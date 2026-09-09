@@ -86,7 +86,7 @@ async function renderedPreview(page: string, generic: (img: string) => boolean =
       }
       all.sort((a, b) => b.area - a.area);
       const best = all[0];
-      return best ? { image: best.src, via: 'hero', width: best.w, height: best.h, title, extras: all.slice(1, 3).map((x) => x.src) } : null;
+      return best ? { image: best.src, via: 'hero', width: best.w, height: best.h, title, extras: all.slice(1, 13).map((x) => x.src) } : null;
     })(${JSON.stringify(genericImage)})`)) as { image: string; via: string; width: number | null; height: number | null; title: string; extras?: string[] } | null;
     if (!found) return null;
     if (/^data:/i.test(found.image) || /[.](svg|gif)([?]|$)/i.test(found.image)) return null;
@@ -98,7 +98,12 @@ async function renderedPreview(page: string, generic: (img: string) => boolean =
   }
 }
 
-type Approved = { images: Record<string, { page: string; image: string; reviewed: string; licence?: string; attribution?: string; more?: string[] }>; _rejected?: Record<string, string> };
+type Approved = {
+  images: Record<string, { page: string; image: string; reviewed: string; licence?: string; attribution?: string; more?: string[]; pages?: string[] }>;
+  _rejected?: Record<string, string>;
+  /** Pictures turned down by eye, per robot, so a later pass does not propose them again. */
+  _rejected_images?: Record<string, string[]>;
+};
 
 function tokens(s: string): string[] {
   return s
@@ -412,54 +417,104 @@ const MORE_DIR = '.out/review-more';
  * not the approved one. Same review flow; approved URLs go into
  * previews.json under `more`.
  */
-async function more() {
+const MORE_CAP = Number(process.env.MORE_CAP ?? 8);
+
+/** Other model slugs of the same maker, so a sibling page that names one of them can be rejected. */
+async function siblingsOfMaker(sql: Awaited<ReturnType<typeof db>>, makerSlug: string, exclude: string): Promise<string[][]> {
+  const rows = (await sql`select r.model_slug, r.name from robots r join manufacturers m on m.id = r.manufacturer_id
+    where m.slug = ${makerSlug} and r.variant = 'base' and r.model_slug <> ${exclude}`) as unknown as { model_slug: string; name: string }[];
+  return rows.map((r) => tokens(r.model_slug.replace(/-/g, ' '))).filter((t) => t.length);
+}
+
+async function more(sql: Awaited<ReturnType<typeof db>>) {
+  const again = process.argv.includes('--again');
   const approved = JSON.parse(readFileSync(APPROVED, 'utf8')) as Approved;
   mkdirSync(MORE_DIR, { recursive: true });
   const manifest: { robot: string; page: string; image: string; n: number; title: string }[] = [];
   const homepageImage = new Map<string, string | null>();
+  const strip = (u: string) => u.split('?')[0];
   for (const [key, a] of Object.entries(approved.images)) {
-    if (a.more || /github[.]com/.test(a.page)) continue;
+    if ((a.more && !again) || /github[.]com/.test(a.page)) continue;
     const site = origin(a.page);
     if (!homepageImage.has(site)) {
       const body = await html(site);
       homepageImage.set(site, body ? previewOf(site, body)?.image ?? null : null);
     }
     const generic = homepageImage.get(site) ?? null;
-    if (!(await html(a.page))) {
-      console.log(`  –  ${key.padEnd(30)} page not fetchable now`);
-      continue;
-    }
-    const r = await renderedPreview(a.page, (img) => !!generic && img.split('?')[0] === generic.split('?')[0], generic);
-    const strip = (u: string) => u.split('?')[0];
-    const pics = [...(r ? [r.image, ...(r.extras ?? [])] : [])].filter((u, i, arr) => strip(u) !== strip(a.image) && arr.findIndex((x) => strip(x) === strip(u)) === i).slice(0, 2);
-    if (!pics.length) {
-      console.log(`  –  ${key.padEnd(30)} no further pictures on the page`);
-      continue;
-    }
-    for (const [i, image] of pics.entries()) {
+    const isGeneric = (img: string) => !!generic && strip(img) === strip(generic);
+    // The maker's other pages about this robot: same host, model tokens in the path or the link text.
+    const [maker, model] = key.split('/');
+    const modelTok = tokens(model.replace(/-/g, ' '));
+    const links = await siteLinks(site);
+    const otherModels = await siblingsOfMaker(sql, maker, model);
+    // A path that carries another model's tokens belongs to that model, not this one.
+    const namesAnother = (u: string) => {
+      let path: string;
       try {
-        const res = await fetch(image, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(30_000) });
-        if (res.ok) writeFileSync(join(MORE_DIR, `${key.replace('/', '__')}__${i + 2}.img`), Buffer.from(await res.arrayBuffer()));
+        path = ` ${decodeURIComponent(new URL(u).pathname).toLowerCase().replace(/[^a-z0-9]+/g, ' ')} `;
+      } catch {
+        return true;
+      }
+      return otherModels.some((t) => t.every((x) => path.includes(` ${x} `)) && !modelTok.every((x) => t.includes(x)));
+    };
+    const siblings = [...links]
+      .map(([u, text]) => ({ u, s: scorePath(u, modelTok, site) + (modelTok.every((x) => ` ${tokens(text).join(' ')} `.includes(` ${x} `)) ? 2 : 0) }))
+      .filter((x) => x.s > 0 && strip(x.u) !== strip(a.page) && !namesAnother(x.u))
+      .sort((x, y) => y.s - x.s)
+      .slice(0, 3)
+      .map((x) => x.u);
+    const pages = [a.page, ...siblings];
+    const have = new Set<string>([strip(a.image), ...(a.more ?? []).map(strip), ...(approved._rejected_images?.[key] ?? []).map(strip)]);
+    const found: { image: string; page: string; title: string }[] = [];
+    const usedPages: string[] = [];
+    for (const page of pages) {
+      if (found.length >= MORE_CAP) break;
+      if (!(await html(page))) continue;
+      const r = await renderedPreview(page, isGeneric, generic);
+      if (!r) continue;
+      let hit = false;
+      for (const image of [r.image, ...(r.extras ?? [])]) {
+        if (have.has(strip(image)) || found.length >= MORE_CAP) continue;
+        have.add(strip(image));
+        found.push({ image, page, title: r.title });
+        hit = true;
+      }
+      if (hit && page !== a.page) usedPages.push(page);
+    }
+    if (!found.length) {
+      console.log(`  –  ${key.padEnd(30)} nothing new on ${pages.length} page(s)`);
+      a.more ??= [];
+      continue;
+    }
+    a.pages = [...new Set([...(a.pages ?? []), ...usedPages])];
+    for (const [i, f] of found.entries()) {
+      const n = (a.more?.length ?? 0) + i + 2;
+      try {
+        const res = await fetch(f.image, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(30_000) });
+        if (res.ok) writeFileSync(join(MORE_DIR, `${key.replace('/', '__')}__${n}.img`), Buffer.from(await res.arrayBuffer()));
       } catch {
         // the sheet shows a broken tile
       }
-      manifest.push({ robot: key, page: a.page, image, n: i + 2, title: r?.title ?? '' });
-      console.log(`  ?  ${key.padEnd(30)} #${i + 2} ${image.slice(0, 90)}`);
+      manifest.push({ robot: key, page: f.page, image: f.image, n, title: f.title });
     }
+    console.log(`  ?  ${key.padEnd(30)} +${found.length} from ${1 + usedPages.length} page(s)`);
   }
+  // Pages are remembered even before the pictures are approved: the spec reader uses them too.
+  writeFileSync(APPROVED, JSON.stringify(approved, null, 2) + '\n');
   writeFileSync(join(MORE_DIR, 'manifest.json'), JSON.stringify(manifest, null, 2));
   const per = 20;
   for (let i = 0; i < manifest.length; i += per) {
-    const tiles = manifest.slice(i, i + per).map((m, j) => `<figure><img src="${m.image}" loading="eager"><figcaption><b>${i + j + 1}</b> ${m.robot} #${m.n}<br><small>${m.title.slice(0, 60)}</small></figcaption></figure>`).join('');
+    const tiles = manifest.slice(i, i + per).map((m, j) => `<figure><img src="${m.image}" loading="eager"><figcaption><b>${i + j + 1}</b> ${m.robot} #${m.n}<br><small>${new URL(m.page).pathname.slice(0, 40)} · ${m.title.slice(0, 40)}</small></figcaption></figure>`).join('');
     writeFileSync(join(MORE_DIR, `sheet-${String(i / per + 1).padStart(2, '0')}.html`), `<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#fff;font:12px system-ui}main{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:8px}figure{margin:0;border:1px solid #ddd;padding:4px}img{width:100%;height:160px;object-fit:contain;background:#f4f4f5}figcaption{margin-top:4px}</style><main>${tiles}</main>`);
   }
   console.log(`
-${manifest.length} further pictures for review → ${MORE_DIR}`);
+${manifest.length} further pictures for review → ${MORE_DIR} (${Math.ceil(manifest.length / per)} sheets)`);
 }
 
 async function main() {
   if (process.argv.includes('--more')) {
-    await more();
+    const sqlMore = await db();
+    await more(sqlMore);
     await (await browser()).close().catch(() => {});
     return;
   }

@@ -54,25 +54,30 @@ test('unknown robots 404', async ({ page }) => {
   expect(res?.status()).toBe(404);
 });
 
-test('the picture column is a gallery: 3D model first, real pictures behind tabs', async ({ page }) => {
+test('the picture column is a 3D tab and a photo gallery you can page through', async ({ page }) => {
   await page.goto('/robots/unitree/g1');
   const media = page.locator('[data-robot-media]');
   await expect(media).toBeVisible();
-  expect(Number(await media.getAttribute('data-slides'))).toBeGreaterThan(1);
+  expect(Number(await media.getAttribute('data-photos'))).toBeGreaterThan(0);
   await expect(page.locator('[data-media-slide="3d"]')).toBeVisible();
   await expect(page.locator('[data-robot-photo]')).toHaveCount(0);
-  const photoTab = media.locator('[data-media-tab]').nth(1);
-  await photoTab.click();
+  await media.locator('[data-media-tab="photos"]').click();
   await expect(page.locator('[data-robot-photo]')).toBeVisible();
   await expect(page.locator('[data-media-slide="3d"]')).toBeHidden();
-  await expect(page.locator('[data-robot-photo] figcaption a')).toHaveAttribute('href', /^https?:\/\//);
+  await expect(page.locator('[data-robot-photo] figcaption a')).toHaveAttribute('href', /^https?:[/][/]/);
+  const photos = Number(await media.getAttribute('data-photos'));
+  if (photos > 1) {
+    await expect(page.locator('[data-photo-count]')).toHaveText(`1 / ${photos}`);
+    await page.locator('[data-photo-next]').click();
+    await expect(page.locator('[data-robot-photo]')).toHaveAttribute('data-photo-index', '1');
+  }
 });
 
 test('a variant without pictures of its own borrows the base model photograph', async ({ page }) => {
   await page.goto('/robots/unitree/g1?variant=edu');
   const media = page.locator('[data-robot-media]');
   await expect(media).toBeVisible();
-  // The EDU shares the G1's model, so the page opens on 3D; the borrowed photograph sits behind its tab.
-  await media.locator('[data-media-tab]').nth(1).click();
-  await expect(page.getByText('Picture of the base model').first()).toBeVisible();
+  // The EDU shares the G1's model, so the page opens on 3D; the borrowed photograph sits behind the photos tab.
+  await media.locator('[data-media-tab="photos"]').click();
+  await expect(page.getByText('Base model').first()).toBeVisible();
 });

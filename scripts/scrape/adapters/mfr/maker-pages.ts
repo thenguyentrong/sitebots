@@ -71,13 +71,16 @@ export const makerPages: SourceAdapter = {
 
   async fetchIndex() {
     if (!existsSync(PREVIEWS)) return [];
-    const approved = JSON.parse(readFileSync(PREVIEWS, 'utf8')) as { images: Record<string, { page: string }> };
+    const approved = JSON.parse(readFileSync(PREVIEWS, 'utf8')) as { images: Record<string, { page: string; pages?: string[] }> };
     const seen = new Set<string>();
     const out: IndexEntry[] = [];
+    // The product page and the maker's other pages about the robot that the picture pass found.
     for (const [key, a] of Object.entries(approved.images)) {
-      if (/github[.]com/.test(a.page) || seen.has(a.page)) continue;
-      seen.add(a.page);
-      out.push({ slug: key, url: a.page });
+      for (const url of [a.page, ...(a.pages ?? [])]) {
+        if (/github[.]com/.test(url) || seen.has(url)) continue;
+        seen.add(url);
+        out.push({ slug: key, url });
+      }
     }
     return out;
   },
