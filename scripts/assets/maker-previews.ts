@@ -29,7 +29,7 @@ const UA = 'SitebotsBot/0.1 (+https://sitebots.dev/bot)';
 const SKIP_PATH = /\/(news|blog|press|media|posts?|articles?|careers|jobs|case[-_]?stud|events?|support|docs?|legal|privacy|terms|about|contact|investors?|tag|category|wp-content|feed)(\/|$|\.)/i;
 
 type Row = { id: string; maker: string; maker_slug: string; model_slug: string; name: string; website: string | null; known: string | null };
-type Cand = { page: string; image: string; width: number | null; height: number | null; title: string; extras?: string[]; how: 'ledger' | 'sitemap' | 'homepage' | 'listing' | 'search'; via: 'meta' | 'rendered-meta' | 'hero' };
+type Cand = { page: string; image: string; width: number | null; height: number | null; title: string; extras?: string[]; how: 'ledger' | 'sitemap' | 'homepage' | 'listing' | 'search' | 'named'; via: 'meta' | 'rendered-meta' | 'hero' };
 
 /**
  * Client-rendered product pages (Unitree, Booster) carry no og:image in the
@@ -245,6 +245,40 @@ function siteLinks(site: string): Promise<Map<string, string>> {
   return p;
 }
 
+type SiteImage = { src: string; alt: string; w: number; h: number };
+const siteImagesCache = new Map<string, Promise<SiteImage[]>>();
+
+function siteImages(site: string): Promise<SiteImage[]> {
+  const cached = siteImagesCache.get(site);
+  if (cached) return cached;
+  const p = (async () => {
+    const out = new Map<string, SiteImage>();
+    const b = await browser();
+    const links = await siteLinks(site);
+    const listings = [...links.keys()].filter((u) => LISTING.test(new URL(u).pathname)).slice(0, 3);
+    for (const url of [site, ...listings]) {
+      if (!(await html(url))) continue;
+      const ctx = await b.newContext({ userAgent: UA, viewport: { width: 1280, height: 900 } });
+      const pg = await ctx.newPage();
+      try {
+        await pg.goto(url, { waitUntil: 'domcontentloaded', timeout: 20_000 }).catch(() => {});
+        await pg.evaluate(`(async () => { for (let y = 0; y < 6000; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 200)); } })()`).catch(() => {});
+        await pg.waitForTimeout(1200);
+        const found = (await pg.evaluate(`Array.from(document.images).map((i) => ({ src: i.currentSrc || i.src, alt: i.alt || '', w: i.naturalWidth || 0, h: i.naturalHeight || 0 }))`)) as SiteImage[];
+        for (const im of found) if (im.src && !out.has(im.src.split('?')[0])) out.set(im.src.split('?')[0], im);
+      } catch {
+        // a site that will not render simply contributes nothing
+      } finally {
+        await ctx.close();
+      }
+    }
+    say(`site images ${new URL(site).host}: ${out.size}`);
+    return [...out.values()];
+  })();
+  siteImagesCache.set(site, p);
+  return p;
+}
+
 const VERBOSE = process.argv.includes('--verbose');
 const say = (m: string) => VERBOSE && console.log('       ' + m);
 
@@ -317,6 +351,24 @@ async function discover(r: Row, homepageImage: string | null): Promise<Cand | nu
         if (c) return c;
       }
     }
+  }
+
+  // No page names the robot; a picture might. An image called "a2-hero.jpg" or
+  // captioned "Unitree A2" on the maker's own site is that robot, even when the
+  // page it sits on covers the whole range.
+  const named = (await siteImages(site))
+    .filter((im) => {
+      if (im.w < 400 || im.h < 250) return false;
+      if (/logo|icon|sprite|avatar|flag|qr|badge|payment|placeholder|banner-bg/i.test(im.src)) return false;
+      if (homepageImage && im.src.split('?')[0] === homepageImage.split('?')[0]) return false;
+      const hay = ` ${tokens(`${decodeURIComponent(im.src.split('/').pop() ?? '')} ${im.alt}`).join(' ')} `;
+      return modelTok.every((t) => hay.includes(` ${t} `));
+    })
+    .sort((a, b) => b.w * b.h - a.w * a.h);
+  if (named.length) {
+    const im = named[0];
+    say(`named image ${im.src.slice(0, 90)}`);
+    return { page: site, how: 'named', via: 'hero', image: im.src, width: im.w, height: im.h, title: im.alt || new URL(site).host, extras: named.slice(1, 6).map((x) => x.src) };
   }
   return null;
 }
