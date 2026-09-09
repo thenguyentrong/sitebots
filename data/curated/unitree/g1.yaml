@@ -1,0 +1,39 @@
+manufacturer: unitree
+model: g1
+variants: [base, edu]
+entries:
+  ip_rating:
+    value: null
+    confidence: assumed
+    note: Unitree publishes no ingress rating for the G1. Open joints and vents; treat as indoor and dry.
+  outdoor_rated:
+    value: false
+    confidence: assumed
+    note: No IP rating or operating temperature published; a research platform demonstrated indoors.
+  stair_capable:
+    value: true
+    confidence: likely
+    evidence_url: https://www.unitree.com/g1
+    note: Stair climbing appears in Unitree's own G1 footage; it is not a published specification and no step height is given.
+  requires_operator:
+    value: teleop
+    confidence: likely
+    note: Ships with a remote controller and an SDK. Autonomous behaviour is whatever the buyer develops.
+  task_capabilities:
+    value: [teleoperated_manipulation, carry_payload]
+    confidence: likely
+    note: 2 kg per arm rated. No hands in the base configuration, so picking is teleoperated at best.
+  certifications:
+    value: []
+    confidence: assumed
+    note: No CE declaration or ISO 10218 conformity published.
+  trl:
+    value: 6
+    confidence: likely
+    note: Shipping research platform; no documented production deployment on a site.
+by_variant:
+  edu:
+    task_capabilities:
+      value: [teleoperated_manipulation, carry_payload, autonomous_nav_indoor]
+      confidence: likely
+      note: EDU adds Jetson compute, optional Dex3-1 hands and SDK access for onboard autonomy; 3 kg per arm.

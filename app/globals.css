@@ -1,0 +1,252 @@
+@import "tailwindcss";
+
+@theme {
+  /* Neutral zinc surfaces, near-black ink, one safety-orange accent that is
+     reserved for the brand mark, the primary action and "best" highlights. */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-subtle: var(--subtle);
+  --color-edge: var(--edge);
+  --color-edge-strong: var(--edge-strong);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-safety: var(--accent);
+  --color-safety-soft: var(--accent-soft);
+
+  /* shadcn primitive tokens, mapped onto the same palette. */
+  --color-primary: var(--foreground);
+  --color-primary-foreground: var(--background);
+  --color-secondary: var(--subtle);
+  --color-secondary-foreground: var(--foreground);
+  --color-accent: var(--subtle);
+  --color-accent-foreground: var(--foreground);
+  --color-destructive: var(--danger);
+  --color-destructive-soft: var(--danger-soft);
+  --color-destructive-foreground: #ffffff;
+  --color-input: var(--edge);
+  --color-ring: var(--foreground);
+  --color-border: var(--edge);
+
+  --color-trust-verified: var(--verified);
+  --color-trust-verified-soft: var(--verified-soft);
+  --color-trust-assessed: var(--assessed);
+  --color-trust-assessed-soft: var(--assessed-soft);
+  --color-trust-reported: var(--reported);
+  --color-trust-reported-soft: var(--reported-soft);
+  --color-trust-unknown: var(--faint);
+  --color-trust-unknown-soft: var(--subtle);
+
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 1px 3px rgb(0 0 0 / 0.05);
+  --shadow-float: 0 10px 30px -10px rgb(0 0 0 / 0.25), 0 2px 6px rgb(0 0 0 / 0.06);
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+:root {
+  --background: #fafafa;
+  --foreground: #09090b;
+  --card: #ffffff;
+  --subtle: #f4f4f5;
+  --edge: #e4e4e7;
+  --edge-strong: #d4d4d8;
+  --muted: #52525b;
+  --faint: #8b8b94;
+  --accent: #ea580c;
+  --accent-soft: #ffedd5;
+  --danger: #dc2626;
+  --danger-soft: #fee2e2;
+  --verified: #15803d;
+  --verified-soft: #dcfce7;
+  --assessed: #1d4ed8;
+  --assessed-soft: #dbeafe;
+  --reported: #b45309;
+  --reported-soft: #fef3c7;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --background: #09090b;
+    --foreground: #fafafa;
+    --card: #111113;
+    --subtle: #18181b;
+    --edge: #27272a;
+    --edge-strong: #3f3f46;
+    --muted: #a1a1aa;
+    --faint: #71717a;
+    --accent: #fb923c;
+    --accent-soft: #3b1f0e;
+    --danger: #f87171;
+    --danger-soft: #3f1515;
+    --verified: #4ade80;
+    --verified-soft: #0f2e1a;
+    --assessed: #60a5fa;
+    --assessed-soft: #10213f;
+    --reported: #fbbf24;
+    --reported-soft: #3a2a0a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --background: #09090b;
+  --foreground: #fafafa;
+  --card: #111113;
+  --subtle: #18181b;
+  --edge: #27272a;
+  --edge-strong: #3f3f46;
+  --muted: #a1a1aa;
+  --faint: #71717a;
+  --accent: #fb923c;
+  --accent-soft: #3b1f0e;
+  --danger: #f87171;
+  --danger-soft: #3f1515;
+  --verified: #4ade80;
+  --verified-soft: #0f2e1a;
+  --assessed: #60a5fa;
+  --assessed-soft: #10213f;
+  --reported: #fbbf24;
+  --reported-soft: #3a2a0a;
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Figures line up in columns; the face stays the same as the prose. */
+.num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Small caption above a value. */
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--faint);
+}
+
+/* Section eyebrow. */
+.eyebrow {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* The one card recipe used everywhere. */
+.card {
+  background: var(--card);
+  border: 1px solid var(--edge);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+/* Dot grid behind the hero, fading out towards the bottom. */
+.bg-dots {
+  background-image: radial-gradient(var(--edge-strong) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.9), transparent 90%);
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0 0 0 / 0.9), transparent 90%);
+}
+
+.glow {
+  background: radial-gradient(60% 55% at 50% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%);
+}
+
+/* Native select with a drawn chevron; no JS dropdowns. */
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2371717a' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+}
+
+/* Checkbox rendered as a toggle chip. The input stays in the DOM (and in
+   the GET query); only its box is hidden. */
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border: 1px solid var(--edge);
+  border-radius: 9999px;
+  background: var(--card);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  line-height: 1.25;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.chip:hover {
+  border-color: var(--edge-strong);
+  color: var(--foreground);
+}
+.chip input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.chip:has(input:checked) {
+  background: var(--foreground);
+  border-color: var(--foreground);
+  color: var(--background);
+}
+.chip:has(input:focus-visible) {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+/* Score ring: the stroke length is set inline. */
+.ring-track {
+  stroke: var(--edge);
+}
+.ring-value {
+  stroke: var(--foreground);
+  stroke-linecap: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Spider chart: strokes on tokens so both themes read; series tones 0–3. */
+.radar-grid {
+  stroke: var(--edge);
+  stroke-width: 1;
+}
+.radar-label {
+  font-size: 11px;
+  font-weight: 500;
+  fill: var(--muted);
+}
+.radar-label-unknown {
+  fill: var(--faint);
+}
+.radar-s0 { --radar: var(--foreground); }
+.radar-s1 { --radar: var(--accent); }
+.radar-s2 { --radar: var(--assessed); }
+.radar-s3 { --radar: var(--verified); }
+.radar-fill { fill: var(--radar); fill-opacity: 0.12; }
+.radar-line { stroke: var(--radar); stroke-width: 2; stroke-linejoin: round; }
+.radar-dot { fill: var(--radar); }
+.radar-gap { stroke: var(--faint); stroke-width: 1.5; stroke-dasharray: 2 2; }

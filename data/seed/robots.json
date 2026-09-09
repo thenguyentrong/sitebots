@@ -1,0 +1,282 @@
+{
+  "_comment": "Hand-entered from the manufacturer page named in each source_url on the observed_at date. Values in canonical units (m, kg, m/s, h, Wh, °C). Unknown stays unknown: no field is filled from memory or from a third-party database.",
+  "robots": [
+    {
+      "manufacturer": "unitree",
+      "model": "g1",
+      "variant": "base",
+      "form_factor": "humanoid",
+      "status": "shipping",
+      "release_year": 2024,
+      "summary": "Compact research humanoid sold openly from Unitree's store. No hands in the base configuration.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 1.32, "raw": "1320×450×200mm (standing)", "source_url": "https://www.unitree.com/g1" },
+        { "field": "footprint", "value": "1320 × 450 × 200 mm standing, 690 × 450 × 300 mm folded", "source_url": "https://www.unitree.com/g1" },
+        { "field": "weight_kg", "value": 35, "raw": "About 35kg (with battery)", "source_url": "https://www.unitree.com/g1" },
+        { "field": "dof_total", "value": 23, "raw": "23", "source_url": "https://www.unitree.com/g1" },
+        { "field": "dof_legs", "value": 12, "raw": "6 per leg", "source_url": "https://www.unitree.com/g1" },
+        { "field": "dof_arms", "value": 10, "raw": "5 per arm", "source_url": "https://www.unitree.com/g1" },
+        { "field": "dof_body", "value": 1, "raw": "Waist 1", "source_url": "https://www.unitree.com/g1" },
+        { "field": "hand_type", "value": "none", "raw": "None standard", "source_url": "https://www.unitree.com/g1" },
+        { "field": "payload_kg", "qualifier": "rated", "value": 2, "raw": "Arm max load about 2kg", "source_url": "https://www.unitree.com/g1", "note": "Per arm, as published. No peak figure given." },
+        { "field": "runtime_h", "qualifier": "unstated", "value": 2, "raw": "About 2h", "source_url": "https://www.unitree.com/g1" },
+        { "field": "compute_module", "value": "8-core high-performance CPU", "source_url": "https://www.unitree.com/g1" },
+        { "field": "has_lidar", "value": true, "raw": "Depth Camera + 3D LiDAR", "source_url": "https://www.unitree.com/g1" },
+        { "field": "cameras", "value": "Depth camera", "source_url": "https://www.unitree.com/g1" },
+        { "field": "connectivity", "value": "WiFi 6, Bluetooth 5.2", "source_url": "https://www.unitree.com/g1" },
+        { "field": "warranty_months", "value": 8, "raw": "8 months", "source_url": "https://www.unitree.com/g1" }
+      ],
+      "prices": [
+        { "amount": 13500, "currency": "USD", "region": "US", "tier": 1, "direct": true, "config": "base", "includes_vat": false, "source_url": "https://www.unitree.com/g1", "note": "US $13.5K on the product page" }
+      ],
+      "availability": [
+        { "region": "US", "status": "for_sale", "in_stock": true, "source_url": "https://shop.unitree.com/products/unitree-g1" }
+      ]
+    },
+    {
+      "manufacturer": "unitree",
+      "model": "g1",
+      "variant": "edu",
+      "form_factor": "humanoid",
+      "status": "shipping",
+      "release_year": 2024,
+      "summary": "The G1 with optional Jetson compute, extra waist and wrist joints and Dex3-1 three-finger hands. Quote only.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 1.32, "raw": "1320×450×200mm (standing)", "source_url": "https://www.unitree.com/g1" },
+        { "field": "weight_kg", "value": 35, "raw": "About 35kg (with battery)", "source_url": "https://www.unitree.com/g1" },
+        { "field": "dof_total", "min": 23, "max": 43, "raw": "23–43", "source_url": "https://www.unitree.com/g1", "note": "Depends on the waist, wrist and hand options." },
+        { "field": "dof_hands", "value": 7, "raw": "7 (three-fingered hand) per hand, optional", "source_url": "https://www.unitree.com/g1", "note": "Per hand." },
+        { "field": "hand_type", "value": "three_finger", "raw": "Dex3-1 optional", "source_url": "https://www.unitree.com/g1" },
+        { "field": "hand_model", "value": "Dex3-1", "source_url": "https://www.unitree.com/g1" },
+        { "field": "payload_kg", "qualifier": "rated", "value": 3, "raw": "Arm max load about 3kg", "source_url": "https://www.unitree.com/g1", "note": "Per arm, as published." },
+        { "field": "runtime_h", "qualifier": "unstated", "value": 2, "raw": "About 2h", "source_url": "https://www.unitree.com/g1" },
+        { "field": "compute_module", "value": "8-core CPU, optional NVIDIA Jetson Orin module", "source_url": "https://www.unitree.com/g1" },
+        { "field": "has_lidar", "value": true, "raw": "Depth Camera + 3D LiDAR", "source_url": "https://www.unitree.com/g1" },
+        { "field": "connectivity", "value": "WiFi 6, Bluetooth 5.2", "source_url": "https://www.unitree.com/g1" },
+        { "field": "warranty_months", "value": 18, "raw": "18 months", "source_url": "https://www.unitree.com/g1" }
+      ],
+      "prices": [],
+      "availability": [
+        { "region": "US", "status": "enterprise_only", "lead_time_text": "Contact sales", "source_url": "https://www.unitree.com/g1" }
+      ]
+    },
+    {
+      "manufacturer": "unitree",
+      "model": "h2",
+      "variant": "base",
+      "form_factor": "humanoid",
+      "status": "pre_order",
+      "release_year": 2025,
+      "summary": "Full-size humanoid listed on Unitree's store. Unitree publishes no spec page for it yet; the store listing is the only primary source.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 1.8, "raw": "180 cm humanoid design", "source_url": "https://shop.unitree.com/products/unitree-h2" },
+        { "field": "dof_total", "value": 31, "raw": "31 degrees of freedom", "source_url": "https://shop.unitree.com/products/unitree-h2" },
+        { "field": "compute_tops", "value": 2070, "raw": "Powered by a 2070 TOPS chip", "source_url": "https://shop.unitree.com/products/unitree-h2", "confidence": 0.6, "note": "The listing does not say whether this compute is standard or an option." }
+      ],
+      "prices": [
+        { "amount": 29900, "currency": "USD", "region": "US", "tier": 1, "direct": true, "config": "base", "includes_vat": false, "source_url": "https://shop.unitree.com/products/unitree-h2" }
+      ],
+      "availability": [
+        { "region": "US", "status": "pre_order", "in_stock": false, "lead_time_text": "Listed, not in stock", "source_url": "https://shop.unitree.com/products/unitree-h2" }
+      ]
+    },
+    {
+      "manufacturer": "unitree",
+      "model": "h2",
+      "variant": "plus",
+      "form_factor": "humanoid",
+      "status": "pre_order",
+      "release_year": 2026,
+      "summary": "H2 with dexterous hands, head stereo and wrist cameras, built on NVIDIA Isaac GR00T. The store shows a $100,000 placeholder, which is a quote-only marker, not a price.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 1.8, "raw": "180 cm (H2 listing)", "source_url": "https://shop.unitree.com/products/unitree-h2", "confidence": 0.6, "note": "Taken from the H2 listing; the Plus listing gives no height." },
+        { "field": "payload_kg", "qualifier": "rated", "value": 7, "raw": "Rated arm payload of 7 kilograms", "source_url": "https://shop.unitree.com/products/unitree-h2-plus" },
+        { "field": "payload_kg", "qualifier": "peak", "value": 15, "raw": "peak payload of 15 kilograms", "source_url": "https://shop.unitree.com/products/unitree-h2-plus" },
+        { "field": "dof_hands", "value": 22, "raw": "22 active DOF in the hands", "source_url": "https://shop.unitree.com/products/unitree-h2-plus", "note": "Both hands together." },
+        { "field": "dof_total", "value": 75, "raw": "75 total body-and-hand DOF", "source_url": "https://shop.unitree.com/products/unitree-h2-plus" },
+        { "field": "cameras", "value": "Head-mounted wide-FOV stereo camera, wrist cameras, IMU", "source_url": "https://shop.unitree.com/products/unitree-h2-plus" },
+        { "field": "compute_module", "value": "Built on NVIDIA Isaac GR00T", "source_url": "https://shop.unitree.com/products/unitree-h2-plus", "confidence": 0.5, "note": "Software stack named, hardware not." }
+      ],
+      "prices": [],
+      "availability": [
+        { "region": "US", "status": "enterprise_only", "in_stock": false, "lead_time_text": "Quote only — the store lists a placeholder price", "source_url": "https://shop.unitree.com/products/unitree-h2-plus" }
+      ]
+    },
+    {
+      "manufacturer": "unitree",
+      "model": "h1",
+      "variant": "base",
+      "form_factor": "humanoid",
+      "status": "shipping",
+      "release_year": 2023,
+      "summary": "Unitree's first full-size humanoid. Fast, no hands, quote only.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 1.8, "raw": "about 180CM", "source_url": "https://www.unitree.com/h1" },
+        { "field": "weight_kg", "value": 47, "raw": "about 47kg", "source_url": "https://www.unitree.com/h1" },
+        { "field": "dof_total", "value": 22, "raw": "legs 10, arms 8, other 4", "source_url": "https://www.unitree.com/h1" },
+        { "field": "dof_legs", "value": 10, "source_url": "https://www.unitree.com/h1" },
+        { "field": "dof_arms", "value": 8, "source_url": "https://www.unitree.com/h1" },
+        { "field": "max_speed_ms", "value": 3.3, "raw": "3.3m/s", "source_url": "https://www.unitree.com/h1" },
+        { "field": "battery_wh", "value": 864, "raw": "15Ah (0.864KWh), max voltage 67.2V", "source_url": "https://www.unitree.com/h1" },
+        { "field": "compute_module", "value": "Intel Core i5 (standard), Intel Core i7 (development)", "source_url": "https://www.unitree.com/h1" },
+        { "field": "has_lidar", "value": true, "raw": "3D LIDAR + Depth Camera", "source_url": "https://www.unitree.com/h1" },
+        { "field": "cameras", "value": "Depth camera", "source_url": "https://www.unitree.com/h1" }
+      ],
+      "prices": [],
+      "availability": [
+        { "region": "US", "status": "enterprise_only", "in_stock": false, "lead_time_text": "Contact us for the real price", "source_url": "https://shop.unitree.com/products/unitree-h1" }
+      ]
+    },
+    {
+      "manufacturer": "unitree",
+      "model": "h1-2",
+      "variant": "base",
+      "form_factor": "humanoid",
+      "status": "shipping",
+      "release_year": 2024,
+      "summary": "Heavier successor to the H1 with a waist joint and wrist actuators.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 1.78, "raw": "about 178CM", "source_url": "https://www.unitree.com/h1" },
+        { "field": "weight_kg", "value": 70, "raw": "about 70kg", "source_url": "https://www.unitree.com/h1" },
+        { "field": "dof_total", "value": 27, "source_url": "https://www.unitree.com/h1" },
+        { "field": "max_speed_ms", "max": 2, "raw": "Moving speed <2m/s", "source_url": "https://www.unitree.com/h1" },
+        { "field": "battery_wh", "value": 864, "raw": "15Ah (0.864KWh)", "source_url": "https://www.unitree.com/h1" },
+        { "field": "compute_module", "value": "Intel Core i5 / i7, optional up to 3 devices incl. Orin NX", "source_url": "https://www.unitree.com/h1" },
+        { "field": "has_lidar", "value": true, "raw": "3D LIDAR + Depth Camera", "source_url": "https://www.unitree.com/h1" }
+      ],
+      "prices": [],
+      "availability": []
+    },
+    {
+      "manufacturer": "boston-dynamics",
+      "model": "spot",
+      "variant": "base",
+      "form_factor": "quadruped",
+      "status": "shipping",
+      "release_year": 2020,
+      "summary": "The reference site-inspection quadruped. Publishes the environmental figures humanoid vendors do not.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "min": 0.52, "max": 0.7, "raw": "Walking height 520–700 mm, default 610 mm", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "footprint", "value": "1100 × 500 mm, 610 mm walking height, 191 mm sitting", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "weight_kg", "value": 33.8, "raw": "33.8 kg (74.5 lb) with battery", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "payload_kg", "qualifier": "sustained", "value": 14, "raw": "Max payload capacity 14 kg (30.9 lbs)", "source_url": "https://bostondynamics.com/products/spot/", "note": "Carried on the back." },
+        { "field": "max_speed_ms", "value": 1.6, "raw": "1.6 m/s", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "max_slope_deg", "value": 30, "raw": "±30°", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "step_height_m", "value": 0.3, "raw": "Max step height 300 mm (11.8 in)", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "stair_capable", "value": true, "raw": "300 mm step height", "source_url": "https://bostondynamics.com/products/spot/", "confidence": 0.8, "note": "Inferred from the published step height; Spot's stair mode is documented separately." },
+        { "field": "battery_wh", "value": 564, "raw": "564 Wh", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "runtime_h", "qualifier": "unstated", "value": 1.5, "raw": "Average runtime 90 mins", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "charge_time_h", "value": 1, "raw": "Recharge time 60 mins", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "operating_temp_c", "min": -20, "max": 55, "raw": "-20°C to 55°C", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "ip_rating", "value": "IP54", "source_url": "https://bostondynamics.com/products/spot/" },
+        { "field": "outdoor_rated", "value": true, "raw": "IP54, -20 to 55 °C", "source_url": "https://bostondynamics.com/products/spot/", "confidence": 0.7, "note": "Inferred from the ingress and temperature ratings." },
+        { "field": "connectivity", "value": "WiFi 2.4/5 GHz, Ethernet", "source_url": "https://bostondynamics.com/products/spot/" }
+      ],
+      "prices": [],
+      "availability": [
+        { "region": "GLOBAL", "status": "enterprise_only", "lead_time_text": "Quote only", "source_url": "https://bostondynamics.com/products/spot/" }
+      ]
+    },
+    {
+      "manufacturer": "agility",
+      "model": "digit",
+      "variant": "base",
+      "form_factor": "humanoid",
+      "status": "shipping",
+      "release_year": 2023,
+      "summary": "Logistics humanoid deployed in warehouses. The spec sheet is behind a lead-capture form, so most fields stay unknown here until it is read by hand.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "payload_kg", "qualifier": "carry_walking", "value": 15.9, "raw": "35 pound carrying capacity", "source_url": "https://agilityrobotics.com/products/digit" },
+        { "field": "runtime_h", "qualifier": "unstated", "value": 4, "raw": "4 hour battery life", "source_url": "https://agilityrobotics.com/products/digit" }
+      ],
+      "prices": [],
+      "availability": [
+        { "region": "US", "status": "enterprise_only", "lead_time_text": "Quote only; spec sheet gated behind a form", "source_url": "https://agilityrobotics.com/products/digit" }
+      ]
+    },
+    {
+      "manufacturer": "anybotics",
+      "model": "anymal-d",
+      "variant": "base",
+      "form_factor": "quadruped",
+      "status": "shipping",
+      "release_year": 2023,
+      "summary": "Industrial inspection quadruped with IP67 and an Ex-rated sibling (ANYmal X).",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "walk_speed_ms", "value": 0.75, "raw": "0.75 m/s – 2.46 ft/s", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "runtime_h", "qualifier": "unstated", "value": 1.5, "raw": "90 min", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "charge_time_h", "value": 3, "raw": "3 h full charge, 70% in 100 min", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "payload_kg", "qualifier": "sustained", "value": 10, "raw": "10 kg payload", "source_url": "https://www.anybotics.com/anymal/", "note": "Additional payload on top of the standard inspection kit." },
+        { "field": "ip_rating", "value": "IP67", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "certifications", "value": ["CE", "FCC"], "raw": "FCC, CE and Anatel compliant", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "compute_module", "value": "2× Intel Core i7 (8th gen, 6-core)", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "has_lidar", "value": true, "raw": "360° LiDAR scanner", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "cameras", "value": "6 depth cameras, 2 tele-operation cameras, PTZ visual (20× zoom) and thermal camera", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "connectivity", "value": "WiFi, 4G/LTE", "source_url": "https://www.anybotics.com/anymal/" },
+        { "field": "outdoor_rated", "value": true, "raw": "IP67", "source_url": "https://www.anybotics.com/anymal/", "confidence": 0.8, "note": "Inferred from the ingress rating." }
+      ],
+      "prices": [],
+      "availability": [
+        { "region": "GLOBAL", "status": "enterprise_only", "lead_time_text": "Quote only", "source_url": "https://www.anybotics.com/anymal/" }
+      ]
+    },
+    {
+      "manufacturer": "deep-robotics",
+      "model": "x30",
+      "variant": "base",
+      "form_factor": "quadruped",
+      "status": "shipping",
+      "release_year": 2023,
+      "summary": "Fast industrial quadruped rated IP67 and -20 to 55 °C.",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 0.47, "raw": "1000*695*470(mm) standing", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "footprint", "value": "1000 × 695 × 470 mm standing", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "weight_kg", "value": 56, "raw": "56kg (battery included)", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "max_speed_ms", "value": 4, "raw": "≥4m/s", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "max_slope_deg", "value": 45, "raw": "≤45°", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "step_height_m", "value": 0.2, "raw": "≥20CM", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "stair_capable", "value": true, "raw": "≥20 cm step height", "source_url": "https://www.deeprobotics.cn/en/index/product3.html", "confidence": 0.7, "note": "Inferred from the published step height." },
+        { "field": "operating_temp_c", "min": -20, "max": 55, "raw": "-20°~55°", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "ip_rating", "value": "IP67", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "runtime_h", "qualifier": "unstated", "min": 2.5, "max": 4, "raw": "2.5-4h", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "outdoor_rated", "value": true, "raw": "IP67, -20 to 55 °C", "source_url": "https://www.deeprobotics.cn/en/index/product3.html", "confidence": 0.8 },
+        { "field": "connectivity", "value": "Ethernet", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" }
+      ],
+      "prices": [],
+      "availability": []
+    },
+    {
+      "manufacturer": "deep-robotics",
+      "model": "x30",
+      "variant": "pro",
+      "form_factor": "quadruped",
+      "status": "shipping",
+      "release_year": 2023,
+      "summary": "X30 with the payload interface (USB, Ethernet, WiFi, 5/12/24 V out).",
+      "observed_at": "2026-09-08T00:00:00Z",
+      "facts": [
+        { "field": "height_m", "value": 0.47, "raw": "1000*715*470(mm) standing", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "weight_kg", "value": 59, "raw": "59kg (battery included)", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "max_speed_ms", "value": 4, "raw": "≥4m/s", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "max_slope_deg", "value": 45, "raw": "≤45°", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "step_height_m", "value": 0.2, "raw": "≥20CM", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "operating_temp_c", "min": -20, "max": 55, "raw": "-20°~55°", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "ip_rating", "value": "IP67", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "runtime_h", "qualifier": "unstated", "min": 2.5, "max": 4, "raw": "2.5-4h", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" },
+        { "field": "connectivity", "value": "USB 2.0/3.0, Ethernet, WiFi; 5 V / 12 V / 24 V payload power", "source_url": "https://www.deeprobotics.cn/en/index/product3.html" }
+      ],
+      "prices": [],
+      "availability": []
+    }
+  ]
+}

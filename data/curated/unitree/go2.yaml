@@ -1,0 +1,28 @@
+manufacturer: unitree
+model: go2
+variants: [air, pro, x]
+entries:
+  outdoor_rated:
+    value: false
+    confidence: assumed
+    note: Used outdoors in dry weather in Unitree's footage, but no ingress protection is published, so not rated for rain or dust.
+  stair_capable:
+    value: true
+    confidence: likely
+    note: Stair climbing is shown by Unitree; step height is not published.
+  requires_operator:
+    value: teleop
+    confidence: likely
+    note: Remote controller and app; SDK autonomy on the higher trims only.
+  task_capabilities:
+    value: [carry_payload, site_inspection]
+    confidence: assumed
+    note: Inspection only with the buyer's camera payload; small platform, payload not published for these trims.
+  certifications:
+    value: []
+    confidence: assumed
+    note: Nothing published.
+  trl:
+    value: 7
+    confidence: likely
+    note: Shipping consumer and education product; no construction deployment documented.

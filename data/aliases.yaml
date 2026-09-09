@@ -1,0 +1,185 @@
+# Entity resolution. A scraped record names a manufacturer and a model in
+# whatever words the source used; this file maps those words onto our keys.
+# Matching is case-insensitive, longest alias wins, and a model alias only
+# counts once the manufacturer has been resolved — that is what keeps
+# "Unitree G1" and "Galbot G1" apart.
+#
+# Unresolved subjects land in .cache/unresolved.jsonl. Add them here, do not
+# widen a regex.
+
+manufacturers:
+  unitree:
+    name: Unitree Robotics
+    country: CN
+    website: https://www.unitree.com/
+    aliases: [Unitree, Unitree Robotics, UnitreeRobotics, 宇树, YuShu, HangZhou YuShu]
+  boston-dynamics:
+    name: Boston Dynamics
+    country: US
+    website: https://bostondynamics.com/
+    aliases: [Boston Dynamics, BostonDynamics, BD]
+  agility:
+    name: Agility Robotics
+    country: US
+    website: https://agilityrobotics.com/
+    aliases: [Agility, Agility Robotics]
+  anybotics:
+    name: ANYbotics
+    country: CH
+    website: https://www.anybotics.com/
+    aliases: [ANYbotics, Anybotics]
+  deep-robotics:
+    name: Deep Robotics
+    country: CN
+    website: https://www.deeprobotics.cn/en/
+    aliases: [Deep Robotics, DeepRobotics, 云深处]
+  booster:
+    name: Booster Robotics
+    country: CN
+    website: https://www.booster.tech/
+    aliases: [Booster, Booster Robotics, Booster Tech]
+  pal:
+    name: PAL Robotics
+    country: ES
+    website: https://pal-robotics.com/
+    aliases: [PAL Robotics, PAL, Pal Robotics]
+  # Slug matches the generated file so the M2 robots stay under one maker.
+  1x:
+    name: 1X Technologies
+    country: NO
+    website: https://www.1x.tech/
+    aliases: [1X, 1X Technologies, 1X Robotics]
+
+robots:
+  unitree:
+    g1:
+      name: Unitree G1
+      form_factor: humanoid
+      aliases: [G1, Unitree G1, G1 Humanoid, G1 Humanoid Agent]
+      variants:
+        base: [Standard, Basic]
+        edu: [EDU, EDU Standard, EDU Plus, EDU Ultimate, EDU U1, EDU U2, EDU U3, EDU U4, EDU U5, EDU U6]
+    g1-d:
+      name: Unitree G1-D
+      form_factor: humanoid
+      aliases: [G1-D, G1 D, Unitree G1-D]
+    h1:
+      name: Unitree H1
+      form_factor: humanoid
+      aliases: [H1, Unitree H1]
+      variants:
+        base: []
+    h1-2:
+      name: Unitree H1-2
+      form_factor: humanoid
+      aliases: [H1-2, H1_2, "H1 2", Unitree H1-2]
+    h2:
+      name: Unitree H2
+      form_factor: humanoid
+      aliases: [H2, Unitree H2]
+      variants:
+        base: [Standard]
+        plus: [Plus, H2 Plus, H2+, Plus Smart]
+    r1:
+      name: Unitree R1
+      form_factor: humanoid
+      aliases: [R1, Unitree R1]
+      variants:
+        base: []
+        air: [Air, R1 Air]
+        edu: [EDU, R1 EDU]
+        d: [R1-D, R1 D, "D"]
+    go2:
+      name: Unitree Go2
+      form_factor: quadruped
+      aliases: [Go2, Unitree Go2, GO2]
+      variants:
+        air: [Air]
+        pro: [Pro]
+        x: [X, Go2 X]
+        edu: [EDU, EDU Plus]
+        w: [Go2-W, Go2 W, Wheeled]
+    b2:
+      name: Unitree B2
+      form_factor: quadruped
+      aliases: [B2, Unitree B2]
+      variants:
+        base: []
+        w: [B2-W, B2 W, Wheeled]
+    a2:
+      name: Unitree A2
+      form_factor: quadruped
+      aliases: [A2, Unitree A2]
+  boston-dynamics:
+    spot:
+      name: Spot
+      form_factor: quadruped
+      aliases: [Spot, Boston Dynamics Spot]
+      variants:
+        base: [Explorer, Enterprise]
+        arm: [Spot Arm, with Arm]
+    atlas:
+      name: Atlas
+      form_factor: humanoid
+      aliases: [Atlas, Electric Atlas]
+  agility:
+    digit:
+      name: Digit
+      form_factor: humanoid
+      aliases: [Digit, Agility Digit]
+  anybotics:
+    anymal-d:
+      name: ANYmal D
+      form_factor: quadruped
+      aliases: [ANYmal D, ANYmal, Anymal]
+    anymal-x:
+      name: ANYmal X
+      form_factor: quadruped
+      aliases: [ANYmal X]
+  deep-robotics:
+    x30:
+      name: X30
+      form_factor: quadruped
+      aliases: [X30, Deep Robotics X30]
+      variants:
+        base: []
+        pro: [Pro, X30 Pro]
+    lite3:
+      name: Lite3
+      form_factor: quadruped
+      aliases: [Lite3, Lite 3]
+  pal:
+    talos:
+      name: TALOS
+      form_factor: humanoid
+      aliases: [TALOS, PAL TALOS]
+    kangaroo:
+      name: Kangaroo
+      form_factor: humanoid
+      aliases: [Kangaroo, PAL Kangaroo]
+    tiago:
+      name: TIAGo
+      form_factor: mobile_manipulator
+      aliases: [TIAGo, TIAGo++, TIAGo Pro]
+  1x:
+    neo:
+      name: 1X NEO
+      form_factor: humanoid
+      aliases: [NEO, 1X NEO]
+    eve:
+      name: 1X EVE
+      form_factor: mobile_manipulator
+      aliases: [EVE, 1X EVE]
+  booster:
+    t1:
+      name: Booster T1
+      form_factor: humanoid
+      aliases: [T1, Booster T1]
+    t2:
+      name: Booster T2
+      form_factor: humanoid
+      aliases: [T2, Booster T2]
+    k1:
+      name: Booster K1
+      form_factor: humanoid
+      aliases: [K1, Booster K1]

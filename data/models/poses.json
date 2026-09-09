@@ -1,0 +1,461 @@
+{
+  "_humanoid": {
+    "standing": {},
+    "reach_up": {
+      "left_shoulder_pitch": -2.6,
+      "right_shoulder_pitch": -2.6,
+      "left_elbow": 0.3,
+      "right_elbow": 0.3
+    },
+    "carry": {
+      "left_shoulder_pitch": -0.9,
+      "right_shoulder_pitch": -0.9,
+      "left_elbow": 1.3,
+      "right_elbow": 1.3
+    },
+    "crouch": {
+      "left_hip_pitch": -1.1,
+      "right_hip_pitch": -1.1,
+      "left_knee": 2,
+      "right_knee": 2,
+      "left_ankle_pitch": -0.9,
+      "right_ankle_pitch": -0.9
+    }
+  },
+  "_quadruped": {
+    "standing": {}
+  },
+  "robots": {
+    "unitree/go2": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "FL_thigh_joint": 0.8,
+          "FR_thigh_joint": 0.8,
+          "RL_thigh_joint": 0.8,
+          "RR_thigh_joint": 0.8,
+          "FL_calf_joint": -1.5,
+          "FR_calf_joint": -1.5,
+          "RL_calf_joint": -1.5,
+          "RR_calf_joint": -1.5
+        },
+        "crouch": {
+          "FL_thigh_joint": 1.35,
+          "FL_calf_joint": -2.6,
+          "FR_thigh_joint": 1.35,
+          "FR_calf_joint": -2.6,
+          "RL_thigh_joint": 1.35,
+          "RL_calf_joint": -2.6,
+          "RR_thigh_joint": 1.35,
+          "RR_calf_joint": -2.6
+        }
+      }
+    },
+    "boston-dynamics/spot": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "fl_hy": 0.75,
+          "fr_hy": 0.75,
+          "hl_hy": 0.75,
+          "hr_hy": 0.75,
+          "fl_kn": -1.45,
+          "fr_kn": -1.45,
+          "hl_kn": -1.45,
+          "hr_kn": -1.45
+        },
+        "crouch": {
+          "fl_hy": 1.45,
+          "fl_kn": -2.6,
+          "fr_hy": 1.45,
+          "fr_kn": -2.6,
+          "hl_hy": 1.45,
+          "hl_kn": -2.6,
+          "hr_hy": 1.45,
+          "hr_kn": -2.6
+        }
+      }
+    },
+    "booster/t2": {
+      "family": "humanoid",
+      "rest": {
+        "left_shoulder_pitch_joint": 0.7,
+        "left_shoulder_roll_joint": -1.518436449,
+        "left_elbow_yaw_joint": -1,
+        "right_shoulder_pitch_joint": 0.7,
+        "right_shoulder_roll_joint": 1.518436449,
+        "right_elbow_yaw_joint": 1
+      }
+    },
+    "unitree/b2": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "FL_thigh_joint": 1.05,
+          "FL_calf_joint": -1.95,
+          "FR_thigh_joint": 1.05,
+          "FR_calf_joint": -1.95,
+          "RL_thigh_joint": 1.05,
+          "RL_calf_joint": -1.95,
+          "RR_thigh_joint": 1.05,
+          "RR_calf_joint": -1.95
+        },
+        "crouch": {
+          "FL_thigh_joint": 1.35,
+          "FL_calf_joint": -2.6,
+          "FR_thigh_joint": 1.35,
+          "FR_calf_joint": -2.6,
+          "RL_thigh_joint": 1.35,
+          "RL_calf_joint": -2.6,
+          "RR_thigh_joint": 1.35,
+          "RR_calf_joint": -2.6
+        }
+      }
+    },
+    "unitree/b2#w": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "FL_thigh_joint": 0.8,
+          "FL_calf_joint": -1.5,
+          "FR_thigh_joint": 0.8,
+          "FR_calf_joint": -1.5,
+          "RL_thigh_joint": 0.8,
+          "RL_calf_joint": -1.5,
+          "RR_thigh_joint": 0.8,
+          "RR_calf_joint": -1.5
+        },
+        "crouch": {
+          "FL_thigh_joint": 1.35,
+          "FL_calf_joint": -2.6,
+          "FR_thigh_joint": 1.35,
+          "FR_calf_joint": -2.6,
+          "RL_thigh_joint": 1.35,
+          "RL_calf_joint": -2.6,
+          "RR_thigh_joint": 1.35,
+          "RR_calf_joint": -2.6
+        }
+      }
+    },
+    "unitree/go2#w": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "FL_thigh_joint": 0.8,
+          "FL_calf_joint": -1.5,
+          "FR_thigh_joint": 0.8,
+          "FR_calf_joint": -1.5,
+          "RL_thigh_joint": 0.8,
+          "RL_calf_joint": -1.5,
+          "RR_thigh_joint": 0.8,
+          "RR_calf_joint": -1.5
+        },
+        "crouch": {
+          "FL_thigh_joint": 1.35,
+          "FL_calf_joint": -2.6,
+          "FR_thigh_joint": 1.35,
+          "FR_calf_joint": -2.6,
+          "RL_thigh_joint": 1.35,
+          "RL_calf_joint": -2.6,
+          "RR_thigh_joint": 1.35,
+          "RR_calf_joint": -2.6
+        }
+      }
+    },
+    "unitree/a2": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "FL_thigh_joint": 0.8,
+          "FL_calf_joint": -1.5,
+          "FR_thigh_joint": 0.8,
+          "FR_calf_joint": -1.5,
+          "RL_thigh_joint": 0.8,
+          "RL_calf_joint": -1.5,
+          "RR_thigh_joint": 0.8,
+          "RR_calf_joint": -1.5
+        },
+        "crouch": {
+          "FL_thigh_joint": 1.35,
+          "FL_calf_joint": -2.6,
+          "FR_thigh_joint": 1.35,
+          "FR_calf_joint": -2.6,
+          "RL_thigh_joint": 1.35,
+          "RL_calf_joint": -2.6,
+          "RR_thigh_joint": 1.35,
+          "RR_calf_joint": -2.6
+        }
+      }
+    },
+    "deep-robotics/x30": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "FL_HipY_joint": -0.8,
+          "FL_Knee_joint": 1.5,
+          "FR_HipY_joint": -0.8,
+          "FR_Knee_joint": 1.5,
+          "HL_HipY_joint": -0.8,
+          "HL_Knee_joint": 1.5,
+          "HR_HipY_joint": -0.8,
+          "HR_Knee_joint": 1.5
+        },
+        "crouch": {
+          "FL_HipY_joint": -1.6,
+          "FL_Knee_joint": 2.4,
+          "FR_HipY_joint": -1.6,
+          "FR_Knee_joint": 2.4,
+          "HL_HipY_joint": -1.6,
+          "HL_Knee_joint": 2.4,
+          "HR_HipY_joint": -1.6,
+          "HR_Knee_joint": 2.4
+        }
+      }
+    },
+    "deep-robotics/lite3": {
+      "family": "quadruped",
+      "presets": {
+        "standing": {
+          "FL_HipY_joint": -0.8,
+          "FL_Knee_joint": 1.5,
+          "FR_HipY_joint": -0.8,
+          "FR_Knee_joint": 1.5,
+          "HL_HipY_joint": -0.8,
+          "HL_Knee_joint": 1.5,
+          "HR_HipY_joint": -0.8,
+          "HR_Knee_joint": 1.5
+        },
+        "crouch": {
+          "FL_HipY_joint": -1.6,
+          "FL_Knee_joint": 2.4,
+          "FR_HipY_joint": -1.6,
+          "FR_Knee_joint": 2.4,
+          "HL_HipY_joint": -1.6,
+          "HL_Knee_joint": 2.4,
+          "HR_HipY_joint": -1.6,
+          "HR_Knee_joint": 2.4
+        }
+      }
+    },
+    "deep-robotics/dr02": {
+      "family": "humanoid",
+      "semantic": {
+        "left_hip_pitch": "left_hip_y_joint",
+        "right_hip_pitch": "right_hip_y_joint",
+        "left_ankle_pitch": "left_ankle_y_joint",
+        "right_ankle_pitch": "right_ankle_y_joint",
+        "left_shoulder_pitch": "left_shoulder_y_joint",
+        "right_shoulder_pitch": "right_shoulder_y_joint"
+      },
+      "presets": {},
+      "rest": {
+        "right_shoulder_x_joint": 0.349066,
+        "left_shoulder_x_joint": -0.349066
+      }
+    },
+    "unitree/g1": {
+      "rest": {
+        "left_shoulder_pitch_joint": 0.7,
+        "left_shoulder_yaw_joint": 0.2,
+        "left_elbow_joint": 0.2,
+        "left_wrist_roll_joint": -1.972222054,
+        "right_shoulder_pitch_joint": 0.7,
+        "right_shoulder_yaw_joint": -0.2,
+        "right_elbow_joint": 0.2,
+        "right_wrist_roll_joint": 1.972222054
+      },
+      "family": "humanoid"
+    },
+    "unitree/h2": {
+      "rest": {
+        "left_shoulder_pitch_joint": 1,
+        "left_shoulder_roll_joint": -0.4,
+        "left_wrist_roll_joint": 0.4,
+        "right_shoulder_pitch_joint": 1,
+        "right_shoulder_roll_joint": 0.4,
+        "right_wrist_roll_joint": -0.4
+      },
+      "family": "humanoid"
+    },
+    "unitree/h2#plus": {
+      "rest": {
+        "left_shoulder_pitch_joint": 1,
+        "left_wrist_roll_joint": 0.4,
+        "left_wrist_yaw_joint": -0.4,
+        "left_pinky_CMC": 0.2618,
+        "left_pinky_MCP_FE": 0.4,
+        "left_pinky_PIP": 0.2,
+        "right_shoulder_pitch_joint": 1,
+        "right_wrist_roll_joint": 0.4
+      },
+      "family": "humanoid"
+    },
+    "unitree/h1-2": {
+      "rest": {
+        "left_shoulder_pitch_joint": 0.7,
+        "left_shoulder_roll_joint": -0.2,
+        "left_wrist_roll_joint": -0.2,
+        "right_shoulder_pitch_joint": 0.7,
+        "right_shoulder_roll_joint": 0.2,
+        "right_wrist_roll_joint": 0.2
+      },
+      "family": "humanoid"
+    },
+    "unitree/h1": {
+      "rest": {
+        "left_shoulder_yaw_joint": -1,
+        "left_elbow_joint": 0.2,
+        "right_shoulder_yaw_joint": -1,
+        "right_elbow_joint": 0.2
+      },
+      "family": "humanoid"
+    },
+    "booster/t1": {
+      "rest": {
+        "left_shoulder_pitch_joint": 1,
+        "left_shoulder_roll_joint": -1.4,
+        "left_elbow_pitch_joint": 0.4,
+        "left_elbow_yaw_joint": -1,
+        "left_wrist_pitch_joint": -0.7,
+        "left_wrist_yaw_joint": -1.4,
+        "right_shoulder_pitch_joint": 1,
+        "right_shoulder_roll_joint": 1.4,
+        "right_elbow_pitch_joint": 0.4,
+        "right_elbow_yaw_joint": 1,
+        "right_wrist_pitch_joint": -0.7,
+        "right_wrist_yaw_joint": 1.4
+      },
+      "family": "humanoid"
+    },
+    "booster/k1": {
+      "rest": {
+        "left_shoulder_roll_joint": -1.642,
+        "right_shoulder_roll_joint": 1.629
+      },
+      "family": "humanoid"
+    },
+    "unitree/r1": {
+      "rest": {
+        "left_shoulder_pitch_joint": 1,
+        "left_elbow_joint": -0.2,
+        "left_wrist_roll_joint": 0.4,
+        "right_shoulder_pitch_joint": 1,
+        "right_elbow_joint": -0.2,
+        "right_wrist_roll_joint": -0.4
+      },
+      "family": "humanoid"
+    },
+    "unitree/g1-d": {
+      "rest": {
+        "left_shoulder_pitch_joint": 1,
+        "left_shoulder_roll_joint": 0.7,
+        "left_hand_thumb_0_joint": -1,
+        "right_shoulder_pitch_joint": 1,
+        "right_shoulder_roll_joint": -0.7,
+        "right_hand_thumb_0_joint": -1
+      },
+      "family": "humanoid"
+    },
+    "fourier/n1": {
+      "rest": {
+        "left_shoulder_pitch_joint": 0.7,
+        "left_shoulder_roll_joint": -0.174,
+        "left_shoulder_yaw_joint": 0.4,
+        "right_shoulder_pitch_joint": 0.7,
+        "right_shoulder_roll_joint": 0.174,
+        "right_shoulder_yaw_joint": -0.4
+      },
+      "family": "humanoid"
+    },
+    "apptronik/apollo": {
+      "rest": {
+        "l_shoulder_aa": -0.122173,
+        "l_shoulder_ie": -0.2,
+        "l_wrist_roll": -0.2,
+        "r_shoulder_aa": 0.122173,
+        "r_shoulder_ie": 0.2,
+        "r_wrist_roll": 0.2
+      },
+      "family": "humanoid"
+    },
+    "pal/talos": {
+      "rest": {
+        "arm_left_3_joint": -1,
+        "arm_left_5_joint": 0.2,
+        "arm_left_6_joint": -0.2,
+        "arm_left_7_joint": -0.2,
+        "arm_right_3_joint": 1,
+        "arm_right_5_joint": -0.2,
+        "arm_right_6_joint": 0.2,
+        "arm_right_7_joint": -0.2
+      },
+      "family": "humanoid"
+    },
+    "robotis/op3": {
+      "rest": {
+        "l_sho_pitch": 0,
+        "l_sho_roll": 1.5,
+        "l_el": 0,
+        "r_sho_pitch": 0,
+        "r_sho_roll": -1.5,
+        "r_el": 0
+      },
+      "family": "humanoid",
+      "restLocked": true
+    },
+    "engineai/pm01": {
+      "rest": {
+        "J15_SHOULDER_YAW_L": -0.7,
+        "J17_ELBOW_YAW_L": -0.2,
+        "J20_SHOULDER_YAW_R": 0.7,
+        "J22_ELBOW_YAW_R": 0.2
+      },
+      "family": "humanoid"
+    },
+    "engineai/t800": {
+      "rest": {
+        "J14_SHOULDER_ROLL_L": -0.2,
+        "J15_SHOULDER_YAW_L": 1.4,
+        "J17_ELBOW_YAW_L": 2.4,
+        "J19_SHOULDER_ROLL_R": 0.2,
+        "J20_SHOULDER_YAW_R": -1.4,
+        "J22_ELBOW_YAW_R": -2.4
+      },
+      "family": "humanoid"
+    },
+    "holiday/friday": {
+      "rest": {
+        "left_arm_3": 1,
+        "right_arm_3": -1
+      },
+      "family": "humanoid"
+    },
+    "noetix/n2": {
+      "rest": {
+        "L_arm_shoulder_yaw_joint": -1,
+        "R_arm_shoulder_yaw_joint": 1
+      },
+      "family": "humanoid"
+    },
+    "noetix/e1-du": {
+      "rest": {
+        "l_arm_shoulder_yaw_joint": -1,
+        "l_arm_elbow_yaw_joint": 1,
+        "r_arm_shoulder_yaw_joint": 1,
+        "r_arm_elbow_yaw_joint": -1
+      },
+      "family": "humanoid"
+    },
+    "engineai/t800-pro": {
+      "rest": {
+        "J14_SHOULDER_ROLL_L": -0.2,
+        "J15_SHOULDER_YAW_L": -1.4,
+        "J17_ELBOW_YAW_L": -0.4,
+        "J28_SHOULDER_ROLL_R": 0.2,
+        "J29_SHOULDER_YAW_R": 1.4,
+        "J31_ELBOW_YAW_R": 0.4
+      },
+      "family": "humanoid"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+manufacturer: agility
+model: digit
+variants: [base]
+entries:
+  outdoor_rated:
+    value: false
+    confidence: assumed
+    note: Deployed indoors in warehouses; no IP rating published.
+  stair_capable:
+    value: true
+    confidence: likely
+    note: Stair climbing demonstrated in Agility footage; not part of the warehouse deployment scope.
+  requires_operator:
+    value: supervised
+    confidence: likely
+    note: Autonomous tote handling in deployments, remotely supervised.
+  task_capabilities:
+    value: [carry_payload, fetch_and_deliver, autonomous_nav_indoor]
+    confidence: confirmed
+    evidence_url: https://agilityrobotics.com/products/digit
+    note: 35 lb carrying capacity and continuous-shift tote moving are the product claim.
+  certifications:
+    value: []
+    confidence: assumed
+    note: Nothing published; the spec sheet is behind a form.
+  trl:
+    value: 8
+    confidence: likely
+    note: Commercial deployments at logistics customers since 2024.
+  deployment_evidence:
+    value:
+      - site: GXO Logistics warehouse
+        year: 2024
+        note: Robots-as-a-service deployment moving totes; widely reported.
+    confidence: likely

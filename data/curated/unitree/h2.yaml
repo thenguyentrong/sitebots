@@ -1,0 +1,32 @@
+manufacturer: unitree
+model: h2
+variants: [base, plus]
+entries:
+  ip_rating:
+    value: null
+    confidence: assumed
+    note: Not published. Unitree's store listing is the only primary source and names no ingress rating.
+  outdoor_rated:
+    value: false
+    confidence: assumed
+    note: No IP rating or temperature range published; assume indoor and dry until Unitree says otherwise.
+  stair_capable:
+    value: null
+    confidence: assumed
+    note: Not demonstrated publicly at the time of writing.
+  requires_operator:
+    value: teleop
+    confidence: assumed
+    note: Positioned as a platform for embodied-AI models; out of the box, expect teleoperation.
+  task_capabilities:
+    value: [teleoperated_manipulation, carry_payload]
+    confidence: assumed
+    note: 7 kg rated per arm on the Plus listing. Not yet shipped; no deployment evidence.
+  certifications:
+    value: []
+    confidence: assumed
+    note: Nothing published.
+  trl:
+    value: 5
+    confidence: assumed
+    note: Listed for pre-order; no units in customer hands documented.

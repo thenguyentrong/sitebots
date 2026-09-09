@@ -1,0 +1,369 @@
+{
+  "_comment": "Source registry. id = domain. tier: 0 curated, 1 manufacturer, 2 distributor, 3 aggregator, 4 estimate. trust=deny rows are never fetched.",
+  "sources": [
+    {
+      "id": "curated",
+      "name": "Curated by sitebots",
+      "domain": "curated",
+      "kind": "curated",
+      "tier": 0,
+      "trust": "high",
+      "attribution_text": "Assessed by sitebots from the linked evidence."
+    },
+    {
+      "id": "seed",
+      "name": "Hand-entered seed",
+      "domain": "seed",
+      "kind": "curated",
+      "tier": 0,
+      "trust": "high",
+      "attribution_text": "Entered by hand from the linked manufacturer page."
+    },
+    {
+      "id": "unitree.com",
+      "name": "Unitree Robotics",
+      "domain": "unitree.com",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://www.unitree.com/"
+    },
+    {
+      "id": "shop.unitree.com",
+      "name": "Unitree store",
+      "domain": "shop.unitree.com",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://shop.unitree.com/",
+      "robots_note": "Shopify storefront; /products.json is the public catalogue feed."
+    },
+    {
+      "id": "bostondynamics.com",
+      "name": "Boston Dynamics",
+      "domain": "bostondynamics.com",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://bostondynamics.com/"
+    },
+    {
+      "id": "agilityrobotics.com",
+      "name": "Agility Robotics",
+      "domain": "agilityrobotics.com",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://agilityrobotics.com/"
+    },
+    {
+      "id": "anybotics.com",
+      "name": "ANYbotics",
+      "domain": "anybotics.com",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://www.anybotics.com/"
+    },
+    {
+      "id": "deeprobotics.cn",
+      "name": "Deep Robotics",
+      "domain": "deeprobotics.cn",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://www.deeprobotics.cn/en/"
+    },
+    {
+      "id": "booster.tech",
+      "name": "Booster Robotics",
+      "domain": "booster.tech",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://www.booster.tech/"
+    },
+    {
+      "id": "1x.tech",
+      "name": "1X Technologies",
+      "domain": "1x.tech",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://www.1x.tech/"
+    },
+    {
+      "id": "pal-robotics.com",
+      "name": "PAL Robotics",
+      "domain": "pal-robotics.com",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "homepage_url": "https://pal-robotics.com/"
+    },
+    {
+      "id": "generationrobots.com",
+      "name": "Génération Robots",
+      "domain": "generationrobots.com",
+      "kind": "distributor",
+      "tier": 2,
+      "trust": "normal",
+      "homepage_url": "https://www.generationrobots.com/",
+      "attribution_text": "Price and stock status from Génération Robots (EU distributor)."
+    },
+    {
+      "id": "quadruped.de",
+      "name": "QUADRUPED Robotics",
+      "domain": "quadruped.de",
+      "kind": "distributor",
+      "tier": 2,
+      "trust": "normal",
+      "homepage_url": "https://www.quadruped.de/",
+      "attribution_text": "Price from QUADRUPED Robotics (German distributor)."
+    },
+    {
+      "id": "openelab.io",
+      "name": "OpenELAB",
+      "domain": "openelab.io",
+      "kind": "distributor",
+      "tier": 2,
+      "trust": "normal",
+      "homepage_url": "https://openelab.io/",
+      "attribution_text": "Price and delivery time from OpenELAB."
+    },
+    {
+      "id": "humanoid.guide",
+      "name": "Humanoid Guide",
+      "domain": "humanoid.guide",
+      "kind": "aggregator",
+      "tier": 3,
+      "trust": "normal",
+      "homepage_url": "https://humanoid.guide/",
+      "attribution_text": "Specification data cross-checked against the Humanoid Guide database (humanoid.guide).",
+      "robots_note": "WooCommerce Store API. Catalog is their product; attribute visibly, never rehost."
+    },
+    {
+      "id": "robothub.app",
+      "name": "RobotHub",
+      "domain": "robothub.app",
+      "kind": "aggregator",
+      "tier": 3,
+      "trust": "normal",
+      "homepage_url": "https://www.robothub.app/",
+      "attribution_text": "Specification data cross-checked against RobotHub (robothub.app).",
+      "robots_note": "Server-rendered. robots.txt disallows /api/, /admin, /*?*page= and has a /trap honeypot — never follow it."
+    },
+    {
+      "id": "robotpriceindex.com",
+      "name": "Robot Price Index",
+      "domain": "robotpriceindex.com",
+      "kind": "aggregator",
+      "tier": 3,
+      "trust": "normal",
+      "homepage_url": "https://robotpriceindex.com/",
+      "attribution_text": "Price ranges cross-checked against Robot Price Index (robotpriceindex.com)."
+    },
+    {
+      "id": "humanoidhub.ai",
+      "name": "HumanoidHub",
+      "domain": "humanoidhub.ai",
+      "kind": "aggregator",
+      "tier": 3,
+      "trust": "medium",
+      "homepage_url": "https://www.humanoidhub.ai/",
+      "attribution_text": "Sensor and compute details cross-checked against HumanoidHub (humanoidhub.ai).",
+      "robots_note": "Detail pages are server-rendered; the /explore listing is not. Cites blog.robozaps.com, which is on the denylist."
+    },
+    {
+      "id": "github.com/jk4e",
+      "name": "jk4e/list-ai-humanoid-robots",
+      "domain": "github.com/jk4e",
+      "kind": "index",
+      "tier": 3,
+      "trust": "normal",
+      "homepage_url": "https://github.com/jk4e/list-ai-humanoid-robots",
+      "attribution_text": "Manufacturer list seeded from jk4e/list-ai-humanoid-robots (GitHub)."
+    },
+    {
+      "id": "robotsguide.com",
+      "name": "IEEE Robots Guide",
+      "domain": "robotsguide.com",
+      "kind": "aggregator",
+      "tier": 3,
+      "trust": "deny",
+      "robots_note": "Content-Signal ai-train=no, Cloudflare blocks crawlers. Link only."
+    },
+    {
+      "id": "robozaps.com",
+      "name": "robozaps",
+      "domain": "robozaps.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny",
+      "robots_note": "AI-generated content farm."
+    },
+    {
+      "id": "9srobotics.com",
+      "name": "9srobotics",
+      "domain": "9srobotics.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "originofbots.com",
+      "name": "originofbots",
+      "domain": "originofbots.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "robotsourced.com",
+      "name": "robotsourced",
+      "domain": "robotsourced.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "grabarobot.com",
+      "name": "grabarobot",
+      "domain": "grabarobot.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "antonrobots.com",
+      "name": "antonrobots",
+      "domain": "antonrobots.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "theresarobotforthat.com",
+      "name": "theresarobotforthat",
+      "domain": "theresarobotforthat.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "robotlar.org",
+      "name": "robotlar",
+      "domain": "robotlar.org",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "humanoid.press",
+      "name": "humanoid.press",
+      "domain": "humanoid.press",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "whichbot.net",
+      "name": "whichbot",
+      "domain": "whichbot.net",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "androids.com",
+      "name": "androids.com",
+      "domain": "androids.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "livium.com",
+      "name": "livium",
+      "domain": "livium.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "humanoidexp.com",
+      "name": "humanoidexp",
+      "domain": "humanoidexp.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "humanoidindex.org",
+      "name": "humanoidindex",
+      "domain": "humanoidindex.org",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "robohuman.org",
+      "name": "robohuman",
+      "domain": "robohuman.org",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "aparobot.com",
+      "name": "aparobot",
+      "domain": "aparobot.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "botinfo.ai",
+      "name": "botinfo",
+      "domain": "botinfo.ai",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "robotomated.com",
+      "name": "robotomated",
+      "domain": "robotomated.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny"
+    },
+    {
+      "id": "humanoidspecs.com",
+      "name": "humanoidspecs",
+      "domain": "humanoidspecs.com",
+      "kind": "aggregator",
+      "tier": 4,
+      "trust": "deny",
+      "robots_note": "Redirects to aiwiki.ai; parked."
+    },
+    {
+      "id": "robotshop.com",
+      "name": "RobotShop",
+      "domain": "robotshop.com",
+      "kind": "distributor",
+      "tier": 2,
+      "trust": "deny",
+      "robots_note": "403 to automated clients. Do not retry."
+    },
+    {
+      "id": "maker-pages",
+      "name": "Manufacturer product pages",
+      "domain": "maker-pages.invalid",
+      "kind": "manufacturer",
+      "tier": 1,
+      "trust": "high",
+      "notes": "The product pages a person approved for pictures in data/assets/previews.json, read once more for the specifications printed on them. One source row for many hosts; every fact carries the page it was read from."
+    }
+  ]
+}

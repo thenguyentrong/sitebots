@@ -1,0 +1,107 @@
+manufacturer: boston-dynamics
+model: spot
+variants:
+  - base
+entries:
+  outdoor_rated:
+    value: true
+    confidence: confirmed
+    evidence_url: https://bostondynamics.com/products/spot/
+    note: IP54 and an operating range of −20 to 55 °C are published.
+  stair_capable:
+    value: true
+    confidence: confirmed
+    evidence_url: https://bostondynamics.com/products/spot/
+    note: Max step height 300 mm is published; stair traversal is part of the standard autonomy.
+  hot_swap:
+    value: true
+    confidence: likely
+    note: Battery packs are field-swappable; 90 min average runtime per pack, 60 min recharge.
+  requires_operator:
+    value: supervised
+    confidence: likely
+    note: Autowalk missions run autonomously along a recorded route; a supervisor is expected on a live site.
+  task_capabilities:
+    value:
+      - site_inspection
+      - progress_scan_360
+      - lidar_scan
+      - patrol_monitoring
+      - carry_payload
+      - stair_climbing
+      - autonomous_nav_indoor
+      - autonomous_nav_outdoor
+    confidence: likely
+    note: Scanning and inspection need the payload rail plus a third-party sensor kit; 14 kg payload published.
+  certifications:
+    value:
+      - CE
+    confidence: likely
+    note: Sold in the EU with a CE declaration; the marking is not shown on the product page.
+  trl:
+    value: 9
+    confidence: confirmed
+    evidence_url: https://bostondynamics.com/products/spot/
+    note: In series production since 2020 and deployed on construction sites by general contractors.
+  deployment_evidence:
+    value:
+      - site: Construction sites of several general contractors
+        year: 2021
+        note: Boston Dynamics case studies; progress capture and scanning.
+    confidence: likely
+  battery_pack:
+    value:
+      energy_wh: 564
+      swappable: true
+    confidence: confirmed
+    evidence_url: https://bostondynamics.com/products/spot/
+    note: 'Spec table: "Battery Capacity 564 Wh"; the battery is a removable pack that swaps in the field.'
+  equipment_options:
+    value:
+      - type: arm
+        name: Spot Arm
+        maker: Boston Dynamics
+        url: https://bostondynamics.com/products/spot/arm/
+      - type: camera_ptz
+        name: Spot CAM+
+        maker: Boston Dynamics
+        url: https://bostondynamics.com/products/spot/payloads/
+        note: PTZ camera payload; a thermal variant is listed on the same page.
+      - type: camera_thermal
+        name: Spot CAM+ IR
+        maker: Boston Dynamics
+        url: https://bostondynamics.com/products/spot/payloads/
+      - type: payload_mount
+        name: Spot GXP
+        maker: Boston Dynamics
+        url: https://bostondynamics.com/products/payload/spot-gxp/
+        note: "General expansion payload: power and comms for third-party hardware."
+      - type: compute
+        name: Spot Core I/O
+        maker: Boston Dynamics
+        url: https://bostondynamics.com/products/payload/spot-core-io/
+      - type: lidar
+        name: Spot EAP 2
+        maker: Boston Dynamics
+        url: https://bostondynamics.com/products/payload/spot-eap-2/
+        note: "Enhanced Autonomy Payload: lidar for autonomous navigation."
+      - type: radio
+        name: Radio Kit
+        url: https://bostondynamics.com/products/spot/payloads/
+        note: Mesh radio kit listed among the payloads.
+      - type: acoustic_sensor
+        name: Sorama acoustic camera
+        maker: Sorama
+        url: https://bostondynamics.com/products/spot/payloads/
+      - type: gas_sensor
+        name: MFE gas detection
+        maker: MFE Inspection Solutions
+        url: https://bostondynamics.com/products/spot/payloads/
+      - type: dock
+        name: Spot Dock
+        maker: Boston Dynamics
+        url: https://bostondynamics.com/products/spot/payloads/
+        note: Charging dock.
+    confidence: confirmed
+    evidence_url: https://bostondynamics.com/products/spot/payloads/
+    note: Names as they appear on the payloads page on 2026-09-09; partner payloads carry the partner as maker.

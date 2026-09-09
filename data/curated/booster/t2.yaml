@@ -1,0 +1,24 @@
+manufacturer: booster
+model: t2
+variants: [base]
+entries:
+  outdoor_rated:
+    value: false
+    confidence: assumed
+    note: Research and competition platform; no ingress rating published.
+  requires_operator:
+    value: teleop
+    confidence: likely
+    note: Sold as a development platform with SDK; autonomy is the buyer's.
+  task_capabilities:
+    value: [teleoperated_manipulation, carry_payload]
+    confidence: likely
+    note: 10 kg "strength" reported by humanoid.guide; end effectors are configurable.
+  certifications:
+    value: []
+    confidence: assumed
+    note: Nothing published.
+  trl:
+    value: 6
+    confidence: likely
+    note: Shipping to research labs; no site deployment documented.

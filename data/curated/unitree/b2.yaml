@@ -1,0 +1,28 @@
+manufacturer: unitree
+model: b2
+variants: [base, w]
+entries:
+  outdoor_rated:
+    value: true
+    confidence: assumed
+    note: Marketed as an industrial quadruped for outdoor inspection; Unitree's own page has not been captured yet, so the ingress rating is unverified.
+  stair_capable:
+    value: true
+    confidence: likely
+    note: Stair climbing shown by Unitree; step height not published.
+  requires_operator:
+    value: teleop
+    confidence: assumed
+    note: Remote control standard; autonomy via SDK.
+  task_capabilities:
+    value: [site_inspection, patrol_monitoring, carry_payload, autonomous_nav_outdoor]
+    confidence: assumed
+    note: Heavy-payload quadruped; inspection with a sensor payload.
+  certifications:
+    value: []
+    confidence: assumed
+    note: Nothing published.
+  trl:
+    value: 7
+    confidence: likely
+    note: Shipping; quote only.

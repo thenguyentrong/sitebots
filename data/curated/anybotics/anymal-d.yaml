@@ -1,0 +1,35 @@
+manufacturer: anybotics
+model: anymal-d
+variants: [base]
+entries:
+  outdoor_rated:
+    value: true
+    confidence: confirmed
+    evidence_url: https://www.anybotics.com/anymal/
+    note: IP67 is published.
+  stair_capable:
+    value: true
+    confidence: likely
+    note: ANYbotics markets stair climbing in industrial plants; step height is not published.
+  hot_swap:
+    value: true
+    confidence: likely
+    note: Battery is exchangeable; 90 min runtime, 3 h full charge published.
+  requires_operator:
+    value: supervised
+    confidence: likely
+    note: Autonomous inspection missions with remote supervision from the operator tablet.
+  task_capabilities:
+    value: [site_inspection, patrol_monitoring, lidar_scan, carry_payload, stair_climbing, autonomous_nav_indoor, autonomous_nav_outdoor]
+    confidence: likely
+    note: The standard payload is the inspection sensor kit (zoom, thermal, acoustic); 10 kg additional payload published.
+  certifications:
+    value: [CE, FCC]
+    confidence: confirmed
+    evidence_url: https://www.anybotics.com/anymal/
+    note: FCC, CE and Anatel compliant. ATEX applies to the ANYmal X variant only.
+  trl:
+    value: 9
+    confidence: confirmed
+    evidence_url: https://www.anybotics.com/anymal/
+    note: Deployed in industrial plants since 2022.

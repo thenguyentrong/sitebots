@@ -1,0 +1,29 @@
+manufacturer: deep-robotics
+model: x30
+variants: [base, pro]
+entries:
+  outdoor_rated:
+    value: true
+    confidence: confirmed
+    evidence_url: https://www.deeprobotics.cn/en/index/product3.html
+    note: IP67 and −20 to 55 °C are published.
+  stair_capable:
+    value: true
+    confidence: likely
+    note: Step height ≥ 20 cm is published; stair footage by Deep Robotics.
+  requires_operator:
+    value: supervised
+    confidence: assumed
+    note: Marketed for substation and tunnel inspection routes; assume supervised autonomy.
+  task_capabilities:
+    value: [site_inspection, patrol_monitoring, carry_payload, stair_climbing, autonomous_nav_indoor, autonomous_nav_outdoor]
+    confidence: assumed
+    note: Inspection needs a sensor payload; the Pro carries the payload interface (USB, Ethernet, 5/12/24 V).
+  certifications:
+    value: []
+    confidence: assumed
+    note: Nothing published on the English product page.
+  trl:
+    value: 8
+    confidence: likely
+    note: Shipping industrial product with reported utility deployments in China.

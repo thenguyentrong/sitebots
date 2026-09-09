@@ -1,0 +1,659 @@
+{
+  "_comment": "Pinned upstream descriptions we may rehost (BSD/MIT/Apache only — the schema refuses anything else). `pin.ts` is the only thing that should change a sha. heightM is the published standing height, used as a unit-scale guard.",
+  "robots": [
+    {
+      "robotKey": "unitree/g1",
+      "variants": [
+        "base",
+        "edu"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "path": "robots/g1_description",
+      "urdf": "g1_23dof_rev_1_0.urdf",
+      "format": "urdf",
+      "packages": {
+        "g1_description": "robots/g1_description"
+      },
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "heightM": 1.32,
+      "excludeLinks": [
+        "pelvis_contour_link",
+        "logo_link",
+        "imu_in_torso",
+        "imu_in_pelvis",
+        "d435_link",
+        "mid360_link"
+      ],
+      "targetTriangles": 40000,
+      "materialColors": {
+        "dark": "#2b2d31",
+        "white": "#e8e6e1"
+      }
+    },
+    {
+      "robotKey": "unitree/h2",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "path": "robots/h2_description",
+      "urdf": "H2_dae.urdf",
+      "format": "urdf",
+      "packages": {
+        "h2_description": "robots/h2_description"
+      },
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "heightM": 1.8,
+      "excludeLinks": [],
+      "targetTriangles": 45000
+    },
+    {
+      "robotKey": "unitree/go2",
+      "variants": [
+        "base",
+        "air",
+        "pro",
+        "edu",
+        "x"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "path": "robots/go2_description",
+      "urdf": "urdf/go2_description.urdf",
+      "format": "urdf",
+      "packages": {
+        "go2_description": "robots/go2_description"
+      },
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "heightM": 0.4,
+      "excludeLinks": [],
+      "targetTriangles": 30000,
+      "heightTolerance": 0.45
+    },
+    {
+      "robotKey": "booster/t2",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "booster_assets",
+      "repo": "BoosterRobotics/booster_assets",
+      "sha": "3c2dfa99e09beddf092e0d6521dbbcec7e7903ed",
+      "path": "robots/T2/T2_31dof",
+      "urdf": "T2_31dof.urdf",
+      "format": "urdf",
+      "packages": {
+        "T2_31dof": "robots/T2/T2_31dof"
+      },
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "heightM": 1.4,
+      "excludeLinks": [],
+      "targetTriangles": 40000
+    },
+    {
+      "robotKey": "boston-dynamics/spot",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "spot_description",
+      "repo": "rai-opensource/spot_description",
+      "sha": "156d1802bfb117f219dbfce7597d283d5fabc968",
+      "path": "spot_description",
+      "urdf": "urdf/spot_simple.urdf.xacro",
+      "format": "xacro",
+      "packages": {
+        "spot_description": "spot_description"
+      },
+      "xacroArgs": {
+        "arm": "false"
+      },
+      "license": "MIT",
+      "licenseFile": "LICENSE",
+      "heightM": 0.61,
+      "excludeLinks": [],
+      "targetTriangles": 30000,
+      "heightTolerance": 0.45
+    },
+    {
+      "robotKey": "unitree/r1",
+      "variants": [
+        "base",
+        "edu"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/r1_description",
+      "urdf": "R1.urdf",
+      "format": "urdf",
+      "packages": {
+        "r1_description": "robots/r1_description"
+      },
+      "heightM": 1.22,
+      "excludeLinks": [],
+      "targetTriangles": 40000
+    },
+    {
+      "robotKey": "unitree/h1-2",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/h1_2_description",
+      "urdf": "h1_2.urdf",
+      "format": "urdf",
+      "packages": {
+        "h1_2_description": "robots/h1_2_description"
+      },
+      "heightM": 1.78,
+      "excludeLinks": [],
+      "targetTriangles": 45000
+    },
+    {
+      "robotKey": "unitree/h2",
+      "variants": [
+        "plus"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/h2_plus",
+      "urdf": "H2_Plus.urdf",
+      "format": "urdf",
+      "packages": {
+        "h2_plus": "robots/h2_plus"
+      },
+      "heightM": 1.8,
+      "excludeLinks": [],
+      "targetTriangles": 45000
+    },
+    {
+      "robotKey": "unitree/h1",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/h1_description",
+      "urdf": "urdf/h1.urdf",
+      "format": "urdf",
+      "packages": {
+        "h1_description": "robots/h1_description"
+      },
+      "heightM": 1.8,
+      "excludeLinks": [],
+      "targetTriangles": 40000
+    },
+    {
+      "robotKey": "unitree/g1-d",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/g1_d_description",
+      "urdf": "g1_d.urdf",
+      "format": "urdf",
+      "packages": {
+        "g1_d_description": "robots/g1_d_description"
+      },
+      "heightM": 1.32,
+      "excludeLinks": [],
+      "targetTriangles": 40000
+    },
+    {
+      "robotKey": "unitree/b2",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/b2_description",
+      "urdf": "urdf/b2_description.urdf",
+      "format": "urdf",
+      "packages": {
+        "b2_description": "robots/b2_description"
+      },
+      "heightM": 0.645,
+      "excludeLinks": [],
+      "targetTriangles": 30000,
+      "heightTolerance": 0.6
+    },
+    {
+      "robotKey": "unitree/b2",
+      "variants": [
+        "w"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/b2w_description",
+      "urdf": "urdf/b2w_description.urdf",
+      "format": "urdf",
+      "packages": {
+        "b2w_description": "robots/b2w_description"
+      },
+      "heightM": 0.76,
+      "excludeLinks": [],
+      "targetTriangles": 30000,
+      "heightTolerance": 0.45
+    },
+    {
+      "robotKey": "unitree/go2",
+      "variants": [
+        "w"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/go2w_description",
+      "urdf": "urdf/go2w_description.urdf",
+      "format": "urdf",
+      "packages": {
+        "go2w_description": "robots/go2w_description"
+      },
+      "heightM": 0.5,
+      "excludeLinks": [],
+      "targetTriangles": 30000,
+      "heightTolerance": 0.45
+    },
+    {
+      "robotKey": "unitree/a2",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "unitree_ros",
+      "repo": "unitreerobotics/unitree_ros",
+      "sha": "7d6075f7f58588b189b940130e3edab3c839b2df",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/a2_description",
+      "urdf": "urdf/a2.urdf",
+      "format": "urdf",
+      "packages": {
+        "a2_description": "robots/a2_description"
+      },
+      "heightM": 0.57,
+      "excludeLinks": [],
+      "targetTriangles": 30000,
+      "heightTolerance": 0.45
+    },
+    {
+      "robotKey": "booster/t1",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "booster_assets",
+      "repo": "BoosterRobotics/booster_assets",
+      "sha": "3c2dfa99e09beddf092e0d6521dbbcec7e7903ed",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/T1",
+      "urdf": "T1_29dof.urdf",
+      "format": "urdf",
+      "packages": {
+        "T1": "robots/T1"
+      },
+      "heightM": 1.18,
+      "excludeLinks": [],
+      "targetTriangles": 40000
+    },
+    {
+      "robotKey": "booster/k1",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "booster_assets",
+      "repo": "BoosterRobotics/booster_assets",
+      "sha": "3c2dfa99e09beddf092e0d6521dbbcec7e7903ed",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "path": "robots/K1",
+      "urdf": "K1_22dof.urdf",
+      "format": "urdf",
+      "packages": {
+        "K1": "robots/K1"
+      },
+      "heightM": 0.95,
+      "excludeLinks": [],
+      "targetTriangles": 40000
+    },
+    {
+      "robotKey": "deep-robotics/x30",
+      "variants": [
+        "base",
+        "pro"
+      ],
+      "sourceId": "deep_robotics_model",
+      "repo": "DeepRoboticsLab/deep_robotics_model",
+      "sha": "549eb9ac08ab0674ad388202f0a276a1b140833b",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE.txt",
+      "path": "X30",
+      "urdf": "urdf/X30.urdf",
+      "format": "urdf",
+      "packages": {
+        "X30": "X30"
+      },
+      "heightM": 0.47,
+      "excludeLinks": [],
+      "heightTolerance": 0.7,
+      "targetTriangles": 30000
+    },
+    {
+      "robotKey": "deep-robotics/dr02",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "deep_robotics_model",
+      "repo": "DeepRoboticsLab/deep_robotics_model",
+      "sha": "549eb9ac08ab0674ad388202f0a276a1b140833b",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE.txt",
+      "path": "DR02",
+      "urdf": "urdf/standard/DR02-std.urdf",
+      "format": "urdf",
+      "packages": {
+        "DR02": "DR02"
+      },
+      "heightM": 1.75,
+      "excludeLinks": [],
+      "targetTriangles": 40000
+    },
+    {
+      "robotKey": "deep-robotics/lite3",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "deep_robotics_model",
+      "repo": "DeepRoboticsLab/deep_robotics_model",
+      "sha": "549eb9ac08ab0674ad388202f0a276a1b140833b",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE.txt",
+      "path": "Lite3",
+      "urdf": "urdf/Lite3.urdf",
+      "format": "urdf",
+      "packages": {
+        "Lite3": "Lite3"
+      },
+      "heightM": 0.4,
+      "excludeLinks": [],
+      "heightTolerance": 0.45,
+      "targetTriangles": 30000
+    },
+    {
+      "robotKey": "apptronik/apollo",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "menagerie_apptronik_apollo",
+      "repo": "google-deepmind/mujoco_menagerie",
+      "sha": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+      "format": "mjcf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "apptronik_apollo",
+      "urdf": "apptronik_apollo.xml",
+      "license": "Apache-2.0",
+      "licenseFile": "apptronik_apollo/LICENSE",
+      "heightM": 1.72
+    },
+    {
+      "robotKey": "rainbow/rb-y1",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "menagerie_rainbow_robotics_rby1",
+      "repo": "google-deepmind/mujoco_menagerie",
+      "sha": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+      "format": "mjcf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "rainbow_robotics_rby1",
+      "urdf": "rby1a_1.2.xml",
+      "license": "Apache-2.0",
+      "licenseFile": "rainbow_robotics_rby1/LICENSE",
+      "heightM": 1.4,
+      "heightTolerance": 0.3
+    },
+    {
+      "robotKey": "pndbotics/adam-lite",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "menagerie_pndbotics_adam_lite",
+      "repo": "google-deepmind/mujoco_menagerie",
+      "sha": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+      "format": "mjcf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "pndbotics_adam_lite",
+      "urdf": "adam_lite.xml",
+      "license": "MIT",
+      "licenseFile": "pndbotics_adam_lite/LICENSE",
+      "heightM": 1.6
+    },
+    {
+      "robotKey": "pal/talos",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "menagerie_pal_talos",
+      "repo": "google-deepmind/mujoco_menagerie",
+      "sha": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+      "format": "mjcf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "pal_talos",
+      "urdf": "talos.xml",
+      "license": "Apache-2.0",
+      "licenseFile": "pal_talos/LICENSE",
+      "heightM": 1.75
+    },
+    {
+      "robotKey": "robotis/op3",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "menagerie_robotis_op3",
+      "repo": "google-deepmind/mujoco_menagerie",
+      "sha": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+      "format": "mjcf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "robotis_op3",
+      "urdf": "op3.xml",
+      "license": "Apache-2.0",
+      "licenseFile": "robotis_op3/LICENSE",
+      "heightM": 0.51,
+      "heightTolerance": 0.25
+    },
+    {
+      "robotKey": "fourier/n1",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "menagerie_fourier_n1",
+      "repo": "google-deepmind/mujoco_menagerie",
+      "sha": "8161bba264d7fa7c99ca301e91e7fb44737676ad",
+      "format": "mjcf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "fourier_n1",
+      "urdf": "n1.xml",
+      "license": "Apache-2.0",
+      "licenseFile": "fourier_n1/LICENSE",
+      "heightM": 1.3
+    },
+    {
+      "robotKey": "engineai/pm01",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "engineai_native_sdk",
+      "repo": "engineai-robotics/engineai_robotics_native_sdk",
+      "sha": "335c60e88772c26c7852d0abd6b3c7439037dd8f",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE.txt",
+      "format": "urdf",
+      "packages": {
+        "resource": "assets/resource"
+      },
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "assets/resource/robot/pm01_edu",
+      "urdf": "urdf/serial_pm01_edu.urdf",
+      "heightM": 1.38
+    },
+    {
+      "robotKey": "engineai/t800",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "engineai_native_sdk",
+      "repo": "engineai-robotics/engineai_robotics_native_sdk",
+      "sha": "335c60e88772c26c7852d0abd6b3c7439037dd8f",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE.txt",
+      "format": "urdf",
+      "packages": {
+        "resource": "assets/resource"
+      },
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "assets/resource/robot/t800",
+      "urdf": "urdf/serial_t800.urdf",
+      "heightM": 1.85
+    },
+    {
+      "robotKey": "engineai/t800-pro",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "engineai_native_sdk",
+      "repo": "engineai-robotics/engineai_robotics_native_sdk",
+      "sha": "335c60e88772c26c7852d0abd6b3c7439037dd8f",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE.txt",
+      "format": "urdf",
+      "packages": {
+        "resource": "assets/resource"
+      },
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "assets/resource/robot/t800pro",
+      "urdf": "urdf/serial_t800pro.urdf",
+      "heightM": 1.73,
+      "meshBase": "assets/resource/robot/t800pro"
+    },
+    {
+      "robotKey": "robotera/l7",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "robotera_humanoid_lab",
+      "repo": "roboterax/humanoid-lab",
+      "sha": "b5b1092051564b9d1cc87fd089a2baf9bc4493a1",
+      "license": "MIT",
+      "licenseFile": "LICENCE.txt",
+      "format": "urdf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 40000,
+      "path": "source/era_okcc_humanoid_lab/era_okcc_humanoid_lab/assets/xbot_description",
+      "urdf": "urdf/l7_29dof_neck_fixed.urdf",
+      "heightM": 1.71
+    },
+    {
+      "robotKey": "holiday/friday",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "friday_ros2",
+      "repo": "Holiday-Robot/friday_ros2",
+      "sha": "e2990335d3dd6fe137a8a80308f2f6c88776a939",
+      "license": "Apache-2.0",
+      "licenseFile": "LICENSE",
+      "format": "urdf",
+      "packages": {
+        "friday_description": "friday_description"
+      },
+      "excludeLinks": [],
+      "targetTriangles": 45000,
+      "path": "friday_description",
+      "urdf": "urdf/FM26B.urdf",
+      "heightM": 1.73
+    },
+    {
+      "robotKey": "noetix/n2",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "noetix_n2_gym",
+      "repo": "Noetix-Robotics/noetix_n2_gym",
+      "sha": "153aad12dcc44aeafe378efe2f652873b02e0d89",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "format": "urdf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 35000,
+      "path": "resources/robots/N2",
+      "urdf": "urdf/N2.urdf",
+      "heightM": 1.18
+    },
+    {
+      "robotKey": "noetix/e1-du",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "noetix_e1_lab",
+      "repo": "Noetix-Robotics/noetix_e1_lab",
+      "sha": "5a1d62d57d26499f10fc840df7b9f9d0331f5c72",
+      "license": "BSD-3-Clause",
+      "licenseFile": "LICENSE",
+      "format": "urdf",
+      "packages": {},
+      "excludeLinks": [],
+      "targetTriangles": 35000,
+      "path": "source/NoetixE1/NoetixE1/assets/robots/e1",
+      "urdf": "urdf/e1_24dof.urdf",
+      "heightM": 1.36
+    }
+  ]
+}
