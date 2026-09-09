@@ -51,13 +51,13 @@ async function renderedPreview(page: string, generic: (img: string) => boolean =
   try {
     await p.goto(page, { waitUntil: 'networkidle', timeout: 25_000 }).catch(() => {});
     // Lazy heroes load on scroll; walk the first screens, then come back up.
-    await p.evaluate(`(async () => { for (let y = 0; y < 3600; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 250)); } window.scrollTo(0, 0); })()`).catch(() => {});
+    await withTimeout(p.evaluate(`(async () => { for (let y = 0; y < 3600; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 250)); } window.scrollTo(0, 0); })()`), 15_000, undefined);
     await p.waitForTimeout(1500);
     // A string, not a function: esbuild would otherwise inject its __name
     // helper into code that runs inside the page, where it does not exist.
     // The site-wide og:image is passed in so the page script can skip it and
     // look for the hero instead; heroes may be <img> or a CSS background.
-    const found = (await p.evaluate(`((GENERIC) => {
+    const found = (await withTimeout(p.evaluate(`((GENERIC) => {
       const meta = (sel) => { const m = document.querySelector(sel); return m ? m.content : null; };
       const og = meta('meta[property="og:image"]') || meta('meta[name="twitter:image"]');
       const title = meta('meta[property="og:title"]') || document.title;
@@ -87,7 +87,7 @@ async function renderedPreview(page: string, generic: (img: string) => boolean =
       all.sort((a, b) => b.area - a.area);
       const best = all[0];
       return best ? { image: best.src, via: 'hero', width: best.w, height: best.h, title, extras: all.slice(1, 13).map((x) => x.src) } : null;
-    })(${JSON.stringify(genericImage)})`)) as { image: string; via: string; width: number | null; height: number | null; title: string; extras?: string[] } | null;
+    })(${JSON.stringify(genericImage)})`), 20_000, null)) as { image: string; via: string; width: number | null; height: number | null; title: string; extras?: string[] } | null;
     if (!found) return null;
     if (/^data:/i.test(found.image) || /[.](svg|gif)([?]|$)/i.test(found.image)) return null;
     if (generic(found.image)) return null;
@@ -187,8 +187,8 @@ async function renderedLinks(url: string): Promise<[string, string][]> {
     // Navigation, not pixels: the DOM after scripts have run is enough, and a 20 s cap keeps a slow site from costing minutes per maker.
     await pg.goto(url, { waitUntil: 'domcontentloaded', timeout: 20_000 }).catch(() => {});
     await pg.waitForTimeout(2500);
-    const found = (await pg.evaluate(`Array.from(document.querySelectorAll('a[href]')).map((a) => [a.href, (a.textContent || '').trim().slice(0, 80)])`)) as [string, string][];
-    return found;
+    const found = (await withTimeout(pg.evaluate(`Array.from(document.querySelectorAll('a[href]')).map((a) => [a.href, (a.textContent || '').trim().slice(0, 80)])`), 15_000, null)) as [string, string][] | null;
+    return found ?? [];
   } catch {
     return [];
   } finally {
@@ -262,10 +262,10 @@ function siteImages(site: string): Promise<SiteImage[]> {
       const pg = await ctx.newPage();
       try {
         await pg.goto(url, { waitUntil: 'domcontentloaded', timeout: 20_000 }).catch(() => {});
-        await pg.evaluate(`(async () => { for (let y = 0; y < 6000; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 200)); } })()`).catch(() => {});
+        await withTimeout(pg.evaluate(`(async () => { for (let y = 0; y < 6000; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 200)); } })()`), 15_000, undefined);
         await pg.waitForTimeout(1200);
-        const found = (await pg.evaluate(`Array.from(document.images).map((i) => ({ src: i.currentSrc || i.src, alt: i.alt || '', w: i.naturalWidth || 0, h: i.naturalHeight || 0 }))`)) as SiteImage[];
-        for (const im of found) if (im.src && !out.has(im.src.split('?')[0])) out.set(im.src.split('?')[0], im);
+        const found = (await withTimeout(pg.evaluate(`Array.from(document.images).map((i) => ({ src: i.currentSrc || i.src, alt: i.alt || '', w: i.naturalWidth || 0, h: i.naturalHeight || 0 }))`), 15_000, null)) as SiteImage[] | null;
+        for (const im of found ?? []) if (im.src && !out.has(im.src.split('?')[0])) out.set(im.src.split('?')[0], im);
       } catch {
         // a site that will not render simply contributes nothing
       } finally {
@@ -277,6 +277,11 @@ function siteImages(site: string): Promise<SiteImage[]> {
   })();
   siteImagesCache.set(site, p);
   return p;
+}
+
+/** Playwright's evaluate() waits forever on a page whose script never settles; this gives up instead. */
+function withTimeout<T>(p: Promise<T>, ms: number, fallback: T): Promise<T> {
+  return Promise.race([p.catch(() => fallback), new Promise<T>((r) => setTimeout(() => r(fallback), ms))]);
 }
 
 const VERBOSE = process.argv.includes('--verbose');
@@ -383,7 +388,10 @@ async function robotsWithout(sql: Awaited<ReturnType<typeof db>>, limit: number,
              where rs.robot_id = r.id and s.tier = 1 and rs.source_url not like '%shop.unitree.com%' limit 1) as known
     from robots r join manufacturers m on m.id = r.manufacturer_id
     where r.variant = 'base'
-      and not exists (select 1 from robot_assets x where x.robot_id = r.id and x.kind = 'image' and x.url not like '/renders/%')
+      -- Robots without a picture from the maker. Having a free-licence photograph
+      -- is no reason to skip one: the G1 had a Commons photo and nothing else,
+      -- while unitree.com publishes a dozen.
+      and not exists (select 1 from robot_assets x where x.robot_id = r.id and x.kind = 'image' and x.licence = 'maker-preview')
       and (${only ?? null}::text is null or m.slug || '/' || r.model_slug = ${only ?? null})
       and (${MAKERS}::text[] is null or m.slug = any(${MAKERS}::text[]))
     order by (select count(*) from robot_facts f where f.robot_id = r.id) desc
@@ -507,7 +515,7 @@ async function more(sql: Awaited<ReturnType<typeof db>>) {
       } catch {
         return true;
       }
-      return otherModels.some((t) => t.every((x) => path.includes(` ${x} `)) && !modelTok.every((x) => t.includes(x)));
+      return otherModels.some((t) => t.every((x) => path.includes(` ${x} `)) && !t.every((x) => modelTok.includes(x)));
     };
     const siblings = [...links]
       .map(([u, text]) => ({ u, s: scorePath(u, modelTok, site) + (modelTok.every((x) => ` ${tokens(text).join(' ')} `.includes(` ${x} `)) ? 2 : 0) }))
