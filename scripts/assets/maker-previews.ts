@@ -479,14 +479,29 @@ const MORE_DIR = '.out/review-more';
  */
 const MORE_CAP = Number(process.env.MORE_CAP ?? 8);
 
-/** Other model slugs of the same maker, so a sibling page that names one of them can be rejected. */
-async function siblingsOfMaker(sql: Awaited<ReturnType<typeof db>>, makerSlug: string, exclude: string): Promise<string[][]> {
-  const rows = (await sql`select r.model_slug, r.name from robots r join manufacturers m on m.id = r.manufacturer_id
-    where m.slug = ${makerSlug} and r.variant = 'base' and r.model_slug <> ${exclude}`) as unknown as { model_slug: string; name: string }[];
-  return rows.map((r) => tokens(r.model_slug.replace(/-/g, ' '))).filter((t) => t.length);
+/** Alphanumeric groups of a name, single characters kept: "R1-D" is r1 + d, and that d is the whole point. */
+function segTokens(s: string): string[] {
+  return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim().split(' ').filter(Boolean);
 }
 
-async function more(sql: Awaited<ReturnType<typeof db>>) {
+/**
+ * Is this URL a page about exactly this model? One path segment must read as
+ * precisely the model's name. "/products/spot/payload" is Spot's, but "/R1-D",
+ * "/R1-ARM" and "/H2plus" are other products — and those variants are not in
+ * the catalogue, so comparing against known models cannot catch them.
+ */
+function sameModelPath(u: string, model: string): boolean {
+  let segs: string[];
+  try {
+    segs = decodeURIComponent(new URL(u).pathname).split('/').filter(Boolean);
+  } catch {
+    return false;
+  }
+  const want = segTokens(model).join(' ');
+  return segs.some((seg) => segTokens(seg.replace(/[.](html?|php|aspx?|jsp)$/i, '')).join(' ') === want);
+}
+
+async function more() {
   const again = process.argv.includes('--again');
   const approved = JSON.parse(readFileSync(APPROVED, 'utf8')) as Approved;
   mkdirSync(MORE_DIR, { recursive: true });
@@ -503,23 +518,12 @@ async function more(sql: Awaited<ReturnType<typeof db>>) {
     const generic = homepageImage.get(site) ?? null;
     const isGeneric = (img: string) => !!generic && strip(img) === strip(generic);
     // The maker's other pages about this robot: same host, model tokens in the path or the link text.
-    const [maker, model] = key.split('/');
+    const model = key.split('/')[1];
     const modelTok = tokens(model.replace(/-/g, ' '));
     const links = await siteLinks(site);
-    const otherModels = await siblingsOfMaker(sql, maker, model);
-    // A path that carries another model's tokens belongs to that model, not this one.
-    const namesAnother = (u: string) => {
-      let path: string;
-      try {
-        path = ` ${decodeURIComponent(new URL(u).pathname).toLowerCase().replace(/[^a-z0-9]+/g, ' ')} `;
-      } catch {
-        return true;
-      }
-      return otherModels.some((t) => t.every((x) => path.includes(` ${x} `)) && !t.every((x) => modelTok.includes(x)));
-    };
     const siblings = [...links]
       .map(([u, text]) => ({ u, s: scorePath(u, modelTok, site) + (modelTok.every((x) => ` ${tokens(text).join(' ')} `.includes(` ${x} `)) ? 2 : 0) }))
-      .filter((x) => x.s > 0 && strip(x.u) !== strip(a.page) && !namesAnother(x.u))
+      .filter((x) => x.s > 0 && strip(x.u) !== strip(a.page) && sameModelPath(x.u, model))
       .sort((x, y) => y.s - x.s)
       .slice(0, 3)
       .map((x) => x.u);
@@ -573,8 +577,7 @@ ${manifest.length} further pictures for review → ${MORE_DIR} (${Math.ceil(mani
 
 async function main() {
   if (process.argv.includes('--more')) {
-    const sqlMore = await db();
-    await more(sqlMore);
+    await more();
     await (await browser()).close().catch(() => {});
     return;
   }
