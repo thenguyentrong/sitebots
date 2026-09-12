@@ -1,6 +1,8 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // The in-app preview connects through the loopback IP.
+  allowedDevOrigins: ['127.0.0.1'],
   async redirects() {
     return ['02', 'w1'].map(model => ({ source: `/robots/zerith/${model}`, destination: `/robots/casbot/${model}`, permanent: true }));
   },

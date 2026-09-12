@@ -8,11 +8,9 @@ The reviewed policy in [review.json](../data/manufacturers/review.json) contains
 
 Unverified means insufficient reliable evidence; it does not mean the company does not exist. Research institutions and software-only records are excluded. Announced commercial product programmes remain visible as In development.
 
-## Gallery work paused for the requested push
+## Official galleries and logo sizing
 
-The new gallery scan has saved 305 robot results and 1003 candidate images locally in .out/gallery-audit-20260912/scan.json. NEO has 36 candidates, including duplicates, accessories and video poster images. These new candidates have not been published or imported. The earlier reviewed photo additions are included in this commit.
-
-Resume with node --import tsx .out/scan-official-galleries.ts, inspect contact sheets, approve only correct model images, deduplicate resized copies and verify browser embedding before importing. Keep source URLs and attribution.
+The resumed gallery review is complete: 676 official images added across 111 robot records, including 38 photos for NEO. See the [gallery audit](gallery-audit-2026-09-12.md) for coverage, sources and verification. Fixed shared logo sizing so tall and square logos fit inside their frames.
 
 ## Checks
 

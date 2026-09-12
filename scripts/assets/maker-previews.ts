@@ -102,7 +102,7 @@ async function renderedPreview(page: string, generic: (img: string) => boolean =
 }
 
 type Approved = {
-  images: Record<string, { page: string; image: string; reviewed: string; licence?: string; attribution?: string; more?: string[]; pages?: string[] }>;
+  images: Record<string, { page: string; image: string; reviewed: string; licence?: string; attribution?: string; more?: string[]; pages?: string[]; details?: Record<string, { page: string; alt?: string; width?: number; height?: number; licence?: string; attribution?: string }> }>;
   _rejected?: Record<string, string>;
   /** Pictures turned down by eye, per robot, so a later pass does not propose them again. */
   _rejected_images?: Record<string, string[]>;
@@ -451,13 +451,18 @@ async function apply(sql: Awaited<ReturnType<typeof db>>) {
     const host = new URL(a.page).host.replace(/^www\./, '');
     const licence = a.licence ?? 'maker-preview';
     const attribution = a.attribution ?? `Image: ${robot.maker}, from ${host}`;
-    await sql`delete from robot_assets where robot_id = ${robot.id} and kind = 'image' and licence = ${licence}`;
-    await sql`insert into robot_assets (robot_id, kind, url, source_url, licence, attribution, alt, is_primary, sort)
-      values (${robot.id}, 'image', ${a.image}, ${a.page}, ${licence}, ${attribution}, ${`${robot.name} by ${robot.maker}`}, false, 1)`;
-    wrote++;
-    for (const [i, extra] of (a.more ?? []).entries()) {
-      await sql`insert into robot_assets (robot_id, kind, url, source_url, licence, attribution, alt, is_primary, sort)
-        values (${robot.id}, 'image', ${extra}, ${a.page}, ${licence}, ${attribution}, ${`${robot.name} by ${robot.maker}, picture ${i + 2}`}, false, ${i + 2})`;
+    // Licensed repository photos can share a licence with our own rendered thumbnails.
+    // Refresh these gallery URLs without deleting unrelated renders under that licence.
+    await sql.query("delete from robot_assets where robot_id = $1 and kind = 'image' and (licence = 'maker-preview' or url = any($2::text[]))", [robot.id, [a.image, ...(a.more ?? [])]]);
+    // Galleries may span product pages and official case studies; keep each image's own source.
+    for (const [i, url] of [a.image, ...(a.more ?? [])].entries()) {
+      const detail = a.details?.[url];
+      const sourcePage = detail?.page ?? a.page;
+      const imageLicence = detail?.licence ?? licence;
+      const imageAttribution = detail?.attribution ?? attribution;
+      const alt = detail?.alt || (i === 0 ? `${robot.name} by ${robot.maker}` : `${robot.name} by ${robot.maker}, picture ${i + 1}`);
+      await sql`insert into robot_assets (robot_id, kind, url, source_url, licence, attribution, alt, is_primary, sort, width, height)
+        values (${robot.id}, 'image', ${url}, ${sourcePage}, ${imageLicence}, ${imageAttribution}, ${alt}, false, ${i + 1}, ${detail?.width ?? null}, ${detail?.height ?? null})`;
       wrote++;
     }
   }
