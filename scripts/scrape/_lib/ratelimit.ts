@@ -16,7 +16,9 @@ function sleep(ms: number): Promise<void> {
 export async function take(host: string): Promise<void> {
   const interval = INTERVAL_MS[host] ?? DEFAULT_INTERVAL_MS;
   const prev = last.get(host) ?? 0;
-  const wait = prev + interval - Date.now();
+  const slot = Math.max(Date.now(), prev + interval);
+  // Reserve before awaiting: concurrent workers must not wake into the same slot.
+  last.set(host, slot);
+  const wait = slot - Date.now();
   if (wait > 0) await sleep(wait);
-  last.set(host, Date.now());
 }

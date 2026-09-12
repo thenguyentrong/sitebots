@@ -1,6 +1,9 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return ['02', 'w1'].map(model => ({ source: `/robots/zerith/${model}`, destination: `/robots/casbot/${model}`, permanent: true }));
+  },
   // PGlite loads its WASM and data files with `new URL(...)` checks that fail
   // once Turbopack has bundled it (the bundler's URL is not Node's URL). Keep
   // it external so the local database works under `next dev`.

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
+import { canonicalManufacturerSlug, isPublicManufacturer, manufacturerStatusLabels } from '@/lib/manufacturers';
 import { CompareToggle } from '@/components/compare/CompareBar';
 import { MakerAvatar } from '@/components/MakerAvatar';
 import { RobotCard } from '@/components/robot/RobotCard';
@@ -18,15 +19,17 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const data = await getManufacturer(slug);
   if (!data) return {};
   const m = data.manufacturer;
-  return publicMetadata({
+  return { ...publicMetadata({
     title: `${m.name} robots`,
     description: `${m.robots} ${m.name} robot${m.robots === 1 ? '' : 's'} with sourced specifications, prices by region and delivery status.`,
-    path: `/brands/${slug}`,
-  });
+    path: `/brands/${m.slug}`,
+  }), ...(!isPublicManufacturer(slug) ? { robots: { index: false, follow: false } } : {}) };
 }
 
 export default async function BrandPage({ params }: { params: Params }) {
   const { slug } = await params;
+  const canonical = canonicalManufacturerSlug(slug);
+  if (canonical !== slug) permanentRedirect(`/brands/${canonical}`);
   const data = await getManufacturer(slug);
   if (!data) notFound();
   const { manufacturer: m, robots } = data;
@@ -42,7 +45,7 @@ export default async function BrandPage({ params }: { params: Params }) {
       </nav>
       <header className="flex flex-wrap items-start justify-between gap-6 py-6">
         <div className="flex items-start gap-4">
-          <MakerAvatar name={m.name} className="h-14 w-14 rounded-2xl text-lg" />
+          <MakerAvatar name={m.name} logo={m.logo} className="h-16 w-28 rounded-2xl text-lg" />
           <div>
             <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">{m.name}</h1>
             <div className="mt-2 flex flex-wrap items-center gap-2">
@@ -64,6 +67,15 @@ export default async function BrandPage({ params }: { params: Params }) {
           </a>
         ) : null}
       </header>
+      <section className="card mb-6 p-5" aria-label="Commercial status">
+        <div className="flex flex-wrap items-center gap-2">
+          <Badge variant={m.review?.status === 'commercial' ? 'success' : 'neutral'}>{manufacturerStatusLabels[m.review?.status ?? 'unverified']}</Badge>
+          {m.review ? <span className="text-xs text-faint">Reviewed {m.review.reviewedAt}</span> : null}
+        </div>
+        <p className="mt-3 max-w-3xl text-sm text-muted">{m.review?.reason ?? 'Commercial status has not been verified. This record is kept for reference.'}</p>
+        {!isPublicManufacturer(m.slug) ? <p className="mt-2 text-sm font-medium">Reference only · Hidden from the supplier catalogue and robot matcher.</p> : null}
+        {m.review?.evidence.length ? <div className="mt-3 flex flex-wrap gap-4 text-xs">{m.review.evidence.map((e, i) => <a key={e.url} href={e.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{e.kind === 'official' ? 'Official source' : 'Review source'}{m.review!.evidence.length > 1 ? ` ${i + 1}` : ''} ↗</a>)}</div> : null}
+      </section>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {robots.map((r) => (
           <RobotCard key={r.id} robot={r} action={<CompareToggle id={r.id} name={r.name} />} />

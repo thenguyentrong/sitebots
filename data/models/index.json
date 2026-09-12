@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T08:29:41.787Z",
+  "generatedAt": "2026-09-12T12:06:24.986Z",
   "robots": {
     "unitree/g1": {
       "glbUrl": "/models/unitree__g1.4517216fb84eaa00.glb",
@@ -36009,6 +36009,2908 @@
           "joints": 45
         },
         "generatedAt": "2026-09-08T23:34:22.161Z"
+      }
+    },
+    "limx-dynamics/tron-1": {
+      "glbUrl": "/models/limx-dynamics__tron-1.f4c594f9b6cfbffd.glb",
+      "hash": "f4c594f9b6cfbffd",
+      "bytes": 857624,
+      "triangles": 39836,
+      "heightM": 0.845,
+      "variants": [
+        "base"
+      ],
+      "joints": {
+        "robotKey": "limx-dynamics/tron-1",
+        "upAxis": "Z",
+        "rootNode": "base_Link",
+        "heightM": 0.845,
+        "modelHeightM": 0.86,
+        "links": [
+          {
+            "name": "base_Link",
+            "node": "base_Link"
+          },
+          {
+            "name": "limx_imu",
+            "node": "limx_imu"
+          },
+          {
+            "name": "abad_L_Link",
+            "node": "abad_L_Link"
+          },
+          {
+            "name": "abad_R_Link",
+            "node": "abad_R_Link"
+          },
+          {
+            "name": "hip_R_Link",
+            "node": "hip_R_Link"
+          },
+          {
+            "name": "knee_R_Link",
+            "node": "knee_R_Link"
+          },
+          {
+            "name": "ankle_R_Link",
+            "node": "ankle_R_Link"
+          },
+          {
+            "name": "hip_L_Link",
+            "node": "hip_L_Link"
+          },
+          {
+            "name": "knee_L_Link",
+            "node": "knee_L_Link"
+          },
+          {
+            "name": "ankle_L_Link",
+            "node": "ankle_L_Link"
+          }
+        ],
+        "joints": [
+          {
+            "name": "limx_imu_joint",
+            "type": "fixed",
+            "parent": "base_Link",
+            "child": "limx_imu",
+            "childNode": "limx_imu",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "abad_L_Joint",
+            "type": "revolute",
+            "parent": "base_Link",
+            "child": "abad_L_Link",
+            "childNode": "abad_L_Link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.38397,
+            "upper": 1.39626,
+            "origin": {
+              "xyz": [
+                0.05556,
+                0.105,
+                -0.2602
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "abad_R_Joint",
+            "type": "revolute",
+            "parent": "base_Link",
+            "child": "abad_R_Link",
+            "childNode": "abad_R_Link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -1.39626,
+            "upper": 0.38397,
+            "origin": {
+              "xyz": [
+                0.05556,
+                -0.105,
+                -0.2602
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "hip_R_Joint",
+            "type": "revolute",
+            "parent": "abad_R_Link",
+            "child": "hip_R_Link",
+            "childNode": "hip_R_Link",
+            "axis": [
+              0,
+              -1,
+              0
+            ],
+            "lower": -1.396263,
+            "upper": 1.012291,
+            "origin": {
+              "xyz": [
+                -0.077,
+                -0.0205,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "knee_R_Joint",
+            "type": "revolute",
+            "parent": "hip_R_Link",
+            "child": "knee_R_Link",
+            "childNode": "knee_R_Link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.361357,
+            "upper": 0.872665,
+            "origin": {
+              "xyz": [
+                -0.15,
+                0.0205,
+                -0.25981
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "ankle_R_Joint",
+            "type": "revolute",
+            "parent": "knee_R_Link",
+            "child": "ankle_R_Link",
+            "childNode": "ankle_R_Link",
+            "axis": [
+              0,
+              -1,
+              0
+            ],
+            "lower": -1.15191730631626,
+            "upper": 1.5707963267949,
+            "origin": {
+              "xyz": [
+                0.15,
+                0,
+                -0.25981
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "hip_L_Joint",
+            "type": "revolute",
+            "parent": "abad_L_Link",
+            "child": "hip_L_Link",
+            "childNode": "hip_L_Link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.012291,
+            "upper": 1.396263,
+            "origin": {
+              "xyz": [
+                -0.077,
+                0.0205,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "knee_L_Joint",
+            "type": "revolute",
+            "parent": "hip_L_Link",
+            "child": "knee_L_Link",
+            "childNode": "knee_L_Link",
+            "axis": [
+              0,
+              -1,
+              0
+            ],
+            "lower": -0.872665,
+            "upper": 1.361357,
+            "origin": {
+              "xyz": [
+                -0.15,
+                -0.0205,
+                -0.25981
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "ankle_L_Joint",
+            "type": "revolute",
+            "parent": "knee_L_Link",
+            "child": "ankle_L_Link",
+            "childNode": "ankle_L_Link",
+            "axis": [
+              0,
+              -1,
+              0
+            ],
+            "lower": -1.15191730631626,
+            "upper": 1.5707963267949,
+            "origin": {
+              "xyz": [
+                0.15,
+                0,
+                -0.25981
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          }
+        ]
+      },
+      "credits": {
+        "robotKey": "limx-dynamics/tron-1",
+        "source": {
+          "sourceId": "limx_tron1_robot_description",
+          "repo": "limxdynamics/tron1-robot-description",
+          "url": "https://github.com/limxdynamics/tron1-robot-description/tree/5b97add1f3b461c9ed26ff2ff2f5025cc6ee4316/pointfoot/SF_TRON1A",
+          "sha": "5b97add1f3b461c9ed26ff2ff2f5025cc6ee4316",
+          "path": "pointfoot/SF_TRON1A",
+          "urdf": "urdf/robot.urdf"
+        },
+        "license": {
+          "spdx": "Apache-2.0",
+          "file": "/licenses/limx_tron1_robot_description.txt",
+          "copyright": "Copyright LimX Dynamics Technology Co., Ltd."
+        },
+        "modifications": [
+          "Converted from URDF and STL meshes to glTF 2.0",
+          "Decimated 389,327 → 39,836 triangles",
+          "Collision geometry and sensor housings removed",
+          "meshopt-compressed",
+          "Sole-foot configuration SF_TRON1A; point-foot and wheeled configurations differ."
+        ],
+        "stats": {
+          "triangles": {
+            "before": 389327,
+            "after": 39836
+          },
+          "bytes": 857624,
+          "links": 10,
+          "joints": 9
+        },
+        "generatedAt": "2026-09-12T12:04:24.006Z"
+      }
+    },
+    "limx-dynamics/oli": {
+      "glbUrl": "/models/limx-dynamics__oli.2e165d1edf839be2.glb",
+      "hash": "2e165d1edf839be2",
+      "bytes": 1045492,
+      "triangles": 46008,
+      "heightM": 1.65,
+      "variants": [
+        "base"
+      ],
+      "joints": {
+        "robotKey": "limx-dynamics/oli",
+        "upAxis": "Z",
+        "rootNode": "base_link",
+        "heightM": 1.65,
+        "modelHeightM": 1.61,
+        "links": [
+          {
+            "name": "base_link",
+            "node": "base_link"
+          },
+          {
+            "name": "left_hip_pitch_link",
+            "node": "left_hip_pitch_link"
+          },
+          {
+            "name": "right_hip_pitch_link",
+            "node": "right_hip_pitch_link"
+          },
+          {
+            "name": "waist_yaw_link",
+            "node": "waist_yaw_link"
+          },
+          {
+            "name": "waist_roll_link",
+            "node": "waist_roll_link"
+          },
+          {
+            "name": "waist_pitch_link",
+            "node": "waist_pitch_link"
+          },
+          {
+            "name": "left_shoulder_pitch_link",
+            "node": "left_shoulder_pitch_link"
+          },
+          {
+            "name": "right_shoulder_pitch_link",
+            "node": "right_shoulder_pitch_link"
+          },
+          {
+            "name": "head_yaw_link",
+            "node": "head_yaw_link"
+          },
+          {
+            "name": "head_pitch_link",
+            "node": "head_pitch_link"
+          },
+          {
+            "name": "right_shoulder_roll_link",
+            "node": "right_shoulder_roll_link"
+          },
+          {
+            "name": "right_shoulder_yaw_link",
+            "node": "right_shoulder_yaw_link"
+          },
+          {
+            "name": "right_elbow_link",
+            "node": "right_elbow_link"
+          },
+          {
+            "name": "right_wrist_yaw_link",
+            "node": "right_wrist_yaw_link"
+          },
+          {
+            "name": "right_wrist_pitch_link",
+            "node": "right_wrist_pitch_link"
+          },
+          {
+            "name": "right_wrist_roll_link",
+            "node": "right_wrist_roll_link"
+          },
+          {
+            "name": "right_hand_contact",
+            "node": "right_hand_contact"
+          },
+          {
+            "name": "right_hand_manip",
+            "node": "right_hand_manip"
+          },
+          {
+            "name": "left_shoulder_roll_link",
+            "node": "left_shoulder_roll_link"
+          },
+          {
+            "name": "left_shoulder_yaw_link",
+            "node": "left_shoulder_yaw_link"
+          },
+          {
+            "name": "left_elbow_link",
+            "node": "left_elbow_link"
+          },
+          {
+            "name": "left_wrist_yaw_link",
+            "node": "left_wrist_yaw_link"
+          },
+          {
+            "name": "left_wrist_pitch_link",
+            "node": "left_wrist_pitch_link"
+          },
+          {
+            "name": "left_wrist_roll_link",
+            "node": "left_wrist_roll_link"
+          },
+          {
+            "name": "left_hand_contact",
+            "node": "left_hand_contact"
+          },
+          {
+            "name": "left_hand_manip",
+            "node": "left_hand_manip"
+          },
+          {
+            "name": "right_hip_roll_link",
+            "node": "right_hip_roll_link"
+          },
+          {
+            "name": "right_hip_yaw_link",
+            "node": "right_hip_yaw_link"
+          },
+          {
+            "name": "right_knee_link",
+            "node": "right_knee_link"
+          },
+          {
+            "name": "right_ankle_pitch_link",
+            "node": "right_ankle_pitch_link"
+          },
+          {
+            "name": "right_ankle_roll_link",
+            "node": "right_ankle_roll_link"
+          },
+          {
+            "name": "contact_foot_center_R",
+            "node": "contact_foot_center_R"
+          },
+          {
+            "name": "contact_foot_heel_R",
+            "node": "contact_foot_heel_R"
+          },
+          {
+            "name": "contact_foot_tip_R",
+            "node": "contact_foot_tip_R"
+          },
+          {
+            "name": "left_hip_roll_link",
+            "node": "left_hip_roll_link"
+          },
+          {
+            "name": "left_hip_yaw_link",
+            "node": "left_hip_yaw_link"
+          },
+          {
+            "name": "left_knee_link",
+            "node": "left_knee_link"
+          },
+          {
+            "name": "left_ankle_pitch_link",
+            "node": "left_ankle_pitch_link"
+          },
+          {
+            "name": "left_ankle_roll_link",
+            "node": "left_ankle_roll_link"
+          },
+          {
+            "name": "contact_foot_center_L",
+            "node": "contact_foot_center_L"
+          },
+          {
+            "name": "contact_foot_heel_L",
+            "node": "contact_foot_heel_L"
+          },
+          {
+            "name": "contact_foot_tip_L",
+            "node": "contact_foot_tip_L"
+          }
+        ],
+        "joints": [
+          {
+            "name": "left_hip_pitch_joint",
+            "type": "revolute",
+            "parent": "base_link",
+            "child": "left_hip_pitch_link",
+            "childNode": "left_hip_pitch_link",
+            "axis": [
+              0,
+              0.9063075164942306,
+              -0.42261884192030513
+            ],
+            "lower": -2.618,
+            "upper": 2.618,
+            "origin": {
+              "xyz": [
+                0.017007,
+                0.1283,
+                0.0081917
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hip_pitch_joint",
+            "type": "revolute",
+            "parent": "base_link",
+            "child": "right_hip_pitch_link",
+            "childNode": "right_hip_pitch_link",
+            "axis": [
+              0,
+              0.9063075164942306,
+              0.42261884192030513
+            ],
+            "lower": -2.618,
+            "upper": 2.618,
+            "origin": {
+              "xyz": [
+                0.017007,
+                -0.1283,
+                0.0081917
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "waist_yaw_joint",
+            "type": "revolute",
+            "parent": "base_link",
+            "child": "waist_yaw_link",
+            "childNode": "waist_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -2.618,
+            "upper": 2.618,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0.10239
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "waist_roll_joint",
+            "type": "revolute",
+            "parent": "waist_yaw_link",
+            "child": "waist_roll_link",
+            "childNode": "waist_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.524,
+            "upper": 0.524,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0.057
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "waist_pitch_joint",
+            "type": "revolute",
+            "parent": "waist_roll_link",
+            "child": "waist_pitch_link",
+            "childNode": "waist_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.524,
+            "upper": 0.785,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_shoulder_pitch_joint",
+            "type": "revolute",
+            "parent": "waist_pitch_link",
+            "child": "left_shoulder_pitch_link",
+            "childNode": "left_shoulder_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -2.792,
+            "upper": 2.792,
+            "origin": {
+              "xyz": [
+                0,
+                0.1589,
+                0.2822
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_shoulder_pitch_joint",
+            "type": "revolute",
+            "parent": "waist_pitch_link",
+            "child": "right_shoulder_pitch_link",
+            "childNode": "right_shoulder_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -2.792,
+            "upper": 2.792,
+            "origin": {
+              "xyz": [
+                0,
+                -0.1589,
+                0.2822
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "head_yaw_joint",
+            "type": "revolute",
+            "parent": "waist_pitch_link",
+            "child": "head_yaw_link",
+            "childNode": "head_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -0.785,
+            "upper": 0.785,
+            "origin": {
+              "xyz": [
+                -0.013,
+                0,
+                0.3882
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "head_pitch_joint",
+            "type": "revolute",
+            "parent": "head_yaw_link",
+            "child": "head_pitch_link",
+            "childNode": "head_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.524,
+            "upper": 0.785,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0.0395
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_shoulder_roll_joint",
+            "type": "revolute",
+            "parent": "right_shoulder_pitch_link",
+            "child": "right_shoulder_roll_link",
+            "childNode": "right_shoulder_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -3.229,
+            "upper": 0.087,
+            "origin": {
+              "xyz": [
+                0,
+                -0.055,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_shoulder_yaw_joint",
+            "type": "revolute",
+            "parent": "right_shoulder_roll_link",
+            "child": "right_shoulder_yaw_link",
+            "childNode": "right_shoulder_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -1.571,
+            "upper": 3.403,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1306
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_elbow_joint",
+            "type": "revolute",
+            "parent": "right_shoulder_yaw_link",
+            "child": "right_elbow_link",
+            "childNode": "right_elbow_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -2.443,
+            "upper": 1.571,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1157
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_wrist_yaw_joint",
+            "type": "revolute",
+            "parent": "right_elbow_link",
+            "child": "right_wrist_yaw_link",
+            "childNode": "right_wrist_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -0.785,
+            "upper": 2.356,
+            "origin": {
+              "xyz": [
+                0,
+                -0.001,
+                -0.1188
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_wrist_pitch_joint",
+            "type": "revolute",
+            "parent": "right_wrist_yaw_link",
+            "child": "right_wrist_pitch_link",
+            "childNode": "right_wrist_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.571,
+            "upper": 1.571,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.0342
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_wrist_roll_joint",
+            "type": "revolute",
+            "parent": "right_wrist_pitch_link",
+            "child": "right_wrist_roll_link",
+            "childNode": "right_wrist_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -1.571,
+            "upper": 1.571,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.065
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hand_contact_joint",
+            "type": "fixed",
+            "parent": "right_wrist_roll_link",
+            "child": "right_hand_contact",
+            "childNode": "right_hand_contact",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.058
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hand_manip_joint",
+            "type": "fixed",
+            "parent": "right_wrist_roll_link",
+            "child": "right_hand_manip",
+            "childNode": "right_hand_manip",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.058
+              ],
+              "rpy": [
+                0,
+                1.5708,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_shoulder_roll_joint",
+            "type": "revolute",
+            "parent": "left_shoulder_pitch_link",
+            "child": "left_shoulder_roll_link",
+            "childNode": "left_shoulder_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.087,
+            "upper": 3.229,
+            "origin": {
+              "xyz": [
+                0,
+                0.055,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_shoulder_yaw_joint",
+            "type": "revolute",
+            "parent": "left_shoulder_roll_link",
+            "child": "left_shoulder_yaw_link",
+            "childNode": "left_shoulder_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -3.403,
+            "upper": 1.571,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1306
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_elbow_joint",
+            "type": "revolute",
+            "parent": "left_shoulder_yaw_link",
+            "child": "left_elbow_link",
+            "childNode": "left_elbow_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -2.443,
+            "upper": 1.571,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1157
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_wrist_yaw_joint",
+            "type": "revolute",
+            "parent": "left_elbow_link",
+            "child": "left_wrist_yaw_link",
+            "childNode": "left_wrist_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -2.356,
+            "upper": 0.785,
+            "origin": {
+              "xyz": [
+                0,
+                0.001,
+                -0.1188
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_wrist_pitch_joint",
+            "type": "revolute",
+            "parent": "left_wrist_yaw_link",
+            "child": "left_wrist_pitch_link",
+            "childNode": "left_wrist_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.571,
+            "upper": 1.571,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.0342
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_wrist_roll_joint",
+            "type": "revolute",
+            "parent": "left_wrist_pitch_link",
+            "child": "left_wrist_roll_link",
+            "childNode": "left_wrist_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -1.571,
+            "upper": 1.571,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.065
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hand_contact_joint",
+            "type": "fixed",
+            "parent": "left_wrist_roll_link",
+            "child": "left_hand_contact",
+            "childNode": "left_hand_contact",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.058
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hand_manip_joint",
+            "type": "fixed",
+            "parent": "left_wrist_roll_link",
+            "child": "left_hand_manip",
+            "childNode": "left_hand_manip",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.058
+              ],
+              "rpy": [
+                0,
+                1.5708,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hip_roll_joint",
+            "type": "revolute",
+            "parent": "right_hip_pitch_link",
+            "child": "right_hip_roll_link",
+            "childNode": "right_hip_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -2.094,
+            "upper": 0.8727,
+            "origin": {
+              "xyz": [
+                -0.01,
+                -0.0016596,
+                -0.0920417
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hip_yaw_joint",
+            "type": "revolute",
+            "parent": "right_hip_roll_link",
+            "child": "right_hip_yaw_link",
+            "childNode": "right_hip_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -2.618,
+            "upper": 2.618,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1774
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_knee_joint",
+            "type": "revolute",
+            "parent": "right_hip_yaw_link",
+            "child": "right_knee_link",
+            "childNode": "right_knee_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.087,
+            "upper": 2.583,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1976
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_ankle_pitch_joint",
+            "type": "revolute",
+            "parent": "right_knee_link",
+            "child": "right_ankle_pitch_link",
+            "childNode": "right_ankle_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.012,
+            "upper": 0.611,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.385
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_ankle_roll_joint",
+            "type": "revolute",
+            "parent": "right_ankle_pitch_link",
+            "child": "right_ankle_roll_link",
+            "childNode": "right_ankle_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.436,
+            "upper": 0.436,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_center_joint_R",
+            "type": "fixed",
+            "parent": "right_ankle_roll_link",
+            "child": "contact_foot_center_R",
+            "childNode": "contact_foot_center_R",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.0625
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_heel_joint_R",
+            "type": "fixed",
+            "parent": "right_ankle_roll_link",
+            "child": "contact_foot_heel_R",
+            "childNode": "contact_foot_heel_R",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                -0.106,
+                0,
+                -0.0625
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_tip_joint_R",
+            "type": "fixed",
+            "parent": "right_ankle_roll_link",
+            "child": "contact_foot_tip_R",
+            "childNode": "contact_foot_tip_R",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0.154,
+                0,
+                -0.0625
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hip_roll_joint",
+            "type": "revolute",
+            "parent": "left_hip_pitch_link",
+            "child": "left_hip_roll_link",
+            "childNode": "left_hip_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.8727,
+            "upper": 2.094,
+            "origin": {
+              "xyz": [
+                -0.01,
+                0.0016596,
+                -0.0920417
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hip_yaw_joint",
+            "type": "revolute",
+            "parent": "left_hip_roll_link",
+            "child": "left_hip_yaw_link",
+            "childNode": "left_hip_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -2.618,
+            "upper": 2.618,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1774
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_knee_joint",
+            "type": "revolute",
+            "parent": "left_hip_yaw_link",
+            "child": "left_knee_link",
+            "childNode": "left_knee_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.087,
+            "upper": 2.583,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1976
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_ankle_pitch_joint",
+            "type": "revolute",
+            "parent": "left_knee_link",
+            "child": "left_ankle_pitch_link",
+            "childNode": "left_ankle_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.012,
+            "upper": 0.611,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.385
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_ankle_roll_joint",
+            "type": "revolute",
+            "parent": "left_ankle_pitch_link",
+            "child": "left_ankle_roll_link",
+            "childNode": "left_ankle_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.436,
+            "upper": 0.436,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_center_joint_L",
+            "type": "fixed",
+            "parent": "left_ankle_roll_link",
+            "child": "contact_foot_center_L",
+            "childNode": "contact_foot_center_L",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.0625
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_heel_joint_L",
+            "type": "fixed",
+            "parent": "left_ankle_roll_link",
+            "child": "contact_foot_heel_L",
+            "childNode": "contact_foot_heel_L",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                -0.106,
+                0,
+                -0.0625
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_tip_joint_L",
+            "type": "fixed",
+            "parent": "left_ankle_roll_link",
+            "child": "contact_foot_tip_L",
+            "childNode": "contact_foot_tip_L",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0.154,
+                0,
+                -0.0625
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          }
+        ]
+      },
+      "credits": {
+        "robotKey": "limx-dynamics/oli",
+        "source": {
+          "sourceId": "limx_humanoid_description",
+          "repo": "limxdynamics/humanoid-description",
+          "url": "https://github.com/limxdynamics/humanoid-description/tree/97b2174054103f9f7085ec1e3533972e4d0f2a50/HU_D04_description",
+          "sha": "97b2174054103f9f7085ec1e3533972e4d0f2a50",
+          "path": "HU_D04_description",
+          "urdf": "urdf/HU_D04_01.urdf"
+        },
+        "license": {
+          "spdx": "Apache-2.0",
+          "file": "/licenses/limx_humanoid_description.txt",
+          "copyright": "Copyright LimX Dynamics Technology Co., Ltd."
+        },
+        "modifications": [
+          "Converted from URDF and STL meshes to glTF 2.0",
+          "Decimated 359,309 → 46,008 triangles",
+          "Collision geometry and sensor housings removed",
+          "meshopt-compressed",
+          "HU_D04_01 body configuration; optional grippers and dexterous hands are not included."
+        ],
+        "stats": {
+          "triangles": {
+            "before": 359309,
+            "after": 46008
+          },
+          "bytes": 1045492,
+          "links": 42,
+          "joints": 41
+        },
+        "generatedAt": "2026-09-12T12:04:59.061Z"
+      }
+    },
+    "limx-dynamics/luna": {
+      "glbUrl": "/models/limx-dynamics__luna.3b2797d8b13386c2.glb",
+      "hash": "3b2797d8b13386c2",
+      "bytes": 1104420,
+      "triangles": 49588,
+      "heightM": 1.6,
+      "variants": [
+        "base"
+      ],
+      "joints": {
+        "robotKey": "limx-dynamics/luna",
+        "upAxis": "Z",
+        "rootNode": "base_link",
+        "heightM": 1.6,
+        "modelHeightM": 1.59,
+        "links": [
+          {
+            "name": "base_link",
+            "node": "base_link"
+          },
+          {
+            "name": "base_imu",
+            "node": "base_imu"
+          },
+          {
+            "name": "left_hip_pitch_link",
+            "node": "left_hip_pitch_link"
+          },
+          {
+            "name": "right_hip_pitch_link",
+            "node": "right_hip_pitch_link"
+          },
+          {
+            "name": "waist_yaw_link",
+            "node": "waist_yaw_link"
+          },
+          {
+            "name": "waist_roll_link",
+            "node": "waist_roll_link"
+          },
+          {
+            "name": "waist_pitch_link",
+            "node": "waist_pitch_link"
+          },
+          {
+            "name": "head_yaw_link",
+            "node": "head_yaw_link"
+          },
+          {
+            "name": "left_shoulder_pitch_link",
+            "node": "left_shoulder_pitch_link"
+          },
+          {
+            "name": "right_shoulder_pitch_link",
+            "node": "right_shoulder_pitch_link"
+          },
+          {
+            "name": "right_shoulder_roll_link",
+            "node": "right_shoulder_roll_link"
+          },
+          {
+            "name": "right_shoulder_yaw_link",
+            "node": "right_shoulder_yaw_link"
+          },
+          {
+            "name": "right_elbow_link",
+            "node": "right_elbow_link"
+          },
+          {
+            "name": "right_wrist_yaw_link",
+            "node": "right_wrist_yaw_link"
+          },
+          {
+            "name": "right_hand_contact",
+            "node": "right_hand_contact"
+          },
+          {
+            "name": "right_hand_manip",
+            "node": "right_hand_manip"
+          },
+          {
+            "name": "left_shoulder_roll_link",
+            "node": "left_shoulder_roll_link"
+          },
+          {
+            "name": "left_shoulder_yaw_link",
+            "node": "left_shoulder_yaw_link"
+          },
+          {
+            "name": "left_elbow_link",
+            "node": "left_elbow_link"
+          },
+          {
+            "name": "left_wrist_yaw_link",
+            "node": "left_wrist_yaw_link"
+          },
+          {
+            "name": "left_hand_contact",
+            "node": "left_hand_contact"
+          },
+          {
+            "name": "left_hand_manip",
+            "node": "left_hand_manip"
+          },
+          {
+            "name": "head_pitch_link",
+            "node": "head_pitch_link"
+          },
+          {
+            "name": "right_hip_roll_link",
+            "node": "right_hip_roll_link"
+          },
+          {
+            "name": "right_hip_yaw_link",
+            "node": "right_hip_yaw_link"
+          },
+          {
+            "name": "right_knee_link",
+            "node": "right_knee_link"
+          },
+          {
+            "name": "right_ankle_pitch_link",
+            "node": "right_ankle_pitch_link"
+          },
+          {
+            "name": "right_ankle_roll_link",
+            "node": "right_ankle_roll_link"
+          },
+          {
+            "name": "contact_foot_center_R",
+            "node": "contact_foot_center_R"
+          },
+          {
+            "name": "contact_foot_heel_R",
+            "node": "contact_foot_heel_R"
+          },
+          {
+            "name": "contact_foot_tip_R",
+            "node": "contact_foot_tip_R"
+          },
+          {
+            "name": "left_hip_roll_link",
+            "node": "left_hip_roll_link"
+          },
+          {
+            "name": "left_hip_yaw_link",
+            "node": "left_hip_yaw_link"
+          },
+          {
+            "name": "left_knee_link",
+            "node": "left_knee_link"
+          },
+          {
+            "name": "left_ankle_pitch_link",
+            "node": "left_ankle_pitch_link"
+          },
+          {
+            "name": "left_ankle_roll_link",
+            "node": "left_ankle_roll_link"
+          },
+          {
+            "name": "contact_foot_center_L",
+            "node": "contact_foot_center_L"
+          },
+          {
+            "name": "contact_foot_heel_L",
+            "node": "contact_foot_heel_L"
+          },
+          {
+            "name": "contact_foot_tip_L",
+            "node": "contact_foot_tip_L"
+          }
+        ],
+        "joints": [
+          {
+            "name": "base_imu_joint",
+            "type": "fixed",
+            "parent": "base_link",
+            "child": "base_imu",
+            "childNode": "base_imu",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                -0.00008466,
+                -0.000046,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hip_pitch_joint",
+            "type": "revolute",
+            "parent": "base_link",
+            "child": "left_hip_pitch_link",
+            "childNode": "left_hip_pitch_link",
+            "axis": [
+              0,
+              0.8660265528314683,
+              -0.4999980097868829
+            ],
+            "lower": -3.0543,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                0,
+                0.10843,
+                0.028124
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hip_pitch_joint",
+            "type": "revolute",
+            "parent": "base_link",
+            "child": "right_hip_pitch_link",
+            "childNode": "right_hip_pitch_link",
+            "axis": [
+              0,
+              0.8660265528314683,
+              0.4999980097868829
+            ],
+            "lower": -3.0543,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                0,
+                -0.10843,
+                0.028124
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "waist_yaw_joint",
+            "type": "revolute",
+            "parent": "base_link",
+            "child": "waist_yaw_link",
+            "childNode": "waist_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -1.5708,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                0,
+                0.00000340601610519,
+                0.12958
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "waist_roll_joint",
+            "type": "revolute",
+            "parent": "waist_yaw_link",
+            "child": "waist_roll_link",
+            "childNode": "waist_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.5236,
+            "upper": 0.5236,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0.0595999999999998
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "waist_pitch_joint",
+            "type": "revolute",
+            "parent": "waist_roll_link",
+            "child": "waist_pitch_link",
+            "childNode": "waist_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.5236,
+            "upper": 0.7854,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "head_yaw_joint",
+            "type": "revolute",
+            "parent": "waist_pitch_link",
+            "child": "head_yaw_link",
+            "childNode": "head_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -0.7854,
+            "upper": 0.7854,
+            "origin": {
+              "xyz": [
+                -0.0280961087301243,
+                0,
+                0.348670496884438
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_shoulder_pitch_joint",
+            "type": "revolute",
+            "parent": "waist_pitch_link",
+            "child": "left_shoulder_pitch_link",
+            "childNode": "left_shoulder_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -3.0543,
+            "upper": 1.0472,
+            "origin": {
+              "xyz": [
+                -0.0299999999990098,
+                0.123000000000184,
+                0.276600000000001
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_shoulder_pitch_joint",
+            "type": "revolute",
+            "parent": "waist_pitch_link",
+            "child": "right_shoulder_pitch_link",
+            "childNode": "right_shoulder_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -3.0543,
+            "upper": 1.0472,
+            "origin": {
+              "xyz": [
+                -0.0299999999990098,
+                -0.123000000000184,
+                0.276600000000001
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_shoulder_roll_joint",
+            "type": "revolute",
+            "parent": "right_shoulder_pitch_link",
+            "child": "right_shoulder_roll_link",
+            "childNode": "right_shoulder_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -1.9199,
+            "upper": 0.087266,
+            "origin": {
+              "xyz": [
+                0,
+                -0.0692000055837298,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_shoulder_yaw_joint",
+            "type": "revolute",
+            "parent": "right_shoulder_roll_link",
+            "child": "right_shoulder_yaw_link",
+            "childNode": "right_shoulder_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -1.5708,
+            "upper": 2.5307,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1126
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_elbow_joint",
+            "type": "revolute",
+            "parent": "right_shoulder_yaw_link",
+            "child": "right_elbow_link",
+            "childNode": "right_elbow_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -2.3911,
+            "upper": 0.5236,
+            "origin": {
+              "xyz": [
+                0.0130000000000001,
+                -0.0000500000000004108,
+                -0.1183
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_wrist_yaw_joint",
+            "type": "revolute",
+            "parent": "right_elbow_link",
+            "child": "right_wrist_yaw_link",
+            "childNode": "right_wrist_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -1.5708,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                -0.00799999999999785,
+                -0.0000499999999999945,
+                -0.22199999999999
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hand_contact_joint",
+            "type": "fixed",
+            "parent": "right_wrist_yaw_link",
+            "child": "right_hand_contact",
+            "childNode": "right_hand_contact",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.121
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hand_manip_joint",
+            "type": "fixed",
+            "parent": "right_wrist_yaw_link",
+            "child": "right_hand_manip",
+            "childNode": "right_hand_manip",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.121
+              ],
+              "rpy": [
+                0,
+                1.5708,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_shoulder_roll_joint",
+            "type": "revolute",
+            "parent": "left_shoulder_pitch_link",
+            "child": "left_shoulder_roll_link",
+            "childNode": "left_shoulder_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.087266,
+            "upper": 1.9199,
+            "origin": {
+              "xyz": [
+                0,
+                0.0692000055837298,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_shoulder_yaw_joint",
+            "type": "revolute",
+            "parent": "left_shoulder_roll_link",
+            "child": "left_shoulder_yaw_link",
+            "childNode": "left_shoulder_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -2.5307,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.1126
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_elbow_joint",
+            "type": "revolute",
+            "parent": "left_shoulder_yaw_link",
+            "child": "left_elbow_link",
+            "childNode": "left_elbow_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -2.3911,
+            "upper": 0.5236,
+            "origin": {
+              "xyz": [
+                0.0130000000000001,
+                0.0000500000000004108,
+                -0.1183
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_wrist_yaw_joint",
+            "type": "revolute",
+            "parent": "left_elbow_link",
+            "child": "left_wrist_yaw_link",
+            "childNode": "left_wrist_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -1.5708,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                -0.00799999999999785,
+                0.0000499999999999945,
+                -0.22199999999999
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hand_contact_joint",
+            "type": "fixed",
+            "parent": "left_wrist_yaw_link",
+            "child": "left_hand_contact",
+            "childNode": "left_hand_contact",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.121
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hand_manip_joint",
+            "type": "fixed",
+            "parent": "left_wrist_yaw_link",
+            "child": "left_hand_manip",
+            "childNode": "left_hand_manip",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.121
+              ],
+              "rpy": [
+                0,
+                1.5708,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "head_pitch_joint",
+            "type": "revolute",
+            "parent": "head_yaw_link",
+            "child": "head_pitch_link",
+            "childNode": "head_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.5236,
+            "upper": 0.5236,
+            "origin": {
+              "xyz": [
+                0.0000158650833830612,
+                0.0295999999996828,
+                0.0499959437400408
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hip_roll_joint",
+            "type": "revolute",
+            "parent": "right_hip_pitch_link",
+            "child": "right_hip_roll_link",
+            "childNode": "right_hip_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -1.5708,
+            "upper": 1.0472,
+            "origin": {
+              "xyz": [
+                0,
+                0.000928882791991492,
+                -0.0998113463614758
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_hip_yaw_joint",
+            "type": "revolute",
+            "parent": "right_hip_roll_link",
+            "child": "right_hip_yaw_link",
+            "childNode": "right_hip_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -1.5708,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                -0.000456858436752703,
+                0,
+                -0.0764999999999998
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_knee_joint",
+            "type": "revolute",
+            "parent": "right_hip_yaw_link",
+            "child": "right_knee_link",
+            "childNode": "right_knee_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.087266,
+            "upper": 2.4435,
+            "origin": {
+              "xyz": [
+                -0.0200001840152544,
+                0,
+                -0.184500355579722
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_ankle_pitch_joint",
+            "type": "revolute",
+            "parent": "right_knee_link",
+            "child": "right_ankle_pitch_link",
+            "childNode": "right_ankle_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.0123,
+            "upper": 0.61086,
+            "origin": {
+              "xyz": [
+                -0.0000740514069974343,
+                0,
+                -0.417063028945095
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "right_ankle_roll_joint",
+            "type": "revolute",
+            "parent": "right_ankle_pitch_link",
+            "child": "right_ankle_roll_link",
+            "childNode": "right_ankle_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.43633,
+            "upper": 0.43633,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_center_joint_R",
+            "type": "fixed",
+            "parent": "right_ankle_roll_link",
+            "child": "contact_foot_center_R",
+            "childNode": "contact_foot_center_R",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.07327
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_heel_joint_R",
+            "type": "fixed",
+            "parent": "right_ankle_roll_link",
+            "child": "contact_foot_heel_R",
+            "childNode": "contact_foot_heel_R",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                -0.09669,
+                0,
+                -0.07327
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_tip_joint_R",
+            "type": "fixed",
+            "parent": "right_ankle_roll_link",
+            "child": "contact_foot_tip_R",
+            "childNode": "contact_foot_tip_R",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0.11773,
+                0,
+                -0.07327
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hip_roll_joint",
+            "type": "revolute",
+            "parent": "left_hip_pitch_link",
+            "child": "left_hip_roll_link",
+            "childNode": "left_hip_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -1.0472,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                0,
+                -0.000928882791991492,
+                -0.0998113463614758
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_hip_yaw_joint",
+            "type": "revolute",
+            "parent": "left_hip_roll_link",
+            "child": "left_hip_yaw_link",
+            "childNode": "left_hip_yaw_link",
+            "axis": [
+              0,
+              0,
+              1
+            ],
+            "lower": -1.5708,
+            "upper": 1.5708,
+            "origin": {
+              "xyz": [
+                -0.000456858436752703,
+                0,
+                -0.0764999999999998
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_knee_joint",
+            "type": "revolute",
+            "parent": "left_hip_yaw_link",
+            "child": "left_knee_link",
+            "childNode": "left_knee_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -0.087266,
+            "upper": 2.4435,
+            "origin": {
+              "xyz": [
+                -0.0200001840152544,
+                0,
+                -0.184500355579722
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_ankle_pitch_joint",
+            "type": "revolute",
+            "parent": "left_knee_link",
+            "child": "left_ankle_pitch_link",
+            "childNode": "left_ankle_pitch_link",
+            "axis": [
+              0,
+              1,
+              0
+            ],
+            "lower": -1.0123,
+            "upper": 0.61086,
+            "origin": {
+              "xyz": [
+                -0.0000740514069974343,
+                0,
+                -0.417063028945095
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "left_ankle_roll_joint",
+            "type": "revolute",
+            "parent": "left_ankle_pitch_link",
+            "child": "left_ankle_roll_link",
+            "childNode": "left_ankle_roll_link",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": -0.43633,
+            "upper": 0.43633,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                0
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_center_joint_L",
+            "type": "fixed",
+            "parent": "left_ankle_roll_link",
+            "child": "contact_foot_center_L",
+            "childNode": "contact_foot_center_L",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0,
+                0,
+                -0.07327
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_heel_joint_L",
+            "type": "fixed",
+            "parent": "left_ankle_roll_link",
+            "child": "contact_foot_heel_L",
+            "childNode": "contact_foot_heel_L",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                -0.09669,
+                0,
+                -0.07327
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          },
+          {
+            "name": "contact_foot_tip_joint_L",
+            "type": "fixed",
+            "parent": "left_ankle_roll_link",
+            "child": "contact_foot_tip_L",
+            "childNode": "contact_foot_tip_L",
+            "axis": [
+              1,
+              0,
+              0
+            ],
+            "lower": null,
+            "upper": null,
+            "origin": {
+              "xyz": [
+                0.11773,
+                0,
+                -0.07327
+              ],
+              "rpy": [
+                0,
+                0,
+                0
+              ]
+            },
+            "mimic": null
+          }
+        ]
+      },
+      "credits": {
+        "robotKey": "limx-dynamics/luna",
+        "source": {
+          "sourceId": "limx_luna_description",
+          "repo": "limx-luna/luna-description",
+          "url": "https://github.com/limx-luna/luna-description/tree/1f4798c753d8290d7fc123215f2315be27b0ad2e/HU_L04_description",
+          "sha": "1f4798c753d8290d7fc123215f2315be27b0ad2e",
+          "path": "HU_L04_description",
+          "urdf": "urdf/HU_L04_01.urdf"
+        },
+        "license": {
+          "spdx": "Apache-2.0",
+          "file": "/licenses/limx_luna_description.txt",
+          "copyright": "Copyright LimX Dynamics Technology Co., Ltd."
+        },
+        "modifications": [
+          "Converted from URDF and STL meshes to glTF 2.0",
+          "Decimated 1,089,558 → 49,588 triangles",
+          "Collision geometry and sensor housings removed",
+          "meshopt-compressed",
+          "Uses the manufacturer serial URDF approximation; ankle and waist closed-loop linkages require the upstream MJCF/USD simulation model."
+        ],
+        "stats": {
+          "triangles": {
+            "before": 1089558,
+            "after": 49588
+          },
+          "bytes": 1104420,
+          "links": 39,
+          "joints": 38
+        },
+        "generatedAt": "2026-09-12T12:05:31.224Z"
       }
     }
   }

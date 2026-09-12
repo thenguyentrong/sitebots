@@ -1,0 +1,30 @@
+import { chromium, expect } from '@playwright/test';
+async function main() {
+  const browser = await chromium.launch({ args: ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true });
+  const page = await context.newPage();
+  await page.addInitScript(() => localStorage.setItem('sitebots.scale', '0'));
+  await page.goto('http://127.0.0.1:3000/robots/deep-robotics/lite3');
+  const view = page.locator('[data-robot-viewer]');
+  const canvas = view.locator('canvas');
+  await expect(canvas).toHaveAttribute('data-camera-ready', 'true', { timeout: 60_000 });
+  await canvas.scrollIntoViewIfNeeded();
+  const box = (await canvas.boundingBox())!;
+  const x = box.x + box.width / 2, y = box.y + box.height / 2;
+  const camera = async () => JSON.parse((await canvas.getAttribute('data-camera'))!);
+  const session = await context.newCDPSession(page);
+  const touch = async (type: 'touchStart' | 'touchMove' | 'touchEnd', points: { x: number; y: number; id: number }[]) => session.send('Input.dispatchTouchEvent', { type, touchPoints: points });
+  const before = await camera();
+  await touch('touchStart', [{ x: x - 25, y, id: 1 }, { x: x + 25, y, id: 2 }]);
+  for (let i = 1; i <= 5; i++) await touch('touchMove', [{ x: x - 25 - i * 5, y, id: 1 }, { x: x + 25 + i * 5, y, id: 2 }]);
+  await touch('touchEnd', []);
+  await expect.poll(async () => (await camera()).distance).toBeLessThan(before.distance * 0.9);
+  const zoomed = await camera();
+  await touch('touchStart', [{ x: x - 25, y, id: 1 }, { x: x + 25, y, id: 2 }]);
+  for (let i = 1; i <= 5; i++) await touch('touchMove', [{ x: x - 25 + i * 5, y: y + i * 2, id: 1 }, { x: x + 25 + i * 5, y: y + i * 2, id: 2 }]);
+  await touch('touchEnd', []);
+  await expect.poll(async () => (await camera()).target).not.toEqual(zoomed.target);
+  console.log('PASS touch pinch zoom and two-finger pan');
+  await browser.close();
+}
+main().catch(error => { console.error(error); process.exit(1); });

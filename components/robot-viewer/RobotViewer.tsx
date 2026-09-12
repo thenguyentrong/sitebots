@@ -1,61 +1,48 @@
 'use client';
 
-import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
-import { Canvas, useThree } from '@react-three/fiber';
-import { Bounds, ContactShadows, Grid, OrbitControls, Text, useGLTF } from '@react-three/drei';
-import { Group, MeshStandardMaterial, type Mesh } from 'three';
+import { Component, Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { Grid, Text, useGLTF } from '@react-three/drei';
+import { Group } from 'three';
 import type { ModelEntry } from '@/lib/models/schemas';
 import type { Pose } from '@/lib/models/poses';
-import { useRobotPose, worldBounds } from './useRobotPose';
-
-/**
- * The model, ground-snapped, with pose presets and a 1.80 m human silhouette
- * for scale. Demand-rendered: nothing runs between interactions. No HDR
- * environment maps — they would be fetched from a third-party CDN.
- */
+import { createRobotRig, modelBounds } from '@/lib/models/rig';
+import { useRobotPose } from './useRobotPose';
+import { CameraControls, type CameraCommand } from './CameraControls';
+import { JointControls } from './JointControls';
 
 const POSE_LABEL: Record<string, string> = { standing: 'Standing', reach_up: 'Reach up', carry: 'Carry', crouch: 'Crouch', sit: 'Sit' };
-
-type PoseApi = { animating: boolean; pose: string; heightM: number };
-
+type PoseApi = { animating: boolean; pose: string; heightM: number; values: Pose; missing: string[] };
 function RobotModel({ entry, pose, initial, setReady, onPoseApi }: { entry: ModelEntry; pose: { name: string; values: Pose } | null; initial: Pose; setReady: (v: boolean) => void; onPoseApi: (api: PoseApi) => void }) {
   const { scene } = useGLTF(entry.glbUrl, false, true);
-  const group = useRef<Group>(null);
+  const rig = useMemo(() => createRobotRig(scene, entry.joints.joints), [scene, entry.joints.joints]);
   const [offset, setOffset] = useState(0);
-  const api = useRobotPose(scene, entry.joints.joints, initial);
-
-  useEffect(() => {
-    // Matte, slightly rough surfaces read better on a pale ground than the raw material.
-    scene.traverse((o) => {
-      const m = o as Mesh;
-      if (m.isMesh && m.material instanceof MeshStandardMaterial) {
-        m.material.roughness = Math.max(m.material.roughness, 0.55);
-        m.castShadow = true;
-      }
-    });
-    setOffset(-worldBounds(scene).minY);
-    setReady(true);
-  }, [scene, setReady]);
-
-  // Keyed on the stable callback, not on `api`: that object is rebuilt every
-  // render, and re-running this effect would restart the pose it just finished.
+  const api = useRobotPose(rig, entry.joints.joints, initial);
   const { setPose } = api;
-  useEffect(() => {
-    if (pose) setPose(pose.name, pose.values);
-  }, [pose, setPose]);
+  useEffect(() => { if (pose) setPose(pose.name, pose.values); }, [pose, setPose]);
+  useLayoutEffect(() => {
+    if (api.animating) {
+      onPoseApi({ animating: true, pose: api.pose, heightM: entry.joints.modelHeightM, values: api.values, missing: rig.missing });
+      return;
+    }
+    const bounds = modelBounds(rig.scene);
+    setOffset(-bounds.min.y);
+    onPoseApi({ animating: false, pose: api.pose, heightM: bounds.max.y - bounds.min.y, values: api.values, missing: rig.missing });
+    setReady(true);
+  }, [api.animating, api.pose, api.revision, api.values, entry.joints.modelHeightM, rig, setReady, onPoseApi]);
+  return <group position={[0, offset, 0]}><primitive object={rig.scene} dispose={null} /></group>;
+}
 
-  useEffect(() => {
-    // Once a pose has settled, snap the feet back to the floor and report the posed height.
-    const b = api.animating ? null : worldBounds(scene);
-    if (b) setOffset(-b.minY);
-    onPoseApi({ animating: api.animating, pose: api.pose, heightM: b ? b.maxY - b.minY : entry.joints.modelHeightM });
-  }, [api.animating, api.pose, onPoseApi, scene, entry.joints.modelHeightM]);
-
-  return (
-    <group ref={group} position={[0, offset, 0]}>
-      <primitive object={scene} />
-    </group>
-  );
+class ModelBoundary extends Component<{ children: ReactNode; url: string }, { failed: boolean }> {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  render() {
+    if (this.state.failed) return <div role="alert" className="flex aspect-[4/3] flex-col items-center justify-center gap-3 px-6 text-center text-sm text-muted">
+      <p>The 3D model could not load. You can still browse the robot’s photos and specifications.</p>
+      <button type="button" className="rounded-lg border border-edge px-3 py-2" onClick={() => { useGLTF.clear(this.props.url); this.setState({ failed: false }); }}>Retry 3D model</button>
+    </div>;
+    return this.props.children;
+  }
 }
 
 /**
@@ -165,105 +152,93 @@ function Ruler({ x, height }: { x: number; height: number }) {
   );
 }
 
-function ResizeInvalidate() {
-  const invalidate = useThree((s) => s.invalidate);
-  useEffect(() => {
-    const on = () => invalidate();
-    window.addEventListener('resize', on);
-    return () => window.removeEventListener('resize', on);
-  }, [invalidate]);
-  return null;
-}
 
 export function RobotViewer({ entry, presets, name, compact = false }: { entry: ModelEntry; presets: Record<string, Pose>; name: string; compact?: boolean }) {
+  const content = useRef<Group>(null);
+  const container = useRef<HTMLDivElement>(null);
   const [ready, setReady] = useState(false);
   const [pose, setPose] = useState<{ name: string; values: Pose } | null>(null);
-  const [scale, setScale] = useState(true);
-  const [api, setApi] = useState<PoseApi>({ animating: false, pose: 'standing', heightM: entry.joints.modelHeightM });
-  const half = useMemo(() => Math.max(0.5, entry.heightM * 0.45), [entry.heightM]);
+  const [scale, setScale] = useState(!compact);
+  const [mode, setMode] = useState<'rotate' | 'pan'>('rotate');
+  const [expanded, setExpanded] = useState(false);
+  const [command, setCommand] = useState<CameraCommand>({ name: 'fit', id: 0 });
   const initial = useMemo(() => presets.standing ?? {}, [presets]);
-
+  const [api, setApi] = useState<PoseApi>({ animating: false, pose: 'standing', heightM: entry.joints.modelHeightM, values: initial, missing: [] });
+  const half = Math.max(0.5, entry.heightM * 0.45);
+  const cameraAction = (name: CameraCommand['name']) => setCommand((c) => ({ name, id: c.id + 1 }));
   useEffect(() => {
-    if (compact) return setScale(false);
-    try {
-      setScale(localStorage.getItem('sitebots.scale') !== '0');
-    } catch {
-      // default on
-    }
+    if (compact) return;
+    try { setScale(localStorage.getItem('sitebots.scale') !== '0'); } catch { /* Storage is optional. */ }
   }, [compact]);
   useEffect(() => {
+    if (!expanded) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const close = (event: KeyboardEvent) => { if (event.key === 'Escape') setExpanded(false); };
+    window.addEventListener('keydown', close);
+    return () => { document.body.style.overflow = previous; window.removeEventListener('keydown', close); };
+  }, [expanded]);
+  useEffect(() => {
+    // Kept for the render/export harness; per-viewer data attributes also support multiple viewers.
     (window as unknown as { __robotViewer?: unknown }).__robotViewer = { ready, ...api };
   }, [ready, api]);
-
+  const resetJoints = useCallback(() => setPose({ name: 'standing', values: initial }), [initial]);
+  const changeJoint = (joint: string, value: number) => setPose((p) => ({ name: 'custom', values: { ...(p?.values ?? initial), [joint]: value } }));
   const presetNames = Object.keys(presets).filter((p) => p === 'standing' || Object.keys(presets[p]).length > 0);
-
-  return (
-    <div className={compact ? 'overflow-hidden' : 'card overflow-hidden'} data-robot-viewer data-ready={ready ? 'true' : 'false'}>
-      <div className="relative aspect-[4/3]">
-        <Canvas
-          dpr={[1, 1.5]}
-          frameloop="demand"
-          shadows={false}
+  const button = 'rounded-lg border border-edge bg-card/95 px-2.5 py-2 text-xs font-medium text-foreground shadow-sm transition hover:bg-subtle aria-pressed:bg-foreground aria-pressed:text-background disabled:opacity-40';
+  return <div ref={container} className={expanded ? 'fixed inset-3 z-50 overflow-auto rounded-2xl border border-edge bg-card shadow-2xl sm:inset-6' : compact ? 'overflow-hidden' : 'card overflow-hidden'} data-robot-viewer data-ready={ready ? 'true' : 'false'} data-pose={api.pose} data-animating={api.animating} data-joint-values={JSON.stringify(api.values)} data-missing-joints={api.missing.join(',')}>
+    <ModelBoundary key={entry.glbUrl} url={entry.glbUrl}>
+      <div className={expanded ? 'relative h-[70vh] min-h-72' : 'relative aspect-[4/3]'}>
+        <Canvas dpr={[1, 1.5]} frameloop="demand" shadows={false}
+          fallback={<div role="alert" className="p-6 text-sm">3D needs WebGL. Photos and specifications are still available.</div>}
           gl={{ antialias: true, powerPreference: 'low-power', alpha: compact, preserveDrawingBuffer: compact }}
-          camera={{ fov: 30, position: [3.2, 1.7, 3.6], near: 0.05, far: 60 }}
-        >
+          camera={{ fov: 30, position: [3.2, 1.7, 3.6], near: 0.005, far: 100 }}>
           {compact ? null : <color attach="background" args={['#f6f6f7']} />}
           <ambientLight intensity={0.7} />
           <hemisphereLight args={['#ffffff', '#c8c4bb', 0.6]} />
           <directionalLight position={[4, 6, 3]} intensity={1.4} />
           <directionalLight position={[-4, 3, -2]} intensity={0.5} />
           <Suspense fallback={null}>
-            {/* Robot and reference figure are framed together; the fit re-runs when the toggle changes what is in view. */}
-            <Bounds fit clip observe margin={compact ? 1.02 : 1.15} key={`${scale ? 'with-scale' : 'robot-only'}-${compact ? 'tight' : 'roomy'}`}>
+            <group ref={content}>
               <RobotModel entry={entry} pose={pose} initial={initial} setReady={setReady} onPoseApi={setApi} />
               <HumanReference x={half + 0.7} visible={scale} />
               {scale ? <Ruler x={-(half + 0.3)} height={entry.joints.modelHeightM || entry.heightM} /> : null}
-            </Bounds>
-            {compact ? null : <ContactShadows position={[0, 0.001, 0]} opacity={0.35} blur={2.2} scale={8} far={2} />}
+            </group>
+
           </Suspense>
-          {compact ? null : (
-            <Grid position={[0, 0, 0]} args={[12, 12]} cellSize={0.5} cellThickness={0.6} cellColor="#e4e4e7" sectionSize={1} sectionThickness={1} sectionColor="#cfcfd4" fadeDistance={10} fadeStrength={1.2} infiniteGrid />
-          )}
-          <OrbitControls makeDefault enablePan={false} minDistance={0.8} maxDistance={9} minPolarAngle={0.15} maxPolarAngle={Math.PI / 2 + 0.05} target={[0, entry.heightM / 2, 0]} />
-          <ResizeInvalidate />
+          {compact ? null : <Grid position={[0, 0, 0]} args={[12, 12]} cellSize={0.5} cellThickness={0.6} cellColor="#e4e4e7" sectionSize={1} sectionThickness={1} sectionColor="#cfcfd4" fadeDistance={10} fadeStrength={1.2} infiniteGrid />}
+          <CameraControls content={content} ready={ready} scale={scale} mode={mode} command={command} compact={compact} />
         </Canvas>
-        {!ready ? <div className="absolute inset-0 flex items-center justify-center text-sm text-faint"><span className="rounded-full border border-edge bg-card px-3 py-1 shadow-sm">Loading {name}…</span></div> : null}
+        {!ready ? <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-faint"><span className="rounded-full border border-edge bg-card px-3 py-1 shadow-sm">Loading {name}…</span></div> : null}
+        {compact ? null : <>
+          <div className="absolute left-3 top-3 flex gap-1" role="group" aria-label="Drag mode">
+            <button type="button" className={button} aria-pressed={mode === 'rotate'} onClick={() => setMode('rotate')}>Rotate</button>
+            <button type="button" className={button} aria-pressed={mode === 'pan'} onClick={() => setMode('pan')}>Pan</button>
+          </div>
+          <div className="absolute right-3 top-3 flex gap-1">
+            <button type="button" className={button} aria-label="Zoom in" disabled={!ready} onClick={() => cameraAction('in')}>+</button>
+            <button type="button" className={button} aria-label="Zoom out" disabled={!ready} onClick={() => cameraAction('out')}>−</button>
+            <button type="button" className={button} aria-label={expanded ? 'Close expanded view' : 'Expand 3D view'} onClick={() => setExpanded((v) => !v)}>{expanded ? 'Close' : 'Expand'}</button>
+          </div>
+          <div className="absolute bottom-3 left-3 flex flex-wrap gap-1" role="group" aria-label="Camera views">
+            {(['fit', 'front', 'side', 'top'] as const).map((view) => <button key={view} type="button" className={button} disabled={!ready} onClick={() => cameraAction(view)}>{view === 'fit' ? 'Reset view' : view[0].toUpperCase() + view.slice(1)}</button>)}
+          </div>
+        </>}
       </div>
-      {compact ? null : (
+    </ModelBoundary>
+    {compact ? null : <>
+      <p className="border-t border-edge/70 px-3 py-2 text-xs text-muted">Drag to {mode === 'pan' ? 'pan' : 'rotate'} · Scroll or pinch to zoom · Right-drag or two fingers to pan</p>
       <div className="flex flex-wrap items-center gap-1.5 border-t border-edge/70 px-3 py-2.5 text-sm">
-        {presetNames.map((p) => (
-          <button
-            key={p}
-            type="button"
-            aria-pressed={api.pose === p}
-            onClick={() => setPose({ name: p, values: presets[p] })}
-            className={`rounded-full border px-3 py-1 text-xs font-medium transition ${api.pose === p ? 'border-foreground bg-foreground text-background' : 'border-edge bg-card text-muted hover:border-edge-strong hover:text-foreground'}`}
-          >
-            {POSE_LABEL[p] ?? p.replace(/_/g, ' ')}
-          </button>
-        ))}
-        <label className="ml-auto flex items-center gap-1.5 text-xs text-muted">
-          <input
-            type="checkbox"
-            checked={scale}
-            onChange={(e) => {
-              setScale(e.target.checked);
-              try {
-                localStorage.setItem('sitebots.scale', e.target.checked ? '1' : '0');
-              } catch {
-                // fine
-              }
-            }}
-            className="h-3.5 w-3.5 rounded accent-[var(--foreground)]"
-          />
-          Show 1.80 m person
-        </label>
+        {presetNames.map((p) => <button key={p} type="button" data-pose-preset={p} aria-pressed={api.pose === p} disabled={!ready} onClick={() => setPose({ name: p, values: presets[p] })}
+          className={'rounded-full border px-3 py-1 text-xs font-medium transition ' + (api.pose === p ? 'border-foreground bg-foreground text-background' : 'border-edge bg-card text-muted hover:border-edge-strong hover:text-foreground')}>{POSE_LABEL[p] ?? p.replace(/_/g, ' ')}</button>)}
+        {api.pose === 'custom' ? <span className="rounded-full bg-subtle px-3 py-1 text-xs">Custom pose</span> : null}
+        <label className="ml-auto flex items-center gap-1.5 text-xs text-muted"><input type="checkbox" checked={scale} onChange={(event) => { setScale(event.target.checked); try { localStorage.setItem('sitebots.scale', event.target.checked ? '1' : '0'); } catch { /* Storage is optional. */ } }} className="h-3.5 w-3.5 rounded accent-[var(--foreground)]" />Show 1.80 m person</label>
         <span className="num text-xs text-faint" title="Height of the model in the current pose">model {api.heightM.toFixed(2)} m</span>
       </div>
-      )}
-      {compact ? null : <ModelCredits entry={entry} />}
-    </div>
-  );
+      <JointControls joints={entry.joints.joints.filter((j) => !api.missing.includes(j.name))} values={api.values} onChange={changeJoint} onReset={resetJoints} disabled={!ready} />
+      <ModelCredits entry={entry} />
+    </>}
+  </div>;
 }
 
 function ModelCredits({ entry }: { entry: ModelEntry }) {

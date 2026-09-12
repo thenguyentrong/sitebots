@@ -1,5 +1,5 @@
 import { FetchRefused, politeFetch } from './fetch';
-import type { Ctx, RawRecord, Snapshot, SourceAdapter } from './types';
+import type { IndexEntry, Ctx, RawRecord, Snapshot, SourceAdapter } from './types';
 
 export type RunResult = {
   records: RawRecord[];
@@ -35,7 +35,14 @@ export async function runAdapter(
   };
 
   opts.log(`${adapter.id}: reading index`);
-  let entries = await adapter.fetchIndex(ctx);
+  let entries: IndexEntry[];
+  try { entries = await adapter.fetchIndex(ctx); }
+  catch (e) {
+    result.blocked = e instanceof FetchRefused && e.code === 'blocked';
+    result.errors.push(`${adapter.id} index: ${e instanceof FetchRefused ? e.code+' — ' : ''}${e instanceof Error ? e.message : String(e)}`);
+    opts.log(result.errors[0]);
+    return result;
+  }
   if (opts.only) entries = entries.filter((e) => e.slug === opts.only || e.url === opts.only);
   if (opts.limit) entries = entries.slice(0, opts.limit);
   opts.log(`${adapter.id}: ${entries.length} entries`);

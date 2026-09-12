@@ -14,5 +14,5 @@ const RobotViewer = dynamic(() => import('./RobotViewer').then((m) => m.RobotVie
 });
 
 export function RobotViewerLazy(props: { entry: ModelEntry; presets: Record<string, Pose>; name: string; compact?: boolean }) {
-  return <RobotViewer {...props} />;
+  return <RobotViewer key={props.entry.glbUrl} {...props} />;
 }

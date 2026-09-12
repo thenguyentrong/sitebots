@@ -1,3 +1,5 @@
+import { westwood } from './mfr/westwood';
+import { limx } from './mfr/limx';
 import type { SourceAdapter } from '../_lib/types';
 import { generationRobots } from './dist/generation-robots';
 import { openelab } from './dist/openelab';
@@ -16,6 +18,8 @@ import { unitreeShop } from './unitree-shop';
 
 /** Registry, in the order they are worth running: makers, stores, distributors, then aggregators. */
 export const ADAPTERS: readonly SourceAdapter[] = [
+  limx,
+  westwood,
   unitree,
   unitreeShop,
   bostonDynamics,
@@ -32,7 +36,7 @@ export const ADAPTERS: readonly SourceAdapter[] = [
   humanoidHub,
 ];
 
-export const MANUFACTURER_ADAPTERS = ['unitree', 'boston-dynamics', 'deep-robotics', 'onex', 'pal', 'maker-pages'];
+export const MANUFACTURER_ADAPTERS = ['limx', 'westwood', 'unitree', 'boston-dynamics', 'deep-robotics', 'onex', 'pal', 'maker-pages'];
 export const DISTRIBUTOR_ADAPTERS = ['quadruped-de', 'openelab', 'generation-robots'];
 
 export function adapterById(id: string): SourceAdapter {

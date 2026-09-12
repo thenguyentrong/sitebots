@@ -15,7 +15,9 @@
     "aliases:generate": "node --import tsx scripts/aliases-generate.ts",
     "curated": "node --env-file-if-exists=.env.local --import tsx scripts/load-curated.ts",
     "report": "node --env-file-if-exists=.env.local --import tsx scripts/report-coverage.ts",
-    "shot": "node --import tsx tests/shot.ts"
+    "shot": "node --import tsx tests/shot.ts",
+    "audit:catalogue": "node --env-file-if-exists=.env.local --import tsx scripts/audit-catalogue.ts",
+    "audit:media": "node --import tsx scripts/audit-media.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",

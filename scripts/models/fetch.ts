@@ -1,7 +1,6 @@
-import { createWriteStream, existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
-import { Readable } from 'node:stream';
-import { pipeline } from 'node:stream/promises';
+import { politeFetch, politeAsset } from '../scrape/_lib/fetch';
 import type { ModelSource } from '@/lib/models/schemas';
 
 /**
@@ -12,7 +11,7 @@ import type { ModelSource } from '@/lib/models/schemas';
  * stage after parsing.
  */
 const CACHE = join(process.cwd(), '.cache', 'models');
-const UA = 'SitebotsBot/0.1 (+http://localhost:3000/bot)';
+
 
 export type TreeEntry = { path: string; type: 'blob' | 'tree'; size?: number; sha: string };
 
@@ -36,11 +35,10 @@ export async function repoTree(repo: string, sha: string): Promise<TreeEntry[]> 
     if (j.tree) return j.tree;
   }
   mkdirSync(dirname(file), { recursive: true });
-  const headers: Record<string, string> = { 'user-agent': UA, accept: 'application/vnd.github+json' };
+  const headers: Record<string, string> = {};
   if (process.env.GITHUB_TOKEN) headers.authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
-  const res = await fetch(`https://api.github.com/repos/${repo}/git/trees/${sha}?recursive=1`, { headers, signal: AbortSignal.timeout(60_000) });
-  if (!res.ok) throw new Error(`GitHub tree ${repo}@${sha}: HTTP ${res.status}`);
-  const json = (await res.json()) as { tree: TreeEntry[]; truncated: boolean };
+  const res = await politeFetch(`https://api.github.com/repos/${repo}/git/trees/${sha}?recursive=1`, { headers, accept: 'application/vnd.github+json' });
+  const json = JSON.parse(res.body) as { tree: TreeEntry[]; truncated: boolean };
   if (json.truncated) throw new Error(`GitHub tree ${repo}@${sha} is truncated; fetch by subfolder`);
   writeFileSync(file, JSON.stringify(json));
   return json.tree;
@@ -50,15 +48,9 @@ async function download(repo: string, sha: string, path: string, dest: string, e
   if (existsSync(dest) && (expectedSize === undefined || statSync(dest).size === expectedSize)) return 'cached';
   mkdirSync(dirname(dest), { recursive: true });
   const url = `https://raw.githubusercontent.com/${repo}/${sha}/${path}`;
-  const res = await fetch(url, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(300_000) });
-  if (!res.ok || !res.body) throw new Error(`${url}: HTTP ${res.status}`);
-  await pipeline(Readable.fromWeb(res.body as import('stream/web').ReadableStream), createWriteStream(dest));
-  // Git LFS pointers are tiny text files; the real bytes live on the media host.
-  if (statSync(dest).size < 400 && readFileSync(dest, 'utf8').startsWith('version https://git-lfs')) {
-    const lfs = await fetch(`https://media.githubusercontent.com/media/${repo}/${sha}/${path}`, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(300_000) });
-    if (!lfs.ok || !lfs.body) throw new Error(`${url}: LFS pointer but media fetch failed (${lfs.status})`);
-    await pipeline(Readable.fromWeb(lfs.body as import('stream/web').ReadableStream), createWriteStream(dest));
-  }
+  let bytes = await politeAsset(url, 300_000);
+  if (bytes.length < 400 && bytes.toString('utf8').startsWith('version https://git-lfs')) bytes = await politeAsset(`https://media.githubusercontent.com/media/${repo}/${sha}/${path}`, 300_000);
+  writeFileSync(dest, bytes);
   return 'fetched';
 }
 
@@ -82,7 +74,7 @@ export async function fetchDescription(src: ModelSource, log: (m: string) => voi
       e.type === 'blob' &&
       ((e.path.startsWith(src.path + '/') && /\.(urdf|xacro|xml|mtl)$/i.test(e.path)) ||
         Object.values(src.packages).some((p) => e.path.startsWith(p + '/') && /\.(urdf|xacro|xml|mtl)$/i.test(e.path)) ||
-        /^(LICENSE|LICENCE|NOTICE)(\.[a-z]+)?$/i.test(e.path) ||
+        /^(LICENSE|LICENCE|NOTICE|THIRD_PARTY_NOTICES|ASSETS)(\.[a-z]+)?$/i.test(e.path) ||
         e.path === src.licenseFile),
   );
   let fetched = 0;
@@ -114,7 +106,8 @@ export async function fetchMeshes(src: ModelSource, tree: TreeEntry[], paths: st
 
 export function licenseText(src: ModelSource): { text: string; copyright: string } {
   const p = join(srcDir(src), src.licenseFile);
-  const text = existsSync(p) ? readFileSync(p, 'utf8') : '';
+  let text = existsSync(p) ? readFileSync(p, 'utf8') : '';
+  for (const notice of ['NOTICE', 'THIRD_PARTY_NOTICES.md']) { const file=join(srcDir(src),notice); if(existsSync(file)) text += `\n\n--- ${notice} ---\n` + readFileSync(file,'utf8'); }
   const copyright = src.copyright ?? text.split(/\r?\n/).find((l) => /copyright/i.test(l))?.trim() ?? '';
   return { text, copyright };
 }

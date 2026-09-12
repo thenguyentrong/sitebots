@@ -6,38 +6,25 @@
 // Two stages. First the repository search, because most makers publish one
 // repo for their whole fleet (unitree_ros carries G1, H1, Go2, B2 …). Then,
 // for every candidate, the licence and the URDF/xacro/MJCF files it holds.
-// Nothing is downloaded and nothing is written: the output is a shortlist to
-// paste into data/models/sources.json by hand, after a human has looked at it.
+// No model assets are downloaded: JSON reports contain source leads to
+// review for exact robot identity and asset-specific licensing before conversion.
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { parse as parseYaml } from 'yaml';
+import { politeFetch } from '../scrape/_lib/fetch';
 import { args, str } from '../scrape/_lib/args';
 
 const TOKEN = process.env.GITHUB_TOKEN || '';
-const UA = 'SitebotsBot/0.1 (+https://sitebots.dev/bot)';
 
-/** Only these can be rehosted; anything else is a look-but-do-not-touch. */
+
+/** Repository-level licence candidates; asset-specific notices still require review. */
 const ALLOWED = new Set(['bsd-3-clause', 'bsd-2-clause', 'mit', 'apache-2.0', 'cc0-1.0', 'unlicense']);
 
 type Repo = { full_name: string; description: string | null; stargazers_count: number; license: { spdx_id: string } | null; default_branch: string; pushed_at: string };
 
 async function gh<T>(path: string): Promise<T | null> {
-  const res = await fetch(`https://api.github.com${path}`, {
-    headers: {
-      accept: 'application/vnd.github+json',
-      'user-agent': UA,
-      ...(TOKEN ? { authorization: `Bearer ${TOKEN}` } : {}),
-    },
-  });
-  if (res.status === 403 || res.status === 429) {
-    const reset = Number(res.headers.get('x-ratelimit-reset') ?? 0) * 1000;
-    const wait = Math.max(2000, reset - Date.now() + 1000);
-    console.error(`  rate limited, waiting ${Math.round(wait / 1000)}s`);
-    await new Promise((r) => setTimeout(r, Math.min(wait, 65_000)));
-    return gh<T>(path);
-  }
-  if (!res.ok) return null;
-  return (await res.json()) as T;
+  try { const res=await politeFetch(`https://api.github.com${path}`,{accept:'application/vnd.github+json',headers:TOKEN?{authorization:`Bearer ${TOKEN}`}:{}}); return JSON.parse(res.body) as T; }
+  catch(e) { console.error(`  skipped ${path}: ${String(e)}`); return null; }
 }
 
 /** Search queries per maker, most specific first. */
@@ -90,7 +77,7 @@ function sweepQueries(name: string): string[] {
   return [`"${q}" urdf OR mjcf OR description in:name,description,readme`, `"${q}" robot description`];
 }
 
-/** A repo counts as first-party when its owner shares a name token with the maker. */
+/** Name-based discovery heuristic, not proof that the repository belongs to the maker. */
 function firstParty(repoFullName: string, maker: { slug: string; name: string }): boolean {
   const owner = repoFullName.split('/')[0].toLowerCase().replace(/[^a-z0-9]/g, '');
   const toks = `${maker.slug} ${maker.name}`.toLowerCase().split(/[^a-z0-9]+/).filter((t) => t.length > 2 && !['robotics', 'robot', 'inc', 'ltd', 'technologies', 'technology', 'dynamics', 'the'].includes(t));
@@ -100,34 +87,42 @@ function firstParty(repoFullName: string, maker: { slug: string; name: string })
 async function sweepAll(limit: number) {
   const makers = allMakers().slice(0, limit);
   console.log(`sweeping ${makers.length} makers, 2 searches each — roughly ${Math.ceil((makers.length * 2 * 2.2) / 60)} min\n`);
-  const seen = new Set<string>();
-  const hits: (Hit & { maker: string; firstParty: boolean })[] = [];
+  const output=process.env.MODEL_SWEEP_OUTPUT ?? '.out/github-sweep.json';
+  const resume=Number(process.env.MODEL_SWEEP_RESUME ?? 0);
+  const hits: (Hit & { maker: string; firstParty: boolean })[] = resume && existsSync(output) ? JSON.parse(readFileSync(output,'utf8')) : [];
+  const seen = new Set(hits.map(h=>h.repo));
   let n = 0;
   for (const maker of makers) {
     n++;
+    if(n<=resume) continue;
     for (const q of sweepQueries(maker.name)) {
       const found = await gh<{ items: Repo[] }>(`/search/repositories?q=${encodeURIComponent(q)}&sort=stars&per_page=6`);
-      await new Promise((r) => setTimeout(r, 2200)); // 30 searches/min
+      // politeFetch reserves one request slot per two seconds, for network searches.
+      if(!TOKEN) await new Promise(r=>setTimeout(r,6200));
       for (const repo of found?.items ?? []) {
         if (seen.has(repo.full_name)) continue;
         seen.add(repo.full_name);
+        const fp = firstParty(repo.full_name, maker);
+        // Non-matching owners remain search leads; only likely maker repositories warrant expensive tree inspection.
+        if(!fp) continue;
         const hit = await inspect(repo);
         if (!hit) continue;
-        const fp = firstParty(repo.full_name, maker);
         hits.push({ ...hit, maker: maker.slug, firstParty: fp });
         if (hit.allowed && fp) console.log(`  ★ ${maker.slug.padEnd(20)} ${hit.repo}  ${hit.spdx}  urdf=${hit.urdf.length} xacro=${hit.xacro.length} mjcf=${hit.mjcf.length}`);
       }
     }
+    writeFileSync(output+'.progress.json', JSON.stringify({checked:n,total:makers.length,lastMaker:maker.slug,at:new Date().toISOString()}));
+    writeFileSync(output, JSON.stringify(hits,null,2));
     if (n % 25 === 0) {
-      writeFileSync('.out/github-sweep.json', JSON.stringify(hits, null, 2));
+      writeFileSync(process.env.MODEL_SWEEP_OUTPUT ?? '.out/github-sweep.json', JSON.stringify(hits, null, 2));
       console.log(`  … ${n}/${makers.length} makers, ${hits.length} repos so far`);
     }
   }
   hits.sort((x, y) => Number(y.allowed && y.firstParty) - Number(x.allowed && x.firstParty) || Number(y.allowed) - Number(x.allowed) || y.stars - x.stars);
-  writeFileSync('.out/github-sweep.json', JSON.stringify(hits, null, 2));
+  writeFileSync(output, JSON.stringify(hits, null, 2));
   const short = hits.filter((h) => h.allowed && h.firstParty);
-  console.log(`\n${hits.length} repos inspected · ${hits.filter((h) => h.allowed).length} permissive · ${short.length} permissive AND first-party → .out/github-sweep.json`);
-  console.log('\nShortlist (permissive, first-party):');
+  console.log(`\n${hits.length} repos inspected · ${hits.filter((h) => h.allowed).length} permissive · ${short.length} permissive repository licences with matching owner names → ${output}`);
+  console.log('\nShortlist (candidate licences and owner-name matches; verify before reuse):');
   for (const h of short) console.log(`  ${h.maker.padEnd(20)} ${h.repo.padEnd(48)} ${h.spdx.padEnd(12)} ${[...h.urdf, ...h.xacro, ...h.mjcf].slice(0, 3).join('  ')}`);
 }
 
@@ -160,7 +155,7 @@ async function main() {
   }
   hits.sort((x, y) => Number(y.allowed) - Number(x.allowed) || y.stars - x.stars);
   writeFileSync('.out/github-models.json', JSON.stringify(hits, null, 2));
-  console.log(`\n${hits.length} candidate repos, ${hits.filter((h) => h.allowed).length} with a licence we can rehost → .out/github-models.json`);
+  console.log(`\n${hits.length} candidate repos, ${hits.filter((h) => h.allowed).length} with a candidate repository licence → .out/github-models.json`);
 }
 
 main().catch((e) => {

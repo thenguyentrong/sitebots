@@ -1,4 +1,5 @@
 import { getSql } from '@/lib/db';
+import { isPublicManufacturer, publicManufacturerSlugs } from '@/lib/manufacturers';
 import type { FormFactor } from '@/lib/spec/enums';
 import type { AvailabilityCurrent, PriceCurrent, RobotCard, RobotSource, SpecConflict } from '@/lib/spec/types';
 import { coerceRows } from './coerce';
@@ -20,9 +21,10 @@ export async function listRobotCards(filter: CardFilter = {}): Promise<{ robots:
      where ($1::text is null or form_factor = $1)
        and ($2::text is null or name ilike $2 or manufacturer_name ilike $2 or model_slug ilike $2)
        and ($4::boolean or image_url is not null)
+       and manufacturer_slug = any($5::text[])
      order by coalesce(array_length(verified_fields, 1), 0) desc, completeness desc, manufacturer_name, name, variant
      limit $3`,
-    [filter.formFactor ?? null, q, filter.limit ?? 1000, all],
+    [filter.formFactor ?? null, q, filter.limit ?? 1000, all, publicManufacturerSlugs()],
   );
   const total = rows.length ? Number(rows[0].total_count) : 0;
   // How many the picture rule keeps off the page, so the page can say so instead of silently shrinking.
@@ -32,8 +34,9 @@ export async function listRobotCards(filter: CardFilter = {}): Promise<{ robots:
         `select count(*)::int as n from robot_cards
          where ($1::text is null or form_factor = $1)
            and ($2::text is null or name ilike $2 or manufacturer_name ilike $2 or model_slug ilike $2)
-           and image_url is null`,
-        [filter.formFactor ?? null, q],
+           and image_url is null
+           and manufacturer_slug = any($3::text[])`,
+        [filter.formFactor ?? null, q, publicManufacturerSlugs()],
       );
   const hidden = hiddenRows.length ? Number(hiddenRows[0].n) : 0;
   return { robots: coerceRows<RobotCard>(rows), total, hidden };
@@ -121,7 +124,7 @@ export async function listRobotPaths(): Promise<{ manufacturer: string; slug: st
     from robots r join manufacturers m on m.id = r.manufacturer_id
     left join robot_current rc on rc.robot_id = r.id
     group by m.slug, r.model_slug order by m.slug, r.model_slug`;
-  return rows.map((r) => ({
+  return rows.filter((r) => isPublicManufacturer(String(r.manufacturer))).map((r) => ({
     manufacturer: String(r.manufacturer),
     slug: String(r.slug),
     updated: r.updated instanceof Date ? r.updated.toISOString() : String(r.updated),

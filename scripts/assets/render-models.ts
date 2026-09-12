@@ -12,7 +12,7 @@
 // A photograph always outranks a render (is_primary), so a robot that has both
 // shows the photograph on its card and keeps the render as a fallback.
 
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { chromium } from '@playwright/test';
 import { getRobotModel, listModelKeys } from '@/lib/models/index';
@@ -64,11 +64,8 @@ async function shoot(only?: string) {
         'nextjs-portal,[data-nextjs-toast],#__next-build-watcher{display:none!important}' +
         'html,body,main,[data-robot-viewer]{background:transparent!important}',
     });
-    // <Bounds> refits when the scale figure disappears; give it a resize and
-    // time to settle, or the shot is framed for a robot plus a 1.80 m person.
-    await page.setViewportSize({ width: SIZE.width, height: SIZE.height - 1 });
-    await page.setViewportSize(SIZE);
-    await page.waitForTimeout(4000);
+    await page.locator('[data-robot-viewer] canvas[data-camera-ready="true"]').waitFor({ timeout: 30_000 });
+    await page.locator('[data-robot-viewer][data-animating="false"]').waitFor({ timeout: 30_000 });
     const file = join(OUT, `${key.replace('/', '__')}.png`);
     await page.locator('[data-robot-viewer] canvas').first().screenshot({ path: file, omitBackground: true });
     await page.close();
@@ -78,7 +75,11 @@ async function shoot(only?: string) {
   }
 
   await browser.close();
-  writeFileSync(MANIFEST, JSON.stringify(shots, null, 2));
+  const previous: Shot[] = existsSync(MANIFEST) ? JSON.parse(readFileSync(MANIFEST, 'utf8')) : [];
+  const merged = new Map(previous.map((shot) => [shot.key, shot]));
+  for (const shot of shots) merged.set(shot.key, shot);
+  writeFileSync(MANIFEST, JSON.stringify([...merged.values()], null, 2));
+  if (shots.length !== keys.length) throw new Error('Some models did not render; previous manifest entries were preserved.');
   console.log(`\n${shots.length} render(s) in ${OUT}. Stop the dev server, then re-run with --attach --commit.`);
 }
 

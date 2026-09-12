@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { isPublicManufacturer } from '@/lib/manufacturers';
 import { CompareToggle } from '@/components/compare/CompareBar';
 import { JsonLd } from '@/components/JsonLd';
 import { EvidenceBadge } from '@/components/robot/EvidenceBadge';
@@ -40,11 +41,11 @@ export async function generateMetadata({ params, searchParams }: { params: Param
     r.payload_kg_conservative !== null ? `${r.payload_kg_conservative} kg payload` : null,
     r.ip_rating,
   ].filter(Boolean);
-  return publicMetadata({
+  return { ...publicMetadata({
     title: `${r.name} specs, price and site suitability`,
     description: `${r.manufacturer_name} ${r.name}: ${bits.join(', ') || 'specifications'} — with the source of every value, regional prices and delivery status.`,
     path: `/robots/${manufacturer}/${slug}`,
-  });
+  }), ...(!isPublicManufacturer(manufacturer) ? { robots: { index: false, follow: false } } : {}) };
 }
 
 const STATUS_VARIANT: Record<string, 'success' | 'info' | 'neutral' | 'warn'> = {
@@ -102,11 +103,11 @@ export default async function RobotPage({ params, searchParams }: { params: Para
   const path = `${base}${robot.variant === 'base' ? '' : `?variant=${robot.variant}`}`;
   const profile = profileFor({ card: robot, prices, availability });
   const model = getRobotModel(`${manufacturer}/${slug}`, robot.variant);
-  const presets = model ? resolvePresets(`${manufacturer}/${slug}`, robot.form_factor, model.joints.joints) : {};
+  const presets = model ? resolvePresets(`${manufacturer}/${slug}${robot.variant === 'base' ? '' : `#${robot.variant}`}`, robot.form_factor, model.joints.joints) : {};
 
   return (
     <>
-      <JsonLd data={productJsonLd(robot, prices, availability, path)} />
+      {isPublicManufacturer(manufacturer) ? <JsonLd data={productJsonLd(robot, prices, availability, path)} /> : null}
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Robots', path: '/robots' },
@@ -157,6 +158,7 @@ export default async function RobotPage({ params, searchParams }: { params: Para
       </div>
 
       <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
+        {!isPublicManufacturer(manufacturer) ? <p className="card mb-6 p-4 text-sm text-muted">Reference only · This manufacturer has no verified current or upcoming commercial offering in our review. This robot is hidden from the supplier catalogue and matcher. <Link href={`/brands/${manufacturer}`} className="underline underline-offset-4">View manufacturer review</Link></p> : null}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <div className="space-y-6">
             <RobotMedia model={model} presets={presets} images={images} name={robot.name} formFactor={robot.form_factor} compact={compact} />

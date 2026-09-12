@@ -1,4 +1,5 @@
 import { getSql } from '@/lib/db';
+import { isPublicManufacturer } from '@/lib/manufacturers';
 import { coerceRows } from '@/lib/queries/coerce';
 import type { AvailabilityCurrent, PriceCurrent, RobotCard } from '@/lib/spec/types';
 import type { Candidate } from './types';
@@ -28,7 +29,7 @@ export async function loadCandidates(): Promise<{ candidates: Candidate[]; usdTo
     l.push(a);
     byRobotAvail.set(a.robot_id, l);
   }
-  const candidates = coerceRows<RobotCard>(cards).map((card) => ({
+  const candidates = coerceRows<RobotCard>(cards).filter((card) => isPublicManufacturer(card.manufacturer_slug)).map((card) => ({
     card,
     prices: byRobotPrice.get(card.id) ?? [],
     availability: byRobotAvail.get(card.id) ?? [],

@@ -18,15 +18,18 @@
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { tokens, scorePath } from './model-matching';
 import * as cheerio from 'cheerio';
 import { COMMIT, db, done, preflight } from '../_guard';
-import { FetchRefused, politeFetch } from '../scrape/_lib/fetch';
+import { FetchRefused, politeFetch, politeAsset } from '../scrape/_lib/fetch';
 import { args, num, str } from '../scrape/_lib/args';
 
-const REVIEW = '.out/review-previews';
+const SKIP_PATH = /\/(news|blog|press|media|posts?|articles?|careers|jobs|case[-_]?stud|events?|support|docs?|legal|privacy|terms|about|contact|investors?|tag|category|wp-content|feed)(\/|$|\.)/i;
+
+const REVIEW = process.env.PREVIEW_REVIEW_DIR ?? '.out/review-previews';
 const APPROVED = 'data/assets/previews.json';
 const UA = 'SitebotsBot/0.1 (+https://sitebots.dev/bot)';
-const SKIP_PATH = /\/(news|blog|press|media|posts?|articles?|careers|jobs|case[-_]?stud|events?|support|docs?|legal|privacy|terms|about|contact|investors?|tag|category|wp-content|feed)(\/|$|\.)/i;
+
 
 type Row = { id: string; maker: string; maker_slug: string; model_slug: string; name: string; website: string | null; known: string | null };
 type Cand = { page: string; image: string; width: number | null; height: number | null; title: string; extras?: string[]; how: 'ledger' | 'sitemap' | 'homepage' | 'listing' | 'search' | 'named'; via: 'meta' | 'rendered-meta' | 'hero' };
@@ -62,12 +65,12 @@ async function renderedPreview(page: string, generic: (img: string) => boolean =
       const og = meta('meta[property="og:image"]') || meta('meta[name="twitter:image"]');
       const title = meta('meta[property="og:title"]') || document.title;
       const same = (u) => GENERIC && u && u.split('?')[0] === GENERIC.split('?')[0];
-      if (og && !same(og)) return { image: og, via: 'rendered-meta', width: null, height: null, title };
+      if (og && !same(og) && !/logo|icon|placeholder/i.test(og)) return { image: og, via: 'rendered-meta', width: null, height: null, title };
       const bad = /logo|icon|sprite|avatar|flag|qr|badge|payment|placeholder|blank|pixel/i;
       const seen = new Set();
       const all = [];
       const consider = (src, r, w, h) => {
-        if (!src || r.width < 400 || r.height < 250 || bad.test(src) || same(src)) return;
+        if (!src || r.width < 400 || r.height < 250 || w < 160 || h < 160 || bad.test(src) || same(src)) return;
         const key = src.split('?')[0];
         if (seen.has(key)) return;
         seen.add(key);
@@ -104,14 +107,6 @@ type Approved = {
   /** Pictures turned down by eye, per robot, so a later pass does not propose them again. */
   _rejected_images?: Record<string, string[]>;
 };
-
-function tokens(s: string): string[] {
-  return s
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, ' ')
-    .split(' ')
-    .filter((t) => t.length > 1 && !['the', 'robot', 'robotics', 'inc', 'ltd', 'co', 'gmbh', 'technologies', 'series', 'humanoid'].includes(t));
-}
 
 async function html(url: string): Promise<string | null> {
   try {
@@ -162,21 +157,6 @@ async function sitemapUrls(site: string): Promise<string[]> {
 }
 
 /** Score a URL as the product page for a model: every model token in the path, shorter is better. */
-function scorePath(url: string, modelTok: string[], site: string): number {
-  let path: string;
-  try {
-    const u = new URL(url);
-    if (u.host.replace(/^www\./, '') !== new URL(site).host.replace(/^www\./, '')) return 0;
-    path = decodeURIComponent(u.pathname).toLowerCase();
-  } catch {
-    return 0;
-  }
-  if (SKIP_PATH.test(path)) return 0;
-  const hay = ` ${path.replace(/[^a-z0-9]+/g, ' ')} `;
-  if (!modelTok.every((t) => hay.includes(` ${t} `))) return 0;
-  return 10 - Math.min(6, path.split('/').filter(Boolean).length) + (/(product|robot)s?\//.test(path) ? 1 : 0);
-}
-
 const LISTING = /[/](products?|robots?|humanoids?|solutions?|portfolio|catalog(ue)?|models?|lineup|series)[/]?$/i;
 
 async function renderedLinks(url: string): Promise<[string, string][]> {
@@ -298,7 +278,12 @@ async function discover(r: Row, homepageImage: string | null): Promise<Cand | nu
     const generic = (img: string) => !!homepageImage && img.split('?')[0] === homepageImage.split('?')[0];
     let p: Omit<Cand, 'how' | 'page'> | null = meta ? { ...meta, via: 'meta' } : null;
     // The site-wide og:image (the company's generic picture) says nothing about this page; the rendered hero might.
-    if (!p || generic(p.image)) p = await renderedPreview(page, generic, homepageImage);
+    if (!p || generic(p.image) || /logo|icon|placeholder/i.test(p.image)) {
+      const $ = cheerio.load(body);
+      const candidates = $('img').toArray().map(el=>({ image: $(el).attr('src') || $(el).attr('data-src') || '', alt: $(el).attr('alt') || '' })).filter(im=>im.image && !/logo|icon|sprite|qr/i.test(im.image) && modelTok.every(t=>tokens(im.alt+' '+im.image.split('/').pop()).includes(t)));
+      if(candidates.length) p={image:new URL(candidates[0].image,page).toString(),width:null,height:null,title:$('title').text(),via:'hero'};
+      else p=await renderedPreview(page,generic,homepageImage);
+    }
     if (!p) return say(`${page}: no og:image in the HTML and nothing usable after rendering`), null;
     if (generic(p.image)) return say(`${page}: same image as the homepage (generic)`), null;
     if (p.width !== null && p.height !== null && (p.width < 300 || p.height < 200)) return say(`${page}: image too small (${p.width}×${p.height})`), null;
@@ -381,7 +366,12 @@ async function discover(r: Row, homepageImage: string | null): Promise<Cand | nu
 /** --makers a,b,c restricts a pass to those maker slugs — the second pass after new websites arrived. */
 const MAKERS = (() => { const i = process.argv.indexOf('--makers'); return i > 0 ? process.argv[i + 1].split(',').map((x) => x.trim()).filter(Boolean) : null; })();
 
-async function robotsWithout(sql: Awaited<ReturnType<typeof db>>, limit: number, only?: string): Promise<Row[]> {
+async function robotsWithout(sql: Awaited<ReturnType<typeof db>> | null, limit: number, only?: string): Promise<Row[]> {
+  if (process.env.CATALOGUE_SCAN_INPUT) {
+    const rows = JSON.parse(readFileSync(process.env.CATALOGUE_SCAN_INPUT, 'utf8')) as (Row & {variant: string; key: string; sourceUrls?: string[]})[];
+    return rows.filter(r=>r.variant==='base' && (!only || r.key===only) && (!MAKERS || MAKERS.includes(r.maker_slug))).slice(0,limit).map(r=>({...r,known:r.sourceUrls?.find((u:string)=>r.website && new URL(u).hostname.replace(/^www\./,'')===new URL(r.website).hostname.replace(/^www\./,'')) ?? null}));
+  }
+  if (!sql) throw new Error('Database or catalogue export required');
   return (await sql`
     select r.id, m.name as maker, m.slug as maker_slug, r.model_slug, r.name, m.website_url as website,
            (select rs.source_url from robot_sources rs join sources s on s.id = rs.source_id
@@ -398,7 +388,7 @@ async function robotsWithout(sql: Awaited<ReturnType<typeof db>>, limit: number,
     limit ${limit}`) as unknown as Row[];
 }
 
-async function review(sql: Awaited<ReturnType<typeof db>>, limit: number, only?: string) {
+async function review(sql: Awaited<ReturnType<typeof db>> | null, limit: number, only?: string) {
   const rows = await robotsWithout(sql, limit, only);
   const approved = existsSync(APPROVED) ? (JSON.parse(readFileSync(APPROVED, 'utf8')) as Approved) : { images: {}, _rejected: {} };
   mkdirSync(REVIEW, { recursive: true });
@@ -406,9 +396,12 @@ async function review(sql: Awaited<ReturnType<typeof db>>, limit: number, only?:
   const homepageImage = new Map<string, string | null>();
   const manifest: (Cand & { robot: string; name: string; maker: string })[] = [];
   const misses: Record<string, string[]> = {};
-  for (const r of rows) {
+  const groups = new Map<string, Row[]>();
+  for (const row of rows) { const host=row.website ? new URL(row.website).host : '(no website)'; groups.set(host,[...(groups.get(host)??[]),row]); }
+  const queue=[...groups.values()];
+  const scan = async (r: Row) => {
     const key = `${r.maker_slug}/${r.model_slug}`;
-    if (approved.images[key] || approved._rejected?.[key]) continue;
+    if (approved.images[key] || (approved._rejected?.[key] && !process.argv.includes('--revisit'))) return;
     if (r.website && !homepageImage.has(r.website)) {
       const body = await html(r.website);
       homepageImage.set(r.website, body ? previewOf(r.website, body)?.image ?? null : null);
@@ -417,18 +410,20 @@ async function review(sql: Awaited<ReturnType<typeof db>>, limit: number, only?:
     if (!c) {
       console.log(`  –  ${key.padEnd(30)} ${r.website ? new URL(r.website).host : '(no website)'}`);
       (misses[r.website ? new URL(r.website).host : '(no website)'] ??= []).push(key);
-      continue;
+      writeFileSync(join(REVIEW, 'misses.json'), JSON.stringify(misses, null, 2));
+      return;
     }
     // One download for the reviewer's eyes; the site itself hotlinks.
     try {
-      const res = await fetch(c.image, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(30_000) });
-      if (res.ok) writeFileSync(join(REVIEW, `${r.maker_slug}__${r.model_slug}.img`), Buffer.from(await res.arrayBuffer()));
+      writeFileSync(join(REVIEW, `${r.maker_slug}__${r.model_slug}.img`), await politeAsset(c.image));
     } catch {
       // the sheet shows a broken tile, which is itself a finding
     }
     manifest.push({ robot: key, name: r.name, maker: r.maker, ...c });
+    writeFileSync(join(REVIEW, 'manifest.json'), JSON.stringify(manifest, null, 2));
     console.log(`  ?  ${key.padEnd(30)} ${c.how.padEnd(8)} ${c.via.padEnd(13)} ${c.page}`);
   }
+  await Promise.all(Array.from({length:6},async()=>{ while(queue.length) { const group=queue.shift()!; for(const r of group) { try { await scan(r); } catch(e) { (misses['scan-error']??=[]).push(`${r.maker_slug}/${r.model_slug}: ${String(e)}`); } } } }));
   writeFileSync(join(REVIEW, 'manifest.json'), JSON.stringify(manifest, null, 2));
   writeFileSync(join(REVIEW, 'misses.json'), JSON.stringify(misses, null, 2));
   // Contact sheets: 20 per page, so a few hundred candidates are a dozen images.
@@ -582,10 +577,10 @@ async function main() {
     return;
   }
   const a = args();
-  const sql = await db();
-  await preflight(sql, 'maker preview images');
+  const sql = process.env.CATALOGUE_SCAN_INPUT && a.review === true ? null : await db();
+  if (sql) await preflight(sql, 'maker preview images');
   if (a.review === true) await review(sql, num(a.limit) ?? 300, str(a.only));
-  else await apply(sql);
+  else { if (!sql) throw new Error('Database required'); await apply(sql); }
   if (!COMMIT) console.log('(dry run — nothing was written)');
   if (browserPromise) await (await browserPromise).close();
   await done();

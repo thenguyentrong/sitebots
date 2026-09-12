@@ -101,7 +101,12 @@ function agrees(a: FactRow, b: FactRow): boolean {
 
 export function projectSpecs(rows: FactRow[]): { specs: Specs; conflicts: SpecConflict[] } {
   const groups = new Map<string, FactRow[]>();
+  // Old values remain in the ledger; only the latest observation from a URL describes its current claim.
+  const latest = new Map<string, number>();
+  const sourceKey = (r: FactRow) => JSON.stringify([r.field, r.qualifier, r.source_url]);
+  for (const r of rows) latest.set(sourceKey(r), Math.max(latest.get(sourceKey(r)) ?? -Infinity, new Date(r.observed_at).getTime()));
   for (const r of rows) {
+    if (new Date(r.observed_at).getTime() < latest.get(sourceKey(r))!) continue;
     const key = specKey(r.field, r.qualifier);
     const g = groups.get(key);
     if (g) g.push(r);

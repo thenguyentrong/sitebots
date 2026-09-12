@@ -26,7 +26,7 @@ async function main() {
   await page.locator('[data-robot-viewer][data-ready="true"]').first().waitFor({ timeout: 90_000 });
   await page.waitForTimeout(1200);
 
-  const buttons = viewer.locator('button[aria-pressed]');
+  const buttons = viewer.locator('button[data-pose-preset]');
   const n = await buttons.count();
   for (let i = 0; i < n; i++) {
     const label = (await buttons.nth(i).textContent())?.trim() ?? `pose${i}`;

@@ -654,6 +654,66 @@
       "path": "source/NoetixE1/NoetixE1/assets/robots/e1",
       "urdf": "urdf/e1_24dof.urdf",
       "heightM": 1.36
+    },
+    {
+      "robotKey": "limx-dynamics/tron-1",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "limx_tron1_robot_description",
+      "repo": "limxdynamics/tron1-robot-description",
+      "sha": "5b97add1f3b461c9ed26ff2ff2f5025cc6ee4316",
+      "path": "pointfoot/SF_TRON1A",
+      "urdf": "urdf/robot.urdf",
+      "format": "urdf",
+      "packages": {
+        "robot_description": "."
+      },
+      "license": "Apache-2.0",
+      "licenseFile": "LICENSE",
+      "copyright": "Copyright LimX Dynamics Technology Co., Ltd.",
+      "heightM": 0.845,
+      "targetTriangles": 50000
+    },
+    {
+      "robotKey": "limx-dynamics/oli",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "limx_humanoid_description",
+      "repo": "limxdynamics/humanoid-description",
+      "sha": "97b2174054103f9f7085ec1e3533972e4d0f2a50",
+      "path": "HU_D04_description",
+      "urdf": "urdf/HU_D04_01.urdf",
+      "format": "urdf",
+      "packages": {
+        "HU_D04_description": "HU_D04_description"
+      },
+      "license": "Apache-2.0",
+      "licenseFile": "LICENSE",
+      "copyright": "Copyright LimX Dynamics Technology Co., Ltd.",
+      "heightM": 1.65,
+      "targetTriangles": 50000
+    },
+    {
+      "robotKey": "limx-dynamics/luna",
+      "variants": [
+        "base"
+      ],
+      "sourceId": "limx_luna_description",
+      "repo": "limx-luna/luna-description",
+      "sha": "1f4798c753d8290d7fc123215f2315be27b0ad2e",
+      "path": "HU_L04_description",
+      "urdf": "urdf/HU_L04_01.urdf",
+      "format": "urdf",
+      "packages": {
+        "HU_L04_description": "HU_L04_description"
+      },
+      "license": "Apache-2.0",
+      "licenseFile": "LICENSE",
+      "copyright": "Copyright LimX Dynamics Technology Co., Ltd.",
+      "heightM": 1.6,
+      "targetTriangles": 50000
     }
   ]
 }

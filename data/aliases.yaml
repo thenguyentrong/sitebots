@@ -49,6 +49,26 @@ manufacturers:
     country: NO
     website: https://www.1x.tech/
     aliases: [1X, 1X Technologies, 1X Robotics]
+  zerith:
+    name: Zerith Robotics
+    country: CN
+    website: https://www.zerith.com/
+    aliases: []
+    note: Official maker website checked 2026-09-12; CASBOT is a separate manufacturer.
+  casbot:
+    name: CASBOT
+    country: CN
+    website: https://casbot.tech/
+    aliases:
+      - CASBOT / Beijing Zhongke Huiling Robotics Technology Co., Ltd.
+    note: Manufacturer identity corrected 2026-09-12; CASBOT 02 and W1 were mistakenly filed under Zerith.
+  tars:
+    name: TARS Robotics
+    country: CN
+    website: https://wiyh.tars-ai.com/
+    aliases:
+      - TARS Robotics (Shanghai)
+    note: Company project site linked by HSG at https://www.hsgcap.com/companies/tars/. The UPV rover team is unrelated.
 
 robots:
   unitree:
@@ -183,3 +203,15 @@ robots:
       name: Booster K1
       form_factor: humanoid
       aliases: [K1, Booster K1]
+  zerith:
+    h1:
+      name: Zerith H1
+      form_factor: mobile_manipulator
+      aliases: []
+      note: Wheeled arm robot on official https://www.zerith.com/.
+  casbot:
+    w1:
+      name: CASBOT W1
+      form_factor: mobile_manipulator
+      aliases: []
+      note: Wheeled robot on official https://casbot.tech/; corrected 2026-09-12.

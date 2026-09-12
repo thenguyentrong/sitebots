@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { clamp } from './kinematics';
+import { resolveJointValues } from './joint-values';
 import { PosesFile, type JointDef } from './schemas';
 
 /**
@@ -33,7 +34,7 @@ export function deriveSemantic(jointName: string): string {
 
 export function resolvePresets(robotKey: string, formFactor: 'humanoid' | 'quadruped' | 'mobile_manipulator', joints: JointDef[]): Record<string, Pose> {
   const file = loadPoses();
-  const robot = file.robots[robotKey];
+  const robot = file.robots[robotKey] ?? file.robots[robotKey.split('#')[0]];
   const family = robot?.family ?? (formFactor === 'quadruped' ? 'quadruped' : 'humanoid');
   const generic = family === 'quadruped' ? file._quadruped : file._humanoid;
   const byName = new Map(joints.map((j) => [j.name, j]));
@@ -72,5 +73,12 @@ export function resolvePresets(robotKey: string, formFactor: 'humanoid' | 'quadr
     out[preset] = pose;
   }
   if (!out.standing) out.standing = { ...rest };
+  // A rest pose alone must not make an unmapped generic preset look usable.
+  const standing = resolveJointValues(joints, out.standing);
+  for (const [name, pose] of Object.entries(out)) {
+    if (name === 'standing') continue;
+    const values = resolveJointValues(joints, pose);
+    if (Object.keys(standing).every((joint) => Math.abs(standing[joint] - values[joint]) < 1e-6)) delete out[name];
+  }
   return out;
 }

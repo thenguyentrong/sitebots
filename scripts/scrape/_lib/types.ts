@@ -96,6 +96,7 @@ export type RawRecord = {
 };
 
 export type FetchOptions = {
+  headers?: Record<string, string>;
   fresh?: boolean;
   accept?: string;
   ttlMs?: number;
