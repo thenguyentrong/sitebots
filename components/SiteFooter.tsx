@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import styles from './SiteFooter.module.css';
 import { Logo } from '@/components/Logo';
 import { EvidenceBadge } from '@/components/robot/EvidenceBadge';
 import { SITE } from '@/lib/site';
@@ -23,6 +25,17 @@ export function SiteFooter() {
             Every figure links to the page it was read from. A value is marked verified only when the manufacturer
             states it. Unknown stays unknown.
           </p>
+          <a
+            href="https://www.ctrl-rwth.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Made by CTRL — Construction Technology and Robotics Laboratory (opens in a new tab)"
+            className={styles.credit}
+          >
+            <span className={styles.caption}>Made by</span>
+            <Image src="/branding/ctrl.png" alt="" aria-hidden="true" width={800} height={137} className={styles.logoLight} />
+            <Image src="/branding/ctrl-white.png" alt="" aria-hidden="true" width={800} height={137} className={styles.logoDark} />
+          </a>
         </div>
         <div>
           <p className="eyebrow">Explore</p>

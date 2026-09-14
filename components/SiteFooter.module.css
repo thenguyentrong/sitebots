@@ -1,0 +1,20 @@
+.credit {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 100%;
+  margin-top: 8px;
+  border-radius: 4px;
+}
+.credit:focus-visible { outline: 2px solid var(--accent); outline-offset: 7px; }
+.caption { color: var(--muted); font-size: 11px; line-height: 1.5; }
+.credit:hover .caption { color: var(--foreground); }
+.logoLight, .logoDark { width: 224px; max-width: 100%; height: auto; object-fit: contain; }
+.logoDark { display: none; }
+:global(:root[data-theme='dark']) .logoLight { display: none; }
+:global(:root[data-theme='dark']) .logoDark { display: block; }
+@media (prefers-color-scheme: dark) {
+  :global(:root:not([data-theme='light'])) .logoLight { display: none; }
+  :global(:root:not([data-theme='light'])) .logoDark { display: block; }
+}
