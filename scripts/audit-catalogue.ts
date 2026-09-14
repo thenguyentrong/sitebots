@@ -1,3 +1,6 @@
+import { lifecycleFromEvidence } from '../lib/ingest/lifecycle';
+import { isPublicRobot } from '../lib/catalogue-policy';
+import { manufacturerReview } from '../lib/manufacturers';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { db, done } from './_guard';
 import { getRobotModel } from '../lib/models/index';
@@ -26,10 +29,15 @@ async function main() {
     const base = robots.find((b:any)=>b.maker_slug===r.maker_slug&&b.model_slug===r.model_slug&&b.variant==='base') as any;
     const photos=ownAssets.filter((a:any)=>['image','hero'].includes(a.kind));
     const borrowed=base&&base.id!==r.id?assets.filter((a:any)=>a.robot_id===base.id&&['image','hero'].includes(a.kind)&&!a.url.startsWith('/renders/')):[];
-    const f=facts.filter((f:any)=>f.robot_id===r.id);
+    const f=facts.filter((f:any)=>f.robot_id===r.id&&!f.invalidated_at);
+    const buyingEvidence = availability.filter((a:any)=>a.robot_id===r.id);
+    const lifecycle = lifecycleFromEvidence(buyingEvidence as Parameters<typeof lifecycleFromEvidence>[0]);
+    if(lifecycle && lifecycle.status!==r.status) issues.push({robot:key,kind:'lifecycle_availability_conflict',detail:{stored:r.status,expected:lifecycle.status,source:lifecycle.sourceUrl}});
+    const unverified = buyingEvidence.filter((a:any)=>a.status!=='unknown' && (a.source_tier==null || a.source_tier>2));
+    if(unverified.length) issues.push({robot:key,kind:'reported_availability',detail:unverified.map((a:any)=>({region:a.region,status:a.status,source:a.source_url}))});
     if(!photos.length&&!borrowed.length) issues.push({robot:key,kind:'missing_image',detail:null});
     if(!model) issues.push({robot:key,kind:'missing_3d',detail:null});
-    if(!r.website) issues.push({robot:key,kind:'missing_maker_website',detail:null});
+    if(!r.website&&!manufacturerReview(r.maker_slug)?.website) issues.push({robot:key,kind:'missing_maker_website',detail:null});
     if(!f.some((x:any)=>x.source_tier===1)) issues.push({robot:key,kind:'no_manufacturer_facts',detail:null});
     if(r.conflicts?.length) issues.push({robot:key,kind:'conflicting_specs',detail:r.conflicts});
     const missing=['height_m','weight_kg','dof_total','runtime_h','ip_rating'].filter(x=>!Object.keys(r.specs??{}).some(k=>(k===x||k.startsWith(x+':')) && r.specs[k]?.value!=null));
@@ -47,7 +55,7 @@ async function main() {
       if(v!==null&&bounds[fact.field]&&(v<bounds[fact.field][0]||v>bounds[fact.field][1])) issues.push({robot:key,kind:'numeric_outlier',detail:{field:fact.field,value:v,source:fact.source_url}});
     }
     const sourceUrls=[...new Set(f.map((x:any)=>x.source_url))];
-    return {...r,key,images:photos.length,borrowedImages:borrowed.length,has3d:!!model,sourceUrls,missingCore:missing,factCount:f.length};
+    return {...r,key,public:isPublicRobot(r.maker_slug,r.model_slug),images:photos.length,borrowedImages:borrowed.length,has3d:!!model,sourceUrls,availability:buyingEvidence,missingCore:missing,factCount:f.length};
   });
   const byId=new Map(catalogue.map(r=>[r.id,r.key]));
   for(const p of priceHistory as any[]) {
@@ -60,7 +68,7 @@ async function main() {
   writeFileSync(`${out}/catalogue.json`,JSON.stringify(catalogue,null,2));
   writeFileSync(`${out}/issues.json`,JSON.stringify(issues,null,2));
   const counts=Object.fromEntries([...new Set(issues.map(x=>x.kind))].map(k=>[k,issues.filter(x=>x.kind===k).length]));
-  const summary={auditedAt:new Date().toISOString(),priceObservations:priceHistory.length,availabilityObservations:availabilityHistory.length,curatedEntries:curated.length,scrapeRuns:runs.length,baseRobots:catalogue.filter(r=>r.variant==='base').length,robots:robots.length,makers:new Set(robots.map((r:any)=>r.maker_slug)).size,facts:facts.length,assets:assets.length,prices:prices.length,models:catalogue.filter(r=>r.has3d).length,counts};
+  const summary={auditedAt:new Date().toISOString(),priceObservations:priceHistory.length,availabilityObservations:availabilityHistory.length,curatedEntries:curated.length,scrapeRuns:runs.length,baseRobots:catalogue.filter(r=>r.variant==='base').length,robots:robots.length,makers:new Set(robots.map((r:any)=>r.maker_slug)).size,facts:facts.length,invalidatedFacts:facts.filter((f:any)=>f.invalidated_at).length,publicRobots:catalogue.filter(r=>r.public).length,assets:assets.length,prices:prices.length,models:catalogue.filter(r=>r.has3d).length,counts};
   writeFileSync(`${out}/summary.json`,JSON.stringify(summary,null,2));
   console.log(JSON.stringify(summary,null,2));
   if(process.argv.includes('--verbose')) console.log('LIMX',JSON.stringify(catalogue.filter(r=>/limx/i.test(r.key)).map(r=>({key:r.key,name:r.name,website:r.website,images:r.images,model:r.has3d,sources:r.sourceUrls})),null,2));

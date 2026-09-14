@@ -1,0 +1,72 @@
+import type { TaskCapability } from '@/lib/spec/enums';
+
+export const SETTINGS = [
+  { id: 'site', label: 'Construction site' },
+  { id: 'factory', label: 'Factory / prefabrication' },
+  { id: 'yard', label: 'Warehouse / material yard' },
+] as const;
+
+export type Job = {
+  id: string; family: string; title: string; description: string; outcome: string;
+  tasks: TaskCapability[]; questions: string[]; setup: string[]; measures: string[];
+};
+export const JOBS: Job[] = [
+  { id: 'transport', family: 'Logistics', title: 'Deliver loaded materials',
+    description: 'Move loaded totes, tools or parts between agreed locations.',
+    outcome: 'A repeatable delivery route, with loading and unloading responsibilities defined.',
+    tasks: ['carry_payload'],
+    questions: ['What is moved, including the container and mount?', 'Who loads and unloads?', 'What changes along the route, and how often is a trip needed?'],
+    setup: ['Load carrier and securing method', 'Route, handoff and charging plan', 'Operator and exception handling'],
+    measures: ['Completed deliveries per shift', 'Human minutes per delivery', 'Interventions and damaged loads'] },
+  { id: 'inspection', family: 'Inspection', title: 'Inspect a site or equipment',
+    description: 'Repeat a visual or sensor inspection at specified locations.',
+    outcome: 'Usable observations delivered to the person responsible for reviewing them.',
+    tasks: ['site_inspection'],
+    questions: ['What must be observed and with which sensor?', 'What makes an observation usable?', 'Who reviews findings and follows up?'],
+    setup: ['Camera or other sensor package', 'Inspection route and reporting software', 'Human review and escalation'],
+    measures: ['Inspection points completed', 'Usable observations', 'Operator time and missed points'] },
+  { id: 'progress', family: 'Documentation', title: 'Capture construction progress',
+    description: 'Collect repeatable 360° imagery for progress documentation.',
+    outcome: 'Comparable capture at agreed locations, with a usable export or report.',
+    tasks: ['progress_scan_360'],
+    questions: ['Which locations and capture frequency?', 'Which output or reporting system?', 'How often will the route change?'],
+    setup: ['360° camera and mounting', 'Capture and reporting integration', 'Route setup and review'],
+    measures: ['Usable capture coverage', 'Repeatability of capture positions', 'Total capture and review time'] },
+  { id: 'monitoring', family: 'Safety support', title: 'Support routine monitoring',
+    description: 'Collect observations for human review and follow-up.',
+    outcome: 'A defined observation and escalation workflow; safety performance needs its own assessment.',
+    tasks: ['patrol_monitoring'],
+    questions: ['Which condition should be observed?', 'Who is responsible for responding?', 'What are the consequences of a missed or false observation?'],
+    setup: ['Specified sensors and detection workflow', 'Human review and response procedure', 'Site-specific deployment assessment'],
+    measures: ['Observation coverage', 'Missed and false observations', 'Response and review time'] },
+  { id: 'layout', family: 'Layout & installation', title: 'Mark out from digital plans',
+    description: 'Transfer agreed layout information onto a prepared surface.',
+    outcome: 'Layout marks checked against the project requirements.',
+    tasks: ['layout_marking'],
+    questions: ['Which plan format and reference system?', 'Which surface and working area?', 'What accuracy and checks are required?'],
+    setup: ['Marking equipment', 'Plan and surveying workflow', 'Surface preparation and operator checks'],
+    measures: ['Accepted marks or area per shift', 'Position error against the agreed reference', 'Setup and rework time'] },
+  { id: 'cleaning', family: 'Finishing & cleaning', title: 'Clean floors and work areas',
+    description: 'Assess a defined cleaning task, surface and type of debris.',
+    outcome: 'An agreed cleanliness level over a measured area.',
+    tasks: ['cleaning_sweep'],
+    questions: ['Which debris and floor conditions?', 'Who prepares and clears the area?', 'How are edges, waste and exceptions handled?'],
+    setup: ['Cleaning head and collection system', 'Area preparation and access', 'Waste handling and maintenance'],
+    measures: ['Accepted area cleaned per hour', 'Human preparation and cleanup time', 'Missed areas and interventions'] },
+  { id: 'sorting', family: 'Factory production', title: 'Sort parts for production',
+    description: 'Sort a defined set of parts before the next production step.',
+    outcome: 'Correct parts in the correct output locations.',
+    tasks: ['material_sorting'],
+    questions: ['How do parts vary in shape and presentation?', 'Which destinations and cycle time?', 'How are unknown or rejected parts handled?'],
+    setup: ['Part presentation and gripping', 'Recognition and machine interfaces', 'Reject handling and supervision'],
+    measures: ['Correctly sorted parts per hour', 'Mis-sorts and rejected parts', 'Operator intervention time'] },
+  { id: 'custom', family: 'Other work', title: 'Describe another job',
+    description: 'Explore assembly, machine loading, finishing or another specific process.',
+    outcome: 'A research brief with explicit requirements and open questions.',
+    tasks: [],
+    questions: ['What is the exact input and required output?', 'What does a person still need to do?', 'Which process step is the bottleneck?'],
+    setup: ['Task-specific tooling', 'Software and process interfaces', 'Site setup and operator responsibilities'],
+    measures: ['Accepted output per shift', 'Human time and interventions', 'Quality and exception rate'] },
+];
+export const jobById = (id: string) => JOBS.find((job) => job.id === id) ?? JOBS[JOBS.length - 1];
+export const settingLabel = (id: string) => SETTINGS.find((setting) => setting.id === id)?.label ?? 'Setting not specified';

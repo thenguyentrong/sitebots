@@ -83,7 +83,8 @@ function Options({ list, labels }: { list: readonly string[]; labels: Record<str
 export function RequirementForm({ req }: { req: Requirements }) {
   const input = `${ui.input} pr-12`;
   return (
-    <form action="/" method="get" className="card">
+    <form action="/#matcher" method="get" className="card" aria-label="Robot requirements">
+      <input type="hidden" name="details" value="1" />
       <div className="divide-y divide-edge/70">
         <Section n={1} title="The job" hint="Tick what the robot has to do">
           <div className="flex flex-wrap gap-2">
@@ -107,18 +108,21 @@ export function RequirementForm({ req }: { req: Requirements }) {
         <Section n={2} title="The site" hint="Ground, weather and the way up">
           <div className="grid grid-cols-2 gap-3">
             <Field label="Ground">
-              <select name="terrain" className={ui.select} defaultValue={req.terrain}>
+              <select name="terrain" className={ui.select} defaultValue={req.terrain ?? ''}>
+                <option value="">Not sure yet</option>
                 <Options list={TERRAINS} labels={TERRAIN_LABEL} />
               </select>
             </Field>
             <Field label="Stairs">
-              <select name="stairs" className={ui.select} defaultValue={req.stairs}>
+              <select name="stairs" className={ui.select} defaultValue={req.stairs ?? ''}>
+                <option value="">Not sure yet</option>
                 <option value="none">Not needed</option>
                 <option value="required">Must climb stairs</option>
               </select>
             </Field>
             <Field label="Where">
-              <select name="environment" className={ui.select} defaultValue={req.environment}>
+              <select name="environment" className={ui.select} defaultValue={req.environment ?? ''}>
+                <option value="">Not sure yet</option>
                 <Options list={ENVIRONMENTS} labels={ENV_LABEL} />
               </select>
             </Field>
@@ -126,12 +130,14 @@ export function RequirementForm({ req }: { req: Requirements }) {
               <input type="number" name="slope_deg" min="0" max="60" step="any" defaultValue={req.slope_deg ?? ''} className={input} />
             </Field>
             <Field label="Dust">
-              <select name="dust" className={ui.select} defaultValue={req.dust}>
+              <select name="dust" className={ui.select} defaultValue={req.dust ?? ''}>
+                <option value="">Not sure yet</option>
                 <Options list={DUST} labels={DUST_LABEL} />
               </select>
             </Field>
             <Field label="Wet">
-              <select name="wet" className={ui.select} defaultValue={req.wet}>
+              <select name="wet" className={ui.select} defaultValue={req.wet ?? ''}>
+                <option value="">Not sure yet</option>
                 <Options list={WET} labels={WET_LABEL} />
               </select>
             </Field>
@@ -150,7 +156,8 @@ export function RequirementForm({ req }: { req: Requirements }) {
               <input type="number" name="runtime_h_per_shift" min="0.5" step="any" defaultValue={req.runtime_h_per_shift ?? ''} className={input} />
             </Field>
             <Field label="Operation">
-              <select name="autonomy" className={ui.select} defaultValue={req.autonomy}>
+              <select name="autonomy" className={ui.select} defaultValue={req.autonomy ?? ''}>
+                <option value="">Not sure yet</option>
                 <Options list={AUTONOMY} labels={AUTONOMY_LABEL} />
               </select>
             </Field>
@@ -214,7 +221,7 @@ export function RequirementForm({ req }: { req: Requirements }) {
       </div>
 
       <div className="sticky bottom-0 flex items-center justify-between gap-3 rounded-b-2xl border-t border-edge/70 bg-card/95 px-5 py-3 backdrop-blur">
-        <Link href="/" className="text-sm text-muted underline-offset-4 hover:underline">
+        <Link href="/#matcher" className="text-sm text-muted underline-offset-4 hover:underline">
           Reset
         </Link>
         <button type="submit" className={`${ui.btn} px-6`}>

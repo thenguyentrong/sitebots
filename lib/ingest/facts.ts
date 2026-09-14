@@ -44,6 +44,8 @@ export async function upsertFacts(sql: SqlClient, robotId: string, facts: Normal
         observed_at = greatest(robot_facts.observed_at, excluded.observed_at),
         run_id = coalesce(excluded.run_id, robot_facts.run_id),
         snapshot_id = coalesce(excluded.snapshot_id, robot_facts.snapshot_id),
+        source_id = excluded.source_id,
+        source_tier = excluded.source_tier,
         confidence = excluded.confidence,
         note = coalesce(excluded.note, robot_facts.note),
         evidence_url = coalesce(excluded.evidence_url, robot_facts.evidence_url)`;
@@ -85,7 +87,11 @@ export async function insertAvailability(
         ${robotId}, ${a.region}, ${a.status}, ${a.in_stock ?? null}, ${a.lead_time_days_min ?? null},
         ${a.lead_time_days_max ?? null}, ${a.lead_time_text ?? null}, ${a.source_id ?? null},
         ${a.source_url}, ${a.observed_at}::timestamptz, ${a.run_id ?? null})
-      on conflict (robot_id, source_url, region, status, observed_day) do nothing`;
+      on conflict (robot_id, source_url, region, status, observed_day) do update set
+        in_stock = excluded.in_stock, lead_time_days_min = excluded.lead_time_days_min,
+        lead_time_days_max = excluded.lead_time_days_max, lead_time_text = excluded.lead_time_text,
+        source_id = excluded.source_id, observed_at = excluded.observed_at, run_id = excluded.run_id
+      where excluded.observed_at >= availability_observations.observed_at`;
     n++;
   }
   return n;

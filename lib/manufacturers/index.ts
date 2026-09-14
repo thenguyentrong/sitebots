@@ -9,6 +9,7 @@ export type ManufacturerReview = {
   reason: string;
   website: string | null;
   canonicalSlug?: string;
+  country?: string;
   evidence: { url: string; kind: string; note: string }[];
 };
 export type ManufacturerLogo = { src: string; background: 'light' | 'dark'; sourceUrl: string; reviewedAt: string };

@@ -1,3 +1,4 @@
+import { reviewedRobotStatus } from './status-review';
 import type { SqlClient } from '@/lib/db';
 import type { FormFactor, RobotStatus } from '@/lib/spec/enums';
 import { manufacturerAlias, robotAlias } from './aliases';
@@ -49,14 +50,16 @@ export async function ensureRobot(sql: SqlClient, r: EnsureRobot): Promise<strin
   const manufacturerId = await ensureManufacturer(sql, r.manufacturerSlug);
   const variant = r.variant ?? 'base';
   const name = r.name ?? variantName(alias.name, variant);
+  // Reviewed source evidence supersedes the initial scraped hint, which otherwise stays unchanged.
+  const reviewedStatus = reviewedRobotStatus(r.manufacturerSlug, r.modelSlug, variant)?.status ?? null;
   const [row] = (await sql`
     insert into robots (manufacturer_id, model_slug, variant, name, form_factor, status, release_year, summary)
     values (${manufacturerId}, ${r.modelSlug}, ${variant}, ${name}, ${r.formFactor ?? alias.form_factor},
-            ${r.status ?? 'unknown'}, ${r.releaseYear ?? null}, ${r.summary ?? null})
+            ${reviewedStatus ?? r.status ?? 'unknown'}, ${r.releaseYear ?? null}, ${r.summary ?? null})
     on conflict (manufacturer_id, model_slug, variant) do update set
       name = excluded.name,
       form_factor = excluded.form_factor,
-      status = case when robots.status = 'unknown' then excluded.status else robots.status end,
+      status = case when ${reviewedStatus}::text is not null or robots.status = 'unknown' then excluded.status else robots.status end,
       release_year = coalesce(robots.release_year, excluded.release_year),
       summary = coalesce(robots.summary, excluded.summary),
       updated_at = now()

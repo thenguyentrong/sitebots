@@ -1,3 +1,4 @@
+import { PLACEHOLDER_MODEL_PATTERN } from '@/lib/catalogue-policy';
 import { getSql } from '@/lib/db';
 import { canonicalManufacturerSlug, publicManufacturerSlugs } from '@/lib/manufacturers';
 
@@ -13,8 +14,8 @@ export async function getSiteStats(): Promise<SiteStats> {
     from robots r join manufacturers m on m.id = r.manufacturer_id
     left join robot_current rc on rc.robot_id = r.id
     left join (select robot_id, count(*) as n from price_current group by robot_id) p on p.robot_id = r.id
-    where m.slug = any($1::text[])
-    group by m.slug`, [publicManufacturerSlugs()]);
+    where m.slug = any($1::text[]) and r.model_slug !~* $2
+    group by m.slug`, [publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN]);
   return {
     robots: rows.reduce((n, r) => n + Number(r.robots), 0),
     makers: new Set(rows.map((r) => canonicalManufacturerSlug(String(r.slug)))).size,

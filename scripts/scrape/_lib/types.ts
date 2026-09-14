@@ -58,7 +58,7 @@ export type RawPrice = {
 export type RawAvailability = {
   region: Region;
   status: AvailabilityStatus;
-  in_stock?: boolean;
+  in_stock?: boolean | null;
   lead_time_days_min?: number;
   lead_time_days_max?: number;
   lead_time_text?: string;

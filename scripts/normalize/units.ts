@@ -40,7 +40,7 @@ function clean(raw: string): string {
     .replace(/（/g, '(')
     .replace(/）/g, ')')
     .replace(/ /g, ' ')
-    .replace(/,(?=\d{3}\b)/g, '') // thousands separator
+    .replace(/,(?=\d{3}(?!\d))/g, '') // thousands separator
     .replace(/℃/g, '°C')
     .replace(/℉/g, '°F')
     .replace(PER_RE, '')
@@ -216,7 +216,9 @@ const LOOSE_RE = new RegExp(`(${NUM})\\s*(?:${SEP}\\s*(${NUM}))?\\s*(${KNOWN_UNI
 export function extractQuantity(raw: string, unitHint?: string): Quantity | null {
   const s = clean(raw).replace(/^\s*(≈|~|about|approx\.?)\s*/i, '');
   const direct = parseQuantity(s);
-  if (direct) return normalizeZeroRange({ ...direct, unit: direct.unit ? unitSpelling(direct.unit) : direct.unit });
+  if (direct && (!unitHint || !direct.unit || (conv(direct.unit, undefined)?.family !== undefined && conv(direct.unit, undefined)?.family === conv(unitHint, undefined)?.family))) {
+    return normalizeZeroRange({ ...direct, unit: direct.unit ? unitSpelling(direct.unit) : direct.unit });
+  }
   LOOSE_RE.lastIndex = 0;
   let m: RegExpExecArray | null;
   while ((m = LOOSE_RE.exec(s))) {

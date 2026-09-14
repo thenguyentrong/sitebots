@@ -1,3 +1,5 @@
+import { RobotLandscape } from '@/components/catalogue/RobotLandscape';
+import { toClusterRobot } from '@/lib/catalogue/cluster-robot';
 import Link from 'next/link';
 import { CompareToggle } from '@/components/compare/CompareBar';
 import { RobotCard } from '@/components/robot/RobotCard';
@@ -25,7 +27,10 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
   // Robots with no real picture stay off the page unless asked for: a card without a picture is a card nobody can recognise.
   const showAllPictures = pictures === 'all';
   const formFactor = FORM_FACTORS.includes(form as FormFactor) ? (form as FormFactor) : undefined;
-  const { robots, total, hidden } = await listRobotCards({ formFactor, q, limit: all === '1' ? 5000 : PAGE_SIZE, pictures: showAllPictures ? 'all' : 'with' });
+  const [{ robots, total, hidden }, landscape] = await Promise.all([
+    listRobotCards({ formFactor, q, limit: all === '1' ? 5000 : PAGE_SIZE, pictures: showAllPictures ? 'all' : 'with' }),
+    listRobotCards({ formFactor, q, limit: 5000, pictures: 'all' }),
+  ]);
 
   const hrefWith = (params: Record<string, string | undefined>) => {
     const sp = new URLSearchParams();
@@ -80,6 +85,8 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
           </button>
         </form>
       </div>
+
+      <RobotLandscape key={[formFactor, q].join(':' )} robots={landscape.robots.map(toClusterRobot)} allowMakerFilter scope="Matching catalogue · includes entries without images" />
 
       <p className="label mb-4 flex flex-wrap items-center gap-x-3 gap-y-1">
         <span>

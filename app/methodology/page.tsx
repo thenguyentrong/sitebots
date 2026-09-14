@@ -70,7 +70,7 @@ export default function MethodologyPage() {
             ))}
           </tbody>
         </table>
-        <p className="mt-4 text-sm text-muted">The task view lists the site tasks we assess in the curated layer: yes when the maker states it or we assessed it with evidence, partial when only a third party reports it, no when a robot was assessed and the task is not listed, and not assessed otherwise.</p>
+        <p className="mt-4 text-sm text-muted">The task view lists the site tasks we assess in the curated layer: yes when the maker states it or we assessed it with evidence, partial when only a third party reports it, and unconfirmed when the task is not listed. Absence from a capability list does not establish that a task is impossible.</p>
         <div className="mt-3 space-y-2">
           {TASK_BUCKETS.map((b) => (
             <div key={b.id} className="flex flex-wrap items-baseline gap-1.5 text-sm"><span className="w-40 shrink-0 text-muted">{b.label}</span>{b.tasks.map((t) => <Badge key={t} variant="outline">{TASK_LABEL[t]}</Badge>)}</div>
@@ -78,6 +78,13 @@ export default function MethodologyPage() {
         </div>
       </section>
 
+      <section id="planning" className="card mt-6 scroll-mt-20 p-5">
+        <h2 className="text-base font-semibold">Automation planning and business cases</h2>
+        <p className="mt-2 text-sm text-muted">An assessment is tied to a job and a complete configuration. Unasked site conditions remain unspecified; terrain is not inferred from body type, and working reach is not inferred from height. Published specifications screen candidates but do not establish successful operation of the complete application.</p>
+        <p className="mt-3 text-sm text-muted">Business value and deployment readiness are client assessments with an editable rationale. Critical blockers and missing evidence remain visible regardless of matrix position. These axes are a custom project-priority method, not BCG market growth and share or an official McKinsey rating.</p>
+        <p className="mt-3 text-sm text-muted">Released capacity value is net annual hours released multiplied by loaded labor cost. Cash savings apply the client's explicit cash-realization percentage. Net annual cash benefit subtracts additional operating cost; simple payback divides total initial spend by positive net annual cash benefit. Each setup has its own inputs. Blank is unknown, not zero.</p>
+        <p className="mt-3 text-sm text-muted">The five-year cash chart assumes constant annual cash flow. Sensitivity cases change achieved hours to 80% and 120% of the estimate; they are scenarios, not forecasts. Discounting, ramp-up, tax, financing and residual value are not included. Pilot thresholds must be agreed for the actual task.</p>
+      </section>
       <section id="images" className="card mt-6 scroll-mt-20 p-5">
         <h2 className="text-base font-semibold">Images and 3D models</h2>
         <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-muted">

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CompareToggle } from '@/components/compare/CompareBar';
 import { Badge } from '@/components/ui/badge';
 import type { CriterionResult, Excluded, MatchOutput, Ranked } from '@/lib/match/types';
 import type { Requirements } from '@/lib/match/requirements';
@@ -99,6 +100,10 @@ export function ResultCard({ r, rank }: { r: Ranked; rank: number }) {
           <CriterionRow key={c.id} c={c} />
         ))}
       </ul>
+      <footer className="flex items-center justify-between gap-3 border-t border-edge/70 px-5 py-3">
+        <Link href={robotHref(r.robot)} className="text-xs font-medium underline-offset-4 hover:underline">View profile <span aria-hidden="true">↗</span></Link>
+        <CompareToggle id={r.robot.id} name={r.robot.name} />
+      </footer>
     </article>
   );
 }
@@ -109,7 +114,7 @@ export function ExcludedList({ excluded }: { excluded: Excluded[] }) {
     <details className="card group overflow-hidden">
       <summary className="flex cursor-pointer items-center justify-between gap-3 px-5 py-3.5 text-sm font-medium">
         <span>
-          {excluded.length} robot{excluded.length === 1 ? '' : 's'} excluded — a hard requirement failed
+          {excluded.length} robot{excluded.length === 1 ? '' : 's'} excluded by the requested filters
         </span>
         <svg viewBox="0 0 24 24" className="h-4 w-4 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
           <path d="m6 9 6 6 6-6" />
@@ -137,7 +142,7 @@ export function ResultList({ output, req }: { output: MatchOutput; req: Requirem
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2 text-sm">
         <span className="font-medium">
-          {n} robot{n === 1 ? '' : 's'} can do this
+          {n} robot{n === 1 ? '' : 's'} candidates to review
         </span>
         <Badge variant="neutral">{output.excluded.length} excluded</Badge>
         <Badge variant="outline">{output.considered} considered</Badge>
@@ -145,7 +150,7 @@ export function ResultList({ output, req }: { output: MatchOutput; req: Requirem
       </div>
       {n === 0 ? (
         <div className="card p-6 text-muted">
-          Nothing passes every hard requirement. Loosen one, or switch off strict mode to see robots whose makers have not published the value.
+          No candidates remain under these filters. Loosen one, or switch off strict mode to see robots whose makers have not published the value.
         </div>
       ) : (
         output.ranked.map((r, i) => <ResultCard key={r.robot.id} r={r} rank={i + 1} />)

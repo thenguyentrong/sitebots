@@ -1,0 +1,253 @@
+{
+  "note": "Reversible exclusions of demonstrated parser or model-assignment errors. Source observations remain in the ledger.",
+  "facts": [
+    {
+      "robot": "unitree/h1",
+      "factHash": "3f164e3d7af236520e1b1c38e0e28b5b",
+      "sourceUrl": "https://www.unitree.com/h1",
+      "field": "battery_pack",
+      "reason": "The battery-pack parser stored kWh as Wh; 0.864 kWh equals 864 Wh.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/h1-2",
+      "factHash": "3f164e3d7af236520e1b1c38e0e28b5b",
+      "sourceUrl": "https://www.unitree.com/h1",
+      "field": "battery_pack",
+      "reason": "The battery-pack parser stored kWh as Wh; 0.864 kWh equals 864 Wh.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/h1-2",
+      "factHash": "44e6d16e65f4a5ffd67bef5700a8e13b",
+      "sourceUrl": "https://www.unitree.com/h1",
+      "field": "payload_kg",
+      "reason": "21 kg is labelled peak in the manufacturer table; the rated load is about 7 kg.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "workfar/syntro",
+      "factHash": "ee8731222018bbae603a97c7e79d4929",
+      "sourceUrl": "https://www.workfar.com/product/syntro",
+      "field": "dof_total",
+      "reason": "The parser treated a component count, 30-day promise or metric unit conversion as a whole-body DOF count, warranty in months or peak payload.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "workfar/syntro",
+      "factHash": "c26ddf129672ad9e800f700c2c9ba4b8",
+      "sourceUrl": "https://www.workfar.com/product/syntro",
+      "field": "payload_kg",
+      "reason": "The parser treated a component count, 30-day promise or metric unit conversion as a whole-body DOF count, warranty in months or peak payload.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "workfar/syntro",
+      "factHash": "3c64b8f58b001f15befb434a11c12e68",
+      "sourceUrl": "https://www.workfar.com/product/syntro",
+      "field": "warranty_months",
+      "reason": "The parser treated a component count, 30-day promise or metric unit conversion as a whole-body DOF count, warranty in months or peak payload.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "7b130fad5f43fa8f5a8da5e2182b3b9c",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-r/",
+      "field": "weight_kg",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "b3727f8ec6050b5dad93b98c3bcb2ded",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-r/",
+      "field": "height_m",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "5a8cb01afc1ea14c116a38a78eef998b",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-r/",
+      "field": "max_speed_ms",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "5dff3d4c1074aa4e61a9e4ea734a37b7",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-r/",
+      "field": "runtime_h",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/h1",
+      "factHash": "44e6d16e65f4a5ffd67bef5700a8e13b",
+      "sourceUrl": "https://www.unitree.com/h1",
+      "field": "payload_kg",
+      "reason": "21 kg is labelled peak in the manufacturer table; the rated load is about 7 kg.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "aei/alice",
+      "factHash": "55464763bcd3abe048c6b7e0e5b21e61",
+      "sourceUrl": "http://www.arobot4all.com/ALICE_M1",
+      "field": "dof_total",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/a2",
+      "factHash": "da246fa4e228ecc8ec498cfb4c707601",
+      "sourceUrl": "https://www.unitree.com/A2-W",
+      "field": "step_height_m",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/a2",
+      "factHash": "a1fb57895b2051e5b481524e0fe28401",
+      "sourceUrl": "https://www.unitree.com/A2-W",
+      "field": "stair_capable",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/h1",
+      "factHash": "a7ca7f0e2ed26319a1c37f4d16d2102d",
+      "sourceUrl": "https://www.unitree.com/h1",
+      "field": "hot_swap",
+      "reason": "Quick release or replaceability does not establish support for battery replacement while powered on.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "3f1c30bc3cee1950b21ad810f7740b66",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-m/",
+      "field": "weight_kg",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "cf281e0ee124ebd502a14a1c2e7eb7c3",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-m/",
+      "field": "height_m",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "42f976dfdc93e9fbd11177b54df85cf7",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-m/",
+      "field": "max_speed_ms",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "e74816f511153025ecbda2df4a577837",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-m/",
+      "field": "payload_kg",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "oversonic/robee",
+      "factHash": "5d117d13ec7d396d8e57494dbdf4ba2b",
+      "sourceUrl": "https://www.oversonicrobotics.com/robee-m/",
+      "field": "runtime_h",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "aei/alice",
+      "factHash": "41f5d33b96e0af2a63f9ecc38fcbe170",
+      "sourceUrl": "http://www.arobot4all.com/ALICE3",
+      "field": "dof_total",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/r1",
+      "factHash": "1aa66742dde2c9dd3957a9633407c523",
+      "sourceUrl": "https://www.unitree.com/R1-D",
+      "field": "compute_module",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/h2",
+      "factHash": "cd3a15df63e26f048003a3fd7c8fc7df",
+      "sourceUrl": "https://www.unitree.com/H2plus",
+      "field": "compute_module",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/g1",
+      "factHash": "9baf9d067d5ecfcc569a2d76bb2ea834",
+      "sourceUrl": "https://www.unitree.com/G1-D",
+      "field": "dof_body",
+      "reason": "A gallery source for a distinct robot variant was incorrectly imported as specifications for this base model.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/g1",
+      "factHash": "75dc4be1605feb18a02c73361849abb8",
+      "sourceUrl": "https://www.unitree.com/g1",
+      "field": "payload_kg",
+      "reason": "The source labels this as maximum arm load, not a rated continuous payload.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/g1",
+      "factHash": "6c834b078ff19b22d33eb9f962abec96",
+      "sourceUrl": "https://www.unitree.com/g1",
+      "field": "payload_kg",
+      "reason": "The source labels this as maximum arm load, not a rated continuous payload.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/g1",
+      "factHash": "35de124d187fda9520417a532550cd06",
+      "sourceUrl": "https://www.unitree.com/g1",
+      "field": "hot_swap",
+      "reason": "The evidence confirms a removable or smart battery, not replacement while the robot remains powered on.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/go2",
+      "factHash": "0f3f2c0f142fa3e479696970d4614f42",
+      "sourceUrl": "https://www.unitree.com/go2",
+      "field": "hot_swap",
+      "reason": "The evidence confirms a removable or smart battery, not replacement while the robot remains powered on.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "boston-dynamics/spot",
+      "factHash": "6c7c18e7dcf9248d083b98865b027330",
+      "sourceUrl": "curated://boston-dynamics/spot.yaml#hot_swap",
+      "field": "hot_swap",
+      "reason": "The evidence confirms a removable or smart battery, not replacement while the robot remains powered on.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "anybotics/anymal-d",
+      "factHash": "d3c5a56fd3666f6b27a63f8fefc1990f",
+      "sourceUrl": "curated://anybotics/anymal-d.yaml#hot_swap",
+      "field": "hot_swap",
+      "reason": "The evidence confirms a removable or smart battery, not replacement while the robot remains powered on.",
+      "reviewedAt": "2026-09-13"
+    },
+    {
+      "robot": "unitree/h1",
+      "factHash": "f23a9ae39ce20fa063018b18bde9a7f7",
+      "sourceUrl": "https://www.unitree.com/h1",
+      "field": "payload_kg",
+      "reason": "The 7 kg rated-load cell belongs to H1-2 in the multi-column official table; the generic page parser assigned it to H1.",
+      "reviewedAt": "2026-09-13"
+    }
+  ]
+}

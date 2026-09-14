@@ -6,9 +6,9 @@ import type { IndexEntry, RawField, RawRecord, Snapshot, SourceAdapter } from '.
 import type { FormFactor } from '@/lib/spec/enums';
 
 /**
- * The product pages a person approved for pictures (data/assets/previews.json)
- * are the makers' own pages for exactly the robot we list, so they are also
- * the best place to read specifications from. This adapter visits each of
+ * Specification pages are approved independently in data/specifications/pages.json.
+ * A gallery may include related variants, so image approval never authorizes
+ * importing that page's specifications. This adapter visits each of
  * them once more and takes every label / value pair the page prints — spec
  * tables, definition lists, "Label: value" lines — through the shared label
  * mapper. Whatever the mapper does not recognise is dropped, never guessed.
@@ -16,7 +16,11 @@ import type { FormFactor } from '@/lib/spec/enums';
  * Robots are named by their catalogue slugs, so the subject is the canonical
  * maker and model name from the alias files and resolves exactly.
  */
-const PREVIEWS = 'data/assets/previews.json';
+const SPEC_PAGES = 'data/specifications/pages.json';
+type ApprovedPage = { robot: string; url: string; fields: string[]; reviewedAt: string };
+function approvedPages(): ApprovedPage[] {
+  return existsSync(SPEC_PAGES) ? JSON.parse(readFileSync(SPEC_PAGES, 'utf8')).pages : [];
+}
 
 type Names = { makers: Map<string, string>; models: Map<string, { name: string; formFactor?: FormFactor }> };
 
@@ -70,18 +74,7 @@ export const makerPages: SourceAdapter = {
   engine: 'fetch',
 
   async fetchIndex() {
-    if (!existsSync(PREVIEWS)) return [];
-    const approved = JSON.parse(readFileSync(PREVIEWS, 'utf8')) as { images: Record<string, { page: string; pages?: string[] }> };
-    const seen = new Set<string>();
-    const out: IndexEntry[] = [];
-    // The product page and the maker's other pages about the robot that the picture pass found.
-    for (const [key, a] of Object.entries(approved.images)) {
-      for (const url of [a.page, ...(a.pages ?? [])]) {
-        if (/github[.]com/.test(url) || seen.has(url)) continue;
-        seen.add(url);
-        out.push({ slug: key, url });
-      }
-    }
+    const out: IndexEntry[] = approvedPages().filter(page => page.fields.length > 0).map(page => ({ slug: page.robot, url: page.url }));
     return out;
   },
 
@@ -90,7 +83,9 @@ export const makerPages: SourceAdapter = {
   },
 
   parse(snapshot: Snapshot, entry: IndexEntry): RawRecord[] {
-    const [maker, model] = entry.slug.split('/');
+    const approval = approvedPages().find(page => page.robot === entry.slug && page.url === entry.url);
+    if (!approval) return [];
+    const [maker] = entry.slug.split('/');
     const n = names();
     const makerName = n.makers.get(maker);
     const m = n.models.get(entry.slug);
@@ -99,6 +94,8 @@ export const makerPages: SourceAdapter = {
     const fields: RawField[] = [];
     for (const [label, value] of pairsOf(snapshot.body)) {
       for (const f of mapSpecLabel(label, value, { formFactor: m.formFactor })) {
+        if (!approval.fields.includes(f.field)) continue;
+        f.note ??= `${label}: ${value}`;
         const k = `${f.field}|${f.qualifier ?? ''}`;
         if (seen.has(k)) continue;
         seen.add(k);

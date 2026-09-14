@@ -22,8 +22,8 @@ export type TaskRow = { id: TaskCapability; label: string; status: TaskStatus; w
 
 /**
  * Per task: yes when the curated list names it with verified/assessed trust,
- * partial when only a third party reports it, no when a list exists and does
- * not name it, unknown when nobody has assessed the robot at all.
+ * partial when only a third party reports it. A task absent from a list is
+ * unknown: absence is not evidence that it cannot be performed.
  */
 export function taskRows(c: Candidate): { rows: TaskRow[]; trust: Trust } {
   const spec = c.card.specs?.task_capabilities;
@@ -32,8 +32,9 @@ export function taskRows(c: Candidate): { rows: TaskRow[]; trust: Trust } {
   const trust: Trust = spec?.trust ?? (listed.size ? 'reported' : 'unknown');
   const rows = TASK_CAPABILITIES.map((id): TaskRow => {
     if (!assessed) return { id, label: TASK_LABEL[id], status: 'unknown', wording: 'not assessed' };
+    if (listed.has(id) && trust === 'unknown') return { id, label: TASK_LABEL[id], status: 'unknown', wording: 'source confidence not established' };
     if (listed.has(id)) return trust === 'reported' ? { id, label: TASK_LABEL[id], status: 'partial', wording: 'third-party report only' } : { id, label: TASK_LABEL[id], status: 'yes', wording: trust === 'verified' ? 'maker states it' : 'assessed with evidence' };
-    return { id, label: TASK_LABEL[id], status: 'no', wording: 'no evidence' };
+    return { id, label: TASK_LABEL[id], status: 'unknown', wording: 'task not confirmed' };
   });
   return { rows, trust };
 }

@@ -1,3 +1,4 @@
+import { reconcileRobotLifecycle } from './lifecycle';
 import type { SqlClient } from '@/lib/db';
 import { fieldDef, specKey } from '@/lib/spec/fields';
 import type { ScalarValue, SpecConflict, SpecValue, Specs } from '@/lib/spec/types';
@@ -20,6 +21,7 @@ import type { Trust } from '@/lib/spec/enums';
  */
 
 type FactRow = {
+  invalidated_at?: string | Date | null;
   field: string;
   qualifier: string | null;
   value_num: string | number | null;
@@ -100,6 +102,7 @@ function agrees(a: FactRow, b: FactRow): boolean {
 }
 
 export function projectSpecs(rows: FactRow[]): { specs: Specs; conflicts: SpecConflict[] } {
+  rows = rows.filter(row => !row.invalidated_at);
   const groups = new Map<string, FactRow[]>();
   // Old values remain in the ledger; only the latest observation from a URL describes its current claim.
   const latest = new Map<string, number>();
@@ -235,21 +238,18 @@ export function parseIp(rating: string | null): { solid: number | null; liquid: 
 }
 
 /** The conservative payload the matcher compares against. */
-export function conservativePayload(specs: Specs): { rated: number | null; peak: number | null; conservative: number | null } {
+export function conservativePayload(specs: Specs): { rated: number | null; peak: number | null; conservative: number | null; key: string | null; estimated: boolean } {
   const rated = low(specs, 'payload_kg:rated');
   const peak = num(specs, 'payload_kg:peak');
-  const candidates = [
-    rated,
-    low(specs, 'payload_kg:sustained'),
-    low(specs, 'payload_kg:carry_walking'),
-    low(specs, 'payload_kg:rated_dual'),
-  ].filter((v): v is number => v !== null);
-  let conservative: number | null = candidates.length ? Math.min(...candidates) : null;
-  if (conservative === null) {
-    const p = peak ?? num(specs, 'payload_kg:peak_dual') ?? num(specs, 'payload_kg:instant') ?? low(specs, 'payload_kg');
-    if (p !== null) conservative = Math.round(p * 0.5 * 10) / 10;
-  }
-  return { rated, peak, conservative };
+  const candidates = ['payload_kg:rated', 'payload_kg:sustained', 'payload_kg:carry_walking', 'payload_kg:rated_dual']
+    .map(key => ({ key, value: low(specs, key) }))
+    .filter((entry): entry is { key: string; value: number } => entry.value !== null)
+    .sort((a, b) => a.value - b.value);
+  const chosen = candidates[0];
+  if (chosen) return { rated, peak, conservative: chosen.value, key: chosen.key, estimated: false };
+  const key = ['payload_kg:peak', 'payload_kg:peak_dual', 'payload_kg:instant', 'payload_kg'].find(key => low(specs, key) !== null) ?? null;
+  const conservative = key ? Math.round(low(specs, key)! * 0.5 * 10) / 10 : null;
+  return { rated, peak, conservative, key, estimated: key !== null };
 }
 
 /** Runtime for a shift is the lowest published figure; the basis says what it was measured doing. */
@@ -273,7 +273,7 @@ export async function buildCurrent(sql: SqlClient, robotIds?: string[], runId?: 
   for (const id of ids) {
     const rows = (await sql`
       select field, qualifier, value_num, value_min, value_max, value_text, value_bool, value_json, unit,
-             raw_value, source_id, source_url, evidence_url, source_tier, observed_at, confidence, note
+             raw_value, source_id, source_url, evidence_url, source_tier, observed_at, confidence, note, invalidated_at
       from robot_facts where robot_id = ${id}`) as FactRow[];
 
     const { specs, conflicts } = projectSpecs(rows);
@@ -335,6 +335,7 @@ export async function buildCurrent(sql: SqlClient, robotIds?: string[], runId?: 
 
     await rebuildPrices(sql, id);
     await rebuildAvailability(sql, id);
+    await reconcileRobotLifecycle(sql, id);
   }
   return ids.length;
 }
@@ -356,10 +357,10 @@ async function rebuildAvailability(sql: SqlClient, robotId: string) {
   await sql`delete from availability_current where robot_id = ${robotId}`;
   await sql`
     insert into availability_current (robot_id, region, status, in_stock, lead_time_days_min, lead_time_days_max,
-                                      lead_time_text, source_url, observed_at)
-    select distinct on (region)
-           robot_id, region, status, in_stock, lead_time_days_min, lead_time_days_max, lead_time_text, source_url, observed_at
-    from availability_observations
-    where robot_id = ${robotId}
-    order by region, observed_at desc`;
+                                      lead_time_text, source_url, observed_at, source_id, source_kind, source_tier)
+    select distinct on (a.region)
+           a.robot_id, a.region, a.status, a.in_stock, a.lead_time_days_min, a.lead_time_days_max, a.lead_time_text, a.source_url, a.observed_at, a.source_id, s.kind, s.tier
+    from availability_observations a left join sources s on s.id = a.source_id
+    where a.robot_id = ${robotId} and coalesce(s.trust, 'normal') <> 'deny'
+    order by a.region, coalesce(s.tier, 4) asc, a.observed_at desc, a.id desc`;
 }

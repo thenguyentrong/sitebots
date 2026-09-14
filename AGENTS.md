@@ -16,3 +16,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Route handlers declare `runtime`, `maxDuration` and `dynamic` explicitly.
 - Comments explain why a thing is the way it is, and name the constraint that forced it.
 - Render the UI before calling it done: `npm run shot http://localhost:3000/robots/unitree/g1 .out/g1.png`.
+
+## Evidence and purchasing workflow
+
+- For technical data, prioritize the exact manufacturer's product page, datasheet, manual or official repository. Comparison sites are discovery leads; they do not verify a value.
+- Keep existing third-party claims explicitly Reported until primary evidence replaces them. Do not promote an estimate or a seller's technical claim to manufacturer-verified status.
+- Buying information must retain its source and checked date, exact configuration, market and published buyer restrictions. A price alone does not establish commercial availability or German delivery.
+- Call a reseller authorized only with reviewed authorization evidence. Use published business contact details, and distinguish directly fetched listings from indexed pages whose live data could not be refreshed.
+- Preserve lifecycle corrections in data/robots/status-reviews.json and sales contacts in data/purchasing/contacts.json. See docs/official-sourcing.md.

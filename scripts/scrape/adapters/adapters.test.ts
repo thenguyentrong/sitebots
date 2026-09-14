@@ -144,3 +144,11 @@ describe('unitree-shop parse', () => {
     ]);
   });
 });
+
+it('does not infer a preorder or physical stock from Shopify checkout flags', () => {
+  const product = { id: 1, title: 'Unitree R1-D', handle: 'unitree-r1-d', vendor: 'Unitree', images: [], variants: [{ id: 1, title: 'Default Title', sku: null, price: '4290.00', available: false, grams: 0 }] };
+  const parse = (extra: object) => unitreeShop.parse({ ...snap('humanoid-guide.json', ''), body: JSON.stringify({ products: [{ ...product, ...extra }] }) }, { slug: 'products', url: '' })[0];
+  expect(parse({}).availability[0]).toMatchObject({ status: 'unknown', in_stock: null });
+  expect(parse({ body_html: '<p>Pre-order now. Delivery date to be confirmed.</p>' }).availability[0]).toMatchObject({ status: 'pre_order', in_stock: null });
+  expect(parse({ variants: [{ ...product.variants[0], available: true }] }).availability[0]).toMatchObject({ status: 'for_sale', in_stock: null });
+});

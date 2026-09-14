@@ -6,8 +6,10 @@
 //
 // A product page's og:image is published so that other sites can show it as
 // a preview with a link back. That is exactly what we do: the image is
-// hotlinked, never copied, credited "Image: <maker>", and linked to the page
-// it came from. Nothing is attached that a person has not looked at: --review
+// normally hotlinked, credited "Image: <maker>", and linked to its product page.
+// Reviewed public images with broken browser redirects can be cached by
+// cache-reviewed-previews.mts; the manifest retains the original asset URL.
+// Nothing is attached that a person has not looked at: --review
 // writes candidates and contact sheets to .out/review-previews, and only
 // data/assets/previews.json is ever applied.
 //
@@ -102,7 +104,7 @@ async function renderedPreview(page: string, generic: (img: string) => boolean =
 }
 
 type Approved = {
-  images: Record<string, { page: string; image: string; reviewed: string; licence?: string; attribution?: string; more?: string[]; pages?: string[]; details?: Record<string, { page: string; alt?: string; width?: number; height?: number; licence?: string; attribution?: string }> }>;
+  images: Record<string, { page: string; image: string; reviewed: string; licence?: string; attribution?: string; more?: string[]; pages?: string[]; details?: Record<string, { page: string; alt?: string; width?: number; height?: number; licence?: string; attribution?: string; assetUrl?: string; cacheReason?: string }> }>;
   _rejected?: Record<string, string>;
   /** Pictures turned down by eye, per robot, so a later pass does not propose them again. */
   _rejected_images?: Record<string, string[]>;

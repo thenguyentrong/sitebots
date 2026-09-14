@@ -13,10 +13,7 @@ import { SITE } from '@/lib/site';
  */
 
 const SCHEMA_AVAILABILITY: Record<string, string> = {
-  for_sale: 'https://schema.org/InStock',
   pre_order: 'https://schema.org/PreOrder',
-  enterprise_only: 'https://schema.org/InStoreOnly',
-  not_sold: 'https://schema.org/OutOfStock',
   discontinued: 'https://schema.org/Discontinued',
 };
 
@@ -33,15 +30,17 @@ export function productJsonLd(robot: RobotCard, prices: PriceCurrent[], availabi
       ...(s.unit ? { unitText: s.unit } : {}),
     }));
 
-  const fresh = prices.filter((p) => p.tier <= 2 && !p.stale);
+  const fresh = prices.filter((p) => p.tier <= 2 && p.direct && !p.stale);
   const offers = fresh.map((p) => {
-    const a = availability.find((x) => x.region === p.region) ?? availability[0];
+    // Stock belongs to a specific seller and market, never to the first unrelated region.
+    const a = availability.find(x => x.region === p.region && x.source_url === p.source_url
+      && x.source_tier != null && x.source_tier <= 2 && Date.now() - +new Date(x.observed_at) <= 90 * 86400000);
     return {
       '@type': 'Offer',
       price: p.amount,
       priceCurrency: p.currency,
       url,
-      availability: a ? SCHEMA_AVAILABILITY[a.status] ?? undefined : undefined,
+      availability: a ? SCHEMA_AVAILABILITY[a.status] ?? (a.in_stock === true ? 'https://schema.org/InStock' : a.in_stock === false ? 'https://schema.org/OutOfStock' : undefined) : undefined,
       priceValidUntil: new Date(new Date(p.observed_at).getTime() + 90 * 86_400_000).toISOString().slice(0, 10),
       eligibleRegion: p.region === 'GLOBAL' ? undefined : p.region,
       seller: { '@type': 'Organization', name: new URL(p.source_url).hostname.replace(/^www\./, '') },

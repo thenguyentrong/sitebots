@@ -10,8 +10,8 @@ export function SiteHeader() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Logo />
         <NavLinks className="hidden md:flex" />
-        <Link href="/#matcher" className={`${ui.btn} h-9 px-4`}>
-          Find a robot
+        <Link href="/robots" className={`${ui.btn} h-9 px-4`}>
+          Browse robots
         </Link>
       </div>
       <div className="border-t border-edge/60 md:hidden">

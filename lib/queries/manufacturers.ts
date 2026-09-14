@@ -1,3 +1,4 @@
+import { PLACEHOLDER_MODEL_PATTERN } from '@/lib/catalogue-policy';
 import { getSql } from '@/lib/db';
 import type { RobotCard } from '@/lib/spec/types';
 import { canonicalManufacturerSlug, isPublicManufacturer, manufacturerAliases, manufacturerDisplayName, manufacturerLogo, manufacturerReview, type ManufacturerLogo, type ManufacturerReview } from '@/lib/manufacturers';
@@ -29,7 +30,7 @@ async function groupedManufacturers(): Promise<ManufacturerRow[]> {
            count(r.id) filter (where r.form_factor = 'quadruped')::int as quadrupeds,
            coalesce(sum(coalesce(array_length(rc.verified_fields, 1), 0)), 0)::int as verified_values
     from manufacturers m
-    left join robots r on r.manufacturer_id = m.id
+    left join robots r on r.manufacturer_id = m.id and r.model_slug !~* ${PLACEHOLDER_MODEL_PATTERN}
     left join robot_current rc on rc.robot_id = r.id
     group by m.id
     having count(r.id) > 0`;
@@ -60,8 +61,8 @@ export async function getManufacturer(slug: string): Promise<{ manufacturer: Man
   if (!manufacturer) return null;
   const sql = await getSql();
   const robots = coerceRows<RobotCard>(await sql.query(
-    'select * from robot_cards where manufacturer_slug = any($1::text[]) order by name, variant',
-    [manufacturerAliases(canonical)],
+    'select * from robot_cards where manufacturer_slug = any($1::text[]) and model_slug !~* $2 order by name, variant',
+    [manufacturerAliases(canonical), PLACEHOLDER_MODEL_PATTERN],
   ));
   return { manufacturer, robots };
 }

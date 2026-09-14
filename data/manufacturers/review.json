@@ -1,5 +1,5 @@
 {
-  "reviewedAt": "2026-09-12",
+  "reviewedAt": "2026-09-13",
   "policy": "Show commercial robot suppliers and companies with an announced robot product. Hide research-only, inactive and unverified entries. Supplier status is separate from individual model availability.",
   "manufacturers": {
     "1x": {
@@ -289,13 +289,22 @@
     },
     "anhui-heli": {
       "name": "Anhui Heli",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [],
-      "sourceCheck": "no_official_website"
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official supplier offers AGV and industrial handling products. The catalogue generic embodied-industrial-robot model remains unconfirmed.",
+      "website": "https://en.helichina.com/",
+      "evidence": [
+        {
+          "url": "https://en.helichina.com/product/",
+          "kind": "official",
+          "note": "The official supplier offers AGV and industrial handling products. The catalogue generic embodied-industrial-robot model remains unconfirmed."
+        }
+      ],
+      "checkedSources": [
+        "https://en.helichina.com/",
+        "https://en.helichina.com/product/"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "anybotics": {
       "name": "ANYbotics",
@@ -323,22 +332,22 @@
     },
     "anyverse": {
       "name": "Anyverse",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The linked Anyverse company provides synthetic data software. Its identity as the manufacturer of the catalogued K15 robot is not established.",
+      "status": "developing",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official hardware company presents the K15 humanoid. This is distinct from the synthetic-data company at anyverse.ai.",
       "website": "https://anyverse.com/",
       "evidence": [
         {
           "url": "https://anyverse.com/",
           "kind": "official",
-          "note": "The linked Anyverse company provides synthetic data software. Its identity as the manufacturer of the catalogued K15 robot is not established."
+          "note": "The official hardware company presents the K15 humanoid. This is distinct from the synthetic-data company at anyverse.ai."
         }
       ],
       "checkedSources": [
         "https://anyverse.com/",
         "https://www.robothub.app/en/robots/k15"
       ],
-      "sourceCheck": "unverified"
+      "sourceCheck": "official-search-index"
     },
     "apptronik": {
       "name": "Apptronik",
@@ -426,17 +435,26 @@
       "sourceCheck": "fetched"
     },
     "atom": {
-      "name": "Atom Robotic",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": "https://www.atomrobot.com/robot/163/1768",
-      "evidence": [],
+      "name": "ATOMROBOT",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The commercial manufacturer publishes an official ATOM01 product announcement. The older English product URL has moved; individual delivery terms still need confirmation.",
+      "website": "https://www.atomrobot.ai/",
+      "evidence": [
+        {
+          "url": "https://www.atomrobot.com/detail/16/1900",
+          "kind": "official",
+          "note": "The manufacturer identifies ATOM01 and its Tianjin industrial base."
+        }
+      ],
       "checkedSources": [
         "https://www.atomrobot.com/robot/163/1768",
-        "https://www.robothub.app/en/robots/atom01"
+        "https://www.robothub.app/en/robots/atom01",
+        "https://www.atomrobot.ai/",
+        "https://www.atomrobot.ai/robot/33/1468"
       ],
-      "sourceCheck": "unverified"
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     },
     "autolife": {
       "name": "AutoLife Robotics",
@@ -586,29 +604,46 @@
       "sourceCheck": "fetched"
     },
     "boshi": {
-      "name": "Boshi",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/boshi-humanoid"
+      "name": "Harbin Boshi Automation",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The company manufactures and sells industrial robotic equipment. The catalogue name DexBot still lacks an exact official product match.",
+      "website": "https://www.boshi.cn/",
+      "evidence": [
+        {
+          "url": "https://en.boshi.cn/",
+          "kind": "official",
+          "note": "The company manufactures and sells industrial robotic equipment. The catalogue name DexBot still lacks an exact official product match."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/boshi-humanoid",
+        "https://www.boshi.cn/",
+        "https://en.boshi.cn/"
+      ],
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     },
     "boshiac": {
-      "name": "BOSHIAC (Harbin, China)",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": "https://en.boshi.cn/",
-      "evidence": [],
-      "checkedSources": [
-        "https://en.boshi.cn/",
-        "https://humanoid.guide/product/dexbot/"
+      "name": "Harbin Boshi Automation",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The company manufactures and sells industrial robotic equipment. The catalogue name DexBot still lacks an exact official product match.",
+      "website": "https://www.boshi.cn/",
+      "evidence": [
+        {
+          "url": "https://en.boshi.cn/",
+          "kind": "official",
+          "note": "The company manufactures and sells industrial robotic equipment. The catalogue name DexBot still lacks an exact official product match."
+        }
       ],
-      "sourceCheck": "unverified"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/boshi-humanoid",
+        "https://www.boshi.cn/",
+        "https://en.boshi.cn/"
+      ],
+      "sourceCheck": "official-search-index",
+      "canonicalSlug": "boshi"
     },
     "boston-dynamics": {
       "name": "Boston Dynamics",
@@ -642,8 +677,8 @@
     "byd": {
       "name": "BYD",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "BYD is a real company, but no official XiaoDi humanoid product announcement was located; search results also refer to the in-car assistant.",
       "website": null,
       "evidence": [],
       "checkedSources": [
@@ -714,29 +749,49 @@
       "sourceCheck": "fetched"
     },
     "cetc-21st-institute": {
-      "name": "CETC 21st Institute",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
+      "name": "CETC Robotics",
+      "status": "developing",
+      "reviewedAt": "2026-09-13",
+      "reason": "CETC identifies its commercial robotics company associated with the 21st Institute and reports the Explorer D1 humanoid programme. General customer delivery of D1 is unconfirmed.",
+      "website": "https://www.cetc.com.cn/",
+      "evidence": [
+        {
+          "url": "https://www.worldrobotconference.com/expo/company/464.html",
+          "kind": "official-exhibitor",
+          "note": "The company identifies the 21st Institute and CETC Robotics corporate relationship and robot manufacturing business."
+        },
+        {
+          "url": "https://www.cetc.com.cn/zgdk/1592960/1592965/2126677/index.html",
+          "kind": "official",
+          "note": "CETC reports the Explorer D1 exhibit at WRC 2026."
+        }
+      ],
       "checkedSources": [
         "https://www.robothub.app/en/robots/explorer-d1"
       ],
-      "sourceCheck": "no_official_website"
+      "sourceCheck": "no_official_website",
+      "country": "CN"
     },
     "chaoneng": {
-      "name": "Chaoneng Robot",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": "http://www.hncnbot.com/cnbot/products/58165561.html",
-      "evidence": [],
+      "name": "Chaoneng Robotics",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official supplier describes deployed service robots and its Xiangjiang No. 1 healthcare humanoid.",
+      "website": "https://www.hncnbot.com/",
+      "evidence": [
+        {
+          "url": "https://www.hncnbot.com/cnbot/products/58165561.html",
+          "kind": "official",
+          "note": "The official supplier describes deployed service robots and its Xiangjiang No. 1 healthcare humanoid."
+        }
+      ],
       "checkedSources": [
         "http://www.hncnbot.com/cnbot/products/58165561.html",
-        "https://www.robothub.app/en/robots/xiangjiang-1"
+        "https://www.robothub.app/en/robots/xiangjiang-1",
+        "https://www.hncnbot.com/",
+        "https://www.hncnbot.com/cnbot/products/58165561.html"
       ],
-      "sourceCheck": "fetched"
+      "sourceCheck": "official-search-index"
     },
     "clone": {
       "name": "Clone Robotics",
@@ -759,18 +814,27 @@
       "sourceCheck": "fetched"
     },
     "cloudminds": {
-      "name": "CloudMinds",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
+      "name": "CloudMinds / Dataa Robotics",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official company history identifies the commercial Cloud Ginger XR-1 launch and subsequent XR-4 programme.",
+      "website": "https://www.dataarobotics.com/",
+      "evidence": [
+        {
+          "url": "https://www.dataarobotics.com/en/about/history/id/37",
+          "kind": "official",
+          "note": "The official company history identifies the commercial Cloud Ginger XR-1 launch and subsequent XR-4 programme."
+        }
+      ],
       "checkedSources": [
         "https://www.robothub.app/en/robots/xr-1",
         "https://www.robothub.app/en/robots/ginger",
-        "https://www.robothub.app/en/robots/xr4"
+        "https://www.robothub.app/en/robots/xr4",
+        "https://www.dataarobotics.com/",
+        "https://www.dataarobotics.com/en/about/history/id/37"
       ],
-      "sourceCheck": "no_official_website"
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     },
     "corenetic": {
       "name": "Corenetic AI",
@@ -1069,17 +1133,25 @@
       "sourceCheck": "fetched"
     },
     "droidup": {
-      "name": "Droidup",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
+      "name": "DroidUp",
+      "status": "developing",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official company and product pages identify Walker 2 (X02) and a commercial development programme. Broad customer delivery is not confirmed.",
+      "website": "https://www.droidup.com/",
+      "evidence": [
+        {
+          "url": "https://www.droidup.com/product/2",
+          "kind": "official",
+          "note": "The official company and product pages identify Walker 2 (X02) and a commercial development programme. Broad customer delivery is not confirmed."
+        }
+      ],
       "checkedSources": [
         "https://www.robothub.app/en/robots/droidup-walker-2",
-        "https://www.robothub.app/en/robots/droidup-walker-3"
+        "https://www.robothub.app/en/robots/droidup-walker-3",
+        "https://www.droidup.com/",
+        "https://www.droidup.com/product/2"
       ],
-      "sourceCheck": "no_official_website"
+      "sourceCheck": "official-search-index"
     },
     "duatic": {
       "name": "Duatic",
@@ -1141,16 +1213,23 @@
     },
     "elu": {
       "name": "Elu.AI",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": "http://www.elu-ai.com/",
-      "evidence": [],
+      "status": "developing",
+      "reviewedAt": "2026-09-13",
+      "reason": "INFIFORCE officially identifies itself as the ELU group robot brand. Grouped under INFIFORCE while keeping historical robot URLs.",
+      "website": "https://infiforce.cn/",
+      "evidence": [
+        {
+          "url": "https://infiforce.cn/news-detail?id=1950444978815766529",
+          "kind": "official",
+          "note": "The manufacturer states the ELU–INFIFORCE parent/brand relationship."
+        }
+      ],
       "checkedSources": [
         "http://www.elu-ai.com/",
         "https://humanoid.guide/product/astrodroid-ad-01/"
       ],
-      "sourceCheck": "unverified"
+      "sourceCheck": "unverified",
+      "canonicalSlug": "infiforce"
     },
     "enchanted-tools": {
       "name": "Enchanted Tools",
@@ -1407,8 +1486,8 @@
     "fujian-humanoid": {
       "name": "Fujian Humanoid",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "Fujian government reports identify a humanoid innovation-center company and Fuzhi. An official manufacturer website and customer offering remain unconfirmed.",
       "website": null,
       "evidence": [],
       "checkedSources": [],
@@ -1417,8 +1496,8 @@
     "fujian-newton": {
       "name": "Fujian Newton Technology",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "No identifiable official manufacturer website or product page was found in the follow-up search.",
       "website": null,
       "evidence": [],
       "checkedSources": [],
@@ -1534,16 +1613,23 @@
       "sourceCheck": "fetched"
     },
     "gaode-momentum": {
-      "name": "Gaode Momentum",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/gaode-momentum-robot"
+      "name": "Amap Robotics",
+      "status": "developing",
+      "reviewedAt": "2026-09-13",
+      "reason": "Amap presents its Tutu robot and an order-interest programme. This confirms a robotics business, not specifications for the unnamed humanoid catalogue record.",
+      "website": "https://abot.amap.com/",
+      "evidence": [
+        {
+          "url": "https://abot.amap.com/",
+          "kind": "official",
+          "note": "Amap presents its Tutu robot and an order-interest programme. This confirms a robotics business, not specifications for the unnamed humanoid catalogue record."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/gaode-momentum-robot",
+        "https://abot.amap.com/"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "gelanruo": {
       "name": "Gelanruo Robotics",
@@ -1783,18 +1869,27 @@
       "sourceCheck": "fetched"
     },
     "hcfa": {
-      "name": "Hcfa",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
+      "name": "HCFA",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The industrial automation supplier publishes official YOLO humanoid programme news. Humanoid delivery is separate from its existing commercial automation business.",
+      "website": "https://www.hcfa.cn/",
+      "evidence": [
+        {
+          "url": "https://www.hcfa.cn/news",
+          "kind": "official",
+          "note": "The industrial automation supplier publishes official YOLO humanoid programme news. Humanoid delivery is separate from its existing commercial automation business."
+        }
+      ],
       "checkedSources": [
         "https://www.robothub.app/en/robots/hcfa-humanoid-servo",
         "https://www.robothub.app/en/robots/yolo-02",
-        "https://www.robothub.app/en/robots/mini-loong"
+        "https://www.robothub.app/en/robots/mini-loong",
+        "https://www.hcfa.cn/",
+        "https://www.hcfa.cn/news"
       ],
-      "sourceCheck": "no_official_website"
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     },
     "hexagon": {
       "name": "Hexagon",
@@ -1956,8 +2051,8 @@
     "huazhijian": {
       "name": "Huazhijian",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "Issuer filings identify Shanghai Huazhijian, but the ZERO product and customer availability still need a direct official product source.",
       "website": null,
       "evidence": [],
       "checkedSources": [
@@ -1992,13 +2087,23 @@
     },
     "huibo": {
       "name": "Huibo Robotics",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [],
-      "sourceCheck": "no_official_website"
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The supplier offers the Astra Pro embodied-intelligence platform. The catalogue suffix Pro 2 requires separate variant confirmation.",
+      "website": "https://www.huiborobot.com/",
+      "evidence": [
+        {
+          "url": "https://www.huiborobot.com/embodiedintelligence/1037.html",
+          "kind": "official",
+          "note": "The supplier offers the Astra Pro embodied-intelligence platform. The catalogue suffix Pro 2 requires separate variant confirmation."
+        }
+      ],
+      "checkedSources": [
+        "https://www.huiborobot.com/",
+        "https://www.huiborobot.com/embodiedintelligence/1037.html"
+      ],
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     },
     "huilun": {
       "name": "Huilun Technology",
@@ -2121,14 +2226,23 @@
       "sourceCheck": "fetched"
     },
     "iplus-mobot": {
-      "name": "IPLUS MOBOT",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [],
-      "sourceCheck": "no_official_website"
+      "name": "IPLUSMOBOT",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official company describes its industrial mobile robots. NAVIAI WA1/WA2 ownership is not established by this evidence and remains a model-level review item.",
+      "website": "https://www.iplusmobot.jp/",
+      "evidence": [
+        {
+          "url": "https://www.iplusmobot.jp/technology/",
+          "kind": "official",
+          "note": "The official company describes its industrial mobile robots. NAVIAI WA1/WA2 ownership is not established by this evidence and remains a model-level review item."
+        }
+      ],
+      "checkedSources": [
+        "https://www.iplusmobot.jp/",
+        "https://www.iplusmobot.jp/technology/"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "isento": {
       "name": "isento robotics GmbH",
@@ -2173,22 +2287,31 @@
       "sourceCheck": "fetched"
     },
     "jingsong": {
-      "name": "Jingsong Intelligence",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/wheeled-legged-humanoid-robot"
+      "name": "Jingsong Intelligent",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official company sells mobile industrial robots. The generic humanoid record still needs a named official product source.",
+      "website": "https://www.gen-song.net/",
+      "evidence": [
+        {
+          "url": "https://www.gen-song.net/ProductCenter",
+          "kind": "official",
+          "note": "The official company sells mobile industrial robots. The generic humanoid record still needs a named official product source."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/wheeled-legged-humanoid-robot",
+        "https://www.gen-song.net/",
+        "https://www.gen-song.net/ProductCenter"
+      ],
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     },
     "jiuguang": {
       "name": "Jiuguang Technology",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "Launch reporting identifies Xiaorui G3 and Jiuguang Technology; a direct official manufacturer website remains unresolved.",
       "website": null,
       "evidence": [],
       "checkedSources": [],
@@ -2780,8 +2903,8 @@
     "moon-dynamics": {
       "name": "Moon Dynamics",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "L1 is associated with Lanyue Dynamics (揽月动力). No official product website was located; it must not borrow LimX Luna or Livsyn L1 assets.",
       "website": null,
       "evidence": [],
       "checkedSources": [
@@ -3350,14 +3473,14 @@
     "qihan": {
       "name": "Qihan Technology",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The recorded website belongs to an LCD display supplier. It does not verify the Qihan/Robo-C 2 manufacturer attribution.",
+      "reviewedAt": "2026-09-13",
+      "reason": "Official Promobot product and user-document pages identify Robo-C2 as a Promobot robot, not Qihan. This misattributed catalogue entry remains hidden pending record correction.",
       "website": "https://www.qihantech.com/",
       "evidence": [
         {
-          "url": "https://www.qihantech.com/",
+          "url": "https://promo-bot.ru/production/robo-c/",
           "kind": "official",
-          "note": "The recorded website belongs to an LCD display supplier. It does not verify the Qihan/Robo-C 2 manufacturer attribution."
+          "note": "Promobot identifies and offers Robo-C2."
         }
       ],
       "checkedSources": [
@@ -3524,15 +3647,23 @@
     },
     "roboscience": {
       "name": "RoboScience",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/rex-g1"
+      "status": "developing",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official company describes development of robot hardware and embodied AI. REX G1 model-specific claims require a separate product source.",
+      "website": "https://www.roboscience.co/",
+      "evidence": [
+        {
+          "url": "https://en.roboscience.co/",
+          "kind": "official",
+          "note": "The official company describes development of robot hardware and embodied AI. REX G1 model-specific claims require a separate product source."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/rex-g1",
+        "https://www.roboscience.co/",
+        "https://en.roboscience.co/"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "era": {
       "name": "Robot Era",
@@ -3919,14 +4050,23 @@
       "sourceCheck": "fetched"
     },
     "step": {
-      "name": "STEP Robotics",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [],
-      "sourceCheck": "no_official_website"
+      "name": "STEP",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The industrial robot supplier officially announced SYNDA R1. Announcement and pilot use do not establish unrestricted humanoid sales.",
+      "website": "https://www.stepelectric.com/",
+      "evidence": [
+        {
+          "url": "https://www.stepelectric.com/News_details/215.html",
+          "kind": "official",
+          "note": "The industrial robot supplier officially announced SYNDA R1. Announcement and pilot use do not establish unrestricted humanoid sales."
+        }
+      ],
+      "checkedSources": [
+        "https://www.stepelectric.com/",
+        "https://www.stepelectric.com/News_details/215.html"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "stial": {
       "name": "Stial",
@@ -4002,16 +4142,24 @@
       "sourceCheck": "fetched"
     },
     "svt": {
-      "name": "SVT Robot",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available SmartWheel entry does not establish a robot manufacturer. Do not confuse robotics orchestration software with a supplier of this robot.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/smartwheel"
+      "name": "SVT Robotics (Hangzhou)",
+      "status": "developing",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official Chinese company presents its Vinci / SmartWheel wheeled robot. This is distinct from the US software company using the SVT Robotics name.",
+      "website": "https://www.svtrobot.com/",
+      "evidence": [
+        {
+          "url": "https://www.svtrobot.com/products/wheeled-robot",
+          "kind": "official",
+          "note": "The official Chinese company presents its Vinci / SmartWheel wheeled robot. This is distinct from the US software company using the SVT Robotics name."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/smartwheel",
+        "https://www.svtrobot.com/",
+        "https://www.svtrobot.com/products/wheeled-robot"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "swancor": {
       "name": "Swancor",
@@ -4094,7 +4242,7 @@
     "tars": {
       "name": "TARS Robotics",
       "status": "developing",
-      "reviewedAt": "2026-09-12",
+      "reviewedAt": "2026-09-13",
       "reason": "TARS develops embodied robots and publishes its robot learning programme. General customer availability is not established.",
       "website": "https://wiyh.tars-ai.com/",
       "evidence": [
@@ -4102,6 +4250,11 @@
           "url": "https://wiyh.tars-ai.com/",
           "kind": "official",
           "note": "TARS develops embodied robots and publishes its robot learning programme. General customer availability is not established."
+        },
+        {
+          "url": "https://www.hongshan.com/companies/%E5%AE%83%E7%9F%B3%E6%99%BA%E8%88%AA/",
+          "kind": "investor",
+          "note": "The company investor identifies TARS as a robotics business and links the same official website. Generic website-builder imagery is not approved as a robot photo."
         }
       ],
       "checkedSources": [
@@ -4721,35 +4874,51 @@
       "sourceCheck": "fetched"
     },
     "vita-dynamics": {
-      "name": "Vita Dynamics",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/vita-atom"
+      "name": "Vita Dynamics / Vbot",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official Vbot company page identifies Vita Dynamics and its robot-dog product. No robot-dog image or specification is assigned to the separate ATOM record.",
+      "website": "https://www.vbot.cn/",
+      "evidence": [
+        {
+          "url": "https://www.vbot.cn/en/About",
+          "kind": "official",
+          "note": "The official Vbot company page identifies Vita Dynamics and its robot-dog product. No robot-dog image or specification is assigned to the separate ATOM record."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/vita-atom",
+        "https://www.vbot.cn/",
+        "https://www.vbot.cn/en/About"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "vizumtech": {
-      "name": "vizumtech",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
+      "name": "Vizum Technology",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official manufacturer presents bipedal, harvesting and AGV humanoid product families and company information.",
+      "website": "https://www.vizumtech.com/",
+      "evidence": [
+        {
+          "url": "https://www.vizumtech.com/about.html",
+          "kind": "official",
+          "note": "The official manufacturer presents bipedal, harvesting and AGV humanoid product families and company information."
+        }
+      ],
       "checkedSources": [
         "https://www.robothub.app/en/robots/weijing-harvesting-robot",
-        "https://www.robothub.app/en/robots/weijing-xiaowei-agv"
+        "https://www.robothub.app/en/robots/weijing-xiaowei-agv",
+        "https://www.vizumtech.com/",
+        "https://www.vizumtech.com/about.html"
       ],
-      "sourceCheck": "no_official_website"
+      "sourceCheck": "official-search-index"
     },
     "vlai": {
       "name": "VLAI Robotics",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "A third-party lead identifies vlai.cn and a K1 programme; no directly verifiable official product content was found.",
       "website": null,
       "evidence": [],
       "checkedSources": [
@@ -4860,8 +5029,8 @@
     "west-lake-interactive": {
       "name": "West Lake Interactive",
       "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
+      "reviewedAt": "2026-09-13",
+      "reason": "No exact official HEARTRobot manufacturer match was found. Westlake Xinchen and Westlake Robotics must not be merged on name similarity.",
       "website": null,
       "evidence": [],
       "checkedSources": [],
@@ -5137,28 +5306,45 @@
     },
     "youibot": {
       "name": "YOUIBOT",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/ling-shu"
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The commercial mobile-robot supplier officially announced its LingShu biped; its separate Xunxiao wheeled model is described in news/180.html.",
+      "website": "https://zh.youibot.com/",
+      "evidence": [
+        {
+          "url": "https://zh.youibot.com/news/179.html",
+          "kind": "official",
+          "note": "The commercial mobile-robot supplier officially announced its LingShu biped; its separate Xunxiao wheeled model is described in news/180.html."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/ling-shu",
+        "https://zh.youibot.com/",
+        "https://zh.youibot.com/news/179.html"
+      ],
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     },
     "youyi": {
-      "name": "Youyi Robotics",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": "https://hfun-tech.com/h-col-109.html",
-      "evidence": [],
+      "name": "Hfun Technology",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The official Hfun manufacturer site lists HM01 and T01 robot products and sales/service contacts.",
+      "website": "https://www.hfun-tech.com/",
+      "evidence": [
+        {
+          "url": "https://www.hfun-tech.com/col.jsp?id=104",
+          "kind": "official",
+          "note": "The official Hfun manufacturer site lists HM01 and T01 robot products and sales/service contacts."
+        }
+      ],
       "checkedSources": [
         "https://hfun-tech.com/h-col-109.html",
-        "https://www.robothub.app/en/robots/youyi-hm01"
+        "https://www.robothub.app/en/robots/youyi-hm01",
+        "https://www.hfun-tech.com/",
+        "https://www.hfun-tech.com/col.jsp?id=104"
       ],
-      "sourceCheck": "unverified"
+      "sourceCheck": "official-search-index"
     },
     "yue-quan-bionics": {
       "name": "Yue Quan Bionics",
@@ -5281,16 +5467,24 @@
       "sourceCheck": "unverified"
     },
     "zhongli": {
-      "name": "Zhongli",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [
-        "https://www.robothub.app/en/robots/kangaroo-robot"
+      "name": "EP Equipment / Zhongli",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "Official EP and XMOVER sites establish a commercial industrial robot supplier. The Kangaroo humanoid name remains unconfirmed.",
+      "website": "https://www.ep-zl.com/",
+      "evidence": [
+        {
+          "url": "https://www.xmover.com/",
+          "kind": "official",
+          "note": "Official EP and XMOVER sites establish a commercial industrial robot supplier. The Kangaroo humanoid name remains unconfirmed."
+        }
       ],
-      "sourceCheck": "no_official_website"
+      "checkedSources": [
+        "https://www.robothub.app/en/robots/kangaroo-robot",
+        "https://www.ep-zl.com/",
+        "https://www.xmover.com/"
+      ],
+      "sourceCheck": "official-search-index"
     },
     "zoomlion": {
       "name": "Zoomlion",
@@ -5311,14 +5505,23 @@
       "sourceCheck": "fetched"
     },
     "unknown": {
-      "name": "天链机器人",
-      "status": "unverified",
-      "reviewedAt": "2026-09-12",
-      "reason": "The available records do not establish a current commercial robot offering or a confirmed product-development programme. Hidden until reliable evidence is available.",
-      "website": null,
-      "evidence": [],
-      "checkedSources": [],
-      "sourceCheck": "no_official_website"
+      "name": "Tianlian Robotics",
+      "status": "commercial",
+      "reviewedAt": "2026-09-13",
+      "reason": "The company is Sichuan Tianlian Robot Co., Ltd. (stock code 835015), a commercial robot manufacturer. The legacy URL slug is preserved; the catalogue Tina model still needs exact product evidence.",
+      "website": "https://www.tlibot.com/",
+      "evidence": [
+        {
+          "url": "https://www.tlibot.com/",
+          "kind": "official",
+          "note": "The company is Sichuan Tianlian Robot Co., Ltd. (stock code 835015), a commercial robot manufacturer. The legacy URL slug is preserved; the catalogue Tina model still needs exact product evidence."
+        }
+      ],
+      "checkedSources": [
+        "https://www.tlibot.com/"
+      ],
+      "sourceCheck": "official-search-index",
+      "country": "CN"
     }
   }
 }

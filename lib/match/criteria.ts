@@ -1,4 +1,5 @@
-import { FORM_FACTOR_LABEL, pickPayloadKey, qualifierLabel } from '@/lib/spec/display';
+import { conservativePayload } from '@/lib/ingest/current';
+import { FORM_FACTOR_LABEL, qualifierLabel } from '@/lib/spec/display';
 import type { Requirements } from './requirements';
 import type { Candidate, CriterionResult, CriterionStatus, PriceQuote } from './types';
 import { LABELS, WEIGHTS } from './weights';
@@ -36,11 +37,15 @@ export function formFactor(c: Candidate, req: Requirements): CriterionResult | n
 
 export function payload(c: Candidate, req: Requirements): CriterionResult | null {
   if (req.payload_kg === undefined) return null;
+  const choice = conservativePayload(c.card.specs ?? {});
   const v = c.card.payload_kg_conservative;
+  if (choice.estimated) return r('payload', 'hard', 'unknown', 0, 'working payload not confirmed; only a peak or unqualified load is published');
   if (v === null) return r('payload', 'hard', 'unknown', 0, 'payload not published');
-  const key = pickPayloadKey(c.card.specs ?? {});
+  const key = choice.key;
   const q = key ? qualifierLabel(key.split(':')[1]) : null;
-  const label = q ? ` ${q.split(',')[0]}` : '';
+  const basis = choice.estimated ? `estimated at 50% of ${q ?? 'unspecified payload'}` : q;
+  const reported = key && c.card.specs[key]?.trust === 'reported' ? '; reported' : '';
+  const label = basis ? ` ${basis}${reported}` : reported;
   const verb = v >= req.payload_kg ? 'meets' : 'fails';
   const sign = v >= req.payload_kg ? '≥' : '<';
   return r('payload', 'hard', v >= req.payload_kg ? 'pass' : 'fail', v >= req.payload_kg ? 1 : 0, `${verb}: ${f1(v)} kg${label} ${sign} ${f1(req.payload_kg)} kg needed`);
@@ -53,16 +58,7 @@ export function reach(c: Candidate, req: Requirements): CriterionResult | null {
     const ok = c.card.reach_m >= need;
     return r('reach', 'hard', ok ? 'pass' : 'fail', ok ? 1 : 0, `${ok ? 'meets' : 'fails'}: reach ${f2(c.card.reach_m)} m ${ok ? '≥' : '<'} ${f2(need)} m needed`);
   }
-  const h = c.card.height_max_m ?? c.card.height_m;
-  if (h === null) return r('reach', 'hard', 'unknown', 0, 'reach and height not published');
-  if (c.card.form_factor === 'quadruped') {
-    // A quadruped reaches what its payload mount reaches; without an arm that is its own back.
-    const ok = h >= need;
-    return r('reach', 'hard', ok ? 'pass' : 'fail', ok ? 1 : 0, `${ok ? 'meets' : 'fails'}: mount height ${f2(h)} m ${ok ? '≥' : '<'} ${f2(need)} m needed (no arm assumed)`);
-  }
-  const est = Math.round(h * 1.15 * 100) / 100;
-  const ok = est >= need;
-  return r('reach', 'hard', ok ? 'pass' : 'fail', ok ? 1 : 0, `${ok ? 'meets' : 'fails'}: ~${f2(est)} m estimated from ${f2(h)} m height ${ok ? '≥' : '<'} ${f2(need)} m needed`);
+  return r('reach', 'hard', 'unknown', 0, 'working reach not published; body height does not establish tool or handling reach');
 }
 
 export function tasks(c: Candidate, req: Requirements): CriterionResult | null {
@@ -71,8 +67,13 @@ export function tasks(c: Candidate, req: Requirements): CriterionResult | null {
   if (!caps.length) return r('tasks', 'hard', 'unknown', 0, 'site tasks not assessed yet');
   const missing = req.tasks.filter((t) => !caps.includes(t));
   const pretty = (l: string[]) => l.map((t) => t.replace(/_/g, ' ')).join(', ');
-  if (!missing.length) return r('tasks', 'hard', 'pass', 1, `covers ${pretty(req.tasks)}`);
-  return r('tasks', 'hard', 'fail', 0, `no evidence of ${pretty(missing)}`);
+  if (!missing.length) {
+    const trust = c.card.specs.task_capabilities?.trust ?? 'reported';
+    if (trust === 'unknown') return r('tasks', 'hard', 'unknown', 0, 'task source confidence not established');
+    if (trust === 'reported') return r('tasks', 'hard', 'partial', 0.5, 'reported capability: ' + pretty(req.tasks) + '; confirm with the manufacturer');
+    return r('tasks', 'hard', 'pass', 1, 'listed capabilities: ' + pretty(req.tasks));
+  }
+  return r('tasks', 'hard', 'unknown', 0, `not confirmed: ${pretty(missing)}`);
 }
 
 export function stairs(c: Candidate, req: Requirements): CriterionResult | null {
@@ -91,25 +92,17 @@ export function slope(c: Candidate, req: Requirements): CriterionResult | null {
 }
 
 export function terrain(c: Candidate, req: Requirements): CriterionResult | null {
-  if (req.terrain === 'paved') return null;
-  const ff = c.card.form_factor;
-  if (req.terrain === 'gravel') {
-    if (ff === 'quadruped') return r('terrain', 'soft', 'pass', 1, 'quadruped, gravel is routine');
-    if (c.card.outdoor_rated === true) return r('terrain', 'soft', 'partial', 0.7, 'outdoor-rated; gravel not specifically stated');
-    if (c.card.outdoor_rated === false) return r('terrain', 'soft', 'fail', 0.2, 'indoor robot on gravel');
-    return r('terrain', 'soft', 'unknown', 0, 'terrain capability not published');
-  }
-  // rubble, mud: a physical limit, not a preference
-  if (ff === 'quadruped') return r('terrain', 'hard', 'pass', 1, `quadruped, ${req.terrain} is within the design envelope`);
-  return r('terrain', 'hard', 'fail', 0, `${FORM_FACTOR_LABEL[ff].toLowerCase()}s are not rated for ${req.terrain}`);
+  if (!req.terrain || req.terrain === 'paved') return null;
+  // Body type and outdoor use do not establish traction or stability on a site.
+  return r('terrain', req.terrain === 'gravel' ? 'soft' : 'hard', 'unknown', 0, req.terrain + ' capability needs configuration-specific evidence');
 }
 
 export function outdoor(c: Candidate, req: Requirements): CriterionResult | null {
-  if (req.environment === 'indoor') return null;
+  if (!req.environment || req.environment === 'indoor') return null;
   const v = c.card.outdoor_rated;
   if (v === true) return r('outdoor', 'hard', 'pass', 1, `outdoor use${c.card.ip_rating ? ` (${c.card.ip_rating})` : ''}`);
   if (v === false) return r('outdoor', 'hard', 'fail', 0, 'indoor only');
-  if (c.card.ip_liquid !== null && c.card.ip_liquid >= 4) return r('outdoor', 'hard', 'partial', 0.6, `${c.card.ip_rating} suggests outdoor use; the maker does not say`);
+  if (c.card.ip_liquid !== null && c.card.ip_liquid >= 4) return r('outdoor', 'hard', 'unknown', 0, `${c.card.ip_rating} is published; outdoor use is not confirmed`);
   return r('outdoor', 'hard', 'unknown', 0, 'outdoor rating not published');
 }
 
@@ -123,7 +116,7 @@ export function dust(c: Candidate, req: Requirements): CriterionResult | null {
 }
 
 export function wet(c: Candidate, req: Requirements): CriterionResult | null {
-  if (req.wet === 'dry') return null;
+  if (!req.wet || req.wet === 'dry') return null;
   const l = c.card.ip_liquid;
   const kind = req.wet === 'rain' ? 'hard' : 'soft';
   if (l === null) return r('wet', kind, 'unknown', 0, 'IP rating not published');
@@ -141,6 +134,7 @@ export function temperature(c: Candidate, req: Requirements): CriterionResult | 
   const rated = `${lo !== null ? f1(lo) : '?'} to ${hi !== null ? f1(hi) : '?'} °C`;
   const site = `${req.temp_min_c !== undefined ? f1(req.temp_min_c) : '?'} to ${req.temp_max_c !== undefined ? f1(req.temp_max_c) : '?'} °C`;
   if (failLo || failHi) return r('temperature', 'hard', 'fail', 0, `rated ${rated} does not cover site ${site}`);
+  if ((req.temp_min_c !== undefined && lo === null) || (req.temp_max_c !== undefined && hi === null)) return r('temperature', 'hard', 'unknown', 0, 'one required temperature limit is not published');
   return r('temperature', 'hard', 'pass', 1, `rated ${rated} covers site ${site}`);
 }
 
@@ -151,7 +145,7 @@ export function runtime(c: Candidate, req: Requirements): CriterionResult | null
   if (v === null) return r('runtime', 'soft', 'unknown', 0, 'runtime not published');
   const basis = c.card.runtime_basis && c.card.runtime_basis !== 'unstated' ? c.card.runtime_basis : 'basis unstated';
   if (v >= req.runtime_h_per_shift) return r('runtime', 'soft', 'pass', 1, `${f1(v)} h (${basis}) covers an ${f1(req.runtime_h_per_shift)} h shift`);
-  if (swap === true) return r('runtime', 'soft', 'pass', 0.9, `${f1(v)} h per battery, swappable — shift covered by swapping`);
+  if (swap === true && req.hot_swap_acceptable) return r('runtime', 'soft', 'pass', 0.9, `${f1(v)} h per battery, swappable — shift covered by swapping`);
   const ratio = v / req.runtime_h_per_shift;
   const swapText = swap === false ? 'no battery swap' : 'battery swap not published';
   if (!req.hot_swap_acceptable) return r('runtime', 'hard', 'fail', 0, `${f1(v)} h (${basis}) < ${f1(req.runtime_h_per_shift)} h shift; ${swapText}`);
@@ -159,7 +153,7 @@ export function runtime(c: Candidate, req: Requirements): CriterionResult | null
 }
 
 export function autonomy(c: Candidate, req: Requirements): CriterionResult | null {
-  if (req.autonomy === 'teleop_ok') return null;
+  if (!req.autonomy || req.autonomy === 'teleop_ok') return null;
   const v = c.card.requires_operator;
   if (!v) return r('autonomy', 'hard', 'unknown', 0, 'level of autonomy not assessed');
   const okLevels = req.autonomy === 'autonomous' ? ['none'] : ['none', 'supervised'];
@@ -175,7 +169,7 @@ export function certifications(c: Candidate, req: Requirements): CriterionResult
   const missing = req.certifications_required.filter((x) => !have.includes(x));
   const pretty = (l: string[]) => l.map((x) => x.replace(/_/g, ' ')).join(', ');
   if (!missing.length) return r('certifications', 'hard', 'pass', 1, `${pretty(have)}`);
-  return r('certifications', 'hard', 'fail', 0, `missing ${pretty(missing)} (has ${pretty(have)})`);
+  return r('certifications', 'hard', 'unknown', 0, `missing ${pretty(missing)} (has ${pretty(have)})`);
 }
 
 /** The price a buyer in the requested region should reckon with, in EUR, with its basis. */

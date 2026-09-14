@@ -1,4 +1,12 @@
+import { RobotLandscape } from '@/components/catalogue/RobotLandscape';
+import { MakerOverview } from '@/components/catalogue/MakerOverview';
+import { toClusterRobot } from '@/lib/catalogue/cluster-robot';
+import { listRobotCards } from '@/lib/queries/robots';
 import Link from 'next/link';
+import Form from 'next/form';
+import { ManufacturerMap } from '@/components/ManufacturerMap';
+import { ManufacturerSubmission } from '@/components/ManufacturerSubmission';
+import reviewData from '@/data/manufacturers/review.json';
 import { MakerAvatar } from '@/components/MakerAvatar';
 import { listManufacturers } from '@/lib/queries/manufacturers';
 import { manufacturerStatusLabels } from '@/lib/manufacturers';
@@ -12,12 +20,22 @@ export const metadata = publicMetadata({
   path: '/brands',
 });
 
-type Search = Promise<{ q?: string; status?: string }>;
+type Search = Promise<{ q?: string; status?: string; country?: string }>;
 export default async function BrandsPage({ searchParams }: { searchParams: Search }) {
-  const [allMakers, search] = await Promise.all([listManufacturers(), searchParams]);
+  const [allMakers, search, landscape] = await Promise.all([listManufacturers(), searchParams, listRobotCards({ limit: 5000, pictures: 'all' })]);
   const q = typeof search.q === 'string' ? search.q.trim() : '';
   const status = search.status === 'commercial' || search.status === 'developing' ? search.status : '';
-  const makers = allMakers.filter((m) => (!status || m.review?.status === status) && (!q || `${m.name} ${m.slug} ${m.country ?? ''}`.toLowerCase().includes(q.toLowerCase())));
+  const country = typeof search.country === 'string' ? search.country.toUpperCase() : '';
+  const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+  const countryCounts = new Map<string, number>();
+  for (const m of allMakers) if (m.country) countryCounts.set(m.country, (countryCounts.get(m.country) ?? 0) + 1);
+  const countries = [...countryCounts].map(([code, count]) => {
+    const params = new URLSearchParams({ country: code });
+    if (q) params.set('q', q);
+    if (status) params.set('status', status);
+    return { code, count, name: regionNames.of(code === 'UK' ? 'GB' : code) ?? code, href: `/brands?${params}#manufacturers` };
+  }).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  const makers = allMakers.filter((m) => (!country || m.country === country) && (!status || m.review?.status === status) && (!q || `${m.name} ${m.slug} ${m.country ?? ''}`.toLowerCase().includes(q.toLowerCase())));
   const commercial = allMakers.filter((m) => m.review?.status === 'commercial').length;
   return (
     <main className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6">
@@ -28,10 +46,11 @@ export default async function BrandsPage({ searchParams }: { searchParams: Searc
         <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">
           <span><strong className="num text-foreground">{commercial}</strong> commercial suppliers</span>
           <span><strong className="num text-foreground">{allMakers.length - commercial}</strong> in development</span>
-          <span>Reviewed 12 September 2026</span>
+          <span>Reviewed {new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(reviewData.reviewedAt))}</span>
         </div>
+        <a href="#submit-manufacturer" className="mt-5 inline-block text-sm font-medium underline underline-offset-4">Suggest a manufacturer</a>
       </header>
-      <form action="/brands" className="mb-5 flex flex-wrap items-end gap-3" role="search" aria-label="Find a manufacturer">
+      <Form key={`filters:${q}:${status}:${country}`} id="manufacturers" action="/brands" className="mb-5 flex flex-wrap items-end gap-3" role="search" aria-label="Find a manufacturer">
         <label className="flex min-w-48 flex-1 flex-col gap-1.5 text-xs font-medium text-muted">
           Search manufacturers
           <input type="search" name="q" defaultValue={q} placeholder="Company or country" className="h-10 rounded-xl border border-edge bg-card px-3 text-sm text-foreground" />
@@ -44,9 +63,11 @@ export default async function BrandsPage({ searchParams }: { searchParams: Searc
             <option value="developing">In development</option>
           </select>
         </label>
+        <label className="flex flex-col gap-1.5 text-xs font-medium text-muted">Country<select name="country" defaultValue={country} className="h-10 rounded-xl border border-edge bg-card px-3 text-sm text-foreground"><option value="">All countries</option>{countries.map(c => <option key={c.code} value={c.code}>{c.name}</option>)}</select></label>
         <button type="submit" className={ui.btnSecondary}>Filter</button>
-        {q || status ? <Link href="/brands" className="px-2 py-2 text-sm text-muted underline underline-offset-4">Clear</Link> : null}
-      </form>
+        {q || status || country ? <Link href="/brands" className="px-2 py-2 text-sm text-muted underline underline-offset-4">Clear</Link> : null}
+      </Form>
+      <MakerOverview key={`overview:${q}:${status}:${country}`} landscape={<RobotLandscape robots={landscape.robots.map(toClusterRobot).filter((robot) => makers.some((maker) => maker.slug === robot.makerSlug))} scope="Robots from the manufacturers below" allowMakerFilter />} locations={<ManufacturerMap countries={countries} selected={country} unknown={allMakers.filter(m => !m.country).length} />} />
       <p className="mb-3 text-xs text-muted"><span className="num">{makers.length}</span> companies · Supplier status does not guarantee that every model is available in your region.</p>
       <div className="card overflow-x-auto">
         <table className="w-full min-w-[620px] border-collapse text-sm">
@@ -78,6 +99,7 @@ export default async function BrandsPage({ searchParams }: { searchParams: Searc
           </tbody>
         </table>
       </div>
+      <ManufacturerSubmission />
     </main>
   );
 }

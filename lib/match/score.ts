@@ -42,7 +42,7 @@ export function rankRobots(candidates: Candidate[], req: Requirements, opts: Ran
   // A robot whose stair or outdoor rating is simply unpublished must not rank
   // above one that is proven to pass. Hard criteria still open sort first,
   // then the soft score, then how much of the rest is known.
-  const openHard = (r: Ranked) => r.results.filter((x) => x.kind === 'hard' && x.status === 'unknown').length;
+  const openHard = (r: Ranked) => r.results.filter((x) => x.kind === 'hard' && (x.status === 'unknown' || x.status === 'partial')).length;
   ranked.sort(
     (a, b) =>
       openHard(a) - openHard(b) ||

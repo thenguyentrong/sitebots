@@ -153,6 +153,9 @@ export type PriceCurrent = {
 };
 
 export type AvailabilityCurrent = {
+  source_id?: string | null;
+  source_kind?: string | null;
+  source_tier?: number | null;
   robot_id: string;
   region: Region;
   status: AvailabilityStatus;

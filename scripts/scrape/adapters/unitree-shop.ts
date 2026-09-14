@@ -173,7 +173,7 @@ export const unitreeShop: SourceAdapter = {
             rec.availability.push({
               region: 'US',
               status: 'enterprise_only',
-              in_stock: false,
+              in_stock: null,
               lead_time_text: 'Quote only — the store lists a placeholder price',
             });
           }
@@ -202,13 +202,15 @@ export const unitreeShop: SourceAdapter = {
           sku: v.sku || undefined,
           note: v.title === 'Default Title' ? undefined : v.title,
         });
-        const status = v.available ? 'for_sale' : 'pre_order';
+        // Shopify unavailable means checkout is disabled; it does not establish a preorder.
+        const explicitPreorder = /pre[ -]?order/i.test(p.title + ' ' + spacedText(p.body_html));
+        const status = explicitPreorder ? 'pre_order' : v.available ? 'for_sale' : 'unknown';
         if (!rec.availability.some((a) => a.status === status)) {
           rec.availability.push({
             region: 'US',
             status,
-            in_stock: v.available,
-            lead_time_text: v.available ? undefined : 'Listed, not in stock',
+            in_stock: null,
+            lead_time_text: explicitPreorder ? 'Manufacturer lists this product for preorder; confirm delivery timing' : v.available ? 'Available to order from the manufacturer store; confirm stock and delivery' : 'Listed by the manufacturer; online checkout unavailable. Contact sales for availability.',
           });
         }
       }

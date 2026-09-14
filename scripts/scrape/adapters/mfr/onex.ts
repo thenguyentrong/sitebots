@@ -8,7 +8,7 @@ import type { IndexEntry, RawField, RawRecord, Snapshot, SourceAdapter } from '.
  * (5’6”, 66 lbs) and labels that repeat across sections ("Hands" is a DOF
  * count, a speed and an IP rating), so the section is part of the mapping.
  */
-const PAGE = 'https://www.1x.tech/neo';
+const PAGE = 'https://www.1x.tech/order';
 
 export const onex: SourceAdapter = {
   id: 'onex',
@@ -56,6 +56,10 @@ export const onex: SourceAdapter = {
     }
 
     if (!fields.length) return [];
+    const text = $('body').text().replace(/\s+/g, ' ');
+    const preorder = /pre[ -]?order|deposit/i.test(text);
+    const delivery = /US Deliveries start\s+(20\d{2})/i.exec(text);
+    const ownership = /\$20,000\s*Ownership/i.test(text);
     return [
       {
         adapter: 'onex',
@@ -64,8 +68,8 @@ export const onex: SourceAdapter = {
         observed_at: snapshot.fetchedAt,
         subject: { manufacturer_raw: '1X Technologies', model_raw: '1X NEO', form_factor_hint: 'humanoid' },
         fields,
-        prices: [],
-        availability: [{ region: 'US', status: 'pre_order', lead_time_text: '$200 deposit; no ship date published' }],
+        prices: ownership ? [{ region: 'US', amount: 20000, currency: 'USD', tier: 1, direct: true, config: 'early-access-ownership', note: 'Ownership purchase; $200 refundable reservation deposit is not the robot price. Subscription is separate.' }] : [],
+        availability: preorder ? [{ region: 'US', status: 'pre_order', lead_time_text: '$200 refundable reservation deposit' + (delivery ? '; manufacturer states US deliveries start ' + delivery[1] : '; confirm delivery timing with the manufacturer') }] : [],
         assets: [],
       },
     ];

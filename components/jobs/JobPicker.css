@@ -1,0 +1,41 @@
+.job-picker { --job-tint: color-mix(in srgb, var(--accent) 7%, var(--card)); padding-top: 30px; border-top: 1px solid var(--edge); scroll-margin-top: 100px; }
+.job-picker :is(a, button):focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.job-picker button { cursor: pointer; }
+.job-picker button:disabled { cursor: default; opacity: .45; }
+.job-picker-kicker { color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.job-picker-heading { display: flex; justify-content: space-between; align-items: end; gap: 20px; }
+.job-picker-heading h2 { margin-top: 8px; font-size: 25px; letter-spacing: -.035em; font-weight: 550; }
+.job-picker-heading > p { font-size: 12px; line-height: 1.6; color: var(--muted); }
+.job-picker-settings { display: flex; align-items: center; gap: 18px; margin: 25px 0 20px; }
+.job-picker-settings legend { float: left; font-size: 12px; color: var(--muted); padding: 9px 0; margin-right: 18px; }
+.job-picker-settings > div { display: flex; flex-wrap: wrap; gap: 7px; }
+.job-picker-settings button { display: inline-flex; align-items: center; gap: 8px; border: 1px solid var(--edge); background: var(--card); border-radius: 6px; padding: 9px 12px; font-size: 12px; line-height: 1.4; }
+.job-picker-settings button[aria-pressed='true'] { border-color: var(--foreground); background: var(--foreground); color: var(--background); }
+.job-picker-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.job-picker-card { display: block; min-width: 0; text-align: left; border: 1px solid var(--edge); border-radius: 11px; background: var(--card); padding: 21px; transition: border-color .18s, background .18s, transform .18s; }
+.job-picker-card:hover:not(:disabled) { border-color: var(--accent); background: var(--job-tint); transform: translateY(-2px); }
+.job-picker-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.job-picker-arrow { color: var(--faint); font-size: 19px; transition: color .18s; }
+.job-picker-card:hover .job-picker-arrow { color: var(--accent); }
+.job-picker-family { display: block; font-size: 9px; color: var(--muted); font-weight: 500; text-transform: uppercase; letter-spacing: .075em; }
+.job-picker-title { display: block; margin-top: 6px; font-size: 15px; letter-spacing: -.015em; font-weight: 600; line-height: 1.4; }
+.job-picker-description { display: block; margin-top: 9px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+.job-picker-note { text-align: center; color: var(--muted); font-size: 11px; margin-top: 22px; }
+@media (max-width: 1000px) { .job-picker-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .job-picker { padding-top: 24px; }
+  .job-picker-heading { display: block; }
+  .job-picker-heading h2 { font-size: 22px; }
+  .job-picker-heading > p { display: none; }
+  .job-picker-settings { display: block; margin-top: 18px; }
+  .job-picker-settings legend { float: none; font-size: 11px; }
+  .job-picker-settings > div { gap: 6px; }
+  .job-picker-settings button { font-size: 11px; padding: 8px 10px; }
+  .job-picker-grid { gap: 10px; }
+  .job-picker-card { padding: 16px; }
+  .job-picker-top { margin-bottom: 18px; }
+  .job-picker-title { font-size: 14px; }
+  .job-picker-description { font-size: 11px; }
+  .job-picker-family { font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .job-picker * { transition: none !important; } }

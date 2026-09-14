@@ -1,3 +1,5 @@
+import { RobotLandscape } from '@/components/catalogue/RobotLandscape';
+import { toClusterRobot } from '@/lib/catalogue/cluster-robot';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
@@ -76,6 +78,7 @@ export default async function BrandPage({ params }: { params: Params }) {
         {!isPublicManufacturer(m.slug) ? <p className="mt-2 text-sm font-medium">Reference only · Hidden from the supplier catalogue and robot matcher.</p> : null}
         {m.review?.evidence.length ? <div className="mt-3 flex flex-wrap gap-4 text-xs">{m.review.evidence.map((e, i) => <a key={e.url} href={e.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{e.kind === 'official' ? 'Official source' : 'Review source'}{m.review!.evidence.length > 1 ? ` ${i + 1}` : ''} ↗</a>)}</div> : null}
       </section>
+      <RobotLandscape robots={robots.map(toClusterRobot)} title={m.name + ' robot clusters'} scope={m.name + ' · all configurations'} />
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {robots.map((r) => (
           <RobotCard key={r.id} robot={r} action={<CompareToggle id={r.id} name={r.name} />} />

@@ -30,7 +30,7 @@ export function PricePanel({ prices, availability }: { prices: PriceCurrent[]; a
     <section className="card overflow-hidden">
       <header className="flex items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
         <h2 className="text-sm font-semibold">Price and delivery</h2>
-        <span className="text-xs text-faint">{prices.length ? `${prices.length} listing${prices.length === 1 ? '' : 's'}` : 'No published price'}</span>
+        <span className="text-xs text-faint">{prices.length ? `${prices.filter(p => p.tier <= 2 && p.direct).length} seller prices · ${prices.filter(p => p.tier > 2 || !p.direct).length} reported` : 'No published price'}</span>
       </header>
 
       {prices.length === 0 ? (
@@ -80,17 +80,17 @@ export function PricePanel({ prices, availability }: { prices: PriceCurrent[]; a
           {availability.map((a) => (
             <li key={a.region} className="flex flex-wrap items-center gap-x-2 gap-y-1">
               <span className="w-14 text-xs font-medium text-muted">{a.region}</span>
-              <Badge variant={AVAIL_VARIANT[a.status] ?? 'neutral'} dot>
-                {AVAILABILITY_LABEL[a.status] ?? a.status}
+              <Badge variant={a.source_tier != null && a.source_tier <= 2 ? AVAIL_VARIANT[a.status] ?? 'neutral' : 'neutral'} dot>
+                {a.source_kind === 'manufacturer' && a.source_tier === 1 ? '' : a.source_kind === 'distributor' && a.source_tier === 2 ? 'Seller lists: ' : 'Reported: '}{AVAILABILITY_LABEL[a.status] ?? a.status}
               </Badge>
-              {a.in_stock === true ? <span className="text-xs text-trust-verified">in stock</span> : null}
+              {a.in_stock === true && a.source_tier != null && a.source_tier <= 2 ? <span className="text-xs text-trust-verified">in stock</span> : null}
               {a.lead_time_days_min != null || a.lead_time_days_max != null ? (
                 <span className="num text-xs text-muted">
                   {a.lead_time_days_min ?? '?'}–{a.lead_time_days_max ?? '?'} days
                 </span>
               ) : null}
               {a.lead_time_text ? <span className="text-xs text-faint">{a.lead_time_text}</span> : null}
-              <span className="text-xs text-faint">· {formatDate(a.observed_at)}</span>
+              <span className="text-xs text-faint">{a.source_kind === 'manufacturer' && a.source_tier === 1 ? 'Manufacturer · ' : ''}<a href={a.source_url} rel="nofollow noopener" target="_blank" className="underline underline-offset-2 hover:text-foreground">{hostOf(a.source_url)}</a> · {formatDate(a.observed_at)}</span>
             </li>
           ))}
         </ul>

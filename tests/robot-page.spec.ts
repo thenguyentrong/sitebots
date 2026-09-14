@@ -81,3 +81,40 @@ test('a variant without pictures of its own borrows the base model photograph', 
   await media.locator('[data-media-tab="photos"]').click();
   await expect(page.getByText('Base model').first()).toBeVisible();
 });
+
+test('TRON 2 has reviewed commercial status and Germany buying contacts', async ({ page }) => {
+  await page.goto('/robots/limx-dynamics/tron-2');
+  await expect(page.getByText('Available to order', { exact: true })).toBeVisible();
+  await expect(page.getByText('Prototype', { exact: true })).toHaveCount(0);
+  const availability = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Price and delivery', exact: true }) });
+  await expect(availability).toContainText('Available to order through LimX sales');
+  await expect(availability.getByRole('link', { name: 'limxdynamics.com', exact: true })).toHaveAttribute('href', 'https://www.limxdynamics.com/en/products/tron2');
+  const buying = page.getByRole('region', { name: 'Buying in Germany' });
+  await expect(buying.getByRole('link', { name: 'reichelt elektronik' })).toHaveAttribute('href', /reichelt.com.*tron2/);
+  await expect(buying).toContainText('Businesses, institutions and government agencies only');
+  await expect(buying).toContainText('live stock and price unconfirmed');
+  await expect(buying.getByRole('link', { name: 'bd@limxdynamics.com', exact: true })).toHaveAttribute('href', 'mailto:bd@limxdynamics.com');
+  await expect(buying.getByRole('link', { name: 'info@reichelt.de', exact: true })).toHaveAttribute('href', 'mailto:info@reichelt.de');
+});
+
+test('B2 has commercial status backed by manufacturer availability', async ({ page }) => {
+  await page.goto('/robots/unitree/b2');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Unitree B2');
+  await expect(page.getByText('Available to order', { exact: true })).toBeVisible();
+  await expect(page.getByText('Status unknown', { exact: true })).toHaveCount(0);
+  const panel = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Price and delivery', exact: true }) });
+  await expect(panel).toContainText('Manufacturer');
+  await expect(panel.getByRole('link', { name: 'shop.unitree.com', exact: true })).toHaveAttribute('href', 'https://shop.unitree.com/products/unitree-b2');
+  await expect(panel).toContainText('Reported: For sale');
+});
+
+test('NEO distinguishes preorders and refundable deposits from the robot price', async ({ page }) => {
+  await page.goto('/robots/1x/neo');
+  const header = page.locator('header').filter({ has: page.getByRole('heading', { level: 1, name: '1X NEO' }) });
+  await expect(header.getByText('Pre-order', { exact: true })).toBeVisible();
+  await expect(header.getByText('Prototype', { exact: true })).toHaveCount(0);
+  const panel = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Price and delivery', exact: true }) });
+  await expect(panel).toContainText('US deliveries start 2026');
+  await expect(panel.getByRole('row').filter({ hasText: 'early-access-ownership' })).toContainText('US$20,000');
+  await expect(panel).toContainText('$200 refundable reservation deposit');
+});

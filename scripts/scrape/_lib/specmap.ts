@@ -1,5 +1,5 @@
 import type { FormFactor } from '@/lib/spec/enums';
-import { extractQuantity, normalizeIp, type Quantity } from '@/scripts/normalize/units';
+import { extractQuantity, normalizeIp, parseQuantity, type Quantity } from '@/scripts/normalize/units';
 import type { RawField } from './types';
 
 /**
@@ -96,7 +96,11 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
   if (/^(total |net )?(mass|weight)/i.test(label) || /net mass/i.test(label)) return f('weight_kg', fmt(extractQuantity(value, 'kg')));
 
   // kinematics
-  if (/total degrees of freedom|^degrees? of freedom|^dof$|total dof/i.test(label)) return f('dof_total', fmt(extractQuantity(value)));
+  if (/^total (?:degrees? of freedom|dof)\b|^degrees? of freedom$|^dof$/i.test(label)) {
+    // Component breakdowns and configuration alternatives are not a whole-body count.
+    const count = parseQuantity(value.replace(/\s*(degrees? of freedom|dof)\s*$/i, ''));
+    return count && !count.unit ? f('dof_total', fmt(count)) : [];
+  }
   if (/(single|each) leg|^legs$/i.test(label) && (/degree|dof/i.test(label) || section.includes('freedom'))) return multiplied(value, 'per leg, both legs counted').map((x) => ({ ...x, field: 'dof_legs' }));
   if (/(single|each) arm degrees|dof of each arm|^arms$/i.test(label) && (/degree|dof/i.test(label) || section.includes('freedom'))) return multiplied(value, 'per arm, both arms counted').map((x) => ({ ...x, field: 'dof_arms' }));
   if (/(single|each) hand degrees|^hands$/i.test(label) && (/degree|dof/i.test(label) || section.includes('freedom'))) {
@@ -105,19 +109,28 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
     const q = extractQuantity(value);
     return q?.value !== undefined ? f('dof_hands', q.value, { note: `${value} — per hand` }) : [];
   }
-  if (/waist degrees|^neck$|^spine$/i.test(label)) {
-    const q = extractQuantity(value);
+  if (/waist degrees|^spine$/i.test(label)) {
+    const q = parseQuantity(value.replace(/\s*dof\s*$/i, ''));
     return q?.value !== undefined ? f('dof_body', q.value, { note: `${label}: ${value}` }) : [];
   }
 
   // payload
   if (/load\s*\(standing\)/i.test(label) || /^lift$/i.test(label)) return f('payload_kg', fmt(extractQuantity(value, 'kg')), { qualifier: 'instant', note: `${label}: ${value}` });
   if (/load\s*\(walking\)/i.test(label) || /^carry$/i.test(label)) return f('payload_kg', fmt(extractQuantity(value, 'kg')), { qualifier: 'carry_walking', note: `${label}: ${value}` });
-  if (/arm (maximum )?load|arm payload|arm normal load|single arm.*load/i.test(label)) return f('payload_kg', fmt(extractQuantity(value, 'kg')), { qualifier: 'rated', note: `${label}: ${value}` });
+  if (/arm (maximum )?load|arm payload|arm normal load|single arm.*load/i.test(label)) {
+    const rated = /rated\s*:?\s*([^;]+)/i.exec(value);
+    const peak = /peak\s*:?\s*([^;]+)/i.exec(value);
+    if (rated || peak) {
+      if (rated) out.push(...f('payload_kg', fmt(extractQuantity(rated[1], 'kg')), { qualifier: 'rated', note: `${label}: ${value}` }));
+      if (peak) out.push(...f('payload_kg', fmt(extractQuantity(peak[1], 'kg')), { qualifier: 'peak', note: `${label}: ${value}` }));
+      return out;
+    }
+    return f('payload_kg', fmt(extractQuantity(value, 'kg')), { qualifier: /max/i.test(label) ? 'peak' : 'rated', note: `${label}: ${value}` });
+  }
   if (/^(max )?payload( capacity)?$/i.test(label)) {
     const main = extractQuantity(value.replace(/\(.*?\)/g, ''), 'kg');
-    const max = /\((?:max)?[^\d]*(\d+(?:\.\d+)?)\s*kg\)/i.exec(value);
-    out.push(...f('payload_kg', fmt(main), { qualifier: quad ? 'sustained' : 'rated', note: `${label}: ${value}` }));
+    const max = /\((?:max(?:imum)?|peak)[^\d]*(\d+(?:\.\d+)?)\s*kg\)/i.exec(value);
+    out.push(...f('payload_kg', fmt(main), { qualifier: quad ? 'sustained' : /^max/i.test(label) ? 'peak' : 'rated', note: `${label}: ${value}` }));
     if (max) out.push(...f('payload_kg', `${max[1]} kg`, { qualifier: quad ? 'instant' : 'peak', note: `${label}: ${value}` }));
     return out;
   }
@@ -147,12 +160,12 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
     } else {
       out.push(...f('runtime_h', fmt(extractQuantity(value, 'h') ?? extractQuantity(value, 'min')), { qualifier: 'unstated', note: value.length > 40 ? value : undefined }));
     }
-    if (/replaceable|swap|quick.?release/i.test(value)) out.push(...f('hot_swap', true, { note: value }));
+    if (/hot[ -]?swap/i.test(value)) out.push(...f('hot_swap', true, { note: value }));
     return out;
   }
   if (/battery (capacity|performance)|^battery$|^capacity$/i.test(label)) {
     out.push(...f('battery_wh', fmt(extractQuantity(value, 'Wh') ?? extractQuantity(value, 'kWh'))));
-    if (/replaceable|swap|quick.?release/i.test(value)) out.push(...f('hot_swap', true, { note: value }));
+    if (/hot[ -]?swap/i.test(value)) out.push(...f('hot_swap', true, { note: value }));
     // The pack itself, when the maker prints it: capacity in mAh, cells in series, nominal volts.
     const mah = /(\d{3,6})\s*mAh/i.exec(value);
     const series = /(\d{1,2})\s*S\b/.exec(value);
@@ -163,14 +176,14 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
       if (mah) pack.capacity_ah = Math.round((Number(mah[1]) / 1000) * 10) / 10;
       if (series) pack.cells_series = Number(series[1]);
       if (volts) pack.voltage_v = Number(volts[1]);
-      if (wh) pack.energy_wh = wh.value;
+      if (wh?.value !== undefined) pack.energy_wh = wh.value * (wh.unit === 'kWh' ? 1000 : 1);
       if (/replaceable|swap|quick.?release/i.test(value)) pack.swappable = true;
       out.push({ field: 'battery_pack', value: pack, note: value.slice(0, 160) });
     }
     return out;
   }
   if (/standby time/i.test(label)) return f('runtime_h', fmt(extractQuantity(value, 'h') ?? extractQuantity(value, 'min')), { qualifier: 'idle' });
-  if (/quick release|smart battery/i.test(label)) return f('hot_swap', true, { note: `${label}: ${value}` });
+  if (/hot[ -]?swap/i.test(label) && /^(yes|true|supported|available)$/i.test(value)) return f('hot_swap', true, { note: `${label}: ${value}` });
   if (/recharge|charge time|charging time/i.test(label)) return f('charge_time_h', fmt(extractQuantity(value, 'h') ?? extractQuantity(value, 'min')));
 
   // environment
@@ -193,13 +206,16 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
     return out;
   }
   if (/sensing|sensor configuration|depth sensing|^camera/i.test(label)) {
-    out.push(...f('cameras', value.slice(0, 160)));
-    out.push(...f('has_lidar', /lidar/i.test(value)));
+    if (/camera|rgb|stereo|depth|vision/i.test(label + ' ' + value)) out.push(...f('cameras', value.slice(0, 160)));
+    if (/lidar/i.test(value)) out.push(...f('has_lidar', !/no\s+lidar|without\s+lidar/i.test(value)));
     return out;
   }
   if (/^material/i.test(label)) return f('structural_material', value.slice(0, 120));
   if (/external interface|^interface|connectivity|communication|wifi/i.test(label)) return f('connectivity', value.slice(0, 160));
-  if (/warranty/i.test(label)) return f('warranty_months', fmt(extractQuantity(value)), { note: value });
+  if (/warranty/i.test(label)) {
+    const duration = /^(\d+(?:\.\d+)?)\s*(months?|years?)\b/i.exec(value);
+    return duration ? f('warranty_months', Number(duration[1]) * (/year/i.test(duration[2]) ? 12 : 1), { note: value }) : [];
+  }
 
   return [];
 }

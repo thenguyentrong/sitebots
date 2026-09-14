@@ -29,14 +29,14 @@ describe('unitree manufacturer pages', () => {
     expect(base.dof_total).toBe('23');
     expect(base.dof_legs).toBe(12);
     expect(base.dof_arms).toBe(10);
-    expect(base['payload_kg:rated']).toBe('2 kg');
+    expect(base['payload_kg:peak']).toBe('2 kg');
     expect(base['runtime_h:unstated']).toBe('2 h');
-    expect(base.hot_swap).toBe(true);
-    expect(base.warranty_months).toBe('8 months');
+    expect(base.hot_swap).toBeUndefined();
+    expect(base.warranty_months).toBe(8);
     expect(recs[0].prices[0]).toMatchObject({ amount: 13500, currency: 'USD', tier: 1 });
     const edu = byField(recs[1].fields);
     expect(edu.dof_total).toBe('23–43');
-    expect(edu['payload_kg:rated']).toBe('3 kg');
+    expect(edu['payload_kg:peak']).toBe('3 kg');
     expect(recs[1].prices).toHaveLength(0);
     expect(recs[1].availability[0].status).toBe('enterprise_only');
   });
@@ -140,7 +140,8 @@ describe('other manufacturer pages', () => {
     expect(f.ip_rating).toBe('IP44');
     expect(f.noise_db).toBe('22 dB');
     expect(f.compute_tops).toBe('2070');
-    expect(neo.availability[0].status).toBe('pre_order');
+    // This fixture contains specifications only, so it cannot establish order availability.
+    expect(neo.availability).toEqual([]);
   });
 
   it('PAL TALOS table with walking and standby runtime', () => {

@@ -10,7 +10,7 @@ describe('rankRobots', () => {
   it('excludes on a hard fail with the payload sentence and ranks the quadruped', () => {
     const out = rankRobots(FIXTURES, req({ payload_kg: 12, stairs: 'required', environment: 'outdoor' }), { today });
     const small = out.excluded.find((e) => e.robot.id === 'small')!;
-    expect(small.reasons).toContain('Payload: fails: 2 kg rated < 12 kg needed');
+    expect(small.reasons).toContain('Payload: fails: 2 kg rated, one arm < 12 kg needed');
     expect(small.reasons.some((r) => r.startsWith('Outdoor use: indoor only'))).toBe(true);
     expect(out.ranked[0].robot.id).toBe('quad');
     expect(out.ranked[0].results.find((r) => r.id === 'stairs')?.text).toContain('climbs stairs');
@@ -31,7 +31,7 @@ describe('rankRobots', () => {
   });
 
   it('scores the shift runtime with swap and basis in the sentence', () => {
-    const out = rankRobots([smallHumanoid, siteQuadruped, wheeledEu], req({ runtime_h_per_shift: 8 }), { today });
+    const out = rankRobots([smallHumanoid, siteQuadruped, wheeledEu], req({ runtime_h_per_shift: 8, hot_swap_acceptable: true }), { today });
     const w = out.ranked.find((r) => r.robot.id === 'wheeled')!;
     expect(w.results.find((r) => r.id === 'runtime')).toMatchObject({ status: 'pass', text: '8 h (loaded) covers an 8 h shift' });
     const q = out.ranked.find((r) => r.robot.id === 'quad')!;
@@ -67,14 +67,14 @@ describe('rankRobots', () => {
     expect(byId.unknown.results.find((r) => r.id === 'lead_time')).toMatchObject({ status: 'unknown' });
   });
 
-  it('rubble excludes bipeds, gravel only scores them down', () => {
-    const rubble = rankRobots(FIXTURES, req({ terrain: 'rubble' }), { today });
-    expect(rubble.ranked.map((r) => r.robot.id)).toEqual(['quad']);
-    const gravel = rankRobots(FIXTURES, req({ terrain: 'gravel' }), { today });
-    expect(gravel.ranked.length).toBe(4);
-    expect(gravel.ranked[0].robot.id).toBe('quad');
+  it('keeps terrain unconfirmed for every body type until specific evidence exists', () => {
+    for (const surface of ['rubble', 'gravel', 'mud']) {
+      const output = rankRobots(FIXTURES, req({ terrain: surface }), { today });
+      expect(output.ranked).toHaveLength(4);
+      expect(output.ranked.every((robot) => robot.results.find((item) => item.id === 'terrain')?.status === 'unknown')).toBe(true);
+      expect(rankRobots(FIXTURES, req({ terrain: surface, strict_unknowns: true }), { today }).ranked).toHaveLength(0);
+    }
   });
-
   it('autonomy and certifications gate, but an unassessed robot stays listed as unknown', () => {
     const out = rankRobots(FIXTURES, req({ autonomy: 'autonomous', certifications_required: ['CE'] }), { today });
     expect(out.ranked.map((r) => r.robot.id)).toEqual(['wheeled', 'unknown']);
@@ -90,13 +90,13 @@ describe('rankRobots', () => {
     expect(out.ranked[out.ranked.length - 1].robot.id).toBe('unknown');
   });
 
-  it('reach is estimated from height and says so', () => {
-    const out = rankRobots([unknownHumanoid, smallHumanoid], req({ reach_height_m: 1.8 }), { today });
-    expect(out.ranked[0].results.find((r) => r.id === 'reach')?.text).toContain('estimated from 1.75 m height');
-    expect(out.excluded[0].reasons[0]).toContain('~1.52 m estimated from 1.32 m height < 1.8 m needed');
+  it('does not infer working reach from height', () => {
+    const output = rankRobots([unknownHumanoid, smallHumanoid], req({ reach_height_m: 1.8 }), { today });
+    expect(output.excluded).toHaveLength(0);
+    expect(output.ranked).toHaveLength(2);
+    for (const robot of output.ranked) expect(robot.results.find((item) => item.id === 'reach')?.status).toBe('unknown');
   });
 });
-
 describe('requirementsFromParams', () => {
   it('reads a query string with repeated keys and defaults', () => {
     const { req, issues, asked } = requirementsFromParams({ payload_kg: '12', tasks: ['carry_payload', 'site_inspection'], stairs: 'required', hot_swap_acceptable: 'on' });

@@ -344,3 +344,12 @@ create table if not exists ai_usage (
   output_tokens integer not null default 0,
   est_cost_usd numeric(12, 6) not null default 0
 );
+
+-- Incorrect extractions stay in the ledger for audit, but cannot become current specifications.
+alter table robot_facts add column if not exists invalidated_at timestamptz;
+alter table robot_facts add column if not exists invalidation_reason text;
+
+-- Availability carries its source tier into the UI and lifecycle reconciliation.
+alter table availability_current add column if not exists source_id text references sources(id);
+alter table availability_current add column if not exists source_kind text;
+alter table availability_current add column if not exists source_tier smallint;

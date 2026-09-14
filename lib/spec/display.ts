@@ -114,7 +114,7 @@ export const STATUS_LABEL: Record<string, string> = {
   concept: 'Concept',
   prototype: 'Prototype',
   pre_order: 'Pre-order',
-  shipping: 'Shipping',
+  shipping: 'Available to order',
   discontinued: 'Discontinued',
   unknown: 'Status unknown',
 };
