@@ -1,0 +1,29 @@
+id: facade_prefab
+group: factory
+title: { en: "Facade element prefabrication", de: "Fassadenelement-Vorfertigung" }
+aliases:
+  en: [curtain wall plant, serial renovation facade panels, facade modules]
+  de: [Fassadenwerk, serielle Sanierung Fassadenelemente, Vorhangfassade]
+coverage: screened
+coverage_note:
+  en: "Screened tasks: riveting fibre-cement cladding panels onto elements (ruled out; 49 to 94 kg panels and wind-load fixings), fitting windows into renovation elements (ruled out; vacuum lifter) and taping the airtight window connections inside the elements (marginal; light, but fiddly at the corners)."
+  de: "Geprüfte Aufgaben: Faserzement-Fassadentafeln auf Elemente nieten (ausgeschlossen; Tafeln von 49 bis 94 kg und Befestigungen nach Windlast), Fenster in Sanierungselemente einbauen (ausgeschlossen; Vakuumheber) und luftdichte Fensteranschlüsse in den Elementen abkleben (grenzwertig; leicht, aber fummelig an den Ecken)."
+typical_incumbent_automation: [overhead_crane, vacuum_lifter, spray_robot, nailing_sheathing_bridge]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: Frame and insulation work in workrooms; render and cutting stations are local dust sources.
+    de: Rahmen- und Dämmarbeit in Arbeitsräumen; Putz- und Schneidplätze sind lokale Staubquellen.
+floor: level
+exposure: indoor
+typical_trades: [facade_roofing, insulation, windows_doors, timber, logistics]
+process_steps:
+  - { id: frame, label: { en: "Frame assembly", de: "Rahmenmontage" } }
+  - { id: insulation, label: { en: "Insulation and membranes", de: "Dämmung und Bahnen" } }
+  - { id: cladding, label: { en: "Cladding or render", de: "Bekleidung oder Putz" } }
+  - { id: windows, label: { en: "Window integration", de: "Fensterintegration" } }
+  - { id: qa, label: { en: "Quality check and documentation", de: "Qualitätsprüfung und Dokumentation" } }
+seed_priority: 6
+sources: []
+status: published

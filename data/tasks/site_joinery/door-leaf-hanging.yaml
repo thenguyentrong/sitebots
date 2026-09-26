@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_joinery/door-leaf-hanging
+status: published
+setting: site_joinery
+family: assembly_fastening
+trades: [carpentry_joinery, windows_doors]
+title:
+  en: "Hang interior door leaves into their frames"
+  de: "Innentürblätter in die Zargen einhängen"
+summary:
+  en: "Carry the leaf from the stack to its opening, lift it onto the hinges in the frame, check that it closes and adjust the hinges."
+  de: "Das Türblatt vom Stapel zur Öffnung tragen, auf die Bänder in der Zarge heben, das Schließen prüfen und die Bänder einstellen."
+description:
+  en: "Once the frames are set, the joiner hangs one leaf per opening. Westag's door compendium lists the leaf of a standard interior door of 1985 × 985 mm at about 22 kg with a honeycomb core, 35 kg with a tubular chipboard core and 45 kg with a solid chipboard core; fire-rated and sound-rated leaves weigh 53 to 100 kg. The leaf is lifted onto the hinge pins at around shoulder height and the hinges are adjusted until the gaps are even."
+  de: "Sind die Zargen gesetzt, hängt der Tischler je Öffnung ein Türblatt ein. Das Westag-Türenkompendium nennt für das Türblatt einer Standardinnentür von 1985 × 985 mm rund 22 kg mit Wabeneinlage, 35 kg mit Röhrenspanplatte und 45 kg mit Vollspanplatte; Feuerschutz- und Schallschutztürblätter wiegen 53 bis 100 kg. Das Blatt wird etwa in Schulterhöhe auf die Bandstifte gehoben, danach werden die Bänder eingestellt, bis die Fugen gleichmäßig sind."
+also_in_settings: [joinery_windows_doors]
+derived_from: null
+lv:
+  lb: '027'
+  atv: "DIN 18355"
+  position:
+    en: "Interior door element with frame and door leaf: supply and install (leaf hung and adjusted)"
+    de: "Innentürelement mit Zarge und Türblatt liefern und montieren (Türblatt eingehängt und eingestellt)"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 22, max: 45 }
+    confidence: confirmed
+    evidence_url: 'https://westag.de/fileadmin/westag_getalit/tueren-und-zargen/profinet/6massegewichtenormen.pdf'
+    note: "Westag door compendium, register 6, page 672 (door weights for a 1985 × 985 mm leaf): honeycomb core 22 kg (11 kg/m²), tubular chipboard 24 to 35 kg, solid chipboard 45 kg (23 kg/m²). Scope: standard interior doors; fire-rated (53 to 76 kg) and sound-rated leaves (up to 100 kg) are heavier and out of this record."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The leaves come in a few standard sizes, but hand of door, core type, glazing and hinge type change from opening to opening."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A leaf that binds or shows uneven gaps is taken off and re-hung or the hinges re-adjusted; a dropped leaf is damaged."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Standard interior doors without fire or smoke function; those are separate, approved elements."
+  reach_height_m:
+    value: { min: 0, max: 2.24 }
+    confidence: likely
+    evidence_url: 'https://westag.de/fileadmin/westag_getalit/tueren-und-zargen/profinet/6massegewichtenormen.pdf'
+    note: "Leaf heights to DIN 18101 in the Westag tables are 1985, 2110 and 2235 mm; the leaf is handled from the floor to its full height."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Late interior works in the closed building."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Hanging the leaf makes no dust; the works around it may."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed or finished floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Hung by hand, often by two people for heavy leaves; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure leaves hung per hour and re-adjustments."
+requirements:
+  object_size_m:
+    value: { min: 1.985, max: 2.235 }
+    confidence: confirmed
+    evidence_url: 'https://westag.de/fileadmin/westag_getalit/tueren-und-zargen/profinet/6massegewichtenormen.pdf'
+    note: "Door leaf heights (Türblattaußenmaß, rebated) of 1985, 2110 and 2235 mm; single-leaf widths from 610 to 1235 mm (Westag register 6, standard-size tables to DIN 18101)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The Westag size tables are drawn for a 7 mm floor gap; no hanging tolerance in millimetres is stated. Even gaps are adjusted at the hinges."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is lifting and holding the leaf while it is set onto the hinge pins."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Use a door lifting aid or hang the leaf with two people. Even the lightest standard leaf in the Westag table (22 kg) sits in the 20–25 kg payload ceiling, and solid-core leaves weigh about twice the design limit."
+      de: "Eine Türheber-Hilfe verwenden oder das Blatt zu zweit einhängen. Schon das leichteste Standardtürblatt der Westag-Tabelle (22 kg) liegt im Bereich der Traglastgrenze von 20–25 kg, Türblätter mit Vollspaneinlage wiegen rund das Doppelte der Auslegungsgrenze."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Westag's door compendium gives the weight of a 1985 × 985 mm standard interior door leaf as about 22 kg with a special honeycomb core, 35 kg with a tubular chipboard core and 45 kg with a solid chipboard core, and 53 to 100 kg for fire-rated and sound-rated leaves."
+      de: "Das Westag-Türenkompendium gibt das Gewicht eines Standardinnentürblatts von 1985 × 985 mm mit rund 22 kg bei Spezialwabeneinlage, 35 kg bei Röhrenspanplatteneinlage und 45 kg bei Vollspanplatteneinlage an, für Feuerschutz- und Schallschutztürblätter 53 bis 100 kg."
+    url: 'https://westag.de/fileadmin/westag_getalit/tueren-und-zargen/profinet/6massegewichtenormen.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Westag-Türen-Kompendium, register 6 (Maße/Gewichte/Normen), page 672. The document carries no date; dated with the check date."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Not a pilot for a humanoid: the leaf weight fails the payload test. Pilot a lifting aid instead and stop if it does not save fitter time against hanging in pairs."
+    de: "Kein Pilot für einen Humanoiden: Das Türblattgewicht fällt durch den Traglasttest. Stattdessen eine Hebehilfe erproben und abbrechen, wenn sie gegenüber dem Einhängen zu zweit keine Monteurzeit spart."
+  scope_hint:
+    en: "One storey of standard doors with honeycomb or tubular cores, with and without a door lifting aid."
+    de: "Ein Geschoss mit Standardtüren mit Waben- oder Röhrenspaneinlage, mit und ohne Türheber-Hilfe."
+prerequisites:
+  - { en: "Frames set, foamed and cured before the leaves are hung", de: "Zargen gesetzt, eingeschäumt und ausgehärtet, bevor die Türblätter eingehängt werden" }
+open_questions:
+  - { en: "Which share of the doors on the project are solid-core, fire-rated or sound-rated leaves?", de: "Welcher Anteil der Türen im Projekt sind Vollspan-, Feuerschutz- oder Schallschutztürblätter?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

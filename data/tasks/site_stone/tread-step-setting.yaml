@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_stone/tread-step-setting
+status: published
+setting: site_stone
+family: assembly_fastening
+trades: [masonry]
+title:
+  en: "Set cast-stone tread steps on a concrete stair core"
+  de: "Trittstufen aus Betonwerkstein auf einen Treppenrohling versetzen"
+summary:
+  en: "Seal the stair core, lay two mortar strips per step, set each tread on the strips without clamping it at the sides and keep the joints between steps open."
+  de: "Den Treppenrohling abdichten, je Stufe zwei Mörtelstreifen legen, jede Trittstufe ohne seitliche Einspannung auf die Streifen setzen und die Fugen zwischen den Stufen offen halten."
+description:
+  en: "Where a concrete stair core is already cast, Rinn's tread steps of 80 mm thickness, up to 40 cm deep and up to 230 cm long are set on it. The installation note asks for the core to be sealed or taped, an adhesion bridge above and below the mortar, two mortar strips of about 2 to 5 cm thickness and 15 cm width, no lateral clamping, and open joints of 3 mm between steps. The treads are made to an accurate rise height of ±1 mm, so the bedding decides whether the stair ends up even."
+  de: "Ist ein Treppenrohling aus Beton vorbetoniert, werden darauf die Trittstufen von Rinn mit 80 mm Dicke, bis 40 cm Tiefe und bis 230 cm Länge versetzt. Der Einbauhinweis verlangt, den Rohling abzukleben oder abzudichten, eine Haftbrücke unter und über dem Mörtel, zwei Mörtelstreifen von rund 2 bis 5 cm Dicke und 15 cm Breite, keine seitliche Einspannung und offene Fugen von 3 mm zwischen den Stufen. Die Stufen sind auf ±1 mm maßgenaue Steigungshöhe gefertigt, über die Ebenheit der Treppe entscheidet also das Versetzen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '014'
+  atv: "DIN 18333"
+  position:
+    en: "Tread steps of cast stone on a stair core, set on mortar strips"
+    de: "Trittstufen aus Betonwerkstein auf Treppenrohling, auf Mörtelstreifen versetzt"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 68, max: 185 }
+    confidence: likely
+    evidence_url: 'https://www.rinn.net/mein-garten/produkte/stufen/detail/block-und-eckblockstufen.html'
+    note: "Derived from Rinn's own figures: the full one-metre block step of about 35 × 15 cm weighs 128 kg, which gives about 2440 to 2510 kg/m³ (with the 35 × 15 cm or 34.7 × 14.7 cm section). A tread of 1.00 × 0.35 × 0.08 m is then about 68 to 70 kg, the largest tread of 2.30 × 0.40 × 0.08 m about 180 to 185 kg. Rinn does not state tread weights."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Treads repeat up the flight; lengths, landings, corner treads and the core's tolerances change per stair."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A tread set out of line or clamped at the side is taken up and re-bedded before the mortar sets; afterwards only with effort."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The tread carries only the stair's use; uneven rises are a trip hazard, which is why they are re-set, but the tread has no structural role for the building."
+  reach_height_m:
+    value: { min: 0, max: 1.5 }
+    confidence: assumed
+    note: "From the foot of the stair to its top landing; outdoor stairs are mostly short. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Outdoor stairs; Rinn's treads are sold for outdoor use."
+  dust:
+    value: { type: mineral, zone: none }
+    confidence: likely
+    note: "Setting the treads makes no dust; cutting would, and happens rarely."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Weather-exposed work."
+  floor:
+    value: stairs
+    confidence: likely
+    note: "The work moves up the stair core itself."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Set by the crew with lifting aids; none of the sources reviewed describes a machine that sets treads on its own."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 1.0, max: 2.3 }
+    confidence: likely
+    evidence_url: 'https://www.rinn.net/mein-garten/produkte/stufen/detail/trittstufen.html'
+    note: "Rinn tread steps: length up to 230 cm, depth up to 40 cm, thickness 80 mm; the 1 m lower bound is our assumption for a typical stair width."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Rinn states the treads' rise height as accurate to ±1 mm and asks for 3 mm open joints and aligned mortar strips, but gives no setting tolerance in millimetres."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is lifting and lowering the tread onto the strips."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Set the treads with a vacuum lifting aid and two people; even a one-metre tread weighs close to three times the 25 kg payload ceiling, and the work is outdoors on the stair itself."
+      de: "Die Trittstufen mit Vakuum-Hebehilfe und zu zweit versetzen; schon eine Meterstufe wiegt fast das Dreifache der Traglastgrenze von 25 kg, und die Arbeit findet im Freien auf der Treppe selbst statt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [carry_payload, autonomous_nav_outdoor, stair_climbing]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Rinn offers tread steps of 80 mm thickness, up to 40 cm deep and up to 230 cm long, with a rise height accurate to ±1 mm."
+      de: "Rinn bietet Trittstufen mit 80 mm Dicke, bis 40 cm Tiefe und bis 230 cm Länge, mit maßgenauer Steigungshöhe von ±1 mm."
+    url: 'https://www.rinn.net/mein-garten/produkte/stufen/detail/trittstufen.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Product page without a date; dated with the check date."
+  - statement:
+      en: "Rinn's installation note sets tread and riser steps on a sealed stair core on two mortar strips of about 2 to 5 cm thickness and 15 cm width, with an adhesion bridge, without lateral clamping and with open joints of 3 mm."
+      de: "Der Rinn-Einbauhinweis versetzt Tritt- und Setzstufen auf einem abgedichteten Treppenrohling auf zwei Mörtelstreifen von rund 2 bis 5 cm Dicke und 15 cm Breite, mit Haftbrücke, ohne seitliche Einspannung und mit offenen Fugen von 3 mm."
+    url: 'https://www.rinn.net/fileadmin/media/rinn/Mein_Garten/Service_Kontakt/Blaetterkataloge/Einbauhinweise-Rinn/Rinn_Einbauhinweise_Stufen_2024.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Einbauhinweis Nr. 060, Stand April 2024 (month only, dated to its first day)."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Not a pilot for a humanoid: mass and weather rule it out. Pilot a lifting aid instead and stop if it does not save crew time."
+    de: "Kein Pilot für einen Humanoiden: Masse und Witterung schließen ihn aus. Stattdessen eine Hebehilfe erproben und abbrechen, wenn sie keine Zeit spart."
+  scope_hint:
+    en: "One stair of one-metre treads with a vacuum lifting aid."
+    de: "Eine Treppe mit Meter-Trittstufen und Vakuum-Hebehilfe."
+prerequisites:
+  - { en: "Stair core cast, cured and sealed", de: "Treppenrohling betoniert, ausgehärtet und abgedichtet" }
+open_questions:
+  - { en: "What do the specified treads weigh per piece?", de: "Was wiegen die ausgeschriebenen Stufen je Stück?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

@@ -42,6 +42,8 @@ test('the manufacturer map zooms and filters the list by country', async ({ page
   await page.getByRole('link', { name: /^China: \d+ manufacturers$/ }).click();
   await expect(page).toHaveURL(/country=CN/);
   await expect(page.getByRole('combobox', { name: 'Country', exact: true })).toHaveValue('CN');
+  // The list re-renders after the URL changes; read it once the filtered rows are there.
+  await expect(page.locator('tbody tr td:nth-child(3)').first()).toHaveText('CN');
   const countries = await page.locator('tbody tr td:nth-child(3)').allTextContents();
   expect(countries.length).toBeGreaterThan(0);
   expect(countries.every(c => c.trim() === 'CN')).toBe(true);

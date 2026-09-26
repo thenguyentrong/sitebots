@@ -1,0 +1,128 @@
+schema_version: 1
+id: site_plumbing/press-fitting-pipes
+status: published
+setting: site_plumbing
+family: assembly_fastening
+trades: [mep_plumbing, mep_hvac]
+title:
+  en: "Join metal water and heating pipes with a press tool"
+  de: "Metallrohre für Trinkwasser und Heizung verpressen"
+summary:
+  en: "Cut and deburr the pipe, mark the insertion depth, push on the fitting and press it with a battery press tool."
+  de: "Rohr ablängen und entgraten, Einstecktiefe markieren, Pressverbinder aufschieben und mit der Akku-Pressmaschine verpressen."
+description:
+  en: "Press fittings have replaced most soldering and threading on site. A joint is a sequence of small steps: cut, deburr, mark the insertion depth, slide the fitting on, place the jaw and trigger the press. REMS states a push force of 32 kN for its Akku-Press E 22 V at 3.3 kg with battery, for pipes from 10 to 108 mm. The joints sit wherever the pipe runs: in shafts, in pre-walls and under the ceiling."
+  de: "Pressverbinder haben auf der Baustelle Löten und Gewindeschneiden weitgehend abgelöst. Eine Verbindung besteht aus mehreren kleinen Schritten: ablängen, entgraten, Einstecktiefe markieren, Pressverbinder aufschieben, Pressbacke ansetzen und auslösen. REMS gibt für seine Akku-Press E 22 V eine Schubkraft von 32 kN bei 3,3 kg mit Akku an, für Rohre von 10 bis 108 mm. Die Verbindungen sitzen dort, wo das Rohr verläuft: in Schächten, in Vorwänden und unter der Decke."
+also_in_settings: [site_heating, mep_prefab]
+derived_from: null
+lv:
+  lb: '042'
+  atv: "DIN 18381"
+  position:
+    en: "Drinking-water pipes of metal with press fittings, including fittings: install"
+    de: "Trinkwasserleitungen aus Metall mit Pressverbindern einschließlich Formteilen montieren"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 3.3 }
+    confidence: likely
+    evidence_url: 'https://www.rems.de/product_details2.aspx?lid=1&anrmodel=576006+R22'
+    note: "The press tool is the heaviest object held during the joint: 3.3 kg with battery (REMS Akku-Press E 22 V). Pipe lengths lie in their brackets before pressing. Gas pipes are out of scope."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Diameters, materials and joint positions change from joint to joint."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A joint that is not pressed or not pushed in fully leaks; it is found at the leak test and redone before the wall or ceiling closes."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Water and heating pipes. Gas installations are excluded here; a faulty gas joint would be a life-safety matter."
+  reach_height_m:
+    value: { min: 0, max: 3.0 }
+    confidence: assumed
+    note: "From floor-level connections to runs under the ceiling; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "General construction dust; cutting metal pipe makes swarf, not mineral dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Pipes are joined before filling."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Shafts, bathrooms and corridors with material, ladders and scaffolds."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Hand-held press tools; no machine makes the joint on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure joints per hour."
+requirements:
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The insertion depth depends on the fitting maker and the diameter; no single value applies."
+  force_n:
+    value: 32000
+    confidence: confirmed
+    evidence_url: 'https://www.rems.de/product_details2.aspx?lid=1&anrmodel=576006+R22'
+    note: "Push force of the press tool (REMS). The tool produces it; whoever works it positions and holds a 3.3 kg tool."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator for joints within reach of the floor first; joints overhead and in shafts are the hard part. The press tool supplies the force; the robot has to insert the pipe to the marked depth and seat the jaw square."
+      de: "Zuerst einen radgebundenen Mobilmanipulator für Verbindungen in Bodennähe vergleichen; Verbindungen über Kopf und in Schächten sind der schwierige Teil. Die Kraft bringt die Pressmaschine; der Roboter muss das Rohr bis zur Markierung einstecken und die Pressbacke gerade ansetzen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "REMS states a push force of 32 kN for its Akku-Press E 22 V A1-32kN, a weight of 3.3 kg with battery and a pressing range of 10 to 108 (110) mm."
+      de: "REMS gibt für seine Akku-Press E 22 V A1-32kN eine Schubkraft von 32 kN, ein Gewicht von 3,3 kg mit Akku und einen Pressbereich von 10 bis 108 (110) mm an."
+    url: 'https://www.rems.de/product_details2.aspx?lid=1&anrmodel=576006+R22'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of joints pass the leak test without rework after 3 months, then stop."
+    de: "Weniger als 99 % der Verbindungen bestehen nach 3 Monaten die Dichtheitsprüfung ohne Nacharbeit, dann abbrechen."
+  scope_hint:
+    en: "One pipe system and material, diameters up to 28 mm, joints between 0.5 and 1.5 m height, the installer inspects every joint."
+    de: "Ein Rohrsystem und Werkstoff, Durchmesser bis 28 mm, Verbindungen zwischen 0,5 und 1,5 m Höhe, der Monteur prüft jede Verbindung."
+prerequisites:
+  - { en: "Pipes cut, deburred and fixed in their brackets before the robot presses", de: "Rohre abgelängt, entgratet und in den Schellen befestigt, bevor der Roboter verpresst" }
+open_questions:
+  - { en: "Who marks and checks the insertion depth?", de: "Wer markiert und prüft die Einstecktiefe?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

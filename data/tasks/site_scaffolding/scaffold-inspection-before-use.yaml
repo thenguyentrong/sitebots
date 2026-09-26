@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_scaffolding/scaffold-inspection-before-use
+status: published
+setting: site_scaffolding
+family: inspection_qa_documentation
+trades: [general, qa_surveying]
+title:
+  en: "Inspect the scaffold before use and after storms"
+  de: "Gerüst vor der Benutzung und nach Unwettern prüfen"
+summary:
+  en: "Walk every level, check decks, guardrails, toe boards, access and anchors against the scaffold's marking and protocol, and record the result."
+  de: "Jede Lage begehen, Beläge, Seitenschutz, Bordbretter, Zugänge und Verankerung anhand der Kennzeichnung und des Protokolls prüfen und das Ergebnis dokumentieren."
+description:
+  en: "German rules split the checks: the scaffold erector proves a safe scaffold with an acceptance protocol, a qualified person inspects before first use and after exceptional events such as storms, heavy rain, icing or heavy snow, and every employer whose staff use the scaffold has it looked over for obvious defects before use, usually every working day. Results are recorded and kept on site until the next inspection."
+  de: "Die deutschen Regeln teilen die Prüfungen auf: Der Gerüstersteller weist ein sicheres Gerüst mit Abnahmeprotokoll nach, eine zur Prüfung befähigte Person prüft vor dem ersten Gebrauch und nach außergewöhnlichen Ereignissen wie Stürmen, Starkregen, Vereisung oder starkem Schneefall, und jeder Arbeitgeber, dessen Beschäftigte das Gerüst nutzen, lässt es vor der Benutzung auf offensichtliche Mängel in Augenschein nehmen, in der Regel arbeitstäglich. Die Ergebnisse werden aufgezeichnet und bis zur nächsten Prüfung am Einsatzort aufbewahrt."
+also_in_settings: [site_survey_documentation]
+derived_from: null
+lv:
+  lb: '001'
+  atv: "DIN 18451"
+  position:
+    en: "Inspection and handover of the scaffold, and checks before use"
+    de: "Prüfung und Übergabe des Gerüsts sowie Kontrolle vor der Benutzung"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 1 }
+    confidence: assumed
+    note: "A checklist, tablet or camera. Not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. A fixed checklist, but every scaffold and every change on it is different."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A missed defect, such as a missing guardrail or anchor, can lead to a fall or a collapse."
+  safety_criticality:
+    value: life_safety
+    confidence: confirmed
+    evidence_url: 'https://gewerbeaufsicht.baden-wuerttemberg.de/documents/20121/55168/5_2121_1.pdf/e653e36e-2342-609d-688f-ca61e0d7f4ed?version=1.0&t=1747821229847&download=true'
+    note: "TRBS 2121 part 1 governs the hazard of falls when using scaffolds and assigns the inspection to a qualified person."
+  reach_height_m:
+    value: { min: 0, max: 2.0 }
+    confidence: assumed
+    note: "Guardrails, anchors and decks are checked on every level, up to the top rail. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Facade scaffolds stand outside; inspections follow storms and rain."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "No dust from the inspection itself."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Inspections are also required after heavy rain and icing."
+  floor:
+    value: stairs
+    confidence: likely
+    note: "Ladders or stair towers between levels, decks with gaps at the ends."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Done by people with a checklist."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "A checklist; photos of people on the scaffold would bring in data-protection questions."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "Before first use, before use (usually every working day) and after exceptional events."
+    confidence: confirmed
+    evidence_url: 'https://bauportal.bgbau.de/bauportal-22023/thema/hochbau/dguv-information-201-011-das-neue-standardwerk-fuer-geruesterstellung-und-nutzung'
+    note: "BG BAU, BauPortal 2/2023, and TRBS 2121 part 1, section 5."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not applicable; nothing is handled."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The check is against the assembly instructions and the marking, not a dimensional tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force; a visual and functional check."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The inspection is a named duty of a qualified person, and its result decides whether people may step onto the scaffold. Keep it with that person; photos from a drone or robot can support the record but cannot sign it off."
+      de: "Die Prüfung ist eine benannte Pflicht einer befähigten bzw. qualifizierten Person, und ihr Ergebnis entscheidet, ob das Gerüst betreten werden darf. Sie bleibt bei dieser Person; Fotos von Drohne oder Roboter können die Dokumentation stützen, aber nicht freigeben."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [site_inspection, stair_climbing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "TRBS 2121 part 1, section 5: an employer who erects a scaffold for own staff has it inspected before first use by a qualified person; every employer whose staff use a scaffold first has it looked over, and function-checked where needed, by a qualified person; after exceptional events such as storms, heavy rain, icing or heavy snow a qualified person inspects again; results are recorded and kept on site until the next inspection."
+      de: "TRBS 2121 Teil 1, Abschnitt 5: Ein Arbeitgeber, der ein Gerüst für eigene Beschäftigte erstellt, lässt es vor dem erstmaligen Gebrauch von einer zur Prüfung befähigten Person prüfen; jeder Arbeitgeber, dessen Beschäftigte ein Gerüst gebrauchen, lässt zuvor eine Inaugenscheinnahme und ggf. Funktionskontrolle durch eine qualifizierte Person durchführen; nach außergewöhnlichen Ereignissen wie Stürmen, Starkregen, Vereisung oder starkem Schneefall wird erneut geprüft; die Ergebnisse werden aufgezeichnet und bis zur nächsten Prüfung am Einsatzort aufbewahrt."
+    url: 'https://gewerbeaufsicht.baden-wuerttemberg.de/documents/20121/55168/5_2121_1.pdf/e653e36e-2342-609d-688f-ca61e0d7f4ed?version=1.0&t=1747821229847&download=true'
+    kind: regulator
+    tier: 1
+    date: '2019-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Ausgabe Januar 2019 (GMBl 2019 S. 28); copy in the Baden-Württemberg labour inspectorate's collection."
+  - statement:
+      en: "BG BAU on DGUV Information 201-011: without the check before use, usually every working day, scaffold users must not enter the scaffold; inspections are done by a person qualified to inspect."
+      de: "BG BAU zur DGUV Information 201-011: Ohne die in der Regel arbeitstägliche Kontrolle darf ein Gerüst von Gerüstnutzern nicht betreten werden; geprüft wird von einer zur Prüfung befähigten Person."
+    url: 'https://bauportal.bgbau.de/bauportal-22023/thema/hochbau/dguv-information-201-011-das-neue-standardwerk-fuer-geruesterstellung-und-nutzung'
+    kind: regulator
+    tier: 1
+    date: '2023-01-01'
+    type: claim
+    confidence: confirmed
+    note: "BauPortal issue 2/2023; day and month not stated."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. A digital checklist with photos per level can make the record faster; the sign-off stays with the qualified person."
+    de: "Kein Roboterpilot. Eine digitale Checkliste mit Fotos je Lage kann die Dokumentation beschleunigen; die Freigabe bleibt bei der befähigten Person."
+prerequisites: []
+open_questions:
+  - { en: "Who carries out the daily scaffold check on your sites, and how is it recorded today?", de: "Wer führt auf Ihren Baustellen die tägliche Gerüstkontrolle durch, und wie wird sie heute dokumentiert?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

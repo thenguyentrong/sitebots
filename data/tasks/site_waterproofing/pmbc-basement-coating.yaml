@@ -1,0 +1,134 @@
+schema_version: 1
+id: site_waterproofing/pmbc-basement-coating
+status: published
+setting: site_waterproofing
+family: surface_finishing
+trades: [insulation]
+title:
+  en: "Apply bitumen thick coating (PMBC) to basement walls"
+  de: "Kunststoffmodifizierte Bitumendickbeschichtung (PMBC) auf Kellerwände auftragen"
+summary:
+  en: "Spray or trowel the two-component coating onto the primed wall in the excavation, reach the minimum dry thickness everywhere and measure it."
+  de: "Die zweikomponentige Beschichtung in der Baugrube auf die grundierte Wand spritzen oder spachteln, überall die Mindesttrockenschichtdicke erreichen und sie messen."
+description:
+  en: "Earth-contact walls are waterproofed to DIN 18533, often with a polymer-modified bitumen thick coating. The product is mixed on site from two components, applied by spraying or trowelling, and must reach its minimum dry thickness at every point: 3 mm against soil moisture, 4 mm against moderate water pressure, plus the allowance the standard adds. Wet thickness is measured at least 20 times per 100 m² and the results go into a record. It is outdoor work in the excavation, and it stops in frost and when rain threatens."
+  de: "Erdberührte Wände werden nach DIN 18533 abgedichtet, häufig mit einer kunststoffmodifizierten Bitumendickbeschichtung. Das Produkt wird auf der Baustelle aus zwei Komponenten gemischt, gespritzt oder gespachtelt und muss an jeder Stelle seine Mindesttrockenschichtdicke erreichen: 3 mm gegen Bodenfeuchte, 4 mm gegen mäßig drückendes Wasser, dazu der Zuschlag, den die Norm verlangt. Die Nassschichtdicke wird mindestens 20-mal je 100 m² gemessen und protokolliert. Es ist Arbeit im Freien in der Baugrube, und sie ruht bei Frost und drohendem Regen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '018'
+  atv: "DIN 18336"
+  position:
+    en: "Waterproofing of earth-contact walls with PMBC to DIN 18533"
+    de: "Abdichtung erdberührter Wände mit PMBC nach DIN 18533"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 4.4, max: 22 }
+    confidence: likely
+    evidence_url: 'https://www.bkm-mannesmann.de/pdf/Produkte/Abdichtungsstoffe/BKM%20PMBC-2K/TechnicalDataSheet/TDS_BKM%20PMBC-2K_DE.pdf'
+    note: "A 30-litre container holds component A at 17.6 kg and component B at 4.4 kg (BKM PMBC-2K technical data sheet, 12/2023); mixed, the full container weighs about 22 kg."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Wall areas repeat; corners, fillets, penetrations and the base detail do not."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.bkm-mannesmann.de/pdf/Produkte/Abdichtungsstoffe/BKM%20PMBC-2K/TechnicalDataSheet/TDS_BKM%20PMBC-2K_DE.pdf'
+    note: "The required dry thickness may not be undercut at any point, and the thickness checks are recorded (technical data sheet, referring to DIN 18533). A thin spot is a leak once the pit is backfilled."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The coating keeps water out of the building; a defect means water damage, not a risk to people."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Basement wall from the footing to ground level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "In the working space of the excavation; the data sheet rules out application in frost or when rain threatens."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "A wet, solvent-free coating outdoors."
+  wet:
+    value: dry
+    confidence: likely
+    evidence_url: 'https://www.bkm-mannesmann.de/pdf/Produkte/Abdichtungsstoffe/BKM%20PMBC-2K/TechnicalDataSheet/TDS_BKM%20PMBC-2K_DE.pdf'
+    note: "Application only in dry weather; the fresh coating has to be protected from rain."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Working space at the bottom of the excavation."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.bkm-mannesmann.de/pdf/Produkte/Abdichtungsstoffe/BKM%20PMBC-2K/TechnicalDataSheet/TDS_BKM%20PMBC-2K_DE.pdf'
+    note: "The coating can be sprayed: a pump does the application, a person guides the gun and checks the thickness."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not relevant; the material comes in containers."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.bkm-mannesmann.de/pdf/Produkte/Abdichtungsstoffe/BKM%20PMBC-2K/TechnicalDataSheet/TDS_BKM%20PMBC-2K_DE.pdf'
+    note: "Not a ± tolerance but a floor: minimum dry thickness 3 mm (W1-E, W4-E) or 4 mm (W2-E, W3-E), plus at least 25 % allowance per DIN 18533-3, never undercut; the wet thickness may not exceed the requirement by more than 100 %."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep trained waterproofers with a spray pump, a wet-film gauge and the thickness record. The work is outdoors in the pit, and a single thin spot is a leak that is only reached again by digging."
+      de: "Geschulte Abdichter mit Spritzpumpe, Nassschichtdickenmesser und Schichtdickenprotokoll bleiben die Antwort. Die Arbeit findet im Freien in der Baugrube statt, und eine einzige dünne Stelle ist ein Leck, an das man nur durch erneutes Aufgraben kommt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, exposure]
+capabilities_required: [surface_finishing]
+capabilities_optional: [carry_payload]
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "BKM lists its PMBC-2K for external waterproofing of earth-contact components to DIN 18533, applied by spraying, trowelling or rolling, with a minimum dry thickness of 3 mm (W1-E) or 4 mm (W2-E), at least 20 wet-thickness measurements per 100 m², and no application in frost or when rain threatens."
+      de: "BKM gibt die PMBC-2K für Außenabdichtungen erdberührter Bauteile nach DIN 18533 an, aufgebracht durch Spritzen, Spachteln oder Rollen, mit einer Mindesttrockenschichtdicke von 3 mm (W1-E) oder 4 mm (W2-E), mindestens 20 Nassschichtdickenmessungen je 100 m² und keiner Verarbeitung bei Frost oder drohendem Regen."
+    url: 'https://www.bkm-mannesmann.de/pdf/Produkte/Abdichtungsstoffe/BKM%20PMBC-2K/TechnicalDataSheet/TDS_BKM%20PMBC-2K_DE.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2023-12-01'
+    type: claim
+    confidence: confirmed
+    note: "Technical data sheet issued 12/2023; the day is not given."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not piloted."
+    de: "Keine Erprobung."
+prerequisites: []
+open_questions:
+  - { en: "Does the project need a membrane on the walls at all, or can the structure itself be watertight concrete?", de: "Braucht das Projekt überhaupt eine Abdichtung auf den Wänden, oder kann das Bauwerk selbst aus wasserundurchlässigem Beton bestehen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

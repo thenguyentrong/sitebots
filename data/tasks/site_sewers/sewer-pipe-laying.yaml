@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_sewers/sewer-pipe-laying
+status: published
+setting: site_sewers
+family: heavy_element_handling
+trades: [civil_earthworks]
+title:
+  en: "Lay concrete sewer pipes in the trench"
+  de: "Betonrohre für Abwasserkanäle im Graben verlegen"
+summary:
+  en: "Lower pipes into the trench, push the spigot into the socket and align each pipe to line and gradient."
+  de: "Rohre in den Graben ablassen, das Spitzende in die Muffe schieben und jedes Rohr nach Flucht und Gefälle ausrichten."
+description:
+  en: "A reinforced concrete pipe DN 300 with a building length of 2.5 m weighs about 520 kg. The excavator lowers it with a pipe laying device, with which one person lays pipes of 300 to 1200 mm; in the trench the pipe is pushed into the socket and set to line and gradient. Before acceptance a new sewer is checked, including an optical inspection."
+  de: "Ein Stahlbetonrohr DN 300 mit 2,5 m Baulänge wiegt etwa 520 kg. Der Bagger lässt es mit einem Rohrverlegegerät ab, mit dem eine Person Rohre von 300 bis 1200 mm verlegt; im Graben wird das Rohr in die Muffe geschoben und nach Flucht und Gefälle gesetzt. Vor der Abnahme wird ein neuer Kanal geprüft, auch optisch."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '009'
+  atv: "DIN 18306"
+  position:
+    en: "Sewer of reinforced concrete pipes DN 300 with bell socket, laid in the trench"
+    de: "Abwasserkanal aus Stahlbetonrohren DN 300 mit Glockenmuffe im Graben herstellen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 520, max: 520 }
+    confidence: likely
+    evidence_url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/kanalbau/beton-und-stahlbetonrohre/rohre-mit-kreisquerschnitt/technische-daten'
+    note: "Pipe DN 300: 208 kg per metre at a building length of 2500 mm (Berding Beton), so about 520 kg per pipe. Larger diameters weigh more."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The pipe repeats, but trench conditions, connections and gradient change along the route."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A pipe off line or gradient, or a displaced joint, shows at the acceptance inspection and has to be relaid."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "A defect is a leak or a flow problem found at inspection, not a structural failure of a building."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: assumed
+    note: "The pipe is guided at the trench bottom. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open trench on site."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Earth and gravel around the pipe; no relevant dust at the joint."
+  wet:
+    value: damp
+    confidence: assumed
+    note: "The trench bottom is often wet from ground water; the site is open to the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Pipe bedding at the trench bottom."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [pipe_laying_device] }
+    confidence: confirmed
+    evidence_url: 'https://www.this-magazin.de/artikel/tis_Rohrverlegung_mit_System-3083939.html'
+    note: "With the Probst RVD-4-ECO-F laying device on the excavator one person lays pipes of 300 to 1200 mm (THIS, December 2017); the pipe is still guided and set by people."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; metres per day depend on depth, diameter and ground."
+requirements:
+  object_size_m:
+    value: { min: 2.5, max: 2.5 }
+    confidence: confirmed
+    evidence_url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/kanalbau/beton-und-stahlbetonrohre/rohre-mit-kreisquerschnitt/technische-daten'
+    note: "Building length 2500 mm for DN 300 to DN 500 (Berding Beton)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No public source used here states the laying tolerance for line and gradient."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states the force needed to push the spigot home."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Keep the excavator with a pipe laying device: with it one person lays pipes of 300 to 1200 mm. At about 520 kg the pipe weighs some twenty times the payload ceiling of today's humanoids."
+      de: "Beim Bagger mit Rohrverlegegerät bleiben: Damit verlegt eine Person Rohre von 300 bis 1200 mm. Mit rund 520 kg wiegt das Rohr etwa das Zwanzigfache der Traglastgrenze heutiger Humanoide."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Berding Beton lists concrete and reinforced concrete pipes DN 300 to DIN EN 1916 and DIN V 1201 at 208 kg per metre, 68 mm wall and 2500 mm building length."
+      de: "Berding Beton gibt für Beton- und Stahlbetonrohre DN 300 nach DIN EN 1916 und DIN V 1201 208 kg je Meter, 68 mm Wanddicke und 2500 mm Baulänge an."
+    url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/kanalbau/beton-und-stahlbetonrohre/rohre-mit-kreisquerschnitt/technische-daten'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated technical data page, dated with the check date; the manufacturer calls the values approximate planning values."
+  - statement:
+      en: "The trade magazine THIS reports that with the Probst RVD-4-ECO-F pipe laying device one person lays pipes with diameters of 300 to 1200 mm comfortably and safely."
+      de: "Das Fachmagazin THIS berichtet, dass mit dem Probst-Rohrverlegegerät RVD-4-ECO-F nur ein Mann Rohre mit Durchmessern von 300 bis 1200 mm komfortabel und sicher verlegt."
+    url: 'https://www.this-magazin.de/artikel/tis_Rohrverlegung_mit_System-3083939.html'
+    kind: press
+    tier: 3
+    date: '2017-12-01'
+    type: claim
+    confidence: confirmed
+    note: "Issue 12/2017; no day given."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If a laying device is new to you: one sewer section, pipes laid per day and people in the trench with and without it."
+    de: "Falls ein Verlegegerät neu für Sie ist: ein Kanalabschnitt, verlegte Rohre je Tag und Personen im Graben mit und ohne Gerät."
+prerequisites: []
+open_questions:
+  - { en: "Where do your pipe layers lose time: lowering, jointing or setting the gradient?", de: "Wo verlieren Ihre Rohrleger Zeit: beim Ablassen, beim Fügen oder beim Einstellen des Gefälles?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,163 @@
+schema_version: 1
+id: site_masonry/masonry-wall-laying
+status: published
+setting: site_masonry
+family: assembly_fastening
+trades: [masonry]
+title:
+  en: "Lay masonry units for walls"
+  de: "Mauersteine für Wände versetzen"
+summary:
+  en: "Set blocks and bricks in mortar or thin-bed adhesive, course by course, from the plan."
+  de: "Steine Schicht für Schicht nach Plan in Mörtel oder Dünnbettmörtel versetzen."
+description:
+  en: "Masonry walls are built from units between a few kilograms and well over a hundred. In Germany, units heavier than 25 kg may only be laid with a setting device, and large-format elements are placed by a mini crane. Load-bearing walls carry the floors above, so line, level, joints and bond are checked as the wall rises."
+  de: "Mauerwerkswände entstehen aus Steinen zwischen wenigen und weit über hundert Kilogramm. In Deutschland dürfen Steine über 25 kg nur mit Versetzgerät verarbeitet werden, großformatige Elemente setzt ein Minikran. Tragende Wände tragen die Geschosse darüber, deshalb werden Flucht, Höhe, Fugen und Verband laufend geprüft."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '012'
+  atv: "DIN 18330"
+  position:
+    en: "Masonry walls of calcium-silicate or clay units"
+    de: "Mauerwerk aus Kalksand- oder Ziegelsteinen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 5.5, max: 165.3 }
+    confidence: confirmed
+    evidence_url: 'https://www.ks-original.de/produkt/ks-xl-planelement-sfk-20-rdk-20-h-498-t-175'
+    note: "From a 2DF lime-sandstone unit of about 5.5 kg (worked example in the KS Maurerfibel) to a 998 × 175 × 498 mm large-format element of 165.3 kg (KS-Original product page)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Standard units, but every wall has its own openings, fitting pieces and connections."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Line, level and joints are checked as the wall rises; a wrong course is taken down."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "Load-bearing walls carry the floors above."
+  reach_height_m:
+    value: { min: 0, max: 2.75 }
+    confidence: assumed
+    note: "Up to storey height; the upper courses are laid from a scaffold or trestle. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "External walls are built in the open, internal walls under the next slab."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Cutting units releases quartz dust; wet cutting or extraction at the saw keeps it controlled."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Work stops in heavy rain, but units and beds are often wet."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slabs, scaffolds and trestles."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_366/c_366.htm'
+    note: "Setting devices are mandatory above 25 kg and standard for large formats; laying robots exist (Hadrian X) but are not standard equipment on German sites."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.24, max: 0.998 }
+    confidence: confirmed
+    evidence_url: 'https://www.ks-original.de/produkt/ks-xl-planelement-sfk-20-rdk-20-h-498-t-175'
+    note: "From a 2DF unit of 240 × 115 × 113 mm (KS Maurerfibel worked example) to a large-format element of 998 × 175 × 498 mm (KS-Original product page)."
+  tolerance_mm:
+    value: 10
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Unfinished walls may deviate 10 mm over a 1 m measuring distance and 5 mm over 0.1 m (DIN 18202 Table 3 row 5), as reproduced by a screed contractor from the ZDB handbook (file from 2009; check the current edition)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the setting device takes the large units."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Use a setting device, a mini crane with clamp or vacuum gripper, which the accident insurer requires above 25 kg anyway, and order large formats with a laying plan. Laying robots exist (the maker of Hadrian X states blocks up to 45 kg at up to 360 blocks an hour) but are not standard equipment here."
+      de: "Ein Versetzgerät einsetzen, also einen Minikran mit Klemm- oder Vakuumgreifer, den die BG BAU über 25 kg ohnehin vorschreibt, und Großformate mit Versetzplan bestellen. Mauerroboter gibt es (der Hersteller von Hadrian X nennt Steine bis 45 kg bei bis zu 360 Steinen pro Stunde), sie sind hier aber keine Standardausstattung."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "BG BAU: masonry units with a processing weight above 25 kg may only be laid with setting devices or machines; units laid with both hands may weigh at most 25 kg."
+      de: "BG BAU: Mauersteine mit einem Verarbeitungsgewicht von mehr als 25 kg dürfen nur mit Versetzgeräten oder -maschinen verarbeitet werden; Zweihandsteine dürfen höchstens 25 kg wiegen."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_366/c_366.htm'
+    kind: regulator
+    tier: 1
+    date: '2019-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Baustein C 366, Stand 07/2019."
+  - statement:
+      en: "KS-Original lists a 998 × 175 × 498 mm large-format lime-sandstone element at 165.3 kg, laid with a setting device."
+      de: "KS-Original gibt für ein KS XL-Planelement mit 998 × 175 × 498 mm 165,3 kg an, versetzt mit Versetzgerät."
+    url: 'https://www.ks-original.de/produkt/ks-xl-planelement-sfk-20-rdk-20-h-498-t-175'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: "Product page undated, read on 2026-09-24."
+  - statement:
+      en: "The lime-sandstone masonry handbook: units up to 25 kg can still be laid by hand for a limited time; above 25 kg setting devices are to be used. Its worked example gives 5.5 kg for a 2DF unit."
+      de: "Die Kalksandstein-Maurerfibel: Steine bis 25 kg lassen sich über einen eingeschränkten Zeitraum noch von Hand vermauern, über 25 kg sind Versetzgeräte einzusetzen. Ihr Rechenbeispiel ergibt 5,5 kg für einen 2DF-Stein."
+    url: 'https://www.ks-maurerfibel.de/maurerfibel/6-mauern/6-2-mauern-von-hand/6-2-1-steingewichte/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: "Published by the lime-sandstone industry. Page undated, read on 2026-09-24."
+  - statement:
+      en: "FBR states that Hadrian X lays blocks of up to 600 × 400 × 300 mm and 45 kg at up to 360 blocks per hour from a truck-mounted boom, and works in light rain."
+      de: "FBR gibt für Hadrian X Steine bis 600 × 400 × 300 mm und 45 kg bei bis zu 360 Steinen pro Stunde an, verlegt von einem Lkw-montierten Ausleger, auch bei leichtem Regen."
+    url: 'https://www.fbr.com.au/view/hadrian-x'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: "Specification claims; the page names no German project. Page undated, read on 2026-09-24."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a setting device: one storey of large-format walls with a laying plan, time per square metre against hand laying."
+    de: "Falls mit Versetzgerät verfolgt: ein Geschoss großformatiger Wände mit Versetzplan, Zeit je Quadratmeter gegen Handvermauerung."
+prerequisites: []
+open_questions:
+  - { en: "Which share of your walls uses units above 25 kg, and is a setting device already on site?", de: "Welcher Anteil Ihrer Wände hat Steine über 25 kg, und ist bereits ein Versetzgerät auf der Baustelle?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

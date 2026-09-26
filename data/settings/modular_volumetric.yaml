@@ -1,0 +1,30 @@
+id: modular_volumetric
+group: factory
+title: { en: "Modular and volumetric construction", de: "Raummodulbau" }
+aliases:
+  en: [volumetric modules, modular building factory, room modules]
+  de: [Modulbau, Raumzellen, Containerbau]
+coverage: screened
+coverage_note:
+  en: "Screened tasks: moving modules and bathroom pods between stations (ruled out; crane or transport carriages), first-fix electrics inside modules before the walls close (marginal) and boarding module walls and ceilings (ruled out by board weight; board lifter)."
+  de: "Geprüfte Aufgaben: Raummodule und Fertigbäder zwischen den Stationen bewegen (ausgeschlossen; Kran oder Transportwagen), Elektro-Rohinstallation im Modul vor dem Schließen der Wände (grenzwertig) und Wände und Decken im Modul beplanken (wegen des Plattengewichts ausgeschlossen; Plattenheber)."
+typical_incumbent_automation: [overhead_crane, gantry_crane, nailing_sheathing_bridge, welding_robot]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: Fit-out halls are workrooms; timber machining or steel cutting bays are zones depending on the module system.
+    de: Ausbauhallen sind Arbeitsräume; Holzbearbeitungs- oder Stahlschneidbereiche sind je nach Modulsystem Zonen.
+floor: level
+exposure: indoor
+typical_trades: [timber, steel, mep_electrical, mep_plumbing, mep_hvac, drywall, painting, flooring_tiling, windows_doors, logistics]
+process_steps:
+  - { id: floor_cassette, label: { en: "Floor cassette and frame", de: "Bodenkassette und Rahmen" } }
+  - { id: walls_mep, label: { en: "Walls and building-services rough-in", de: "Wände und TGA-Rohinstallation" } }
+  - { id: interior_finishing, label: { en: "Interior finishing", de: "Innenausbau" } }
+  - { id: fit_out, label: { en: "Fit-out and fixtures", de: "Ausstattung und Einbauten" } }
+  - { id: qa, label: { en: "Quality check and documentation", de: "Qualitätsprüfung und Dokumentation" } }
+  - { id: loading, label: { en: "Module loading and transport", de: "Modulverladung und Transport" } }
+seed_priority: 3
+sources: []
+status: published

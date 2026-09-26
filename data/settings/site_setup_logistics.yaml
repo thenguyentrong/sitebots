@@ -1,0 +1,26 @@
+id: site_setup_logistics
+group: site
+section: site_wide
+lv: { lb: ['000', '090'], atv: [] }
+title: { en: "Site setup and logistics", de: "Baustelleneinrichtung und Baulogistik" }
+aliases:
+  en: [site logistics, material handling on site]
+  de: [Baustelleneinrichtung, Baulogistik]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: material runs to the installers (candidate, compare wheeled transport first), distributing 30 kg sacks of bagged material (ruled out by weight; move the pallet instead) and setting up the mobile site fence (feet up to 35 kg, outdoors; ruled out)."
+  de: "Drei geprüfte Aufgaben: Materialläufe zu den Monteuren (Kandidat, zuerst Transport auf Rädern vergleichen), Verteilen von 30-kg-Sackware (scheidet am Gewicht aus; stattdessen die Palette bewegen) und Aufstellen des mobilen Bauzauns (Füße bis 35 kg, im Freien; scheidet aus)."
+typical_incumbent_automation: [gantry_crane, forklift, amr_fleet]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: both
+typical_trades: [logistics, general]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+status: published

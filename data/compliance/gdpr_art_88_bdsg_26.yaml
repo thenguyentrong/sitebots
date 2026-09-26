@@ -1,0 +1,25 @@
+id: gdpr_art_88_bdsg_26
+kind: law
+jurisdiction: DE
+term_de: Art. 88 DSGVO und § 26 BDSG (Beschäftigtendatenschutz)
+term_en: Article 88 GDPR and Section 26 BDSG (employee data protection)
+official_reference: Regulation (EU) 2016/679, Article 88; Bundesdatenschutzgesetz § 26; CJEU C-34/21
+url: 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+applies_from: null
+status: in_force
+triggers: [cameras_on_people]
+what_it_means:
+  en: A robot with cameras and microphones among employees processes personal data. The German provision on employee data was held partly inapplicable by the Court of Justice (C-34/21, 2023), so the assessment rests on the GDPR itself with Section 26 read alongside it. Third-country transfers need their own legal basis.
+  de: Ein Roboter mit Kameras und Mikrofonen unter Beschäftigten verarbeitet personenbezogene Daten. Die deutsche Vorschrift zum Beschäftigtendatenschutz wurde vom EuGH teilweise für unanwendbar erklärt (C-34/21, 2023), die Bewertung stützt sich daher auf die DSGVO selbst, § 26 BDSG daneben gelesen. Drittlandübermittlungen brauchen eine eigene Rechtsgrundlage.
+consequence:
+  en: A data-protection impact assessment for the pilot, a processing agreement with the vendor, EU data residency or an air-gapped mode, and information to employees.
+  de: Eine Datenschutz-Folgenabschätzung für den Pilot, ein Auftragsverarbeitungsvertrag mit dem Anbieter, EU-Datenresidenz oder Offline-Betrieb und Information der Beschäftigten.
+action:
+  en: Ask for the air-gapped mode and a draft DPA (RFI 06); involve the data protection officer before commissioning.
+  de: Offline-Modus und AV-Vertragsentwurf anfordern (RFI 06); den Datenschutzbeauftragten vor der Inbetriebnahme einbinden.
+provenance:
+  source_url: 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+  tier: 1
+  observed_at: '2026-09-24'
+  confidence: confirmed
+  note: { en: "Cite Article 88 GDPR together with Section 26 BDSG and the ruling.", de: "Art. 88 DSGVO zusammen mit § 26 BDSG und dem Urteil zitieren." }

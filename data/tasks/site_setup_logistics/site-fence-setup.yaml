@@ -1,0 +1,143 @@
+schema_version: 1
+id: site_setup_logistics/site-fence-setup
+status: published
+setting: site_setup_logistics
+family: assembly_fastening
+trades: [general, logistics]
+title:
+  en: "Set up and move the mobile site fence"
+  de: "Mobilen Bauzaun aufstellen und umsetzen"
+summary:
+  en: "Place the feet along the site boundary, stand the mesh panels in them, couple the panels and move sections whenever access or storage areas change."
+  de: "Die Füße entlang der Baustellengrenze setzen, die Gitterelemente einstellen, die Elemente verbinden und Abschnitte umsetzen, sobald sich Zufahrten oder Lagerflächen ändern."
+description:
+  en: "A mobile site fence is built from mesh panels of about 3.5 × 2 m that stand in feet (Heras). The feet weigh 24 to 35 kg in concrete and 18 or 25 kg in recycled plastic; the 18 kg foot has forklift pockets. The fence closes the site boundary for the whole build and moves with it. The work is outdoors along the site edge."
+  de: "Ein mobiler Bauzaun besteht aus Gitterelementen von etwa 3,5 × 2 m, die in Füßen stehen (Heras). Die Füße wiegen aus Beton 24 bis 35 kg und aus Recyclingkunststoff 18 oder 25 kg; der 18-kg-Fuß hat Staplertaschen. Der Zaun schließt die Baustellengrenze über die ganze Bauzeit und wandert mit ihr. Gearbeitet wird im Freien am Baustellenrand."
+also_in_settings: [construction_logistics_hub]
+derived_from: null
+lv:
+  lb: '000'
+  atv: null
+  position:
+    en: "Mobile site fence of mesh panels with feet: erect, keep available, relocate and remove"
+    de: "Mobilen Bauzaun aus Gitterelementen mit Füßen aufstellen, vorhalten, umsetzen und beseitigen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 18, max: 35 }
+    confidence: confirmed
+    evidence_url: 'https://www.heras-mobile.de/bauzaun-zubehoer/bauzaunfuesse'
+    note: "Fence feet: concrete 24, 34 and 35 kg, recycled plastic 18 and 25 kg (Heras). The panel mass is not stated on the pages read."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same parts every time, but every boundary, gate, slope and pavement edge differs."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A gap or a loose coupler is noticed on the next round and closed."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The fence marks and closes the boundary; it carries no structure."
+  reach_height_m:
+    value: { min: 0, max: 2.0 }
+    confidence: likely
+    evidence_url: 'https://www.heras-mobile.de/bauzaeune-mobilzaeune/bauzaun-standard-2-m'
+    note: "Panels are 2 m high (Heras)."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Along the site edge."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Setting fence parts makes no relevant dust."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoors in all weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Verges, gravel, pavement edges and slopes."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.heras-mobile.de/bauzaun-zubehoer/bauzaunfuesse'
+    note: "Set by hand; the 18 kg plastic foot has forklift pockets for moving stacks (Heras)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Priced per metre of fence and per relocation; not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.5 }
+    confidence: confirmed
+    evidence_url: 'https://www.heras-mobile.de/bauzaeune-mobilzaeune/bauzaun-standard-2-m'
+    note: "Standard panels 3.5 m wide and 2 m high (Heras)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No dimensional tolerance; the fence has to stand closed and upright."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure beyond lifting the parts."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep fencing with the site crew and move stacks of feet with the forklift. Concrete feet of up to 35 kg and work in the open along the site edge rule the humanoid out; lighter plastic feet ease the manual part."
+      de: "Das Zaunstellen bei der Baustellenmannschaft lassen und Fußstapel mit dem Stapler bewegen. Betonfüße bis 35 kg und die Arbeit im Freien am Baustellenrand schließen den Humanoiden aus; leichtere Kunststofffüße erleichtern den Handanteil."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Heras lists concrete site fence feet of 24, 34 and 35 kg and recycled plastic feet of 18 and 25 kg; the 18 kg foot has forklift pockets and is described as 40 % lighter than a concrete foot."
+      de: "Heras führt Bauzaunfüße aus Beton mit 24, 34 und 35 kg und aus Recyclingkunststoff mit 18 und 25 kg; der 18-kg-Fuß hat Staplertaschen und wird als 40 % leichter als ein Betonfuß beschrieben."
+    url: 'https://www.heras-mobile.de/bauzaun-zubehoer/bauzaunfuesse'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; dated with the check date. Product data, not a robot precedent."
+  - statement:
+      en: "Heras's standard site fence panels are 3.5 m wide and 2 m high."
+      de: "Die Standard-Bauzaunelemente von Heras sind 3,5 m breit und 2 m hoch."
+    url: 'https://www.heras-mobile.de/bauzaeune-mobilzaeune/bauzaun-standard-2-m'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If lifting feet is the burden, compare plastic feet and moving pallets of feet by forklift."
+    de: "Kein Roboterpilot. Wenn das Heben der Füße die Last ist, Kunststofffüße und das Umsetzen von Fußstapeln mit dem Stapler vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "How often is the fence moved during a project, and by how many people?", de: "Wie oft wird der Zaun während eines Projekts umgesetzt, und von wie vielen Personen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

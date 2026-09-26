@@ -1,0 +1,150 @@
+schema_version: 1
+id: site_sewers/sewer-camera-inspection
+status: published
+setting: site_sewers
+family: inspection_qa_documentation
+trades: [civil_earthworks, qa_surveying]
+title:
+  en: "Inspect new sewers by camera before acceptance"
+  de: "Neue Kanäle vor der Abnahme mit der Kamera befahren"
+summary:
+  en: "Drive a camera through each new pipe run, record joints, connections and defects, and hand over the coded inspection."
+  de: "Jede neue Haltung mit der Kamera befahren, Muffen, Anschlüsse und Schäden aufnehmen und die codierte Inspektion übergeben."
+description:
+  en: "Sewers must be built to be functional, safe and tight, and for new or renovated sewers freedom from defects can in general only be established by optical inspection. The quality association for sewer construction publishes a work aid for this acceptance inspection, based on DIN EN 13508-2, DWA-M 149-2, DIN 18306 and DIN EN 1610. Steerable camera crawlers drive the pipes from DN 150 upwards, launched from the manhole."
+  de: "Abwasserkanäle müssen funktionsfähig, betriebssicher und dicht errichtet werden, und bei neu erstellten oder renovierten Kanälen ist die Feststellung der Mängelfreiheit im Allgemeinen nur mit einer optischen Inspektion möglich. Die Gütegemeinschaft Kanalbau gibt für diese Abnahmeprüfung eine Arbeitshilfe heraus, gestützt auf DIN EN 13508-2, DWA-M 149-2, DIN 18306 und DIN EN 1610. Lenkbare Kamerafahrwagen befahren die Rohre ab DN 150, eingesetzt über den Schacht."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '009'
+  atv: "DIN 18306"
+  position:
+    en: "Optical inspection (CCTV) of new sewers before acceptance"
+    de: "Optische Inspektion (TV-Untersuchung) neuer Kanäle vor der Abnahme"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: "No object is carried; the camera crawler is the tool."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The run repeats from manhole to manhole; the findings and their coding differ every time."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missed defect is found later at the owner's cost; findings are coded to DIN EN 13508-2."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "An inspection; the pipe itself is not changed."
+  reach_height_m:
+    value: { min: 0, max: 0 }
+    confidence: assumed
+    note: "The work happens inside the pipe; nothing is reached above floor level."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Launched from manholes on site; the crawler runs inside the pipe."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Inside a new pipe; no relevant dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Inside a sewer."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "The inside of a pipe; people do not fit into most sewer diameters from DN 150 upwards."
+  incumbent_automation:
+    value: { status: full, machine_classes: [sewer_inspection_crawler] }
+    confidence: confirmed
+    evidence_url: 'https://www.ibak.de/infos/magazin/artikel/verlaufsmessung-im-hauptkanal-eine-klare-sache-in-osnabrueck'
+    note: "Camera crawlers such as the IBAK T 76 inspect sewers and can measure the pipe route in 3D; this is the standard method."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "The camera films the inside of the pipe, not people."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; metres inspected per day depend on the number of runs and connections."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not applicable; no object is handled."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Acceptance criteria follow the work aid and DIN EN 13508-2 coding, not a single tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not applicable."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The camera crawler is the standard tool: it drives pipes no person fits into and produces the coded record the acceptance needs."
+      de: "Der Kamerafahrwagen ist das Standardwerkzeug: Er befährt Rohre, in die kein Mensch passt, und liefert die codierte Aufnahme, die die Abnahme braucht."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [site_inspection]
+capabilities_optional: []
+solution_classes: [dedicated_machine]
+evidence:
+  - statement:
+      en: "Unitracc reports a new work aid of the Gütegemeinschaft Kanalbau for optical acceptance inspection and states that for newly built and renovated sewers freedom from defects can in general only be established by optical inspection; it names DIN EN 13508-2, DWA-M 149-2, DIN 18306 and DIN EN 1610."
+      de: "Unitracc meldet eine neue Arbeitshilfe der Gütegemeinschaft Kanalbau zur optischen Abnahmeprüfung und schreibt, dass bei neu erstellten und renovierten Abwasserleitungen und -kanälen die Feststellung der Mängelfreiheit im Allgemeinen nur mit Hilfe einer optischen Inspektion möglich ist; genannt werden DIN EN 13508-2, DWA-M 149-2, DIN 18306 und DIN EN 1610."
+    url: 'https://www.unitracc.de/aktuelles/news/arbeitshilfe-zur-optischen-abnahmepruefung-neu-erschienen'
+    kind: standard
+    tier: 2
+    date: '2014-10-21'
+    type: claim
+    confidence: confirmed
+    note: "News item about the quality association's work aid."
+  - statement:
+      en: "IBAK describes an inspection and 3D route measurement in a main sewer with its ORION 2.9 3D camera on the T 76 crawler."
+      de: "IBAK beschreibt eine Inspektion mit 3D-Rohrverlaufsmessung in einem Hauptkanal mit der ORION-2.9-3D-Kamera auf dem Fahrwagen T 76."
+    url: 'https://www.ibak.de/infos/magazin/artikel/verlaufsmessung-im-hauptkanal-eine-klare-sache-in-osnabrueck'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: deployment
+    confidence: confirmed
+    note: "Undated magazine article, dated with the check date."
+  - statement:
+      en: "A sewer service company describes the IBAK T 76 as a steerable camera crawler for sewer inspections from DN 150, with centred runs up to DN 700."
+      de: "Ein Kanalservice-Unternehmen beschreibt den IBAK T 76 als lenkbaren Kamerafahrwagen für Kanalinspektionen ab DN 150, mit rohrmittigen Befahrungen bis DN 700."
+    url: 'https://www.kanalservice-roos.de/cms/index.php/component/spsimpleportfolio/item/16-ibak-t-76-kamerafahrwagen'
+    kind: operator
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated page of an operator, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot: specify the acceptance inspection in the LV with the coding standard and the report format."
+    de: "Kein Roboterpilot: die Abnahmeinspektion im LV mit Kodiernorm und Berichtsformat ausschreiben."
+prerequisites: []
+open_questions:
+  - { en: "Do you inspect with your own crawler or buy the inspection in?", de: "Inspizieren Sie mit eigenem Fahrwagen oder kaufen Sie die Inspektion zu?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

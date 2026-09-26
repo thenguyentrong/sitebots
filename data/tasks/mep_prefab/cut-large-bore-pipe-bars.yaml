@@ -1,0 +1,125 @@
+schema_version: 1
+id: mep_prefab/cut-large-bore-pipe-bars
+status: published
+setting: mep_prefab
+family: machine_tending
+trades: [mep_plumbing, mep_hvac, mep_sprinkler]
+title:
+  en: "Take large-bore pipe bars from the rack and cut them to length"
+  de: "Rohrstangen großer Nennweite aus dem Regal nehmen und ablängen"
+summary:
+  en: "Lift 6 m pipe bars of d 76–108 mm onto the saw table, cut to the list and stack the pieces for the spool benches."
+  de: "6-m-Rohrstangen mit d 76–108 mm auf den Sägetisch heben, nach Liste ablängen und die Stücke für die Werkbänke stapeln."
+description:
+  en: "Mains and plant-room spools start with long, heavy bars. A person lifts each bar from the rack onto the saw table, feeds it to the stop, cuts and stacks the pieces. The movement is the same every time; the weight is what makes it hard."
+  de: "Hauptleitungs- und Technikzentralen-Stücke beginnen mit langen, schweren Stangen. Eine Person hebt jede Stange aus dem Regal auf den Sägetisch, schiebt sie an den Anschlag, sägt und stapelt die Stücke. Die Bewegung ist jedes Mal gleich; das Gewicht macht sie schwer."
+also_in_settings: [site_plumbing, site_sprinklers]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 22, max: 32 }
+    confidence: likely
+    evidence_url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    note: "Geberit Mapress stainless pipe d 76.1–108 mm with 2 mm wall in 6 m bars (Geberit product data, 01/11/2021). At 8.0 kg/dm³ (1.4401 data sheet): 76.1 × 2 mm about 3.7 kg/m, 22 kg per bar; 108 × 2 mm about 5.3 kg/m, 32 kg per bar."
+  variability:
+    value: low
+    confidence: assumed
+    note: "Analyst judgement. Take bar, feed, cut, stack: the same every time."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A piece cut too short is scrap; the length is checked at the spool bench."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "Cutting to length only."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Rack levels and saw table height; measure your store."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Prefabrication hall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "The saw is a local source of chips and fine dust; the rest of the hall is clean (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Assumed manual handling with a saw at a fixed station; if your saw has a bar loader, the task is already automated."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people needed."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Batch work; depends on the cutting list."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count bars per shift and lifts per bar."
+requirements:
+  object_size_m:
+    value: { min: 6, max: 6 }
+    confidence: confirmed
+    evidence_url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    note: "Delivered as 6 m bars (Geberit product data)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Cut length to the list; no ± value on the sources used here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The saw cuts; the load is the bar's weight."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: fail, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T4_variability]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "A saw with a bar magazine and roller conveyor, or a lifting aid at the rack. Heavy and repetitive is what fixed handling equipment is for."
+      de: "Eine Säge mit Stangenmagazin und Rollenbahn oder eine Hebehilfe am Regal. Schwer und immer gleich ist genau das, wofür feste Handhabungstechnik da ist."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [machine_tending, carry_payload]
+capabilities_optional: []
+solution_classes: [dedicated_machine, vacuum_lifter_assist, gantry]
+evidence:
+  - statement:
+      en: "Geberit lists its Mapress stainless system pipe d 76.1, 88.9 and 108 mm with 2 mm wall in 6 m bars."
+      de: "Geberit führt das Mapress Edelstahl-Systemrohr d 76,1, 88,9 und 108 mm mit 2 mm Wand in 6-m-Stangen."
+    url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2021-11-01'
+    type: claim
+    confidence: likely
+    note: "Geberit product data sheet dated 01/11/2021, hosted by a distributor. Data source for the bar masses."
+pilot:
+  metrics: [operator_minutes_per_unit]
+  abort_rule:
+    en: "Not a humanoid pilot. Compare lifts per shift before and after a bar magazine or lifting aid."
+    de: "Kein Humanoiden-Pilot. Hebevorgänge je Schicht vor und nach einem Stangenmagazin oder einer Hebehilfe vergleichen."
+  scope_hint:
+    en: "One saw station, the large-bore range."
+    de: "Ein Sägeplatz, die großen Nennweiten."
+prerequisites:
+  - { en: "Cutting lists per project", de: "Zuschnittlisten je Projekt" }
+open_questions:
+  - { en: "How many large-bore bars does the shop cut per week?", de: "Wie viele Stangen großer Nennweite sägt die Werkstatt pro Woche?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

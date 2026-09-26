@@ -1,6 +1,7 @@
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
+import { tmpdir } from 'node:os';
 import type { Snapshot } from './types';
 
 /**
@@ -8,7 +9,10 @@ import type { Snapshot } from './types';
  * while its parser is being fixed must not hit the source again, and a
  * revalidation (ETag / Last-Modified) is one cheap request instead of a page.
  */
-const ROOT = join(process.cwd(), '.cache', 'http');
+// Serverless deployments have a read-only project directory. Caches are runtime
+// state, never build inputs; local scripts keep their existing persistent cache.
+export const CACHE_ROOT = process.env.VERCEL ? join(tmpdir(), 'sitebots-cache') : join(/* turbopackIgnore: true */ process.cwd(), '.cache');
+const ROOT = join(CACHE_ROOT, 'http');
 export const DEFAULT_TTL_MS = 7 * 24 * 3600 * 1000;
 
 type Meta = Omit<Snapshot, 'body' | 'fromCache'>;
@@ -22,10 +26,10 @@ function paths(url: string): { meta: string; body: string } {
 
 export function lookup(url: string): Snapshot | null {
   const p = paths(url);
-  if (!existsSync(p.meta) || !existsSync(p.body)) return null;
+  if (!existsSync(/* turbopackIgnore: true */ p.meta) || !existsSync(/* turbopackIgnore: true */ p.body)) return null;
   try {
-    const meta = JSON.parse(readFileSync(p.meta, 'utf8')) as Meta;
-    const body = readFileSync(p.body, 'utf8');
+    const meta = JSON.parse(readFileSync(/* turbopackIgnore: true */ p.meta, 'utf8')) as Meta;
+    const body = readFileSync(/* turbopackIgnore: true */ p.body, 'utf8');
     return { ...meta, body, fromCache: true };
   } catch {
     return null;

@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import robotsParser from 'robots-parser';
+import { CACHE_ROOT } from './cache';
 
 /**
  * robots.txt, honoured for the user agent we declare. Cached per host for a
@@ -10,7 +11,7 @@ import robotsParser from 'robots-parser';
  * assume it has none. A missing file (404) is the one case that means "no
  * rules", and the standard says so.
  */
-const DIR = join(process.cwd(), '.cache', 'robots');
+const DIR = join(CACHE_ROOT, 'robots');
 const TTL_MS = 24 * 3600 * 1000;
 
 type Cached = { fetchedAt: number; status: number; text: string };
@@ -20,8 +21,8 @@ const memo = new Map<string, Promise<Cached>>();
 async function load(origin: string, ua: string): Promise<Cached> {
   mkdirSync(DIR, { recursive: true });
   const file = join(DIR, origin.replace(/[^a-z0-9.-]/gi, '_') + '.json');
-  if (existsSync(file)) {
-    const c = JSON.parse(readFileSync(file, 'utf8')) as Cached;
+  if (existsSync(/* turbopackIgnore: true */ file)) {
+    const c = JSON.parse(readFileSync(/* turbopackIgnore: true */ file, 'utf8')) as Cached;
     if (Date.now() - c.fetchedAt < TTL_MS) return c;
   }
   let status = 0;

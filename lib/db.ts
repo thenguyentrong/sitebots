@@ -29,9 +29,10 @@ let cached: Promise<SqlClient> | null = null;
  */
 export function getSql(): Promise<SqlClient> {
   if (!cached) {
-    cached = useLocal()
+    cached = Promise.resolve().then(() => useLocal()
       ? import('./db.local').then((m) => m.localSql())
-      : Promise.resolve(neon(process.env.DATABASE_URL!) as unknown as SqlClient);
+      : neon(process.env.DATABASE_URL!) as unknown as SqlClient
+    ).catch(error => { cached = null; throw error; });
   }
   return cached;
 }

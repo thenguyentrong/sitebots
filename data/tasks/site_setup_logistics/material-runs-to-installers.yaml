@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_setup_logistics/material-runs-to-installers
+status: published
+setting: site_setup_logistics
+family: intralogistics_transport
+trades: [mep_hvac, mep_electrical, mep_plumbing, logistics]
+title:
+  en: "Bring fittings, fixings and tools to the installers"
+  de: "Formteile, Befestigungsmaterial und Werkzeug zu den Monteuren bringen"
+summary:
+  en: "Carry totes from the floor store or the hoist to where the installers work, and take the empties back."
+  de: "Kisten vom Etagenlager oder vom Bauaufzug zu den Monteuren bringen und das Leergut zurücknehmen."
+description:
+  en: "Pallets reach the floor by crane or hoist; the last stretch to the work face is walked, often many times a day, by the installers themselves or by a helper. The loads are small, the routes change as walls go up, and a late delivery costs installer time, not safety."
+  de: "Paletten kommen per Kran oder Bauaufzug ins Geschoss; die letzte Strecke zur Arbeitsstelle wird zu Fuß zurückgelegt, oft mehrmals am Tag, von den Monteuren selbst oder von einem Helfer. Die Lasten sind klein, die Wege ändern sich, sobald Wände stehen, und eine späte Lieferung kostet Monteurzeit, nicht Sicherheit."
+also_in_settings: [site_concrete, site_drywall, construction_logistics_hub]
+derived_from: null
+lv:
+  lb: '090'
+  atv: null
+  position:
+    en: "Material transport within the site to the work face"
+    de: "Materialtransport innerhalb der Baustelle bis zur Arbeitsstelle"
+  unit: h
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 12 }
+    confidence: assumed
+    note: "Scope of this record: totes with fittings, fixings and hand tools. Long pipes, radiators and cable drums go by pallet truck and hoist and are out of scope. Not measured."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every delivery differs, and the routes change with the building."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A wrong or late tote costs waiting time and is corrected on the next run."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Material supply; nothing structural depends on the run itself."
+  reach_height_m:
+    value: { min: 0.2, max: 1.5 }
+    confidence: assumed
+    note: "Totes from floor stacks, trolleys and shelves. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Installation work starts once the floor is closed in."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling and cutting dust from other trades; it must be measured with the robot running."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Temporary ramps, cables, door thresholds, and stairs where no hoist stops."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "People carry. Contractors have piloted transport robots on their own sites (Shimizu), but no standard site machine does this step."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    note: "Navigation cameras see workers on the floor; the works council and the data protection officer are involved."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on routes and shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure runs per shift and installer minutes spent fetching."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Scope set by this record: totes of fittings and tools; no source gives sizes. Measure the largest tote on your site."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Delivery has no dimensional tolerance; the right tote at the right place is what counts."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; lifting and carrying totes."
+screen:
+  verdict: candidate
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare wheeled transport first: a robot cart that rides the hoist covers most runs, which is what contractors have piloted. A legged robot only earns its place where stairs, thresholds and clutter stop wheels."
+      de: "Zuerst Transport auf Rädern vergleichen: Ein Roboterwagen, der mit dem Bauaufzug fährt, deckt die meisten Fahrten ab, und genau das haben Bauunternehmen erprobt. Ein laufender Roboter lohnt sich erst dort, wo Treppen, Schwellen und Unordnung Räder stoppen."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage, ergonomics]
+capabilities_required: [fetch_and_deliver, carry_payload, autonomous_nav_indoor]
+capabilities_optional: [stair_climbing, tool_handoff]
+solution_classes: [amr_carts, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "Shimizu describes Robo-Carrier, part of its Smart Site system, as a system that transports materials delivered to the job site to the location where the work is performed, and announced the system for a high-rise site in Osaka for autumn 2018."
+      de: "Shimizu beschreibt Robo-Carrier, Teil seines Smart-Site-Systems, als System, das angelieferte Materialien zum Ort der Ausführung transportiert, und kündigte das System für eine Hochhausbaustelle in Osaka für Herbst 2018 an."
+    url: 'https://www.shimz.co.jp/en/topics/construction/item12/'
+    kind: operator
+    tier: 1
+    date: '2018-04-26'
+    type: claim
+    confidence: confirmed
+    note: "The contractor describes its own robots; the 2018 page announces the deployment."
+  - statement:
+      en: "In September 2021 Shimizu ran its floor-installation robot together with a robot that carries the flooring materials on two floors of a building project near Shin-Osaka Station, still in a probation period."
+      de: "Im September 2021 setzte Shimizu seinen Bodenmontage-Roboter zusammen mit einem Roboter, der das Bodenmaterial transportiert, auf zwei Geschossen eines Bauprojekts nahe dem Bahnhof Shin-Osaka ein, noch in einer Erprobungsphase."
+    url: 'https://www.shimz.co.jp/en/company/about/news-release/2021/2021040.html'
+    kind: operator
+    tier: 1
+    date: '2021-09-21'
+    type: pilot
+    confidence: confirmed
+    note: "Wheeled carrier on a live site; transferable to tote runs, not evidence for a legged robot."
+pilot:
+  metrics: [unaided_completion_pct, interventions_per_hour, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of runs completed unaided after 3 months, then change the use case."
+    de: "Weniger als 99 % der Fahrten nach 3 Monaten ohne Eingriff erledigt, dann Use Case wechseln."
+  scope_hint:
+    en: "One floor, one set of routes from the store to the work faces, two trades; log every delivery against installer waiting time."
+    de: "Ein Geschoss, feste Wege vom Lager zu den Arbeitsstellen, zwei Gewerke; jede Lieferung gegen die Wartezeit der Monteure erfassen."
+prerequisites:
+  - { en: "A floor store with labelled totes and a hoist the robot may use", de: "Ein Etagenlager mit beschrifteten Kisten und ein Bauaufzug, den der Roboter nutzen darf" }
+  - { en: "Agreement with the works council and the subcontractors on the navigation cameras", de: "Vereinbarung mit Betriebsrat und Nachunternehmern zu den Navigationskameras" }
+open_questions:
+  - { en: "How many installer minutes per shift go into fetching today?", de: "Wie viele Monteurminuten pro Schicht gehen heute ins Holen?" }
+compliance_flags: [mineral_dust_trgs_559, gdpr_art_88_bdsg_26, betrvg_87_1_6, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

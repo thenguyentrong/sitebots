@@ -1,0 +1,27 @@
+id: site_timber_frame
+group: site
+section: structure
+lv: { lb: ['016'], atv: ["DIN 18334"] }
+title: { en: "Carpentry and timber construction", de: "Zimmer- und Holzbauarbeiten" }
+aliases:
+  en: [roof structure, timber frame erection]
+  de: [Dachstuhl, Holzbau]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: setting prefabricated wall elements, driving self-drilling screws in structural connections and setting rafters (40 to 87 kg, load-bearing, on the open roof). All three are ruled out; the carpentry crew stays."
+  de: "Drei geprüfte Aufgaben: Versetzen vorgefertigter Wandelemente, Eindrehen selbstbohrender Schrauben in tragenden Verbindungen und Aufstellen von Sparren (40 bis 87 kg, tragend, auf dem offenen Dach). Alle drei scheiden aus; die Zimmererkolonne bleibt."
+typical_incumbent_automation: [gantry_crane]
+dust:
+  type: wood
+  typical_zone: controlled
+  note:
+    en: "Sawing and sanding timber on site releases wood dust (TRGS 553)."
+    de: "Sägen und Schleifen von Holz auf der Baustelle setzt Holzstaub frei (TRGS 553)."
+floor: mixed
+exposure: both
+typical_trades: [timber, carpentry_joinery]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

@@ -1,0 +1,123 @@
+schema_version: 1
+id: asset_inspection_infrastructure/parking-deck-condition-survey
+status: published
+setting: asset_inspection_infrastructure
+family: inspection_qa_documentation
+trades: [qa_surveying, concrete]
+title:
+  en: "Document cracks and coating damage in parking decks"
+  de: "Risse und Beschichtungsschäden in Parkdecks dokumentieren"
+summary:
+  en: "Walk every deck, photograph cracks, coating damage, standing water and rust stains, and log each finding with its position for the engineer's inspection."
+  de: "Jedes Deck ablaufen, Risse, Beschichtungsschäden, stehendes Wasser und Rostfahnen fotografieren und jeden Befund mit Position für die Begutachtung durch den Ingenieur erfassen."
+description:
+  en: "VDI 6200 sets out regular structural inspections for buildings other than bridges and tunnels, with intervals by consequence and robustness class. In a car park, the first step is a walk across every deck and ramp to document what can be seen: cracks, damaged coating, puddles, rust stains on soffits. The engineer then judges what the findings mean; this record covers only the documentation."
+  de: "Die VDI 6200 regelt die regelmäßige Überprüfung der Standsicherheit von Bauwerken außer Brücken und Tunneln, mit Intervallen nach Schadensfolge- und Robustheitsklasse. Im Parkhaus ist der erste Schritt ein Gang über jedes Deck und jede Rampe, um das Sichtbare zu dokumentieren: Risse, beschädigte Beschichtung, Pfützen, Rostfahnen an der Deckenunterseite. Was die Befunde bedeuten, beurteilt danach der Ingenieur; dieser Datensatz umfasst nur die Dokumentation."
+also_in_settings: [facility_operation]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 2 }
+    confidence: assumed
+    note: "Scope of this record: camera or tablet. Not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The route repeats; every finding looks different."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missed finding stays until the next walk; the engineer's inspection can catch it."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The documentation informs the engineer, who carries the structural judgement."
+  reach_height_m:
+    value: { min: 0, max: 3.0 }
+    confidence: assumed
+    note: "Deck surface to soffit; storey heights of car parks are low but above head height. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Covered decks and an open top deck."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "No dust hazard; exhaust fumes while cars move."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Water and de-icing salt carried in by cars."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Level decks joined by ramps; stairs to the top deck."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Walks with a camera and a plan; no fixed monitoring assumed."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    note: "Number plates and people are in the pictures."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the size of the car park."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts square metres of deck per hour and usable pictures per finding."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled beyond the camera."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No published position tolerance for findings; the engineer sets what precision the plan needs."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force; visual documentation only."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled robot or a quadruped with cameras first; nothing has to be touched, so hands add nothing. The engineer keeps the assessment."
+      de: "Zuerst einen fahrenden Roboter oder einen Vierbeiner mit Kameras vergleichen; es muss nichts berührt werden, Hände bringen nichts. Die Beurteilung bleibt beim Ingenieur."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [site_inspection, autonomous_nav_indoor]
+capabilities_optional: [lidar_scan, progress_scan_360]
+solution_classes: [quadruped_inspection, mobile_manipulator_wheeled, keep_process]
+evidence:
+  - statement:
+      en: "VDI 6200 (edition February 2010) covers regular inspection of the structural safety of buildings other than bridges and tunnels, classifies buildings by consequence and robustness classes and recommends inspection methods and intervals from them."
+      de: "Die VDI 6200 (Ausgabe Februar 2010) regelt die regelmäßige Überprüfung der Standsicherheit von Bauwerken außer Brücken und Tunneln, ordnet Bauwerke in Schadensfolge- und Robustheitsklassen ein und empfiehlt daraus Prüfmethoden und Intervalle."
+    url: 'https://www.vdi.de/richtlinien/details/vdi-6200-standsicherheit-von-bauwerken-regelmaessige-ueberpruefung'
+    kind: standard
+    tier: 1
+    date: '2010-02-01'
+    type: claim
+    confidence: confirmed
+    note: "Guideline summary on the VDI page; the guideline text itself is not free. Only the month of the edition is given."
+pilot:
+  metrics: [usable_captures_pct, operator_minutes_per_unit]
+  abort_rule:
+    en: "If fewer than 95 % of the findings the engineer marks are in the robot's record after two walks, stop."
+    de: "Enthält die Aufzeichnung des Roboters nach zwei Begehungen weniger als 95 % der Befunde, die der Ingenieur markiert, abbrechen."
+  scope_hint:
+    en: "One covered deck, walked by robot and by a person in the same week."
+    de: "Ein überdachtes Deck, in derselben Woche von Roboter und Mensch begangen."
+prerequisites:
+  - { en: "A deck plan with grid lines to locate findings", de: "Ein Deckplan mit Achsraster zur Verortung der Befunde" }
+open_questions:
+  - { en: "Which findings does the engineer need at which resolution?", de: "Welche Befunde braucht der Ingenieur in welcher Auflösung?" }
+compliance_flags: [gdpr_art_88_bdsg_26]
+sources_reviewed_at: '2026-09-25'

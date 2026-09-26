@@ -1,0 +1,152 @@
+schema_version: 1
+id: site_earthworks/formation-compaction-testing
+status: published
+setting: site_earthworks
+family: inspection_qa_documentation
+trades: [civil_earthworks, qa_surveying]
+title:
+  en: "Test compaction on the formation with the light falling weight device"
+  de: "Verdichtung auf dem Planum mit dem Leichten Fallgewichtsgerät prüfen"
+summary:
+  en: "Set the load plate on the formation, drop the weight in a series, read the dynamic deformation modulus and record it per test point."
+  de: "Die Lastplatte auf das Planum setzen, das Fallgewicht in einer Serie fallen lassen, den dynamischen Verformungsmodul ablesen und je Prüfpunkt dokumentieren."
+description:
+  en: "Before the base layers go on, the contractor proves that the formation is compacted. The light falling weight device drops 10 kg (15 kg as an option) onto a load plate and gives the dynamic deformation modulus Evd. Sachsen-Anhalt's road authority, for example, requires at least one test per started 400 m² of formation; rollers with integrated compaction measurement (FDVK) record the whole area during compaction but do not remove the spot tests there."
+  de: "Bevor die Tragschichten eingebaut werden, weist der Auftragnehmer die Verdichtung des Planums nach. Das Leichte Fallgewichtsgerät lässt 10 kg (optional 15 kg) auf eine Lastplatte fallen und liefert den dynamischen Verformungsmodul Evd. Die Straßenbauverwaltung Sachsen-Anhalts etwa fordert mindestens einen Nachweis je angefangene 400 m² Planumsfläche; Walzen mit flächendeckender dynamischer Verdichtungskontrolle (FDVK) erfassen beim Verdichten die ganze Fläche, ersetzen dort die Einzelprüfungen aber nicht."
+also_in_settings: [site_roads_paving]
+derived_from: null
+lv:
+  lb: '002'
+  atv: "DIN 18300"
+  position:
+    en: "Compaction tests on the formation (contractor's self-monitoring)"
+    de: "Verdichtungsprüfungen auf dem Planum (Eigenüberwachung)"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 10, max: 15 }
+    confidence: likely
+    evidence_url: 'https://www.zorn-instruments.com/light-weight-deflectometers/zfg-3000/'
+    note: "Falling weight of the load device: 10 kg standard, 15 kg optional (Zorn Instruments). The load plate and guide rod add weight that the page does not state."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The test routine is fixed, but test points, surfaces and access change across the site."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A doubtful reading is repeated; a wrong acceptance shows up later as settlement."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "A quality test, not a safety function."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: assumed
+    note: "The device stands on the formation; the weight is lifted along its guide rod. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open formation, before the base layers."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: likely
+    note: "Soil dust in the open; no classified area."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Testing happens in the open; the reading depends on the water content of the soil."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Compacted soil, ruts and slopes."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [autonomous_compactor] }
+    confidence: likely
+    evidence_url: 'https://www.bomag.com/fileadmin/user_upload/FDVK_fuer_Baufirmen.pdf'
+    note: "Rollers with integrated compaction measurement and GPS documentation (FDVK) record the whole area while compacting; spot tests with the plate remain part of the proof."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "At least one test per started 400 m² of formation (Sachsen-Anhalt supplement to ZTV E-StB)."
+    confidence: confirmed
+    evidence_url: 'https://lsbb.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LSBB/Partner/ZTV-StB-LSBB/5-ZTV-StB_LSBB_ST_21_Kapitel_2.pdf'
+    note: "A regional rule; other clients set their own test density."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Plate and device dimensions are not stated on the page read."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The requirement is a deformation modulus per test point, not a dimensional tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The falling weight produces the load; the operator lifts 10 or 15 kg to the latch."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Use roller-integrated compaction measurement with GPS documentation (FDVK) to cover the whole area, and keep the few required spot tests with the technician. A walking robot would have to carry the device across open, wet ground to do what the roller already measures."
+      de: "Die walzenintegrierte Verdichtungsmessung mit GPS-Dokumentation (FDVK) für die ganze Fläche nutzen und die wenigen vorgeschriebenen Einzelprüfungen beim Prüftechniker lassen. Ein laufender Roboter müsste das Gerät über offenes, nasses Gelände tragen, um zu tun, was die Walze bereits misst."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [site_inspection, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Zorn Instruments: with the 10 kg load device the ZFG 3000 measures a dynamic deformation modulus Evd of 15–70 MN/m²; an optional 15 kg load device extends the range to 70–105 MN/m²."
+      de: "Zorn Instruments: Mit der 10-kg-Belastungsvorrichtung misst das ZFG 3000 einen dynamischen Verformungsmodul Evd von 15–70 MN/m²; eine optionale 15-kg-Vorrichtung erweitert den Bereich auf 70–105 MN/m²."
+    url: 'https://www.zorn-instruments.com/light-weight-deflectometers/zfg-3000/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Product page undated, read on 2026-09-25."
+  - statement:
+      en: "Sachsen-Anhalt's supplement to ZTV E-StB (ZTV-StB LSBB ST 21): the dynamic deformation modulus on the formation is to be proven as required, but at least per started 400 m² of formation, and every 200 m of length for widenings."
+      de: "Die Ergänzung Sachsen-Anhalts zur ZTV E-StB (ZTV-StB LSBB ST 21): Der dynamische Verformungsmodul ist je nach Erfordernis, mindestens jedoch pro angefangene 400 m² Planumsfläche nachzuweisen, bei Verbreiterungen je angefangene 200 m Baulänge."
+    url: 'https://lsbb.sachsen-anhalt.de/fileadmin/Bibliothek/Politik_und_Verwaltung/Landesbetriebe/LSBB/Partner/ZTV-StB-LSBB/5-ZTV-StB_LSBB_ST_21_Kapitel_2.pdf'
+    kind: regulator
+    tier: 1
+    date: '2021-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Edition ST 21, chapter 2, section 1.5.2; month and day not stated."
+  - statement:
+      en: "BOMAG trains contractors and clients in full-area dynamic compaction control (FDVK) with its compaction measurement and documentation systems (Terrameter, BOMAP, GPS), including how to use FDVK as a requirement in tenders."
+      de: "BOMAG schult Baufirmen und Auftraggeber in der flächendeckenden dynamischen Verdichtungskontrolle (FDVK) mit seinen Verdichtungsmess- und Dokumentationssystemen (Terrameter, BOMAP, GPS), auch darin, FDVK als Anforderung in Ausschreibungen einzusetzen."
+    url: 'https://www.bomag.com/fileadmin/user_upload/FDVK_fuer_Baufirmen.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-10-17'
+    type: claim
+    confidence: confirmed
+    note: "Course flyer for a training on 5 March 2025; the file dates from October 2024."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. On the next road or yard job, ask for FDVK on the rollers and compare how many spot tests the client still needs."
+    de: "Kein Roboterpilot. Beim nächsten Straßen- oder Hofbau FDVK auf den Walzen anfragen und vergleichen, wie viele Einzelprüfungen der Auftraggeber noch verlangt."
+prerequisites: []
+open_questions:
+  - { en: "Which test density do your clients require on the formation, and do your rollers already record compaction?", de: "Welche Prüfdichte verlangen Ihre Auftraggeber auf dem Planum, und zeichnen Ihre Walzen die Verdichtung bereits auf?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

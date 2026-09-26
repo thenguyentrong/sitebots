@@ -1,0 +1,28 @@
+id: asset_inspection_infrastructure
+group: operations
+title: { en: "Inspection of infrastructure assets", de: "Bauwerksinspektion an Infrastruktur" }
+aliases:
+  en: [bridge inspection, tunnel inspection, plant inspection]
+  de: [Brückenprüfung, Tunnelinspektion, Anlageninspektion]
+coverage: screened
+coverage_note:
+  en: "Screened tasks for bridge inspection under DIN 1076, substation rounds, cable tunnel patrols and documenting damage in parking decks. Tunnel patrols and the parking-deck survey are marginal; bridges stay with engineers and outdoor rounds go to quadrupeds."
+  de: "Geprüfte Aufgaben für die Brückenprüfung nach DIN 1076, Kontrollgänge in Umspannwerken und Kabeltunneln sowie die Schadensdokumentation in Parkdecks. Tunnelgänge und die Parkdeck-Dokumentation sind grenzwertig; Brücken bleiben bei Ingenieuren, Außenrundgänge gehören Vierbeinern."
+typical_incumbent_automation: [drone, scanner_fixed]
+dust:
+  type: none
+  typical_zone: none
+  note:
+    en: Outdoor and confined structures; weather and access dominate.
+    de: Außen- und enge Bauwerke; Wetter und Zugang dominieren.
+floor: mixed
+exposure: outdoor
+typical_trades: [qa_surveying, civil_earthworks, tunnel]
+process_steps:
+  - { id: access, label: { en: "Access and traffic management", de: "Zugang und Verkehrssicherung" } }
+  - { id: capture, label: { en: "Visual and sensor capture", de: "Visuelle und sensorische Erfassung" } }
+  - { id: assessment, label: { en: "Assessment by an engineer", de: "Bewertung durch eine Ingenieurin oder einen Ingenieur" } }
+  - { id: reporting, label: { en: "Reporting", de: "Berichterstattung" } }
+seed_priority: 5
+sources: []
+status: published

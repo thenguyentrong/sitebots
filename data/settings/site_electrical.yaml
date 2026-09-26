@@ -1,0 +1,27 @@
+id: site_electrical
+group: site
+section: services
+lv: { lb: ['053', '054', '058', '061', '063'], atv: ["DIN 18382"] }
+title: { en: "Electrical and communication installations", de: "Elektro-, Sicherheits- und Informationstechnische Anlagen" }
+aliases:
+  en: [electrical installation, cable trays, lighting]
+  de: [Elektroinstallation, Kabeltrassen, Leuchten]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks: overhead anchor drilling, mounting cable trays, laying and pulling cables, and the initial verification to DIN VDE 0100-600. Trays and cable pulling are marginal (3 m sections overhead, 24 kg rings, a 625 N pulling limit); drilling goes to the dedicated robot, and the verification stays with the electrician."
+  de: "Vier geprüfte Aufgaben: Dübellöcher über Kopf bohren, Kabelrinnen montieren, Leitungen verlegen und einziehen sowie die Erstprüfung nach DIN VDE 0100-600. Rinnen und Leitungszug sind grenzwertig (3-m-Stücke über Kopf, 24-kg-Ringe, 625 N Zuggrenze); das Bohren gehört dem dedizierten Roboter, die Prüfung bleibt bei der Elektrofachkraft."
+typical_incumbent_automation: [drilling_robot, layout_robot]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: indoor
+typical_trades: [mep_electrical]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

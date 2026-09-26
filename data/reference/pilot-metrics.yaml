@@ -1,0 +1,68 @@
+# What a pilot measures. Reliability, not hours saved, is the metric the whole
+# industry is stuck on (about 99 % reached against 99.99 % expected); measuring
+# it makes the client smarter than the vendors.
+metrics:
+  - id: unaided_completion_pct
+    label: { en: "Units completed without intervention", de: "Ohne Eingriff erledigte Einheiten" }
+    unit: '%'
+    better: higher
+    needs_baseline: false
+    definition:
+      en: Share of kits, trips or captures the robot finished without a person touching the robot, the part or the software.
+      de: Anteil der Kits, Fahrten oder Aufnahmen, die der Roboter ohne Eingriff einer Person an Roboter, Teil oder Software abgeschlossen hat.
+  - id: grasp_failure_unknown_parts_pct
+    label: { en: "Grasp failures on parts not seen before", de: "Greiffehler bei unbekannten Teilen" }
+    unit: '%'
+    better: lower
+    needs_baseline: false
+    definition:
+      en: Failed or dropped grasps on parts that were not in the demonstration data, per attempt.
+      de: Fehlgriffe oder fallengelassene Teile bei Teilen, die nicht in den Demonstrationsdaten waren, je Versuch.
+  - id: cycle_time_vs_manual
+    label: { en: "Cycle time against the hand baseline", de: "Taktzeit gegenüber der Handbaseline" }
+    unit: '%'
+    better: lower
+    needs_baseline: true
+    definition:
+      en: Robot cycle time per unit as a percentage of the measured manual cycle time for the same unit.
+      de: Roboter-Taktzeit je Einheit in Prozent der gemessenen manuellen Taktzeit derselben Einheit.
+  - id: interventions_per_hour
+    label: { en: "Interventions per hour", de: "Eingriffe je Stunde" }
+    unit: '1/h'
+    better: lower
+    needs_baseline: false
+    definition:
+      en: Every stop, reset, manual correction or re-teach during measured operation.
+      de: Jeder Stopp, Reset, jede manuelle Korrektur oder jedes Nachlernen während des gemessenen Betriebs.
+  - id: uptime_vs_shift_pct
+    label: { en: "Productive time per shift", de: "Produktive Zeit je Schicht" }
+    unit: '%'
+    better: higher
+    needs_baseline: false
+    definition:
+      en: Minutes the robot worked on the task divided by shift minutes, charging and battery swaps counted as downtime.
+      de: Minuten, in denen der Roboter an der Aufgabe arbeitete, geteilt durch Schichtminuten; Laden und Akkuwechsel zählen als Stillstand.
+  - id: error_rate_vs_human_pct
+    label: { en: "Error rate against the human baseline", de: "Fehlerrate gegenüber der menschlichen Baseline" }
+    unit: '%'
+    better: lower
+    needs_baseline: true
+    definition:
+      en: Wrong, missing or damaged outputs per unit, compared with the same count measured for the manual process.
+      de: Falsche, fehlende oder beschädigte Ergebnisse je Einheit, verglichen mit derselben Zählung im manuellen Prozess.
+  - id: usable_captures_pct
+    label: { en: "Usable captures", de: "Verwertbare Aufnahmen" }
+    unit: '%'
+    better: higher
+    needs_baseline: false
+    definition:
+      en: Share of planned capture points delivered in a quality the reviewer accepts without a repeat visit.
+      de: Anteil der geplanten Aufnahmepunkte, die in einer Qualität geliefert wurden, die die prüfende Person ohne Wiederholung akzeptiert.
+  - id: operator_minutes_per_unit
+    label: { en: "Operator minutes per unit", de: "Bedienminuten je Einheit" }
+    unit: min
+    better: lower
+    needs_baseline: true
+    definition:
+      en: All human time per unit, including supervision, replenishment, fallback work and review, against the manual baseline.
+      de: Gesamte menschliche Zeit je Einheit, einschließlich Aufsicht, Nachschub, Rückfallarbeit und Prüfung, gegenüber der manuellen Baseline.

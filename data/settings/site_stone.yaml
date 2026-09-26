@@ -1,0 +1,27 @@
+id: site_stone
+group: site
+section: interior
+lv: { lb: ['014'], atv: ["DIN 18332", "DIN 18333"] }
+title: { en: "Natural and cast stone", de: "Natur- und Betonwerksteinarbeiten" }
+aliases:
+  en: [stone stairs, window sills, stone flooring]
+  de: [Naturstein, Betonwerkstein, Fensterbänke]
+coverage: screened
+coverage_note:
+  en: "Two screened tasks, both outdoor stairs of cast stone: setting block steps (87 to 128 kg per metre step) and setting tread steps on a stair core. Both are ruled out by mass and weather; a vacuum lifting aid is the better answer."
+  de: "Zwei geprüfte Aufgaben, beide Außentreppen aus Betonwerkstein: Blockstufen versetzen (87 bis 128 kg je Meterstufe) und Trittstufen auf einen Treppenrohling versetzen. Beide sind durch Masse und Witterung ausgeschlossen; eine Vakuum-Hebehilfe ist die bessere Antwort."
+typical_incumbent_automation: []
+dust:
+  type: mineral
+  typical_zone: controlled
+  note:
+    en: "Cutting and grinding stone releases quartz-bearing dust at the tool; wet cutting or extraction at the source is the rule (TRGS 559)."
+    de: "Schneiden und Schleifen von Stein setzt quarzhaltigen Staub am Werkzeug frei; Nassschnitt oder Absaugung an der Quelle ist die Regel (TRGS 559)."
+floor: level
+exposure: both
+typical_trades: [masonry, flooring_tiling]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

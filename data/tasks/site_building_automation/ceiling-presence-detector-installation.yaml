@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_building_automation/ceiling-presence-detector-installation
+status: published
+setting: site_building_automation
+family: assembly_fastening
+trades: [mep_electrical]
+title:
+  en: "Install presence detectors in suspended ceilings"
+  de: "Präsenzmelder in abgehängte Decken einbauen"
+summary:
+  en: "Drill a 32 mm hole in the ceiling board, connect the detector to the KNX bus, push it in on its retaining springs and put it into programming mode with the supplied magnet."
+  de: "Ein 32-mm-Loch in die Deckenplatte bohren, den Melder an den KNX-Bus anschließen, mit den Spannfedern einsetzen und mit dem beigelegten Magneten in den Programmiermodus versetzen."
+description:
+  en: "Presence detectors switch light and ventilation per room and sit overhead in the suspended ceiling, one or more per room. The maker's instructions are short: connect the detector to the bus, fit it into the hollow ceiling with its retaining springs, switch on the bus. For commissioning the address is prepared in the ETS; holding the supplied magnet against the housing puts the detector into programming mode, and the red LED goes out once programming succeeds. The drill hole is 32 mm, the installation depth 41 mm, and the stated detection range applies up to a mounting height of 4 m."
+  de: "Präsenzmelder schalten Licht und Lüftung raumweise und sitzen über Kopf in der abgehängten Decke, einer oder mehrere je Raum. Die Anleitung des Herstellers ist kurz: Melder an den Bus anschließen, mit den Spannfedern in die Hohldecke einsetzen, Busspannung zuschalten. Zur Inbetriebnahme wird die Adresse in der ETS vorbereitet; der beigelegte Magnet, an das Gehäuse gehalten, versetzt den Melder in den Programmiermodus, die rote LED erlischt nach erfolgreicher Programmierung. Der Bohrdurchmesser beträgt 32 mm, die Einbautiefe 41 mm, und die angegebene Reichweite gilt bis 4 m Montagehöhe."
+also_in_settings: [site_electrical]
+derived_from: null
+lv:
+  lb: '070'
+  atv: "DIN 18386"
+  position:
+    en: "Presence detectors for suspended ceilings (KNX): install, connect and address"
+    de: "Präsenzmelder für abgehängte Decken (KNX) montieren, anschließen und adressieren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.02, max: 0.2 }
+    confidence: assumed
+    note: "A detector of 42 mm diameter and 48 mm height plus the drill; the maker publishes no weight, so the detector range is an estimate and the drill is not included."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Same detector and steps throughout a floor; ceiling types, positions and cable ends vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wrong connection or address shows at commissioning; a misplaced hole means a new ceiling board."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Switches light and ventilation; the maker warns of mains voltage during installation, but nothing structural or life-safety depends on the result."
+  reach_height_m:
+    value: { min: 2.5, max: 4.0 }
+    confidence: likely
+    evidence_url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/SCN-P360L2-03_MDT_AOI_DE_EN.pdf'
+    note: "Overhead in suspended ceilings; the stated range applies up to a mounting height of 4 m. The 2.5 m lower bound is assumed for office ceilings."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Suspended ceilings inside the building; the detector is rated IP44 for wet rooms."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling the ceiling board releases gypsum dust overhead; extraction at the drill is the rule."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed building during fit-out."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screeded floors, working from a ladder or a small platform."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Installed by electricians; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Passive infrared detection of presence; no images are recorded."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure detectors per hour."
+requirements:
+  object_size_m:
+    value: { min: 0.048, max: 0.048 }
+    confidence: confirmed
+    evidence_url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/SCN-P360L2-03_MDT_AOI_DE_EN.pdf'
+    note: "Diameter 42 mm, height 48 mm; drill hole 32 mm, installation depth 41 mm (MDT operating instructions, 08/23)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The hole diameter is fixed at 32 mm; no position tolerance is published."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the detector is held by retaining springs."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator with a lifting column first: the work is light but overhead, with a 32 mm hole to drill and a small bus terminal to connect. An electrician makes the connection and holds the magnet for the programming mode."
+      de: "Zuerst einen radgebundenen Mobilmanipulator mit Hubsäule vergleichen: Die Arbeit ist leicht, aber über Kopf, mit einem 32-mm-Loch und einer kleinen Busklemme. Eine Elektrofachkraft stellt den Anschluss her und hält den Magneten für den Programmiermodus."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [drilling, autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "MDT's operating instructions for its KNX presence detector 360° L2 IP44 give a drill hole of 32 mm, an installation depth of 41 mm and dimensions of 42 × 48 mm, a range of 9 m diameter at a maximum mounting height of 4 m, and three installation steps: connect to the KNX bus, fit into the suspended ceiling with retaining springs, switch on the bus. Programming mode is set with the supplied magnet; the device is for authorised electricians only."
+      de: "Die Betriebsanleitung von MDT für seinen KNX-Präsenzmelder 360° L2 IP44 nennt 32 mm Bohrdurchmesser, 41 mm Einbautiefe und Abmessungen von 42 × 48 mm, eine Reichweite von 9 m Durchmesser bei maximal 4 m Einbauhöhe und drei Montageschritte: an den KNX-Bus anschließen, mit Spannfedern in die abgehängte Decke setzen, Busspannung zuschalten. Der Programmiermodus wird mit dem beigelegten Magneten aktiviert; das Gerät ist nur für autorisiertes Elektrofachpersonal."
+    url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/SCN-P360L2-03_MDT_AOI_DE_EN.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2023-08-01'
+    type: claim
+    confidence: confirmed
+    note: "Operating instructions, Stand 08/23."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of detectors set in without a damaged board or rework after 3 months, then stop."
+    de: "Weniger als 99 % der Melder nach 3 Monaten ohne beschädigte Platte und ohne Nacharbeit eingesetzt, dann abbrechen."
+  scope_hint:
+    en: "One open-plan floor with one ceiling type, positions from the lighting plan, cables prepared at every position, an electrician connects and programmes."
+    de: "Ein Großraumgeschoss mit einem Deckentyp, Positionen aus dem Lichtplan, Leitungen an jeder Position vorbereitet, eine Elektrofachkraft schließt an und programmiert."
+prerequisites:
+  - { en: "Ceiling boards installed and detector positions marked from the lighting plan", de: "Deckenplatten montiert und Melderpositionen aus dem Lichtplan angezeichnet" }
+open_questions:
+  - { en: "Can the drilling be done before the boards go up, at a bench, to take it out of the overhead work?", de: "Lässt sich das Bohren vor dem Einbau der Platten am Tisch erledigen, um es aus der Überkopfarbeit herauszunehmen?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

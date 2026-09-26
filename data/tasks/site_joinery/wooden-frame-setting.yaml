@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_joinery/wooden-frame-setting
+status: published
+setting: site_joinery
+family: assembly_fastening
+trades: [carpentry_joinery, windows_doors]
+title:
+  en: "Set wooden door frames into the wall opening and foam them in"
+  de: "Holzumfassungszargen in die Wandöffnung setzen und einschäumen"
+summary:
+  en: "Assemble the frame, push the rebated lining into the opening, align it, spread it and fix it with two-component foam at three points per side, then push in the trim."
+  de: "Die Zarge zusammenbauen, die Falzbekleidung in die Wandöffnung schieben, ausrichten, ausspreizen und je Seite an drei Punkten mit Zwei-Komponenten-Schaum fixieren, danach die Zierbekleidung einschieben."
+description:
+  en: "Westag describes the fixing of its wooden wrap-around frames like this: the rebated lining is pushed into the wall opening, aligned, spread and fixed with foam; for living-room doors with two-component PU foam at three points per side in solid and lightweight walls. Above 40 kg door weight, or where an approval requires it, the frame is screwed instead. The assembly instruction shows the frame being wedged, held with three spreaders, checked with the leaf hung in, and only then foamed. The frame has to sit plumb and square, because every later gap on the door depends on it."
+  de: "Westag beschreibt die Befestigung seiner Holzumfassungszargen so: Die Falzbekleidung wird in die Maueröffnung eingeschoben, ausgerichtet, ausgespreizt und mit Schaum fixiert, bei Wohnraumtüren mit Zwei-Komponenten-PU-Schaum an drei Punkten je Seite in Massiv- und Leichtbauwänden. Über 40 kg Türgewicht oder wenn eine Zulassung es vorschreibt, wird die Zarge stattdessen verschraubt. Die Montageanleitung zeigt, wie die Zarge verkeilt, mit drei Spreizen gehalten, mit eingehängtem Türblatt geprüft und erst dann eingeschäumt wird. Die Zarge muss lot- und winkelrecht sitzen, weil jede spätere Fuge an der Tür davon abhängt."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '027'
+  atv: "DIN 18355"
+  position:
+    en: "Wooden wrap-around frame for interior doors: set, align and fix with foam"
+    de: "Holzumfassungszarge für Innentüren setzen, ausrichten und mit Montageschaum befestigen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 5, max: 14 }
+    confidence: assumed
+    note: "Westag states no frame weight. One frame side (a 25 mm lining board about 2.1 m long with its trim, per the compendium's frame chapter) is estimated below the 15 kg design limit; the assembled frame is lifted into the opening in one piece. To be weighed in a pilot."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Frame types repeat, but wall thickness, wall type (solid or lightweight), opening tolerances and door hand change from opening to opening."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A frame foamed out of plumb makes the door bind or leaves uneven gaps; after the foam has set it can only be cut out and re-set."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Frames of doors without fire or smoke function; fire-rated frames are screwed to their approval and are out of this record."
+  reach_height_m:
+    value: { min: 0, max: 2.2 }
+    confidence: likely
+    note: "From the floor to the head of the frame; frame heights follow the DIN 18101 leaf heights of about 2.0 to 2.25 m."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Interior works in the closed building, after plaster and screed."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Setting and foaming make no dust; two-component PU foam needs ventilation and gloves, which is a chemical, not a dust, question."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed or finished floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Set by hand with wedges, spreaders and a spirit level; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure frames per hour and frames re-set."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 2.3 }
+    confidence: likely
+    evidence_url: 'https://westag.de/fileadmin/westag_getalit/tueren-und-zargen/profinet/6massegewichtenormen.pdf'
+    note: "Frame heights follow the DIN 18101 leaf heights in the Westag tables (wall openings of 2005, 2130 and 2255 mm); the long frame sides are the largest parts."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The instructions require the frame plumb, square and spread to the leaf but give no tolerance in millimetres; the check is the hung leaf itself."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is holding, wedging and spreading the frame."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator that holds the frame while a fitter aligns and foams it. Full autonomy would need reliable plumb and square measurement in openings that are never exactly to size."
+      de: "Einen radgebundenen Mobilmanipulator vergleichen, der die Zarge hält, während ein Monteur ausrichtet und schäumt. Volle Autonomie bräuchte eine sichere Lot- und Winkelmessung in Öffnungen, die nie genau maßhaltig sind."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [precision, capacity]
+capabilities_required: [autonomous_nav_indoor, teleoperated_manipulation]
+capabilities_optional: [carry_payload]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Westag's door compendium: the rebated lining of wrap-around frames is pushed into the wall opening, aligned, spread and fixed with foam; for living-room doors with two-component PU foam at three points per side. Above 40 kg door weight, or where an approval requires it, the frame is fixed mechanically by screwing."
+      de: "Westag-Türenkompendium: Die Falzbekleidung von Holzumfassungszargen wird in die Maueröffnung eingeschoben, ausgerichtet, ausgespreizt und mit Schaum fixiert, bei Wohnraumtüren mit Zwei-Komponenten-PU-Schaum an drei Punkten je Seite. Bei Türgewichten über 40 kg oder wenn eine Zulassung es vorschreibt, wird die Zarge mechanisch durch Verschraubung fixiert."
+    url: 'https://www.westag.de/fileadmin/westag_getalit/tueren-und-zargen/profinet/5-2holzzargen.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Westag-Türen-Kompendium, register 5.2 (Holzzargen), page 523. Undated; dated with the check date."
+  - statement:
+      en: "Westag's pictorial assembly instruction for wooden frames shows the frame assembled flat, set into the opening, wedged, held with three spreaders, checked with the door leaf hung in and then fixed with two-component PU foam."
+      de: "Die bebilderte Westag-Montageanleitung für Holzzargen zeigt, wie die Zarge liegend zusammengebaut, in die Öffnung gesetzt, verkeilt, mit drei Spreizen gehalten, mit eingehängtem Türblatt geprüft und dann mit Zwei-Komponenten-PU-Schaum fixiert wird."
+    url: 'https://www.westag.de/fileadmin/westag_getalit/tueren-und-zargen/fachhandel/verarbeiter-architekten/montageanleitungen/700143_montage_standardzarge_d.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2021-12-16'
+    type: claim
+    confidence: confirmed
+    note: "Montageanleitung Holzzarge; the date is the file's creation date in its metadata. Pictorial, no text values."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "More than 1 in 100 frames foamed out of plumb after 3 months, then stop."
+    de: "Mehr als 1 von 100 Zargen nach 3 Monaten nicht lotrecht eingeschäumt, dann abbrechen."
+  scope_hint:
+    en: "One storey, one frame type in lightweight walls, the robot holding and spreading, a fitter checking plumb before the foam goes in."
+    de: "Ein Geschoss, ein Zargentyp in Leichtbauwänden, der Roboter hält und spreizt, ein Monteur prüft das Lot, bevor geschäumt wird."
+prerequisites:
+  - { en: "Openings measured and within the frame's adjustment range", de: "Öffnungen aufgemessen und im Verstellbereich der Zarge" }
+open_questions:
+  - { en: "How much does an assembled frame of the project's type weigh?", de: "Wie viel wiegt eine zusammengebaute Zarge des Projekttyps?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

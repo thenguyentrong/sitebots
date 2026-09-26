@@ -1,0 +1,113 @@
+schema_version: 1
+id: prefab_timber/wall-element-handling
+status: published
+setting: prefab_timber
+family: heavy_element_handling
+trades: [timber]
+title:
+  en: Move and turn finished wall, floor and roof elements
+  de: Fertige Wand-, Decken- und Dachelemente bewegen und wenden
+summary:
+  en: Lift, turn and transfer complete elements between stations and to storage.
+  de: Komplette Elemente zwischen Stationen und ins Lager heben, wenden und übergeben.
+description:
+  en: Finished elements weigh several tonnes and measure six to twelve metres. They are moved by overhead crane, turning table and transfer carriage; the task is repetitive and already mechanised, and a dropped element is a severe safety event.
+  de: Fertige Elemente wiegen mehrere Tonnen und messen sechs bis zwölf Meter. Sie werden mit Hallenkran, Wendetisch und Verschiebewagen bewegt; die Tätigkeit ist repetitiv und bereits mechanisiert, und ein fallendes Element ist ein schwerer Sicherheitsvorfall.
+also_in_settings: [precast_concrete, modular_volumetric, facade_prefab]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 3500, max: 6000 }
+    confidence: likely
+    note: Typical range for closed timber-frame elements from an industry engagement, 2025/26; verify per product.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Fixed element families and routes.
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: A dropped or misaligned element is a severe safety and damage event.
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: Suspended multi-tonne loads.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Not applicable to a humanoid; the mass test decides.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Assembly hall, not the machining zone.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Rails and industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [overhead_crane, turning_table, element_transfer_carriage] }
+    confidence: likely
+    note: Standard equipment in element production.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.hundegger.com/de/maschinen/plattenbearbeitungsmaschinen/wall-master'
+    note: "The element width, later the wall height, is 3.2, 3.8 or 4.5 m depending on the multifunction bridge (Hundegger WALL-Master); the length depends on the plant’s tables and is not published there."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Set-down position follows the next station’s stops; no ± value is published."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The crane or table carries the load; guiding forces are not published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T5_failure_tolerance, T4_variability]
+  better_answer:
+    class: keep_process
+    note:
+      en: Keep the crane, turning table and transfer carriage. If the goal is fewer operator interventions, look at crane automation or a vacuum lifter with assist control from the equipment maker, not at a humanoid with a 20–25 kg payload ceiling.
+      de: Kran, Wendetisch und Verschiebewagen beibehalten. Geht es um weniger Bedienereingriffe, sind Kranautomatisierung oder ein Vakuumheber mit Assistenzsteuerung des Anlagenherstellers der Ansatz, kein Humanoid mit 20–25 kg Traglastgrenze.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [exposure]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [keep_process, gantry, vacuum_lifter_assist, dedicated_machine]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: If pursued as crane automation, pilot on one element family with the equipment maker.
+    de: Falls als Kranautomatisierung verfolgt, Pilot mit dem Anlagenhersteller an einer Elementfamilie.
+prerequisites: []
+open_questions:
+  - { en: "Is the actual pain the crane cycle, or the manual slinging and alignment around it?", de: "Liegt das Problem im Krantakt oder im manuellen Anschlagen und Ausrichten drumherum?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

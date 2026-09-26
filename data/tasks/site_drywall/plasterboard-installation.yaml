@@ -1,0 +1,153 @@
+schema_version: 1
+id: site_drywall/plasterboard-installation
+status: published
+setting: site_drywall
+family: assembly_fastening
+trades: [drywall]
+title:
+  en: "Lift and fix plasterboard to walls and ceilings"
+  de: "Gipsplatten an Wand und Decke setzen und verschrauben"
+summary:
+  en: "Carry boards from the stack, hold them against the studs or the ceiling grid and screw them on."
+  de: "Platten vom Stapel holen, an Ständerwerk oder Deckenunterkonstruktion halten und verschrauben."
+description:
+  en: "A standard 12.5 mm board of 1250 mm width weighs about 21 to 32 kg depending on its length, and ceilings are boarded overhead. Two people or a board lift do the holding; the screwing follows the pattern the system prescribes. A humanoid research prototype has installed a smaller, lighter board on a simulated construction site."
+  de: "Eine Standardplatte mit 12,5 mm Dicke und 1250 mm Breite wiegt je nach Länge etwa 21 bis 32 kg, Decken werden über Kopf beplankt. Das Halten übernehmen zwei Personen oder ein Plattenheber; verschraubt wird nach dem Raster, das das System vorgibt. Ein humanoider Forschungsprototyp hat auf einer nachgebildeten Baustelle eine kleinere, leichtere Platte montiert."
+also_in_settings: [modular_volumetric, site_etics]
+derived_from: null
+lv:
+  lb: '039'
+  atv: "DIN 18340"
+  position:
+    en: "Gypsum board lining of stud walls and ceilings"
+    de: "Gipsplatten-Beplankung von Ständerwänden und Unterdecken"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 21.3, max: 31.9 }
+    confidence: confirmed
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Boards of 1250 mm width at no less than 8.5 kg/m² in the listed lengths of 2000, 2500, 2600, 2750 and 3000 mm: 1.25 × 2.0 × 8.5 = 21.3 kg to 1.25 × 3.0 × 8.5 = 31.9 kg each (Rigips datasheet, Stand 02.07.2026, page 2; cut sizes by price list). Moisture adds weight."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Standard boards, but cut pieces, openings and ceiling work vary per room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Joints, screw spacing and alignment are checked; a badly set board is taken down again."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Standard boards for walls and ceilings without fire-protection requirements; fire-rated systems follow their own approvals and are out of scope."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "From floor to ceiling height; ceilings are boarded overhead. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Boards are installed in closed, dry rooms."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Cutting boards releases gypsum dust; scoring and snapping or extraction at the saw keeps it low."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Slab or screed, with board stacks and scaffolds."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    note: "Board lifts hold ceiling boards; robots that hold and screw ceiling boards exist in contractor pilots (Shimizu Robo-Buddy)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Boards 1250 mm wide in lengths of 2000, 2500, 2600, 2750 and 3000 mm; cut sizes in the price list (Rigips RB 12.5 datasheet, Stand 02.07.26, page 2)."
+  tolerance_mm:
+    value: 5
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Boarded walls and suspended ceilings may deviate 5 mm over a 1 m measuring distance and 3 mm over 0.1 m (DIN 18202 Table 3 row 6), as reproduced by a screed contractor from the ZDB handbook (file from 2009; check the current edition)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is holding the board and screwing it on."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Use a board lift for ceilings and a board trolley for the carry. The 11 kg board in the humanoid demonstration weighs about half as much as the lightest standard board here; robots from contractors that hold and screw ceiling boards exist only in pilots."
+      de: "Für Decken einen Plattenheber, für den Transport einen Plattenwagen einsetzen. Die 11-kg-Platte aus der Humanoiden-Demonstration wiegt etwa halb so viel wie die leichteste Standardplatte hier; Roboter von Bauunternehmen, die Deckenplatten halten und verschrauben, gibt es nur in Pilotprojekten."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [vacuum_lifter_assist, dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "AIST demonstrated its humanoid HRP-5P (182 cm, 101 kg) installing gypsum boards of 1820 × 910 × 10 mm, about 11 kg, autonomously on a simulated residential construction site."
+      de: "Das AIST zeigte seinen Humanoiden HRP-5P (182 cm, 101 kg), der Gipsplatten von 1820 × 910 × 10 mm, rund 11 kg, auf einer nachgebildeten Wohnbaustelle autonom montierte."
+    url: 'https://www.aist.go.jp/aist_e/list/latest_research/2018/20181116/en20181116.html'
+    kind: academic
+    tier: 1
+    date: '2018-09-27'
+    type: demo
+    subject: { maker: aist, model: hrp-5p }
+    confidence: confirmed
+    note: "Research prototype. English translation of the press release, published 16.11.2018."
+  - statement:
+      en: "Shimizu describes its Robo-Buddy using two robotic arms to insert ceiling hanger bolts and backing members, hold ceiling boards in place and screw them in."
+      de: "Shimizu beschreibt, wie sein Robo-Buddy mit zwei Roboterarmen Deckenabhänger und Unterkonstruktion setzt, Deckenplatten in Position hält und verschraubt."
+    url: 'https://www.shimz.co.jp/en/topics/construction/item12/'
+    kind: operator
+    tier: 1
+    date: '2018-04-26'
+    type: claim
+    confidence: confirmed
+    note: "The contractor describes its own robot."
+  - statement:
+      en: "Rigips lists its standard 12.5 mm board at 1250 mm width, in lengths of 2000, 2500, 2600, 2750 and 3000 mm, at no less than 8.5 kg/m²."
+      de: "Rigips gibt für die Bauplatte RB 12,5 eine Breite von 1250 mm, Längen von 2000, 2500, 2600, 2750 und 3000 mm und mindestens 8,5 kg/m² an."
+    url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-07-02'
+    type: claim
+    confidence: confirmed
+    note: "Product datasheet, Stand 02.07.2026."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a lift assist: one floor of ceilings, time per board with and without the lift."
+    de: "Falls mit Hebehilfe verfolgt: ein Geschoss Decken, Zeit je Platte mit und ohne Heber."
+prerequisites: []
+open_questions:
+  - { en: "Is the pain the carry from the stack or the holding overhead?", de: "Liegt das Problem im Tragen vom Stapel oder im Halten über Kopf?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-24'

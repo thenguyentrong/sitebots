@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_survey_documentation/pre-closure-documentation
+status: published
+setting: site_survey_documentation
+family: inspection_qa_documentation
+trades: [mep_hvac, mep_electrical, mep_plumbing, qa_surveying]
+title:
+  en: "Photograph installations before ceilings and shafts close"
+  de: "Installationen vor dem Schließen von Decken und Schächten fotografieren"
+summary:
+  en: "Capture pipes, ducts, cables and fire stops in ceiling voids and shafts before the boards go up, and file the images by room."
+  de: "Rohre, Kanäle, Kabel und Abschottungen in Deckenhohlräumen und Schächten vor dem Beplanken aufnehmen und die Bilder raumweise ablegen."
+description:
+  en: "Once the suspended ceiling or the shaft wall is closed, the installations behind it can only be seen by opening it again. Site managers and installers therefore photograph each area before it is closed, for acceptance, defects and the as-built record. The timing follows the drywall trade, and an area that was missed cannot be captured later."
+  de: "Sobald die abgehängte Decke oder die Schachtwand geschlossen ist, sind die Installationen dahinter nur noch durch erneutes Öffnen sichtbar. Bauleitung und Monteure fotografieren deshalb jeden Bereich vor dem Schließen, für Abnahme, Mängel und die Bestandsdokumentation. Der Zeitpunkt folgt dem Trockenbau, und ein verpasster Bereich lässt sich später nicht nachholen."
+also_in_settings: [site_drywall]
+derived_from: null
+lv:
+  lb: null
+  atv: null
+  position:
+    en: "Photo documentation of installations before ceilings and walls close (not an LV position)"
+    de: "Fotodokumentation der Installationen vor dem Schließen von Decken und Wänden (keine LV-Position)"
+  unit: lump
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: "Nothing is carried; the camera is the payload."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every room and shaft differs, and areas close in an order set by the drywall trade."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missed area cannot be captured once it is closed; it is opened again or stays undocumented."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Documentation only, no intervention in the work."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "A viewpoint question: the camera looks up into the void from below."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling and drywall dust; lenses need cleaning, and image quality must be measured in the pilot."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Scaffolds, board stacks and cables on the floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Phones and 360° cameras carried by people; quadrupeds with cameras are marketed for jobsite documentation but are not standard."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    note: "Images can show workers; blurring and retention rules apply."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the area released per day; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure areas captured per closing sequence."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled; the camera is the payload."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Photos, no build tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a quadruped with a camera, or a person with a 360° camera and a fixed checklist; the value is in the timing with the drywall trade, not in the robot form."
+      de: "Einen Vierbeiner mit Kamera vergleichen oder eine Person mit 360°-Kamera und fester Checkliste; der Nutzen liegt im Timing mit dem Trockenbau, nicht in der Roboterform."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [site_inspection, progress_scan_360, autonomous_nav_indoor]
+capabilities_optional: [stair_climbing]
+solution_classes: [quadruped_inspection, humanoid, process_change]
+evidence:
+  - statement:
+      en: "Boston Dynamics markets Spot for jobsite photo documentation with 360° camera payloads on autonomous routes, including surveys after hours."
+      de: "Boston Dynamics bewirbt Spot für die fotografische Baustellendokumentation mit 360°-Kameras auf autonomen Routen, auch für Aufnahmen außerhalb der Arbeitszeit."
+    url: 'https://bostondynamics.com/solutions/digital-twin/site-documentation/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    subject: { maker: boston-dynamics, model: spot }
+    confidence: likely
+    note: "Manufacturer claim about general site documentation; capture of ceiling voids before closing is not evidenced. Page undated, read on 2026-09-24."
+pilot:
+  metrics: [usable_captures_pct, operator_minutes_per_unit]
+  abort_rule:
+    en: "Fewer than 99 % of areas captured before closing after 3 months, then change the use case."
+    de: "Weniger als 99 % der Bereiche nach 3 Monaten vor dem Schließen erfasst, dann Use Case wechseln."
+  scope_hint:
+    en: "One floor, capture triggered by the drywall schedule; a person reviews every area before it is released for closing."
+    de: "Ein Geschoss, Aufnahme ausgelöst durch den Trockenbauplan; eine Person prüft jeden Bereich vor der Freigabe zum Schließen."
+prerequisites:
+  - { en: "A closing schedule from the drywall trade that the capture can follow", de: "Ein Schließplan des Trockenbaus, dem die Aufnahme folgen kann" }
+open_questions:
+  - { en: "Who releases an area for closing, and is the capture part of that release?", de: "Wer gibt einen Bereich zum Schließen frei, und ist die Aufnahme Teil dieser Freigabe?" }
+compliance_flags: [mineral_dust_trgs_559, gdpr_art_88_bdsg_26, betrvg_87_1_6]
+sources_reviewed_at: '2026-09-24'

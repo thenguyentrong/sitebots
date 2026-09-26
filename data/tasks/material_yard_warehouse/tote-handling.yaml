@@ -1,0 +1,136 @@
+schema_version: 1
+id: material_yard_warehouse/tote-handling
+status: published
+setting: material_yard_warehouse
+family: intralogistics_transport
+trades: [logistics]
+title:
+  en: Move totes between shelving, conveyor and packing
+  de: Behälter zwischen Regal, Fördertechnik und Packplatz bewegen
+summary:
+  en: Take small-part totes from shelving or a conveyor and set them down at packing or dispatch.
+  de: Kleinteilebehälter aus dem Regal oder vom Förderband nehmen und am Packplatz oder im Versand absetzen.
+description:
+  en: In a builders' merchant or a contractor's central warehouse, fixings, fittings and small tools are picked into totes. Someone carries each tote from the shelving or a conveyor end to packing, counter pickup or dispatch. Tote types are few; where they are picked up changes with every order. This is the task class with the first commercial humanoid deployment, which is why it is worth a screen.
+  de: Im Baustoffhandel oder im Zentrallager eines Bauunternehmens werden Befestigungsmittel, Fittings und Kleinwerkzeug in Behälter kommissioniert. Jemand trägt jeden Behälter vom Regal oder vom Ende eines Förderbands zum Packplatz, zur Theke oder in den Versand. Es gibt wenige Behältertypen; wo sie aufgenommen werden, wechselt mit jedem Auftrag. Das ist die Aufgabenklasse mit dem ersten kommerziellen Humanoid-Einsatz, deshalb lohnt das Screening.
+also_in_settings: [construction_logistics_hub, equipment_rental_depot, mep_prefab]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 12 }
+    confidence: assumed
+    note: Scope set by this record, not a measured value. Small-part totes filled below the 15 kg design limit; weigh the heaviest tote on your own shelves before a pilot.
+  variability:
+    value: medium
+    confidence: assumed
+    note: Analyst judgement. Few tote types, but pickup points change with every order; where totes only move between two fixed points, a conveyor or a fixed cell competes.
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: A tote set down in the wrong place costs search time, nothing else.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: No structural or life-safety consequence.
+  reach_height_m:
+    value: { min: 0.2, max: 2.0 }
+    confidence: assumed
+    note: Shelving usually runs above head height; totes on the top level exceed 1.8 m. Verify per rack.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Warehouse hall; the outdoor yard is a separate task.
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: Indoor warehouse with packed goods.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Warehouse floor.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: In a typical merchant warehouse totes move by hand or trolley. Larger distribution centres run conveyors or AMR fleets; if you do, answer that in the context and the screen changes.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Navigation cameras see people in the aisles; check whether recordings are kept.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Depends on order volume and shift length; the 30–90 min humanoid runtime is a known limit to test against.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; a pilot baseline must count tote moves per shift and walking minutes per move.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Tote formats vary; none of the cited sources gives a size. Measure the largest tote on your shelves."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Totes are set onto shelves and conveyors; no dimensional tolerance is published for that."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is lifting and placing totes."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: Tote handling is where humanoids have their first commercial deployment. Between two fixed points a conveyor or an AMR with carts is cheaper; the humanoid case is totes picked from shelving that people also use, with no change to the racks.
+      de: Behälterhandling ist die Aufgabe mit dem ersten kommerziellen Humanoid-Einsatz. Zwischen zwei festen Punkten sind Förderband oder AMR mit Wagen günstiger; der Fall für den Humanoiden sind Behälter aus Regalen, die auch Menschen nutzen, ohne Umbau der Regale.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, fetch_and_deliver, autonomous_nav_indoor]
+capabilities_optional: [shelf_pick]
+solution_classes: [amr_carts, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: Agility Robotics' Digit moves totes from cobots onto conveyors at a GXO-operated facility for SPANX under a multi-year Robots-as-a-Service agreement, which the manufacturer calls the first formal commercial deployment of humanoid robots.
+      de: Digit von Agility Robotics setzt in einer von GXO betriebenen Anlage für SPANX Behälter von Cobots auf Förderbänder, im Rahmen eines mehrjährigen Robots-as-a-Service-Vertrags, den der Hersteller als ersten formellen kommerziellen Einsatz humanoider Roboter bezeichnet.
+    url: 'https://www.agilityrobotics.com/content/gxo-signs-industry-first-multi-year-agreement-with-agility-robotics'
+    kind: manufacturer
+    tier: 1
+    date: '2024-06-27'
+    type: deployment
+    subject: { maker: agility, model: digit }
+    confidence: confirmed
+    note: Fixed handover points from cobot to conveyor; tote weights are not published.
+  - statement:
+      en: Amazon began testing Digit at its robotics research and development site south of Seattle, first for tote recycling, the repeated picking up and moving of empty totes.
+      de: Amazon hat an seinem Robotik-Entwicklungsstandort südlich von Seattle begonnen, Digit zu testen, zuerst für das Behälter-Recycling, also das wiederholte Aufnehmen und Wegbringen leerer Behälter.
+    url: 'https://www.agilityrobotics.com/content/agility-robotics-broadens-relationship-with-amazon'
+    kind: manufacturer
+    tier: 1
+    date: '2023-10-24'
+    type: pilot
+    subject: { maker: agility, model: digit }
+    confidence: confirmed
+    note: A test at a research site, not production use; empty totes only.
+pilot:
+  metrics: [unaided_completion_pct, interventions_per_hour, cycle_time_vs_manual, uptime_vs_shift_pct]
+  abort_rule:
+    en: Fewer than 99 % of tote moves completed unaided after 3 months, then change the use case.
+    de: Weniger als 99 % der Behälterbewegungen nach 3 Monaten ohne Eingriff, dann Use Case wechseln.
+  scope_hint:
+    en: One tote type, one rack aisle to one packing table, a supervised route; weigh the totes before the pilot starts.
+    de: Ein Behältertyp, eine Regalgasse zu einem Packtisch, eine beaufsichtigte Route; die Behälter vor Pilotstart wiegen.
+prerequisites:
+  - { en: "Tote weights recorded, heavy items moved to trolleys", de: "Behältergewichte erfasst, schwere Artikel auf Wagen verlagert" }
+  - { en: "A map of the warehouse with marked walkways", de: "Eine Karte des Lagers mit markierten Wegen" }
+open_questions:
+  - { en: "How many tote moves per shift go between two fixed points, where a conveyor would do?", de: "Wie viele Behälterbewegungen je Schicht laufen zwischen zwei festen Punkten, wo ein Förderband reichen würde?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

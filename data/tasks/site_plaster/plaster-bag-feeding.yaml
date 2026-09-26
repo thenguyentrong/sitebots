@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_plaster/plaster-bag-feeding
+status: published
+setting: site_plaster
+family: machine_tending
+trades: [painting, logistics]
+title:
+  en: "Feed plaster bags into the mixing pump"
+  de: "Putzsäcke in die Mischpumpe aufgeben"
+summary:
+  en: "Carry 30 kg bags of dry plaster from the pallet, cut them open and empty them into the hopper of the mixing pump, bag after bag."
+  de: "30-kg-Säcke Trockenputz von der Palette holen, aufschneiden und nacheinander in den Trichter der Mischpumpe entleeren."
+description:
+  en: "Knauf ships MP 75 in 30 kg bags, 42 to a pallet, or loose for silos. One bag covers about 3 m² at 10 mm, so every few square metres of wall mean another 30 kg lifted to the hopper. The alternative is logistics, not a robot: loose delivery into a silo with a conveying plant (Knauf names the PFT SILOMAT, up to 100 or 140 m at 20 kg/min) takes the bags off the site."
+  de: "Knauf liefert MP 75 in 30-kg-Säcken, 42 Säcke je Palette, oder lose für Silos. Ein Sack reicht bei 10 mm für rund 3 m², alle paar Quadratmeter Wand werden also weitere 30 kg zum Trichter gehoben. Die Alternative liegt in der Logistik, nicht im Roboter: Lose Lieferung ins Silo mit Förderanlage (Knauf nennt die PFT SILOMAT, bis 100 bzw. 140 m bei 20 kg/min) nimmt die Säcke von der Baustelle."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '023'
+  atv: "DIN 18350"
+  position:
+    en: "Interior machine plaster; material supply to the mixing pump is part of the plaster position"
+    de: "Innenputz als Maschinenputz; die Materialaufgabe an der Mischpumpe ist Teil der Putzposition"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 30, max: 30 }
+    confidence: confirmed
+    evidence_url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    note: "Knauf MP 75 comes in 30 kg bags, 42 bags per pallet."
+  variability:
+    value: low
+    confidence: assumed
+    note: "Analyst judgement. The same bag, the same hopper, the same motion all day."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A torn bag or a spill is swept up; the pump doses the water."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Material supply; nothing structural depends on it."
+  reach_height_m:
+    value: { min: 0, max: 1.2 }
+    confidence: assumed
+    note: "From pallet height to the hopper rim; hopper heights of the pumps were not checked."
+  environment:
+    value: both
+    confidence: likely
+    note: "The pump stands at the building entrance or inside on the storey being plastered."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Emptying bags into the hopper raises dust at the machine."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Dry bags; water only at the pump."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Site access, ramps or the raw floor of the storey."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    note: "Knauf also delivers MP 75 loose and names PFT SILOMAT conveying plants for it; many sites still work from bags."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "about 3 m² of wall per 30 kg bag at 10 mm"
+    confidence: confirmed
+    evidence_url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    note: "Knauf's yield figure for MP 75."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Bag dimensions are not published on the sheet."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance; the bag is emptied into an open hopper."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: fail, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T4_variability]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Switch to loose delivery with a silo and a conveying plant. Where bags stay, a vacuum lifter at the pallet takes the weight off the crew."
+      de: "Auf lose Lieferung mit Silo und Förderanlage umstellen. Wo Säcke bleiben, nimmt ein Vakuumheber an der Palette der Kolonne das Gewicht ab."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [machine_tending, carry_payload]
+capabilities_optional: []
+solution_classes: [dedicated_machine, vacuum_lifter_assist, process_change]
+evidence:
+  - statement:
+      en: "Knauf's technical sheet for MP 75 lists 30 kg bags (42 per pallet) and loose delivery, a yield of about 3 m² per bag at 10 mm, and the PFT SILOMAT trans plus 100 and 140 conveying plants for distances up to 100 and 140 m at 20 kg/min."
+      de: "Das Technische Blatt zu Knauf MP 75 nennt 30-kg-Säcke (42 je Palette) und lose Ware, eine Ergiebigkeit von rund 3 m² je Sack bei 10 mm sowie die Förderanlagen PFT SILOMAT trans plus 100 und 140 für bis zu 100 bzw. 140 m bei 20 kg/min."
+    url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2018-03-01'
+    type: claim
+    confidence: confirmed
+    note: "Technical sheet P111.de, 03/2018, hosted by a retailer. Month only, dated to the first."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If bags stay: a vacuum lifter at the pallet for one plaster crew, lifts per shift before and after."
+    de: "Falls Säcke bleiben: ein Vakuumheber an der Palette für eine Putzkolonne, Hebevorgänge je Schicht vorher und nachher."
+prerequisites: []
+open_questions:
+  - { en: "Is there space and truck access for a silo at the building?", de: "Gibt es am Gebäude Platz und Zufahrt für ein Silo?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

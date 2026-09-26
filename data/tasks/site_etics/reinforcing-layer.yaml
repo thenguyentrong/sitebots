@@ -1,0 +1,140 @@
+schema_version: 1
+id: site_etics/reinforcing-layer
+status: published
+setting: site_etics
+family: surface_finishing
+trades: [insulation, facade_roofing]
+title:
+  en: "Apply the base coat and embed the reinforcing mesh"
+  de: "Armierungsmörtel auftragen und Armierungsgewebe einbetten"
+summary:
+  en: "Trowel the reinforcing mortar onto the bonded and anchored insulation boards, press the glass-fibre mesh into it and cover it, ready for the finishing render."
+  de: "Den Armierungsmörtel auf die geklebten und verdübelten Dämmplatten aufziehen, das Glasfasergewebe einbetten und überziehen, bereit für den Oberputz."
+description:
+  en: "In an ETICS the insulation boards are bonded to the wall and anchored first. Knauf Insulation describes the next step for its FKD-S board: a layer of adhesive mortar is applied to take the glass-fibre mesh, followed by the rendering coat. ROCKWOOL's Coverrock II board can be rendered directly without a scratch coat; its datasheet requires the insulation to be protected from rain before and during the work, if necessary by covering the scaffold, and the surface to be dry."
+  de: "Bei einem WDVS werden die Dämmplatten zuerst an der Wand verklebt und verdübelt. Knauf Insulation beschreibt für seine Platte FKD-S den nächsten Schritt: Eine Lage Klebemörtel wird aufgetragen, um das Glasfasergewebe aufzunehmen, darauf folgt die Putzschicht. Die ROCKWOOL Coverrock II kann ohne vorherige Pressspachtelung direkt verputzt werden; das Datenblatt verlangt, den Dämmstoff vor und während der Verarbeitung vor Regen zu schützen, gegebenenfalls durch Abplanen des Gerüsts, und einen trockenen Untergrund."
+also_in_settings: [site_plaster]
+derived_from: null
+lv:
+  lb: '023'
+  atv: "DIN 18345"
+  position:
+    en: "Reinforcing layer of adhesive and reinforcing mortar with embedded glass-fibre mesh on ETICS insulation boards"
+    de: "Armierungsschicht aus Klebe- und Armierungsmörtel mit eingebettetem Glasfasergewebe auf WDVS-Dämmplatten"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "No mortar or mesh datasheet could be reached, so bag and roll weights are not established."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Open wall areas repeat, but corners, reveals and openings need extra mesh and careful working per facade."
+  error_tolerance:
+    value: limited
+    confidence: assumed
+    note: "A reinforcing layer that is too thin or badly embedded is reworked before the finishing render goes on; not quantified in a fetched source."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The system is held by adhesive and anchors (Knauf Insulation); the reinforcing layer is not treated as load-bearing here."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "From the scaffold deck to just above head height; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the scaffold outside the building."
+  dust:
+    value: { type: cement, zone: none }
+    confidence: assumed
+    note: "Mixing the mortar releases cement dust; outdoors, no classified zone."
+  wet:
+    value: damp
+    confidence: likely
+    evidence_url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/fassade-wdvs/db-coverrock-ii-rockwool.pdf'
+    note: "Outdoors; the insulation must be protected from rain before and during the work, if necessary by covering the scaffold (ROCKWOOL)."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck: level but narrow."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Not established from a fetched source whether machines apply this layer; embedding the mesh is recorded as manual here."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Mesh roll dimensions are not stated in the fetched sources."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Layer thickness and mesh overlap are not stated in the fetched sources."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for troweling."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The layer goes on outdoors on the scaffold, under weather protection at best, and no humanoid publishes a usable ingress rating. The plasterer stays."
+      de: "Die Schicht entsteht im Freien auf dem Gerüst, bestenfalls unter Wetterschutz, und kein Humanoide veröffentlicht eine brauchbare Schutzart. Der Stuckateur bleibt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [surface_finishing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Knauf Insulation on its FKD-S ETICS board: the boards are glued to the base wall and mechanically fastened with 6–8 anchors per m²; after that, a layer of glue is added for placing the glass-fibre mesh in it, as well as the rendering coat layer."
+      de: "Knauf Insulation zur WDVS-Platte FKD-S: Die Platten werden auf die Wand geklebt und mit 6–8 Dübeln je m² mechanisch befestigt; danach wird eine Lage Kleber aufgetragen, um das Glasfasergewebe einzubetten, ebenso die Putzschicht."
+    url: 'https://pim.knaufinsulation.com/files/download/fkd-s_thermal_en_202004.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2020-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Product datasheet, April 2020 (Knauf Insulation Greece); the day is not stated."
+  - statement:
+      en: "ROCKWOOL's Coverrock II datasheet: the board can be rendered directly thanks to its coating, without a scratch coat; the insulation must be protected from rain before and during the work, if necessary by covering the scaffold, and the substrate surface must be dry."
+      de: "Datenblatt ROCKWOOL Coverrock II: Die Platte lässt sich dank ihrer Haftbrückenbeschichtung ohne Pressspachtelung direkt verputzen; der Dämmstoff muss vor und während der Verarbeitung vor Regen geschützt werden, gegebenenfalls durch Abplanen des Gerüsts, und die Oberfläche des Untergrunds muss trocken sein."
+    url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/fassade-wdvs/db-coverrock-ii-rockwool.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2023-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Technical datasheet, edition 09/2023; the day is not stated."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If weather is the bottleneck: count the days lost per facade with and without a covered scaffold."
+    de: "Falls das Wetter der Engpass ist: verlorene Tage je Fassade mit und ohne abgeplantes Gerüst zählen."
+prerequisites: []
+open_questions:
+  - { en: "Which system holder's approval applies, and what layer thickness and mesh overlap does it prescribe?", de: "Welche Zulassung des Systemhalters gilt, und welche Schichtdicke und Gewebeüberlappung schreibt sie vor?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

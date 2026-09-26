@@ -1,0 +1,151 @@
+schema_version: 1
+id: site_sheet_metal/downpipe-installation
+status: published
+setting: site_sheet_metal
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Install downpipes on the facade"
+  de: "Regenfallrohre an der Fassade montieren"
+summary:
+  en: "Fix the pipe brackets into the wall, plug the downpipes together from the gutter outlet down and join them to the standpipe at the bottom."
+  de: "Die Rohrhalter in der Wand befestigen, die Fallrohre vom Rinnenstutzen abwärts ineinanderstecken und unten an das Standrohr anschließen."
+description:
+  en: "Round downpipes run vertically down the building and have to be secured against slipping; they are usually fixed with pipe brackets at about 20 mm from the wall and connected to standpipes. Following the trade rules, RHEINZINK sets the brackets at most every 3 m for DN 60 to DN 100 and every 2 m above DN 100. PREFA supplies aluminium downpipes in 3 m lengths from Ø 60 to Ø 150 mm at 0.7 mm, and a 1.6 mm version at Ø 100 mm. RHEINZINK's impact-protected standpipe is 1 m long, with two brackets pre-mounted."
+  de: "Runde Regenfallrohre werden senkrecht am Gebäude heruntergeführt und sind gegen Abrutschen zu sichern; üblich sind Fallrohrschellen mit etwa 20 mm Wandabstand und der Anschluss an Standrohre. Nach den Fachregeln setzt RHEINZINK die Halter bei DN 60 bis DN 100 höchstens alle 3 m, über DN 100 höchstens alle 2 m. PREFA liefert Aluminium-Fallrohre in 3 m Länge von Ø 60 bis Ø 150 mm in 0,7 mm, dazu eine Ausführung mit 1,6 mm bei Ø 100 mm. Das schlaggeschützte RHEINZINK-Standrohr ist 1 m lang, zwei Halter sind vormontiert."
+also_in_settings: [site_lightning_protection]
+derived_from: null
+lv:
+  lb: '022'
+  atv: "DIN 18339"
+  position:
+    en: "Round downpipe of titanium zinc or aluminium with pipe brackets: supply and install"
+    de: "Regenfallrohr, rund, aus Titanzink oder Aluminium, mit Rohrschellen liefern und montieren"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 1.1, max: 4.1 }
+    confidence: likely
+    evidence_url: 'https://www.prefa.de/produkt-katalog/dachentwaesserung/ablaufrohr/'
+    note: "Derived for PREFA aluminium pipes of 3 m: circumference × length × wall × 2.70 g/cm³ (aluminium, de.wikipedia.org/wiki/Aluminium). Ø 60 × 0.7 mm about 1.1 kg, Ø 150 × 0.7 mm about 2.7 kg, Ø 100 × 1.6 mm about 4.1 kg. Seams and coating are ignored; zinc pipes of the same size are heavier."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Straight runs repeat, but the bends at the eaves, offsets around projections and the length down to the standpipe differ per building."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A run out of plumb or a joint that leaks is visible and is refitted; the brackets have to keep the run from slipping (RHEINZINK)."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Rainwater drainage on the facade; the pipe carries no structural load."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "From the scaffold deck or the ground, level by level; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the outside of the building."
+  dust:
+    value: { type: mineral, zone: none }
+    confidence: assumed
+    note: "Drilling the bracket holes into masonry or concrete; outdoors, no classified zone."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the weather decides."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck or ground."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Brackets and pipes are fitted by hand; no machine for this step is recorded."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 3.0, max: 3.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.prefa.de/produkt-katalog/dachentwaesserung/ablaufrohr/'
+    note: "PREFA downpipes come in 3000 mm lengths; RHEINZINK's standpipe at the bottom is 1 m long."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No millimetre tolerance is stated; the run is set plumb with the brackets at about 20 mm from the wall (RHEINZINK)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published for drilling or fixing the brackets."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The pipes are light, but the work is outdoors on the scaffold at every level of the facade, and no humanoid publishes a usable ingress rating. The sheet-metal worker stays."
+      de: "Die Rohre sind leicht, aber gearbeitet wird im Freien auf dem Gerüst über alle Geschosse, und kein Humanoide veröffentlicht eine brauchbare Schutzart. Der Klempner bleibt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [skills_shortage]
+capabilities_required: [drilling, screwing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "RHEINZINK: round downpipes are led vertically down the building and secured against slipping, usually with pipe brackets at about 20 mm from the wall; for DN 60 to DN 100 the brackets are set at most every 3 m according to the trade rules, above DN 100 at most every 2 m."
+      de: "RHEINZINK: Runde Regenfallrohre werden senkrecht am Gebäude heruntergeführt und sind gegen Abrutschen zu sichern, üblich mit Fallrohrschellen mit etwa 20 mm Wandabstand; bei DN 60 bis DN 100 sind die Halter nach den Fachregeln höchstens alle drei Meter zu befestigen, über DN 100 höchstens alle zwei Meter."
+    url: 'https://www.rheinzink.de/fileadmin/redaktion/RHEINZINK_DE/Downloads/Broschueren-Produktionformationen/produktinformation-universal-fallrohrhalter-102886-v010-de-de.PDF'
+    kind: manufacturer
+    tier: 1
+    date: '2011-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Product information for the universal downpipe bracket, © 2011, code 102886-RZ-D-010-01-11; the day is not stated."
+  - statement:
+      en: "PREFA offers its round aluminium downpipe in 3000 mm lengths at Ø 60, 80, 100, 120 and 150 mm in 0.7 mm, and a reinforced 1.6 mm version at Ø 100 mm."
+      de: "PREFA bietet das runde Aluminium-Ablaufrohr in 3000 mm Länge mit Ø 60, 80, 100, 120 und 150 mm in 0,7 mm an, dazu eine verstärkte Ausführung mit 1,6 mm bei Ø 100 mm."
+    url: 'https://www.prefa.de/produkt-katalog/dachentwaesserung/ablaufrohr/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the check date."
+  - statement:
+      en: "RHEINZINK's standpipe is an impact-protected pipe of 1 m that can be plugged together for longer lengths; each comes with two brackets pre-assembled."
+      de: "Das RHEINZINK-Standrohr ist ein schlaggeschütztes Rohr von 1 m, das sich für größere Längen ineinanderstecken lässt; an jedem sind zwei Halter vormontiert."
+    url: 'https://www.rheinzink.de/fileadmin/redaktion/RHEINZINK_DE/Downloads/Technische-Unterlagen/Montageanleitung_Standrohr_DE_EN_FR.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2012-11-01'
+    type: claim
+    confidence: confirmed
+    note: "Installation instructions, © 2012, code 105335-RZ-INT-001-11-12; month taken from the code."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If scaffold time is the pain: minutes per metre of downpipe with pre-assembled bracket sets against loose brackets, on one elevation."
+    de: "Falls die Gerüstzeit das Problem ist: Minuten je Meter Fallrohr mit vormontierten Haltersets gegenüber losen Haltern, an einer Fassadenseite."
+prerequisites: []
+open_questions:
+  - { en: "Which wall takes the brackets: masonry, concrete, or an ETICS that needs special fixings?", de: "Welche Wand nimmt die Halter auf: Mauerwerk, Beton oder ein WDVS, das Spezialbefestigungen braucht?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

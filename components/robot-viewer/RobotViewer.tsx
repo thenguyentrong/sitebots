@@ -2,8 +2,8 @@
 
 import { Component, Suspense, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { Grid, Text, useGLTF } from '@react-three/drei';
-import { Group } from 'three';
+import { ContactShadows, Environment, Grid, Lightformer, Text, useGLTF } from '@react-three/drei';
+import { AgXToneMapping, Group } from 'three';
 import type { ModelEntry } from '@/lib/models/schemas';
 import type { Pose } from '@/lib/models/poses';
 import { createRobotRig, modelBounds } from '@/lib/models/rig';
@@ -13,6 +13,29 @@ import { JointControls } from './JointControls';
 
 const POSE_LABEL: Record<string, string> = { standing: 'Standing', reach_up: 'Reach up', carry: 'Carry', crouch: 'Crouch', sit: 'Sit' };
 type PoseApi = { animating: boolean; pose: string; heightM: number; values: Pose; missing: string[] };
+
+type SceneColors = { dark: boolean; cell: string; section: string; ink: string; line: string };
+const LIGHT: SceneColors = { dark: false, cell: '#e4e4e7', section: '#d4d4d8', ink: '#71717a', line: '#a1a1aa' };
+const DARK: SceneColors = { dark: true, cell: '#232327', section: '#34343a', ink: '#8b8b94', line: '#52525b' };
+
+/** The scene follows the page theme: system preference, overridden by data-theme on <html>. */
+function useSceneColors(): SceneColors {
+  const [colors, setColors] = useState<SceneColors>(DARK);
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+    const read = () => {
+      const forced = document.documentElement.getAttribute('data-theme');
+      setColors((forced ? forced === 'dark' : media.matches) ? DARK : LIGHT);
+    };
+    read();
+    media.addEventListener('change', read);
+    const observer = new MutationObserver(read);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => { media.removeEventListener('change', read); observer.disconnect(); };
+  }, []);
+  return colors;
+}
+
 function RobotModel({ entry, pose, initial, setReady, onPoseApi }: { entry: ModelEntry; pose: { name: string; values: Pose } | null; initial: Pose; setReady: (v: boolean) => void; onPoseApi: (api: PoseApi) => void }) {
   const { scene } = useGLTF(entry.glbUrl, false, true);
   const rig = useMemo(() => createRobotRig(scene, entry.joints.joints), [scene, entry.joints.joints]);
@@ -45,89 +68,33 @@ class ModelBoundary extends Component<{ children: ReactNode; url: string }, { fa
   }
 }
 
+/** The site worker mesh: 1.80 m to the top of the head, feet on y = 0, facing +x like the robots. */
+export const WORKER_URL = '/models/reference/construction-worker.glb';
+
+function Worker() {
+  const { scene } = useGLTF(WORKER_URL, false, true);
+  const copy = useMemo(() => scene.clone(true), [scene]);
+  return <primitive object={copy} />;
+}
+
 /**
- * The 1.80 m reference is a person in site clothing — hard hat, hi-vis vest,
- * work trousers, boots — because the question a robot page answers is "how big
- * is this next to the people on my site", not next to a grey mannequin.
+ * The 1.80 m reference is a construction worker (hard hat, hi-vis vest,
+ * boots) because the question a robot page answers is "how big is this next
+ * to the people on my site", not next to a grey mannequin.
  */
-function HumanReference({ x, visible }: { x: number; visible: boolean }) {
+export function HumanReference({ x, visible, ink, label = true }: { x: number; visible: boolean; ink: string; label?: boolean }) {
   if (!visible) return null;
-  const skin = <meshStandardMaterial color="#c99a72" roughness={0.8} />;
-  const hat = <meshStandardMaterial color="#f5c400" roughness={0.45} />;
-  const vest = <meshStandardMaterial color="#ff6a13" roughness={0.75} />;
-  const stripe = <meshStandardMaterial color="#d9dde3" roughness={0.3} metalness={0.15} />;
-  const shirt = <meshStandardMaterial color="#3a5a8a" roughness={0.85} />;
-  const trousers = <meshStandardMaterial color="#3f4652" roughness={0.9} />;
-  const boots = <meshStandardMaterial color="#4a3a2a" roughness={0.9} />;
   return (
     <group position={[x, 0, 0]}>
-      {/* head, neck */}
-      <mesh position={[0, 1.66, 0]}>
-        <sphereGeometry args={[0.1, 24, 16]} />
-        {skin}
-      </mesh>
-      <mesh position={[0, 1.55, 0]}>
-        <cylinderGeometry args={[0.045, 0.05, 0.06, 12]} />
-        {skin}
-      </mesh>
-      {/* hard hat: dome, brim */}
-      <mesh position={[0, 1.7, 0]}>
-        <sphereGeometry args={[0.115, 24, 12, 0, Math.PI * 2, 0, Math.PI / 2]} />
-        {hat}
-      </mesh>
-      <mesh position={[0, 1.69, 0]}>
-        <cylinderGeometry args={[0.15, 0.15, 0.02, 24]} />
-        {hat}
-      </mesh>
-      {/* torso: shirt under a hi-vis vest with two reflective bands */}
-      <mesh position={[0, 1.27, 0]}>
-        <capsuleGeometry args={[0.165, 0.42, 8, 16]} />
-        {shirt}
-      </mesh>
-      <mesh position={[0, 1.27, 0]}>
-        <cylinderGeometry args={[0.18, 0.19, 0.5, 20]} />
-        {vest}
-      </mesh>
-      {[1.38, 1.14].map((y) => (
-        <mesh key={y} position={[0, y, 0]}>
-          <cylinderGeometry args={[0.186, 0.196, 0.035, 20]} />
-          {stripe}
-        </mesh>
-      ))}
-      {/* arms, hanging, hands bare */}
-      {[-0.245, 0.245].map((dx) => (
-        <group key={dx}>
-          <mesh position={[dx, 1.2, 0]} rotation={[0, 0, dx < 0 ? 0.08 : -0.08]}>
-            <capsuleGeometry args={[0.05, 0.5, 6, 12]} />
-            {shirt}
-          </mesh>
-          <mesh position={[dx * 1.12, 0.88, 0]}>
-            <sphereGeometry args={[0.05, 12, 10]} />
-            {skin}
-          </mesh>
-        </group>
-      ))}
-      {/* legs and boots */}
-      {[-0.1, 0.1].map((dx) => (
-        <group key={dx}>
-          <mesh position={[dx, 0.55, 0]}>
-            <capsuleGeometry args={[0.075, 0.72, 6, 12]} />
-            {trousers}
-          </mesh>
-          <mesh position={[dx, 0.07, 0.04]}>
-            <boxGeometry args={[0.13, 0.14, 0.28]} />
-            {boots}
-          </mesh>
-        </group>
-      ))}
-      <Text position={[0, 1.92, 0]} fontSize={0.09} color="#6b7280" anchorX="center" anchorY="bottom">
+      <Worker />
+      {label ? <Text position={[0, 1.95, 0]} fontSize={0.09} color={ink} anchorX="center" anchorY="bottom">
         1.80 m
-      </Text>
+      </Text> : null}
     </group>
   );
 }
 
-function Ruler({ x, height }: { x: number; height: number }) {
+function Ruler({ x, height, colors }: { x: number; height: number; colors: SceneColors }) {
   const top = Math.ceil(Math.max(height, 1.8) * 2) / 2;
   const ticks = [];
   for (let h = 0; h <= top + 1e-6; h += 0.5) ticks.push(h);
@@ -135,15 +102,15 @@ function Ruler({ x, height }: { x: number; height: number }) {
     <group position={[x, 0, 0]}>
       <mesh position={[0, top / 2, 0]}>
         <boxGeometry args={[0.004, top, 0.004]} />
-        <meshBasicMaterial color="#9ca3af" />
+        <meshBasicMaterial color={colors.line} />
       </mesh>
       {ticks.map((h) => (
         <group key={h} position={[0, h, 0]}>
           <mesh position={[-0.04, 0, 0]}>
             <boxGeometry args={[0.08, 0.004, 0.004]} />
-            <meshBasicMaterial color="#9ca3af" />
+            <meshBasicMaterial color={colors.line} />
           </mesh>
-          <Text position={[-0.12, 0, 0]} fontSize={0.06} color="#6b7280" anchorX="right" anchorY="middle">
+          <Text position={[-0.12, 0, 0]} fontSize={0.06} color={colors.ink} anchorX="right" anchorY="middle">
             {h.toFixed(1)}
           </Text>
         </group>
@@ -152,10 +119,26 @@ function Ruler({ x, height }: { x: number; height: number }) {
   );
 }
 
+/**
+ * A studio in the scene itself: one large softbox overhead and two strips at
+ * the sides, rendered once into the environment map. Nothing is downloaded,
+ * and painted covers and metal joints pick up real reflections.
+ */
+export function Studio() {
+  return (
+    <Environment resolution={256} frames={1}>
+      <Lightformer form="rect" intensity={2.2} position={[0, 5, 1]} rotation={[Math.PI / 2, 0, 0]} scale={[10, 6, 1]} />
+      <Lightformer form="rect" intensity={1.4} position={[-5, 1.5, 1]} rotation={[0, Math.PI / 2, 0]} scale={[3, 6, 1]} />
+      <Lightformer form="rect" intensity={0.9} position={[5, 2, -1]} rotation={[0, -Math.PI / 2, 0]} scale={[3, 6, 1]} />
+      <Lightformer form="rect" intensity={0.6} position={[0, 1.5, -5]} scale={[8, 3, 1]} />
+    </Environment>
+  );
+}
 
 export function RobotViewer({ entry, presets, name, compact = false }: { entry: ModelEntry; presets: Record<string, Pose>; name: string; compact?: boolean }) {
   const content = useRef<Group>(null);
   const container = useRef<HTMLDivElement>(null);
+  const colors = useSceneColors();
   const [ready, setReady] = useState(false);
   const [pose, setPose] = useState<{ name: string; values: Pose } | null>(null);
   const [scale, setScale] = useState(!compact);
@@ -185,28 +168,28 @@ export function RobotViewer({ entry, presets, name, compact = false }: { entry: 
   const resetJoints = useCallback(() => setPose({ name: 'standing', values: initial }), [initial]);
   const changeJoint = (joint: string, value: number) => setPose((p) => ({ name: 'custom', values: { ...(p?.values ?? initial), [joint]: value } }));
   const presetNames = Object.keys(presets).filter((p) => p === 'standing' || Object.keys(presets[p]).length > 0);
-  const button = 'rounded-lg border border-edge bg-card/95 px-2.5 py-2 text-xs font-medium text-foreground shadow-sm transition hover:bg-subtle aria-pressed:bg-foreground aria-pressed:text-background disabled:opacity-40';
+  const button = 'rounded-lg border border-edge bg-card/90 px-2.5 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition hover:bg-subtle aria-pressed:bg-foreground aria-pressed:text-background disabled:opacity-40';
   return <div ref={container} className={expanded ? 'fixed inset-3 z-50 overflow-auto rounded-2xl border border-edge bg-card shadow-2xl sm:inset-6' : compact ? 'overflow-hidden' : 'card overflow-hidden'} data-robot-viewer data-ready={ready ? 'true' : 'false'} data-pose={api.pose} data-animating={api.animating} data-joint-values={JSON.stringify(api.values)} data-missing-joints={api.missing.join(',')}>
     <ModelBoundary key={entry.glbUrl} url={entry.glbUrl}>
-      <div className={expanded ? 'relative h-[70vh] min-h-72' : 'relative aspect-[4/3]'}>
-        <Canvas dpr={[1, 1.5]} frameloop="demand" shadows={false}
+      <div className={(expanded ? 'relative h-[70vh] min-h-72' : 'relative aspect-[4/3]') + (compact ? '' : ' viewer-stage')}>
+        <Canvas dpr={[1, 2]} frameloop="demand" shadows={false}
           fallback={<div role="alert" className="p-6 text-sm">3D needs WebGL. Photos and specifications are still available.</div>}
-          gl={{ antialias: true, powerPreference: 'low-power', alpha: compact, preserveDrawingBuffer: compact }}
+          gl={{ antialias: true, powerPreference: 'high-performance', alpha: true, preserveDrawingBuffer: compact }}
+          onCreated={({ gl }) => { gl.toneMapping = AgXToneMapping; gl.toneMappingExposure = 1.05; }}
           camera={{ fov: 30, position: [3.2, 1.7, 3.6], near: 0.005, far: 100 }}>
-          {compact ? null : <color attach="background" args={['#f6f6f7']} />}
-          <ambientLight intensity={0.7} />
-          <hemisphereLight args={['#ffffff', '#c8c4bb', 0.6]} />
-          <directionalLight position={[4, 6, 3]} intensity={1.4} />
-          <directionalLight position={[-4, 3, -2]} intensity={0.5} />
+          <hemisphereLight args={['#ffffff', colors.dark ? '#1c1c20' : '#d8d6d0', colors.dark ? 0.35 : 0.5]} />
+          <directionalLight position={[3, 6, 4]} intensity={1.8} />
+          <directionalLight position={[-4, 3, -3]} intensity={0.7} />
+          <Studio />
           <Suspense fallback={null}>
             <group ref={content}>
               <RobotModel entry={entry} pose={pose} initial={initial} setReady={setReady} onPoseApi={setApi} />
-              <HumanReference x={half + 0.7} visible={scale} />
-              {scale ? <Ruler x={-(half + 0.3)} height={entry.joints.modelHeightM || entry.heightM} /> : null}
+              <HumanReference x={half + 0.7} visible={scale} ink={colors.ink} />
+              {scale ? <Ruler x={-(half + 0.3)} height={entry.joints.modelHeightM || entry.heightM} colors={colors} /> : null}
             </group>
-
+            <ContactShadows position={[0, 0.001, 0]} scale={8} resolution={1024} blur={2.2} far={2.5} opacity={colors.dark ? 0.75 : 0.45} color="#000000" />
           </Suspense>
-          {compact ? null : <Grid position={[0, 0, 0]} args={[12, 12]} cellSize={0.5} cellThickness={0.6} cellColor="#e4e4e7" sectionSize={1} sectionThickness={1} sectionColor="#cfcfd4" fadeDistance={10} fadeStrength={1.2} infiniteGrid />}
+          {compact ? null : <Grid position={[0, -0.001, 0]} args={[12, 12]} cellSize={0.5} cellThickness={0.6} cellColor={colors.cell} sectionSize={1} sectionThickness={1} sectionColor={colors.section} fadeDistance={9} fadeStrength={1.4} infiniteGrid />}
           <CameraControls content={content} ready={ready} scale={scale} mode={mode} command={command} compact={compact} />
         </Canvas>
         {!ready ? <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-faint"><span className="rounded-full border border-edge bg-card px-3 py-1 shadow-sm">Loading {name}…</span></div> : null}
@@ -227,7 +210,7 @@ export function RobotViewer({ entry, presets, name, compact = false }: { entry: 
       </div>
     </ModelBoundary>
     {compact ? null : <>
-      <p className="border-t border-edge/70 px-3 py-2 text-xs text-muted">Drag to {mode === 'pan' ? 'pan' : 'rotate'} · Scroll or pinch to zoom · Right-drag or two fingers to pan</p>
+      <p className="border-t border-edge/70 px-3 py-2 text-xs text-muted">Drag to {mode === 'pan' ? 'pan' : 'rotate'}. Scroll or pinch to zoom. Right-drag or two fingers to pan.</p>
       <div className="flex flex-wrap items-center gap-1.5 border-t border-edge/70 px-3 py-2.5 text-sm">
         {presetNames.map((p) => <button key={p} type="button" data-pose-preset={p} aria-pressed={api.pose === p} disabled={!ready} onClick={() => setPose({ name: p, values: presets[p] })}
           className={'rounded-full border px-3 py-1 text-xs font-medium transition ' + (api.pose === p ? 'border-foreground bg-foreground text-background' : 'border-edge bg-card text-muted hover:border-edge-strong hover:text-foreground')}>{POSE_LABEL[p] ?? p.replace(/_/g, ' ')}</button>)}
@@ -264,7 +247,7 @@ function ModelCredits({ entry }: { entry: ModelEntry }) {
         </p>
         <p>Modified by sitebots: {c.modifications.join('; ')}.</p>
         <p className="num">
-          {c.stats.triangles.after.toLocaleString('en-GB')} triangles · {(c.stats.bytes / 1024).toFixed(0)} KB · {c.stats.joints} joints
+          {c.stats.triangles.after.toLocaleString('en-GB')} triangles, {(c.stats.bytes / 1024).toFixed(0)} KB, {c.stats.joints} joints
         </p>
       </div>
     </details>

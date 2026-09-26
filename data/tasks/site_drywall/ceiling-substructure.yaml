@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_drywall/ceiling-substructure
+status: published
+setting: site_drywall
+family: assembly_fastening
+trades: [drywall]
+title:
+  en: "Hang the substructure of a suspended plasterboard ceiling"
+  de: "Unterkonstruktion einer abgehängten Gipsplattendecke abhängen"
+summary:
+  en: "Anchor hangers in the concrete slab, clip the CD 60/27 base and load-bearing profiles to them and align the grid at ceiling height."
+  de: "Abhänger in der Rohdecke verankern, CD-60/27-Grund- und Tragprofile einhängen und den Rost auf Deckenhöhe ausrichten."
+description:
+  en: "The ceiling hangs from anchors in the slab. Knauf's detail sheet puts its hangers for CD 60/27 profiles in the 0.25 kN (25 kg) load class, anchors them in reinforced concrete with its ceiling nail or suitable steel anchors, and requires fire-approved anchors where the ceiling has to protect against fire from above. The grid is sized to the ceiling weight to DIN 18168. The parts are light, the work is overhead, and every anchor carries part of a ceiling above people."
+  de: "Die Decke hängt an Verankerungen in der Rohdecke. Das Knauf-Detailblatt ordnet seine Abhänger für CD-60/27-Profile der Tragfähigkeitsklasse 0,25 kN (25 kg) zu, verankert sie in Stahlbeton mit dem Knauf Deckennagel oder geeigneten Stahldübeln und verlangt brandschutztechnisch zugelassene Verankerungen, wo die Decke gegen Brand von oben schützen muss. Der Rost wird nach DIN 18168 für das Deckengewicht bemessen. Die Teile sind leicht, gearbeitet wird über Kopf, und jede Verankerung trägt einen Teil einer Decke über Menschen."
+also_in_settings: [site_electrical, site_ventilation]
+derived_from: null
+lv:
+  lb: '039'
+  atv: "DIN 18340"
+  position:
+    en: "Suspended plasterboard ceiling on a CD profile grid, including hangers and anchors"
+    de: "Abgehängte Gipsplattendecke, Unterkonstruktion aus CD-Profilen, einschließlich Abhänger und Verankerung"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 3 }
+    confidence: assumed
+    note: "Hangers weigh a few hundred grams. The product pages checked give no weight for the 4 m CD 60/27 profile of 0.6 mm steel; scaled from the 3 m CW 75 × 50 × 0.6 stud (2.48 kg) by its smaller cross-section it stays under 3 kg. Assumed."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The grid repeats, but room shapes, services in the ceiling void and hanger positions change from room to room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A crooked grid shows in the finished ceiling and is re-hung before boarding."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://drepper.com/wp-content/uploads/PDFs/baustoffwissen/Gipsplatten_und_Putze_Knauf_Konstruktion_D11.pdf'
+    note: "Knauf D11.de (11/2015): hangers in the 0.25 kN (25 kg) load class, anchored in concrete with the Knauf ceiling nail or suitable steel anchors, fire-approved anchors for fire protection from above, grid designed to DIN 18168. Each anchor carries part of the ceiling over the room."
+  reach_height_m:
+    value: { min: 2.4, max: 3.5 }
+    confidence: assumed
+    note: "Overhead at ceiling height, plus the depth of the void. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed shell."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling anchor holes in concrete releases quartz dust at the drill; extraction at the tool is the rule (TRGS 559)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Slab or screed; the crew works from podiums or mobile scaffolds."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [drilling_robot] }
+    confidence: likely
+    note: "Ceiling drilling robots drill anchor holes from the model (Hilti Jaibot), and Shimizu's Robo-Buddy sets ceiling hanger bolts on its own projects; hanging and aligning the grid is done by people."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 4, max: 4 }
+    confidence: confirmed
+    evidence_url: 'https://rueppel.de/Knauf-Trockenbauprofil-CD-Profil-60x27x0-6mm-4000mm'
+    note: "Knauf CD 60/27 profiles are sold in 4000 mm lengths (dealer listing)."
+  tolerance_mm:
+    value: 5
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Suspended ceilings may deviate 5 mm over a 1 m measuring-point distance, DIN 18202 Table 3 row 6, as reproduced by a screed contractor from the ZDB handbook; the grid sets the plane of the finished ceiling."
+  force_n:
+    value: 250
+    confidence: likely
+    evidence_url: 'https://drepper.com/wp-content/uploads/PDFs/baustoffwissen/Gipsplatten_und_Putze_Knauf_Konstruktion_D11.pdf'
+    note: "Not a working force but the design load of each hanger: Knauf's hangers for CD 60/27 belong to the 0.25 kN (25 kg) load class, which every anchor must hold."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep trained drywall installers for hanging and aligning the grid. The overhead drilling can go to a ceiling drilling robot; the anchors and their inspection stay with people."
+      de: "Abhängen und Ausrichten des Rosts bei geschulten Trockenbauern belassen. Das Bohren über Kopf kann ein Deckenbohrroboter übernehmen; Verankerungen und deren Kontrolle bleiben beim Menschen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [drilling, carry_payload]
+capabilities_optional: [screwing, teleoperated_manipulation]
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "Knauf's detail sheet D11.de assigns its hangers for CD 60/27 profiles to the 0.25 kN (25 kg) load class, anchors them in reinforced concrete with the Knauf ceiling nail or suitable steel anchors, and requires a fire-approved anchor where the ceiling protects against fire from above."
+      de: "Das Knauf-Detailblatt D11.de ordnet die Abhänger für CD-60/27-Profile der Tragfähigkeitsklasse 0,25 kN (25 kg) zu, verankert sie in Stahlbeton mit dem Knauf Deckennagel oder geeigneten Stahldübeln und verlangt bei Brandschutz von oben ein brandschutztechnisch zugelassenes Verankerungsmittel."
+    url: 'https://drepper.com/wp-content/uploads/PDFs/baustoffwissen/Gipsplatten_und_Putze_Knauf_Konstruktion_D11.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2015-11-01'
+    type: claim
+    confidence: confirmed
+    note: "Detail sheet 11/2015, hosted by a building-materials dealer; Knauf publishes newer editions. Month only, dated to the first."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the drilling is automated: one storey of ceilings, anchor holes by the drilling robot, hanging and alignment by the crew; compare crew hours per 100 m²."
+    de: "Falls das Bohren automatisiert wird: ein Geschoss Decken, Bohrlöcher durch den Bohrroboter, Abhängen und Ausrichten durch die Kolonne; Kolonnenstunden je 100 m² vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "Which anchors does the ceiling system approve for your slab?", de: "Welche Verankerungen lässt das Deckensystem für Ihre Rohdecke zu?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

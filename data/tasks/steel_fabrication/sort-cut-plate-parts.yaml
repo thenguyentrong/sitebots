@@ -1,0 +1,146 @@
+schema_version: 1
+id: steel_fabrication/sort-cut-plate-parts
+status: published
+setting: steel_fabrication
+family: kitting_picking_sorting
+trades: [steel]
+title:
+  en: "Take cut plate parts off the cutting table and sort them by assembly"
+  de: "Zugeschnittene Blechteile vom Schneidtisch nehmen und nach Baugruppen sortieren"
+summary:
+  en: "After plasma or oxy-fuel cutting, break the parts out of the skeleton, check the part mark and put each part into the box or onto the pallet of its assembly."
+  de: "Nach dem Plasma- oder Brennschnitt die Teile aus dem Restgitter lösen, die Teilemarkierung prüfen und jedes Teil in die Kiste oder auf die Palette seiner Baugruppe legen."
+description:
+  en: "End plates, cleats, stiffeners and gussets come off the plate cutting machine as one nested sheet. Some machines drop finished parts onto a discharge conveyor; on others the operator unloads by hand from the cutting table. Every nest is different, the parts are small to medium and heavy ones go by magnet or crane, and a part in the wrong box is missed at the fitting station."
+  de: "Kopfplatten, Laschen, Steifen und Knotenbleche kommen als ein geschachteltes Blech von der Brennschneidanlage. Manche Anlagen werfen fertige Teile auf ein Abfuhrband; bei anderen entlädt der Bediener den Schneidtisch von Hand. Jede Schachtelung ist anders, die Teile sind klein bis mittelgroß, schwere gehen per Magnet oder Kran, und ein Teil in der falschen Kiste fehlt am Anpassplatz."
+also_in_settings: [rebar_formwork_prep]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.2, max: 25 }
+    confidence: likely
+    evidence_url: 'https://www.stauberstahl.com/werkstoffe/10570-werkstoff-datenblatt/'
+    note: "Scope of this record: parts handled by hand. At 7.85 kg/dm³ (S355J2 data sheet) a 400 × 300 × 20 mm end plate weighs 18.8 kg; a 100 × 100 × 10 mm cleat 0.8 kg. Heavier parts go by magnet or crane and are out of scope."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every nest carries a different mix of parts, shapes and assemblies."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missing or misplaced part stops the fitter and is searched for; nothing is built wrong because of it."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Sorting; the load-bearing work is the welding and bolting later."
+  reach_height_m:
+    value: { min: 0.6, max: 1.2 }
+    confidence: assumed
+    note: "Cutting table and boxes at working height; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Fabrication hall."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "No mineral or wood dust; cutting fumes are extracted at the table, which is a separate topic (welding and cutting fumes)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.voortman.net/en/products/v325'
+    note: "Voortman's V325 drops finished parts onto an automatic discharge conveyor; on the V304 the operator unloads the table, which Voortman made easier with a stepped rail. Sorting by assembly remains a manual step as far as known."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at parts and marks."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on plates per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count parts per plate and minutes per plate."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Parts are nested from full plates (Voortman lists plate widths up to 6,000 mm for the V304); the parts in scope are small, but no size range is published."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No placement tolerance; the part only has to reach the right box."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Parts can stick in the skeleton after cutting; no force figure published."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare an automatic part discharge on the cutting machine first; then a wheeled mobile manipulator or a fixed cell with a vision system that reads the part marks. Parts near 25 kg stay with the magnet or the crane."
+      de: "Zuerst eine automatische Teileabfuhr an der Schneidanlage vergleichen; danach einen radgebundenen Mobilmanipulator oder eine feste Zelle mit Bilderkennung, die die Teilemarkierung liest. Teile nahe 25 kg bleiben bei Magnet oder Kran."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [material_sorting, kitting]
+capabilities_optional: [carry_payload]
+solution_classes: [dedicated_machine, fixed_cobot_cell, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "Voortman's V325 plate processing machine drops finished parts from the skeleton onto an automatic product discharge table with a motor-driven conveyor belt."
+      de: "Die Blechbearbeitungsanlage V325 von Voortman lässt fertige Teile aus dem Restgitter auf einen automatischen Abfuhrtisch mit motorisch angetriebenem Förderband fallen."
+    url: 'https://www.voortman.net/en/products/v325'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date."
+  - statement:
+      en: "On Voortman's V304 plate cutting machine the X-rail has a stair-like step height to make loading and unloading easier and more ergonomic; plates up to 200 mm thick can be cut, depending on the process."
+      de: "An der Brennschneidanlage V304 von Voortman hat die X-Schiene eine treppenartige Stufenhöhe, damit Be- und Entladen leichter und ergonomischer werden; je nach Verfahren werden Bleche bis 200 mm Dicke geschnitten."
+    url: 'https://www.voortman.net/en/products/v304'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date. Manual unloading remains on this machine."
+  - statement:
+      en: "The S355J2 (1.0570) data sheet gives a density of 7.85 kg/dm³."
+      de: "Das Werkstoffdatenblatt S355J2 (1.0570) nennt eine Dichte von 7,85 kg/dm³."
+    url: 'https://www.stauberstahl.com/werkstoffe/10570-werkstoff-datenblatt/'
+    kind: manufacturer
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Supplier data sheet without a date. Data source for the part masses."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of parts in the right box without intervention after 3 months, or no gain against the discharge conveyor: stop."
+    de: "Nach 3 Monaten weniger als 99 % der Teile ohne Eingriff in der richtigen Kiste oder kein Vorteil gegenüber dem Abfuhrband: stoppen."
+  scope_hint:
+    en: "Parts up to 10 kg from one plate thickness range, marked parts only."
+    de: "Teile bis 10 kg aus einem Blechdickenbereich, nur markierte Teile."
+prerequisites:
+  - { en: "Part marks readable on every part (ink jet or scribed)", de: "Lesbare Teilemarkierung auf jedem Teil (Tintenstrahl oder geritzt)" }
+  - { en: "Nesting data with part-to-assembly assignment", de: "Schachteldaten mit Zuordnung Teil zu Baugruppe" }
+open_questions:
+  - { en: "Does your cutting machine already discharge parts automatically?", de: "Führt Ihre Schneidanlage die Teile bereits automatisch ab?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

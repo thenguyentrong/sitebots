@@ -1,0 +1,27 @@
+id: site_concrete_repair
+group: site
+section: demolition_repair
+lv: { lb: ['081'], atv: ["DIN 18349"] }
+title: { en: "Concrete repair", de: "Betonerhaltungsarbeiten" }
+aliases:
+  en: [concrete repair, surface preparation]
+  de: [Betoninstandsetzung]
+coverage: screened
+coverage_note:
+  en: "Two screened tasks: removing damaged concrete by hydrodemolition and applying repair mortar. Both concern load-bearing concrete; the robot answer exists for the removal, the mortar stays with trained crews."
+  de: "Zwei geprüfte Aufgaben: geschädigten Beton mit Höchstdruckwasserstrahlen abtragen und Instandsetzungsmörtel auftragen. Beide betreffen tragenden Beton; für den Abtrag gibt es die Roboterantwort, der Mörtel bleibt bei geschulten Kolonnen."
+typical_incumbent_automation: []
+dust:
+  type: mineral
+  typical_zone: controlled
+  note:
+    en: "Cutting, drilling and grinding mineral materials release quartz-bearing dust at the tool; extraction at the source is the rule (TRGS 559)."
+    de: "Schneiden, Bohren und Schleifen mineralischer Baustoffe setzt quarzhaltigen Staub am Werkzeug frei; Absaugung an der Quelle ist die Regel (TRGS 559)."
+floor: mixed
+exposure: both
+typical_trades: [concrete]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

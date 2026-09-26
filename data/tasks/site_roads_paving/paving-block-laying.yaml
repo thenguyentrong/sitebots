@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_roads_paving/paving-block-laying
+status: published
+setting: site_roads_paving
+family: assembly_fastening
+trades: [road, civil_earthworks]
+title:
+  en: "Lay concrete paving blocks"
+  de: "Betonpflastersteine verlegen"
+summary:
+  en: "Set paving blocks one by one on the screeded bedding in the chosen bond, keep the joints and fit the edges."
+  de: "Pflastersteine einzeln auf die abgezogene Bettung im gewählten Verband setzen, die Fugen einhalten und die Ränder anpassen."
+description:
+  en: "A standard rectangular block of 197 × 97 × 80 mm weighs about 3.6 kg, and 48 of them make a square metre, set bent over at ground level. The ATV DIN 18318 asks for joints of 3 to 5 mm and, in general, no more than 2 mm height difference from block to block. Large, simple areas can be laid by machine in whole laying units; curves, cuts and small areas stay hand work."
+  de: "Ein Standard-Rechteckpflaster von 197 × 97 × 80 mm wiegt etwa 3,6 kg, 48 davon ergeben einen Quadratmeter, gesetzt gebückt auf Bodenhöhe. Die ATV DIN 18318 verlangt Fugen von 3 bis 5 mm und im Allgemeinen höchstens 2 mm Höhenversatz von Stein zu Stein. Große, einfache Flächen lassen sich maschinell in ganzen Verlegeeinheiten verlegen; Bögen, Anschnitte und kleine Flächen bleiben Handarbeit."
+also_in_settings: [site_landscaping]
+derived_from: null
+lv:
+  lb: '080'
+  atv: "DIN 18318"
+  position:
+    en: "Paving of concrete blocks in unbound construction"
+    de: "Pflasterdecke aus Betonpflastersteinen in ungebundener Bauweise"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 2.7, max: 4.6 }
+    confidence: likely
+    evidence_url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/strassen-galabau/funktionspflaster/rechteckpflaster/technische-daten'
+    note: "Rectangular block 20/10 in 60, 80 and 100 mm: 130, 175 and 220 kg/m² at 48 blocks per m² (Berding Beton), so about 2.7, 3.6 and 4.6 kg per block. Larger formats weigh more."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The bond repeats across the field; edges, curves, gullies and cuts vary from site to site."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.pflastersteine.de/downloads/service/2010-10_Pflasterdecken_regelgerecht_herstellen.pdf'
+    note: "Joints of 3 to 5 mm and in general at most 2 mm height difference from block to block (ATV DIN 18318, as described by the Betonverband SLG in 2010). A wrongly laid area is taken up and relaid."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "A surface course; a defect is a repair, not a safety failure."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: assumed
+    note: "Blocks are set at ground level while kneeling or bending. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Roads, paths, squares and yards."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Cutting blocks at the edges releases quartz dust; wet cutting or extraction keeps it down (TRGS 559)."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Screeded bedding on a compacted base, not a finished floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [paving_laying_machine] }
+    confidence: confirmed
+    evidence_url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/strassen-galabau/service-planung/wissen-qualitaet/technik-fuer-profis/maschinelle-pflasterverlegung'
+    note: "Paving can be laid by machine in laying units; the manufacturer calls it efficient from 80 mm block thickness and asks for 2 to 2.5 mm spacers. Small and curved areas stay hand work."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the area laid per day depends on format, bond and cuts."
+requirements:
+  object_size_m:
+    value: { min: 0.197, max: 0.197 }
+    confidence: confirmed
+    evidence_url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/strassen-galabau/funktionspflaster/rechteckpflaster/technische-daten'
+    note: "Rectangular block 197 × 97 mm, 60 to 100 mm thick (Berding Beton)."
+  tolerance_mm:
+    value: 2
+    confidence: likely
+    evidence_url: 'https://www.pflastersteine.de/downloads/service/2010-10_Pflasterdecken_regelgerecht_herstellen.pdf'
+    note: "Height difference from block to block in general at most 2 mm; at most 20 mm deviation from the target height; joints 3 to 5 mm for blocks under 120 mm. Values of the April 2010 edition of ATV DIN 18318 as described by the Betonverband SLG (October 2010); check the current edition."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states a force for setting blocks."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the paving crew; for large, simple areas compare a paving laying machine that sets whole laying units. No humanoid publishes an ingress rating for outdoor work."
+      de: "Bei der Pflasterkolonne bleiben; für große, einfache Flächen eine Pflasterverlegemaschine vergleichen, die ganze Verlegeeinheiten setzt. Kein Humanoid veröffentlicht eine Schutzart für Arbeiten im Freien."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Berding Beton describes machine laying of its paving in laying units, calls it efficient from a block thickness of 80 mm and asks for blocks with spacers of 2 to 2.5 mm, so that joints of about 3 to 5 mm or 5 to 10 mm result, as the standard requires."
+      de: "Berding Beton beschreibt die maschinelle Verlegung seines Pflasters in Verlegeeinheiten, nennt sie ab einer Steindicke von 80 mm effizient und verlangt Steine mit 2 bis 2,5 mm Abstandhaltern, damit DIN-gerechte Fugen von rund 3 bis 5 mm beziehungsweise 5 bis 10 mm entstehen."
+    url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/strassen-galabau/service-planung/wissen-qualitaet/technik-fuer-profis/maschinelle-pflasterverlegung'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated guidance page, dated with the check date; it links a Betonverband SLG leaflet from June 2024."
+  - statement:
+      en: "The Betonverband SLG summarises ATV DIN 18318: joints of 3 to 5 mm for blocks under 120 mm thick, in general at most 2 mm height difference between blocks, at most 20 mm deviation from the target height and at most 10 mm deviation from evenness."
+      de: "Der Betonverband SLG fasst die ATV DIN 18318 zusammen: Fugen von 3 bis 5 mm bei Steinen unter 120 mm Dicke, im Allgemeinen höchstens 2 mm Höhenversatz zwischen den Steinen, höchstens 20 mm Abweichung von der Sollhöhe und höchstens 10 mm Abweichung von der Ebenheit."
+    url: 'https://www.pflastersteine.de/downloads/service/2010-10_Pflasterdecken_regelgerecht_herstellen.pdf'
+    kind: standard
+    tier: 2
+    date: '2010-10-01'
+    type: claim
+    confidence: confirmed
+    note: "Refers to the April 2010 edition of ATV DIN 18318; the paper is dated October 2010 without a day."
+  - statement:
+      en: "Berding Beton lists its 20/10 rectangular block at 197 × 97 mm, 48 blocks per m², and 130, 175 and 220 kg/m² at 60, 80 and 100 mm thickness."
+      de: "Berding Beton gibt für sein Rechteckpflaster 20/10 197 × 97 mm, 48 Steine je m² sowie 130, 175 und 220 kg/m² bei 60, 80 und 100 mm Dicke an."
+    url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/strassen-galabau/funktionspflaster/rechteckpflaster/technische-daten'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated technical data page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If a laying machine is considered: one car park area, area laid per day and rework, by machine and by hand."
+    de: "Falls eine Verlegemaschine erwogen wird: eine Parkplatzfläche, verlegte Fläche je Tag und Nacharbeit, maschinell und von Hand."
+prerequisites: []
+open_questions:
+  - { en: "How much of your paving is large, simple area and how much is edges, curves and cuts?", de: "Wie viel Ihrer Pflasterflächen sind große, einfache Flächen und wie viel Ränder, Bögen und Anschnitte?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

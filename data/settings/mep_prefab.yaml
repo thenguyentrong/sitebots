@@ -1,0 +1,29 @@
+id: mep_prefab
+group: factory
+title: { en: "Building-services prefabrication (TGA)", de: "TGA-Vorfertigung" }
+aliases:
+  en: [MEP prefab, pipe spool shop, plant room modules]
+  de: [Vorfertigung Haustechnik, Rohrvorfertigung, Technikmodule]
+coverage: screened
+coverage_note:
+  en: "Screened tasks: cutting and pressing small-bore pipe spools (marginal; a cobot cell holding the press machine first), cutting large-bore pipe bars (ruled out; saw with bar magazine) and labelling finished spools and packing them per floor (marginal; racks per floor and AMR carts first)."
+  de: "Geprüfte Aufgaben: Rohrstücke kleiner Nennweite ablängen und verpressen (grenzwertig; zuerst eine Cobot-Zelle, die die Pressmaschine hält), Rohrstangen großer Nennweite ablängen (ausgeschlossen; Säge mit Stangenmagazin) und fertige Rohrstücke beschriften und geschossweise packen (grenzwertig; zuerst Gestelle je Geschoss und AMR-Wagen)."
+typical_incumbent_automation: [conveyor, overhead_crane, welding_robot]
+dust:
+  type: none
+  typical_zone: none
+  note:
+    en: Mostly clean assembly work; cutting and grinding stations are local exceptions.
+    de: Überwiegend saubere Montagearbeit; Schneid- und Schleifplätze sind lokale Ausnahmen.
+floor: level
+exposure: indoor
+typical_trades: [mep_hvac, mep_electrical, mep_plumbing, mep_sprinkler, logistics]
+process_steps:
+  - { id: cutting, label: { en: "Pipe and duct cutting", de: "Rohr- und Kanalzuschnitt" } }
+  - { id: assembly, label: { en: "Spool and module assembly", de: "Spool- und Modulmontage" } }
+  - { id: testing, label: { en: "Pressure and function testing", de: "Druck- und Funktionsprüfung" } }
+  - { id: kitting_for_site, label: { en: "Kitting for site delivery", de: "Kommissionierung für die Baustelle" } }
+  - { id: packing, label: { en: "Packing and dispatch", de: "Verpackung und Versand" } }
+seed_priority: 6
+sources: []
+status: published

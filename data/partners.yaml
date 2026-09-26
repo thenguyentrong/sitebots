@@ -1,0 +1,41 @@
+# Who a company can talk to. Only what the source page states; no ratings, no
+# "free" or "neutral" unless the source says so. `verification` follows
+# data/purchasing/contacts.json: direct = page read directly, indexed = checked
+# against an indexed page.
+partners:
+  - id: fraunhofer_ipa_kmumanoid
+    type: research
+    name: Fraunhofer IPA, project KMUmanoid
+    region: [DE-BW, DE]
+    offers:
+      en: Research project on humanoid robots for small and medium-sized enterprises, funded by the Baden-Württemberg Ministry of Economic Affairs; announces guides on economic and safe use; companies with application ideas can contact the project.
+      de: Forschungsprojekt zu humanoiden Robotern für kleine und mittlere Unternehmen, gefördert vom Wirtschaftsministerium Baden-Württemberg; kündigt Leitfäden zu wirtschaftlichem und sicherem Einsatz an; Unternehmen mit Anwendungsideen können das Projekt kontaktieren.
+    url: 'https://www.ipa.fraunhofer.de/de/referenzprojekte/kmumanoid.html'
+    provenance: { source_url: 'https://www.ipa.fraunhofer.de/de/presse/presseinformationen/projekt-kmumanoid-erprobt-humanoide-roboter-fuer-den-mittelstand.html', tier: 2, observed_at: '2026-09-24', confidence: confirmed }
+    verification: indexed
+    applies_when: { form_factors: [humanoid] }
+    note:
+      en: Not part of the federal Mittelstand-Digital programme. Whether a first consultation is free of charge is not stated on the source page.
+      de: Kein Teil des Bundesprogramms Mittelstand-Digital. Ob ein Erstgespräch kostenlos ist, steht nicht auf der Quellseite.
+  - id: bghm
+    type: accident_insurer
+    name: Berufsgenossenschaft Holz und Metall (BGHM)
+    region: [DE]
+    offers:
+      en: Statutory accident insurance institution for the wood and metal industries; the body to involve early on a risk assessment for a robot on a timber or metal line, since it has no published position on humanoids yet.
+      de: Gesetzliche Unfallversicherung für die Holz- und Metallbranche; früh einzubinden bei der Gefährdungsbeurteilung für einen Roboter an einer Holz- oder Metalllinie, da sie noch keine veröffentlichte Position zu Humanoiden hat.
+    url: 'https://www.bghm.de/'
+    provenance: { source_url: 'https://www.bghm.de/', tier: 2, observed_at: '2026-09-24', confidence: likely }
+    verification: indexed
+    applies_when: { setting_groups: [factory] }
+  - id: bg_bau
+    type: accident_insurer
+    name: BG BAU
+    region: [DE]
+    offers:
+      en: Statutory accident insurance institution for the construction industry; the counterpart of BGHM for construction sites and site logistics.
+      de: Gesetzliche Unfallversicherung der Bauwirtschaft; das Gegenstück zur BGHM für Baustellen und Baulogistik.
+    url: 'https://www.bgbau.de/'
+    provenance: { source_url: 'https://www.bgbau.de/', tier: 2, observed_at: '2026-09-24', confidence: likely }
+    verification: indexed
+    applies_when: { setting_groups: [site, yard_logistics] }

@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_painting/door-frame-lacquering
+status: published
+setting: site_painting
+family: surface_finishing
+trades: [painting]
+title:
+  en: "Lacquer steel door frames and wooden doors on site"
+  de: "Stahlzargen und Holztüren vor Ort lackieren"
+summary:
+  en: "Sand and clean the primed frames and leaves, then apply the intermediate and final coats of water-based lacquer by brush, roller or spray."
+  de: "Die grundierten Zargen und Türblätter anschleifen und reinigen, dann Zwischen- und Schlussbeschichtung mit wasserverdünnbarem Lack streichen, rollen oder spritzen."
+description:
+  en: "Caparol's Capacryl PU-Satin is sold for intermediate and final coats on primed, dimensionally stable wood and on primed metal. It can be brushed, rolled or sprayed; the technical information gives about 100 to 120 ml per m² and coat, a density of about 1.3 g/cm³, recoating after 10 to 12 hours, and asks for a P2 dust filter when sanding. On site the painter works frame by frame and door by door, with the hinges, lock and seals masked or removed."
+  de: "Capacryl PU-Satin von Caparol ist für Zwischen- und Schlussbeschichtungen auf grundierten maßhaltigen Holzbauteilen und grundiertem Metall bestimmt. Er kann gestrichen, gerollt oder gespritzt werden; die Technische Information nennt rund 100 bis 120 ml je m² und Auftrag, eine Dichte von rund 1,3 g/cm³, Überstreichbarkeit nach 10 bis 12 Stunden und verlangt beim Schleifen einen P2-Staubfilter. Vor Ort arbeitet der Maler Zarge für Zarge und Tür für Tür, Bänder, Schloss und Dichtungen werden abgeklebt oder abgenommen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '034'
+  atv: "DIN 18363"
+  position:
+    en: "Coating of steel door frames and wooden door leaves with water-based lacquer, intermediate and final coat"
+    de: "Beschichtung von Stahlzargen und Holztürblättern mit wasserverdünnbarem Lack, Zwischen- und Schlussbeschichtung"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 3.25 }
+    confidence: likely
+    evidence_url: 'https://www.caparol.de/produkte/bautenlacke-lasuren/capacryl-wasserbasierte-bautenlacke/weiss-und-buntlacke/capacryl-pu-satin'
+    note: "The heaviest object handled is the working container: 2.5 l × about 1.3 kg/l = 3.25 kg of lacquer (Caparol: containers 375 ml to 10 l, density about 1.3 g/cm³), plus the tin. Brushes and rollers weigh far less."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Frames and leaves repeat in a few standard sizes; hinges, locks, glazing beads and the order of masking change from door to door."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Runs, missed edges and dust in the film are sanded and recoated; nothing structural depends on the finish."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Decorative and protective coating without structural function."
+  reach_height_m:
+    value: { min: 0, max: 2.2 }
+    confidence: likely
+    note: "From the frame foot to the head of the frame, about 2.0 to 2.25 m for DIN 18101 door sizes."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Interior works; the technical information asks for at least 8 °C, best 10 to 25 °C."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: likely
+    evidence_url: 'https://caparol.de/caparol_pim_import/caparol_de/products/ti/2615/TI_052_CC.pdf'
+    note: "Sanding between coats releases lacquer and wood dust; Caparol asks for a P2 dust filter for sanding work. Spray application creates aerosol, which the TI also warns about."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms; relative humidity is a processing condition."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed or covered finished floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Done by painters with brush, roller or spray gun; none of the sources reviewed describes a machine that coats door frames on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure frames and leaves per shift and rework."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "The coated parts stay in place; only tins and tools are carried."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The technical information gives consumption per coat, not a film thickness tolerance in millimetres."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Before any robot, compare doors and frames that arrive factory-finished, which removes the step. Where coating on site stays, a wheeled mobile manipulator with a spray head is the class to compare; masking and the edges around hardware remain hand work."
+      de: "Vor jedem Roboter werkseitig endbeschichtete Türen und Zargen vergleichen, damit entfällt der Schritt. Wo vor Ort beschichtet wird, ist ein radgebundener Mobilmanipulator mit Sprühkopf die Klasse zum Vergleich; Abkleben und die Kanten an den Beschlägen bleiben Handarbeit."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [surface_finishing, autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [process_change, mobile_manipulator_wheeled, keep_process]
+evidence:
+  - statement:
+      en: "Caparol's technical information no. 052 describes Capacryl PU-Satin for intermediate and final coats on primed, dimensionally stable wood and primed metal, applied by brush, roller or spray at about 100 to 120 ml per m² and coat, density about 1.3 g/cm³, and asks for a P2 dust filter when sanding."
+      de: "Die Technische Information Nr. 052 von Caparol beschreibt Capacryl PU-Satin für Zwischen- und Schlussbeschichtungen auf grundierten maßhaltigen Holzbauteilen und grundiertem Metall, aufgetragen durch Streichen, Rollen oder Spritzen mit rund 100 bis 120 ml je m² und Auftrag, Dichte rund 1,3 g/cm³, und verlangt beim Schleifen einen P2-Staubfilter."
+    url: 'https://caparol.de/caparol_pim_import/caparol_de/products/ti/2615/TI_052_CC.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Technische Information Nr. 052, Stand Januar 2026 (month only, dated to its first day)."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "More than 1 in 100 frames needing a second finishing pass for runs or missed edges after 3 months, then stop."
+    de: "Mehr als 1 von 100 Zargen braucht nach 3 Monaten einen zweiten Durchgang wegen Läufern oder Fehlstellen, dann abbrechen."
+  scope_hint:
+    en: "One storey of steel frames, masked by a painter, final coat sprayed by the robot, inspected by the painter."
+    de: "Ein Geschoss Stahlzargen, vom Maler abgeklebt, Schlussbeschichtung vom Roboter gespritzt, vom Maler abgenommen."
+prerequisites:
+  - { en: "Frames and leaves primed and sanded", de: "Zargen und Türblätter grundiert und angeschliffen" }
+open_questions:
+  - { en: "Does the project order factory-finished doors, which removes the step?", de: "Bestellt das Projekt werkseitig endbeschichtete Türen, womit der Schritt entfällt?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

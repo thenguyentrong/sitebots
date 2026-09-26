@@ -99,7 +99,7 @@ export const FIELDS: readonly FieldDef[] = [
   f({ id: 'battery_pack', label: 'Battery pack', group: 'parts', kind: 'json', optional: true, hint: 'Chemistry, voltage, capacity, packs, swappable.' }),
 
   // equipment options: what the maker or a partner sells to attach
-  f({ id: 'equipment_options', label: 'Equipment options', group: 'equipment', kind: 'json', optional: true, merge: 'union', hint: 'Arms, grippers, sensors, docks, radios — only where someone sells them.' }),
+  f({ id: 'equipment_options', label: 'Equipment options', group: 'equipment', kind: 'json', optional: true, merge: 'union', hint: 'Arms, grippers, sensors, docks, radios, only where someone sells them.' }),
 
   // environment
   f({ id: 'ip_rating', label: 'IP rating', group: 'environment', kind: 'text', column: 'ip_rating' }),

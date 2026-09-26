@@ -1,0 +1,124 @@
+schema_version: 1
+id: facade_prefab/fit-windows-into-elements
+status: published
+setting: facade_prefab
+family: assembly_fastening
+trades: [windows_doors, facade_roofing]
+title:
+  en: "Fit windows into facade elements for serial renovation"
+  de: "Fenster in Fassadenelemente für die serielle Sanierung einbauen"
+summary:
+  en: "Set the finished window into the element opening, align, fix and seal it, so the element leaves the factory with its window in place."
+  de: "Das fertige Fenster in die Elementöffnung setzen, ausrichten, befestigen und abdichten, damit das Element mit eingebautem Fenster das Werk verlässt."
+description:
+  en: "Serial renovation moves the window installation from the scaffold into the factory: prefabricated envelope elements arrive with insulation, windows and ventilation already integrated. The window has to be lifted into the opening, aligned, fixed and sealed airtight inside and rain-tight outside. Every element of an existing building has its own openings."
+  de: "Die serielle Sanierung verlegt den Fenstereinbau vom Gerüst ins Werk: vorgefertigte Hüllelemente kommen mit bereits integrierter Dämmung, Fenstern und Lüftung. Das Fenster muss in die Öffnung gehoben, ausgerichtet, befestigt und innen luftdicht, außen schlagregendicht abgedichtet werden. Jedes Element eines Bestandsgebäudes hat seine eigenen Öffnungen."
+also_in_settings: [site_windows_doors]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 40, max: 80 }
+    confidence: likely
+    evidence_url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    note: "Glass alone: 2.5 kg per m² and mm (glasundbeschlag.de); triple glazing with three 4 mm panes is 30 kg/m². A 1.23 × 1.48 m window holds about 1.4 m² of glass, 42 kg before frame and sash; a 1.4 × 2.1 m balcony door about 2.4 m², 72 kg. Frames add more; weigh your windows."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Openings and window sizes follow the existing building, element by element."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A badly aligned or sealed window shows at the element check or later as a leak; rework in the factory is cheaper than on the facade."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The window is fixed to the element by the system's fixings; no structural function beyond carrying itself."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Depends on whether the element lies flat or stands; measure your station."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Production hall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Frame and insulation work in workrooms; cutting stations are local sources (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Assumed manual with a crane or vacuum lifter; verify for your line."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at the element and window."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on elements per shift."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count windows per element and minutes per window."
+requirements:
+  object_size_m:
+    value: { min: 1.2, max: 2.1 }
+    confidence: assumed
+    note: "The two example windows above; take your sizes from the element plans."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Joint widths and sealing follow the window installation guidelines and the tape manufacturer; no ± value on the sources used here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not published on the sources used here."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "A vacuum lifter or balancer lifts the window into the opening; people align, fix and seal. The sealing is the part to standardise, not the lift."
+      de: "Ein Vakuumheber oder Balancer hebt das Fenster in die Öffnung; Menschen richten aus, befestigen und dichten. Standardisieren sollte man die Abdichtung, nicht das Heben."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: [screwing]
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Energiesprong DE describes ecoworks' prefabricated thermal envelopes for buildings of the 1950s to 1980s as integrating insulation, windows, thermal protection and ventilation from the factory."
+      de: "Energiesprong DE beschreibt die vorgefertigten thermischen Gebäudehüllen von ecoworks für Gebäude der 1950er bis 1980er Jahre als Elemente, die Dämmung, Fenster, Wärmeschutz und Lüftung ab Werk integrieren."
+    url: 'https://www.energiesprong.de/projekte-anbieter/anbieter-serielle-sanierung/profil/ecoworks-gmbh/'
+    kind: analyst
+    tier: 3
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Provider profile on the Energiesprong DE platform, undated; dated with the check date. Shows that the task sits in the factory."
+pilot:
+  metrics: [operator_minutes_per_unit, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a humanoid pilot. Trial a vacuum lifter at the window station and compare minutes and people per window."
+    de: "Kein Humanoiden-Pilot. Einen Vakuumheber an der Fensterstation erproben und Minuten und Personen je Fenster vergleichen."
+  scope_hint:
+    en: "One element series, standard window sizes."
+    de: "Eine Elementserie, Standard-Fenstergrößen."
+prerequisites:
+  - { en: "Window sizes and positions per element from the survey of the existing building", de: "Fenstergrößen und -positionen je Element aus dem Aufmaß des Bestands" }
+open_questions:
+  - { en: "Which sealing system is used, and can its application be standardised?", de: "Welches Dichtsystem wird verwendet, und lässt sich sein Einbau standardisieren?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,79 @@
+# Twelve months from order to a measured result. Phases are month offsets from
+# the visitor's start date; owners are roles the Context station asks about.
+# Sitebots assessment from one industry engagement, 2025/26, with the caveat that
+# the bottleneck is customs and safety release, not the technology.
+phases:
+  - id: procurement
+    month_from: 0
+    month_to: 1
+    title: { en: "Procurement", de: "Beschaffung" }
+    activities:
+      - { id: order_platform, text: { en: "Order the platform and request quotes for the alternative class", de: "Plattform bestellen und Angebote für die Alternativklasse einholen" }, owner: procurement }
+      - { id: customs_import, text: { en: "Clear customs and import formalities; confirm who is importer", de: "Zoll und Einfuhr abwickeln; klären, wer Importeur ist" }, owner: procurement }
+      - { id: test_area, text: { en: "Set up the test area, network and power", de: "Testbereich, Netz und Strom aufbauen" }, owner: it }
+      - { id: accessories, text: { en: "Order accessories in parallel (batteries, racks, markers, scanners)", de: "Zubehör parallel bestellen (Akkus, Regale, Marker, Scanner)" }, owner: procurement }
+      - { id: works_council_agreement, text: { en: "Agree the pilot with the works council where cameras or performance data are involved", de: "Pilot mit dem Betriebsrat vereinbaren, wo Kameras oder Leistungsdaten im Spiel sind" }, owner: works_council }
+    bottleneck:
+      en: Lead time and customs run in parallel with everything else; start them first.
+      de: Lieferzeit und Zoll laufen parallel zu allem anderen; zuerst anstoßen.
+    provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: commissioning
+    month_from: 1
+    month_to: 2
+    title: { en: "Commissioning", de: "Inbetriebnahme" }
+    activities:
+      - { id: sdk_sim_teleop, text: { en: "Set up SDK, simulation and teleoperation", de: "SDK, Simulation und Teleoperation einrichten" }, owner: integrator }
+      - { id: safety_concept, text: { en: "Safety concept for the test hall; ISO 12100 risk assessment started", de: "Sicherheitskonzept für die Versuchshalle; Risikobeurteilung nach ISO 12100 beginnen" }, owner: safety }
+      - { id: isolated_vlan, text: { en: "Isolated VLAN, no plant network, no cloud by default", de: "Isoliertes VLAN, kein Werksnetz, standardmäßig keine Cloud" }, owner: it }
+      - { id: team_onboarding, text: { en: "Team onboarding and documented instruction (Unterweisung)", de: "Team einarbeiten und Unterweisung dokumentieren" }, owner: production }
+    bottleneck:
+      en: Safety release, not software, decides when the first run happens.
+      de: Die Sicherheitsfreigabe, nicht die Software, entscheidet über den ersten Lauf.
+    provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: first_use_case
+    month_from: 2
+    month_to: 3
+    title: { en: "First use case", de: "Erster Use Case" }
+    activities:
+      - { id: scripted_run, text: { en: "Scripted first use case in the test area", de: "Gescripteter erster Use Case im Testbereich" }, owner: integrator }
+      - { id: demo_data, text: { en: "Record demonstration data for the variable parts", de: "Demonstrationsdaten für die variablen Teile aufnehmen" }, owner: integrator }
+      - { id: first_kpis, text: { en: "First measurements against the hand baseline", de: "Erste Messungen gegen die Handbaseline" }, owner: production }
+      - { id: decide_second, text: { en: "Decide on the second use case", de: "Über den zweiten Use Case entscheiden" }, owner: management }
+    decision:
+      en: Continue, switch the use case, or stop, against the abort criterion set at the start.
+      de: Weiter, Use Case wechseln oder abbrechen, gemessen am vorab gesetzten Abbruchkriterium.
+    provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: measure_and_move
+    month_from: 3
+    month_to: 12
+    title: { en: "Measure and move into the plant", de: "Messen und ins Werk verlagern" }
+    activities:
+      - { id: semi_autonomous, text: { en: "Semi-autonomous operation with variable parts", de: "Teilautonomer Betrieb mit variablen Teilen" }, owner: integrator }
+      - { id: into_plant, text: { en: "Move into the plant after the plant safety release", de: "Nach der Sicherheitsfreigabe im Werk verlagern" }, owner: safety }
+      - { id: second_third, text: { en: "Second and third use case", de: "Zweiter und dritter Use Case" }, owner: production }
+      - { id: abort_check, text: { en: "Check against the abort criterion at the end of the window", de: "Am Ende des Zeitfensters gegen das Abbruchkriterium prüfen" }, owner: management }
+    bottleneck:
+      en: Six months to a measurement that holds, twelve to plant operation.
+      de: Sechs Monate bis zu einer belastbaren Messung, zwölf bis zum Werksbetrieb.
+    provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+abort_template:
+  metric_id: unaided_completion_pct
+  comparator: '<'
+  threshold: 99
+  window_months: 3
+  action:
+    en: Change the use case; do not extend the pilot.
+    de: Use Case wechseln; den Pilot nicht verlängern.
+  provenance:
+    source_url: 'https://sitebots.vercel.app/methodology'
+    tier: 0
+    observed_at: '2026-09-24'
+    confidence: assumed
+    note:
+      en: Sitebots assessment from one industry engagement, 2025/26. A hint, never prefilled; the visitor sets the threshold.
+      de: Sitebots-Einschätzung aus einem Branchenprojekt 2025/26. Ein Hinweis, nie vorbelegt; die Schwelle setzt der Besucher.
+notes:
+  - en: Personnel is the largest single item and is kept apart from material costs.
+    de: Personal ist der größte Einzelposten und wird getrennt von den Sachkosten geführt.
+  - en: Quote the conventional alternative (cobot cell, AMR, lifting aid) in parallel; if it wins, the productivity gain still lands.
+    de: Die konventionelle Alternative (Cobot-Zelle, AMR, Hebehilfe) parallel anfragen; gewinnt sie, kommt der Produktivitätsgewinn trotzdem.

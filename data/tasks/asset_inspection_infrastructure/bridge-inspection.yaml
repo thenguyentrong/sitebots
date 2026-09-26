@@ -1,0 +1,123 @@
+schema_version: 1
+id: asset_inspection_infrastructure/bridge-inspection
+status: published
+setting: asset_inspection_infrastructure
+family: inspection_qa_documentation
+trades: [qa_surveying, civil_earthworks]
+title:
+  en: Inspect bridges under DIN 1076
+  de: Brücken nach DIN 1076 prüfen
+summary:
+  en: Examine a bridge at arm's length for cracks, spalling, corrosion and bearing damage, and rate its condition.
+  de: Eine Brücke handnah auf Risse, Abplatzungen, Korrosion und Lagerschäden untersuchen und ihren Zustand bewerten.
+description:
+  en: In Germany every bridge gets a main inspection every six years under DIN 1076, at arm's length and mainly visual, by qualified engineers. Undersides and piers need access equipment and lane closures, which makes the inspection slow and expensive. The result is a condition rating that feeds maintenance decisions, so a missed defect on a load-bearing member is a structural risk.
+  de: In Deutschland erhält jede Brücke alle sechs Jahre eine Hauptprüfung nach DIN 1076, handnah und vorwiegend visuell, durch qualifizierte Ingenieurinnen und Ingenieure. Unterseiten und Pfeiler brauchen Zugangsgeräte und Sperrungen, das macht die Prüfung langsam und teuer. Ergebnis ist eine Zustandsnote, die in die Erhaltungsplanung eingeht; ein übersehener Schaden an einem tragenden Bauteil ist ein Tragwerksrisiko.
+also_in_settings: [site_roads_paving]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: Nothing is carried; the inspection is visual and at arm's length.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. Every structure, access situation and damage pattern differs.
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: The condition rating feeds maintenance decisions; a missed defect on a load-bearing member stays a structural risk until the next inspection.
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: The inspection assesses load-bearing members.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Undersides and piers need access equipment and closures; that is the cost driver, not a humanoid reach question.
+  environment:
+    value: outdoor
+    confidence: likely
+    note: Open structures over roads, rail and water.
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: Weather and access dominate, not dust.
+  wet:
+    value: rain
+    confidence: likely
+    note: Inspections run in most weather.
+  floor:
+    value: mixed
+    confidence: likely
+    note: Decks, embankments, access platforms and ladders.
+  incumbent_automation:
+    value: { status: partial, machine_classes: [drone] }
+    confidence: likely
+    evidence_url: 'https://www.bast.de/DE/Publikationen/Foko/2022-2021/2021-18.html'
+    note: Drones capture images for automated crack detection in research and first practice; the hands-on main inspection stays with the engineer.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Images of public structures; passers-by in images need masking.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Every six years per structure, plus simpler checks in between.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled; the sensors or the camera are the payload."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The inspection judges condition, it does not build to a tolerance; DIN 1076 sets the intervals, not a measuring accuracy."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force: the work is looking, measuring crack widths and documenting."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: The engineer-led inspection stays. Where access is the cost, drone capture with automated crack detection can prepare and document the inspection; research by the Federal Highway Research Institute treats it as support, not as a replacement.
+      de: Die Prüfung durch Ingenieurinnen und Ingenieure bleibt. Wo der Zugang die Kosten treibt, kann Drohnenerfassung mit automatischer Risserkennung die Prüfung vorbereiten und dokumentieren; die Forschung der Bundesanstalt für Straßenwesen sieht darin eine Unterstützung, keinen Ersatz.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [exposure, quality, cost]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine, quadruped_inspection]
+evidence:
+  - statement:
+      en: The Federal Highway Research Institute (BASt) states that the six-yearly main inspection of infrastructure structures under DIN 1076 is carried out at arm's length and mainly visually; its research used drone images and trained neural networks to detect cracks as support for the inspection and names further development work as necessary.
+      de: Die Bundesanstalt für Straßenwesen (BASt) hält fest, dass die alle sechs Jahre stattfindende Hauptprüfung von Infrastrukturbauwerken nach DIN 1076 handnah und vorwiegend visuell erfolgt; ihr Forschungsprojekt nutzte Drohnenbilder und trainierte Faltungsnetze zur Risserkennung als Unterstützung der Prüfung und hält weitere Forschungs- und Entwicklungsarbeiten für erforderlich.
+    url: 'https://www.bast.de/DE/Publikationen/Foko/2022-2021/2021-18.html'
+    kind: academic
+    tier: 1
+    date: '2021-01-01'
+    type: demo
+    confidence: confirmed
+    note: Forschung kompakt 18/21; the page gives the year only, so 1 January is used. Full report BASt B 171 (2021).
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: If pursued, as drone capture on one structure with difficult access, evaluated by the responsible engineer next to the regular inspection.
+    de: Falls verfolgt, als Drohnenerfassung an einem schwer zugänglichen Bauwerk, bewertet von der zuständigen Prüferin oder dem Prüfer parallel zur regulären Prüfung.
+prerequisites: []
+open_questions:
+  - { en: "Which share of the inspection cost is access equipment and closures, and which is the engineer's time on the structure?", de: "Welcher Anteil der Prüfkosten entfällt auf Zugangsgeräte und Sperrungen, welcher auf die Zeit der Prüfenden am Bauwerk?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-24'

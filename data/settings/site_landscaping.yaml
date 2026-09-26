@@ -1,0 +1,27 @@
+id: site_landscaping
+group: site
+section: civil
+lv: { lb: ['003', '004'], atv: ["DIN 18320"] }
+title: { en: "Landscaping", de: "Landschaftsbauarbeiten" }
+aliases:
+  en: [planting, outdoor areas]
+  de: [Außenanlagen, Pflanzarbeiten]
+coverage: screened
+coverage_note:
+  en: "Two screened tasks: mowing new lawns until acceptance, which commercial robotic mowers already do, and laying turf rolls, which stays with the landscaping crew."
+  de: "Zwei geprüfte Aufgaben: neue Rasenflächen bis zur Abnahme mähen, was gewerbliche Mähroboter bereits übernehmen, und Rollrasen verlegen, was bei der Garten- und Landschaftsbaukolonne bleibt."
+typical_incumbent_automation: []
+dust:
+  type: mixed
+  typical_zone: none
+  note:
+    en: "Outdoors; dust depends on weather and the work next to it."
+    de: "Im Freien; Staub hängt von Wetter und Nachbararbeiten ab."
+floor: uneven
+exposure: outdoor
+typical_trades: [civil_earthworks]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

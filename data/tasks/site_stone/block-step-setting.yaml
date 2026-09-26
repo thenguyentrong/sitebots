@@ -1,0 +1,143 @@
+schema_version: 1
+id: site_stone/block-step-setting
+status: published
+setting: site_stone
+family: assembly_fastening
+trades: [masonry]
+title:
+  en: "Set cast-stone block steps for outdoor stairs"
+  de: "Blockstufen aus Betonwerkstein für Außentreppen versetzen"
+summary:
+  en: "Set each block step on the foundation in a mortar bed, align it with a slight fall to the front, backfill and bed the next step on top."
+  de: "Jede Blockstufe im Mörtelbett auf das Fundament setzen, mit leichtem Gefälle nach vorn ausrichten, hinterfüllen und die nächste Stufe darauf betten."
+description:
+  en: "Rinn's block steps come in lengths of 50 to 150 cm at about 35 × 15 cm section; the full metre step weighs 128 kg and the lightened version 87 kg. Rinn's installation note asks for a frost-free foundation, each step set in a mortar bed and aligned level along its length with about 3 to 6 mm fall to the front for drainage, steps overlapping by 2 to 3 cm and joints of 3 to 5 mm."
+  de: "Die Blockstufen von Rinn gibt es in Längen von 50 bis 150 cm bei rund 35 × 15 cm Querschnitt; die volle Meterstufe wiegt 128 kg, die leichtere Variante 87 kg. Der Einbauhinweis von Rinn verlangt ein frostfreies Fundament, jede Stufe im Mörtelbett versetzt und der Länge nach waagerecht ausgerichtet, mit rund 3 bis 6 mm Gefälle nach vorn für den Wasserablauf, 2 bis 3 cm Überlappung der Stufen und Fugen von 3 bis 5 mm."
+also_in_settings: [site_landscaping]
+derived_from: null
+lv:
+  lb: '014'
+  atv: "DIN 18333"
+  position:
+    en: "Block steps of cast stone, set in a mortar bed on a foundation"
+    de: "Blockstufen aus Betonwerkstein im Mörtelbett auf Fundament versetzen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 87, max: 128 }
+    confidence: confirmed
+    evidence_url: 'https://www.rinn.net/mein-garten/produkte/stufen/detail/block-und-eckblockstufen.html'
+    note: "Rinn product page: the full block step weighs 128 kg, the lightened version 87 kg, both for the one-metre step. Shorter steps weigh less, lengths up to 230 cm on request more."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same step repeats up a flight, but every stair has its own foundation, rise, length and corner pieces."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A step set out of level or without its fall is taken up and re-bedded before the mortar sets; afterwards only with effort."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The steps carry only their own use; uneven rises are a trip hazard, which is why they are re-set, but the step has no structural role for the building."
+  reach_height_m:
+    value: { min: 0, max: 1.0 }
+    confidence: assumed
+    note: "Garden and entrance stairs near ground level; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Outdoor stairs in the open."
+  dust:
+    value: { type: mineral, zone: none }
+    confidence: likely
+    note: "Setting the steps makes no dust; cutting a step would, and happens rarely."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Weather-exposed work."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Excavated slope, gravel base and foundation concrete."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Set by the crew with lifting aids; none of the sources reviewed describes a machine that sets steps on its own."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: confirmed
+    evidence_url: 'https://www.rinn.net/mein-garten/produkte/stufen/detail/block-und-eckblockstufen.html'
+    note: "Standard lengths 50, 75, 100, 125 and 150 cm at 35 × 15 cm (rinnit Basalt 34.7 × 14.7 cm); up to 230 cm on request."
+  tolerance_mm:
+    value: 3
+    confidence: likely
+    evidence_url: 'https://www.rinn.net/fileadmin/media/rinn/Mein_Garten/Service_Kontakt/Blaetterkataloge/Einbauhinweise-Rinn/Rinn_Einbauhinweise_Stufen_2024.pdf'
+    note: "The tread must be level along its length with about 3 to 6 mm fall to the front, a window of 3 mm; joints 3 to 5 mm (Rinn installation note no. 060, April 2024)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is lifting and lowering the step onto the bed."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Set the steps with a vacuum lifter or step clamp on a small excavator; at 87 to 128 kg per metre the step weighs three and a half to five times the 25 kg payload ceiling, and the work is outdoors."
+      de: "Die Stufen mit Vakuumheber oder Stufenzange am Minibagger versetzen; mit 87 bis 128 kg je Meter wiegt die Stufe das Dreieinhalb- bis Fünffache der Traglastgrenze von 25 kg, und die Arbeit findet im Freien statt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [carry_payload, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Rinn states that its lightened block step weighs 87 kg against 128 kg for the full step (metre step), and lists lengths of 50 to 150 cm at a section of about 35 × 15 cm."
+      de: "Rinn gibt an, dass die leichtere Blockstufe 87 kg wiegt gegenüber 128 kg für die Vollstufe (Meterstufe), und nennt Längen von 50 bis 150 cm bei einem Querschnitt von rund 35 × 15 cm."
+    url: 'https://www.rinn.net/mein-garten/produkte/stufen/detail/block-und-eckblockstufen.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Product page without a date; dated with the check date."
+  - statement:
+      en: "Rinn's installation note for steps asks for a frost-free foundation, steps set in a mortar bed, treads level along their length with about 3 to 6 mm fall to the front, steps overlapping by about 2 to 3 cm, and joints of 3 to 5 mm."
+      de: "Der Rinn-Einbauhinweis für Stufen verlangt eine frostfreie Gründung, Stufen im Mörtelbett versetzt, Trittflächen der Länge nach waagerecht mit rund 3 bis 6 mm Gefälle nach vorn, eine Überlappung der Stufen von rund 2 bis 3 cm und Fugen von 3 bis 5 mm."
+    url: 'https://www.rinn.net/fileadmin/media/rinn/Mein_Garten/Service_Kontakt/Blaetterkataloge/Einbauhinweise-Rinn/Rinn_Einbauhinweise_Stufen_2024.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Einbauhinweis Nr. 060, Stand April 2024 (month only, dated to its first day)."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Not a pilot for a humanoid: mass and weather rule it out. Pilot a lifting aid instead and stop if it does not save crew time against setting by hand and tackle."
+    de: "Kein Pilot für einen Humanoiden: Masse und Witterung schließen ihn aus. Stattdessen eine Hebehilfe erproben und abbrechen, wenn sie gegenüber dem Versetzen von Hand und mit Hebezeug keine Zeit spart."
+  scope_hint:
+    en: "One flight of metre steps with a vacuum lifter on a small excavator."
+    de: "Ein Treppenlauf mit Meterstufen, Vakuumheber am Minibagger."
+prerequisites:
+  - { en: "Frost-free foundation and gravel base ready", de: "Frostfreies Fundament und Schottertragschicht fertig" }
+open_questions:
+  - { en: "Are lightened steps (87 kg) specified, and do they change the crew size?", de: "Sind leichtere Stufen (87 kg) ausgeschrieben, und ändern sie die Kolonnengröße?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

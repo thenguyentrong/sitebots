@@ -1,0 +1,136 @@
+schema_version: 1
+id: modular_volumetric/board-module-walls-ceilings
+status: published
+setting: modular_volumetric
+family: assembly_fastening
+trades: [drywall]
+title:
+  en: "Board module walls and ceilings with gypsum boards"
+  de: "Wände und Decken im Modul mit Gipsplatten beplanken"
+summary:
+  en: "Lift boards from the stack inside the module, hold them against the studs or the ceiling grid and screw them on, station by station."
+  de: "Platten vom Stapel im Modul aufnehmen, an Ständer oder Deckenunterkonstruktion halten und festschrauben, Station für Station."
+description:
+  en: "In a volumetric factory the fit-out runs through the module: floor build-up, wall build-up and boarding, electrical and sanitary installation, windows and doors, and depending on the client screed, wall finishes or floor coverings. Boarding is the step with the heaviest single object: a standard 12.5 mm board of 1250 mm width weighs about 21 to 32 kg depending on its length, and ceilings are boarded overhead inside the module."
+  de: "Im Modulwerk läuft der Ausbau durch das Modul: Bodenaufbau, Wandaufbau und Beplankung, Elektro- und Sanitärinstallation, Fenster und Türen, je nach Auftraggeber Estrich, Wandbekleidung oder Bodenbeläge. Beim Beplanken fällt das schwerste Einzelteil an: Eine 12,5-mm-Standardplatte mit 1250 mm Breite wiegt je nach Länge etwa 21 bis 32 kg, und Decken werden im Modul über Kopf beplankt."
+also_in_settings: [site_drywall]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 21.25, max: 31.9 }
+    confidence: likely
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Rigips Bauplatte RB 12.5: width 1250 mm, lengths 2000 to 3000 mm, at least 8.5 kg/m² (datasheet, Stand 02.07.26). 1.25 × 2.0 × 8.5 = 21.25 kg; 1.25 × 3.0 × 8.5 = 31.9 kg. Moisture adds weight."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Module types repeat within a project, but cut boards, openings and ceiling work vary per module."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Joints, screw spacing and alignment are checked; a badly set board is taken down again before the module leaves."
+  safety_criticality:
+    value: none
+    confidence: likely
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Standard boards for wall and ceiling systems, as a rule without fire-protection requirements (datasheet); fire-rated systems follow their own approvals and are out of scope."
+  reach_height_m:
+    value: { min: 0, max: 3.0 }
+    confidence: assumed
+    note: "Floor to module ceiling; ceilings are boarded overhead. Not measured; use your module's clear height."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the module in the factory hall."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Cutting and sanding boards release gypsum dust; scoring and snapping or extraction at the saw keeps it low."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Factory hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Module floor or raw floor build-up."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Boards are set by hand, with board lifters for ceilings as far as known; no machine sets boards inside a module."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at boards and studs."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the station time per module; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count boards per module and minutes per board."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Board lengths 2000 / 2500 / 2600 / 2750 / 3000 mm at 1250 mm width (datasheet)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The datasheet gives the board's own tolerances (length +0/−5 mm, squareness ≤ 2.5 mm/m), not a placement tolerance; flatness of the finished surface follows the drywall rules."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is lifting, holding and screwing."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Use a board lifter for the ceilings and a board trolley for the carry; the boards are above the payload ceiling of today's humanoids. Screwing a held board is the part worth comparing later."
+      de: "Für Decken einen Plattenheber und für den Transport einen Plattenwagen einsetzen; die Platten liegen über der Traglastgrenze heutiger Humanoider. Das Verschrauben einer gehaltenen Platte ist der Teil, der sich später zu vergleichen lohnt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: [tool_handoff]
+solution_classes: [vacuum_lifter_assist, keep_process, humanoid]
+evidence:
+  - statement:
+      en: "ALHO describes the fit-out in its factory: dry-liners, joiners, installers, electricians, painters, screed and tile layers work hand in hand; the floor build-up is followed by wall build-up and boarding, then electrical and sanitary installation and the fitting of windows and doors, with screed, wall finishes or floor coverings as further stages depending on the client."
+      de: "ALHO beschreibt den Ausbau im Werk: Trockenbauer, Schreiner, Installateure, Elektriker, Maler, Estrich- und Fliesenleger arbeiten Hand in Hand; auf den Bodenaufbau folgen Wandaufbau und Beplankung, danach Elektro- und Sanitärinstallation sowie der Einbau von Fenstern und Türen, je nach Auftraggeber weitere Stufen wie Estrich, Wandverkleidung oder Bodenbeläge."
+    url: 'https://www.alho.com/de/modulbau/bauweise/produktion/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated page; dated with the check date. No module sizes or weights are given there."
+  - statement:
+      en: "Rigips states for the 12.5 mm Bauplatte a width of 1250 mm, lengths from 2000 to 3000 mm and a mass of at least 8.5 kg per m²."
+      de: "Rigips gibt für die Bauplatte 12,5 mm eine Breite von 1250 mm, Längen von 2000 bis 3000 mm und eine flächenbezogene Masse von mindestens 8,5 kg/m² an."
+    url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-07-02'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet Stand 02.07.26. Data source for mass and size."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, operator_minutes_per_unit]
+  abort_rule:
+    en: "If assisted boarding does not cut the person-minutes per module after 3 months, return to the manual crew with board lifters."
+    de: "Wenn das unterstützte Beplanken die Personenminuten je Modul nach 3 Monaten nicht senkt, zurück zur Handarbeit mit Plattenhebern."
+  scope_hint:
+    en: "Ceiling boarding in one module type with a board lifter first; measure minutes per board."
+    de: "Zuerst Deckenbeplankung in einem Modultyp mit Plattenheber; Minuten je Platte messen."
+prerequisites:
+  - { en: "Board sizes per module from the drawings", de: "Plattenmaße je Modul aus den Plänen" }
+open_questions:
+  - { en: "Which share of your boards are ceiling boards set overhead?", de: "Welcher Anteil Ihrer Platten wird über Kopf an der Decke gesetzt?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

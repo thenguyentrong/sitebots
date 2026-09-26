@@ -1,0 +1,123 @@
+schema_version: 1
+id: facility_operation/night-security-patrol
+status: published
+setting: facility_operation
+family: monitoring_safety_patrol
+trades: [general]
+title:
+  en: "Walk the night security rounds inside the building"
+  de: "Die nächtlichen Kontrollgänge im Gebäude laufen"
+summary:
+  en: "Follow the patrol route through corridors, stairwells and the car park, check doors and report anything unusual."
+  de: "Der Kontrollroute durch Flure, Treppenhäuser und Tiefgarage folgen, Türen prüfen und Auffälligkeiten melden."
+description:
+  en: "Outside working hours, a guard walks a fixed route several times a night: doors and windows closed, no water on the floor, no one where no one should be. Most of the round is looking and walking; what counts is noticing the exception and calling someone. Cameras and alarm systems already cover parts of a building, and autonomous security robots are sold for exactly this patrol."
+  de: "Außerhalb der Arbeitszeit läuft ein Wachmann mehrmals pro Nacht eine feste Route ab: Türen und Fenster geschlossen, kein Wasser am Boden, niemand, wo niemand sein sollte. Der größte Teil des Rundgangs ist Schauen und Gehen; entscheidend ist, die Ausnahme zu bemerken und jemanden zu rufen. Kameras und Alarmanlagen decken Teile eines Gebäudes bereits ab, und autonome Sicherheitsroboter werden genau für diesen Rundgang verkauft."
+also_in_settings: [construction_logistics_hub, equipment_rental_depot]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: "Nothing is carried; the robot's own sensors do the work."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The route is fixed; what has to be noticed is different every night."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missed event is found later; the patrol reports, people respond."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Fire and intrusion detection are separate systems; the patrol adds to them."
+  reach_height_m:
+    value: { min: 0.8, max: 1.2 }
+    confidence: assumed
+    note: "Door handles and light switches; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Corridors, stairwells and a covered car park; outdoor grounds are a separate case."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Building in operation."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoors."
+  floor:
+    value: stairs
+    confidence: likely
+    note: "Stairwells and doors on the route; lifts where the robot may use them."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: assumed
+    note: "Cameras and alarm systems cover parts of most buildings; security robots are offered for the rest."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    note: "The patrol exists to see people; recordings fall under data protection and, for staff, co-determination."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "One round length depends on the building; the robot can charge between rounds."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts rounds per night and events reported."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No published figure for checking a door."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare wheeled security robots and a quadruped for the stairs first; the humanoid's only extra is opening doors and pressing lift buttons. People keep the response."
+      de: "Zuerst fahrende Sicherheitsroboter und für die Treppen einen Vierbeiner vergleichen; der einzige Zusatz des Humanoiden ist das Öffnen von Türen und Drücken von Aufzugsknöpfen. Die Reaktion bleibt bei Menschen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage]
+capabilities_required: [patrol_monitoring, autonomous_nav_indoor]
+capabilities_optional: [stair_climbing]
+solution_classes: [dedicated_machine, quadruped_inspection, humanoid]
+evidence:
+  - statement:
+      en: "Knightscope states that its autonomous security robots patrol around the clock with lasers, radar, sonar, cameras and sensors, and lists more than 4.4 million autonomous hours, 434 clients and 42 US states."
+      de: "Knightscope gibt an, dass seine autonomen Sicherheitsroboter rund um die Uhr mit Lasern, Radar, Sonar, Kameras und Sensoren patrouillieren, und nennt mehr als 4,4 Millionen autonome Stunden, 434 Kunden und 42 US-Bundesstaaten."
+    url: 'https://www.knightscope.com/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Manufacturer figures on an undated page, dated with the check date; wheeled robots, mostly outdoors and in car parks in the US."
+pilot:
+  metrics: [unaided_completion_pct, interventions_per_hour, uptime_vs_shift_pct]
+  abort_rule:
+    en: "Fewer than 99 % of rounds completed unaided after 3 months, then stop."
+    de: "Nach 3 Monaten weniger als 99 % der Rundgänge ohne Eingriff, dann abbrechen."
+  scope_hint:
+    en: "One floor and the car park, rounds recorded next to the guard's for one month."
+    de: "Ein Geschoss und die Tiefgarage, Rundgänge einen Monat lang parallel zu denen des Wachdienstes aufgezeichnet."
+prerequisites:
+  - { en: "Works council agreement on cameras", de: "Betriebsvereinbarung zu den Kameras" }
+open_questions:
+  - { en: "Which doors on the route does the robot have to open itself?", de: "Welche Türen auf der Route muss der Roboter selbst öffnen?" }
+compliance_flags: [gdpr_art_88_bdsg_26, betrvg_87_1_6]
+sources_reviewed_at: '2026-09-25'

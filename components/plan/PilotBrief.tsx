@@ -7,6 +7,8 @@ import { ui } from '@/lib/ui';
 import { Field, Notes } from './Fields';
 import { EvidenceDetails } from './EvidenceDetails';
 import { PlanComparison } from './PlanComparison';
+import { DecisionAnswer } from './DecisionAnswer';
+import { PriceReference } from './PriceReference';
 import { useAssessment } from './useAssessment';
 
 export function PilotBrief({ project, update }: { project: Project; update: (patch: Partial<Project>) => void }) {
@@ -19,8 +21,9 @@ export function PilotBrief({ project, update }: { project: Project; update: (pat
   const action = nextAction(project, checked?.blocked, open);
   const pilot = (key: keyof Project['pilot'], value: string) => update({ pilot: { ...project.pilot, [key]: value } });
   return <div className="space-y-6">
-    <section className="plan-screen card space-y-5 p-5 sm:p-6">
-      <p className="eyebrow">04 / Pilot and decision</p><h2 className="text-xl font-semibold">What must we learn before investing?</h2>
+    <div className="plan-screen"><DecisionAnswer project={project} result={checked} action={action} /></div>
+    <details className="plan-screen card p-5 sm:p-6 finder-refine"><summary>Refine your decision and pilot <span>Priority, evidence, scope and owner</span></summary><section className="space-y-5 pt-6">
+      <p className="eyebrow">Pilot and decision</p><h2 className="text-xl font-semibold">What must we learn before investing?</h2>
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="Solution to investigate"><select className={ui.select} value={chosen?.id ?? ''} onChange={(event) => update({ selectedOptionId: event.target.value, gate: 'unknown' })}><option value="">Select a solution</option>{project.options.map((option) => <option key={option.id} value={option.id}>{option.name}</option>)}</select></Field>
         <Field label="Critical requirements review"><select className={ui.select} value={project.gate} onChange={(event) => update({ gate: event.target.value as Project['gate'] })}><option value="unknown">Evidence still missing</option><option value="confirmed">Confirmed for this configuration</option><option value="blocked">Known blocker</option></select></Field>
@@ -34,8 +37,9 @@ export function PilotBrief({ project, update }: { project: Project; update: (pat
         <Field label="Decision owner"><input className={ui.input} maxLength={160} value={project.pilot.owner} onChange={(event) => pilot('owner', event.target.value)} /></Field>
         <Field label="Next review date"><input type="date" className={ui.input} value={project.pilot.date} onChange={(event) => pilot('date', event.target.value)} /></Field>
       </div>
-    </section>
+    </section></details>
     <div className="plan-screen flex flex-wrap items-center justify-between gap-3"><p className="text-sm text-muted">Review the brief below, then print or save it as a PDF.</p><button type="button" className={ui.btn} onClick={() => window.print()}>Print decision brief</button></div>
+    <details className="finder-brief-details"><summary>Read the full decision brief <span>Requirements, comparison, assumptions and sources</span></summary>
     <article data-plan-brief className="card space-y-7 p-5 sm:p-8">
       <header className="border-b border-edge pb-5"><p className="eyebrow">Sitebots / Decision brief</p><h2 className="mt-2 text-2xl font-semibold">{project.title || 'Untitled opportunity'}</h2><p className="mt-2 text-sm text-muted">{settingLabel(project.setting)} · {job.title}</p></header>
       <section><h3 className="text-lg font-semibold">Recommended next step</h3><p className="mt-2" data-testid="plan-next-action">{action}</p><p className="mt-2 text-sm text-muted">For {chosen?.name ?? 'a solution still to be selected'}. This is an assessment based on the information below.</p></section>
@@ -44,11 +48,12 @@ export function PilotBrief({ project, update }: { project: Project; update: (pat
         <section><h3 className="font-semibold">Current process</h3><p className="mt-2 whitespace-pre-wrap text-sm">{project.baseline || 'Baseline not recorded.'}</p></section>
       </div>
       {project.description ? <section><h3 className="font-semibold">Job description</h3><p className="mt-2 whitespace-pre-wrap text-sm">{project.description}</p></section> : null}
-      <section><h3 className="font-semibold">Requirements supplied</h3><ul className="mt-2 grid gap-2 text-sm sm:grid-cols-2">
+      <section><h3 className="font-semibold">Requirements supplied</h3><p className="mt-2 text-sm">Robot focus: {project.focus === 'humanoid' ? 'Humanoids only' : 'Any robot that could fit'}</p><ul className="mt-2 grid gap-2 text-sm sm:grid-cols-2">
         {Object.entries(project.needs).map(([key, value]) => <li key={key}><span className="font-medium">{{ payload: 'Carried load (kg)', reach: 'Working reach (m)', runtime: 'Continuous work (hours)', terrain: 'Ground', stairs: 'Stairs', environment: 'Exposure', autonomy: 'Operation' }[key]}: </span>{value || 'Not specified'}</li>)}
       </ul></section>
       <section><h3 className="font-semibold">Business priority</h3><p className="mt-2 text-sm">Value: {project.value || 'not assessed'} · Readiness: {project.readiness || 'not assessed'}</p><p className="mt-2 whitespace-pre-wrap text-sm">{project.rationale || 'Assessment rationale not recorded.'}</p></section><section><h3 className="font-semibold">Critical evidence and dependencies</h3><p className="mt-2 whitespace-pre-wrap text-sm">{project.gateNote || 'Confirmation evidence has not been recorded.'}</p><p className="mt-2 text-sm text-muted">Client review: {project.gate}. {open ? 'Configuration, task evidence or human responsibilities remain open.' : 'Review the cited configuration and evidence.'}</p></section>
       {project.options.length ? <PlanComparison project={project} results={assessment.data?.results} /> : <p className="text-sm text-muted">No alternative solutions recorded yet.</p>}
+      {checked ? <PriceReference result={checked} /> : null}
       <section><h3 className="font-semibold">Cost assumptions by solution</h3><div className="mt-3 space-y-4">{project.options.map((option) => {
         const cost = costResult(option.costs);
         return <div key={option.id} className="border-l-2 border-edge pl-4"><h4 className="font-medium">{option.name}</h4><p className="mt-1 text-sm">Initial spend: {option.costs.initial || 'unknown'} € · Released hours/year: {option.costs.hours || 'unknown'} · Labor cost/hour: {option.costs.rate || 'unknown'} € · Cash conversion: {option.costs.cashShare || 'unknown'}% · Additional annual cost: {option.costs.annual || 'unknown'} €</p><p className="mt-1 text-sm">{cost.kind === 'ready' ? 'Net annual cash benefit: ' + euro(cost.net) + '; simple payback: ' + (cost.payback !== null ? cost.payback.toFixed(1) + ' years.' : 'none under these assumptions.') : 'Business case incomplete.'}</p><p className="mt-2 whitespace-pre-wrap text-xs text-muted">{option.evidence || 'Basis for estimates not recorded.'}</p></div>;
@@ -60,6 +65,6 @@ export function PilotBrief({ project, update }: { project: Project; update: (pat
       {assessment.loading ? <p role="status" className="text-sm">Refreshing catalogue evidence…</p> : assessment.error ? <p role="alert" className="text-sm">{assessment.error} <button className="plan-screen underline" onClick={assessment.retry}>Retry</button></p> : null}
       {assessment.data?.missing.length ? <p className="text-sm">A saved robot is no longer available in the public catalogue. Recheck it before making a decision.</p> : null}
       {assessment.data?.results.map((result) => <section key={result.id} className="plan-evidence"><h3 className="font-semibold"><Link href={result.href} className={ui.link}>{result.name}</Link> · catalogue evidence</h3><EvidenceDetails result={result} /></section>)}
-    </article>
+    </article></details>
   </div>;
 }

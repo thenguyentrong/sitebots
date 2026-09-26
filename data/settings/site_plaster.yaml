@@ -1,0 +1,27 @@
+id: site_plaster
+group: site
+section: interior
+lv: { lb: ['023'], atv: ["DIN 18350"] }
+title: { en: "Plaster and stucco", de: "Putz- und Stuckarbeiten" }
+aliases:
+  en: [plastering, rendering]
+  de: [Innenputz, Maschinenputz]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: spraying and levelling machine plaster, setting corner beads and feeding bags into the mixing pump. Applying and corner beads are marginal; the 30 kg bags are ruled out, with silo delivery as the better answer."
+  de: "Drei geprüfte Aufgaben: Maschinenputz anspritzen und abziehen, Eckschutzschienen setzen und Säcke in die Mischpumpe aufgeben. Auftragen und Eckschienen sind grenzwertig; die 30-kg-Säcke scheiden aus, bessere Antwort ist die Siloversorgung."
+typical_incumbent_automation: [spray_robot]
+dust:
+  type: cement
+  typical_zone: controlled
+  note:
+    en: "Mixing and pumping cement-bound material releases cement dust; the wet material itself is alkaline."
+    de: "Anmischen und Pumpen zementgebundener Stoffe setzt Zementstaub frei; das nasse Material selbst ist alkalisch."
+floor: level
+exposure: indoor
+typical_trades: [painting]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

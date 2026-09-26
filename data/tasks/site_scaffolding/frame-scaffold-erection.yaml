@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_scaffolding/frame-scaffold-erection
+status: published
+setting: site_scaffolding
+family: assembly_fastening
+trades: [general]
+title:
+  en: "Erect a frame facade scaffold and anchor it to the building"
+  de: "Fassadengerüst aus Stellrahmen aufbauen und am Bauwerk verankern"
+summary:
+  en: "Set base plates and frames, lay the decks, fit guardrails and toe boards level by level, and anchor the scaffold to the wall as it rises."
+  de: "Fußplatten und Stellrahmen setzen, Beläge einlegen, Seitenschutz und Bordbretter Lage für Lage montieren und das Gerüst beim Aufbau fortlaufend an der Wand verankern."
+description:
+  en: "A frame facade scaffold is built from standard parts: steel frames of about 19 kg (aluminium about 9 kg), decks of about 19 kg for a 3.07 m bay, plus guardrails and toe boards. The crew works up from the level below and anchors to the wall continuously while building; the manufacturer warns that missing or weak anchors can make the scaffold collapse. After assembly a qualified person inspects the scaffold before it is used."
+  de: "Ein Fassadengerüst aus Stellrahmen besteht aus Regelbauteilen: Stahlrahmen von etwa 19 kg (Aluminium etwa 9 kg), Beläge von etwa 19 kg für ein 3,07-m-Feld, dazu Seitenschutz und Bordbretter. Die Kolonne arbeitet sich von der Lage darunter nach oben und verankert fortlaufend beim Aufbau; der Hersteller warnt, dass fehlende oder zu schwache Verankerungen zum Einsturz führen können. Nach der Montage prüft eine befähigte Person das Gerüst vor der Benutzung."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '001'
+  atv: "DIN 18451"
+  position:
+    en: "Facade work scaffold: erect, keep available, dismantle"
+    de: "Fassadengerüst als Arbeitsgerüst auf-, abbauen und vorhalten"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 8.6, max: 19.3 }
+    confidence: likely
+    evidence_url: 'https://www.hawego.de/layher-blitz-stellrahmen-stahl-2-00-x-0-73-m-lg-1773.200'
+    note: "Layher Blitz parts as listed by a scaffold retailer: aluminium frame 2.00 × 0.73 m 8.6 kg, steel frame 18.8 kg, lightweight steel deck 3.07 × 0.32 m 19.3 kg. A 4.14 m deck weighs 29.8 kg but lies outside the standard bays up to 3.07 m."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Standard parts in a fixed sequence, but every facade has its own heights, openings, corners and anchor positions."
+  error_tolerance:
+    value: critical
+    confidence: confirmed
+    evidence_url: 'https://deubner-bau.de/wp-content/uploads/2025/01/26_Blitz-Geruest-Stand-02.2024.pdf'
+    note: "The assembly instructions warn that missing or insufficient anchors reduce the stability and can make the scaffold collapse."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: "The scaffold is the workplace and the fall protection of everyone on it."
+  reach_height_m:
+    value: { min: 0, max: 2.0 }
+    confidence: likely
+    note: "Frames are 2.00 m high and are set from the deck of the level below."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the outside of the building."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Assembly makes no relevant dust; drilling anchor holes makes some locally."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Work continues in light rain; wind and ice stop it."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Uneven ground at the base, decks and ladders above."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Frame scaffolds are assembled by hand; no machine that erects them is known to us."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Priced per square metre of scaffold area; not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.07 }
+    confidence: confirmed
+    evidence_url: 'https://deubner-bau.de/wp-content/uploads/2025/01/26_Blitz-Geruest-Stand-02.2024.pdf'
+    note: "Frames 2.00 m high; bays up to 3.07 m long for use as a work scaffold of load classes 1–6."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No dimensional tolerance in the sources read; the requirement is assembly to the instructions and the anchor pattern."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force beyond lifting the parts. Per the assembly instructions, a pull-out test of the anchors may be skipped only if a qualified person judges the anchorage adequate and the anchor force is at most 1.5 kN (6.0 kN in reinforced concrete)."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep scaffold erection with a trained scaffold crew working to the assembly instructions, with anchors set as they build and an inspection before handover. A robot on an unfinished scaffold, in the weather, setting the parts that protect everyone else, would carry the full risk of a collapse."
+      de: "Den Gerüstbau bei einer geschulten Gerüstbaukolonne nach Aufbau- und Verwendungsanleitung lassen, mit fortlaufender Verankerung und Prüfung vor der Übergabe. Ein Roboter auf einem unfertigen Gerüst, im Wetter, der die Teile setzt, die alle anderen schützen, trüge das volle Risiko eines Einsturzes."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics, skills_shortage]
+capabilities_required: [carry_payload, stair_climbing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Layher's assembly instructions for the Blitz scaffold: anchors are essential for stability and must be built in continuously during assembly; anchor only to sufficiently load-bearing parts, test with pull-out tests if needed; missing or insufficient anchors can make the scaffold collapse. Bays up to 3.07 m may be used as work scaffolds of load classes 1–6."
+      de: "Aufbau- und Verwendungsanleitung für das Layher Blitz Gerüst: Verankerungen sind für die Standsicherheit wesentlich und fortlaufend während des Aufbaus einzubauen; nur an ausreichend tragfähigen Bauteilen verankern, ggf. durch Auszugsversuche prüfen; fehlende oder nicht ausreichend tragfähige Verankerungen können zum Einsturz führen. Feldlängen bis 3,07 m sind als Arbeitsgerüst der Lastklassen 1–6 verwendbar."
+    url: 'https://deubner-bau.de/wp-content/uploads/2025/01/26_Blitz-Geruest-Stand-02.2024.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2024-02-01'
+    type: claim
+    confidence: confirmed
+    note: "Ausgabe 02.2024; manufacturer document hosted by a construction company."
+  - statement:
+      en: "TRBS 2121 part 1: an employer who erects a scaffold for their own staff has it inspected by a qualified person before first use; the scaffold erector proves a safe scaffold to the user with an acceptance protocol."
+      de: "TRBS 2121 Teil 1: Ein Arbeitgeber, der ein Gerüst für die eigenen Beschäftigten erstellt, lässt es vor dem erstmaligen Gebrauch durch eine zur Prüfung befähigte Person prüfen; der Gerüstersteller weist dem Nutzer ein sicheres Gerüst mit dem Protokoll einer Abnahmeprüfung nach."
+    url: 'https://gewerbeaufsicht.baden-wuerttemberg.de/documents/20121/55168/5_2121_1.pdf/e653e36e-2342-609d-688f-ca61e0d7f4ed?version=1.0&t=1747821229847&download=true'
+    kind: regulator
+    tier: 1
+    date: '2019-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Ausgabe Januar 2019 (GMBl 2019 S. 28), section 5.2; copy in the Baden-Württemberg labour inspectorate's collection."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If carrying parts up is the burden, compare a scaffold hoist or aluminium frames on one elevation."
+    de: "Kein Roboterpilot. Wenn das Hochtragen die Last ist, an einer Fassadenseite einen Gerüstaufzug oder Aluminiumrahmen vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "Do you erect scaffolds yourselves or subcontract them, and which system and bay length do you use?", de: "Bauen Sie Gerüste selbst oder vergeben Sie sie, und welches System und welche Feldlänge verwenden Sie?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

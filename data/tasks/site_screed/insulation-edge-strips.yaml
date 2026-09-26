@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_screed/insulation-edge-strips
+status: published
+setting: site_screed
+family: assembly_fastening
+trades: [flooring_tiling, insulation]
+title:
+  en: "Lay impact-sound insulation and edge strips under a floating screed"
+  de: "Trittschalldämmung und Randdämmstreifen unter schwimmendem Estrich verlegen"
+summary:
+  en: "Fix edge strips along every wall and penetration, then lay mineral-wool boards across the slab with tight joints and cover them before the screed."
+  de: "Randdämmstreifen an allen Wänden und Durchdringungen befestigen, dann Mineralwolleplatten dicht gestoßen auf der Rohdecke verlegen und vor dem Estrich abdecken."
+description:
+  en: "A floating screed works only if it touches nothing: the edge strips decouple it from the walls and must stand higher than the screed layer; they are cut flush only after the floor covering is laid. The insulation boards (ISOVER's TDPT, for example, 1200 × 600 mm in 15 to 80 mm) cover the whole slab and are cut around pipes and penetrations. The parts are light and the work is on the floor; a gap becomes a sound bridge that nobody sees once the screed is in."
+  de: "Ein schwimmender Estrich funktioniert nur, wenn er nichts berührt: Die Randdämmstreifen entkoppeln ihn von den Wänden und müssen höher sein als die Estrichschicht; abgeschnitten werden sie erst nach dem Verlegen des Bodenbelags. Die Dämmplatten (etwa ISOVER TDPT, 1200 × 600 mm in 15 bis 80 mm) liegen vollflächig auf der Rohdecke und werden um Rohre und Durchdringungen zugeschnitten. Die Teile sind leicht und die Arbeit liegt am Boden; eine Lücke wird zur Schallbrücke, die niemand mehr sieht, sobald der Estrich liegt."
+also_in_settings: [site_heating]
+derived_from: null
+lv:
+  lb: '025'
+  atv: "DIN 18353"
+  position:
+    en: "Impact-sound insulation under floating screed, mineral wool, including edge insulation strips"
+    de: "Trittschalldämmung unter schwimmendem Estrich aus Mineralwolle, einschließlich Randdämmstreifen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.2, max: 3.5 }
+    confidence: assumed
+    note: "The ISOVER sheet gives board sizes but no weight. Even at an assumed 150 kg/m³ a 1200 × 600 × 30 mm board weighs 3.2 kg; edge-strip rolls are lighter. Packs are set down in the room beforehand."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The boards repeat, but each room's outline, the pipes on the slab and the penetrations need cutting."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.bauprofessor.de/randdaemmstreifen/'
+    note: "A gap in the insulation or a missing edge strip becomes a sound bridge under the screed; it is expensive to find and fix afterwards."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Sound and heat insulation; no structural or fire function in this scope."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: assumed
+    note: "Floor-level work on the knees; edge strips stand a little above the screed."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed shell."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Cutting mineral wool releases fibres; no classified area."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Laid dry before the screed."
+  floor:
+    value: level
+    confidence: likely
+    note: "Raw slab; pipes on it are covered by a levelling layer first."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid by hand; no machine for it was found."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the floor area per day; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure m² per hour including edge strips."
+requirements:
+  object_size_m:
+    value: { min: 1.2, max: 1.2 }
+    confidence: confirmed
+    evidence_url: 'https://www.baustoffshop.at/mediafiles//Datenblaetter/TDPT.pdf'
+    note: "ISOVER TDPT boards measure 1200 × 600 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Boards are laid with tight joints; there is no dimensional tolerance for the layer itself. The flatness that matters is that of the slab below and of the finished screed."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator first: the work is light and on the floor, but cutting boards around pipes and fixing strips at every penetration takes dexterity. Keep a person checking strips and joints before the screed goes in."
+      de: "Zuerst einen radgebundenen Mobilmanipulator vergleichen: Die Arbeit ist leicht und liegt am Boden, aber das Zuschneiden um Rohre und das Befestigen der Streifen an jeder Durchdringung verlangt Geschick. Streifen und Stöße prüft vor dem Estrich weiter eine Person."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [carry_payload]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "ISOVER lists its TDPT impact-sound board in glass wool, 1200 × 600 mm in thicknesses of 15 to 80 mm, for use under floating screeds, including those with tiled floors."
+      de: "ISOVER führt die Trittschall-Dämmplatte TDPT aus Glaswolle, 1200 × 600 mm in Dicken von 15 bis 80 mm, für den Einsatz unter schwimmenden Estrichen, auch mit Fliesenbelägen."
+    url: 'https://www.baustoffshop.at/mediafiles//Datenblaetter/TDPT.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2014-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Austrian product information MKT 01/2014, hosted by a dealer. Month only, dated to the first."
+  - statement:
+      en: "Edge strips decouple the screed from the wall to reduce impact sound, have to be higher than the screed layer, and are cut flush with the finished floor only after the covering is laid."
+      de: "Randdämmstreifen entkoppeln den Estrich von der Wand, um Trittschall zu mindern, müssen höher sein als die Estrichschicht und werden erst nach dem Verlegen des Belags bündig abgeschnitten."
+    url: 'https://www.bauprofessor.de/randdaemmstreifen/'
+    kind: analyst
+    tier: 3
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Construction lexicon entry referring to DIN 18560-2; undated, dated with the check date."
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "More sound bridges found at the check before the screed than with the manual crew after three months: stop."
+    de: "Nach drei Monaten mehr Schallbrücken bei der Kontrolle vor dem Estrich als bei der Kolonne von Hand: abbrechen."
+  scope_hint:
+    en: "One storey of flats with the same insulation build-up; a person checks strips and joints before the screed."
+    de: "Ein Geschoss Wohnungen mit demselben Dämmaufbau; eine Person prüft Streifen und Stöße vor dem Estrich."
+prerequisites:
+  - { en: "Pipes on the slab covered by a levelling layer", de: "Rohrleitungen auf der Rohdecke durch eine Ausgleichsschicht abgedeckt" }
+open_questions:
+  - { en: "Who checks the edge strips before the screed is poured?", de: "Wer prüft die Randdämmstreifen, bevor der Estrich eingebracht wird?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

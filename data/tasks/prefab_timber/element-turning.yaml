@@ -1,0 +1,112 @@
+schema_version: 1
+id: prefab_timber/element-turning
+status: published
+setting: prefab_timber
+family: heavy_element_handling
+trades: [timber]
+title:
+  en: Turn elements for the second side
+  de: Elemente für die zweite Seite wenden
+summary:
+  en: Flip a complete wall element to sheath and finish its other face.
+  de: Ein komplettes Wandelement drehen, um die andere Seite zu beplanken und zu bearbeiten.
+description:
+  en: A butterfly turning table flips a multi-tonne element in one movement. A dedicated machine, a fixed position, a life-safety load; nothing here belongs to a humanoid.
+  de: Ein Schmetterlings-Wendetisch dreht ein tonnenschweres Element in einer Bewegung. Eine dedizierte Maschine, ein fester Platz, eine sicherheitskritische Last; nichts davon gehört einem Humanoiden.
+also_in_settings: [modular_volumetric, facade_prefab]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 3500, max: 6000 }
+    confidence: likely
+    note: Whole elements; range from an industry engagement, 2025/26.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. One movement, every element.
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: A dropped element is a severe safety event.
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: Multi-tonne load in motion next to people.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Not applicable; the mass test decides.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Assembly hall, not the machining zone.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [turning_table] }
+    confidence: likely
+    note: Standard equipment.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.hundegger.com/de/maschinen/plattenbearbeitungsmaschinen/wall-master'
+    note: "The element width, later the wall height, is 3.2, 3.8 or 4.5 m depending on the multifunction bridge (Hundegger WALL-Master); the length depends on the plant’s tables and is not published there."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Set-down position on the next table follows its stops; no ± value is published."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The crane or table carries the load; guiding forces are not published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T5_failure_tolerance, T4_variability]
+  better_answer:
+    class: keep_process
+    note:
+      en: The turning table. Ruled out about two hundred times over on mass alone.
+      de: Der Wendetisch. Allein an der Masse rund zweihundertfach ausgeschlossen.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: []
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None.
+    de: Keiner.
+prerequisites: []
+open_questions: []
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

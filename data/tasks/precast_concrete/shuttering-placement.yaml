@@ -1,0 +1,143 @@
+schema_version: 1
+id: precast_concrete/shuttering-placement
+status: published
+setting: precast_concrete
+family: assembly_fastening
+trades: [concrete]
+title:
+  en: Set and strip shutters on the pallet
+  de: Schalung auf der Palette setzen und entschalen
+summary:
+  en: Place magnetic shutters on the steel pallet to the element outline, activate the magnets, and remove the shutters after curing.
+  de: Magnetschaler nach der Elementkontur auf die Stahlpalette setzen, die Magnete aktivieren und die Schaler nach dem Aushärten entfernen.
+description:
+  en: In a pallet circulation plant for walls and slabs, every element needs its outline built from steel shutters with integrated magnets, taken from a magazine, placed to CAD data, and removed, cleaned and oiled after curing. Plant suppliers sell shuttering and deshuttering robots that do exactly this, including shutter storage and cleaning.
+  de: In einer Palettenumlaufanlage für Wände und Decken braucht jedes Element seine Kontur aus Stahlschalern mit integrierten Magneten, aus einem Magazin entnommen, nach CAD-Daten gesetzt und nach dem Aushärten entfernt, gereinigt und geölt. Anlagenhersteller verkaufen Schal- und Entschalroboter, die genau das tun, einschließlich Schalerlager und Reinigung.
+also_in_settings: [facade_prefab, modular_volumetric]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: Shutter weights are not published on the supplier pages checked; steel profiles of several metres with integrated magnets. Weigh yours; the incumbent test decides either way.
+  variability:
+    value: medium
+    confidence: assumed
+    note: Analyst judgement. The outline changes with every element, the shutter profiles are standard.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A misplaced shutter makes a wrong element; outlines are checked before concreting.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Dimensional quality, not load-bearing safety.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Work on a pallet at table height; not a reach question.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: Circulation line in a workroom; grinding and cutting areas are separate zones. Measure airborne dust on site.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall; release agent on the pallet.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor along the circulation line.
+  incumbent_automation:
+    value: { status: full, machine_classes: [formwork_robot] }
+    confidence: likely
+    note: Shuttering and deshuttering robots are offered by several suppliers of circulation plants and run in German plants.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Pallets per hour set the takt; not recorded here.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "The supplier pages read give no shutter lengths or masses; Progress describes shuttering to the centimetre without filling pieces."
+  tolerance_mm:
+    value: 10
+    confidence: confirmed
+    evidence_url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    note: "Wall panels of 3.0 to 6.0 m may deviate ±10 mm in length and width, ±8 mm up to 3.0 m and ±12 mm from 6.0 to 10.0 m; openings follow the same values (FDB Merkblatt Nr. 6, 09/2023, Bild A.4 after DIN 1045-4 and DIN EN 14992). The shutters set these dimensions."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the magnets hold the shutters on the pallet."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: A shuttering robot from the plant supplier is the machine for this step, with CAD import, a shutter magazine and cleaning. People stay for special outlines and for the check before concreting.
+      de: Ein Schalungsroboter des Anlagenherstellers ist die Maschine für diesen Schritt, mit CAD-Anbindung, Schalermagazin und Reinigung. Menschen bleiben für Sonderkonturen und für die Kontrolle vor dem Betonieren.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [capacity, precision, ergonomics]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: Progress Maschinen & Automation describes a shuttering robot that places shutters on the pallet according to the element to be produced and activates their integrated magnets, and a deshuttering robot that scans, identifies and picks up the shutters automatically.
+      de: Progress Maschinen & Automation beschreibt einen Schalungsroboter, der die Schaler je nach zu fertigendem Element auf der Palette positioniert und ihre integrierten Magnete aktiviert, sowie einen Entschalungsroboter, der die Schaler automatisch scannt, erkennt und aufnimmt.
+    url: 'https://pma.progress.group/en/products/shuttering-robot'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: Undated product page, checked 2026-09-24; no weights or cycle times published.
+  - statement:
+      en: The automatic shuttering station E9 from Elematic demoulds all shutters including opening the magnets, places shutters on the table according to the production plan and CAD data, manages the shutter storage and oils and cleans the shutters, for plants of up to about eight pallets an hour.
+      de: Die automatische Schalstation E9 von Elematic entschalt alle Schaler einschließlich Öffnen der Magnete, setzt Schaler nach Produktionsplan und CAD-Daten auf den Tisch, verwaltet das Schalerlager und ölt und reinigt die Schaler, für Anlagen mit bis zu etwa acht Paletten pro Stunde.
+    url: 'https://www.elematic.com/product/automatic-shuttering-station-e9/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: Undated product page, checked 2026-09-24.
+  - statement:
+      en: At the Oschatz concrete plant a Vollert shuttering robot positions the shuttering profiles and sets embedded parts such as magnets for electric outlets; the same robot line also demoulds under CAD-CAM control.
+      de: Im Betonwerk Oschatz positioniert ein Schalungsroboter von Vollert die Schalungsprofile und setzt Einbauteile wie Magnete für Elektrodosen; dieselbe Roboterlinie entschalt auch, CAD-CAM-gesteuert.
+    url: 'https://www.bft-international.com/en/artikel/bft_The_Oschatz_concrete_plant_banks_on_robot_technology_3287521.html'
+    kind: press
+    tier: 3
+    date: '2019-01-01'
+    type: deployment
+    confidence: likely
+    note: BFT International issue 01/2019; the page gives no day, so the first of the month is used.
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: If pursued, as a retrofit of a shuttering robot with the plant supplier.
+    de: Falls verfolgt, als Nachrüstung eines Schalungsroboters mit dem Anlagenhersteller.
+prerequisites: []
+open_questions:
+  - { en: "Which share of your elements has outlines the shutter magazine could not cover?", de: "Welcher Anteil Ihrer Elemente hat Konturen, die das Schalermagazin nicht abdecken könnte?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_heating/heat-pump-setting
+status: published
+setting: site_heating
+family: assembly_fastening
+trades: [mep_hvac]
+title:
+  en: "Set the outdoor and indoor units of an air-to-water heat pump"
+  de: "Außen- und Inneneinheit einer Luft/Wasser-Wärmepumpe aufstellen"
+summary:
+  en: "Bring the outdoor unit to its base outside and the indoor unit to its wall in the plant room, level and fix both, and connect the hydraulic lines between them."
+  de: "Die Außeneinheit auf ihr Fundament im Freien und die Inneneinheit an ihre Wand im Technikraum bringen, beide ausrichten und befestigen und die Hydraulikleitungen zwischen ihnen anschließen."
+description:
+  en: "A split air-to-water heat pump has a monobloc outdoor unit and an indoor unit with the controls and hydraulics. For one current model range the outdoor unit weighs 162 kg (215 kg for the largest size) at 600 × 1144 × 841 mm, and the indoor unit 47 kg empty at 360 × 450 × 920 mm; the connecting lines run 5 to 20 m. The refrigerant circuit is filled at the factory with propane (R290, safety group A3), so no refrigerant work happens on site. The units are carried in, set, levelled and connected by the heating installers."
+  de: "Eine Split-Luft/Wasser-Wärmepumpe besteht aus einer Monoblock-Außeneinheit und einer Inneneinheit mit Regelung und Hydraulik. Bei einer aktuellen Baureihe wiegt die Außeneinheit 162 kg (215 kg bei der größten Baugröße) bei 600 × 1144 × 841 mm, die Inneneinheit leer 47 kg bei 360 × 450 × 920 mm; die Verbindungsleitungen sind 5 bis 20 m lang. Der Kältekreis ist ab Werk mit Propan (R290, Sicherheitsgruppe A3) gefüllt, auf der Baustelle wird am Kältekreis nicht gearbeitet. Eingebracht, aufgestellt, ausgerichtet und angeschlossen werden die Geräte von den Heizungsinstallateuren."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '040'
+  atv: "DIN 18380"
+  position:
+    en: "Air-to-water heat pump with outdoor and indoor unit: supply, set and connect"
+    de: "Luft/Wasser-Wärmepumpe mit Außen- und Inneneinheit liefern, aufstellen und anschließen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 47, max: 215 }
+    confidence: confirmed
+    evidence_url: 'https://www.viessmann.de/content/dam/public-brands/master/products/heat-pump/vitocal-250-a/db-6246346-vitocal-250-a.pdf'
+    note: "Vitocal 250-A datasheet (9/2025): indoor unit 47 kg empty (75 kg filled), outdoor unit 162 kg for sizes 04 to 08 and 215 kg for size 10."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. One unit model per project, but access routes, bases, wall positions and line runs differ at every house."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A unit set out of level or a leaking connection shows at filling and commissioning and is corrected."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The propane circuit is closed at the factory; the protection zone around the outdoor unit is fixed in planning, not in the setting. Nothing structural depends on the step."
+  reach_height_m:
+    value: { min: 0, max: 2.0 }
+    confidence: assumed
+    note: "Outdoor unit on a ground base, indoor unit 920 mm tall on the wall; the mounting height is not stated in the datasheet."
+  environment:
+    value: both
+    confidence: likely
+    note: "Outdoor unit outside the building, indoor unit in the plant room."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Drilling for wall brackets and anchors; otherwise little dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "The outdoor unit is set in the open."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Paths, steps and cellar stairs on the way in."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Carried in with trolleys and carrying aids and set by the installers; the maker supplies a carrying aid for the outdoor unit."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Installation documents only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.92, max: 1.382 }
+    confidence: confirmed
+    evidence_url: 'https://www.viessmann.de/content/dam/public-brands/master/products/heat-pump/vitocal-250-a/db-6246346-vitocal-250-a.pdf'
+    note: "Indoor unit 360 × 450 × 920 mm; outdoor unit 600 × 1144 × 841 mm, size 10 is 1382 mm tall."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No setting tolerance published in the datasheet; the installation manual governs levelling."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Use lifting and carrying aids: stair climbers and trolleys for the outdoor unit, a lifting aid for the wall-hung indoor unit. At 47 to 215 kg per unit this is no humanoid payload; the connecting and commissioning stay with the installers."
+      de: "Hebe- und Tragehilfen einsetzen: Treppensteiger und Transportwagen für die Außeneinheit, eine Hebehilfe für die wandhängende Inneneinheit. Mit 47 bis 215 kg je Gerät ist das keine Nutzlast für einen Humanoiden; Anschließen und Inbetriebnahme bleiben bei den Installateuren."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload]
+capabilities_optional: [stair_climbing]
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Viessmann's datasheet for the Vitocal 250-A gives the indoor unit at 360 × 450 × 920 mm and 47 kg empty (75 kg filled), the outdoor unit at 600 × 1144 × 841 mm and 162 kg for sizes 04 to 08, and 1382 mm tall at 215 kg for size 10; the refrigerant is R290 in safety group A3, and the outdoor unit comes with a carrying aid."
+      de: "Das Datenblatt von Viessmann für die Vitocal 250-A nennt für die Inneneinheit 360 × 450 × 920 mm und 47 kg leer (75 kg befüllt), für die Außeneinheit 600 × 1144 × 841 mm und 162 kg bei den Baugrößen 04 bis 08 sowie 1382 mm Höhe und 215 kg bei Baugröße 10; Kältemittel ist R290 der Sicherheitsgruppe A3, und zur Außeneinheit gehört eine Tragehilfe."
+    url: 'https://www.viessmann.de/content/dam/public-brands/master/products/heat-pump/vitocal-250-a/db-6246346-vitocal-250-a.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2025-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet 6246346 DE 9/2025."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If lifting aids are pursued: one house type, stair climber and wall-lifting aid, the installers set, level and connect."
+    de: "Falls Hebehilfen verfolgt werden: ein Haustyp, Treppensteiger und Wandhebehilfe, die Installateure stellen auf, richten aus und schließen an."
+prerequisites: []
+open_questions:
+  - { en: "Which access route does the outdoor unit take to its base, and are there steps on the way?", de: "Über welchen Weg kommt die Außeneinheit auf ihr Fundament, und liegen Stufen auf dem Weg?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

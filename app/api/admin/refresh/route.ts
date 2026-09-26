@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getSql } from '@/lib/db';
-import { runPipelineFor } from '@/lib/ingest/pipeline';
-import { selectAdapters } from '@/scripts/scrape/adapters';
+import { z } from 'zod';
 
 /**
  * Run adapters against the database the app is serving.
@@ -18,18 +17,36 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 300;
 
+const RequestSchema = z.object({
+  adapters: z.array(z.string().trim().min(1)).min(1).max(20).optional(),
+  limit: z.number().int().positive().max(5000).optional(),
+  only: z.string().trim().min(1).max(200).optional(),
+  fresh: z.boolean().optional(),
+}).strict();
+
 export async function POST(request: Request) {
   const secret = process.env.CRON_SECRET;
   if (!secret || request.headers.get('authorization') !== `Bearer ${secret}`) {
     return NextResponse.json({ error: 'unauthorised' }, { status: 401 });
   }
-  let body: { adapters?: string[]; limit?: number; only?: string; fresh?: boolean } = {};
-  try {
-    body = (await request.json()) as typeof body;
-  } catch {
-    // empty body → all adapters
+  if (process.env.NODE_ENV === 'production' && !process.env.DATABASE_URL) {
+    return NextResponse.json({ error: 'This deployment serves a read-only snapshot. Refresh locally and rebuild the snapshot, or configure DATABASE_URL.' }, { status: 503 });
   }
-  const adapters = selectAdapters(body.adapters?.length ? body.adapters.join(',') : 'all');
+  let raw: unknown;
+  try {
+    const text = await request.text();
+    raw = text.trim() ? JSON.parse(text) : {};
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 });
+  }
+  const parsed = RequestSchema.safeParse(raw);
+  if (!parsed.success) return NextResponse.json({ error: 'Invalid refresh options.' }, { status: 400 });
+  const body = parsed.data;
+  const { selectAdapters } = await import('@/scripts/scrape/adapters');
+  const { runPipelineFor } = await import('@/lib/ingest/pipeline');
+  let adapters;
+  try { adapters = selectAdapters(body.adapters?.join(',') ?? 'all'); }
+  catch { return NextResponse.json({ error: 'Unknown adapter. Choose a registered scraper.' }, { status: 400 }); }
   const sql = await getSql();
   const logs: string[] = [];
   const summaries = [];

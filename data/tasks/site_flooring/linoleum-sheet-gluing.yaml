@@ -1,0 +1,118 @@
+schema_version: 1
+id: site_flooring/linoleum-sheet-gluing
+status: published
+setting: site_flooring
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Lay and glue linoleum sheet from the roll"
+  de: "Linoleum in Bahnen von der Rolle verlegen und verkleben"
+summary:
+  en: "Bring the roll into the room, cut sheets to room length, fold them back into the adhesive bed, roll them down and fit or weld the seams."
+  de: "Die Rolle in den Raum bringen, Bahnen auf Raumlänge schneiden, ins Kleberbett zurückschlagen, anwalzen und die Nähte passen oder verschweißen."
+description:
+  en: "Linoleum sheet comes in 2 m wide rolls of up to 33 m at 2.9 kg/m², so a full roll weighs about 190 kg and a single room-length sheet of 6 m still 35 kg. Sheets are laid into full-surface adhesive and the seams are either fitted tight or welded with a rod."
+  de: "Linoleum kommt in 2 m breiten Rollen bis 33 m Länge mit 2,9 kg/m², eine volle Rolle wiegt also rund 190 kg und eine einzelne Bahn von 6 m Raumlänge noch 35 kg. Die Bahnen werden vollflächig ins Kleberbett gelegt, die Nähte stumpf gestoßen oder mit einer Schnur verschweißt."
+also_in_settings: [facility_operation]
+derived_from: null
+lv:
+  lb: '036'
+  atv: "DIN 18365"
+  position:
+    en: "Linoleum sheet flooring, fully bonded"
+    de: "Linoleumbelag in Bahnen, vollflächig verklebt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 35, max: 191 }
+    confidence: likely
+    evidence_url: 'https://forbo.blob.core.windows.net/forbodocuments/6a5cd767-fab9-4c95-a3c6-04567923e365/Forbo_Marmoleum%20Solid_techn.specs_092024.pdf'
+    note: "Forbo Marmoleum 2.5 mm (technical specifications 09-2024): 2900 g/m², roll width 2.0 m, roll length up to 33 m. Full roll: 2.0 m × 33 m × 2.9 kg/m² = 191 kg; a 6 m room-length sheet: 2.0 m × 6 m × 2.9 kg/m² = 35 kg."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Sheets run room-length in the same way; door frames, columns, pipes and seam positions differ per room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Bubbles, open seams or a sheet out of line mean cutting out and re-laying; nothing structural depends on it."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Floor finish without structural function."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: likely
+    note: "Floor work."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building on screed ready for covering."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Cut with a knife; no dust from the step. Screed sanding beforehand is a separate step."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed ready for covering."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid by floor layers by hand; none of the sources reviewed describes a machine that lays sheet flooring."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and seams reworked."
+requirements:
+  object_size_m:
+    value: { min: 2, max: 2 }
+    confidence: confirmed
+    evidence_url: 'https://forbo.blob.core.windows.net/forbodocuments/6a5cd767-fab9-4c95-a3c6-04567923e365/Forbo_Marmoleum%20Solid_techn.specs_092024.pdf'
+    note: "Roll width 2.0 m (EN ISO 24341); cut sheets run room-length."
+  tolerance_mm:
+    value: 4
+    confidence: confirmed
+    evidence_url: 'https://www.just-fussboden.com/downloads/ebenheitstoleranzen.pdf'
+    note: "Flatness of the finished floor: 4 mm over a 1 m measuring distance, DIN 18202 Table 3, row 3 (finished floors including bonded coverings), as reproduced by Just Fußboden."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "A 190 kg roll and 35 kg sheets are beyond any humanoid payload. A roll carriage and unrolling aid with two floor layers is the better answer; the laying itself stays with them."
+      de: "Eine Rolle von 190 kg und Bahnen von 35 kg liegen jenseits jeder humanoiden Traglast. Ein Rollenwagen mit Abrollhilfe und zwei Bodenlegern ist die bessere Antwort; das Verlegen selbst bleibt bei ihnen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload, surface_finishing]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence: []
+pilot:
+  metrics: [cycle_time_vs_manual]
+  abort_rule:
+    en: "Not a robot pilot; judge a roll carriage by lifting minutes saved per room."
+    de: "Kein Roboterpilot; einen Rollenwagen an eingesparten Hebeminuten je Raum messen."
+  scope_hint:
+    en: "Compare roll handling with and without a roll carriage on one floor."
+    de: "Rollenhandling mit und ohne Rollenwagen in einem Geschoss vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "How are full rolls brought to the floor and into the room today?", de: "Wie kommen volle Rollen heute ins Geschoss und in den Raum?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

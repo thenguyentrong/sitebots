@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_demolition/asbestos-removal
+status: published
+setting: site_demolition
+family: surface_finishing
+trades: [demolition]
+title:
+  en: "Remove weakly bound asbestos in an enclosed area"
+  de: "Schwach gebundene Asbestprodukte im abgeschotteten Bereich ausbauen"
+summary:
+  en: "Strip sprayed asbestos, boards or insulation inside a sealed black area under negative pressure, bag it and pass it out through the lock."
+  de: "Spritzasbest, Platten oder Dämmungen im abgedichteten Schwarzbereich unter Unterdruck ausbauen, verpacken und durch die Schleuse ausschleusen."
+description:
+  en: "TRGS 519 requires the black area to be sealed dust-tight against its surroundings; negative pressure is generally sufficient at 20 Pa below the adjacent rooms, with at least eight fresh-air changes per hour in the work area. People enter through a lock of three chambers with an anteroom or of four chambers, and the area is released when fibre concentrations fall below 500 fibres per m³."
+  de: "Die TRGS 519 verlangt, dass der Schwarzbereich staubdicht von der Umgebung abgetrennt ist; der Unterdruck ist in der Regel ausreichend, wenn er 20 Pa gegenüber angrenzenden Räumen beträgt, bei mindestens achtfachem Frischluftwechsel pro Stunde im Arbeitsbereich. Der Zugang erfolgt über eine Schleuse aus drei Kammern mit Vorraum oder aus vier Kammern, freigegeben wird bei Faserkonzentrationen unter 500 Fasern je m³."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '084'
+  atv: "DIN 18459"
+  position:
+    en: "Removal of weakly bound asbestos products under TRGS 519"
+    de: "Ausbau schwach gebundener Asbestprodukte nach TRGS 519"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "Pieces are broken out and bagged; the sources used here state no mass."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every building, product and fixing differs."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/tr/trgs519/14.htm'
+    note: "A breach of the enclosure lets fibres out of the black area; the rule's enclosure, negative pressure and lock exist to prevent exactly that (TRGS 519, section 14)."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: "Asbestos fibres endanger the health of people inside and outside the work area."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Walls, ceilings and installations up to storey height. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the sealed black area."
+  dust:
+    value: { type: mixed, zone: zone }
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/tr/trgs519/14.htm'
+    note: "The black area is a sealed work area under negative pressure (TRGS 519, section 14)."
+  wet:
+    value: null
+    confidence: assumed
+    note: "Depends on the removal method."
+  floor:
+    value: mixed
+    confidence: assumed
+    note: "Existing floors, covered and sealed for the work."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "People remove the material with hand tools inside the enclosure; no machine is assumed here."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Products differ; no single size applies."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Release is by fibre measurement, not by a dimensional tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states a force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: fail, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T2_dust, T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep certified crews working under TRGS 519. Any robot would itself have to leave the black area through the lock and be cleaned; plan that before asking about the robot."
+      de: "Bei sachkundigen Kolonnen nach TRGS 519 bleiben. Jeder Roboter müsste selbst durch die Schleuse aus dem Schwarzbereich und gereinigt werden; das zuerst planen, dann nach dem Roboter fragen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure]
+capabilities_required: [teleoperated_manipulation]
+capabilities_optional: []
+solution_classes: [keep_process, process_change]
+evidence:
+  - statement:
+      en: "TRGS 519, section 14, as published by BG BAU: the black area must be sealed dust-tight against its surroundings; 20 Pa negative pressure to adjacent rooms is generally sufficient; at least eight fresh-air changes per hour in the work area and ten in the lock chambers; a lock of three chambers with an anteroom or four chambers; release below 500 fibres/m³ in the work area."
+      de: "TRGS 519, Abschnitt 14, wie von der BG BAU veröffentlicht: Der Schwarzbereich muss staubdicht von der Umgebung abgetrennt sein; 20 Pa Unterdruck gegenüber angrenzenden Räumen reichen in der Regel; mindestens achtfacher Frischluftwechsel pro Stunde im Arbeitsbereich und zehnfacher in den Schleusenkammern; eine Schleuse aus drei Kammern mit Vorraum oder vier Kammern; Freigabe unter 500 Fasern/m³ im Arbeitsbereich."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/tr/trgs519/14.htm'
+    kind: regulator
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "The page shows no edition date; dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot today: document hours inside the black area per square metre as the baseline any later tool must beat."
+    de: "Heute kein Roboterpilot: Stunden im Schwarzbereich je Quadratmeter als Ausgangswert festhalten, den jedes spätere Werkzeug schlagen muss."
+prerequisites: []
+open_questions:
+  - { en: "Which removal steps keep people longest inside the black area?", de: "Welche Ausbauschritte halten Menschen am längsten im Schwarzbereich?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

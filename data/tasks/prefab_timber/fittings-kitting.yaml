@@ -1,0 +1,126 @@
+schema_version: 1
+id: prefab_timber/fittings-kitting
+status: published
+setting: prefab_timber
+family: kitting_picking_sorting
+trades: [timber, logistics]
+title:
+  en: Kit fittings and hardware for element assembly
+  de: Beschläge und Kleinteile für die Elementmontage kommissionieren
+summary:
+  en: Pick screws, anchors, brackets and fittings per element from bins into a kit before assembly.
+  de: Schrauben, Anker, Winkel und Beschläge je Element aus Behältern zu einem Kit zusammenstellen.
+description:
+  en: Per element a picker reads the part list, walks a shelving row with several hundred item numbers, picks small items into a tote and labels it for the assembly station. Items are light, the mix changes with every house, and a wrong or missing part is noticed at assembly. The item variety is exactly what a fixed cell cannot justify.
+  de: Je Element liest eine Person die Stückliste, geht eine Regalzeile mit mehreren hundert Artikelnummern ab, legt Kleinteile in eine Kiste und beschriftet sie für die Montagestation. Die Teile sind leicht, der Mix wechselt mit jedem Haus, ein falsches oder fehlendes Teil fällt bei der Montage auf. Die Teilevielfalt ist genau das, was eine feste Zelle nicht rechtfertigen kann.
+also_in_settings: [precast_concrete, joinery_windows_doors, modular_volumetric, mep_prefab, material_yard_warehouse, construction_logistics_hub]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.01, max: 2 }
+    confidence: likely
+    note: Fittings and fasteners; the heaviest single item in a kit is a steel bracket of about 2 kg. Range from an industry engagement, 2025/26.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. Several hundred item numbers, the mix changes per element. Not a measured quantity.
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: A missing or wrong part is noticed at assembly and corrected; nothing structural depends on the kit itself.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: The kit is an intermediate; structural fastening is checked at assembly.
+  reach_height_m:
+    value: { min: 0.4, max: 1.8 }
+    confidence: assumed
+    note: Typical shelving; verify per plant. No catalogue humanoid publishes working reach.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Kitting area in the production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Kitting sits outside machining, in a workroom with a cleaning plan; airborne dust must be measured on site with the robot running.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: Manual picking from paper or screen lists; no pick-to-light or automated kitting in the reference plant.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Cameras look at bins and parts; if they record people, the data-protection flags apply.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Depends on the plant's takt; the 30–90 min humanoid runtime is a known limit to test against.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; the pilot baseline must measure kits per shift and picker minutes per kit.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Fittings and fasteners; the largest item is a steel bracket (see the mass note); dimensions are not recorded."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Kits are checked at assembly; no positional tolerance applies."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: candidate
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: Compare a wheeled dual-arm mobile manipulator first (statically stable, ISO 10218:2025 applies), a humanoid second, and a fixed cobot cell only if the item mix can be reduced to a stable set.
+      de: Zuerst einen radgebundenen Zweiarm-Mobilmanipulator vergleichen (statisch stabil, ISO 10218:2025 anwendbar), dann einen Humanoiden, eine feste Cobot-Zelle nur, wenn sich der Artikelmix auf ein stabiles Set reduzieren lässt.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, quality]
+capabilities_required: [shelf_pick, kitting, autonomous_nav_indoor]
+capabilities_optional: [fetch_and_deliver]
+solution_classes: [mobile_manipulator_wheeled, humanoid, fixed_cobot_cell]
+evidence:
+  - statement:
+      en: Agility Robotics' Digit handles totes in a GXO logistics facility under a multi-year agreement, a deployment for tote transport, not for small-part kitting.
+      de: Digit von Agility Robotics bewegt Behälter in einem GXO-Logistikzentrum unter einem Mehrjahresvertrag, ein Einsatz für Behältertransport, nicht für Kleinteile-Kommissionierung.
+    url: 'https://www.agilityrobotics.com/content/gxo-signs-industry-first-multi-year-agreement-with-agility-robotics'
+    kind: manufacturer
+    tier: 1
+    date: '2024-06-27'
+    type: deployment
+    subject: { maker: agility, model: digit }
+    confidence: confirmed
+    note: Transferable for navigation and tote handling; grasping of loose fittings is not evidenced here.
+pilot:
+  metrics: [unaided_completion_pct, grasp_failure_unknown_parts_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: Fewer than 99 % of kits completed unaided after 3 months, then change the use case.
+    de: Weniger als 99 % der Kits nach 3 Monaten ohne Eingriff fertig, dann Use Case wechseln.
+  scope_hint:
+    en: One element family, 30–50 items in fixed trays, two shifts, human check at assembly.
+    de: Eine Elementfamilie, 30–50 Artikel in festen Trays, zwei Schichten, Kontrolle an der Montage.
+prerequisites:
+  - { en: "Part master data with weights and images per item number", de: "Artikelstammdaten mit Gewichten und Bildern je Artikelnummer" }
+  - { en: "Fixed part presentation in trays or labelled bins", de: "Feste Teilebereitstellung in Trays oder beschrifteten Behältern" }
+  - { en: "Measured airborne dust in the kitting zone", de: "Gemessene Staubbelastung in der Kommissionierzone" }
+open_questions:
+  - { en: "Which grasp failure rate on fittings not seen before is acceptable?", de: "Welche Greiffehlerrate bei unbekannten Beschlägen ist akzeptabel?" }
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

@@ -1,0 +1,125 @@
+schema_version: 1
+id: precast_concrete/embedded-parts-placement
+status: published
+setting: precast_concrete
+family: assembly_fastening
+trades: [concrete, mep_electrical]
+title:
+  en: Place electrical boxes, conduit and small inserts before concreting
+  de: Elektrodosen, Leerrohre und kleine Einbauteile vor dem Betonieren setzen
+summary:
+  en: Set outlet boxes, conduit, sockets and small inserts on the pallet per element drawing, after the shutters and before the concrete.
+  de: Elektrodosen, Leerrohre, Hülsen und kleine Einbauteile nach Elementplan auf die Palette setzen, nach der Schalung und vor dem Beton.
+description:
+  en: Between shuttering and concreting, workers fix the parts that later carry the building services. Positions change with every element and the parts are light, but a missing or misplaced box is cast in and means drilling or chiselling later. Some shuttering robots already set outlet magnets; the rest is placed by hand. Lifting anchors and structural inserts are outside this record and stay with people.
+  de: Zwischen Schalung und Betonage befestigen Werker die Teile, die später die Haustechnik aufnehmen. Die Positionen wechseln mit jedem Element und die Teile sind leicht, aber eine fehlende oder falsch gesetzte Dose wird einbetoniert und bedeutet später Bohren oder Stemmen. Manche Schalungsroboter setzen bereits Dosenmagnete; der Rest wird von Hand gesetzt. Transportanker und tragende Einbauteile gehören nicht zu diesem Datensatz und bleiben bei Menschen.
+also_in_settings: [modular_volumetric, facade_prefab]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.05, max: 5 }
+    confidence: assumed
+    note: Scope set by this record; outlet boxes, conduit, sockets and small inserts. Lifting anchors and structural inserts are excluded.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. Positions and part mix change with every element drawing.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A missing or misplaced box is cast in; the element is checked before concreting for that reason.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Non-structural parts only; anchors and structural inserts are out of scope.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Work on a pallet at table height, reaching across the element; verify the pallet width against the platform.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: Circulation line in a workroom; grinding and cutting areas are separate zones. Measure airborne dust on site.
+  wet:
+    value: dry
+    confidence: likely
+    note: Before concreting.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor along the circulation line.
+  incumbent_automation:
+    value: { status: partial, machine_classes: [formwork_robot] }
+    confidence: likely
+    evidence_url: 'https://www.bft-international.com/en/artikel/bft_The_Oschatz_concrete_plant_banks_on_robot_technology_3287521.html'
+    note: Shuttering robots set magnets for electric outlets in some plants; conduit and the other parts are placed by hand.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Cameras look at the pallet; if they record people, the data-protection flags apply.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Depends on the takt of the line; the 30–90 min humanoid runtime is a known limit to test against.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; count parts per element and minutes per pallet.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Outlet boxes, conduit and small inserts; none of the cited sources gives sizes."
+  tolerance_mm:
+    value: 10
+    confidence: confirmed
+    evidence_url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    note: "Embedded parts in slab and wall panels may deviate ±8 mm at positions up to 3.0 m and ±10 mm from 3.0 to 6.0 m (FDB Merkblatt Nr. 6, 09/2023, Table A.5 after DIN 1045-4 Table Q.1); for walls at most 15 mm in class B (Bild A.4)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; parts are pressed onto magnets or tied on."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: First ask the plant supplier how many of these parts the shuttering robot can set. What remains is light and variable; a wheeled mobile manipulator beside the line comes before a humanoid, and a person checks every element before concreting.
+      de: Zuerst beim Anlagenhersteller klären, wie viele dieser Teile der Schalungsroboter setzen kann. Was bleibt, ist leicht und variabel; ein radgebundener Mobilmanipulator neben der Linie kommt vor dem Humanoiden, und eine Person prüft jedes Element vor dem Betonieren.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [quality, ergonomics, capacity]
+capabilities_required: [kitting, autonomous_nav_indoor]
+capabilities_optional: [fetch_and_deliver]
+solution_classes: [dedicated_machine, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: At the Oschatz concrete plant a Vollert shuttering robot positions the shuttering profiles and sets embedded parts such as magnets for electric outlets; the same robot line also demoulds under CAD-CAM control.
+      de: Im Betonwerk Oschatz positioniert ein Schalungsroboter von Vollert die Schalungsprofile und setzt Einbauteile wie Magnete für Elektrodosen; dieselbe Roboterlinie entschalt auch, CAD-CAM-gesteuert.
+    url: 'https://www.bft-international.com/en/artikel/bft_The_Oschatz_concrete_plant_banks_on_robot_technology_3287521.html'
+    kind: press
+    tier: 3
+    date: '2019-01-01'
+    type: deployment
+    confidence: likely
+    note: BFT International issue 01/2019; the page gives no day, so the first of the month is used. Evidence for the dedicated machine, not for a humanoid.
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: Fewer than 99 % of parts placed correctly without intervention after 3 months, then stay with manual placement.
+    de: Weniger als 99 % der Teile nach 3 Monaten ohne Eingriff richtig gesetzt, dann bei manuellem Setzen bleiben.
+  scope_hint:
+    en: One element type, outlet boxes and conduit only, a check of every pallet before concreting.
+    de: Ein Elementtyp, nur Elektrodosen und Leerrohre, Kontrolle jeder Palette vor dem Betonieren.
+prerequisites:
+  - { en: "Part positions exported from the element CAD data", de: "Teilepositionen aus den CAD-Daten der Elemente exportiert" }
+open_questions:
+  - { en: "Can the existing shuttering robot take over more of these parts with a gripper change?", de: "Kann der vorhandene Schalungsroboter mit einem Greiferwechsel mehr dieser Teile übernehmen?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

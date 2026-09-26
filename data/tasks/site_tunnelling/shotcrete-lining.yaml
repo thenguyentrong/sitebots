@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_tunnelling/shotcrete-lining
+status: published
+setting: site_tunnelling
+family: surface_finishing
+trades: [tunnel, concrete]
+title:
+  en: "Spray the shotcrete lining"
+  de: "Spritzbetonschale auftragen"
+summary:
+  en: "Spray concrete in layers onto the freshly excavated face and walls to secure the heading."
+  de: "Beton lagenweise auf die frisch ausgebrochene Ortsbrust und Laibung spritzen, um den Vortrieb zu sichern."
+description:
+  en: "Tunnel concrete sprayers carry the nozzle on a boom with vertical and horizontal tracking and nozzle nutation. The Normet Spraymec 5100 pumps up to 30 m³/h, reaches 14 m vertically and can be fitted with a system that measures the sprayed thickness. The lining is part of the support of the heading."
+  de: "Spritzbetonmaschinen im Tunnelbau führen die Düse an einem Ausleger mit vertikaler und horizontaler Nachführung und Düsennutation. Die Normet Spraymec 5100 fördert bis 30 m³/h, reicht 14 m hoch und lässt sich mit einem System ausstatten, das die gespritzte Dicke misst. Die Schale ist Teil der Sicherung des Vortriebs."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '007'
+  atv: "DIN 18314"
+  position:
+    en: "Shotcrete support of the heading, wet-mix method"
+    de: "Spritzbetonsicherung im Vortrieb, Nassspritzverfahren"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The nozzle hangs on the machine boom; no source used here states what a hand-held nozzle with a filled hose weighs."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The profile repeats; the excavated surface and the required thickness change from round to round."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "Too thin a layer or a void behind it weakens the support of the heading."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The shotcrete lining is part of the tunnel support."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Depends on the tunnel profile."
+  environment:
+    value: both
+    confidence: likely
+    note: "Underground, sheltered from the weather but not an indoor workroom."
+  dust:
+    value: { type: mineral, zone: zone }
+    confidence: likely
+    note: "Spraying underground releases quartz-bearing dust in an enclosed space; ventilation and dust suppression are planned for it."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Rock water and the wet-mix spray keep the heading wet."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Tunnel invert during excavation."
+  incumbent_automation:
+    value: { status: full, machine_classes: [shotcrete_manipulator] }
+    confidence: confirmed
+    evidence_url: 'https://www.normet.com/en/products-and-services/equipment/concrete-spraying/wet-mix-concrete-sprayers/spraymec-5100'
+    note: "Mobile concrete sprayers with a tracking spray boom apply the lining (Normet Spraymec 5100)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not applicable; concrete is sprayed, not handled as pieces."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The required thickness comes from the support design; no single tolerance applies."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states the nozzle reaction force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: fail, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T2_dust, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The concrete sprayer with its tracking boom is the answer; compare thickness measurement options rather than a robot at the nozzle."
+      de: "Die Spritzbetonmaschine mit nachgeführtem Ausleger ist die Antwort; eher Optionen zur Dickenmessung vergleichen als einen Roboter an der Düse."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, quality]
+capabilities_required: [surface_finishing]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [dedicated_machine]
+evidence:
+  - statement:
+      en: "Normet describes the Spraymec 5100 as a sprayer for sprayed concrete in mining and tunnelling, with a spray boom featuring vertical and horizontal tracking, automatic upper boom telescope movement and nozzle nutation, up to 30 m³/h and 14 m vertical reach, and an optional thickness measurement system."
+      de: "Normet beschreibt die Spraymec 5100 als Spritzmaschine für Spritzbeton im Bergbau und Tunnelbau, mit Spritzausleger mit vertikaler und horizontaler Nachführung, automatischer Teleskopbewegung und Düsennutation, bis 30 m³/h und 14 m Reichhöhe sowie optionaler Dickenmessung."
+    url: 'https://www.normet.com/en/products-and-services/equipment/concrete-spraying/wet-mix-concrete-sprayers/spraymec-5100'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot: where thickness control is the issue, trial a thickness scan on one tunnel section."
+    de: "Kein Roboterpilot: Wo die Dickenkontrolle das Problem ist, einen Dickenscan auf einem Tunnelabschnitt erproben."
+prerequisites: []
+open_questions:
+  - { en: "Is hand spraying still used on your headings, and where?", de: "Wird auf Ihren Vortrieben noch von Hand gespritzt, und wo?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_plumbing/drainage-pipe-gradient
+status: published
+setting: site_plumbing
+family: assembly_fastening
+trades: [mep_plumbing]
+title:
+  en: "Lay drainage pipes inside the building to falls"
+  de: "Abwasserleitungen im Gebäude mit Gefälle verlegen"
+summary:
+  en: "Hang or lay plastic drainage pipes from the fixtures to the stacks and the basement collectors, push the socket joints together and keep the specified fall on every metre."
+  de: "Kunststoff-Abwasserrohre von den Sanitärobjekten zu den Fallleitungen und den Sammelleitungen im Keller hängen oder verlegen, die Steckmuffen zusammenschieben und auf jedem Meter das geforderte Gefälle halten."
+description:
+  en: "Drainage inside a building runs by gravity in plastic pipes with push-fit sockets, from DN 32 to DN 160, in lengths from 150 mm to 6 m. The fitters cut the lengths, push them into the sockets, fix them with brackets under the ceiling or in the shafts and set every run to fall. Minimum gradients are 0.5 % for vented and 1 % for unvented pipes (DIN EN 12056 and DIN 1986-100): 5 or 10 mm of fall per metre, checked with a level. Sound-insulating pipes are used where the building needs it."
+  de: "Die Entwässerung im Gebäude läuft im Freispiegel durch Kunststoffrohre mit Steckmuffen, von DN 32 bis DN 160, in Längen von 150 mm bis 6 m. Die Monteure kürzen die Rohre, schieben sie in die Muffen, befestigen sie mit Schellen unter der Decke oder in den Schächten und legen jede Leitung in Gefälle. Das Mindestgefälle beträgt 0,5 % bei belüfteten und 1 % bei unbelüfteten Leitungen (DIN EN 12056 und DIN 1986-100): 5 oder 10 mm Fall je Meter, mit der Wasserwaage geprüft. Wo das Gebäude es verlangt, kommen schalldämmende Rohre zum Einsatz."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '044'
+  atv: "DIN 18381"
+  position:
+    en: "Drainage pipes of plastic DN 50 to DN 150 inside the building, laid to falls, including fixings: supply and install"
+    de: "Abwasserleitungen aus Kunststoff DN 50 bis DN 150 innerhalb des Gebäudes mit Gefälle verlegt, einschließlich Befestigung, liefern und montieren"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 0.2, max: 6 }
+    confidence: assumed
+    note: "Plastic pipe lengths up to 6 m are light; no datasheet with weights was reached, so the range is an estimate for PP and PE pipes up to DN 100."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same pipe system and joints throughout, but routes, branches and fixing points change with every floor plan."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Too little fall or a leaking joint shows at the check or later as a blockage or smell and is reworked; reworking a pipe cast into walls or ceilings is costly."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Gravity drainage; nothing structural or safety-relevant depends on it."
+  reach_height_m:
+    value: { min: 0.3, max: 3.0 }
+    confidence: assumed
+    note: "From connections near the floor to collectors under the basement ceiling; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    evidence_url: 'https://de.wikipedia.org/wiki/HT-Rohr'
+    note: "Drainage inside the building up to the outer wall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Construction dust from the other trades; drilling for brackets adds concrete dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slabs, shafts and platforms."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Cut, joined and fixed by hand; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Drawings only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure metres per hour and the share of rework."
+requirements:
+  object_size_m:
+    value: { min: 0.15, max: 6 }
+    confidence: likely
+    evidence_url: 'https://de.wikipedia.org/wiki/HT-Rohr'
+    note: "HT pipes come in DN 32 to DN 160 and lengths from 150 to 6000 mm."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://de.wikipedia.org/wiki/Grundleitung'
+    note: "The requirement is a minimum fall, not a tolerance: 0.5 % for vented and 1 % for unvented pipes, 5 or 10 mm per metre (DIN EN 12056, DIN 1986-100, as summarised)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published for pushing the socket joints."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator for carrying and holding runs overhead while a fitter joins and levels them; setting the fall on every metre is measurement work a machine could help with. Prefabricated pipe sets from the workshop cut the site work first."
+      de: "Einen radgebundenen Mobilmanipulator vergleichen, der Leitungen über Kopf trägt und hält, während ein Monteur sie verbindet und ausrichtet; das Gefälle auf jedem Meter zu setzen ist Messarbeit, bei der eine Maschine helfen könnte. Vorgefertigte Rohrsets aus der Werkstatt verringern zuerst die Arbeit auf der Baustelle."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, precision]
+capabilities_required: [carry_payload]
+capabilities_optional: [drilling]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Geberit lists its Silent-db20 drainage pipe in DN 56 to DN 150 (outer diameters 56 to 160 mm, DN 100 at 110 mm) of PE-S2 for buildings with higher sound insulation requirements, supplied in lengths."
+      de: "Geberit führt sein Abwasserrohr Silent-db20 in DN 56 bis DN 150 (Außendurchmesser 56 bis 160 mm, DN 100 mit 110 mm) aus PE-S2 für Gebäude mit erhöhten Schallschutzanforderungen, geliefert in Stangen."
+    url: 'https://catalog.geberit.de/de-DE/product/PRO_101426'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Catalogue page, dated with the check date; no weights or lengths are given."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of runs within the required fall and without leaks at the check after 3 months, then stop."
+    de: "Weniger als 99 % der Leitungen nach 3 Monaten im geforderten Gefälle und ohne Undichtigkeit bei der Prüfung, dann abbrechen."
+  scope_hint:
+    en: "Basement collectors of one building section, one pipe system, bracket positions marked, a fitter joins and checks the fall on every run."
+    de: "Sammelleitungen im Keller eines Bauabschnitts, ein Rohrsystem, Schellenpositionen angezeichnet, ein Monteur verbindet und prüft das Gefälle jeder Leitung."
+prerequisites:
+  - { en: "Pipe routes and fixing points marked from the plumbing drawings", de: "Leitungsführung und Befestigungspunkte aus den Sanitärplänen angezeichnet" }
+open_questions:
+  - { en: "How much of the drainage can come prefabricated as pipe sets from the workshop?", de: "Wie viel der Entwässerung kann als vorgefertigtes Rohrset aus der Werkstatt kommen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

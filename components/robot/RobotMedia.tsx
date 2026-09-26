@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { RobotViewerLazy } from '@/components/robot-viewer/RobotViewerLazy';
 import type { ModelEntry } from '@/lib/models/schemas';
 import type { Pose } from '@/lib/models/poses';
@@ -30,7 +30,7 @@ function credit(i: RobotImage): { text: string; href: string | null } {
  * source under each. Nothing stands in for a missing picture; a robot with
  * no model and no photo has no picture column.
  *
- * The viewer stays mounted while the photos show so switching back does not
+ * A still preview loads first. After activation the viewer stays mounted so switching back does not
  * reload the GLB; only its box is hidden.
  */
 export function RobotMedia({
@@ -51,29 +51,23 @@ export function RobotMedia({
   // With a live model the still render is the same thing, smaller; skip it.
   const photos = images.filter((i) => !(model && i.kind === 'render'));
   const [tab, setTab] = useState<'3d' | 'photos'>(model ? '3d' : 'photos');
+  const [viewerLoaded, setViewerLoaded] = useState(compact);
+  const openViewer = () => { setViewerLoaded(true); setTab('3d'); };
   const [index, setIndex] = useState(0);
   const count = photos.length;
   const step = useCallback((d: number) => setIndex((i) => (count ? (i + d + count) % count : 0)), [count]);
 
-  useEffect(() => {
-    if (tab !== 'photos' || count < 2) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight') step(1);
-      if (e.key === 'ArrowLeft') step(-1);
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [tab, count, step]);
-
   if (!model && !count) return null;
   const current = photos[Math.min(index, Math.max(0, count - 1))];
   const showPhotos = tab === 'photos' && current;
+  const poster = images.find(image => image.kind === 'render') ?? photos[0];
+  const thumbnailStart = Math.max(0, Math.min(index - 2, count - 5));
 
   return (
     <div className="space-y-2" data-robot-media data-photos={count}>
       {model && count > 0 && !compact ? (
         <div className="segment inline-flex rounded-full bg-subtle p-1" role="tablist" aria-label="Pictures">
-          <button type="button" role="tab" aria-selected={tab === '3d'} data-media-tab="3d" onClick={() => setTab('3d')} className={cn('rounded-full px-3 py-1 text-sm transition', tab === '3d' ? 'bg-card font-medium text-foreground shadow-sm' : 'text-muted hover:text-foreground')}>
+          <button type="button" role="tab" aria-selected={tab === '3d'} data-media-tab="3d" onClick={openViewer} className={cn('rounded-full px-3 py-1 text-sm transition', tab === '3d' ? 'bg-card font-medium text-foreground shadow-sm' : 'text-muted hover:text-foreground')}>
             3D model
           </button>
           <button type="button" role="tab" aria-selected={tab === 'photos'} data-media-tab="photos" onClick={() => setTab('photos')} className={cn('rounded-full px-3 py-1 text-sm transition', tab === 'photos' ? 'bg-card font-medium text-foreground shadow-sm' : 'text-muted hover:text-foreground')}>
@@ -84,14 +78,26 @@ export function RobotMedia({
 
       {model ? (
         <div hidden={tab !== '3d'} data-media-slide="3d">
-          <RobotViewerLazy entry={model} presets={presets} name={name} compact={compact} />
+          {viewerLoaded ? (
+            <RobotViewerLazy entry={model} presets={presets} name={name} compact={compact} />
+          ) : (
+            <div className="card overflow-hidden" data-robot-poster>
+              {poster ? <RobotPhoto url={poster.url} alt={name} formFactor={formFactor} className="aspect-[4/3] w-full" eager /> : null}
+              <div className="flex flex-col items-center gap-2 p-6 text-center">
+                <button type="button" onClick={openViewer} className="rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background">Explore in 3D</button>
+                <p className="text-xs text-muted">Rotate, zoom and try the model’s controls.</p>
+              </div>
+            </div>
+          )}
         </div>
       ) : null}
 
       {showPhotos ? (
-        <figure className="card overflow-hidden" data-robot-photo data-photo-index={index}>
+        <figure className="card overflow-hidden" data-robot-photo data-photo-index={index} tabIndex={0} aria-label={name + ' photo gallery'} onKeyDown={event => {
+          if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); step(event.key === 'ArrowRight' ? 1 : -1); }
+        }}>
           <div className="relative">
-            <RobotPhoto url={current.url} alt={current.alt ?? name} formFactor={formFactor} fit="contain" className="aspect-[4/3] w-full rounded-t-2xl" />
+            <RobotPhoto url={current.url} alt={current.alt ?? name} formFactor={formFactor} fit="contain" eager className="aspect-[4/3] w-full rounded-t-2xl" />
             {count > 1 ? (
               <>
                 <button type="button" aria-label="Previous photo" data-photo-prev onClick={() => step(-1)} className="absolute left-2 top-1/2 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-card/90 text-foreground shadow-sm transition hover:bg-card">
@@ -121,12 +127,11 @@ export function RobotMedia({
           </figcaption>
           {count > 1 && !compact ? (
             <div className="flex gap-1.5 overflow-x-auto border-t border-edge/70 px-3 py-2" data-photo-strip>
-              {photos.map((p, i) => (
+              {photos.slice(thumbnailStart, thumbnailStart + 5).map((p, offset) => { const i = thumbnailStart + offset; return (
                 <button key={p.url + i} type="button" aria-label={`Photo ${i + 1}`} aria-current={i === index} onClick={() => setIndex(i)} className={cn('shrink-0 overflow-hidden rounded-lg border-2 transition', i === index ? 'border-foreground' : 'border-transparent opacity-70 hover:opacity-100')}>
-                  {/* eslint-disable-next-line @next/next/no-img-element -- thumbnails of remote pictures */}
-                  <img src={p.url} alt="" loading="lazy" referrerPolicy="no-referrer" className="h-12 w-16 bg-subtle object-cover" />
+                  <RobotPhoto url={p.url} alt="" formFactor={formFactor} fit="cover" sizes="64px" className="h-12 w-16" />
                 </button>
-              ))}
+              ); })}
             </div>
           ) : null}
         </figure>

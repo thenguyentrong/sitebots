@@ -1,0 +1,125 @@
+schema_version: 1
+id: modular_volumetric/move-modules-between-stations
+status: published
+setting: modular_volumetric
+family: heavy_element_handling
+trades: [logistics]
+title:
+  en: "Move room modules and bathroom pods between stations"
+  de: "Raummodule und Fertigbäder zwischen den Stationen bewegen"
+summary:
+  en: "Shift whole modules or pods from one fit-out station to the next and out to the loading area."
+  de: "Ganze Module oder Fertigbäder von einer Ausbaustation zur nächsten und in den Verladebereich bringen."
+description:
+  en: "A module or pod passes through several fit-out stations before it leaves the hall. Between them it is lifted or rolled as one piece, with its full weight of floor, walls, ceiling and installations. The pods and modules carry lifting points for exactly this; the people involved guide and secure the load, they do not carry it."
+  de: "Ein Modul oder Fertigbad durchläuft mehrere Ausbaustationen, bevor es die Halle verlässt. Dazwischen wird es als Ganzes gehoben oder gerollt, mit dem vollen Gewicht aus Boden, Wänden, Decke und Installationen. Fertigbäder und Module haben genau dafür Anschlagpunkte; die Beteiligten führen und sichern die Last, sie tragen sie nicht."
+also_in_settings: []
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 900, max: 12000 }
+    confidence: likely
+    evidence_url: 'https://badelement.de/dokumentation/baubeschreibung-beton-fertigbaeder/'
+    note: "Lower bound from the badelement specification: the floor is 95 mm reinforced concrete at 2,400 kg/m³, about 228 kg/m², so the floor of a 2.0 × 2.0 m pod alone weighs about 0.9 t before walls (60 mm lightweight concrete at 1,650 kg/m³) and ceiling. Upper bound from a trade article that plans crane lifts for a 12 t module (baustelle.com, 2026). Weigh your own modules."
+  variability:
+    value: low
+    confidence: assumed
+    note: "Analyst judgement. The move is the same for every module on the line: pick up at the lifting points, set down at the next station."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A dropped or colliding module is damaged or scrapped, and people near a moving multi-tonne load are at risk."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The result carries no structural or fire function; the hazard is the handling itself, which falls under the lifting and transport rules of the plant."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Not a reach task: the load hangs from a crane or sits on a carriage; people guide it by hand or with tag lines."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Production hall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Fit-out halls are workrooms; measure airborne dust at the stations."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: full, machine_classes: [overhead_crane, gantry_crane] }
+    confidence: likely
+    evidence_url: 'https://badelement.de/dokumentation/baubeschreibung-beton-fertigbaeder/'
+    note: "Pods are built with four lifting points of 20 mm wire loops and are lifted by crane (badelement specification); modules move by crane or transport carriages. Nobody carries them."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people needed for the move itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant while a crane does the lifting."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Moves per shift follow the line takt; count them if a transfer system is being compared."
+requirements:
+  object_size_m:
+    value: { min: 2.5, max: 12.5 }
+    confidence: assumed
+    note: "From a small bathroom pod to a long room module; the length is set by road transport. Use your module drawings."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Set-down position at the next station follows its fixing points; no published ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The crane or carriage carries the load; guiding forces are not published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T5_failure_tolerance, T4_variability]
+  better_answer:
+    class: gantry
+    note:
+      en: "Keep the crane or put the line on transport carriages or air cushions; the question is layout and takt, not a robot that carries. People guide and secure the load."
+      de: "Beim Kran bleiben oder die Linie auf Transportwagen oder Luftkissen stellen; die Frage ist Layout und Takt, nicht ein Roboter, der trägt. Menschen führen und sichern die Last."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, exposure]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [gantry, dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "The badelement specification for concrete bathroom pods gives a 95 mm reinforced-concrete floor at 2,400 kg/m³, 60 mm lightweight-concrete walls at 1,650 kg/m³, four lifting points of 20 mm wire loops, and lifting by the site crane."
+      de: "Die badelement-Baubeschreibung für Beton-Fertigbäder nennt einen 95 mm Stahlbetonboden mit 2.400 kg/m³, 60 mm Leichtbetonwände mit 1.650 kg/m³, vier Hebepunkte aus 20-mm-Drahtbügeln und das Einheben mit dem bauseitigen Kran."
+    url: 'https://badelement.de/dokumentation/baubeschreibung-beton-fertigbaeder/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated page; dated with the check date. Data source for mass and handling, not a robot precedent."
+pilot:
+  metrics: [cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Not a humanoid pilot. Compare a transport-carriage layout against the crane on moves per shift and waiting time at the stations."
+    de: "Kein Humanoiden-Pilot. Ein Layout mit Transportwagen gegen den Kran vergleichen, nach Bewegungen je Schicht und Wartezeit an den Stationen."
+  scope_hint:
+    en: "One module type through three stations."
+    de: "Ein Modultyp durch drei Stationen."
+prerequisites:
+  - { en: "Module weights per type from the design or by weighing", de: "Modulgewichte je Typ aus der Planung oder durch Wiegen" }
+open_questions:
+  - { en: "Is the crane the bottleneck of the line, or the stations?", de: "Ist der Kran der Engpass der Linie oder sind es die Stationen?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

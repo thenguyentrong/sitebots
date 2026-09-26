@@ -1,0 +1,27 @@
+id: site_masonry
+group: site
+section: structure
+lv: { lb: ['012'], atv: ["DIN 18330"] }
+title: { en: "Masonry", de: "Mauerarbeiten" }
+aliases:
+  en: [blockwork, bricklaying]
+  de: [Mauerwerk, Maurerarbeiten]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks: laying units, setting precast lintels, cutting fitting pieces at the saw and stocking units along the wall. Laying and lintels are ruled out by weight and structural role; cutting and stocking are marginal, and plant-cut wall kits remove most site cuts."
+  de: "Vier geprüfte Aufgaben: Steine versetzen, Fertigteilstürze setzen, Passsteine an der Säge schneiden und Steine an der Wand vorlegen. Versetzen und Stürze scheiden an Gewicht und Tragfunktion aus; Schneiden und Vorlegen sind grenzwertig, und im Werk geschnittene Wandbausätze nehmen die meisten Baustellenschnitte weg."
+typical_incumbent_automation: [gantry_crane]
+dust:
+  type: mineral
+  typical_zone: controlled
+  note:
+    en: "Cutting, drilling and grinding mineral materials release quartz-bearing dust at the tool; extraction at the source is the rule (TRGS 559)."
+    de: "Schneiden, Bohren und Schleifen mineralischer Baustoffe setzt quarzhaltigen Staub am Werkzeug frei; Absaugung an der Quelle ist die Regel (TRGS 559)."
+floor: mixed
+exposure: both
+typical_trades: [masonry]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

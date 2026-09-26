@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_ventilation/ceiling-diffuser-installation
+status: published
+setting: site_ventilation
+family: assembly_fastening
+trades: [mep_hvac]
+title:
+  en: "Fit ceiling diffusers with plenum boxes"
+  de: "Deckenluftdurchlässe mit Anschlusskasten montieren"
+summary:
+  en: "Hang the plenum box from the slab, connect it to the duct and fix the front plate flush in the ceiling with its central screw."
+  de: "Den Anschlusskasten an der Rohdecke abhängen, an die Luftleitung anschließen und die Frontplatte mit der Zentralbefestigung deckenbündig anbringen."
+description:
+  en: "Swirl diffusers sit in the suspended ceiling, one per grid field or a few per room. Wildeboer builds its DV diffuser with square front plates of 323 to 823 mm on a galvanised plenum box, for rooms of about 2.5 to 4 m height, and tenders it per piece, supplied and fitted complete with fixings. The TROX installation instruction for ceiling diffusers asks for the work to be done by two people, preferably with a lift, and for fixing to load-bearing building parts only."
+  de: "Dralldurchlässe sitzen in der abgehängten Decke, einer je Rasterfeld oder einige je Raum. Wildeboer baut seinen DV-Dralldurchlass mit quadratischen Frontplatten von 323 bis 823 mm auf einem verzinkten Anschlusskasten für Räume von etwa 2,5 bis 4 m Höhe und schreibt ihn je Stück aus, geliefert und montiert komplett mit Befestigungen. Die TROX-Montageanleitung für Deckenluftdurchlässe verlangt, die Arbeiten zu zweit durchzuführen, vorzugsweise mit einem Lift, und nur an tragenden Gebäudeteilen zu befestigen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '075'
+  atv: "DIN 18379"
+  position:
+    en: "Ceiling swirl diffuser with plenum box: supply and install complete with fixings"
+    de: "Dralldurchlass mit Anschlusskasten liefern und montieren, komplett mit Befestigungen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 3, max: 12 }
+    confidence: assumed
+    note: "No weight is published in the documents checked. A size-600 unit is a 595 mm steel front plate on a galvanised box of 537 mm square and up to about 400 mm height (Wildeboer DV); estimated at 3 to 12 kg. Weigh the project's units."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. A few diffuser types per project, but connections and ceiling systems vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A leaking connection or a front plate out of line with the ceiling is reworked; TROX states that the air flow works as designed only with flush installation."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The box hangs from load-bearing parts per the maker's instruction; nothing structural depends on the step."
+  reach_height_m:
+    value: { min: 2.5, max: 4.0 }
+    confidence: likely
+    evidence_url: 'https://www.wildeboer.de/dokumente/produkte/luftverteilung/dv/sprachuebergreifend/anwenderhandbuch-dv.pdf'
+    note: "Rooms of about 2.5 to 4 m height (Wildeboer); the box hangs from the slab above the ceiling."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "General construction dust while the ceilings are built."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Floors under a ceiling being built, with lifts and scaffolds."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Fitted by hand, two people or one with a lift."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure units per hour."
+requirements:
+  object_size_m:
+    value: { min: 0.323, max: 0.823 }
+    confidence: confirmed
+    evidence_url: 'https://www.wildeboer.de/dokumente/produkte/luftverteilung/dv/sprachuebergreifend/anwenderhandbuch-dv.pdf'
+    note: "Square front plates of 323 to 823 mm across the DV sizes (Wildeboer, 2020-04)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Flush with the ceiling for the air flow (TROX); no figure is given."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure beyond holding the unit overhead."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a lift with a wheeled mobile manipulator that holds the box overhead while a fitter fixes it; the maker already asks for two people or a lift. Weigh the project's units before any pilot."
+      de: "Eine Hebebühne mit einem radgebundenen Mobilmanipulator vergleichen, der den Kasten über Kopf hält, während ein Monteur ihn befestigt; der Hersteller verlangt ohnehin zwei Personen oder einen Lift. Vor jedem Pilotversuch die Geräte des Projekts wiegen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: [tool_handoff]
+solution_classes: [mobile_manipulator_wheeled, vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "TROX's installation instruction for ceiling diffusers says to do the work in pairs, preferably with a lift, to fix units only to load-bearing building parts with approved and adequately sized fixings, and that the air flow works best with flush installation."
+      de: "Die TROX-Montageanleitung für Deckenluftdurchlässe verlangt, die Arbeiten zu zweit durchzuführen, vorzugsweise mit einem Lift, Geräte nur an tragenden Gebäudeteilen mit zugelassenem und ausreichend dimensioniertem Befestigungsmaterial zu befestigen, und nennt die optimale lufttechnische Funktion nur bei deckenbündigem Einbau."
+    url: 'https://cdn.trox.de/fd5f17493e2816ec/a26c865aa360/00271544_0.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2017-05-01'
+    type: claim
+    confidence: confirmed
+    note: "Montageanleitung Luftdurchlässe, Deckenluftdurchlässe, A00000054446, 05/2017."
+  - statement:
+      en: "Wildeboer lists square front plates of 323 to 823 mm for its DV swirl diffuser, suited to rooms of about 2.5 to 4 m height, and tenders it per piece, supplied and fitted complete with fixings."
+      de: "Wildeboer gibt für seinen DV-Dralldurchlass quadratische Frontplatten von 323 bis 823 mm an, geeignet für Räume von etwa 2,5 bis 4 m Höhe, und schreibt ihn je Stück aus, geliefert und montiert komplett mit Befestigungen."
+    url: 'https://www.wildeboer.de/dokumente/produkte/luftverteilung/dv/sprachuebergreifend/anwenderhandbuch-dv.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2020-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Anwenderhandbuch 2.10 (2020-04)."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of units fitted flush and tight without rework after 3 months, then stop."
+    de: "Weniger als 99 % der Geräte nach 3 Monaten ohne Nacharbeit deckenbündig und dicht montiert, dann abbrechen."
+  scope_hint:
+    en: "One floor of an office building, one diffuser type; the robot holds, the fitter fixes."
+    de: "Ein Geschoss eines Bürogebäudes, ein Durchlasstyp; der Roboter hält, der Monteur befestigt."
+prerequisites:
+  - { en: "Hanger points set and the ceiling grid in place", de: "Abhängepunkte gesetzt und Deckenraster montiert" }
+open_questions:
+  - { en: "What do the project's diffusers with plenum boxes actually weigh?", de: "Was wiegen die Dralldurchlässe des Projekts mit Anschlusskasten tatsächlich?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

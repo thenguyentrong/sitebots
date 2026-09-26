@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_sewers/manhole-ring-setting
+status: published
+setting: site_sewers
+family: heavy_element_handling
+trades: [civil_earthworks]
+title:
+  en: "Set precast manhole rings on the manhole base"
+  de: "Schachtringe aus Betonfertigteilen auf das Schachtunterteil setzen"
+summary:
+  en: "Clean the joint, fit the seal and lubricant, lower the next ring onto the one below, centred and plumb, until the cone goes on."
+  de: "Muffe säubern, Dichtung und Gleitmittel aufbringen, den nächsten Ring zentrisch und lotrecht auf den unteren absetzen, bis der Konus folgt."
+description:
+  en: "A sewer manhole is built from a precast base, rings and a cone or cover slab. A DN 1000 ring weighs about 650 to 1,800 kg depending on height and wall thickness, so the excavator or a crane lifts it on its cast-in transport anchors with ball-head lifting clutches, which people couple and uncouple by hand. In the pit the crew cleans spigot and socket, fits the seal, applies the lubricant approved by the seal maker, guides the ring down and sets it centred and in line; a load-transfer element goes into every joint. The finished manhole is tested for watertightness before backfilling."
+  de: "Ein Kanalschacht besteht aus einem Schachtunterteil aus Betonfertigteilen, Schachtringen und einem Konus oder einer Abdeckplatte. Ein Ring DN 1000 wiegt je nach Höhe und Wanddicke etwa 650 bis 1.800 kg, daher hebt ihn der Bagger oder ein Kran an den einbetonierten Transportankern mit Kugelkopfabhebern, die von Hand an- und abgekuppelt werden. In der Baugrube säubert die Kolonne Spitzende und Muffe, zieht die Dichtung auf, trägt das vom Dichtungshersteller zugelassene Gleitmittel auf, führt den Ring ab und setzt ihn zentrisch und fluchtgerecht; in jede Fuge kommt ein Lastübertragungselement. Der fertige Schacht wird vor dem Verfüllen auf Dichtheit geprüft."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '009'
+  atv: "DIN 18306"
+  position:
+    en: "Manhole of precast concrete components DN 1000 to DIN EN 1917 / DIN 4034-1: supply and install"
+    de: "Schacht aus Betonfertigteilen DN 1000 nach DIN EN 1917 / DIN 4034-1 liefern und einbauen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 650, max: 1800 }
+    confidence: confirmed
+    evidence_url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/kanalbau/schachtsysteme/topseal-plus/technische-daten-schachtring-sr-m'
+    note: "Berding Beton TOPSEAL plus ring SR-M DN 1000: about 650 kg (500 mm high, 150 mm wall) to 1,800 kg (1,000 mm high, 200 mm wall); DN 1200 and DN 1500 rings weigh up to 2,200 and 2,660 kg. The page calls these approximate planning values."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The rings are standard parts, but every manhole combines a different base, depth, number of rings, connections and cone."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.berdingbeton.de/fileadmin/Kanalbauseiten/Prospekte/FBS/2016_fachgerechter_einbau_auf_der_baustelle.pdf'
+    note: "The parts must sit centred and in line, and the manhole is tested for watertightness, usually by filling it with water, before backfilling (FBS rules for installing manhole components). A leaking or misaligned joint is found there and reset."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.berdingbeton.de/fileadmin/Kanalbauseiten/Prospekte/FBS/2016_fachgerechter_einbau_auf_der_baustelle.pdf'
+    note: "The joints must transfer the load evenly and vertically, which is why a load-transfer element goes between all parts from base to cone (FBS); the manhole carries traffic loads under the road."
+  reach_height_m:
+    value: { min: 0, max: 1.2 }
+    confidence: assumed
+    note: "The crew works at the joint in the pit, from foot level to chest height. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open excavation in the street or the field."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Excavated soil in the open; no relevant dust from the setting itself."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather, often with groundwater in the pit."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Bottom of the excavation around the manhole."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.berdingbeton.de/fileadmin/Kanalbauseiten/Download/Sicherheits_Einbauhinweise/Verwendungsanleitung_Kugelkopfabheber_BGW_Bohr.pdf'
+    note: "The excavator or crane does the lifting on the cast-in transport anchors; the ball-head lifting clutches are coupled and uncoupled by hand (BGW-Bohr instructions, 10/2018). Sealing, lubricating and guiding stay with the crew."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; rings per manhole depend on its depth."
+requirements:
+  object_size_m:
+    value: { min: 1.3, max: 1.4 }
+    confidence: likely
+    evidence_url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/kanalbau/schachtsysteme/topseal-plus/technische-daten-schachtring-sr-m'
+    note: "Outer diameter of a DN 1000 ring: 1,000 mm inside plus twice the 150 or 200 mm wall, so 1.3 to 1.4 m; heights 0.5 to 1.0 m (Berding Beton table)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The FBS rules ask for centred, in-line setting and even load transfer but give no millimetre value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The lifting is done by the excavator or crane; no source states a force for guiding the ring."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: gantry
+    note:
+      en: "Keep the excavator or crane with the lifting clutches on the transport anchors; the crew seals and guides. A ring of 650 kg and more is far beyond any humanoid, and the joints carry the traffic load."
+      de: "Beim Bagger oder Kran mit Kugelkopfabhebern an den Transportankern bleiben; die Kolonne dichtet und führt. Ein Ring ab 650 kg liegt weit jenseits jedes Humanoiden, und die Fugen tragen die Verkehrslast."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [gantry, keep_process]
+evidence:
+  - statement:
+      en: "Berding Beton lists its TOPSEAL plus manhole ring SR-M (DIN EN 1917 / DIN 4034-1) at about 650 to 1,800 kg for DN 1000, 1,100 to 2,200 kg for DN 1200 and 1,330 to 2,660 kg for DN 1500, and calls the values approximate planning figures."
+      de: "Berding Beton gibt für seinen Schachtring TOPSEAL plus SR-M (DIN EN 1917 / DIN 4034-1) etwa 650 bis 1.800 kg bei DN 1000, 1.100 bis 2.200 kg bei DN 1200 und 1.330 bis 2.660 kg bei DN 1500 an und nennt die Werte Circa-Angaben für die Planung."
+    url: 'https://www.berdingbeton.de/produkte/produkte-oeffentlicher-bereich/kanalbau/schachtsysteme/topseal-plus/technische-daten-schachtring-sr-m'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated technical data page, dated with the check date."
+  - statement:
+      en: "The FBS guide to installation on site lists the rules for manhole components: set the base true to line and level, clean socket and spigot, fit the seal, apply the lubricant, ensure even load transfer, set the rings centred and in line, and test the manhole for watertightness, usually by filling it with water."
+      de: "Der FBS-Leitfaden zum fachgerechten Einbau nennt die Regeln für Schachtbauteile: Schachtunterteil flucht- und plangerecht versetzen, Muffe und Spitzende säubern, Dichtung aufziehen, Gleitmittel auftragen, gleichmäßige Lastübertragung sicherstellen, Schachtringe zentrisch und fluchtgerecht versetzen und den Schacht auf Dichtheit prüfen, im Allgemeinen mittels Wasserfüllung."
+    url: 'https://www.berdingbeton.de/fileadmin/Kanalbauseiten/Prospekte/FBS/2016_fachgerechter_einbau_auf_der_baustelle.pdf'
+    kind: standard
+    tier: 2
+    date: '2016-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Fachvereinigung Betonrohre und Stahlbetonrohre (FBS), hosted by Berding Beton; the year is taken from the file name."
+  - statement:
+      en: "BGW-Bohr describes its ball-head lifting clutch as a manually operated coupling that is attached by hand to a cast-in transport anchor of the matching load class, and allows precast parts to be lifted in any direction."
+      de: "BGW-Bohr beschreibt seinen Kugelkopfabheber als manuell zu bedienende Kupplung, die von Hand an einen einbetonierten Transportanker der passenden Laststufe angekuppelt wird und Betonfertigteile in alle Richtungen heben lässt."
+    url: 'https://www.berdingbeton.de/fileadmin/Kanalbauseiten/Download/Sicherheits_Einbauhinweise/Verwendungsanleitung_Kugelkopfabheber_BGW_Bohr.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2018-10-01'
+    type: claim
+    confidence: confirmed
+    note: "Instructions dated 10/18 in the footer, hosted by Berding Beton."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If lifting gear is reviewed: one manhole, time from base to cone and the number of joints reset after the watertightness test."
+    de: "Falls das Hebezeug überprüft wird: ein Schacht, Zeit vom Unterteil bis zum Konus und Zahl der nach der Dichtheitsprüfung nachgesetzten Fugen."
+prerequisites: []
+open_questions:
+  - { en: "Which manhole depths and nominal sizes dominate your sewer jobs?", de: "Welche Schachttiefen und Nennweiten überwiegen bei Ihren Kanalbaustellen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

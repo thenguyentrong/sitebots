@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_windows_doors/window-unit-setting
+status: published
+setting: site_windows_doors
+family: assembly_fastening
+trades: [windows_doors]
+title:
+  en: "Set window units into the opening and fix them"
+  de: "Fenster in die Öffnung setzen und befestigen"
+summary:
+  en: "Bring the window to the opening, set it on packers, align it plumb and level and fix it to the wall."
+  de: "Das Fenster zur Öffnung bringen, auf Klötze setzen, lot- und waagerecht ausrichten und in der Wand befestigen."
+description:
+  en: "Glass alone weighs 2.5 kg per m² for every millimetre of thickness, so triple glazing of three 4 mm panes adds 30 kg per m² before the frame: a window of 1.5 to 2.5 m² carries 45 to 75 kg of glass. Installation devices exist for this: Heavydrive's GMG 400 transports and installs window elements of up to 460 kg and is operated by one person by radio remote control. Aligning, packing and fixing stay with the installer, and the joint is then sealed in three levels (a separate task)."
+  de: "Glas allein wiegt 2,5 kg je m² und Millimeter Dicke; eine Dreifachverglasung aus drei 4-mm-Scheiben bringt also 30 kg je m² vor dem Rahmen: Ein Fenster von 1,5 bis 2,5 m² trägt 45 bis 75 kg Glas. Dafür gibt es Montagegeräte: Das GMG 400 von Heavydrive transportiert und montiert Fensterelemente bis 460 kg und wird von einer Person per Funk-Fernsteuerung bedient. Ausrichten, Verklotzen und Befestigen bleiben beim Monteur, danach wird die Fuge in drei Ebenen abgedichtet (eigene Aufgabe)."
+also_in_settings: [joinery_windows_doors]
+derived_from: null
+lv:
+  lb: '026'
+  atv: "DIN 18355"
+  position:
+    en: "Timber or PVC windows with triple glazing, supplied and installed"
+    de: "Fenster aus Holz oder Kunststoff mit Dreifachverglasung liefern und montieren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 45, max: 75 }
+    confidence: assumed
+    evidence_url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    note: "Glass only: 2.5 kg per m² and mm × 12 mm (three 4 mm panes) × 1.5 to 2.5 m² window area. The window sizes are assumed; the frame adds weight."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Standard window types, but every opening differs in its tolerances and fixing substrate."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A window set out of plumb jams or leaks; it is reset before the joint is sealed."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "A standard window in a wall carries no structural load."
+  reach_height_m:
+    value: { min: 0, max: 2.2 }
+    confidence: assumed
+    note: "From the floor to the head of the opening. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Installed from inside into an opening of the external wall; the outer face is exposed."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling fixing holes into masonry or concrete releases quartz-bearing dust at the tool."
+  wet:
+    value: damp
+    confidence: likely
+    note: "The opening is open to the weather until the window is in."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab, packers and material in front of the opening."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [vacuum_lifter] }
+    confidence: confirmed
+    evidence_url: 'https://de.heavydrive.com/produkt/glas-montage-geraet-gmg-400-mit-460-kg-traglast'
+    note: "Installation devices lift and place window elements (Heavydrive GMG 400: up to 460 kg); aligning and fixing stay manual."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; depends on the window schedule."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Depends on the window schedule."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Tolerances of the opening and of the installation come from the project and the installation guide; not recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "The glass alone outweighs the payload ceiling of today's humanoids. A window installation device takes the weight, operated by one person, while the installer aligns and fixes."
+      de: "Schon das Glas allein übersteigt die Traglastgrenze heutiger Humanoiden. Ein Fenstermontagegerät nimmt das Gewicht, bedient von einer Person, während der Monteur ausrichtet und befestigt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "GLASundBESCHLAG gives the weight of glass as thickness in mm × 2.5 = kg per m², for example 25 kg/m² for 10 mm glass."
+      de: "GLASundBESCHLAG gibt das Glasgewicht als Glasdicke in mm × 2,5 = kg je m² an, zum Beispiel 25 kg/m² bei 10 mm Glas."
+    url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    kind: analyst
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Glossary of a glass and hardware supplier; undated, the date is the day it was read."
+  - statement:
+      en: "Heavydrive's GMG 400 glass installation device transports and installs window elements and similar airtight workpieces of up to 460 kg frontally (200 kg sideways), weighs 932 kg and is operated by one person by radio remote control."
+      de: "Das Glasmontagegerät GMG 400 von Heavydrive transportiert und montiert Fensterelemente und ähnliche luftdichte Werkstücke bis 460 kg frontal (200 kg seitlich), wiegt 932 kg und wird von einer Person per Funk-Fernsteuerung bedient."
+    url: 'https://de.heavydrive.com/produkt/glas-montage-geraet-gmg-400-mit-460-kg-traglast'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the day it was read."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If lifting is the pain: installation time and crew size per window with and without an installation device on one floor."
+    de: "Falls das Heben das Problem ist: Montagezeit und Kolonnengröße je Fenster mit und ohne Montagegerät in einem Geschoss."
+prerequisites: []
+open_questions:
+  - { en: "What do the heaviest units in the window schedule weigh with their frames?", de: "Was wiegen die schwersten Elemente der Fensterliste mit Rahmen?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,127 @@
+schema_version: 1
+id: facade_prefab/fix-cladding-panels
+status: published
+setting: facade_prefab
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Rivet fibre-cement cladding panels onto facade elements"
+  de: "Faserzement-Fassadentafeln auf Fassadenelemente nieten"
+summary:
+  en: "Place large-format cladding panels on the element's substructure with an 8 mm joint, drill and rivet them with fixed and sliding points."
+  de: "Großformatige Fassadentafeln mit 8 mm Fuge auf die Unterkonstruktion des Elements setzen, bohren und mit Fest- und Gleitpunkten vernieten."
+description:
+  en: "Where a prefabricated facade element leaves the factory with its cladding, the panels go on in the hall: lifted onto the substructure, aligned to the joint pattern, drilled through and riveted at the edge distances the manufacturer sets. The panels are large and heavy, the joints are visible, and the fixings carry wind suction."
+  de: "Wo ein vorgefertigtes Fassadenelement das Werk mit Bekleidung verlässt, kommen die Tafeln in der Halle darauf: auf die Unterkonstruktion gehoben, am Fugenbild ausgerichtet, durchgebohrt und mit den Randabständen vernietet, die der Hersteller vorgibt. Die Tafeln sind groß und schwer, die Fugen sichtbar, und die Befestigungen tragen Windsog."
+also_in_settings: [site_ventilated_facade]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 49, max: 94 }
+    confidence: likely
+    evidence_url: 'https://www.swisspearl.com/media/18159/download/Swisspearl_DIM_Montageanleitung_LargoFassadenplatten.pdf?v=3&inline=true'
+    note: "Swisspearl Largo panels weigh about 15.7 kg/m² at 8 mm and 24.6 kg/m² at 12 mm, maximum usable formats 3050 × 1250 and 2510 × 1250 mm (planning guide 02/2024): a 2510 × 1250 × 8 mm panel weighs about 49 kg, a 3050 × 1250 × 12 mm panel about 94 kg."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Renovation elements differ in size and openings, so panel layouts change per element."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A misaligned joint is visible and a wrong fixing distance fails the wind-load design; both are checked before the element ships."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.swisspearl.com/media/18159/download/Swisspearl_DIM_Montageanleitung_LargoFassadenplatten.pdf?v=3&inline=true'
+    note: "Maximum fixing distances follow from the wind load for region, building height, shape and position (Swisspearl guide); a failed fixing lets a panel fall."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Depends on whether the element lies flat or stands in a rack; measure your station."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Production hall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Drilling fibre cement releases dust at the drill; cutting stations are local sources (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Assumed manual with a crane or vacuum lifter for the panels; verify for your line."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at panels and joints."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on elements per shift."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count panels and rivets per element."
+requirements:
+  object_size_m:
+    value: { min: 2.51, max: 3.05 }
+    confidence: confirmed
+    evidence_url: 'https://www.swisspearl.com/media/18159/download/Swisspearl_DIM_Montageanleitung_LargoFassadenplatten.pdf?v=3&inline=true'
+    note: "Maximum usable formats 2510 × 1250 and 3050 × 1250 mm; smaller cuts are possible (Swisspearl guide 02/2024)."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.swisspearl.com/media/18159/download/Swisspearl_DIM_Montageanleitung_LargoFassadenplatten.pdf?v=3&inline=true'
+    note: "Joint width 8 mm on a metal substructure, holes Ø 9.5 mm, standard edge distances 30 mm horizontal and 80 mm vertical; tolerances of fixing rows and joints are set by optical criteria, not given as a ± value (Swisspearl guide)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Riveting force comes from the tool; not published on the source used here."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "A vacuum lifter or crane with a panel suction frame places the panel; people align, drill and rivet. A fixed drilling template speeds up the repeat work."
+      de: "Ein Vakuumheber oder Kran mit Plattensauger setzt die Tafel; Menschen richten aus, bohren und nieten. Eine feste Bohrlehre beschleunigt die Wiederholarbeit."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [carry_payload, drilling]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Swisspearl's planning guide for Largo facade panels (02/2024) gives about 15.7 kg/m² at 8 mm and 24.6 kg/m² at 12 mm, maximum usable formats of 3050 × 1250 and 2510 × 1250 mm, an 8 mm joint on metal substructures, Ø 9.5 mm fixing holes and edge distances of 30 mm horizontal and 80 mm vertical."
+      de: "Die Planungsunterlage von Swisspearl für Largo-Fassadentafeln (02/2024) nennt etwa 15,7 kg/m² bei 8 mm und 24,6 kg/m² bei 12 mm, maximale Nutzformate von 3050 × 1250 und 2510 × 1250 mm, 8 mm Fuge auf Metallunterkonstruktion, Befestigungslöcher Ø 9,5 mm und Randabstände von 30 mm horizontal und 80 mm vertikal."
+    url: 'https://www.swisspearl.com/media/18159/download/Swisspearl_DIM_Montageanleitung_LargoFassadenplatten.pdf?v=3&inline=true'
+    kind: manufacturer
+    tier: 1
+    date: '2024-02-01'
+    type: claim
+    confidence: likely
+    note: "Edition 02.2024; the day is not given, so the first of the month is used. Data source for mass, size and fixing."
+pilot:
+  metrics: [operator_minutes_per_unit, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a humanoid pilot. Trial a vacuum lifter with panel frame and compare minutes and people per panel."
+    de: "Kein Humanoiden-Pilot. Einen Vakuumheber mit Plattenrahmen erproben und Minuten und Personen je Tafel vergleichen."
+  scope_hint:
+    en: "One element type, 8 mm panels, one station."
+    de: "Ein Elementtyp, 8-mm-Tafeln, eine Station."
+prerequisites:
+  - { en: "Panel layout and fixing plan per element from the design", de: "Plattenaufteilung und Befestigungsplan je Element aus der Planung" }
+open_questions:
+  - { en: "Are panels delivered cut to size, or cut in your hall?", de: "Kommen die Tafeln zugeschnitten oder werden sie in Ihrer Halle geschnitten?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

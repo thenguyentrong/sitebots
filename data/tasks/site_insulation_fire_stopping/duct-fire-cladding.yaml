@@ -1,0 +1,135 @@
+schema_version: 1
+id: site_insulation_fire_stopping/duct-fire-cladding
+status: published
+setting: site_insulation_fire_stopping
+family: assembly_fastening
+trades: [insulation, mep_hvac]
+title:
+  en: "Clad ventilation ducts with fire-protection boards"
+  de: "Lüftungsleitungen mit Brandschutzplatten bekleiden"
+summary:
+  en: "Cut calcium-silicate boards to the duct, fix them around it to the approved build-up and close every joint."
+  de: "Kalziumsilikatplatten auf die Leitung zuschneiden, nach dem zugelassenen Aufbau um die Leitung befestigen und jede Fuge schließen."
+description:
+  en: "Where a steel ventilation duct runs through a fire compartment it does not serve, it gets a fire-resistant cladding: large boards are cut to size on site, lifted to the duct below the ceiling, screwed or stapled into a closed box and the joints filled, exactly as the system's approval describes. The boards are large and heavy, the work is overhead, and a wrong joint is a gap in the fire protection."
+  de: "Führt eine Stahlblech-Lüftungsleitung durch einen Brandabschnitt, den sie nicht versorgt, bekommt sie eine feuerwiderstandsfähige Bekleidung: große Platten werden auf der Baustelle zugeschnitten, an die Leitung unter der Decke gehoben, zu einem geschlossenen Kasten verschraubt oder geklammert und die Fugen verspachtelt, genau wie es die Zulassung des Systems beschreibt. Die Platten sind groß und schwer, die Arbeit geschieht über Kopf, und eine falsche Fuge ist eine Lücke im Brandschutz."
+also_in_settings: [site_ventilation]
+derived_from: null
+lv:
+  lb: '047'
+  atv: "DIN 18421"
+  position:
+    en: "Fire-resistant cladding of steel ventilation ducts with fire-protection boards to the system approval"
+    de: "Feuerwiderstandsfähige Bekleidung von Stahlblech-Lüftungsleitungen mit Brandschutzplatten nach Zulassung"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 30, max: 90 }
+    confidence: likely
+    evidence_url: 'https://media.promat.com/pi619930/original/334901669/promatect-l500---technisches-datenblatt.pdf'
+    note: "A full board of PROMATECT-L500, standard format 2,500 × 1,200 mm = 3.0 m², at 10.0 kg/m² (20 mm) to 30.0 kg/m² (60 mm) dry: 30 to 90 kg. Cut pieces are lighter, but whole boards are carried and cut on site."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The build-up repeats along a straight duct; hangers, branches, dampers and bends need individual cut pieces."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "An open joint or a missing fixing leaves a path for fire and smoke; the cladding only works as the approved build-up."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    evidence_url: 'https://media.promat.com/pi619930/original/334901669/promatect-l500---technisches-datenblatt.pdf'
+    note: "The boards serve as fire-resistant cladding of steel ventilation ducts (datasheet: application); building regulations and the fire-protection requirements and approvals govern the build-up."
+  reach_height_m:
+    value: { min: 2.5, max: 4.0 }
+    confidence: assumed
+    evidence_url: 'https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a1_2/6.htm'
+    note: "Ducts below the slab. ASR A1.2 sets minimum clear room heights of 2.50 m to 3.25 m; the 4.0 m upper bound is assumed."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building; the boards must be stored dry."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: confirmed
+    evidence_url: 'https://media.promat.com/pi619930/original/334901669/promatect-l500---technisches-datenblatt.pdf'
+    note: "The datasheet warns that sawing, drilling and sanding the board produce dust that must be extracted; no classified zone."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab, platforms and board stacks."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Cut, lifted and fixed by hand; board lifters help with the lifting."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Duct layout and approval documents only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2.5, max: 2.5 }
+    confidence: confirmed
+    evidence_url: 'https://media.promat.com/pi619930/original/334901669/promatect-l500---technisches-datenblatt.pdf'
+    note: "Standard board format 2,500 × 1,200 mm (datasheet)."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://media.promat.com/pi619930/original/334901669/promatect-l500---technisches-datenblatt.pdf'
+    note: "The approval, not a millimetre value, governs joints and fixings. For reference, the board itself is made to ±0.5 mm in thickness and ±3.0 mm in length and width (datasheet)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Give the installers a board lifter that raises and holds the boards at the duct, and keep the approved build-up in trained hands. A 30 to 90 kg board above head height is well over the 20–25 kg ceiling the screen uses for today's humanoids."
+      de: "Den Monteuren einen Plattenheber geben, der die Platten an die Leitung hebt und hält, und den zugelassenen Aufbau in geschulten Händen lassen. Eine Platte von 30 bis 90 kg über Kopf liegt weit über der Grenze von 20–25 kg, mit der das Screening heutige Humanoide bewertet."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Promat describes PROMATECT-L500 as a cement-bound calcium-silicate fire-protection board of about 500 kg/m³ for self-supporting ventilation ducts and for cladding steel ventilation ducts, in a standard format of 2,500 × 1,200 mm at 10.0 to 30.0 kg/m² dry for 20 to 60 mm; single boards are to be carried on edge, and cutting dust must be extracted."
+      de: "Promat beschreibt PROMATECT-L500 als zementgebundene Kalziumsilikat-Brandschutzplatte mit etwa 500 kg/m³ für selbstständige Lüftungsleitungen und die Bekleidung von Stahlblech-Lüftungsleitungen, im Standardformat 2.500 × 1.200 mm mit 10,0 bis 30,0 kg/m² trocken bei 20 bis 60 mm; einzelne Platten sind hochkant zu transportieren, Bearbeitungsstaub ist abzusaugen."
+    url: 'https://media.promat.com/pi619930/original/334901669/promatect-l500---technisches-datenblatt.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Technical datasheet (document 0022303) without an issue date; dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a board lifter: one duct run, the installers fix and document every joint."
+    de: "Falls mit einem Plattenheber verfolgt: eine Leitungsstrecke, die Monteure befestigen und dokumentieren jede Fuge."
+prerequisites: []
+open_questions:
+  - { en: "Which board thickness does the approval require for this duct and fire-resistance class?", de: "Welche Plattendicke verlangt die Zulassung für diese Leitung und Feuerwiderstandsklasse?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

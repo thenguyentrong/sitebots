@@ -1,0 +1,28 @@
+id: facility_operation
+group: operations
+title: { en: "Facility operation and building inspection", de: "Gebäudebetrieb und Bauwerksinspektion" }
+aliases:
+  en: [facility management, plant rounds, building inspection]
+  de: [Facility Management, Anlagenrundgänge, Gebäudeprüfung]
+coverage: screened
+coverage_note:
+  en: "Screened tasks for inspection rounds in plant rooms, night security rounds, floor scrubbing and facade window cleaning. The plant-room round is a candidate and the security round marginal; large floors go to the autonomous scrubber-dryer, and facade cleaning stays with people on the maintenance unit."
+  de: "Geprüfte Aufgaben für Kontrollgänge in Technikzentralen, nächtliche Sicherheitsrundgänge, Bodenreinigung und Fassadenreinigung. Der Kontrollgang in der Technikzentrale ist ein Kandidat, der Sicherheitsrundgang grenzwertig; große Flächen gehören der autonomen Scheuersaugmaschine, und die Fassadenreinigung bleibt beim Personal an der Befahranlage."
+typical_incumbent_automation: [scanner_fixed, drone, cleaning_machine]
+dust:
+  type: none
+  typical_zone: none
+  note:
+    en: Operating buildings are clean; plant rooms add heat and noise.
+    de: Betriebsgebäude sind sauber; Technikräume bringen Hitze und Lärm.
+floor: stairs
+exposure: both
+typical_trades: [mep_hvac, mep_electrical, qa_surveying, general]
+process_steps:
+  - { id: rounds, label: { en: "Inspection rounds", de: "Inspektionsrundgänge" } }
+  - { id: readings, label: { en: "Meter and gauge readings", de: "Zähler- und Anzeigenablesung" } }
+  - { id: defect_logging, label: { en: "Defect logging", de: "Mängelerfassung" } }
+  - { id: cleaning, label: { en: "Cleaning", de: "Reinigung" } }
+seed_priority: 5
+sources: []
+status: published

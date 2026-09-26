@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_roads_paving/stakeout-kerb-lines
+status: published
+setting: site_roads_paving
+family: layout_marking_surveying
+trades: [road, qa_surveying]
+title:
+  en: "Stake out kerb lines and points for the road works"
+  de: "Bordlinien und Absteckpunkte für den Straßenbau abstecken"
+summary:
+  en: "Walk the prepared base with a GNSS rover or total station and spray-mark kerb lines, edges and points for the paving crew."
+  de: "Mit GNSS-Rover oder Tachymeter über das vorbereitete Planum gehen und Bordlinien, Ränder und Punkte für die Pflaster- und Bordsteinkolonne markieren."
+description:
+  en: "Before kerbs are set and surfaces paved, the contractor's surveyor or foreman transfers the design onto the ground: point by point, with a GNSS rover or a total station, marking each position with paint or a pin. The step repeats hundreds of times per job on gravel, asphalt or soil, outdoors in all weather. Layout robots now do this autonomously; one maker states up to 600 points per hour at 10 to 20 mm accuracy."
+  de: "Bevor Bordsteine gesetzt und Flächen gepflastert werden, überträgt der Vermesser oder Polier des Auftragnehmers die Planung auf den Boden: Punkt für Punkt, mit GNSS-Rover oder Tachymeter, jede Lage mit Farbe oder Nagel markiert. Der Schritt wiederholt sich je Baustelle hunderte Male auf Schotter, Asphalt oder Boden, im Freien bei jedem Wetter. Absteckroboter erledigen das inzwischen autonom; ein Hersteller nennt bis zu 600 Punkte pro Stunde bei 10 bis 20 mm Genauigkeit."
+also_in_settings: [site_survey_documentation]
+derived_from: null
+lv:
+  lb: null
+  atv: null
+  position:
+    en: "Setting out kerb lines and points for the road works (surveying, usually the contractor's own work, not a separate LV position)"
+    de: "Abstecken von Bordlinien und Punkten für den Straßenbau (Vermessung, meist Eigenleistung des Auftragnehmers, keine eigene LV-Position)"
+  unit: lump
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 5 }
+    confidence: assumed
+    note: "A spray can and a GNSS rover pole or prism pole. Not weighed; no source used here states the masses."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Every road layout differs, but the step itself repeats point by point."
+  error_tolerance:
+    value: limited
+    confidence: assumed
+    note: "A wrong mark puts a kerb in the wrong place; the foreman or surveyor checks the marks before the crew sets out, and a misplaced kerb is reset."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Marks on the ground; a wrong one is a correction, not a safety failure."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: assumed
+    note: "Marks are sprayed onto the ground. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Roads, paths and squares under construction."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Open site; no relevant dust from the marking itself."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Compacted gravel base, soil or asphalt binder course."
+  incumbent_automation:
+    value: { status: full, machine_classes: [layout_robot] }
+    confidence: confirmed
+    evidence_url: 'https://tinysurveyor.com/terra/'
+    note: "The TinySurveyor Terra stakes out points autonomously on grass, gravel, dirt, asphalt or concrete, positioned by GNSS or a total station; the maker states up to 600 points per hour."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; points per day depend on the layout."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "No object is handled apart from the marking tools."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The maker states 10 to 20 mm for its robot, which is what the machine achieves, not what the job requires; the required accuracy comes from the setting-out plan."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not relevant for marking."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Compare a layout robot that stakes out the points autonomously from the design data, with the surveyor checking; no humanoid publishes an ingress rating for outdoor work."
+      de: "Einen Absteckroboter vergleichen, der die Punkte autonom aus den Planungsdaten absteckt, mit Kontrolle durch den Vermesser; kein Humanoid veröffentlicht eine Schutzart für Arbeiten im Freien."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, precision]
+capabilities_required: [layout_marking, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "TinySurveyor describes its Terra robot as built for large infrastructure projects: it stakes out up to 600 points per hour, to within 0.4 to 0.8 inch, with GNSS or a total station, on grass, gravel, dirt, asphalt or concrete, for 8 hours on one battery charge."
+      de: "TinySurveyor beschreibt seinen Roboter Terra für große Infrastrukturprojekte: Er steckt bis zu 600 Punkte pro Stunde ab, auf 0,4 bis 0,8 Zoll genau, mit GNSS oder Tachymeter, auf Rasen, Schotter, Erde, Asphalt oder Beton, 8 Stunden mit einer Akkuladung."
+    url: 'https://tinysurveyor.com/terra/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date. The page also quotes customers, among them a surveying firm that marked 2.5 km of railway in 2.5 hours instead of at least 10."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If a layout robot is considered: one street section, points per hour and marks corrected by the surveyor, robot against crew."
+    de: "Falls ein Absteckroboter erwogen wird: ein Straßenabschnitt, Punkte pro Stunde und vom Vermesser korrigierte Markierungen, Roboter gegen Kolonne."
+prerequisites:
+  - { en: "Setting-out data from the design model or the surveyor", de: "Absteckdaten aus dem Planungsmodell oder vom Vermesser" }
+open_questions:
+  - { en: "How many stakeout points does a typical road job of yours need, and who sets them out today?", de: "Wie viele Absteckpunkte braucht eine typische Straßenbaustelle bei Ihnen, und wer steckt sie heute ab?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

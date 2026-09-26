@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_ventilated_facade/substructure-mounting
+status: published
+setting: site_ventilated_facade
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Mount the aluminium sub-structure: wall brackets and rails"
+  de: "Aluminium-Unterkonstruktion montieren: Wandkonsolen und Tragprofile"
+summary:
+  en: "Drill and anchor the wall brackets on their grid, then fix the vertical rails to them, aligned for the cladding."
+  de: "Wandkonsolen im Raster bohren und verankern, dann die senkrechten Tragprofile daran befestigen und für die Bekleidung ausrichten."
+description:
+  en: "Before any panel goes on, the sub-structure is anchored to the wall. In Hilti's MFT system a wall bracket such as the MFT-FOX VI L is an aluminium part (EN AW-6063 T66) of 53 × 155 mm with a 6 mm polypropylene isolator, available with projections from 40 to 300 mm. The MFT-T rail is 6000 mm long (sold in 3 m or 6 m units), 80 to 140 mm wide and 40 or 60 mm deep; its product page refers to the European Technical Assessment ETA-22/0816."
+  de: "Bevor eine Tafel angesetzt wird, wird die Unterkonstruktion an der Wand verankert. Im Hilti-System MFT ist eine Wandkonsole wie die MFT-FOX VI L ein Aluminiumteil (EN AW-6063 T66) von 53 × 155 mm mit 6 mm Polypropylen-Thermostopp, lieferbar mit Ausladungen von 40 bis 300 mm. Die Schiene MFT-T ist 6000 mm lang (in Einheiten zu 3 m oder 6 m), 80 bis 140 mm breit und 40 oder 60 mm tief; die Produktseite verweist auf die Europäische Technische Bewertung ETA-22/0816."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '038'
+  atv: "DIN 18351"
+  position:
+    en: "Aluminium sub-structure of wall brackets and vertical rails for a rainscreen facade, anchored: supply and install"
+    de: "Unterkonstruktion aus Aluminium mit Wandkonsolen und Tragprofilen für vorgehängte hinterlüftete Fassade, verankert, liefern und montieren"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "Hilti's pages give dimensions and material of brackets and rails but no weights, so the heaviest part's mass is not established."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The bracket grid repeats, but projections, extra brackets at openings and edges, and the wall's unevenness differ per facade."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A rail set out of line shows in the cladding joints and is re-set before the panels go on."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.hilti.de/c/CLS_FACADE_MOUNTING_SYSTEMS/CLS_PROFILES/r5333'
+    note: "Brackets and rails carry the weight of the cladding and the wind load into the wall; the rail's product page refers to the European Technical Assessment ETA-22/0816."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "From the scaffold deck to just above head height; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the scaffold outside the building."
+  dust:
+    value: { type: mineral, zone: none }
+    confidence: assumed
+    note: "Drilling the anchor holes into masonry or concrete; outdoors, no classified zone."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the weather decides."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck: level but narrow."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Brackets are drilled, anchored and aligned by hand; no machine for this step is recorded."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 3.0, max: 6.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.hilti.de/c/CLS_FACADE_MOUNTING_SYSTEMS/CLS_PROFILES/r5333'
+    note: "MFT-T rail 6000 mm long, sold in 3 m or 6 m units; brackets 53 × 155 mm with projections of 40 to 300 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No alignment tolerance is stated on the product pages."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for drilling or anchoring on the product pages."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The sub-structure carries the facade, so a fixing error is a structural defect, and the work is outdoors on the scaffold. The fitter stays."
+      de: "Die Unterkonstruktion trägt die Fassade, ein Befestigungsfehler ist also ein Tragwerksmangel, und gearbeitet wird im Freien auf dem Gerüst. Der Monteur bleibt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [skills_shortage]
+capabilities_required: [drilling, screwing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Hilti lists the MFT-FOX VI L wall bracket in aluminium EN AW-6063 T66 with a 6 mm polypropylene isolator, 53 mm wide and 155 mm high, with projections from 40 to 300 mm."
+      de: "Hilti führt die Wandkonsole MFT-FOX VI L aus Aluminium EN AW-6063 T66 mit 6 mm Polypropylen-Thermostopp, 53 mm breit und 155 mm hoch, mit Ausladungen von 40 bis 300 mm."
+    url: 'https://www.hilti.de/c/CLS_FACADE_MOUNTING_SYSTEMS/CLS_BRACKETS/r9429826'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the check date."
+  - statement:
+      en: "Hilti's MFT-T rail is 6000 mm long in EN AW-6063 T66, 80 to 140 mm wide and 40 or 60 mm deep, sold in 3 m or 6 m units; the page refers to ETA-22-0816."
+      de: "Die Hilti-Schiene MFT-T ist 6000 mm lang, aus EN AW-6063 T66, 80 bis 140 mm breit und 40 oder 60 mm tief, in Einheiten zu 3 m oder 6 m; die Seite verweist auf die ETA-22-0816."
+    url: 'https://www.hilti.de/c/CLS_FACADE_MOUNTING_SYSTEMS/CLS_PROFILES/r5333'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If setting out is the pain: brackets set per hour with the grid marked from the model beforehand against marking on the scaffold."
+    de: "Falls das Einmessen das Problem ist: gesetzte Konsolen je Stunde mit vorab aus dem Modell angezeichnetem Raster gegenüber dem Anzeichnen auf dem Gerüst."
+prerequisites: []
+open_questions:
+  - { en: "Which anchor does the wall take, and has its pull-out capacity been tested on site?", de: "Welchen Dübel nimmt die Wand auf, und ist seine Auszugsfestigkeit am Bauwerk geprüft?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

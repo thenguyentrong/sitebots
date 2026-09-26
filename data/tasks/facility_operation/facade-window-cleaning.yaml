@@ -1,0 +1,123 @@
+schema_version: 1
+id: facility_operation/facade-window-cleaning
+status: published
+setting: facility_operation
+family: cleaning_housekeeping_replenishment
+trades: [general]
+title:
+  en: "Clean facade glazing from the building maintenance unit"
+  de: "Fassadenverglasung von der Fassadenbefahranlage aus reinigen"
+summary:
+  en: "Wash and squeegee the outside of the facade glazing, drop by drop down the building from the gondola or on ropes."
+  de: "Die Außenseite der Fassadenverglasung waschen und abziehen, Bahn für Bahn von der Gondel aus oder am Seil."
+description:
+  en: "Taller office buildings are cleaned from a building maintenance unit: a gondola that runs along the roof and lowers cleaners down the facade, bay by bay. Where there is none, rope access teams do the work. The work is outdoors in wind and weather, and every pane needs the same wash-and-squeegee motion. Robot arms mounted on the building's existing maintenance unit are offered for exactly this."
+  de: "Höhere Bürogebäude werden von einer Fassadenbefahranlage aus gereinigt: einer Gondel, die am Dach entlangfährt und das Reinigungspersonal Feld für Feld an der Fassade herablässt. Wo es keine gibt, arbeiten Industriekletterer am Seil. Gearbeitet wird im Freien bei Wind und Wetter, und jede Scheibe braucht dieselbe Bewegung aus Waschen und Abziehen. Für genau das werden Roboterarme angeboten, die an der vorhandenen Befahranlage des Gebäudes montiert werden."
+also_in_settings: []
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 5 }
+    confidence: assumed
+    note: "Scope of this record: washer, squeegee, bucket or water-fed pole. Not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The motion repeats on every pane; mullions, sunshades and access points differ per facade."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "Streaks mean another pass."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The result carries no safety function; the fall hazard is the cleaners', managed by the access system."
+  reach_height_m:
+    value: { min: 0, max: 2.0 }
+    confidence: assumed
+    note: "Reach from the gondola floor across one facade bay; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "The outside of the facade."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Facade dirt, no dust hazard."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Wash water on the glass, plus weather."
+  floor:
+    value: level
+    confidence: assumed
+    note: "The gondola floor; it moves with the building maintenance unit."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: assumed
+    note: "The maintenance unit provides the access; robot arms that clean from it are offered by at least one supplier, while most facades are still cleaned by people."
+  data_sensitivity:
+    value: personal_data
+    confidence: assumed
+    note: "A robot's cameras on the facade look into offices; people inside are in view."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "A facade takes days; no figure for one drop."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts square metres of glass per shift."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Pane sizes differ per building."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance; the result is a clean pane."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No published figure for the squeegee pressure."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: marginal, X2_outdoor: fail, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the cleaners on the gondola or ropes. Where the building has a maintenance unit, robot arms mounted on it are the automated option to compare; a humanoid publishes no rating for spray and rain."
+      de: "Das Reinigungspersonal bleibt in der Gondel oder am Seil. Wo das Gebäude eine Befahranlage hat, sind daran montierte Roboterarme die automatisierte Option zum Vergleich; ein Humanoid veröffentlicht keine Schutzart gegen Spritzwasser und Regen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, skills_shortage]
+capabilities_required: [cleaning_sweep]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "Skyline Robotics describes Ozmo as automating window cleaning from a building's existing maintenance units, three times faster than traditional window cleaning, with operators supervising from above."
+      de: "Skyline Robotics beschreibt Ozmo als Automatisierung der Fensterreinigung von den vorhandenen Befahranlagen eines Gebäudes aus, dreimal schneller als die herkömmliche Fensterreinigung, mit Bedienern, die von oben überwachen."
+    url: 'https://www.skylinerobotics.com/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Manufacturer claim on an undated page, dated with the check date; the page names no buildings or deployment dates."
+pilot:
+  metrics: [operator_minutes_per_unit, usable_captures_pct]
+  abort_rule:
+    en: "If a robot arm on the maintenance unit does not clean more glass per shift than the crew after one season, stop."
+    de: "Reinigt ein Roboterarm an der Befahranlage nach einer Saison nicht mehr Glas je Schicht als die Kolonne, abbrechen."
+  scope_hint:
+    en: "One facade with a maintenance unit, one robot arm, operators on the roof."
+    de: "Eine Fassade mit Befahranlage, ein Roboterarm, Bediener auf dem Dach."
+prerequisites:
+  - { en: "A building maintenance unit rated for the added load", de: "Eine Befahranlage, die für die Zusatzlast zugelassen ist" }
+open_questions:
+  - { en: "Does the maintenance unit's approval allow a robot arm on the gondola?", de: "Erlaubt die Zulassung der Befahranlage einen Roboterarm an der Gondel?" }
+compliance_flags: [gdpr_art_88_bdsg_26]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,143 @@
+schema_version: 1
+id: site_etics/insulation-anchoring
+status: published
+setting: site_etics
+family: assembly_fastening
+trades: [insulation, facade_roofing]
+title:
+  en: "Drill and set insulation anchors through the boards"
+  de: "Dämmstoffdübel durch die Platten bohren und setzen"
+summary:
+  en: "Once the adhesive has dried, drill through board and adhesive into the load-bearing wall and set the anchors flush, in the given pattern."
+  de: "Nach dem Trocknen des Klebers durch Platte und Kleber in den tragenden Untergrund bohren und die Dübel im vorgegebenen Schema bündig setzen."
+description:
+  en: "The VDPM guidance on anchors in ETICS: anchors are set only after the boards are bonded and the adhesive has dried; holes are drilled perpendicular to the board, through the adhesive and any old render, into the load-bearing substrate, usually with an 8 mm bit that is replaced once it has worn below 8.05 mm. Concrete, solid brick and dense lightweight concrete are drilled with hammer action, perforated brick and aerated concrete mostly in rotary mode. The anchor plate sits flush with the insulation surface; a wrongly set anchor is removed and replaced about 10 cm away. The number per m² follows from the wind-load proof for each project; Knauf Insulation names 6 to 8 anchors per m² for its boards."
+  de: "Der VDPM-Leitfaden zu Dübeln im WDVS: Gedübelt wird erst, wenn die Platten verklebt sind und der Kleber getrocknet ist; die Löcher werden senkrecht zur Platte durch Kleber und ggf. Altputz bis in den tragenden Untergrund gebohrt, meist mit 8-mm-Bohrern, die ersetzt werden, sobald sie unter 8,05 mm verschlissen sind. Beton, Vollziegel und haufwerksporiger Leichtbeton werden im Schlaggang gebohrt, Lochziegel und Porenbeton meist im Drehgang. Der Dübelteller sitzt bündig mit der Dämmstoffoberfläche; ein fehlerhaft gesetzter Dübel wird entfernt und etwa 10 cm daneben ersetzt. Die Anzahl je m² folgt aus dem Windsognachweis des Projekts; Knauf Insulation nennt für seine Platten 6 bis 8 Dübel je m²."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '023'
+  atv: "DIN 18345"
+  position:
+    en: "ETICS: anchoring the insulation boards with insulation anchors"
+    de: "WDVS: Verdübelung der Dämmplatten mit Dämmstoffdübeln"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "Anchors weigh grams; the heaviest object is the drill, which is not recorded here."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. A fixed pattern in the field, more anchors at edges and corners, and the drilling mode changes with the substrate."
+  error_tolerance:
+    value: limited
+    confidence: confirmed
+    evidence_url: 'https://www.keim.com/fileadmin/content/Documents/WDVS/Planungshilfen/VDPM-merkblatt-duebel_juli_2020.pdf'
+    note: "A wrongly set anchor is removed, the hole closed and a replacement set about 10 cm away (VDPM); an unnoticed one weakens the wind-load proof."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://www.keim.com/fileadmin/content/Documents/WDVS/Planungshilfen/VDPM-merkblatt-duebel_juli_2020.pdf'
+    note: "Anchors contribute to the stability of the ETICS and carry wind loads into the substrate; the stability against wind suction is proven for each project (VDPM)."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "From the scaffold deck to just above head height. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the scaffold outside the building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling into concrete and masonry releases quartz-bearing dust at the bit; outdoors, no classified zone."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the weather decides."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck: level but narrow."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Anchors are drilled and set by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "6 to 8 anchors per m² for Knauf Insulation FKD-S Thermal boards; the project's wind-load proof decides"
+    confidence: confirmed
+    evidence_url: 'https://pim.knaufinsulation.com/files/download/fkd-s_thermal_en_202004.pdf'
+    note: "Knauf Insulation datasheet, April 2020."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Anchor length follows from anchorage depth, tolerance allowance and insulation thickness (VDPM); not a fixed size."
+  tolerance_mm:
+    value: null
+    confidence: confirmed
+    evidence_url: 'https://www.keim.com/fileadmin/content/Documents/WDVS/Planungshilfen/VDPM-merkblatt-duebel_juli_2020.pdf'
+    note: "The anchor plate must sit flush with the insulation surface, neither proud nor too deep (VDPM); no figure in mm. The 8 mm bit is replaced below 8.05 mm."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Pull-out resistance comes from the anchor's ETA or site tests, not recorded here."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The anchors carry the facade's wind load, and the work happens outdoors on the scaffold, so the trained installer stays. Getting the pattern, the drilling mode and the flush setting right is what the VDPM guidance asks of people, with site tests where the substrate is unclear."
+      de: "Die Dübel tragen die Windlast der Fassade, und die Arbeit findet draußen auf dem Gerüst statt, der geschulte Verarbeiter bleibt also. Schema, Bohrverfahren und bündiges Setzen richtig zu treffen verlangt der VDPM-Leitfaden von Menschen, mit Baustellenversuchen, wo der Untergrund unklar ist."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [drilling]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "VDPM's guidance says anchors are set only after bonding and drying, drilled perpendicular through the adhesive into the load-bearing substrate, usually with an 8 mm bit that must measure at least 8.05 mm; concrete, solid brick and dense lightweight concrete are drilled with hammer action, perforated brick and aerated concrete mostly in rotary mode; the anchor plate sits flush and a wrongly set anchor is replaced about 10 cm away."
+      de: "Der VDPM-Leitfaden sagt: gedübelt wird erst nach Verkleben und Trocknen, senkrecht durch den Kleber in den tragenden Untergrund, meist mit 8-mm-Bohrern von mindestens 8,05 mm; Beton, Vollziegel und haufwerksporiger Leichtbeton im Schlaggang, Lochziegel und Porenbeton meist im Drehgang; der Dübelteller sitzt bündig, ein fehlerhaft gesetzter Dübel wird etwa 10 cm daneben ersetzt."
+    url: 'https://www.keim.com/fileadmin/content/Documents/WDVS/Planungshilfen/VDPM-merkblatt-duebel_juli_2020.pdf'
+    kind: standard
+    tier: 2
+    date: '2020-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Merkblatt 'Dübel in WDVS', July 2020 (month only), published by the Verband für Dämmsysteme, Putz und Mörtel; copy hosted by a member company."
+  - statement:
+      en: "Knauf Insulation fastens its FKD-S Thermal ETICS boards mechanically after bonding, with 6 to 8 anchors per m²."
+      de: "Knauf Insulation befestigt seine FKD-S-Thermal-Platten nach dem Kleben mechanisch mit 6 bis 8 Dübeln je m²."
+    url: 'https://pim.knaufinsulation.com/files/download/fkd-s_thermal_en_202004.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2020-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Greek edition, April 2020 (month only)."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot; check anchors set per m² against the pattern of the wind-load proof on one facade."
+    de: "Kein Roboterpilot; gesetzte Dübel je m² an einer Fassade mit dem Schema aus dem Windsognachweis abgleichen."
+prerequisites: []
+open_questions:
+  - { en: "Is the substrate known well enough, or are pull-out tests on site needed first?", de: "Ist der Untergrund bekannt genug, oder sind zuerst Auszugsversuche am Bauwerk nötig?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

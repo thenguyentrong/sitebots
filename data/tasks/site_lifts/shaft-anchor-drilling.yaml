@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_lifts/shaft-anchor-drilling
+status: published
+setting: site_lifts
+family: assembly_fastening
+trades: [general]
+title:
+  en: "Drill anchor holes in the lift shaft for the guide rail brackets"
+  de: "Dübellöcher im Aufzugsschacht für die Führungsschienenbügel bohren"
+summary:
+  en: "Drill the holes for the brackets that carry the car and counterweight guide rails, clear of the reinforcement, and set the anchor bolts, level by level up the shaft."
+  de: "Die Löcher für die Bügel bohren, die die Führungsschienen von Kabine und Gegengewicht tragen, ohne die Bewehrung zu treffen, und die Ankerbolzen setzen, Ebene für Ebene den Schacht hinauf."
+description:
+  en: "Before rails and doors go in, fitters drill rows of anchor holes into the concrete walls of the shaft and set anchor bolts for the rail brackets, working from a platform inside the shaft. The positions come from the installation drawing and have to miss the reinforcement. Schindler runs a robotic installation system for exactly this step: once in the shaft it drills the holes and sets the anchor bolts autonomously, locating the rebar first."
+  de: "Bevor Schienen und Türen eingebaut werden, bohren Monteure Reihen von Dübellöchern in die Betonwände des Schachts und setzen Ankerbolzen für die Schienenbügel, von einer Arbeitsbühne im Schacht aus. Die Positionen kommen aus der Montagezeichnung und dürfen die Bewehrung nicht treffen. Schindler setzt für genau diesen Schritt ein robotisches Montagesystem ein: Im Schacht bohrt es die Löcher und setzt die Ankerbolzen selbstständig, nachdem es die Bewehrung geortet hat."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '069'
+  atv: "DIN 18385"
+  position:
+    en: "Guide rail brackets in the lift shaft: drill anchor holes and set anchors"
+    de: "Führungsschienenbügel im Aufzugsschacht: Dübellöcher bohren und Anker setzen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The work is drilling with a rotary hammer and setting anchor bolts; no tool or anchor mass was found on the pages checked."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The hole pattern repeats per bracket level, but positions shift around the reinforcement and differ between shafts."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A misplaced hole is redrilled at a new position; Schindler describes locating the rebar first and choosing the drilling position from it."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The anchors carry the rail brackets and with them the guide rails the car runs on; anchor type and spacing come from the lift maker's installation design."
+  reach_height_m:
+    value: { min: 0.3, max: 2.5 }
+    confidence: assumed
+    note: "Measured from the working platform in the shaft, holes at several heights on three walls; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the concrete shaft of the building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling concrete releases quartz dust at the bit in a narrow shaft; extraction at the drill is the rule."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the building shell."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "A temporary platform inside the shaft rather than a floor."
+  incumbent_automation:
+    value: { status: full, machine_classes: [lift_shaft_robot] }
+    confidence: confirmed
+    evidence_url: 'https://group.schindler.com/en/company/innovations/schindler-rise.html'
+    note: "Schindler R.I.S.E drills the holes and sets the anchor bolts; once in the shaft it works fully autonomously, according to Schindler, with five robots deployed on projects worldwide."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Shaft drawings only; no people in view during the drilling."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "No tool or anchor dimensions published on the pages checked."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Schindler states an accuracy that matches or exceeds traditional methods but gives no figure; the installation drawing fixes the hole positions."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No drilling or setting force published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "A dedicated shaft robot already does the step: Schindler's R.I.S.E drills and sets the anchors autonomously and runs around the clock. A general-purpose robot would repeat that work in a narrow shaft, on anchors that carry the rails."
+      de: "Ein dedizierter Schachtroboter erledigt den Schritt bereits: Schindlers R.I.S.E bohrt und setzt die Anker selbstständig und arbeitet rund um die Uhr. Ein Universalroboter würde diese Arbeit im engen Schacht wiederholen, an Ankern, die die Schienen tragen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics, capacity]
+capabilities_required: [drilling]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Schindler describes R.I.S.E as automating shaft preparation: it drills holes and sets anchor bolts, detects the wall surface and avoids obstacles, places the holes according to the rebar location, works fully autonomously once in the shaft and needs no operator. Schindler lists five robots deployed on projects in Vienna, Shanghai, São Paulo, Warsaw, Singapore, Dubai and Hong Kong."
+      de: "Schindler beschreibt R.I.S.E als Automatisierung der Schachtvorbereitung: Es bohrt Löcher und setzt Ankerbolzen, erkennt die Wandoberfläche und umgeht Hindernisse, setzt die Bohrungen nach der Lage der Bewehrung, arbeitet im Schacht vollständig autonom und braucht keinen Bediener. Schindler nennt fünf Roboter im Einsatz auf Projekten in Wien, Shanghai, São Paulo, Warschau, Singapur, Dubai und Hongkong."
+    url: 'https://group.schindler.com/en/company/innovations/schindler-rise.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: deployment
+    confidence: confirmed
+    note: "Undated page, dated with the check date; the most recent project listed is dated November 2025. No speed or accuracy figures are given."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the dedicated robot is pursued: one shaft, the lift maker's installation drawing, fitters check every bracket before the rails go in."
+    de: "Falls der dedizierte Roboter verfolgt wird: ein Schacht, die Montagezeichnung des Aufzugsherstellers, die Monteure prüfen jeden Bügel, bevor die Schienen eingebaut werden."
+prerequisites:
+  - { en: "Shaft finished and measured, with the lift maker's installation drawing", de: "Schacht fertiggestellt und aufgemessen, mit der Montagezeichnung des Aufzugsherstellers" }
+open_questions:
+  - { en: "Does the lift maker for this building offer the robotic shaft installation, or only its own crews?", de: "Bietet der Aufzugshersteller für dieses Gebäude die robotische Schachtmontage an oder nur eigene Montagetrupps?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

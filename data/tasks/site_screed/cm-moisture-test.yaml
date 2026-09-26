@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_screed/cm-moisture-test
+status: published
+setting: site_screed
+family: inspection_qa_documentation
+trades: [flooring_tiling, qa_surveying]
+title:
+  en: "Test screed moisture with the CM method before covering"
+  de: "Estrichfeuchte vor dem Belegen mit der CM-Methode prüfen"
+summary:
+  en: "Take a sample over the full screed depth, weigh it, react it with calcium carbide in the pressure bottle and read off whether the screed may be covered."
+  de: "Eine Probe über die ganze Estrichdicke entnehmen, einwiegen, mit Calciumcarbid in der Druckflasche umsetzen und ablesen, ob der Estrich belegreif ist."
+description:
+  en: "Before parquet, vinyl or tiles go down, the residual moisture of the screed is measured. In the CM method the moisture in a crushed sample reacts with calcium carbide to acetylene, and the pressure rise on a manometer gives the moisture content. BG BAU gives the limits: cement screed up to 2.0 CM-% (heated 1.8), calcium sulphate screed 0.5 CM-%, with floor layers often asking for 0.3. The flooring trade has to check readiness for covering; screed contractors also offer the measurement. The reading decides whether a finished floor fails later."
+  de: "Bevor Parkett, Vinyl oder Fliesen verlegt werden, wird die Restfeuchte des Estrichs gemessen. Bei der CM-Methode reagiert die Feuchte einer zerkleinerten Probe mit Calciumcarbid zu Acetylen, der Druckanstieg am Manometer ergibt den Feuchtegehalt. Die BG BAU nennt die Grenzwerte: Zementestrich bis 2,0 CM-% (beheizt 1,8), Calciumsulfatestrich 0,5 CM-%, Bodenleger fordern oft 0,3. Die Belegreife muss das bodenlegende Gewerk prüfen; Estrichbetriebe bieten die Messung ebenfalls an. Von der Ablesung hängt ab, ob ein fertiger Boden später versagt."
+also_in_settings: [site_flooring, site_tiling]
+derived_from: null
+lv:
+  lb: '025'
+  atv: "DIN 18353"
+  position:
+    en: "Residual moisture measurement of the screed by the CM method, per measuring point"
+    de: "Restfeuchtemessung des Estrichs nach der CM-Methode, je Messstelle"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The sample weighs tens of grams; the chisel, hammer and CM bottle are hand tools whose weights were not checked."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same procedure every time, but the measuring points, screed depth and access change from room to room."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://bauportal.bgbau.de/bauportal-42021/thema/hochbau/auf-dem-weg-zur-belegreife-bestimmung-der-restfeuchte-in-estrichen'
+    note: "The reading decides whether the floor may be covered. A wrong pass shows up as a failing floor covering after handover, and the flooring trade carries the duty to check."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The reaction forms acetylene inside the closed bottle; the task has no structural or fire function."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: assumed
+    note: "Floor level, kneeling."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: "Chiselling out and crushing the sample releases a little screed dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "The screed is close to dry by the time it is tested."
+  floor:
+    value: level
+    confidence: likely
+    note: "Finished screed."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Measured by hand with the CM device."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Hand tools and a small sample; not relevant."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The accuracy that matters is the sample weight and the reading, not a dimension."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the measurement with the trained flooring or screed trade. The result is a liability decision; a robot would add a failure mode without taking the responsibility off anyone."
+      de: "Die Messung beim geschulten Bodenleger- oder Estrichgewerk belassen. Das Ergebnis ist eine Haftungsentscheidung; ein Roboter brächte eine weitere Fehlerquelle, ohne jemandem die Verantwortung abzunehmen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [site_inspection]
+capabilities_optional: [drilling]
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "BG BAU describes the CM method: moisture in the sample reacts with calcium carbide to acetylene, measured by the pressure rise on a manometer; the limits are 2.0 CM-% for cement screed (1.8 heated) and 0.5 CM-% for calcium sulphate screed, and the flooring trade has to check readiness for covering."
+      de: "Die BG BAU beschreibt die CM-Methode: Die Feuchte der Probe reagiert mit Calciumcarbid zu Acetylen, gemessen über den Druckanstieg am Manometer; die Grenzwerte liegen bei 2,0 CM-% für Zementestrich (beheizt 1,8) und 0,5 CM-% für Calciumsulfatestrich, und die Belegreife muss das bodenlegende Gewerk prüfen."
+    url: 'https://bauportal.bgbau.de/bauportal-42021/thema/hochbau/auf-dem-weg-zur-belegreife-bestimmung-der-restfeuchte-in-estrichen'
+    kind: regulator
+    tier: 1
+    date: '2021-01-01'
+    type: claim
+    confidence: confirmed
+    note: "BG BAU BauPortal, issue 4/2021; only the issue is given, dated to the year."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not applicable; the measurement stays with the trade."
+    de: "Nicht anwendbar; die Messung bleibt beim Gewerk."
+prerequisites: []
+open_questions:
+  - { en: "Does your contract put the CM measurement with the screed or the flooring trade?", de: "Liegt die CM-Messung in Ihrem Vertrag beim Estrich- oder beim Bodenlegergewerk?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

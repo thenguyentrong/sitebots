@@ -1,0 +1,27 @@
+id: site_demolition
+group: site
+section: demolition_repair
+lv: { lb: ['084'], atv: ["DIN 18459"] }
+title: { en: "Demolition, stripping and hazardous-material removal", de: "Abbruch-, Rückbau- und Schadstoffsanierungsarbeiten" }
+aliases:
+  en: [demolition, soft strip, asbestos removal]
+  de: [Abbruch, Entkernung, Asbestsanierung]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: breaking out concrete, where remote-controlled demolition robots are the answer; removing weakly bound asbestos under TRGS 519, which stays with certified crews; and stripping out the fit-out by waste fraction, where whole boards and doors exceed a humanoid payload."
+  de: "Drei geprüfte Aufgaben: Beton abbrechen, wofür ferngesteuerte Abbruchroboter die Antwort sind; schwach gebundenen Asbest nach TRGS 519 ausbauen, was bei sachkundigen Kolonnen bleibt; und den Ausbau nach Abfallfraktionen entkernen, wobei ganze Platten und Türen die Traglast eines Humanoiden übersteigen."
+typical_incumbent_automation: [demolition_robot_teleoperated]
+dust:
+  type: mixed
+  typical_zone: zone
+  note:
+    en: "Demolition and removal of hazardous materials (asbestos, PAH, mineral fibres) happen in enclosed, classified work areas (TRGS 519, TRGS 521, TRGS 524)."
+    de: "Rückbau und Schadstoffsanierung (Asbest, PAK, Mineralfasern) finden in abgeschotteten, eingestuften Arbeitsbereichen statt (TRGS 519, TRGS 521, TRGS 524)."
+floor: uneven
+exposure: both
+typical_trades: [demolition]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

@@ -43,9 +43,10 @@ npm run dev
 
 With `USE_LOCAL_DB=1` the app boots an in-process Postgres (PGlite — WASM, no
 Docker, no server), applies the schema and seeds it from `data/seed/robots.json`,
-so a fresh clone shows real robot pages. It is opt-in and refuses to engage
-when `NODE_ENV=production`, so a deploy missing `DATABASE_URL` fails loudly
-instead of quietly serving a database nobody can update.
+so a fresh clone shows real robot pages. Production without `DATABASE_URL`
+loads the committed catalogue snapshot in memory, with writes disabled. It
+does not apply schema changes or rewrite curated evidence during startup.
+Regenerate the snapshot after schema or catalogue changes; see below.
 
 Against Neon: set `DATABASE_URL`, then `npm run db:migrate` and
 `npm run seed:local -- --commit`.
@@ -128,3 +129,8 @@ npm run shot -- http://localhost:3000/robots/unitree/g1 .out/g1.png
 No Python anywhere in this repository. App Control on the build machine
 blocks virtual environments, so the scrapers, the converters and the
 screenshot harness are TypeScript.
+
+## Release verification
+
+See [the launch audit](docs/launch-audit-2026-09-15.md) for the current public URL,
+performance measurements, verified flows and remaining launch configuration.

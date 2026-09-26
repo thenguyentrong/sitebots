@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_specialist_foundations/sheet-pile-driving
+status: published
+setting: site_specialist_foundations
+family: heavy_element_handling
+trades: [civil_earthworks, steel]
+title:
+  en: "Pitch and drive steel sheet piles"
+  de: "Stahlspundbohlen aufnehmen, einfädeln und einrütteln"
+summary:
+  en: "Pick a sheet pile, thread it into the interlock of the previous one and vibrate it to depth."
+  de: "Eine Spundbohle aufnehmen, in das Schloss der vorigen einfädeln und auf Tiefe einrütteln."
+description:
+  en: "A single AZ 18-700 sheet pile weighs 76.5 kg per metre, so a 6 m pile weighs about 460 kg. Excavator-mounted side-grip vibrators handle, pitch, drive and extract piles and can do the whole piling process without manual handling or assisting machinery. The finished wall retains the excavation."
+  de: "Eine einzelne Spundbohle AZ 18-700 wiegt 76,5 kg je Meter, eine 6-m-Bohle also etwa 460 kg. Am Bagger angebaute Seitengreifer-Rüttler nehmen Bohlen auf, fädeln sie ein, rütteln sie ein und ziehen sie wieder, und schaffen den ganzen Rammvorgang ohne Handhabung von Hand oder weitere Hilfsgeräte. Die fertige Wand sichert die Baugrube."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '006'
+  atv: "DIN 18304"
+  position:
+    en: "Steel sheet pile wall, piles vibrated in"
+    de: "Stahlspundwand herstellen, Bohlen einrütteln"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 459, max: 459 }
+    confidence: likely
+    evidence_url: 'https://sheetpiling.arcelormittal.com/products/az-sections/az-700-and-az-770/az-18-700'
+    note: "AZ 18-700 single pile: 76.5 kg/m (ArcelorMittal). A 6 m pile weighs 459 kg; longer piles weigh proportionally more."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Piles repeat along the wall; ground, corners and obstructions vary."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A pile off line, out of its interlock or short of depth weakens the wall that retains the excavation."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The sheet pile wall is a retaining structure for the excavation."
+  reach_height_m:
+    value: { min: 0, max: 6 }
+    confidence: assumed
+    note: "Pitching a 6 m pile means handling it up to its full length above ground. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Excavation pits and embankments."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Soil; no relevant dust at the pile."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Unpaved working platform."
+  incumbent_automation:
+    value: { status: full, machine_classes: [excavator_pile_driver] }
+    confidence: confirmed
+    evidence_url: 'https://www.movax.com/en-GB/products/pile-drivers/'
+    note: "Excavator-mounted side-grip pile drivers handle, pitch, drive and extract piles without manual handling or assisting machinery (Movax)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 6, max: 6 }
+    confidence: assumed
+    note: "Pile length follows the wall design; 6 m is the example length used for the mass."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No public source used here states the driving tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The vibrator's driving force depends on the model and the ground; no single value applies."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "An excavator-mounted pile driver already picks, threads and drives the piles; the pile itself weighs about eighteen times the payload ceiling of today's humanoids."
+      de: "Ein am Bagger angebautes Rammgerät nimmt die Bohlen bereits auf, fädelt sie ein und bringt sie ein; die Bohle selbst wiegt etwa das Achtzehnfache der Traglastgrenze heutiger Humanoide."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [dedicated_machine]
+evidence:
+  - statement:
+      en: "ArcelorMittal lists the AZ 18-700 sheet pile at 76.5 kg per metre for a single pile."
+      de: "ArcelorMittal gibt für die Spundbohle AZ 18-700 76,5 kg je Meter für die Einzelbohle an."
+    url: 'https://sheetpiling.arcelormittal.com/products/az-sections/az-700-and-az-770/az-18-700'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product data page, dated with the check date."
+  - statement:
+      en: "Movax says its excavator-mounted side-grip pile drivers handle, pitch, drive and extract different piles and can accomplish the entire piling process without manual handling or assisting machinery, on excavators of 8 to 50 t."
+      de: "Movax schreibt, dass seine am Bagger angebauten Seitengreifer-Rammgeräte verschiedene Pfähle und Bohlen aufnehmen, einfädeln, einbringen und ziehen und den gesamten Rammvorgang ohne Handhabung von Hand oder Hilfsgeräte schaffen, an Baggern von 8 bis 50 t."
+    url: 'https://www.movax.com/en-GB/products/pile-drivers/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot: compare crane-and-crew piling against an excavator-mounted driver on one pit wall."
+    de: "Kein Roboterpilot: Rammen mit Kran und Kolonne gegen ein Bagger-Anbaugerät an einer Baugrubenwand vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "How many people are near the pile when it is pitched today?", de: "Wie viele Personen stehen heute beim Einfädeln an der Bohle?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

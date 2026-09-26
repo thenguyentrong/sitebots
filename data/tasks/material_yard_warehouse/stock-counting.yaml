@@ -1,0 +1,123 @@
+schema_version: 1
+id: material_yard_warehouse/stock-counting
+status: published
+setting: material_yard_warehouse
+family: inspection_qa_documentation
+trades: [logistics]
+title:
+  en: "Count stock at the shelf for the rolling inventory"
+  de: "Bestände am Regal für die permanente Inventur zählen"
+summary:
+  en: "Walk the storage locations of the day's count list, count or scan what is there and book the difference."
+  de: "Die Lagerplätze der Zählliste des Tages ablaufen, zählen oder scannen, was dort liegt, und die Differenz buchen."
+description:
+  en: "Instead of closing for a year-end count, merchants and contractors' stores count part of the stock every day. § 241 HGB allows inventory by statistical sampling and by a continuous booking method, as long as it meets the principles of proper accounting. Someone walks to each location on the list, counts or scans the items and books the difference. The counting varies with every location; the shelves run above head height."
+  de: "Statt für eine Stichtagsinventur zu schließen, zählen Baustoffhändler und Bauhöfe jeden Tag einen Teil des Bestands. § 241 HGB lässt die Inventur mit Stichproben nach anerkannten mathematisch-statistischen Methoden und mit einem den Grundsätzen ordnungsmäßiger Buchführung entsprechenden Fortschreibungsverfahren zu. Jemand geht jeden Platz der Liste ab, zählt oder scannt die Artikel und bucht die Differenz. Das Zählen ändert sich mit jedem Platz; die Regale reichen über Kopfhöhe."
+also_in_settings: [construction_logistics_hub, equipment_rental_depot]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.2, max: 1 }
+    confidence: assumed
+    note: "Scope of this record: a handheld scanner or tablet. Items are counted where they are, not moved."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every location holds different items in different packaging and quantities."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wrong count distorts the book stock until the next count of that location; it costs money, not safety."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "No structural or life-safety consequence."
+  reach_height_m:
+    value: { min: 0, max: 2.5 }
+    confidence: assumed
+    note: "Floor level to the top shelf of standard shelving; high-bay racks go higher. Verify per rack."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Warehouse hall; yard locations are a separate case."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Packed goods in a hall."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Warehouse floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Counting with a handheld scanner; inventory drones and RFID gates exist in large distribution centres, rarely at a merchant."
+  data_sensitivity:
+    value: none
+    confidence: assumed
+    note: "The count concerns goods; a camera system in the aisles also sees staff, which would change this answer."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the length of the daily count list."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts locations per hour and the share of recounts."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is moved; the scanner is the only object."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance; the requirement is the count accuracy."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure; counting and scanning."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled robot or drone with a scanner first: the count needs eyes and reach, not hands. A person verifies every difference before it is booked."
+      de: "Zuerst einen fahrenden Roboter oder eine Drohne mit Scanner vergleichen: Die Zählung braucht Augen und Reichweite, keine Hände. Jede Differenz prüft ein Mensch, bevor sie gebucht wird."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, quality]
+capabilities_required: [site_inspection, autonomous_nav_indoor]
+capabilities_optional: [lidar_scan]
+solution_classes: [mobile_manipulator_wheeled, dedicated_machine, humanoid]
+evidence:
+  - statement:
+      en: "§ 241 HGB allows the stock to be determined with recognised mathematical-statistical sampling methods, and allows inventory without a physical count on the reporting date where a booking method that meets the principles of proper accounting secures the stock figures."
+      de: "§ 241 HGB lässt zu, den Bestand mit Hilfe anerkannter mathematisch-statistischer Methoden auf Grund von Stichproben zu ermitteln, und erlaubt die Inventur ohne körperliche Bestandsaufnahme am Stichtag, wenn ein den Grundsätzen ordnungsmäßiger Buchführung entsprechendes Fortschreibungsverfahren den Bestand sichert."
+    url: 'https://www.gesetze-im-internet.de/hgb/__241.html'
+    kind: regulator
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Federal law as published by the Federal Ministry of Justice; dated with the check date."
+pilot:
+  metrics: [error_rate_vs_human_pct, operator_minutes_per_unit]
+  abort_rule:
+    en: "If the count error is above the people's after 3 months, stop."
+    de: "Liegt der Zählfehler nach 3 Monaten über dem der Mitarbeiter, abbrechen."
+  scope_hint:
+    en: "One shelving aisle with barcoded locations, counted daily in parallel with the current routine."
+    de: "Eine Regalgasse mit Barcode-Lagerplätzen, täglich parallel zur bisherigen Routine gezählt."
+prerequisites:
+  - { en: "Barcoded locations and items", de: "Lagerplätze und Artikel mit Barcode" }
+open_questions:
+  - { en: "How many locations per day are on the count list?", de: "Wie viele Lagerplätze stehen täglich auf der Zählliste?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

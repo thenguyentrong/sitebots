@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_tunnelling/rock-bolt-setting
+status: published
+setting: site_tunnelling
+family: assembly_fastening
+trades: [tunnel]
+title:
+  en: "Drill and set radial rock bolts in the tunnel"
+  de: "Radiale Gebirgsanker im Tunnel bohren und setzen"
+summary:
+  en: "Drill the bolt holes in the fresh tunnel profile, insert grouted or resin-anchored bolts and fit the plates, round after round."
+  de: "Ankerlöcher in das frisch ausgebrochene Tunnelprofil bohren, vermörtelte oder mit Kunstharz verklebte Anker einführen und die Platten setzen, Abschlag für Abschlag."
+description:
+  en: "After each round of excavation the rock around the tunnel profile is reinforced with radial bolts, among them fully grouted or resin-anchored rebar bolts. Rock support rigs drill the holes and install the bolts; the manufacturer describes the full bolting cycle as operated by one person under the canopy or in a cabin, with bolts of 1.5 to 3 m and holes of 33 to 43 mm. The heading is wet, dusty and under unsupported ground until the bolts are in."
+  de: "Nach jedem Abschlag wird das Gebirge um das Tunnelprofil mit radialen Ankern bewehrt, darunter vollvermörtelte oder mit Kunstharz verklebte Stabanker. Ankerbohrwagen bohren die Löcher und setzen die Anker; der Hersteller beschreibt den vollständigen Ankerzyklus als von einer Person unter dem Schutzdach oder in der Kabine bedient, mit Ankern von 1,5 bis 3 m und Bohrlöchern von 33 bis 43 mm. Die Ortsbrust ist nass, staubig und bis zum Setzen der Anker ungesichert."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '007'
+  atv: "DIN 18312"
+  position:
+    en: "Systematic rock bolting: radial bolts, length up to 3 m, drill and set"
+    de: "Systemankerung: Radialanker bis 3 m Länge bohren und setzen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 3.7, max: 11.6 }
+    confidence: assumed
+    evidence_url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    note: "A bar bolt of 20 to 25 mm diameter (reinforcing steel 2.47 and 3.85 kg/m per the DIN 488-1 table) and 1.5 to 3.0 m length (range the Sandvik DS312 installs): about 3.7 to 11.6 kg. The bolt diameter is an assumption; the rig, not a person, handles the drill."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The bolting pattern repeats from round to round, but rock, profile and bolt positions change along the drive."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.mining.sandvik/en/products/ground-support/tunneling-and-geotech/radial-bolts/'
+    note: "Radial bolts are the ground support that reinforces the rock around the tunnel profile (Sandvik); a missing or poorly bonded bolt weakens the support."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.mining.sandvik/en/products/ground-support/tunneling-and-geotech/radial-bolts/'
+    note: "Rock bolts are part of the tunnel support."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Bolts go into the crown and walls; the height depends on the tunnel cross-section and is reached by the rig's boom. Not established."
+  environment:
+    value: both
+    confidence: likely
+    note: "Underground, sheltered from the weather but not an indoor workroom."
+  dust:
+    value: { type: mineral, zone: zone }
+    confidence: likely
+    note: "Drilling rock underground releases quartz-bearing dust in an enclosed space; ventilation and dust suppression are planned for it (the setting's condition)."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Rock water and flushing water keep the heading wet."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Tunnel invert during excavation."
+  incumbent_automation:
+    value: { status: full, machine_classes: [rock_bolting_rig] }
+    confidence: confirmed
+    evidence_url: 'https://www.mining.sandvik/en/products/equipment/bolters/'
+    note: "Sandvik: the full bolting cycle can be operated by one person under the canopy or in a cabin (DS421); the DS411 installs rows of 1.5 to 3 m bolts. The pages describe mining rigs; the work step is the same in tunnel headings."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; bolts per round follow the support class of the design."
+requirements:
+  object_size_m:
+    value: { min: 1.5, max: 3.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.mining.sandvik/en/products/equipment/underground-drill-rigs/ds312-rock-support-drill-rig/'
+    note: "Bolt length range 1.5 to 3.0 m, hole size 33 to 43 mm (Sandvik DS312)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No source used here states a position tolerance for bolt holes."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Drilling and bolt installation forces are the rig's; no source states them."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: fail, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T2_dust, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Use a rock bolting rig that drills and sets the bolts from under the canopy or the cabin, so nobody stands under unsupported ground."
+      de: "Einen Ankerbohrwagen einsetzen, der vom Schutzdach oder der Kabine aus bohrt und die Anker setzt, damit niemand unter ungesichertem Gebirge steht."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, capacity]
+capabilities_required: [drilling]
+capabilities_optional: []
+solution_classes: [dedicated_machine]
+evidence:
+  - statement:
+      en: "Sandvik says the full bolting cycle of its DS421 can be operated by one person working under the canopy or in a soundproof, air-conditioned cabin, and that the DS411 installs several rows of 1.5 to 3 m rock bolts."
+      de: "Sandvik schreibt, der vollständige Ankerzyklus seines DS421 könne von einer Person unter dem Schutzdach oder in einer schallgedämmten, klimatisierten Kabine bedient werden, und der DS411 setze mehrere Reihen Gebirgsanker von 1,5 bis 3 m."
+    url: 'https://www.mining.sandvik/en/products/equipment/bolters/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Mining rigs; undated product page, dated with the check date."
+  - statement:
+      en: "The Sandvik DS312 rock support rig installs bolts of 1.5 to 3.0 m in holes of 33 to 43 mm, has two FOPS/ROPS cabins and weighs about 16,000 kg."
+      de: "Der Sandvik-Ankerbohrwagen DS312 setzt Anker von 1,5 bis 3,0 m in Bohrlöcher von 33 bis 43 mm, hat zwei FOPS/ROPS-Kabinen und wiegt etwa 16.000 kg."
+    url: 'https://www.mining.sandvik/en/products/equipment/underground-drill-rigs/ds312-rock-support-drill-rig/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Designed for mechanised rock reinforcement in underground mines with small and medium cross sections."
+  - statement:
+      en: "Sandvik describes radial bolts as ground support that reinforces the rock around the tunnel profile, and rebar bolts as permanently stabilising the rock mass in fully grouted or resin-anchored systems."
+      de: "Sandvik beschreibt Radialanker als Ausbau, der das Gebirge um das Tunnelprofil bewehrt, und Stabanker als dauerhafte Stabilisierung des Gebirges in vollvermörtelten oder kunstharzverklebten Systemen."
+    url: 'https://www.mining.sandvik/en/products/ground-support/tunneling-and-geotech/radial-bolts/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If rig automation is reviewed: bolts per shift and the time people spend under unsupported ground, before and after."
+    de: "Falls die Automatisierung des Bohrwagens geprüft wird: Anker je Schicht und die Zeit, die Personen unter ungesichertem Gebirge verbringen, vorher und nachher."
+prerequisites: []
+open_questions:
+  - { en: "Which support classes and bolt types does your tunnel design specify?", de: "Welche Ausbauklassen und Ankertypen sieht Ihre Tunnelplanung vor?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

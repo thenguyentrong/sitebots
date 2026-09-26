@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_cleaning_waste/waste-sorting-fractions
+status: published
+setting: site_cleaning_waste
+family: kitting_picking_sorting
+trades: [general, logistics]
+title:
+  en: "Sort construction waste into the separate fractions"
+  de: "Bauabfälle in die getrennten Fraktionen sortieren"
+summary:
+  en: "Pick offcuts, packaging and debris from the collection point and put each piece into the right container: wood, metal, plastics, gypsum, insulation and the rest."
+  de: "Verschnitt, Verpackung und Bauschutt an der Sammelstelle aufnehmen und jedes Stück in den richtigen Behälter legen: Holz, Metall, Kunststoff, Gips, Dämmstoff und der Rest."
+description:
+  en: "The Gewerbeabfallverordnung requires construction and demolition waste to be collected in ten separate fractions, from glass, plastics, metals and wood to insulation, bituminous mixtures, gypsum, concrete, bricks and tiles, and the separation has to be documented. On site this is manual work at the collection points: every load is a different mix of shapes and materials. In recycling plants, sorting robots already pick C&D waste."
+  de: "Die Gewerbeabfallverordnung verlangt, Bau- und Abbruchabfälle in zehn Fraktionen getrennt zu sammeln, von Glas, Kunststoff, Metallen und Holz über Dämmmaterial, bitumenhaltige Gemische und Gips bis zu Beton, Ziegeln und Fliesen, und die Trennung ist zu dokumentieren. Auf der Baustelle ist das Handarbeit an den Sammelstellen: Jede Ladung ist ein anderes Gemisch aus Formen und Materialien. In Recyclinganlagen sortieren Roboter Bau- und Abbruchabfälle bereits."
+also_in_settings: [site_demolition]
+derived_from: null
+lv:
+  lb: '087'
+  atv: null
+  position:
+    en: "Separate collection of construction and demolition waste by fraction"
+    de: "Getrennte Sammlung von Bau- und Abbruchabfällen nach Fraktionen"
+  unit: t
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 25 }
+    confidence: assumed
+    note: "From packaging film to offcuts and broken blocks; pieces above about 25 kg go by machine or two people. Not measured; weigh a sample of the project's waste."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every load is a different mix of shapes and materials."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.gesetze-im-internet.de/gewabfv_2017/__8.html'
+    note: "A wrong piece contaminates a fraction; § 8 GewAbfV requires separate collection of ten fractions and documentation of it."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Sorting does not touch the structure; sharp and heavy pieces are a work-safety matter."
+  reach_height_m:
+    value: { min: 0, max: 1.5 }
+    confidence: assumed
+    note: "From the floor to the rim of a skip or container. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Collection points on the floors, containers outside."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Mixed construction dust at the collection points; no classified zone."
+  wet:
+    value: null
+    confidence: assumed
+    note: "Containers outside are exposed to the weather."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slabs inside, site roads and container areas outside."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "On site people sort by hand; sorting robots work in recycling plants, not at the collection point."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    note: "A robot's cameras would see workers at the collection points; works council and data protection officer are involved."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the waste volume per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the waste contractor's weighing slips give the tonnage per fraction."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "From small offcuts to long profiles; not recorded."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Not relevant; the measure is the purity of each fraction."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: marginal, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator at a fixed collection point first; it has to do what the plant robots do, in a far less orderly place. Where separation on site does not work, mixed loads go to a sorting plant, where robots such as the Heavy Picker already pick C&D waste."
+      de: "Zuerst einen radgebundenen Mobilmanipulator an einer festen Sammelstelle vergleichen; er muss leisten, was die Anlagenroboter leisten, an einem weit weniger geordneten Ort. Wo die Trennung auf der Baustelle nicht gelingt, gehen gemischte Ladungen in eine Sortieranlage, in der Roboter wie der Heavy Picker Bau- und Abbruchabfälle bereits greifen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [material_sorting, carry_payload]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [mobile_manipulator_wheeled, humanoid, process_change]
+evidence:
+  - statement:
+      en: "§ 8 (1) of the Gewerbeabfallverordnung requires construction and demolition waste to be collected separately in ten fractions: glass, plastics, metals, wood, insulation, bituminous mixtures, gypsum-based materials, concrete, bricks and tiles; § 8 (3) requires the separation to be documented."
+      de: "§ 8 Abs. 1 der Gewerbeabfallverordnung verlangt, Bau- und Abbruchabfälle in zehn Fraktionen getrennt zu sammeln: Glas, Kunststoff, Metalle, Holz, Dämmmaterial, bitumenhaltige Gemische, Baustoffe auf Gipsbasis, Beton, Ziegel sowie Fliesen und Keramik; § 8 Abs. 3 verlangt die Dokumentation der Trennung."
+    url: 'https://www.gesetze-im-internet.de/gewabfv_2017/__8.html'
+    kind: regulator
+    tier: 1
+    date: '2017-04-18'
+    type: claim
+    confidence: confirmed
+    note: "Gewerbeabfallverordnung of 18 April 2017 (BGBl. I S. 896), current text."
+  - statement:
+      en: "Terex ZenRobotics lists its Heavy Picker for construction and demolition waste among other streams, picking objects up to 40 kg at up to 2300 picks per hour per arm."
+      de: "Terex ZenRobotics führt den Heavy Picker unter anderem für Bau- und Abbruchabfälle, mit Objekten bis 40 kg und bis zu 2300 Griffen pro Stunde und Arm."
+    url: 'https://www.terex.com/zenrobotics/robots/heavy-picker'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the day it was checked. A recycling-plant robot, not a site robot; transferable for the picking, not for the environment."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of pieces in the right fraction without intervention after 3 months, then stop."
+    de: "Weniger als 99 % der Stücke nach 3 Monaten ohne Eingriff in der richtigen Fraktion, dann abbrechen."
+  scope_hint:
+    en: "One collection point on one floor, three fractions (wood, metal, plastics), one shift; compare with the purity the waste contractor reports."
+    de: "Eine Sammelstelle auf einem Geschoss, drei Fraktionen (Holz, Metall, Kunststoff), eine Schicht; mit der Sortenreinheit vergleichen, die der Entsorger meldet."
+prerequisites:
+  - { en: "Labelled containers per fraction at a fixed, reachable collection point", de: "Beschriftete Behälter je Fraktion an einer festen, erreichbaren Sammelstelle" }
+open_questions:
+  - { en: "Which fractions does the waste contractor reject most often today?", de: "Welche Fraktionen beanstandet der Entsorger heute am häufigsten?" }
+compliance_flags: [gdpr_art_88_bdsg_26, betrvg_87_1_6, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

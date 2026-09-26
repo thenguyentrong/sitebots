@@ -1,0 +1,32 @@
+id: prefab_timber
+group: factory
+title: { en: "Prefab timber house factory", de: "Fertighauswerk (Holzbau)" }
+aliases:
+  en: [timber frame plant, wood factory, prefabricated house plant]
+  de: [Holzrahmenbau, Fertigteilwerk Holz, Holzhauswerk]
+coverage: screened
+coverage_note:
+  en: "Screened records from a timber-frame line. Other factory settings can borrow their object facts; the conditions always come from your context."
+  de: "Geprüfte Datensätze aus einer Holzrahmenbau-Linie. Andere Werkssettings können die Objektfakten übernehmen; die Bedingungen kommen immer aus Ihrem Kontext."
+typical_incumbent_automation: [cnc_joinery, nailing_sheathing_bridge, panel_saw, stud_insertion_robot, panel_placement_robot, turning_table, gluing_insulation_cell, element_transfer_carriage, overhead_crane]
+dust:
+  type: wood
+  typical_zone: controlled
+  note:
+    en: Assembly, kitting and storage halls are workrooms with a cleaning plan; the machining area around joinery centres and panel saws is a dust zone, and filters and silos are explosion zones.
+    de: Montage-, Kommissionier- und Lagerhallen sind Arbeitsräume mit Reinigungsplan; der Bearbeitungsbereich um Abbundanlage und Plattensäge ist ein Staubbereich, Filter und Silos sind Ex-Zonen.
+floor: level
+exposure: indoor
+typical_trades: [timber, carpentry_joinery, insulation, windows_doors, logistics, qa_surveying]
+process_steps:
+  - { id: joinery_cutting, label: { en: "Joinery cutting of studs and beams", de: "Abbund von Riegeln und Balken" } }
+  - { id: framing, label: { en: "Frame assembly on the framing station", de: "Riegelwerk auf der Rahmenstation" } }
+  - { id: sheathing_nailing, label: { en: "Sheathing and nailing", de: "Beplanken und Nageln" } }
+  - { id: insulation, label: { en: "Insulation insertion", de: "Dämmung einlegen" } }
+  - { id: windows_installation, label: { en: "Window and door installation", de: "Fenster- und Türeinbau" } }
+  - { id: facade, label: { en: "Facade and EIFS application", de: "Fassade und WDVS" } }
+  - { id: qa, label: { en: "Quality check and documentation", de: "Qualitätsprüfung und Dokumentation" } }
+  - { id: storage_loading, label: { en: "Element storage and truck loading", de: "Elementlager und Verladung" } }
+seed_priority: 1
+sources: []
+status: published

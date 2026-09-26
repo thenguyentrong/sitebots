@@ -1,0 +1,24 @@
+id: atex_betrsichv
+kind: law
+jurisdiction: DE
+term_de: Explosionsschutz nach BetrSichV und GefStoffV (ATEX-Zonen)
+term_en: Explosion protection under BetrSichV and GefStoffV (ATEX zones)
+official_reference: Betriebssicherheitsverordnung, Gefahrstoffverordnung; Directive 2014/34/EU for equipment
+url: 'https://www.gesetze-im-internet.de/betrsichv_2015/'
+applies_from: null
+status: in_force
+triggers: [atex_zone]
+what_it_means:
+  en: Inside a classified explosion zone (filters, silos, extraction plant, some paint and solvent areas) only equipment certified for that zone may operate. No humanoid or mobile manipulator carries such a certification.
+  de: In einer ausgewiesenen Ex-Zone (Filter, Silos, Absauganlagen, manche Lackier- und Lösemittelbereiche) dürfen nur für die Zone zertifizierte Geräte betrieben werden. Kein Humanoid oder Mobilmanipulator trägt eine solche Zertifizierung.
+consequence:
+  en: Any task inside a zone is ruled out for the humanoid class; the zone itself is geofenced for a robot working nearby.
+  de: Jede Aufgabe innerhalb einer Zone ist für die Humanoid-Klasse ausgeschlossen; die Zone selbst wird für einen nahe arbeitenden Roboter per Geofence gesperrt.
+action:
+  en: Take the zone plan from the explosion protection document; exclude those areas from the robot's map; look at certified dedicated equipment for the task itself.
+  de: Den Zonenplan aus dem Explosionsschutzdokument nehmen; diese Bereiche aus der Karte des Roboters ausschließen; für die Aufgabe selbst zertifizierte dedizierte Geräte prüfen.
+provenance:
+  source_url: 'https://www.gesetze-im-internet.de/betrsichv_2015/'
+  tier: 1
+  observed_at: '2026-09-24'
+  confidence: likely

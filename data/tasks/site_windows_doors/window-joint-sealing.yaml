@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_windows_doors/window-joint-sealing
+status: published
+setting: site_windows_doors
+family: assembly_fastening
+trades: [windows_doors, insulation]
+title:
+  en: "Seal the window joint in three levels"
+  de: "Fensteranschlussfuge in drei Ebenen abdichten"
+summary:
+  en: "Fit the inner airtight film, fill the joint with foam and close it outside with a weather-tight film or tape."
+  de: "Die innere luftdichte Folie anbringen, die Fuge ausschäumen und außen mit Folie oder Band schlagregendicht schließen."
+description:
+  en: "Window makers follow the three-level principle of the RAL installation guide: an inner film for airtightness to DIN 4108-7, foam filling between frame and masonry, and an outer sealing film against the weather. In existing masonry the joint widths are rarely even, which is why films rather than compression tapes are used at the sill. The materials weigh little; the difficulty is fitting every corner and every uneven joint, on both faces of the wall."
+  de: "Fensterbauer folgen dem Drei-Ebenen-Prinzip der RAL-Montage: innen eine Folie für die Luftdichtheit nach DIN 4108-7, dazwischen Schaum zwischen Rahmen und Mauerwerk, außen eine Abdichtungsfolie gegen das Wetter. Im Bestandsmauerwerk sind die Fugenbreiten selten gleichmäßig, deshalb werden an der Brüstung Folien statt Kompribänder verwendet. Das Material wiegt wenig; schwierig ist das Anpassen an jeder Ecke und jeder ungleichmäßigen Fuge, auf beiden Seiten der Wand."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '026'
+  atv: "DIN 18355"
+  position:
+    en: "Sealing the window joint inside, in the middle and outside"
+    de: "Abdichtung der Fensteranschlussfuge innen, mittig und außen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 1.5 }
+    confidence: assumed
+    note: "Rolls of film and tape and cans of foam; not weighed."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every joint differs in width and substrate; corners and sills need individual fitting."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A leaky joint shows as draughts, damp or mould and is hard to repair once plastered over."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The seal carries no structural load."
+  reach_height_m:
+    value: { min: 0, max: 2.2 }
+    confidence: assumed
+    note: "From the floor to the head of the opening. Not measured."
+  environment:
+    value: both
+    confidence: confirmed
+    evidence_url: 'https://www.tmp-fenster.de/fachbetriebe/tutorials/artikel/fenstermontage-im-altbau-einbau-mit-anschlag-nach-ral/'
+    note: "An inner film on the room side and an outer sealing film on the weather side (TMP)."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Films, foam and tapes raise no dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "The outer face is exposed to the weather."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab inside, scaffold or ladder outside."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Films, foam and tapes are applied by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; metres of joint per window follow from the window schedule."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Film and tape widths depend on the joint; not recorded."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The source gives no joint-width tolerance; in existing masonry the widths are rarely even (TMP)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Light, varied and done by hand today, so it passes the hard tests, but only as marginal: the outer seal is weather work, the fit has to be airtight and the head of the opening is above comfortable reach. Compare a wheeled manipulator for the inner film first; the outer face would need a published rating against rain."
+      de: "Leicht, vielfältig und heute Handarbeit, deshalb besteht die Aufgabe die harten Tests, aber nur grenzwertig: Die äußere Abdichtung ist Wetterarbeit, die Ausführung muss luftdicht sein, und der Sturz liegt über bequemer Reichhöhe. Zuerst einen radgebundenen Manipulator für die innere Folie vergleichen; für die Außenseite bräuchte es eine veröffentlichte Schutzart gegen Regen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, skills_shortage]
+capabilities_required: []
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "TMP Fenster + Türen describes installing windows in existing masonry to the RAL three-level principle: an inner film for airtightness to DIN 4108-7, foam between frame and masonry and an outer sealing film; joint widths in existing masonry are rarely even, so films are used at the sill instead of compression tapes."
+      de: "TMP Fenster + Türen beschreibt die Fenstermontage im Bestandsmauerwerk nach dem RAL-Drei-Ebenen-Prinzip: innen eine Folie für die Luftdichtheit nach DIN 4108-7, Schaum zwischen Rahmen und Mauerwerk und außen eine Abdichtungsfolie; im Bestand sind die Fugenbreiten selten gleichmäßig, deshalb an der Brüstung Folien statt Kompribänder."
+    url: 'https://www.tmp-fenster.de/fachbetriebe/tutorials/artikel/fenstermontage-im-altbau-einbau-mit-anschlag-nach-ral/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-07-08'
+    type: claim
+    confidence: confirmed
+    note: "Tutorial for trade partners by a window maker."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "More joints needing rework than with the installers' own work after 3 months, then stop."
+    de: "Nach 3 Monaten mehr nachzuarbeitende Fugen als bei den eigenen Monteuren, dann abbrechen."
+  scope_hint:
+    en: "Inner film only, one type of window, new masonry with even joints, checked by the installer."
+    de: "Nur die innere Folie, ein Fenstertyp, Neubaumauerwerk mit gleichmäßigen Fugen, geprüft durch den Monteur."
+prerequisites:
+  - { en: "Window schedule with joint widths per opening", de: "Fensterliste mit Fugenbreiten je Öffnung" }
+open_questions:
+  - { en: "How is airtightness checked on site before the plaster closes the joint?", de: "Wie wird die Luftdichtheit auf der Baustelle geprüft, bevor der Putz die Fuge schließt?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

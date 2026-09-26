@@ -1,0 +1,28 @@
+id: equipment_rental_depot
+group: yard_logistics
+title: { en: "Equipment rental depot and workshop", de: "Mietpark und Werkstatt" }
+aliases:
+  en: [plant hire, tool rental, equipment workshop]
+  de: [Geräteverleih, Mietgeräte, Gerätewerkstatt]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: cleaning concrete residue off returned vibrators and trowels, testing returned portable electrical tools, and sorting returned scaffold parts. Sorting is marginal; the cleaning needs a lifting aid, and the electrical test stays with a qualified person."
+  de: "Drei geprüfte Aufgaben: Betonreste von zurückgegebenen Innenrüttlern und Glättern reinigen, zurückgegebene ortsveränderliche Elektrogeräte prüfen und zurückgegebene Gerüstteile sortieren. Das Sortieren ist grenzwertig; die Reinigung braucht eine Hebehilfe, und die Elektroprüfung bleibt bei einer qualifizierten Person."
+typical_incumbent_automation: [forklift, cleaning_machine]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: Returned equipment brings site dirt; washing bays are wet.
+    de: Rückläufer bringen Baustellenschmutz; Waschplätze sind nass.
+floor: level
+exposure: both
+typical_trades: [logistics, general]
+process_steps:
+  - { id: returns_check, label: { en: "Return inspection", de: "Rücknahmeprüfung" } }
+  - { id: cleaning, label: { en: "Cleaning", de: "Reinigung" } }
+  - { id: maintenance, label: { en: "Maintenance and repair", de: "Wartung und Reparatur" } }
+  - { id: kitting, label: { en: "Kitting for the next rental", de: "Kommissionierung für die nächste Vermietung" } }
+seed_priority: 6
+sources: []
+status: published

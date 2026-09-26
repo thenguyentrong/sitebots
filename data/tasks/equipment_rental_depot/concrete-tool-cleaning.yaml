@@ -1,0 +1,115 @@
+schema_version: 1
+id: equipment_rental_depot/concrete-tool-cleaning
+status: published
+setting: equipment_rental_depot
+family: cleaning_housekeeping_replenishment
+trades: [concrete, general]
+title:
+  en: "Clean concrete residue off returned vibrators and trowels"
+  de: "Betonreste von zurückgegebenen Innenrüttlern und Flügelglättern reinigen"
+summary:
+  en: "Wash hardened and fresh concrete off poker vibrators, power trowels and their hoses in the wash bay before the next hire."
+  de: "Frische und angetrocknete Betonreste von Innenrüttlern, Flügelglättern und deren Schläuchen im Waschplatz entfernen, bevor sie wieder vermietet werden."
+description:
+  en: "Concrete equipment often comes back with residue on the vibrator head, the hose and the trowel blades. It is lifted into the wash bay, sprayed with the pressure washer, scraped where the concrete has set, and dried. The pieces are heavy: an internal vibrator weighs 12.5 to 39.5 kg with its hose, a walk-behind trowel 73 kg. The wash bay is wet and the water carries cement."
+  de: "Betontechnik kommt oft mit Resten am Rüttelkopf, am Schlauch und an den Glättflügeln zurück. Sie wird in den Waschplatz gehoben, mit dem Hochdruckreiniger abgespritzt, wo der Beton angezogen hat, abgeschabt, und getrocknet. Die Teile sind schwer: Ein Innenrüttler wiegt mit Schlauch 12,5 bis 39,5 kg, ein handgeführter Flügelglätter 73 kg. Der Waschplatz ist nass, und das Wasser führt Zement."
+also_in_settings: [site_concrete]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 12.5, max: 73 }
+    confidence: confirmed
+    evidence_url: 'https://www.4groupci.com/media/27993/wackerneuson-ct36-5a-en.pdf'
+    note: "Wacker Neuson IRFU internal vibrators 12.5 kg (IRFU 30, 5 m) to 39.5 kg (IRFU 65, 15 m) per the manufacturer's technical data (wackerneuson.at); walk-behind trowel CT36-5A 73 kg without handle (Wacker Neuson datasheet, 26.05.2021)."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Different machines, different amounts of residue, set or fresh, on every return."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "Residue left behind is found at the check-out and cleaned again."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Cleaning does not decide the machine's safety; the function check after cleaning is a separate step."
+  reach_height_m:
+    value: { min: 0, max: 1.5 }
+    confidence: assumed
+    note: "Equipment on the wash bay floor or a stand; not measured."
+  environment:
+    value: both
+    confidence: assumed
+    note: "Wash bays are covered or open, depending on the depot."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: "Cement slurry while wet; scraping set concrete releases dust. Measure at the bay before a pilot."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Spray water from the pressure washer; the bay is wet throughout."
+  floor:
+    value: level
+    confidence: likely
+    note: "Wash bay slab with drainage."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "People with a pressure washer and scrapers; no depot machine does this step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the returns per day."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts machines cleaned per shift and minutes per machine."
+requirements:
+  object_size_m:
+    value: { min: 2.005, max: 2.005 }
+    confidence: confirmed
+    evidence_url: 'https://www.4groupci.com/media/27993/wackerneuson-ct36-5a-en.pdf'
+    note: "CT36-5A trowel 2005 × 915 × 1040 mm (Wacker Neuson datasheet, 2021). Vibrator hoses of 5 to 15 m are flexible and coiled for washing."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance; the result is a visual check for residue."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No published figure for scraping or for the pressure-washer recoil at the bay's machine."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "A jib crane or hoist over the wash bay takes the lifting; the washing stays with people. Spray water is the second limit: no humanoid publishes a rating for it."
+      de: "Ein Schwenkkran oder Hebezeug über dem Waschplatz übernimmt das Heben; das Waschen bleibt bei Menschen. Spritzwasser ist die zweite Grenze: Kein Humanoid veröffentlicht eine Schutzart dafür."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [cleaning_sweep, carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence: []
+pilot:
+  metrics: [operator_minutes_per_unit, cycle_time_vs_manual]
+  abort_rule:
+    en: "If the lifting aid does not cut the minutes per machine within one month, keep the old routine."
+    de: "Wenn die Hebehilfe die Minuten je Maschine nicht innerhalb eines Monats senkt, bei der alten Routine bleiben."
+  scope_hint:
+    en: "One wash bay, one lifting aid, the vibrators and trowels of one month's returns."
+    de: "Ein Waschplatz, eine Hebehilfe, die Innenrüttler und Glätter der Rückläufer eines Monats."
+prerequisites:
+  - { en: "Wash water treated for cement before it reaches the drain", de: "Waschwasser vor der Einleitung von Zement gereinigt" }
+open_questions:
+  - { en: "How much of the cleaning is set concrete that needs scraping rather than washing?", de: "Wie viel der Reinigung ist angezogener Beton, der abgeschabt statt abgespritzt werden muss?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

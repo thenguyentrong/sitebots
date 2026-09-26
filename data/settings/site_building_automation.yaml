@@ -1,0 +1,27 @@
+id: site_building_automation
+group: site
+section: services
+lv: { lb: ['070'], atv: ["DIN 18386"] }
+title: { en: "Building automation", de: "Gebäudeautomation" }
+aliases:
+  en: [BMS, room controllers, commissioning]
+  de: [GA, Raumautomation, Inbetriebnahme]
+coverage: screened
+coverage_note:
+  en: "Two screened tasks: mounting, connecting and addressing room temperature controllers (marginal) and installing presence detectors in suspended ceilings (marginal, overhead). Both are light, fine work that the maker reserves for authorised electricians."
+  de: "Zwei geprüfte Aufgaben: Raumtemperaturregler montieren, anschließen und adressieren (grenzwertig) und Präsenzmelder in abgehängte Decken einbauen (grenzwertig, über Kopf). Beides ist leichte Feinarbeit, die der Hersteller Elektrofachkräften vorbehält."
+typical_incumbent_automation: []
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: indoor
+typical_trades: [mep_electrical, mep_hvac]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

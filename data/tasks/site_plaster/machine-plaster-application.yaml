@@ -1,0 +1,146 @@
+schema_version: 1
+id: site_plaster/machine-plaster-application
+status: published
+setting: site_plaster
+family: surface_finishing
+trades: [painting]
+title:
+  en: "Spray and level machine-applied gypsum plaster"
+  de: "Maschinengipsputz anspritzen und abziehen"
+summary:
+  en: "Spray the plaster from the mixing pump's hose onto walls and ceilings, spread it with an h-straightedge, straighten it and smooth it to the required quality level."
+  de: "Den Putz aus dem Schlauch der Mischpumpe auf Wand und Decke spritzen, mit der H-Kartätsche verteilen, abziehen und in der geforderten Qualitätsstufe glätten."
+description:
+  en: "A mixing pump (Knauf names the PFT G4 and G5) mixes the gypsum plaster and pumps it through a 25 mm hose up to 30 m. The plasterer sprays it on, spreads it plumb and flush with an h-straightedge, straightens it once it starts to stiffen, then felts and smooths it for quality levels Q1 to Q4. Walls take one coat of 8 to 50 mm, about 10 kg of dry mortar per m² at 10 mm. Autonomous plastering robots are on the market."
+  de: "Eine Mischpumpe (Knauf nennt die PFT G4 und G5) mischt den Gipsputz und fördert ihn durch einen 25-mm-Schlauch bis 30 m weit. Der Stuckateur spritzt ihn an, verteilt ihn mit der H-Kartätsche lot- und fluchtgerecht, zieht ihn nach dem Ansteifen ab und filzt und glättet ihn für die Qualitätsstufen Q1 bis Q4. Wände erhalten einlagig 8 bis 50 mm, rund 10 kg Trockenmörtel je m² bei 10 mm. Autonome Putzroboter sind am Markt."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '023'
+  atv: "DIN 18350"
+  position:
+    en: "Interior gypsum machine plaster, single coat, smoothed, quality level Q2 to Q3"
+    de: "Innenputz als Gipsmaschinenputz, einlagig, geglättet, Qualitätsstufe Q2 bis Q3"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 1.3, max: 1.6 }
+    confidence: likely
+    evidence_url: 'https://www.dewepro.de/aluminium-h-profil-kartatsche-mit-zahnung-lange-200cm'
+    note: "The hand tool is the aluminium h-straightedge at about 640 g/m: 1.3 kg at 2.0 m, about 1.6 kg at 2.5 m (Dewepro listing, arithmetic ours). The spray gun on the mortar hose is dragged along, not lifted; its weight with wet mortar is not published."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same motions on every wall, but openings, reveals, corners and ceilings change the path in every room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wavy surface fails the agreed quality level and the DIN 18202 flatness limits; it is reworked while the plaster is workable or filled later."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Standard interior plaster. Plaster that forms part of a fire-protection rating is out of scope."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Walls from floor to ceiling, and the ceilings themselves; storey heights up to about 3 m assumed."
+  environment:
+    value: indoor
+    confidence: confirmed
+    evidence_url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    note: "Knauf MP 75 is an interior plaster."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Filling bags into the pump raises dust at the machine; the plaster reaches the wall wet."
+  wet:
+    value: damp
+    confidence: likely
+    evidence_url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    note: "A wet trade: the mortar is sprayed wet and the room stays humid while it dries; Knauf gives about 14 days' drying for 10 mm."
+  floor:
+    value: level
+    confidence: likely
+    note: "Slab or screed; hoses and material on the floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [spray_robot] }
+    confidence: likely
+    note: "Mixing and pumping are machine work already (PFT mixing pumps). Spraying and levelling at the wall are done by hand, and autonomous plastering robots such as the Okibo EG7 are sold for it."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the area per coat; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: "about 10 kg of dry mortar per m² at 10 mm, 3.0 m² per 30 kg bag"
+    confidence: confirmed
+    evidence_url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    note: "Knauf's consumption figures for MP 75; the exact demand is found by a trial application on the object."
+requirements:
+  object_size_m:
+    value: { min: 2, max: 2.5 }
+    confidence: likely
+    evidence_url: 'https://www.dewepro.de/aluminium-h-profil-kartatsche-mit-zahnung-lange-200cm'
+    note: "h-straightedges of 2.0 m (Dewepro listing) and 2.5 m are the common lengths for walls."
+  tolerance_mm:
+    value: 5
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Plastered walls may deviate 5 mm over a 1 m measuring-point distance, DIN 18202 Table 3 row 6, as reproduced by a screed contractor from the ZDB handbook."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The push on the straightedge is not published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a dedicated plastering robot first; the Okibo EG7 is sold for autonomous plastering. A humanoid would have to hold a pressurised mortar hose and a 2 m straightedge up to the ceiling, which a machine built for the job does better."
+      de: "Zuerst einen spezialisierten Putzroboter vergleichen; der Okibo EG7 wird für autonomes Verputzen angeboten. Ein Humanoide müsste einen Mörtelschlauch unter Druck und eine 2-m-Kartätsche bis an die Decke führen, was eine dafür gebaute Maschine besser kann."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [surface_finishing]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [dedicated_machine, mobile_manipulator_wheeled, keep_process]
+evidence:
+  - statement:
+      en: "Knauf's technical sheet for MP 75 names the PFT G4 and G5 mixing pumps, 25 mm mortar hoses and wet-mortar conveying up to 30 m, single coats of 8 to 50 mm, about 10 kg of dry mortar per m² at 10 mm, and surfaces spread plumb and flush with an h-straightedge for quality levels Q1 to Q4."
+      de: "Das Technische Blatt zu Knauf MP 75 nennt die PFT-Mischpumpen G4 und G5, 25-mm-Mörtelschläuche und Nassmörtel-Förderweiten bis 30 m, einlagige Putzdicken von 8 bis 50 mm, rund 10 kg Trockenmörtel je m² bei 10 mm und das lot- und fluchtgerechte Verteilen mit der H-Kartätsche für die Qualitätsstufen Q1 bis Q4."
+    url: 'https://media.hornbach.de/hb/technicaldatasheet/as.46255512.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2018-03-01'
+    type: claim
+    confidence: confirmed
+    note: "Technical sheet P111.de, 03/2018, hosted by a retailer. Month only, dated to the first."
+  - statement:
+      en: "Okibo describes its EG7 as a smart autonomous plastering robot, also for painting, coating and drywall finishing, on an omnidirectional swerve drive, weighing 800 pounds."
+      de: "Okibo beschreibt seinen EG7 als intelligenten autonomen Putzroboter, auch für Streichen, Beschichten und Spachteln im Trockenbau, mit omnidirektionalem Swerve-Antrieb und 800 Pfund Gewicht."
+    url: 'https://okibo.com/our-robot/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date. Manufacturer claim; no deployment figures on the page."
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "Surfaces that need more rework than the manual crew's after three months: stop and keep the pump with the crew."
+    de: "Nach drei Monaten mehr Nacharbeit an den Flächen als bei der Kolonne von Hand: abbrechen und die Pumpe mit der Kolonne behalten."
+  scope_hint:
+    en: "One storey of walls in one quality level, the pump mixing as today, robot or crew applying; flatness checked with a straightedge."
+    de: "Ein Geschoss Wände in einer Qualitätsstufe, die Pumpe mischt wie bisher, Roboter oder Kolonne tragen auf; Ebenheit mit der Richtlatte geprüft."
+prerequisites:
+  - { en: "Substrate prepared and primed to the plaster manufacturer's rules", de: "Untergrund nach Herstellerangaben vorbereitet und grundiert" }
+open_questions:
+  - { en: "Which quality level, Q1 to Q4, does the LV ask for?", de: "Welche Qualitätsstufe, Q1 bis Q4, fordert das LV?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

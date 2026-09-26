@@ -1,0 +1,111 @@
+schema_version: 1
+id: prefab_timber/stud-insertion-framing
+status: published
+setting: prefab_timber
+family: assembly_fastening
+trades: [timber]
+title:
+  en: Insert studs into the frame
+  de: Riegel in das Rahmenwerk einsetzen
+summary:
+  en: Pick studs from the collection station and place them in the frame at any angle.
+  de: Riegel von der Sammelstation nehmen und in beliebigem Winkel in den Rahmen setzen.
+description:
+  en: "Modern lines run a stud insertion robot for this: any stud type, any angle, gable walls and openings fully automatic. The studs sit at the payload ceiling, the joint is structural, and the sequence is programmed."
+  de: Moderne Linien haben dafür einen Riegelwerk-Roboter, jeder Riegeltyp, jeder Winkel, Giebelwände und Öffnungen vollautomatisch. Die Riegel liegen an der Traglastgrenze, die Verbindung ist tragend, und die Abfolge ist programmiert.
+also_in_settings: [modular_volumetric]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 5, max: 25 }
+    confidence: likely
+    note: Studs of 2.5–3 m; range from an industry engagement, 2025/26.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Programmed from the model.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A misplaced stud is found before sheathing.
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: The frame is the structure.
+  reach_height_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: assumed
+    note: Table height.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Framing station outside the sawing zone.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [stud_insertion_robot] }
+    confidence: likely
+    note: Industrial robots have done this on timber lines since the late 2010s.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: { min: 2.5, max: 3.0 }
+    confidence: assumed
+    note: "Studs of 2.5 to 3 m, as in the mass note. Sitebots assessment from one industry engagement, 2025/26; no public source."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Stud positions come from the element drawing; no ± value is recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T5_failure_tolerance, T4_variability]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: The stud insertion robot, fixed and fast. A plant without one buys one before it thinks about humanoids.
+      de: Der Riegelwerk-Roboter, fest und schnell. Ein Werk ohne einen kauft einen, bevor es über Humanoide nachdenkt.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: []
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None.
+    de: Keiner.
+prerequisites: []
+open_questions: []
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

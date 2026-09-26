@@ -1,0 +1,145 @@
+schema_version: 1
+id: site_screed/screed-levelling
+status: published
+setting: site_screed
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Spread and level cement screed"
+  de: "Zementestrich verteilen und abziehen"
+summary:
+  en: "Spread the screed the conveyor delivers, compact it and level it to the height marks with a straightedge, room by room."
+  de: "Den vom Förderer gelieferten Estrich verteilen, verdichten und mit der Abziehlatte auf die Höhenmarken abziehen, Raum für Raum."
+description:
+  en: "Pneumatic screed conveyors, such as the EstrichBoy range of Brinkmann, a Putzmeister brand, deliver the screed to the storey; spreading, compacting and levelling it is manual work on the knees with a straightedge. A floor that is to take a covering must meet DIN 18202 Table 3 row 3: 4 mm over 1 m. Each room is finished in one go while the screed is workable."
+  de: "Druckluftförderer für Estrich, etwa die EstrichBoy-Reihe von Brinkmann, einer Marke der Putzmeister-Gruppe, bringen den Estrich ins Geschoss; Verteilen, Verdichten und Abziehen sind Handarbeit auf den Knien mit der Abziehlatte. Ein Boden, der einen Belag aufnehmen soll, muss DIN 18202 Tabelle 3 Zeile 3 erfüllen: 4 mm auf 1 m. Jeder Raum wird in einem Zug fertig, solange der Estrich verarbeitbar ist."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '025'
+  atv: "DIN 18353"
+  position:
+    en: "Cement screed (CT) on an insulation layer, floating, levelled to take a floor covering"
+    de: "Zementestrich (CT) auf Dämmschicht, schwimmend, abgezogen zur Aufnahme eines Bodenbelags"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 1.3, max: 1.6 }
+    confidence: likely
+    evidence_url: 'https://www.dewepro.de/aluminium-h-profil-kartatsche-mit-zahnung-lange-200cm'
+    note: "The straightedge: an aluminium h-profile of about 640 g/m, 1.3 kg at 2.0 m and about 1.6 kg at 2.5 m (Dewepro listing, arithmetic ours). The wet screed is shovelled and pushed; the load per shovel is not published."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same screed and thickness throughout, but every room has its own outline, height marks, door thresholds and pipe covers."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "A floor outside DIN 18202 Table 3 row 3 needs grinding or levelling compound before the covering; that is rework, not a failure."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "A floating screed carries floor loads but is not a structural member of the building."
+  reach_height_m:
+    value: { min: 0, max: 0.2 }
+    confidence: assumed
+    note: "Floor level, kneeling."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed shell."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: "The screed arrives wet; dust arises at the mixing machine, not where it is spread."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Wet, alkaline cement screed underfoot and on the tools."
+  floor:
+    value: level
+    confidence: likely
+    note: "Insulation layer covered with foil, walked on during placing."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.estrichboy.de/maschinen/druckluftfoerderer/'
+    note: "Mixing and conveying are machine work (pneumatic screed conveyors); spreading and levelling are done by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "A room is finished in one go; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure m² per crew hour."
+requirements:
+  object_size_m:
+    value: { min: 2, max: 2.5 }
+    confidence: likely
+    evidence_url: 'https://www.dewepro.de/aluminium-h-profil-kartatsche-mit-zahnung-lange-200cm'
+    note: "Straightedges of 2.0 m (Dewepro listing) and 2.5 m are the common lengths."
+  tolerance_mm:
+    value: 4
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Floors that take a covering may deviate 4 mm over a 1 m measuring-point distance (2 mm over 0.1 m), DIN 18202 Table 3 row 3, as reproduced by a screed contractor from the ZDB handbook; row 4 with higher requirements allows 3 mm."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Keep the crew and the conveyor for now, and look for a machine that levels floating screed in room-sized areas before a general-purpose robot. The tolerance, not the weight, is the hard part."
+      de: "Vorerst Kolonne und Förderer behalten und eher nach einer Maschine suchen, die schwimmenden Estrich in raumgroßen Flächen abzieht, als nach einem Universalroboter. Schwierig ist die Toleranz, nicht das Gewicht."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [surface_finishing]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "A screed contractor reproduces DIN 18202 Table 3: floors that take a covering (row 3) may deviate 2 mm over 0.1 m and 4 mm over 1 m; with higher requirements (row 4) 1 mm and 3 mm."
+      de: "Ein Estrichbetrieb gibt DIN 18202 Tabelle 3 wieder: Böden zur Aufnahme von Belägen (Zeile 3) dürfen 2 mm auf 0,1 m und 4 mm auf 1 m abweichen, mit erhöhten Anforderungen (Zeile 4) 1 mm und 3 mm."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: operator
+    tier: 2
+    date: '2009-04-21'
+    type: claim
+    confidence: likely
+    note: "Reproduction from the ZDB handbook for the screed and flooring trades; the file dates from 2009, so check the current edition of DIN 18202."
+  - statement:
+      en: "Brinkmann, a brand of the Putzmeister group, lists pneumatic conveyors of its EstrichBoy range (EC 260/35 Quattro, DC 260/45, EC 260/45 Duo, DC 260/55)."
+      de: "Brinkmann, eine Marke der Putzmeister-Gruppe, führt Druckluftförderer seiner EstrichBoy-Reihe (EC 260/35 Quattro, DC 260/45, EC 260/45 Duo, DC 260/55)."
+    url: 'https://www.estrichboy.de/maschinen/druckluftfoerderer/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Product overview without technical data; undated page, dated with the check date."
+pilot:
+  metrics: [error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "More floors outside DIN 18202 row 3 than with the manual crew after three months: stop."
+    de: "Nach drei Monaten mehr Böden außerhalb von DIN 18202 Zeile 3 als bei der Kolonne von Hand: abbrechen."
+  scope_hint:
+    en: "One storey of flats with the same screed and thickness; flatness checked with a straightedge before the covering."
+    de: "Ein Geschoss Wohnungen mit gleichem Estrich und gleicher Dicke; Ebenheit vor dem Belag mit der Richtlatte geprüft."
+prerequisites:
+  - { en: "Height marks set in every room", de: "Höhenmarken in jedem Raum gesetzt" }
+open_questions:
+  - { en: "Which flatness row does the LV specify for the screed, row 3 or row 4?", de: "Welche Ebenheitszeile gibt das LV für den Estrich vor, Zeile 3 oder Zeile 4?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

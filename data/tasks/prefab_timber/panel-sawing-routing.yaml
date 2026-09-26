@@ -1,0 +1,113 @@
+schema_version: 1
+id: prefab_timber/panel-sawing-routing
+status: published
+setting: prefab_timber
+family: machine_operation_dedicated
+trades: [timber, carpentry_joinery]
+title:
+  en: Saw and rout boards, cut openings
+  de: Platten sägen und fräsen, Öffnungen schneiden
+summary:
+  en: Full-format boards cut to size and routed for openings on a processing centre.
+  de: Ganze Platten auf einem Bearbeitungszentrum zuschneiden und für Öffnungen fräsen.
+description:
+  en: A panel processing centre handles thousands of parts per shift in the dust zone, on 40–60 kg boards. Three tests fail before variability is even considered.
+  de: Ein Plattenbearbeitungszentrum schafft tausende Teile je Schicht im Staubbereich, an 40–60 kg schweren Platten. Drei Tests scheitern, bevor die Varianz überhaupt betrachtet wird.
+also_in_settings: [joinery_windows_doors, modular_volumetric]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 40, max: 60 }
+    confidence: likely
+    note: Full-format boards; range from an industry engagement, 2025/26.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Programmed from the model.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A miscut board is scrap; found at the next station.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Sheathing boards are not the primary load path.
+  reach_height_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: assumed
+    note: Table height.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Machining hall.
+  dust:
+    value: { type: wood, zone: zone }
+    confidence: likely
+    note: Sawing and routing area with extraction; a dust zone, not a workroom.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [panel_saw] }
+    confidence: likely
+    note: Standard equipment.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.0 }
+    confidence: likely
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Gypsum boards are 1.25 m wide and listed in 2.0, 2.5, 2.6, 2.75 and 3.0 m lengths (Rigips RB 12.5 datasheet, 02.07.2026, page 2); the OSB formats in use were not checked and may differ."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "The boards themselves are made to length +0/−5 mm and width +0/−4 mm (DIN EN 520, same datasheet); how precisely they must sit on the frame comes from the element drawings and is not recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "A machine task; cutting forces stay inside the machine."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: fail, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T2_dust, T4_variability]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: The processing centre. Nothing about this step calls for a mobile platform.
+      de: Das Bearbeitungszentrum. Nichts an diesem Schritt verlangt nach einer mobilen Plattform.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: []
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None.
+    de: Keiner.
+prerequisites: []
+open_questions: []
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_flooring/click-vinyl-laying
+status: published
+setting: site_flooring
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Lay click vinyl planks floating"
+  de: "Klick-Vinyldielen schwimmend verlegen"
+summary:
+  en: "Take planks from the opened packs, click them together row by row, score and snap the cut planks with a knife and fit them at walls and frames."
+  de: "Dielen aus den geöffneten Paketen nehmen, Reihe für Reihe verklicken, Passstücke mit dem Messer anritzen und brechen und an Wänden und Zargen einpassen."
+description:
+  en: "Parador's Vinyl Classic 2030 comes as 1207 × 216 × 9.6 mm planks, seven to a pack of 1.825 m² and 17.91 kg, so one plank weighs about 2.6 kg. The data sheet rules out full-surface gluing: the planks are clicked together and laid floating. Cut pieces are scored and snapped, so the step makes little dust; what varies is the fitting at the room's edges."
+  de: "Vinyl Classic 2030 von Parador kommt in Dielen von 1207 × 216 × 9,6 mm, sieben Stück je Paket mit 1,825 m² und 17,91 kg, eine Diele wiegt also rund 2,6 kg. Das Datenblatt schließt eine vollflächige Verklebung aus: Die Dielen werden verklickt und schwimmend verlegt. Passstücke werden angeritzt und gebrochen, der Schritt macht also kaum Staub; wechselnd ist das Einpassen an den Rändern des Raums."
+also_in_settings: [modular_volumetric]
+derived_from: null
+lv:
+  lb: '036'
+  atv: "DIN 18365"
+  position:
+    en: "Rigid vinyl planks with click joint, laid floating"
+    de: "Vinyl-Designbelag in Dielen mit Klickverbindung, schwimmend verlegt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 2.56, max: 2.56 }
+    confidence: likely
+    evidence_url: 'https://parador.de/pcms/downloads/downloadfile/file_id/261/'
+    note: "Parador technical data sheet Vinyl Classic 2030 (valid from 01/06/2026): pack of 7 planks, 1.825 m², 17.91 kg; 17.91 kg / 7 = 2.56 kg per plank. Scope: laying from packs opened in the room."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The field repeats row after row; the edges, door frames and pipes need a fitted piece in every room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Open or stepped joints show and mean taking rows up again; nothing structural depends on the floor finish."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Floor finish without structural function."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: likely
+    note: "Floor work, kneeling height."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Closed building on screed ready for covering."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Planks are scored and snapped with a knife; no dust from the step."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed ready for covering."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid by floor layers by hand; none of the sources reviewed describes a machine that lays click vinyl on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and rows re-laid."
+requirements:
+  object_size_m:
+    value: { min: 1.207, max: 1.207 }
+    confidence: confirmed
+    evidence_url: 'https://parador.de/pcms/downloads/downloadfile/file_id/261/'
+    note: "Plank format 1207 × 216 × 9.6 mm (Parador Vinyl Classic 2030)."
+  tolerance_mm:
+    value: 0.2
+    confidence: likely
+    evidence_url: 'https://parador.de/pcms/downloads/downloadfile/file_id/261/'
+    note: "The data sheet lists the EN ISO 20326 requirements for joined planks: joint opening mean 0.15 mm, max 0.20 mm; height difference between planks mean 0.10 mm, max 0.15 mm. These are product requirements for the click joint; a laid joint that opens wider shows as a defect."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The data sheet gives the joint strength (long side 1.0 kN/m, short side 2.0 kN/m), not the force needed to engage it."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator for the open field, with a floor layer fitting the edges. The planks are light and dust-free to cut; the case rests on engaging the joint to within 0.2 mm."
+      de: "Einen radgebundenen Mobilmanipulator für die freie Fläche vergleichen, der Bodenleger passt die Ränder ein. Die Dielen sind leicht und staubfrei zu schneiden; der Fall hängt am Einrasten der Fuge auf 0,2 mm genau."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Parador's technical data sheet for Vinyl Classic 2030 gives a plank format of 1207 × 216 × 9.6 mm, packs of 7 planks, 1.825 m² and 17.91 kg, and states that the product is not approved for full-surface gluing."
+      de: "Das technische Datenblatt von Parador für Vinyl Classic 2030 nennt ein Dielenformat von 1207 × 216 × 9,6 mm, Pakete mit 7 Dielen, 1,825 m² und 17,91 kg, und hält fest, dass das Produkt nicht für vollflächige Verklebung freigegeben ist."
+    url: 'https://parador.de/pcms/downloads/downloadfile/file_id/261/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-06-01'
+    type: claim
+    confidence: confirmed
+    note: "File PA_TDS_Designboden_Vinyl_Classic-2030_DE_20260601, valid from 01/06/2026."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of planks engaged without rework after 3 months, then stop."
+    de: "Weniger als 99 % der Dielen nach 3 Monaten ohne Nacharbeit verlegt, dann abbrechen."
+  scope_hint:
+    en: "Open fields of rectangular rooms with one plank format; the floor layer fits the edge rows."
+    de: "Freie Flächen rechteckiger Räume mit einem Dielenformat; der Bodenleger passt die Randreihen ein."
+prerequisites:
+  - { en: "Screed ready for covering, flatness checked", de: "Estrich belegreif, Ebenheit geprüft" }
+open_questions:
+  - { en: "Does a robot's click engagement meet the 0.2 mm joint opening consistently?", de: "Erreicht das Einrasten durch einen Roboter die Fugenöffnung von 0,2 mm zuverlässig?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

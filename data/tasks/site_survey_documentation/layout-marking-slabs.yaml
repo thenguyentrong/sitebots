@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_survey_documentation/layout-marking-slabs
+status: published
+setting: site_survey_documentation
+family: layout_marking_surveying
+trades: [qa_surveying, masonry, drywall]
+title:
+  en: "Mark wall lines and openings on the slab"
+  de: "Wandachsen und Aussparungen auf der Rohdecke anzeichnen"
+summary:
+  en: "Transfer walls, openings and fixing points from the plan onto the slab before the next trades start."
+  de: "Wände, Öffnungen und Befestigungspunkte vom Plan auf die Rohdecke übertragen, bevor die Folgegewerke beginnen."
+description:
+  en: "Surveyors or foremen mark axes, wall lines and openings with a total station, chalk lines and spray paint. The marks are the reference for masonry, drywall and installation; a wrong line is built into the wall. Commercial layout robots print the same lines directly from the model."
+  de: "Vermesser oder Poliere zeichnen Achsen, Wandlinien und Öffnungen mit Tachymeter, Schlagschnur und Sprühfarbe an. Die Markierungen sind die Referenz für Mauerwerk, Trockenbau und Installation; eine falsche Linie wird mitgebaut. Handelsübliche Markierroboter drucken dieselben Linien direkt aus dem Modell."
+also_in_settings: [site_electrical, site_drywall]
+derived_from: null
+lv:
+  lb: null
+  atv: null
+  position:
+    en: "Setting out wall and anchor positions on the slab (surveyor or own staff)"
+    de: "Anzeichnen von Wand- und Befestigungspunkten auf der Rohdecke (Vermesser oder eigenes Personal)"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 1 }
+    confidence: assumed
+    note: "Marking tools only: spray can, chalk line, prism. Not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Every floor has its own layout, but the operation is the same: read a coordinate, mark it."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Lines are checked before building, but an undetected error is built into walls and openings."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Marking only; the trades check the lines before they build."
+  reach_height_m:
+    value: { min: 0, max: 0.1 }
+    confidence: likely
+    note: "All marks are on the slab; the work is at floor level."
+  environment:
+    value: both
+    confidence: likely
+    note: "Slabs are open to the weather until the envelope is closed."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Concrete dust and debris on the slab; the surface is swept before marking."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Standing water on open slabs delays marking."
+  floor:
+    value: level
+    confidence: likely
+    note: "A concrete slab, cluttered with material and props."
+  incumbent_automation:
+    value: { status: full, machine_classes: [layout_robot] }
+    confidence: confirmed
+    evidence_url: 'https://www.hp.com/de-de/printers/site-print/layout-robot.html'
+    note: "Layout robots that print lines from the model are offered in Germany (HP SitePrint) and in North America (Dusty Robotics)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Plan data only; no cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Marking tools only."
+  tolerance_mm:
+    value: 12
+    confidence: likely
+    evidence_url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    note: "Walls and openings built from the marks must meet DIN 18202 Table 1: ±12 mm for plan dimensions of 1 to 3 m, ±16 mm for 3 to 6 m (FDB Merkblatt Nr. 6, 09/2023, Table A.1). The marks have to sit well inside that; HP states ±2 mm for SitePrint."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force: marking on the slab."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Compare a layout robot that prints the lines from the model; the surveyor keeps the control points and the checks. The machine for this step exists and is offered in Germany."
+      de: "Einen Markierroboter vergleichen, der die Linien aus dem Modell druckt; der Vermesser behält Festpunkte und Kontrolle. Die Maschine für diesen Schritt gibt es, sie wird in Deutschland angeboten."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [precision, capacity, skills_shortage]
+capabilities_required: [layout_marking]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "HP offers SitePrint in Germany as a robot for marking construction layouts on site and states a marking precision of ±2 mm."
+      de: "HP bietet SitePrint in Deutschland als Roboter für die Baustellenmarkierung an und gibt eine Markiergenauigkeit von ±2 mm an."
+    url: 'https://www.hp.com/de-de/printers/site-print/layout-robot.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: "Page undated, read on 2026-09-24."
+  - statement:
+      en: "Dusty Robotics prints layouts from digital models directly on the jobsite floor and states 10,000 to 15,000 square feet per day with one person; the FieldPrinter is available in North America."
+      de: "Dusty Robotics druckt Grundrisse aus digitalen Modellen direkt auf die Baustellendecke und gibt 10.000 bis 15.000 Quadratfuß pro Tag mit einer Person an; der FieldPrinter ist in Nordamerika erhältlich."
+    url: 'https://www.dustyrobotics.com/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: "Page undated, read on 2026-09-24."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued as a layout robot: one floor, checked against the surveyor's control measurement."
+    de: "Falls als Markierroboter verfolgt: ein Geschoss, geprüft gegen die Kontrollmessung des Vermessers."
+prerequisites:
+  - { en: "A coordinated model or CAD plan tied to the site control points", de: "Ein abgestimmtes Modell oder CAD-Plan, an die Festpunkte der Baustelle angeschlossen" }
+open_questions:
+  - { en: "Who resolves conflicts between the model and the built slab before printing?", de: "Wer klärt vor dem Drucken Konflikte zwischen Modell und gebauter Decke?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

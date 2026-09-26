@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_roofing/roof-battens
+status: published
+setting: site_roofing
+family: assembly_fastening
+trades: [facade_roofing, carpentry_joinery]
+title:
+  en: "Fix counter-battens and tiling battens on the rafters"
+  de: "Konter- und Traglattung auf den Sparren befestigen"
+summary:
+  en: "Nail counter-battens along the rafters, then the tiling battens across them at the gauge the roof tile needs."
+  de: "Konterlatten entlang der Sparren nageln, dann die Traglatten quer darüber im Lattabstand, den der Dachstein verlangt."
+description:
+  en: "Before a pitched roof is tiled, the roofer battens it: counter-battens along the rafters, then tiling battens across them. The gauge follows the tile. For Braas' Frankfurter Pfanne the batten gauge is 312 to 320 mm below 22° pitch, up to 335 mm at 22–30° and up to 345 mm above 30°, with the top batten 40 mm below the ridge; each tile weighs about 4.35 kg and 9.7 to 10.7 go on a square metre. Valleys, hips, openings and the verge need cut battens and a new setting-out."
+  de: "Bevor ein Steildach eingedeckt wird, lattet der Dachdecker es: Konterlatten entlang der Sparren, darüber quer die Traglatten. Der Lattabstand folgt dem Dachstein. Für die Braas Frankfurter Pfanne beträgt er unter 22° Dachneigung 312 bis 320 mm, bei 22–30° bis 335 mm und über 30° bis 345 mm, die oberste Latte liegt 40 mm unter dem First; jeder Stein wiegt etwa 4,35 kg, auf den Quadratmeter kommen 9,7 bis 10,7 Stück. Kehlen, Grate, Öffnungen und der Ortgang verlangen Zuschnitte und ein neues Einteilen."
+also_in_settings: [site_timber_frame]
+derived_from: null
+lv:
+  lb: '020'
+  atv: "DIN 18338"
+  position:
+    en: "Counter-battens and tiling battens of sawn softwood on rafters, nailed"
+    de: "Konterlattung und Traglattung aus Nadelschnittholz auf Sparren, genagelt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The batten cross-section depends on the rafter spacing and the roofer's rules; no fetched source states it, so the batten mass is not established."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Batten rows repeat at one gauge, but the gauge is set out per roof and pitch, and valleys, hips and openings need cut pieces."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://d25az829w54h6m.cloudfront.net/Dachziegel_Dachsteine/Braas_Dachsteine_Datenblaetter/Datenblatt-Dachstein-BRAAS-Frankfurter-Pfanne.pdf'
+    note: "The gauge has to match the tile's cover length, 312 to 345 mm for this tile depending on pitch (Braas); a batten off gauge shows in the tile rows and is re-set."
+  safety_criticality:
+    value: null
+    confidence: assumed
+    note: "The battens carry the roof covering; whether a fixing error counts as structural is not established from a fetched source."
+  reach_height_m:
+    value: { min: 0, max: 1 }
+    confidence: assumed
+    note: "The work is at the roof surface; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the open roof."
+  dust:
+    value: { type: wood, zone: none }
+    confidence: assumed
+    note: "Cutting battens to length on the roof; outdoors, no classified zone."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the weather decides."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "A pitched roof: the roofer stands on rafters, battens or roof ladders."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Battens are set out, cut and nailed by hand; no machine for this step is recorded."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Batten lengths are not stated in the fetched sources."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The datasheet gives the gauge range per pitch (312–345 mm) but no ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for nailing."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: unknown, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Battening is outdoor work on a pitched roof, where no humanoid publishes a usable ingress rating and the footing is rafters and battens. The roofer stays."
+      de: "Das Latten ist Außenarbeit auf dem Steildach, wofür kein Humanoide eine brauchbare Schutzart veröffentlicht, und der Stand sind Sparren und Latten. Der Dachdecker bleibt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Braas' datasheet for the Frankfurter Pfanne gives a batten gauge of 312 to 320 mm below 22° pitch, 312 to 335 mm at 22–30° and 312 to 345 mm above 30°, a top batten 40 mm below the ridge, about 4.35 kg per tile and 9.7 to 10.7 tiles per square metre."
+      de: "Das Braas-Datenblatt zur Frankfurter Pfanne nennt eine Lattweite von 312 bis 320 mm unter 22° Dachneigung, 312 bis 335 mm bei 22–30° und 312 bis 345 mm über 30°, eine oberste Latte 40 mm unter dem First, etwa 4,35 kg je Stein und 9,7 bis 10,7 Steine je Quadratmeter."
+    url: 'https://d25az829w54h6m.cloudfront.net/Dachziegel_Dachsteine/Braas_Dachsteine_Datenblaetter/Datenblatt-Dachstein-BRAAS-Frankfurter-Pfanne.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2014-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet, technical status 04/2014, hosted on a distributor's file server; the day is not stated."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If setting out is the pain: minutes per square metre with the gauge marked from the roof model against setting out on the roof."
+    de: "Falls das Einteilen das Problem ist: Minuten je Quadratmeter mit aus dem Dachmodell übertragener Einteilung gegenüber dem Einteilen auf dem Dach."
+prerequisites: []
+open_questions:
+  - { en: "Which tile, and which pitch? They decide the batten gauge.", de: "Welcher Dachstein, welche Dachneigung? Beides bestimmt die Lattweite." }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

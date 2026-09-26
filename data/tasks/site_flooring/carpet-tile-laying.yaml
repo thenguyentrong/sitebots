@@ -1,0 +1,119 @@
+schema_version: 1
+id: site_flooring/carpet-tile-laying
+status: published
+setting: site_flooring
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Lay carpet tiles on tackifier"
+  de: "Teppichfliesen auf Fixierung verlegen"
+summary:
+  en: "Lay 50 × 50 cm carpet tiles into a releasable tackifier in the set pattern, cutting them at walls, columns and floor boxes."
+  de: "Teppichfliesen 50 × 50 cm im vorgegebenen Verlegemuster in eine lösbare Fixierung legen und an Wänden, Stützen und Bodentanks zuschneiden."
+description:
+  en: "Each tile weighs about 1 kg and goes down in the same pattern across the field; cuts are needed at the edges. The tackifier keeps tiles releasable, so a misplaced tile is lifted and laid again."
+  de: "Jede Fliese wiegt rund 1 kg und wird über die Fläche im gleichen Muster gelegt; zugeschnitten wird an den Rändern. Die Fixierung hält die Fliesen lösbar, eine falsch gelegte Fliese wird aufgenommen und neu gelegt."
+also_in_settings: [facility_operation]
+derived_from: null
+lv:
+  lb: '036'
+  atv: "DIN 18365"
+  position:
+    en: "Textile floor tiles (50 × 50 cm) laid on tackifier"
+    de: "Textile Bodenbeläge als Fliesen (50 × 50 cm) auf Fixierung verlegt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 1 }
+    confidence: likely
+    evidence_url: 'https://media.tarkett-image.com/docs/DS_INT_EssenceStructure.pdf'
+    note: "Desso Essence Structure (Tarkett data sheet EN-20240703): total mass 4000 g/m² (ISO 8543), 50 × 50 cm tiles: 0.25 m² × 4.0 kg/m² = 1.0 kg per tile. A box of 20 tiles (5 m², 20 kg) is staged in the room, not handled at the tile."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The field repeats tile by tile; walls, columns and floor boxes need cuts in every room."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "The tackifier keeps tiles releasable; a misplaced tile is lifted and laid again."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Floor finish without structural function."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: likely
+    note: "Floor work."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Office floors inside the closed building."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Cut with a knife; no dust from the step."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed or raised access floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid by hand; none of the sources reviewed describes a machine that lays carpet tiles."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the area per day; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and tiles re-laid."
+requirements:
+  object_size_m:
+    value: { min: 0.5, max: 0.5 }
+    confidence: confirmed
+    evidence_url: 'https://media.tarkett-image.com/docs/DS_INT_EssenceStructure.pdf'
+    note: "Tile 50 × 50 cm, 6.5 mm thick; the same range also comes as 100 × 25 cm planks."
+  tolerance_mm:
+    value: 4
+    confidence: confirmed
+    evidence_url: 'https://www.just-fussboden.com/downloads/ebenheitstoleranzen.pdf'
+    note: "Flatness of the finished floor: 4 mm over a 1 m measuring distance, DIN 18202 Table 3, row 3 (finished floors including floor coverings), as reproduced by Just Fußboden."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Light, forgiving and repetitive in the field: close to a candidate. Repetition cuts both ways, since a fixed pattern over a large floor is also what a simpler wheeled machine could do. Compare a wheeled mobile manipulator first, a humanoid second, and keep people on the cuts."
+      de: "Leicht, fehlertolerant und in der Fläche wiederholend: nahe an einem Kandidaten. Die Wiederholung schneidet in beide Richtungen, denn ein festes Muster über eine große Fläche könnte auch eine einfachere Maschine auf Rädern legen. Zuerst einen radgebundenen Mobilmanipulator vergleichen, dann einen Humanoiden; die Zuschnitte bleiben bei Menschen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [surface_finishing]
+capabilities_optional: [autonomous_nav_indoor, carry_payload]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of full tiles laid in pattern without correction after 3 months, then change the use case."
+    de: "Weniger als 99 % der ganzen Fliesen nach 3 Monaten ohne Korrektur im Muster gelegt, dann Use Case wechseln."
+  scope_hint:
+    en: "Full tiles in one open office floor; people do the edges and floor boxes."
+    de: "Ganze Fliesen auf einer offenen Bürofläche; Ränder und Bodentanks machen Menschen."
+prerequisites:
+  - { en: "Floor ready for covering and tackifier applied", de: "Belegreifer Untergrund und aufgetragene Fixierung" }
+open_questions:
+  - { en: "How many square metres of carpet tiles do you lay per year, and what share is full tiles?", de: "Wie viele Quadratmeter Teppichfliesen verlegen Sie pro Jahr, und welcher Anteil sind ganze Fliesen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

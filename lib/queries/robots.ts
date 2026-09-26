@@ -1,3 +1,4 @@
+import { cache } from 'react';
 import { isPublicRobot, PLACEHOLDER_MODEL_PATTERN } from '@/lib/catalogue-policy';
 import { getSql } from '@/lib/db';
 import { publicManufacturerSlugs } from '@/lib/manufacturers';
@@ -67,7 +68,7 @@ export type RobotDetail = {
  * `variant` picks the tab. Falls back to the first variant when the requested
  * one does not exist, so a stale link still lands on the model.
  */
-export async function getRobotDetail(
+export const getRobotDetail = cache(async function getRobotDetail(
   manufacturerSlug: string,
   modelSlug: string,
   variant?: string,
@@ -118,7 +119,7 @@ export async function getRobotDetail(
     sources: coerceRows<RobotSource>(sources),
     conflicts,
   };
-}
+});
 
 export async function listRobotPaths(): Promise<{ manufacturer: string; slug: string; updated: string }[]> {
   const sql = await getSql();

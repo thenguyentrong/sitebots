@@ -1,0 +1,27 @@
+id: site_painting
+group: site
+section: interior
+lv: { lb: ['034', '037'], atv: ["DIN 18363", "DIN 18366"] }
+title: { en: "Painting, coating and wallpapering", de: "Maler-, Lackier- und Tapezierarbeiten" }
+aliases:
+  en: [painting, wallpapering]
+  de: [Malerarbeiten, Tapezieren]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks: painting walls and ceilings, covering and masking, hanging woodchip wallpaper and lacquering door frames and doors. All four are marginal: light, varied work held back by reach, by finish quality and, for doors, by the alternative of factory-finished elements."
+  de: "Vier geprüfte Aufgaben: Wände und Decken streichen, Abdecken und Abkleben, Raufaser tapezieren sowie Zargen und Türen lackieren. Alle vier sind grenzwertig: leichte, wechselnde Arbeit, gebremst von der Reichhöhe, von der Oberflächenqualität und bei Türen von der Alternative werkseitig beschichteter Elemente."
+typical_incumbent_automation: [spray_robot]
+dust:
+  type: mineral
+  typical_zone: controlled
+  note:
+    en: "Sanding and cutting boards and filler release fine dust; extraction on the sander is standard."
+    de: "Schleifen und Schneiden von Platten und Spachtel setzt Feinstaub frei; Absaugung am Schleifer ist Standard."
+floor: level
+exposure: indoor
+typical_trades: [painting]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

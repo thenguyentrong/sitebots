@@ -17,6 +17,8 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Comments explain why a thing is the way it is, and name the constraint that forced it.
 - Render the UI before calling it done: `npm run shot http://localhost:3000/robots/unitree/g1 .out/g1.png`.
 
+- The decision journey reads bilingual YAML under `data/` (tasks, settings, taxonomy, compliance, costs, reference, partners) with provenance on every attribute, like the curated layer. `npm run content -- --check` validates it and recomputes every pinned verdict; run it before committing content. Client names and figures never go in; a git-ignored `.confidential-terms` list feeds the scan.
+
 ## Evidence and purchasing workflow
 
 - For technical data, prioritize the exact manufacturer's product page, datasheet, manual or official repository. Comparison sites are discovery leads; they do not verify a value.

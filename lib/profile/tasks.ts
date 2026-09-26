@@ -5,9 +5,9 @@ import type { Candidate } from '@/lib/match/types';
 export const TASK_BUCKETS: { id: string; label: string; tasks: TaskCapability[] }[] = [
   { id: 'transport', label: 'Transport', tasks: ['carry_payload', 'fetch_and_deliver', 'shelf_pick', 'tool_handoff'] },
   { id: 'inspection', label: 'Inspection & capture', tasks: ['site_inspection', 'progress_scan_360', 'lidar_scan', 'patrol_monitoring'] },
-  { id: 'manipulation', label: 'Manipulation & tools', tasks: ['teleoperated_manipulation', 'drilling', 'screwing', 'material_sorting'] },
+  { id: 'manipulation', label: 'Manipulation & tools', tasks: ['teleoperated_manipulation', 'drilling', 'screwing', 'material_sorting', 'kitting', 'machine_tending', 'palletising'] },
   { id: 'navigation', label: 'Navigation', tasks: ['autonomous_nav_indoor', 'autonomous_nav_outdoor', 'stair_climbing'] },
-  { id: 'sitework', label: 'Site work', tasks: ['layout_marking', 'cleaning_sweep'] },
+  { id: 'sitework', label: 'Site work', tasks: ['layout_marking', 'cleaning_sweep', 'surface_finishing'] },
 ];
 
 export const TASK_LABEL: Record<TaskCapability, string> = {
@@ -15,6 +15,7 @@ export const TASK_LABEL: Record<TaskCapability, string> = {
   site_inspection: 'Site inspection', progress_scan_360: '360° progress capture', lidar_scan: 'LiDAR scanning', layout_marking: 'Layout marking',
   drilling: 'Drilling', screwing: 'Screwing', cleaning_sweep: 'Sweeping', material_sorting: 'Sorting material', patrol_monitoring: 'Patrol / monitoring',
   teleoperated_manipulation: 'Teleoperated handling', autonomous_nav_indoor: 'Navigate indoors alone', autonomous_nav_outdoor: 'Navigate outdoors alone', stair_climbing: 'Climb stairs',
+  kitting: 'Kitting', machine_tending: 'Machine tending', palletising: 'Palletising', surface_finishing: 'Surface finishing',
 };
 
 export type TaskStatus = 'yes' | 'partial' | 'unknown' | 'no';

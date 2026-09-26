@@ -33,7 +33,7 @@ export function CompareTable({ rows }: { rows: CompareRow[] }) {
 
   return (
     <div className="card overflow-x-auto" data-compare-table>
-      <table className="w-full min-w-[760px] border-collapse text-sm">
+      <table className="w-full min-w-[760px] table-fixed border-collapse text-sm">
         <thead>
           <tr className="border-b border-edge align-top">
             <th className="w-48 px-5 py-4 text-left font-normal" />

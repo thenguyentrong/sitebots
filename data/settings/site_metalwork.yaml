@@ -1,0 +1,27 @@
+id: site_metalwork
+group: site
+section: envelope
+lv: { lb: ['031'], atv: ["DIN 18360"] }
+title: { en: "Metalwork", de: "Metallbauarbeiten" }
+aliases:
+  en: [railings, steel stairs, curtain walls]
+  de: [Geländer, Pfosten-Riegel-Fassade]
+coverage: screened
+coverage_note:
+  en: "Two screened tasks: installing railings, the fall protection the building code requires, and laying steel gratings on platforms and walkways. Both are ruled out on safety, the gratings also on weight; the metalworker stays."
+  de: "Zwei geprüfte Aufgaben: Geländer montieren, die Absturzsicherung, die das Bauordnungsrecht verlangt, und Gitterroste auf Podesten und Laufstegen verlegen. Beide scheiden an der Sicherheit aus, die Roste zusätzlich am Gewicht; der Metallbauer bleibt."
+typical_incumbent_automation: []
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: both
+typical_trades: [steel]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

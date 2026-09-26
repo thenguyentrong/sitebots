@@ -1,0 +1,112 @@
+schema_version: 1
+id: prefab_timber/nailing-sheathing
+status: published
+setting: prefab_timber
+family: assembly_fastening
+trades: [timber]
+title:
+  en: Nail and staple sheathing to the frame
+  de: Beplankung auf den Rahmen nageln und klammern
+summary:
+  en: Thousands of fasteners per element, driven by a multifunction bridge.
+  de: Tausende Befestiger je Element, gesetzt von einer Multifunktionsbrücke.
+description:
+  en: "The nailing bridge owns this: thousands of parts per shift, structural fastening at defined spacing, no variability. The fasteners are light, and that is the only test a humanoid passes here."
+  de: Die Nagelbrücke hat das, tausende Teile je Schicht, tragende Befestigung im definierten Abstand, keine Varianz. Die Befestiger sind leicht, und das ist der einzige Test, den ein Humanoid hier besteht.
+also_in_settings: [modular_volumetric, facade_prefab]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.01, max: 0.1 }
+    confidence: likely
+    note: Nails and staples.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Programmed spacing on every element.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: Missed fasteners are found at inspection; systematic errors are not tolerated.
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: Sheathing fastening is part of the load path.
+  reach_height_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: assumed
+    note: Table height.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Bridge station outside the sawing zone.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [nailing_sheathing_bridge] }
+    confidence: likely
+    note: Multifunction bridges are standard on modern lines.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.hundegger.com/de/maschinen/plattenbearbeitungsmaschinen/wall-master'
+    note: "Nails and staples; the bridge works across elements 3.2, 3.8 or 4.5 m wide (Hundegger WALL-Master)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Fastener spacing and edge distances come from the structural design; not recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Driving force is set in the tool; not published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T5_failure_tolerance, T4_variability]
+  better_answer:
+    class: keep_process
+    note:
+      en: The bridge is faster, stronger and cheaper per part. Where no bridge exists, the bridge is the answer, not a humanoid with a nail gun.
+      de: Die Brücke ist schneller, stärker und je Teil günstiger. Wo keine Brücke steht, ist die Brücke die Antwort, nicht ein Humanoid mit Nagelpistole.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: []
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None.
+    de: Keiner.
+prerequisites: []
+open_questions: []
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

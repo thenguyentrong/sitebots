@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_metalwork/railing-installation
+status: published
+setting: site_metalwork
+family: assembly_fastening
+trades: [steel]
+title:
+  en: "Install railings on balconies and stair flights"
+  de: "Geländer an Balkonen und Treppenläufen montieren"
+summary:
+  en: "Set the posts or base profiles at the slab edge, anchor them and fit the infill."
+  de: "Pfosten oder Bodenprofile an der Deckenkante setzen, verankern und die Füllungen einbauen."
+description:
+  en: "Railings are the fall protection the building code requires. The Musterbauordnung (§ 38) asks for barriers wherever walkable surfaces border surfaces more than 1 m lower, at least 0.90 m high for fall heights up to 12 m and 1.10 m above that. The anchoring into the slab edge is what keeps the barrier standing."
+  de: "Geländer sind die Absturzsicherung, die das Bauordnungsrecht verlangt. Die Musterbauordnung (§ 38) fordert Umwehrungen überall dort, wo begehbare Flächen an mehr als 1 m tiefer liegende Flächen grenzen, mindestens 0,90 m hoch bis 12 m Absturzhöhe und 1,10 m darüber. Die Verankerung in der Deckenkante ist das, was die Umwehrung hält."
+also_in_settings: [steel_fabrication]
+derived_from: null
+lv:
+  lb: '031'
+  atv: "DIN 18360"
+  position:
+    en: "Balcony and stair railings of steel or aluminium, supplied and installed"
+    de: "Balkon- und Treppengeländer aus Stahl oder Aluminium liefern und montieren"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "Depends on the railing system; not recorded."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Repeated balcony elements, but stair flights, corners and wall ends differ."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A railing that gives way is a fall; a badly anchored one is not acceptable at any rate."
+  safety_criticality:
+    value: life_safety
+    confidence: confirmed
+    evidence_url: 'https://www.bauministerkonferenz.de/Dokumente/42323066.pdf'
+    note: "Barriers against falls are required by the building code (MBO § 38), with minimum heights of 0.90 m and 1.10 m."
+  reach_height_m:
+    value: { min: 0, max: 1.5 }
+    confidence: assumed
+    note: "From the slab to above the handrail height of 0.90 to 1.10 m. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Balconies outside, stair flights inside."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling anchor holes into concrete releases quartz-bearing dust at the bit."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Balconies are exposed to the weather."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slab edges and stair flights."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Railings are set and anchored by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Depends on the railing system."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The code sets minimum heights (0.90 m up to 12 m fall height, 1.10 m above), not an installation tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Design loads come from the structural calculation; not recorded here."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "A railing is life-safety equipment the building code requires, so a 1 % failure rate is not acceptable. The metalworker stays; the leverage is in prefabricated elements and anchor positions set out before the slab is poured."
+      de: "Ein Geländer ist Absturzsicherung, die das Bauordnungsrecht verlangt, eine Fehlerquote von 1 % ist also nicht hinnehmbar. Der Metallbauer bleibt; ansetzen lässt sich bei vorgefertigten Elementen und Ankerpunkten, die vor dem Betonieren festgelegt werden."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [drilling, screwing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "The Musterbauordnung requires barriers on walkable surfaces that border surfaces more than 1 m lower (§ 38 (1)), at least 0.90 m high for fall heights of 1 to 12 m and 1.10 m above 12 m (§ 38 (4))."
+      de: "Die Musterbauordnung verlangt Umwehrungen an begehbaren Flächen, die an mehr als 1 m tiefer liegende Flächen grenzen (§ 38 Abs. 1), mindestens 0,90 m hoch bei 1 bis 12 m Absturzhöhe und 1,10 m über 12 m (§ 38 Abs. 4)."
+    url: 'https://www.bauministerkonferenz.de/Dokumente/42323066.pdf'
+    kind: regulator
+    tier: 1
+    date: '2019-02-22'
+    type: claim
+    confidence: confirmed
+    note: "MBO, version of November 2002, last amended 22.02.2019; the state building codes implement it."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot; count on-site adjustments per railing element before and after prefabricated anchor positions."
+    de: "Kein Roboterpilot; Nacharbeiten je Geländerelement vor und nach vorab festgelegten Ankerpunkten zählen."
+prerequisites: []
+open_questions:
+  - { en: "Are the anchor positions in the slab edge known before the concrete is poured?", de: "Sind die Ankerpunkte in der Deckenkante vor dem Betonieren bekannt?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,28 @@
+id: material_yard_warehouse
+group: yard_logistics
+title: { en: "Material yard and warehouse", de: "Baustofflager und Lagerhalle" }
+aliases:
+  en: [builders' merchant, central warehouse, storage yard]
+  de: [Baustoffhandel, Zentrallager, Lagerplatz]
+coverage: screened
+coverage_note:
+  en: "Screened tasks for tote handling, counting stock for the rolling inventory, picking bagged goods and loading trucks in the yard. Totes and stock counting are marginal; 30 kg bags and truck loading stay with lifting aids and forklifts."
+  de: "Geprüfte Aufgaben für Behälterhandling, Bestandszählung für die permanente Inventur, Kommissionieren von Sackware und die Lkw-Verladung im Lagerplatz. Behälter und Bestandszählung sind grenzwertig; 30-kg-Säcke und die Verladung bleiben bei Hebehilfen und Staplern."
+typical_incumbent_automation: [forklift, conveyor, amr_fleet, pick_to_light, palletiser]
+dust:
+  type: none
+  typical_zone: none
+  note:
+    en: Indoor warehouses are clean; outdoor yards bring weather, not dust.
+    de: Lagerhallen sind sauber; Außenlager bringen Wetter, nicht Staub.
+floor: level
+exposure: both
+typical_trades: [logistics, general]
+process_steps:
+  - { id: receiving, label: { en: "Receiving and putaway", de: "Wareneingang und Einlagerung" } }
+  - { id: picking, label: { en: "Picking and kitting", de: "Picken und Kommissionieren" } }
+  - { id: replenishment, label: { en: "Replenishment", de: "Nachschub" } }
+  - { id: packing_loading, label: { en: "Packing and loading", de: "Verpacken und Verladen" } }
+seed_priority: 4
+sources: []
+status: published

@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_masonry/unit-staging-at-wall
+status: published
+setting: site_masonry
+family: intralogistics_transport
+trades: [masonry, logistics]
+title:
+  en: "Stock masonry units along the wall for the bricklayer"
+  de: "Mauersteine entlang der Wand für den Maurer vorlegen"
+summary:
+  en: "Take units from the pallet the crane or forklift set down and stack them along the wall line within the bricklayer's reach."
+  de: "Steine von der Palette nehmen, die Kran oder Stapler abgesetzt hat, und entlang der Wandachse in Reichweite des Maurers stapeln."
+description:
+  en: "Pallets arrive on the slab by crane or forklift; the last metres to the wall are carried by hand, often by a helper, so the bricklayer does not walk for every unit. Units laid by hand weigh up to 25 kg; heavier ones need a setting device and are not stocked by hand. The work is repetitive but follows the wall layout, openings and unit types of each storey."
+  de: "Paletten kommen per Kran oder Stapler auf die Decke; die letzten Meter zur Wand werden von Hand getragen, oft von einem Helfer, damit der Maurer nicht für jeden Stein läuft. Von Hand verarbeitete Steine wiegen bis 25 kg; schwerere brauchen ein Versetzgerät und werden nicht von Hand vorgelegt. Die Arbeit wiederholt sich, folgt aber in jedem Geschoss dem Wandverlauf, den Öffnungen und den Steinsorten."
+also_in_settings: [site_setup_logistics]
+derived_from: null
+lv:
+  lb: '012'
+  atv: "DIN 18330"
+  position:
+    en: "Masonry walls: units distributed to the work place (part of the wall position)"
+    de: "Mauerwerk: Steine an der Arbeitsstelle verteilen (Teil der Wandposition)"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 5.5, max: 25 }
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_366/c_366.htm'
+    note: "Hand-stocked units are the hand-laid ones: from about 5.5 kg (2DF lime-sandstone example in the KS Maurerfibel) to the 25 kg two-hand limit set by BG BAU."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same motion, but unit types, stack positions and routes change with every wall and opening."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A unit in the wrong place is moved by the bricklayer; nothing is built from the stack itself."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Material supply; the wall is checked as it rises."
+  reach_height_m:
+    value: { min: 0, max: 1.5 }
+    confidence: assumed
+    note: "From the pallet to stacks on the slab or a trestle. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Upper storeys are open to the weather until the next slab is on."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Carrying units makes no dust; cutting and mixing nearby are their own tasks."
+  wet:
+    value: damp
+    confidence: assumed
+    note: "Units and slabs are often wet from rain or curing."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab with edges, openings, starter bars and mortar tubs."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane, forklift] }
+    confidence: likely
+    note: "Crane or forklift set pallets on the slab; the last metres to the wall are carried by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the laying rate; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; count units per wall metre and helper minutes before a pilot."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Unit formats vary; a 2DF unit measures 240 × 115 × 113 mm (KS Maurerfibel). Not measured for this record."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No placing tolerance; a stack only has to be within reach and stable."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force beyond lifting and carrying the unit."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Ask the supplier for pallets packed per wall and let the crane set them close to the wall line first. A robot helper is only worth comparing on covered storeys with walkable slabs, carrying units at the top of its payload over starter bars and slab edges."
+      de: "Zuerst beim Lieferanten wandweise gepackte Paletten bestellen und den Kran nah an der Wandachse absetzen lassen. Ein Roboter-Helfer lohnt den Vergleich nur in geschlossenen Geschossen mit begehbaren Decken, mit Steinen am oberen Ende seiner Traglast über Anschlusseisen und Deckenränder."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [carry_payload, fetch_and_deliver]
+capabilities_optional: []
+solution_classes: [process_change, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "BG BAU: masonry units laid with both hands may weigh at most 25 kg; heavier units may only be laid with setting devices or machines."
+      de: "BG BAU: Zweihand-Mauersteine dürfen höchstens 25 kg wiegen; schwerere Steine dürfen nur mit Versetzgeräten oder -maschinen verarbeitet werden."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_366/c_366.htm'
+    kind: regulator
+    tier: 1
+    date: '2019-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Baustein C 366, Stand 07/2019."
+  - statement:
+      en: "The lime-sandstone masonry handbook calculates 5.5 kg for a 2DF unit (240 × 115 × 113 mm) and says units up to 25 kg can be laid by hand only for a limited time."
+      de: "Die Kalksandstein-Maurerfibel berechnet 5,5 kg für einen 2DF-Stein (240 × 115 × 113 mm) und sagt, dass Steine bis 25 kg nur über einen eingeschränkten Zeitraum von Hand vermauert werden können."
+    url: 'https://www.ks-maurerfibel.de/maurerfibel/6-mauern/6-2-mauern-von-hand/6-2-1-steingewichte/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Page undated, read on 2026-09-25."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of stocking runs completed unaided after 3 months on covered storeys, or any fall of a unit from a slab edge: stop and keep the helper."
+    de: "Weniger als 99 % der Vorlegeläufe nach 3 Monaten in geschlossenen Geschossen ohne Eingriff, oder ein Stein fällt über einen Deckenrand: abbrechen und beim Helfer bleiben."
+  scope_hint:
+    en: "One covered storey, one unit type below 15 kg, pallets set by crane at fixed points, edge protection in place."
+    de: "Ein geschlossenes Geschoss, eine Steinsorte unter 15 kg, Paletten vom Kran an festen Punkten, Seitenschutz vorhanden."
+prerequisites:
+  - { en: "Edge protection and cleared walking routes on the slab", de: "Seitenschutz und freie Laufwege auf der Decke" }
+open_questions:
+  - { en: "How many units per storey are carried by hand from pallet to wall, and by whom?", de: "Wie viele Steine je Geschoss werden von Hand von der Palette zur Wand getragen, und von wem?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

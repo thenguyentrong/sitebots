@@ -1,0 +1,124 @@
+schema_version: 1
+id: asset_inspection_infrastructure/cable-tunnel-inspection
+status: published
+setting: asset_inspection_infrastructure
+family: inspection_qa_documentation
+trades: [mep_electrical, tunnel, qa_surveying]
+title:
+  en: Patrol utility and cable tunnels
+  de: Versorgungs- und Kabeltunnel kontrollieren
+summary:
+  en: Walk sections of a utility or power cable tunnel and record cracks, water seepage, hot spots and other anomalies.
+  de: Abschnitte eines Versorgungs- oder Kabeltunnels abgehen und Risse, Wassereintritt, Hotspots und andere Auffälligkeiten erfassen.
+description:
+  en: Power, district heating and utility tunnels run for kilometres underground. Staff patrol them in sections, which is slow, and every entry into a confined space needs its own safety measures. The route is fixed but long, the air is often damp, and shafts bring stairs and ladders. The first quadruped pilots in power cable tunnels are running.
+  de: Strom-, Fernwärme- und Versorgungstunnel verlaufen kilometerlang unter der Erde. Personal geht sie abschnittsweise ab, das ist langsam, und jeder Einstieg in einen engen Raum braucht eigene Schutzmaßnahmen. Die Route ist fest, aber lang, die Luft oft feucht, und Schächte bringen Treppen und Leitern. Erste Pilotprojekte mit Vierbeinern in Stromkabeltunneln laufen.
+also_in_settings: [site_tunnelling, facility_operation]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: Nothing is carried; the sensors are the payload.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. Fixed route, but the findings are spread over kilometres of tunnel and change every patrol.
+  error_tolerance:
+    value: tolerant
+    confidence: assumed
+    note: A missed observation is caught on the next patrol; structural assessments of the tunnel are a separate inspection.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Observation only.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Not a reach task; cameras capture cable trays and the lining from the walkway.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Underground and enclosed, without weather.
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: No relevant dust assumed in an operating tunnel; check yours.
+  wet:
+    value: damp
+    confidence: likely
+    note: Seepage and humidity are among the defects the patrol looks for.
+  floor:
+    value: mixed
+    confidence: likely
+    note: Walkways with stairs and ladders at the shafts.
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: assumed
+    note: Many tunnels have fixed sensors for single values such as temperature, gas or water level; the visual patrol is on foot. Verify for your tunnel.
+  data_sensitivity:
+    value: confidential
+    confidence: likely
+    note: Utility tunnels are critical infrastructure; operators restrict where images and maps may be stored.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Depends on section length; long tunnels need docking points along the route, whatever the platform.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; count patrol kilometres per month and staff hours per kilometre.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled; the sensors or the camera are the payload."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "A patrol records observations; there is no build tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force: the robot walks and records."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: unknown, X2_outdoor: marginal, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: Compare a quadruped first; the pilots in cable tunnels use them, legs handle shaft stairs, and the humanoid form adds nothing to a camera. Check runtime and docking against the length of the sections.
+      de: Zuerst einen Vierbeiner vergleichen; die Pilotprojekte in Kabeltunneln nutzen sie, Beine bewältigen die Schachttreppen, und die humanoide Form bringt einer Kamera nichts. Laufzeit und Ladepunkte gegen die Länge der Abschnitte prüfen.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [exposure, quality, capacity]
+capabilities_required: [site_inspection, patrol_monitoring, stair_climbing]
+capabilities_optional: [lidar_scan, autonomous_nav_indoor]
+solution_classes: [quadruped_inspection, humanoid]
+evidence:
+  - statement:
+      en: SP Group in Singapore is piloting a DEEP Robotics X30 quadruped on sections of a 40-kilometre underground power transmission tunnel, with cameras and thermal sensors to find cracks, water seepage and other anomalies.
+      de: SP Group in Singapur erprobt einen Vierbeiner X30 von DEEP Robotics auf Abschnitten eines 40 Kilometer langen unterirdischen Stromkabeltunnels, mit Kameras und Wärmebildsensoren zur Erkennung von Rissen, Wassereintritt und anderen Auffälligkeiten.
+    url: 'https://www.robotics247.com/article/deep_robotics_deploys_x30_robot_dog_to_inspect_singapore_power_cable_tunnel'
+    kind: press
+    tier: 3
+    date: '2025-02-14'
+    type: pilot
+    subject: { maker: deep-robotics, model: x30 }
+    confidence: likely
+    note: Trade press on a pilot; no results are published yet.
+pilot:
+  metrics: [usable_captures_pct, unaided_completion_pct, interventions_per_hour]
+  abort_rule:
+    en: Fewer than 99 % of patrols completed with usable images after 3 months, then keep patrolling on foot.
+    de: Weniger als 99 % der Kontrollgänge nach 3 Monaten mit brauchbaren Bildern abgeschlossen, dann weiter zu Fuß kontrollieren.
+  scope_hint:
+    en: One tunnel section between two shafts, results compared with the patrol on foot.
+    de: Ein Tunnelabschnitt zwischen zwei Schächten, Ergebnisse mit dem Kontrollgang zu Fuß verglichen.
+prerequisites:
+  - { en: "Radio coverage or a plan for offline missions underground", de: "Funkabdeckung oder ein Konzept für Offline-Missionen unter Tage" }
+open_questions:
+  - { en: "Which part of the patrol cost is the walking, and which the confined-space entry procedure?", de: "Welcher Teil der Kontrollkosten ist das Gehen, welcher das Verfahren für den Einstieg in enge Räume?" }
+compliance_flags: [data_residency_air_gapped, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

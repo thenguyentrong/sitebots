@@ -1,0 +1,27 @@
+id: site_waterproofing
+group: site
+section: structure
+lv: { lb: ['018'], atv: ["DIN 18336"] }
+title: { en: "Waterproofing", de: "Abdichtungsarbeiten" }
+aliases:
+  en: [basement waterproofing, membranes]
+  de: [Bauwerksabdichtung]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: PMBC coating of basement walls (minimum dry thickness may not be undercut anywhere, outdoors), torch-on bitumen membranes (34 kg rolls, outdoors) and laying a protection and drainage membrane (21 kg rolls, in the pit). All three are ruled out."
+  de: "Drei geprüfte Aufgaben: PMBC-Beschichtung von Kellerwänden (Mindesttrockenschichtdicke darf nirgends unterschritten werden, im Freien), Bitumenschweißbahnen (34-kg-Rollen, im Freien) und Verlegen einer Schutz- und Dränbahn (21-kg-Rollen, in der Baugrube). Alle drei scheiden aus."
+typical_incumbent_automation: []
+dust:
+  type: mixed
+  typical_zone: none
+  note:
+    en: "Outdoors; dust depends on weather and the work next to it."
+    de: "Im Freien; Staub hängt von Wetter und Nachbararbeiten ab."
+floor: mixed
+exposure: both
+typical_trades: [insulation, facade_roofing]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

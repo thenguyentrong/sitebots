@@ -1,0 +1,27 @@
+id: site_ventilation
+group: site
+section: services
+lv: { lb: ['075', '078'], atv: ["DIN 18379"] }
+title: { en: "Ventilation and air conditioning", de: "Raumlufttechnische Anlagen" }
+aliases:
+  en: [ductwork, HVAC]
+  de: [Lüftungskanäle, RLT]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: fitting ceiling diffusers (marginal), hanging rectangular ducts (ruled out on mass; a duct lift is the better answer) and installing fire dampers (ruled out: a fire-safety function, kept with trained fitters)."
+  de: "Drei geprüfte Aufgaben: Deckenluftdurchlässe montieren (grenzwertig), Rechteckkanäle abhängen (am Gewicht ausgeschieden; ein Kanallift ist die bessere Antwort) und Brandschutzklappen einbauen (ausgeschieden: Sicherheitsfunktion im Brandfall, bleibt bei geschulten Monteuren)."
+typical_incumbent_automation: [drilling_robot]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: indoor
+typical_trades: [mep_hvac]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

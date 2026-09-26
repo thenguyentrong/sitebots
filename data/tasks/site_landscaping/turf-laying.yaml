@@ -1,0 +1,151 @@
+schema_version: 1
+id: site_landscaping/turf-laying
+status: published
+setting: site_landscaping
+family: assembly_fastening
+trades: [general]
+title:
+  en: "Lay turf rolls on the prepared soil"
+  de: "Fertigrasen auf den vorbereiteten Boden verlegen"
+summary:
+  en: "Unroll the turf on the day it is delivered, butt the strips tightly in a staggered bond, roll it in and water it."
+  de: "Den Rollrasen am Liefertag ausrollen, die Bahnen dicht an dicht im Verband legen, anwalzen und wässern."
+description:
+  en: "Turf is harvested, delivered and laid on the same day where possible. The strips are butted tightly without gaps in a staggered bond starting from a straight line, rolled in diagonally and watered until the sod and about 5 cm of soil below are wet, then daily until it has rooted. A square metre of turf weighs about 20 to 25 kg depending on moisture, and the whole job is done kneeling at ground level, outdoors."
+  de: "Rollrasen wird möglichst am selben Tag geschält, geliefert und verlegt. Die Bahnen werden von einer Geraden aus dicht an dicht ohne Fugen im Verband gelegt, diagonal angewalzt und gewässert, bis Sode und etwa 5 cm Boden durchfeuchtet sind, danach bis zum Anwachsen täglich. Ein Quadratmeter Rollrasen wiegt je nach Feuchte etwa 20 bis 25 kg, und die ganze Arbeit geschieht kniend auf Bodenhöhe im Freien."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '003'
+  atv: "DIN 18320"
+  position:
+    en: "Turf (pre-grown lawn): supply, lay, roll in and water"
+    de: "Fertigrasen liefern, verlegen, anwalzen und wässern"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 20, max: 25 }
+    confidence: assumed
+    evidence_url: 'https://www.rollrasen.de/de/faq'
+    note: "A square metre of turf weighs about 20 to 25 kg depending on moisture (Rollrasen-Aue). The source does not give the roll format; the range assumes the common roll of about one square metre."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Straight runs repeat; edges, curves, beds and trees need cutting and fitting."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.schwab-rollrasen.de/rasenwissen/verlegen/'
+    note: "The strips must be laid tightly without gaps and watered until sod and about 5 cm of soil are wet (Schwab); gaps and dry edges fail to root and are relaid."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Vegetation; a defect is a repair, not a safety failure."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: assumed
+    note: "Laid kneeling at ground level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Gardens, green areas and sports grounds."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Moist soil and turf; no relevant dust."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather, on watered turf."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Prepared, loosened soil."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Laid by hand in the sources used here; machine laying of large rolls is not assessed."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; one supplier loads at most 50 m² per pallet."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "The sources used here do not state the roll format."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The requirement is tight joints without gaps; no millimetre value is given."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not stated; rolling in is done with a lawn roller."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the landscaping crew; turf is laid on delivery day outdoors, and no humanoid publishes an ingress rating for outdoor work."
+      de: "Bei der Garten- und Landschaftsbaukolonne bleiben; Rollrasen wird am Liefertag im Freien verlegt, und kein Humanoid veröffentlicht eine Schutzart für Arbeiten im Freien."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Rollrasen-Aue states that a square metre of turf weighs about 20 to 25 kg depending on moisture, and that the carrier loads at most 50 m² per pallet, about one tonne."
+      de: "Rollrasen-Aue gibt an, dass ein Quadratmeter Rollrasen je nach Feuchtigkeitsgehalt etwa 20 bis 25 kg wiegt und die Spedition je Palette höchstens 50 m² lädt, rund eine Tonne."
+    url: 'https://www.rollrasen.de/de/faq'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Turf producer's FAQ, undated, dated with the check date."
+  - statement:
+      en: "Rollrasen-Aue recommends laying the turf on the day it is harvested, laying the strips butted in a staggered bond from a straight line, rolling them in diagonally and watering about 15 to 20 litres per m² a day until the turf has rooted."
+      de: "Rollrasen-Aue empfiehlt, den Rasen am Erntetag zu verlegen, die Bahnen von einer Geraden aus Stoß an Stoß im Verbund zu legen, diagonal anzuwalzen und bis zum Anwachsen täglich etwa 15 bis 20 Liter je m² zu wässern."
+    url: 'https://www.rollrasen.de/de/das-verlegen'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Laying guide, undated, dated with the check date."
+  - statement:
+      en: "Schwab Rollrasen tells customers to lay the turf tightly without gaps and to water until the sod and about 5 cm of the soil below are thoroughly wet."
+      de: "Schwab Rollrasen empfiehlt, den Rasen dicht an dicht ohne Fugen zu verlegen und zu wässern, bis die Sode und etwa 5 cm des Bodens gut durchfeuchtet sind."
+    url: 'https://www.schwab-rollrasen.de/rasenwissen/verlegen/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Laying guide, undated, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not applicable."
+    de: "Nicht anwendbar."
+prerequisites: []
+open_questions:
+  - { en: "How much turf do you lay per year, and on which projects?", de: "Wie viel Rollrasen verlegen Sie im Jahr, und auf welchen Projekten?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

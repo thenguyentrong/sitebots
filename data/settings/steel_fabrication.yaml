@@ -1,0 +1,29 @@
+id: steel_fabrication
+group: factory
+title: { en: "Steel fabrication shop", de: "Stahlbau-Fertigung" }
+aliases:
+  en: [structural steel shop, steel fabricator]
+  de: [Stahlbauwerkstatt, Stahlbauer]
+coverage: screened
+coverage_note:
+  en: "Screened tasks: loading beams onto the drill and saw line (ruled out; automatic infeed and outfeed), fitting and tack-welding attachments (ruled out; load-bearing welds, a fitting and welding robot for standard assemblies) and sorting cut plate parts by assembly (marginal; automatic part discharge first)."
+  de: "Geprüfte Aufgaben: Träger auf die Bohr-Säge-Linie legen (ausgeschlossen; automatischer Zu- und Ablauf), Anbauteile anpassen und heften (ausgeschlossen; tragende Nähte, ein Anpass- und Schweißroboter für Standardbaugruppen) und zugeschnittene Blechteile nach Baugruppen sortieren (grenzwertig; zuerst automatische Teileabfuhr)."
+typical_incumbent_automation: [cnc_steel_beam_line, welding_robot, overhead_crane]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: Welding fume and grinding dust are managed by extraction; fit-up and coating areas are workrooms, blasting cabins are zones.
+    de: Schweißrauch und Schleifstaub werden abgesaugt; Heft- und Beschichtungsbereiche sind Arbeitsräume, Strahlkabinen sind Zonen.
+floor: level
+exposure: indoor
+typical_trades: [steel, logistics, qa_surveying]
+process_steps:
+  - { id: cutting_drilling, label: { en: "Cutting and drilling", de: "Sägen und Bohren" } }
+  - { id: fit_up, label: { en: "Fit-up and tacking", de: "Heften und Zusammenbau" } }
+  - { id: welding, label: { en: "Welding", de: "Schweißen" } }
+  - { id: coating, label: { en: "Blasting and coating", de: "Strahlen und Beschichten" } }
+  - { id: loading, label: { en: "Loading", de: "Verladung" } }
+seed_priority: 6
+sources: []
+status: published

@@ -1,0 +1,89 @@
+# Task families. Every task record belongs to exactly one; they cut across
+# settings. `capabilities` are the robot capabilities a task in this family
+# usually needs (lib/spec/enums.ts TASK_CAPABILITIES). `verdict_note` is the
+# pattern the screen tends to produce, for the library page, not a verdict.
+families:
+  - id: intralogistics_transport
+    title: { en: "Intralogistics and transport", de: "Intralogistik und Transport" }
+    question: { en: "Where do people carry, fetch or push things between places?", de: "Wo tragen, holen oder schieben Menschen Dinge von A nach B?" }
+    capabilities: [carry_payload, fetch_and_deliver, tool_handoff, autonomous_nav_indoor]
+    verdict_note:
+      en: Candidate when loads stay light and routes vary; an AMR with carts wins when the route is fixed.
+      de: Kandidat, wenn Lasten leicht bleiben und Wege wechseln; bei festen Wegen gewinnt ein AMR mit Wagen.
+  - id: kitting_picking_sorting
+    title: { en: "Kitting, picking and sorting", de: "Kommissionieren, Picken und Sortieren" }
+    question: { en: "Where are small parts collected, picked or sorted by hand?", de: "Wo werden Kleinteile von Hand zusammengestellt, gepickt oder sortiert?" }
+    capabilities: [shelf_pick, kitting, material_sorting, autonomous_nav_indoor]
+    verdict_note:
+      en: The strongest humanoid-class fit when the item mix is high and the parts are light.
+      de: Der stärkste Fit für die Humanoid-Klasse, wenn der Artikelmix hoch und die Teile leicht sind.
+  - id: machine_tending
+    title: { en: "Machine tending", de: "Maschinenbeschickung" }
+    question: { en: "Which stations does a person load and unload by hand?", de: "Welche Stationen werden von Hand be- und entladen?" }
+    capabilities: [machine_tending, shelf_pick, autonomous_nav_indoor]
+    verdict_note:
+      en: Candidate in clean zones with variable parts; a fixed cobot cell wins at stable volumes.
+      de: Kandidat in sauberen Zonen mit variablen Teilen; bei stabilen Mengen gewinnt eine feste Cobot-Zelle.
+  - id: assembly_fastening
+    title: { en: "Assembly, fastening and insertion", de: "Montage, Befestigung und Einbau" }
+    question: { en: "Which assembly or fastening steps are still done by hand?", de: "Welche Montage- oder Befestigungsschritte laufen noch von Hand?" }
+    capabilities: [drilling, screwing, teleoperated_manipulation]
+    verdict_note:
+      en: Usually marginal (floppy materials, force control) or ruled out where the joint is structural.
+      de: Meist grenzwertig (nachgiebige Materialien, Kraftregelung) oder ausgeschlossen, wo die Verbindung tragend ist.
+  - id: inspection_qa_documentation
+    title: { en: "Inspection, quality checks and documentation", de: "Prüfung, Qualitätskontrolle und Dokumentation" }
+    question: { en: "What is photographed, measured, checked or logged repeatedly?", de: "Was wird wiederholt fotografiert, gemessen, geprüft oder protokolliert?" }
+    capabilities: [site_inspection, progress_scan_360, lidar_scan, autonomous_nav_indoor]
+    verdict_note:
+      en: Zero payload and recoverable errors make this the lowest-risk candidate; quadrupeds and fixed sensors compete.
+      de: Keine Nutzlast und korrigierbare Fehler machen das zum risikoärmsten Kandidaten; Vierbeiner und feste Sensorik konkurrieren.
+  - id: layout_marking_surveying
+    title: { en: "Layout marking and setting out", de: "Absteckung und Anreißen" }
+    question: { en: "Where are plans transferred onto floors, walls or elements?", de: "Wo werden Pläne auf Böden, Wände oder Elemente übertragen?" }
+    capabilities: [layout_marking, autonomous_nav_indoor]
+    verdict_note:
+      en: A dedicated layout robot usually wins; the humanoid form adds nothing to the task.
+      de: Meist gewinnt ein dedizierter Markierroboter; die humanoide Form bringt der Aufgabe nichts.
+  - id: surface_finishing
+    title: { en: "Surface finishing", de: "Oberflächenbearbeitung" }
+    question: { en: "Which sanding, painting, plastering or coating work is repetitive?", de: "Welche Schleif-, Anstrich-, Putz- oder Beschichtungsarbeit ist repetitiv?" }
+    capabilities: [surface_finishing, teleoperated_manipulation]
+    verdict_note:
+      en: Marginal at best; dedicated finishing machines and spray robots hold the evidence.
+      de: Bestenfalls grenzwertig; dedizierte Bearbeitungsmaschinen und Spritzroboter tragen die Nachweise.
+  - id: cleaning_housekeeping_replenishment
+    title: { en: "Cleaning, housekeeping and replenishment", de: "Reinigung, Ordnung und Nachschub" }
+    question: { en: "What tidying, restocking or clearing work fragments skilled shifts?", de: "Welche Aufräum-, Nachfüll- oder Räumarbeit zerstückelt die Schichten der Fachkräfte?" }
+    capabilities: [cleaning_sweep, fetch_and_deliver, autonomous_nav_indoor]
+    verdict_note:
+      en: Low value per action but constant; a candidate in clean zones, a cleaning machine for floors.
+      de: Geringer Wert je Handgriff, aber ständig; Kandidat in sauberen Zonen, für Böden eine Reinigungsmaschine.
+  - id: heavy_element_handling
+    title: { en: "Heavy element handling", de: "Handhabung schwerer Elemente" }
+    question: { en: "Where are elements, beams, boards or units far above 25 kg moved?", de: "Wo werden Elemente, Balken, Platten oder Einheiten weit über 25 kg bewegt?" }
+    capabilities: []
+    verdict_note:
+      en: Ruled out by mass; cranes, vacuum lifters and gantries are the answer.
+      de: Durch die Masse ausgeschlossen; Kran, Vakuumheber und Portal sind die Antwort.
+  - id: packaging_palletising_loading
+    title: { en: "Packaging, palletising and loading", de: "Verpacken, Palettieren und Verladen" }
+    question: { en: "What is packed, stacked or loaded at the end of the line?", de: "Was wird am Ende der Linie verpackt, gestapelt oder verladen?" }
+    capabilities: [palletising, carry_payload]
+    verdict_note:
+      en: A palletiser or cobot cell at stable volumes; truck loading stays crane and forklift work.
+      de: Palettierer oder Cobot-Zelle bei stabilen Mengen; Verladen bleibt Kran- und Staplerarbeit.
+  - id: monitoring_safety_patrol
+    title: { en: "Monitoring and patrol", de: "Überwachung und Rundgänge" }
+    question: { en: "Which rounds or observations happen on a schedule?", de: "Welche Rundgänge oder Beobachtungen laufen nach Plan?" }
+    capabilities: [patrol_monitoring, autonomous_nav_outdoor, autonomous_nav_indoor]
+    verdict_note:
+      en: Quadruped precedents exist; cameras on people raise data-protection and works-council questions.
+      de: Vierbeiner-Präzedenzfälle existieren; Kameras auf Personen werfen Datenschutz- und Betriebsratsfragen auf.
+  - id: machine_operation_dedicated
+    title: { en: "Operating dedicated machines", de: "Führen dedizierter Maschinen" }
+    question: { en: "Which machines, saws, printers or excavators does a person operate?", de: "Welche Maschinen, Sägen, Drucker oder Bagger bedient eine Person?" }
+    capabilities: [teleoperated_manipulation]
+    verdict_note:
+      en: The machine already exists; the question is automation of the machine itself, not a humanoid at its controls.
+      de: Die Maschine gibt es schon; die Frage ist die Automatisierung der Maschine selbst, nicht ein Humanoid an ihren Bedienelementen.

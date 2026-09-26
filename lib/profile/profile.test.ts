@@ -47,7 +47,7 @@ describe('profileFor', () => {
       const p = profileFor(c);
       for (const a of p.axes) if (a.score !== null) expect(a.score).toBeGreaterThanOrEqual(0), expect(a.score).toBeLessThanOrEqual(1);
       expect(p.radar.site).toHaveLength(10);
-      expect(p.radar.tasks).toHaveLength(17);
+      expect(p.radar.tasks).toHaveLength(21);
     }
   });
 });

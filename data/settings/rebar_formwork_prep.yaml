@@ -1,0 +1,28 @@
+id: rebar_formwork_prep
+group: factory
+title: { en: "Rebar cage and formwork preparation", de: "Bewehrungs- und Schalungsvorbereitung" }
+aliases:
+  en: [rebar shop, formwork yard, reinforcement prefabrication]
+  de: [Biegerei, Schalungsplatz, Bewehrungsvorfertigung]
+coverage: screened
+coverage_note:
+  en: "Screened tasks: feeding bars to shear and bending machines (ruled out; coil bending or a bar magazine), tying reinforcement cages (ruled out; load-bearing reinforcement stays with people) and cutting stock mesh to size (ruled out; mats of 34 to 132 kg go by crane, custom mesh welded to CAD data removes the cutting)."
+  de: "Geprüfte Aufgaben: Stäbe in Schneid- und Biegemaschinen einlegen (ausgeschlossen; Coilbiegen oder Stabmagazin), Bewehrungskörbe flechten (ausgeschlossen; tragende Bewehrung bleibt bei Menschen) und Lagermatten zuschneiden (ausgeschlossen; Matten von 34 bis 132 kg bewegt der Kran, nach CAD-Daten geschweißte Sondermatten ersparen den Zuschnitt)."
+typical_incumbent_automation: [cnc_rebar_bender, rebar_mesh_welder, overhead_crane]
+dust:
+  type: mineral
+  typical_zone: controlled
+  note:
+    en: Formwork cleaning releases concrete dust; bending and tying are clean but heavy.
+    de: Schalungsreinigung setzt Betonstaub frei; Biegen und Binden sind sauber, aber schwer.
+floor: level
+exposure: both
+typical_trades: [concrete, steel, logistics]
+process_steps:
+  - { id: bending, label: { en: "Bending and cutting", de: "Biegen und Schneiden" } }
+  - { id: cage_assembly, label: { en: "Cage assembly and tying", de: "Korbmontage und Binden" } }
+  - { id: formwork_prep, label: { en: "Formwork cleaning and preparation", de: "Schalung reinigen und vorbereiten" } }
+  - { id: storage, label: { en: "Storage and transfer", de: "Lagern und Umsetzen" } }
+seed_priority: 7
+sources: []
+status: published

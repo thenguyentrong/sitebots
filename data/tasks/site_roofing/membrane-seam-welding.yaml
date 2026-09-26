@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_roofing/membrane-seam-welding
+status: published
+setting: site_roofing
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Weld the seams of plastic roofing membranes"
+  de: "Nähte von Kunststoff-Dachbahnen verschweißen"
+summary:
+  en: "Guide the automatic hot-air welder along the overlaps of the laid membranes and finish the details at edges and penetrations."
+  de: "Den Heißluft-Schweißautomaten entlang der Überlappungen der verlegten Bahnen führen und die Details an Rändern und Durchdringungen fertigstellen."
+description:
+  en: "Flat roofs waterproofed with polymer membranes are closed by welding the overlaps. Leister's VARIMAT V2 does this at a drive speed of up to 39 ft/min (about 12 m/min) with a 1.6 inch (40 mm) nozzle; it weighs 77 lb (about 35 kg) and the maker shows it on inclinations of up to 30°. The operator sets it on each seam, guides it and moves it on; corners, edges and penetrations need detail work."
+  de: "Flachdächer mit Kunststoffbahnen werden geschlossen, indem die Überlappungen verschweißt werden. Der VARIMAT V2 von Leister tut das mit bis zu 39 ft/min (etwa 12 m/min) Fahrgeschwindigkeit und einer 1,6-Zoll-Düse (40 mm); er wiegt 77 lb (etwa 35 kg), und der Hersteller zeigt ihn auf Neigungen bis 30°. Die Bedienperson setzt ihn auf jede Naht, führt ihn und versetzt ihn; Ecken, Ränder und Durchdringungen brauchen Detailarbeit."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '021'
+  atv: "DIN 18336"
+  position:
+    en: "Flat-roof waterproofing with plastic membranes, seams hot-air welded"
+    de: "Dachabdichtung mit Kunststoffbahnen, Nähte heißluftverschweißt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 35, max: 35 }
+    confidence: confirmed
+    evidence_url: 'https://cdn-assets.leister.com/pim/medias/30/16/0/30160.pdf'
+    note: "The heaviest object is the automatic welder: 77 lb, about 35 kg (Leister brochure, 12.2009). Whoever does the task lifts it from seam to seam."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Long straight seams in the field; edges, corners and penetrations differ per roof."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A weak seam leaks; seams are checked and rewelded where they fail."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Waterproofing carries no structural load."
+  reach_height_m:
+    value: { min: 0, max: 1 }
+    confidence: assumed
+    note: "Work at roof level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the roof, in the weather."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Hot-air welding raises no dust; fumes from heated membranes are a separate question."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Dew and rain on the roof; membranes are welded dry."
+  floor:
+    value: level
+    confidence: likely
+    note: "Flat roof; the maker shows the welder on inclinations of up to 30°."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: confirmed
+    evidence_url: 'https://cdn-assets.leister.com/pim/medias/30/16/0/30160.pdf'
+    note: "Automatic hot-air welders run the long seams; a person sets and guides them, and details stay manual."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "Drive speed 2.3 to 39 ft/min (about 0.7 to 12 m/min), depending on material"
+    confidence: confirmed
+    evidence_url: 'https://cdn-assets.leister.com/pim/medias/30/16/0/30160.pdf'
+    note: "Leister technical data for the VARIMAT V2."
+requirements:
+  object_size_m:
+    value: { min: 0.64, max: 0.64 }
+    confidence: confirmed
+    evidence_url: 'https://cdn-assets.leister.com/pim/medias/30/16/0/30160.pdf'
+    note: "Welder 25 × 17 × 13 inches, about 640 × 430 × 330 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The brochure gives the nozzle width (1.6 inch, about 40 mm), not a seam tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The welder applies its own pressure through the pressure roller; no figure is given."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The automatic welder is the better answer and already in use: it runs the long seams at up to 12 m/min while a person guides it. A humanoid would have to lift the 35 kg machine between seams and work in the weather."
+      de: "Der Schweißautomat ist die bessere Antwort und bereits im Einsatz: Er fährt die langen Nähte mit bis zu 12 m/min, während eine Person ihn führt. Ein Humanoid müsste die 35-kg-Maschine zwischen den Nähten heben und im Wetter arbeiten."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Leister's brochure gives the VARIMAT V2 automatic hot-air welder for polymer roofing membranes a drive speed of 2.3 to 39 ft/min, a 1.6 inch welding nozzle, a size of 25 × 17 × 13 inches and a weight of 77 lb, and shows it on inclinations of up to 30°."
+      de: "Die Leister-Broschüre nennt für den Heißluft-Schweißautomaten VARIMAT V2 für Kunststoff-Dachbahnen 2,3 bis 39 ft/min Fahrgeschwindigkeit, eine 1,6-Zoll-Schweißdüse, 25 × 17 × 13 Zoll und 77 lb Gewicht und zeigt ihn auf Neigungen bis 30°."
+    url: 'https://cdn-assets.leister.com/pim/medias/30/16/0/30160.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2009-12-01'
+    type: claim
+    confidence: confirmed
+    note: "US edition of the brochure, 12.2009 (month only)."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the automatic welder is not yet used: compare metres of seam per hour and rework with and without it on one roof."
+    de: "Falls noch kein Schweißautomat eingesetzt wird: Nahtmeter pro Stunde und Nacharbeit mit und ohne Automat auf einem Dach vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "How much of the seam length is straight field seam and how much detail?", de: "Wie viel der Nahtlänge ist gerade Flächennaht, wie viel Detail?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

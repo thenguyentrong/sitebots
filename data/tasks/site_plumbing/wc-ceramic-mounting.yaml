@@ -1,0 +1,127 @@
+schema_version: 1
+id: site_plumbing/wc-ceramic-mounting
+status: published
+setting: site_plumbing
+family: assembly_fastening
+trades: [mep_plumbing]
+title:
+  en: "Hang wall-hung WC bowls on the installation frame"
+  de: "Wand-WCs am Montageelement anbringen"
+summary:
+  en: "Fit the connection pieces, lift the bowl onto the frame's threaded studs, align it against the finished wall and tighten it."
+  de: "Anschlussstücke einsetzen, die Keramik auf die Gewindebolzen des Elements heben, an der fertigen Wand ausrichten und festschrauben."
+description:
+  en: "After tiling, the ceramics go onto the pre-wall frames. A wall-hung WC such as the Villeroy & Boch Subway 2.0 weighs 26.0 kg according to the maker's professional catalogue, at 560 × 370 × 365 mm. It is lifted onto two threaded studs, pushed against the finished wall with the connection pieces in place and tightened without damaging the porcelain."
+  de: "Nach dem Fliesen kommt die Keramik an die Vorwandelemente. Ein Wand-WC wie das Villeroy & Boch Subway 2.0 wiegt laut dem Fachkatalog des Herstellers 26,0 kg bei 560 × 370 × 365 mm. Es wird auf zwei Gewindebolzen gehoben, mit eingesetzten Anschlussstücken an die fertige Wand geschoben und festgezogen, ohne das Porzellan zu beschädigen."
+also_in_settings: [modular_volumetric]
+derived_from: null
+lv:
+  lb: '045'
+  atv: "DIN 18381"
+  position:
+    en: "Wall-hung WC of vitreous china: supply and install on the installation element"
+    de: "Wand-WC aus Sanitärporzellan liefern und am Montageelement montieren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 26.0, max: 26.0 }
+    confidence: confirmed
+    evidence_url: 'https://pro.villeroy-boch.com/de/ch/bw/p/Subway-2.0-Tiefspuel-WC-spuelrandlos-Oval-5614A101'
+    note: "26.025 kg for the Subway 2.0 rimless wall-hung WC 5614A101 in the maker's professional catalogue; the page does not say whether packing is included. Other models are lighter or heavier."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same step in every bathroom, but models, connection pieces and wall finishes vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Cracked porcelain or a leaking connection means a new bowl or a reset, with the finished tiles at risk."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The installation frame carries the load; the bowl is fixed to it by the maker's instructions."
+  reach_height_m:
+    value: { min: 0.3, max: 0.6 }
+    confidence: assumed
+    note: "Bowl height at the finished wall; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Tiled bathrooms."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Late interior works; no drilling in this step."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Before the water is on."
+  floor:
+    value: level
+    confidence: likely
+    note: "Tiled floor, to be protected."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Lifted and fitted by hand; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.56, max: 0.56 }
+    confidence: confirmed
+    evidence_url: 'https://pro.villeroy-boch.com/de/ch/bw/p/Subway-2.0-Tiefspuel-WC-spuelrandlos-Oval-5614A101'
+    note: "560 mm long, 370 mm wide, 365 mm high."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The bowl sits against the finished wall on the frame's fixed studs; no tolerance figure is stated."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Use a lifting and positioning aid if the carry is the problem, and keep aligning and tightening with the installer. At 26 kg the bowl sits just above the payload ceiling of current humanoids, and the porcelain leaves no margin for a slip."
+      de: "Wenn das Tragen das Problem ist, eine Hebe- und Positionierhilfe einsetzen, Ausrichten und Festziehen beim Monteur lassen. Mit 26 kg liegt die Keramik knapp über der Traglastgrenze heutiger Humanoider, und das Porzellan verzeiht kein Abrutschen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Villeroy & Boch lists the Subway 2.0 rimless wall-hung WC 5614A101 at 560 × 370 × 365 mm and 26.025 kg in its professional product catalogue."
+      de: "Villeroy & Boch gibt im Fachkatalog für das spülrandlose Wand-WC Subway 2.0 (5614A101) 560 × 370 × 365 mm und 26,025 kg an."
+    url: 'https://pro.villeroy-boch.com/de/ch/bw/p/Subway-2.0-Tiefspuel-WC-spuelrandlos-Oval-5614A101'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Swiss professional catalogue page, undated, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a lifting aid: one building section of bathrooms, time per bowl with and without the aid."
+    de: "Falls mit Hebehilfe verfolgt: ein Bauabschnitt mit Bädern, Zeit je WC mit und ohne Hilfe."
+prerequisites: []
+open_questions:
+  - { en: "How much of the bathroom time goes into the ceramics, compared with tiling and connecting?", de: "Wie viel der Badzeit entfällt auf die Keramik im Vergleich zu Fliesen und Anschließen?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

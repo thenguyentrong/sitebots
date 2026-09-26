@@ -1,0 +1,124 @@
+schema_version: 1
+id: modular_volumetric/first-fix-electrics-in-modules
+status: published
+setting: modular_volumetric
+family: assembly_fastening
+trades: [mep_electrical]
+title:
+  en: "Set boxes and lay cables in modules before the walls close"
+  de: "Dosen setzen und Leitungen verlegen, bevor die Modulwände geschlossen werden"
+summary:
+  en: "First-fix electrical installation inside a module: fix boxes, run cables from the ring along the planned routes, leave the ends for connection."
+  de: "Elektro-Rohinstallation im Modul: Dosen befestigen, Leitungen vom Ring entlang der geplanten Wege verlegen, Enden für den Anschluss lassen."
+description:
+  en: "In module factories the installations go in on the line, after floor, walls and panelling and before the module is closed. An electrician works inside a room-sized box: sets switch and socket boxes, pulls cable off 100 m rings and fixes it along the routes of the drawing. Positions change with every module plan; the parts are light; mistakes show at the inspection before the lining goes on."
+  de: "In Modulwerken kommen die Installationen am Band hinein, nach Boden, Wänden und Beplankung und bevor das Modul geschlossen wird. Eine Elektrofachkraft arbeitet in einer raumgroßen Kiste: setzt Schalter- und Steckdosen, zieht Leitung von 100-m-Ringen und befestigt sie entlang der Wege aus dem Plan. Die Positionen wechseln mit jedem Modulplan; die Teile sind leicht; Fehler zeigen sich bei der Prüfung vor dem Beplanken."
+also_in_settings: [site_electrical]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.05, max: 11.5 }
+    confidence: likely
+    evidence_url: 'https://www.unielektro.de/NYM-J-3X1-5-grau-Ring-100-m--item-10901261'
+    note: "Boxes and clips weigh grams; the heaviest item is a 100 m ring of NYM-J 3 × 1.5 mm² at 115 kg/km, 11.5 kg per ring (distributor data)."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Box positions and cable routes change with every module plan."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missing box or wrong route is found at the check before the lining closes the wall; after that it means opening the wall."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "First fix only; protective measures are verified after completion, before the installation is put into service."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Floor to ceiling of the module; take the clear room height from your module types."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the module, inside the hall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Fit-out stations are workrooms; drilling and cutting of the lining are local sources. Measure on site."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Module floor; the step into the module is the only change of level."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Done by hand in module factories as far as known; if your line pre-assembles wiring looms, the task shrinks."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at walls and boxes; if they record people, the data-protection flags apply."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the station takt; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; count boxes and cable metres per module type."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Cable of 9.0 mm outer diameter (distributor data) off a ring; the ring size is not stated."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Cables run in the installation zones and boxes sit where the drawing puts them; neither is a ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Pulling and clipping cable by hand; no published force."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Light, variable and inside a small room, which is where a humanoid's size helps; the open point is the check before closing. Compare a wheeled mobile manipulator for the boxes, keep a person for the check."
+      de: "Leicht, variabel und in einem kleinen Raum, wo die Größe eines Humanoiden hilft; offen ist die Kontrolle vor dem Schließen. Einen radgebundenen Mobilmanipulator für die Dosen vergleichen, die Kontrolle bleibt bei einer Person."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage, quality]
+capabilities_required: [screwing, autonomous_nav_indoor]
+capabilities_optional: [drilling]
+solution_classes: [humanoid, mobile_manipulator_wheeled]
+evidence:
+  - statement:
+      en: "In ALHO's module production, floor construction is followed by wall construction and panelling, then electrical and sanitary installations and the fitting of windows and doors."
+      de: "In der Modulfertigung von ALHO folgen auf den Bodenaufbau Wandaufbau und Beplankung, danach Elektro- und Sanitärinstallation sowie der Einbau von Fenstern und Türen."
+    url: 'https://www.alho.com/en/modular-construction/construction-method/production/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated page; dated with the check date. Shows where the task sits in the factory, not a robot precedent."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of boxes and routes right at the check after 3 months, then stay manual."
+    de: "Weniger als 99 % der Dosen und Wege nach 3 Monaten bei der Kontrolle richtig, dann manuell bleiben."
+  scope_hint:
+    en: "One module type, boxes only, cable by hand, a check of every module."
+    de: "Ein Modultyp, nur Dosen, Leitungen von Hand, Kontrolle jedes Moduls."
+prerequisites:
+  - { en: "Box positions exported from the module model", de: "Dosenpositionen aus dem Modulmodell exportiert" }
+open_questions:
+  - { en: "Can the wiring be pre-assembled as looms off the line instead?", de: "Lässt sich die Verdrahtung stattdessen als Kabelbaum neben der Linie vorfertigen?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,124 @@
+schema_version: 1
+id: construction_3d_printing/set-boxes-during-printing
+status: published
+setting: construction_3d_printing
+family: assembly_fastening
+trades: [concrete, mep_electrical]
+title:
+  en: "Set outlet boxes and opening covers into the wall while it prints"
+  de: "Leerdosen und Öffnungsabdeckungen während des Drucks in die Wand setzen"
+summary:
+  en: "When the printer stops at a planned outlet or opening, place the empty box or lay a steel sheet over the gap, then let the print continue."
+  de: "Wenn der Drucker an einer geplanten Dose oder Öffnung anhält, die Leerdose setzen oder ein Stahlblech über die Lücke legen, dann den Druck fortsetzen."
+description:
+  en: "3D-printed walls take their services during printing instead of being chased afterwards. The printer stops where an outlet is planned; a person sets an empty box, or lays a sheet over a larger opening, and the next layers are printed over it. The positions come from the plan, the parts are light, and a missed box means chiselling later, which the method exists to avoid."
+  de: "3D-gedruckte Wände bekommen ihre Installationen während des Drucks, statt sie nachträglich zu schlitzen. Der Drucker hält an, wo eine Steckdose geplant ist; eine Person setzt eine Leerdose oder legt ein Blech über eine größere Öffnung, und die nächsten Lagen werden darüber gedruckt. Die Positionen kommen aus dem Plan, die Teile sind leicht, und eine vergessene Dose bedeutet späteres Stemmen, das die Methode gerade vermeiden soll."
+also_in_settings: [site_electrical]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.05, max: 5 }
+    confidence: assumed
+    note: "Empty boxes weigh grams; the sheets laid over larger openings are not specified in the source, assumed up to 5 kg."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Box and opening positions change with every wall and storey."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missed or misplaced box is printed over and has to be chiselled out later."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "Non-structural parts; openings that affect the wall's load-bearing design are planned, not improvised."
+  reach_height_m:
+    value: { min: 0.2, max: 3.0 }
+    confidence: assumed
+    note: "From the first layers up to storey height as the wall grows; measure your printer's working envelope."
+  environment:
+    value: both
+    confidence: likely
+    note: "Printing happens in the hall and on site; the Beckum house was printed on its plot."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: "The print area is wet; dry material handling and mixing are the dust sources (setting note)."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Fresh printed material next to the placement."
+  floor:
+    value: mixed
+    confidence: assumed
+    note: "Level in a hall, uneven on a building plot."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.dabonline.de/bautechnik/haus-3d-drucker-betondruck-deutschlands-erstes-wohnhaus-gedruckt-beckum-beton-peri'
+    note: "The printer stops and a person places the box (Beckum, 2020); the printer itself does not place parts."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at the wall; if they record people, the data-protection flags apply."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Print runs last hours with short interventions; the robot would wait between them."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count stops per wall and printer minutes lost per stop."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Box sizes follow the electrical plan; sheet sizes follow the openings."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Box positions come from the plan; no ± value in the source."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Pressing a box into fresh material; no published force."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Light, variable and tied to the printer's stops, so the real comparison is a tool on the printer head that places boxes against a person in the print space. A humanoid needs to reach storey height beside wet material, outdoors when printing on site."
+      de: "Leicht, variabel und an die Druckstopps gebunden; der eigentliche Vergleich ist ein Werkzeug am Druckkopf, das Dosen setzt, gegen eine Person im Druckraum. Ein Humanoide müsste neben nassem Material bis Geschosshöhe reichen, im Freien beim Druck vor Ort."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, quality]
+capabilities_required: [autonomous_nav_indoor]
+capabilities_optional: [tool_handoff]
+solution_classes: [dedicated_machine, humanoid, mobile_manipulator_wheeled]
+evidence:
+  - statement:
+      en: "At the printed house in Beckum the printer stopped where an outlet was planned; a technician set an empty box or laid a stainless-steel sheet over larger openings, so no slots had to be chiselled afterwards."
+      de: "Beim gedruckten Haus in Beckum hielt der Drucker an, wo eine Steckdose geplant war; ein Techniker setzte eine Leerdose ein oder legte bei größeren Aussparungen ein Edelstahlblech darüber, sodass kein Schlitz nachträglich gestemmt werden musste."
+    url: 'https://www.dabonline.de/bautechnik/haus-3d-drucker-betondruck-deutschlands-erstes-wohnhaus-gedruckt-beckum-beton-peri'
+    kind: press
+    tier: 3
+    date: '2020-11-26'
+    type: deployment
+    confidence: likely
+    note: "Deutsches Architektenblatt, 26.11.2020, updated after completion in 2021. Evidence that people do this step today."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Any box missed or printed over, or printer waiting time longer than with the technician: stop."
+    de: "Jede vergessene oder überdruckte Dose oder längere Wartezeit des Druckers als mit dem Techniker: stoppen."
+  scope_hint:
+    en: "One storey in the hall, outlet boxes only."
+    de: "Ein Geschoss in der Halle, nur Leerdosen."
+prerequisites:
+  - { en: "Box and opening positions in the print path data", de: "Dosen- und Öffnungspositionen in den Druckpfaddaten" }
+open_questions:
+  - { en: "Can the printer supplier offer a placing tool on the print head instead?", de: "Kann der Druckerhersteller stattdessen ein Setzwerkzeug am Druckkopf anbieten?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

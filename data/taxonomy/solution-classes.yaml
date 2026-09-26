@@ -1,0 +1,131 @@
+# What the Systems station compares. The first three map to catalogue form
+# factors; the rest are answers the catalogue has no rows for, so a ruled-out
+# task still ends in a decision. Price bands stay null unless sourced; the one
+# band given is a Sitebots assessment and says so.
+solution_classes:
+  - id: humanoid
+    title: { en: "Humanoid", de: "Humanoider Roboter" }
+    catalogue_form_factor: humanoid
+    when_it_wins:
+      en: Variable, light, non-critical work in spaces built for people, where a fixed cell cannot justify itself and the platform may be relocated between tasks.
+      de: Variable, leichte, nicht sicherheitskritische Arbeit in Räumen, die für Menschen gebaut sind, wo sich eine feste Zelle nicht rechnet und die Plattform zwischen Aufgaben wechseln darf.
+    supplier_questions:
+      - { en: "Which exact configuration (hands, compute, battery) is quoted, and which reference customers run it unattended?", de: "Welche exakte Konfiguration (Hände, Rechner, Akku) wird angeboten, und welche Referenzkunden betreiben sie unbeaufsichtigt?" }
+      - { en: "What replaces the unpublished legged-robot safety standard in your conformity approach?", de: "Was ersetzt in Ihrem Konformitätsansatz die unveröffentlichte Norm für Laufroboter?" }
+    regulatory_note:
+      en: Dynamically stable, so the mobility hazards fall outside ISO 10218:2025; ISO 25785-1 is unpublished. A bespoke ISO 12100 risk assessment carries the application.
+      de: Dynamisch stabil, daher liegen die Mobilitätsgefährdungen außerhalb der ISO 10218:2025; ISO 25785-1 ist unveröffentlicht. Eine eigene Risikobeurteilung nach ISO 12100 trägt die Anwendung.
+    typical_price_band: { value: null, confidence: assumed, note: See the catalogue price observations per robot; no class-level band is published. }
+  - id: mobile_manipulator_wheeled
+    title: { en: "Wheeled dual-arm mobile manipulator", de: "Radgebundener Zweiarm-Mobilmanipulator" }
+    catalogue_form_factor: mobile_manipulator
+    when_it_wins:
+      en: The same variable work on level floors, when static stability matters for the conformity path and the platform never needs stairs.
+      de: Dieselbe variable Arbeit auf ebenen Böden, wenn statische Stabilität für den Konformitätsweg zählt und die Plattform nie Treppen braucht.
+    supplier_questions:
+      - { en: "Is the platform statically stable in every configuration, including with arms extended and loaded?", de: "Ist die Plattform in jeder Konfiguration statisch stabil, auch mit ausgestreckten, belasteten Armen?" }
+      - { en: "Which mobile-manipulator provisions of ISO 10218-2:2025 does the conformity file cite?", de: "Welche Bestimmungen der ISO 10218-2:2025 für mobile Manipulatoren zitiert die Konformitätsakte?" }
+    regulatory_note:
+      en: Statically stable platforms fall under the published mobile-manipulator provisions of ISO 10218-2:2025; both German production deployments reported in 2026 chose wheels.
+      de: Statisch stabile Plattformen fallen unter die veröffentlichten Bestimmungen der ISO 10218-2:2025 für mobile Manipulatoren; beide 2026 gemeldeten deutschen Produktionseinsätze wählten Räder.
+    typical_price_band: { value: null, confidence: assumed, note: See the catalogue price observations per robot. }
+  - id: quadruped_inspection
+    title: { en: "Quadruped inspection platform", de: "Vierbeinige Inspektionsplattform" }
+    catalogue_form_factor: quadruped
+    when_it_wins:
+      en: Sensing and documentation on routes with stairs, rubble or outdoor stretches; no manipulation.
+      de: Erfassen und Dokumentieren auf Wegen mit Treppen, Schutt oder Außenabschnitten; keine Handhabung.
+    supplier_questions:
+      - { en: "Which sensor payload, mission software and export format deliver the report the reviewer needs?", de: "Welche Sensornutzlast, Missionssoftware und Exportformat liefern den Bericht, den die prüfende Person braucht?" }
+    regulatory_note:
+      en: Legged like a humanoid, so the same standards gap applies; several models publish ingress ratings, which humanoids do not.
+      de: Laufend wie ein Humanoid, daher dieselbe Normenlücke; mehrere Modelle veröffentlichen Schutzarten, Humanoide nicht.
+    typical_price_band: { value: null, confidence: assumed, note: See the catalogue price observations per robot. }
+  - id: fixed_cobot_cell
+    title: { en: "Fixed cobot cell with fixtures", de: "Feste Cobot-Zelle mit Vorrichtungen" }
+    catalogue_form_factor: null
+    when_it_wins:
+      en: Repetitive, fixed-position work with a stable part mix; cheaper per unit than any mobile platform.
+      de: Repetitive, ortsfeste Arbeit mit stabilem Teilemix; je Stück günstiger als jede mobile Plattform.
+    supplier_questions:
+      - { en: "Which part presentation and fixtures does the cell need, and who builds them?", de: "Welche Teilebereitstellung und Vorrichtungen braucht die Zelle, und wer baut sie?" }
+      - { en: "What is the changeover time between part families?", de: "Wie lang ist die Umrüstzeit zwischen Teilefamilien?" }
+    regulatory_note:
+      en: Fully covered by ISO 10218-1/-2:2025 including the collaborative provisions that absorbed ISO/TS 15066.
+      de: Vollständig durch ISO 10218-1/-2:2025 abgedeckt, einschließlich der kollaborativen Bestimmungen aus der ehemaligen ISO/TS 15066.
+    typical_price_band:
+      value: { min: 60000, max: 120000, currency: EUR }
+      confidence: assumed
+      note: Sitebots assessment from one industry engagement, 2025/26, for a cobot with gripper, fixtures and integration; obtain quotes.
+  - id: vacuum_lifter_assist
+    title: { en: "Vacuum lifter or assist device", de: "Vakuumheber oder Hebehilfe" }
+    catalogue_form_factor: null
+    when_it_wins:
+      en: Boards, windows and units between 25 kg and a few hundred kilograms handled by one person with a device.
+      de: Platten, Fenster und Einheiten zwischen 25 kg und einigen hundert Kilogramm, von einer Person mit Gerät bewegt.
+    supplier_questions:
+      - { en: "Which surfaces and weights does the lifter hold safely, and what is the cycle time at the station?", de: "Welche Oberflächen und Gewichte hält der Heber sicher, und wie lang ist der Takt an der Station?" }
+    regulatory_note:
+      en: Lifting accessory under the Machinery Regulation; operator training and inspection intervals apply.
+      de: Lastaufnahmemittel nach Maschinenverordnung; Unterweisung und Prüffristen gelten.
+    typical_price_band: { value: null, confidence: assumed, note: Not published at class level; obtain quotes. }
+  - id: gantry
+    title: { en: "Gantry or crane system", de: "Portal- oder Kransystem" }
+    catalogue_form_factor: null
+    when_it_wins:
+      en: Elements of tonnes, fixed routes between stations, full-hall coverage.
+      de: Elemente im Tonnenbereich, feste Wege zwischen Stationen, Abdeckung der ganzen Halle.
+    supplier_questions:
+      - { en: "Can the existing crane be automated for the repeat moves before new equipment is considered?", de: "Lässt sich der vorhandene Kran für die Wiederholbewegungen automatisieren, bevor neue Anlagen erwogen werden?" }
+    regulatory_note:
+      en: Established machinery with published standards and inspection regimes.
+      de: Etablierte Maschinen mit veröffentlichten Normen und Prüfregimen.
+    typical_price_band: { value: null, confidence: assumed, note: Not published at class level; obtain quotes. }
+  - id: amr_carts
+    title: { en: "AMR fleet with carts", de: "AMR-Flotte mit Wagen" }
+    catalogue_form_factor: null
+    when_it_wins:
+      en: Repeat transport of carts and pallets between fixed points on level floors, loaded and unloaded by people or stations.
+      de: Wiederholter Transport von Wagen und Paletten zwischen festen Punkten auf ebenen Böden, be- und entladen von Menschen oder Stationen.
+    supplier_questions:
+      - { en: "Who loads and unloads, and how do the carts dock at the stations?", de: "Wer be- und entlädt, und wie docken die Wagen an den Stationen an?" }
+    regulatory_note:
+      en: Covered by the published mobile-robot standards; fleet software and traffic rules are part of the risk assessment.
+      de: Durch die veröffentlichten Normen für mobile Roboter abgedeckt; Flottensoftware und Verkehrsregeln sind Teil der Risikobeurteilung.
+    typical_price_band: { value: null, confidence: assumed, note: Not published at class level; obtain quotes. }
+  - id: dedicated_machine
+    title: { en: "Dedicated machine for this step", de: "Dedizierte Maschine für diesen Schritt" }
+    catalogue_form_factor: null
+    when_it_wins:
+      en: Whenever a machine class already does this step faster, stronger and cheaper per unit; a humanoid at its controls adds cost.
+      de: Immer dann, wenn eine Maschinenklasse diesen Schritt schon schneller, stärker und je Stück günstiger erledigt; ein Humanoid an den Bedienelementen kostet nur.
+    supplier_questions:
+      - { en: "What is the cost per unit at your volume, including operator time and changeovers?", de: "Was kostet das Stück bei Ihrer Menge, inklusive Bedienzeit und Umrüstung?" }
+    regulatory_note:
+      en: Established machinery; the machine maker holds the conformity.
+      de: Etablierte Maschinen; die Konformität liegt beim Maschinenhersteller.
+    typical_price_band: { value: null, confidence: assumed, note: Depends on the machine class; obtain quotes. }
+  - id: keep_process
+    title: { en: "Keep the existing process", de: "Bestehenden Prozess beibehalten" }
+    catalogue_form_factor: null
+    when_it_wins:
+      en: When the incumbent already performs, and the real pain sits around it (slinging, alignment, waiting), not in it.
+      de: Wenn der bestehende Prozess bereits funktioniert und der eigentliche Schmerz drumherum liegt (Anschlagen, Ausrichten, Warten), nicht darin.
+    supplier_questions:
+      - { en: "Which interventions around the existing machine cost the most operator time?", de: "Welche Eingriffe rund um die vorhandene Maschine kosten am meisten Bedienzeit?" }
+    regulatory_note:
+      en: Nothing changes; the process is the baseline every alternative is compared with.
+      de: Nichts ändert sich; der Prozess ist die Basis, mit der jede Alternative verglichen wird.
+    typical_price_band: { value: null, confidence: assumed, note: The baseline; no purchase. }
+  - id: process_change
+    title: { en: "Change the process first", de: "Zuerst den Prozess ändern" }
+    catalogue_form_factor: null
+    when_it_wins:
+      en: When dust, presentation or layout rule a robot out; extraction, relocation of the step or fixed part presentation may remove the obstacle.
+      de: Wenn Staub, Bereitstellung oder Layout einen Roboter ausschließen; Absaugung, Verlagerung des Schritts oder feste Teilebereitstellung können das Hindernis beseitigen.
+    supplier_questions:
+      - { en: "Which change would move this step out of the classified zone or into a stable presentation?", de: "Welche Änderung brächte diesen Schritt aus der Zone heraus oder in eine stabile Bereitstellung?" }
+    regulatory_note:
+      en: A process change in a dust area is an occupational-hygiene measure first (cleaning plan, extraction, exposure measurement).
+      de: Eine Prozessänderung im Staubbereich ist zuerst eine Arbeitsschutzmaßnahme (Reinigungsplan, Absaugung, Expositionsmessung).
+    typical_price_band: { value: null, confidence: assumed, note: Depends on the change; obtain quotes. }

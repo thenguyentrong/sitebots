@@ -1,0 +1,134 @@
+schema_version: 1
+id: joinery_windows_doors/load-windows-onto-racks
+status: published
+setting: joinery_windows_doors
+family: packaging_palletising_loading
+trades: [windows_doors, logistics]
+title:
+  en: "Load finished windows onto transport racks"
+  de: "Fertige Fenster auf Transportgestelle laden"
+summary:
+  en: "Take glazed windows off the end of the line, stand them on the transport rack in delivery order and secure them for the truck."
+  de: "Verglaste Fenster am Ende der Linie abnehmen, in Lieferreihenfolge auf das Transportgestell stellen und für den Lkw sichern."
+description:
+  en: "Once a window is glazed and its hardware is in, it leaves the line whole. The glass alone decides the weight: 2.5 kg per m² for every millimetre of glass, so a triple unit with three 4 mm panes weighs 30 kg per m² before frame and hardware. Units stand upright on racks in the order they go into the building, protected against scratches on glass and frame."
+  de: "Ist ein Fenster verglast und der Beschlag angeschlagen, verlässt es die Linie als Ganzes. Das Glas allein bestimmt das Gewicht: 2,5 kg je m² und Millimeter Glas, eine Dreifachverglasung mit drei 4-mm-Scheiben wiegt also 30 kg je m², ohne Rahmen und Beschlag. Die Einheiten stehen aufrecht auf den Gestellen, in der Reihenfolge, in der sie ins Gebäude kommen, geschützt gegen Kratzer an Glas und Rahmen."
+also_in_settings: [facade_prefab, site_windows_doors]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 30, max: 90 }
+    confidence: likely
+    evidence_url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    note: "Glass only: thickness in mm × 2.5 = kg per m² (GLASundBESCHLAG glossary). Three 4 mm panes = 12 mm = 30 kg/m²; window glass areas of 1 to 3 m² (assumed) give 30 to 90 kg before frame and hardware."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Sizes and opening types change per order, but the handling steps repeat."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A scratched pane or a dented frame is rework or a new unit, found at the latest on delivery."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "Handling finished products; falling units are a handling risk for people, not a property of the product."
+  reach_height_m:
+    value: { min: 0.2, max: 2.0 }
+    confidence: assumed
+    note: "Units stand upright on the rack; tall units reach about 2 m. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "End of the assembly line in the hall."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Finished products; no dust-producing work at the rack."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Factory hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Loaded by people with vacuum lifting aids as far as known; if your line stacks automatically, the task is gone."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at windows and racks."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on units per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count units per shift and minutes per unit."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Unit sizes vary per order; no published size range is used here."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No placement tolerance; units must not touch each other on the rack."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Lifting and tilting the unit; no force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "A vacuum lifter on a crane or a column jib carries the unit; the glass alone is above the payload ceiling of today's humanoids. Automatic stacking at the end of a glazing line is the next comparison."
+      de: "Ein Vakuumheber an Kran oder Säulenschwenkkran trägt die Einheit; schon das Glas liegt über der Traglastgrenze heutiger Humanoider. Automatisches Stapeln am Ende einer Verglasungslinie ist der nächste Vergleich."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [carry_payload, palletising]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "GLASundBESCHLAG gives the rule for glass weight: glass thickness in mm × 2.5 = weight per m² in kg, for example 10 mm glass = 25 kg/m²; for laminated glass the pane thicknesses are added."
+      de: "GLASundBESCHLAG nennt die Faustregel für das Glasgewicht: Glasdicke in mm × 2,5 = Gewicht pro m² in kg, etwa 10 mm Glas = 25 kg/m²; bei Verbundsicherheitsglas werden die Scheibendicken addiert."
+    url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    kind: manufacturer
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Glossary page without a date (© 2024); dated with the check date. Data source for the mass."
+  - statement:
+      en: "Arndt Fenstertechnik invested in an automated glazing line that reduces manual handling of heavy glass panes; the operation went from eight employees to five."
+      de: "Arndt Fenstertechnik hat in eine automatisierte Verglasungsstraße investiert, die das manuelle Handling schwerer Glasscheiben verringert; der Betrieb kommt statt mit acht nun mit fünf Mitarbeitenden aus."
+    url: 'https://www.bauelemente-bau.eu/news/neuigkeiten/4169/arndt-fenstertechnik-investiert-in-automatisierte-verglasungsstra%C3%9Fe.html'
+    kind: press
+    tier: 3
+    date: '2021-02-15'
+    type: deployment
+    confidence: likely
+    note: "Trade press on glazing; it does not describe what happens after glazing."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Any glass breakage caused by the lifting aid, or no drop in person-minutes per unit after 3 months: stop."
+    de: "Jeder Glasbruch durch die Hebehilfe oder nach 3 Monaten keine Senkung der Personenminuten je Einheit: stoppen."
+  scope_hint:
+    en: "One rack type and one window family; measure minutes per unit and damage per 1,000 units."
+    de: "Ein Gestelltyp und eine Fensterfamilie; Minuten je Einheit und Schäden je 1.000 Einheiten messen."
+prerequisites:
+  - { en: "Glass build-up and unit sizes per order from the order data", de: "Glasaufbau und Einheitenmaße je Auftrag aus den Auftragsdaten" }
+open_questions:
+  - { en: "What is the heaviest unit you ship, including frame and hardware?", de: "Was ist Ihre schwerste ausgelieferte Einheit, mit Rahmen und Beschlag?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

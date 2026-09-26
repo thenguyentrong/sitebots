@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_steelwork/steel-deck-laying
+status: published
+setting: site_steelwork
+family: assembly_fastening
+trades: [steel, facade_roofing]
+title:
+  en: "Lay and fix trapezoidal steel roof decking"
+  de: "Stahltrapezprofile als Dachtragschale verlegen und befestigen"
+summary:
+  en: "Take the sheets from the bundle the crane has set on the roof, lay them with the specified laps and fix them to the steel frame."
+  de: "Die Profiltafeln aus dem Paket nehmen, das der Kran auf dem Dach abgesetzt hat, mit den vorgegebenen Überdeckungen verlegen und an der Stahlkonstruktion befestigen."
+description:
+  en: "Trapezoidal sheets of this kind are mostly used as the load-bearing shell of insulated roofs. A 135/310 profile in 0.88 mm steel weighs about 11 kg per square metre at 930 mm cover width, so a single sheet of 3 to 12 m weighs roughly 31 to 124 kg. The work happens at height on an open roof, sheet after sheet."
+  de: "Trapezprofile dieser Art dienen meist als tragende Schale wärmegedämmter Dächer. Ein Profil 135/310 aus 0,88 mm Stahl wiegt bei 930 mm Baubreite rund 11 kg je Quadratmeter, eine einzelne Tafel von 3 bis 12 m also etwa 31 bis 124 kg. Gearbeitet wird in der Höhe auf dem offenen Dach, Tafel für Tafel."
+also_in_settings: [site_roofing]
+derived_from: null
+lv:
+  lb: '017'
+  atv: "DIN 18335"
+  position:
+    en: "Trapezoidal steel sheets as load-bearing roof decking"
+    de: "Stahltrapezprofile als tragende Dachschale"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 31, max: 124 }
+    confidence: likely
+    evidence_url: 'https://www.fischerprofil.de/de/produkte/fischertrapez-135_310'
+    note: "FischerTRAPEZ 135/310 in 0.88 mm: 11.10 kg/m², cover width 930 mm (Fischer Profil product page). A 3 m sheet weighs 0.93 × 3 × 11.10 ≈ 31 kg, a 12 m sheet ≈ 124 kg; the maker rolls lengths up to 27 m."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The sheets repeat, but laps, cut-outs and edges change across the roof."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Laps and the fastening pattern follow the structural design; a missing fastener is found in the check and added."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://buildingsolutions-deutschland.arcelormittal.com/de/produkt/dach/tragprofile/hacierco-tp-135-1-310'
+    note: "Profiles of this type are mostly used as the load-bearing shell of insulated roofs (ArcelorMittal, Hacierco TP 135.1/310); the decking and its fixings are part of the structure."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: assumed
+    note: "Sheets are laid and fixed at deck level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the open roof before it is closed."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Outdoors; cutting sheets produces sparks and swarf rather than airborne dust."
+  wet:
+    value: null
+    confidence: assumed
+    note: "Depends on the weather; wet sheets are slippery."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Open deck, profiled sheets and roof edges."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    note: "The crane sets the bundles on the roof; laying and fixing the sheets is done by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 3, max: 12 }
+    confidence: likely
+    evidence_url: 'https://www.fischerprofil.de/de/produkte/fischertrapez-135_310'
+    note: "Sheet length 3 to 12 m chosen for this record at 0.93 m cover width; the maker lists lengths up to 27 m."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Laps and fastener spacing come from the design and the maker's rules; no value recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Crane to the roof, two fitters to lay and fix: the sheets are too heavy and too long for one robot, the work is outdoors at an edge, and the deck carries the roof."
+      de: "Kran aufs Dach, zwei Monteure zum Verlegen und Befestigen: Die Tafeln sind für einen Roboter zu schwer und zu lang, die Arbeit findet im Freien an einer Absturzkante statt, und die Schale trägt das Dach."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: [autonomous_nav_outdoor]
+solution_classes: [keep_process, vacuum_lifter_assist]
+evidence:
+  - statement:
+      en: "Fischer Profil lists FischerTRAPEZ 135/310 in 0.88 mm steel at 11.10 kg/m² with a cover width of 930 mm and lengths up to 27 m."
+      de: "Fischer Profil gibt für FischerTRAPEZ 135/310 in 0,88 mm Stahl 11,10 kg/m² bei 930 mm Baubreite und Längen bis 27 m an."
+    url: 'https://www.fischerprofil.de/de/produkte/fischertrapez-135_310'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the day it was checked."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not piloted."
+    de: "Keine Erprobung."
+prerequisites: []
+open_questions:
+  - { en: "Which sheet lengths does the project order, and how are the bundles set on the roof?", de: "Welche Tafellängen bestellt das Projekt, und wie werden die Pakete auf dem Dach abgesetzt?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

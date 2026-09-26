@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_scaffolding/frame-scaffold-dismantling
+status: published
+setting: site_scaffolding
+family: assembly_fastening
+trades: [general]
+title:
+  en: "Dismantle the frame scaffold and stack the parts"
+  de: "Fassadengerüst abbauen und die Teile stapeln"
+summary:
+  en: "Take the scaffold down level by level in the reverse order of assembly, remove anchors only below dismantled levels, hand the parts down and stack them for transport."
+  de: "Das Gerüst Lage für Lage in umgekehrter Aufbaureihenfolge abbauen, Verankerungen nur unterhalb abgebauter Lagen lösen, die Teile nach unten reichen und für den Abtransport stapeln."
+description:
+  en: "Layher's assembly instructions for the Blitz scaffold (edition 02.2024) reverse the assembly steps for dismantling, with the advance guardrail used in reverse order. Anchors may only come out once the levels above are completely dismantled, parts whose connections have been loosened must be removed at once, and parts must not be thrown off the scaffold or stored on traffic routes. A steel frame of 2.00 × 0.73 m weighs 18.8 kg. The work is on the outside of the building."
+  de: "Die Aufbau- und Verwendungsanleitung für das Layher Blitz Gerüst (Ausgabe 02.2024) kehrt für den Abbau die Aufbauschritte um, der vorlaufende Seitenschutz wird in umgekehrter Reihenfolge verwendet. Verankerungen dürfen erst zurückgebaut werden, wenn die darüberliegenden Lagen vollständig demontiert sind, gelöste Bauteile sind umgehend auszubauen, und Teile dürfen weder vom Gerüst geworfen noch auf Verkehrswegen gelagert werden. Ein Stahlrahmen 2,00 × 0,73 m wiegt 18,8 kg. Gearbeitet wird an der Außenseite des Gebäudes."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '001'
+  atv: "DIN 18451"
+  position:
+    en: "Facade work scaffold: erect, keep available, dismantle"
+    de: "Fassadengerüst als Arbeitsgerüst auf-, abbauen und vorhalten"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 18.8, max: 18.8 }
+    confidence: likely
+    evidence_url: 'https://www.hawego.de/layher-blitz-stellrahmen-stahl-2-00-x-0-73-m-lg-1773.200'
+    note: "Layher Blitz steel frame 2.00 × 0.73 m, 18.8 kg, as listed by a scaffold retailer. Decks and other parts are handled too; their masses are in the erection record."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Standard parts in a fixed reverse sequence, but every facade has its own heights, corners and anchor positions."
+  error_tolerance:
+    value: critical
+    confidence: confirmed
+    evidence_url: 'https://deubner-bau.de/wp-content/uploads/2025/01/26_Blitz-Geruest-Stand-02.2024.pdf'
+    note: "Anchors may only be removed once the levels above are completely dismantled (Layher instructions, section 22); removing them early takes away the scaffold's stability."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: "The advance guardrail protects the crew from falls while they dismantle, and parts must not be thrown down onto people below."
+  reach_height_m:
+    value: { min: 0, max: 2.0 }
+    confidence: likely
+    note: "Frames are 2.00 m high and are handled from the deck of the level below."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the outside of the building."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Dismantling makes no relevant dust."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Exposed to the weather."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Decks and ladders on the scaffold, uneven ground at the base."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Frame scaffolds are taken down by hand; no machine that dismantles them is known to us."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Part of the scaffold position, priced per square metre; not recorded separately."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.07 }
+    confidence: confirmed
+    evidence_url: 'https://deubner-bau.de/wp-content/uploads/2025/01/26_Blitz-Geruest-Stand-02.2024.pdf'
+    note: "Frames 2.00 m high (Layher Blitz steel frame 2.00 × 0.73 m); bay lengths up to 3.07 m for use as a work scaffold (Layher instructions, section 21)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No dimensional tolerance; the requirement is the order of dismantling and the anchor rule."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force beyond lifting and handing down the parts."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep dismantling with a trained scaffold crew working to the instructions: anchors last, level by level, parts handed down, never thrown. A robot on a scaffold that is losing its anchors, in the weather, would carry the full risk of a collapse."
+      de: "Den Abbau bei einer geschulten Gerüstbaukolonne nach Anleitung lassen: Verankerungen zuletzt, Lage für Lage, Teile nach unten gereicht, nie geworfen. Ein Roboter auf einem Gerüst, das gerade seine Verankerung verliert, im Wetter, trüge das volle Einsturzrisiko."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics, skills_shortage]
+capabilities_required: [carry_payload, stair_climbing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Layher's assembly instructions for the Blitz scaffold (section 22): dismantling reverses the assembly steps, the advance guardrail is used in reverse order, anchors may only be removed once the scaffold levels above are completely dismantled, loosened parts must be removed at once, parts must not be thrown off the scaffold, and they must not be stored on traffic routes."
+      de: "Aufbau- und Verwendungsanleitung für das Layher Blitz Gerüst (Abschnitt 22): Für den Abbau ist die Reihenfolge der Aufbauschritte umzukehren, der vorlaufende Seitenschutz wird in umgekehrter Reihenfolge verwendet, die Verankerung darf erst zurückgebaut werden, wenn die darüberliegenden Gerüstlagen vollständig demontiert sind, gelöste Bauteile sind umgehend auszubauen, Teile dürfen nicht vom Gerüst geworfen und nicht auf Verkehrswegen gelagert werden."
+    url: 'https://deubner-bau.de/wp-content/uploads/2025/01/26_Blitz-Geruest-Stand-02.2024.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2024-02-01'
+    type: claim
+    confidence: confirmed
+    note: "Ausgabe 02.2024, page 40; manufacturer document hosted by a construction company."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If lowering and stacking the parts is the burden, compare a scaffold hoist and stacking racks at the base."
+    de: "Kein Roboterpilot. Wenn das Ablassen und Stapeln der Teile die Last ist, einen Gerüstaufzug und Stapelgestelle am Fuß vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "How do the parts come down today, by hand from level to level or with a hoist?", de: "Wie kommen die Teile heute herunter, von Hand von Lage zu Lage oder mit einem Aufzug?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

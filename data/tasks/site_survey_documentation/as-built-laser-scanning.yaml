@@ -1,0 +1,146 @@
+schema_version: 1
+id: site_survey_documentation/as-built-laser-scanning
+status: published
+setting: site_survey_documentation
+family: inspection_qa_documentation
+trades: [qa_surveying]
+title:
+  en: "Scan the as-built state and compare it with the model"
+  de: "Ist-Zustand per Laserscan erfassen und mit dem Modell vergleichen"
+summary:
+  en: "Set the laser scanner up station by station through the floor, let it scan, and compare the registered point cloud with the design model."
+  de: "Den Laserscanner Standpunkt für Standpunkt durch das Geschoss aufstellen, scannen lassen und die registrierte Punktwolke mit dem Planungsmodell vergleichen."
+description:
+  en: "Terrestrial laser scanners such as Leica's RTC360 are sold for construction-site and as-built documentation. The RTC360 weighs 5.35 kg without batteries, captures a full dome with HDR imagery in under 2 minutes and states a 3D point accuracy of 1.9 mm at 10 m; it tracks its own movement between stations to register the scans. A comparison with the model is only as good as the capture: the flatness limits of DIN 18202 are 4 mm over 1 m for finished floors and 10 to 15 mm for raw walls and slabs. Between stations a person carries and sets up the scanner."
+  de: "Terrestrische Laserscanner wie der RTC360 von Leica werden für Baustellen- und Bestandsdokumentation angeboten. Der RTC360 wiegt 5,35 kg ohne Akkus, erfasst eine volle Kuppel mit HDR-Bildern in unter 2 Minuten und gibt eine 3D-Punktgenauigkeit von 1,9 mm auf 10 m an; zwischen den Standpunkten verfolgt er seine eigene Bewegung, um die Scans zu registrieren. Ein Abgleich mit dem Modell ist nur so gut wie die Erfassung: Die Ebenheitsgrenzwerte der DIN 18202 liegen bei 4 mm auf 1 m für flächenfertige Böden und bei 10 bis 15 mm für Rohwände und Rohdecken. Zwischen den Standpunkten trägt und stellt eine Person den Scanner auf."
+also_in_settings: [facility_operation]
+derived_from: null
+lv:
+  lb: null
+  atv: null
+  position:
+    en: "As-built survey by terrestrial laser scanning, compared with the design model (surveyor or own staff; not an LV position)"
+    de: "Bestandsaufmaß per terrestrischem Laserscanning mit Abgleich gegen das Planungsmodell (Vermesser oder eigenes Personal; keine LV-Position)"
+  unit: lump
+attributes:
+  object_mass_kg:
+    value: { min: 5.35, max: 6.03 }
+    confidence: likely
+    evidence_url: 'https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica%20rtc360%20ds%20872750%201025%20en%20lr.pdf'
+    note: "RTC360: 5.35 kg nominal without batteries, plus two GEB461 batteries of 340 g each = 6.03 kg (Leica data sheet). The tripod comes on top."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every floor and every stage of the build looks different."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A gap in the capture shows at registration and the station is repeated; a deviation missed in the comparison surfaces later as rework."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Documentation; no structural or life-safety role."
+  reach_height_m:
+    value: { min: 0.5, max: 1.8 }
+    confidence: assumed
+    note: "The scanner stands on a tripod at about chest height. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Scope is inside the closed shell and the fit-out; scans outdoors are out of scope."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: likely
+    evidence_url: 'https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica%20rtc360%20ds%20872750%201025%20en%20lr.pdf'
+    note: "Construction dust on the floors; the scanner itself is rated IP54 (Leica)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slabs with stored material, thresholds, and stairs between floors."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "The scan itself is automatic, but a person carries and sets up the scanner at every station."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    evidence_url: 'https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica%20rtc360%20ds%20872750%201025%20en%20lr.pdf'
+    note: "The scanner's cameras capture people on site. Its double scan removes moving objects (Leica), which does not settle data protection on its own."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "The data sheet gives up to 4 hours per battery for the scanner; how long a robot would need to run per floor is not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Stations per floor not recorded; the pilot baseline must count them."
+requirements:
+  object_size_m:
+    value: { min: 0.24, max: 0.24 }
+    confidence: confirmed
+    evidence_url: 'https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica%20rtc360%20ds%20872750%201025%20en%20lr.pdf'
+    note: "Scanner dimensions 120 × 240 × 230 mm (Leica data sheet)."
+  tolerance_mm:
+    value: 4
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "To check DIN 18202 flatness the capture must resolve deviations of the order of the limit: 4 mm over 1 m for finished floors (Table 3, row 3), 10 mm for raw walls (row 5), 15 mm for raw slab tops (row 1). The RTC360 states 1.9 mm 3D point accuracy at 10 m."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force beyond carrying and placing the scanner."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a quadruped or a wheeled robot that carries the scanner on a repeatable route first; hands only matter where doors or temporary barriers have to be opened. Keep the registration check and the comparison with the model with a person."
+      de: "Zuerst einen Vierbeiner oder einen Roboter auf Rädern vergleichen, der den Scanner auf einer wiederholbaren Route trägt; Hände zählen nur, wo Türen oder Absperrungen zu öffnen sind. Die Prüfung der Registrierung und den Modellabgleich bei einer Person lassen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [lidar_scan, autonomous_nav_indoor]
+capabilities_optional: [stair_climbing]
+solution_classes: [quadruped_inspection, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "Leica's RTC360 data sheet: full dome scan with spherical HDR image in under 2 minutes, up to 2 million points per second, range 0.5–130 m, 3D point accuracy 1.9 mm at 10 m, visual-inertial tracking between setups for real-time registration, automatic removal of moving objects, IP54, −5 to +40 °C, 5.35 kg without batteries."
+      de: "Datenblatt des Leica RTC360: volle Kuppel mit sphärischem HDR-Bild in unter 2 Minuten, bis zu 2 Millionen Punkte pro Sekunde, Reichweite 0,5–130 m, 3D-Punktgenauigkeit 1,9 mm auf 10 m, visuell-inertiale Verfolgung zwischen den Standpunkten für die Registrierung in Echtzeit, automatische Entfernung bewegter Objekte, IP54, −5 bis +40 °C, 5,35 kg ohne Akkus."
+    url: 'https://leica-geosystems.com/-/media/files/leicageosystems/products/datasheets/leica%20rtc360%20ds%20872750%201025%20en%20lr.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2025-10-01'
+    type: claim
+    confidence: confirmed
+    note: "Document 872750 – 10.25 (October 2025). Product data; the scanner is carried by people, not a robot precedent."
+  - statement:
+      en: "An extended flatness table from DIN 18202 (Table 3), reproduced from the handbook of the screed and flooring trade, gives limits at 1 m measuring distance of 15 mm for raw slab tops (row 1), 4 mm for finished floors (row 3) and 10 mm for raw walls and slab soffits (row 5)."
+      de: "Eine erweiterte Ebenheitstabelle aus DIN 18202 (Tabelle 3), wiedergegeben aus dem Handbuch für das Estrich- und Belaggewerbe, nennt bei 1 m Messpunktabstand 15 mm für nichtflächenfertige Deckenoberseiten (Zeile 1), 4 mm für flächenfertige Böden (Zeile 3) und 10 mm für nichtflächenfertige Wände und Deckenunterseiten (Zeile 5)."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-02-01'
+    type: claim
+    confidence: confirmed
+    note: "Contractor's copy of the table; month taken from the file path. Check the current edition of DIN 18202."
+pilot:
+  metrics: [usable_captures_pct, operator_minutes_per_unit, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of stations captured and registered without a person stepping in after 3 months, then stop and keep the surveyor's rounds."
+    de: "Weniger als 99 % der Standpunkte nach 3 Monaten ohne Eingriff erfasst und registriert, dann abbrechen und bei den Runden des Vermessers bleiben."
+  scope_hint:
+    en: "One floor a week on the same route, the surveyor checks every registration and runs the model comparison."
+    de: "Ein Geschoss pro Woche auf derselben Route, der Vermesser prüft jede Registrierung und macht den Modellabgleich."
+prerequisites:
+  - { en: "A design model and control points on each floor", de: "Ein Planungsmodell und Festpunkte in jedem Geschoss" }
+  - { en: "Agreement with the works council and data protection on capturing people", de: "Abstimmung mit Betriebsrat und Datenschutz zur Erfassung von Personen" }
+open_questions:
+  - { en: "How many stations does a floor take today, and who does the comparison with the model?", de: "Wie viele Standpunkte braucht ein Geschoss heute, und wer macht den Abgleich mit dem Modell?" }
+compliance_flags: [gdpr_art_88_bdsg_26, betrvg_87_1_6, mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

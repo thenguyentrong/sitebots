@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_metalwork/grating-laying
+status: published
+setting: site_metalwork
+family: assembly_fastening
+trades: [steel]
+title:
+  en: "Lay and clamp steel gratings on platforms and walkways"
+  de: "Gitterroste auf Podesten und Laufstegen verlegen und befestigen"
+summary:
+  en: "Bring the galvanised gratings onto the steel supports, lay them edge to edge in the bearing-bar direction and fix each with clamps."
+  de: "Die verzinkten Gitterroste auf die Stahlunterkonstruktion bringen, Stoß an Stoß in Tragstabrichtung verlegen und jeden mit Klemmen befestigen."
+description:
+  en: "Gratings are the walking surface of industrial platforms, walkways and stairs. MEISER stocks pressed gratings with a 33 × 33 mm mesh and a T-profile edge, hot-dip galvanised, from 400 × 800 mm up to 1500 × 1000 mm with bearing bars of 20 × 2 to 40 × 3 mm; the first dimension is the bearing-bar direction. Its load tables for industrial stairs, platforms and walkways follow DIN EN ISO 14122-3 and RAL-GZ 638 at 5.00 kN/m² and a 1.50 kN point load. Gratings ship in units of 35, fixing clamps in units of 100."
+  de: "Gitterroste sind die Lauffläche von Industriebühnen, Laufstegen und Treppen. MEISER führt Pressroste mit 33 × 33 mm Maschenteilung und T-Profil-Einfassung, feuerverzinkt, von 400 × 800 mm bis 1500 × 1000 mm mit Tragstäben von 20 × 2 bis 40 × 3 mm; das erstgenannte Maß ist die Tragstabrichtung. Die Belastungstabellen für Industrietreppen, Arbeitsbühnen und Laufstege folgen DIN EN ISO 14122-3 und RAL-GZ 638 mit 5,00 kN/m² und 1,50 kN Einzellast. Roste werden in Einheiten zu 35 Stück geliefert, Befestigungsklemmen zu 100 Stück."
+also_in_settings: [site_steelwork, facility_operation]
+derived_from: null
+lv:
+  lb: '031'
+  atv: "DIN 18360"
+  position:
+    en: "Steel gratings, hot-dip galvanised, as covering of platforms and walkways, with fixing clamps: supply and lay"
+    de: "Gitterroste aus Stahl, feuerverzinkt, als Belag von Podesten und Laufstegen, mit Befestigungsklemmen liefern und verlegen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 3.0, max: 42.4 }
+    confidence: likely
+    evidence_url: 'https://www.meiser.de/files/downloads/preislisten-sonderverkauf/de/meiser-lagerprogramm-deutsch.pdf'
+    note: "Lower bounds from the bearing bars alone, for MEISER stock sizes: bars at 33 mm pitch × bar length × bar section × 7.85 kg/dm³ (steel, metallparadies.de). 1500 × 1000 mm with 40 × 3 mm bars: 30 × 1.5 m × 120 mm² = 42.4 kg; 400 × 800 mm with 20 × 2 mm bars: about 3 kg. Cross bars, the edging and the zinc coat add weight."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Standard panels in a grid, but cut pieces around columns, pipes and edges differ per platform."
+  error_tolerance:
+    value: limited
+    confidence: assumed
+    note: "A grating laid without its clamps or on too short a bearing is corrected at acceptance; not quantified in a fetched source."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    evidence_url: 'https://www.meiser.de/files/downloads/statik-und-belastungstabellen/gitterroste/meiser-belastungstabellen-gitterroste.pdf'
+    note: "Gratings are the walking surface of platforms and walkways, designed to DIN EN ISO 14122-3 (MEISER load tables); a loose grating is a fall hazard."
+  reach_height_m:
+    value: { min: 0, max: 1 }
+    confidence: assumed
+    note: "Laid at floor level of the platform; not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Platforms and walkways in halls and outdoors, as the MEISER brochures show."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Little dust from laying; cutting gratings to size happens in the shop or with extraction."
+  wet:
+    value: damp
+    confidence: assumed
+    note: "Outdoor platforms are exposed to the weather."
+  floor:
+    value: mixed
+    confidence: assumed
+    note: "The fitter stands on the steel frame or on gratings already laid; not measured."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Gratings are placed and clamped by hand; no machine for this step is recorded."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.4, max: 1.5 }
+    confidence: confirmed
+    evidence_url: 'https://www.meiser.de/files/downloads/preislisten-sonderverkauf/de/meiser-lagerprogramm-deutsch.pdf'
+    note: "MEISER stock pressed gratings from 400 × 800 up to 1500 × 1000 mm (outer dimensions)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No laying tolerance is stated in the fetched sources."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for fitting the clamps."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The larger stock gratings weigh over 40 kg from the bearing bars alone, and the result is a walking surface where a loose panel is a fall hazard. Stacks go up with the crane; laying and clamping stay with the metalworkers."
+      de: "Die größeren Lagerroste wiegen allein über die Tragstäbe mehr als 40 kg, und das Ergebnis ist eine Lauffläche, auf der ein loser Rost eine Absturzgefahr ist. Die Stapel kommen mit dem Kran hoch; Verlegen und Klemmen bleiben beim Metallbauer."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: []
+solution_classes: [keep_process, gantry]
+evidence:
+  - statement:
+      en: "MEISER's stock programme lists pressed industrial gratings with a 33 × 33 mm mesh and T-profile edge, hot-dip galvanised, from 400 × 800 mm to 1500 × 1000 mm with bearing bars of 20 × 2 to 40 × 3 mm, the first dimension being the bearing-bar direction; gratings ship in units of 35, clamps in units of 100."
+      de: "Das MEISER-Lagerprogramm führt Press-Industrieroste mit 33 × 33 mm Maschenteilung und T-Profil-Einfassung, feuerverzinkt, von 400 × 800 mm bis 1500 × 1000 mm mit Tragstäben von 20 × 2 bis 40 × 3 mm, erstgenanntes Maß in Tragstabrichtung; Roste werden zu 35 Stück, Klemmen zu 100 Stück verpackt."
+    url: 'https://www.meiser.de/files/downloads/preislisten-sonderverkauf/de/meiser-lagerprogramm-deutsch.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "The stock programme carries no date; the date is the check date."
+  - statement:
+      en: "MEISER's load tables for industrial stairs, platforms and walkways use 5.00 kN/m² and 1.50 kN point loads on 100 × 100 mm to DIN EN ISO 14122-3 and RAL-GZ 638, material S235, for the standard 33.3 × 33.3 mm mesh."
+      de: "Die MEISER-Belastungstabellen für Industrietreppen, Arbeitsbühnen und Laufstege rechnen mit 5,00 kN/m² und 1,50 kN Einzellast auf 100 × 100 mm nach DIN EN ISO 14122-3 und RAL-GZ 638, Werkstoff S235, für die Standardmaschenteilung 33,3 × 33,3 mm."
+    url: 'https://www.meiser.de/files/downloads/statik-und-belastungstabellen/gitterroste/meiser-belastungstabellen-gitterroste.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "The load tables carry no date; the date is the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If lifting is the pain: gratings laid per hour when the crane sets the stacks at the platform against carrying them up by hand."
+    de: "Falls das Heben das Problem ist: verlegte Roste je Stunde, wenn der Kran die Stapel an der Bühne absetzt, gegenüber dem Hochtragen von Hand."
+prerequisites: []
+open_questions:
+  - { en: "Which grating sizes does the platform plan use, and how many are cut specials?", de: "Welche Rostgrößen sieht der Bühnenplan vor, und wie viele sind Zuschnitte?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

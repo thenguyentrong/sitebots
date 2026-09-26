@@ -1,0 +1,151 @@
+schema_version: 1
+id: site_steelwork/shear-stud-welding
+status: published
+setting: site_steelwork
+family: assembly_fastening
+trades: [steel]
+title:
+  en: "Weld shear studs onto steel beams on site"
+  de: "Kopfbolzendübel auf der Baustelle auf Stahlträger aufschweißen"
+summary:
+  en: "Load each headed stud into the welding gun, weld it to the top flange at the marked pitch and check it, before the slab is concreted."
+  de: "Jeden Kopfbolzen in die Schweißpistole setzen, im angerissenen Abstand auf den Obergurt schweißen und prüfen, bevor die Decke betoniert wird."
+description:
+  en: "In composite construction, headed studs join the steel sections to the reinforced concrete in the composite joint (bauforumstahl). Köco's SD1 studs to DIN EN ISO 13918 and ETA-03/0039 come with shank diameters of 6 to 25 mm and lengths up to 525 mm. They are welded by drawn-arc stud welding; Köco's welding units for studs up to 22 or 25 mm weigh about 210 to 490 kg and stay put while the welder handles the gun. Once the slab is poured, the studs sit inside the concrete."
+  de: "Im Verbundbau verbinden Kopfbolzendübel die Stahlprofile in der Verbundfuge mit den Stahlbetonbauteilen (bauforumstahl). Die Kopfbolzen SD1 von Köco nach DIN EN ISO 13918 und ETA-03/0039 gibt es mit Schaftdurchmessern von 6 bis 25 mm und Längen bis 525 mm. Geschweißt wird im Hubzündungs-Bolzenschweißen; die Schweißgeräte von Köco für Bolzen bis 22 oder 25 mm wiegen etwa 210 bis 490 kg und bleiben stehen, während der Schweißer die Pistole führt. Ist die Decke betoniert, sitzen die Bolzen im Beton."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '017'
+  atv: "DIN 18335"
+  position:
+    en: "Headed studs (shear connectors) welded onto steel beams by drawn-arc stud welding"
+    de: "Kopfbolzendübel im Hubzündungs-Bolzenschweißverfahren auf Stahlträger aufschweißen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The studs are light (a 22 × 150 mm stud is well under a kilogram), but no page read gives the mass of the welding gun and cable a robot would hold. The welding unit (about 210–490 kg, Köco) stays on the ground or deck."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The stud pitch repeats along each beam, but numbers and positions follow the design beam by beam."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "Once the slab is concreted, a poor weld can no longer be reached or repaired."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://bauforumstahl.de/stahlbau/bauwerkstypen/verbundbau'
+    note: "Headed studs join the steel sections to the reinforced concrete in the composite joint (bauforumstahl); the composite action depends on them."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: likely
+    note: "On the top flange of the beams, at deck level."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the open steel frame before the floor above closes it."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "No mineral or wood dust; welding fumes are a separate hazard not modelled in this screen."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Exposed to rain until the structure is closed."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Beams and decking at height."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "The welder places every stud with a handheld gun; no machine that does this on site is known to us."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Priced per stud; not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.025, max: 0.525 }
+    confidence: confirmed
+    evidence_url: 'https://koeco.net/media/pages/produkte/kopfbolzen-sd1/ef626e2b58-1772713456/koco-datenblatt_kopfbolzen-sd1-_de.pdf'
+    note: "SD1 stud lengths from 25 to 525 mm, shank diameters 6 to 25 mm (Köco data sheet)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Stud positions and pitch come from the design; no tolerance value in the sources read."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Drawn-arc welding; no force figure published for placing the gun."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep stud welding with a qualified welder. Every stud carries shear in the finished floor and disappears in the concrete, and the work is on an open frame in the weather; the gun's mass is open on top of that."
+      de: "Das Bolzenschweißen bei einem qualifizierten Schweißer lassen. Jeder Bolzen überträgt im fertigen Tragwerk Schub und verschwindet im Beton, und gearbeitet wird am offenen Tragwerk im Wetter; das Gewicht der Pistole ist obendrein offen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "bauforumstahl describes composite construction as steel sections joined in the composite joint to reinforced concrete members by means of headed studs."
+      de: "bauforumstahl beschreibt den Verbundbau als Stahlprofile, die in der Verbundfuge mittels Kopfbolzendübeln mit Stahlbeton-Bauteilen verbunden sind."
+    url: 'https://bauforumstahl.de/stahlbau/bauwerkstypen/verbundbau'
+    kind: analyst
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Industry association page, undated; dated with the check date."
+  - statement:
+      en: "Köco's data sheet for SD1 headed studs cites DIN EN ISO 13918 and ETA-03/0039 and lists shank diameters of 6 to 25 mm and lengths from 25 to 525 mm."
+      de: "Das Datenblatt von Köco für Kopfbolzen SD1 nennt DIN EN ISO 13918 und ETA-03/0039 und führt Schaftdurchmesser von 6 bis 25 mm und Längen von 25 bis 525 mm."
+    url: 'https://koeco.net/media/pages/produkte/kopfbolzen-sd1/ef626e2b58-1772713456/koco-datenblatt_kopfbolzen-sd1-_de.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated data sheet; dated with the check date."
+  - statement:
+      en: "Köco lists its ELOTOP+ drawn-arc stud welding units for studs of 6–22 mm at about 210 kg and for 6–25 mm at about 380 and 490 kg."
+      de: "Köco führt seine Hubzündungs-Bolzenschweißgeräte ELOTOP+ für Bolzen von 6–22 mm mit etwa 210 kg und für 6–25 mm mit etwa 380 und 490 kg."
+    url: 'https://koeco.net/de/produkte/schweissmaschinen'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. Where studs can be welded in the fabrication shop instead of on site, compare that first."
+    de: "Kein Roboterpilot. Wo die Bolzen statt auf der Baustelle in der Werkstatt aufgeschweißt werden können, zuerst das vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "Are your studs welded in the shop or on site, and how many per floor?", de: "Werden Ihre Bolzen in der Werkstatt oder auf der Baustelle geschweißt, und wie viele je Geschoss?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

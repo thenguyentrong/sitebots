@@ -1,0 +1,135 @@
+schema_version: 1
+id: construction_3d_printing/run-material-supply
+status: published
+setting: construction_3d_printing
+family: machine_operation_dedicated
+trades: [concrete]
+title:
+  en: "Run the mixing and pumping plant that feeds the printer"
+  de: "Misch- und Pumpanlage betreiben, die den Drucker versorgt"
+summary:
+  en: "Keep material flowing from silo or ready-mix through the batch plant and the pump to the print head, at the consistency the print needs, for the whole print."
+  de: "Das Material aus Silo oder Transportbeton über Mischanlage und Pumpe zum Druckkopf am Laufen halten, in der Konsistenz, die der Druck braucht, über den ganzen Druck."
+description:
+  en: "A printer is fed from a silo through a batch plant and a pump; a materials operator is one of the three people on a COBOD job site. With local concrete the plant mixes standard concrete with aggregate up to 10 mm; with pre-bagged dry mix the material comes in bulk bags. The job is to run the plant, not to lift material: bags and trucks are handled by forklift, crane or truck. An interruption or a wrong mix shows as a defect in a load-bearing wall."
+  de: "Ein Drucker wird aus einem Silo über eine Mischanlage und eine Pumpe versorgt; ein Materialbediener gehört zu den drei Personen auf einer COBOD-Baustelle. Mit örtlichem Beton mischt die Anlage Normalbeton mit Gesteinskörnung bis 10 mm; mit Sackware kommt das Trockenmaterial in Big Bags. Die Aufgabe ist, die Anlage zu fahren, nicht Material zu heben: Säcke und Fahrzeuge bewegen Stapler, Kran oder Lkw. Eine Unterbrechung oder eine falsche Mischung zeigt sich als Fehler in einer tragenden Wand."
+also_in_settings: [precast_concrete]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "No manual lifting in scope: bulk bags and ready-mix are handled by forklift, crane or truck. The operator works at the plant's controls and hoses."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The recipe is fixed, but weather, material and print speed call for adjustments during the print."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A supply stop or a wrong consistency leaves a weak or failed layer in a wall that may carry load; it cannot be undone once the next layers are on."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://cobod.com/how-it-works/'
+    note: "Printed walls can be load-bearing; COBOD states they are reinforced per local structural engineering requirements."
+  reach_height_m:
+    value: { min: 0.5, max: 1.8 }
+    confidence: assumed
+    note: "Controls, hatches and hose couplings at the plant; not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "The plant stands next to the printer, in a hall or on the building plot."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: "Dry material handling and mixing are the dust sources (setting note)."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Wet mix, cleaning water and site weather."
+  floor:
+    value: mixed
+    confidence: assumed
+    note: "Level in a hall, uneven on a building plot."
+  incumbent_automation:
+    value: { status: full, machine_classes: [batching_plant] }
+    confidence: likely
+    evidence_url: 'https://cobod.com/how-it-works/'
+    note: "The batch plant and the pump are the machines that do the work; the operator supervises and adjusts them (silo, batch plant, pump, print head in COBOD's description)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Plant data and cameras on material, no people data needed."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "As long as the print runs; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count cubic metres per print day and interruptions per print."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "No object handled by hand in scope."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The requirement is material consistency and a continuous supply; COBOD gives layer heights of 7 to 10 cm for local concrete, not a supply tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Operating controls and hose couplings; no force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The plant is the machine. Better sensors and controls on the batch plant and the pump are the automation; a robot at the controls adds nothing but a new failure point."
+      de: "Die Anlage ist die Maschine. Bessere Sensorik und Steuerung an Mischanlage und Pumpe sind die Automatisierung; ein Roboter an den Bedienelementen bringt nur eine neue Fehlerquelle."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [machine_tending]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "COBOD describes the material flow as silo, batch plant, pump and print head, and a job-site crew of three: printer operator, materials operator and one helper."
+      de: "COBOD beschreibt den Materialfluss als Silo, Mischanlage, Pumpe und Druckkopf und eine Baustellenmannschaft aus drei Personen: Druckerbediener, Materialbediener und ein Helfer."
+    url: 'https://cobod.com/how-it-works/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated page; dated with the check date."
+  - statement:
+      en: "COBOD recommends standard concrete with aggregate up to 10 mm, sourced locally, printed in 7 to 10 cm layers; the alternative is a proprietary dry mix delivered in bulk bags, printed in 1 to 2 cm layers."
+      de: "COBOD empfiehlt örtlich bezogenen Normalbeton mit Gesteinskörnung bis 10 mm, gedruckt in Lagen von 7 bis 10 cm; die Alternative ist eine herstellergebundene Trockenmischung in Big Bags, gedruckt in Lagen von 1 bis 2 cm."
+    url: 'https://cobod.com/technology/materials/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated page; dated with the check date. It gives no bag weights."
+pilot:
+  metrics: [uptime_vs_shift_pct, interventions_per_hour]
+  abort_rule:
+    en: "Not a robot pilot: measure supply interruptions per print and invest in plant controls where they occur."
+    de: "Kein Roboterpilot: Versorgungsunterbrechungen je Druck messen und dort in die Anlagensteuerung investieren, wo sie auftreten."
+  scope_hint:
+    en: "Log interruptions and consistency corrections over the next printed building."
+    de: "Unterbrechungen und Konsistenzkorrekturen über das nächste gedruckte Gebäude protokollieren."
+prerequisites:
+  - { en: "A log of supply interruptions and their causes", de: "Ein Protokoll der Versorgungsunterbrechungen und ihrer Ursachen" }
+open_questions:
+  - { en: "Do you print with local concrete or with a bagged dry mix?", de: "Drucken Sie mit örtlichem Beton oder mit Trockenmischung aus dem Sack?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

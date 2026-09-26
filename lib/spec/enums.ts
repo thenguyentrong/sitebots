@@ -79,6 +79,11 @@ export const TASK_CAPABILITIES = [
   'autonomous_nav_indoor',
   'autonomous_nav_outdoor',
   'stair_climbing',
+  // added 2026-09-24 for the task library; robots stay unknown for them until curated
+  'kitting',
+  'machine_tending',
+  'palletising',
+  'surface_finishing',
 ] as const;
 export type TaskCapability = (typeof TASK_CAPABILITIES)[number];
 

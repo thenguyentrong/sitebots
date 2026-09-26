@@ -1,0 +1,27 @@
+id: site_lifts
+group: site
+section: services
+lv: { lb: ['069'], atv: ["DIN 18385"] }
+title: { en: "Lifts and escalators", de: "Aufzugsanlagen, Fahrtreppen und Fahrsteige" }
+aliases:
+  en: [lift installation, elevator shaft]
+  de: [Aufzugsmontage, Aufzugsschacht]
+coverage: screened
+coverage_note:
+  en: "Two screened tasks: drilling anchor holes in the shaft for the guide rail brackets (ruled out: a dedicated shaft robot already does it, and the anchors carry the rails) and installing the landing doors (ruled out: life safety at an open shaft; the lift fitters keep it)."
+  de: "Zwei geprüfte Aufgaben: Dübellöcher im Schacht für die Führungsschienenbügel bohren (ausgeschieden: ein dedizierter Schachtroboter erledigt das bereits, und die Anker tragen die Schienen) und Schachttüren einbauen (ausgeschieden: Personenschutz am offenen Schacht; das bleibt bei den Aufzugsmonteuren)."
+typical_incumbent_automation: [drilling_robot]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: indoor
+typical_trades: [mep_electrical]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

@@ -1,0 +1,113 @@
+schema_version: 1
+id: prefab_timber/board-handling-osb-gypsum
+status: published
+setting: prefab_timber
+family: heavy_element_handling
+trades: [timber]
+title:
+  en: Handle full OSB and gypsum boards
+  de: Ganze OSB- und Gipsplatten handhaben
+summary:
+  en: Lift 2.8 m boards from the stack onto the frame for sheathing.
+  de: 2,8 m lange Platten vom Stapel auf den Rahmen zum Beplanken heben.
+description:
+  en: A full-size board weighs 40 to 60 kg, is awkward and flexible, and is a two-person or vacuum-lifter job. Heavy and floppy at once is the worst combination for any arm; panel placement robots already do it on modern lines.
+  de: Eine ganze Platte wiegt 40 bis 60 kg, ist unhandlich und biegsam, und ist eine Zwei-Personen- oder Vakuumheber-Aufgabe. Schwer und biegsam zugleich ist die schlechteste Kombination für jeden Arm; Plattenlege-Roboter machen das auf modernen Linien bereits.
+also_in_settings: [modular_volumetric, facade_prefab, joinery_windows_doors]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 40, max: 60 }
+    confidence: likely
+    note: Full-format OSB and gypsum boards; range from an industry engagement, 2025/26.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Few board formats, fixed placement.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A damaged edge is reworked; a misplaced board is caught before nailing.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Sheathing is checked at the bridge.
+  reach_height_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: assumed
+    note: Table height; the boards lie flat.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Sheathing station, outside the sawing zone.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [panel_placement_robot] }
+    confidence: likely
+    note: Panel placement robots are standard on modern lines; hand or vacuum-lifter placement elsewhere.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.0 }
+    confidence: likely
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Gypsum boards are 1.25 m wide and listed in 2.0, 2.5, 2.6, 2.75 and 3.0 m lengths (Rigips RB 12.5 datasheet, 02.07.2026, page 2); the OSB formats in use were not checked and may differ."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "The boards themselves are made to length +0/−5 mm and width +0/−4 mm (DIN EN 520, same datasheet); how precisely they must sit on the frame comes from the element drawings and is not recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data; the boards are lifted and laid flat."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T4_variability]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: Two to three times the payload ceiling. A vacuum lifter with assist control where no placement robot exists; the placement robot where volumes justify it.
+      de: Das Zwei- bis Dreifache der Traglastgrenze. Ein Vakuumheber mit Assistenzsteuerung, wo kein Legeroboter steht; der Legeroboter, wo die Mengen ihn rechtfertigen.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, dedicated_machine, keep_process]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None.
+    de: Keiner.
+prerequisites: []
+open_questions: []
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

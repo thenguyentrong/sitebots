@@ -1,63 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { comparisonHref, useCompare } from '@/lib/compare/store';
+export { useCompare } from '@/lib/compare/store';
+export type { CompareItem } from '@/lib/compare/store';
 import { ui } from '@/lib/ui';
 import { cn } from '@/lib/utils';
-
-/**
- * The compare selection lives in localStorage so it survives browsing from
- * card to card, but the compare page itself reads ids from the URL — the URL
- * is the shareable truth, the storage is a convenience. Max four.
- */
-const KEY = 'sitebots.compare';
-const MAX = 4;
-
-export type CompareItem = { id: string; name: string };
-
-function read(): CompareItem[] {
-  try {
-    const raw = localStorage.getItem(KEY);
-    const list = raw ? (JSON.parse(raw) as CompareItem[]) : [];
-    return Array.isArray(list) ? list.slice(0, MAX) : [];
-  } catch {
-    return [];
-  }
-}
-
-function write(list: CompareItem[]) {
-  try {
-    localStorage.setItem(KEY, JSON.stringify(list.slice(0, MAX)));
-    window.dispatchEvent(new Event('sitebots:compare'));
-  } catch {
-    // storage unavailable: the button still works for this page load
-  }
-}
-
-export function useCompare() {
-  const [items, setItems] = useState<CompareItem[]>([]);
-  useEffect(() => {
-    setItems(read());
-    const on = () => setItems(read());
-    window.addEventListener('sitebots:compare', on);
-    window.addEventListener('storage', on);
-    return () => {
-      window.removeEventListener('sitebots:compare', on);
-      window.removeEventListener('storage', on);
-    };
-  }, []);
-  const toggle = (item: CompareItem) => {
-    const cur = read();
-    const next = cur.some((x) => x.id === item.id) ? cur.filter((x) => x.id !== item.id) : [...cur, item].slice(0, MAX);
-    write(next);
-    setItems(next);
-  };
-  const clear = () => {
-    write([]);
-    setItems([]);
-  };
-  return { items, toggle, clear, full: items.length >= MAX };
-}
 
 function Icon({ d }: { d: string }) {
   return (
@@ -117,7 +65,7 @@ export function CompareBar() {
             </span>
           </button>
         ))}
-        <Link href={`/compare?ids=${items.map((x) => x.id).join(',')}`} className={cn(ui.btn, 'h-9 px-4')}>
+        <Link href={comparisonHref(items)} className={cn(ui.btn, 'h-9 px-4')}>
           Open comparison ({items.length})
         </Link>
         <button type="button" onClick={clear} className={cn(ui.btnGhost, 'h-9 px-3 text-xs')}>

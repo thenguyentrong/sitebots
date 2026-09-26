@@ -1,0 +1,29 @@
+id: construction_3d_printing
+group: factory
+title: { en: "Construction 3D printing", de: "Bau-3D-Druck" }
+aliases:
+  en: [3D printed buildings, additive construction, printed concrete]
+  de: [3D-gedruckte Gebäude, additive Fertigung im Bauwesen, Betondruck]
+coverage: screened
+coverage_note:
+  en: "Screened tasks: setting outlet boxes and opening covers while the wall prints (marginal; a placing tool on the print head is the comparison), placing reinforcement in printed walls (ruled out; load-bearing, stays with the crew) and running the mixing and pumping plant (ruled out; the plant is the machine)."
+  de: "Geprüfte Aufgaben: Leerdosen und Öffnungsabdeckungen während des Drucks setzen (grenzwertig; Vergleich ist ein Setzwerkzeug am Druckkopf), Bewehrung in gedruckte Wände einlegen (ausgeschlossen; tragend, bleibt bei der Mannschaft) und die Misch- und Pumpanlage betreiben (ausgeschlossen; die Anlage ist die Maschine)."
+typical_incumbent_automation: [construction_3d_printer, batching_plant, overhead_crane]
+dust:
+  type: cement
+  typical_zone: controlled
+  note:
+    en: Dry material handling and mixing are dust sources; the print area itself is wet.
+    de: Trockenmaterial und Mischen sind Staubquellen; der Druckbereich selbst ist nass.
+floor: level
+exposure: both
+typical_trades: [concrete, general, mep_electrical, mep_plumbing]
+process_steps:
+  - { id: material_prep, label: { en: "Material preparation and mixing", de: "Materialvorbereitung und Mischen" } }
+  - { id: printing, label: { en: "Printing", de: "Drucken" } }
+  - { id: insertion, label: { en: "Reinforcement and services insertion", de: "Bewehrung und Leitungen einlegen" } }
+  - { id: post_processing, label: { en: "Post-processing", de: "Nachbearbeitung" } }
+  - { id: qa, label: { en: "Geometry check and documentation", de: "Geometrieprüfung und Dokumentation" } }
+seed_priority: 7
+sources: []
+status: published

@@ -1,0 +1,115 @@
+schema_version: 1
+id: equipment_rental_depot/scaffold-parts-sorting
+status: published
+setting: equipment_rental_depot
+family: kitting_picking_sorting
+trades: [logistics, general]
+title:
+  en: "Sort returned scaffold parts onto stillages by type"
+  de: "Zurückgegebene Gerüstteile nach Typ in Gitterboxen und Stapelgestelle sortieren"
+summary:
+  en: "Take frames, ledgers and couplers off the returned load and stack each type on its own stillage; a competent person checks for damage."
+  de: "Rahmen, Riegel und Kupplungen von der zurückgekommenen Ladung nehmen und jeden Typ auf sein eigenes Gestell stapeln; eine befähigte Person prüft auf Schäden."
+description:
+  en: "Returned scaffold arrives mixed on the truck. Parts are sorted by type and length so the next order can be picked and the count billed: aluminium frames of 8.6 kg, steel frames of 18.8 kg, ledgers of 3.7 kg in the Layher Blitz system, plus decks, guardrails and couplers. Damaged parts go aside for a competent person to check; that check is not part of this record."
+  de: "Zurückgegebenes Gerüst kommt gemischt auf dem Lkw an. Die Teile werden nach Typ und Länge sortiert, damit der nächste Auftrag kommissioniert und die Stückzahl abgerechnet werden kann: im System Layher Blitz Aluminiumrahmen mit 8,6 kg, Stahlrahmen mit 18,8 kg, Riegel mit 3,7 kg, dazu Beläge, Geländer und Kupplungen. Beschädigte Teile kommen zur Seite und werden von einer befähigten Person geprüft; diese Prüfung gehört nicht zu diesem Datensatz."
+also_in_settings: [site_scaffolding]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 3.7, max: 18.8 }
+    confidence: likely
+    evidence_url: 'https://www.hawego.de/layher-blitz-stellrahmen-stahl-2-00-x-0-73-m-lg-1773.200'
+    note: "Layher Blitz parts as listed by a scaffold retailer: ledger 0.73 m 3.7 kg, aluminium frame 2.00 × 0.73 m 8.6 kg, steel frame 2.00 × 0.73 m 18.8 kg. Decks and other systems differ; weigh your own heaviest part."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Few part types, but they arrive mixed, dirty and in any order."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A part on the wrong stillage costs a recount and can short the next order."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Sorting only; the damage check before reuse stays with a competent person."
+  reach_height_m:
+    value: { min: 0, max: 1.8 }
+    confidence: assumed
+    note: "Truck bed and stillage heights; not measured."
+  environment:
+    value: both
+    confidence: assumed
+    note: "Open yard or covered hall, depending on the depot."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Mortar and dirt on returned parts; open yard, no classified area."
+  wet:
+    value: damp
+    confidence: assumed
+    note: "Parts come back wet from site; the yard is exposed to weather."
+  floor:
+    value: level
+    confidence: likely
+    note: "Paved yard or hall floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "People sort by hand; a forklift moves the full stillages."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the returns per day; the 30–90 min humanoid runtime is a known limit."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts parts sorted per hour."
+requirements:
+  object_size_m:
+    value: { min: 0.73, max: 2.0 }
+    confidence: likely
+    evidence_url: 'https://www.hawego.de/layher-blitz-stellrahmen-alu-2-00-x-0-73-m-lg-1714.200'
+    note: "Ledger 0.73 m long; frames 2.00 × 0.73 m (retailer listing of Layher Blitz parts). Decks for a 3.07 m bay are longer."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance; parts are stacked, not fitted."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No published figure; the work is lifting and stacking."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Steel frames sit in the 15–25 kg band, so start with the aluminium parts and ledgers. Compare a wheeled mobile manipulator in a covered hall first; the damage check stays with a competent person."
+      de: "Stahlrahmen liegen im Bereich von 15 bis 25 kg, deshalb mit Aluminiumteilen und Riegeln beginnen. Zuerst einen radgebundenen Mobilmanipulator in einer überdachten Halle vergleichen; die Schadensprüfung bleibt bei einer befähigten Person."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [material_sorting, carry_payload]
+capabilities_optional: [kitting]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, grasp_failure_unknown_parts_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of parts on the right stillage after 3 months, then stop."
+    de: "Nach 3 Monaten weniger als 99 % der Teile auf dem richtigen Gestell, dann abbrechen."
+  scope_hint:
+    en: "One scaffold system, aluminium frames and ledgers only, in a covered hall."
+    de: "Ein Gerüstsystem, nur Aluminiumrahmen und Riegel, in einer überdachten Halle."
+prerequisites:
+  - { en: "One stillage per part type at a fixed place", de: "Ein Gestell je Teiletyp an festem Platz" }
+open_questions:
+  - { en: "What share of returns comes back in a state that needs cleaning before sorting?", de: "Welcher Anteil der Rückläufer muss vor dem Sortieren gereinigt werden?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

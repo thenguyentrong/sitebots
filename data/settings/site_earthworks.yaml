@@ -1,0 +1,27 @@
+id: site_earthworks
+group: site
+section: structure
+lv: { lb: ['002'], atv: ["DIN 18300"] }
+title: { en: "Earthworks", de: "Erdarbeiten" }
+aliases:
+  en: [excavation, backfilling]
+  de: [Aushub, Verfüllung]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: compacting trench backfill, testing compaction on the formation and laying a geotextile separation layer. All three are ruled out outdoors; a remote-controlled trench roller and roller-integrated compaction measurement already do two of them, and the earthworks crew keeps the third."
+  de: "Drei geprüfte Aufgaben: Grabenverfüllung verdichten, die Verdichtung auf dem Planum prüfen und ein Geotextil als Trennlage verlegen. Alle drei scheiden im Freien aus; eine ferngesteuerte Grabenwalze und die walzenintegrierte Verdichtungsmessung erledigen zwei davon bereits, die dritte bleibt bei der Erdbaukolonne."
+typical_incumbent_automation: [autonomous_compactor]
+dust:
+  type: mixed
+  typical_zone: none
+  note:
+    en: "Outdoors; dust depends on weather and the work next to it."
+    de: "Im Freien; Staub hängt von Wetter und Nachbararbeiten ab."
+floor: uneven
+exposure: outdoor
+typical_trades: [civil_earthworks]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

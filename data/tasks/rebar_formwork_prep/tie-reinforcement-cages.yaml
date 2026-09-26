@@ -1,0 +1,126 @@
+schema_version: 1
+id: rebar_formwork_prep/tie-reinforcement-cages
+status: published
+setting: rebar_formwork_prep
+family: assembly_fastening
+trades: [concrete, steel]
+title:
+  en: "Tie reinforcement cages for columns and beams"
+  de: "Bewehrungskörbe für Stützen und Balken flechten"
+summary:
+  en: "Thread stirrups over the longitudinal bars at a jig, space them to the drawing and tie every crossing."
+  de: "Bügel an einer Lehre über die Längsstäbe fädeln, nach Plan verteilen und jede Kreuzung binden."
+description:
+  en: "A cage is built from its bending schedule: longitudinal bars on trestles or a jig, stirrups threaded on and spaced, every crossing tied with wire. Every cage has its own drawing. The finished cage is checked for its dimensions before it goes into the formwork, because it carries the element's loads and fixes the concrete cover."
+  de: "Ein Korb entsteht aus seiner Biegeliste: Längsstäbe auf Böcken oder einer Lehre, Bügel aufgefädelt und verteilt, jede Kreuzung mit Draht gebunden. Jeder Korb hat seinen eigenen Plan. Der fertige Korb wird vor dem Einbau in die Schalung auf seine Maße geprüft, weil er die Lasten des Bauteils trägt und die Betondeckung bestimmt."
+also_in_settings: [site_concrete, precast_concrete]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.4, max: 23.1 }
+    confidence: likely
+    evidence_url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    note: "Stirrups of Ø8–10 weigh well under a kilogram; a 6 m Ø25 longitudinal bar weighs 23.1 kg at 3.85 kg/m (Kämpfe weight table, DIN 488-1)."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every cage has its own bending schedule and drawing."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    note: "The finished cage is checked for its dimensions and corrected where needed before it is used (FDB Merkblatt Nr. 6, 2023)."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The cage is the element's load-bearing reinforcement."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "At jig height; measure your station."
+  environment:
+    value: both
+    confidence: assumed
+    note: "Rebar shops run in halls and covered yards (setting)."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Tying is clean work (setting note)."
+  wet:
+    value: dry
+    confidence: assumed
+    note: "Under cover."
+  floor:
+    value: level
+    confidence: likely
+    note: "Shop floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Assumed tied by hand at jigs, often with handheld tying tools; verify for your shop."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at bars and ties."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on cages per shift."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Ties per cage and minutes per cage are the numbers to record."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Cage lengths follow the element; take them from your schedules."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    note: "Permitted deviations of the cage have to fit those of the finished element; the FDB points to the DBV guideline on concrete cover and reinforcement for the values."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Wire tying by hand or tool; no published force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep people on the cage and the dimension check; make the tying faster with handheld tying tools and good jigs. Load-bearing reinforcement is not the place to trial a general-purpose robot."
+      de: "Menschen bleiben am Korb und an der Maßkontrolle; das Binden mit handgeführten Bindegeräten und guten Lehren beschleunigen. Tragende Bewehrung ist nicht der Ort, um einen Universalroboter zu erproben."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "The FDB guideline on tolerances for precast elements (09/2023) says the permitted deviations in formwork, reinforcement and concreting must fit those of the end product; the finished reinforcement cage is checked for its dimensions and corrected where needed."
+      de: "Das FDB-Merkblatt zu Toleranzen für Betonfertigteile (09/2023) sagt, dass die zulässigen Abweichungen in Schalungsbau, Bewehren und Betonieren auf die des Endprodukts abgestimmt sein müssen; der fertige Bewehrungskorb wird auf korrekte Maße geprüft und gegebenenfalls korrigiert."
+    url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    kind: standard
+    tier: 2
+    date: '2023-09-01'
+    type: claim
+    confidence: likely
+    note: "Trade association guideline, edition 09/2023; the day is not given. Data source for the check requirement."
+pilot:
+  metrics: [error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a humanoid pilot. Trial handheld tying tools on one cage type and compare minutes per cage and rework at the check."
+    de: "Kein Humanoiden-Pilot. Handgeführte Bindegeräte an einem Korbtyp erproben und Minuten je Korb und Nacharbeit bei der Kontrolle vergleichen."
+  scope_hint:
+    en: "One column cage type, one jig."
+    de: "Ein Stützenkorbtyp, eine Lehre."
+prerequisites:
+  - { en: "Bending schedules and cage drawings per element", de: "Biegelisten und Korbpläne je Bauteil" }
+open_questions:
+  - { en: "Which cage types repeat often enough for a dedicated welding or tying jig?", de: "Welche Korbtypen wiederholen sich oft genug für eine eigene Schweiß- oder Bindelehre?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

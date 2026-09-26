@@ -1,0 +1,155 @@
+schema_version: 1
+id: site_demolition/soft-strip-fit-out
+status: published
+setting: site_demolition
+family: assembly_fastening
+trades: [demolition]
+title:
+  en: "Strip out the fit-out and sort it into waste fractions"
+  de: "Ausbau entkernen und nach Abfallfraktionen trennen"
+summary:
+  en: "Take out suspended ceilings, drywall, floor coverings, doors and fittings, and sort them by material before the structure is demolished or refurbished."
+  de: "Unterdecken, Trockenbauwände, Bodenbeläge, Türen und Ausstattung ausbauen und nach Materialien trennen, bevor der Rohbau abgebrochen oder saniert wird."
+description:
+  en: "Before a building is demolished or refurbished, the fit-out comes out room by room. The materials must be collected separately by fraction, among them gypsum-based materials, insulation, wood, metals, glass and plastics, and the separation documented. The pieces range from ceiling tiles to whole gypsum boards of 21 to 32 kg, doors and sanitary ware; heavy parts can go to remote-controlled demolition robots, the rest is hand work in dust and debris, after the building has been checked for hazardous materials."
+  de: "Bevor ein Gebäude abgebrochen oder saniert wird, wird der Ausbau Raum für Raum entfernt. Die Materialien sind getrennt nach Fraktionen zu sammeln, darunter Baustoffe auf Gipsbasis, Dämmmaterial, Holz, Metalle, Glas und Kunststoff, und die Trennung ist zu dokumentieren. Die Teile reichen von Deckenplatten bis zu ganzen Gipsplatten von 21 bis 32 kg, Türen und Sanitärobjekten; schwere Teile können ferngesteuerte Abbruchroboter übernehmen, der Rest ist Handarbeit in Staub und Schutt, nachdem das Gebäude auf Schadstoffe untersucht ist."
+also_in_settings: [site_cleaning_waste]
+derived_from: null
+lv:
+  lb: '084'
+  atv: "DIN 18459"
+  position:
+    en: "Soft strip: remove non-load-bearing fit-out (suspended ceilings, partitions, floor coverings, doors), sort by fraction and stage for removal"
+    de: "Entkernung: nichttragende Ausbauteile (Unterdecken, Trennwände, Bodenbeläge, Türen) ausbauen, sortenrein trennen und zur Abfuhr bereitstellen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 21.3, max: 31.9 }
+    confidence: likely
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "The heaviest regular pieces are whole gypsum boards: 12.5 mm board, 1,250 mm wide, 2,000 to 3,000 mm long, at least 8.5 kg/m² (Rigips datasheet, Stand 02.07.26), so at least 21.3 to 31.9 kg each. Doors and sanitary ware are further heavy items; broken pieces are lighter."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every building has a different fit-out, and hidden conditions show up only when ceilings and linings come off."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    evidence_url: 'https://www.gesetze-im-internet.de/gewabfv_2017/__8.html'
+    note: "A piece in the wrong container is sorted again; the fractions and the documentation are what § 8 GewAbfV requires, not a precision result."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The structure stays; hazardous materials and live services are dealt with before the strip-out starts."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "From floor coverings to suspended ceilings at room height. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the building."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Gypsum, mineral wool and general demolition dust; with extraction and after the hazardous-material survey, no classified zone."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Floors with debris, openings and stairs."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [demolition_robot_teleoperated] }
+    confidence: likely
+    evidence_url: 'https://www.brokk.com/de/product/brokk-300/'
+    note: "Remote-controlled demolition robots such as the Brokk 300 (3,650 kg, 6.5 m vertical reach, operated from up to 300 m by a portable remote control) take over heavy breaking; the strip-out of fit-out stays largely hand work."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; area stripped per day depends on the fit-out."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.0 }
+    confidence: likely
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Whole gypsum boards are 1.25 m wide and 2.0 to 3.0 m long (Rigips)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No dimensional tolerance; the requirement is clean separation by fraction."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states the force to pull boards or ceilings."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Keep the strip-out crew with lifting aids and chutes for boards and doors, and give heavy breaking to a remote-controlled demolition robot. Whole boards are beyond a humanoid's payload."
+      de: "Bei der Entkernungskolonne mit Hebehilfen und Schuttrutschen für Platten und Türen bleiben und schweres Abbrechen einem ferngesteuerten Abbruchroboter geben. Ganze Platten liegen über der Traglast eines Humanoiden."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [material_sorting, carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "§ 8 GewAbfV requires construction and demolition waste to be collected and transported separately by fraction, among them glass, plastics, metals, wood, insulation, bituminous mixtures, gypsum-based materials, concrete, bricks and tiles, and the separation to be documented with site plans, photos and delivery or weighing slips."
+      de: "§ 8 GewAbfV verlangt, Bau- und Abbruchabfälle getrennt nach Fraktionen zu sammeln und zu befördern, darunter Glas, Kunststoff, Metalle, Holz, Dämmmaterial, Bitumengemische, Baustoffe auf Gipsbasis, Beton, Ziegel und Fliesen, und die Trennung mit Lageplänen, Lichtbildern sowie Liefer- oder Wiegescheinen zu dokumentieren."
+    url: 'https://www.gesetze-im-internet.de/gewabfv_2017/__8.html'
+    kind: regulator
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Checked on the date given; the documentation duty does not apply below 10 m³ of waste."
+  - statement:
+      en: "Rigips lists its 12.5 mm board at 1,250 mm wide, 2,000 to 3,000 mm long and at least 8.5 kg/m²."
+      de: "Rigips gibt seine 12,5-mm-Bauplatte mit 1.250 mm Breite, 2.000 bis 3.000 mm Länge und mindestens 8,5 kg/m² an."
+    url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-07-02'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet Stand 02.07.26."
+  - statement:
+      en: "Brokk lists its Brokk 300 demolition robot at 3,650 kg without attachment, with 6,500 mm vertical reach including hammer, operated by a portable remote control with a range of up to 300 m."
+      de: "Brokk gibt seinen Abbruchroboter Brokk 300 mit 3.650 kg ohne Anbaugerät, 6.500 mm vertikaler Reichweite einschließlich Hammer und Bedienung über eine tragbare Fernsteuerung mit bis zu 300 m Reichweite an."
+    url: 'https://www.brokk.com/de/product/brokk-300/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If lifting aids or a demolition robot are reviewed: one floor, area stripped per day and share sorted correctly at the first attempt."
+    de: "Falls Hebehilfen oder ein Abbruchroboter geprüft werden: ein Geschoss, entkernte Fläche je Tag und Anteil beim ersten Mal richtig sortiert."
+prerequisites:
+  - { en: "Hazardous-material survey and release of the areas", de: "Schadstofferkundung und Freigabe der Bereiche" }
+  - { en: "Services isolated and made safe", de: "Versorgungsleitungen abgeschaltet und gesichert" }
+open_questions:
+  - { en: "Which fit-out materials dominate the buildings you strip?", de: "Welche Ausbaumaterialien überwiegen in den Gebäuden, die Sie entkernen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

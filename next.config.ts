@@ -1,6 +1,20 @@
 import type { NextConfig } from 'next';
 
+// The decision-journey content is read from disk at request time; every route
+// that calls loadContent() must list it here or the deployed function will not
+// find the files (a missing entry fails silently on Vercel, not locally).
+const CONTENT = [
+  './data/tasks/**/*.yaml',
+  './data/settings/**/*.yaml',
+  './data/taxonomy/**/*.yaml',
+  './data/compliance/**/*.yaml',
+  './data/costs/**/*.yaml',
+  './data/reference/**/*.yaml',
+  './data/partners.yaml',
+];
+
 const nextConfig: NextConfig = {
+  devIndicators: false,
   // The in-app preview connects through the loopback IP.
   allowedDevOrigins: ['127.0.0.1'],
   async redirects() {
@@ -10,15 +24,24 @@ const nextConfig: NextConfig = {
   // once Turbopack has bundled it (the bundler's URL is not Node's URL). Keep
   // it external so the local database works under `next dev`.
   serverExternalPackages: ['@electric-sql/pglite'],
-  // Files the server reads with fs at request time. Vercel only ships what the
-  // tracer sees imported, so name them: the database snapshot, the model index
-  // and poses, the curated YAML applied at boot, the seed and the source list.
+  // Only database-backed routes need the prepared catalogue. Runtime scraper
+  // caches must never be copied into deployment functions.
   outputFileTracingIncludes: {
-    '/**/*': ['./data/snapshot/**', './data/models/*.json', './data/curated/**', './data/seed/**', './data/sources.json', './data/aliases*.yaml', './db/*.sql'],
+    '/': CONTENT,
+    '/plan{,/**}': CONTENT,
+    '/use-cases{,/**}': CONTENT,
+    '/robots{,/**}': ['./data/snapshot/pglite.tar.gz'],
+    '/brands{,/**}': ['./data/snapshot/pglite.tar.gz'],
+    '/compare': ['./data/snapshot/pglite.tar.gz'],
+    '/api/match': ['./data/snapshot/pglite.tar.gz'],
+    '/api/plan': ['./data/snapshot/pglite.tar.gz'],
+    '/sitemap.xml': ['./data/snapshot/pglite.tar.gz', ...CONTENT],
+    '/api/admin/refresh': ['./data/aliases*.yaml', './data/specifications/pages.json', './data/sources.json'],
+  },
+  outputFileTracingExcludes: {
+    '/*': ['./.cache/**/*', './.out/**/*', './.pglite/**/*', './.git/**/*', './.env*', './tests/**/*'],
   },
   images: {
-    // Assets are copied into our own Blob store with the licence recorded, so
-    // this is the only host the image optimiser ever has to trust.
     remotePatterns: [{ protocol: 'https', hostname: '*.public.blob.vercel-storage.com' }],
   },
 };

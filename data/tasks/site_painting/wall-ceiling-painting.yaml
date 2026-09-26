@@ -1,0 +1,129 @@
+schema_version: 1
+id: site_painting/wall-ceiling-painting
+status: published
+setting: site_painting
+family: surface_finishing
+trades: [painting]
+title:
+  en: "Paint walls and ceilings"
+  de: "Wände und Decken streichen"
+summary:
+  en: "Mask, cut in and paint interior surfaces with a roller or an airless sprayer."
+  de: "Innenflächen abkleben, Kanten vorstreichen und mit Rolle oder Airless-Gerät streichen."
+description:
+  en: "Large open surfaces go fast with a roller or an airless sprayer; masking and cutting in at edges and details are slower manual work. Painting robots that spray open wall areas autonomously are offered and, according to their maker, deployed in Europe."
+  de: "Große offene Flächen gehen mit Rolle oder Airless-Gerät schnell; Abkleben und Vorstreichen an Kanten und Details sind langsamere Handarbeit. Malerroboter, die offene Wandflächen autonom spritzen, werden angeboten und sind nach Herstellerangabe in Europa im Einsatz."
+also_in_settings: [modular_volumetric, facility_operation]
+derived_from: null
+lv:
+  lb: '034'
+  atv: "DIN 18363"
+  position:
+    en: "Coating of wall and ceiling surfaces with emulsion paint"
+    de: "Beschichtung von Wand- und Deckenflächen mit Dispersionsfarbe"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 5 }
+    confidence: assumed
+    note: "A roller on a pole or a spray gun; full paint buckets are moved separately. Not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Open surfaces repeat; edges, openings and colour changes do not."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "Defects are touched up or covered by the next coat."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Decorative surface, no structural or fire-protection function."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Walls and ceilings up to room height. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Closed, dry rooms."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Painting makes no dust; spray mist and solvents are a separate question for the product used."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Finished floor or screed, covered for protection."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [spray_robot] }
+    confidence: likely
+    note: "Painting robots for interior walls are offered (Okibo states projects in Europe), but rollers and airless sprayers in the hands of painters are the norm."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on area and coats; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure square metres per shift and touch-ups."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Roller or spray gun; no source gives sizes."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The coating follows the surface it is applied to; flatness is set by the plaster or lining underneath."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a painting robot for large open areas first; the humanoid form adds nothing to spraying a wall. Keep people on masking, edges and details until a pilot shows otherwise."
+      de: "Zuerst einen Malerroboter für große offene Flächen vergleichen; die humanoide Form bringt beim Spritzen einer Wand nichts. Abkleben, Kanten und Details bleiben bei Menschen, bis ein Pilot anderes zeigt."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage, ergonomics]
+capabilities_required: [surface_finishing]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [dedicated_machine, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Okibo states that its EG7 robot paints and coats interior surfaces autonomously without preparation or marking, averages 1,000 square feet per hour and has completed more than one million square feet in Europe."
+      de: "Okibo gibt an, dass sein Roboter EG7 Innenflächen ohne Vorbereitung oder Markierung autonom streicht und beschichtet, im Schnitt 1.000 Quadratfuß pro Stunde schafft und in Europa über eine Million Quadratfuß bearbeitet hat."
+    url: 'https://www.okibo.com/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: likely
+    note: "Manufacturer claims; no project named on the page. Page undated, read on 2026-09-24."
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Fewer than 99 % of the planned area painted without touch-up after 3 months, then change the use case."
+    de: "Weniger als 99 % der geplanten Fläche nach 3 Monaten ohne Ausbesserung gestrichen, dann Use Case wechseln."
+  scope_hint:
+    en: "One floor of open walls in one colour; people do the masking and edges; measure touch-ups."
+    de: "Ein Geschoss offener Wände in einer Farbe; Menschen übernehmen Abkleben und Kanten; Ausbesserungen messen."
+prerequisites: []
+open_questions:
+  - { en: "Which share of your painting hours goes into open surfaces, and which into masking and edges?", de: "Welcher Anteil Ihrer Malerstunden entfällt auf offene Flächen, welcher auf Abkleben und Kanten?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

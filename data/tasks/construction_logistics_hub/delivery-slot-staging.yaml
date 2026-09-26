@@ -1,0 +1,115 @@
+schema_version: 1
+id: construction_logistics_hub/delivery-slot-staging
+status: published
+setting: construction_logistics_hub
+family: intralogistics_transport
+trades: [logistics]
+title:
+  en: "Stage pallets in lanes by delivery slot"
+  de: "Paletten nach Lieferfenster in Bereitstellungsgassen stellen"
+summary:
+  en: "Move the pallets of each site delivery into the marshalling lane of its time slot so the truck can be loaded in one go."
+  de: "Die Paletten jeder Baustellenlieferung in die Bereitstellungsgasse ihres Zeitfensters fahren, damit der Lkw in einem Zug beladen werden kann."
+description:
+  en: "A logistics hub delivers to sites in booked time slots. Before each slot, the pallets for that delivery are brought from storage or from kitting to a marked lane at the dock. A Euro pallet measures 1200 × 800 mm, weighs about 25 kg empty and may carry 1,500 kg, so the move is made with a pallet truck, not by hand."
+  de: "Ein Baulogistikzentrum liefert in gebuchten Zeitfenstern auf die Baustellen. Vor jedem Fenster werden die Paletten der Lieferung aus dem Lager oder von der Kommissionierung in eine markierte Gasse am Tor gebracht. Eine Europalette misst 1200 × 800 mm, wiegt leer etwa 25 kg und darf 1.500 kg tragen; bewegt wird sie deshalb mit dem Hubwagen, nicht von Hand."
+also_in_settings: [material_yard_warehouse]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 25, max: 1500 }
+    confidence: confirmed
+    evidence_url: 'https://www.epal-pallets.org/eu-en/load-carriers/epal-euro-pallet'
+    note: "EPAL Euro pallet: approx. 25 kg empty, safe working load 1,500 kg (EPAL)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The moves are standard; which pallets go to which lane changes with every slot plan."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A pallet in the wrong lane leaves on the wrong truck or delays a site."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "No structural or life-safety consequence of the placement itself."
+  reach_height_m:
+    value: { min: 0, max: 1.5 }
+    confidence: assumed
+    note: "Floor-level pallet moves; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Warehouse and dock area."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Packed goods."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Warehouse floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "People drive manual or electric pallet trucks; autonomous pallet trucks exist but are not assumed here."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the slot plan."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts pallet moves per slot and minutes per move."
+requirements:
+  object_size_m:
+    value: { min: 1.2, max: 1.2 }
+    confidence: confirmed
+    evidence_url: 'https://www.epal-pallets.org/eu-en/load-carriers/epal-euro-pallet'
+    note: "Euro pallet 1200 × 800 × 144 mm (EPAL); the load on it can be larger."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No published tolerance; the lane markings set it."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure; the pallet truck does the lifting."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: amr_carts
+    note:
+      en: "Autonomous pallet trucks between storage and the marshalling lanes; people build the loads and check each lane against the slot plan."
+      de: "Autonome Hubwagen zwischen Lager und Bereitstellungsgassen; Menschen stellen die Ladungen zusammen und prüfen jede Gasse gegen den Zeitfensterplan."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity]
+capabilities_required: [fetch_and_deliver, autonomous_nav_indoor]
+capabilities_optional: []
+solution_classes: [amr_carts, dedicated_machine]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, interventions_per_hour, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of pallets in the right lane before the slot after 3 months, then stop."
+    de: "Nach 3 Monaten weniger als 99 % der Paletten vor dem Zeitfenster in der richtigen Gasse, dann abbrechen."
+  scope_hint:
+    en: "One route from one storage aisle to two lanes, pallets on standard Euro pallets only."
+    de: "Eine Route von einer Lagergasse zu zwei Bereitstellungsgassen, nur Standard-Europaletten."
+prerequisites:
+  - { en: "Marked lanes and a slot plan the system can read", de: "Markierte Gassen und ein maschinenlesbarer Zeitfensterplan" }
+open_questions:
+  - { en: "How many pallet moves per day go to the dock lanes?", de: "Wie viele Palettenbewegungen gehen täglich in die Torgassen?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

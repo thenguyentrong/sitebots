@@ -1,0 +1,146 @@
+schema_version: 1
+id: rebar_formwork_prep/cut-stock-mesh
+status: published
+setting: rebar_formwork_prep
+family: heavy_element_handling
+trades: [concrete]
+title:
+  en: "Cut stock mesh to size and cut out openings"
+  de: "Lagermatten zuschneiden und Aussparungen ausschneiden"
+summary:
+  en: "Lay a stock mesh mat on the cutting bench, cut it to the shape on the bending schedule, cut out openings and stack the pieces by position."
+  de: "Eine Lagermatte auf den Schneidplatz legen, nach der Biegeliste zuschneiden, Aussparungen ausschneiden und die Teile nach Positionen stapeln."
+description:
+  en: "Stock mesh comes in standard mats of 6.00 × 2.30 m (2.35 m for Q636). Where a slab or wall needs a different shape or an opening, the mat is cut to size with shears. The mats weigh 33.6 kg (R188) to 132 kg (Q636) each and go onto the bench by crane; the cut pieces carry load in the finished element, and the reinforcement is checked before concreting."
+  de: "Lagermatten kommen im Standardformat 6,00 × 2,30 m (Q636: 2,35 m). Braucht eine Decke oder Wand eine andere Form oder eine Aussparung, wird die Matte mit der Schere zugeschnitten. Die Matten wiegen je 33,6 kg (R188) bis 132 kg (Q636) und kommen per Kran auf den Schneidplatz; die Zuschnitte tragen im fertigen Bauteil, und die Bewehrung wird vor dem Betonieren abgenommen."
+also_in_settings: [precast_concrete, site_concrete]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 33.6, max: 132 }
+    confidence: confirmed
+    evidence_url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    note: "Stock mesh per mat (Lagermatten, German delivery programme since 01.01.2008): Q188 41.7 kg to Q636 132.0 kg; R188 33.6 kg to R524 75.7 kg (Kämpfe weight table). Cut pieces weigh less."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Mat types are standard; shapes and openings change with every element."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wrong cut is seen at the reinforcement check and re-cut; the bars removed are gone."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The mesh is load-bearing reinforcement in the finished slab or wall; missing bars at an opening change the structure."
+  reach_height_m:
+    value: { min: 0, max: 1.0 }
+    confidence: assumed
+    note: "Mats lie flat on the bench or the floor; not measured."
+  environment:
+    value: indoor
+    confidence: assumed
+    note: "Cutting in the shop hall; stock mats are stored outside and brought in by crane."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Shear cutting makes no relevant dust."
+  wet:
+    value: dry
+    confidence: assumed
+    note: "Shop hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Shop floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [rebar_mesh_welder] }
+    confidence: likely
+    evidence_url: 'https://pma.progress.group/en/products/automation-of-reinforcement'
+    note: "Custom mesh is welded automatically to CAD data in precast plants (Progress Wire Center) and by mesh welding lines (MEP MRSA); where stock mats are used, they are still cut by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at mats and cuts."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on mats per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count mats per shift and cuts per mat."
+requirements:
+  object_size_m:
+    value: { min: 6.0, max: 6.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    note: "Stock mats are 600 × 230 cm (Q636: 600 × 235 cm) (Kämpfe weight table)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Cut positions follow the bending schedule; no ± value is stated in the sources read."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Cut with hydraulic or manual shears; no force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: gantry
+    note:
+      en: "Mats move by crane; the cutting stays with the rebar crew and the reinforcement check stays with the engineer. Where volumes allow, custom mesh welded to CAD data removes the cutting altogether."
+      de: "Matten bewegt der Kran; das Schneiden bleibt beim Bewehrungsteam und die Bewehrungsabnahme beim Ingenieur. Wo die Menge es trägt, macht nach CAD-Daten geschweißte Sondermatte das Zuschneiden ganz überflüssig."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [gantry, dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Kämpfe's weight table lists stock mesh mats of 600 × 230 cm from Q188 at 41.7 kg to Q524 at 100.9 kg and Q636 (600 × 235 cm) at 132.0 kg per mat, and bar masses to DIN 488-1."
+      de: "Die Gewichtstabelle von Kämpfe führt Lagermatten 600 × 230 cm von Q188 mit 41,7 kg bis Q524 mit 100,9 kg sowie Q636 (600 × 235 cm) mit 132,0 kg je Matte und Stabgewichte nach DIN 488-1."
+    url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2024-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Rebar supplier weight table; no date in the file, the upload path says 2024/09. Data source for mass and size."
+  - statement:
+      en: "Progress says its Wire Center processes rebar from coil fully automatically and places cross and longitudinal reinforcement and lattice girders to CAD specifications."
+      de: "Progress schreibt, dass sein Wire Center Betonstahl vom Coil vollautomatisch verarbeitet und Quer- und Längsbewehrung sowie Gitterträger nach CAD-Vorgaben ablegt."
+    url: 'https://pma.progress.group/en/products/automation-of-reinforcement'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date."
+  - statement:
+      en: "MEP describes its MRSA line as producing welded mesh from pre-cut bars, from coil or both, including structural meshes; the MRSA F welds wires up to Ø25 mm."
+      de: "MEP beschreibt seine MRSA-Linie als Anlage für geschweißte Matten aus vorgeschnittenen Stäben, vom Coil oder beidem, auch für statische Matten; die MRSA F schweißt Drähte bis Ø 25 mm."
+    url: 'https://www.mepgroup.com/product-categories/mrsa'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date."
+pilot:
+  metrics: [operator_minutes_per_unit, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a robot pilot: if custom mesh does not cut the person-minutes per element after 3 months of orders, stay with stock mats and cutting."
+    de: "Kein Roboterpilot: Wenn Sondermatten die Personenminuten je Bauteil nach 3 Monaten Aufträgen nicht senken, bei Lagermatten und Zuschnitt bleiben."
+  scope_hint:
+    en: "Compare stock-mat cutting with ordered custom mesh for one element type."
+    de: "Zuschnitt aus Lagermatten mit bestellter Sondermatte für einen Bauteiltyp vergleichen."
+prerequisites:
+  - { en: "Bending schedules with mesh positions and openings", de: "Biegelisten mit Mattenpositionen und Aussparungen" }
+open_questions:
+  - { en: "What share of your mesh is cut from stock mats today?", de: "Welcher Anteil Ihrer Matten wird heute aus Lagermatten zugeschnitten?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

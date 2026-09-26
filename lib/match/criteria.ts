@@ -145,7 +145,7 @@ export function runtime(c: Candidate, req: Requirements): CriterionResult | null
   if (v === null) return r('runtime', 'soft', 'unknown', 0, 'runtime not published');
   const basis = c.card.runtime_basis && c.card.runtime_basis !== 'unstated' ? c.card.runtime_basis : 'basis unstated';
   if (v >= req.runtime_h_per_shift) return r('runtime', 'soft', 'pass', 1, `${f1(v)} h (${basis}) covers an ${f1(req.runtime_h_per_shift)} h shift`);
-  if (swap === true && req.hot_swap_acceptable) return r('runtime', 'soft', 'pass', 0.9, `${f1(v)} h per battery, swappable — shift covered by swapping`);
+  if (swap === true && req.hot_swap_acceptable) return r('runtime', 'soft', 'pass', 0.9, `${f1(v)} h per battery, swappable, so swapping covers the shift`);
   const ratio = v / req.runtime_h_per_shift;
   const swapText = swap === false ? 'no battery swap' : 'battery swap not published';
   if (!req.hot_swap_acceptable) return r('runtime', 'hard', 'fail', 0, `${f1(v)} h (${basis}) < ${f1(req.runtime_h_per_shift)} h shift; ${swapText}`);
@@ -184,7 +184,7 @@ export function quote(c: Candidate, req: Requirements, ctx: Ctx): PriceQuote | n
     for (const p of rows) {
       const eur = toEur(p.amount, p.currency);
       if (eur === null) continue;
-      return { amount_eur: Math.round(eur), original: { amount: p.amount, currency: p.currency, region: p.region, tier: p.tier, source_url: p.source_url, observed_at: p.observed_at }, basis };
+      return { amount_eur: Math.round(eur), original: { amount: p.amount, currency: p.currency, region: p.region, config: p.config, tier: p.tier, source_url: p.source_url, observed_at: p.observed_at }, basis };
     }
     return null;
   };

@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_masonry/lintel-placing
+status: published
+setting: site_masonry
+family: heavy_element_handling
+trades: [masonry]
+title:
+  en: "Set precast lintels over door and window openings"
+  de: "Fertigteilstürze über Tür- und Fensteröffnungen versetzen"
+summary:
+  en: "Lift precast lintels onto the wall ends beside each opening, bed them in mortar and prop them until the wall above has set."
+  de: "Fertigteilstürze auf die Wandenden neben jeder Öffnung heben, in Mörtel verlegen und abstützen, bis das Mauerwerk darüber fest ist."
+description:
+  en: "Every opening in a masonry wall needs a lintel. Clay flat lintels come in lengths from 1.00 to 3.00 m and must be propped at most every 1.25 m until masonry and concrete above have gained strength, usually seven days; aerated-concrete lintels weigh between 45 and 161 kg a piece and carry load at once. The lintel rests at least 11.5 cm on each wall end, is wetted and bedded in mortar, and a damaged one must not be built in."
+  de: "Jede Öffnung in einer Mauerwerkswand braucht einen Sturz. Ziegelflachstürze gibt es in Längen von 1,00 bis 3,00 m; sie werden höchstens alle 1,25 m abgestützt, bis Mauerwerk und Beton darüber ausreichend fest sind, in der Regel sieben Tage. Porenbetonstürze wiegen zwischen 45 und 161 kg je Stück und sind sofort belastbar. Der Sturz liegt an jedem Wandende mindestens 11,5 cm auf, wird angenässt und in Mörtel verlegt; ein beschädigter Sturz darf nicht eingebaut werden."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '012'
+  atv: "DIN 18330"
+  position:
+    en: "Precast lintels over openings: supply and install"
+    de: "Fertigteilstürze über Öffnungen liefern und einbauen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 45, max: 161 }
+    confidence: confirmed
+    evidence_url: 'https://technik.xella.de/media/books/baubuch/144/'
+    note: "Load-bearing aerated-concrete lintels (Ytong PST) from 45 kg (1.30 m × 175 mm) to 161 kg (2.25 m × 365 mm) per piece, from the manufacturer's table. Clay flat lintels are lighter per metre; their datasheet gives no mass."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same product in a few lengths and widths, but every opening has its own position, height and bearing."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Bearing length, level and props are checked before the wall continues; a misplaced lintel is lifted out and set again."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://technik.xella.de/media/books/baubuch/144/'
+    note: "The lintel carries the wall and, for the aerated-concrete type, the floor above; the maker states it can be loaded immediately, including by floor elements."
+  reach_height_m:
+    value: { min: 2.0, max: 2.5 }
+    confidence: assumed
+    note: "Lintels sit on top of door and window openings, roughly 2.0–2.5 m above the floor. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "External walls are built in the open, internal walls under the slab above."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Setting a lintel in mortar makes no dust; cutting units next to it is its own task."
+  wet:
+    value: damp
+    confidence: confirmed
+    evidence_url: 'https://www.wienerberger.de/content/dam/wienerberger/germany/marketing/documents-magazines/technical/technical-product-info-sheet/wall/wall-accessories/DE_MKT_DOC_Poroton_Datenblatt_Ziegelsturz_10-2025.pdf'
+    note: "The datasheet says to wet precast lintels well before installation and to bed them in mortar."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slabs, trestles and scaffold decks."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_366/c_366.htm'
+    note: "Anything above 25 kg is set with a setting device or mini crane, which BG BAU requires for masonry units; light clay lintels are still placed by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "One lintel per opening; not recorded."
+requirements:
+  object_size_m:
+    value: { min: 1.0, max: 3.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.wienerberger.de/content/dam/wienerberger/germany/marketing/documents-magazines/technical/technical-product-info-sheet/wall/wall-accessories/DE_MKT_DOC_Poroton_Datenblatt_Ziegelsturz_10-2025.pdf'
+    note: "Clay lintels in lengths from 100 to 300 cm (Wienerberger, Stand Oktober 2025); aerated-concrete lintels run from 1.30 to 2.25 m."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No placing tolerance is published. The datasheet sets a minimum bearing depth of 11.5 cm on each wall end and props at most 1.25 m apart."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force beyond lifting the lintel."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Set heavy lintels with the setting device or mini crane that is on site for large masonry units anyway, and keep light clay lintels as two-person work. A structural element over an opening, weighing up to 161 kg, is not work for a walking robot."
+      de: "Schwere Stürze mit dem Versetzgerät oder Minikran setzen, der für großformatige Steine ohnehin auf der Baustelle ist, und leichte Ziegelstürze als Zwei-Personen-Arbeit belassen. Ein tragendes Bauteil über einer Öffnung mit bis zu 161 kg ist keine Arbeit für einen laufenden Roboter."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, gantry, keep_process]
+evidence:
+  - statement:
+      en: "Xella lists load-bearing Ytong lintels (PST) from 1.30 × 0.175 m at 45 kg to 2.25 × 0.365 m at 161 kg per piece, regulated by DIN 4223-1 and DIN EN 12602; no temporary support is needed and the lintel can be loaded immediately."
+      de: "Xella führt tragende Ytong-Stürze (PST) von 1,30 × 0,175 m mit 45 kg bis 2,25 × 0,365 m mit 161 kg je Stück, geregelt durch DIN 4223-1 und DIN EN 12602; eine Unterstützung ist nicht nötig, der Sturz ist sofort belastbar."
+    url: 'https://technik.xella.de/media/books/baubuch/144/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Ytong Silka Baubuch, 6th edition, page 144; undated, read on 2026-09-25."
+  - statement:
+      en: "Wienerberger's lintel datasheet: prop precast lintels during installation at most every 1.25 m, leave the props until masonry and concrete have enough strength (usually 7 days), wet the lintels and bed them in mortar, embed at least 11.5 cm, and do not install damaged ones."
+      de: "Das Sturz-Datenblatt von Wienerberger: Sturzfertigteile beim Einbau höchstens alle 1,25 m unterstützen, Montagestützen stehen lassen, bis Mauerwerk und Beton ausreichend fest sind (i. d. R. 7 Tage), Stürze annässen und in Mörtel verlegen, mindestens 11,5 cm einbinden, beschädigte nicht einbauen."
+    url: 'https://www.wienerberger.de/content/dam/wienerberger/germany/marketing/documents-magazines/technical/technical-product-info-sheet/wall/wall-accessories/DE_MKT_DOC_Poroton_Datenblatt_Ziegelsturz_10-2025.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2025-10-01'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet dated Stand Oktober 2025; day not stated."
+  - statement:
+      en: "BG BAU: masonry units laid with both hands may weigh at most 25 kg; heavier units may only be laid with setting devices or machines."
+      de: "BG BAU: Zweihand-Mauersteine dürfen höchstens 25 kg wiegen; schwerere Steine dürfen nur mit Versetzgeräten oder -maschinen verarbeitet werden."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_366/c_366.htm'
+    kind: regulator
+    tier: 1
+    date: '2019-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Baustein C 366, Stand 07/2019. The rule is written for masonry units; lintels are handled the same way on site."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a setting device: all lintels of one storey set with the device the masonry crew already uses, time per lintel against two-person placing."
+    de: "Falls mit Versetzgerät verfolgt: alle Stürze eines Geschosses mit dem Gerät der Mauerkolonne setzen, Zeit je Sturz gegen Versetzen zu zweit."
+prerequisites: []
+open_questions:
+  - { en: "Which lintel types and lengths do your projects use, and is a setting device already on site for them?", de: "Welche Sturztypen und -längen verwenden Ihre Projekte, und ist dafür schon ein Versetzgerät auf der Baustelle?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

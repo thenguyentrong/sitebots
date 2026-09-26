@@ -1,0 +1,134 @@
+schema_version: 1
+id: site_drywall/stud-frame-setting
+status: published
+setting: site_drywall
+family: assembly_fastening
+trades: [drywall]
+title:
+  en: "Set the metal stud frame of a partition"
+  de: "Metallständerwerk einer Trennwand stellen"
+summary:
+  en: "Fix UW tracks to floor and ceiling, stand CW studs into them at the specified spacing and align the frame."
+  de: "UW-Profile an Boden und Decke dübeln, CW-Profile im vorgegebenen Achsabstand einstellen und das Ständerwerk ausrichten."
+description:
+  en: "Before any board goes on, the installer marks the wall line, drills and dowels the UW tracks to the slab and the ceiling, cuts the CW studs to room height and stands them into the tracks. The profiles are light: a 3 m CW 75 stud weighs about 2.5 kg. Along one wall the steps repeat, but every wall has its own length, openings and junctions, and the ceiling track is drilled into concrete overhead."
+  de: "Bevor eine Platte gesetzt wird, reißt der Monteur die Wandachse an, bohrt und dübelt die UW-Profile an Rohboden und Decke, längt die CW-Profile auf Raumhöhe ab und stellt sie in die UW-Profile. Die Profile sind leicht: Ein 3 m langes CW-75-Profil wiegt rund 2,5 kg. Entlang einer Wand wiederholen sich die Schritte, aber jede Wand hat ihre eigene Länge, Öffnungen und Anschlüsse, und das Deckenprofil wird über Kopf in Beton gebohrt."
+also_in_settings: [modular_volumetric]
+derived_from: null
+lv:
+  lb: '039'
+  atv: "DIN 18340"
+  position:
+    en: "Metal stud partition, single stud frame, boarded on both sides"
+    de: "Metallständerwand, Einfachständerwerk, beidseitig beplankt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 1.16, max: 2.9 }
+    confidence: likely
+    evidence_url: 'https://www.bauhaus.info/cw-profile/knauf-cw-standprofil/p/13931200'
+    note: "Knauf profiles as listed by a retailer (Bauhaus): CW 75 × 50 × 0.6 stud of 3.0 m 2.48 kg, of 3.5 m 2.9 kg; UW track 50 × 40 of 2.0 m 1.16 kg. Taller walls take longer, heavier studs."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same profiles and steps on every wall, but lengths, openings, door studs and wall junctions change from wall to wall."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A frame out of line shows as an uneven wall after boarding and is re-set; the finished wall has to meet the DIN 18202 flatness limits."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Partitions without fire or structural rating. Fire-rated and load-bearing walls follow their own approvals and are out of scope."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Tracks at floor level and at the ceiling; room heights up to about 3 m assumed, not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed shell."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling the dowel holes in concrete releases quartz dust at the drill; extraction at the tool is the rule (TRGS 559)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Raw slab or screed with material stacks."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "People set the frame. Layout robots can mark the wall lines on the slab; no machine was found that sets the profiles."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on wall lengths per storey; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure m² of frame per crew hour."
+requirements:
+  object_size_m:
+    value: { min: 2, max: 4 }
+    confidence: likely
+    evidence_url: 'https://www.kemmler.de/sortiment/produkt/knauf-cw-profil-150-50-06/150-50-06/laenge4000mm/3575100231'
+    note: "Knauf CW studs are sold up to 4000 mm (dealer listing for CW 150/50/06); tracks from 2000 mm (retail listings)."
+  tolerance_mm:
+    value: 5
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Finished walls may deviate 5 mm over a 1 m measuring-point distance (Stichmaß), DIN 18202 Table 3 row 6, as reproduced by a screed contractor from the ZDB handbook. The frame has to be set so the boarded wall meets it."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The drilling thrust for the dowel holes is not published for this use."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator with a drilling tool first. The profiles are light; the hard parts are drilling the ceiling track overhead and aligning the frame. A layout robot can take over the marking."
+      de: "Zuerst einen radgebundenen Mobilmanipulator mit Bohrwerkzeug vergleichen. Die Profile sind leicht; schwierig sind das Bohren der Deckenanschlüsse über Kopf und das Ausrichten des Ständerwerks. Das Anreißen kann ein Markierroboter übernehmen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [drilling, carry_payload]
+capabilities_optional: [layout_marking, screwing]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "A screed contractor reproduces DIN 18202 Table 3: finished walls and suspended ceilings (row 6) may deviate 3 mm over 0.1 m and 5 mm over 1 m; floors that take a covering (row 3) 2 mm over 0.1 m and 4 mm over 1 m."
+      de: "Ein Estrichbetrieb gibt DIN 18202 Tabelle 3 wieder: Flächenfertige Wände und untergehängte Decken (Zeile 6) dürfen 3 mm auf 0,1 m und 5 mm auf 1 m abweichen, Böden zur Aufnahme von Belägen (Zeile 3) 2 mm auf 0,1 m und 4 mm auf 1 m."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: operator
+    tier: 2
+    date: '2009-04-21'
+    type: claim
+    confidence: likely
+    note: "Reproduction from the ZDB handbook for the screed and flooring trades; the file dates from 2009, so check the current edition of DIN 18202."
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "Walls that need re-setting more often than with the manual crew after three months: stop."
+    de: "Nach drei Monaten öfter nachzurichtende Wände als bei der Kolonne von Hand: abbrechen."
+  scope_hint:
+    en: "One storey of partitions of the same system, wall lines marked beforehand, checked with a straightedge by a person."
+    de: "Ein Geschoss Trennwände desselben Systems, Wandachsen vorher angerissen, Kontrolle mit der Richtlatte durch eine Person."
+prerequisites:
+  - { en: "Wall lines marked on the slab", de: "Wandachsen auf der Rohdecke angerissen" }
+  - { en: "Dowels approved for the slab and the ceiling", de: "Für Rohboden und Decke geeignete Dübel" }
+open_questions:
+  - { en: "Is drilling the ceiling track overhead the step that slows the crew most?", de: "Ist das Bohren der Deckenanschlüsse über Kopf der Schritt, der die Kolonne am meisten bremst?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

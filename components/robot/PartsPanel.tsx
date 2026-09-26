@@ -59,9 +59,9 @@ export function PartsPanel({ specs, formFactor }: { specs: Specs; formFactor: st
         </tbody>
       </table>
       {[
-        { key: 'sensors', label: 'Sensors', spec: specs.sensors, lines: sensors?.map((s) => `${s.count && s.count > 1 ? `${s.count}× ` : ''}${SENSOR_TYPE_LABEL[s.type] ?? s.type}${s.model ? ` · ${s.model}` : ''}${s.location ? ` · ${s.location}` : ''}${s.note ? ` — ${s.note}` : ''}`) },
-        { key: 'actuators', label: 'Actuators', spec: specs.actuators, lines: actuators?.map((a) => `${ACTUATOR_GROUP_LABEL[a.group] ?? a.group}${a.count ? ` · ${a.count}×` : ''}${a.type ? ` ${a.type}` : ''}${a.model ? ` ${a.model}` : ''}${a.peak_torque_nm ? ` · ${fmt(a.peak_torque_nm)} N·m peak` : ''}${a.note ? ` — ${a.note}` : ''}`) },
-        { key: 'battery_pack', label: 'Battery pack', spec: specs.battery_pack, lines: battery ? [summarizeJson('battery_pack', battery) + (battery.model ? ` · ${battery.model}` : '') + (battery.note ? ` — ${battery.note}` : '')] : undefined },
+        { key: 'sensors', label: 'Sensors', spec: specs.sensors, lines: sensors?.map((s) => `${s.count && s.count > 1 ? `${s.count}× ` : ''}${SENSOR_TYPE_LABEL[s.type] ?? s.type}${s.model ? ` · ${s.model}` : ''}${s.location ? ` · ${s.location}` : ''}${s.note ? `: ${s.note}` : ''}`) },
+        { key: 'actuators', label: 'Actuators', spec: specs.actuators, lines: actuators?.map((a) => `${ACTUATOR_GROUP_LABEL[a.group] ?? a.group}${a.count ? ` · ${a.count}×` : ''}${a.type ? ` ${a.type}` : ''}${a.model ? ` ${a.model}` : ''}${a.peak_torque_nm ? ` · ${fmt(a.peak_torque_nm)} N·m peak` : ''}${a.note ? `: ${a.note}` : ''}`) },
+        { key: 'battery_pack', label: 'Battery pack', spec: specs.battery_pack, lines: battery ? [summarizeJson('battery_pack', battery) + (battery.model ? ` · ${battery.model}` : '') + (battery.note ? `: ${battery.note}` : '')] : undefined },
       ].map((block) =>
         block.spec && block.lines ? (
           <div key={block.key} className="border-t border-edge/70 px-5 py-3">

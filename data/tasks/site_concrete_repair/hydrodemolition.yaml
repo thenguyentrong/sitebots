@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_concrete_repair/hydrodemolition
+status: published
+setting: site_concrete_repair
+family: surface_finishing
+trades: [concrete]
+title:
+  en: "Remove damaged concrete down to the reinforcement"
+  de: "Geschädigten Beton bis zur Bewehrung abtragen"
+summary:
+  en: "Take off damaged concrete around the reinforcement without damaging the steel, as preparation for the repair."
+  de: "Geschädigten Beton um die Bewehrung abtragen, ohne den Stahl zu beschädigen, als Vorbereitung der Instandsetzung."
+description:
+  en: "Hydrodemolition removes concrete selectively with high-pressure water while the reinforcement is kept: typically about 1000 bar for selective removal and 2500 bar for removal to a controlled depth. The robot carries and guides the jet and is remote-controlled. For load-bearing members, the DIBt technical rule on maintenance of concrete structures sets the requirements for the repair."
+  de: "Höchstdruckwasserstrahlen trägt Beton selektiv mit Wasser unter hohem Druck ab, die Bewehrung bleibt erhalten: typisch etwa 1000 bar für selektiven Abtrag und 2500 bar für Abtrag auf kontrollierte Tiefe. Der Roboter trägt und führt den Strahl und wird ferngesteuert. Bei tragenden Bauteilen setzt die Technische Regel des DIBt zur Instandhaltung von Betonbauwerken die Anforderungen an die Instandsetzung."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '081'
+  atv: "DIN 18349"
+  position:
+    en: "Removal of concrete by high-pressure water jetting down to the reinforcement"
+    de: "Betonabtrag mit Höchstdruckwasserstrahlen bis zur Bewehrung"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The jet does the removal; the sources used here state no mass for hand-held equipment."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Areas and depths change with the damage found."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Too little removal leaves damaged concrete; too much weakens the member."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.dibt.de/de/aktuelles/meldungen/nachricht-detail/meldung/technische-regel-instandhaltung-von-betonbauwerken-neu-ab-januar-2021'
+    note: "Repair of load-bearing concrete falls under the DIBt technical rule on maintenance of concrete structures, which addresses load-bearing capacity and structural safety (January 2021)."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Decks, walls and soffits. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Bridges, car parks and buildings."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "A wet process: slurry instead of dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "The work floods the area with water."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Broken-out surfaces and slurry."
+  incumbent_automation:
+    value: { status: full, machine_classes: [hydrodemolition_robot] }
+    confidence: confirmed
+    evidence_url: 'https://aquajet.se/de/hydrodemolition/was-ist-hydrodemolition/'
+    note: "Remote-controlled hydrodemolition robots do this work and keep the reinforcement (Aquajet)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not applicable; concrete is removed, not handled as pieces."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The removal depth comes from the repair design; no single tolerance applies."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The robot takes the recoil of the jet; the sources used here state no force for hand work."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The hydrodemolition robot is the answer: it removes concrete selectively, keeps the steel and keeps the operator at a distance."
+      de: "Der Höchstdruckwasserstrahl-Roboter ist die Antwort: Er trägt Beton selektiv ab, erhält den Stahl und hält den Bediener auf Abstand."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, quality]
+capabilities_required: [surface_finishing]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [dedicated_machine]
+evidence:
+  - statement:
+      en: "Aquajet describes hydrodemolition as selective concrete removal with high-pressure water that keeps the reinforcement, carried out by a robot with remote control; typically 1000 bar for selective removal and 2500 bar for removal to a controlled depth."
+      de: "Aquajet beschreibt Hydrodemolition als selektiven Betonabtrag mit Hochdruckwasser, bei dem die Bewehrung erhalten bleibt, ausgeführt von einem Roboter mit Fernsteuerung; typisch 1000 bar für selektiven Abtrag und 2500 bar für Abtrag auf kontrollierte Tiefe."
+    url: 'https://aquajet.se/de/hydrodemolition/was-ist-hydrodemolition/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated page, dated with the check date."
+  - statement:
+      en: "The DIBt announced its technical rule on maintenance of concrete structures, new from January 2021: part 1 sets the principles of maintenance and repair with regard to mechanical strength and structural safety, part 2 the performance repair products must meet to maintain or restore load-bearing capacity."
+      de: "Das DIBt kündigte seine Technische Regel Instandhaltung von Betonbauwerken an, neu ab Januar 2021: Teil 1 legt die Grundsätze der Instandhaltung und Instandsetzung mit Blick auf mechanische Festigkeit und Standsicherheit fest, Teil 2 die Leistungen, die Instandsetzungsprodukte zum Erhalt oder zur Wiederherstellung der Tragfähigkeit erfüllen müssen."
+    url: 'https://www.dibt.de/de/aktuelles/meldungen/nachricht-detail/meldung/technische-regel-instandhaltung-von-betonbauwerken-neu-ab-januar-2021'
+    kind: regulator
+    tier: 1
+    date: '2021-01-19'
+    type: claim
+    confidence: confirmed
+    note: "News item of the DIBt."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot: if you still break out by hand, compare one repair area with a hydrodemolition subcontractor."
+    de: "Kein Roboterpilot: Wenn Sie noch von Hand abtragen, eine Instandsetzungsfläche mit einem Nachunternehmer für Höchstdruckwasserstrahlen vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "How do you dispose of the water and slurry on your repair sites?", de: "Wie entsorgen Sie Wasser und Schlamm auf Ihren Instandsetzungsbaustellen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

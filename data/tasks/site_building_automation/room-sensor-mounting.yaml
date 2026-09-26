@@ -1,0 +1,135 @@
+schema_version: 1
+id: site_building_automation/room-sensor-mounting
+status: published
+setting: site_building_automation
+family: assembly_fastening
+trades: [mep_electrical, mep_hvac]
+title:
+  en: "Mount, connect and address room temperature controllers"
+  de: "Raumtemperaturregler montieren, anschließen und adressieren"
+summary:
+  en: "Screw the support ring onto the switch box, connect the KNX bus, snap the controller in, and press its programming button when the ETS asks for it."
+  de: "Tragring auf die Schalterdose schrauben, den KNX-Bus anschließen, den Regler einrasten und den Programmiertaster drücken, wenn die ETS dazu auffordert."
+description:
+  en: "Every room gets a controller or sensor in a flush-mounted switch box at about 1.60 m. The steps per device are short and the same: support ring onto the box, bus terminal on the two-wire KNX cable, device into the ring, bus power on. For commissioning the physical address and application are prepared in the ETS software and downloaded; the fitter presses the programming button on the underside of the device when asked, and the red LED goes out when programming succeeds. The maker restricts installation and commissioning to authorised electricians."
+  de: "Jeder Raum bekommt einen Regler oder Sensor in einer Unterputz-Schalterdose auf etwa 1,60 m. Die Schritte je Gerät sind kurz und gleich: Tragring auf die Dose, Busklemme an die zweiadrige KNX-Leitung, Gerät in den Tragring, Busspannung zuschalten. Zur Inbetriebnahme werden physikalische Adresse und Applikation in der ETS-Software vorbereitet und geladen; der Monteur drückt auf Aufforderung den Programmiertaster an der Unterseite des Geräts, die rote LED erlischt nach erfolgreicher Programmierung. Der Hersteller erlaubt Montage und Inbetriebnahme nur Elektrofachkräften."
+also_in_settings: [site_electrical]
+derived_from: null
+lv:
+  lb: '070'
+  atv: "DIN 18386"
+  position:
+    en: "Room temperature controllers and sensors (KNX), flush-mounted: install, connect and address"
+    de: "Raumtemperaturregler und -sensoren (KNX), Unterputz, montieren, anschließen und adressieren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.02, max: 0.2 }
+    confidence: assumed
+    note: "A 55 × 55 × 13 mm flush-mounted device with its support ring; the maker publishes no weight, so the range is an estimate."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Same device and same steps in every room; box positions, cable ends and frame programmes vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wrong connection or address shows at commissioning and is corrected; nothing is damaged."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Room temperature control on the KNX bus; nothing structural or safety-relevant depends on it."
+  reach_height_m:
+    value: { min: 1.6, max: 1.6 }
+    confidence: confirmed
+    evidence_url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/MDT_AOI_Room_Temperature_Controller.pdf'
+    note: "Recommended installation height 1.60 m (MDT operating instructions, 09/24)."
+  environment:
+    value: indoor
+    confidence: confirmed
+    evidence_url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/MDT_DB_Raumtemperaturregler.pdf'
+    note: "The datasheet says the device must be mounted in dry interior rooms."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Late fit-out: construction dust from the finishing trades."
+  wet:
+    value: dry
+    confidence: confirmed
+    evidence_url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/MDT_DB_Raumtemperaturregler.pdf'
+    note: "Dry interior rooms only, protection class IP20."
+  floor:
+    value: level
+    confidence: likely
+    note: "Finished or screeded floors."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Mounted by electricians; addressing is software-guided but needs a person at the device."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Temperature values only; no cameras."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure devices per hour including addressing."
+requirements:
+  object_size_m:
+    value: { min: 0.055, max: 0.055 }
+    confidence: confirmed
+    evidence_url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/MDT_DB_Raumtemperaturregler.pdf'
+    note: "55 × 55 × 13 mm (MDT datasheet, 02/17), for 55 mm switch programmes."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No position tolerance published; the device sits in the frame of the switch programme."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force published; the KNX terminal takes solid conductors of 0.6 to 0.8 mm diameter."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator for the mounting and a person for the bus connection first: the device is light and sits at 1.60 m, but the small terminal, the frame of each switch programme and the button press on the underside are fine work. The maker allows only authorised electricians to install and commission it."
+      de: "Zuerst einen radgebundenen Mobilmanipulator für die Montage und eine Person für den Busanschluss vergleichen: Das Gerät ist leicht und sitzt auf 1,60 m, aber die kleine Klemme, der Rahmen jedes Schalterprogramms und der Tastendruck an der Unterseite sind Feinarbeit. Der Hersteller erlaubt Montage und Inbetriebnahme nur Elektrofachkräften."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage]
+capabilities_required: [screwing, autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "MDT's operating instructions for its KNX room temperature controller list four installation steps (support ring onto the switch box, connect to the KNX bus, snap the device into the ring, switch on bus power) and three commissioning steps (create the physical address and application in the ETS, download and press the programming button on the underside when prompted, red LED goes out after successful programming). Recommended installation height 1.60 m; for authorised electricians only."
+      de: "Die Betriebsanleitung von MDT für seinen KNX-Raumtemperaturregler nennt vier Montageschritte (Tragring auf die Schalterdose, Anschluss an den KNX-Bus, Gerät in den Tragring einrasten, Busspannung zuschalten) und drei Inbetriebnahmeschritte (physikalische Adresse und Applikation in der ETS erstellen, laden und auf Aufforderung den Programmiertaster an der Unterseite drücken, rote LED erlischt nach erfolgreicher Programmierung). Empfohlene Montagehöhe 1,60 m; nur für autorisiertes Elektrofachpersonal."
+    url: 'https://www.mdt.de/fileadmin/user_upload/user_upload/download/MDT_AOI_Room_Temperature_Controller.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Operating instructions, Stand 09/24."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of devices mounted, connected and addressed without rework after 3 months, then stop."
+    de: "Weniger als 99 % der Geräte nach 3 Monaten ohne Nacharbeit montiert, angeschlossen und adressiert, dann abbrechen."
+  scope_hint:
+    en: "One floor, one device type and one switch programme, cables prepared in the boxes, an electrician connects the bus and checks every tenth device."
+    de: "Ein Geschoss, ein Gerätetyp und ein Schalterprogramm, Leitungen in den Dosen vorbereitet, eine Elektrofachkraft schließt den Bus an und prüft jedes zehnte Gerät."
+prerequisites:
+  - { en: "Switch boxes set and the KNX cable pulled to every box", de: "Schalterdosen gesetzt und KNX-Leitung bis in jede Dose gezogen" }
+  - { en: "ETS project with physical addresses per room", de: "ETS-Projekt mit physikalischen Adressen je Raum" }
+open_questions:
+  - { en: "Who carries the electrical responsibility when a machine mounts devices that only authorised electricians may install?", de: "Wer trägt die elektrotechnische Verantwortung, wenn eine Maschine Geräte montiert, die nur Elektrofachkräfte einbauen dürfen?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

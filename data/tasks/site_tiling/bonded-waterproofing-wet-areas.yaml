@@ -1,0 +1,114 @@
+schema_version: 1
+id: site_tiling/bonded-waterproofing-wet-areas
+status: published
+setting: site_tiling
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Apply bonded liquid waterproofing under tiles (DIN 18534)"
+  de: "Flüssige Verbundabdichtung unter Fliesen auftragen (DIN 18534)"
+summary:
+  en: "Roll or trowel two coats of liquid waterproofing onto shower and bathroom walls and floors before tiling, with sealing tapes at corners and collars at pipes."
+  de: "Zwei Lagen flüssige Abdichtung vor dem Fliesen auf Wände und Böden von Duschen und Bädern rollen oder spachteln, mit Dichtbändern in Ecken und Manschetten an Rohren."
+description:
+  en: "DIN 18534-3 sets a minimum dry film thickness for liquid bonded waterproofing: 0.5 mm for polymer dispersions, 2.0 mm for crack-bridging mineral slurries, 1.0 mm for reaction resins, applied evenly in two coats. The layer disappears under the tiles; a thin spot shows up only later, as water damage."
+  de: "DIN 18534-3 legt für flüssige Verbundabdichtungen eine Mindesttrockenschichtdicke fest: 0,5 mm bei Polymerdispersionen, 2,0 mm bei rissüberbrückenden mineralischen Dichtschlämmen, 1,0 mm bei Reaktionsharzen, gleichmäßig in zwei Lagen aufgetragen. Die Schicht verschwindet unter den Fliesen; eine zu dünne Stelle zeigt sich erst später, als Wasserschaden."
+also_in_settings: [modular_volumetric]
+derived_from: null
+lv:
+  lb: '024'
+  atv: "DIN 18352"
+  position:
+    en: "Bonded liquid waterproofing (AIV-F) under tiles to DIN 18534"
+    de: "Abdichtung im Verbund (AIV-F) unter Fliesen nach DIN 18534"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 3, max: 20 }
+    confidence: likely
+    evidence_url: 'https://www.sopro.com/de-de/produktdetails/abdichtungen-im-verbund/525-flaechendicht-flexibel-grau'
+    note: "Sopro FlächenDicht flexibel (FDF 525) comes in 3, 5, 15 and 20 kg buckets; the roller or trowel is light. The heaviest item is a full 20 kg bucket."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Wall and floor areas repeat; corners, sealing tapes, pipe collars and drains are details that differ per bathroom."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.sopro.com/fileadmin/customer/productdata/de_DE/4x4_Newsletter/EXAKT_Newsletter/2024/24-EXAKT_Newsletter_01_24.pdf'
+    note: "Per DIN 18534-3 as summarised by Sopro (EXAKT 1/2024), no single measured value may fall more than 10 % below the minimum dry film thickness, and the mean may not fall below it. A defect is covered by the tiles and found as water damage."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Protects the building from water; no structural or life-safety function."
+  reach_height_m:
+    value: { min: 0, max: 2.5 }
+    confidence: assumed
+    note: "Shower walls and floors; height of the waterproofed wall area not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Bathrooms inside the closed building."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Liquid application; no dust from the step itself."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Applied to a dry substrate in a room not yet in use."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed with falls to the drain in showers."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Applied by hand with roller, brush or trowel; Sopro lists spraying as an alternative, which is still done by a person."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Short sessions per bathroom with drying time between coats; not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.sopro.com/fileadmin/customer/productdata/de_DE/4x4_Newsletter/EXAKT_Newsletter/2024/24-EXAKT_Newsletter_01_24.pdf'
+    note: "No positional tolerance applies; the requirement is a layer thickness. Minimum dry film thickness 0.5 mm (polymer dispersion), 2.0 mm (mineral slurry) or 1.0 mm (reaction resin); single values at most 10 % below the minimum; at least five measurements per bathroom up to 20 m² (Sopro EXAKT 1/2024, citing DIN 18534-3)."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "A layer that must reach its minimum thickness everywhere and is then covered is not a task for a 99 % robot. Keep it with trained tilers and make the check routine: wet film comb, consumption per square metre and the two-colour second coat, documented."
+      de: "Eine Schicht, die überall ihre Mindestdicke erreichen muss und danach verdeckt wird, ist keine Aufgabe für einen 99-%-Roboter. Sie bleibt bei geschulten Fliesenlegern, und die Kontrolle wird Routine: Nassschichtkamm, Verbrauch je Quadratmeter und die zweifarbige zweite Lage, dokumentiert."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [surface_finishing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence: []
+pilot:
+  metrics: [error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a pilot task; measure the documented wet film thickness on every bathroom instead."
+    de: "Keine Pilotaufgabe; stattdessen die dokumentierte Nassschichtdicke in jedem Bad messen."
+  scope_hint:
+    en: "Document consumption and wet film thickness per bathroom, as DIN 18534-3 already requires for water exposure class W3-I."
+    de: "Verbrauch und Nassschichtdicke je Bad dokumentieren, wie es DIN 18534-3 für die Wassereinwirkungsklasse W3-I ohnehin fordert."
+prerequisites: []
+open_questions:
+  - { en: "Do you document wet film thickness on every bathroom today, or only for W3-I?", de: "Dokumentieren Sie die Nassschichtdicke heute in jedem Bad oder nur bei W3-I?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

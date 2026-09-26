@@ -1,0 +1,27 @@
+id: site_insulation_fire_stopping
+group: site
+section: services
+lv: { lb: ['047'], atv: ["DIN 18421"] }
+title: { en: "Insulation and fire stopping on building services", de: "Dämm- und Brandschutzarbeiten an technischen Anlagen" }
+aliases:
+  en: [pipe insulation, fire stopping]
+  de: [Rohrdämmung, Abschottungen]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: insulating heating and hot-water pipes to GEG (marginal), fire stopping of service penetrations and fire-resistant cladding of ventilation ducts (both ruled out: life safety, and boards of 30 to 90 kg for the cladding)."
+  de: "Drei geprüfte Aufgaben: Heizungs- und Warmwasserleitungen nach GEG dämmen (grenzwertig), Leitungsdurchführungen abschotten und Lüftungsleitungen feuerwiderstandsfähig bekleiden (beide ausgeschieden: Personenschutz, bei der Bekleidung zudem Platten von 30 bis 90 kg)."
+typical_incumbent_automation: []
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: indoor
+typical_trades: [insulation, mep_sprinkler]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

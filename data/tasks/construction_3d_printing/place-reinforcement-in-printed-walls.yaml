@@ -1,0 +1,135 @@
+schema_version: 1
+id: construction_3d_printing/place-reinforcement-in-printed-walls
+status: published
+setting: construction_3d_printing
+family: assembly_fastening
+trades: [concrete]
+title:
+  en: "Place reinforcement in printed walls"
+  de: "Bewehrung in gedruckte Wände einlegen"
+summary:
+  en: "Set the rebar the structural engineer specifies into the printed wall as it rises, at the heights and positions on the plan."
+  de: "Die vom Tragwerksplaner vorgegebene Bewehrung in die wachsende gedruckte Wand einlegen, in den Höhen und Lagen laut Plan."
+description:
+  en: "A printed wall is built up layer by layer; where it carries load it is reinforced with standard rebar or post-tensioned, as the local structural design requires. The bars are cut to length and set into the wall during or after printing; the sources read do not say which. The bars are light; the point is that they carry load and have to sit where the engineer put them."
+  de: "Eine gedruckte Wand entsteht Lage für Lage; wo sie trägt, wird sie mit normalem Betonstahl bewehrt oder vorgespannt, wie es die örtliche Tragwerksplanung verlangt. Die Stäbe werden abgelängt und während oder nach dem Druck in die Wand gesetzt; die gelesenen Quellen sagen nicht, wann. Die Stäbe sind leicht; entscheidend ist, dass sie Last abtragen und dort liegen müssen, wo der Ingenieur sie vorgesehen hat."
+also_in_settings: [site_concrete]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 1.85, max: 9.48 }
+    confidence: likely
+    evidence_url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    note: "Bars Ø10 to Ø16 at 0.617 to 1.58 kg/m (DIN 488-1, Kämpfe weight table). Bar lengths of 3 to 6 m are assumed: 0.617 × 3 = 1.85 kg; 1.58 × 6 = 9.48 kg. The engineer's schedule decides the real bars."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The reinforcement follows each building's structural design; the placing steps repeat."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A bar missing or in the wrong place weakens a load-bearing wall and cannot be fixed once the next layers are printed."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://cobod.com/how-it-works/'
+    note: "COBOD states that walls are reinforced with standard rebar or post-tensioning per local structural engineering requirements."
+  reach_height_m:
+    value: { min: 0, max: 3.0 }
+    confidence: assumed
+    note: "From the foundation to storey height as the wall rises; not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Printing happens in halls and on site; COBOD crews install and remove the printer between sites."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: "Fresh printed material around the placement; dry material handling at the mixer is the dust source (setting note)."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Fresh printed concrete next to the placement."
+  floor:
+    value: mixed
+    confidence: assumed
+    note: "Level in a hall, uneven on a building plot."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Set by the crew as far as known; no source read describes an automatic placing tool."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at the wall and the bars."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Follows the print; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count bars per wall and minutes per bar."
+requirements:
+  object_size_m:
+    value: { min: 3, max: 6 }
+    confidence: assumed
+    note: "Bar lengths assumed from typical wall lengths; the reinforcement schedule gives the real ones."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Positions and covers come from the structural design; no ± value is stated in the sources read."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Placing light bars; no force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the placing with the print crew and check it against the reinforcement plan before the next layers cover it. The bars are light enough; the error cost is what rules a robot out today."
+      de: "Das Einlegen bleibt bei der Druckmannschaft und wird gegen den Bewehrungsplan geprüft, bevor die nächsten Lagen es verdecken. Die Stäbe wären leicht genug; die Fehlerkosten schließen einen Roboter heute aus."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: [tool_handoff]
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "COBOD states that printed walls are reinforced using standard rebar or post-tensioning methods per local structural engineering requirements, and that a three-person crew of printer operator, materials operator and helper runs a job site."
+      de: "COBOD schreibt, dass gedruckte Wände mit normalem Betonstahl oder Vorspannung nach den örtlichen Anforderungen der Tragwerksplanung bewehrt werden und dass eine Dreier-Mannschaft aus Druckerbediener, Materialbediener und Helfer eine Baustelle betreibt."
+    url: 'https://cobod.com/how-it-works/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated page; dated with the check date. It does not say whether bars go between layers or in afterwards."
+  - statement:
+      en: "Kämpfe's weight table gives bar masses to DIN 488-1: Ø10 0.617 kg/m, Ø12 0.888 kg/m, Ø16 1.58 kg/m."
+      de: "Die Gewichtstabelle von Kämpfe nennt Stabgewichte nach DIN 488-1: Ø 10 0,617 kg/m, Ø 12 0,888 kg/m, Ø 16 1,58 kg/m."
+    url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2024-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Rebar supplier weight table; no date in the file, the upload path says 2024/09. Data source for the bar masses."
+pilot:
+  metrics: [error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a robot pilot: keep the placing with the crew; measure placing errors found at the check per wall."
+    de: "Kein Roboterpilot: Das Einlegen bleibt bei der Mannschaft; Einlegefehler je Wand bei der Prüfung messen."
+  scope_hint:
+    en: "Record placing time and errors on one printed building before any automation is considered."
+    de: "Einlegezeit und Fehler an einem gedruckten Gebäude erfassen, bevor Automatisierung erwogen wird."
+prerequisites:
+  - { en: "Reinforcement plan per wall with heights and positions", de: "Bewehrungsplan je Wand mit Höhen und Lagen" }
+open_questions:
+  - { en: "Are your printed walls load-bearing, or infill with separate structure?", de: "Tragen Ihre gedruckten Wände, oder sind sie Ausfachung mit eigenem Tragwerk?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

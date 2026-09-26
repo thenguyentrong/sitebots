@@ -1,0 +1,124 @@
+schema_version: 1
+id: joinery_windows_doors/fit-sash-hardware
+status: published
+setting: joinery_windows_doors
+family: assembly_fastening
+trades: [windows_doors, carpentry_joinery]
+title:
+  en: "Fit tilt-and-turn hardware to window sashes"
+  de: "Dreh-Kipp-Beschläge an Fensterflügel anschlagen"
+summary:
+  en: "Cut the gear and top rails to length, set corner drives, locking points and hinges, and screw them to the sash."
+  de: "Getriebe- und Oberschienen ablängen, Eckumlenkungen, Verriegelungen und Bänder setzen und am Flügel verschrauben."
+description:
+  en: "Every sash needs its hardware set: rails cut to the sash size, corner drives, locking cams, stays and hinges, screwed in the positions the hardware system prescribes. The parts are light and the system is one per plant, but sizes and window types change from order to order. Hardware fitting machines cut, punch and mount the rails automatically; the rest is fitted by hand in many plants."
+  de: "Jeder Flügel braucht seinen Beschlagsatz: auf das Flügelmaß abgelängte Schienen, Eckumlenkungen, Schließzapfen, Scheren und Bänder, verschraubt an den Stellen, die das Beschlagsystem vorgibt. Die Teile sind leicht und das System ist je Werk eines, aber Größen und Fenstertypen wechseln von Auftrag zu Auftrag. Beschlagautomaten schneiden, stanzen und montieren die Schienen automatisch; der Rest wird in vielen Werken von Hand angeschlagen."
+also_in_settings: []
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.05, max: 3 }
+    confidence: assumed
+    note: "Scope of this record: the hardware parts. The sash lies on the fitting table or sits in the machine and is not carried here."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. One hardware system, but sash sizes and window types change with every order."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A misfitted part shows at the function test at the end of the line; after delivery it means a service call."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "Standard hardware; burglary-resistant sets would add requirements that are not part of this record."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "At the fitting table; measure your station."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Production hall."
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: "Hardware fitting is a workroom; profile machining is a separate dust area (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [window_assembly_line] }
+    confidence: likely
+    evidence_url: 'https://www.lemuth.com/de/Beschlagmontage_FL_GEL__79/pId__40/'
+    note: "Hardware fitting machines such as the Lemuth FBA 136/138.H cut, punch and mount the rails, gear rails and centre locks for timber and aluminium windows; whether your plant runs one decides this test."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at parts and sashes."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Follows the line takt."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count sashes per shift and minutes per sash."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Rails up to the sash length; the parts are small."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Positions come from the hardware system's templates and drilling patterns; no ± value on the sources used here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Screwing torque follows the screw and profile; not published on the sources used here."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Price a hardware fitting machine first; what stays manual is short, repetitive screwing at a table, which a fixed cobot cell does before a mobile robot needs to."
+      de: "Zuerst einen Beschlagautomaten anfragen; was manuell bleibt, ist kurzes, wiederholtes Schrauben am Tisch, das eine feste Cobot-Zelle übernimmt, bevor ein mobiler Roboter nötig wird."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, quality, ergonomics]
+capabilities_required: [screwing]
+capabilities_optional: [kitting]
+solution_classes: [dedicated_machine, fixed_cobot_cell, mobile_manipulator_wheeled]
+evidence:
+  - statement:
+      en: "Lemuth's FBA 136/138.H cuts, punches and mounts all hardware parts that have to be cut to length, such as gear and top rails, stay arms and centre locks, for timber and aluminium window production."
+      de: "Der Lemuth FBA 136/138.H schneidet, stanzt und montiert alle abzulängenden Beschlagteile wie Getriebe- und Oberschienen, Axerstulp und Mittenverriegelungen, für die Holz- und Aluminium-Fensterfertigung."
+    url: 'https://www.lemuth.com/de/Beschlagmontage_FL_GEL__79/pId__40/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date. Evidence for the dedicated machine."
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a humanoid pilot until the machine quote is in. If a cell is trialled: fewer than 99 % of sashes passing the function test after 3 months, then stop."
+    de: "Kein Humanoiden-Pilot, bevor das Maschinenangebot da ist. Wird eine Zelle erprobt: weniger als 99 % der Flügel bestehen nach 3 Monaten den Funktionstest, dann stoppen."
+  scope_hint:
+    en: "One window series, standard tilt-and-turn sashes, screwing only."
+    de: "Eine Fensterserie, Standard-Dreh-Kipp-Flügel, nur Schrauben."
+prerequisites:
+  - { en: "Hardware parts lists per sash from the window software", de: "Beschlagstücklisten je Flügel aus der Fenstersoftware" }
+open_questions:
+  - { en: "Which share of your sashes can a hardware fitting machine take without changeover?", de: "Welchen Anteil Ihrer Flügel kann ein Beschlagautomat ohne Umrüsten übernehmen?" }
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

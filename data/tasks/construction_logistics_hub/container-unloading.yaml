@@ -1,0 +1,134 @@
+schema_version: 1
+id: construction_logistics_hub/container-unloading
+status: published
+setting: construction_logistics_hub
+family: packaging_palletising_loading
+trades: [logistics]
+title:
+  en: Unload floor-loaded cartons from containers
+  de: Lose verladene Kartons aus Containern entladen
+summary:
+  en: Take cartons of fittings, sanitary ware or tiles off the container floor and stack them onto pallets at the dock.
+  de: Kartons mit Fittings, Sanitärkeramik oder Fliesen vom Containerboden nehmen und an der Rampe auf Paletten stapeln.
+description:
+  en: Most construction material arrives on pallets and is unloaded by forklift. Imported goods often come floor-loaded, carton by carton, stacked close to the container roof. Two or three people unload a container by hand, in heat or cold, lifting every carton once or twice. Dedicated unloading robots already do this in parcel and retail logistics.
+  de: Das meiste Baumaterial kommt auf Paletten und wird mit dem Stapler entladen. Importware kommt oft lose verladen, Karton für Karton, bis knapp unter das Containerdach gestapelt. Zwei oder drei Personen entladen einen Container von Hand, bei Hitze oder Kälte, und heben jeden Karton ein- oder zweimal. In der Paket- und Handelslogistik erledigen das bereits dedizierte Entladeroboter.
+also_in_settings: [material_yard_warehouse, mep_prefab]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 25 }
+    confidence: assumed
+    note: Analyst range for cartons of fittings, sanitary ware and tiles; tile cartons are among the heaviest. Weigh the heaviest cartons of your own inbound mix.
+  variability:
+    value: medium
+    confidence: assumed
+    note: Analyst judgement. Carton sizes and stacking patterns differ per supplier and container.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A dropped carton of ceramics or tiles is usually a write-off.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Falling cartons are a handling risk for people nearby, not a structural one.
+  reach_height_m:
+    value: { min: 0, max: 2.4 }
+    confidence: likely
+    note: A standard container is about 2.4 m high inside, and floor-loaded cartons reach close to the roof.
+  environment:
+    value: both
+    confidence: likely
+    note: The container stands at an open dock door; inside it is as hot or cold as the weather.
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: Packed goods.
+  wet:
+    value: dry
+    confidence: likely
+    note: Covered dock.
+  floor:
+    value: level
+    confidence: likely
+    note: Container floor and dock plate.
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    note: Dedicated truck and container unloading robots are in series deployment in parcel and contract logistics; construction hubs mostly unload by hand.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Cameras look at cartons inside the container.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: A container takes hours to unload by hand; the 30–90 min humanoid runtime is a known limit to test against.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; count containers per week and cartons per container.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Carton sizes vary with the inbound mix; the Stretch product page states only a weight limit (up to 50 lb), no size limit. Measure the largest cartons you receive."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Cartons are stacked on pallets or a conveyor; no dimensional tolerance applies."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is lifting and carrying cartons."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: The dedicated machine for this step exists. Truck and container unloading robots move hundreds of cartons an hour and are rolling out by the thousand in parcel logistics; compare one first. A humanoid only makes sense if the same unit also works elsewhere in the hub.
+      de: Die dedizierte Maschine für diesen Schritt gibt es. Lkw- und Container-Entladeroboter bewegen Hunderte Kartons pro Stunde und werden in der Paketlogistik zu Tausenden ausgerollt; zuerst einen davon vergleichen. Ein Humanoid lohnt sich nur, wenn dieselbe Einheit auch anderswo im Zentrum arbeitet.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure, capacity]
+capabilities_required: [carry_payload, palletising]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [dedicated_machine, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: Boston Dynamics sells Stretch, a mobile case-handling robot for trailer unloading and case picking that handles boxes of up to 50 pounds (about 23 kg).
+      de: Boston Dynamics vertreibt Stretch, einen mobilen Roboter für das Entladen von Trailern und das Kommissionieren von Kartons, der Kartons bis 50 Pfund (etwa 23 kg) handhabt.
+    url: 'https://bostondynamics.com/products/stretch/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: Undated product page, checked 2026-09-24. Stretch is not in the Sitebots catalogue.
+  - statement:
+      en: DHL Group signed a memorandum of understanding with Boston Dynamics for more than 1,000 additional Stretch robots; DHL Supply Chain introduced Stretch commercially in North America in 2023 for container unloading and reports up to 700 cartons an hour.
+      de: DHL Group hat mit Boston Dynamics eine Absichtserklärung über mehr als 1.000 zusätzliche Stretch-Roboter unterzeichnet; DHL Supply Chain setzt Stretch seit 2023 in Nordamerika kommerziell zum Entladen von Containern ein und nennt bis zu 700 Kartons pro Stunde.
+    url: 'https://bostondynamics.com/news/dhl-signs-mou-for-additional-1000-robot-deployment/'
+    kind: manufacturer
+    tier: 1
+    date: '2025-05-13'
+    type: deployment
+    confidence: confirmed
+    note: Parcel and contract logistics; construction cartons may be heavier and less uniform, so check your own mix.
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: Fewer than 99 % of cartons unloaded without intervention after 3 months, then stay with manual unloading or a dedicated unloader.
+    de: Weniger als 99 % der Kartons nach 3 Monaten ohne Eingriff entladen, dann bei manueller Entladung oder einem dedizierten Entladeroboter bleiben.
+  scope_hint:
+    en: One supplier with a regular carton mix, one dock door, cartons weighed beforehand.
+    de: Ein Lieferant mit regelmäßigem Kartonmix, ein Rampentor, Kartons vorher gewogen.
+prerequisites:
+  - { en: "Carton weights and sizes from the suppliers", de: "Kartongewichte und -maße von den Lieferanten" }
+  - { en: "A dock layout with room for the unloader and the pallet stack", de: "Ein Rampenlayout mit Platz für den Entlader und die Palettenstapel" }
+open_questions:
+  - { en: "How many floor-loaded containers arrive per week, and could suppliers ship on pallets instead?", de: "Wie viele lose verladene Container kommen je Woche an, und könnten die Lieferanten stattdessen auf Paletten liefern?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

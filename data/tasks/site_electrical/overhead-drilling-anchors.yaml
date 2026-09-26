@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_electrical/overhead-drilling-anchors
+status: published
+setting: site_electrical
+family: assembly_fastening
+trades: [mep_hvac, mep_electrical, mep_plumbing, mep_sprinkler]
+title:
+  en: "Drill anchor holes overhead for the installations"
+  de: "Dübellöcher über Kopf für die Installation bohren"
+summary:
+  en: "Drill holes in concrete ceilings for the anchors that carry pipes, ducts and cable trays."
+  de: "Löcher in Betondecken für die Dübel bohren, an denen Rohre, Kanäle und Kabeltrassen hängen."
+description:
+  en: "Installers drill anchor holes over their heads, floor after floor, often from a ladder or a mobile platform. Positions come from the plan, depth and diameter from the anchor's approval, and the dust comes down on the person drilling. A semi-autonomous robot that drills these holes from digital plan data is sold in Germany."
+  de: "Monteure bohren Dübellöcher über Kopf, Geschoss für Geschoss, oft von der Leiter oder einer Hubarbeitsbühne. Die Positionen kommen aus dem Plan, Tiefe und Durchmesser aus der Zulassung des Dübels, und der Staub fällt auf den Bohrenden. Ein semi-autonomer Roboter, der diese Löcher nach digitalen Plandaten bohrt, wird in Deutschland verkauft."
+also_in_settings: [site_drywall, site_etics]
+derived_from: null
+lv:
+  lb: '053'
+  atv: "DIN 18382"
+  position:
+    en: "Fixings for cable trays and supports in concrete ceilings"
+    de: "Befestigungen für Kabelrinnen und Tragsysteme in Betondecken"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 2, max: 5 }
+    confidence: assumed
+    note: "A rotary hammer with dust extraction, held overhead; a few kilograms. Not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Positions change per floor, the operation does not."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Holes in the wrong place are redrilled; hitting reinforcement stops the hole."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The anchors carry suspended pipes, ducts and trays; depth, diameter and cleaning of the hole decide whether the approved load holds."
+  reach_height_m:
+    value: { min: 2.5, max: 4.8 }
+    confidence: assumed
+    note: "Ceiling height on the project; the dedicated robot covers 1.2 to 4.8 m. Not measured per project."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the shell, once the slab above is cast."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: likely
+    note: "Drilling concrete releases quartz dust at the tool; extraction on the drill is standard practice."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the shell."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slabs with material, cables and temporary ramps."
+  incumbent_automation:
+    value: { status: full, machine_classes: [drilling_robot] }
+    confidence: confirmed
+    evidence_url: 'https://www.hilti.de/content/hilti/E3/DE/de/company/media-relations/media-releases/pressemitteilung-2023---jaibot.html'
+    note: "A semi-autonomous drilling robot for anchor holes from digital plan data is sold in Germany (Hilti Jaibot)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Plan data only; no cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "A rotary hammer with extraction; no source gives its size."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Hilti states that depth and diameter are kept precisely but gives no millimetre value; the hole positions come from the installation model."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No drilling force is published on the pages read."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Compare the dedicated drilling robot: it drills from the plan data between 1.2 and 4.8 m with its own dust extraction, and the installer checks the anchors. A humanoid would hold a rotary hammer overhead with no published reach."
+      de: "Den dedizierten Bohrroboter vergleichen: Er bohrt nach Plandaten zwischen 1,2 und 4,8 m mit eigener Absaugung, der Monteur prüft die Dübel. Ein Humanoid müsste einen Bohrhammer über Kopf halten, ohne veröffentlichte Reichweite."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure, precision]
+capabilities_required: [drilling]
+capabilities_optional: [layout_marking]
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Hilti describes Jaibot as a semi-autonomous drilling robot that drills holes for anchor fastenings from digital planning data in concrete and composite ceilings and in concrete walls, in a height range of 1.2 to 4.8 m, with integrated dust extraction; after training on site the contractor operates it."
+      de: "Hilti beschreibt den Jaibot als semi-autonomen Bohrroboter, der Bohrungen für Dübelbefestigungen auf Grundlage digitaler Planungsdaten in Beton- und Metallverbunddecken sowie in Betonwänden ausführt, im Höhenbereich von 1,2 bis 4,8 m und mit integrierter Staubabsaugung; nach einem Training vor Ort bedient ihn der ausführende Betrieb selbst."
+    url: 'https://www.hilti.de/content/hilti/E3/DE/de/company/media-relations/media-releases/pressemitteilung-2023---jaibot.html'
+    kind: manufacturer
+    tier: 1
+    date: '2023-05-17'
+    type: claim
+    confidence: confirmed
+    note: "Press release of Hilti Deutschland."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with the drilling robot: one floor with a coordinated model; the installer checks every anchor."
+    de: "Falls mit dem Bohrroboter verfolgt: ein Geschoss mit abgestimmtem Modell; der Monteur prüft jeden Dübel."
+prerequisites: []
+open_questions:
+  - { en: "Is there a coordinated model with the hanger positions, or are they set out by hand today?", de: "Gibt es ein abgestimmtes Modell mit den Abhängepunkten, oder werden sie heute von Hand angerissen?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

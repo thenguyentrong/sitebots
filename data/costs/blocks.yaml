@@ -1,0 +1,354 @@
+# Cost blocks for the Implementation station. A machine and compute · B safety,
+# law and import · C hall and operation · D personnel, kept apart. Ranges are
+# first-year material costs, list prices, never offers; every range says where it
+# comes from. Tier 0 ranges are a Sitebots assessment from one industry
+# engagement, 2025/26, and are shown as such, never prefilled into a project.
+blocks:
+  - id: A
+    title: { en: "Machine and compute", de: "Maschine und Rechner" }
+    note: { en: "The platform and what it needs to think and run.", de: "Die Plattform und was sie zum Denken und Laufen braucht." }
+  - id: B
+    title: { en: "Safety, law and import", de: "Sicherheit, Recht und Import" }
+    note: { en: "What makes the robot lawful to operate; falls in full before the first run.", de: "Was den Roboter rechtmäßig betreibbar macht; fällt vor dem ersten Lauf in voller Höhe an." }
+  - id: C
+    title: { en: "Hall and operation", de: "Halle und Betrieb" }
+    note: { en: "The surroundings the task needs; most of it only when the robot moves into the plant.", de: "Das Umfeld, das die Aufgabe braucht; das meiste erst beim Schritt ins Werk." }
+  - id: D
+    title: { en: "Personnel", de: "Personal" }
+    note: { en: "The largest single item, kept apart from material costs and never inside a payback figure by default.", de: "Der größte Einzelposten, getrennt von den Sachkosten und nie automatisch in einer Amortisation." }
+
+scenarios:
+  - id: lab
+    label: { en: "Pilot in the test hall", de: "Pilot in der Versuchshalle" }
+    description:
+      en: One machine, compute, safety area, import and the surroundings for the first use case. No plant operation, no reserve. Sitebots assessment from one engagement, roughly 140 k€ material.
+      de: Eine Maschine, Rechner, Sicherheitsbereich, Import und das Umfeld für den ersten Use Case. Kein Werkseinsatz, keine Reserve. Sitebots-Einschätzung aus einem Projekt, grob 140 T€ Sachkosten.
+    provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: measurable
+    label: { en: "Working and measurable", de: "Arbeitsfähig und messbar" }
+    description:
+      en: Adds teleoperation, data pipeline, auto-ID and spares; the configuration that yields numbers that hold. Sitebots assessment, roughly 200 k€ material.
+      de: Zusätzlich Teleoperation, Datenpipeline, Auto-ID und Ersatzteile; die Konfiguration, mit der man belastbare Zahlen bekommt. Sitebots-Einschätzung, grob 200 T€ Sachkosten.
+    provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: plant
+    label: { en: "Two platforms, into the plant", de: "Zwei Plattformen, ins Werk" }
+    description:
+      en: Adds a second platform of another class and the full plant surroundings, so legged can be compared with wheeled. Sitebots assessment, roughly 280 k€ material.
+      de: Zusätzlich eine zweite Plattform einer anderen Klasse und die volle Werksperipherie, damit zweibeinig gegen fahrbar verglichen werden kann. Sitebots-Einschätzung, grob 280 T€ Sachkosten.
+    provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+
+rules_of_thumb:
+  - id: surroundings_ratio
+    label: { en: "Surroundings per euro of robot price", de: "Umfeld je Euro Roboterpreis" }
+    value: { min: 4, max: 5 }
+    unit: '€ per € robot'
+    note:
+      en: Whoever budgets only the machine budgets a fifth of the project. Shown next to the visitor's own (B + C) / A ratio, never used to fill a number.
+      de: Wer nur die Maschine budgetiert, budgetiert ein Fünftel des Projekts. Wird neben dem eigenen Verhältnis (B + C) / A gezeigt, nie zum Ausfüllen benutzt.
+    provenance:
+      source_url: 'https://sitebots.vercel.app/methodology'
+      tier: 0
+      observed_at: '2026-09-24'
+      confidence: assumed
+      note: { en: "Sitebots assessment from one industry engagement, 2025/26.", de: "Sitebots-Einschätzung aus einem Branchenprojekt 2025/26." }
+
+lines:
+  # A — machine and compute
+  - id: a.robot_platform
+    block: A
+    label: { en: "Robot platform", de: "Roboterplattform" }
+    note: { en: "The catalogue carries price observations per robot with region, tier and date; enter the quoted configuration.", de: "Der Katalog führt Preisbeobachtungen je Roboter mit Region, Stufe und Datum; die angebotene Konfiguration eintragen." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range: null
+  - id: a.dexterous_hands
+    block: A
+    label: { en: "Dexterous hands or grippers", de: "Geschickte Hände oder Greifer" }
+    note: { en: "Often sold separately from the base platform; a kitting task lives or dies on them.", de: "Oft getrennt von der Basisplattform verkauft; eine Kommissionieraufgabe steht und fällt damit." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 8000
+      high: 32000
+      currency: EUR
+      basis: { en: "European distributor list prices for one pair, 2026.", de: "Listenpreise europäischer Händler für ein Paar, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: a.workstation_gpu
+    block: A
+    label: { en: "Training workstation with GPU", de: "Trainings-Workstation mit GPU" }
+    note: { en: "Needed to train or fine-tune policies from demonstration data; not needed for scripted tasks.", de: "Nötig zum Trainieren oder Feinabstimmen von Policies aus Demonstrationsdaten; nicht nötig für gescriptete Aufgaben." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 12000
+      high: 35000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+    scenarios: [measurable, plant]
+  - id: a.edge_computer
+    block: A
+    label: { en: "Edge computer on the robot", de: "Edge-Rechner auf dem Roboter" }
+    note: { en: "Development kits sit above the compute shipped with the platform.", de: "Entwicklerkits liegen über dem mit der Plattform gelieferten Rechner." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 4500
+      high: 12000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: a.spare_batteries_charger
+    block: A
+    label: { en: "Spare batteries and charging station", de: "Zweitakkus und Ladestation" }
+    note: { en: "Continuous runtime is 30–90 minutes; without a second pack the pilot cannot measure a shift.", de: "Die Laufzeit am Stück beträgt 30–90 Minuten; ohne zweiten Akku kann der Pilot keine Schicht messen." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 3000
+      high: 9000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: a.sensors_teleop_rig
+    block: A
+    label: { en: "Sensors and teleoperation rig", de: "Sensorik und Teleoperations-Rig" }
+    note: { en: "Demonstration data comes from teleoperation; gloves, headset and trackers.", de: "Demonstrationsdaten kommen aus der Teleoperation; Handschuhe, Headset und Tracker." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 4200
+      high: 18000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+    scenarios: [measurable, plant]
+  - id: a.second_platform
+    block: A
+    label: { en: "Second platform of another class", de: "Zweite Plattform einer anderen Klasse" }
+    note: { en: "A wheeled configuration next to a legged one turns the pilot into a comparison.", de: "Eine Radkonfiguration neben einer zweibeinigen macht den Pilot zum Vergleich." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range: null
+    scenarios: [plant]
+  # B — safety, law and import
+  - id: b.safety_fence_doors
+    block: B
+    label: { en: "Safety fence and interlocked doors", de: "Schutzzaun und verriegelte Türen" }
+    note: { en: "A separated test area with two interlocked doors; sized per hall.", de: "Ein abgetrennter Testbereich mit zwei verriegelten Türen; je Halle bemessen." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 8000
+      high: 20000
+      currency: EUR
+      basis: { en: "About 36 m of fence with two doors, European list prices, 2026.", de: "Rund 36 m Zaun mit zwei Türen, europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: b.estop_safety_tech
+    block: B
+    label: { en: "Emergency stop and safety technology", de: "Not-Halt und Sicherheitstechnik" }
+    note: { en: "Safety scanners, e-stop circuit and safety controller for the area.", de: "Sicherheitsscanner, Not-Halt-Kreis und Sicherheitssteuerung für den Bereich." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 7000
+      high: 22000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: b.fall_protection
+    block: B
+    label: { en: "Fall protection (gantry or tether)", de: "Fallsicherung (Portal oder Sicherung)" }
+    note: { en: "Cutting the power drops a legged robot; a gantry or tether is part of the safety concept for legged platforms.", de: "Stromabschaltung lässt einen Laufroboter fallen; Portal oder Sicherung gehören zum Sicherheitskonzept für Laufplattformen." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 4000
+      high: 14000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+    applies_when: { legged: true }
+  - id: b.ce_procedure_risk_assessment
+    block: B
+    label: { en: "CE procedure and risk assessment for the integrated application", de: "CE-Verfahren und Risikobeurteilung für die integrierte Anwendung" }
+    note:
+      en: The robot's own CE mark covers the hardware. The integrated cell (robot, fixtures, hall, software) is new machinery whose declaration of conformity is signed by the integrator or by you. Budget the ISO 12100 risk assessment, documentation and, where Annex I Part A applies, the notified body.
+      de: Das CE-Zeichen des Roboters gilt für die Hardware. Die integrierte Zelle (Roboter, Vorrichtungen, Halle, Software) ist eine neue Maschine, deren Konformitätserklärung der Integrator oder Sie unterschreiben. Risikobeurteilung nach ISO 12100, Dokumentation und bei Anhang I Teil A die notifizierte Stelle budgetieren.
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 8000
+      high: 25000
+      currency: EUR
+      basis: { en: "Consultancy day rates, 2026.", de: "Beratungstagessätze, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+    references:
+      - label: { en: 'Regulation (EU) 2023/1230, Article 3(16) and Article 54', de: 'Verordnung (EU) 2023/1230, Art. 3 Nr. 16 und Art. 54' }
+        provenance: { source_url: 'https://eur-lex.europa.eu/eli/reg/2023/1230/oj', tier: 1, observed_at: '2026-09-24', confidence: confirmed }
+  - id: b.gefaehrdungsbeurteilung
+    block: B
+    label: { en: "Workplace risk assessment (Gefährdungsbeurteilung)", de: "Gefährdungsbeurteilung nach BetrSichV" }
+    note: { en: "The operator's own assessment under the Betriebssicherheitsverordnung, plus documented instruction of every worker involved.", de: "Die eigene Beurteilung des Betreibers nach Betriebssicherheitsverordnung, plus dokumentierte Unterweisung jeder beteiligten Person." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 2500
+      high: 8000
+      currency: EUR
+      basis: { en: "Consultancy day rates, 2026.", de: "Beratungstagessätze, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: b.freight_customs_insurance
+    block: B
+    label: { en: "Air freight, customs duty and transport insurance", de: "Luftfracht, Zoll und Transportversicherung" }
+    note:
+      en: Direct import makes the buyer the importer. Duty depends on the tariff classification; check the TARIC code and rate for the exact product instead of assuming one. Import VAT is a pass-through for a business entitled to deduct it.
+      de: Direktimport macht den Käufer zum Importeur. Der Zollsatz hängt von der Tarifeinreihung ab; Code und Satz im TARIC für das konkrete Produkt prüfen statt einen anzunehmen. Einfuhrumsatzsteuer ist für ein vorsteuerabzugsberechtigtes Unternehmen durchlaufend.
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 4700
+      high: 16000
+      currency: EUR
+      basis: { en: "Freight quotes and a low single-digit duty rate on one platform, 2026.", de: "Frachtangebote und ein niedriger einstelliger Zollsatz für eine Plattform, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+    references:
+      - label: { en: 'Tariff heading 8479 50 00, industrial robots n.e.s.', de: 'Zolltarifposition 8479 50 00, Industrieroboter a.n.g.' }
+        provenance: { source_url: 'https://www.trade-tariff.service.gov.uk/commodities/8479500000', tier: 2, observed_at: '2026-09-24', confidence: likely }
+    applies_when: { import_origin: non_eu }
+  - id: b.data_protection_works_council
+    block: B
+    label: { en: "Data protection and works-council agreement", de: "Datenschutz und Betriebsvereinbarung" }
+    note: { en: "A processing agreement with the vendor, a data-protection assessment for cameras among employees, and a works-council agreement where co-determination applies.", de: "Auftragsverarbeitungsvertrag mit dem Anbieter, Datenschutzbewertung für Kameras unter Beschäftigten und Betriebsvereinbarung, wo Mitbestimmung greift." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range: null
+    applies_when: { cameras_on_people: true }
+  # C — hall and operation
+  - id: c.racks_bins_workstation
+    block: C
+    label: { en: "Racks, bins and workstation", de: "Regal, Behälter und Arbeitsplatz" }
+    note: { en: "Fixed part presentation is what makes grasping repeatable; visual shelving and standard bins.", de: "Feste Teilebereitstellung macht das Greifen wiederholbar; Sichtlagerregal und Normbehälter." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range:
+      low: 15000
+      high: 41000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: c.auto_id
+    block: C
+    label: { en: "Auto-ID (scanners, labels, RFID)", de: "Auto-ID (Scanner, Etiketten, RFID)" }
+    note: { en: "The robot needs to know which part is which; label printer, hand scanner and, for tote logistics, tags.", de: "Der Roboter muss wissen, welches Teil welches ist; Etikettendrucker, Handscanner und für Behälterlogistik Tags." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 11000
+      high: 27000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+    scenarios: [measurable, plant]
+  - id: c.markers_calibration_lighting
+    block: C
+    label: { en: "Markers, calibration and lighting", de: "Marker, Kalibrierung und Beleuchtung" }
+    note: { en: "Fiducial markers, calibration targets and even lighting; perception degrades in glare and dust.", de: "Fiducial-Marker, Kalibrierziele und gleichmäßige Beleuchtung; die Wahrnehmung leidet bei Blendung und Staub." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 8000
+      high: 22000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: c.weighing_counting
+    block: C
+    label: { en: "Weighing and counting", de: "Wäge- und Zähltechnik" }
+    note: { en: "Completeness checks for kits by weight or count.", de: "Vollständigkeitsprüfung von Kits über Gewicht oder Stückzahl." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 3000
+      high: 8000
+      currency: EUR
+      basis: { en: "European list prices, 2026.", de: "Europäische Listenpreise, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: c.data_pipeline_mlops
+    block: C
+    label: { en: "Data pipeline and MLOps software", de: "Datenpipeline und MLOps-Software" }
+    note: { en: "Storing, labelling and versioning demonstration data and policies; the part nobody budgets.", de: "Speichern, Labeln und Versionieren von Demonstrationsdaten und Policies; der Teil, den niemand budgetiert." }
+    unit: lump_sum
+    recurring: false
+    mandatory: false
+    typical_range:
+      low: 8000
+      high: 25000
+      currency: EUR
+      basis: { en: "European list prices and licence estimates, 2026.", de: "Europäische Listenpreise und Lizenzschätzungen, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+    scenarios: [measurable, plant]
+  - id: c.network_isolated_vlan
+    block: C
+    label: { en: "Isolated network segment", de: "Isoliertes Netzsegment" }
+    note: { en: "The robot never sits on the plant network; a VLAN with logged egress.", de: "Der Roboter hängt nie im Werksnetz; ein VLAN mit protokolliertem Ausgang." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range: null
+  - id: c.maintenance_spares
+    block: C
+    label: { en: "Maintenance and spare parts", de: "Wartung und Ersatzteile" }
+    note: { en: "Recurring; hands and actuators wear. Ask the vendor for the service price list.", de: "Laufend; Hände und Aktoren verschleißen. Beim Anbieter die Servicepreisliste anfragen." }
+    unit: per_year
+    recurring: true
+    mandatory: false
+    typical_range: null
+  - id: c.lease_or_raas_fee
+    block: C
+    label: { en: "Lease or robot-as-a-service fee", de: "Leasing- oder Robot-as-a-Service-Gebühr" }
+    note: { en: "Converts unproven capex into cancellable opex; circulating monthly rates have no primary source, so enter the quoted figure.", de: "Wandelt unbewiesene Investition in kündbare Betriebskosten; kursierende Monatsraten haben keine Primärquelle, also den angebotenen Betrag eintragen." }
+    unit: per_year
+    recurring: true
+    mandatory: false
+    typical_range: null
+  # D — personnel
+  - id: d.project_team
+    block: D
+    label: { en: "One engineer and one assistant for twelve months", de: "Ein Ingenieur und eine Hilfskraft für zwölf Monate" }
+    note: { en: "The largest single item of the project. Kept apart so a payback figure never quietly absorbs it.", de: "Der größte Einzelposten des Projekts. Getrennt geführt, damit eine Amortisation ihn nie stillschweigend schluckt." }
+    unit: per_year
+    recurring: true
+    mandatory: true
+    typical_range:
+      low: 90000
+      high: 110000
+      currency: EUR
+      basis: { en: "Public-sector pay scale for one scientific employee plus a student assistant, 2026.", de: "Tarif TV-L für eine wissenschaftliche Stelle plus studentische Hilfskraft, 2026." }
+      provenance: { source_url: 'https://sitebots.vercel.app/methodology', tier: 0, observed_at: '2026-09-24', confidence: assumed }
+  - id: d.training
+    block: D
+    label: { en: "Training and instruction of the crew", de: "Schulung und Unterweisung der Mannschaft" }
+    note: { en: "Documented instruction is the defence in a liability case; it is also what makes the pilot run.", de: "Dokumentierte Unterweisung ist die Verteidigung im Haftungsfall; sie ist auch das, was den Pilot laufen lässt." }
+    unit: lump_sum
+    recurring: false
+    mandatory: true
+    typical_range: null

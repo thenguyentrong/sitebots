@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_lightning_protection/foundation-earth-electrode
+status: published
+setting: site_lightning_protection
+family: assembly_fastening
+trades: [mep_electrical, concrete]
+title:
+  en: "Lay the foundation earth electrode before the concrete is poured"
+  de: "Fundamenterder vor dem Betonieren verlegen"
+summary:
+  en: "Lay galvanised steel strip as a closed ring and mesh in the foundation, connect it to the reinforcement every 2 m, bring out the connection lugs, and document it before the pour."
+  de: "Verzinkten Bandstahl als geschlossenen Ring und Maschen im Fundament verlegen, alle 2 m mit der Bewehrung verbinden, die Anschlussfahnen herausführen und alles vor dem Betonieren dokumentieren."
+description:
+  en: "The foundation earth electrode is laid in the foundation of new buildings to DIN 18014: hot-dip galvanised strip or round steel, meshes no larger than 20 × 20 m, connected to the reinforcement every 2 m in Germany, with about 5 cm of concrete cover protecting it from corrosion. Only qualified electricians or lightning protection specialists may plan, install and test it, and it has to be documented, because once the concrete is in, nothing can be seen or corrected. The strip comes in coils of 30 m at about 25 kg."
+  de: "Der Fundamenterder wird bei Neubauten nach DIN 18014 im Fundament verlegt: feuerverzinkter Band- oder Rundstahl, Maschen höchstens 20 × 20 m, in Deutschland alle 2 m mit der Bewehrung verbunden, mit etwa 5 cm Betonüberdeckung als Korrosionsschutz. Planen, errichten und prüfen dürfen ihn nur Elektrofachkräfte oder Blitzschutzfachkräfte, und er muss dokumentiert werden, denn sobald der Beton eingebracht ist, ist nichts mehr zu sehen oder zu korrigieren. Das Band kommt in Ringen von 30 m mit rund 25 kg."
+also_in_settings: [site_concrete]
+derived_from: null
+lv:
+  lb: '050'
+  atv: "DIN 18384"
+  position:
+    en: "Foundation earth electrode of hot-dip galvanised steel strip 30 × 3.5 mm to DIN 18014, including connections to the reinforcement: supply and install"
+    de: "Fundamenterder aus feuerverzinktem Bandstahl 30 × 3,5 mm nach DIN 18014, einschließlich Verbindungen zur Bewehrung, liefern und verlegen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 25, max: 25 }
+    confidence: confirmed
+    evidence_url: 'https://www.obo.de/de-de/produkte/flachleiter-stahl-verzinkt-30-3-5-5019345.html'
+    note: "Hot-dip galvanised flat conductor 30 × 3.5 mm: about 25 kg per 30 m coil (OBO)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The rules are fixed, but every foundation layout, reinforcement cage and lug position differs."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://de.wikipedia.org/wiki/Fundamenterder'
+    note: "Cast into the concrete: a missing connection or broken ring cannot be seen or corrected afterwards, which is why the installation is documented before the pour."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: "The earth electrode is the base of the protective earthing, the equipotential bonding and the lightning protection of the building."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: assumed
+    note: "At the bottom of the foundation and in the reinforcement cage; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "In the open excavation before the pour."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "No dust-producing step."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Excavation open to the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Blinding concrete, reinforcement and formwork in an excavation."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid and connected by hand; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Foundation plan and photo documentation of the installation, no people in view needed."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Coil dimensions are not published; the strip is 30 mm wide and 3.5 mm thick."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://de.wikipedia.org/wiki/Fundamenterder'
+    note: "No position tolerance; the rules are a mesh of at most 20 × 20 m, a connection to the reinforcement every 2 m and about 5 cm of concrete cover (DIN 18014:2014-03 as summarised)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the electricians or lightning protection specialists on it: the electrode disappears in the concrete, only qualified people may install and test it, and it has to be documented before the pour. The documentation photos are where tools can help."
+      de: "Das bleibt bei Elektro- oder Blitzschutzfachkräften: Der Erder verschwindet im Beton, nur Fachkräfte dürfen ihn errichten und prüfen, und er muss vor dem Betonieren dokumentiert werden. Bei den Dokumentationsfotos können Werkzeuge helfen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [carry_payload, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "OBO's hot-dip galvanised flat conductor 30 × 3.5 mm (105 mm², zinc layer at least 500 g/m²) comes in coils of 30 m at about 25 kg and is rated for lightning protection, earthing and equipotential bonding to DIN EN 62561-2."
+      de: "Der feuerverzinkte Flachleiter 30 × 3,5 mm von OBO (105 mm², Zinkauflage mindestens 500 g/m²) kommt in Ringen von 30 m mit rund 25 kg und ist für Blitzschutz, Erdung und Potentialausgleich nach DIN EN 62561-2 vorgesehen."
+    url: 'https://www.obo.de/de-de/produkte/flachleiter-stahl-verzinkt-30-3-5-5019345.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not pursued; qualified electricians lay, connect and document the electrode."
+    de: "Nicht verfolgt; Elektrofachkräfte verlegen, verbinden und dokumentieren den Erder."
+prerequisites: []
+open_questions:
+  - { en: "Is the electrode in this building a separate strip or does it use the reinforcement, and who documents the connections before the pour?", de: "Ist der Erder in diesem Gebäude ein eigenes Band oder wird die Bewehrung genutzt, und wer dokumentiert die Verbindungen vor dem Betonieren?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

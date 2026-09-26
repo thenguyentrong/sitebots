@@ -1,0 +1,119 @@
+schema_version: 1
+id: site_tiling/bathroom-wall-tiling
+status: published
+setting: site_tiling
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Tile bathroom walls with 30 × 60 cm tiles"
+  de: "Badwände mit Fliesen 30 × 60 cm fliesen"
+summary:
+  en: "Set wall tiles in thin-bed adhesive from floor to ceiling, cut around pipes, niches and corners, and keep the joint lines true."
+  de: "Wandfliesen im Dünnbett vom Boden bis zur Decke setzen, um Rohre, Nischen und Ecken schneiden und die Fugenbilder gerade halten."
+description:
+  en: "A single 30 × 60 cm wall tile weighs about 2.5 kg, so mass is not the problem. The work is in the details: every bathroom has its own pipe outlets, niches, corners and edge profiles, and the finished wall must stay within its flatness tolerance with straight, even joints up to ceiling height."
+  de: "Eine einzelne Wandfliese 30 × 60 cm wiegt rund 2,5 kg, das Gewicht ist also nicht das Problem. Die Arbeit steckt in den Details: Jedes Bad hat eigene Rohrauslässe, Nischen, Ecken und Abschlussprofile, und die fertige Wand muss bis zur Deckenhöhe in ihrer Ebenheitstoleranz bleiben, mit geraden, gleichmäßigen Fugen."
+also_in_settings: [modular_volumetric]
+derived_from: null
+lv:
+  lb: '024'
+  atv: "DIN 18352"
+  position:
+    en: "Wall tiles in thin-bed adhesive in bathrooms"
+    de: "Wandfliesen im Dünnbettverfahren in Bädern"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 2.5, max: 2.6 }
+    confidence: likely
+    evidence_url: 'https://www.fliesenadeneuer.de/villeroy-boch-white-cream-wandfliese-weiss-matt-kalibriert-30x60-cm.html'
+    note: "Villeroy & Boch White & Cream 30 × 60 cm, 297 × 597 × 9 mm, 14.29 kg/m²: 0.297 m × 0.597 m × 14.29 kg/m² = 2.5 kg per tile. The seven-tile package (1.26 m², about 18 kg) and the adhesive bags are staged at the wall, not handled at the tile."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Pipe outlets, niches, corners, window reveals and edge profiles differ in every bathroom; few full tiles go on without a cut."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Crooked joints, lippage or hollow tiles are visible defects; a tile has to be knocked out and replaced, but nothing structural depends on it."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Wall finish without structural or fire-protection function."
+  reach_height_m:
+    value: { min: 0, max: 2.6 }
+    confidence: assumed
+    note: "Floor to ceiling in a bathroom; room height not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: likely
+    note: "Cutting and drilling tiles releases quartz-bearing dust at the tool (TRGS 559); setting the tile makes no dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed building; the bathroom is not yet in use."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed or waterproofed floor; a small room with a stepladder for the upper rows."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Tiled by hand. None of the sources reviewed describes a machine that sets wall tiles on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the bathroom; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and tiles replaced."
+requirements:
+  object_size_m:
+    value: { min: 0.297, max: 0.597 }
+    confidence: confirmed
+    evidence_url: 'https://www.fliesenadeneuer.de/villeroy-boch-white-cream-wandfliese-weiss-matt-kalibriert-30x60-cm.html'
+    note: "Manufacturer size 297 × 597 × 9 mm."
+  tolerance_mm:
+    value: 5
+    confidence: confirmed
+    evidence_url: 'https://www.just-fussboden.com/downloads/ebenheitstoleranzen.pdf'
+    note: "Flatness of the finished wall: 5 mm over a 1 m measuring distance (3 mm over 0.1 m, 10 mm over 4 m), DIN 18202 Table 3, row 6 (finished walls, wall claddings), as reproduced by Just Fußboden."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "The tile is light and the work varies, which suits a general-purpose robot in principle. What holds it back is the finish: joint lines and flatness up to ceiling height, and the cuts. Compare a humanoid or a mobile manipulator only in a pilot that measures replaced tiles."
+      de: "Die Fliese ist leicht und die Arbeit wechselt, das passt grundsätzlich zu einem Universalroboter. Was bremst, ist das Ergebnis: Fugenbild und Ebenheit bis zur Deckenhöhe und die Zuschnitte. Einen Humanoiden oder Mobilmanipulator nur in einem Pilot vergleichen, der ersetzte Fliesen misst."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [skills_shortage, ergonomics, quality]
+capabilities_required: [surface_finishing]
+capabilities_optional: [autonomous_nav_indoor, teleoperated_manipulation]
+solution_classes: [humanoid, mobile_manipulator_wheeled, keep_process]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of tiles set without replacement after 3 months, then keep the tilers on it."
+    de: "Weniger als 99 % der Fliesen nach 3 Monaten ohne Ersatz gesetzt, dann bleibt es bei den Fliesenlegern."
+  scope_hint:
+    en: "One bathroom type repeated across a building, full tiles on plain wall fields only; people do cuts and details."
+    de: "Ein Badtyp, der sich im Gebäude wiederholt, nur ganze Fliesen auf glatten Wandfeldern; Zuschnitte und Details machen Menschen."
+prerequisites:
+  - { en: "Walls within their flatness tolerance and waterproofed where required", de: "Wände innerhalb ihrer Ebenheitstoleranz und wo nötig abgedichtet" }
+open_questions:
+  - { en: "How many identical bathrooms does one of your projects have?", de: "Wie viele gleiche Bäder hat eines Ihrer Projekte?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

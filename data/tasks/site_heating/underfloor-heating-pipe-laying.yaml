@@ -1,0 +1,153 @@
+schema_version: 1
+id: site_heating/underfloor-heating-pipe-laying
+status: published
+setting: site_heating
+family: assembly_fastening
+trades: [mep_hvac]
+title:
+  en: "Lay and tack underfloor heating pipe"
+  de: "Fußbodenheizungsrohr verlegen und tackern"
+summary:
+  en: "Unroll the heating pipe from the coil along the printed grid of the insulation layer and fix it with tacker needles at the design spacing."
+  de: "Das Heizrohr vom Ring entlang des aufgedruckten Rasters der Dämmschicht abrollen und im geplanten Verlegeabstand mit Tackernadeln fixieren."
+description:
+  en: "Before the screed goes in, installers lay the heating circuits room by room: the pipe comes off a coil on an unwinder, follows a meander or spiral at the spacing from the heat-load calculation and is pinned into the insulation with a tacker tool. Uponor supplies the insulation as rolls of 1 × 10 m with a printed 100 mm grid, and the pipe on coils of 120 to 640 m; a 240 m coil weighs 22.1 kg. The work is done kneeling or bent over at floor level, and a damaged pipe is expensive once the screed covers it."
+  de: "Bevor der Estrich eingebracht wird, verlegen Monteure die Heizkreise Raum für Raum: Das Rohr läuft von einem Ring auf der Abrollvorrichtung, folgt einer Mäander- oder Schneckenform im Abstand aus der Heizlastberechnung und wird mit einem Tackergerät in der Dämmung fixiert. Uponor liefert die Dämmung als Rollen von 1 × 10 m mit aufgedrucktem 100-mm-Raster und das Rohr auf Ringen von 120 bis 640 m; ein 240-m-Ring wiegt 22,1 kg. Gearbeitet wird kniend oder gebückt auf Bodenhöhe, und ein beschädigtes Rohr wird teuer, sobald der Estrich darüber liegt."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '041'
+  atv: "DIN 18380"
+  position:
+    en: "Underfloor heating in a tacker system: insulation, heating pipe and fixing"
+    de: "Fußbodenheizung im Tackersystem: Dämmung, Heizrohr und Befestigung"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 22.1 }
+    confidence: likely
+    evidence_url: 'https://www.uponor.com/en-en/s/uponor-comfort-pipe-plus-16x2-0-240m-1062045'
+    note: "The heaviest object is the pipe coil set onto the unwinder: 22.1 kg for a 240 m coil of 16 × 2.0 mm pipe (Uponor, 0.091 kg/m). The 640 m coil weighs 62.8 kg as packed; this record assumes coils of 240 m or less."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The laying pattern repeats, but every room has its own outline, spacing and edge zone."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A kinked or pinched pipe or a wrong spacing is found before screeding at best; once the screed is down, a repair means opening the floor."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Heating circuits; nothing structural depends on the laying."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: likely
+    note: "Work at floor level, kneeling or bent over."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building before screeding."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "General construction dust from the other trades; no cutting of mineral material in this step."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Before the screed; the rooms are dry."
+  floor:
+    value: level
+    confidence: likely
+    note: "Insulation boards on the slab; the laid pipe becomes a trip hazard as the work proceeds."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Installers lay and tack by hand with a tacker tool; no machine that lays heating pipe on site turned up in our search."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure square metres per hour."
+requirements:
+  object_size_m:
+    value: { min: 1.0, max: 1.0 }
+    confidence: likely
+    evidence_url: 'https://brandportal.uponor.com/m/7e50f58ae7b55b8c/original/TI-Tacker-UFH-C-DE-1143982-v2.pdf'
+    note: "The insulation roll is 1 m wide and unrolls to 10 m (Uponor Tacker roll). The box of a 640 m pipe coil measures 794 × 594 × 808 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Uponor refers the build-up heights to DIN 18202, tables 2 and 3, and the pipe follows the printed 100 mm grid; no tolerance for the pipe position itself is stated."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for setting tacker needles is published."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "No machine that lays heating pipe on site turned up in our search. Compare a wheeled mobile manipulator carrying the unwinder first; stay with coils of 240 m or less so the coil change stays inside the payload band, and keep the check before screeding with the installer."
+      de: "Eine Maschine, die Heizrohr auf der Baustelle verlegt, hat unsere Suche nicht ergeben. Zuerst einen radgebundenen Mobilmanipulator mit Abrollvorrichtung an Bord vergleichen; bei Ringen bis 240 m bleiben, damit der Ringwechsel im Traglastbereich liegt, und die Prüfung vor dem Estrich beim Monteur lassen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [carry_payload, autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Uponor lists its Comfort Pipe PLUS 16 × 2.0 mm at 0.091 kg per metre; the 240 m coil weighs 22.11 kg as packed."
+      de: "Uponor gibt für sein Comfort Pipe PLUS 16 × 2,0 mm 0,091 kg je Meter an; der 240-m-Ring wiegt verpackt 22,11 kg."
+    url: 'https://www.uponor.com/en-en/s/uponor-comfort-pipe-plus-16x2-0-240m-1062045'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "The 640 m coil of the same pipe weighs 62.8 kg as packed, in a box of 794 × 594 × 808 mm."
+      de: "Der 640-m-Ring desselben Rohrs wiegt verpackt 62,8 kg, in einem Karton von 794 × 594 × 808 mm."
+    url: 'https://www.uponor.com/en-en/s/uponor-comfort-pipe-plus-16x2-0-640m-1062046'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "Uponor describes its tacker system as insulation rolls of 1 × 10 m with a printed 100 × 100 mm laying grid, pipes pinned with tacker needles set by a tacker tool, and installation by a qualified person."
+      de: "Uponor beschreibt sein Tackersystem als Dämmrollen von 1 × 10 m mit aufgedrucktem Verlegeraster von 100 × 100 mm, Rohre, die mit Tackernadeln per Tackergerät fixiert werden, und Installation durch eine qualifizierte Person."
+    url: 'https://brandportal.uponor.com/m/7e50f58ae7b55b8c/original/TI-Tacker-UFH-C-DE-1143982-v2.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Technical information Uponor Tacker, version 2; the document carries no date, dated with the check date."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of circuits laid to plan without rework after 3 months, then stop."
+    de: "Weniger als 99 % der Heizkreise nach 3 Monaten ohne Nacharbeit planmäßig verlegt, dann abbrechen."
+  scope_hint:
+    en: "One floor of a residential building, one pipe size, coils of 240 m, the installer checks every circuit before screeding."
+    de: "Ein Geschoss eines Wohngebäudes, eine Rohrdimension, Ringe von 240 m, der Monteur prüft jeden Heizkreis vor dem Estrich."
+prerequisites:
+  - { en: "Laying plan per room with spacing and circuit lengths", de: "Verlegeplan je Raum mit Verlegeabstand und Kreislängen" }
+  - { en: "Insulation laid and taped before the robot starts", de: "Dämmung verlegt und abgeklebt, bevor der Roboter beginnt" }
+open_questions:
+  - { en: "Can the robot work at floor level for hours without damaging the insulation?", de: "Kann der Roboter stundenlang auf Bodenhöhe arbeiten, ohne die Dämmung zu beschädigen?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

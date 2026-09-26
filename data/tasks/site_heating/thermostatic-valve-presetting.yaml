@@ -1,0 +1,138 @@
+schema_version: 1
+id: site_heating/thermostatic-valve-presetting
+status: published
+setting: site_heating
+family: assembly_fastening
+trades: [mep_hvac]
+title:
+  en: "Preset thermostatic radiator valves for hydraulic balancing"
+  de: "Thermostatventile für den hydraulischen Abgleich voreinstellen"
+summary:
+  en: "Go from radiator to radiator, take off the cap or sensor, turn the presetting ring to the calculated value and refit the head."
+  de: "Von Heizkörper zu Heizkörper gehen, Schutzkappe oder Fühler abnehmen, den Einstellring auf den berechneten Wert drehen und den Kopf wieder aufsetzen."
+description:
+  en: "Hydraulic balancing sets every radiator valve to the flow its room needs. The values come from the heat-load calculation; the presetting itself is a small manual step per valve. Danfoss describes it for its RA-DV valves as removing the cap or sensor, finding the setting mark and turning the ring until the calculated value lines up, in steps 1 to 7 or N, without special tools. In a multi-storey residential building this repeats at every radiator."
+  de: "Beim hydraulischen Abgleich wird jedes Heizkörperventil auf den Durchfluss eingestellt, den sein Raum braucht. Die Werte kommen aus der Heizlastberechnung; das Voreinstellen selbst ist je Ventil ein kleiner Handgriff. Danfoss beschreibt ihn für seine RA-DV-Ventile so: Schutzkappe oder Fühlerelement abnehmen, Einstellmarkierung suchen und den Einstellring drehen, bis der berechnete Wert an der Markierung steht, in Stufen von 1 bis 7 oder N, ohne Spezialwerkzeug. Im Geschosswohnungsbau wiederholt sich das an jedem Heizkörper."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '041'
+  atv: "DIN 18380"
+  position:
+    en: "Presetting of thermostatic radiator valves (hydraulic balancing)"
+    de: "Voreinstellung der Thermostatventile (hydraulischer Abgleich)"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.05, max: 0.3 }
+    confidence: assumed
+    note: "Thermostatic head or protective cap and, where the valve needs one, a presetting key; not weighed."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every valve gets its own value, valve makes differ, and the radiators sit in different places."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A wrong presetting shows as a room that heats too much or too little and is reset; nothing is damaged."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Comfort and energy use; nothing structural or safety-relevant."
+  reach_height_m:
+    value: { min: 0.1, max: 1.0 }
+    confidence: assumed
+    note: "Valves sit at the radiator connection, from near the floor to the radiator top; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Finished or nearly finished rooms."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "General construction dust during the late interior works."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed rooms."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Finished floors, with furniture or material in occupied or late-stage rooms."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Done by hand from the presetting list; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required; in occupied flats, entering the rooms needs the residents' consent."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the 30–90 min runtime of current humanoids is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure valves per hour."
+requirements:
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The value is set in steps (1 to 7, N) and the step must line up with the setting mark; there is no tolerance in millimetres."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Turned by hand without special tools (Danfoss); no force figure is published."
+screen:
+  verdict: candidate
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator first: the valves sit low, the force is small, and the hard part is reading the mark and lining up a small ring. The value per valve is small, so the case only works where hundreds of valves are set in one building."
+      de: "Zuerst einen radgebundenen Mobilmanipulator vergleichen: Die Ventile sitzen tief, die Kraft ist gering, schwierig ist das Ablesen der Markierung und das genaue Ausrichten eines kleinen Rings. Der Nutzen je Ventil ist klein, der Fall trägt nur dort, wo Hunderte Ventile in einem Gebäude eingestellt werden."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [precision, capacity, skills_shortage]
+capabilities_required: [autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation, stair_climbing]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Danfoss describes presetting its RA-DV valves without special tools: remove the cap or sensor, find the setting mark and turn the setting ring to the calculated value, in steps from 1 to 7; setting N lifts the presetting. The same document says all radiator valves must be preset."
+      de: "Danfoss beschreibt das Voreinstellen seiner RA-DV-Ventile ohne Spezialwerkzeug: Schutzkappe oder Fühlerelement entfernen, Einstellmarkierung suchen und den Einstellring auf den berechneten Wert drehen, in Stufen von 1 bis 7; bei Einstellung N ist die Voreinstellung aufgehoben. Im selben Dokument heißt es, dass alle Heizkörperventile voreingestellt werden müssen."
+    url: 'https://assets.danfoss.com/documents/latest/45874/AM122186404707de-000102.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2014-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Technical document VFGWG113, Danfoss AG, 07/2014."
+  - statement:
+      en: "Boston Dynamics states that the Spot Arm can semi-autonomously turn valves, flip levers and open doors, and lift up to 11 kg."
+      de: "Boston Dynamics gibt an, dass der Spot Arm halbautonom Ventile drehen, Hebel umlegen und Türen öffnen sowie bis zu 11 kg heben kann."
+    url: 'https://bostondynamics.com/products/spot/arm/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    subject: { maker: boston-dynamics, model: spot }
+    confidence: confirmed
+    note: "Undated product page, dated with the check date. Industrial valves with hand wheels, not presetting rings: transferable for reaching and turning, not for reading a small scale."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of valves set to the calculated value without correction after 3 months, then stop."
+    de: "Weniger als 99 % der Ventile nach 3 Monaten ohne Korrektur auf den berechneten Wert eingestellt, dann abbrechen."
+  scope_hint:
+    en: "One building section, one valve make, the presetting list from the heat-load calculation, every tenth valve checked by an installer."
+    de: "Ein Bauabschnitt, ein Ventilfabrikat, die Voreinstellliste aus der Heizlastberechnung, jedes zehnte Ventil vom Monteur geprüft."
+prerequisites:
+  - { en: "Presetting list per room and radiator from the heat-load calculation", de: "Voreinstellliste je Raum und Heizkörper aus der Heizlastberechnung" }
+  - { en: "Valves of one make with a readable setting mark", de: "Ventile eines Fabrikats mit ablesbarer Einstellmarkierung" }
+open_questions:
+  - { en: "Can the robot read the setting mark reliably behind a radiator in poor light?", de: "Kann der Roboter die Einstellmarkierung hinter einem Heizkörper bei schlechtem Licht sicher ablesen?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

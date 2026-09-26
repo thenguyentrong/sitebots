@@ -1,0 +1,27 @@
+id: site_scaffolding
+group: site
+section: site_wide
+lv: { lb: ['001'], atv: ["DIN 18451"] }
+title: { en: "Scaffolding", de: "Gerüstarbeiten" }
+aliases:
+  en: [scaffold erection]
+  de: [Gerüstbau]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: erecting a frame facade scaffold, inspecting it before use and dismantling it. All three are ruled out: the scaffold is fall protection, the inspection is a named duty of a qualified person, and anchors may only come out once the levels above are gone."
+  de: "Drei geprüfte Aufgaben: ein Fassadengerüst aus Stellrahmen aufbauen, es vor der Benutzung prüfen und es abbauen. Alle drei scheiden aus: Das Gerüst ist Absturzsicherung, die Prüfung ist eine benannte Pflicht einer befähigten Person, und Verankerungen dürfen erst gelöst werden, wenn die Lagen darüber abgebaut sind."
+typical_incumbent_automation: []
+dust:
+  type: mixed
+  typical_zone: none
+  note:
+    en: "Outdoors; dust depends on weather and the work next to it."
+    de: "Im Freien; Staub hängt von Wetter und Nachbararbeiten ab."
+floor: uneven
+exposure: outdoor
+typical_trades: [general]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

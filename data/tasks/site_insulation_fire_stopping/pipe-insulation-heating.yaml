@@ -1,0 +1,144 @@
+schema_version: 1
+id: site_insulation_fire_stopping/pipe-insulation-heating
+status: published
+setting: site_insulation_fire_stopping
+family: assembly_fastening
+trades: [insulation, mep_hvac, mep_plumbing]
+title:
+  en: "Insulate heating and hot-water pipes to GEG"
+  de: "Heizungs- und Warmwasserleitungen nach GEG dämmen"
+summary:
+  en: "Fit pipe sections of the thickness the Building Energy Act requires around every pipe, bend and fitting, and close every joint."
+  de: "Rohrschalen in der Dicke, die das Gebäudeenergiegesetz verlangt, um jedes Rohr, jeden Bogen und jedes Formstück legen und jede Fuge schließen."
+description:
+  en: "After the pressure test, insulators fit pipe sections around the heating and hot-water pipes: cut to length, slit open, pushed over the pipe, the overlap taped, bends and tees cut from the same material, valves boxed in. The Building Energy Act sets the minimum thickness by pipe diameter; gaps, crushed sections and open joints cost energy and are reworked."
+  de: "Nach der Druckprobe legen Isolierer Rohrschalen um die Heizungs- und Warmwasserleitungen: ablängen, aufklappen, über das Rohr schieben, die Überlappung verkleben, Bögen und T-Stücke aus demselben Material zuschneiden, Armaturen einkasten. Das Gebäudeenergiegesetz legt die Mindestdicke nach Rohrdurchmesser fest; Lücken, gequetschte Schalen und offene Fugen kosten Energie und werden nachgearbeitet."
+also_in_settings: [site_heating, site_plumbing]
+derived_from: null
+lv:
+  lb: '047'
+  atv: "DIN 18421"
+  position:
+    en: "Thermal insulation of heating and hot-water pipes with pipe sections to GEG, including bends and fittings"
+    de: "Wärmedämmung von Heizungs- und Warmwasserleitungen mit Rohrschalen nach GEG, einschließlich Bögen und Formstücken"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 5 }
+    confidence: assumed
+    note: "One pipe section, 1 m long (ROCKWOOL 800), for inner diameters from 15 to 273 mm; the datasheet gives no density, so the mass is not derived. Small sections weigh grams, the largest a few kilograms. Not weighed."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Diameters, thicknesses, bends, tees, valves and the space around each pipe change metre by metre."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Gaps and crushed sections are found at inspection and reworked; they cost energy, not safety."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Thermal insulation only; insulation that is part of a fire-stopping system is the separate fire-stopping task."
+  reach_height_m:
+    value: { min: 0.3, max: 4.0 }
+    confidence: assumed
+    evidence_url: 'https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a1_2/6.htm'
+    note: "Risers in shafts near the floor up to mains below the slab. ASR A1.2 sets minimum clear room heights of 2.50 m to 3.25 m; the 4.0 m upper bound is assumed."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Plant rooms, shafts and ceiling voids."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Cutting stone wool releases fibres and dust at the knife; no classified zone."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the building; the insulation itself must be kept dry."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Plant rooms, shafts and platforms."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Fitted by hand; no machine does the step on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Pipe schedule from the plan only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Insulating runs over whole shifts; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline measures metres per shift, straight pipe and fittings counted apart."
+requirements:
+  object_size_m:
+    value: { min: 1.0, max: 1.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/haustechnik/db-rockwool-800-rockwool.pdf'
+    note: "Length per pipe section 1 m (ROCKWOOL 800 datasheet, Ausgabe 08/2024)."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.gesetze-im-internet.de/geg/anlage_8.html'
+    note: "No position tolerance. What the result must meet is a minimum thickness: GEG Anlage 8 requires 20 mm up to 22 mm inner diameter, 30 mm from 22 to 35 mm, the inner diameter from 35 to 100 mm and 100 mm above, at 0.035 W/(m·K); half of that in wall and ceiling penetrations."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure; sections are pushed on and taped by hand."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "The material is light and the variety high, which suits a general-purpose robot in principle; the hard part is the space around the pipes and the taped joints. Test a mobile manipulator only on straight mains in open plant rooms; fittings, valves and shafts stay manual."
+      de: "Das Material ist leicht und die Vielfalt hoch, was grundsätzlich zu einem Universalroboter passt; schwierig sind der Platz um die Rohre und die verklebten Fugen. Einen Mobilmanipulator nur an geraden Hauptleitungen in offenen Technikzentralen testen; Formstücke, Armaturen und Schächte bleiben manuell."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: []
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "GEG Anlage 8 sets the minimum insulation for heat distribution and hot-water pipes at a thermal conductivity of 0.035 W/(m·K): 20 mm up to 22 mm inner diameter, 30 mm from 22 to 35 mm, equal to the inner diameter from 35 to 100 mm and 100 mm above 100 mm, with half these values in wall and ceiling penetrations."
+      de: "GEG Anlage 8 legt die Mindestdämmung für Wärmeverteilungs- und Warmwasserleitungen bei einer Wärmeleitfähigkeit von 0,035 W/(m·K) fest: 20 mm bis 22 mm Innendurchmesser, 30 mm von 22 bis 35 mm, gleich dem Innendurchmesser von 35 bis 100 mm und 100 mm über 100 mm, mit der Hälfte dieser Werte in Wand- und Deckendurchbrüchen."
+    url: 'https://www.gesetze-im-internet.de/geg/anlage_8.html'
+    kind: regulator
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Federal law as published on gesetze-im-internet.de; dated with the check date."
+  - statement:
+      en: "ROCKWOOL lists the ROCKWOOL 800 pipe section in 1 m lengths for inner diameters from 15 to 273 mm and insulation thicknesses from 20 to 100 mm, marks the sizes that meet the GEG minimum, and gives a thermal conductivity of 0.035 W/(m·K)."
+      de: "ROCKWOOL führt die Rohrschale ROCKWOOL 800 in 1 m Länge für Innendurchmesser von 15 bis 273 mm und Dämmdicken von 20 bis 100 mm, kennzeichnet die Größen, die die GEG-Mindestdicke erfüllen, und gibt eine Wärmeleitfähigkeit von 0,035 W/(m·K) an."
+    url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/haustechnik/db-rockwool-800-rockwool.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-08-01'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet 'Ausgabe 08/2024', dated to the first of the month."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of straight metres insulated without rework after 3 months, then stop."
+    de: "Weniger als 99 % der geraden Meter nach 3 Monaten ohne Nacharbeit gedämmt, dann abbrechen."
+  scope_hint:
+    en: "Straight mains in one plant room, one pipe size range, the insulator does bends, valves and the final check."
+    de: "Gerade Hauptleitungen in einer Technikzentrale, ein Rohrdurchmesserbereich, der Isolierer macht Bögen, Armaturen und die Endkontrolle."
+prerequisites:
+  - { en: "Pipes pressure-tested and released for insulation", de: "Rohrleitungen druckgeprüft und zur Dämmung freigegeben" }
+  - { en: "Pipe schedule with diameters and required thicknesses", de: "Rohrliste mit Durchmessern und geforderten Dämmdicken" }
+open_questions:
+  - { en: "How much of the insulated length is straight pipe, and how much is fittings and valves?", de: "Wie viel der gedämmten Länge ist gerades Rohr, wie viel sind Formstücke und Armaturen?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,27 @@
+id: site_drywall
+group: site
+section: interior
+lv: { lb: ['039'], atv: ["DIN 18340"] }
+title: { en: "Drywall", de: "Trockenbauarbeiten" }
+aliases:
+  en: [partitions, suspended ceilings]
+  de: [Ständerwände, Unterdecken]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks: setting the stud frame and hanging the ceiling substructure, fixing plasterboard, and jointing to Q1–Q4. The stud frame and the jointing are marginal; boards fail on weight, and the ceiling anchors are a safety matter that stays with trained installers."
+  de: "Vier geprüfte Aufgaben: Ständerwerk stellen und Deckenunterkonstruktion abhängen, Gipsplatten setzen und Verspachteln in Q1–Q4. Ständerwerk und Spachteln sind grenzwertig; die Platten scheitern am Gewicht, und die Deckenverankerung ist eine Sicherheitsfrage, die bei geschulten Monteuren bleibt."
+typical_incumbent_automation: [layout_robot]
+dust:
+  type: mineral
+  typical_zone: controlled
+  note:
+    en: "Sanding and cutting boards and filler release fine dust; extraction on the sander is standard."
+    de: "Schleifen und Schneiden von Platten und Spachtel setzt Feinstaub frei; Absaugung am Schleifer ist Standard."
+floor: level
+exposure: indoor
+typical_trades: [drywall]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

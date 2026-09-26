@@ -44,7 +44,6 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
     <main className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6">
       <header className="flex flex-wrap items-end justify-between gap-4 py-10">
         <div>
-          <p className="eyebrow">Catalogue</p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Robots</h1>
           <p className="mt-3 max-w-2xl text-muted">
             Every number links to the page it was read from. To filter by what a site needs, use the{' '}
@@ -71,6 +70,7 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
           ))}
         </nav>
         <form action="/robots" method="get" className="ml-auto flex items-center gap-2">
+          {showAllPictures ? <input type="hidden" name="pictures" value="all" /> : null}
           {formFactor ? <input type="hidden" name="form" value={formFactor} /> : null}
           <label className="relative block">
             <span className="sr-only">Search robots</span>
@@ -78,7 +78,7 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
               <circle cx="11" cy="11" r="7" />
               <path d="m20 20-3.5-3.5" />
             </svg>
-            <input type="search" name="q" defaultValue={q ?? ''} placeholder="Maker or model" className={`${ui.input} h-9 w-44 pl-9 sm:w-60`} />
+            <input key={q ?? ''} type="search" name="q" defaultValue={q ?? ''} placeholder="Maker or model" className={`${ui.input} h-9 w-44 pl-9 sm:w-60`} />
           </label>
           <button type="submit" className={`${ui.btn} h-9 px-4`}>
             Search

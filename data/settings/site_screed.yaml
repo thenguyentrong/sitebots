@@ -1,0 +1,27 @@
+id: site_screed
+group: site
+section: interior
+lv: { lb: ['025'], atv: ["DIN 18353"] }
+title: { en: "Screed", de: "Estricharbeiten" }
+aliases:
+  en: [floor screed, underfloor insulation]
+  de: [Estrich, Trittschalldämmung]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: laying impact-sound insulation with edge strips, spreading and levelling cement screed, and the CM moisture test before covering. The first two are marginal; the moisture test stays with the trade because its reading is a liability decision."
+  de: "Drei geprüfte Aufgaben: Trittschalldämmung mit Randdämmstreifen verlegen, Zementestrich verteilen und abziehen, CM-Feuchtemessung vor dem Belegen. Die ersten beiden sind grenzwertig; die Feuchtemessung bleibt beim Gewerk, weil ihr Ergebnis eine Haftungsentscheidung ist."
+typical_incumbent_automation: []
+dust:
+  type: cement
+  typical_zone: controlled
+  note:
+    en: "Mixing and pumping cement-bound material releases cement dust; the wet material itself is alkaline."
+    de: "Anmischen und Pumpen zementgebundener Stoffe setzt Zementstaub frei; das nasse Material selbst ist alkalisch."
+floor: level
+exposure: indoor
+typical_trades: [flooring_tiling]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

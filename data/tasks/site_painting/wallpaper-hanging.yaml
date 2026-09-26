@@ -1,0 +1,114 @@
+schema_version: 1
+id: site_painting/wallpaper-hanging
+status: published
+setting: site_painting
+family: surface_finishing
+trades: [painting]
+title:
+  en: "Hang woodchip wallpaper"
+  de: "Raufaser tapezieren"
+summary:
+  en: "Cut strips to wall height, paste them, let them soak, hang them plumb seam to seam and trim at ceiling, skirting and corners."
+  de: "Bahnen auf Wandhöhe zuschneiden, einkleistern, weichen lassen, lotrecht Naht an Naht kleben und an Decke, Sockel und Ecken beschneiden."
+description:
+  en: "The maker's instructions describe the step: strips cut to wall height plus allowance, pasted by hand or with a pasting machine, folded two thirds to one third, about ten minutes' soaking, hung plumb seam to seam, pressed with a brush or rubber roller, excess torn or cut off; outside corners are cut exactly on the edge."
+  de: "Die Herstelleranleitung beschreibt den Schritt: Bahnen auf Wandhöhe plus Zugabe zuschneiden, von Hand oder mit Kleistergerät einkleistern, zwei Drittel zu einem Drittel zusammenlegen, etwa zehn Minuten weichen lassen, lotrecht Naht an Naht kleben, mit Bürste oder Gummirolle andrücken, Überstände abreißen oder abschneiden; Außenecken werden exakt auf der Kante getrennt."
+also_in_settings: [facility_operation]
+derived_from: null
+lv:
+  lb: '037'
+  atv: "DIN 18366"
+  position:
+    en: "Woodchip wallpaper on walls, ready for painting"
+    de: "Raufasertapete auf Wandflächen, streichfertig"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 5 }
+    confidence: assumed
+    note: "A pasted strip of wall height is light; the paste bucket is the heaviest item. The Erfurt sheet gives roll sizes but no weights; not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Strips repeat on plain walls; windows, doors, sockets, radiators and corners differ in every room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Open seams, bubbles or a strip out of plumb show under the paint; the strip has to come off and be hung again."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Wall finish without structural function."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Floor to ceiling; room height not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    evidence_url: 'https://www.erfurt.com/fileadmin/products/de/pro/downloads/technische_datenblaetter/VKFES-RF-Profi-PV-TM-D001.pdf'
+    note: "Erfurt: for all wallpaperable substrates indoors."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Hanging makes no dust; sanding the substrate beforehand is a separate step."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Finished floor or screed, with a pasting table and a stepladder in the room."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.erfurt.com/fileadmin/products/de/pro/downloads/technische_datenblaetter/VKFES-RF-Profi-PV-TM-D001.pdf'
+    note: "Erfurt recommends pasting machines combined with a table for pasting; cutting, hanging and trimming stay manual."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the rooms; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and strips re-hung."
+requirements:
+  object_size_m:
+    value: { min: 0.53, max: 3 }
+    confidence: likely
+    evidence_url: 'https://www.erfurt.com/fileadmin/products/de/pro/downloads/technische_datenblaetter/VKFES-RF-Profi-PV-TM-D001.pdf'
+    note: "Strip width 0.53 m (rolls of 33.50 m or 17.00 m; 0.75 m on 125 m and 60 m machine rolls), strip length wall height plus allowance, here up to about 3 m."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Nothing rules it out, but everything is marginal: a limp, wet strip three metres long has to be placed plumb and seam to seam. The pasting machine already takes the easy part. Keep people on hanging unless a pilot shows unaided strips."
+      de: "Nichts schließt es aus, aber alles ist grenzwertig: Eine schlaffe, nasse Bahn von drei Metern muss lotrecht und Naht an Naht sitzen. Das Kleistergerät übernimmt schon den leichten Teil. Das Kleben bleibt bei Menschen, solange kein Pilot Bahnen ohne Eingriff zeigt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage]
+capabilities_required: [surface_finishing]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [humanoid, keep_process]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Fewer than 99 % of strips hung without re-hanging after 3 months, then keep the painters on it."
+    de: "Weniger als 99 % der Bahnen nach 3 Monaten ohne erneutes Kleben, dann bleibt es bei den Malern."
+  scope_hint:
+    en: "Plain wall fields in one floor of identical rooms; people do corners, windows and trimming."
+    de: "Glatte Wandfelder in einem Geschoss gleicher Räume; Ecken, Fenster und Beschnitt machen Menschen."
+prerequisites:
+  - { en: "Substrate filled and primed as the wallpaper maker requires", de: "Untergrund gespachtelt und grundiert, wie es der Tapetenhersteller verlangt" }
+open_questions: []
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

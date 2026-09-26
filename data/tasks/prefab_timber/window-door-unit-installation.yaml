@@ -1,0 +1,112 @@
+schema_version: 1
+id: prefab_timber/window-door-unit-installation
+status: published
+setting: prefab_timber
+family: assembly_fastening
+trades: [windows_doors, timber]
+title:
+  en: Install window and door units into elements
+  de: Fenster- und Türelemente in die Wandelemente einbauen
+summary:
+  en: Lift 40–150 kg units into the opening, align, fix and seal.
+  de: 40–150 kg schwere Einheiten in die Öffnung heben, ausrichten, befestigen und abdichten.
+description:
+  en: One of the stations that stays manual in modern plants. The units are two to six times above the humanoid payload ceiling; the alignment and sealing around them is skilled work that a lifting aid supports and a humanoid cannot carry.
+  de: Eine der Stationen, die in modernen Werken Handarbeit bleibt. Die Einheiten liegen zwei- bis sechsfach über der Humanoid-Traglastgrenze; das Ausrichten und Abdichten drumherum ist Facharbeit, die eine Hebehilfe unterstützt und ein Humanoid nicht tragen kann.
+also_in_settings: [facade_prefab, modular_volumetric, site_ventilated_facade]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 40, max: 150 }
+    confidence: likely
+    note: Window and door units incl. glazing; range from an industry engagement, 2025/26.
+  variability:
+    value: medium
+    confidence: assumed
+    note: Analyst judgement. Sizes vary per house; the sequence does not.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A misaligned unit leaks or jams and is reworked at cost.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Not load-bearing; a dropped unit is a damage event.
+  reach_height_m:
+    value: { min: 0.5, max: 2.5 }
+    confidence: assumed
+    note: Openings up to lintel height on a standing or lying element.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Finishing area, outside machining.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: Manual with a crane or vacuum lifter as an aid; no dedicated installation cell in the reference plant.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out by mass.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Unit sizes come from the window schedule; not recorded here."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Joint widths and fixing follow the window installation guideline; no ± value is recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: A vacuum lifter or assist device for the lift, the person for alignment and sealing. A dedicated installation cell only at high volumes of similar units.
+      de: Ein Vakuumheber oder eine Hebehilfe für das Heben, die Person für Ausrichten und Abdichten. Eine dedizierte Einbauzelle nur bei hohen Stückzahlen ähnlicher Einheiten.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, dedicated_machine, keep_process]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: Trial an assist device at one station and measure strain and cycle time.
+    de: Eine Hebehilfe an einer Station erproben und Belastung und Takt messen.
+prerequisites: []
+open_questions:
+  - { en: "Where does the time go, lifting or sealing?", de: "Wohin geht die Zeit, ins Heben oder ins Abdichten?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

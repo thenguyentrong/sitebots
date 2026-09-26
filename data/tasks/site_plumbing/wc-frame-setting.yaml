@@ -1,0 +1,127 @@
+schema_version: 1
+id: site_plumbing/wc-frame-setting
+status: published
+setting: site_plumbing
+family: assembly_fastening
+trades: [mep_plumbing]
+title:
+  en: "Set pre-wall installation frames for wall-hung WCs"
+  de: "Vorwand-Montageelemente für Wand-WCs setzen"
+summary:
+  en: "Stand the frame, set it to height, fix it to floor and wall, and connect water and drain."
+  de: "Das Element aufstellen, auf Höhe einstellen, an Boden und Wand befestigen und an Wasser und Abwasser anschließen."
+description:
+  en: "A pre-wall frame carries the cistern and the wall-hung WC. Geberit lists its Duofix element for wall-hung WC, 112 cm high and 50 cm wide, at a net weight of 12.371 kg. The frame is set to height, anchored to floor and wall and connected; Geberit states that the system meets DIN 4103 and the console loads of VDI 6000 part 1, which for a wall-hung WC are 4000 N. The fixing therefore carries the WC and the person using it."
+  de: "Ein Vorwandelement trägt Spülkasten und Wand-WC. Geberit gibt für sein Duofix-Element für Wand-WC, 112 cm hoch und 50 cm breit, ein Nettogewicht von 12,371 kg an. Das Element wird auf Höhe gestellt, an Boden und Wand verankert und angeschlossen; laut Geberit erfüllt das System DIN 4103 und die Konsollasten nach VDI 6000 Blatt 1, für ein Wand-WC 4000 N. Die Befestigung trägt also das WC und die Person, die es benutzt."
+also_in_settings: [site_drywall, mep_prefab]
+derived_from: null
+lv:
+  lb: '045'
+  atv: "DIN 18381"
+  position:
+    en: "Pre-wall installation element for wall-hung WC: set, fix and connect"
+    de: "Vorwand-Montageelement für Wand-WC setzen, befestigen und anschließen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 12.37, max: 12.37 }
+    confidence: confirmed
+    evidence_url: 'https://catalog.geberit.de/de-DE/product/PRO_3933392'
+    note: "Net weight 12.371 kg for the Duofix element for wall-hung WC, 112 cm, with Sigma cistern 12 cm (Geberit catalogue, article 111.300.00.6). Washbasin and urinal elements differ."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same element in many bathrooms, but wall types, heights and connection positions vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A frame set out of plumb or at the wrong height is reset before the wall is closed; afterwards it means opening the wall."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The fixing takes the console load of the WC and its user: 4000 N according to the maker's statement on VDI 6000 part 1."
+  reach_height_m:
+    value: { min: 0, max: 1.12 }
+    confidence: likely
+    note: "Floor to the top of the 112 cm frame."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Bathrooms inside the closed building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling the anchors into floor and wall releases quartz dust at the drill; extraction at the drill is standard."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed rooms before the water is on."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Bathrooms under construction, with pipes and material on the floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Set by hand; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 1.12, max: 1.12 }
+    confidence: confirmed
+    evidence_url: 'https://catalog.geberit.de/de-DE/product/PRO_3933392'
+    note: "112 cm high, 50 cm wide, 12 cm deep."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Height and plumb follow the installation instructions; the catalogue page states no tolerance figure."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep setting and anchoring with the installer, who answers for the fixing. The frame itself is light enough; a robot could at most bring it and hold it in place while the installer sets and checks the anchors."
+      de: "Setzen und Verankern beim Monteur lassen, der für die Befestigung einsteht. Das Element selbst ist leicht genug; ein Roboter könnte es höchstens bringen und in Position halten, während der Monteur die Dübel setzt und prüft."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, drilling, screwing]
+capabilities_optional: []
+solution_classes: [keep_process, mobile_manipulator_wheeled]
+evidence:
+  - statement:
+      en: "Geberit lists the Duofix element for wall-hung WC (112 cm, Sigma cistern 12 cm) at 50 × 112 × 12 cm and 12.371 kg net, and states that the Duofix system meets DIN 4103 and the console loads of VDI 6000 part 1: 4000 N for wall-hung WC and bidet, 1500 N for washbasin and urinal, 1000 N for grab rails."
+      de: "Geberit gibt für das Duofix-Element für Wand-WC (112 cm, Sigma-Spülkasten 12 cm) 50 × 112 × 12 cm und 12,371 kg netto an und erklärt, dass das Duofix-System DIN 4103 und die Konsollasten nach VDI 6000 Blatt 1 erfüllt: 4000 N für Wand-WC und Bidet, 1500 N für Waschtisch und Urinal, 1000 N für Stütz- und Haltegriffe."
+    url: 'https://catalog.geberit.de/de-DE/product/PRO_3933392'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Product catalogue page, undated, dated with the check date; the weight and the load statement are in the page's technical data and tender text."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued as an assist: the robot brings and holds the frame, the installer anchors and checks; time per bathroom with and without the robot."
+    de: "Falls als Assistenz verfolgt: Der Roboter bringt und hält das Element, der Monteur verankert und prüft; Zeit je Bad mit und ohne Roboter."
+prerequisites: []
+open_questions:
+  - { en: "Who answers for the anchor fixing if a robot holds the frame?", de: "Wer steht für die Verankerung ein, wenn ein Roboter das Element hält?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

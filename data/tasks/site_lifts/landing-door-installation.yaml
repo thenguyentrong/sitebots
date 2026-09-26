@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_lifts/landing-door-installation
+status: published
+setting: site_lifts
+family: assembly_fastening
+trades: [general]
+title:
+  en: "Install and adjust the landing doors of a lift"
+  de: "Schachttüren eines Aufzugs einbauen und einstellen"
+summary:
+  en: "Set the frame and sill at each landing, hang the door panels and adjust the locking device so the door only opens when the car is there."
+  de: "An jeder Haltestelle Zarge und Schwelle setzen, die Türblätter einhängen und die Verriegelung so einstellen, dass die Tür nur öffnet, wenn die Kabine da ist."
+description:
+  en: "At every landing the fitters set the door frame and the sill at the shaft opening, hang the panels, and adjust rollers, closer and the locking device until the door runs and locks as designed. A landing door stands between the floor and an open shaft; door and lock follow the lift standards, and the lift is inspected before it is handed over. The doors come in many configurations: one supplier alone offers eleven, with clear openings from 600 to 3200 mm and clear heights from 2000 to 3500 mm."
+  de: "An jeder Haltestelle setzen die Monteure Türzarge und Schwelle an der Schachtöffnung, hängen die Türblätter ein und stellen Laufrollen, Schließer und Verriegelung ein, bis die Tür wie vorgesehen läuft und verriegelt. Eine Schachttür steht zwischen dem Geschoss und einem offenen Schacht; Tür und Verriegelung folgen den Aufzugsnormen, und der Aufzug wird vor der Übergabe geprüft. Die Türen gibt es in vielen Ausführungen: Ein Hersteller allein bietet elf an, mit lichten Breiten von 600 bis 3200 mm und lichten Höhen von 2000 bis 3500 mm."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '069'
+  atv: "DIN 18385"
+  position:
+    en: "Landing doors with frame, sill and locking device: install and adjust"
+    de: "Schachttüren mit Zarge, Schwelle und Verriegelung montieren und einstellen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The supplier page gives door configurations and sizes but no panel or frame weights; not claimed."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. One door type repeats through a building, but openings, finishes and fire ratings change between projects."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Running and locking are adjusted and checked at every landing, and the lift is inspected before handover."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    evidence_url: 'https://www.wittur.com/en/elevator-components/landing-doors/hydra-landing-door.aspx'
+    note: "The door closes an open shaft; the supplier builds it to EN 81-20/50, the European lift safety standards, and offers fire-resistant versions to EN 81-58."
+  reach_height_m:
+    value: { min: 0, max: 3.5 }
+    confidence: likely
+    evidence_url: 'https://www.wittur.com/en/elevator-components/landing-doors/hydra-landing-door.aspx'
+    note: "From the sill at floor level to the top of the frame; clear heights run from 2000 to 3500 mm for this door range."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "At the landings inside the building."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Construction dust from the other trades during fit-out."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed building."
+  floor:
+    value: level
+    confidence: likely
+    note: "Landing floor in front of the shaft."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Installed and adjusted by lift fitters; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Installation drawings only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.5 }
+    confidence: likely
+    evidence_url: 'https://www.wittur.com/en/elevator-components/landing-doors/hydra-landing-door.aspx'
+    note: "Panels follow the clear height of 2000 to 3500 mm for this door range; clear openings run from 600 to 3200 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No adjustment tolerance published; the door maker's installation manual and the lift inspection set it."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the lift fitters on the doors: the door and its lock protect people from an open shaft and are adjusted landing by landing to the lift standards. Automation belongs in the shaft preparation before, not in the doors."
+      de: "Die Schachttüren bleiben bei den Aufzugsmonteuren: Tür und Verriegelung schützen Menschen vor dem offenen Schacht und werden Haltestelle für Haltestelle nach den Aufzugsnormen eingestellt. Automatisierung gehört in die Schachtvorbereitung davor, nicht in die Türen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Wittur offers its Hydra landing door in eleven configurations with clear openings from 600 to 3200 mm and clear heights from 2000 to 3500 mm, for speeds up to 4 m/s, built to EN 81-20/50, with fire-resistant versions to EN 81-58 as an option. The page gives no weights."
+      de: "Wittur bietet seine Schachttür Hydra in elf Ausführungen mit lichten Breiten von 600 bis 3200 mm und lichten Höhen von 2000 bis 3500 mm an, für Geschwindigkeiten bis 4 m/s, nach EN 81-20/50, mit Feuerschutzausführungen nach EN 81-58 als Option. Gewichte nennt die Seite nicht."
+    url: 'https://www.wittur.com/en/elevator-components/landing-doors/hydra-landing-door.aspx'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not pursued; the lift fitters install and adjust the doors."
+    de: "Nicht verfolgt; die Aufzugsmonteure bauen die Türen ein und stellen sie ein."
+prerequisites: []
+open_questions:
+  - { en: "Which door type and fire rating does the lift order specify for each landing?", de: "Welcher Türtyp und welche Feuerwiderstandsklasse sind in der Aufzugsbestellung je Haltestelle vorgesehen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

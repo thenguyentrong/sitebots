@@ -1,0 +1,113 @@
+schema_version: 1
+id: prefab_timber/packaging-kitting-stable-volumes
+status: published
+setting: prefab_timber
+family: packaging_palletising_loading
+trades: [logistics]
+title:
+  en: Pack standard fitting sets at stable volumes
+  de: Standard-Beschlagsets bei stabilen Mengen verpacken
+summary:
+  en: Fill the same fitting set into bags or boxes, thousands of times.
+  de: Dasselbe Beschlagset in Beutel oder Kartons füllen, tausendfach.
+description:
+  en: The stable cousin of kitting. When the same set ships with every house, a pick-and-place cell is cheaper than any mobile platform; the case for a humanoid only returns when the sets start to vary.
+  de: Der stabile Verwandte der Kommissionierung. Wenn dasselbe Set mit jedem Haus verschickt wird, ist eine Pick-and-Place-Zelle günstiger als jede mobile Plattform; das Argument für einen Humanoiden kehrt erst zurück, wenn die Sets zu variieren beginnen.
+also_in_settings: [joinery_windows_doors, mep_prefab, material_yard_warehouse]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 10 }
+    confidence: assumed
+    note: Bags, boxes and their contents.
+  variability:
+    value: medium
+    confidence: assumed
+    note: Analyst judgement. A handful of set variants; presentation is fixed.
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: A wrong set is noticed at the site or at goods-out checks.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: No structural consequence.
+  reach_height_m:
+    value: { min: 0.4, max: 1.6 }
+    confidence: assumed
+    note: Packing table.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Packing area.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Outside machining.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: Hand packing in the reference plant; counting scales at most.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Cameras look at the table.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; sets per shift decide between a cell and a mobile platform.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Bags and boxes vary with the order; not measured."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance; contents are checked against the packing list."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: If volumes are stable, a pick-and-place cell; if the sets vary with the house, this becomes the kitting task and the mobile platform is back in play.
+      de: Bei stabilen Mengen eine Pick-and-Place-Zelle; variieren die Sets mit dem Haus, wird daraus die Kommissionieraufgabe und die mobile Plattform ist wieder im Spiel.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [kitting, shelf_pick]
+capabilities_optional: [palletising]
+solution_classes: [fixed_cobot_cell, mobile_manipulator_wheeled]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: Fewer than 99 % of sets complete and correct unaided after 3 months, then stop.
+    de: Weniger als 99 % der Sets nach 3 Monaten ohne Eingriff vollständig und richtig, dann stoppen.
+  scope_hint:
+    en: Quote the cell and the mobile platform on the same set data.
+    de: Zelle und mobile Plattform mit denselben Set-Daten anfragen.
+prerequisites:
+  - { en: "Set definitions and volumes per month", de: "Set-Definitionen und Mengen je Monat" }
+open_questions:
+  - { en: "How often do the sets change per year?", de: "Wie oft ändern sich die Sets im Jahr?" }
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

@@ -1,9 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { matchable, requirementsFor, type Project } from '@/lib/plan/model';
 import type { PlanResponse } from '@/lib/plan/assessment';
+import { matchable, requirementsFor, type Project } from '@/lib/plan/model';
 
+/** Asks the catalogue about a project. The task's checked facts feed the request, so dust, floor and exposure reach the matcher. */
 export function useAssessment(project: Project | undefined, ids?: string[], enabled = true) {
   const parsed = project ? requirementsFor(project) : null;
   const valid = Boolean(project && matchable(project));

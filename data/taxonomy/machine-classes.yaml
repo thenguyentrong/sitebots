@@ -1,0 +1,58 @@
+# Incumbent automation vocabulary. `families` says which task families a class
+# covers: when a visitor lists a class in Station 0, every task of those families
+# counts as fully automated for test 3 (the machine becomes the baseline).
+machine_classes:
+  # timber prefab line
+  - { id: cnc_joinery, title: { en: "CNC joinery centre", de: "Abbundanlage" }, families: [machine_operation_dedicated] }
+  - { id: nailing_sheathing_bridge, title: { en: "Multifunction nailing and sheathing bridge", de: "Multifunktionsbrücke (Nageln, Beplanken)" }, families: [assembly_fastening] }
+  - { id: panel_saw, title: { en: "Panel saw and processing centre", de: "Plattensäge und Bearbeitungszentrum" }, families: [machine_operation_dedicated] }
+  - { id: stud_insertion_robot, title: { en: "Stud insertion robot", de: "Riegelwerk-Roboter" }, families: [assembly_fastening] }
+  - { id: panel_placement_robot, title: { en: "Panel placement robot", de: "Plattenlege-Roboter" }, families: [heavy_element_handling] }
+  - { id: turning_table, title: { en: "Turning table", de: "Wendetisch" }, families: [heavy_element_handling] }
+  - { id: gluing_insulation_cell, title: { en: "Gluing and insulation cell", de: "Klebe- und Dämmzelle" }, families: [assembly_fastening] }
+  - { id: element_transfer_carriage, title: { en: "Element transfer carriage", de: "Verschiebewagen" }, families: [heavy_element_handling] }
+  # lifting and moving
+  - { id: overhead_crane, title: { en: "Overhead crane", de: "Hallenkran" }, families: [heavy_element_handling] }
+  - { id: gantry_crane, title: { en: "Gantry crane", de: "Portalkran" }, families: [heavy_element_handling, packaging_palletising_loading] }
+  - { id: vacuum_lifter, title: { en: "Vacuum lifter", de: "Vakuumheber" }, families: [heavy_element_handling] }
+  - { id: forklift, title: { en: "Forklift", de: "Gabelstapler" }, families: [packaging_palletising_loading] }
+  - { id: conveyor, title: { en: "Conveyor", de: "Fördertechnik" }, families: [intralogistics_transport] }
+  - { id: amr_fleet, title: { en: "AMR fleet", de: "AMR-Flotte" }, families: [intralogistics_transport] }
+  - { id: agv, title: { en: "AGV", de: "FTS" }, families: [intralogistics_transport] }
+  - { id: palletiser, title: { en: "Palletiser", de: "Palettierer" }, families: [packaging_palletising_loading] }
+  - { id: pick_to_light, title: { en: "Pick-to-light or pick-by-voice system", de: "Pick-by-Light- oder Pick-by-Voice-System" }, families: [] }
+  - { id: sorting_cell, title: { en: "Robotic sorting cell", de: "Robotische Sortierzelle" }, families: [kitting_picking_sorting] }
+  # concrete, steel, site
+  - { id: cnc_rebar_bender, title: { en: "CNC rebar bender", de: "CNC-Bewehrungsbiegemaschine" }, families: [machine_operation_dedicated] }
+  - { id: rebar_mesh_welder, title: { en: "Rebar mesh welding line", de: "Mattenschweißanlage" }, families: [assembly_fastening] }
+  - { id: batching_plant, title: { en: "Batching plant", de: "Mischanlage" }, families: [machine_operation_dedicated] }
+  - { id: formwork_robot, title: { en: "Formwork robot", de: "Schalungsroboter" }, families: [assembly_fastening] }
+  - { id: cnc_steel_beam_line, title: { en: "CNC beam processing line", de: "CNC-Trägerbearbeitung" }, families: [machine_operation_dedicated] }
+  - { id: welding_robot, title: { en: "Welding robot", de: "Schweißroboter" }, families: [assembly_fastening] }
+  - { id: window_assembly_line, title: { en: "Window assembly line", de: "Fenstermontagelinie" }, families: [assembly_fastening] }
+  - { id: layout_robot, title: { en: "Layout marking robot", de: "Markierroboter" }, families: [layout_marking_surveying] }
+  - { id: drilling_robot, title: { en: "Overhead drilling robot", de: "Deckenbohrroboter" }, families: [assembly_fastening] }
+  - { id: spray_robot, title: { en: "Spray or plaster robot", de: "Spritz- oder Putzroboter" }, families: [surface_finishing] }
+  - { id: cleaning_machine, title: { en: "Floor cleaning machine", de: "Bodenreinigungsmaschine" }, families: [cleaning_housekeeping_replenishment] }
+  - { id: scanner_fixed, title: { en: "Fixed camera or scanner system", de: "Feste Kamera- oder Scanneranlage" }, families: [inspection_qa_documentation] }
+  - { id: drone, title: { en: "Drone", de: "Drohne" }, families: [inspection_qa_documentation, monitoring_safety_patrol] }
+  - { id: construction_3d_printer, title: { en: "Construction 3D printer", de: "Bau-3D-Drucker" }, families: [machine_operation_dedicated] }
+  - { id: tunnel_boring_machine, title: { en: "Tunnel boring machine", de: "Tunnelbohrmaschine" }, families: [machine_operation_dedicated] }
+  - { id: autonomous_compactor, title: { en: "Autonomous compactor or paver", de: "Autonome Walze oder Fertiger" }, families: [machine_operation_dedicated] }
+  - { id: demolition_robot_teleoperated, title: { en: "Teleoperated demolition robot", de: "Ferngesteuerter Abbruchroboter" }, families: [machine_operation_dedicated] }
+  - { id: site_crane, title: { en: "Tower or mobile crane", de: "Turmdreh- oder Mobilkran" }, families: [heavy_element_handling] }
+  - { id: power_trowel, title: { en: "Power trowel, walk-behind or ride-on", de: "Flügelglätter, handgeführt oder Aufsitzgerät" }, families: [surface_finishing] }
+  - { id: vibratory_compactor, title: { en: "Vibratory compactor: plate, rammer or trench roller", de: "Verdichtungsgerät: Platte, Stampfer oder Grabenwalze" }, families: [machine_operation_dedicated] }
+  - { id: paving_laying_machine, title: { en: "Paving laying machine", de: "Pflasterverlegemaschine" }, families: [] }
+  - { id: pipe_laying_device, title: { en: "Pipe laying device", de: "Rohrverlegegerät" }, families: [] }
+  - { id: sewer_inspection_crawler, title: { en: "Sewer camera crawler", de: "Kanal-Kamerafahrwagen" }, families: [] }
+  - { id: cable_plough, title: { en: "Cable plough", de: "Kabelpflug" }, families: [] }
+  - { id: robotic_mower, title: { en: "Robotic mower", de: "Mähroboter" }, families: [] }
+  - { id: excavator_pile_driver, title: { en: "Excavator-mounted pile driver", de: "Baggeranbau-Rammgerät" }, families: [] }
+  - { id: shotcrete_manipulator, title: { en: "Shotcrete spraying manipulator", de: "Spritzbetonmanipulator" }, families: [] }
+  - { id: hydrodemolition_robot, title: { en: "Hydrodemolition robot", de: "Höchstdruckwasserstrahl-Roboter" }, families: [] }
+  - { id: blasting_robot, title: { en: "Abrasive blasting robot", de: "Strahlroboter" }, families: [] }
+  - { id: rock_bolting_rig, title: { en: "Rock bolting rig", de: "Ankerbohrwagen" }, families: [] }
+  - { id: cable_pulling_winch, title: { en: "Cable pulling winch", de: "Kabelzugwinde" }, families: [] }
+  - { id: anchor_drilling_rig, title: { en: "Anchor drilling rig", de: "Ankerbohrgerät" }, families: [] }
+  - { id: lift_shaft_robot, title: { en: "Lift shaft installation robot", de: "Montageroboter für Aufzugsschächte" }, families: [] }

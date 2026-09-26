@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_timber_frame/prefab-element-setting
+status: published
+setting: site_timber_frame
+family: heavy_element_handling
+trades: [timber, carpentry_joinery]
+title:
+  en: "Set and fix prefabricated timber wall elements"
+  de: "Vorgefertigte Holzbau-Wandelemente versetzen und befestigen"
+summary:
+  en: "Guide the element on the crane hook into its axis, align it and fix it to the slab and to the neighbouring elements."
+  de: "Das Element am Kranhaken in seine Achse führen, ausrichten und an Decke und Nachbarelementen befestigen."
+description:
+  en: "Closed wall elements arrive finished with cladding, insulation and boarding. The crane lifts; two fitters guide the element with tag lines, set it on the sole plate, align it and fix the connectors. A finished external timber-frame wall weighs around 65 kg per square metre, so a single element weighs hundreds of kilograms to more than two tonnes, and it carries loads once it is fixed."
+  de: "Geschlossene Wandelemente kommen fertig mit Bekleidung, Dämmung und Beplankung auf die Baustelle. Der Kran hebt; zwei Monteure führen das Element mit Leitseilen, setzen es auf die Schwelle, richten es aus und befestigen die Verbinder. Eine fertige Holzrahmen-Außenwand wiegt rund 65 kg je Quadratmeter, ein einzelnes Element also mehrere hundert Kilogramm bis über zwei Tonnen, und sobald es befestigt ist, trägt es Lasten."
+also_in_settings: [site_concrete]
+derived_from: null
+lv:
+  lb: '016'
+  atv: "DIN 18334"
+  position:
+    en: "Setting and fixing prefabricated timber wall and floor elements"
+    de: "Montage vorgefertigter Holzbau-Wand- und Deckenelemente"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 545, max: 2181 }
+    confidence: likely
+    evidence_url: 'https://www.dataholz.eu/download/de/awrhhi08b-9.pdf'
+    note: "A finished external timber-frame wall with facade cladding weighs 64.90 kg/m² (dataholz.eu awrhhi08b-09, Holzforschung Austria, 02.08.2023). At 2.8 m storey height and 3 to 12 m element length that is 2.8 × 3 × 64.90 ≈ 545 kg to 2.8 × 12 × 64.90 ≈ 2181 kg; the element dimensions are assumed for this record."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Every element has its own position and connections, but the sequence repeats storey by storey."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "The element is aligned to the axes before it is fixed; a misplaced element is lifted and set again."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.dataholz.eu/download/de/awrhhi08b-9.pdf'
+    note: "External timber-frame walls are load-bearing: dataholz rates the example wall REI 60 under a load of up to 32.0 kN/m. The connections the fitters set are part of the load path."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Guiding at slab level, connectors up to storey height. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "The shell is open while elements are set; crane work happens in the weather."
+  dust:
+    value: { type: wood, zone: none }
+    confidence: assumed
+    note: "Elements arrive finished; little cutting on site, and the work is in the open shell."
+  wet:
+    value: null
+    confidence: assumed
+    note: "Depends on the weather on the day; elements are kept out of the rain."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slab edges, sole plates and scaffolds."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    note: "The crane does the lifting; people guide, align and fix."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; depends on the crane cycle and the element plan."
+requirements:
+  object_size_m:
+    value: { min: 3, max: 12 }
+    confidence: assumed
+    note: "Element length 3 to 12 m at about 2.8 m height, assumed for this record; the real sizes come from the transport and crane plan."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Placement tolerances come from the execution drawings; no public value is recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The load hangs on the crane; guiding forces are not recorded."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Crane plus two trained fitters stays the answer: the element weighs far more than any robot carries, and the connections they set are structural and checked. At most a robot could bring the fixings to the fitters."
+      de: "Kran plus zwei geschulte Monteure bleibt die Antwort: Das Element wiegt weit mehr, als ein Roboter trägt, und die Verbindungen, die sie setzen, sind tragend und werden geprüft. Ein Roboter könnte höchstens die Verbindungsmittel zu den Monteuren bringen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, skills_shortage]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [keep_process, gantry]
+evidence:
+  - statement:
+      en: "Holzforschung Austria lists an external timber-frame wall with cladding, installation layer and gypsum board at an area-related mass of 64.90 kg/m², fire-rated REI 60 under a load of up to 32.0 kN/m."
+      de: "Die Holzforschung Austria gibt für eine Holzrahmen-Außenwand mit Fassade, Installationsebene und Gipsplatte eine flächenbezogene Masse von 64,90 kg/m² und eine Feuerwiderstandsklasse REI 60 bei einer Last bis 32,0 kN/m an."
+    url: 'https://www.dataholz.eu/download/de/awrhhi08b-9.pdf'
+    kind: academic
+    tier: 1
+    date: '2023-08-02'
+    type: claim
+    confidence: confirmed
+    note: "Component sheet awrhhi08b-09 in the dataholz.eu catalogue."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If anything is piloted, it is fixing supply: connectors and screws delivered to the fitters per element."
+    de: "Wenn überhaupt etwas erprobt wird, dann die Versorgung: Verbinder und Schrauben je Element zu den Monteuren bringen."
+prerequisites: []
+open_questions:
+  - { en: "Where does the crew lose time: slinging, guiding or fixing?", de: "Wo verliert die Kolonne Zeit: beim Anschlagen, beim Führen oder beim Befestigen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

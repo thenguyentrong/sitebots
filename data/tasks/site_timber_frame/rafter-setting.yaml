@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_timber_frame/rafter-setting
+status: published
+setting: site_timber_frame
+family: heavy_element_handling
+trades: [timber, carpentry_joinery]
+title:
+  en: "Set and fix rafters on the roof structure"
+  de: "Sparren auf dem Dachstuhl aufstellen und befestigen"
+summary:
+  en: "Bring each rafter onto the wall plate and the ridge purlin, align it to the marked spacing and fix it."
+  de: "Jeden Sparren auf Fußpfette und Firstpfette bringen, auf den angerissenen Abstand ausrichten und befestigen."
+description:
+  en: "Rafters of structural solid timber (KVH, strength class C24) span from the wall plate to the ridge. The KVH association lists preferred cross-sections from 60 × 100 up to 80 × 240 mm and standard lengths up to 13 m; at the mean density of 420 kg/m³ an 80 × 200 mm rafter of 6 m weighs about 40 kg and one of 13 m about 87 kg. Long members are handled by several carpenters or lifted up; the work is on the open roof until it is covered."
+  de: "Sparren aus Konstruktionsvollholz (KVH, Festigkeitsklasse C24) spannen von der Fußpfette zum First. Die Überwachungsgemeinschaft KVH nennt Vorzugsquerschnitte von 60 × 100 bis 80 × 240 mm und Standardlängen bis 13 m; bei der mittleren Rohdichte von 420 kg/m³ wiegt ein Sparren 80 × 200 mm von 6 m rund 40 kg, einer von 13 m rund 87 kg. Lange Hölzer werden von mehreren Zimmerern gehandhabt oder hochgehoben; gearbeitet wird auf dem offenen Dach, bis es gedeckt ist."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '016'
+  atv: "DIN 18334"
+  position:
+    en: "Rafters of structural solid timber: supply, cut and erect"
+    de: "Sparren aus Konstruktionsvollholz liefern, abbinden und aufstellen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 40.3, max: 87.4 }
+    confidence: likely
+    evidence_url: 'https://www.kvh.eu/produkte/konstruktionsvollholz-kvh/eigenschaften/'
+    note: "KVH C24 with ρmean 420 kg/m³ and standard lengths up to 13 m (kvh.eu). An 80 × 200 mm rafter (a preferred cross-section): 0.08 × 0.20 × 6.0 m × 420 = 40.3 kg at 6 m (the length is an example), 0.08 × 0.20 × 13 m × 420 = 87.4 kg at 13 m."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Rafters repeat along the roof, but hips, valleys, dormers and openings change lengths and cuts."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A misplaced rafter is realigned before battens or sheathing go on; after that it is built in."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://www.kvh.eu/produkte/konstruktionsvollholz-kvh/'
+    note: "KVH is solid timber for load-bearing purposes to DIN EN 14081-1 (kvh.eu); the rafters carry the roof."
+  reach_height_m:
+    value: { min: 0, max: 4.0 }
+    confidence: assumed
+    note: "From the top slab or the scaffold up to the ridge; depends on pitch and span. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the open roof structure."
+  dust:
+    value: { type: wood, zone: none }
+    confidence: likely
+    note: "Cutting on site makes wood dust in the open air; no enclosed zone."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Exposed to the weather until the roof is covered."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Top slab, wall plates, scaffold and the roof structure itself."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "No machine that sets rafters on site is known to us; cranes only lift the timber up."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Priced per metre of rafter; not recorded."
+requirements:
+  object_size_m:
+    value: { min: 6.0, max: 13.0 }
+    confidence: likely
+    evidence_url: 'https://www.kvh.eu/produkte/konstruktionsvollholz-kvh/eigenschaften/'
+    note: "Standard lengths up to 13 m (kvh.eu); 6 m is an example rafter length, not a stated value."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Spacing and position follow the carpentry drawing; no tolerance value in the sources read."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure beyond lifting and holding the member."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep rafter setting with the carpentry crew, the members lifted up by crane where they are long. At 40 to 87 kg, load-bearing and on an open roof, a rafter fails three hard tests at once."
+      de: "Das Aufstellen der Sparren bei der Zimmererkolonne lassen, lange Hölzer per Kran hochgehoben. Mit 40 bis 87 kg, tragend und auf einem offenen Dach, scheitert ein Sparren an drei harten Tests zugleich."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure, skills_shortage]
+capabilities_required: [carry_payload, screwing]
+capabilities_optional: []
+solution_classes: [keep_process, gantry]
+evidence:
+  - statement:
+      en: "The KVH association offers structural solid timber in strength class C24 (ρk and ρmean 420 kg/m³), in preferred cross-sections from 60 × 100 to 140 × 140 mm and standard lengths up to 13 m, at about 15 % ± 3 % moisture content."
+      de: "Die Überwachungsgemeinschaft KVH bietet Konstruktionsvollholz in der Festigkeitsklasse C24 an (ρk und ρmean 420 kg/m³), in Vorzugsquerschnitten von 60 × 100 bis 140 × 140 mm und Standardlängen bis 13 m, bei einer Holzfeuchte um 15 % ± 3 %."
+    url: 'https://www.kvh.eu/produkte/konstruktionsvollholz-kvh/eigenschaften/'
+    kind: standard
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated association page; dated with the check date. Product data, not a robot precedent."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If carrying rafters up is the burden, compare crane lifts of pre-cut bundles to the roof."
+    de: "Kein Roboterpilot. Wenn das Hochtragen der Sparren die Last ist, Kranhübe abgebundener Pakete aufs Dach vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "Which rafter sections and lengths do you set, and how are they brought onto the roof today?", de: "Welche Sparrenquerschnitte und -längen stellen Sie auf, und wie kommen sie heute aufs Dach?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

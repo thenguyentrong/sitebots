@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_sheet_metal/parapet-capping
+status: published
+setting: site_sheet_metal
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Fold and fit parapet cappings in sheet zinc"
+  de: "Attikaabdeckungen aus Titanzink kanten und montieren"
+summary:
+  en: "Measure the parapet, fold the zinc strip to its profile, fit it in lengths and join the pieces."
+  de: "Attika aufmessen, den Zinkstreifen auf ihr Profil kanten, in Längen montieren und die Stöße verbinden."
+description:
+  en: "Rheinzink supplies strip in standard widths from 333 to 1000 mm and thicknesses from 0.70 to 1.50 mm at 7.2 g/cm³. The minimum bending radius is 1.75 mm, and below 10 °C the material is warmed before sudden forming. A piece cut 500 mm wide at 0.8 mm and 3 m long weighs about 8.6 kg. Each parapet is measured on site and gets its own profile, with corners and joints."
+  de: "Rheinzink liefert Band in Standardbreiten von 333 bis 1000 mm und Dicken von 0,70 bis 1,50 mm bei 7,2 g/cm³. Der Mindestbiegeradius beträgt 1,75 mm, unter 10 °C wird vor schlagartigen Umformungen erwärmt. Ein Stück mit 500 mm Zuschnitt, 0,8 mm Dicke und 3 m Länge wiegt etwa 8,6 kg. Jede Attika wird vor Ort aufgemessen und bekommt ihr eigenes Profil, mit Ecken und Stößen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '022'
+  atv: "DIN 18339"
+  position:
+    en: "Parapet and wall cappings of titanium zinc"
+    de: "Attika- und Mauerabdeckungen aus Titanzink"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 3.4, max: 8.6 }
+    confidence: assumed
+    evidence_url: 'https://www.rheinzink.com/fileadmin/redaktion/RHEINZINK_GLOBAL/Downloads/Technical-Documents/MDB_CLASSIC_01_DE.pdf'
+    note: "Width × thickness × length × 7.2 g/cm³: 333 mm × 0.7 mm × 2 m about 3.4 kg, 500 mm × 0.8 mm × 3 m about 8.6 kg. Widths, thicknesses and density from the Rheinzink datasheet; the piece lengths are assumed."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every parapet is measured and folded to its own profile, with corners and joints."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A capping that lets water behind it is taken off and refitted; the damage shows later in the wall."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The capping carries no structural load."
+  reach_height_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: assumed
+    note: "The parapet top is at about waist to chest height from the roof. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the roof edge, in the weather."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Folding and fitting sheet zinc raises no dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the weather decides."
+  floor:
+    value: level
+    confidence: likely
+    note: "Flat roof next to the parapet."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Profiles are folded on hand-operated bending machines; fitting is manual."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2, max: 3 }
+    confidence: assumed
+    note: "Piece lengths assumed; not from a datasheet."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The datasheet gives a minimum bending radius of 1.75 mm, not a fitting tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Weather is the only test that fails: pieces under 9 kg, high variability and no structural role would otherwise make this a candidate. The honest answer today is the sheet-metal worker with a bending machine in the site workshop; a robot would need a published rating for rain first."
+      de: "Nur der Wettertest scheitert: Stücke unter 9 kg, hohe Variabilität und keine tragende Rolle würden die Aufgabe sonst zum Kandidaten machen. Die ehrliche Antwort ist heute der Klempner mit einer Kantbank in der Baustellenwerkstatt; ein Roboter bräuchte zuerst eine veröffentlichte Schutzart gegen Regen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Rheinzink's material datasheet gives titanium zinc to DIN EN 988 at 7.2 g/cm³ in standard widths of 333 to 1000 mm and thicknesses of 0.70 to 1.50 mm, with a minimum bending radius of 1.75 mm and warming before sudden forming below 10 °C."
+      de: "Das Rheinzink-Materialdatenblatt nennt Titanzink nach DIN EN 988 mit 7,2 g/cm³ in Standardbreiten von 333 bis 1000 mm und Dicken von 0,70 bis 1,50 mm, einen Mindestbiegeradius von 1,75 mm und Erwärmen vor schlagartigen Umformungen unter 10 °C."
+    url: 'https://www.rheinzink.com/fileadmin/redaktion/RHEINZINK_GLOBAL/Downloads/Technical-Documents/MDB_CLASSIC_01_DE.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated datasheet; the date is the day it was read."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot; measure how much of the time goes into measuring and folding versus fitting."
+    de: "Kein Roboterpilot; messen, wie viel Zeit ins Aufmessen und Kanten gegenüber dem Montieren geht."
+prerequisites: []
+open_questions:
+  - { en: "Could parapet profiles be standardised enough to fold them off site?", de: "Ließen sich Attikaprofile so weit vereinheitlichen, dass sie außerhalb der Baustelle gekantet werden?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

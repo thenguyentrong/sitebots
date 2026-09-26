@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_concrete/rebar-tying-slabs
+status: published
+setting: site_concrete
+family: assembly_fastening
+trades: [concrete, steel]
+title:
+  en: "Tie rebar crossings on slab and deck mats"
+  de: "Kreuzungspunkte der Decken- und Plattenbewehrung verrödeln"
+summary:
+  en: "Tie the crossings of the reinforcement layers so the bars stay in place during concreting."
+  de: "Die Kreuzungspunkte der Bewehrungslagen verrödeln, damit die Stäbe beim Betonieren in Lage bleiben."
+description:
+  en: "Rebar workers bend over the mat for hours and tie thousands of crossings by hand or with a battery tying tool. The pattern repeats across the slab; the ties hold the bars in position until the concrete sets and are checked before the pour. Slabs and bridge decks lie open to the weather."
+  de: "Eisenflechter arbeiten stundenlang gebückt über der Matte und verrödeln Tausende Kreuzungen von Hand oder mit einem Akku-Bindegerät. Das Muster wiederholt sich über die ganze Decke; die Bindungen halten die Stäbe bis zum Erhärten des Betons in Lage und werden vor dem Betonieren geprüft. Decken und Brückenplatten liegen offen im Wetter."
+also_in_settings: [site_roads_paving]
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Reinforcing steel: cut, bend, place and tie"
+    de: "Betonstahl schneiden, biegen, verlegen und verrödeln"
+  unit: t
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "The bars are already placed; the tool is a hand or battery tier of a few kilograms. Not measured."
+  variability:
+    value: low
+    confidence: assumed
+    note: "Analyst judgement. Regular bar spacing over large, flat mats; the same motion thousands of times."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A missed tie is found and tied by hand at the check before the pour."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Ties hold the bars in position during concreting; they are not part of the load-bearing design."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: likely
+    note: "Work at mat level, bent over or kneeling."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Slabs and decks are tied before they are covered; rain and sun hit the mat directly."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Tying makes no dust; dust from other trades is a context question."
+  wet:
+    value: damp
+    confidence: assumed
+    note: "Open slabs are exposed to rain; conditions vary daily."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "The worker stands on the bars of the mat itself."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.constructionrobots.com/tybot'
+    note: "A gantry tying robot is in use on bridge decks in the US (TyBOT); building slabs are tied by hand or with battery tying tools."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the maker of the gantry robot states over 1,200 ties per hour."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "The bars are already placed; the tool is small. TyBOT handles intersections up to #8 by #9 bars, the page gives no tool size."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No tie accuracy in millimetres is published; the tie only has to hold the crossing until the pour."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No tie force published for hand tools or TyBOT."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: fail, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T4_variability, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Large, regular mats are what a gantry tying robot is built for; its maker states over 1,200 ties an hour on bridge decks. Check whether your slab geometry fits such a gantry before considering a walking robot, which would stand on the mat in the weather with no ingress rating."
+      de: "Große, regelmäßige Matten sind genau das, wofür ein Portal-Bindeautomat gebaut ist; sein Hersteller nennt über 1.200 Bindungen pro Stunde auf Brückenplatten. Erst prüfen, ob die eigene Deckengeometrie zu so einem Portal passt, bevor ein laufender Roboter in Frage kommt, der ohne Schutzart im Wetter auf der Matte stünde."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Advanced Construction Robotics describes TyBOT as a fully autonomous rebar-tying robot that runs on the edge forms or screed rails of bridge decks, states an active tie rate of 1,200+ ties per hour and lists US bridge projects, among them the I-30 Crossing in Little Rock with 669,142 ties."
+      de: "Advanced Construction Robotics beschreibt TyBOT als vollautonomen Bewehrungs-Bindeautomaten, der auf Randschalung oder Abziehschienen von Brückenplatten fährt, nennt eine Bindeleistung von über 1.200 Bindungen pro Stunde und listet Brückenprojekte in den USA, darunter den I-30 Crossing in Little Rock mit 669.142 Bindungen."
+    url: 'https://www.constructionrobots.com/tybot'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: deployment
+    confidence: confirmed
+    note: "Bridge decks only; the page does not mention building slabs. Page undated, read on 2026-09-24."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a gantry tying robot: one large, regular slab section with rails along its edges."
+    de: "Falls mit einem Portal-Bindeautomaten verfolgt: ein großer, regelmäßiger Deckenabschnitt mit Schienen an den Rändern."
+prerequisites: []
+open_questions:
+  - { en: "Is your slab large and regular enough for a gantry, or is it cut up by openings and steps?", de: "Ist die Decke groß und regelmäßig genug für ein Portal, oder ist sie durch Aussparungen und Versprünge zerteilt?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

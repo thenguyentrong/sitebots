@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_timber_frame/structural-screw-connections
+status: published
+setting: site_timber_frame
+family: assembly_fastening
+trades: [timber, carpentry_joinery]
+title:
+  en: "Drive self-drilling screws into structural timber connections"
+  de: "Selbstbohrende Schrauben in tragende Holzverbindungen eindrehen"
+summary:
+  en: "Set the screws of a designed connection at the prescribed positions, angles and spacings, for example in beam supports or element joints."
+  de: "Die Schrauben einer bemessenen Verbindung an den vorgegebenen Stellen, unter den vorgegebenen Winkeln und Abständen setzen, etwa an Trägerauflagern oder Elementstößen."
+description:
+  en: "Many timber connections are made with screws alone: long full-thread screws, often at an angle, in numbers the structural engineer has calculated. The technical assessment of such screws sets the spacings, end and edge distances and the insertion torque. The work repeats, but each connection has its own pattern, and a missing or misplaced screw changes the load path."
+  de: "Viele Holzverbindungen bestehen nur aus Schrauben: lange Vollgewindeschrauben, oft unter einem Winkel, in einer vom Tragwerksplaner berechneten Anzahl. Die technische Bewertung solcher Schrauben legt Zwischen-, End- und Randabstände sowie das Einschraubdrehmoment fest. Die Arbeit wiederholt sich, aber jede Verbindung hat ihr eigenes Bild, und eine fehlende oder falsch gesetzte Schraube verändert den Lastpfad."
+also_in_settings: [prefab_timber]
+derived_from: null
+lv:
+  lb: '016'
+  atv: "DIN 18334"
+  position:
+    en: "Connections with self-drilling timber screws"
+    de: "Verbindungen mit selbstbohrenden Holzbauschrauben"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The heaviest object is the screwdriver for long screws; no tool datasheet is recorded here. Weigh the tool the crew uses."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Screw types, angles and patterns change from connection to connection; within one connection they repeat."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.dibt.de/pdf_storage/2018/ETA-11!0190(8.06.03-125!17).pdf'
+    note: "Spacings, end and edge distances and the insertion torque are fixed in the technical assessment; a connection that deviates is a structural defect, not a cosmetic one."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://www.dibt.de/pdf_storage/2018/ETA-11!0190(8.06.03-125!17).pdf'
+    note: "The European Technical Assessment ETA-11/0190 assesses these screws as timber connectors under basic works requirement 1, mechanical resistance and stability."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "From slab level up to storey height, often from a platform. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "In the open shell until the building is closed."
+  dust:
+    value: { type: wood, zone: none }
+    confidence: assumed
+    note: "Self-drilling screws produce chips rather than airborne dust."
+  wet:
+    value: null
+    confidence: assumed
+    note: "Depends on the weather while the shell is open."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slabs, platforms and scaffolds."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Carpenters with cordless screwdrivers; no machine does this step on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the connection schedule gives the number of screws."
+requirements:
+  object_size_m:
+    value: { min: 0.013, max: 2 }
+    confidence: confirmed
+    evidence_url: 'https://www.dibt.de/pdf_storage/2018/ETA-11!0190(8.06.03-125!17).pdf'
+    note: "Screw lengths covered by ETA-11/0190: 13 to 2000 mm, thread diameters 3 to 14 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The assessment sets minimum spacings, end and edge distances per screw type (Annex 2 of the ETA); they are not reproduced here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The assessment states an insertion torque per screw type (Annex 2); not reproduced here."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the screwing with trained carpenters who follow the connection drawing; a structural connection needs a person who can see and sign off a deviation. Where connections can move off site, the element factory is the place to automate them."
+      de: "Das Verschrauben bleibt bei geschulten Zimmerleuten, die nach der Anschlusszeichnung arbeiten; eine tragende Verbindung braucht jemanden, der eine Abweichung erkennt und abzeichnet. Wo sich Verbindungen ins Werk verlagern lassen, ist das Elementwerk der Ort, sie zu automatisieren."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [screwing]
+capabilities_optional: [carry_payload]
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "The Deutsches Institut für Bautechnik issued ETA-11/0190 for Würth self-drilling screws as timber connectors, with thread diameters of 3 to 14 mm and lengths of 13 to 2000 mm, assessing among other things insertion torque and spacings, end and edge distances."
+      de: "Das Deutsche Institut für Bautechnik hat die ETA-11/0190 für selbstbohrende Würth-Schrauben als Holzverbindungsmittel erteilt, mit Gewindedurchmessern von 3 bis 14 mm und Längen von 13 bis 2000 mm; bewertet werden unter anderem Einschraubdrehmoment sowie Zwischen-, End- und Randabstände."
+    url: 'https://www.dibt.de/pdf_storage/2018/ETA-11!0190(8.06.03-125!17).pdf'
+    kind: regulator
+    tier: 1
+    date: '2018-07-23'
+    type: claim
+    confidence: confirmed
+    note: "One manufacturer's assessment as an example; other screw systems have their own ETAs."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not piloted on site; look at automated screwing in the element factory instead."
+    de: "Keine Erprobung auf der Baustelle; stattdessen automatisiertes Verschrauben im Elementwerk betrachten."
+prerequisites: []
+open_questions:
+  - { en: "How many connections per storey are screwed on site rather than in the factory?", de: "Wie viele Verbindungen je Geschoss werden auf der Baustelle statt im Werk verschraubt?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

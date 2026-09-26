@@ -42,7 +42,7 @@ export function EquipmentPanel({ spec }: { spec: SpecValue | undefined }) {
         ) : null}
       </header>
       {items.length === 0 ? (
-        <p className="px-5 py-4 text-sm text-muted">No equipment options published — payloads and accessories are listed only where the maker or a partner sells them.</p>
+        <p className="px-5 py-4 text-sm text-muted">No equipment options published. Payloads and accessories are listed only where the maker or a partner sells them.</p>
       ) : (
         <div className="space-y-3 px-5 py-4">
           {[...groups].map(([type, list]) => (

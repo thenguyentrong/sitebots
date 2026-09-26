@@ -1,0 +1,136 @@
+schema_version: 1
+id: joinery_windows_doors/glaze-sashes
+status: published
+setting: joinery_windows_doors
+family: assembly_fastening
+trades: [windows_doors, carpentry_joinery]
+title:
+  en: "Glaze window sashes with insulating glass units"
+  de: "Flügel mit Isolierglas verglasen"
+summary:
+  en: "Take the insulating glass unit that belongs to the sash, set it on its blocks in the rebate and fix the glazing beads."
+  de: "Die zum Flügel gehörende Isolierglaseinheit nehmen, auf die Klötze im Falz setzen und die Glasleisten befestigen."
+description:
+  en: "Each sash gets its own pane, measured to the order. The pane is heavy and fragile, has to go in square and sit on its glazing blocks so the sash carries it properly, and the beads go on without scratching the glass. Some plants run automated glazing lines with suction portals and pane buffers; many others lift panes with vacuum lifters."
+  de: "Jeder Flügel bekommt seine eigene, auftragsbezogen gemessene Scheibe. Die Scheibe ist schwer und empfindlich, muss rechtwinklig hinein und auf ihren Verglasungsklötzen sitzen, damit der Flügel sie richtig trägt, und die Glasleisten kommen ohne Kratzer ans Glas. Manche Werke betreiben automatische Verglasungslinien mit Saugerportal und Scheibenpuffer; viele andere heben Scheiben mit Vakuumhebern."
+also_in_settings: [site_windows_doors]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 20, max: 60 }
+    confidence: likely
+    evidence_url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    note: "Glass weighs about 2.5 kg per m² and mm of thickness (glasundbeschlag.de). Double glazing with two 4 mm panes is 20 kg/m²; triple glazing with three 4 mm panes 30 kg/m², so a 1.0 × 1.3 m sash pane weighs 39 kg and a 1.2 × 1.6 m pane 58 kg."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Pane sizes change with every order; the operation itself repeats."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A scratched pane or wrong blocking is found at the final check; a broken pane is scrap and a re-order."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The sash carries the pane; blocking follows the system rules and is checked. Safety glazing is a product choice, not part of this step."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "At the glazing table or line height; measure your station."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Production hall."
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: "Glazing is a workroom; profile machining is a separate dust area (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [window_assembly_line] }
+    confidence: likely
+    evidence_url: 'https://www.bauelemente-bau.eu/news/neuigkeiten/4169/arndt-fenstertechnik-investiert-in-automatisierte-verglasungsstra%C3%9Fe.html'
+    note: "Automated glazing lines exist: at Arndt Fenstertechnik a suction portal picks up the measured pane and inserts it (2021). Whether your plant has one decides this test."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at glass and sash."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Follows the line takt."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count sashes per shift and minutes per sash."
+requirements:
+  object_size_m:
+    value: { min: 1.0, max: 1.6 }
+    confidence: assumed
+    note: "The two example panes above; take your sizes from the order data."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Blocking positions follow the profile system's glazing rules; no ± value is published on the sources used here."
+  force_n:
+    value: 245
+    confidence: likely
+    evidence_url: 'https://www.bauelemente-bau.eu/news/neuigkeiten/4169/arndt-fenstertechnik-investiert-in-automatisierte-verglasungsstra%C3%9Fe.html'
+    note: "The Arndt line presses the pane with a defined 25 kg for static dry glazing, about 245 N."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "A vacuum lifter at the glazing table for manual glazing; an automated glazing line with pane buffer where the volume carries it. Both lift the glass for the person instead of replacing them."
+      de: "Ein Vakuumheber am Verglasungstisch für die Handverglasung; eine automatische Verglasungslinie mit Scheibenpuffer, wo die Stückzahl sie trägt. Beide heben das Glas für die Person, statt sie zu ersetzen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, dedicated_machine]
+evidence:
+  - statement:
+      en: "Arndt Fenstertechnik invested in an automated glazing line by Lemuth: frames are aligned square, panes come from a sorter with up to 400 places, are measured automatically, picked up by a suction portal and inserted; for static dry glazing the pane is pressed with a defined 25 kg."
+      de: "Arndt Fenstertechnik investierte in eine automatisierte Verglasungsstraße von Lemuth: Rahmen werden rechtwinklig ausgerichtet, Scheiben kommen aus einem Sortierpuffer mit bis zu 400 Plätzen, werden automatisch vermessen, über ein Saugerportal aufgenommen und eingelegt; für die statische Trockenverglasung wird die Scheibe mit definierten 25 kg angedrückt."
+    url: 'https://www.bauelemente-bau.eu/news/neuigkeiten/4169/arndt-fenstertechnik-investiert-in-automatisierte-verglasungsstra%C3%9Fe.html'
+    kind: press
+    tier: 3
+    date: '2021-02-15'
+    type: deployment
+    confidence: likely
+    note: "Evidence for the dedicated machine, not for a humanoid."
+  - statement:
+      en: "Glass has a weight of about 2.5 kg per square metre and millimetre of thickness; 10 mm of glass weighs 25 kg/m²."
+      de: "Glas wiegt etwa 2,5 kg je Quadratmeter und Millimeter Glasdicke; 10 mm Glas wiegen 25 kg/m²."
+    url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    kind: manufacturer
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Specialist retailer glossary, undated; dated with the check date. Data source for the pane masses."
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Not a humanoid pilot. Trial a vacuum lifter at one glazing table and compare breakage and minutes per sash."
+    de: "Kein Humanoiden-Pilot. Einen Vakuumheber an einem Verglasungstisch erproben und Bruch und Minuten je Flügel vergleichen."
+  scope_hint:
+    en: "One glazing table, triple glazing, two weeks."
+    de: "Ein Verglasungstisch, Dreifachverglasung, zwei Wochen."
+prerequisites:
+  - { en: "Pane sizes and glass build-ups per order", de: "Scheibengrößen und Glasaufbauten je Auftrag" }
+open_questions:
+  - { en: "At which yearly volume does an automated glazing line pay for itself in your plant?", de: "Ab welcher Jahresstückzahl rechnet sich in Ihrem Werk eine automatische Verglasungslinie?" }
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

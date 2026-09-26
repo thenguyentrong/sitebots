@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_cleaning_waste/glazing-first-clean
+status: published
+setting: site_cleaning_waste
+family: cleaning_housekeeping_replenishment
+trades: [general]
+title:
+  en: "Clean windows and glazing at handover"
+  de: "Fenster und Verglasungen bei der Bauendreinigung reinigen"
+summary:
+  en: "Wash panes, frames and seals from the inside with plenty of water, soft tools and a squeegee, and take off residues without scratching the glass."
+  de: "Scheiben, Rahmen und Dichtungen von innen mit viel Wasser, weichen Werkzeugen und Abzieher reinigen und Rückstände entfernen, ohne das Glas zu verkratzen."
+description:
+  en: "The first clean after completion cleans the building components; it cannot remove everything that built up during construction (BF-Merkblatt 012/2012). Glass is cleaned with plenty of clean water and soft tools such as sponges, leather, cloths or rubber squeegees, with separate tools for glass, seals and frames. Blades or knives can scratch the surface, scraping whole panes with a glass planer is not allowed, and if cleaning damage appears the work stops. Coated and toughened glass needs extra care because damage shows more."
+  de: "Die Erstreinigung reinigt die Bauteile nach der Fertigstellung; sie kann nicht alles beseitigen, was während des Baufortschritts angefallen ist (BF-Merkblatt 012/2012). Glas wird mit viel sauberem Wasser und weichen Werkzeugen wie Schwämmen, Leder, Lappen oder Gummiabstreifern gereinigt, mit getrennten Werkzeugen für Glas, Dichtungen und Rahmen. Klingen oder Messer können die Oberfläche verkratzen, das Abklingen ganzer Scheiben mit dem Glashobel ist nicht zulässig, und zeigen sich Reinigungsschäden, wird die Arbeit unterbrochen. Beschichtete und vorgespannte Gläser brauchen besondere Sorgfalt, weil Schäden dort stärker sichtbar sind."
+also_in_settings: [facility_operation]
+derived_from: null
+lv:
+  lb: '033'
+  atv: null
+  position:
+    en: "Construction final clean: glazing including frames and seals"
+    de: "Bauendreinigung: Verglasungen einschließlich Rahmen und Dichtungen reinigen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 12 }
+    confidence: assumed
+    note: "Squeegee, cloths and a bucket of water; about 10 l of water weigh 10 kg. Not measured."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every pane size, frame profile and kind of residue differs."
+  error_tolerance:
+    value: limited
+    confidence: confirmed
+    evidence_url: 'https://www.bundesverband-flachglas.de/wp-content/uploads/simple-file-list/bf-merkblaetter/BF-Merkblatt_012-2012_Reinigung_von_Glas.pdf'
+    note: "Blades or knives can scratch the glass, whole-pane scraping is not allowed, and on cleaning damage the work must stop (BF-Merkblatt 012/2012). A scratch is a visible defect on a finished pane."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Cleaning; no structural or life-safety role."
+  reach_height_m:
+    value: { min: 0, max: 2.5 }
+    confidence: assumed
+    note: "Up to the head of the window frame; storey heights vary. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Scope is the inner faces; outer faces are cleaned from access equipment and are out of scope."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: likely
+    note: "Residual construction dust at handover."
+  wet:
+    value: damp
+    confidence: likely
+    evidence_url: 'https://www.bundesverband-flachglas.de/wp-content/uploads/simple-file-list/bf-merkblaetter/BF-Merkblatt_012-2012_Reinigung_von_Glas.pdf'
+    note: "Wet cleaning with plenty of water (BF-Merkblatt 012/2012)."
+  floor:
+    value: level
+    confidence: likely
+    note: "Finished and protected floors."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Done by hand by cleaning crews."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the glazing area per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Priced per square metre of glazing; not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "The glass is cleaned in place; only hand tools are carried."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The measure is a scratch-free pane; the visual quality of insulating glass is judged by the BF guideline 007, not read here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure; the Merkblatt asks for soft tools and plenty of water."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled manipulator with a squeegee on repetitive glazing, such as an office floor, first. Keep people for coated or toughened glass, for residues that need judgement and for anything that looks like damage."
+      de: "Zuerst einen Mobilmanipulator auf Rädern mit Abzieher an gleichförmigen Verglasungen vergleichen, etwa auf einer Büroetage. Menschen bleiben für beschichtete oder vorgespannte Gläser, für Rückstände, die Urteilsvermögen brauchen, und für alles, was nach Schaden aussieht."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, quality]
+capabilities_required: [cleaning_sweep]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "The Bundesverband Flachglas (BF-Merkblatt 012/2012) says the first clean after completion cannot remove all soiling from the whole construction period; glass is cleaned with plenty of clean water and soft tools, blades and knives can cause scratches, scraping whole panes with a glass planer is not allowed, and cleaning stops if damage appears. Alkaline cement, plaster and mortar residues etch glass unless the trade that caused them rinses them off at once."
+      de: "Der Bundesverband Flachglas (BF-Merkblatt 012/2012) sagt, die Erstreinigung könne nicht alle Verschmutzungen der gesamten Bauzeit beseitigen; Glas wird mit viel sauberem Wasser und weichen Werkzeugen gereinigt, Klingen und Messer können Kratzer verursachen, das Abklingen ganzer Scheiben mit dem Glashobel ist nicht zulässig, und bei Schäden wird die Reinigung unterbrochen. Alkalische Zement-, Putz- und Mörtelreste verätzen das Glas, wenn der Verursacher sie nicht sofort abspült."
+    url: 'https://www.bundesverband-flachglas.de/wp-content/uploads/simple-file-list/bf-merkblaetter/BF-Merkblatt_012-2012_Reinigung_von_Glas.pdf'
+    kind: standard
+    tier: 2
+    date: '2012-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Trade association guideline, edition 2012 (month not stated). Process requirement, not a robot precedent."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Any scratch caused by the robot, or fewer than 99 % of panes clean without rework after 3 months, then stop and keep the crew."
+    de: "Jeder vom Roboter verursachte Kratzer oder weniger als 99 % der Scheiben ohne Nacharbeit sauber nach 3 Monaten, dann abbrechen und bei der Kolonne bleiben."
+  scope_hint:
+    en: "One office floor with uniform glazing, inner faces only, a person checks every pane before handover."
+    de: "Eine Büroetage mit gleichförmiger Verglasung, nur Innenseiten, eine Person prüft jede Scheibe vor der Übergabe."
+prerequisites:
+  - { en: "Alkaline residues rinsed off by the trades that caused them, as the Merkblatt requires", de: "Alkalische Rückstände vom Verursacher abgespült, wie es das Merkblatt verlangt" }
+  - { en: "A list of coated and toughened panes and the makers' cleaning instructions", de: "Eine Liste beschichteter und vorgespannter Scheiben und die Reinigungshinweise der Hersteller" }
+open_questions:
+  - { en: "Which glass types are installed, and who removes protective films before the clean?", de: "Welche Glasarten sind eingebaut, und wer entfernt Schutzfolien vor der Reinigung?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

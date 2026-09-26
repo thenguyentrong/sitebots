@@ -1,0 +1,125 @@
+schema_version: 1
+id: prefab_timber/intralogistics-between-stations
+status: published
+setting: prefab_timber
+family: intralogistics_transport
+trades: [timber, logistics]
+title:
+  en: Fetch tools, consumables and kit boxes to the line
+  de: Werkzeug, Verbrauchsmaterial und Kits an die Linie bringen
+summary:
+  en: Carry totes, tool boxes and consumables between storage, kitting and the assembly stations.
+  de: Behälter, Werkzeugkisten und Verbrauchsmaterial zwischen Lager, Kommissionierung und Montagestationen tragen.
+description:
+  en: Carpenters walk for supplies. Every trip between the kitting area, the fastener store and the assembly stations is time lost in a paced line. The loads are light, the walkways are built for people, and pickup points change with the production plan.
+  de: Zimmerleute laufen für Nachschub. Jeder Weg zwischen Kommissionierung, Befestigungsmittellager und Montagestation ist verlorene Zeit in einer getakteten Linie. Die Lasten sind leicht, die Wege für Menschen gebaut, die Abholpunkte wechseln mit dem Produktionsplan.
+also_in_settings: [precast_concrete, modular_volumetric, joinery_windows_doors, mep_prefab, steel_fabrication, material_yard_warehouse]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 12 }
+    confidence: likely
+    note: Standard totes, tool boxes and fastener cartons; anything heavier goes on a cart. Range from an industry engagement, 2025/26.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. Pickup and delivery points change with the plan; items and containers vary by station.
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: A late or misplaced delivery costs waiting time, nothing else.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: No structural or life-safety consequence.
+  reach_height_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: assumed
+    note: Handover at table and cart height; verify per station.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Walkways inside the production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Walkways cross workrooms with a cleaning plan; routes must avoid the machining zone and be measured for airborne dust.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor with marked walkways.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: Pallets move by forklift; small-item supply to stations is on foot in the reference plant.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Navigation cameras see people in walkways; check whether recordings are kept.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Trip frequency and length are not recorded; the 30–90 min humanoid runtime limits unbroken service.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; the pilot baseline must count trips per shift and minutes per trip.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Standard totes, tool boxes and cartons; formats not recorded."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Hand-over at the station; no positional tolerance is recorded."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: candidate
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: The one task class with a running commercial humanoid deployment. Compare against an AMR with carts; if the routes turn out to be fixed, the AMR wins on cost.
+      de: Die eine Aufgabenklasse mit laufendem kommerziellem Humanoid-Einsatz. Gegen ein AMR mit Wagen vergleichen; sind die Wege doch fest, gewinnt das AMR bei den Kosten.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [capacity, ergonomics]
+capabilities_required: [carry_payload, fetch_and_deliver, autonomous_nav_indoor]
+capabilities_optional: [tool_handoff]
+solution_classes: [mobile_manipulator_wheeled, humanoid, amr_carts]
+evidence:
+  - statement:
+      en: Agility Robotics' Digit moves totes in a GXO logistics facility under a multi-year agreement; the manufacturer reports six-figure tote movements.
+      de: Digit von Agility Robotics bewegt Behälter in einem GXO-Logistikzentrum unter einem Mehrjahresvertrag; der Hersteller berichtet von Behälterbewegungen im sechsstelligen Bereich.
+    url: 'https://www.agilityrobotics.com/content/gxo-signs-industry-first-multi-year-agreement-with-agility-robotics'
+    kind: manufacturer
+    tier: 1
+    date: '2024-06-27'
+    type: deployment
+    subject: { maker: agility, model: digit }
+    confidence: confirmed
+    note: Warehouse floor, fixed handover points; a factory with changing pickup points is a step beyond this evidence.
+pilot:
+  metrics: [unaided_completion_pct, interventions_per_hour, cycle_time_vs_manual, uptime_vs_shift_pct]
+  abort_rule:
+    en: Fewer than 99 % of trips completed unaided after 3 months, then change the use case.
+    de: Weniger als 99 % der Fahrten nach 3 Monaten ohne Eingriff, dann Use Case wechseln.
+  scope_hint:
+    en: One tote type, two agreed handover points, a supervised route; test grasping and unloading separately from carrying.
+    de: Ein Behältertyp, zwei vereinbarte Übergabepunkte, eine beaufsichtigte Route; Greifen und Absetzen getrennt vom Tragen testen.
+prerequisites:
+  - { en: "Marked walkways and a map of the hall", de: "Markierte Wege und eine Karte der Halle" }
+  - { en: "Defined handover points at the stations", de: "Definierte Übergabepunkte an den Stationen" }
+open_questions:
+  - { en: "Who loads and unloads at each end, and how is the handover confirmed?", de: "Wer be- und entlädt an jedem Ende, und wie wird die Übergabe bestätigt?" }
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

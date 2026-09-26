@@ -1,5 +1,7 @@
 import * as cheerio from 'cheerio';
-import { existsSync, readFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
+import specificationPages from '@/data/specifications/pages.json';
+import { join } from 'node:path';
 import { parse as parseYaml } from 'yaml';
 import { mapSpecLabel } from '../../_lib/specmap';
 import type { IndexEntry, RawField, RawRecord, Snapshot, SourceAdapter } from '../../_lib/types';
@@ -16,10 +18,9 @@ import type { FormFactor } from '@/lib/spec/enums';
  * Robots are named by their catalogue slugs, so the subject is the canonical
  * maker and model name from the alias files and resolves exactly.
  */
-const SPEC_PAGES = 'data/specifications/pages.json';
 type ApprovedPage = { robot: string; url: string; fields: string[]; reviewedAt: string };
 function approvedPages(): ApprovedPage[] {
-  return existsSync(SPEC_PAGES) ? JSON.parse(readFileSync(SPEC_PAGES, 'utf8')).pages : [];
+  return specificationPages.pages;
 }
 
 type Names = { makers: Map<string, string>; models: Map<string, { name: string; formFactor?: FormFactor }> };
@@ -27,9 +28,13 @@ type Names = { makers: Map<string, string>; models: Map<string, { name: string; 
 function names(): Names {
   const makers = new Map<string, string>();
   const models = new Map<string, { name: string; formFactor?: FormFactor }>();
-  for (const f of ['data/aliases.yaml', 'data/aliases.generated.yaml']) {
-    if (!existsSync(f)) continue;
-    const y = parseYaml(readFileSync(f, 'utf8')) as {
+  // Literal paths let the deployment tracer include just these two files.
+  const documents = [
+    readFileSync(join(process.cwd(), 'data', 'aliases.yaml'), 'utf8'),
+    readFileSync(join(process.cwd(), 'data', 'aliases.generated.yaml'), 'utf8'),
+  ];
+  for (const document of documents) {
+    const y = parseYaml(document) as {
       manufacturers?: Record<string, { name: string }>;
       robots?: Record<string, Record<string, { name: string; form_factor?: FormFactor }>>;
     };

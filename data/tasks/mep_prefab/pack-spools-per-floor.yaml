@@ -1,0 +1,125 @@
+schema_version: 1
+id: mep_prefab/pack-spools-per-floor
+status: published
+setting: mep_prefab
+family: packaging_palletising_loading
+trades: [mep_plumbing, mep_hvac, logistics]
+title:
+  en: "Label finished pipe spools and pack them per floor for delivery"
+  de: "Fertige Rohrstücke beschriften und geschossweise für die Lieferung packen"
+summary:
+  en: "Check each pressed spool against the list, label it with floor and position, and put it into the rack or crate of its floor and riser."
+  de: "Jedes verpresste Rohrstück mit der Liste abgleichen, mit Geschoss und Position beschriften und in das Gestell oder die Kiste seines Geschosses und Strangs legen."
+description:
+  en: "Prefabricated spools only save time on site if they arrive in the order they are installed. At the end of the bench every spool gets its label and goes into the rack of its floor and riser. The spools are light, but many look alike; one in the wrong rack is searched for on site."
+  de: "Vorgefertigte Rohrstücke sparen auf der Baustelle nur dann Zeit, wenn sie in Einbaureihenfolge ankommen. Am Ende der Werkbank bekommt jedes Stück sein Etikett und wandert in das Gestell seines Geschosses und Strangs. Die Stücke sind leicht, aber viele sehen gleich aus; eines im falschen Gestell wird auf der Baustelle gesucht."
+also_in_settings: [site_setup_logistics, construction_logistics_hub]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 11.9 }
+    confidence: assumed
+    evidence_url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    note: "Spools cut from Geberit Mapress stainless system pipe, 6 m bars up to d 54 × 1.5 mm in the small-bore range (Geberit data sheet). At about 8.0 kg/dm³, typical for 1.4401 but not checked against a data sheet here, a full 6 m bar of 54 × 1.5 mm weighs about 11.9 kg; spools are shorter and lighter."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Spool types repeat per floor, but every building has its own set and its own floors."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A spool in the wrong rack costs search time on site; nothing is built wrong because of it."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Packing and labelling; the pressure test happened before."
+  reach_height_m:
+    value: { min: 0.2, max: 1.8 }
+    confidence: assumed
+    note: "Racks and crates up to shoulder height; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Prefabrication hall."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "No dust-producing work at the packing station."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Labelled and packed by hand as far as known; label printing from the spool list is common."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at spools and labels."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on spools per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count spools per floor and minutes per spool."
+requirements:
+  object_size_m:
+    value: { min: 0.2, max: 6 }
+    confidence: likely
+    evidence_url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    note: "Pipe comes in 6 m bars (Geberit data sheet); spools run from short pieces to a few metres."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No placement tolerance; the spool has to reach the right rack with a readable label."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Lifting light spools; no force figure published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare fixed racks per floor that the spools go into straight from the bench, moved by AMR carts, before a manipulator. The label printed from the spool list does the sorting work; a robot only carries."
+      de: "Zuerst feste Gestelle je Geschoss vergleichen, in die die Stücke direkt von der Werkbank gehen und die AMR-Wagen bewegen, erst danach einen Manipulator. Das aus der Stückliste gedruckte Etikett übernimmt das Sortieren; ein Roboter trägt nur."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, quality]
+capabilities_required: [material_sorting, carry_payload]
+capabilities_optional: [palletising]
+solution_classes: [amr_carts, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "Geberit lists its Mapress stainless system pipe (1.4401) in 6 m lengths from d 12 mm with 1 mm wall to d 108 mm with 2 mm wall."
+      de: "Geberit führt das Mapress Edelstahl-Systemrohr (1.4401) in 6-m-Längen von d 12 mm mit 1 mm Wand bis d 108 mm mit 2 mm Wand."
+    url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Geberit product data sheet hosted by a distributor; no date on the page read, dated with the check date. Data source for length and diameters."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, operator_minutes_per_unit]
+  abort_rule:
+    en: "More than one spool per 1,000 in the wrong rack, or no drop in minutes per spool after 3 months: stop."
+    de: "Mehr als ein Stück je 1.000 im falschen Gestell oder nach 3 Monaten keine Senkung der Minuten je Stück: stoppen."
+  scope_hint:
+    en: "One building, spools up to d 28 mm, racks per floor at the end of one bench."
+    de: "Ein Gebäude, Stücke bis d 28 mm, Gestelle je Geschoss am Ende einer Werkbank."
+prerequisites:
+  - { en: "Spool lists with floor and riser per spool from the model", de: "Stücklisten mit Geschoss und Strang je Stück aus dem Modell" }
+open_questions:
+  - { en: "How are spools delivered to your sites today: per floor, per riser, or mixed?", de: "Wie liefern Sie Rohrstücke heute auf die Baustelle: je Geschoss, je Strang oder gemischt?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

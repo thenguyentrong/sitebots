@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_survey_documentation/progress-capture-walks
+status: published
+setting: site_survey_documentation
+family: inspection_qa_documentation
+trades: [qa_surveying, concrete, masonry]
+title:
+  en: "Walk the shell and capture progress"
+  de: "Den Rohbau begehen und den Baufortschritt erfassen"
+summary:
+  en: "Repeat a route through the building with a 360° camera or scanner and file the images against the plan and the date."
+  de: "Eine Route durch das Gebäude mit 360°-Kamera oder Scanner wiederholen und die Aufnahmen plan- und datumsbezogen ablegen."
+description:
+  en: "Site managers document progress, hidden work and defects by walking every floor at regular intervals. The route grows with the building, floors are cluttered and partly open to the weather, and nothing is carried except the camera. A missed walk is repeated at the next interval."
+  de: "Bauleitungen dokumentieren Fortschritt, verdeckte Arbeiten und Mängel, indem sie in regelmäßigen Abständen jedes Geschoss begehen. Die Route wächst mit dem Gebäude, die Geschosse sind vollgestellt und teils offen zur Witterung, getragen wird nur die Kamera. Eine ausgefallene Begehung wird beim nächsten Termin nachgeholt."
+also_in_settings: [site_electrical, site_drywall, site_concrete, site_ventilated_facade]
+derived_from: null
+lv:
+  lb: null
+  atv: null
+  position:
+    en: "Progress documentation by the site management (not an LV position)"
+    de: "Baufortschrittsdokumentation durch die Bauleitung (keine LV-Position)"
+  unit: lump
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: "Nothing is carried; the camera or scanner is the payload."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. The building changes between walks; routes, obstacles and lighting change with it."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A missed or blurred capture is repeated at the next walk; a person reviews the images."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Documentation only, no intervention in the work."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Not a reach task; the capture height is a viewpoint question."
+  environment:
+    value: both
+    confidence: likely
+    note: "Floors are open to the weather until the envelope is closed."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Concrete and masonry work release quartz dust; conditions change daily and must be measured with the robot running."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Open floors take rain and standing water until the envelope is closed."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slabs with edge protection, ramps, stairs, reinforcement and material stacks."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Usually a person with a 360° camera or a phone; quadrupeds and drones are used on some sites but are not standard equipment."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    note: "Images show workers on site; blurring, retention and the works council apply."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on floor area and route; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure walks per week and minutes per floor."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled; the camera or scanner is the payload."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Captures, no build tolerance; scan accuracy is a sensor question."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: unknown, X2_outdoor: marginal, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a quadruped first: it climbs stairs and publishes an ingress rating (Spot: IP54 in the catalogue). A humanoid adds nothing to a camera walk except an unrated body in the weather."
+      de: "Zuerst einen Vierbeiner vergleichen: Er steigt Treppen und veröffentlicht eine Schutzart (Spot: IP54 laut Katalog). Ein Humanoid bringt für eine Kamerabegehung nichts mit außer einem Körper ohne Schutzart im Wetter."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [progress_scan_360, autonomous_nav_indoor, stair_climbing]
+capabilities_optional: [lidar_scan, site_inspection]
+solution_classes: [quadruped_inspection, humanoid, process_change]
+evidence:
+  - statement:
+      en: "Boston Dynamics markets Spot for jobsite photo documentation with 360° camera payloads on autonomous routes, quotes the general contractor Brasfield & Gorrie and claims a 95 % reduction in inspection time."
+      de: "Boston Dynamics bewirbt Spot für die fotografische Baustellendokumentation mit 360°-Kameras auf autonomen Routen, zitiert den Generalunternehmer Brasfield & Gorrie und nennt eine um 95 % kürzere Inspektionszeit."
+    url: 'https://bostondynamics.com/solutions/digital-twin/site-documentation/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    subject: { maker: boston-dynamics, model: spot }
+    confidence: likely
+    note: "Manufacturer claim; the time saving is not independently documented. Page undated, read on 2026-09-24."
+pilot:
+  metrics: [usable_captures_pct, interventions_per_hour, operator_minutes_per_unit]
+  abort_rule:
+    en: "Fewer than 99 % of planned capture points usable after 3 months, then change the use case."
+    de: "Weniger als 99 % der geplanten Aufnahmepunkte nach 3 Monaten verwertbar, dann Use Case wechseln."
+  scope_hint:
+    en: "One building, one fixed route per floor, weekly walks; a person reviews every capture against the plan."
+    de: "Ein Gebäude, eine feste Route je Geschoss, wöchentliche Begehungen; eine Person prüft jede Aufnahme gegen den Plan."
+prerequisites:
+  - { en: "A current plan or model to file the captures against", de: "Ein aktueller Plan oder ein Modell als Ablagegrundlage" }
+  - { en: "Agreement with the works council and the subcontractors on what is recorded", de: "Vereinbarung mit Betriebsrat und Nachunternehmern darüber, was aufgezeichnet wird" }
+open_questions:
+  - { en: "Who clears the route of material and secures open edges before each walk?", de: "Wer räumt die Route vor jeder Begehung von Material frei und sichert offene Kanten?" }
+compliance_flags: [mineral_dust_trgs_559, gdpr_art_88_bdsg_26, betrvg_87_1_6, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

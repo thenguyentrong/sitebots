@@ -57,7 +57,7 @@ export function RobotCard({ robot, action }: { robot: Card; action?: React.React
           </h3>
         </div>
         {robot.image_url ? (
-          <RobotPhoto
+          <RobotPhoto sizes="64px"
             url={robot.image_url}
             alt={robot.image_alt}
             formFactor={robot.form_factor}

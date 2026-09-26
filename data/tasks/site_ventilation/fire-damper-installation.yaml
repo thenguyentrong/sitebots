@@ -1,0 +1,127 @@
+schema_version: 1
+id: site_ventilation/fire-damper-installation
+status: published
+setting: site_ventilation
+family: assembly_fastening
+trades: [mep_hvac, mep_sprinkler]
+title:
+  en: "Install fire dampers in walls and floors"
+  de: "Brandschutzklappen in Wände und Decken einbauen"
+summary:
+  en: "Set the damper in the opening of the fire-rated wall or floor as the tested installation type prescribes, close the gap and connect the ducts on both sides."
+  de: "Die Klappe so in die Öffnung der feuerwiderstandsfähigen Wand oder Decke setzen, wie es die geprüfte Einbauart vorschreibt, den Spalt schließen und die Kanäle beidseitig anschließen."
+description:
+  en: "Fire dampers close a duct where it passes from one fire compartment into the next. TROX builds its FK2-EU in sizes from 200 × 100 to 1500 × 800 mm, 305 or 500 mm long, weighing 4 to 73 kg with a fusible link, and classifies it up to EI 240 S. It comes with a declaration of performance and is installed the ways the tests cover, for example wet in mortar or dry with installation kits; the release mechanism must stay accessible."
+  de: "Brandschutzklappen sperren eine Luftleitung dort ab, wo sie von einem Brandabschnitt in den nächsten führt. TROX baut seine FK2-EU in Größen von 200 × 100 bis 1500 × 800 mm, 305 oder 500 mm lang, mit 4 bis 73 kg in der Ausführung mit Schmelzlot, klassifiziert bis EI 240 S. Sie hat eine Leistungserklärung und wird so eingebaut, wie es die Prüfungen abdecken, etwa nass in Mörtel oder trocken mit Einbausätzen; die Auslöseeinrichtung muss zugänglich bleiben."
+also_in_settings: [site_insulation_fire_stopping]
+derived_from: null
+lv:
+  lb: '075'
+  atv: "DIN 18379"
+  position:
+    en: "Fire dampers: supply and install in walls and floors to the tested installation type"
+    de: "Brandschutzklappen liefern und nach geprüfter Einbauart in Wände und Decken einbauen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 4, max: 73 }
+    confidence: confirmed
+    evidence_url: 'https://cdn.trox.de/b8d9b79113937e62/6c1e63155455/FK2-EU_PD_2022_09_27_DE_de.pdf'
+    note: "FK2-EU with fusible link: 4 kg (200 × 100 mm, 305 mm long) to 73 kg (1500 × 800 mm, 500 mm long); about 1 kg more with a spring-return actuator (TROX datasheet 09/2022)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. One product family, but sizes, wall types and installation types change."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A damper installed outside its tested installation type loses its classification; that is found late, if at all."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: "Fire dampers keep fire and smoke from passing along the ducts into the next fire compartment."
+  reach_height_m:
+    value: { min: 0.3, max: 4.0 }
+    confidence: assumed
+    note: "Openings from low in walls to under the ceiling; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Mixing mortar and working openings in masonry or concrete release mineral dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Wet installation uses mortar, but the room is dry."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Floors with scaffolds, lifts and material."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Installed by hand by trained fitters; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.2, max: 1.5 }
+    confidence: confirmed
+    evidence_url: 'https://cdn.trox.de/b8d9b79113937e62/6c1e63155455/FK2-EU_PD_2022_09_27_DE_de.pdf'
+    note: "Nominal widths 200 to 1500 mm, heights 100 to 800 mm, casing lengths 305 or 500 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The datasheet sets minimum distances for wet installation (40 mm to load-bearing parts, 60 mm between two dampers), not a positional tolerance."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep fire dampers with trained fitters who install to the tested installation type and document it. A lifting aid helps with the large sizes; the safety function rules out a robot doing the installation itself."
+      de: "Brandschutzklappen bei geschulten Monteuren lassen, die nach geprüfter Einbauart einbauen und dokumentieren. Bei großen Größen hilft eine Hebehilfe; die Sicherheitsfunktion schließt aus, dass ein Roboter den Einbau selbst übernimmt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, vacuum_lifter_assist]
+evidence:
+  - statement:
+      en: "TROX gives the FK2-EU in sizes 200 × 100 to 1500 × 800 mm, 305 or 500 mm long, at 4 to 73 kg with fusible link, classified up to EI 240 (ve, ho, i ↔ o) S, with a declaration of performance under the Construction Products Regulation and certified wet installation at reduced distances of 40 mm to load-bearing parts and 60 mm between two dampers."
+      de: "TROX gibt die FK2-EU in Größen von 200 × 100 bis 1500 × 800 mm, 305 oder 500 mm lang, mit 4 bis 73 kg in der Ausführung mit Schmelzlot an, klassifiziert bis EI 240 (ve, ho, i ↔ o) S, mit Leistungserklärung nach Bauproduktenverordnung und zertifiziertem Nasseinbau mit reduzierten Abständen von 40 mm zu tragenden Bauteilen und 60 mm zwischen zwei Brandschutzklappen."
+    url: 'https://cdn.trox.de/b8d9b79113937e62/6c1e63155455/FK2-EU_PD_2022_09_27_DE_de.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2022-09-27'
+    type: claim
+    confidence: confirmed
+    note: "Product datasheet PD-09/2022; weight table on page 27."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If anything is automated here, it is the documentation of each installed damper, not the installation."
+    de: "Wenn hier etwas automatisiert wird, dann die Dokumentation jeder eingebauten Klappe, nicht der Einbau."
+prerequisites: []
+open_questions:
+  - { en: "Which installation types does the project use, and who documents them?", de: "Welche Einbauarten verwendet das Projekt, und wer dokumentiert sie?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

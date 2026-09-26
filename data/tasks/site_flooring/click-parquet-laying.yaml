@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_flooring/click-parquet-laying
+status: published
+setting: site_flooring
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Lay click parquet planks floating on an underlay"
+  de: "Klick-Parkett schwimmend auf Trittschalldämmung verlegen"
+summary:
+  en: "Take planks from the opened packs, click them together row by row on the underlay, cut the last plank of each row and fit around frames and pipes."
+  de: "Dielen aus den geöffneten Paketen nehmen, Reihe für Reihe auf der Trittschalldämmung verklicken, die letzte Diele jeder Reihe zuschneiden und an Zargen und Rohren anpassen."
+description:
+  en: "Parador's Classic 3060 parquet comes as 2200 × 185 × 13 mm planks, nine to a pack of 3.663 m² and 29.3 kg, so one plank weighs about 3.3 kg. The planks are laid floating on an underlay and clicked together; the work is repetitive across the room and varied at its edges, where planks are sawn to length and width and fitted around door frames, heating pipes and columns."
+  de: "Das Parkett Classic 3060 von Parador kommt in Dielen von 2200 × 185 × 13 mm, neun Stück je Paket mit 3,663 m² und 29,3 kg, eine Diele wiegt also rund 3,3 kg. Die Dielen werden schwimmend auf einer Unterlage verlegt und verklickt; die Arbeit wiederholt sich in der Fläche und wechselt an den Rändern, wo Dielen auf Länge und Breite gesägt und an Zargen, Heizungsrohre und Stützen angepasst werden."
+also_in_settings: [modular_volumetric]
+derived_from: null
+lv:
+  lb: '028'
+  atv: "DIN 18356"
+  position:
+    en: "Multi-layer parquet with click joint, laid floating on impact-sound underlay"
+    de: "Mehrschichtparkett mit Klickverbindung, schwimmend auf Trittschalldämmunterlage verlegt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 3.26, max: 3.26 }
+    confidence: likely
+    evidence_url: 'https://parador.de/pcms/downloads/downloadfile/file_id/210/'
+    note: "Parador technical data sheet Parkett Classic 3060 (valid from 01.12.2023): pack of 9 planks, 3.663 m², 29.304 kg; 29.304 kg / 9 = 3.26 kg per plank. Scope: laying from packs opened in the room; carrying the 29 kg packs is not part of this record."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The field is the same click motion row after row; the edges, door frames and pipes need cutting and fitting in every room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Open or stepped joints show and mean taking rows up again; nothing structural depends on the floor finish."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Floor finish without structural function."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: likely
+    note: "Floor work, kneeling height."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Closed building on screed ready for covering."
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: likely
+    note: "Sawing planks to length and width releases wood dust at the saw; with extraction at the saw the room stays a controlled area (TRGS 553 applies)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms; the screed must be ready for covering."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed ready for covering."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid by floor layers by hand; none of the sources reviewed describes a machine that lays click parquet on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and rows re-laid."
+requirements:
+  object_size_m:
+    value: { min: 2.2, max: 2.2 }
+    confidence: confirmed
+    evidence_url: 'https://parador.de/pcms/downloads/downloadfile/file_id/210/'
+    note: "Plank format 2200 × 185 × 13 mm (Parador Classic 3060; one shorter plank per pack allowed)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The data sheet gives the planks' own tolerances to EN 13489 (permissible width deviation 0.2 mm, surface flushness 0.2 mm), not a laying tolerance; the flatness of the laid floor follows the screed, which DIN 18202 limits."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published for engaging the click joint."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator for the open field of the room, with a floor layer doing the cut rows at the walls and frames. The planks are light; the hard part is engaging the click joint cleanly and fitting the edges."
+      de: "Einen radgebundenen Mobilmanipulator für die freie Fläche vergleichen, der Bodenleger übernimmt die Passreihen an Wänden und Zargen. Die Dielen sind leicht; schwierig ist das saubere Einrasten der Klickverbindung und das Anpassen an den Rändern."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Parador's technical data sheet for Parkett Classic 3060 gives a plank format of 2200 × 185 × 13 mm, about 3.6 mm wear layer and packs of 9 planks, 3.663 m² and 29.304 kg."
+      de: "Das technische Datenblatt von Parador für Parkett Classic 3060 nennt ein Dielenformat von 2200 × 185 × 13 mm, rund 3,6 mm Nutzschicht und Pakete mit 9 Dielen, 3,663 m² und 29,304 kg."
+    url: 'https://parador.de/pcms/downloads/downloadfile/file_id/210/'
+    kind: manufacturer
+    tier: 1
+    date: '2023-12-01'
+    type: claim
+    confidence: confirmed
+    note: "File PA_TDS_Parkett_Classic-3060_DE_20231201, valid from 01.12.2023."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of planks engaged without rework after 3 months, then stop."
+    de: "Weniger als 99 % der Dielen nach 3 Monaten ohne Nacharbeit verlegt, dann abbrechen."
+  scope_hint:
+    en: "Open fields of rectangular rooms with one plank format; the floor layer cuts and lays the edge rows."
+    de: "Freie Flächen rechteckiger Räume mit einem Dielenformat; der Bodenleger schneidet und verlegt die Randreihen."
+prerequisites:
+  - { en: "Screed ready for covering, flatness checked", de: "Estrich belegreif, Ebenheit geprüft" }
+  - { en: "Packs acclimatised and opened in the room", de: "Pakete im Raum akklimatisiert und geöffnet" }
+open_questions:
+  - { en: "Can a robot engage the click joint without damaging the tongue?", de: "Kann ein Roboter die Klickverbindung einrasten, ohne die Feder zu beschädigen?" }
+compliance_flags: [wood_dust_trgs_553]
+sources_reviewed_at: '2026-09-25'

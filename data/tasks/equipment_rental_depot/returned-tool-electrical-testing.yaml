@@ -1,0 +1,123 @@
+schema_version: 1
+id: equipment_rental_depot/returned-tool-electrical-testing
+status: published
+setting: equipment_rental_depot
+family: inspection_qa_documentation
+trades: [mep_electrical, general]
+title:
+  en: "Test returned portable electrical tools before the next hire"
+  de: "Zurückgegebene ortsveränderliche Elektrogeräte vor der nächsten Vermietung prüfen"
+summary:
+  en: "Check each returned drill, grinder, breaker and cable for damage, connect it to the appliance tester and record the result."
+  de: "Jede zurückgegebene Bohrmaschine, jeden Winkelschleifer, Abbruchhammer und jede Leitung auf Schäden sichten, am Gerätetester anschließen und das Ergebnis dokumentieren."
+description:
+  en: "Portable electrical equipment that comes back from site is checked before it goes out again: a look at housing, cable and plug, then the measurements the appliance tester runs, then a label and a record. DGUV Vorschrift 3 makes the employer responsible for these tests and names who may carry them out; for portable equipment the guideline interval on construction sites is three months. A tool that passes with a hidden fault reaches the next user."
+  de: "Ortsveränderliche Elektrogeräte, die von der Baustelle zurückkommen, werden vor der nächsten Ausgabe geprüft: Sichtprüfung von Gehäuse, Leitung und Stecker, dann die Messungen, die der Gerätetester fährt, dann Prüfplakette und Protokoll. Die DGUV Vorschrift 3 macht den Unternehmer für diese Prüfungen verantwortlich und legt fest, wer sie durchführen darf; für ortsveränderliche Betriebsmittel liegt der Richtwert auf Baustellen bei drei Monaten. Ein Gerät, das mit verdecktem Fehler durchgeht, landet beim nächsten Nutzer."
+also_in_settings: [material_yard_warehouse]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 1 }
+    confidence: assumed
+    note: "Scope of this record: the test leads, adapters and plugs handled during the test. The tools themselves, up to 27.1 kg for a Hilti TE 3000-AVR breaker, are put on the test bench at the return counter, which is a separate step."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The rental fleet is a known catalogue, but every test depends on protection class, cable and attachments, and damage looks different on every return."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A missed fault goes out with the next hire; the test exists to catch exactly that."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: "Electric shock from a damaged tool or cable; DGUV Vorschrift 3 requires the test before the equipment is used again."
+  reach_height_m:
+    value: { min: 0.7, max: 1.2 }
+    confidence: assumed
+    note: "Test bench height; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Workshop test bench."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Workshop bench; returned tools are wiped before the test."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Tests are made on dry equipment."
+  floor:
+    value: level
+    confidence: likely
+    note: "Workshop floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: assumed
+    note: "Appliance testers run the measurement sequence and store the result; connecting the device and the visual check stay with the person."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Test records concern equipment, not people."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the returns per day; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a baseline counts tests per shift and minutes per device."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Tools from a hand drill to a breaker; no single size governs the test."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No geometric tolerance; the limits are the measured values set by the test standard and the tester."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; plugs and probes are connected by hand."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The test stays with an electrically skilled or instructed person using an appliance tester, which already automates the measurements. Automate the record and the scheduling, not the judgement."
+      de: "Die Prüfung bleibt bei einer Elektrofachkraft oder elektrotechnisch unterwiesenen Person mit Gerätetester, der die Messungen bereits automatisiert. Automatisieren lassen sich Protokoll und Terminplanung, nicht das Urteil."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, skills_shortage]
+capabilities_required: [tool_handoff]
+capabilities_optional: [site_inspection]
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "DGUV Vorschrift 3, § 5: the employer ensures that electrical installations and equipment are tested for their proper condition, by an electrically skilled person or under the direction and supervision of one; portable equipment may also be tested by an electrotechnically instructed person using suitable measuring and test equipment. Table 1B gives a guideline interval of 6 months, on construction sites 3 months, for portable equipment."
+      de: "DGUV Vorschrift 3, § 5: Der Unternehmer hat dafür zu sorgen, dass elektrische Anlagen und Betriebsmittel auf ihren ordnungsgemäßen Zustand geprüft werden, durch eine Elektrofachkraft oder unter Leitung und Aufsicht einer Elektrofachkraft; ortsveränderliche Betriebsmittel darf bei Verwendung geeigneter Mess- und Prüfgeräte auch eine elektrotechnisch unterwiesene Person prüfen. Tabelle 1B nennt für ortsveränderliche Betriebsmittel einen Richtwert von 6 Monaten, auf Baustellen 3 Monaten."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/dguv/3/5.htm'
+    kind: regulator
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Accident prevention regulation as published by BG BAU; the page carries no date, dated with the check date."
+pilot:
+  metrics: [error_rate_vs_human_pct, operator_minutes_per_unit]
+  abort_rule:
+    en: "Any device passed that a person's check would have failed ends the pilot."
+    de: "Ein einziges Gerät, das durchgeht, obwohl die Prüfung durch eine Person es aussortiert hätte, beendet den Piloten."
+  scope_hint:
+    en: "Only the record keeping and the queue: scan the returned device, schedule the test, file the result."
+    de: "Nur Dokumentation und Warteschlange: zurückgegebenes Gerät scannen, Prüfung einplanen, Ergebnis ablegen."
+prerequisites:
+  - { en: "Every device with an ID and a test history", de: "Jedes Gerät mit Kennung und Prüfhistorie" }
+open_questions:
+  - { en: "How many returns per day wait for a test, and how long?", de: "Wie viele Rückläufer warten täglich auf die Prüfung, und wie lange?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

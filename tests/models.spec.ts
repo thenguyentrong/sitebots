@@ -15,6 +15,7 @@ test('a robot with a model renders the viewer and poses on request', async ({ pa
   });
 
   await page.goto('/robots/unitree/g1');
+  await page.getByRole('tab', { name: '3D model' }).or(page.getByRole('button', { name: 'Explore in 3D' })).first().click();
   const viewer = page.locator('[data-robot-viewer]');
   await expect(viewer).toHaveAttribute('data-ready', 'true', { timeout: 90_000 });
   await expect(viewer.locator('canvas')).toBeVisible();
@@ -57,6 +58,7 @@ test('the licence text is served', async ({ request }) => {
 });
 test('a model converted from MJCF renders in the viewer', async ({ page }) => {
   await page.goto('/robots/apptronik/apollo');
+  await page.getByRole('tab', { name: '3D model' }).or(page.getByRole('button', { name: 'Explore in 3D' })).first().click();
   await page.locator('[data-robot-viewer][data-ready="true"]').waitFor({ timeout: 120_000 });
   await page.getByText('Model credits and licence').click();
   await expect(page.getByRole('link', { name: 'Apache-2.0' })).toHaveAttribute('href', '/licenses/menagerie_apptronik_apollo.txt');

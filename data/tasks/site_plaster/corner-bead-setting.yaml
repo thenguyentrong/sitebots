@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_plaster/corner-bead-setting
+status: published
+setting: site_plaster
+family: assembly_fastening
+trades: [painting]
+title:
+  en: "Set corner beads before plastering"
+  de: "Eckschutzschienen vor dem Putzen setzen"
+summary:
+  en: "Set galvanised corner and edge profiles in dabs of mortar on every external corner and reveal, plumb and flush with the plaster surface to come."
+  de: "Verzinkte Eck- und Kantenprofile an jeder Außenecke und Laibung in Mörtelbatzen setzen, lot- und fluchtgerecht zur späteren Putzoberfläche."
+description:
+  en: "Every external corner and window reveal gets a profile before the plaster goes on. Protektor sells its edge profile for 10 mm interior plaster in galvanised steel in lengths from 1.5 to 3.0 m. Baumit's instructions: equal dabs of mortar about 40 cm apart, press the profile in, check it with a level, and let the mortar dry for two to three days before plastering. The profile defines the finished corner, so a crooked one shows."
+  de: "Jede Außenecke und Fensterlaibung erhält vor dem Putzen ein Profil. Protektor bietet sein Kantenprofil für 10 mm Innenputz aus verzinktem Stahl in Längen von 1,5 bis 3,0 m an. Baumit beschreibt: gleich große Mörtelbatzen im Abstand von etwa 40 cm, Profil eindrücken, mit der Wasserwaage prüfen und den Mörtel vor dem Putzen zwei bis drei Tage trocknen lassen. Das Profil bestimmt die fertige Ecke; eine schiefe fällt auf."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '023'
+  atv: "DIN 18350"
+  position:
+    en: "Corner and edge profiles for interior plaster, galvanised steel"
+    de: "Eck- und Kantenprofile für Innenputz, verzinkter Stahl"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 1 }
+    confidence: assumed
+    note: "Galvanised steel profiles; the product pages checked give no weight. A 3 m profile is assumed to stay under 1 kg."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every corner and reveal has its own length and position; profiles are cut to size on site."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A profile out of plumb shows in the finished corner. It is corrected while the mortar is soft; afterwards only by cutting it out."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "A finishing detail with no structural or fire function."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Corners run from floor to ceiling; storey heights up to about 3 m assumed."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Interior plaster."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Cutting profiles and mixing small batches of mortar; little dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Only the mortar dabs are wet; the room is dry."
+  floor:
+    value: level
+    confidence: likely
+    note: "Slab or screed."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Set by hand; no machine for it was found."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the metres of corner per storey; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure metres of profile per hour."
+requirements:
+  object_size_m:
+    value: { min: 1.5, max: 3 }
+    confidence: confirmed
+    evidence_url: 'https://www2.protektor.de/de/produkt/1007-kantenprofil-fuer-den-innenputz/'
+    note: "Protektor 1007 comes in lengths from 150 to 300 cm."
+  tolerance_mm:
+    value: 5
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "The profile sets the plane of the plastered wall at the corner, which may deviate 5 mm over a 1 m measuring-point distance (DIN 18202 Table 3 row 6, as reproduced by a screed contractor)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The force to press the profile into the mortar is not published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator with a level sensor first. The parts are light and every corner differs, which suits a flexible robot; the difficulty is pressing a thin profile into soft mortar exactly plumb."
+      de: "Zuerst einen radgebundenen Mobilmanipulator mit Neigungssensor vergleichen. Die Teile sind leicht und jede Ecke ist anders, was einem flexiblen Roboter entgegenkommt; schwierig ist, ein dünnes Profil genau lotrecht in weichen Mörtel zu drücken."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: [surface_finishing, layout_marking]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Protektor lists its edge profile 1007 for 10 mm interior plaster in galvanised steel, in lengths from 150 to 300 cm."
+      de: "Protektor führt sein Kantenprofil 1007 für 10 mm Innenputz aus verzinktem Stahl in Längen von 150 bis 300 cm."
+    url: 'https://www2.protektor.de/de/produkt/1007-kantenprofil-fuer-den-innenputz/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "Baumit's instructions set corner profiles in equal dabs of mortar about 40 cm apart, check them with a level and let the mortar dry for about two to three days before plastering."
+      de: "Baumit beschreibt das Setzen von Eckprofilen in gleich großen Mörtelbatzen im Abstand von etwa 40 cm, die Kontrolle mit der Wasserwaage und rund zwei bis drei Tage Trocknung vor dem Verputzen."
+    url: 'https://www.baumit-selbermachen.de/mauern-verputzen/anleitungen/putzvorbereitung-und-reparaturarbeiten/eckschienen-kantenprofil-richtig-setzen_aid_759.html'
+    kind: manufacturer
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Manufacturer's instructions for do-it-yourselfers; undated page, dated with the check date."
+pilot:
+  metrics: [error_rate_vs_human_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "More corners out of plumb than with the manual crew after three months: stop."
+    de: "Nach drei Monaten mehr Ecken außer Lot als bei der Kolonne von Hand: abbrechen."
+  scope_hint:
+    en: "One storey of corners and reveals with one profile type, checked with a level before plastering."
+    de: "Ein Geschoss Ecken und Laibungen mit einem Profiltyp, vor dem Verputzen mit der Wasserwaage geprüft."
+prerequisites:
+  - { en: "Plaster thickness fixed, so the profile size is known", de: "Putzdicke festgelegt, damit die Profilgröße feststeht" }
+open_questions:
+  - { en: "How many metres of corner and reveal does a typical storey have?", de: "Wie viele Meter Ecken und Laibungen hat ein typisches Geschoss?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

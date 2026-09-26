@@ -1,0 +1,135 @@
+schema_version: 1
+id: facility_operation/plant-room-rounds
+status: published
+setting: facility_operation
+family: monitoring_safety_patrol
+trades: [mep_hvac, mep_electrical, general]
+title:
+  en: Walk inspection rounds through plant rooms
+  de: Kontrollgänge durch Technikzentralen gehen
+summary:
+  en: Read analogue gauges, take thermal images and listen for unusual noise at pumps, fans and switchgear on a fixed route.
+  de: Auf einer festen Route Analoganzeigen ablesen, Wärmebilder aufnehmen und an Pumpen, Lüftern und Schaltanlagen auf ungewöhnliche Geräusche achten.
+description:
+  en: In hospitals, office towers and data centres, technicians walk the plant rooms on a schedule. They note values the building automation does not report, look for leaks and hot spots and listen to pumps and fans. The route is fixed, but the points are spread over rooms, floors and stairs, and what is worth reporting differs every round. A technician still acts on every finding.
+  de: In Kliniken, Bürohochhäusern und Rechenzentren gehen Techniker die Technikzentralen nach Plan ab. Sie notieren Werte, die die Gebäudeautomation nicht meldet, suchen Leckagen und Hotspots und hören Pumpen und Lüfter ab. Die Route ist fest, die Prüfpunkte verteilen sich aber über Räume, Geschosse und Treppen, und was zu melden ist, ändert sich mit jedem Gang. Auf jeden Befund reagiert weiterhin ein Techniker.
+also_in_settings: [asset_inspection_infrastructure]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: Nothing is carried; the sensors are the payload.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. Fixed route, but the points are spread over rooms and floors, so no fixed station covers them, and the findings change every round.
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: A missed reading is caught at the next round, and critical values are alarmed by the building automation anyway.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Observation only; the robot switches nothing.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Not a reach task; cameras read gauges from a distance. Overhead valves become a reach question only if the robot must operate them.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Plant rooms inside the building; rooftop plant is a different, outdoor task.
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: Operating buildings are clean; heat and noise are the conditions to test.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor; a leak is a finding, not an operating condition.
+  floor:
+    value: stairs
+    confidence: likely
+    note: Plant rooms connect by stairs and often have raised thresholds and cable trays.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: The building automation reports many values; the round covers what it does not measure. Fixed cameras at single points would change the baseline for those points only.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Cameras point at equipment; if people are recorded along the route, the data-protection flags apply.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Round length is not recorded; check it against the 30–90 min humanoid runtime and against docking along the route.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; count rounds per week, points per round and technician minutes per round.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled; the sensors or the camera are the payload."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Readings and observations, no build tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force unless valves or doors must be operated, which is outside this record."
+screen:
+  verdict: candidate
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: A candidate, but the humanoid form is not needed for it. Quadrupeds carry the published deployments for rounds, including stairs and thermal cameras; compare one first. A humanoid adds something only where valves, switches or doors must be operated on the way.
+      de: Ein Kandidat, aber die humanoide Form braucht es dafür nicht. Vierbeiner haben die veröffentlichten Einsätze für Kontrollgänge, inklusive Treppen und Wärmebildkameras; zuerst einen davon vergleichen. Ein Humanoid bringt nur dort etwas, wo unterwegs Ventile, Schalter oder Türen zu bedienen sind.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [quality, skills_shortage, capacity]
+capabilities_required: [site_inspection, patrol_monitoring, stair_climbing, autonomous_nav_indoor]
+capabilities_optional: [lidar_scan]
+solution_classes: [quadruped_inspection, humanoid, mobile_manipulator_wheeled]
+evidence:
+  - statement:
+      en: National Grid uses Spot at an HVDC converter station in Massachusetts; after a pilot in 2019–2020 the robot walks the site autonomously with an infrared camera to find hot spots, and the lead engineer calls it part of the team.
+      de: National Grid setzt Spot in einer HGÜ-Konverterstation in Massachusetts ein; nach einem Pilotprojekt 2019–2020 läuft der Roboter das Gelände autonom mit einer Infrarotkamera ab, um Hotspots zu finden, und der leitende Ingenieur nennt ihn Teil des Teams.
+    url: 'https://bostondynamics.com/case-studies/spot-becomes-part-of-the-team-at-national-grid/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: deployment
+    subject: { maker: boston-dynamics, model: spot }
+    confidence: likely
+    note: Undated case study on the manufacturer site that quotes the operator; checked 2026-09-24. A converter station, not a building plant room.
+  - statement:
+      en: ANYbotics reports a test of ANYmal at BASF in Ludwigshafen, where the robot read gauges, took acoustic measurements of pumps and compressors and checked for hot spots with its thermal camera.
+      de: ANYbotics berichtet von einem Test mit ANYmal bei BASF in Ludwigshafen, bei dem der Roboter Anzeigen ablas, Pumpen und Verdichter akustisch vermaß und mit der Wärmebildkamera nach Hotspots suchte.
+    url: 'https://www.anybotics.com/news/anymal-case-basf-chemical-plant/'
+    kind: manufacturer
+    tier: 1
+    date: '2021-03-25'
+    type: pilot
+    confidence: confirmed
+    note: A test in a chemical plant; building plant rooms are a simpler environment but are not covered by this source.
+pilot:
+  metrics: [usable_captures_pct, unaided_completion_pct, interventions_per_hour, operator_minutes_per_unit]
+  abort_rule:
+    en: Fewer than 99 % of scheduled rounds completed with usable readings after 3 months, then keep the rounds on foot.
+    de: Weniger als 99 % der geplanten Rundgänge nach 3 Monaten mit brauchbaren Messwerten abgeschlossen, dann bleiben die Rundgänge zu Fuß.
+  scope_hint:
+    en: One plant room floor, 20–30 fixed points, readings checked against the round on foot for four weeks.
+    de: Eine Technikebene, 20–30 feste Prüfpunkte, Werte vier Wochen lang gegen den Rundgang zu Fuß geprüft.
+prerequisites:
+  - { en: "A list of the points on the round with the expected value ranges", de: "Eine Liste der Prüfpunkte mit den erwarteten Wertebereichen" }
+  - { en: "Wi-Fi or a mesh radio along the route", de: "WLAN oder Mesh-Funk entlang der Route" }
+open_questions:
+  - { en: "Which findings on the rounds today need hands (valves, filters, resets), and which only eyes and ears?", de: "Welche Befunde der heutigen Rundgänge brauchen Hände (Ventile, Filter, Quittierungen) und welche nur Augen und Ohren?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

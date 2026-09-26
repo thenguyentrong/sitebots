@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_waterproofing/drainage-protection-membrane
+status: published
+setting: site_waterproofing
+family: surface_finishing
+trades: [insulation]
+title:
+  en: "Lay a protection and drainage membrane over the basement waterproofing"
+  de: "Schutz- und Dränbahn vor die Abdichtung der Kellerwände verlegen"
+summary:
+  en: "Unroll the dimpled drainage membrane down the waterproofed wall, join the strips at the self-adhesive edge and fix it at the top, before the pit is backfilled."
+  de: "Die Noppen-Dränbahn an der abgedichteten Wand abrollen, die Bahnen am Selbstkleberand verbinden und oben befestigen, bevor die Baugrube verfüllt wird."
+description:
+  en: "Dörken's DELTA-TERRAXX is a drainage layer that also protects pressure-resistant surfaces against mechanical damage, for use under DIN 4095, DIN 18531 and DIN 18533. It comes in rolls of 12.50 × 2.40 m at 710 g/m², so a roll weighs about 21 kg, with an integrated self-adhesive edge to join the strips; on walls it is cut with a knife and held with dedicated fixings. The work is in the excavation pit, outdoors, before backfilling."
+  de: "DELTA-TERRAXX von Dörken ist eine Dränschicht, die zugleich druckstabile Untergründe vor mechanischen Einwirkungen schützt, für den Einsatz nach DIN 4095, DIN 18531 und DIN 18533. Sie kommt in Rollen von 12,50 × 2,40 m bei 710 g/m², eine Rolle wiegt also rund 21 kg, mit integriertem Selbstkleberand zum Verbinden der Bahnen; an Wänden wird sie mit dem Cuttermesser zugeschnitten und mit eigenen Befestigungsmitteln gehalten. Gearbeitet wird in der Baugrube, im Freien, vor dem Verfüllen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '018'
+  atv: "DIN 18336"
+  position:
+    en: "Protection and drainage layer of dimpled membrane with filter fleece in front of the waterproofing of earth-contact walls: supply and lay"
+    de: "Schutz- und Dränschicht aus Noppenbahn mit Filtervlies vor der Abdichtung erdberührter Wände liefern und verlegen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 21.3, max: 21.3 }
+    confidence: likely
+    evidence_url: 'https://www.doerken.com/de/de/delta-terraxx'
+    note: "One roll: 12.50 m × 2.40 m × 0.710 kg/m² = 21.3 kg (Dörken product data). Narrower 0.75 m strips weigh less."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same product strip by strip, but corners, pipe penetrations, wall heights and the pit's working space differ."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A gap or a torn strip leaves the waterproofing unprotected when the pit is backfilled; found before, it is repaired, afterwards it is buried."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Protects the waterproofing and drains water; no structural or life-safety role."
+  reach_height_m:
+    value: { min: 0, max: 3.0 }
+    confidence: assumed
+    note: "Basement wall height; a storey height is assumed. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "In the excavation pit."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Laying and cutting the membrane make no relevant dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Excavation pit with rain and ground moisture."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Working space at the foot of the wall in the pit."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.doerken.com/de/de/delta-terraxx'
+    note: "Laid by hand from the roll, cut with a knife and joined at the self-adhesive edge (Dörken)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Priced per square metre; not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2.4, max: 12.5 }
+    confidence: confirmed
+    evidence_url: 'https://www.doerken.com/de/de/delta-terraxx'
+    note: "Roll of 12.50 m × 2.40 m (Dörken)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Strips are joined at the integrated self-adhesive edge; no dimensional tolerance is stated."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure beyond handling the roll."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep laying with the waterproofing crew. The 21 kg roll is at the payload limit, but the pit, the weather and the wall heights rule the humanoid out first."
+      de: "Das Verlegen beim Abdichtungstrupp lassen. Die 21-kg-Rolle liegt an der Traglastgrenze, aber Baugrube, Wetter und Wandhöhen schließen den Humanoiden zuerst aus."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Dörken describes DELTA-TERRAXX as a drainage layer that protects pressure-resistant surfaces against mechanical damage, to DIN 4095, DIN 18531 and DIN 18533; rolls of 12.50 × 2.40 m (also 12.50 × 0.75 m), 710 g/m², with an integrated self-adhesive edge, cut with a utility knife on vertical surfaces and held with dedicated fixings."
+      de: "Dörken beschreibt DELTA-TERRAXX als Dränschicht, die druckstabile Untergründe vor mechanischen Einwirkungen schützt, nach DIN 4095, DIN 18531 und DIN 18533; Rollen 12,50 × 2,40 m (auch 12,50 × 0,75 m), 710 g/m², mit integriertem Selbstkleberand, an senkrechten Flächen mit dem Cuttermesser zugeschnitten und mit eigenen Befestigungsmitteln gehalten."
+    url: 'https://www.doerken.com/de/de/delta-terraxx'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; dated with the check date. Product data, not a robot precedent."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If carrying rolls into the pit is the burden, compare narrower strips or lowering the rolls with the site crane."
+    de: "Kein Roboterpilot. Wenn das Tragen der Rollen in die Grube die Last ist, schmalere Bahnen oder das Ablassen der Rollen mit dem Baukran vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "How much working space is left in the pit at the foot of your basement walls?", de: "Wie viel Arbeitsraum bleibt in der Baugrube am Fuß Ihrer Kellerwände?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

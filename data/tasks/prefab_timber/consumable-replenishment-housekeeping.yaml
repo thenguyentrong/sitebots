@@ -1,0 +1,123 @@
+schema_version: 1
+id: prefab_timber/consumable-replenishment-housekeeping
+status: published
+setting: prefab_timber
+family: cleaning_housekeeping_replenishment
+trades: [logistics, timber]
+title:
+  en: Restock fastener magazines, clear packaging, tidy workstations
+  de: Magazine nachfüllen, Verpackung räumen, Arbeitsplätze aufräumen
+summary:
+  en: The constant, low-value interstitial work between the automated machines.
+  de: Die ständige, geringwertige Zwischenarbeit zwischen den automatisierten Maschinen.
+description:
+  en: Nail and screw magazines run empty, cartons pile up, offcuts and packaging wander across the stations. Nobody wants the job and it fragments the shifts of skilled carpenters. The items are light, the locations change constantly, and an error costs nothing but a repeat.
+  de: Nagel- und Schraubenmagazine laufen leer, Kartons stapeln sich, Verschnitt und Verpackung wandern über die Stationen. Niemand will die Arbeit, und sie zerstückelt die Schichten der Fachkräfte. Die Teile sind leicht, die Orte wechseln ständig, ein Fehler kostet nur eine Wiederholung.
+also_in_settings: [precast_concrete, modular_volumetric, joinery_windows_doors, mep_prefab, steel_fabrication, material_yard_warehouse]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 5 }
+    confidence: likely
+    note: Fastener cartons, empty packaging, small offcuts. Range from an industry engagement, 2025/26.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. Locations, items and timing change every hour.
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: A magazine refilled late stops a bridge for minutes; nothing else.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: No structural consequence.
+  reach_height_m:
+    value: { min: 0.2, max: 1.8 }
+    confidence: assumed
+    note: Floor to magazine height; verify per station.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Workrooms with a cleaning plan; the robot must stay out of the machining zone and airborne dust must be measured.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: Nobody automates housekeeping; it is done by whoever is free.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Navigation cameras see people in walkways; check whether recordings are kept.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Work arrives in short bursts; battery swaps fit between them, but the pattern is not recorded.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; the pilot baseline must count interruptions per skilled worker and shift.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Cartons, packaging and offcuts vary; not measured."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No tolerance applies beyond putting the item into the right magazine."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: candidate
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: Low value per action, high value per shift. Compare a mobile manipulator against a reorganised replenishment route with carts before buying anything.
+      de: Geringer Wert je Handgriff, hoher Wert je Schicht. Vor jedem Kauf einen Mobilmanipulator mit einer neu organisierten Nachschubroute mit Wagen vergleichen.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [capacity, ergonomics, skills_shortage]
+capabilities_required: [fetch_and_deliver, autonomous_nav_indoor]
+capabilities_optional: [shelf_pick, cleaning_sweep]
+solution_classes: [mobile_manipulator_wheeled, humanoid, amr_carts, process_change]
+evidence:
+  - statement:
+      en: Agility Robotics' Digit navigates a human-designed warehouse and moves totes in a GXO facility; the navigation and carrying parts transfer, the tidying and refilling parts do not.
+      de: Digit von Agility Robotics navigiert in einem für Menschen gebauten Lager und bewegt Behälter in einer GXO-Anlage; Navigation und Tragen sind übertragbar, Aufräumen und Nachfüllen nicht.
+    url: 'https://www.agilityrobotics.com/content/gxo-signs-industry-first-multi-year-agreement-with-agility-robotics'
+    kind: manufacturer
+    tier: 1
+    date: '2024-06-27'
+    type: deployment
+    subject: { maker: agility, model: digit }
+    confidence: confirmed
+pilot:
+  metrics: [unaided_completion_pct, interventions_per_hour, operator_minutes_per_unit]
+  abort_rule:
+    en: Fewer than 99 % of refill and clearing jobs completed unaided after 3 months, then change the use case.
+    de: Weniger als 99 % der Nachfüll- und Räumaufträge nach 3 Monaten ohne Eingriff, dann Use Case wechseln.
+  scope_hint:
+    en: Two stations, one fastener type, one packaging stream; measure interruptions per skilled worker before and after.
+    de: Zwei Stationen, ein Befestigungsmitteltyp, ein Verpackungsstrom; Unterbrechungen je Fachkraft vorher und nachher messen.
+prerequisites:
+  - { en: "Fixed refill points and bins at every station", de: "Feste Nachfüllpunkte und Behälter an jeder Station" }
+open_questions:
+  - { en: "How much skilled time do interruptions actually cost per shift?", de: "Wie viel Fachkräftezeit kosten die Unterbrechungen tatsächlich je Schicht?" }
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

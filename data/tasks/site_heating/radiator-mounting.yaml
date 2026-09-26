@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_heating/radiator-mounting
+status: published
+setting: site_heating
+family: assembly_fastening
+trades: [mep_hvac]
+title:
+  en: "Hang panel radiators on their wall brackets"
+  de: "Flachheizkörper an die Wandkonsolen hängen"
+summary:
+  en: "Drill and set the brackets, lift the radiator onto them, level it and connect it to the valve fittings."
+  de: "Konsolen bohren und setzen, den Heizkörper einhängen, ausrichten und an die Ventilanschlüsse anschließen."
+description:
+  en: "Panel radiators sit under the windows at fixed heights, one or more per room. Kermi lists its therm-x2 Profil radiators from 2.74 kg (type 10, 300 × 400 mm) to 195.27 kg (type 33, 900 × 3000 mm); a common type 22 of 600 mm height weighs 12.69 kg at 400 mm length and 58.00 kg at 2000 mm. The brackets are drilled into the wall, the radiator is hung, levelled and connected."
+  de: "Flachheizkörper sitzen in festen Höhen unter den Fenstern, einer oder mehrere je Raum. Kermi gibt für seine therm-x2-Profil-Heizkörper 2,74 kg (Typ 10, 300 × 400 mm) bis 195,27 kg (Typ 33, 900 × 3000 mm) an; ein gängiger Typ 22 mit 600 mm Bauhöhe wiegt bei 400 mm Baulänge 12,69 kg und bei 2000 mm 58,00 kg. Die Konsolen werden in die Wand gebohrt, der Heizkörper eingehängt, ausgerichtet und angeschlossen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '041'
+  atv: "DIN 18380"
+  position:
+    en: "Panel radiators with wall brackets: supply and install"
+    de: "Flachheizkörper mit Wandkonsolen liefern und montieren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 12.69, max: 58.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.alternative-haustechnik.de/media/8d/23/30/1682398475/db-kermi-x2-fhk.pdf'
+    note: "Type 22, 600 mm high, 400 to 2000 mm long (Kermi therm-x2 Profil, as of February 2018). The full range runs from 2.74 kg to 195.27 kg."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same bracket system throughout, but sizes, walls and connection sides change from room to room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A radiator hung out of level or with a leaking connection is reset; leaks show when the system is filled and tested."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The brackets carry the radiator only and are fixed to the maker's instructions."
+  reach_height_m:
+    value: { min: 0.1, max: 1.2 }
+    confidence: assumed
+    note: "From the floor clearance to the top of a 900 mm radiator; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Rooms during the interior works."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling the brackets into masonry or concrete releases quartz dust at the drill; extraction at the drill is standard."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed rooms."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Rooms during the interior works, with material and other trades."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Installers hang radiators by hand; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.4, max: 2.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.alternative-haustechnik.de/media/8d/23/30/1682398475/db-kermi-x2-fhk.pdf'
+    note: "Lengths of the type 22 range in this record; the catalogue goes up to 3.0 m."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Levelling follows the maker's instructions; the datasheet states no tolerance figure."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure applies beyond the lift itself."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Use a lifting aid for the long and multi-panel sizes and keep hanging and connecting with the installer. The payload of current humanoids covers only the small sizes of the range."
+      de: "Für lange und mehrlagige Heizkörper eine Hebehilfe einsetzen, Einhängen und Anschließen beim Monteur lassen. Die Traglast heutiger Humanoider reicht nur für die kleinen Größen der Baureihe."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload, drilling]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Kermi lists weights for its therm-x2 Profil panel radiators from 2.74 kg (type 10, 300 × 400 mm) to 195.27 kg (type 33, 900 × 3000 mm); a type 22 of 600 mm height weighs 12.69 kg at 400 mm length and 58.00 kg at 2000 mm."
+      de: "Kermi gibt für seine therm-x2-Profil-Flachheizkörper Gewichte von 2,74 kg (Typ 10, 300 × 400 mm) bis 195,27 kg (Typ 33, 900 × 3000 mm) an; ein Typ 22 mit 600 mm Bauhöhe wiegt bei 400 mm Baulänge 12,69 kg und bei 2000 mm 58,00 kg."
+    url: 'https://www.alternative-haustechnik.de/media/8d/23/30/1682398475/db-kermi-x2-fhk.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2018-02-01'
+    type: claim
+    confidence: confirmed
+    note: "Kermi technical brochure therm-x2 Flachheizkörper, as of February 2018, weight tables on pages 20 and 21; the copy is hosted by a retailer."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a lifting aid: one building section, time per radiator with and without the aid."
+    de: "Falls mit Hebehilfe verfolgt: ein Bauabschnitt, Zeit je Heizkörper mit und ohne Hilfe."
+prerequisites: []
+open_questions:
+  - { en: "Which radiator sizes make up most of the project?", de: "Welche Heizkörpergrößen machen den Großteil des Projekts aus?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

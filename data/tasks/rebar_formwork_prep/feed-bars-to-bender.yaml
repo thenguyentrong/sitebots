@@ -1,0 +1,136 @@
+schema_version: 1
+id: rebar_formwork_prep/feed-bars-to-bender
+status: published
+setting: rebar_formwork_prep
+family: machine_tending
+trades: [concrete, steel]
+title:
+  en: "Feed reinforcing bars to the shear and bending machines"
+  de: "Betonstabstahl in Schneid- und Biegemaschinen einlegen"
+summary:
+  en: "Take bars from the bundle, lay them into the shear and the bender to the bending schedule and take the bent shapes off."
+  de: "Stäbe aus dem Bund nehmen, nach Biegeliste in Schere und Biegemaschine einlegen und die gebogenen Formen abnehmen."
+description:
+  en: "Reinforcement starts as 12 to 15 m bars. Smaller diameters can be bent automatically from coil; larger bars are cut and bent on bar-fed machines, and someone lifts the bars in and out. The bending schedule changes per job, the lifting does not."
+  de: "Bewehrung beginnt als Stab von 12 bis 15 m. Kleinere Durchmesser lassen sich automatisch vom Coil biegen; größere Stäbe werden auf stabgespeisten Maschinen geschnitten und gebogen, und jemand hebt die Stäbe hinein und heraus. Die Biegeliste wechselt je Auftrag, das Heben nicht."
+also_in_settings: [precast_concrete]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 4.7, max: 72.5 }
+    confidence: likely
+    evidence_url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    note: "Bar steel to DIN 488-1: Ø8 0.395 kg/m, Ø20 2.47 kg/m, Ø28 4.83 kg/m (Kämpfe weight table), supplied in 12, 14 and 15 m bars (Baustahlgewebe): a 12 m Ø8 bar weighs 4.7 kg, a 12 m Ø20 bar 29.6 kg, a 15 m Ø28 bar 72.5 kg."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Shapes change with the bending schedule; the handling repeats."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wrong shape is found at the check against the schedule and is scrap."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "Handling and bending only; the reinforcement is checked again when it is placed."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Bundle racks and machine tables; measure your shop."
+  environment:
+    value: both
+    confidence: assumed
+    note: "Rebar shops run in halls and covered yards (setting)."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Bending is clean; formwork cleaning elsewhere in the shop is the dust source (setting note)."
+  wet:
+    value: dry
+    confidence: assumed
+    note: "Under cover."
+  floor:
+    value: level
+    confidence: likely
+    note: "Shop floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [cnc_rebar_bender] }
+    confidence: likely
+    evidence_url: 'https://www.mepgroup.com/product-categories/planet'
+    note: "Automatic bending from coil with a fully automatic cycle exists up to Ø26 mm (MEP PLANET range); bar-fed bending of larger diameters is where people still lift."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people needed."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Shift work at the machine."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Tonnes per shift and lifts per tonne are the numbers to record."
+requirements:
+  object_size_m:
+    value: { min: 12, max: 15 }
+    confidence: confirmed
+    evidence_url: 'https://www.baustahlgewebe.com/de/produkte/betonstahl/betonstahl-stab'
+    note: "Bars supplied in 12, 14 and 15 m lengths, other lengths on request (Baustahlgewebe)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Bending tolerances follow the bending schedule and the reinforcement rules; not quoted on the sources used here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The machine bends; the load is the bar's weight."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Bend smaller diameters from coil on an automatic bending centre; for bars, a shear line with bar magazine and a crane with magnet traverse. People keep the schedule check."
+      de: "Kleinere Durchmesser vom Coil auf einem automatischen Biegezentrum biegen; für Stäbe eine Scherenlinie mit Stabmagazin und ein Kran mit Magnettraverse. Die Kontrolle gegen die Biegeliste bleibt bei Menschen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [machine_tending, carry_payload]
+capabilities_optional: []
+solution_classes: [dedicated_machine, gantry]
+evidence:
+  - statement:
+      en: "MEP builds its PLANET machines for automatic bending from coil where long bars, large shapes and bends on both sides are required, with a fully automatic cycle; single-wire diameters reach Ø26 mm in the largest model."
+      de: "MEP baut die PLANET-Maschinen für das automatische Biegen vom Coil, wo lange Stäbe, große Formen und Biegungen an beiden Enden gebraucht werden, mit vollautomatischem Zyklus; im größten Modell bis Ø26 mm einadrig."
+    url: 'https://www.mepgroup.com/product-categories/planet'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date. Evidence for the dedicated machine."
+  - statement:
+      en: "Kämpfe's weight table for bar steel to DIN 488-1 lists 0.395 kg/m for Ø8, 0.888 kg/m for Ø12, 2.47 kg/m for Ø20, 3.85 kg/m for Ø25 and 4.83 kg/m for Ø28."
+      de: "Die Gewichtstabelle von Kämpfe für Stabstahl nach DIN 488-1 nennt 0,395 kg/m für Ø8, 0,888 kg/m für Ø12, 2,47 kg/m für Ø20, 3,85 kg/m für Ø25 und 4,83 kg/m für Ø28."
+    url: 'https://www.kaempfe.de/wp-content/uploads/2024/09/Kaempfe_B500-SM_Gewichte.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-09-01'
+    type: claim
+    confidence: likely
+    note: "Uploaded 09/2024 (file path); the day is not given. Data source for the bar masses."
+pilot:
+  metrics: [operator_minutes_per_unit, uptime_vs_shift_pct]
+  abort_rule:
+    en: "Not a humanoid pilot. Compare lifts per tonne before and after moving diameters to coil bending or adding a bar magazine."
+    de: "Kein Humanoiden-Pilot. Hebevorgänge je Tonne vergleichen, vor und nach der Verlagerung von Durchmessern auf das Coilbiegen oder dem Einbau eines Stabmagazins."
+  scope_hint:
+    en: "One machine, the diameter range with the most tonnes."
+    de: "Eine Maschine, der Durchmesserbereich mit den meisten Tonnen."
+prerequisites:
+  - { en: "Tonnes per diameter per month from the bending schedules", de: "Tonnen je Durchmesser und Monat aus den Biegelisten" }
+open_questions:
+  - { en: "Which diameters could move from bar to coil in your shop?", de: "Welche Durchmesser könnten in Ihrer Biegerei vom Stab aufs Coil wechseln?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

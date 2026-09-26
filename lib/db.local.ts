@@ -8,8 +8,8 @@ import type { Rows, SqlClient } from './db';
  *
  * Lets the site be cloned and run end to end without provisioning Neon. It is
  * a real Postgres, so db/schema.sql and db/views.sql run against it unmodified.
- * Loaded only from the `USE_LOCAL_DB` branch in db.ts, which refuses to engage
- * in production.
+ * Development uses a writable local directory; production without Neon loads
+ * the prepared snapshot in memory and rejects writes.
  *
  * An empty local database is seeded from data/seed/robots.json on first boot,
  * so a fresh clone shows real robot pages instead of an empty list. Set
@@ -57,12 +57,21 @@ async function boot(): Promise<SqlClient> {
   // Production has no writable data directory and no DATABASE_URL yet: load
   // the committed snapshot into memory. Development keeps its on-disk cluster.
   const fromSnapshot = process.env.NODE_ENV === 'production' && !process.env.LOCAL_DB_DIR && existsSync(SNAPSHOT);
+  if (process.env.NODE_ENV === 'production' && !process.env.LOCAL_DB_DIR && !fromSnapshot) {
+    throw new Error('The production catalogue snapshot is missing. Rebuild it or configure DATABASE_URL.');
+  }
   const pg = fromSnapshot
     ? new PGlite({ dataDir: 'memory://', loadDataDir: new Blob([readFileSync(SNAPSHOT)]) })
     : new PGlite(process.env.LOCAL_DB_DIR ?? '.pglite');
   instance = pg;
   await pg.waitReady;
-  if (fromSnapshot) console.log('[db.local] booted from data/snapshot/pglite.tar.gz');
+  if (fromSnapshot) {
+    // The snapshot already contains schema, projections and reviewed facts.
+    // Reapplying curation on cold starts changes evidence dates and delays every worker.
+    await pg.exec('SET default_transaction_read_only = on');
+    console.log('[db.local] loaded read-only catalogue snapshot');
+    return wrap(pg);
+  }
 
   const root = process.cwd();
   await pg.exec(readFileSync(join(root, 'db', 'schema.sql'), 'utf8'));
@@ -88,6 +97,12 @@ async function boot(): Promise<SqlClient> {
 }
 
 export function localSql(): Promise<SqlClient> {
-  if (!ready) ready = boot();
+  if (!ready) ready = boot().catch(async error => {
+    const failed = instance;
+    instance = null;
+    try { await failed?.close(); } catch { /* Preserve the original startup failure. */ }
+    ready = null;
+    throw error;
+  });
   return ready;
 }

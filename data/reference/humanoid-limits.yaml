@@ -1,0 +1,44 @@
+# The four hard limits of the 2025/26 humanoid generation, as the Context station
+# shows them. Payload, runtime and ingress rating can be corroborated from the
+# catalogue; reliability cannot, and stays assumed until a public source exists.
+limits:
+  - id: payload_ceiling
+    label: { en: "Payload ceiling", de: "Traglastgrenze" }
+    figure: 20–25 kg
+    value: 20–25 kg across platforms; design tasks below 15 kg
+    basis: analyst
+    confidence: likely
+    checked_at: '2026-09-24'
+    note:
+      en: The most cautious published working payload of shipping humanoids stays in this band; vendor peak figures are momentary and per arm. Design margin is what makes 15 kg the screen limit.
+      de: Die vorsichtigste veröffentlichte Arbeitsnutzlast lieferbarer Humanoide bleibt in diesem Band; Spitzenwerte der Hersteller sind kurzzeitig und je Arm. Die Auslegungsreserve macht 15 kg zur Prüfgrenze.
+  - id: runtime_continuous
+    label: { en: "Continuous runtime", de: "Laufzeit am Stück" }
+    figure: 30–90 min
+    value: 30–90 min under load, against an 8-hour shift
+    basis: analyst
+    confidence: assumed
+    checked_at: '2026-09-24'
+    note:
+      en: Catalogue runtime figures are nominal (idle or walking) and mostly higher. Battery swaps and charging breaks are part of every pilot plan.
+      de: Katalogangaben zur Laufzeit sind Nennwerte (Stand oder Gehen) und meist höher. Akkuwechsel und Ladepausen gehören in jeden Pilotplan.
+  - id: task_reliability
+    label: { en: "Task reliability", de: "Aufgabenzuverlässigkeit" }
+    figure: ≈ 99 %
+    value: about 99 % reached, 99.99 % expected in industrial automation
+    basis: analyst
+    confidence: assumed
+    checked_at: '2026-09-24'
+    note:
+      en: The gap the whole industry is stuck on. Measure it in the pilot; do not take a demo video for it.
+      de: Die Lücke, an der die ganze Branche hängt. Im Pilot messen; kein Demo-Video dafür nehmen.
+  - id: ingress_rating
+    label: { en: "Ingress rating", de: "Schutzart" }
+    figure: 50 / 493
+    value: no shipping humanoid publishes a usable IP rating; 50 of 493 public catalogue variants publish any IP code
+    basis: catalogue_stats
+    confidence: likely
+    checked_at: '2026-09-24'
+    note:
+      en: The few published codes are drip- or splash-only. Outdoor and wet work is therefore a hard limit for the humanoid class; several quadrupeds publish real ratings.
+      de: Die wenigen veröffentlichten Codes sind Tropf- oder Spritzschutz. Arbeit im Freien oder bei Nässe ist daher für die Humanoid-Klasse eine harte Grenze; mehrere Vierbeiner veröffentlichen echte Schutzarten.

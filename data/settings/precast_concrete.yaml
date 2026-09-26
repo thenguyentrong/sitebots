@@ -1,0 +1,30 @@
+id: precast_concrete
+group: factory
+title: { en: "Precast concrete plant", de: "Betonfertigteilwerk" }
+aliases:
+  en: [precast plant, prefabricated concrete elements]
+  de: [Fertigteilwerk Beton, Betonwerk]
+coverage: screened
+coverage_note:
+  en: "Screened records for shuttering, embedded parts, reinforcement and the dimension check of finished elements on the pallet circulation line. Shuttering is machine work already and reinforcement placement partly so; the embedded parts and the dimension check are marginal."
+  de: "Geprüfte Datensätze für Schalung, Einbauteile, Bewehrung und die Maßprüfung fertiger Elemente an der Palettenumlaufanlage. Schalen ist bereits Maschinenarbeit, die Bewehrungsablage teilweise; Einbauteile und Maßprüfung sind grenzwertig."
+typical_incumbent_automation: [cnc_rebar_bender, rebar_mesh_welder, batching_plant, formwork_robot, overhead_crane, gantry_crane]
+dust:
+  type: cement
+  typical_zone: controlled
+  note:
+    en: Curing and finishing halls are workrooms; cutting, grinding and shot-blasting areas release quartz dust and count as zones.
+    de: Aushärte- und Nachbearbeitungshallen sind Arbeitsräume; Schneid-, Schleif- und Strahlbereiche setzen Quarzstaub frei und zählen als Zonen.
+floor: level
+exposure: indoor
+typical_trades: [concrete, steel, insulation, logistics, qa_surveying]
+process_steps:
+  - { id: formwork_setting, label: { en: "Formwork setting on the pallet", de: "Schalung setzen auf der Palette" } }
+  - { id: reinforcement, label: { en: "Reinforcement and embedded parts", de: "Bewehrung und Einbauteile" } }
+  - { id: concreting, label: { en: "Concreting and compaction", de: "Betonieren und Verdichten" } }
+  - { id: curing_demoulding, label: { en: "Curing and demoulding", de: "Aushärten und Ausschalen" } }
+  - { id: finishing, label: { en: "Surface finishing and repair", de: "Oberflächenbearbeitung und Nacharbeit" } }
+  - { id: storage, label: { en: "Storage and loading", de: "Lager und Verladung" } }
+seed_priority: 3
+sources: []
+status: published

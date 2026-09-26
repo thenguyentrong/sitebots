@@ -1,0 +1,26 @@
+id: site_survey_documentation
+group: site
+section: site_wide
+lv: { lb: [], atv: [] }
+title: { en: "Survey, layout and documentation", de: "Vermessung, Absteckung und Dokumentation" }
+aliases:
+  en: [setting out, progress capture, as-built]
+  de: [Absteckung, Baudokumentation, Bauleitung]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks outside the LV: progress capture walks, as-built laser scanning and photo documentation before ceilings close (all three marginal), and marking wall lines on the slab (ruled out; a layout robot already does it)."
+  de: "Vier geprüfte Aufgaben außerhalb des LV: Baufortschritts-Begehungen, Bestandsaufmaß per Laserscan und Fotodokumentation vor dem Schließen der Decken (alle drei grenzwertig) sowie Anzeichnen von Wandachsen auf der Rohdecke (scheidet aus; ein Markierroboter erledigt das bereits)."
+typical_incumbent_automation: [layout_robot, drone, scanner_fixed]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: both
+typical_trades: [qa_surveying]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+status: published

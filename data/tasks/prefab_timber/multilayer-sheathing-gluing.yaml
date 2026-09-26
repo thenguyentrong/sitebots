@@ -1,0 +1,113 @@
+schema_version: 1
+id: prefab_timber/multilayer-sheathing-gluing
+status: published
+setting: prefab_timber
+family: assembly_fastening
+trades: [timber, insulation]
+title:
+  en: Glue and apply multi-layer sheathing
+  de: Mehrlagige Beplankung kleben und aufbringen
+summary:
+  en: Apply adhesive and lay successive board layers on the element.
+  de: Kleber auftragen und aufeinanderfolgende Plattenlagen auf das Element legen.
+description:
+  en: Gluing, multi-layer sheathing and insulation application are offered as one automated cell by line makers. The boards are two to three times the payload ceiling and the sequence never varies.
+  de: Kleben, mehrlagiges Beplanken und Dämmung aufbringen werden von Linienherstellern als eine automatisierte Zelle angeboten. Die Platten liegen beim Zwei- bis Dreifachen der Traglastgrenze, und die Abfolge variiert nie.
+also_in_settings: [modular_volumetric, facade_prefab]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 40, max: 60 }
+    confidence: likely
+    note: Full-format boards; range from an industry engagement, 2025/26.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Programmed layer sequence.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: Glue faults are found at inspection or not at all.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Not the primary load path.
+  reach_height_m:
+    value: { min: 0.5, max: 1.5 }
+    confidence: assumed
+    note: Table height.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: wood, zone: controlled }
+    confidence: assumed
+    note: Gluing station outside the sawing zone.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [gluing_insulation_cell, nailing_sheathing_bridge] }
+    confidence: likely
+    note: Offered as a cell by line makers; installed on modern lines.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 3.0 }
+    confidence: likely
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "Gypsum boards are 1.25 m wide and listed in 2.0, 2.5, 2.6, 2.75 and 3.0 m lengths (Rigips RB 12.5 datasheet, 02.07.2026, page 2); the OSB formats in use were not checked and may differ."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.rigips.de/Dokumente/produktdatenblatter-pdb/produktdatenblatt-rigips-bauplatte-rb-125.pdf'
+    note: "The boards themselves are made to length +0/−5 mm and width +0/−4 mm (DIN EN 520, same datasheet); how precisely they must sit on the frame comes from the element drawings and is not recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Press or clamping forces for the glue line are not published here."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T4_variability]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: The gluing and sheathing cell from the line maker.
+      de: Die Klebe- und Beplankungszelle des Linienherstellers.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: []
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process, vacuum_lifter_assist]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None.
+    de: Keiner.
+prerequisites: []
+open_questions: []
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

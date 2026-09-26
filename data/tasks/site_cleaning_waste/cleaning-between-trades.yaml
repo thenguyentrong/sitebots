@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_cleaning_waste/cleaning-between-trades
+status: published
+setting: site_cleaning_waste
+family: cleaning_housekeeping_replenishment
+trades: [general, logistics]
+title:
+  en: "Clear and sweep floors between trades"
+  de: "Geschosse zwischen den Gewerken räumen und reinigen"
+summary:
+  en: "Collect offcuts and packaging, remove dust and empty the bins so the next trade starts on a clean floor."
+  de: "Verschnitt und Verpackung einsammeln, Staub entfernen und Behälter leeren, damit das nächste Gewerk auf einem sauberen Geschoss beginnt."
+description:
+  en: "Every trade leaves offcuts, packaging and dust behind. The floors change daily, and the loads are sacks and bins rather than single heavy parts. Floor-cleaning machines take the dust; collecting mixed debris is still done by hand."
+  de: "Jedes Gewerk hinterlässt Verschnitt, Verpackung und Staub. Die Geschosse ändern sich täglich, und die Lasten sind Säcke und Behälter statt einzelner schwerer Teile. Bodenreinigungsmaschinen nehmen den Staub auf; gemischten Schutt einsammeln ist weiterhin Handarbeit."
+also_in_settings: [site_concrete, site_electrical, facility_operation]
+derived_from: null
+lv:
+  lb: '033'
+  atv: null
+  position:
+    en: "Construction cleaning between trades"
+    de: "Baureinigung zwischen den Gewerken"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 20 }
+    confidence: assumed
+    note: "Offcuts, packaging and sacks filled to what one person carries; skips and chutes take the rest. Not measured."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Debris, layouts and obstacles change daily."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "Missed debris is picked up on the next round."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Housekeeping, no structural or life-safety function."
+  reach_height_m:
+    value: { min: 0, max: 1.2 }
+    confidence: assumed
+    note: "Floor level up to the rim of a bin. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Closed floors during interior finishing."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Cleaning stirs up mineral dust from cutting and sanding; vacuum or wet cleaning keeps it down."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed floors."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slab and screed with thresholds, cables and material stacks."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [cleaning_machine] }
+    confidence: likely
+    note: "Floor-cleaning machines sweep and scrub; an autonomous cleaning robot is in operational use on at least one apartment site in Korea. Collecting mixed debris is manual."
+  data_sensitivity:
+    value: personal_data
+    confidence: likely
+    note: "Navigation cameras see workers; the works council and the data protection officer are involved."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on floor area; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure floor area per shift and debris collected."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Offcuts and packaging of every size; no source gives one. The bins and chutes set the practical limit."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Cleaning has no dimensional tolerance; the next trade judges the floor."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; sweeping and carrying."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare an autonomous floor-cleaning machine for the dust first; one is in operational use on an apartment site. Collecting mixed debris is the gripping task left over, and sacks above 15 kg are at the limit of what today's humanoids carry."
+      de: "Zuerst eine autonome Bodenreinigungsmaschine für den Staub vergleichen; auf einer Wohnbaustelle ist eine im Regelbetrieb. Das Einsammeln von gemischtem Schutt bleibt als Greifaufgabe übrig, und Säcke über 15 kg liegen an der Grenze dessen, was heutige Humanoide tragen."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [capacity, quality]
+capabilities_required: [cleaning_sweep, autonomous_nav_indoor]
+capabilities_optional: [material_sorting, carry_payload]
+solution_classes: [dedicated_machine, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "Lotte Construction moved an autonomous floor-cleaning robot, developed with TXR Robotics, from a proof-of-concept trial to operational duty on an apartment construction site in Incheon; it sweeps dust and collects debris at night from a map of the floor loaded in advance."
+      de: "Lotte Construction hat einen autonomen Bodenreinigungsroboter, entwickelt mit TXR Robotics, nach einem Machbarkeitstest auf einer Wohnbaustelle in Incheon in den Regelbetrieb übernommen; er fegt Staub und sammelt Schutt nachts anhand einer vorab geladenen Karte des Geschosses."
+    url: 'https://www.techtimes.com/articles/321964/20260729/lotte-construction-deploys-autonomous-floor-cleaning-robot-active-korean-build-site.htm'
+    kind: press
+    tier: 3
+    date: '2026-07-29'
+    type: deployment
+    confidence: likely
+    note: "Press report; the map must be redone when the layout changes significantly."
+pilot:
+  metrics: [unaided_completion_pct, interventions_per_hour, operator_minutes_per_unit]
+  abort_rule:
+    en: "Fewer than 99 % of planned rounds completed unaided after 3 months, then change the use case."
+    de: "Weniger als 99 % der geplanten Runden nach 3 Monaten ohne Eingriff erledigt, dann Use Case wechseln."
+  scope_hint:
+    en: "One floor, night shift, dust only; debris collection measured separately."
+    de: "Ein Geschoss, Nachtschicht, nur Staub; das Einsammeln von Schutt getrennt messen."
+prerequisites:
+  - { en: "A cleaning route kept free of loose material stacks", de: "Eine Reinigungsroute ohne lose Materialstapel" }
+open_questions:
+  - { en: "Who pays for cleaning today, and how is it split between the trades?", de: "Wer trägt heute die Reinigung, und wie wird sie auf die Gewerke umgelegt?" }
+compliance_flags: [mineral_dust_trgs_559, gdpr_art_88_bdsg_26, betrvg_87_1_6, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

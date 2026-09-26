@@ -1,0 +1,28 @@
+id: eu_ai_act_high_risk
+kind: regulation
+jurisdiction: EU
+term_de: Verordnung (EU) 2024/1689 (KI-Verordnung), Hochrisiko-Pflichten
+term_en: Regulation (EU) 2024/1689 (AI Act), high-risk obligations
+official_reference: Regulation (EU) 2024/1689, Article 113, Annex I and Annex III
+url: 'https://eur-lex.europa.eu/eli/reg/2024/1689/oj'
+applies_from: null
+status: amended_pending
+triggers: [ai_component, self_learning]
+what_it_means:
+  en: A robot whose AI component is a safety component of machinery falls under the high-risk rules for Annex I products. The application dates for high-risk obligations are being amended; the text shown on the amendment tracker on 2026-09-24 carries 2 December 2027 for Annex III systems and 2 August 2028 for Annex I products such as machinery.
+  de: Ein Roboter, dessen KI-Komponente ein Sicherheitsbauteil einer Maschine ist, fällt unter die Hochrisiko-Regeln für Anhang-I-Produkte. Die Geltungsdaten der Hochrisiko-Pflichten werden geändert; der am 24.09.2026 im Änderungs-Tracker gezeigte Text nennt den 2. Dezember 2027 für Anhang-III-Systeme und den 2. August 2028 für Anhang-I-Produkte wie Maschinen.
+consequence:
+  en: Conformity assessment, risk management, logging and human oversight for the AI component, on top of the Machinery Regulation; self-evolving safety behaviour may require a notified body.
+  de: Konformitätsbewertung, Risikomanagement, Protokollierung und menschliche Aufsicht für die KI-Komponente, zusätzlich zur Maschinenverordnung; selbstentwickelndes Sicherheitsverhalten kann eine notifizierte Stelle erfordern.
+action:
+  en: Contract the pilot to remain lawful past both dates or to be withdrawn at the vendor's cost; verify the dates on the consolidated EUR-Lex text before relying on them.
+  de: Den Pilot vertraglich so gestalten, dass er über beide Daten hinaus rechtmäßig bleibt oder auf Kosten des Anbieters zurückgenommen wird; die Daten vor Verwendung im konsolidierten EUR-Lex-Text prüfen.
+watch:
+  en: 'Earlier notes used 2 August 2027 for all high-risk obligations; amendment markers now show 2027-12-02 (Annex III) and 2028-08-02 (Annex I). Recheck.'
+  de: 'Frühere Notizen nannten den 2. August 2027 für alle Hochrisiko-Pflichten; Änderungsmarker zeigen jetzt 02.12.2027 (Anhang III) und 02.08.2028 (Anhang I). Erneut prüfen.'
+provenance:
+  source_url: 'https://artificialintelligenceact.eu/article/113/'
+  tier: 3
+  observed_at: '2026-09-24'
+  confidence: likely
+  note: { en: "Amendment tracker, not the consolidated legal text.", de: "Änderungs-Tracker, nicht der konsolidierte Gesetzestext." }

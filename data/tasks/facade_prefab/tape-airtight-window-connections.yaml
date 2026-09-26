@@ -1,0 +1,134 @@
+schema_version: 1
+id: facade_prefab/tape-airtight-window-connections
+status: published
+setting: facade_prefab
+family: assembly_fastening
+trades: [facade_roofing, windows_doors, insulation]
+title:
+  en: "Tape the airtight window connections in prefabricated facade elements"
+  de: "Luftdichte Fensteranschlüsse in vorgefertigten Fassadenelementen abkleben"
+summary:
+  en: "Bond the window connection tape between frame and element on the inside, fold it into the corners, press it on and check it before the element closes."
+  de: "Das Fensteranschlussband zwischen Rahmen und Element innen verkleben, in die Ecken falten, andrücken und prüfen, bevor das Element geschlossen wird."
+description:
+  en: "Renovation facade elements come with insulation and windows from the factory. The connection between window frame and element has to be airtight on the room side; a tape bonded over the joint does that. The tape itself weighs nothing worth mentioning; the work is folding it cleanly into the corners and pressing it on without creases, in every opening size the order brings."
+  de: "Fassadenelemente für die serielle Sanierung kommen mit Dämmung und Fenstern aus dem Werk. Der Anschluss zwischen Fensterrahmen und Element muss raumseitig luftdicht sein; ein über die Fuge geklebtes Band leistet das. Das Band selbst wiegt kaum etwas; die Arbeit besteht darin, es sauber in die Ecken zu falten und faltenfrei anzudrücken, in jeder Öffnungsgröße, die der Auftrag mitbringt."
+also_in_settings: [joinery_windows_doors, site_windows_doors]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 1 }
+    confidence: assumed
+    note: "Tape rolls and a pressure roller; no roll mass is published on the product page read. Well under 1 kg."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Opening sizes and frame profiles change per order; the taping steps repeat."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://de.proclima.com/produkte/verbindungsmittel/anschlussklebebaender/contega-solido-sl'
+    note: "The tape makes the room-side airtight connection to DIN 4108-7 (pro clima); a leak shows in the airtightness test and is costly to repair once the element is mounted."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Airtightness and moisture protection, not a load-bearing or fire-safety function."
+  reach_height_m:
+    value: { min: 0.7, max: 1.2 }
+    confidence: assumed
+    note: "Elements lie flat on assembly tables as far as known; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Factory hall."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "No dust-producing work at the taping station; saws elsewhere in the hall. Surfaces must be clean for the tape to bond."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Factory hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Taped by hand as far as known."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at frames and tape."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on openings per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count openings per element and minutes per opening."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Opening sizes vary per order; none published."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The overlap and bonding widths come from the tape maker's processing rules, which the product page read does not show."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The tape is pressed on with a roller; no force figure published."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Light, but fiddly: folding a flexible tape into corners is hard for any robot today. Compare a wheeled mobile manipulator on straight runs with a person finishing the corners, and keep the airtightness test as the gate."
+      de: "Leicht, aber fummelig: ein flexibles Band in Ecken zu falten ist heute für jeden Roboter schwer. Einen radgebundenen Mobilmanipulator auf geraden Strecken vergleichen, die Ecken macht eine Person; die Luftdichtheitsprüfung bleibt das Tor."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [tool_handoff]
+capabilities_optional: []
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "pro clima sells CONTEGA SOLIDO SL as a fully bonding plaster and window connection tape for the inside, for the room-side airtight and vapour-retarding connection of membranes and wood-based panels to windows, doors and mineral surfaces, for airtight connections to DIN 4108-7."
+      de: "pro clima vertreibt CONTEGA SOLIDO SL als vollflächig klebendes Putz- und Fensteranschlussband für innen, für den raumseitig luftdichten und dampfbremsenden Anschluss von Bahnen und Holzwerkstoffplatten an Fenster, Türen und mineralische Oberflächen, für luftdichte Anschlüsse nach DIN 4108-7."
+    url: 'https://de.proclima.com/produkte/verbindungsmittel/anschlussklebebaender/contega-solido-sl'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date. The technical data tab did not load."
+  - statement:
+      en: "The serial-renovation supplier ecoworks prefabricates thermal building envelopes with insulation, windows, thermal protection and ventilation from the factory."
+      de: "Der Anbieter für serielle Sanierung ecoworks fertigt thermische Gebäudehüllen mit Dämmung, Fenstern, Wärmeschutz und Lüftung ab Werk vor."
+    url: 'https://www.energiesprong.de/projekte-anbieter/anbieter-serielle-sanierung/profil/ecoworks-gmbh/'
+    kind: operator
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Supplier profile on the Energiesprong site without a date; dated with the check date. It gives no element sizes."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Any leak at a robot-taped connection in the airtightness test that a person would have avoided, or fewer than 99 % of runs taped without intervention after 3 months: stop."
+    de: "Jede Leckage an einem vom Roboter geklebten Anschluss bei der Luftdichtheitsprüfung, die eine Person vermieden hätte, oder nach 3 Monaten weniger als 99 % ohne Eingriff geklebte Strecken: stoppen."
+  scope_hint:
+    en: "Straight runs on one window type; corners stay manual."
+    de: "Gerade Strecken an einem Fenstertyp; Ecken bleiben Handarbeit."
+prerequisites:
+  - { en: "Clean, dry bonding surfaces at the taping station", de: "Saubere, trockene Klebeflächen an der Klebestation" }
+open_questions:
+  - { en: "How many openings per element, and how many corner folds per opening?", de: "Wie viele Öffnungen je Element und wie viele Eckfaltungen je Öffnung?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

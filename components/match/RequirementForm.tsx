@@ -10,6 +10,7 @@ import { ui } from '@/lib/ui';
  */
 
 const TASK_LABEL: Record<string, string> = {
+  kitting: 'Kitting', machine_tending: 'Machine tending', palletising: 'Palletising', surface_finishing: 'Surface finishing',
   carry_payload: 'Carry material',
   fetch_and_deliver: 'Fetch and deliver',
   shelf_pick: 'Pick from shelves',

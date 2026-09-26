@@ -1,0 +1,119 @@
+schema_version: 1
+id: site_tiling/large-format-floor-tiles
+status: published
+setting: site_tiling
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Lay large-format floor tiles in thin-bed adhesive"
+  de: "Großformatige Bodenfliesen im Dünnbett verlegen"
+summary:
+  en: "Set porcelain tiles of 60 × 120 cm and larger into adhesive on screed, level them and keep the joints even."
+  de: "Feinsteinzeugfliesen ab 60 × 120 cm in Kleber auf dem Estrich verlegen, eben ausrichten und die Fugen gleichmäßig halten."
+description:
+  en: "A 60 × 120 cm porcelain tile weighs about 17 kg, a 120 × 120 cm tile close to 29 kg. Each has to go flat into the adhesive bed, without lippage or hollow spots, so that the finished floor stays within its flatness tolerance. The work is done kneeling, tile after tile."
+  de: "Eine Feinsteinzeugfliese 60 × 120 cm wiegt rund 17 kg, eine 120 × 120 cm knapp 29 kg. Jede muss ohne Überzähne und Hohlstellen flach ins Kleberbett, damit der fertige Boden in seiner Ebenheitstoleranz bleibt. Gearbeitet wird kniend, Fliese für Fliese."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '024'
+  atv: "DIN 18352"
+  position:
+    en: "Floor tiles in thin-bed adhesive, large formats"
+    de: "Bodenfliesen im Dünnbettverfahren, Großformat"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 16.9, max: 28.7 }
+    confidence: likely
+    evidence_url: 'https://www.fliesenrabatte.de/villeroy-boch-metalcraft-bodenfliese-120x120-steel-2758-mc60-0.html'
+    note: "Villeroy & Boch Metalcraft 120 × 120 cm, 9 mm: 20 kg/m² × 1.197 m × 1.197 m = 28.7 kg per tile (dealer page with the maker's data). Agrob Buchtal Valley 60 × 120 cm, 10.5 mm: 23.18 kg/m², two tiles per 33.74 kg package = 16.9 kg per tile (fliesenadeneuer.de)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The field repeats; cuts at walls, door frames, drains and falls differ in every room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Lippage or a hollow spot shows on the finished floor and means lifting and re-laying the tile; nothing structural depends on it."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Floor finish without structural or fire-protection function."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: likely
+    note: "Floor work, done kneeling."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building, on screed ready for covering."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: likely
+    note: "Cutting and grinding porcelain releases quartz-bearing dust at the tool (TRGS 559); laying itself makes no dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed building."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screed ready for covering."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid by hand. None of the sources reviewed describes a machine that lays floor tiles on German sites."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the area per day; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and tiles re-laid."
+requirements:
+  object_size_m:
+    value: { min: 1.195, max: 1.197 }
+    confidence: confirmed
+    evidence_url: 'https://www.fliesenrabatte.de/villeroy-boch-metalcraft-bodenfliese-120x120-steel-2758-mc60-0.html'
+    note: "Longest edge: 1197 mm for Villeroy & Boch Metalcraft 120 × 120 (production size 1197 × 1197 mm); 1195 mm for Agrob Buchtal Valley 60 × 120 (596 × 1195 mm, fliesenadeneuer.de)."
+  tolerance_mm:
+    value: 4
+    confidence: confirmed
+    evidence_url: 'https://www.just-fussboden.com/downloads/ebenheitstoleranzen.pdf'
+    note: "Flatness of the finished floor: 4 mm over a 1 m measuring distance (2 mm over 0.1 m, 10 mm over 4 m), DIN 18202 Table 3, row 3 (finished floors including tile coverings), as reproduced by Just Fußboden."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Up to 29 kg per tile is above the payload ceiling of today's humanoids. A vacuum lifting aid in the tiler's hands is the better answer for these formats; smaller tiles go through the screen as their own task."
+      de: "Bis zu 29 kg je Fliese liegen über der Traglastgrenze heutiger Humanoider. Für diese Formate ist eine Vakuum-Hebehilfe in der Hand des Fliesenlegers die bessere Antwort; kleinere Fliesen laufen als eigene Aufgabe durch den Screen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage, quality]
+capabilities_required: [carry_payload, surface_finishing]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence: []
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: "More than 1 % of tiles re-laid for lippage or hollow spots after 3 months with the lifting aid, then go back to the previous method."
+    de: "Mehr als 1 % der Fliesen wegen Überzähnen oder Hohlstellen neu verlegt nach 3 Monaten mit der Hebehilfe, dann zurück zur bisherigen Methode."
+  scope_hint:
+    en: "One floor of 60 × 120 cm tiles with a vacuum lifting aid against the current method; measure square metres per shift and re-laid tiles."
+    de: "Ein Geschoss 60 × 120 cm mit Vakuum-Hebehilfe gegen die bisherige Methode; Quadratmeter je Schicht und neu verlegte Fliesen messen."
+prerequisites:
+  - { en: "Screed ready for covering and within its own flatness tolerance", de: "Belegreifer Estrich innerhalb seiner eigenen Ebenheitstoleranz" }
+open_questions:
+  - { en: "Which share of your tiled floor area is 60 × 120 cm or larger?", de: "Welcher Anteil Ihrer Fliesenfläche ist 60 × 120 cm oder größer?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

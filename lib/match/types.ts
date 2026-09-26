@@ -22,7 +22,7 @@ export type CriterionResult = {
 
 export type PriceQuote = {
   amount_eur: number;
-  original: { amount: number; currency: string; region: string; tier: number; source_url: string; observed_at: string };
+  original: { amount: number; currency: string; region: string; config: string; tier: number; source_url: string; observed_at: string };
   /** 'listed' when read in EUR from an EU store or distributor; 'converted' for a US list price; 'estimate' for aggregator figures. */
   basis: 'listed' | 'converted' | 'estimate';
 };

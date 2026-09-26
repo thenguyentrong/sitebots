@@ -1,0 +1,136 @@
+schema_version: 1
+id: mep_prefab/press-pipe-spools
+status: published
+setting: mep_prefab
+family: assembly_fastening
+trades: [mep_plumbing, mep_hvac]
+title:
+  en: "Cut, deburr and press small-bore pipe spools"
+  de: "Rohrstücke kleiner Nennweite ablängen, entgraten und verpressen"
+summary:
+  en: "Cut stainless system pipe to the spool list, deburr, mark the insertion depth, fit the press fittings and press them with the battery press machine."
+  de: "Edelstahl-Systemrohr nach Stückliste ablängen, entgraten, Einstecktiefe markieren, Pressfittings aufschieben und mit der Akku-Pressmaschine verpressen."
+description:
+  en: "Prefabricated spools for risers and floor distributions come off a bench: pipe from 6 m bars, cut, deburred, marked, fitted and pressed. The press machine supplies the force; the fitter positions jaw and machine, checks the insertion mark and labels the spool. Spool types repeat per floor, but every building has its own set."
+  de: "Vorgefertigte Rohrstücke für Steigleitungen und Etagenverteilungen entstehen an einer Werkbank: Rohr von 6-m-Stangen, abgelängt, entgratet, markiert, gefügt und verpresst. Die Pressmaschine bringt die Kraft auf; der Monteur setzt Backe und Maschine an, prüft die Einsteckmarkierung und beschriftet das Rohrstück. Die Stücktypen wiederholen sich je Geschoss, aber jedes Gebäude hat seinen eigenen Satz."
+also_in_settings: [site_plumbing, site_heating]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 11.9 }
+    confidence: likely
+    evidence_url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    note: "Geberit Mapress stainless system pipe comes in 6 m bars, d 12–54 mm with 1–1.5 mm wall (Geberit product data, 01/11/2021). At 8.0 kg/dm³ (1.4401 data sheet) a 54 × 1.5 mm bar weighs about 1.98 kg/m, 11.9 kg for 6 m; a 28 × 1.2 mm bar about 0.81 kg/m. Spools cut from them are lighter."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Spool types repeat per floor; every building has its own set."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "An unpressed or badly inserted joint shows at the pressure test before the spool leaves the shop."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "Water and heating pipework; the pressure test is the gate. Gas pipework would add requirements not covered here."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "At the bench; measure your station."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Prefabrication hall."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Clean assembly work; the cutting station is a local exception (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Cut and pressed by hand at the bench as far as known; if your shop runs an automatic cutting line, the task shrinks to fitting and pressing."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at pipe and fittings."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on spools per shift; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Count joints per spool and minutes per joint."
+requirements:
+  object_size_m:
+    value: { min: 0.2, max: 6 }
+    confidence: likely
+    evidence_url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    note: "Pipe comes in 6 m bars (Geberit product data); spools run from short pieces to a few metres."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The insertion depth is marked before pressing and checked after; it is a mark to reach, not a ± value."
+  force_n:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.viega.de/de/produkte/Katalog/Rohrleitungstechnik/Systempresswerkzeuge/Systempressmaschinen/Pressgun-6/Pressgun-6-Plus-Pressmaschine-2295-3.html'
+    note: "The press machine supplies the 32 kN press force (Viega Pressgun 6 Plus); the person or robot only positions jaw and machine."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "A bench job with repeating spool types: compare a fixed cobot cell that holds the press machine first, then a wheeled mobile manipulator if the spools move between stations. The pressure test stays."
+      de: "Eine Werkbankarbeit mit wiederkehrenden Stücktypen: zuerst eine feste Cobot-Zelle vergleichen, die die Pressmaschine hält, danach einen radgebundenen Mobilmanipulator, wenn die Stücke zwischen Stationen wandern. Die Druckprüfung bleibt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage, ergonomics]
+capabilities_required: [tool_handoff]
+capabilities_optional: [kitting]
+solution_classes: [fixed_cobot_cell, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "Geberit lists its Mapress stainless system pipe in 6 m bars from d 12 mm (1 mm wall) to d 108 mm (2 mm wall)."
+      de: "Geberit führt das Mapress Edelstahl-Systemrohr in 6-m-Stangen von d 12 mm (1 mm Wand) bis d 108 mm (2 mm Wand)."
+    url: 'https://documents.unidomo.de/de/gedb_pro_103002_de-de.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2021-11-01'
+    type: claim
+    confidence: likely
+    note: "Geberit product data sheet dated 01/11/2021, hosted by a distributor. Data source for mass and length."
+  - statement:
+      en: "Viega's Pressgun 6 Plus battery press machine applies a press force of 32 kN."
+      de: "Die Akku-Pressmaschine Pressgun 6 Plus von Viega bringt eine Presskraft von 32 kN auf."
+    url: 'https://www.viega.de/de/produkte/Katalog/Rohrleitungstechnik/Systempresswerkzeuge/Systempressmaschinen/Pressgun-6/Pressgun-6-Plus-Pressmaschine-2295-3.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date. The tool does the pressing."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Any joint failing the pressure test that the person would have caught, or fewer than 99 % of joints pressed right without intervention after 3 months: stop."
+    de: "Eine Verbindung, die bei der Druckprüfung durchfällt und die eine Person erkannt hätte, oder nach 3 Monaten weniger als 99 % richtig verpresste Verbindungen ohne Eingriff: stoppen."
+  scope_hint:
+    en: "One spool type, d 15–28 mm, one bench."
+    de: "Ein Stücktyp, d 15–28 mm, eine Werkbank."
+prerequisites:
+  - { en: "Spool lists with lengths and fittings from the model", de: "Stücklisten mit Längen und Fittings aus dem Modell" }
+open_questions:
+  - { en: "How many spool types cover most of your volume?", de: "Wie viele Stücktypen decken den Großteil Ihrer Menge ab?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

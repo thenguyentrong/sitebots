@@ -1,0 +1,27 @@
+id: site_flooring
+group: site
+section: interior
+lv: { lb: ['036', '028'], atv: ["DIN 18365", "DIN 18356"] }
+title: { en: "Floor coverings and parquet", de: "Bodenbelag- und Parkettarbeiten" }
+aliases:
+  en: [vinyl, carpet, parquet]
+  de: [Bodenbeläge, Parkett]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks: linoleum sheet from the roll (ruled out; a full roll weighs about 190 kg), carpet tiles, click parquet and click vinyl (all three marginal: planks and tiles of 1 to 3.3 kg, held back by the cuts at walls and frames and by joints that must close cleanly)."
+  de: "Vier geprüfte Aufgaben: Linoleum in Bahnen von der Rolle (ausgeschlossen; eine volle Rolle wiegt rund 190 kg), Teppichfliesen, Klick-Parkett und Klick-Vinyl (alle drei grenzwertig: Dielen und Fliesen von 1 bis 3,3 kg, gebremst durch die Zuschnitte an Wänden und Zargen und durch Fugen, die sauber schließen müssen)."
+typical_incumbent_automation: []
+dust:
+  type: wood
+  typical_zone: controlled
+  note:
+    en: "Sawing and sanding timber on site releases wood dust (TRGS 553)."
+    de: "Sägen und Schleifen von Holz auf der Baustelle setzt Holzstaub frei (TRGS 553)."
+floor: level
+exposure: indoor
+typical_trades: [flooring_tiling]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

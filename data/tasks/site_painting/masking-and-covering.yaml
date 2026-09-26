@@ -1,0 +1,113 @@
+schema_version: 1
+id: site_painting/masking-and-covering
+status: published
+setting: site_painting
+family: surface_finishing
+trades: [painting]
+title:
+  en: "Cover floors and mask components before painting"
+  de: "Böden abdecken und Bauteile abkleben vor dem Streichen"
+summary:
+  en: "Roll out covering fleece on the floor, tape it down and mask window frames, sockets, doors and edges before the paint goes on."
+  de: "Abdeckvlies auf dem Boden ausrollen, festkleben und Fensterrahmen, Steckdosen, Türen und Kanten abkleben, bevor gestrichen wird."
+description:
+  en: "Preparation that comes before every coat and is different in every room: fleece rolls on the floor, tape along every frame and edge, film over what must stay clean. Nothing heavy is lifted; the work runs from floor level to the ceiling edge."
+  de: "Vorarbeit, die vor jedem Anstrich kommt und in jedem Raum anders ist: Vliesrollen auf dem Boden, Klebeband an jedem Rahmen und jeder Kante, Folie über alles, was sauber bleiben muss. Schweres wird nicht gehoben; die Arbeit reicht vom Boden bis zur Deckenkante."
+also_in_settings: [facility_operation]
+derived_from: null
+lv:
+  lb: '034'
+  atv: "DIN 18363"
+  position:
+    en: "Covering floors and masking components before coating work"
+    de: "Abdecken von Böden und Abkleben von Bauteilen vor Beschichtungsarbeiten"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 4.5, max: 13 }
+    confidence: likely
+    evidence_url: 'https://www.colorus.de/abdecken/Abdeckvlies/'
+    note: "Colorus lists painter's fleece at 180 to 260 g/m² in 1 m wide rolls of 25 or 50 m: 1 m × 25 m × 0.18 kg/m² = 4.5 kg, 1 m × 50 m × 0.26 kg/m² = 13 kg. Their 2 m wide 50 m roll at 230 g/m² comes to 23 kg and is left out of this record's scope."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Window frames, sockets, doors, radiators and floor finishes differ in every room."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A missed edge means cleaning or touching up afterwards."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Protective preparation; no structural or fire-protection function."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Floor to ceiling edge; room height not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Closed, dry rooms."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Masking makes no dust."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Finished floor or screed."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Done by hand; none of the sources reviewed describes a machine for it."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the rooms; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure masking minutes per room."
+requirements:
+  object_size_m:
+    value: { min: 1, max: 1 }
+    confidence: confirmed
+    evidence_url: 'https://www.colorus.de/abdecken/Abdeckvlies/'
+    note: "Roll width 1 m for the fleece in scope; tape rolls and film are smaller."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: pass, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Light, varied and error-tolerant: the hard tests pass. What remains open is reach up to the ceiling edge and whether a robot tapes a window frame cleanly. Compare a humanoid and a wheeled mobile manipulator on floor covering first, masking second."
+      de: "Leicht, abwechslungsreich und fehlertolerant: Die harten Tests bestehen. Offen bleiben die Reichhöhe bis zur Deckenkante und ob ein Roboter einen Fensterrahmen sauber abklebt. Einen Humanoiden und einen radgebundenen Mobilmanipulator zuerst beim Bodenabdecken vergleichen, das Abkleben danach."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage]
+capabilities_required: [surface_finishing]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [humanoid, mobile_manipulator_wheeled, keep_process]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of rooms covered and masked without rework after 3 months, then change the use case."
+    de: "Weniger als 99 % der Räume nach 3 Monaten ohne Nacharbeit abgedeckt und abgeklebt, dann Use Case wechseln."
+  scope_hint:
+    en: "Floor covering in one floor of identical rooms first; masking of frames only once the covering runs unaided."
+    de: "Zuerst das Bodenabdecken in einem Geschoss gleicher Räume; das Abkleben von Rahmen erst, wenn das Abdecken ohne Eingriff läuft."
+prerequisites: []
+open_questions:
+  - { en: "How many painter hours per flat go into covering and masking today?", de: "Wie viele Malerstunden je Wohnung entfallen heute auf Abdecken und Abkleben?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

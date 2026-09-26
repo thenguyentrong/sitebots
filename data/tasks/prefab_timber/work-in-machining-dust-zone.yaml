@@ -1,0 +1,112 @@
+schema_version: 1
+id: prefab_timber/work-in-machining-dust-zone
+status: published
+setting: prefab_timber
+family: cleaning_housekeeping_replenishment
+trades: [timber]
+title:
+  en: Clear offcuts and service the machines in the machining zone
+  de: Verschnitt räumen und Maschinen im Bearbeitungsbereich bedienen
+summary:
+  en: Any handling task inside the dust zone around the joinery centre and the panel saw.
+  de: Jede Handhabungsaufgabe im Staubbereich um Abbundanlage und Plattensäge.
+description:
+  en: "Clearing offcuts, feeding blanks and small service tasks next to the big machines look like humanoid work by mass and variability. They are not, because the area is a dust zone: no humanoid publishes a usable ingress rating, and the coming legged-robot standard is not written for dust atmospheres. Move the step out of the zone first."
+  de: Verschnitt räumen, Rohlinge zuführen und kleine Servicearbeiten neben den großen Maschinen sehen nach Masse und Varianz wie Humanoid-Arbeit aus. Sind sie nicht, weil der Bereich ein Staubbereich ist, kein Humanoid veröffentlicht eine brauchbare Schutzart, und die kommende Norm für Laufroboter ist nicht für Staubatmosphären geschrieben. Den Schritt zuerst aus der Zone verlagern.
+also_in_settings: [joinery_windows_doors, precast_concrete, steel_fabrication]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 10 }
+    confidence: assumed
+    note: Offcuts and blanks; verify per machine.
+  variability:
+    value: medium
+    confidence: assumed
+    note: Analyst judgement. Offcut sizes and timing vary; the locations do not.
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: A missed offcut is picked up later.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: No structural consequence; machine guarding is a separate review.
+  reach_height_m:
+    value: { min: 0.2, max: 1.8 }
+    confidence: assumed
+    note: Floor to outfeed height.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Machining hall.
+  dust:
+    value: { type: wood, zone: zone }
+    confidence: likely
+    note: The area around the joinery centre and the panel saw is a dust zone with extraction, not a workroom in the cleaning-plan sense.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: partial, machine_classes: [cnc_joinery] }
+    confidence: assumed
+    note: Offcut sorting into bins is offered as part of some automated cells; manual in the reference plant.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Offcuts and blanks vary per machine; not recorded."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No positional tolerance is recorded."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: fail, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T2_dust]
+  better_answer:
+    class: process_change
+    note:
+      en: Move the offcut and feeding step out of the zone (conveyor to a clean area, extraction at the source), then screen it again as a clean-zone task.
+      de: Den Verschnitt- und Zuführschritt aus der Zone verlagern (Förderband in einen sauberen Bereich, Absaugung an der Quelle), dann als Aufgabe in der sauberen Zone erneut prüfen.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [process_change, dedicated_machine]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None until the step leaves the zone.
+    de: Keiner, bis der Schritt die Zone verlässt.
+prerequisites: []
+open_questions:
+  - { en: "Can the offcut stream be conveyed to a clean area?", de: "Lässt sich der Verschnittstrom in einen sauberen Bereich fördern?" }
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

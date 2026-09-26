@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_setup_logistics/bagged-material-distribution
+status: published
+setting: site_setup_logistics
+family: intralogistics_transport
+trades: [logistics]
+title:
+  en: "Distribute bagged plaster and mortar to the work areas"
+  de: "Sackware wie Putz und Mörtel zu den Arbeitsbereichen verteilen"
+summary:
+  en: "Take the pallet off the hoist at the floor and bring the sacks to where the plasterers or masons mix."
+  de: "Die Palette am Geschoss vom Bauaufzug nehmen und die Säcke dorthin bringen, wo Putzer oder Maurer anmischen."
+description:
+  en: "Machine plaster comes in 30 kg sacks, 40 to a pallet, about 1.2 t. A material hoist lifts the whole pallet; a GEDA 1500 Z/ZP, for example, carries up to 2000 kg of material. From the landing the sacks are carried by hand or the pallet is moved with a pallet truck. Each sack is above the payload ceiling the screen uses for humanoids, and carrying it is hard work for people as well."
+  de: "Maschinenputz kommt in 30-kg-Säcken, 40 Stück je Palette, rund 1,2 t. Ein Materialaufzug hebt die ganze Palette; ein GEDA 1500 Z/ZP etwa trägt bis zu 2000 kg Material. Vom Ausstieg aus werden die Säcke getragen oder die Palette mit dem Hubwagen bewegt. Jeder Sack liegt über der Traglastgrenze, die das Screening für Humanoide ansetzt, und das Tragen ist auch für Menschen schwere Arbeit."
+also_in_settings: [site_plaster, site_masonry, construction_logistics_hub]
+derived_from: null
+lv:
+  lb: '090'
+  atv: null
+  position:
+    en: "Distribution of bagged material within the site (site logistics)"
+    de: "Verteilung von Sackware innerhalb der Baustelle (Baulogistik)"
+  unit: t
+attributes:
+  object_mass_kg:
+    value: { min: 30, max: 30 }
+    confidence: likely
+    evidence_url: 'https://baustoffe.rw.net/Knauf-MP75-L-Maschinenputzgips-leicht-30-kg/p/2010149'
+    note: "Knauf MP 75 L gypsum machine plaster: 30 kg sacks, 40 sacks per pallet, about 1.2 t (builders' merchant product page). Other bagged mortars differ; weigh what the project orders."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The load is uniform; routes and drop points change as the floor fills up."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A sack in the wrong room costs a few minutes and is moved again."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Material supply; nothing structural depends on the run."
+  reach_height_m:
+    value: { min: 0, max: 1.2 }
+    confidence: assumed
+    note: "From the pallet to the floor next to the mixer. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed floors where plastering happens."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Closed sacks release little; the floor carries dust from mixing and cutting."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Sacks are kept dry; wet sacks harden."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab, thresholds, hoses and scaffolds."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.geda.de/en/product/1500-zzp/'
+    note: "The material hoist lifts whole pallets (up to 2000 kg on a GEDA 1500 Z/ZP); the last metres are carried by hand or with a pallet truck."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "About 8 kg of plaster per m² at 10 mm; the plaster area of the floor gives the tonnage."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Sack dimensions not recorded."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Not relevant."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: amr_carts
+    note:
+      en: "Move the pallet, not the sacks: a pallet truck or an autonomous pallet mover from the hoist landing to the mixing point, so that nobody carries 30 kg sacks across the floor."
+      de: "Die Palette bewegen, nicht die Säcke: ein Hubwagen oder ein autonomer Palettentransporter vom Aufzugsausstieg bis zur Mischstelle, damit niemand 30-kg-Säcke über das Geschoss trägt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload, fetch_and_deliver, autonomous_nav_indoor]
+capabilities_optional: []
+solution_classes: [amr_carts, keep_process]
+evidence:
+  - statement:
+      en: "GEDA lists its 1500 Z/ZP construction hoist with a payload of 2000 kg for material or 17 persons, a lifting speed of 24 m/min and lifting heights up to 100 m."
+      de: "GEDA gibt für den Bauaufzug 1500 Z/ZP eine Nutzlast von 2000 kg Material oder 17 Personen, 24 m/min Hubgeschwindigkeit und Förderhöhen bis 100 m an."
+    url: 'https://www.geda.de/en/product/1500-zzp/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the day it was checked."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If an autonomous pallet mover is tried: one floor, hoist landing to two mixing points, count the sacks nobody had to carry."
+    de: "Falls ein autonomer Palettentransporter erprobt wird: ein Geschoss, Aufzugsausstieg zu zwei Mischstellen, die Säcke zählen, die niemand tragen musste."
+prerequisites: []
+open_questions:
+  - { en: "How many tonnes of bagged material does one floor take, and who carries it today?", de: "Wie viele Tonnen Sackware braucht ein Geschoss, und wer trägt sie heute?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

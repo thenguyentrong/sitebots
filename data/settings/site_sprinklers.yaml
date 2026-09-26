@@ -1,0 +1,26 @@
+id: site_sprinklers
+group: site
+section: services
+lv: { lb: ['049'], atv: [] }
+title: { en: "Sprinklers and extinguishing systems", de: "Feuerlöschanlagen" }
+aliases:
+  en: [sprinkler installation]
+  de: [Sprinkleranlagen]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks: hanging the pipework (ruled out: 6 m steel lengths of 15 to 73 kg in a fire-protection system; a material lift is the better answer), installing the sprinklers (ruled out: life safety, a 19 Nm wrench rating and a 13 mm adjustment window) and connecting sprinklers with flexible hoses in suspended ceilings (ruled out: every connection belongs to the approved extinguishing system)."
+  de: "Drei geprüfte Aufgaben: Rohrleitungen montieren (ausgeschieden: 6-m-Stahlrohre mit 15 bis 73 kg in einer Brandschutzanlage; ein Materiallift ist die bessere Antwort), Sprinkler montieren (ausgeschieden: Personenschutz, 19 Nm am Montageschlüssel und 13 mm Verstellbereich) und Sprinkler mit flexiblen Schläuchen in abgehängten Decken anschließen (ausgeschieden: jeder Anschluss gehört zur zugelassenen Löschanlage)."
+typical_incumbent_automation: [drilling_robot]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: indoor
+typical_trades: [mep_sprinkler]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+status: published

@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_sprinklers/flexible-sprinkler-drops
+status: published
+setting: site_sprinklers
+family: assembly_fastening
+trades: [mep_sprinkler]
+title:
+  en: "Connect sprinklers to the branch lines with flexible hoses in suspended ceilings"
+  de: "Sprinkler mit flexiblen Schläuchen in abgehängten Decken an die Verteilleitungen anschließen"
+summary:
+  en: "Fix the support bar to the ceiling grid, run the flexible hose from the branch line to the sprinkler position, bend it into place and connect both ends."
+  de: "Die Tragschiene am Deckenraster befestigen, den flexiblen Schlauch von der Verteilleitung zur Sprinklerposition führen, in Form biegen und beide Enden anschließen."
+description:
+  en: "Instead of rigid drops, flexible sprinkler hoses connect each sprinkler to the branch line above a suspended ceiling. A support bar spans the ceiling grid, the hose runs from the outlet on the branch line to the bar, and the sprinkler sits in the hose end at the design position. Hoses come in several lengths and may be bent several times; the system carries fire-protection approvals from UL, FM, LPCB and VdS. Each connection is part of the extinguishing system and is pressure-tested with it."
+  de: "Statt starrer Abgänge verbinden flexible Sprinklerschläuche jeden Sprinkler über einer abgehängten Decke mit der Verteilleitung. Eine Tragschiene überspannt das Deckenraster, der Schlauch läuft vom Abgang der Verteilleitung zur Schiene, und der Sprinkler sitzt im Schlauchende an der geplanten Position. Die Schläuche gibt es in mehreren Längen, sie dürfen mehrfach gebogen werden; das System trägt Brandschutzzulassungen von UL, FM, LPCB und VdS. Jeder Anschluss ist Teil der Löschanlage und wird mit ihr druckgeprüft."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '049'
+  atv: null
+  position:
+    en: "Flexible sprinkler connection hoses with support bar for the ceiling grid: supply and install"
+    de: "Flexible Sprinkleranschlussschläuche mit Tragschiene für das Deckenraster liefern und montieren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 3 }
+    confidence: assumed
+    note: "Hose, sprinkler and a 700 mm support bar; the maker publishes no weight, so the range is an estimate."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. One hose type repeats across a floor; lengths, bends and positions follow the ceiling layout."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A leaking or misplaced connection shows at the pressure test or the ceiling inspection and is remade."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    evidence_url: 'https://www.viking-emea.com/technologies/s-flex/'
+    note: "Part of an automatic fire-extinguishing system; the hoses carry UL, FM, LPCB and VdS approvals."
+  reach_height_m:
+    value: { min: 2.5, max: 3.5 }
+    confidence: assumed
+    note: "Above and in the suspended ceiling; heights not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Construction dust from the other trades during fit-out."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Dry until the system is filled."
+  floor:
+    value: level
+    confidence: likely
+    note: "Screeded floors, working from a platform."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Installed by sprinkler fitters; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Design drawings only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.7, max: 0.7 }
+    confidence: confirmed
+    evidence_url: 'https://www.viking-emea.com/technologies/s-flex/'
+    note: "Standard support bar 700 mm, longer versions on request; hose lengths vary."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No position tolerance published; the design fixes the sprinkler positions."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the maker only states a tighter bend radius than comparable hoses."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the sprinkler fitters on it: every connection belongs to an approved extinguishing system and is pressure-tested with it. The hoses themselves already take work out of the job compared with rigid drops."
+      de: "Das bleibt bei den Sprinklermonteuren: Jeder Anschluss gehört zu einer zugelassenen Löschanlage und wird mit ihr druckgeprüft. Die Schläuche selbst sparen gegenüber starren Abgängen schon Arbeit."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [screwing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Viking describes its S-Flex flexible sprinkler hose with several hose lengths, multiple bends allowed, a tighter bend radius than other FM-approved or UL-listed hoses, a 700 mm standard support bar that fits most ceiling grids, and UL, FM, LPCB, VdS and CE approvals."
+      de: "Viking beschreibt seinen flexiblen Sprinklerschlauch S-Flex mit mehreren Schlauchlängen, mehrfach erlaubten Biegungen, einem engeren Biegeradius als andere FM- oder UL-zugelassene Schläuche, einer 700-mm-Standardtragschiene für die meisten Deckenraster und Zulassungen nach UL, FM, LPCB, VdS und CE."
+    url: 'https://www.viking-emea.com/technologies/s-flex/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date; no weights or hose lengths are given."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not pursued; the sprinkler fitters install and test the connections."
+    de: "Nicht verfolgt; die Sprinklermonteure montieren und prüfen die Anschlüsse."
+prerequisites: []
+open_questions:
+  - { en: "Does the design allow flexible hoses throughout, or rigid drops in some areas?", de: "Sieht die Planung durchgehend flexible Schläuche vor oder in manchen Bereichen starre Abgänge?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

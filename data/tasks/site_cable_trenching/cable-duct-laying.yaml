@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_cable_trenching/cable-duct-laying
+status: published
+setting: site_cable_trenching
+family: assembly_fastening
+trades: [civil_earthworks, mep_electrical]
+title:
+  en: "Lay cable protection ducts in the trench"
+  de: "Kabelschutzrohre im Graben verlegen"
+summary:
+  en: "Lay PE duct bars on the trench bed and join them with push-fit sockets."
+  de: "PE-Schutzrohrstangen auf die Grabensohle legen und mit Steckmuffen verbinden."
+description:
+  en: "A 6 m bar of PE-HD cable duct, 110 × 6.3 mm, weighs about 12.6 kg: light, but long. In an open trench the bars are laid and joined by hand. Without an open trench, a cable plough lays several cables and pipes in one pass; one contractor gives daily outputs of up to 3000 m."
+  de: "Eine 6-m-Stange PE-HD-Kabelschutzrohr 110 × 6,3 mm wiegt etwa 12,6 kg: leicht, aber lang. Im offenen Graben werden die Stangen von Hand verlegt und verbunden. Ohne offenen Graben legt ein Kabelpflug mehrere Kabel und Rohre in einem Arbeitsgang; ein Unternehmen nennt Tagesleistungen bis 3000 m."
+also_in_settings: [site_electrical]
+derived_from: null
+lv:
+  lb: '051'
+  atv: "DIN 18322"
+  position:
+    en: "Cable protection ducts of PE-HD laid in the trench"
+    de: "Kabelschutzrohre aus PE-HD im Graben verlegen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 12.6, max: 12.6 }
+    confidence: likely
+    evidence_url: 'https://www.schoengen.de/fileadmin/website/download/prospekte/prospekte2021/pdf/Karl_Schoengen_KG_2_Schutzrohre-PE-HD_06-2021.pdf'
+    note: "PE-HD duct 110 × 6.3 mm: 2.10 kg/m (Karl Schoengen catalogue, June 2021), so about 12.6 kg per 6 m bar."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The bar repeats; bends, crossings and building entries vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A kinked or open joint shows when cables are pulled in and means digging up again."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The duct protects cables; a defect is a repair, not a safety failure."
+  reach_height_m:
+    value: { min: 0, max: 0.3 }
+    confidence: assumed
+    note: "Laid on the trench bed. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open trench on site."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Earth and sand in the trench; no relevant dust."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Trench bed."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [cable_plough] }
+    confidence: likely
+    evidence_url: 'https://www.boeck-kabelpflug.de/'
+    note: "A cable plough lays several cables and pipes in one pass without an open trench (contractor page); in a trench that is already open, people lay the bars."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 6.0, max: 6.0 }
+    confidence: likely
+    evidence_url: 'https://www.schoengen.de/fileadmin/website/download/prospekte/prospekte2021/pdf/Karl_Schoengen_KG_2_Schutzrohre-PE-HD_06-2021.pdf'
+    note: "Bars of 6.0 m (Karl Schoengen catalogue); coils and drums are also sold."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No public source used here states a laying tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states the force to push a socket home."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "In an open trench the bars stay light hand work; where the route allows it, compare a cable plough that lays ducts and cables in one pass. Outdoors, no humanoid publishes an ingress rating."
+      de: "Im offenen Graben bleiben die Stangen leichte Handarbeit; wo die Trasse es zulässt, einen Kabelpflug vergleichen, der Rohre und Kabel in einem Arbeitsgang legt. Im Freien veröffentlicht kein Humanoid eine Schutzart."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity]
+capabilities_required: [carry_payload, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "The Karl Schoengen catalogue of PE-HD protection pipes lists the 110 × 6.3 mm pipe at 2.10 kg per metre and bars of 6.0 m."
+      de: "Der Katalog Schutzrohre PE-HD von Karl Schoengen führt das Rohr 110 × 6,3 mm mit 2,10 kg je Meter und Stangen à 6,0 m."
+    url: 'https://www.schoengen.de/fileadmin/website/download/prospekte/prospekte2021/pdf/Karl_Schoengen_KG_2_Schutzrohre-PE-HD_06-2021.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2021-06-01'
+    type: claim
+    confidence: confirmed
+    note: "Catalogue edition 06-2021; no day given."
+  - statement:
+      en: "A cable ploughing contractor says several cables and pipes can be laid at once with the plough, in a single pass, with daily outputs of up to 3000 m."
+      de: "Ein Kabelpflug-Unternehmen schreibt, dass mit dem Pflug mehrere Kabel und Rohre gleichzeitig in nur einem Arbeitsgang verlegt werden, mit Tagesleistungen bis zu 3000 m."
+    url: 'https://www.boeck-kabelpflug.de/'
+    kind: operator
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Contractor's own claim; undated page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If ploughing is an option: one rural route, metres per day ploughed against trenched."
+    de: "Falls Pflügen in Frage kommt: eine Trasse außerorts, Meter je Tag gepflügt gegenüber im Graben."
+prerequisites: []
+open_questions:
+  - { en: "How much of your duct work is in open trenches and how much could be ploughed?", de: "Wie viel Ihrer Rohrverlegung liegt im offenen Graben und wie viel ließe sich pflügen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

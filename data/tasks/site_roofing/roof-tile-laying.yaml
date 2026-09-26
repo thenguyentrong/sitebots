@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_roofing/roof-tile-laying
+status: published
+setting: site_roofing
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Lay concrete roof tiles on the battens and clip them"
+  de: "Betondachsteine auf der Lattung verlegen und verklammern"
+summary:
+  en: "Take tiles from the stack on the roof, hang them row by row on the battens and set the clips."
+  de: "Dachsteine vom Stapel auf dem Dach nehmen, Reihe für Reihe in die Lattung hängen und die Klammern setzen."
+description:
+  en: "A Frankfurter Pfanne concrete tile weighs about 4.35 kg; 9.7 to 10.7 of them cover a square metre, depending on the roof pitch, and the batten gauge shifts with the pitch between 312 and 345 mm. The work is repetitive in the field of the roof and individual at verges, hips, valleys and penetrations, and it happens on a pitched surface in the weather."
+  de: "Ein Betondachstein Frankfurter Pfanne wiegt etwa 4,35 kg; je nach Dachneigung decken 9,7 bis 10,7 Stück einen Quadratmeter, und die Lattweite verschiebt sich mit der Neigung zwischen 312 und 345 mm. In der Fläche wiederholt sich die Arbeit, an Ortgang, Grat, Kehle und Durchdringungen ist sie Einzelarbeit, und sie findet auf geneigter Fläche im Wetter statt."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '020'
+  atv: "DIN 18338"
+  position:
+    en: "Roof covering with concrete roof tiles on battens, including clips"
+    de: "Dachdeckung mit Betondachsteinen auf Lattung einschließlich Verklammerung"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 4.35, max: 4.35 }
+    confidence: confirmed
+    evidence_url: 'https://d25az829w54h6m.cloudfront.net/Dachziegel_Dachsteine/Braas_Dachsteine_Datenblaetter/Datenblatt-Dachstein-BRAAS-Frankfurter-Pfanne.pdf'
+    note: "Braas datasheet: about 4.35 kg per standard tile (technical status 04/2014). Ridge, verge and other fittings weigh differently and are not covered here."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Repeated rows in the field; cuts and fittings at verges, hips, valleys and penetrations differ per roof."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A badly laid or unclipped tile lets water in and has to be relaid; it is found at inspection or after the first heavy rain."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The covering carries no structural load. The fall hazard on the roof concerns whoever does the work, not the result."
+  reach_height_m:
+    value: { min: 0, max: 1 }
+    confidence: assumed
+    note: "Work at arm's length on the roof surface; the roof itself is at height. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the roof, in the weather."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Hanging and clipping tiles raises no dust; cutting tiles is a separate step."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Dew and rain on the roof surface; work stops in heavy rain."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Pitched roof on battens, at the regular pitch of 22° for this tile or steeper."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Tiles are laid by hand; no site machine for laying roof tiles is known to us."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "9.7 to 10.7 tiles per m², depending on roof pitch"
+    confidence: confirmed
+    evidence_url: 'https://d25az829w54h6m.cloudfront.net/Dachziegel_Dachsteine/Braas_Dachsteine_Datenblaetter/Datenblatt-Dachstein-BRAAS-Frankfurter-Pfanne.pdf'
+    note: "Braas datasheet, Bedarf pro m²."
+requirements:
+  object_size_m:
+    value: { min: 0.33, max: 0.42 }
+    confidence: confirmed
+    evidence_url: 'https://d25az829w54h6m.cloudfront.net/Dachziegel_Dachsteine/Braas_Dachsteine_Datenblaetter/Datenblatt-Dachstein-BRAAS-Frankfurter-Pfanne.pdf'
+    note: "Tile 420 mm long and 330 mm wide including the side lock (Braas drawing)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The datasheet gives the batten gauge by roof pitch (312 to 345 mm), not a laying tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data; the tiles are hung on the battens and clipped."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The weather rules a humanoid out: none publishes a usable ingress rating for rain on a pitched roof. The tile weight itself would pass. No machine lays tiles on German sites that we know of, so the roofer stays; what a machine can take over is lifting the tiles to the roof, and prefabricated roof elements move work into the factory."
+      de: "Das Wetter schließt einen Humanoiden aus: keiner veröffentlicht eine brauchbare Schutzart für Regen auf dem Steildach. Das Gewicht der Steine allein würde bestehen. Eine Maschine, die auf deutschen Baustellen Dachsteine verlegt, ist uns nicht bekannt, der Dachdecker bleibt also; eine Maschine kann das Hochheben der Steine aufs Dach übernehmen, und vorgefertigte Dachelemente verlagern Arbeit ins Werk."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "Braas gives the Frankfurter Pfanne concrete tile at about 4.35 kg per piece, 9.7 to 10.7 pieces per m² depending on roof pitch, a cover width of 300 mm, a variable cover length of 312 to 345 mm and a regular roof pitch of 22°."
+      de: "Braas gibt für den Betondachstein Frankfurter Pfanne ca. 4,35 kg je Stück, 9,7 bis 10,7 Stück je m² je nach Dachneigung, 300 mm Deckbreite, eine variable Decklänge von 312 bis 345 mm und 22° Regeldachneigung an."
+    url: 'https://d25az829w54h6m.cloudfront.net/Dachziegel_Dachsteine/Braas_Dachsteine_Datenblaetter/Datenblatt-Dachstein-BRAAS-Frankfurter-Pfanne.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2014-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Braas datasheet, technical status 04/2014 (month only), copy on a distributor's file server."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If lifting is the pain: measure how long tiles take from the pallet to the roof with and without a material lift."
+    de: "Falls das Hochtragen das Problem ist: messen, wie lange die Steine von der Palette aufs Dach brauchen, mit und ohne Materialaufzug."
+prerequisites: []
+open_questions:
+  - { en: "Is the strain in laying the rows or in carrying the tiles up to the roof?", de: "Liegt die Belastung im Verlegen der Reihen oder im Hochtragen der Steine aufs Dach?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

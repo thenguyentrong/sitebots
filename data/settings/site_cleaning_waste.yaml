@@ -1,0 +1,26 @@
+id: site_cleaning_waste
+group: site
+section: site_wide
+lv: { lb: ['033', '087'], atv: [] }
+title: { en: "Construction cleaning and waste", de: "Baureinigung und Abfallentsorgung" }
+aliases:
+  en: [builders clean, site waste]
+  de: [Bauendreinigung, Baustellenabfall]
+coverage: screened
+coverage_note:
+  en: "Three screened tasks, all marginal: cleaning between trades, sorting waste into the ten fractions the Gewerbeabfallverordnung requires, and cleaning glazing at handover without scratching it."
+  de: "Drei geprüfte Aufgaben, alle grenzwertig: Reinigung zwischen den Gewerken, Sortieren der Abfälle in die zehn Fraktionen, die die Gewerbeabfallverordnung verlangt, und Reinigung der Verglasungen bei der Bauendreinigung, ohne sie zu verkratzen."
+typical_incumbent_automation: [cleaning_machine]
+dust:
+  type: mixed
+  typical_zone: controlled
+  note:
+    en: "General construction dust from the other trades; no classified zone."
+    de: "Allgemeiner Baustaub der anderen Gewerke; kein klassifizierter Bereich."
+floor: mixed
+exposure: indoor
+typical_trades: [general, logistics]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+status: published

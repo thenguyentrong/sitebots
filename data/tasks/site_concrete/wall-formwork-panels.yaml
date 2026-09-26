@@ -1,0 +1,162 @@
+schema_version: 1
+id: site_concrete/wall-formwork-panels
+status: published
+setting: site_concrete
+family: heavy_element_handling
+trades: [concrete]
+title:
+  en: "Set, tie and strike framed wall formwork"
+  de: "Rahmenschalung für Wände stellen, verspannen und ausschalen"
+summary:
+  en: "Stand framed panels on both faces of the wall, connect them with clamps, set the ties, plumb the formwork, and strip and clean it after the pour."
+  de: "Rahmentafeln auf beiden Wandseiten stellen, mit Spannern verbinden, Anker setzen, die Schalung ausloten und nach dem Betonieren ausschalen und reinigen."
+description:
+  en: "System wall formwork comes as framed panels. Hand-set systems weigh from about 20 to 90 kg a panel; crane-set panels run up to over 500 kg and are moved in gangs by the tower crane. The formwork has to carry the fresh concrete pressure, up to 50 kN/m² for the lightest hand-set system, so ties, clamps and props are checked before every pour; the wall surface it leaves must meet the flatness limits for unfinished walls."
+  de: "Systemwandschalung besteht aus Rahmentafeln. Handschalungen wiegen etwa 20 bis 90 kg je Tafel; Kranschalungen reichen bis über 500 kg und werden als Großflächen vom Turmdrehkran umgesetzt. Die Schalung muss den Frischbetondruck aufnehmen, bis 50 kN/m² bei der leichtesten Handschalung, deshalb werden Anker, Spanner und Stützen vor jedem Betonieren geprüft; die entstehende Wandfläche muss die Ebenheitstoleranzen für nichtflächenfertige Wände einhalten."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Wall formwork of framed panels: erect, tie and strike"
+    de: "Wandschalung aus Rahmenschalung herstellen, verspannen und ausschalen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 19.5, max: 514.2 }
+    confidence: confirmed
+    evidence_url: 'https://www.doka.com/_ext/downloads/itemlists/de/223458.pdf'
+    note: "Doka item lists: hand-set Frami Xlife panels from 19.5 kg (0.30 × 1.20 m) to 86.5 kg (0.90 × 3.00 m); crane-set Framax Xlife panels from 31.8 kg (0.30 × 1.35 m) to 514.2 kg (2.70 × 3.30 m), 210 kg for the common 1.35 × 2.70 m panel."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The panels repeat, but every wall layout has its own lengths, corners, stop-ends and openings."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Ties, clamps and plumbness are checked before the pour; mistakes found then are corrected, mistakes found during the pour are costly."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://www.doka.com/de/news/press/Doka_auf_NordBau_2019'
+    note: "The formwork carries the fresh concrete pressure; Doka states up to 50 kN/m² for walls with its lightest hand-set system. A failing tie or clamp lets the formwork burst."
+  reach_height_m:
+    value: { min: 0, max: 3.3 }
+    confidence: likely
+    note: "Panels stand up to 3.30 m high; clamps and ties are set over the full height, the top ones from the formwork platform."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Walls are formed before the storey is closed, in the open."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Setting and striking formwork makes no relevant dust; cleaning panels scrapes off concrete residue locally."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Work continues in rain."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Foundations and slabs with starter bars, formwork platforms and ladders."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    note: "The tower crane moves large panels and gang forms; hand-set systems are moved without a crane."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; formwork is priced per square metre of formed area."
+requirements:
+  object_size_m:
+    value: { min: 1.2, max: 3.3 }
+    confidence: likely
+    evidence_url: 'https://www.doka.com/_ext/downloads/itemlists/de/223458.pdf'
+    note: "Panel heights from 1.20 m (Frami Xlife) to 3.30 m (Framax Xlife); widths from 0.30 to 2.70 m. Taken from the two Doka item lists."
+  tolerance_mm:
+    value: 10
+    confidence: confirmed
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Flatness of the struck wall: DIN 18202 table 3, row 5 (unfinished walls), 10 mm as the limit at a measuring point distance of 1 m. A limit, not a ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for setting panels. The formwork itself carries the fresh concrete pressure, up to 50 kN/m² for the lightest hand-set system (Doka)."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: gantry
+    note:
+      en: "Keep the heavy lifting on the crane: large panels and gang forms are moved by the tower crane, and a formwork crew sets clamps and ties. Panels from 20 to over 500 kg that hold back fresh concrete, in the open, are not a case for a walking or wheeled robot."
+      de: "Das schwere Heben beim Kran lassen: Großtafeln und Großflächen setzt der Turmdrehkran um, die Schalungskolonne setzt Spanner und Anker. Tafeln von 20 bis über 500 kg, die Frischbeton halten, im Freien, sind kein Fall für einen laufenden oder fahrenden Roboter."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [gantry, keep_process]
+evidence:
+  - statement:
+      en: "Doka's Framax Xlife item list gives panel weights from 31.8 kg (0.30 × 1.35 m) to 514.2 kg (2.70 × 3.30 m), with 210.0 kg for the 1.35 × 2.70 m panel."
+      de: "Die Artikelliste von Doka für Framax Xlife nennt Tafelgewichte von 31,8 kg (0,30 × 1,35 m) bis 514,2 kg (2,70 × 3,30 m), 210,0 kg für die Tafel 1,35 × 2,70 m."
+    url: 'https://www.doka.com/_ext/downloads/itemlists/de/223458.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Item list without an edition date, read on 2026-09-25."
+  - statement:
+      en: "Doka's Frami Xlife item list, the hand-set framed formwork, gives panel weights from 19.5 kg (0.30 × 1.20 m) to 86.5 kg (0.90 × 3.00 m)."
+      de: "Die Artikelliste von Doka für die Handschalung Frami Xlife nennt Tafelgewichte von 19,5 kg (0,30 × 1,20 m) bis 86,5 kg (0,90 × 3,00 m)."
+    url: 'https://direct.doka.com/_ext/downloads/itemlists/at/189962.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Item list without an edition date, read on 2026-09-25."
+  - statement:
+      en: "Doka presented DokaXlight at NordBau 2019: about 22 kg per 0.75 × 1.50 m main panel, used by hand without a crane, for fresh concrete pressure up to 50 kN/m² on walls and 75 kN/m² on columns."
+      de: "Doka stellte DokaXlight auf der NordBau 2019 vor: ca. 22 kg je Hauptelement 0,75 × 1,50 m, ohne Kran von Hand einsetzbar, für einen Frischbetondruck bis 50 kN/m² bei Wänden und 75 kN/m² bei Stützen."
+    url: 'https://www.doka.com/de/news/press/Doka_auf_NordBau_2019'
+    kind: manufacturer
+    tier: 1
+    date: '2019-08-12'
+    type: claim
+    confidence: confirmed
+  - statement:
+      en: "DIN 18202 table 3 (as reproduced in the screed trade handbook of the ZDB): unfinished walls and soffits (row 5) allow 10 mm as the limit at a measuring point distance of 1 m."
+      de: "DIN 18202 Tabelle 3 (wiedergegeben im Handbuch für das Estrich- und Belaggewerbe des ZDB): Nichtflächenfertige Wände und Unterseiten von Rohdecken (Zeile 5) erlauben 10 mm als Grenzwert bei 1 m Messpunktabstand."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Copy of the table published by a screed contractor; the values at 0.1, 1, 4, 10 and 15 m are from the standard, the others interpolated. Read on 2026-09-25."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the aim is less lifting: compare a lighter hand-set system or larger crane-set gangs on one wall section, hours per square metre formed."
+    de: "Wenn weniger Heben das Ziel ist: ein leichteres Handschalungssystem oder größere Kranflächen an einem Wandabschnitt vergleichen, Stunden je Quadratmeter Schalfläche."
+prerequisites: []
+open_questions:
+  - { en: "Which formwork system and panel sizes do you use, and how much of it is moved by hand?", de: "Welches Schalungssystem und welche Tafelgrößen verwenden Sie, und wie viel davon wird von Hand umgesetzt?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

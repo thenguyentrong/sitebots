@@ -1,7 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { scraperUserAgent } from '@/lib/site';
-import { DEFAULT_TTL_MS, isFresh, lookup, sha256, store } from './cache';
+import { CACHE_ROOT, DEFAULT_TTL_MS, isFresh, lookup, sha256, store } from './cache';
 import { isDenied, isTrap } from './denylist';
 import { take } from './ratelimit';
 import { allowed } from './robots';
@@ -128,9 +128,9 @@ export async function politeFetch(url: string, opts: FetchOptions = {}): Promise
 export async function politeAsset(url: string, timeoutMs = 60_000): Promise<Buffer> {
   if (isDenied(url)) throw new FetchRefused('denied', 'source is on the denylist', url);
   if (isTrap(url)) throw new FetchRefused('trap', 'honeypot URL', url);
-  const cacheDir=join(process.cwd(),'.cache','binary');
+  const cacheDir=join(CACHE_ROOT,'binary');
   const cacheFile=join(cacheDir,sha256(url));
-  if(existsSync(cacheFile) && Date.now()-statSync(cacheFile).mtimeMs<24*3600*1000) return readFileSync(cacheFile);
+  if(existsSync(/* turbopackIgnore: true */ cacheFile) && Date.now()-statSync(/* turbopackIgnore: true */ cacheFile).mtimeMs<24*3600*1000) return readFileSync(/* turbopackIgnore: true */ cacheFile);
   const verdict = await allowed(url, UA);
   if (!verdict.ok) throw new FetchRefused('robots', verdict.reason ?? 'robots.txt', url);
   for (let attempt=0; attempt<3; attempt++) {

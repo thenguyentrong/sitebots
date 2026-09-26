@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_demolition/concrete-breaking
+status: published
+setting: site_demolition
+family: machine_operation_dedicated
+trades: [demolition, concrete]
+title:
+  en: "Break out concrete walls and slabs"
+  de: "Betonwände und -decken abbrechen"
+summary:
+  en: "Break concrete members apart with a heavy breaker or a remote-controlled demolition robot."
+  de: "Betonbauteile mit einem schweren Abbruchhammer oder einem ferngesteuerten Abbruchroboter zerkleinern."
+description:
+  en: "A heavy electric breaker such as the Hilti TE 3000-AVR weighs 27.1 kg and delivers 85 J per blow at 6.3 m/s² vibration. Remote-controlled demolition robots do the same work from a distance: a Brokk 300 weighs 3650 kg, reaches 6.5 m high with its hammer, runs on a 37 kW electric motor and is steered by radio from up to 300 m."
+  de: "Ein schwerer Elektro-Abbruchhammer wie der Hilti TE 3000-AVR wiegt 27,1 kg und liefert 85 J je Schlag bei 6,3 m/s² Vibration. Ferngesteuerte Abbruchroboter erledigen dieselbe Arbeit auf Abstand: Ein Brokk 300 wiegt 3650 kg, reicht mit dem Hammer 6,5 m hoch, läuft mit 37 kW elektrisch und wird per Funk aus bis zu 300 m gesteuert."
+also_in_settings: [site_concrete_repair]
+derived_from: null
+lv:
+  lb: '084'
+  atv: "DIN 18459"
+  position:
+    en: "Demolition of reinforced concrete members"
+    de: "Abbruch von Stahlbetonbauteilen"
+  unit: m3
+attributes:
+  object_mass_kg:
+    value: { min: 27.1, max: 27.1 }
+    confidence: confirmed
+    evidence_url: 'https://www.hilti.de/c/CLS_POWER_TOOLS_7124/CLS_DEMOLITION_HAMMER_BREAKER_SUB_7124/CLS_DEMOLITION_HAMMER_BREAKER_7124/r11668382'
+    note: "The heavy hand breaker used for this work weighs 27.1 kg (Hilti TE 3000-AVR, EPTA procedure 01/2003); broken pieces can weigh more."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Every member and opening differs; the breaking itself repeats."
+  error_tolerance:
+    value: limited
+    confidence: assumed
+    note: "Breaking beyond the marked line damages parts that stay."
+  safety_criticality:
+    value: structural
+    confidence: assumed
+    note: "Breaking out load-bearing members changes the stability of what remains; the demolition sequence is planned beforehand."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Walls and slabs from floor to ceiling height. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Inside buildings and outdoors."
+  dust:
+    value: { type: mineral, zone: zone }
+    confidence: likely
+    note: "Breaking concrete releases heavy quartz dust at the tool (TRGS 559); the area is treated as a dust zone."
+  wet:
+    value: dry
+    confidence: assumed
+    note: "Unless the dust is suppressed with water."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Rubble on the floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [demolition_robot_teleoperated] }
+    confidence: confirmed
+    evidence_url: 'https://www.brokk.com/de/product/brokk-300/'
+    note: "Remote-controlled demolition robots break concrete from a distance (Brokk); smaller openings are still broken by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Members differ; no single size applies."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No public source used here states a tolerance for breaking lines."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The breaker delivers 85 J per blow (Hilti); no source used here states the holding force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: fail, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T2_dust, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Use a remote-controlled demolition robot: it keeps people out of the dust and the danger zone. The hand breaker alone is above the payload ceiling of today's humanoids."
+      de: "Einen ferngesteuerten Abbruchroboter einsetzen: Er hält Menschen aus Staub und Gefahrenbereich. Schon der Handhammer liegt über der Traglastgrenze heutiger Humanoide."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics]
+capabilities_required: [teleoperated_manipulation]
+capabilities_optional: []
+solution_classes: [dedicated_machine]
+evidence:
+  - statement:
+      en: "Hilti lists the TE 3000-AVR demolition hammer at 27.1 kg (EPTA procedure 01/2003), 85 J single impact energy and 6.3 m/s² vibration when chiselling concrete."
+      de: "Hilti gibt für den Abbruchhammer TE 3000-AVR 27,1 kg (EPTA-Prozedur 01/2003), 85 J Einzelschlagenergie und 6,3 m/s² Vibration beim Meißeln in Beton an."
+    url: 'https://www.hilti.de/c/CLS_POWER_TOOLS_7124/CLS_DEMOLITION_HAMMER_BREAKER_SUB_7124/CLS_DEMOLITION_HAMMER_BREAKER_7124/r11668382'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "Brokk lists its Brokk 300 demolition robot at 3650 kg without attachment, 6500 mm vertical reach with the hydraulic hammer, a 37 kW electric motor and a portable radio remote control with a range of up to 300 m."
+      de: "Brokk gibt für den Abbruchroboter Brokk 300 3650 kg ohne Anbaugerät, 6500 mm vertikale Reichweite mit Hydraulikhammer, 37 kW Elektromotor und eine tragbare Funkfernsteuerung mit bis zu 300 m Reichweite an."
+    url: 'https://www.brokk.com/de/product/brokk-300/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If a demolition robot is new to you: one floor of openings, hours and dust exposure against hand breaking."
+    de: "Falls ein Abbruchroboter neu für Sie ist: ein Geschoss mit Durchbrüchen, Stunden und Staubbelastung gegenüber Handabbruch."
+prerequisites: []
+open_questions:
+  - { en: "Which openings are too small or too scattered for your demolition robot today?", de: "Welche Durchbrüche sind heute zu klein oder zu verstreut für Ihren Abbruchroboter?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

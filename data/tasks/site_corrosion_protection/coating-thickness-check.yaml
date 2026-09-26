@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_corrosion_protection/coating-thickness-check
+status: published
+setting: site_corrosion_protection
+family: inspection_qa_documentation
+trades: [steel, painting, qa_surveying]
+title:
+  en: "Measure the dry film thickness of the coating on steelwork"
+  de: "Trockenschichtdicke der Beschichtung am Stahlbau messen"
+summary:
+  en: "Take thickness readings with a handheld gauge across the coated steel members, following the inspection plan, and record them for acceptance."
+  de: "Mit einem Handmessgerät Schichtdickenwerte über die beschichteten Stahlbauteile nach dem Prüfplan aufnehmen und für die Abnahme protokollieren."
+description:
+  en: "After each coat, and before acceptance, the inspector measures the dry film thickness on the steel members with a magnetic or eddy-current gauge. A current gauge weighs about 156 g, takes more than 70 readings a minute and records statistics and high and low limits; it supports sampling standards such as ISO 19840 and SSPC PA 2. The work is simple per reading but spread over girders, webs and edges that are often reached only from scaffolds or lifts."
+  de: "Nach jeder Schicht und vor der Abnahme misst der Prüfer die Trockenschichtdicke an den Stahlbauteilen mit einem magnetinduktiven oder Wirbelstrom-Messgerät. Ein aktuelles Gerät wiegt etwa 156 g, nimmt mehr als 70 Messwerte pro Minute auf und speichert Statistik sowie obere und untere Grenzwerte; es unterstützt Stichprobennormen wie ISO 19840 und SSPC PA 2. Jede einzelne Messung ist einfach, verteilt sich aber über Träger, Stege und Kanten, die oft nur vom Gerüst oder der Hubarbeitsbühne erreichbar sind."
+also_in_settings: [steel_fabrication]
+derived_from: null
+lv:
+  lb: '035'
+  atv: "DIN 18364"
+  position:
+    en: "Dry film thickness check of the coating system with measurement record"
+    de: "Prüfung der Trockenschichtdicke des Beschichtungssystems mit Messprotokoll"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.156, max: 0.156 }
+    confidence: confirmed
+    evidence_url: 'https://www.elcometer.com/en/coatings-inspection/all-coatings-inspection/dry-film-thickness/digital/elcometer-456-integral-coating-thickness-gauge.html'
+    note: "Elcometer 456 integral gauge: 156 g including batteries."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The reading repeats; member shapes, access and measuring points vary from structure to structure."
+  error_tolerance:
+    value: limited
+    confidence: assumed
+    note: "A misread area is found in the statistics against the high and low limits and measured again; a coat that is really too thin is recoated before acceptance."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The check documents the corrosion protection; it does not carry load or protect life directly."
+  reach_height_m:
+    value: { min: 0, max: 2.5 }
+    confidence: assumed
+    note: "Members at working height from the floor, scaffold or lift platform. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Bridges and structures on site, or enclosed coating areas."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Measurement takes place after the coat has dried, not during blasting or spraying."
+  wet:
+    value: damp
+    confidence: assumed
+    note: "Coating work needs dry surfaces, but site structures are exposed to the weather."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Scaffold decks, platforms and ground."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Handheld gauges operated by the inspector; the gauge records statistics and limits, but a person places the probe."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Readings on steel; no people recorded."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the humanoid runtime of 30–90 min is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; readings per area follow the inspection plan."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Handheld gauge; no large object is handled."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The acceptance criteria are film thicknesses in micrometres from the coating specification; no value is stated in the sources used here. The gauge's own accuracy is ±1 to 3 % or ±2.5 µm."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Only the light contact of the probe."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator carrying the gauge on accessible members first; on scaffolds and lifts the inspector stays. The gauge already does the statistics."
+      de: "Zuerst einen radgebundenen Mobilmanipulator mit dem Messgerät an gut erreichbaren Bauteilen vergleichen; auf Gerüst und Hubarbeitsbühne bleibt der Prüfer. Die Statistik macht das Messgerät bereits."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [site_inspection]
+capabilities_optional: [autonomous_nav_outdoor]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Elcometer lists its 456 integral gauge for coatings on ferrous and non-ferrous metals at 156 g including batteries, more than 70 readings per minute, accuracy of ±1 to 3 % or ±2.5 µm, statistics with high and low limits and alarms, and compliance with standards including ISO 19840, ISO 2808 and SSPC PA 2."
+      de: "Elcometer gibt sein Messgerät 456 mit integrierter Sonde für Beschichtungen auf Eisen- und Nichteisenmetallen mit 156 g einschließlich Batterien, mehr als 70 Messungen pro Minute, einer Genauigkeit von ±1 bis 3 % oder ±2,5 µm, Statistik mit oberen und unteren Grenzwerten samt Alarmen und Konformität unter anderem mit ISO 19840, ISO 2808 und SSPC PA 2 an."
+    url: 'https://www.elcometer.com/en/coatings-inspection/all-coatings-inspection/dry-film-thickness/digital/elcometer-456-integral-coating-thickness-gauge.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: [usable_captures_pct, cycle_time_vs_manual, interventions_per_hour]
+  abort_rule:
+    en: "If fewer than 99 % of the readings the robot takes are usable after 3 months, keep the inspector with the handheld gauge."
+    de: "Wenn nach 3 Monaten weniger als 99 % der vom Roboter aufgenommenen Messwerte verwertbar sind, beim Prüfer mit dem Handgerät bleiben."
+  scope_hint:
+    en: "One structure with accessible members, readings per hour and share of readings the inspector repeats, robot against inspector."
+    de: "Ein Bauwerk mit gut erreichbaren Bauteilen, Messwerte pro Stunde und Anteil der vom Prüfer wiederholten Messungen, Roboter gegen Prüfer."
+prerequisites:
+  - { en: "Inspection plan with measuring areas and acceptance limits", de: "Prüfplan mit Messflächen und Abnahmegrenzen" }
+open_questions:
+  - { en: "How many readings does a typical acceptance of yours need, and where on the structure?", de: "Wie viele Messwerte braucht eine typische Abnahme bei Ihnen, und wo am Bauwerk?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

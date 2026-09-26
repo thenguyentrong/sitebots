@@ -1,0 +1,152 @@
+schema_version: 1
+id: site_cable_trenching/cable-pulling-into-ducts
+status: published
+setting: site_cable_trenching
+family: assembly_fastening
+trades: [civil_earthworks, mep_electrical]
+title:
+  en: "Pull power cables into the ground ducts"
+  de: "Energiekabel in die Kabelschutzrohre einziehen"
+summary:
+  en: "Set up drum and rollers, attach the pulling stocking, pull the cable through the duct with the winch and guide it at the duct mouths without overstressing or kinking it."
+  de: "Trommel und Rollen aufstellen, den Kabelziehstrumpf anbringen, das Kabel mit der Winde durch das Schutzrohr ziehen und an den Rohrmündungen führen, ohne es zu überlasten oder zu knicken."
+description:
+  en: "Low-voltage cables such as NYY-J or NAYY-J are laid in the ground and in ducts. A 4 × 150 mm² copper cable weighs about 6.5 kg per metre and may not be bent tighter than 528 mm, so runs between pits are pulled by an electric or hydraulic cable winch over cable rollers while the crew feeds the drum and guides the cable at every duct mouth and bend. The pull must stay below the limit the conductor cross-section allows."
+  de: "Niederspannungskabel wie NYY-J oder NAYY-J werden in Erde und in Schutzrohren verlegt. Ein Kupferkabel 4 × 150 mm² wiegt etwa 6,5 kg je Meter und darf nicht enger als 528 mm gebogen werden, daher werden die Strecken zwischen den Gruben mit einer elektrischen oder hydraulischen Kabelwinde über Kabelrollen gezogen, während die Kolonne die Trommel abwickelt und das Kabel an jeder Rohrmündung und jedem Bogen führt. Die Zugkraft muss unter dem Grenzwert bleiben, den der Leiterquerschnitt zulässt."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '051'
+  atv: "DIN 18322"
+  position:
+    en: "Pull cable into existing cable protection ducts"
+    de: "Kabel in vorhandene Kabelschutzrohre einziehen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.waskoenig.de/de/produkte/niederspannungskabel/nyy-j'
+    note: "No single lifted object: the cable is continuous and pulled by the winch. It weighs 2.4 to 10.5 kg per metre (NYY-J 4 × 50 to 4 × 240 mm², Waskönig + Walter), so every metre the crew holds up at a duct mouth adds to the load."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Pit spacing, duct routes, bends and cable sizes change from job to job; the pull itself repeats."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.waskoenig.de/de/produkte/niederspannungskabel/nyy-j'
+    note: "A cable pulled too hard or bent below its minimum radius (528 mm for 4 × 150 mm², twelve times the outer diameter) is damaged and has to be replaced; the damage is found in testing before the cable is energised."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "The cable is tested before it is energised; the pull itself carries no structural or life-safety function."
+  reach_height_m:
+    value: { min: 0, max: 1.0 }
+    confidence: assumed
+    note: "Duct mouths in the pits and the trench, at ground level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Cable trenches and pits in the open."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Open excavation; no relevant dust from pulling."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather; pits often hold water."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Trench bottom and pit edges."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [cable_pulling_winch] }
+    confidence: confirmed
+    evidence_url: 'https://www.katimex.com/de/energiekabelverlegung'
+    note: "Katimex lists electrically and hydraulically driven cable pulling winches, cable rollers for bends and drum lifting devices for energy cables; the winch pulls, the crew feeds and guides."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; metres per day depend on pit spacing and cable size."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "A continuous cable, pulled in lengths between pits; outer diameter 30 to 56 mm for NYY-J 4 × 50 to 4 × 240 mm²."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No position tolerance; the limits are the pulling force and the minimum bending radius."
+  force_n:
+    value: 30000
+    confidence: likely
+    evidence_url: 'https://www.helu.com/de-de/newsroom/beitrag/zugkraft-berechnen.html'
+    note: "Upper limit the pull must stay below, for a 4 × 150 mm² copper cable: up to 50 N per mm² for fixed-installed cables (HELUKABEL) × 600 mm² = 30,000 N. Aluminium conductors and pulling stockings have their own values from the cable maker."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the crew with the cable winch, rollers and drum trailer; the winch does the pulling and the people guide at the duct mouths. No humanoid publishes an ingress rating for outdoor work."
+      de: "Bei der Kolonne mit Kabelwinde, Rollen und Trommelwagen bleiben; die Winde zieht, die Leute führen an den Rohrmündungen. Kein Humanoid veröffentlicht eine Schutzart für Arbeiten im Freien."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [teleoperated_manipulation]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "Waskönig + Walter lists NYY-J for fixed installation indoors, outdoors, in the ground, in water and in concrete, with 6,483 kg/km, 44 mm outer diameter and a minimum bending radius of 528 mm for 4 × 150 mm², and 10,501 kg/km, 56 mm and 672 mm for 4 × 240 mm²."
+      de: "Waskönig + Walter führt NYY-J zur festen Verlegung in Innenräumen, im Freien, in Erde, in Wasser und in Beton, mit 6.483 kg/km, 44 mm Außendurchmesser und 528 mm Mindestbiegeradius bei 4 × 150 mm² sowie 10.501 kg/km, 56 mm und 672 mm bei 4 × 240 mm²."
+    url: 'https://www.waskoenig.de/de/produkte/niederspannungskabel/nyy-j'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "HELUKABEL gives up to 50 N/mm² for fixed-installed cables and markedly lower values for moving applications."
+      de: "HELUKABEL nennt bis zu 50 N/mm² für fest verlegte Kabel und deutlich geringere Werte für bewegte Anwendungen."
+    url: 'https://www.helu.com/de-de/newsroom/beitrag/zugkraft-berechnen.html'
+    kind: manufacturer
+    tier: 1
+    date: '2025-08-06'
+    type: claim
+    confidence: confirmed
+  - statement:
+      en: "Katimex offers electrically and hydraulically driven cable pulling winches, cable rollers for bends, drum lifting devices and systems for pulling energy cables into underground ducts."
+      de: "Katimex bietet elektrisch und hydraulisch angetriebene Kabelzugwinden, Kabelrollen für Bögen, Trommelheber und Systeme zum Einziehen von Energiekabeln in erdverlegte Rohre an."
+    url: 'https://www.katimex.com/de/energiekabelverlegung'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page without technical data, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the pulling gear is reviewed: one route, metres pulled per day and cables rejected in testing."
+    de: "Falls die Zugtechnik überprüft wird: eine Trasse, eingezogene Meter je Tag und in der Prüfung verworfene Kabel."
+prerequisites: []
+open_questions:
+  - { en: "Which cable sizes and pit spacings are usual on your routes?", de: "Welche Kabelquerschnitte und Grubenabstände sind auf Ihren Trassen üblich?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

@@ -9,15 +9,16 @@ import type { Trust } from '@/lib/spec/enums';
 
 const TRUSTS: Trust[] = ['verified', 'assessed', 'reported', 'unknown'];
 const LINKS = [
-  { href: '/', label: 'Find a robot' },
-  { href: '/robots', label: 'All robots' },
+  { href: '/use-cases', label: 'Use cases' },
+  { href: '/use-cases/criteria', label: 'How tasks are screened' },
+  { href: '/robots', label: 'Robots' },
   { href: '/brands', label: 'Makers' },
   { href: '/compare', label: 'Compare' },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-edge bg-card">
+    <footer className="mt-16 border-t border-edge bg-card">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1.4fr)]">
         <div className="space-y-4">
           <Logo />
@@ -29,7 +30,7 @@ export function SiteFooter() {
             href="https://www.ctrl-rwth.de"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Made by CTRL — Construction Technology and Robotics Laboratory (opens in a new tab)"
+            aria-label="Made by CTRL, Construction Technology and Robotics Laboratory (opens in a new tab)"
             className={styles.credit}
           >
             <span className={styles.caption}>Made by</span>
@@ -38,7 +39,7 @@ export function SiteFooter() {
           </a>
         </div>
         <div>
-          <p className="eyebrow">Explore</p>
+          <p className="text-sm font-semibold">Explore</p>
           <ul className="mt-3 space-y-2 text-sm">
             {LINKS.map((l) => (
               <li key={l.href}>
@@ -50,7 +51,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <p className="eyebrow">How to read a value</p>
+          <p className="text-sm font-semibold">How to read a value</p>
           <ul className="mt-3 space-y-2.5 text-sm">
             {TRUSTS.map((t) => (
               <li key={t} className="flex items-start gap-3">

@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_windows_doors/large-pane-glazing
+status: published
+setting: site_windows_doors
+family: heavy_element_handling
+trades: [windows_doors]
+title:
+  en: "Lift large insulating glass units into their frames"
+  de: "Große Isolierglaseinheiten in die Rahmen einsetzen"
+summary:
+  en: "Pick the glass unit up by suction, bring it to the frame, set it on the glazing blocks and fix the beads."
+  de: "Die Glaseinheit mit Saugern aufnehmen, an den Rahmen bringen, auf die Verglasungsklötze setzen und die Glasleisten befestigen."
+description:
+  en: "At 2.5 kg per m² and millimetre, a triple unit of three 4 mm panes weighs 30 kg per m², one of three 6 mm panes 45 kg per m²; a unit of 2 to 3 m² therefore weighs 60 to 135 kg. Glazing devices are built for this: Heavydrive's GMG 400 carries up to 460 kg frontally and is operated by one person by radio remote control."
+  de: "Bei 2,5 kg je m² und Millimeter wiegt eine Dreifacheinheit aus drei 4-mm-Scheiben 30 kg je m², eine aus drei 6-mm-Scheiben 45 kg je m²; eine Einheit von 2 bis 3 m² wiegt damit 60 bis 135 kg. Dafür sind Verglasungsgeräte gebaut: Das GMG 400 von Heavydrive trägt frontal bis 460 kg und wird von einer Person per Funk-Fernsteuerung bedient."
+also_in_settings: [joinery_windows_doors]
+derived_from: null
+lv:
+  lb: '032'
+  atv: "DIN 18361"
+  position:
+    en: "Glazing with insulating glass units in frames and post-and-beam facades"
+    de: "Verglasung mit Isolierglaseinheiten in Rahmen und Pfosten-Riegel-Fassaden"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 60, max: 135 }
+    confidence: assumed
+    evidence_url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    note: "2.5 kg per m² and mm: 2 m² × 12 mm = 60 kg, 3 m² × 18 mm = 135 kg. Unit sizes and pane thicknesses are assumed."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same handling for every unit, but sizes and positions change across the facade."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A unit set without its blocks or knocked at the edge has to come out again; a broken unit is replaced."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Vertical glazing in a frame; overhead and fall-protection glazing follow their own rules and are out of scope."
+  reach_height_m:
+    value: { min: 0.3, max: 2.5 }
+    confidence: assumed
+    note: "From the sill to the head of a storey-high unit. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Glazed from inside or from the scaffold outside, depending on the system."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Setting glass raises no dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "The building is not yet closed while it is glazed."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab or scaffold."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [vacuum_lifter] }
+    confidence: confirmed
+    evidence_url: 'https://de.heavydrive.com/produkt/glas-montage-geraet-gmg-400-mit-460-kg-traglast'
+    note: "Glazing devices lift and place the units (Heavydrive GMG 400: up to 460 kg); blocks and beads are fitted by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Depends on the glazing schedule."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Glazing tolerances come from the frame system; not recorded here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Two to five times the payload ceiling of today's humanoids. Glazing devices with suction frames are the better answer and already in use; one person steers, the glazier sets blocks and beads."
+      de: "Zwei- bis fünfmal so schwer wie die Traglastgrenze heutiger Humanoiden. Verglasungsgeräte mit Saugrahmen sind die bessere Antwort und bereits im Einsatz; eine Person steuert, der Glaser setzt Klötze und Leisten."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "GLASundBESCHLAG gives the weight of glass as thickness in mm × 2.5 = kg per m², for example 25 kg/m² for 10 mm glass."
+      de: "GLASundBESCHLAG gibt das Glasgewicht als Glasdicke in mm × 2,5 = kg je m² an, zum Beispiel 25 kg/m² bei 10 mm Glas."
+    url: 'https://www.glasundbeschlag.de/beratung/glossar/glasgewicht/'
+    kind: analyst
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Glossary of a glass and hardware supplier; undated, the date is the day it was read."
+  - statement:
+      en: "Heavydrive's GMG 400 glass installation device transports and installs window elements and similar airtight workpieces of up to 460 kg frontally (200 kg sideways) and is operated by one person by radio remote control."
+      de: "Das Glasmontagegerät GMG 400 von Heavydrive transportiert und montiert Fensterelemente und ähnliche luftdichte Werkstücke bis 460 kg frontal (200 kg seitlich) und wird von einer Person per Funk-Fernsteuerung bedient."
+    url: 'https://de.heavydrive.com/produkt/glas-montage-geraet-gmg-400-mit-460-kg-traglast'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the day it was read."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If units are still set by hand: time and crew size per unit with and without a glazing device on one elevation."
+    de: "Falls Einheiten noch von Hand gesetzt werden: Zeit und Kolonnengröße je Einheit mit und ohne Verglasungsgerät an einer Fassadenseite."
+prerequisites: []
+open_questions:
+  - { en: "What do the largest units in the glazing schedule weigh?", de: "Was wiegen die größten Einheiten der Verglasungsliste?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

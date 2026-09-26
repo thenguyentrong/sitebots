@@ -1,0 +1,29 @@
+id: joinery_windows_doors
+group: factory
+title: { en: "Joinery, window and door manufacturing", de: "Tischlerei, Fenster- und Türenbau" }
+aliases:
+  en: [window factory, door factory, joinery shop]
+  de: [Fensterbau, Türenwerk, Schreinerei]
+coverage: screened
+coverage_note:
+  en: "Screened tasks: glazing sashes with insulating glass (ruled out by pane weight; vacuum lifter or glazing line), fitting tilt-and-turn hardware (marginal; a hardware fitting machine first) and loading finished windows onto transport racks (ruled out by unit weight; vacuum lifter)."
+  de: "Geprüfte Aufgaben: Flügel mit Isolierglas verglasen (wegen des Scheibengewichts ausgeschlossen; Vakuumheber oder Verglasungslinie), Dreh-Kipp-Beschläge anschlagen (grenzwertig; zuerst ein Beschlagautomat) und fertige Fenster auf Transportgestelle laden (wegen des Einheitengewichts ausgeschlossen; Vakuumheber)."
+typical_incumbent_automation: [window_assembly_line, cnc_joinery, panel_saw, vacuum_lifter]
+dust:
+  type: wood
+  typical_zone: controlled
+  note:
+    en: Hardware fitting, glazing and packing are workrooms; profile machining is a dust zone.
+    de: Beschlagmontage, Verglasung und Verpackung sind Arbeitsräume; die Profilbearbeitung ist ein Staubbereich.
+floor: level
+exposure: indoor
+typical_trades: [carpentry_joinery, windows_doors, logistics]
+process_steps:
+  - { id: profile_machining, label: { en: "Profile machining", de: "Profilbearbeitung" } }
+  - { id: frame_assembly, label: { en: "Frame assembly", de: "Rahmenmontage" } }
+  - { id: hardware_fitting, label: { en: "Hardware fitting", de: "Beschlagmontage" } }
+  - { id: glazing, label: { en: "Glazing and sealing", de: "Verglasung und Abdichtung" } }
+  - { id: packing, label: { en: "Packing and dispatch", de: "Verpackung und Versand" } }
+seed_priority: 3
+sources: []
+status: published

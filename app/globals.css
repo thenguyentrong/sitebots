@@ -64,6 +64,8 @@
   --assessed-soft: #dbeafe;
   --reported: #b45309;
   --reported-soft: #fef3c7;
+  --stage-center: #ffffff;
+  --stage-edge: #efeff1;
   color-scheme: light;
 }
 
@@ -87,6 +89,8 @@
     --assessed-soft: #10213f;
     --reported: #fbbf24;
     --reported-soft: #3a2a0a;
+    --stage-center: #1b1b1f;
+    --stage-edge: #0d0d0f;
     color-scheme: dark;
   }
 }
@@ -110,6 +114,8 @@
   --assessed-soft: #10213f;
   --reported: #fbbf24;
   --reported-soft: #3a2a0a;
+  --stage-center: #1b1b1f;
+  --stage-edge: #0d0d0f;
   color-scheme: dark;
 }
 
@@ -140,11 +146,11 @@ body {
 
 /* Section eyebrow. */
 .eyebrow {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--faint);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
 }
 
 /* The one card recipe used everywhere. */
@@ -250,3 +256,6 @@ body {
 .radar-line { stroke: var(--radar); stroke-width: 2; stroke-linejoin: round; }
 .radar-dot { fill: var(--radar); }
 .radar-gap { stroke: var(--faint); stroke-width: 1.5; stroke-dasharray: 2 2; }
+
+/* The 3D stage: a soft pool of light behind the robot, in both themes. */
+.viewer-stage { background: radial-gradient(85% 70% at 50% 36%, var(--stage-center) 0%, var(--stage-edge) 100%); }

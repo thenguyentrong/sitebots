@@ -1,0 +1,24 @@
+id: data_residency_air_gapped
+kind: other
+jurisdiction: EU
+term_de: Datenresidenz und Offline-Betrieb (Drittlandübermittlung, Kapitel V DSGVO)
+term_en: Data residency and air-gapped operation (third-country transfers, Chapter V GDPR)
+official_reference: Regulation (EU) 2016/679, Chapter V
+url: 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+applies_from: null
+status: in_force
+triggers: [cameras_on_people, ai_component]
+what_it_means:
+  en: Telemetry, video or teleoperation leaving the EU is a third-country transfer that needs a legal basis and a processing agreement. Several vendors send camera, microphone and location data to servers outside the EU by default and publish no data-residency terms or offline mode.
+  de: Telemetrie, Video oder Teleoperation, die die EU verlassen, sind Drittlandübermittlungen, die eine Rechtsgrundlage und einen Auftragsverarbeitungsvertrag brauchen. Mehrere Anbieter senden Kamera-, Mikrofon- und Standortdaten standardmäßig an Server außerhalb der EU und veröffentlichen weder Datenresidenz-Bedingungen noch einen Offline-Modus.
+consequence:
+  en: This single question eliminates a large part of the market for a public-sector or works-council-bound buyer.
+  de: Diese eine Frage schließt für einen Käufer mit Betriebsrat oder öffentlicher Bindung einen großen Teil des Markts aus.
+action:
+  en: Require a documented air-gapped or on-premise mode and a draft DPA with EU residency (RFI 06); log every outbound connection during the pilot.
+  de: Einen dokumentierten Offline- oder On-Premise-Modus und einen AV-Vertragsentwurf mit EU-Residenz fordern (RFI 06); im Pilot jede ausgehende Verbindung protokollieren.
+provenance:
+  source_url: 'https://eur-lex.europa.eu/eli/reg/2016/679/oj'
+  tier: 1
+  observed_at: '2026-09-24'
+  confidence: confirmed

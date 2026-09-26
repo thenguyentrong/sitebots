@@ -1,0 +1,133 @@
+schema_version: 1
+id: site_sprinklers/sprinkler-pipework
+status: published
+setting: site_sprinklers
+family: assembly_fastening
+trades: [mep_sprinkler]
+title:
+  en: "Hang sprinkler pipework under the ceiling"
+  de: "Sprinklerrohrleitungen unter der Decke montieren"
+summary:
+  en: "Lift 6 m steel pipe lengths to the hangers, join them and fix them along the design layout."
+  de: "Stahlrohre in 6-m-Längen an die Rohrhalterungen heben, verbinden und entlang der geplanten Führung befestigen."
+description:
+  en: "Sprinkler mains and branch lines are steel pipe, usually traded in 6 m lengths and hung from the ceiling on hangers: the fitters lift each length to the hangers, often with a material lift, join it by thread, groove or press fitting and align it to the design, which fixes pipe sizes and routes for the hydraulics. In a wet system the pipe is filled with water, so the hangers carry far more than the empty pipe."
+  de: "Sprinkler-Hauptleitungen und Verteilleitungen sind Stahlrohre, meist in 6-m-Handelslängen, die an Rohrhalterungen unter die Decke gehängt werden: Die Monteure heben jede Länge an die Halterungen, oft mit einem Materiallift, verbinden sie per Gewinde, Nut oder Pressfitting und richten sie nach der Planung aus, die Rohrgrößen und Führung für die Hydraulik festlegt. In einer Nassanlage ist das Rohr mit Wasser gefüllt, die Halterungen tragen also weit mehr als das leere Rohr."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '049'
+  atv: null
+  position:
+    en: "Sprinkler pipework of steel pipe DN 25 to DN 100, including hangers: supply and install"
+    de: "Sprinklerrohrleitung aus Stahlrohr DN 25 bis DN 100 einschließlich Rohrhalterungen liefern und montieren"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 14.6, max: 73.1 }
+    confidence: likely
+    evidence_url: 'https://www.sikla.de/fast/600/17%20Rohre%20(Abmessungen%20und%20Gewichte).pdf'
+    note: "One 6 m length of threaded steel pipe to DIN EN 10255 (Sikla table, 2019-10): DN 25 at 2.44 kg/m = 14.6 kg, DN 50 at 5.10 kg/m = 30.6 kg, DN 80 at 8.47 kg/m = 50.8 kg, DN 100 at 12.19 kg/m = 73.1 kg. Filled with water, DN 100 weighs 20.89 kg/m."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Grid layouts repeat; offsets around ducts, beams and cable trays change on every floor."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Leaking joints show at the pressure test and are remade; a wrong pipe size changes the hydraulics and is rebuilt."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    evidence_url: 'https://www.viking-emea.com/app/uploads/2024/11/092221.pdf'
+    note: "The pipework is part of an automatic fire-extinguishing system and is built to its design and the applicable rules; a sprinkler manufacturer names NFPA, LPCB, APSAD and VdS among them."
+  reach_height_m:
+    value: { min: 2.5, max: 4.0 }
+    confidence: assumed
+    evidence_url: 'https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a1_2/6.htm'
+    note: "Pipes just below the slab. ASR A1.2 sets minimum clear room heights of 2.50 m to 3.25 m; halls are higher, and the 4.0 m upper bound is assumed for offices and car parks."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Construction dust from the other trades; cutting and threading pipe produces metal swarf and cutting oil."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Dry until the system is filled."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab, material lifts and platforms."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Material lifts raise the pipe, but people join and fix it; no machine does the step. Anchor drilling for the hangers is the separate drilling task."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Design drawings only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 6, max: 6 }
+    confidence: confirmed
+    evidence_url: 'https://www.vhg-gruppe.de/gewinderohr-en-10255-m'
+    note: "Welded threaded pipe to EN 10255 is traded in 6 m lengths (VHG product page)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No published position tolerance found; the design fixes routes, sizes and hanger spacing."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; joining torque or press force depends on the fitting system."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Lift the pipe with a material lift that raises each length to the hangers and holds it while the fitters join it; the joints and the alignment stay with the sprinkler fitters. 15 to 73 kg per length, 6 m long and overhead is no humanoid payload."
+      de: "Das Rohr mit einem Materiallift heben, der jede Länge an die Halterungen hebt und hält, während die Monteure sie verbinden; Verbindungen und Ausrichtung bleiben bei den Sprinklermonteuren. 15 bis 73 kg je Länge, 6 m lang und über Kopf ist keine Nutzlast für einen Humanoiden."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Sikla's pipe table for threaded steel pipe to DIN EN 10255 gives 2.44 kg/m for 1 inch, 5.10 kg/m for 2 inch, 8.47 kg/m for 3 inch and 12.19 kg/m for 4 inch pipe, and 20.89 kg/m for 4 inch filled with water, as weights for dimensioning hangers."
+      de: "Die Rohrtabelle von Sikla für Gewinderohr nach DIN EN 10255 nennt 2,44 kg/m für 1 Zoll, 5,10 kg/m für 2 Zoll, 8,47 kg/m für 3 Zoll und 12,19 kg/m für 4 Zoll, sowie 20,89 kg/m für 4 Zoll mit Wasser gefüllt, als Gewichte zur Bemessung der Halterungen."
+    url: 'https://www.sikla.de/fast/600/17%20Rohre%20(Abmessungen%20und%20Gewichte).pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2019-10-01'
+    type: claim
+    confidence: confirmed
+    note: "Pipe-support manufacturer's table, dated 2019-10; weights computed from nominal dimensions."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a material lift: one floor of branch lines, the fitters join and align every length."
+    de: "Falls mit einem Materiallift verfolgt: ein Geschoss Verteilleitungen, die Monteure verbinden und richten jede Länge aus."
+prerequisites: []
+open_questions:
+  - { en: "Which pipe sizes and joining system does the design use, and how much of the length is DN 50 and above?", de: "Welche Rohrgrößen und welches Verbindungssystem sieht die Planung vor, und wie viel der Länge ist DN 50 und größer?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

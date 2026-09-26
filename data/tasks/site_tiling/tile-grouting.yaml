@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_tiling/tile-grouting
+status: published
+setting: site_tiling
+family: surface_finishing
+trades: [flooring_tiling]
+title:
+  en: "Grout wall and floor tiles"
+  de: "Wand- und Bodenfliesen verfugen"
+summary:
+  en: "Mix the grout, work it into the joints diagonally with a rubber float, wash the surface off with a sponge once it has set enough, and clean the tiles."
+  de: "Fugenmörtel anrühren, mit dem Gummischieber diagonal in die Fugen einarbeiten, nach dem Anziehen mit dem Schwamm abwaschen und die Fliesen reinigen."
+description:
+  en: "Sopro's DF 10 DesignFuge Flex is a cementitious flexible grout for joints of 1 to 10 mm, sold in 1, 5 and 10 kg containers. It is mixed by machine, worked into the joints with a rubber float and washed off with a sponge; the surface is walkable after about 2 hours. Sopro gives about 0.3 kg per m² for 30 × 60 cm tiles with 4 mm joints. The motion repeats over every area; the corners, edges and the timing of the wash-off need judgement."
+  de: "Sopro DF 10 DesignFuge Flex ist ein zementärer Flex-Fugenmörtel für Fugen von 1 bis 10 mm, geliefert in Gebinden von 1, 5 und 10 kg. Er wird maschinell angerührt, mit dem Gummischieber in die Fugen eingearbeitet und mit dem Schwamm abgewaschen; begehbar ist die Fläche nach rund 2 Stunden. Sopro nennt rund 0,3 kg je m² bei Fliesen 30 × 60 cm mit 4 mm Fugen. Die Bewegung wiederholt sich auf jeder Fläche; Ecken, Ränder und der richtige Zeitpunkt für das Abwaschen verlangen Urteilsvermögen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '024'
+  atv: "DIN 18352"
+  position:
+    en: "Grouting of wall and floor tiles with cementitious flexible grout"
+    de: "Verfugen von Wand- und Bodenfliesen mit zementärem Flexfugenmörtel"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 10 }
+    confidence: likely
+    evidence_url: 'https://www.sopro.com/de-de/produktdetails/fugenmoertel-fugendichtstoffe-1/df-10-df-10-designfuge-flex'
+    note: "Sopro DF 10 comes in 1 kg and 5 kg buckets, 5 kg bags and 10 kg buckets; the heaviest object handled is a full 10 kg container or the mixed batch in the working bucket. Float and sponge weigh far less."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Joint patterns repeat within an area; tile formats, joint widths, corners, edges and fittings change from room to room."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Voids, uneven joints or grout haze are raked out, re-grouted or cleaned; nothing structural depends on the grout."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Joint filling without structural function; waterproofing is the bonded layer below the tiles."
+  reach_height_m:
+    value: { min: 0, max: 2.6 }
+    confidence: assumed
+    note: "Floor tiles at floor level, wall tiles up to ceiling height in bathrooms; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Bathrooms, kitchens and corridors inside the closed building."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: likely
+    note: "Mixing the dry grout releases cement dust at the bucket; grouting and washing off are wet."
+  wet:
+    value: damp
+    confidence: likely
+    note: "The joints are washed off with a wet sponge and water."
+  floor:
+    value: level
+    confidence: likely
+    note: "Tiled floors, walkable once set."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Grouted by tilers by hand; none of the sources reviewed describes a machine that grouts tiles on site."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure square metres per shift and joints reworked."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Buckets and tools only; no long objects."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Sopro gives the joint width range (1 to 10 mm), not a tolerance for the finished joint."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published for working grout in with the float."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a wheeled mobile manipulator for large floor areas first; wall grouting up to the ceiling, corners and the wash-off timing stay with the tiler for now."
+      de: "Zuerst einen radgebundenen Mobilmanipulator für große Bodenflächen vergleichen; das Verfugen von Wänden bis zur Decke, die Ecken und der Zeitpunkt des Abwaschens bleiben vorerst beim Fliesenleger."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [surface_finishing, autonomous_nav_indoor]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [mobile_manipulator_wheeled, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "Sopro describes DF 10 DesignFuge Flex as a cementitious, fine, fast-setting flexible grout for joints of 1 to 10 mm, in 1, 5 and 10 kg containers, worked in with a rubber float and washed off with a sponge; walkable after about 2 hours."
+      de: "Sopro beschreibt DF 10 DesignFuge Flex als zementären, feinen, schnell erhärtenden Flex-Fugenmörtel für Fugen von 1 bis 10 mm, in Gebinden von 1, 5 und 10 kg, mit dem Gummischieber eingearbeitet und mit dem Schwamm abgewaschen; begehbar nach rund 2 Stunden."
+    url: 'https://www.sopro.com/de-de/produktdetails/fugenmoertel-fugendichtstoffe-1/df-10-df-10-designfuge-flex'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Product page without a date; dated with the check date."
+pilot:
+  metrics: [unaided_completion_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "More than 1 in 100 m² of joints needing rework after 3 months, then stop."
+    de: "Mehr als 1 von 100 m² Fugen braucht nach 3 Monaten Nacharbeit, dann abbrechen."
+  scope_hint:
+    en: "Floor areas of one tile format and joint width, grout mixed by the tiler, wash-off timing set by the tiler."
+    de: "Bodenflächen mit einem Fliesenformat und einer Fugenbreite, Mörtel vom Fliesenleger angerührt, Abwaschzeitpunkt vom Fliesenleger bestimmt."
+prerequisites:
+  - { en: "Tile adhesive cured and joints clean", de: "Fliesenkleber ausgehärtet und Fugen sauber" }
+open_questions:
+  - { en: "Can a robot judge when the grout has set enough to wash off?", de: "Kann ein Roboter beurteilen, wann der Fugenmörtel zum Abwaschen genug angezogen hat?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

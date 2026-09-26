@@ -1,0 +1,28 @@
+id: construction_logistics_hub
+group: yard_logistics
+title: { en: "Construction logistics hub", de: "Baulogistikzentrum" }
+aliases:
+  en: [consolidation centre, site logistics, just-in-time delivery]
+  de: [Konsolidierungszentrum, Baustellenlogistik, Just-in-time-Belieferung]
+coverage: screened
+coverage_note:
+  en: "Screened tasks for kitting per floor and crew, unloading floor-loaded containers and staging pallets by delivery slot. Kitting and unloading are marginal; pallet moves go to autonomous pallet trucks. The delivery leg to site belongs to the site settings."
+  de: "Geprüfte Aufgaben für die Kommissionierung je Geschoss und Kolonne, das Entladen lose verladener Container und das Bereitstellen von Paletten nach Lieferfenster. Kommissionierung und Entladen sind grenzwertig; Palettenbewegungen gehören autonomen Hubwagen. Die Lieferung auf die Baustelle gehört zu den Baustelleneinstellungen."
+typical_incumbent_automation: [forklift, conveyor, amr_fleet]
+dust:
+  type: none
+  typical_zone: none
+  note:
+    en: Warehouse conditions.
+    de: Lagerbedingungen.
+floor: level
+exposure: indoor
+typical_trades: [logistics, general]
+process_steps:
+  - { id: receiving, label: { en: "Receiving from suppliers", de: "Wareneingang von Lieferanten" } }
+  - { id: kitting_per_crew, label: { en: "Kitting per floor and crew", de: "Kommissionierung je Geschoss und Kolonne" } }
+  - { id: staging, label: { en: "Staging for delivery slots", de: "Bereitstellung für Lieferfenster" } }
+  - { id: returns, label: { en: "Returns and waste", de: "Rückläufer und Abfall" } }
+seed_priority: 4
+sources: []
+status: published

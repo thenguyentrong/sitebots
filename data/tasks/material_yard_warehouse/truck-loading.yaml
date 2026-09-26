@@ -1,0 +1,113 @@
+schema_version: 1
+id: material_yard_warehouse/truck-loading
+status: published
+setting: material_yard_warehouse
+family: packaging_palletising_loading
+trades: [logistics]
+title:
+  en: Load customer orders onto trucks in the yard
+  de: Kundenaufträge im Lagerplatz auf Lkw verladen
+summary:
+  en: Put pallets of bagged goods, bundles and board packs onto delivery trucks and secure them.
+  de: Paletten mit Sackware, Bunde und Plattenpakete auf Lieferfahrzeuge laden und sichern.
+description:
+  en: Orders leave the yard as full pallets, bundles of bars or pipes and packs of boards. They are lifted by forklift, side loader or the truck's own crane and then secured for the road. The loads weigh hundreds of kilograms to over a tonne, the work happens outdoors in any weather, and a falling load or a badly secured one is a serious safety event.
+  de: Aufträge verlassen den Lagerplatz als volle Paletten, Bunde aus Stäben oder Rohren und Plattenpakete. Sie werden mit Stapler, Seitenstapler oder dem Ladekran des Lkw gehoben und anschließend für die Straße gesichert. Die Lasten wiegen Hunderte Kilogramm bis über eine Tonne, gearbeitet wird im Freien bei jedem Wetter, und eine fallende oder schlecht gesicherte Last ist ein schwerer Sicherheitsvorfall.
+also_in_settings: [construction_logistics_hub, precast_concrete, equipment_rental_depot]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 20, max: 1500 }
+    confidence: assumed
+    note: Analyst range from full pallets of bagged goods, bundles and board packs; verify with the heaviest order line in your own yard.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Repetitive forklift work with standard load carriers; the orders change, the movements do not.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A damaged pallet is a write-off; a badly secured load is a road-safety issue.
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    note: Suspended and forklift-carried loads next to people and traffic; load securing on the truck.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Not a humanoid reach question; the mass test decides.
+  environment:
+    value: outdoor
+    confidence: likely
+    note: Open yard and loading area.
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: Outdoor yards bring weather, not a classified dust area.
+  wet:
+    value: rain
+    confidence: likely
+    note: Loading goes on in rain and snow.
+  floor:
+    value: uneven
+    confidence: assumed
+    note: Paved or gravel yard with ramps; varies by site.
+  incumbent_automation:
+    value: { status: full, machine_classes: [forklift] }
+    confidence: likely
+    note: Forklifts, side loaders and truck-mounted cranes do the lifting in every merchant yard.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: { min: 1.2, max: 2.6 }
+    confidence: likely
+    evidence_url: 'https://www.epal-pallets.org/eu-en/load-carriers/epal-euro-pallet'
+    note: "A Euro pallet measures 1200 × 800 mm and carries up to 1,500 kg (EPAL); plasterboard packs follow the 2000 to 2600 mm board lengths in the Rigips RB 12.5 datasheet (Stand 02.07.26). Bundles of profiles or pipes can be longer."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Loads are placed on a truck bed and secured; no dimensional tolerance is published."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the forklift does the lifting."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T5_failure_tolerance, T4_variability, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: The forklift and the truck crane stay. If the pain is waiting trucks or loading errors, look at yard scheduling, pre-staged loads and scanner checks at the gate, not at a robot with a 20–25 kg payload ceiling.
+      de: Stapler und Lkw-Ladekran bleiben. Liegt das Problem bei wartenden Lkw oder Ladefehlern, helfen Zeitfenstersteuerung, vorbereitete Ladungen und Scannerkontrolle am Tor, kein Roboter mit 20–25 kg Traglastgrenze.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [exposure]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [keep_process, process_change, dedicated_machine]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: If pursued, as a process change around the forklift, for example pre-staged loads per delivery slot.
+    de: Falls verfolgt, als Prozessänderung rund um den Stapler, zum Beispiel vorbereitete Ladungen je Lieferfenster.
+prerequisites: []
+open_questions:
+  - { en: "Is the real cost the lift itself, or the searching, re-handling and waiting around it?", de: "Liegen die eigentlichen Kosten beim Heben selbst oder beim Suchen, Umladen und Warten drumherum?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

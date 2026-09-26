@@ -1,0 +1,125 @@
+schema_version: 1
+id: steel_fabrication/fit-and-tack-attachments
+status: published
+setting: steel_fabrication
+family: assembly_fastening
+trades: [steel]
+title:
+  en: "Fit and tack-weld end plates, cleats and stiffeners to beams"
+  de: "Stirnplatten, Laschen und Steifen an Trägern anpassen und heften"
+summary:
+  en: "Position the secondary parts on the main section to the shop drawing and tack them in place for the welder."
+  de: "Die Anbauteile nach Werkstattzeichnung am Hauptprofil positionieren und für den Schweißer heften."
+description:
+  en: "Each assembly has its own set of plates and cleats in its own positions. The fitter reads the drawing, marks or measures, clamps the part, checks square and tacks it. The welds carry load in the finished structure, so position and weld quality are checked. Fitting and welding robots exist that align parts by holes and laser scanning."
+  de: "Jede Baugruppe hat ihren eigenen Satz Platten und Laschen an eigenen Stellen. Der Schlosser liest die Zeichnung, reißt an oder misst, spannt das Teil, prüft den Winkel und heftet es. Die Nähte tragen im fertigen Tragwerk, deshalb werden Lage und Nahtqualität geprüft. Es gibt Anpass- und Schweißroboter, die Teile über Bohrungen und Laserscan ausrichten."
+also_in_settings: [site_steelwork]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 19 }
+    confidence: likely
+    evidence_url: 'https://www.stauberstahl.com/werkstoffe/10570-werkstoff-datenblatt/'
+    note: "At 7.85 kg/dm³ (S355 data sheet) a 400 × 300 × 20 mm end plate weighs 18.8 kg; cleats and stiffeners weigh a few kilograms."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every assembly has its own parts and positions."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A misplaced plate is found at the dimensional check; after welding it means cutting off and refitting."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The welded connections carry load in the finished structure."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "At the assembly bench or on trestles; measure your station."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Fabrication hall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Welding fume and grinding dust are extracted at the source; the fit-up area is a workroom (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [welding_robot] }
+    confidence: likely
+    evidence_url: 'https://www.voortman.net/en/products/voortman-fabricator-automatic-fitting-welding'
+    note: "The Voortman Fabricator fits and welds automatically, with a 200 kg handling payload and profiles up to 24 m; most shops still fit by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at parts; if they record people, the data-protection flags apply."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on assemblies per shift."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Parts per assembly and minutes per part are the numbers to record."
+requirements:
+  object_size_m:
+    value: { min: 0.1, max: 0.4 }
+    confidence: assumed
+    note: "From small cleats to the example end plate above."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Permitted deviations for fabricated steel components come from the execution standard for steel structures; not quoted on the sources used here."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Clamping and tacking; no published force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "A fitting and welding robot for the standard assemblies, qualified welders for the rest and for every structural weld check. The load-bearing connection is not a place to test a general-purpose robot."
+      de: "Ein Anpass- und Schweißroboter für die Standardbaugruppen, qualifizierte Schweißer für den Rest und für jede Prüfung tragender Nähte. Die tragende Verbindung ist kein Ort, um einen Universalroboter zu erproben."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage, quality]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Voortman describes the Fabricator as automated fitting and welding with consistent robotic welds across angles, box, I/H, T-sections and channels, a 200 kg payload with 2,666 mm reach, for profile lengths up to 24 m."
+      de: "Voortman beschreibt den Fabricator als automatisches Anpassen und Schweißen mit gleichbleibenden Roboternähten an Winkeln, Hohlprofilen, I/H-, T-Profilen und U-Profilen, 200 kg Traglast bei 2.666 mm Reichweite, für Profillängen bis 24 m."
+    url: 'https://www.voortman.net/en/products/voortman-fabricator-automatic-fitting-welding'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date. Evidence for the dedicated machine."
+pilot:
+  metrics: [error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Not a humanoid pilot. For a fitting robot: fewer than 99 % of parts within tolerance at the dimensional check after 3 months, then stay manual for that assembly type."
+    de: "Kein Humanoiden-Pilot. Für einen Anpassroboter: weniger als 99 % der Teile nach 3 Monaten in Toleranz bei der Maßkontrolle, dann für diesen Baugruppentyp manuell bleiben."
+  scope_hint:
+    en: "Beams with end plates and cleats only, one section range."
+    de: "Nur Träger mit Stirnplatten und Laschen, ein Profilbereich."
+prerequisites:
+  - { en: "Shop drawings as CAD-CAM data with part positions", de: "Werkstattzeichnungen als CAD-CAM-Daten mit Teilepositionen" }
+open_questions:
+  - { en: "Which share of your assemblies repeats often enough for a fitting robot?", de: "Welcher Anteil Ihrer Baugruppen wiederholt sich oft genug für einen Anpassroboter?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

@@ -5,9 +5,8 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const ITEMS = [
-  { href: '/', label: 'Find a robot', match: (p: string) => p === '/' },
-  { href: '/robots', label: 'Robots', match: (p: string) => p.startsWith('/robots') },
-  { href: '/brands', label: 'Makers', match: (p: string) => p.startsWith('/brands') },
+  { href: '/use-cases', label: 'Use cases', match: (p: string) => p.startsWith('/use-cases') },
+  { href: '/robots', label: 'Robots', match: (p: string) => p.startsWith('/robots') || p.startsWith('/brands') },
   { href: '/compare', label: 'Compare', match: (p: string) => p.startsWith('/compare') },
 ];
 

@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_concrete/slab-power-troweling
+status: published
+setting: site_concrete
+family: surface_finishing
+trades: [concrete, flooring_tiling]
+title:
+  en: "Float and trowel slab surfaces with a power trowel"
+  de: "Betonflächen mit dem Flügelglätter abscheiben und glätten"
+summary:
+  en: "Once the fresh slab bears foot traffic, float and then trowel it in several passes with a walk-behind or ride-on power trowel until the surface is closed and flat."
+  de: "Sobald die frische Betonfläche begehbar ist, sie in mehreren Durchgängen mit einem handgeführten oder Aufsitz-Flügelglätter abscheiben und glätten, bis die Oberfläche geschlossen und eben ist."
+description:
+  en: "Industrial floors and slabs that serve as the finished surface are power-floated. The operator walks behind a trowel of about 73 kg with a 915 mm rotor or sits on a ride-on machine of about 370 kg, pass after pass, while the concrete sets. The finished floor has to meet the flatness limits for finished floors; timing depends on the concrete and the weather, and a missed window means grinding."
+  de: "Industrieböden und Decken, deren Oberfläche die fertige Nutzschicht ist, werden flügelgeglättet. Der Bediener läuft hinter einem Glätter von etwa 73 kg mit 915-mm-Rotor oder sitzt auf einem Aufsitzgerät von etwa 370 kg, Durchgang für Durchgang, während der Beton abbindet. Der fertige Boden muss die Ebenheitstoleranzen für flächenfertige Böden einhalten; der Zeitpunkt hängt von Beton und Wetter ab, ein verpasstes Fenster bedeutet Schleifen."
+also_in_settings: [site_screed]
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Machine-trowelled concrete surface (power floated)"
+    de: "Betonoberfläche maschinell geglättet (flügelgeglättet)"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 73, max: 379 }
+    confidence: confirmed
+    evidence_url: 'https://www.4groupci.com/media/27993/wackerneuson-ct36-5a-en.pdf'
+    note: "Walk-behind trowel CT36-5A: 73 kg without handle (Wacker Neuson datasheet, 2021). Ride-on trowels CRT 36: 817–835 lb operating weight, about 371–379 kg (Wacker Neuson datasheet, 2015)."
+  variability:
+    value: low
+    confidence: assumed
+    note: "Analyst judgement. Large flat areas and the same passes; what varies is the timing with the setting concrete."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Marks, burns or a surface out of tolerance are ground or levelled afterwards at extra cost."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The surface finish is not structural."
+  reach_height_m:
+    value: { min: 0, max: 1.1 }
+    confidence: likely
+    evidence_url: 'https://www.4groupci.com/media/27993/wackerneuson-ct36-5a-en.pdf'
+    note: "The walk-behind machine is 1,040 mm high with its handle; work happens at floor level."
+  environment:
+    value: both
+    confidence: likely
+    note: "Hall floors are trowelled under a roof, slabs in the open."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Trowelling fresh concrete makes no dust; grinding a hardened floor would."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Fresh concrete surface."
+  floor:
+    value: level
+    confidence: likely
+    note: "The slab itself, still setting."
+  incumbent_automation:
+    value: { status: full, machine_classes: [power_trowel] }
+    confidence: confirmed
+    evidence_url: 'https://www.olearysequipment.com/docs/default-source/Manuals/crt36.pdf?sfvrsn=0'
+    note: "The trowelling is machine work today: walk-behind trowels and ride-on trowels on which one person sits and steers."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier. The ride-on datasheet states 3.3 h on a tank."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.915, max: 2.03 }
+    confidence: likely
+    evidence_url: 'https://www.4groupci.com/media/27993/wackerneuson-ct36-5a-en.pdf'
+    note: "Rotor diameter 915 mm; the walk-behind machine is 2,005 mm long with its handle, the ride-on 80 in (about 2.03 m)."
+  tolerance_mm:
+    value: 4
+    confidence: confirmed
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Finished floors, DIN 18202 table 3 row 3: 4 mm as the limit at a measuring point distance of 1 m; 3 mm under row 4 for increased requirements. A limit, not a ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure; the machine does the work and the operator steers it."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T4_variability]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The dedicated machine is already there: walk-behind and ride-on power trowels. If operator hours are the issue, compare a ride-on or a remote-controlled trowel with your flooring contractor; a humanoid pushing a 73 kg trowel would only copy the operator."
+      de: "Die dedizierte Maschine gibt es schon: handgeführte und Aufsitz-Flügelglätter. Wenn Bedienerstunden das Problem sind, mit dem Bodenbauer ein Aufsitzgerät oder einen ferngesteuerten Glätter vergleichen; ein Humanoid, der einen 73-kg-Glätter schiebt, würde nur den Bediener nachahmen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [surface_finishing]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Wacker Neuson's CT36-5A datasheet: gasoline walk-behind trowel, 73 kg without handle, 915 mm trowelling diameter, 2,005 × 915 × 1,040 mm with handle, rotor 60/125 rpm."
+      de: "Datenblatt CT36-5A von Wacker Neuson: benzinbetriebener handgeführter Flügelglätter, 73 kg ohne Führungsholm, 915 mm Glättdurchmesser, 2.005 × 915 × 1.040 mm mit Holm, Rotor 60/125 1/min."
+    url: 'https://www.4groupci.com/media/27993/wackerneuson-ct36-5a-en.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2021-05-26'
+    type: claim
+    confidence: confirmed
+    note: "Manufacturer datasheet (compiled on 26.05.2021) hosted by a dealer."
+  - statement:
+      en: "Wacker Neuson's CRT 36 datasheet: ride-on trowels with 36 in trowelling diameter and 817–835 lb operating weight; one person can raise and lower the integrated wheel set, and the operator steers with twin levers."
+      de: "Datenblatt CRT 36 von Wacker Neuson: Aufsitz-Flügelglätter mit 36 Zoll Glättdurchmesser und 817–835 lb Betriebsgewicht; eine Person kann den integrierten Radsatz heben und senken, gesteuert wird mit zwei Hebeln."
+    url: 'https://www.olearysequipment.com/docs/default-source/Manuals/crt36.pdf?sfvrsn=0'
+    kind: manufacturer
+    tier: 2
+    date: '2015-06-17'
+    type: claim
+    confidence: confirmed
+    note: "Manufacturer datasheet (17.06.2015) hosted by a dealer."
+  - statement:
+      en: "DIN 18202 table 3 (as reproduced in the screed trade handbook of the ZDB): finished floors (row 3) allow 4 mm as the limit at a measuring point distance of 1 m, floors with increased requirements (row 4) 3 mm."
+      de: "DIN 18202 Tabelle 3 (wiedergegeben im Handbuch für das Estrich- und Belaggewerbe des ZDB): Flächenfertige Böden (Zeile 3) erlauben 4 mm als Grenzwert bei 1 m Messpunktabstand, Böden mit erhöhten Anforderungen (Zeile 4) 3 mm."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Copy of the table published by a screed contractor; values at 0.1, 1, 4, 10 and 15 m are from the standard. Read on 2026-09-25."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If operator hours matter: one hall floor with a ride-on trowel against walk-behind machines, hours per square metre and flatness measured to DIN 18202."
+    de: "Wenn Bedienerstunden zählen: eine Hallenfläche mit Aufsitzgerät gegen handgeführte Glätter, Stunden je Quadratmeter und Ebenheit nach DIN 18202 gemessen."
+prerequisites: []
+open_questions:
+  - { en: "Which flatness row of DIN 18202 do your floors have to meet, and who trowels them today?", de: "Welche Zeile der DIN 18202 müssen Ihre Böden einhalten, und wer glättet sie heute?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

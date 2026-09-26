@@ -1,0 +1,144 @@
+# Ten gating questions for a supplier. A vendor who cannot answer all of them in
+# writing cannot lawfully put a robot on a German line. Genericised from an
+# industry engagement, 2025/26; references point at the primary texts.
+items:
+  - id: rfi.01
+    order: 1
+    title: { en: "CE conformity valid under Regulation (EU) 2023/1230 from 20 January 2027", de: "CE-Konformität nach Verordnung (EU) 2023/1230 ab 20. Januar 2027" }
+    why:
+      en: Directive 2006/42/EC is repealed on 20 January 2027 with no transition period. A robot first placed on the EU market from that date needs conformity under the Regulation; an older declaration does not carry over.
+      de: Die Richtlinie 2006/42/EG wird am 20. Januar 2027 ohne Übergangsfrist aufgehoben. Ein ab diesem Datum erstmals in der EU bereitgestellter Roboter braucht Konformität nach der Verordnung; eine ältere Erklärung gilt nicht weiter.
+    good_answer:
+      en: A dated EU declaration of conformity naming the Regulation and the applied standards; the legal entity placing the product on the EU market; where Annex I Part A applies, the notified body's name, number and certificate.
+      de: Eine datierte EU-Konformitätserklärung mit Nennung der Verordnung und der angewandten Normen; die juristische Person, die das Produkt in der EU in Verkehr bringt; bei Anhang I Teil A Name, Nummer und Bescheinigung der notifizierten Stelle.
+    fail_if:
+      en: Only a self-declaration under Directive 2006/42/EC is offered for deliveries after 20 January 2027, or no EU entity responsible for placing on the market is named.
+      de: Für Lieferungen nach dem 20. Januar 2027 wird nur eine Eigenerklärung nach Richtlinie 2006/42/EG angeboten, oder keine für das Inverkehrbringen verantwortliche EU-Stelle wird genannt.
+    references:
+      - label: { en: 'Regulation (EU) 2023/1230, Article 54', de: 'Verordnung (EU) 2023/1230, Artikel 54' }
+        provenance: { source_url: 'https://eur-lex.europa.eu/eli/reg/2023/1230/oj', tier: 1, observed_at: '2026-09-24', confidence: confirmed }
+  - id: rfi.02
+    order: 2
+    title: { en: "Self-learning behaviour and model updates", de: "Selbstlernendes Verhalten und Modell-Updates" }
+    why:
+      en: The Regulation brings self-evolving behaviour into scope and treats substantial modification, including digital modification, as restarting conformity. A robot that receives policy or model updates lives with this question permanently.
+      de: Die Verordnung nimmt selbstentwickelndes Verhalten in den Anwendungsbereich und behandelt eine wesentliche Veränderung, auch eine digitale, als Neustart der Konformität. Ein Roboter mit Policy- oder Modell-Updates lebt dauerhaft mit dieser Frage.
+    good_answer:
+      en: A written procedure that says which updates count as substantial modification, who assesses them, and how the delivered safety functions stay unchanged by learned behaviour.
+      de: Ein schriftliches Verfahren, das benennt, welche Updates als wesentliche Veränderung gelten, wer sie bewertet und wie die gelieferten Sicherheitsfunktionen von gelerntem Verhalten unberührt bleiben.
+    fail_if:
+      en: Updates are pushed without a documented assessment, or the vendor has no position on the clause.
+      de: Updates werden ohne dokumentierte Bewertung ausgerollt, oder der Anbieter hat keine Position zur Klausel.
+    references:
+      - label: { en: 'Regulation (EU) 2023/1230, Article 3(16)', de: 'Verordnung (EU) 2023/1230, Art. 3 Nr. 16' }
+        provenance: { source_url: 'https://eur-lex.europa.eu/eli/reg/2023/1230/oj', tier: 1, observed_at: '2026-09-24', confidence: confirmed }
+    applies_when: { self_learning: true }
+  - id: rfi.03
+    order: 3
+    title: { en: "Mobility hazards outside ISO 10218 and the unpublished ISO 25785-1", de: "Mobilitätsgefährdungen außerhalb der ISO 10218 und die unveröffentlichte ISO 25785-1" }
+    why:
+      en: ISO 10218-1/-2:2025 covers manipulators and statically stable mobile platforms and excludes the mobility hazards of dynamically stable machines. For a legged robot no published standard exists; the vendor's risk assessment stands in for it.
+      de: ISO 10218-1/-2:2025 deckt Manipulatoren und statisch stabile mobile Plattformen ab und schließt die Mobilitätsgefährdungen dynamisch stabiler Maschinen aus. Für einen Laufroboter gibt es keine veröffentlichte Norm; die Risikobeurteilung des Anbieters tritt an ihre Stelle.
+    good_answer:
+      en: The ISO 12100 risk assessment for falls, loss of balance and power loss, with the mitigations (safe stop posture, tethering, exclusion zones) and the test evidence behind each.
+      de: Die Risikobeurteilung nach ISO 12100 für Stürze, Gleichgewichtsverlust und Stromausfall, mit den Maßnahmen (sichere Stopp-Haltung, Sicherung, Sperrzonen) und den Prüfnachweisen dahinter.
+    fail_if:
+      en: The vendor cites ISO 25785-1 as if it were published, or has no fall analysis.
+      de: Der Anbieter zitiert ISO 25785-1, als wäre sie veröffentlicht, oder hat keine Sturzanalyse.
+    references:
+      - label: { en: 'ISO/CD 25785-1 (committee draft)', de: 'ISO/CD 25785-1 (Komiteeentwurf)' }
+        provenance: { source_url: 'https://www.iso.org/standard/91469.html', tier: 1, observed_at: '2026-09-24', confidence: confirmed }
+    applies_when: { legged: true }
+  - id: rfi.04
+    order: 4
+    title: { en: "Safety functions at EN ISO 13849 performance level d or better", de: "Sicherheitsfunktionen mit Performance Level d oder besser nach EN ISO 13849" }
+    why:
+      en: Emergency stop, protective stop, speed and separation monitoring and safe torque limits need a stated performance level with the architecture behind it; a marketing sentence is not a safety function.
+      de: Not-Halt, Schutzstopp, Geschwindigkeits- und Abstandsüberwachung und sichere Drehmomentbegrenzung brauchen einen benannten Performance Level mit der Architektur dahinter; ein Marketingsatz ist keine Sicherheitsfunktion.
+    good_answer:
+      en: A list of safety functions with PL, category and the safety controller that implements them, plus the validation report.
+      de: Eine Liste der Sicherheitsfunktionen mit PL, Kategorie und der Sicherheitssteuerung, die sie umsetzt, plus Validierungsbericht.
+    fail_if:
+      en: Safety relies on the perception stack alone or no PL is stated.
+      de: Die Sicherheit beruht allein auf der Wahrnehmung, oder kein PL wird genannt.
+    references:
+      - label: { en: 'ISO 10218-1:2025 (robot safety)', de: 'ISO 10218-1:2025 (Robotersicherheit)' }
+        provenance: { source_url: 'https://www.iso.org/standard/73933.html', tier: 1, observed_at: '2026-09-24', confidence: likely }
+  - id: rfi.05
+    order: 5
+    title: { en: "Full ingress rating, temperature range and dust limits", de: "Vollständige Schutzart, Temperaturbereich und Staubgrenzen" }
+    why:
+      en: Almost no humanoid publishes an IP rating, and the few that do are drip- or splash-only. A hall with dust, a yard in rain or a cold store each need a stated limit, not a demo video.
+      de: Fast kein Humanoid veröffentlicht eine Schutzart, und die wenigen sind Tropf- oder Spritzschutz. Eine Halle mit Staub, ein Hof im Regen oder ein Kühlraum brauchen je eine genannte Grenze, kein Demo-Video.
+    good_answer:
+      en: IP code for body and cabinet, operating temperature range, and a written statement on dust environments; IP65 where the context declares a dust workroom.
+      de: IP-Code für Körper und Schaltschrank, Betriebstemperaturbereich und eine schriftliche Aussage zu Staubumgebungen; IP65, wo der Kontext einen Staubarbeitsraum nennt.
+    fail_if:
+      en: No IP code, or dust suitability claimed without a code.
+      de: Kein IP-Code, oder Staubtauglichkeit ohne Code behauptet.
+  - id: rfi.06
+    order: 6
+    title: { en: "Air-gapped operating mode and a data processing agreement with EU residency", de: "Offline-Betriebsmodus und Auftragsverarbeitungsvertrag mit EU-Datenresidenz" }
+    why:
+      en: A robot with cameras and microphones among employees processes personal data. Telemetry to servers outside the EU without a processing agreement is a violation, and a works council can block the deployment.
+      de: Ein Roboter mit Kameras und Mikrofonen unter Beschäftigten verarbeitet personenbezogene Daten. Telemetrie an Server außerhalb der EU ohne Auftragsverarbeitungsvertrag ist ein Verstoß, und ein Betriebsrat kann den Einsatz stoppen.
+    good_answer:
+      en: A documented on-premise or air-gapped mode, a draft DPA with EU data residency, and a list of every outbound connection the robot makes.
+      de: Ein dokumentierter On-Premise- oder Offline-Modus, ein Entwurf des AV-Vertrags mit EU-Datenresidenz und eine Liste jeder ausgehenden Verbindung des Roboters.
+    fail_if:
+      en: Teleoperation or telemetry outside the EU cannot be switched off, or no DPA is offered.
+      de: Teleoperation oder Telemetrie außerhalb der EU lassen sich nicht abschalten, oder kein AV-Vertrag wird angeboten.
+    references:
+      - label: { en: 'Regulation (EU) 2016/679, Article 28 and Chapter V', de: 'Verordnung (EU) 2016/679, Artikel 28 und Kapitel V' }
+        provenance: { source_url: 'https://eur-lex.europa.eu/eli/reg/2016/679/oj', tier: 1, observed_at: '2026-09-24', confidence: confirmed }
+  - id: rfi.07
+    order: 7
+    title: { en: "EU legal entity, EU service organisation and who signs the declaration for the integrated application", de: "EU-Rechtsträger, EU-Serviceorganisation und wer die Erklärung für die integrierte Anwendung unterschreibt" }
+    why:
+      en: Buying direct from a non-EU manufacturer makes the buyer the importer with its verification duties. The vendor's CE mark covers the hardware; the integrated cell is new machinery and someone must sign its declaration.
+      de: Der Direktkauf bei einem Nicht-EU-Hersteller macht den Käufer zum Importeur mit Prüfpflichten. Das CE-Zeichen des Anbieters gilt für die Hardware; die integrierte Zelle ist eine neue Maschine, und jemand muss ihre Erklärung unterschreiben.
+    good_answer:
+      en: The EU entity that places the product on the market, the service organisation with a guaranteed response time, and the party that signs the declaration of conformity for the integrated application.
+      de: Der EU-Rechtsträger, der das Produkt in Verkehr bringt, die Serviceorganisation mit garantierter Reaktionszeit und die Partei, die die Konformitätserklärung für die integrierte Anwendung unterschreibt.
+    fail_if:
+      en: Only a non-EU seller and no integrator willing to sign.
+      de: Nur ein Nicht-EU-Verkäufer und kein Integrator, der unterschreibt.
+    references:
+      - label: { en: 'Regulation (EU) 2023/1230, obligations of importers', de: 'Verordnung (EU) 2023/1230, Pflichten der Einführer' }
+        provenance: { source_url: 'https://eur-lex.europa.eu/eli/reg/2023/1230/oj', tier: 1, observed_at: '2026-09-24', confidence: confirmed }
+  - id: rfi.08
+    order: 8
+    title: { en: "Written unit counts and named reference calls", de: "Schriftliche Stückzahlen und benannte Referenzgespräche" }
+    why:
+      en: Press releases and demo videos are not deployments. A unit count in writing and a reference customer who will take a call separate shipping products from announcements.
+      de: Pressemitteilungen und Demo-Videos sind keine Einsätze. Eine schriftliche Stückzahl und ein Referenzkunde, der ans Telefon geht, trennen lieferbare Produkte von Ankündigungen.
+    good_answer:
+      en: Units delivered per year, units in unattended operation, and two reference customers in a comparable setting who agree to a call.
+      de: Ausgelieferte Einheiten je Jahr, Einheiten im unbeaufsichtigten Betrieb und zwei Referenzkunden in vergleichbarem Umfeld, die einem Gespräch zustimmen.
+    fail_if:
+      en: Only press references, or references under NDA that cannot be contacted.
+      de: Nur Presseverweise oder Referenzen unter NDA, die nicht kontaktiert werden können.
+  - id: rfi.09
+    order: 9
+    title: { en: "Negotiated warranty replacing vendor boilerplate", de: "Verhandelte Gewährleistung statt Anbieter-Standardtext" }
+    why:
+      en: Several vendors ship on as-is terms that are unusable for a German business buyer; warranty, spare-part availability and repair turnaround belong in the contract.
+      de: Mehrere Anbieter liefern zu As-is-Bedingungen, die für einen deutschen Geschäftskunden unbrauchbar sind; Gewährleistung, Ersatzteilverfügbarkeit und Reparaturzeiten gehören in den Vertrag.
+    good_answer:
+      en: Warranty period, spare-part availability period, repair turnaround, and what happens to the robot when the vendor discontinues the line.
+      de: Gewährleistungsfrist, Ersatzteilverfügbarkeit, Reparaturdauer und was mit dem Roboter passiert, wenn der Anbieter die Linie einstellt.
+    fail_if:
+      en: As-is terms only.
+      de: Nur As-is-Bedingungen.
+  - id: rfi.10
+    order: 10
+    title: { en: "Source-code or continuity escrow", de: "Quellcode- oder Kontinuitäts-Escrow" }
+    why:
+      en: Vendors in this sector have discontinued product lines on existing customers. A robot that depends on a cloud service or a closed software stack stops working when the vendor does.
+      de: Anbieter in dieser Branche haben Produktlinien bei Bestandskunden eingestellt. Ein Roboter, der von einem Cloud-Dienst oder einem geschlossenen Software-Stack abhängt, steht still, wenn der Anbieter aufhört.
+    good_answer:
+      en: An escrow agreement for the software needed to operate and maintain the robot offline, released on insolvency or discontinuation.
+      de: Eine Escrow-Vereinbarung für die Software, die den Roboter offline betreibt und wartet, mit Freigabe bei Insolvenz oder Einstellung.
+    fail_if:
+      en: Operation depends on a cloud account with no continuity commitment.
+      de: Der Betrieb hängt an einem Cloud-Konto ohne Kontinuitätszusage.

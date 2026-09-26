@@ -1,14 +1,15 @@
-import { PlanWorkspace } from '@/components/plan/PlanWorkspace';
-import { publicMetadata } from '@/lib/seo';
-import './plan.css';
+import type { Metadata } from 'next';
+import { Shortlist } from '@/components/journey/Shortlist';
+import { loadContent } from '@/lib/content/load';
+import { PRIVATE_METADATA } from '@/lib/seo';
+import { journeyContent } from '@/lib/tasks/cards';
 
-export const metadata = publicMetadata({ title: 'Plan automation', description: 'Explore jobs, compare complete solutions, assess costs and prepare a pilot for construction and factory automation.', path: '/plan' });
+export const metadata: Metadata = { ...PRIVATE_METADATA, title: 'Your shortlist' };
 export const dynamic = 'force-dynamic';
 
-export default async function PlanPage({ searchParams }: { searchParams: Promise<{ mode?: string }> }) {
-  const { mode } = await searchParams;
-  return <main className="plan-page">
-    <noscript><p>This assessment needs JavaScript to save your draft in this browser.</p></noscript>
-    <PlanWorkspace mode={mode} />
-  </main>;
+export default function PlanPage() {
+  return <>
+    <noscript><p>The shortlist needs JavaScript to keep your work in this browser.</p></noscript>
+    <Shortlist content={journeyContent(loadContent())} />
+  </>;
 }

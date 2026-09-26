@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_specialist_foundations/ground-anchor-installation
+status: published
+setting: site_specialist_foundations
+family: assembly_fastening
+trades: [civil_earthworks, steel]
+title:
+  en: "Install prestressed ground anchors for a retaining wall"
+  de: "Verpressanker für eine Verbauwand einbauen"
+summary:
+  en: "After the rig has drilled the hole, push in the bar or strand tendon, grout it, then stress and lock off the anchor with a hydraulic jack."
+  de: "Nachdem das Bohrgerät das Loch gebohrt hat, das Stab- oder Litzenzugglied einschieben, verpressen, dann den Anker mit einer hydraulischen Presse spannen und festlegen."
+description:
+  en: "Ground anchors tie back retaining walls and resist uplift. An anchor drilling rig drills the hole; the crew then inserts the tendon, either threadbar sections of typically 6 to 12 m joined by couplers or a strand tendon delivered coiled in lengths of up to 90 m and more, grouts it and later stresses and locks it off with a hydraulic jack. Anchor capacities reach several thousand kilonewtons, and each anchor carries part of the wall's stability."
+  de: "Verpressanker halten Verbauwände zurück und nehmen Auftrieb auf. Ein Ankerbohrgerät bohrt das Loch; die Kolonne schiebt dann das Zugglied ein, entweder Gewindestäbe in Abschnitten von typischerweise 6 bis 12 m mit Muffen oder ein aufgerolltes Litzenzugglied mit bis zu 90 m und mehr, verpresst es und spannt es später mit einer hydraulischen Presse vor und legt es fest. Die Ankerkräfte erreichen mehrere tausend Kilonewton, und jeder Anker trägt einen Teil der Standsicherheit der Wand."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '006'
+  atv: null
+  position:
+    en: "Prestressed grouted ground anchor for the temporary or permanent tieback of a retaining wall: install, grout, stress and lock off"
+    de: "Verpressanker für die temporäre oder dauerhafte Rückverankerung einer Verbauwand herstellen, verpressen, spannen und festlegen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://dywidag.com/products/ground-anchors/threadbar-anchor-system'
+    note: "Threadbar sections are typically 6 to 12 m long and strand tendons are delivered coiled in lengths of up to 90 m and more (DYWIDAG); the pages give no weights, so the mass handled per piece is not established."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The anchor pattern repeats along the wall; lengths, inclinations and ground change from job to job."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://dywidag.com/products/ground-anchors/threadbar-anchor-system'
+    note: "The anchors provide the tieback of the retaining wall and the uplift restraint (DYWIDAG); an anchor that does not hold endangers the excavation."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://dywidag.com/products/ground-anchors/threadbar-anchor-system'
+    note: "Retaining-wall tieback and uplift restraint are structural functions."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "Anchor heads sit on the wall at the working level of each excavation stage. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open excavation pit."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Open excavation; drilling is flushed and done by the rig."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather, with grout and flushing water."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Excavation level of the current stage."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [anchor_drilling_rig] }
+    confidence: likely
+    evidence_url: 'https://equipment.bauer.de/de/ankerbohrgeraete'
+    note: "Anchor drilling rigs do the drilling (Bauer lists them for anchors, wells, injection and geothermal work); inserting, grouting and stressing stay with the crew and the hydraulic jack."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; anchors per day depend on length and ground."
+requirements:
+  object_size_m:
+    value: { min: 6, max: 12 }
+    confidence: confirmed
+    evidence_url: 'https://dywidag.com/products/ground-anchors/threadbar-anchor-system'
+    note: "Typical threadbar section lengths of 6 to 12 m (DYWIDAG); strand tendons reach 90 m and more but come coiled."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No source used here states a position or inclination tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Stressing is done by a hydraulic jack; anchor capacities go up to 4,500 kN for the threadbar system (DYWIDAG), which no person applies by hand."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the specialist crew with the anchor drilling rig and the stressing jack; the anchors carry the wall and every one must hold."
+      de: "Bei der Spezialtiefbaukolonne mit Ankerbohrgerät und Spannpresse bleiben; die Anker tragen die Wand, und jeder einzelne muss halten."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure]
+capabilities_required: [teleoperated_manipulation]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "DYWIDAG describes its threadbar anchor system for retaining-wall tieback, uplift restraint and excavation support, with capacities of up to 4,500 kN and typical section lengths of 6 to 12 m."
+      de: "DYWIDAG beschreibt sein Gewindestab-Ankersystem für die Rückverankerung von Stützwänden, die Auftriebssicherung und die Baugrubensicherung, mit Ankerkräften bis 4.500 kN und typischen Abschnittslängen von 6 bis 12 m."
+    url: 'https://dywidag.com/products/ground-anchors/threadbar-anchor-system'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "DYWIDAG supplies strand anchors with 15.2 or 15.7 mm strands, 1 to 22 or more strands, in single-section lengths of up to 90 m and more, fully coiled for transport and handling, grouted on site or pre-grouted, and stressed with multi-strand jacks for high capacities."
+      de: "DYWIDAG liefert Litzenanker mit Litzen von 15,2 oder 15,7 mm, 1 bis 22 und mehr Litzen, in einteiligen Längen bis 90 m und mehr, für Transport und Handhabung vollständig aufgerollt, vor Ort verpresst oder werkseitig vorverpresst, und gespannt mit Mehrlitzenpressen für hohe Ankerkräfte."
+    url: 'https://dywidag.com/products/ground-anchors/strand-anchor-system'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "Bauer lists its KLEMM anchor drilling rigs for anchors, wells, injection and geothermal drilling."
+      de: "Bauer führt seine KLEMM-Ankerbohrgeräte für Anker, Brunnen, Injektion und Geothermie."
+    url: 'https://equipment.bauer.de/de/ankerbohrgeraete'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Overview page without technical data, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not applicable."
+    de: "Nicht anwendbar."
+prerequisites: []
+open_questions:
+  - { en: "How many anchor rows and which anchor types do your excavations usually need?", de: "Wie viele Ankerlagen und welche Ankertypen brauchen Ihre Baugruben üblicherweise?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

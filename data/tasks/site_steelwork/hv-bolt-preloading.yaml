@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_steelwork/hv-bolt-preloading
+status: published
+setting: site_steelwork
+family: assembly_fastening
+trades: [steel]
+title:
+  en: "Preload high-strength bolts in steel connections"
+  de: "HV-Schrauben in Stahlbauverbindungen planmäßig vorspannen"
+summary:
+  en: "Tighten HV bolt sets in slip-resistant or preloaded connections in two steps, pre-tightening torque then a further rotation angle, and mark each bolt."
+  de: "HV-Garnituren in gleitfesten oder vorgespannten Verbindungen in zwei Schritten anziehen, erst mit Voranziehmoment, dann mit Weiterdrehwinkel, und jede Schraube markieren."
+description:
+  en: "In slip-resistant and preloaded connections the preload of each bolt enters the structural design directly. With the combined method of DIN EN 1090-2 every bolt in the connection is first tightened to about three quarters of a reference torque; only then is the further rotation angle applied, checked against a mark on the nut. For an M20 set in property class 10.9 the minimum preload is 172 kN."
+  de: "In gleitfesten und vorgespannten Verbindungen geht die Vorspannkraft jeder Schraube direkt in die Bemessung ein. Beim kombinierten Vorspannverfahren nach DIN EN 1090-2 wird zuerst jede Schraube der Verbindung auf etwa drei Viertel eines Referenzmoments vorangezogen; erst dann folgt der Weiterdrehwinkel, geprüft an einer Markierung auf der Mutter. Für eine M20-Garnitur der Festigkeitsklasse 10.9 beträgt die Mindestvorspannkraft 172 kN."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '017'
+  atv: "DIN 18335"
+  position:
+    en: "Preloaded bolted connections with HV bolt sets"
+    de: "Planmäßig vorgespannte Schraubverbindungen mit HV-Garnituren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The heaviest object is the tightening tool, a torque wrench or a powered torque multiplier; no tool datasheet is recorded here."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Bolt sizes and connection types repeat, the positions and access do not."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://archiv.bauforumstahl.de/fileadmin/user_upload/bauforumstahl.de/wissen/arbeitshilfen/Arbeitshilfen-Stahlbau/2021-09-28_SA_5.3_Ausfuehrung_von_Stahlbauten_-_Geschraubte_Verbindungen_-_Planmaessiges_Vorspannen.pdf'
+    note: "An under-preloaded bolt in a slip-resistant connection is a structural defect; the tightening procedure and its checks are laid down in DIN EN 1090-2."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://archiv.bauforumstahl.de/fileadmin/user_upload/bauforumstahl.de/wissen/arbeitshilfen/Arbeitshilfen-Stahlbau/2021-09-28_SA_5.3_Ausfuehrung_von_Stahlbauten_-_Geschraubte_Verbindungen_-_Planmaessiges_Vorspannen.pdf'
+    note: "bauforumstahl calls preloading in connection categories B, C and E a safety-relevant use that enters the design directly."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "Connections are worked from a mobile elevating work platform or the deck, around head height. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Steel erection happens in the open structure."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Tightening bolts releases no dust."
+  wet:
+    value: null
+    confidence: assumed
+    note: "Depends on the weather during erection."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Work platforms, decks and beams."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Fitters with torque wrenches or powered torque multipliers; the tools are hand-held."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the bolt list of the connection design gives the number."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not relevant for the bolts; tool sizes are not recorded."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Not a positional tolerance: the requirement is the preload and the further rotation angle."
+  force_n:
+    value: 172000
+    confidence: confirmed
+    evidence_url: 'https://archiv.bauforumstahl.de/fileadmin/user_upload/bauforumstahl.de/wissen/arbeitshilfen/Arbeitshilfen-Stahlbau/2021-09-28_SA_5.3_Ausfuehrung_von_Stahlbauten_-_Geschraubte_Verbindungen_-_Planmaessiges_Vorspannen.pdf'
+    note: "Minimum preload Fp,C of an M20 set in property class 10.9 per DIN EN 1090-2, from table 1 of the bauforumstahl guide. The first step of the combined method applies 0.75 × Mr,1 with Mr,1 = 0.13 × d × Fp,C, for M20 about 0.75 × 447 ≈ 335 N·m (our arithmetic from the formula in the guide), followed by the further rotation angle."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep trained fitters with calibrated tools, the mark on each nut and the documented check. Preload enters the structural design; a machine has to meet the same procedure and the same inspection, not a lighter one."
+      de: "Geschulte Monteure mit kalibrierten Werkzeugen, die Markierung an jeder Mutter und die dokumentierte Kontrolle bleiben die Antwort. Die Vorspannkraft geht in die Bemessung ein; eine Maschine muss dasselbe Verfahren und dieselbe Kontrolle erfüllen, keine leichtere."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [screwing]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "bauforumstahl lists the minimum preload Fp,C per DIN EN 1090-2 as 110 kN for M16, 172 kN for M20 and 247 kN for M24 in property class 10.9, and describes the combined method: a first step at about 0.75 Mr, completed for all bolts of the connection, then a defined further rotation angle."
+      de: "bauforumstahl nennt als Mindestvorspannkraft Fp,C nach DIN EN 1090-2 für die Festigkeitsklasse 10.9 110 kN bei M16, 172 kN bei M20 und 247 kN bei M24 und beschreibt das kombinierte Vorspannverfahren: einen ersten Anziehschritt mit etwa 0,75 Mr, abgeschlossen für alle Schrauben der Verbindung, dann einen festgelegten Weiterdrehwinkel."
+    url: 'https://archiv.bauforumstahl.de/fileadmin/user_upload/bauforumstahl.de/wissen/arbeitshilfen/Arbeitshilfen-Stahlbau/2021-09-28_SA_5.3_Ausfuehrung_von_Stahlbauten_-_Geschraubte_Verbindungen_-_Planmaessiges_Vorspannen.pdf'
+    kind: analyst
+    tier: 2
+    date: '2021-09-28'
+    type: claim
+    confidence: confirmed
+    note: "Arbeitshilfe 5.3 of the German steel construction association; the date is taken from the file name."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not piloted; if anything, test a robot bringing bolt sets and tools to the platform."
+    de: "Keine Erprobung; wenn überhaupt, einen Roboter testen, der Garnituren und Werkzeug zur Arbeitsbühne bringt."
+prerequisites: []
+open_questions:
+  - { en: "How many preloaded bolts per tonne of steel does the project have, and who checks them?", de: "Wie viele vorgespannte Schrauben je Tonne Stahl hat das Projekt, und wer prüft sie?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

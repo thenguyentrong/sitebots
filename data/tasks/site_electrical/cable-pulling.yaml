@@ -1,0 +1,146 @@
+schema_version: 1
+id: site_electrical/cable-pulling
+status: published
+setting: site_electrical
+family: assembly_fastening
+trades: [mep_electrical]
+title:
+  en: "Lay cables on trays and pull them into conduits"
+  de: "Leitungen auf Kabelrinnen verlegen und in Rohre einziehen"
+summary:
+  en: "Unwind installation cable from rings, lay it on the trays and pull it through conduits to each outlet, without overstressing it."
+  de: "Installationsleitung vom Ring abwickeln, auf die Rinnen legen und durch Rohre zu jedem Auslass ziehen, ohne sie zu überlasten."
+description:
+  en: "For the final circuits, electricians unwind sheathed cable from 50 m and 100 m rings, lay it on the trays, sort it and pull it through conduits and wall openings to the outlets, usually one feeding and one pulling. The cable must not be pulled harder than the manufacturer allows or bent tighter than its minimum radius; damage shows up at the insulation measurement before the circuit is switched on."
+  de: "Für die Endstromkreise wickeln Elektriker Mantelleitung von 50- und 100-m-Ringen ab, legen sie auf die Rinnen, ordnen sie und ziehen sie durch Rohre und Wanddurchbrüche zu den Auslässen, meist einer am Ring und einer am Zugende. Die Leitung darf nicht stärker gezogen werden als vom Hersteller zugelassen und nicht enger gebogen als ihr Mindestradius; Schäden zeigen sich bei der Isolationsmessung, bevor der Stromkreis eingeschaltet wird."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '053'
+  atv: "DIN 18382"
+  position:
+    en: "Sheathed installation cable NYM-J: supply, lay on cable trays or pull into conduits"
+    de: "Mantelleitung NYM-J liefern, auf Kabelrinnen verlegen oder in Rohre einziehen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 6, max: 24 }
+    confidence: likely
+    evidence_url: 'https://www.waskoenig.de/download/0091?locale=de'
+    note: "Heaviest handled object is the ring. Waskönig + Walter NYM-J datasheet (Stand 24.09.2026): 3 × 1.5 mm² 50 m ring 6 kg net; 5 × 2.5 mm² 100 m ring 24 kg net (223.79 kg/km). Scope: final circuits up to 5 × 2.5 mm²; larger cables come on drums and are pulled with winches."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every circuit has its own route, length, cable type and pulling point."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A cable damaged while pulling is replaced; the fault is found at the insulation measurement before the circuit is switched on."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The electrical safety is proven afterwards at the initial verification (DIN VDE 0100-600); the pulling itself carries no structural or life-safety load."
+  reach_height_m:
+    value: { min: 0.3, max: 4.0 }
+    confidence: assumed
+    evidence_url: 'https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a1_2/6.htm'
+    note: "From outlets near the floor up to trays below the slab. ASR A1.2 sets minimum clear room heights of 2.50 m to 3.25 m; the 4.0 m upper bound is assumed."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Construction dust from the other trades; pulling produces none."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Raw slab, platforms and ladders; cable rings stand on the floor."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Final-circuit cables are pulled by hand; cable winches are used for heavy cables on drums, which are outside this scope."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Circuit lists from the plan only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Pulling runs over whole shifts; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline measures metres laid per shift and team."
+requirements:
+  object_size_m:
+    value: { min: 0.39, max: 0.39 }
+    confidence: confirmed
+    evidence_url: 'https://www.waskoenig.de/download/0091?locale=de'
+    note: "Outer diameter of a 100 m ring of NYM-J 5 × 2.5 mm²: 390 mm (datasheet). The cable itself runs tens of metres."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.waskoenig.de/download/0091?locale=de'
+    note: "No position tolerance. The limit that matters is the minimum bending radius, 8 × the outer diameter (datasheet), about 96 mm for the 12 mm cable, and a handling temperature of 5 to 70 °C."
+  force_n:
+    value: 625
+    confidence: likely
+    evidence_url: 'https://www.helu.com/de-de/newsroom/beitrag/zugkraft-berechnen.html'
+    note: "Permissible pulling force, which the pull must stay below: 50 N × number of cores × cross-section in mm² (HELUKABEL, citing VDE 0298-3); for 5 × 2.5 mm² that is 50 × 5 × 2.5 = 625 N."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "The ring is at the payload ceiling and the pull needs force control below 625 N at the cable. Compare a ring dispenser and a simple cable puller first; a robot is worth testing only as the second person on straight tray runs."
+      de: "Der Ring liegt an der Nutzlastgrenze, und der Zug braucht eine Kraftregelung unter 625 N an der Leitung. Zuerst einen Ringabroller und ein einfaches Zuggerät vergleichen; ein Roboter lohnt den Test nur als zweite Person auf geraden Rinnenstrecken."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: [autonomous_nav_indoor, tool_handoff]
+solution_classes: [keep_process, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "HELUKABEL gives the permissible pulling force for fixed-installation cables with copper conductors as 50 N × number of cores × conductor cross-section in mm², for example 500 N for a cable with 4 × 2.5 mm², with reference to VDE 0298-3."
+      de: "HELUKABEL gibt die zulässige Zugkraft für fest verlegte Kabel und Leitungen mit Kupferleitern mit 50 N × Aderzahl × Leiterquerschnitt in mm² an, zum Beispiel 500 N für eine Leitung mit 4 × 2,5 mm², unter Verweis auf VDE 0298-3."
+    url: 'https://www.helu.com/de-de/newsroom/beitrag/zugkraft-berechnen.html'
+    kind: manufacturer
+    tier: 1
+    date: '2025-08-06'
+    type: claim
+    confidence: confirmed
+    note: "Article of a cable manufacturer. Product data, not a robot precedent."
+  - statement:
+      en: "The Waskönig + Walter NYM-J datasheet lists NYM-J 5 × 2.5 mm² at 223.79 kg/km, 12 mm outer diameter, in 100 m rings of 24 kg net, with a minimum bending radius of 8 × the outer diameter and a handling temperature of 5 to 70 °C."
+      de: "Das Datenblatt NYM-J von Waskönig + Walter führt NYM-J 5 × 2,5 mm² mit 223,79 kg/km und 12 mm Außendurchmesser, in 100-m-Ringen mit 24 kg netto, mit einem Mindestbiegeradius von 8 × Außendurchmesser und einer Verlegetemperatur von 5 bis 70 °C."
+    url: 'https://www.waskoenig.de/download/0091?locale=de'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet 'Stand 24.09.2026'."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: "Any cable damaged by the robot's pull in the first month, or fewer than 99 % of runs completed without help after 3 months, then stop."
+    de: "Eine vom Roboter beim Ziehen beschädigte Leitung im ersten Monat oder weniger als 99 % der Strecken nach 3 Monaten ohne Hilfe, dann abbrechen."
+  scope_hint:
+    en: "Straight tray runs on one floor, cables up to 5 × 2.5 mm², the electrician feeds and checks; conduits stay manual."
+    de: "Gerade Rinnenstrecken in einem Geschoss, Leitungen bis 5 × 2,5 mm², der Elektriker führt zu und prüft; Rohre bleiben manuell."
+prerequisites:
+  - { en: "Circuit list with cable types, lengths and routes", de: "Stromkreisliste mit Leitungstypen, Längen und Trassen" }
+  - { en: "Trays mounted and free of other trades' material", de: "Rinnen montiert und frei von Material anderer Gewerke" }
+open_questions:
+  - { en: "How many metres per shift does a two-person team lay today, and how much of it is on straight trays?", de: "Wie viele Meter verlegt ein Zweierteam heute pro Schicht, und wie viel davon auf geraden Rinnen?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

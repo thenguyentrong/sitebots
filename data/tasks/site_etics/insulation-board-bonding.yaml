@@ -1,0 +1,153 @@
+schema_version: 1
+id: site_etics/insulation-board-bonding
+status: published
+setting: site_etics
+family: assembly_fastening
+trades: [insulation, facade_roofing]
+title:
+  en: "Bond insulation boards to the external wall"
+  de: "Dämmplatten auf die Außenwand kleben"
+summary:
+  en: "Apply the adhesive, press the boards into it and keep the surface flat and dry for the render."
+  de: "Kleber auftragen, die Platten einschwimmen und die Fläche eben und trocken für den Putz halten."
+description:
+  en: "Rockwool supplies its stone-wool render carrier board Coverrock II in 800 × 625 and 1200 × 400 mm, 60 to 300 mm thick, and requires at least 40 % bonded area; the adhesive can be applied by machine to the wall or straight onto the board, and the insulation has to stay dry, if necessary under a covered scaffold. Knauf Insulation describes the same step for its FKD-S Thermal boards: adhesive in lines along the edges and in spots on the surface, then mechanical fastening. According to the trade association VDPM, the dead load of an ETICS goes into the wall through the adhesive and the boards."
+  de: "Rockwool liefert die Steinwolle-Putzträgerplatte Coverrock II in 800 × 625 und 1200 × 400 mm bei 60 bis 300 mm Dicke und verlangt mindestens 40 % Verklebung; der Kleber kann maschinell auf den Untergrund oder direkt auf die Platte aufgebracht werden, und der Dämmstoff muss trocken bleiben, notfalls unter abgeplantem Gerüst. Knauf Insulation beschreibt denselben Schritt für die FKD-S-Thermal-Platten: Kleber in Wülsten am Rand und Punkten in der Fläche, danach mechanische Befestigung. Laut dem Verband VDPM wird die Eigenlast eines WDVS über den Kleber und die Dämmplatten in den Untergrund eingeleitet."
+also_in_settings: [facade_prefab]
+derived_from: null
+lv:
+  lb: '023'
+  atv: "DIN 18345"
+  position:
+    en: "ETICS: bonding the insulation boards to the external wall"
+    de: "WDVS: Dämmplatten auf die Außenwand kleben"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "Neither the Rockwool nor the Knauf Insulation datasheet states a density, so the board weight is open. Weigh a board of the planned thickness (up to 300 mm)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. A repetitive field of boards, but cuts at openings, corners and the base course differ per facade."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A board bonded below the required 40 % has to come off again before rendering."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.keim.com/fileadmin/content/Documents/WDVS/Planungshilfen/VDPM-merkblatt-duebel_juli_2020.pdf'
+    note: "The adhesive carries the system's dead load into the wall (VDPM); the bonded area is part of the stability proof."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "From the scaffold deck to just above head height. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the scaffold outside the building."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Outdoors; cutting stone wool and mixing adhesive raise dust at the scaffold, no classified zone."
+  wet:
+    value: damp
+    confidence: confirmed
+    evidence_url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/fassade-wdvs/db-coverrock-ii-rockwool.pdf'
+    note: "Rockwool: the insulation must be protected from rain before and during installation, if necessary by covering the scaffold."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck: level but narrow."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: confirmed
+    evidence_url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/fassade-wdvs/db-coverrock-ii-rockwool.pdf'
+    note: "The adhesive can be applied by machine (Rockwool); placing and pressing the boards is manual."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.8, max: 1.2 }
+    confidence: confirmed
+    evidence_url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/fassade-wdvs/db-coverrock-ii-rockwool.pdf'
+    note: "Boards of 800 × 625 or 1200 × 400 mm, 60 to 300 mm thick (Rockwool, edition 09/2023)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Neither datasheet gives a flatness tolerance for the board surface."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The bond is part of the facade's stability and the work happens in the weather, so the trained installer stays. The machine that already helps is the one that applies the adhesive."
+      de: "Die Verklebung ist Teil der Standsicherheit der Fassade und die Arbeit findet im Wetter statt, der geschulte Verarbeiter bleibt also. Die Maschine, die schon hilft, ist die, die den Kleber aufträgt."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Rockwool's datasheet for the stone-wool render carrier board Coverrock II lists formats of 800 × 625 and 1200 × 400 mm in thicknesses of 60 to 300 mm, requires at least 40 % bonded area, allows the adhesive to be applied by machine and requires the insulation to be protected from rain, if necessary by covering the scaffold."
+      de: "Das Rockwool-Datenblatt zur Steinwolle-Putzträgerplatte Coverrock II nennt die Formate 800 × 625 und 1200 × 400 mm in 60 bis 300 mm Dicke, verlangt mindestens 40 % Verklebung, erlaubt den maschinellen Kleberauftrag und verlangt Schutz des Dämmstoffs vor Regen, notfalls durch Abplanen des Gerüsts."
+    url: 'https://www.rockwool.com/siteassets/rw-d/datenblatter/fassade-wdvs/db-coverrock-ii-rockwool.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2023-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Edition 09/2023 (month only)."
+  - statement:
+      en: "Knauf Insulation describes bonding its FKD-S Thermal boards (600 × 1000 mm, 30 to 200 mm) with polymer-cement adhesive in lines along the edges and spots on the surface, followed by mechanical fastening with 6 to 8 anchors per m²."
+      de: "Knauf Insulation beschreibt das Kleben der FKD-S-Thermal-Platten (600 × 1000 mm, 30 bis 200 mm) mit Polymer-Zement-Kleber in Wülsten am Rand und Punkten in der Fläche, gefolgt von mechanischer Befestigung mit 6 bis 8 Dübeln je m²."
+    url: 'https://pim.knaufinsulation.com/files/download/fkd-s_thermal_en_202004.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2020-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Greek edition, April 2020 (month only)."
+  - statement:
+      en: "VDPM states that the dead load of an ETICS is carried into the substrate through the adhesive and the stability of the insulation boards, and that anchors contribute to the system's stability against wind."
+      de: "Der VDPM hält fest, dass die Eigenlast eines WDVS über den Kleber und die Stabilität der Dämmplatten in den Untergrund eingeleitet wird und die Dübel zur Standsicherheit gegen Wind beitragen."
+    url: 'https://www.keim.com/fileadmin/content/Documents/WDVS/Planungshilfen/VDPM-merkblatt-duebel_juli_2020.pdf'
+    kind: standard
+    tier: 2
+    date: '2020-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Merkblatt 'Dübel in WDVS', July 2020 (month only), published by the Verband für Dämmsysteme, Putz und Mörtel; copy hosted by a member company."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot; if the adhesive is applied by hand today, compare machine application on one facade."
+    de: "Kein Roboterpilot; falls der Kleber heute von Hand aufgetragen wird, den maschinellen Auftrag an einer Fassade vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "What does a board of the planned thickness weigh?", de: "Was wiegt eine Platte in der geplanten Dicke?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

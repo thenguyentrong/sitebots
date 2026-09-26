@@ -7,7 +7,7 @@ test('a robot page carries the construction profile with both views', async ({ p
   await expect(profile.locator('[data-profile-view="site"] [data-radar] [data-spoke]')).toHaveCount(10);
   await expect(profile.getByText('Carry', { exact: true }).first()).toBeVisible();
   await profile.getByRole('tab', { name: 'Tasks' }).click();
-  await expect(profile.locator('[data-profile-view="tasks"] [data-radar] [data-spoke]')).toHaveCount(17);
+  await expect(profile.locator('[data-profile-view="tasks"] [data-radar] [data-spoke]')).toHaveCount(21);
   await expect(profile.locator('[data-profile-view="tasks"]').getByText('Site inspection', { exact: true }).last()).toBeVisible();
 });
 

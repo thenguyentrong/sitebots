@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_ventilated_facade/facade-panel-mounting
+status: published
+setting: site_ventilated_facade
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Lift and fix large fibre-cement facade panels"
+  de: "Große Faserzement-Fassadentafeln ansetzen und befestigen"
+summary:
+  en: "Lift the panel to the sub-structure from the scaffold, align it with the joints and rivet or screw it on."
+  de: "Die Tafel vom Gerüst aus an die Unterkonstruktion heben, an den Fugen ausrichten und vernieten oder verschrauben."
+description:
+  en: "Eternit's EQUITONE [tectiva] panels are 8 mm thick at 14.9 kg/m²; a panel of the largest usable format, 3050 × 1220 mm, weighs 57 kg, one of 2500 × 1220 mm weighs 47 kg. They are fixed with facade rivets on aluminium and facade screws on timber sub-structures, on rainscreen facades of all building types and heights. Panels with stamped edges are trimmed by about 10 mm on all sides before use."
+  de: "Die Eternit-Tafeln EQUITONE [tectiva] sind 8 mm dick bei 14,9 kg/m²; eine Tafel im größten Nutzmaß von 3050 × 1220 mm wiegt 57 kg, eine von 2500 × 1220 mm 47 kg. Befestigt werden sie mit Fassadennieten auf Aluminium- und Fassadenschrauben auf Holz-Unterkonstruktionen, an hinterlüfteten Fassaden aller Gebäudearten und -höhen. Tafeln mit Stanzkante werden vor der Verwendung allseitig um etwa 10 mm besäumt."
+also_in_settings: [facade_prefab]
+derived_from: null
+lv:
+  lb: '038'
+  atv: "DIN 18351"
+  position:
+    en: "Fibre-cement facade panels on an aluminium sub-structure, riveted"
+    de: "Faserzement-Fassadentafeln auf Aluminium-Unterkonstruktion, genietet"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 47, max: 57 }
+    confidence: confirmed
+    evidence_url: 'https://www.fvhf.de/Fassade/Messekatalog/Eternit-Fassadentafel.pdf'
+    note: "Eternit datasheet: 47 kg per 2500 × 1220 mm panel, 57 kg per 3050 × 1220 mm panel (14.9 kg/m², 8 mm). Smaller cut panels weigh less."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. A repeated panel grid, but cut panels at openings, corners and the building edge differ per facade."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A panel set out of line is taken off and refixed; the joint lines are visible on the finished facade."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The rivets carry the panel's weight and the wind load; a failed fixing lets a panel of up to 57 kg fall."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "From the scaffold deck to just above head height. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the scaffold outside the building."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Trimming and drilling fibre cement raise dust; outdoors, no classified zone."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the weather decides."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck: level but narrow."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Panels are lifted and fixed by hand; not recorded otherwise."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 2.5, max: 3.05 }
+    confidence: confirmed
+    evidence_url: 'https://www.fvhf.de/Fassade/Messekatalog/Eternit-Fassadentafel.pdf'
+    note: "Usable formats 2500 × 1220 and 3050 × 1220 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The datasheet gives no joint or alignment tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data for riveting."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "A 57 kg panel is more than twice the payload ceiling of today's humanoids, the fixing carries the panel over people's heads and the work is outdoors. A suction lifter takes the weight while the installers align and rivet."
+      de: "Eine 57-kg-Tafel ist mehr als doppelt so schwer wie die Traglastgrenze heutiger Humanoiden, die Befestigung hält die Tafel über den Köpfen von Menschen, und gearbeitet wird im Freien. Ein Vakuumheber nimmt das Gewicht, während die Monteure ausrichten und nieten."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Eternit's datasheet gives EQUITONE [tectiva] facade panels 8 mm thick at 14.9 kg/m², in usable formats of 3050 × 1220 mm at 57 kg and 2500 × 1220 mm at 47 kg per panel, fixed with facade rivets on aluminium or facade screws on timber sub-structures."
+      de: "Das Eternit-Datenblatt nennt für die Fassadentafel EQUITONE [tectiva] 8 mm Dicke bei 14,9 kg/m², Nutzmaße von 3050 × 1220 mm mit 57 kg und 2500 × 1220 mm mit 47 kg je Tafel, befestigt mit Fassadennieten auf Aluminium- oder Fassadenschrauben auf Holz-Unterkonstruktionen."
+    url: 'https://www.fvhf.de/Fassade/Messekatalog/Eternit-Fassadentafel.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2012-12-01'
+    type: claim
+    confidence: confirmed
+    note: "Eternit datasheet, print code 12.2012 (month only), published in the fair catalogue of the rainscreen trade association FVHF."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If lifting is the pain: time per panel with and without a suction lifter on one elevation."
+    de: "Falls das Heben das Problem ist: Zeit je Tafel mit und ohne Vakuumheber an einer Fassadenseite."
+prerequisites: []
+open_questions:
+  - { en: "Which share of the panels is full format, which cut to size?", de: "Welcher Anteil der Tafeln ist Vollformat, welcher zugeschnitten?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

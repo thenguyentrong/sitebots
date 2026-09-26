@@ -1,0 +1,27 @@
+id: site_lightning_protection
+group: site
+section: services
+lv: { lb: ['050'], atv: ["DIN 18384"] }
+title: { en: "Lightning protection and earthing", de: "Blitzschutz-, Überspannungsschutz- und Erdungsanlagen" }
+aliases:
+  en: [lightning protection, earthing]
+  de: [Blitzschutz, Erdung, Fundamenterder]
+coverage: screened
+coverage_note:
+  en: "Two screened tasks: laying roof conductors on a flat roof (ruled out: outdoors and part of a safety system to DIN EN 62305) and laying the foundation earth electrode before the pour (ruled out: cast in concrete, installed and documented by qualified electricians under DIN 18014)."
+  de: "Zwei geprüfte Aufgaben: Dachleitungen auf dem Flachdach verlegen (ausgeschieden: im Freien und Teil einer Sicherheitsanlage nach DIN EN 62305) und den Fundamenterder vor dem Betonieren verlegen (ausgeschieden: im Beton eingegossen, von Elektrofachkräften nach DIN 18014 errichtet und dokumentiert)."
+typical_incumbent_automation: []
+dust:
+  type: mixed
+  typical_zone: none
+  note:
+    en: "Outdoors on the roof and facade; dust depends on the work next to it."
+    de: "Im Freien auf Dach und Fassade; Staub hängt von den Nachbararbeiten ab."
+floor: uneven
+exposure: outdoor
+typical_trades: [mep_electrical]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

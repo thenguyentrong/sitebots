@@ -1,0 +1,131 @@
+schema_version: 1
+id: site_corrosion_protection/abrasive-blasting
+status: published
+setting: site_corrosion_protection
+family: surface_finishing
+trades: [steel, painting]
+title:
+  en: "Blast-clean steel before coating"
+  de: "Stahloberflächen vor dem Beschichten strahlen"
+summary:
+  en: "Blast old coatings and rust off steel members with abrasive to prepare the surface for the new coating system."
+  de: "Alte Beschichtungen und Rost mit Strahlmittel von Stahlbauteilen entfernen, um die Oberfläche für das neue Beschichtungssystem vorzubereiten."
+description:
+  en: "On the southern spans of the Sydney Harbour Bridge two robots of 25 kg each grit-blast old paint and corrosion: they map the area with sensors and cameras, calculate where and how to place the nozzle, and a human operator presses the blast button. The work is described as dangerous, with exposure to lead paint and fine dust."
+  de: "An den Südspannweiten der Sydney Harbour Bridge strahlen zwei Roboter von je 25 kg alte Farbe und Korrosion ab: Sie erfassen den Bereich mit Sensoren und Kameras, berechnen, wo und wie die Düse anzusetzen ist, und ein Bediener löst das Strahlen aus. Die Arbeit gilt als gefährlich, mit Belastung durch Bleifarbe und Feinstaub."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '035'
+  atv: "DIN 18364"
+  position:
+    en: "Surface preparation of steel by abrasive blasting"
+    de: "Oberflächenvorbereitung von Stahl durch Strahlen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The blast nozzle and hose are handled; the sources used here state no mass."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Girders repeat; access, geometry and old coatings vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "The prepared surface is inspected before coating; missed areas are blasted again."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Surface preparation; the structure itself is not changed."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Members within reach from scaffolds or platforms. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Bridges and steel structures, often inside enclosed and ventilated blasting areas."
+  dust:
+    value: { type: mixed, zone: zone }
+    confidence: likely
+    evidence_url: 'https://www.uts.edu.au/research-and-teaching/research/explore/impact/revolutionising-steel-bridge-maintenance'
+    note: "Blasting old coatings releases fine dust and, on older structures, lead paint (UTS); the work area is enclosed and ventilated."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Dry abrasive blasting."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Scaffolds, platforms and girders."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [blasting_robot] }
+    confidence: confirmed
+    evidence_url: 'https://www.uts.edu.au/research-and-teaching/research/explore/impact/revolutionising-steel-bridge-maintenance'
+    note: "Grit-blasting robots work on the Sydney Harbour Bridge, with an operator starting each blast (UTS, December 2020); most blasting is still done by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at the steel, not at people."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not applicable; the surface is blasted, not handled."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The required surface grade is a cleanliness grade, not a dimensional tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The sources used here state no nozzle reaction force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: fail, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T2_dust]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Compare a purpose-built blasting robot of the kind used on the Sydney Harbour Bridge: it takes people out of the dust and lead exposure, with an operator in control."
+      de: "Einen eigens gebauten Strahlroboter wie an der Sydney Harbour Bridge vergleichen: Er holt Menschen aus Staub- und Bleibelastung, gesteuert von einem Bediener."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics]
+capabilities_required: [surface_finishing]
+capabilities_optional: [teleoperated_manipulation]
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "UTS reports that two 25 kg robots, Rosie and Sandy, grit-blast old paint and corrosion on the southern spans of the Sydney Harbour Bridge; they map the area with sensors and cameras and calculate nozzle positions, and an operator presses the blast button. The work is described as dangerous, with exposure to lead paint and fine dust."
+      de: "Die UTS berichtet, dass zwei 25-kg-Roboter, Rosie und Sandy, an den Südspannweiten der Sydney Harbour Bridge alte Farbe und Korrosion abstrahlen; sie erfassen den Bereich mit Sensoren und Kameras und berechnen die Düsenpositionen, ein Bediener löst das Strahlen aus. Die Arbeit gilt als gefährlich, mit Belastung durch Bleifarbe und Feinstaub."
+    url: 'https://www.uts.edu.au/research-and-teaching/research/explore/impact/revolutionising-steel-bridge-maintenance'
+    kind: academic
+    tier: 1
+    date: '2020-12-07'
+    type: deployment
+    confidence: confirmed
+    note: "University impact page."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If a blasting robot is considered: one repeated girder type, area blasted per shift and rework before coating."
+    de: "Falls ein Strahlroboter erwogen wird: ein wiederkehrender Trägertyp, gestrahlte Fläche je Schicht und Nacharbeit vor dem Beschichten."
+prerequisites: []
+open_questions:
+  - { en: "Which of your blasting jobs repeat the same member geometry often enough for a robot?", de: "Welche Ihrer Strahlarbeiten wiederholen dieselbe Bauteilgeometrie oft genug für einen Roboter?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

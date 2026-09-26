@@ -1,0 +1,130 @@
+schema_version: 1
+id: site_insulation_fire_stopping/fire-stopping-penetrations
+status: published
+setting: site_insulation_fire_stopping
+family: assembly_fastening
+trades: [mep_hvac, mep_electrical, mep_plumbing, mep_sprinkler]
+title:
+  en: "Seal service penetrations through fire-rated walls and slabs"
+  de: "Leitungsdurchführungen durch feuerwiderstandsfähige Bauteile abschotten"
+summary:
+  en: "Close the gaps around pipes, cables and ducts with an approved fire-stop system and document each penetration."
+  de: "Die Öffnungen um Rohre, Kabel und Kanäle mit einem zugelassenen Abschottungssystem schließen und jede Durchführung dokumentieren."
+description:
+  en: "Wherever a pipe, cable or duct passes through a wall or slab with a fire-resistance requirement, the opening must be closed so that fire and smoke cannot spread. Every penetration is different: material, diameter, insulation, wall type and the approval of the system decide the product and the installation steps, and the installer documents each one."
+  de: "Wo ein Rohr, Kabel oder Kanal eine Wand oder Decke mit Feuerwiderstandsanforderung durchdringt, muss die Öffnung so geschlossen werden, dass sich Feuer und Rauch nicht ausbreiten. Jede Durchführung ist anders: Material, Durchmesser, Dämmung, Wandart und die Zulassung des Systems bestimmen Produkt und Einbauschritte, und der Monteur dokumentiert jede einzelne."
+also_in_settings: [site_drywall, site_etics]
+derived_from: null
+lv:
+  lb: '047'
+  atv: "DIN 18421"
+  position:
+    en: "Fire stopping of service penetrations in fire-rated walls and floors"
+    de: "Abschottung von Leitungsdurchführungen in feuerwiderstandsfähigen Wänden und Decken"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.1, max: 5 }
+    confidence: assumed
+    note: "Sealant cartridges, collars, wraps and small batches of mortar. Not measured."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every penetration differs in material, size, position and system."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: "A gap left open lets fire and smoke through a fire-rated element."
+  safety_criticality:
+    value: life_safety
+    confidence: confirmed
+    evidence_url: 'https://bauministerkonferenz.de/Dokumente/42323066.pdf'
+    note: "The model building code allows services through fire-rated elements only where fire spread is prevented for long enough (MBO § 40 (1))."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "From floor level to ceiling height. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Core drilling and mortar work release mineral dust at the tool."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Inside the closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Finished and unfinished floors, shafts and ceiling voids."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Done by hand by the installer or a fire-stopping contractor."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Cartridges, collars and wraps; no source gives sizes."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The approved system sets gaps, depths and layer thicknesses per product; no general value applies."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep this with trained installers using an approved system, and put the effort into the record: a photo and a label for every penetration. A robot can help photograph the result, not make the seal."
+      de: "Bei geschulten Monteuren mit zugelassenem System lassen und den Aufwand in die Dokumentation stecken: Foto und Kennzeichnung für jede Durchführung. Ein Roboter kann beim Fotografieren des Ergebnisses helfen, nicht beim Abschotten."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Model building code (MBO, version of November 2002, last amended 22 February 2019), § 40 (1): services may pass through space-enclosing elements with a required fire resistance only if fire spread is not to be feared for a sufficiently long time or precautions are taken against it."
+      de: "Musterbauordnung (Fassung November 2002, zuletzt geändert am 22.02.2019), § 40 Abs. 1: Leitungen dürfen durch raumabschließende Bauteile, für die eine Feuerwiderstandsfähigkeit vorgeschrieben ist, nur hindurchgeführt werden, wenn eine Brandausbreitung ausreichend lang nicht zu befürchten ist oder Vorkehrungen hiergegen getroffen sind."
+    url: 'https://bauministerkonferenz.de/Dokumente/42323066.pdf'
+    kind: regulator
+    tier: 1
+    date: '2019-02-22'
+    type: claim
+    confidence: confirmed
+    note: "Model code of the building ministers; each state adopts it in its own building code. Exemptions apply to building classes 1 and 2 and within dwellings."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "None for the sealing itself; photo documentation of finished penetrations can be piloted separately."
+    de: "Keiner für das Abschotten selbst; die Fotodokumentation fertiger Durchführungen lässt sich getrennt erproben."
+prerequisites: []
+open_questions:
+  - { en: "Who keeps the penetration register: the installer, the fire-stopping contractor or the site manager?", de: "Wer führt das Schottkataster: der Installateur, der Abschottungsbetrieb oder die Bauleitung?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-24'

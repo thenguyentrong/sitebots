@@ -1,0 +1,134 @@
+schema_version: 1
+id: site_earthworks/trench-backfill-compaction
+status: published
+setting: site_earthworks
+family: machine_operation_dedicated
+trades: [civil_earthworks]
+title:
+  en: "Compact trench backfill layer by layer"
+  de: "Grabenverfüllung lagenweise verdichten"
+summary:
+  en: "Fill the trench in layers and compact each one with a vibratory plate, rammer or trench roller before the next goes in."
+  de: "Den Graben in Lagen verfüllen und jede Lage mit Rüttelplatte, Stampfer oder Grabenwalze verdichten, bevor die nächste kommt."
+description:
+  en: "Backfill over pipes and cables is placed and compacted in layers, because settlement later breaks the road or path above. In trenches the compaction is machine work: rammers and plates in narrow sections, remote-controlled trench rollers of about 1.5 t in wider ones. The remote control keeps the operator out of the trench; the roller stops when it loses line of sight or comes within 2 m of the operator."
+  de: "Die Verfüllung über Rohren und Kabeln wird lagenweise eingebaut und verdichtet, weil spätere Setzungen die Straße oder den Weg darüber zerstören. Im Graben ist das Maschinenarbeit: Stampfer und Platten in engen Abschnitten, ferngesteuerte Grabenwalzen von etwa 1,5 t in breiteren. Die Fernsteuerung hält den Bediener aus dem Graben; die Walze stoppt, wenn der Sichtkontakt abreißt oder sie dem Bediener näher als 2 m kommt."
+also_in_settings: [site_sewers, site_cable_trenching]
+derived_from: null
+lv:
+  lb: '002'
+  atv: "DIN 18300"
+  position:
+    en: "Backfill trenches in layers and compact"
+    de: "Leitungsgräben lagenweise verfüllen und verdichten"
+  unit: m3
+attributes:
+  object_mass_kg:
+    value: { min: 1465, max: 1465 }
+    confidence: confirmed
+    evidence_url: 'https://gebrauchtmaschinen.moser-baumaschinen.de/media/c4/e9/ef/1625732589/WN%20RTX-SC3-de.pdf'
+    note: "Scope of this record: the remote-controlled trench roller RTx-SC3 at 1,465 kg operating weight (Wacker Neuson datasheet, 2021). Rammers and plates for narrow trenches are lighter; they are not covered here."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same passes per layer, but trench width, depth, soil and pipe cover change along the run."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Compaction is tested; a failed test means compacting again or replacing the layer."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Poor compaction causes settlement damage, not a structural failure of the building."
+  reach_height_m:
+    value: { min: 0, max: 1.2 }
+    confidence: assumed
+    note: "The operator walks at the trench edge with the remote control. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open trenches."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: likely
+    note: "Dry soil can raise dust in the open; no classified area."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Work continues in rain unless the soil becomes too wet to compact."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Trench bottom, loose fill and spoil heaps."
+  incumbent_automation:
+    value: { status: full, machine_classes: [vibratory_compactor] }
+    confidence: confirmed
+    evidence_url: 'https://gebrauchtmaschinen.moser-baumaschinen.de/media/c4/e9/ef/1625732589/WN%20RTX-SC3-de.pdf'
+    note: "Compaction is done by machines; the trench roller is operated by infrared remote control from the trench edge."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "Up to 990 m²/h area output for the trench roller, depending on soil (datasheet)."
+    confidence: confirmed
+    evidence_url: 'https://gebrauchtmaschinen.moser-baumaschinen.de/media/c4/e9/ef/1625732589/WN%20RTX-SC3-de.pdf'
+    note: "Manufacturer's maximum; real output depends on soil and layer thickness."
+requirements:
+  object_size_m:
+    value: { min: 1.853, max: 1.853 }
+    confidence: confirmed
+    evidence_url: 'https://gebrauchtmaschinen.moser-baumaschinen.de/media/c4/e9/ef/1625732589/WN%20RTX-SC3-de.pdf'
+    note: "Trench roller 1,853 × 820 × 1,268 mm; drums of 560 or 820 mm width."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The requirement is a compaction value checked by testing, not a dimensional tolerance."
+  force_n:
+    value: 68400
+    confidence: confirmed
+    evidence_url: 'https://gebrauchtmaschinen.moser-baumaschinen.de/media/c4/e9/ef/1625732589/WN%20RTX-SC3-de.pdf'
+    note: "Maximum centrifugal force of the trench roller, 34.2 to 68.4 kN at 42 Hz: the force the job takes, delivered by the machine."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The dedicated machine exists and is already remote-controlled: a trench roller that stops when it loses sight of the operator or comes within 2 m. A robot would only replace the person holding the remote."
+      de: "Die dedizierte Maschine gibt es und sie ist bereits ferngesteuert: eine Grabenwalze, die stoppt, wenn sie den Bediener aus dem Blick verliert oder ihm näher als 2 m kommt. Ein Roboter ersetzte nur die Person mit der Fernbedienung."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Wacker Neuson's RTx-SC3 datasheet: remote-controlled trench roller for compacting excavations and base layers, 1,465 kg operating weight, 34.2–68.4 kN centrifugal force; the infrared remote switches the machine off when line of sight is lost, and near-field detection stops it coming closer than 2 m to the operator."
+      de: "Datenblatt RTx-SC3 von Wacker Neuson: ferngesteuerte Grabenwalze zum Verdichten von Ausschachtungen und Tragschichten, 1.465 kg Betriebsgewicht, 34,2–68,4 kN Zentrifugalkraft; die Infrarot-Fernsteuerung schaltet das Gerät ab, sobald der Sichtkontakt abreißt, die Nahfelderkennung verhindert, dass es näher als 2 m an den Bediener heranfährt."
+    url: 'https://gebrauchtmaschinen.moser-baumaschinen.de/media/c4/e9/ef/1625732589/WN%20RTX-SC3-de.pdf'
+    kind: manufacturer
+    tier: 2
+    date: '2021-07-08'
+    type: claim
+    confidence: confirmed
+    note: "Manufacturer datasheet (erstellt am 08.07.2021) hosted by a dealer."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. Where operators still walk in the trench, compare remote-controlled rollers against hand-guided plates on one run."
+    de: "Kein Roboterpilot. Wo Bediener noch im Graben laufen, auf einem Abschnitt ferngesteuerte Walzen gegen handgeführte Platten vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "In which trench widths do your crews still compact with hand-guided plates or rammers?", de: "In welchen Grabenbreiten verdichten Ihre Kolonnen noch mit handgeführten Platten oder Stampfern?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

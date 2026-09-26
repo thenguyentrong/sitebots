@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_lightning_protection/roof-conductor-installation
+status: published
+setting: site_lightning_protection
+family: assembly_fastening
+trades: [mep_electrical]
+title:
+  en: "Lay roof conductors of the lightning protection on a flat roof"
+  de: "Dachleitungen des Blitzschutzes auf dem Flachdach verlegen"
+summary:
+  en: "Set conductor holders with concrete bases along the planned mesh, unroll the aluminium round conductor from the coil, clip it into the holders and connect it at every joint."
+  de: "Leitungshalter mit Betonsockel entlang der geplanten Maschen setzen, den Aluminium-Runddraht vom Ring abwickeln, in die Halter einclipsen und an jedem Knoten verbinden."
+description:
+  en: "On a flat roof the air-termination system is a mesh of round conductors resting on loose holders, so the roof membrane is not pierced. The fitters place the holders, unroll 8 mm aluminium conductor from coils of up to 150 m, clip it in, and join crossings and down-conductor connections with clamps. The installation follows the lightning protection design to DIN EN 62305 and is inspected afterwards; the work is on the open roof in any weather the schedule allows."
+  de: "Auf einem Flachdach ist die Fangeinrichtung ein Maschennetz aus Runddrähten auf losen Haltern, damit die Dachabdichtung nicht durchdrungen wird. Die Monteure setzen die Halter, wickeln 8-mm-Aluminiumdraht von Ringen bis 150 m ab, clipsen ihn ein und verbinden Kreuzungen und Ableitungsanschlüsse mit Klemmen. Die Anlage folgt der Blitzschutzplanung nach DIN EN 62305 und wird danach geprüft; gearbeitet wird auf dem offenen Dach, bei jedem Wetter, das der Terminplan zulässt."
+also_in_settings: [site_roofing]
+derived_from: null
+lv:
+  lb: '050'
+  atv: "DIN 18384"
+  position:
+    en: "Roof conductor of aluminium round conductor Rd 8 on flat-roof conductor holders: supply and install"
+    de: "Dachleitung aus Aluminium-Runddraht Rd 8 auf Flachdach-Leitungshaltern liefern und verlegen"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 1, max: 20 }
+    confidence: confirmed
+    evidence_url: 'https://www.obo.de/de-de/produkte/rundleiter-aluminium-8-20-150-50-aluminium-5021286.html'
+    note: "Conductor coils of Rd 8 aluminium weigh 20 kg for 150 m and 10 kg for 75 m (OBO); each flat-roof holder carries a 1 kg fill of frost-resistant concrete (OBO 165 MBG)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The mesh is a regular grid, but roof edges, domes, plant and parapets break it on every roof."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A missing clamp or a gap in the conductor shows at the inspection and is fixed; until then the protection is incomplete."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    evidence_url: 'https://www.obo.de/de-de/produkte/rundleiter-aluminium-8-20-150-50-aluminium-5021286.html'
+    note: "Part of the lightning protection system, designed and tested to DIN EN 62305 (VDE 0185-305); the conductor is rated to DIN EN 62561-2."
+  reach_height_m:
+    value: { min: 0, max: 1.0 }
+    confidence: assumed
+    note: "On the roof surface, up to parapets and roof fittings; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open flat roof."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "No dust-producing step; outdoors on the roof."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Exposed to the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Roof membrane or gravel with falls, domes and edges; edge protection needed."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Laid by hand by lightning protection fitters; no machine does the step."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Roof plan only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Coil dimensions are not published; the holder is 133.5 mm long (OBO 165 MBG)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Holder spacing and mesh size come from the lightning protection design; no position tolerance is published."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the conductor is clipped into the holder."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the lightning protection fitters on the roof: the work is outdoors on an open roof, and the conductor mesh is a safety system that is designed and inspected to DIN EN 62305. Lighter coils (75 m, 10 kg) ease the carrying."
+      de: "Die Blitzschutzmonteure bleiben auf dem Dach: Die Arbeit ist im Freien auf einem offenen Dach, und das Maschennetz ist eine Sicherheitsanlage, die nach DIN EN 62305 geplant und geprüft wird. Leichtere Ringe (75 m, 10 kg) erleichtern das Tragen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics]
+capabilities_required: [carry_payload, autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "OBO lists its Rd 8 aluminium round conductor (50 mm²) for use as a down conductor to DIN EN 62561-2, at 20 kg per 150 m coil, with a 75 m coil at 10 kg."
+      de: "OBO führt seinen Aluminium-Runddraht Rd 8 (50 mm²) als Ableitung nach DIN EN 62561-2, mit 20 kg je 150-m-Ring und einem 75-m-Ring mit 10 kg."
+    url: 'https://www.obo.de/de-de/produkte/rundleiter-aluminium-8-20-150-50-aluminium-5021286.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "OBO's flat-roof conductor holder 165 MBG has a polyethylene housing on a polyamide base with a 1 kg fill of frost-resistant concrete, holds Rd 8 to 10 conductors with a clip, and is 133.5 mm long."
+      de: "Der Flachdach-Leitungshalter 165 MBG von OBO hat ein Polyethylen-Gehäuse auf einem Polyamid-Boden mit 1 kg Füllung aus frostbeständigem Beton, hält Rd-8- bis Rd-10-Leiter mit einer Clipschelle und ist 133,5 mm lang."
+    url: 'https://www.obo.de/de-de/produkte/dachleitungshalter-165-mbg-fuer-flachdaecher-grau-mit-beton-133-5-rd-8-10-5218708.html'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not pursued; the lightning protection fitters lay and connect the mesh."
+    de: "Nicht verfolgt; die Blitzschutzmonteure verlegen und verbinden das Maschennetz."
+prerequisites: []
+open_questions:
+  - { en: "Can the holders be pre-placed by the roofers while the membrane goes on, to save a separate pass over the roof?", de: "Können die Dachdecker die Halter schon beim Abdichten vorlegen, um einen eigenen Gang über das Dach zu sparen?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

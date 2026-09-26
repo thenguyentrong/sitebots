@@ -1,0 +1,134 @@
+schema_version: 1
+id: asset_inspection_infrastructure/substation-rounds
+status: published
+setting: asset_inspection_infrastructure
+family: monitoring_safety_patrol
+trades: [mep_electrical, qa_surveying]
+title:
+  en: Patrol substations for hot spots and gauge readings
+  de: Umspannwerke auf Hotspots und Anzeigen kontrollieren
+summary:
+  en: Walk the switchyard, read analogue gauges, take thermal images of transformers and breakers and note visible damage.
+  de: Die Schaltanlage abgehen, Analoganzeigen ablesen, Wärmebilder von Transformatoren und Leistungsschaltern aufnehmen und sichtbare Schäden notieren.
+description:
+  en: Operators inspect substations on foot at intervals, looking for hot spots, leaks and damaged equipment and reading gauges that are not connected to the control room. Switchyards are outdoors on gravel, in all weather, next to live equipment. Since 2019 utilities have piloted and run legged robots with thermal and zoom cameras in substations and converter stations.
+  de: Betreiber kontrollieren Umspannwerke in Abständen zu Fuß, suchen nach Hotspots, Leckagen und beschädigten Betriebsmitteln und lesen Anzeigen ab, die nicht an die Leitwarte angebunden sind. Schaltanlagen liegen im Freien auf Schotter, bei jedem Wetter, neben spannungsführenden Anlagen. Seit 2019 erproben und betreiben Versorger Laufroboter mit Wärmebild- und Zoomkameras in Umspannwerken und Konverterstationen.
+also_in_settings: [facility_operation]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: Nothing is carried; the sensors are the payload.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. The points are spread across the yard, so no fixed station covers them, and the findings change every round.
+  error_tolerance:
+    value: limited
+    confidence: assumed
+    note: A missed hot spot can precede an outage; rounds, protection systems and online monitoring overlap.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: Observation only; safe distances to live parts are a condition for the robot, not an output of the task.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Not a reach task; zoom cameras read gauges from the ground.
+  environment:
+    value: outdoor
+    confidence: likely
+    note: Open switchyard.
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: Weather, not dust, is the condition.
+  wet:
+    value: rain
+    confidence: likely
+    note: Rounds run in rain and snow.
+  floor:
+    value: uneven
+    confidence: likely
+    note: Gravel, kerbs and cable trenches.
+  incumbent_automation:
+    value: { status: partial, machine_classes: [scanner_fixed] }
+    confidence: assumed
+    note: Online monitoring and fixed cameras cover selected assets in some substations; the round on foot covers the rest. Verify for your stations.
+  data_sensitivity:
+    value: confidential
+    confidence: likely
+    note: Substations are critical infrastructure; operators restrict where images and site maps may be stored.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Round length is not recorded; check it against battery runtime and a dock on site.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; count rounds per station per month.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Nothing is handled; the sensors or the camera are the payload."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Gauge readings and thermal images, no build tolerance; the reading accuracy is a sensor question."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force: the robot walks and records."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: fail, X3_data: flag, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: quadruped_inspection
+    note:
+      en: A quadruped with thermal and zoom cameras is the answer here, and utilities already run them. No humanoid publishes an ingress rating for rain on gravel next to live equipment.
+      de: Ein Vierbeiner mit Wärmebild- und Zoomkamera ist hier die Antwort, und Versorger setzen ihn bereits ein. Kein Humanoid veröffentlicht eine Schutzart für Regen auf Schotter neben spannungsführenden Anlagen.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [exposure, quality, skills_shortage]
+capabilities_required: [site_inspection, patrol_monitoring, autonomous_nav_outdoor]
+capabilities_optional: [lidar_scan]
+solution_classes: [quadruped_inspection, keep_process]
+evidence:
+  - statement:
+      en: National Grid uses Spot at an HVDC converter station in Massachusetts; after a pilot in 2019–2020 the robot walks the site autonomously with an infrared camera to find hot spots, and the lead engineer calls it part of the team.
+      de: National Grid setzt Spot in einer HGÜ-Konverterstation in Massachusetts ein; nach einem Pilotprojekt 2019–2020 läuft der Roboter das Gelände autonom mit einer Infrarotkamera ab, um Hotspots zu finden, und der leitende Ingenieur nennt ihn Teil des Teams.
+    url: 'https://bostondynamics.com/case-studies/spot-becomes-part-of-the-team-at-national-grid/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: deployment
+    subject: { maker: boston-dynamics, model: spot }
+    confidence: likely
+    note: Undated case study on the manufacturer site that quotes the operator; checked 2026-09-24.
+  - statement:
+      en: Avangrid is piloting Spot with AI models from Levatas at two substations of its Connecticut utility United Illuminating, to read analogue gauges, take thermal images of transformers and breakers and detect damaged equipment; at first an operator on site drives the robot with a tablet.
+      de: Avangrid erprobt Spot mit KI-Modellen von Levatas in zwei Umspannwerken seines Versorgers United Illuminating in Connecticut, um Analoganzeigen abzulesen, Wärmebilder von Transformatoren und Leistungsschaltern aufzunehmen und beschädigte Betriebsmittel zu erkennen; zunächst steuert eine Person vor Ort den Roboter per Tablet.
+    url: 'https://www.tdworld.com/substations/article/21282583/avangrid-pilots-mobile-robot-dog-to-advance-substation-inspections-with-artificial-intelligence'
+    kind: press
+    tier: 3
+    date: '2024-02-12'
+    type: pilot
+    subject: { maker: boston-dynamics, model: spot }
+    confidence: likely
+    note: Trade press reporting the operator announcement.
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable for a humanoid; ruled out at screening.
+    de: Für einen Humanoiden nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: If pursued with a quadruped, one station, a fixed route with 20–30 points, results compared with the round on foot for three months.
+    de: Falls mit einem Vierbeiner verfolgt, eine Station, eine feste Route mit 20–30 Punkten, Ergebnisse drei Monate lang mit dem Rundgang zu Fuß verglichen.
+prerequisites: []
+open_questions:
+  - { en: "May images and maps of the station leave the site, or must everything stay on premises?", de: "Dürfen Bilder und Karten der Station das Gelände verlassen, oder muss alles vor Ort bleiben?" }
+compliance_flags: [data_residency_air_gapped, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

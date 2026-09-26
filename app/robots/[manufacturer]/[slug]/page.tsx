@@ -44,7 +44,7 @@ export async function generateMetadata({ params, searchParams }: { params: Param
   ].filter(Boolean);
   return { ...publicMetadata({
     title: `${r.name} specs, price and site suitability`,
-    description: `${r.manufacturer_name} ${r.name}: ${bits.join(', ') || 'specifications'} — with the source of every value, regional prices and delivery status.`,
+    description: `${r.manufacturer_name} ${r.name}: ${bits.join(', ') || 'specifications'}, with the source of every value, regional prices and delivery status.`,
     path: `/robots/${manufacturer}/${slug}`,
   }), ...(!isPublicRobot(manufacturer, slug) ? { robots: { index: false, follow: false } } : {}) };
 }

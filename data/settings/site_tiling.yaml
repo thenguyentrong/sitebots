@@ -1,0 +1,27 @@
+id: site_tiling
+group: site
+section: interior
+lv: { lb: ['024'], atv: ["DIN 18352"] }
+title: { en: "Tiling", de: "Fliesen- und Plattenarbeiten" }
+aliases:
+  en: [wall tiles, floor tiles]
+  de: [Fliesenlegen, Plattenbeläge]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks: large-format floor tiles (ruled out by up to 29 kg per tile; a vacuum lifting aid is the better answer), bathroom wall tiling and grouting (both marginal on finish, reach and wet work) and bonded waterproofing to DIN 18534 (ruled out: a hidden layer that must reach its minimum thickness everywhere)."
+  de: "Vier geprüfte Aufgaben: großformatige Bodenfliesen (ausgeschlossen wegen bis zu 29 kg je Fliese; eine Vakuum-Hebehilfe ist die bessere Antwort), Wandfliesen im Bad und Verfugen (beide grenzwertig bei Ergebnis, Reichhöhe und Nassarbeit) und Verbundabdichtung nach DIN 18534 (ausgeschlossen: eine verdeckte Schicht, die überall ihre Mindestdicke erreichen muss)."
+typical_incumbent_automation: []
+dust:
+  type: mineral
+  typical_zone: controlled
+  note:
+    en: "Cutting, drilling and grinding mineral materials release quartz-bearing dust at the tool; extraction at the source is the rule (TRGS 559)."
+    de: "Schneiden, Bohren und Schleifen mineralischer Baustoffe setzt quarzhaltigen Staub am Werkzeug frei; Absaugung an der Quelle ist die Regel (TRGS 559)."
+floor: level
+exposure: indoor
+typical_trades: [flooring_tiling]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

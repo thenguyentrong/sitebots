@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_concrete_repair/repair-mortar-application
+status: published
+setting: site_concrete_repair
+family: surface_finishing
+trades: [concrete]
+title:
+  en: "Mix and apply repair mortar to prepared areas"
+  de: "Instandsetzungsmörtel anmischen und auf vorbereitete Flächen auftragen"
+summary:
+  en: "Mix the bagged mortar and build up the prepared area in layers with the trowel."
+  de: "Den Sackmörtel anmischen und die vorbereitete Fläche lagenweise mit der Kelle aufbauen."
+description:
+  en: "A common repair mortar of class R4 to EN 1504-3 comes in 25 kg bags and is applied 10 to 50 mm per pass; larger areas can be sprayed with wet-spraying machines. For load-bearing members, the DIBt technical rule on maintenance of concrete structures sets the requirements for the repair."
+  de: "Ein gängiger Instandsetzungsmörtel der Klasse R4 nach EN 1504-3 wird in 25-kg-Säcken geliefert und 10 bis 50 mm je Arbeitsgang aufgetragen; größere Flächen lassen sich mit Nassspritzmaschinen spritzen. Bei tragenden Bauteilen setzt die Technische Regel des DIBt zur Instandhaltung von Betonbauwerken die Anforderungen an die Instandsetzung."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '081'
+  atv: "DIN 18349"
+  position:
+    en: "Reprofiling with polymer-modified cement repair mortar (PCC), hand-applied"
+    de: "Reprofilierung mit kunststoffmodifiziertem Zementmörtel (PCC) im Handauftrag"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 25, max: 25 }
+    confidence: confirmed
+    evidence_url: 'https://deu.sika.com/content/dam/dms/deaddconst01/u/sika_monotop_-412de.pdf'
+    note: "25 kg bags (Sika MonoTop-412 DE datasheet, August 2025, version 02.06); the bag is the heaviest object when mixing."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every repair area differs in size, depth and position."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Poor bond or insufficient cover is found at testing and has to be repaired again."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.dibt.de/de/aktuelles/meldungen/nachricht-detail/meldung/technische-regel-instandhaltung-von-betonbauwerken-neu-ab-januar-2021'
+    note: "Repair of load-bearing concrete falls under the DIBt technical rule on maintenance of concrete structures, which addresses load-bearing capacity and structural safety (January 2021)."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Walls and soffits up to storey height. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "Car parks, bridges and facades."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Surface preparation and mixing release dust; the mortar itself is applied wet (TRGS 559)."
+  wet:
+    value: dry
+    confidence: assumed
+    note: "Applied in dry weather or under cover."
+  floor:
+    value: mixed
+    confidence: assumed
+    note: "Scaffolds, decks and car-park floors."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: confirmed
+    evidence_url: 'https://deu.sika.com/content/dam/dms/deaddconst01/u/sika_monotop_-412de.pdf'
+    note: "The same mortar can be sprayed with wet-spraying machines such as PFT or Putzmeister (Sika datasheet); small patches are trowelled."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not applicable beyond the 25 kg bag."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The datasheet sets 10 to 50 mm per pass; the cover the repair must restore comes from the design, not from a single tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states a force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep trained repair crews; the repair restores the protection of load-bearing reinforcement. For larger areas compare wet spraying with the same mortar."
+      de: "Bei geschulten Instandsetzungskolonnen bleiben; die Instandsetzung stellt den Schutz tragender Bewehrung wieder her. Für größere Flächen das Nassspritzen desselben Mörtels vergleichen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, quality]
+capabilities_required: [surface_finishing, carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "Sika's datasheet for MonoTop-412 DE gives 25 kg bags, class R4 to EN 1504-3, 10 to 50 mm per pass, about 60 minutes working time, and wet spraying with machines such as PFT or Putzmeister."
+      de: "Das Produktdatenblatt von Sika zu MonoTop-412 DE nennt 25-kg-Säcke, Klasse R4 nach EN 1504-3, 10 bis 50 mm je Arbeitsgang, etwa 60 Minuten Verarbeitungszeit und Nassspritzen mit Maschinen wie PFT oder Putzmeister."
+    url: 'https://deu.sika.com/content/dam/dms/deaddconst01/u/sika_monotop_-412de.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2025-08-01'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet August 2025, version 02.06; no day given."
+  - statement:
+      en: "The DIBt announced its technical rule on maintenance of concrete structures, new from January 2021, covering maintenance and repair with regard to structural safety and the performance of repair products."
+      de: "Das DIBt kündigte seine Technische Regel Instandhaltung von Betonbauwerken an, neu ab Januar 2021, zu Instandhaltung und Instandsetzung mit Blick auf die Standsicherheit und die Leistung von Instandsetzungsprodukten."
+    url: 'https://www.dibt.de/de/aktuelles/meldungen/nachricht-detail/meldung/technische-regel-instandhaltung-von-betonbauwerken-neu-ab-januar-2021'
+    kind: regulator
+    tier: 1
+    date: '2021-01-19'
+    type: claim
+    confidence: confirmed
+    note: "News item of the DIBt."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If carrying bags is the strain: material supply to the scaffold is a separate, lighter task worth screening."
+    de: "Wenn das Tragen der Säcke die Belastung ist: die Materialversorgung zum Gerüst ist eine eigene, leichtere Aufgabe, die sich zu prüfen lohnt."
+prerequisites: []
+open_questions:
+  - { en: "How much of your repair area is small patches and how much could be sprayed?", de: "Wie viel Ihrer Instandsetzungsfläche sind kleine Fehlstellen und wie viel ließe sich spritzen?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_masonry/fitting-pieces-cutting
+status: published
+setting: site_masonry
+family: machine_operation_dedicated
+trades: [masonry]
+title:
+  en: "Cut fitting pieces at the masonry saw"
+  de: "Passsteine an der Steinsäge zuschneiden"
+summary:
+  en: "Measure the gap at the wall end or opening, cut a unit to size on a wet-cutting or extracted stone saw and hand it to the bricklayer."
+  de: "Das Passmaß am Wandende oder an der Öffnung nehmen, einen Stein an der Steinsäge mit Wasser oder Absaugung zuschneiden und dem Maurer reichen."
+description:
+  en: "Every wall ends in fitting pieces: at corners, openings, slab edges and service penetrations. On site a helper or the bricklayer measures, marks and cuts units on a stone saw. Cutting quartz-bearing units releases carcinogenic dust, so BG BAU allows only wet cutting or dust-reduced saws with extraction, and no dry cuts on diamond saws. Lime-sandstone kit suppliers cut all fitting pieces in the plant from a laying plan, which removes most of this work."
+  de: "Jede Wand endet in Passsteinen: an Ecken, Öffnungen, Deckenrändern und Durchbrüchen. Auf der Baustelle misst, zeichnet und schneidet ein Helfer oder der Maurer die Steine an einer Steinsäge. Beim Schneiden quarzhaltiger Steine entsteht krebserzeugender Staub; die BG BAU lässt deshalb nur Nassschnitt oder staubarme Sägen mit Absaugung zu, an Diamantsägen keine Trockenschnitte. Kalksandstein-Bausatzhersteller schneiden alle Passelemente im Werk nach Versetzplan, was diese Arbeit weitgehend entfallen lässt."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '012'
+  atv: "DIN 18330"
+  position:
+    en: "Masonry walls including fitting pieces cut on site (usually part of the wall position)"
+    de: "Mauerwerk einschließlich auf der Baustelle zugeschnittener Passsteine (meist Teil der Wandposition)"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 5.5, max: 25 }
+    confidence: likely
+    evidence_url: 'https://www.ks-maurerfibel.de/maurerfibel/6-mauern/6-2-mauern-von-hand/6-2-1-steingewichte/'
+    note: "Units cut on site are the ones laid by hand: from about 5.5 kg for a 2DF lime-sandstone unit (worked example in the KS Maurerfibel) up to the 25 kg two-hand limit. Heavier elements come pre-cut from the plant."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every fitting piece has its own length, angle or cut-out."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wrong cut costs a unit and time; it is noticed when the piece is tried in the wall."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The cut itself is not structural; the finished wall is checked as it rises."
+  reach_height_m:
+    value: { min: 0.8, max: 1.2 }
+    confidence: assumed
+    note: "Saw table and unit stack at working height. Not measured."
+  environment:
+    value: both
+    confidence: likely
+    note: "The saw stands on the slab or in the open next to the building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: confirmed
+    evidence_url: 'https://www.bgbau-medien.de/app/daten/bausteine/b_207/b_207.htm'
+    note: "Quartz-bearing dust at the saw; BG BAU requires wet cutting or dust-reduced saws with extraction, and no dry cuts on diamond saws."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Wet cutting sprays water on the blade and the unit."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Slab or open ground around the saw."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: confirmed
+    evidence_url: 'https://ks-original.de/produkte/ks-plus'
+    note: "Wall kits arrive with all fitting pieces sawn in the plant from a CAD laying plan, so on-site cutting largely disappears; for single units the saw is the tool."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on how many fitting pieces a wall needs; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; count fitting pieces per storey before any pilot."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Depends on the unit format; a 2DF unit measures 240 × 115 × 113 mm (KS Maurerfibel), larger formats up to about half a metre. Not measured for this record."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No cutting tolerance is published for site cuts; the piece has to fit the joint thickness of the wall (thin-bed or normal mortar)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The saw does the cutting; the operator guides the unit or the saw head. No force figure published."
+screen:
+  verdict: marginal
+  results: { T1_mass: marginal, T2_dust: pass, T3_incumbent: marginal, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: marginal, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "First order kits with fitting pieces cut in the plant; that removes most site cuts without any robot. Only where many cuts remain would a wheeled mobile manipulator at a fixed, extracted saw be worth comparing, with units at the upper end of its payload and quartz dust to be measured with the machine running."
+      de: "Zuerst Bausätze mit im Werk geschnittenen Passelementen bestellen; das nimmt die meisten Baustellenschnitte weg, ganz ohne Roboter. Nur wo viele Schnitte bleiben, lohnt ein Vergleich mit einem radgebundenen Mobilmanipulator an einer festen, abgesaugten Säge, mit Steinen am oberen Ende seiner Traglast und Quarzstaub, der mit laufender Maschine gemessen werden muss."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics]
+capabilities_required: [carry_payload]
+capabilities_optional: [machine_tending]
+solution_classes: [process_change, mobile_manipulator_wheeled, keep_process]
+evidence:
+  - statement:
+      en: "BG BAU on stone saws: quartz-bearing dust can harm health; use dust-reduced systems with extraction or wet-cutting saws, and make no dry cuts on diamond saws."
+      de: "BG BAU zu Steinsägen: Quarzhaltige Stäube können Gesundheitsschäden verursachen; staubarme Systeme mit Absaugung oder Nassschnitt-Sägen einsetzen, an Diamantsägen keine Trockenschnitte ausführen."
+    url: 'https://www.bgbau-medien.de/app/daten/bausteine/b_207/b_207.htm'
+    kind: regulator
+    tier: 1
+    date: '2021-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Baustein B 207, Stand 07/2021."
+  - statement:
+      en: "KS-Original describes pre-configured wall kits whose fitting pieces are individually prefabricated in the plant, with project-specific CAD laying plans; laborious sawing and cutting on site is no longer needed."
+      de: "KS-Original beschreibt vorkonfektionierte Wandbausätze mit werkseitig individuell vorgefertigten Passelementen und objektbezogenen CAD-Verlegeplänen; aufwendiges Sägen und Schneiden auf der Baustelle entfällt."
+    url: 'https://ks-original.de/produkte/ks-plus'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Product page undated, read on 2026-09-25."
+  - statement:
+      en: "The lime-sandstone masonry handbook: units up to 25 kg can be laid by hand for a limited time, above that setting devices are required; its worked example gives 5.5 kg for a 2DF unit."
+      de: "Die Kalksandstein-Maurerfibel: Steine bis 25 kg lassen sich über einen eingeschränkten Zeitraum von Hand vermauern, darüber sind Versetzgeräte einzusetzen; ihr Rechenbeispiel ergibt 5,5 kg für einen 2DF-Stein."
+    url: 'https://www.ks-maurerfibel.de/maurerfibel/6-mauern/6-2-mauern-von-hand/6-2-1-steingewichte/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Page undated, read on 2026-09-25."
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual, error_rate_vs_human_pct]
+  abort_rule:
+    en: "If more than 1 in 100 cut pieces does not fit, or airborne quartz dust exceeds the limit with the machine running, stop and keep cutting by hand."
+    de: "Passt mehr als 1 von 100 geschnittenen Stücken nicht oder liegt der Quarzfeinstaub mit laufender Maschine über dem Grenzwert, abbrechen und weiter von Hand schneiden."
+  scope_hint:
+    en: "One storey, one saw with extraction or water, cut lists taken from the laying plan, the bricklayer checks every piece."
+    de: "Ein Geschoss, eine Säge mit Absaugung oder Wasser, Schnittlisten aus dem Versetzplan, der Maurer prüft jedes Stück."
+prerequisites:
+  - { en: "A cut list per wall from the laying plan", de: "Eine Schnittliste je Wand aus dem Versetzplan" }
+  - { en: "Measured quartz dust at the saw with the machine running", de: "Gemessener Quarzstaub an der Säge mit laufender Maschine" }
+open_questions:
+  - { en: "How many fitting pieces per storey are still cut on site, and could the supplier cut them in the plant?", de: "Wie viele Passsteine je Geschoss werden noch auf der Baustelle geschnitten, und könnte der Lieferant sie im Werk schneiden?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

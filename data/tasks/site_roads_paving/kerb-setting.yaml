@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_roads_paving/kerb-setting
+status: published
+setting: site_roads_paving
+family: heavy_element_handling
+trades: [road, civil_earthworks]
+title:
+  en: "Set concrete kerbs"
+  de: "Hochbordsteine aus Beton setzen"
+summary:
+  en: "Lift kerbs into the concrete bed and align them to line and level along the string."
+  de: "Bordsteine in das Betonbett heben und entlang der Schnur nach Flucht und Höhe ausrichten."
+description:
+  en: "A standard concrete kerb of 15 × 30 × 100 cm weighs about 100 kg. Kerbs set the height and the drainage edge of the paving next to them, so line and level matter. A vacuum laying device on a carrier takes the lift: it handles kerbs up to 150 kg and sets up to seven 1 m kerbs from one carrier position, while the setter guides and aligns."
+  de: "Ein Standard-Hochbordstein 15 × 30 × 100 cm wiegt etwa 100 kg. Bordsteine legen Höhe und Entwässerungskante der angrenzenden Pflasterfläche fest, Flucht und Höhe zählen also. Ein Vakuum-Verlegegerät am Trägergerät übernimmt das Heben: Es nimmt Bordsteine bis 150 kg auf und setzt bis zu sieben 1-m-Steine aus einer Standposition, während der Setzer führt und ausrichtet."
+also_in_settings: [site_landscaping]
+derived_from: null
+lv:
+  lb: '080'
+  atv: "DIN 18318"
+  position:
+    en: "Concrete kerbs set in a concrete bed with back support"
+    de: "Bordsteine aus Beton in Beton setzen mit Rückenstütze"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 100, max: 100 }
+    confidence: confirmed
+    evidence_url: 'https://www.beton-hartmann.de/produkte/einfassungs-strassenbauelemente/hochbordstein-h-15-x-30/'
+    note: "Hochbordstein H 15 × 30 (A4), 12–15 × 30 × 100 cm, about 100 kg per piece (Betonsteinwerk Hartmann)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Straight runs repeat; curves, transitions and lowered kerbs at entrances vary."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Line and level fix the drainage edge; a wrongly set kerb is lifted and reset."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "An edging element; a defect is a repair, not a safety failure."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: assumed
+    note: "Kerbs are set at ground level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Roads, paths and car parks."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Cutting kerbs releases quartz dust; wet cutting or extraction keeps it down (TRGS 559)."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Excavated edge strip and fresh concrete bed."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [vacuum_lifter] }
+    confidence: confirmed
+    evidence_url: 'https://kurt-koenig.com/de/produkt/probst-vakuum-bordsteinverlegegeraet-jumbo-bv-vario-b--9dc6e7b5-8f0d-4f70-88ec-b73ca82a05e5'
+    note: "A vacuum kerb laying device lifts kerbs up to 150 kg and sets up to seven 1 m kerbs from one carrier position (Probst data on a dealer page); people still guide and align."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 1.0, max: 1.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.beton-hartmann.de/produkte/einfassungs-strassenbauelemente/hochbordstein-h-15-x-30/'
+    note: "Length 100 cm, section 12–15 × 30 cm (Betonsteinwerk Hartmann)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No public source used here states the setting tolerance for kerbs."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states a force for the work."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Keep the vacuum laying device: it takes the 100 kg lift and the setter keeps the alignment. The kerb weighs four times the payload ceiling of today's humanoids."
+      de: "Beim Vakuum-Verlegegerät bleiben: Es übernimmt das Heben der 100 kg, der Setzer behält das Ausrichten. Der Bordstein wiegt das Vierfache der Traglastgrenze heutiger Humanoide."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "Betonsteinwerk Hartmann lists its Hochbordstein H 15 × 30 (A4), 12–15 × 30 × 100 cm to DIN EN 1340 and DIN 483, at about 100 kg per piece."
+      de: "Das Betonsteinwerk Hartmann gibt für seinen Hochbordstein H 15 × 30 (A4), 12–15 × 30 × 100 cm nach DIN EN 1340 und DIN 483, etwa 100 kg je Stück an."
+    url: 'https://www.beton-hartmann.de/produkte/einfassungs-strassenbauelemente/hochbordstein-h-15-x-30/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "A dealer page for the Probst vacuum kerb laying device JUMBO-BV-VARIO-B gives a permitted load of 150 kg and says seven kerbs of 1 m each can be laid from one carrier position."
+      de: "Eine Händlerseite zum Probst Vakuum-Bordsteinverlegegerät JUMBO-BV-VARIO-B nennt eine zulässige Tragkraft von 150 kg und sieben Bordsteine à 1 m, die aus einer Standposition des Trägergeräts verlegt werden können."
+    url: 'https://kurt-koenig.com/de/produkt/probst-vakuum-bordsteinverlegegeraet-jumbo-bv-vario-b--9dc6e7b5-8f0d-4f70-88ec-b73ca82a05e5'
+    kind: manufacturer
+    tier: 2
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Dealer page quoting the manufacturer's data; the manufacturer's own page did not load. Undated, dated with the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the laying device is new to you: one street section, kerbs set per hour with and without it."
+    de: "Falls das Verlegegerät neu für Sie ist: ein Straßenabschnitt, gesetzte Bordsteine je Stunde mit und ohne Gerät."
+prerequisites: []
+open_questions:
+  - { en: "Do your crews already use a vacuum laying device, and on which jobs not?", de: "Nutzen Ihre Kolonnen bereits ein Vakuum-Verlegegerät, und bei welchen Aufträgen nicht?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

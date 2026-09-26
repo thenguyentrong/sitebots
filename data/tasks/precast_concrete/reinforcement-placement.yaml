@@ -1,0 +1,125 @@
+schema_version: 1
+id: precast_concrete/reinforcement-placement
+status: published
+setting: precast_concrete
+family: assembly_fastening
+trades: [concrete, steel]
+title:
+  en: Place reinforcement mesh and lattice girders on the pallet
+  de: Bewehrungsmatten und Gitterträger auf der Palette verlegen
+summary:
+  en: Lay welded mesh, loose bars and lattice girders into the shuttered element to the reinforcement drawing.
+  de: Geschweißte Matten, Einzelstäbe und Gitterträger nach Bewehrungsplan in das geschalte Element legen.
+description:
+  en: After shuttering, the reinforcement goes in, from stock or custom-welded mesh to lattice girders and additional bars, with spacers under it. A stock mesh sheet of 6.00 by 2.30 metres weighs between about 34 and 132 kg, and the position of every bar is part of the structural design. Plant suppliers sell systems that produce and place reinforcement to CAD data.
+  de: Nach dem Schalen kommt die Bewehrung, von Lager- oder Sondermatten über Gitterträger bis zu Zulagestäben, mit Abstandhaltern darunter. Eine Lagermatte von 6,00 mal 2,30 Metern wiegt etwa 34 bis 132 kg, und die Lage jedes Stabs ist Teil der Tragwerksplanung. Anlagenhersteller verkaufen Systeme, die Bewehrung nach CAD-Daten fertigen und ablegen.
+also_in_settings: [rebar_formwork_prep, site_concrete]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 33.6, max: 132 }
+    confidence: likely
+    evidence_url: 'https://www.rivastahl.com/items_RivaFE/439/allegati/5/Lagermatten_RivaStahl.pdf'
+    note: Stock mesh sheets of 6.00 x 2.30 m weigh 33.6 kg (R188A) to 132 kg (Q636A, 6.00 x 2.35 m) in the Riva Stahl Lagermatten sheet, revision 06/2015. Custom mesh in a plant varies.
+  variability:
+    value: medium
+    confidence: assumed
+    note: Analyst judgement. Layouts change with every element; the mesh and girder types repeat.
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: Wrong cover or a missing bar weakens the element; it is checked before concreting.
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: The reinforcement carries the load.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Work on a pallet at table height; the mass test decides.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Production hall.
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: Circulation line in a workroom; grinding and cutting areas are separate zones.
+  wet:
+    value: dry
+    confidence: likely
+    note: Before concreting.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor along the circulation line.
+  incumbent_automation:
+    value: { status: partial, machine_classes: [rebar_mesh_welder] }
+    confidence: likely
+    note: Systems that produce and place reinforcement to CAD data exist; many plants still place mesh by crane and hand.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: { min: 6.0, max: 6.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.rivastahl.com/items_RivaFE/439/allegati/5/Lagermatten_RivaStahl.pdf'
+    note: "Stock mesh sheets are 6.00 m long and 2.30 or 2.35 m wide (Riva Stahl Lagermatten, revision 06/2015). Custom mesh in a plant varies."
+  tolerance_mm:
+    value: 5
+    confidence: likely
+    evidence_url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    note: "Cover may fall short of its nominal value by the allowance cdev from DIN EN 1992-1-1, 4.4.1.3; plants with quality control may reduce the allowance, but never below 5 mm (FDB Merkblatt Nr. 6, 09/2023). With a reduced allowance, the bars have to hold their cover to within 5 mm."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; mesh is lifted by crane or two people and laid on spacers."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: Automated reinforcement production and placement from the plant supplier is the machine answer; below that level, a crane with a mesh spreader beam. People keep the additional bars and the check before concreting.
+      de: Automatisierte Bewehrungsfertigung und -ablage des Anlagenherstellers ist die Maschinenlösung; darunter ein Kran mit Mattentraverse. Zulagen und die Kontrolle vor dem Betonieren bleiben bei Menschen.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, precision]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, gantry, keep_process]
+evidence:
+  - statement:
+      en: Progress Maschinen & Automation describes its Wire Center, which processes rebar from coil and places cross and longitudinal reinforcement, with and without spacers, and lattice girders to CAD specifications.
+      de: Progress Maschinen & Automation beschreibt sein Wire Center, das Betonstahl vom Coil verarbeitet und Quer- und Längsbewehrung mit und ohne Abstandhalter sowie Gitterträger nach CAD-Vorgaben ablegt.
+    url: 'https://pma.progress.group/en/products/automation-of-reinforcement'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: confirmed
+    note: Undated product page, checked 2026-09-24; no throughput figures published.
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: If pursued, as automated reinforcement placement with the plant supplier, starting with one element type.
+    de: Falls verfolgt, als automatisierte Bewehrungsablage mit dem Anlagenhersteller, beginnend mit einem Elementtyp.
+prerequisites: []
+open_questions:
+  - { en: "How much of the reinforcement is stock mesh, and how much custom mesh and loose bars?", de: "Wie viel der Bewehrung sind Lagermatten, wie viel Listenmatten und Einzelstäbe?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

@@ -1,0 +1,27 @@
+id: site_concrete
+group: site
+section: structure
+lv: { lb: ['013'], atv: ["DIN 18331"] }
+title: { en: "Concrete and reinforced concrete", de: "Betonarbeiten" }
+aliases:
+  en: [formwork, reinforcement, concreting]
+  de: [Schalung, Bewehrung, Stahlbeton]
+coverage: screened
+coverage_note:
+  en: "Four screened tasks: tying rebar on slabs, framed wall formwork, compacting with poker vibrators and power trowelling. All four are ruled out: dedicated machines, the crane or a trained crew are the better answer."
+  de: "Vier geprüfte Aufgaben: Bewehrung auf Decken verrödeln, Wandschalung aus Rahmentafeln, Verdichten mit dem Innenrüttler und Flügelglätten. Alle vier scheiden aus: dedizierte Maschinen, der Kran oder eine geschulte Kolonne sind die bessere Antwort."
+typical_incumbent_automation: [gantry_crane]
+dust:
+  type: cement
+  typical_zone: controlled
+  note:
+    en: "Mixing and pumping cement-bound material releases cement dust; the wet material itself is alkaline."
+    de: "Anmischen und Pumpen zementgebundener Stoffe setzt Zementstaub frei; das nasse Material selbst ist alkalisch."
+floor: mixed
+exposure: both
+typical_trades: [concrete]
+seed_priority: 5
+sources:
+  - 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C3%9Cbersicht-STLB-Bau-Version-2024-04.pdf'
+  - 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf'
+status: published

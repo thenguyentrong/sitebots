@@ -1,0 +1,141 @@
+schema_version: 1
+id: site_drywall/drywall-joint-finishing
+status: published
+setting: site_drywall
+family: surface_finishing
+trades: [drywall, painting]
+title:
+  en: "Fill, spray and sand drywall joints"
+  de: "Fugen im Trockenbau spachteln, spritzen und schleifen"
+summary:
+  en: "Apply joint compound over tapes and screw heads, let it dry and sand it to the required surface quality."
+  de: "Spachtelmasse über Fugenstreifen und Schraubenköpfe auftragen, trocknen lassen und auf die geforderte Oberflächenqualität schleifen."
+description:
+  en: "Finishing takes several passes with drying time in between, and the required quality level decides how much of the surface is covered. The tools are light, the reach goes up to the ceiling, and sanding produces fine dust. Finishing robots spray and sand compound on open wall areas; intricate areas stay with the workers."
+  de: "Das Verspachteln braucht mehrere Durchgänge mit Trocknungszeit dazwischen, und die geforderte Qualitätsstufe bestimmt, wie viel der Fläche bearbeitet wird. Die Werkzeuge sind leicht, die Reichweite geht bis zur Decke, und Schleifen erzeugt Feinstaub. Spachtelroboter spritzen und schleifen die Masse auf offenen Wandflächen; schwierige Bereiche bleiben bei den Handwerkern."
+also_in_settings: [modular_volumetric]
+derived_from: null
+lv:
+  lb: '039'
+  atv: "DIN 18340"
+  position:
+    en: "Jointing and filling of gypsum boards, quality levels Q1 to Q4"
+    de: "Verspachtelung von Gipsplatten, Qualitätsstufen Q1 bis Q4"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0.5, max: 5 }
+    confidence: assumed
+    note: "Trowels, taping knives and a sander with extraction hose; a few kilograms. Not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Open wall areas repeat; corners, openings and junctions do not."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Surface defects show under grazing light and after painting; rework means another pass and another drying cycle."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Surface work, no structural or fire-protection function."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Walls and ceilings up to room height. Not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Closed, dry rooms."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: likely
+    note: "Sanding releases fine dust; sanders with extraction keep it controlled, dry sanding without extraction does not."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Slab or screed with scaffolds."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [spray_robot] }
+    confidence: likely
+    note: "Robots that spray and sand compound on open wall areas exist (Canvas in the US; Okibo states projects in Europe); intricate areas stay manual."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at walls; if they record people, the data-protection flags apply."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on area and drying cycles; the 30–90 min humanoid runtime is a known limit to test against."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the pilot baseline must measure square metres per shift and the rework after painting."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Hand tools and a sander; no source gives sizes."
+  tolerance_mm:
+    value: 5
+    confidence: likely
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "The finished lining is a flat finished wall or suspended ceiling: 5 mm over a 1 m measuring distance, 3 mm over 0.1 m (DIN 18202 Table 3 row 6), or 3 mm over 1 m where increased requirements are agreed (row 7), as reproduced by a screed contractor from the ZDB handbook (file from 2009; check the current edition). The quality levels Q1 to Q4 add visual criteria."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is filling and sanding."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Compare a finishing robot for the open wall areas first and keep people on corners and details; that split is where the published schedule savings come from. A humanoid would meet the same dust and reach limits without a tool built for the job."
+      de: "Zuerst einen Spachtelroboter für die offenen Wandflächen vergleichen und Menschen an Ecken und Details lassen; aus dieser Aufteilung stammen die veröffentlichten Zeiteinsparungen. Ein Humanoid hätte dieselben Staub- und Reichweitengrenzen, ohne ein dafür gebautes Werkzeug."
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, quality, skills_shortage]
+capabilities_required: [surface_finishing]
+capabilities_optional: [autonomous_nav_indoor]
+solution_classes: [dedicated_machine, humanoid, keep_process]
+evidence:
+  - statement:
+      en: "A case story by Universal Robots on Canvas: UR10e arms spray and sand joint compound for Level 4 and Level 5 finishes; schedules reduced by up to 60 % and labour by about 40 %, with workers handling coordination and intricate areas."
+      de: "Eine Fallstudie von Universal Robots zu Canvas: UR10e-Arme spritzen und schleifen Spachtelmasse für Oberflächen der US-Stufen Level 4 und Level 5; Termine um bis zu 60 % und Arbeitsaufwand um rund 40 % verkürzt, Koordination und schwierige Bereiche übernehmen die Handwerker."
+    url: 'https://www.universal-robots.com/case-stories/canvas/'
+    kind: manufacturer
+    tier: 2
+    date: '2026-09-24'
+    type: claim
+    confidence: likely
+    note: "Case story by the arm supplier, not by Canvas; no project named. Page undated, read on 2026-09-24."
+  - statement:
+      en: "Okibo states that its EG7 robot works autonomously on painting, coating and drywall finishing, sands with a swappable dust collector, averages 1,000 square feet per hour and has completed more than one million square feet in Europe."
+      de: "Okibo gibt an, dass sein Roboter EG7 autonom streicht, beschichtet und Trockenbauflächen spachtelt, mit wechselbarem Staubsammler schleift, im Schnitt 1.000 Quadratfuß pro Stunde schafft und in Europa über eine Million Quadratfuß bearbeitet hat."
+    url: 'https://www.okibo.com/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-24'
+    type: claim
+    confidence: likely
+    note: "Manufacturer claims; no project named on the page. Page undated, read on 2026-09-24."
+pilot:
+  metrics: [cycle_time_vs_manual, error_rate_vs_human_pct, interventions_per_hour]
+  abort_rule:
+    en: "Fewer than 99 % of the planned area finished without manual rework after 3 months, then change the use case."
+    de: "Weniger als 99 % der geplanten Fläche nach 3 Monaten ohne Nacharbeit von Hand fertig, dann Use Case wechseln."
+  scope_hint:
+    en: "One floor of open wall areas at one quality level; people finish corners and details; measure the rework after painting."
+    de: "Ein Geschoss offener Wandflächen in einer Qualitätsstufe; Menschen übernehmen Ecken und Details; Nacharbeit nach dem Anstrich messen."
+prerequisites:
+  - { en: "A defined surface quality level per area", de: "Eine festgelegte Oberflächenqualitätsstufe je Bereich" }
+open_questions:
+  - { en: "Which quality level do your contracts require, and where does rework come from today?", de: "Welche Qualitätsstufe fordern Ihre Verträge, und woher kommt heute die Nacharbeit?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

@@ -1,3 +1,5 @@
+import { siteOrigin } from './site-origin';
+
 /**
  * Operator identity and the facts the legal pages and the crawler are built
  * from. One object, rendered everywhere, so nothing drifts.
@@ -11,7 +13,7 @@
 export const SITE = {
   name: 'sitebots',
   tagline: 'Which robot can work on your construction site',
-  url: process.env.SITE_URL || 'http://localhost:3000',
+  url: siteOrigin(process.env.SITE_URL, process.env.VERCEL_PROJECT_PRODUCTION_URL, process.env.NODE_ENV === 'production'),
   email: process.env.SCRAPER_CONTACT_EMAIL || '',
 
   // ── FILL THESE IN ────────────────────────────────────────────────────────

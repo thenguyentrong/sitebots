@@ -1,0 +1,125 @@
+schema_version: 1
+id: construction_logistics_hub/kitting-per-crew
+status: published
+setting: construction_logistics_hub
+family: kitting_picking_sorting
+trades: [logistics, general]
+title:
+  en: Pick material kits per floor and crew
+  de: Materialkits je Geschoss und Kolonne kommissionieren
+summary:
+  en: Pick fixings, fittings and consumables for one crew and one floor into a labelled kit for the next delivery slot.
+  de: Befestigungsmittel, Fittings und Verbrauchsmaterial für eine Kolonne und ein Geschoss in ein beschriftetes Kit für das nächste Lieferfenster kommissionieren.
+description:
+  en: A consolidation centre receives material from many suppliers and sends it to site in time slots, packed per floor and per crew. The small-part share of each kit is picked by hand from shelving against a list from the site. The item mix changes with every trade and floor; a missing item is only noticed on site, where a crew then waits.
+  de: Ein Konsolidierungszentrum nimmt Material vieler Lieferanten an und schickt es in Zeitfenstern auf die Baustelle, gepackt je Geschoss und je Kolonne. Der Kleinteileanteil jedes Kits wird von Hand aus Regalen nach einer Liste der Baustelle kommissioniert. Der Artikelmix wechselt mit jedem Gewerk und Geschoss; ein fehlender Artikel fällt erst auf der Baustelle auf, wo dann eine Kolonne wartet.
+also_in_settings: [material_yard_warehouse, mep_prefab, site_electrical, site_drywall]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.05, max: 12 }
+    confidence: assumed
+    note: Scope set by this record. Small parts and cartons only; boards, pipes and bagged goods go by pallet and are a different task.
+  variability:
+    value: high
+    confidence: assumed
+    note: Analyst judgement. The item mix changes with every trade, floor and delivery slot.
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: A missing or wrong item is noticed on site, where a crew waits for a follow-up delivery; hubs check kits before dispatch for that reason.
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: The kit is an intermediate; nothing structural depends on the picking itself.
+  reach_height_m:
+    value: { min: 0.2, max: 2.0 }
+    confidence: assumed
+    note: Shelving above head height on the top levels; verify per rack.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Warehouse hall of the hub.
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: Warehouse conditions.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Warehouse floor.
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: Picking by hand from paper or scanner lists; pick-by-light or pick-by-voice would change the baseline, not the task.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: Cameras look at shelves and parts; if they record people, the data-protection flags apply.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Depends on the number of kits per slot; the 30–90 min humanoid runtime is a known limit to test against.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded; a pilot baseline must measure kits per shift and picking minutes per kit.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Scope set by this record: small parts and cartons; none of the cited sources gives sizes. Measure the largest carton in your kits."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "Picking has no dimensional tolerance; the accuracy that matters is the right item in the right kit."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the work is picking and placing."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: Scanner-guided picking or pick-by-light usually removes more errors per euro than any robot, so price that first. For the robot comparison, a wheeled mobile manipulator comes before a humanoid on a level warehouse floor, and a person checks every kit before dispatch.
+      de: Scannergeführtes Kommissionieren oder Pick-by-Light beseitigt meist mehr Fehler je Euro als jeder Roboter, deshalb zuerst das kalkulieren. Im Robotervergleich kommt auf ebenem Lagerboden ein radgebundener Mobilmanipulator vor dem Humanoiden, und eine Person prüft jedes Kit vor dem Versand.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: [quality, capacity, skills_shortage]
+capabilities_required: [shelf_pick, kitting, autonomous_nav_indoor]
+capabilities_optional: [fetch_and_deliver]
+solution_classes: [process_change, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: Agility Robotics' Digit moves totes from cobots onto conveyors at a GXO-operated facility for SPANX under a multi-year Robots-as-a-Service agreement, a deployment for tote transfer, not for picking loose items.
+      de: Digit von Agility Robotics setzt in einer von GXO betriebenen Anlage für SPANX Behälter von Cobots auf Förderbänder, unter einem mehrjährigen Robots-as-a-Service-Vertrag; ein Einsatz für Behälterumschlag, nicht für das Greifen loser Artikel.
+    url: 'https://www.agilityrobotics.com/content/gxo-signs-industry-first-multi-year-agreement-with-agility-robotics'
+    kind: manufacturer
+    tier: 1
+    date: '2024-06-27'
+    type: deployment
+    subject: { maker: agility, model: digit }
+    confidence: confirmed
+    note: Transferable for carrying totes; picking a changing mix of small parts is not evidenced here.
+pilot:
+  metrics: [unaided_completion_pct, grasp_failure_unknown_parts_pct, error_rate_vs_human_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: Fewer than 99 % of kits complete and correct without intervention after 3 months, then change the use case.
+    de: Weniger als 99 % der Kits nach 3 Monaten vollständig und richtig ohne Eingriff, dann Use Case wechseln.
+  scope_hint:
+    en: One trade, 30–50 item numbers in fixed bins, a human check before dispatch; compare against scanner-guided picking.
+    de: Ein Gewerk, 30–50 Artikelnummern in festen Behältern, eine Kontrolle vor dem Versand; Vergleich gegen scannergeführtes Kommissionieren.
+prerequisites:
+  - { en: "Item master data with weights and pictures", de: "Artikelstammdaten mit Gewichten und Bildern" }
+  - { en: "Kit lists from site in a structured format, not free text", de: "Kitlisten der Baustelle in strukturierter Form, nicht als Freitext" }
+open_questions:
+  - { en: "How many kit errors per week reach the site today, and what does one cost?", de: "Wie viele Kitfehler je Woche erreichen heute die Baustelle, und was kostet einer?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

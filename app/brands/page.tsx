@@ -40,7 +40,6 @@ export default async function BrandsPage({ searchParams }: { searchParams: Searc
   return (
     <main className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6">
       <header className="py-10">
-        <p className="eyebrow">Makers</p>
         <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Manufacturers</h1>
         <p className="mt-3 max-w-2xl text-muted">Companies supplying robots today and building the next generation. Research projects and unverified suppliers are excluded.</p>
         <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted">

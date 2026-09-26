@@ -7,7 +7,7 @@ describe('automation assessment', () => {
     const parsed = requirementsFor(project);
     expect(parsed.success).toBe(true);
     if (parsed.success) expect(parsed.data).toMatchObject({ tasks: ['carry_payload'], terrain: undefined, stairs: undefined, environment: undefined, autonomy: undefined });
-    expect(WorkspaceSchema.safeParse({ version: 1, activeId: projectId, projects: [project] }).success).toBe(true);
+    expect(WorkspaceSchema.safeParse({ version: 2, activeId: projectId, projects: [project] }).success).toBe(true);
   });
   it('rejects invalid requirements without replacing them with friendly defaults', () => {
     const project = newProject(projectId);
@@ -36,9 +36,10 @@ describe('automation assessment', () => {
     expect(nextAction({ ...project, gate: 'unknown' })).toContain('Confirm critical requirements');
   });
   it('rejects external script URLs and unsupported saved-draft versions', () => {
-    expect(WorkspaceSchema.safeParse({ version: 2, activeId: '', projects: [] }).success).toBe(false);
+    expect(WorkspaceSchema.safeParse({ version: 3, activeId: '', projects: [] }).success).toBe(false);
+    expect(WorkspaceSchema.safeParse({ version: 1, activeId: '', projects: [] }).success).toBe(false);
     const project = newProject(projectId);
     project.options.push({ id: 'one', name: 'One', kind: 'robot', href: 'javascript:alert(1)', package: '', operator: '', evidence: '', costs: emptyCosts() });
-    expect(WorkspaceSchema.safeParse({ version: 1, activeId: projectId, projects: [project] }).success).toBe(false);
+    expect(WorkspaceSchema.safeParse({ version: 2, activeId: projectId, projects: [project] }).success).toBe(false);
   });
 });

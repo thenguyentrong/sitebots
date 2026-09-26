@@ -1,0 +1,143 @@
+schema_version: 1
+id: site_sheet_metal/gutter-installation
+status: published
+setting: site_sheet_metal
+family: assembly_fastening
+trades: [facade_roofing]
+title:
+  en: "Hang eaves gutters in their brackets and join the lengths"
+  de: "Hängedachrinnen in die Rinnenhalter einlegen und die Längen verbinden"
+summary:
+  en: "Fix the brackets along the eaves, lay the gutter lengths in and solder them at the overlaps."
+  de: "Rinnenhalter entlang der Traufe befestigen, die Rinnenlängen einlegen und an den Überlappungen verlöten."
+description:
+  en: "Rheinzink supplies half-round gutters to DIN EN 612 in nominal sizes 250 to 500 at 0.65 to 0.8 mm, in a standard length of 3.0 m, fixed in brackets made for the purpose. At 7.2 g/cm³ a 3 m length weighs about 3.5 to 8.6 kg. Rheinzink states that front-hung gutters may be laid with or without fall and that standing water is not a defect; lengths are soft-soldered with an overlap of 10 to 15 mm. The work happens at the eaves, from the scaffold."
+  de: "Rheinzink liefert halbrunde Dachrinnen nach DIN EN 612 in den Nenngrößen 250 bis 500 mit 0,65 bis 0,8 mm Dicke in der Standardlänge 3,0 m, befestigt in eigens dafür gefertigten Rinnenhaltern. Bei 7,2 g/cm³ wiegt eine 3-m-Länge etwa 3,5 bis 8,6 kg. Laut Rheinzink dürfen vorgehängte Rinnen mit oder ohne Gefälle verlegt werden, stehendes Wasser ist kein Mangel; die Längen werden mit 10 bis 15 mm Überlappung weichgelötet. Gearbeitet wird an der Traufe vom Gerüst aus."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '022'
+  atv: "DIN 18339"
+  position:
+    en: "Half-round eaves gutter of titanium zinc with brackets"
+    de: "Halbrunde Hängedachrinne aus Titanzink mit Rinnenhaltern"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 3.5, max: 8.6 }
+    confidence: likely
+    evidence_url: 'https://www.rheinzink.de/produkte/halbrunde-dachrinne/'
+    note: "Blank width × thickness × 3.0 m × 7.2 g/cm³: nominal size 250 at 0.65 mm about 3.5 kg, size 500 at 0.8 mm about 8.6 kg. Sizes, thicknesses and length from the Rheinzink gutter page, density from the Rheinzink material datasheet."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Straight eaves runs, but corners, outlets and end caps differ per building."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A leaking joint or a gutter out of line is resoldered or rehung; it shows in the first rain."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The gutter carries no structural load."
+  reach_height_m:
+    value: { min: 1, max: 2 }
+    confidence: assumed
+    note: "From the top scaffold lift the eaves are at about chest to head height. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "At the eaves, in the weather."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "No dust; soldering produces fumes, not dust."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the weather decides."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck: level but narrow."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Gutters are hung and soldered by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "3.0 m per gutter length"
+    confidence: confirmed
+    evidence_url: 'https://www.rheinzink.de/produkte/halbrunde-dachrinne/'
+    note: "Rheinzink standard length; other lengths on request."
+requirements:
+  object_size_m:
+    value: { min: 3, max: 3 }
+    confidence: confirmed
+    evidence_url: 'https://www.rheinzink.de/produkte/halbrunde-dachrinne/'
+    note: "Standard length 3.0 m."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.rheinzink.de/produkte/halbrunde-dachrinne/'
+    note: "Rheinzink allows front-hung gutters with or without fall; no laying tolerance is stated."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force data."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The weather rules a humanoid out; the 3 m lengths would pass on weight. No machine hangs gutters on site that we know of, so the sheet-metal worker stays; shop-made corners and outlets shorten the work at the eaves."
+      de: "Das Wetter schließt einen Humanoiden aus; vom Gewicht her würden die 3-m-Längen bestehen. Eine Maschine, die auf der Baustelle Rinnen hängt, ist uns nicht bekannt, der Klempner bleibt also; in der Werkstatt gefertigte Ecken und Stutzen verkürzen die Arbeit an der Traufe."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Rheinzink offers half-round gutters to DIN EN 612 in nominal sizes 250, 280, 333, 400 and 500, metal thicknesses of 0.65, 0.7 and 0.8 mm depending on size, in a standard length of 3.0 m; front-hung gutters may be installed with or without fall, and standing water is not a defect."
+      de: "Rheinzink bietet halbrunde Dachrinnen nach DIN EN 612 in den Nenngrößen 250, 280, 333, 400 und 500, Metalldicken von 0,65, 0,7 und 0,8 mm je nach Nenngröße, in der Standardlänge 3,0 m an; vorgehängte Rinnen dürfen mit oder ohne Gefälle montiert werden, stehendes Wasser ist kein Mangel."
+    url: 'https://www.rheinzink.de/produkte/halbrunde-dachrinne/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page; the date is the day it was read."
+  - statement:
+      en: "Rheinzink's material datasheet gives titanium zinc to DIN EN 988 a density of 7.2 g/cm³ and recommends soft soldering with an overlap of 10 to 15 mm."
+      de: "Das Rheinzink-Materialdatenblatt nennt für Titanzink nach DIN EN 988 eine Dichte von 7,2 g/cm³ und empfiehlt Weichlöten mit 10 bis 15 mm Überlappung."
+    url: 'https://www.rheinzink.com/fileadmin/redaktion/RHEINZINK_GLOBAL/Downloads/Technical-Documents/MDB_CLASSIC_01_DE.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated datasheet; the date is the day it was read."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the eaves work is the bottleneck: count on-site cuts and solder joints per building before and after using shop-made corners and outlets."
+    de: "Falls die Traufarbeit der Engpass ist: Zuschnitte und Lötstellen auf der Baustelle je Gebäude vor und nach dem Einsatz werkstattgefertigter Ecken und Stutzen zählen."
+prerequisites: []
+open_questions:
+  - { en: "How many corners and outlets does a typical building have per metre of eaves?", de: "Wie viele Ecken und Stutzen hat ein typisches Gebäude je Meter Traufe?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

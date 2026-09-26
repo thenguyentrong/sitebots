@@ -1,0 +1,113 @@
+schema_version: 1
+id: prefab_timber/cnc-joinery-cutting
+status: published
+setting: prefab_timber
+family: machine_operation_dedicated
+trades: [timber, carpentry_joinery]
+title:
+  en: Cut and joint studs and beams
+  de: Riegel und Balken abbinden
+summary:
+  en: Cutting, drilling and jointing of structural timber.
+  de: Sägen, Bohren und Abbinden von tragendem Holz.
+description:
+  en: "A CNC joinery centre does this faster, stronger and cheaper per part than any robot will this decade, in a dust zone, on members far above the payload ceiling. The honest core of the story: the heavy, repetitive, high-value work is already automated."
+  de: Eine Abbundanlage macht das schneller, stärker und je Teil günstiger als jeder Roboter in diesem Jahrzehnt, in einem Staubbereich, an Hölzern weit über der Traglastgrenze. Der ehrliche Kern der Geschichte, die schwere, repetitive, wertvolle Arbeit ist bereits automatisiert.
+also_in_settings: [joinery_windows_doors, modular_volumetric]
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 10, max: 300 }
+    confidence: likely
+    note: Studs to beams; range from an industry engagement, 2025/26.
+  variability:
+    value: low
+    confidence: assumed
+    note: Analyst judgement. Every cut is programmed from the model.
+  error_tolerance:
+    value: critical
+    confidence: likely
+    note: Cutting accuracy defines the structure.
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: Load-bearing members.
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: Not applicable; a machine task.
+  environment:
+    value: indoor
+    confidence: likely
+    note: Machining hall.
+  dust:
+    value: { type: wood, zone: zone }
+    confidence: likely
+    note: The joinery centre sits in the dust zone with extraction; not a workroom in the cleaning-plan sense.
+  wet:
+    value: dry
+    confidence: likely
+    note: Indoor hall.
+  floor:
+    value: level
+    confidence: likely
+    note: Industrial floor.
+  incumbent_automation:
+    value: { status: full, machine_classes: [cnc_joinery] }
+    confidence: likely
+    note: Standard in every modern plant.
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: No cameras on people required.
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: Not relevant; ruled out earlier.
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: Not recorded.
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.hundegger.com/de/maschinen/abbundmaschinen/k2-industry-2026'
+    note: "The joinery machine takes cross-sections from 20 × 50 mm up to 300 × 450, 650 or 1300 mm depending on the model (Hundegger K2-Industry); member lengths are not stated there."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.hundegger.com/de/maschinen/abbundmaschinen/k2-industry-2026'
+    note: "No machining accuracy is published on the product page."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "A machine task; cutting forces stay inside the machine."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: fail, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T2_dust, T5_failure_tolerance, T4_variability]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The machine already owns this. The candidates are around it: feeding small parts in the clean zone, clearing offcuts outside the dust zone, documentation."
+      de: Die Maschine hat das bereits. Die Kandidaten liegen drumherum, Kleinteile in der sauberen Zone zuführen, Verschnitt außerhalb des Staubbereichs räumen, Dokumentation.
+  screened_at: '2026-09-24'
+  screened_by: sitebots
+value_drivers: []
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence: []
+pilot:
+  metrics: []
+  abort_rule:
+    en: Not applicable; ruled out at screening.
+    de: Nicht anwendbar; im Screening ausgeschieden.
+  scope_hint:
+    en: None.
+    de: Keiner.
+prerequisites: []
+open_questions: []
+compliance_flags: [wood_dust_trgs_553, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-24'

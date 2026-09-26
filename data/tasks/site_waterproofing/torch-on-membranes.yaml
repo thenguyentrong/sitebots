@@ -1,0 +1,132 @@
+schema_version: 1
+id: site_waterproofing/torch-on-membranes
+status: published
+setting: site_waterproofing
+family: surface_finishing
+trades: [insulation]
+title:
+  en: "Torch-weld bitumen membranes onto basement walls and slabs"
+  de: "Bitumenschweißbahnen an Kellerwänden und Bodenplatten aufschweißen"
+summary:
+  en: "Unroll the membrane, melt its underside with the torch and press it onto the primed substrate with the specified laps."
+  de: "Die Bahn abrollen, ihre Unterseite mit dem Brenner aufschmelzen und sie mit den vorgegebenen Überdeckungen auf den vorbehandelten Untergrund drücken."
+description:
+  en: "Polymer-bitumen welding membranes come in rolls of 1 m by 5 m weighing around 34 kg. They are laid parallel with staggered cross joints, with laps of at least 80 mm along the length and, as the maker recommends, 100 mm across. The work uses an open flame, so the fire rules of the construction trade association apply, and it happens outdoors in the excavation or on the slab."
+  de: "Polymerbitumen-Schweißbahnen kommen in Rollen von 1 m mal 5 m mit rund 34 kg. Sie werden parallel mit versetzten Quernähten verlegt, mit mindestens 80 mm Überdeckung in Längsrichtung und, wie der Hersteller empfiehlt, 100 mm an den Quernähten. Gearbeitet wird mit offener Flamme, daher gelten die Brandschutzvorschriften der BG BAU, und zwar im Freien in der Baugrube oder auf der Bodenplatte."
+also_in_settings: [site_roofing]
+derived_from: null
+lv:
+  lb: '018'
+  atv: "DIN 18336"
+  position:
+    en: "Waterproofing with polymer-bitumen welding membranes"
+    de: "Abdichtung mit Polymerbitumen-Schweißbahnen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 34, max: 34 }
+    confidence: confirmed
+    evidence_url: 'https://www.soprema.de/fileadmin/produkt/Produktinformationen/Bitumenabdichtung/30_Zwischenlagen/PYE_PV200_S5_Sand.pdf'
+    note: "SOPREMA PYE PV200 S5: roll 5.00 × 1.00 m, 5.00 mm, 6.80 kg/m², 34.00 kg per roll (product information, 07/2026)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The runs of membrane repeat; corners, penetrations and connections to other layers do not."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A faulty seam can be re-welded while it is still accessible; after backfilling it can only be reached by digging."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "The membrane keeps water out; a defect means water damage, not a risk to people. The open flame is a work-safety matter for the crew."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Slab level up to the top of the basement wall. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "In the excavation or on the open slab."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "No dust; fumes from the melting bitumen instead."
+  wet:
+    value: dry
+    confidence: assumed
+    note: "Welding needs a dry substrate. Not measured."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Excavation working space or the slab with starter bars."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Torch and roll puller are hand tools; no machine does this step on basement walls."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required for the task itself."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 1, max: 5 }
+    confidence: confirmed
+    evidence_url: 'https://www.soprema.de/fileadmin/produkt/Produktinformationen/Bitumenabdichtung/30_Zwischenlagen/PYE_PV200_S5_Sand.pdf'
+    note: "Roll width 1.00 m, length 5.00 m."
+  tolerance_mm:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.soprema.de/fileadmin/produkt/Produktinformationen/Bitumenabdichtung/30_Zwischenlagen/PYE_PV200_S5_Sand.pdf'
+    note: "Not a ± tolerance but minimum laps: at least 80 mm along the length, 100 mm recommended across and at connections; the applicable rules take precedence."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Pressing force not recorded; the maker recommends a roll puller and winding core for even pressure."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, X2_outdoor]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Handle the 34 kg rolls with an assist rather than a robot: a roll puller with a winding core, which the maker recommends for even pressure anyway. The welding stays with trained waterproofers under the rules for open flame."
+      de: "Die 34-kg-Rollen mit einer Hilfe statt mit einem Roboter bewegen: mit Rollenzieher und Wickelkern, die der Hersteller für gleichmäßigen Anpressdruck ohnehin empfiehlt. Das Schweißen bleibt bei geschulten Abdichtern nach den Regeln für offene Flamme."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [carry_payload, surface_finishing]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, keep_process]
+evidence:
+  - statement:
+      en: "SOPREMA describes PYE PV200 S5 as an elastomer-bitumen welding membrane for multi-layer roof or structural waterproofing, laid by torch-welding with laps of at least 0.08 m along the length and a recommended 0.10 m across, in rolls of 5 × 1 m at 34 kg, and points to the construction trade association's rules for open flame."
+      de: "SOPREMA beschreibt die PYE PV200 S5 als Elastomerbitumen-Schweißbahn für mehrlagige Dach- oder Bauwerksabdichtungen, verlegt im Schweißverfahren mit mindestens 0,08 m Längsnahtüberdeckung und empfohlenen 0,10 m an Quernähten, in Rollen von 5 × 1 m mit 34 kg, und verweist auf die Vorschriften der Bau-Berufsgenossenschaft für offene Flamme."
+    url: 'https://www.soprema.de/fileadmin/produkt/Produktinformationen/Bitumenabdichtung/30_Zwischenlagen/PYE_PV200_S5_Sand.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Product information, Stand 07/2026; the day is not given."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If anything, try a roll cart that carries the rolls from the stack to the wall."
+    de: "Wenn überhaupt, einen Rollenwagen erproben, der die Rollen vom Stapel zur Wand bringt."
+prerequisites: []
+open_questions:
+  - { en: "Is membrane waterproofing specified, or would a coating or watertight concrete do?", de: "Ist eine Bahnenabdichtung vorgeschrieben, oder täten es eine Beschichtung oder wasserundurchlässiger Beton?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

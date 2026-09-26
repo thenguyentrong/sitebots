@@ -1,0 +1,151 @@
+schema_version: 1
+id: site_ventilation/rectangular-duct-installation
+status: published
+setting: site_ventilation
+family: assembly_fastening
+trades: [mep_hvac]
+title:
+  en: "Hang rectangular sheet-metal ducts under the ceiling"
+  de: "Rechteckige Blechkanäle unter der Decke montieren"
+summary:
+  en: "Set the hangers, lift each duct section to ceiling height, join it to the previous one and seal the joint."
+  de: "Abhängungen setzen, jeden Kanalschuss auf Deckenhöhe heben, mit dem vorherigen verbinden und den Stoß abdichten."
+description:
+  en: "Rectangular ducts come as sections of 1500 mm (the BerlinerLuft standard length) in galvanised sheet whose thickness grows with the edge length: 0.8 mm up to 500 mm, 0.8 or 1.0 mm up to 1000 mm in the lower pressure classes (RLK, after DIN 24190). With steel at 7.85 kg/dm³, a 600 × 400 mm section of 1.5 m in 0.8 mm sheet weighs about 18.8 kg and a 1000 × 500 mm section in 1.0 mm sheet about 35.3 kg, before frames and stiffeners. The sections are lifted to ceiling height, joined and sealed; the hanger anchors are drilled overhead."
+  de: "Rechteckkanäle kommen als Schüsse von 1500 mm (Standardlänge bei BerlinerLuft) aus verzinktem Blech, dessen Dicke mit der Kantenlänge wächst: 0,8 mm bis 500 mm, 0,8 oder 1,0 mm bis 1000 mm in den unteren Druckstufen (RLK, nach DIN 24190). Bei Stahl mit 7,85 kg/dm³ wiegt ein Schuss von 600 × 400 mm und 1,5 m Länge aus 0,8-mm-Blech rund 18,8 kg, einer von 1000 × 500 mm aus 1,0-mm-Blech rund 35,3 kg, ohne Rahmen und Versteifungen. Die Schüsse werden auf Deckenhöhe gehoben, verbunden und abgedichtet; die Dübel für die Abhängungen werden über Kopf gebohrt."
+also_in_settings: [mep_prefab]
+derived_from: null
+lv:
+  lb: '075'
+  atv: "DIN 18379"
+  position:
+    en: "Rectangular air ducts of galvanised sheet steel: supply and install, billed by surface area"
+    de: "Rechteckige Luftleitungen aus verzinktem Stahlblech liefern und montieren, Abrechnung nach Oberfläche"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 7.5, max: 35.3 }
+    confidence: likely
+    evidence_url: 'https://www.rlk.de/wp-content/uploads/2014/12/RLK-NORM-2014.pdf'
+    note: "Surface × sheet thickness × 7.85 kg/dm³ for 1.5 m sections: 200 × 200 mm in 0.8 mm about 7.5 kg, 600 × 400 mm in 0.8 mm about 18.8 kg, 1000 × 500 mm in 1.0 mm about 35.3 kg, without frames and stiffeners. Larger ducts weigh more."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Standard sections, but every run has its own bends, branches and hanger positions."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A joint that leaks beyond the tightness class or a duct hung out of line is reworked; the tightness classes set the allowed leakage."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Standard ducts. Where installations run above fire-rated ceilings, the fixings must follow the MLAR and MLüAR (RLK); that case is out of scope here."
+  reach_height_m:
+    value: { min: 2.5, max: 4.0 }
+    confidence: assumed
+    note: "Ceiling heights in offices and residential buildings; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the closed building."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: assumed
+    note: "Drilling the hanger anchors into concrete releases quartz dust at the drill; extraction at the drill is standard."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Closed building."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Floors with scaffolds, lifts and other trades' material."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [drilling_robot] }
+    confidence: likely
+    note: "Overhead drilling robots set anchors on some sites; lifting and joining the ducts is done by people with material lifts."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 1.5, max: 1.5 }
+    confidence: confirmed
+    evidence_url: 'https://www.berlinerluft.de/fileadmin/user_upload/Download-Katalog-PDF/2019_BerlinerLuft.Katalogauszug_Kanalbauteile.pdf'
+    note: "Standard section length 1500 mm (BerlinerLuft); RLK makes sections of 1000 and 1500 mm."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The tightness class sets the allowed leakage per square metre of duct surface, not a positional tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure beyond lifting the section."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass]
+  better_answer:
+    class: vacuum_lifter_assist
+    note:
+      en: "Lift the sections with a material or duct lift and keep joining and sealing with the fitters; leave the anchors to an overhead drilling robot where the site runs one. Only the smallest sections fit a humanoid payload."
+      de: "Kanalschüsse mit einem Material- oder Kanallift heben, Verbinden und Abdichten bei den Monteuren lassen; die Dübel dort einem Deckenbohrroboter überlassen, wo die Baustelle einen einsetzt. Nur die kleinsten Schüsse passen in die Traglast eines Humanoiden."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure]
+capabilities_required: [carry_payload, drilling]
+capabilities_optional: []
+solution_classes: [vacuum_lifter_assist, dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "RLK lists sheet thicknesses for galvanised ducts after DIN 24190: 0.80 mm for edge lengths of 100 to 500 mm and 0.80 or 1.00 mm for 600 to 1000 mm, depending on the pressure class. It makes sections of 1000 and 1500 mm and bills by surface area after DIN 18379, and notes that installations above F30 ceilings must be fixed according to the MLAR and MLüAR."
+      de: "RLK gibt für verzinkte Kanäle nach DIN 24190 Blechdicken von 0,80 mm für Kantenlängen von 100 bis 500 mm und von 0,80 oder 1,00 mm für 600 bis 1000 mm an, je nach Druckstufe. Gefertigt werden Schüsse von 1000 und 1500 mm, abgerechnet wird nach Oberfläche gemäß DIN 18379; Installationen über F30-Decken sind nach MLAR und MLüAR zu befestigen."
+    url: 'https://www.rlk.de/wp-content/uploads/2014/12/RLK-NORM-2014.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2014-12-01'
+    type: claim
+    confidence: confirmed
+    note: "RLK-Klimatechnik works standard, uploaded December 2014; the document itself carries no date."
+  - statement:
+      en: "BerlinerLuft gives a standard section length of 1500 mm for its folded rectangular duct components in galvanised steel DX51D + Z275."
+      de: "BerlinerLuft gibt für seine gefalzten rechteckigen Kanalbauteile aus verzinktem Stahl DX51D + Z275 eine Kanal-Normschusslänge von 1500 mm an."
+    url: 'https://www.berlinerluft.de/fileadmin/user_upload/Download-Katalog-PDF/2019_BerlinerLuft.Katalogauszug_Kanalbauteile.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2019-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Catalogue excerpt 2019, page 33; no day given."
+  - statement:
+      en: "A metal supplier gives the density of steel DC01 and S235JR as 7.85 kg per dm³."
+      de: "Ein Metallhändler gibt die Dichte von Stahl DC01 und S235JR mit 7,85 kg je dm³ an."
+    url: 'https://www.metallparadies.de/info/stahlblech-gewicht.html'
+    kind: manufacturer
+    tier: 3
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Metal retailer's information page, undated, dated with the check date; used for the mass arithmetic only."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If pursued with a duct lift: one floor, metres of duct per hour with and without the lift."
+    de: "Falls mit Kanallift verfolgt: ein Geschoss, Meter Kanal je Stunde mit und ohne Lift."
+prerequisites: []
+open_questions:
+  - { en: "Is the pain the lifting, the overhead drilling or the joining?", de: "Liegt das Problem beim Heben, beim Bohren über Kopf oder beim Verbinden?" }
+compliance_flags: [mineral_dust_trgs_559]
+sources_reviewed_at: '2026-09-25'

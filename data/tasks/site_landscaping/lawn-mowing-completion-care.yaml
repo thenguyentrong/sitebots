@@ -1,0 +1,140 @@
+schema_version: 1
+id: site_landscaping/lawn-mowing-completion-care
+status: published
+setting: site_landscaping
+family: machine_operation_dedicated
+trades: [general]
+title:
+  en: "Mow new lawns until acceptance"
+  de: "Neue Rasenflächen bis zur Abnahme mähen"
+summary:
+  en: "Mow sown lawns during completion care until they reach the condition agreed for acceptance."
+  de: "Angesäte Rasenflächen in der Fertigstellungspflege mähen, bis sie den für die Abnahme vereinbarten Zustand erreichen."
+description:
+  en: "Under DIN 18320, completion care of lawns includes watering, fertilising, mowing and removing unwanted growth, and it continues until the condition agreed or set by the standard for acceptance is reached. Robotic mowers for large areas navigate by satellite positioning to 2 to 3 cm and cut in parallel paths; one machine covers areas of up to 50,000 m²."
+  de: "Nach DIN 18320 umfasst die Fertigstellungspflege von Rasen das Beregnen, Düngen und Mähen sowie das Entfernen unerwünschten Aufwuchses; sie läuft, bis der vereinbarte oder in der Norm festgelegte abnahmefähige Zustand erreicht ist. Mähroboter für große Flächen navigieren per Satellitenortung auf 2 bis 3 cm genau und mähen in parallelen Bahnen; ein Gerät deckt Flächen bis 50.000 m² ab."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '003'
+  atv: "DIN 18320"
+  position:
+    en: "Completion care of lawns: mowing until acceptance"
+    de: "Fertigstellungspflege Rasen: Mähen bis zur Abnahme"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 0, max: 0 }
+    confidence: likely
+    note: "No object is carried; the work is steering a mower."
+  variability:
+    value: low
+    confidence: assumed
+    note: "Analyst judgement. The same areas are mown again and again along parallel paths."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A missed strip is mown on the next pass."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Lawn care; no structural or life-safety relevance."
+  reach_height_m:
+    value: { min: 0, max: 0.5 }
+    confidence: assumed
+    note: "Ground level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Outdoor areas."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Grass cuttings; no relevant dust."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Young lawn on prepared soil."
+  incumbent_automation:
+    value: { status: full, machine_classes: [robotic_mower] }
+    confidence: confirmed
+    evidence_url: 'https://www.husqvarnagroup.com/en/press/husqvarna-transforming-commercial-turf-care-new-50-000-m2-robotic-solution-1868921'
+    note: "Commercial robotic mowers cover areas of up to 50,000 m² with satellite positioning to 2 to 3 cm (Husqvarna, December 2020)."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "The number of cuts until acceptance depends on the lawn type and the contract."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Not applicable; no object is handled."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The cutting height follows the lawn type and the contract, not a tolerance."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Not applicable."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T4_variability, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Robotic mowers for large areas do exactly this. For completion care the question is whether the contract and the site allow one before handover."
+      de: "Mähroboter für große Flächen tun genau das. In der Fertigstellungspflege ist die Frage, ob Vertrag und Baustelle einen vor der Übergabe zulassen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity]
+capabilities_required: [autonomous_nav_outdoor]
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Bauprofessor explains that completion care of lawn and seeding works includes watering, fertilising, mowing and removing unwanted growth, and that it continues until the agreed or standardised condition for acceptance is reached."
+      de: "Bauprofessor erläutert, dass die Fertigstellungspflege bei Rasen- und Saatarbeiten das Beregnen, Düngen und Mähen sowie das Entfernen von unerwünschtem Aufwuchs umfasst und so lange zu leisten ist, bis der vereinbarte oder in der Normierung festgelegte abnahmefähige Zustand erreicht ist."
+    url: 'https://www.bauprofessor.de/fertigstellungspflege/'
+    kind: analyst
+    tier: 3
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Lexicon entry, undated, dated with the check date."
+  - statement:
+      en: "Husqvarna presents CEORA, a robotic mower for public and commercial landowners, sports fields and golf courses that covers areas of up to 50,000 m², navigates by satellite to 2 to 3 cm and cuts in parallel paths."
+      de: "Husqvarna stellt CEORA vor, einen Mähroboter für öffentliche und gewerbliche Flächeneigentümer, Sportplätze und Golfanlagen, der Flächen bis 50.000 m² abdeckt, per Satellit auf 2 bis 3 cm genau navigiert und in parallelen Bahnen mäht."
+    url: 'https://www.husqvarnagroup.com/en/press/husqvarna-transforming-commercial-turf-care-new-50-000-m2-robotic-solution-1868921'
+    kind: manufacturer
+    tier: 1
+    date: '2020-12-01'
+    type: claim
+    confidence: confirmed
+    note: "Press release."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If a robotic mower is considered: one large lawn area, cuts and hours until acceptance against manual mowing."
+    de: "Falls ein Mähroboter erwogen wird: eine große Rasenfläche, Schnitte und Stunden bis zur Abnahme gegenüber manuellem Mähen."
+prerequisites: []
+open_questions:
+  - { en: "Do your contracts include development care after acceptance, where a robotic mower would run for longer?", de: "Enthalten Ihre Verträge Entwicklungspflege nach der Abnahme, in der ein Mähroboter länger laufen würde?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

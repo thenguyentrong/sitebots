@@ -1,0 +1,120 @@
+schema_version: 1
+id: site_joinery/door-hardware-fitting
+status: published
+setting: site_joinery
+family: assembly_fastening
+trades: [carpentry_joinery, windows_doors]
+title:
+  en: "Fit lever handles to interior doors"
+  de: "Drückergarnituren an Innentüren montieren"
+summary:
+  en: "Fit the lever handle set with roses to each hung interior door: spindle through the lock, roses aligned, screws set, handle checked for smooth return."
+  de: "An jeder eingehängten Innentür die Drückergarnitur mit Rosetten montieren: Vierkantstift durchs Schloss, Rosetten ausrichten, Schrauben setzen, den Drücker auf leichten Rücklauf prüfen."
+description:
+  en: "Once the doors hang, every leaf gets its handle set. The parts are small and light and the same model usually repeats across a building; door hand, door thickness and lock type vary. Fire and smoke doors are left out of this record."
+  de: "Sobald die Türen hängen, bekommt jedes Blatt seine Drückergarnitur. Die Teile sind klein und leicht, und meist wiederholt sich im Gebäude dasselbe Modell; Anschlagrichtung, Türblattdicke und Schlosstyp wechseln. Feuer- und Rauchschutztüren sind nicht Teil dieses Datensatzes."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '029'
+  atv: "DIN 18357"
+  position:
+    en: "Supply and fit lever handle sets with roses to interior doors"
+    de: "Drückergarnituren mit Rosetten an Innentüren liefern und montieren"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.3, max: 1.5 }
+    confidence: assumed
+    note: "A handle set with roses and screws, plus a cordless screwdriver. No datasheet read; not measured."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same handle model repeats; door hand, door thickness and lock type differ."
+  error_tolerance:
+    value: tolerant
+    confidence: likely
+    note: "A loose or crooked handle is readjusted at handover."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Standard interior doors only; fire and smoke doors are out of scope."
+  reach_height_m:
+    value: { min: 0.9, max: 1.1 }
+    confidence: assumed
+    note: "Handle height on a standard door; not measured."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the finished building."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Screwing only; no drilling or cutting in this step."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Finished, dry rooms."
+  floor:
+    value: level
+    confidence: likely
+    note: "Finished floors, often covered for protection."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Fitted by hand; none of the sources reviewed describes a machine for it."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on the number of doors per floor; not recorded."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; a pilot baseline must measure doors per hour and readjustments."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Handle sets and roses; no datasheet was read."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No tolerance published for handle fitting; it is readjusted at handover."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No screw torque published for the handle sets."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: pass, X1_reach: pass, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "Light, at comfortable height and forgiving; only the mix of door hands and lock types keeps it from being a candidate. Worth a pilot where one handle model repeats over many doors, compared against a joiner's time per door."
+      de: "Leicht, in bequemer Höhe und fehlertolerant; nur der Mix aus Anschlagrichtungen und Schlosstypen hält es vom Kandidaten ab. Einen Pilot wert, wo sich ein Drückermodell über viele Türen wiederholt, gemessen an der Tischlerzeit je Tür."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage]
+capabilities_required: [screwing]
+capabilities_optional: [tool_handoff, autonomous_nav_indoor]
+solution_classes: [humanoid, mobile_manipulator_wheeled, keep_process]
+evidence: []
+pilot:
+  metrics: [unaided_completion_pct, cycle_time_vs_manual]
+  abort_rule:
+    en: "Fewer than 99 % of handle sets fitted without readjustment after 3 months, then change the use case."
+    de: "Weniger als 99 % der Drückergarnituren nach 3 Monaten ohne Nachjustieren montiert, dann Use Case wechseln."
+  scope_hint:
+    en: "One handle model on one floor of standard interior doors; the joiner checks every door."
+    de: "Ein Drückermodell in einem Geschoss mit Standard-Innentüren; der Tischler prüft jede Tür."
+prerequisites:
+  - { en: "Doors hung and adjusted, handle sets staged per door", de: "Türen eingehängt und eingestellt, Garnituren je Tür bereitgelegt" }
+open_questions:
+  - { en: "How many doors per project share one handle model?", de: "Wie viele Türen je Projekt haben dasselbe Drückermodell?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

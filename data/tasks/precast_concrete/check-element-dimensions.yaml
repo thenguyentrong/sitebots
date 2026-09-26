@@ -1,0 +1,124 @@
+schema_version: 1
+id: precast_concrete/check-element-dimensions
+status: published
+setting: precast_concrete
+family: inspection_qa_documentation
+trades: [concrete, qa_surveying]
+title:
+  en: "Check finished elements against their tolerances and record the result"
+  de: "Fertige Elemente gegen ihre Toleranzen prüfen und das Ergebnis dokumentieren"
+summary:
+  en: "Measure length, cross-section, openings and embedded parts of a demoulded element and log them for the factory production control."
+  de: "Länge, Querschnitt, Öffnungen und Einbauteile eines ausgeschalten Elements messen und für die werkseigene Produktionskontrolle protokollieren."
+description:
+  en: "Dimension checks of finished elements are part of the plant's factory production control, at the frequency its handbook sets. Someone measures the element against its drawing, compares the deviations with the permitted values for its size and type, records the result and flags non-conformities. Every element is different; the tools are light."
+  de: "Maßprüfungen fertiger Elemente gehören zur werkseigenen Produktionskontrolle, in der Häufigkeit, die ihr Handbuch festlegt. Jemand misst das Element gegen seinen Plan, vergleicht die Abweichungen mit den zulässigen Werten für Größe und Typ, dokumentiert das Ergebnis und meldet Abweichungen. Jedes Element ist anders; die Werkzeuge sind leicht."
+also_in_settings: []
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 0.2, max: 2 }
+    confidence: assumed
+    note: "Measuring tape, folding rule, laser distance meter, straightedge; the element itself is not moved."
+  variability:
+    value: high
+    confidence: assumed
+    note: "Analyst judgement. Every element has its own drawing, openings and embedded parts."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A deviation that slips through shows at assembly on site as a fit problem; a false alarm costs a re-measure."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "Dimensional check only; structural checks such as concrete strength and cover are separate steps."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Elements lie on the pallet or stand in racks; measure your layout."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Production hall or covered storage."
+  dust:
+    value: { type: cement, zone: controlled }
+    confidence: assumed
+    note: "Curing and finishing halls are workrooms (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "After demoulding."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor along the line."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Assumed measured by hand; if your plant scans elements, the task is partly automated."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Cameras look at elements; if they record people, the data-protection flags apply."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Depends on elements per shift and the test frequency."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Checks per shift follow the factory production control handbook."
+requirements:
+  object_size_m:
+    value: null
+    confidence: assumed
+    note: "Elements from under 1.5 m to beyond 10 m; take yours from the production mix."
+  tolerance_mm:
+    value: 10
+    confidence: confirmed
+    evidence_url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    note: "Length of reinforced-concrete beams and columns of 3 to 6 m: ±10 mm; ±6 mm up to 1.5 m and ±12 mm for 6 to 10 m. Openings and embedded parts are placed to the same deviations (FDB Merkblatt Nr. 6, Bild A.1 and A.2, after DIN 1045-4 and DIN EN 13225)."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Measuring only."
+screen:
+  verdict: marginal
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: pass, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: []
+  better_answer:
+    class: null
+    note:
+      en: "A measuring task with light tools and changing targets; compare a fixed scanning station over the line or a mobile scanner first, because the value is the record, not the walking. A person signs off the non-conformities."
+      de: "Eine Messaufgabe mit leichten Werkzeugen und wechselnden Zielen; zuerst eine feste Scanstation über der Linie oder einen mobilen Scanner vergleichen, denn der Wert liegt im Protokoll, nicht im Gehen. Abweichungen gibt eine Person frei."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality, capacity]
+capabilities_required: [lidar_scan, autonomous_nav_indoor]
+capabilities_optional: [site_inspection]
+solution_classes: [dedicated_machine, mobile_manipulator_wheeled, humanoid]
+evidence:
+  - statement:
+      en: "The FDB guideline on tolerances (09/2023) places dimension checks of finished elements in the plant's factory production control, with reference plans in DIN 1045-4 Annex D, and lists permitted length deviations for reinforced-concrete beams from ±6 mm up to 1.5 m to ±20 mm beyond 30 m."
+      de: "Das FDB-Merkblatt zu Toleranzen (09/2023) ordnet Maßprüfungen fertiger Elemente der werkseigenen Produktionskontrolle zu, mit Referenzplänen in DIN 1045-4 Anhang D, und nennt zulässige Längenabweichungen für Stahlbetonbalken von ±6 mm bis 1,5 m bis ±20 mm über 30 m."
+    url: 'https://www.fdb-fertigteilbau.de/fileadmin/user_upload/Merkblaetter/FDB-Merkblatt_Nr_6_Toleranzen_und_Passungsberechnungen_2023-09.pdf'
+    kind: standard
+    tier: 2
+    date: '2023-09-01'
+    type: claim
+    confidence: likely
+    note: "Trade association guideline, edition 09/2023; the day is not given. Data source for the requirement, not a robot precedent."
+pilot:
+  metrics: [error_rate_vs_human_pct, operator_minutes_per_unit, usable_captures_pct]
+  abort_rule:
+    en: "More deviations missed than by the person on the same elements, or fewer than 95 % of records usable without rework after 3 months: stop."
+    de: "Mehr übersehene Abweichungen als bei der Person an denselben Elementen oder nach 3 Monaten weniger als 95 % ohne Nacharbeit verwendbare Protokolle: stoppen."
+  scope_hint:
+    en: "One element type, length, cross-section and openings, parallel to the manual check."
+    de: "Ein Elementtyp, Länge, Querschnitt und Öffnungen, parallel zur manuellen Prüfung."
+prerequisites:
+  - { en: "Element drawings with the permitted deviations per type", de: "Elementpläne mit den zulässigen Abweichungen je Typ" }
+open_questions:
+  - { en: "Which checks does your production control handbook require per element type and how often?", de: "Welche Prüfungen verlangt Ihr WPK-Handbuch je Elementtyp und wie oft?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

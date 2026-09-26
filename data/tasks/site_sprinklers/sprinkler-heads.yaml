@@ -1,0 +1,135 @@
+schema_version: 1
+id: site_sprinklers/sprinkler-heads
+status: published
+setting: site_sprinklers
+family: assembly_fastening
+trades: [mep_sprinkler]
+title:
+  en: "Install sprinklers and set them to the ceiling"
+  de: "Sprinkler montieren und auf die Decke einstellen"
+summary:
+  en: "Screw each sprinkler into its fitting with the installation wrench, within its torque rating, at the height the ceiling needs."
+  de: "Jeden Sprinkler mit dem Montageschlüssel innerhalb seines Drehmoments in sein Formstück schrauben, in der Höhe, die die Decke verlangt."
+description:
+  en: "Once the pipework is in and the ceiling grid is set, fitters screw the sprinklers into the drops: a glass-bulb sprinkler with a protective cap, turned with the manufacturer's installation wrench, which is rated for a maximum torque, at a drop that puts it within the adjustment range of the cover plate. A cracked bulb, a bent frame or a head outside the range can mean a gap in the fire protection or a leak."
+  de: "Sind die Rohre montiert und das Deckenraster gesetzt, schrauben Monteure die Sprinkler in die Abgänge: ein Glasfass-Sprinkler mit Schutzkappe, gedreht mit dem Montageschlüssel des Herstellers, der für ein Höchstdrehmoment ausgelegt ist, auf einer Abgangshöhe, die ihn in den Verstellbereich der Abdeckplatte bringt. Ein gerissenes Glasfass, ein verbogener Bügel oder ein Sprinkler außerhalb des Bereichs kann eine Lücke im Brandschutz oder ein Leck bedeuten."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '049'
+  atv: null
+  position:
+    en: "Sprinkler: supply, install and set to the ceiling level"
+    de: "Sprinkler liefern, montieren und auf die Deckenebene einstellen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 0.05, max: 0.3 }
+    confidence: assumed
+    note: "A brass sprinkler with its cover assembly; the datasheet gives no mass. Not weighed."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same operation at every head; positions, ceiling types and drop lengths change."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.viking-emea.com/app/uploads/2024/11/092221.pdf'
+    note: "The installation wrench is rated for a maximum of 19 Nm and the cover assembly adjusts only 13 mm; a damaged head or one outside the range may fail in a fire or leak."
+  safety_criticality:
+    value: life_safety
+    confidence: likely
+    evidence_url: 'https://www.viking-emea.com/app/uploads/2024/11/092221.pdf'
+    note: "Automatic fire-extinguishing system; the manufacturer requires installation to its technical data and to NFPA, LPCB, APSAD, VdS or similar standards and the applicable codes."
+  reach_height_m:
+    value: { min: 2.5, max: 4.0 }
+    confidence: assumed
+    evidence_url: 'https://vorschriften.bgn-branchenwissen.de/daten/tr/asr_a1_2/6.htm'
+    note: "At the ceiling. ASR A1.2 sets minimum clear room heights of 2.50 m to 3.25 m; the 4.0 m upper bound is assumed."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Inside the building, after the ceiling grid is set."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Construction dust from the ceiling and painting trades; the protective cap keeps paint and dust off the head."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Dry until the system is filled."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Platforms on finished or raw floors."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    note: "Installed by hand with the manufacturer's wrench."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "Design drawings only."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out at screening."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded."
+requirements:
+  object_size_m:
+    value: { min: 0.076, max: 0.084 }
+    confidence: confirmed
+    evidence_url: 'https://www.viking-emea.com/app/uploads/2024/11/092221.pdf'
+    note: "Concealed pendent sprinkler 76 mm high, cover plates 70 or 84 mm across (Viking VK4921, Form F_092221 Rev 06, April 2024)."
+  tolerance_mm:
+    value: 13
+    confidence: confirmed
+    evidence_url: 'https://www.viking-emea.com/app/uploads/2024/11/092221.pdf'
+    note: "The cover assembly provides up to 13 mm of vertical adjustment; the installation drawing gives 50 mm minimum and 64 mm maximum from the fitting to the ceiling surface."
+  force_n:
+    value: null
+    confidence: likely
+    evidence_url: 'https://www.viking-emea.com/app/uploads/2024/11/092221.pdf'
+    note: "The limit is a torque, not a force: the installation wrench is rated for a maximum of 19 Nm (14 ft-lbs)."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the installation with the sprinkler fitters and the manufacturer's wrench. What can be supported is the record: the position, type and temperature rating of every head, photographed against the design."
+      de: "Die Montage bei den Sprinklermonteuren mit dem Herstellerschlüssel lassen. Unterstützen lässt sich die Dokumentation: Lage, Typ und Auslösetemperatur jedes Sprinklers, fotografiert und mit der Planung abgeglichen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [quality]
+capabilities_required: [screwing]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "Viking's technical data for the VK4921 concealed pendent sprinkler (April 2024) limits the installation wrench to a maximum torque of 14 ft-lbs (19 Nm), gives up to 13 mm of vertical adjustment for the cover assembly, and requires installation to Viking's technical data and to the standards of NFPA, LPCB, APSAD, VdS or similar organisations and the applicable codes."
+      de: "Die technischen Daten von Viking zum verdeckten Hängesprinkler VK4921 (April 2024) begrenzen den Montageschlüssel auf ein Drehmoment von höchstens 14 ft-lbs (19 Nm), geben bis zu 13 mm Höhenverstellung für die Abdeckung an und verlangen die Montage nach den technischen Daten von Viking und den Regeln von NFPA, LPCB, APSAD, VdS oder ähnlichen Organisationen sowie den geltenden Vorschriften."
+    url: 'https://www.viking-emea.com/app/uploads/2024/11/092221.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Form F_092221 Rev 06, April 2024, dated to the first of the month."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "None for the installation; a photo record of installed heads against the design can be piloted separately."
+    de: "Keiner für die Montage; eine Fotodokumentation der montierten Sprinkler gegen die Planung lässt sich getrennt erproben."
+prerequisites: []
+open_questions:
+  - { en: "How are head positions, types and temperature ratings recorded for acceptance today?", de: "Wie werden Lage, Typ und Auslösetemperatur der Sprinkler heute für die Abnahme dokumentiert?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'

@@ -4,6 +4,7 @@ test.describe.configure({ timeout: 120_000 });
 async function viewer(page: Page, url = '/robots/deep-robotics/lite3') {
   await page.addInitScript(() => localStorage.setItem('sitebots.scale', '0'));
   await page.goto(url);
+  await page.getByRole('tab', { name: '3D model' }).or(page.getByRole('button', { name: 'Explore in 3D' })).first().click();
   const view = page.locator('[data-robot-viewer]');
   await expect(view).toHaveAttribute('data-ready', 'true', { timeout: 90_000 });
   await expect(view.locator('canvas')).toHaveAttribute('data-camera-ready', 'true');
@@ -68,6 +69,7 @@ test('a failed model can be retried without losing the robot page', async ({ pag
   let fail = true;
   await page.route(/\.glb(?:\?.*)?$/, (route) => fail ? route.abort() : route.continue());
   await page.goto('/robots/deep-robotics/lite3');
+  await page.getByRole('tab', { name: '3D model' }).or(page.getByRole('button', { name: 'Explore in 3D' })).first().click();
   const retry = page.getByRole('button', { name: 'Retry 3D model' });
   await expect(retry).toBeVisible();
   await expect(page.getByRole('heading', { name: /Lite3/ }).first()).toBeVisible();

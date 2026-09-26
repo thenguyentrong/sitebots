@@ -1,0 +1,126 @@
+schema_version: 1
+id: steel_fabrication/load-beam-drill-saw-line
+status: published
+setting: steel_fabrication
+family: machine_tending
+trades: [steel, logistics]
+title:
+  en: "Load beams onto the drill and saw line and take the cut parts off"
+  de: "Träger auf die Bohr-Säge-Linie legen und die Zuschnitte abnehmen"
+summary:
+  en: "Bring full-length sections to the infeed conveyor of the CNC drill and saw line and clear the finished parts from the outfeed."
+  de: "Profile in Lagerlänge auf den Zulauf der CNC-Bohr-Säge-Linie bringen und die fertigen Teile vom Ablauf räumen."
+description:
+  en: "Structural sections arrive in long bars, go through drilling, sawing and marking on a CNC line, and leave as cut parts sorted for assembly. Between the store and the line they move by crane, cross transports and roller conveyors; lines with automatic infeed and outfeed run a batch unattended."
+  de: "Stahlprofile kommen in langen Stäben, laufen auf einer CNC-Linie durch Bohren, Sägen und Anreißen und verlassen sie als nach Baugruppen sortierte Zuschnitte. Zwischen Lager und Linie bewegen sie sich per Kran, Querförderer und Rollenbahn; Linien mit automatischem Zu- und Ablauf arbeiten eine Charge unbeaufsichtigt ab."
+also_in_settings: []
+derived_from: null
+attributes:
+  object_mass_kg:
+    value: { min: 43, max: 518 }
+    confidence: likely
+    evidence_url: 'https://www.limtrade.de/hea-200'
+    note: "An HEA 200 weighs 43.2 kg/m (distributor data): 43 kg per metre and 518 kg as a 12 m bar; the same page offers lengths up to 18 m, and heavier sections weigh more."
+  variability:
+    value: low
+    confidence: assumed
+    note: "Analyst judgement. The move repeats: section onto the infeed, part off the outfeed."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "A wrongly fed bar is caught by the line's measuring system or at the part check; collisions damage the conveyors."
+  safety_criticality:
+    value: none
+    confidence: assumed
+    note: "Handling only; the structural checks sit at fabrication and assembly."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "Not a reach task: sections lie on conveyors and cross transports."
+  environment:
+    value: indoor
+    confidence: likely
+    note: "Fabrication hall."
+  dust:
+    value: { type: mixed, zone: controlled }
+    confidence: assumed
+    note: "Sawing and drilling produce chips and some dust at the machine; the line area is a workroom (setting note)."
+  wet:
+    value: dry
+    confidence: likely
+    note: "Indoor hall; cutting fluid stays at the machine."
+  floor:
+    value: level
+    confidence: likely
+    note: "Industrial floor."
+  incumbent_automation:
+    value: { status: full, machine_classes: [cnc_steel_beam_line, overhead_crane] }
+    confidence: likely
+    evidence_url: 'https://www.voortman.net/en/products/back-to-back'
+    note: "Voortman drill-saw lines load and unload through cross transports and roller conveyors; light curtains allow loading while the machine runs, and with the gripper truck a run can process overnight and sort onto the outfeed cross transports."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people needed."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant once the line feeds itself."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Tonnes per shift and crane minutes per bar are the numbers to compare."
+requirements:
+  object_size_m:
+    value: { min: 1, max: 18 }
+    confidence: likely
+    evidence_url: 'https://www.limtrade.de/hea-200'
+    note: "Bars up to 18 m from the distributor; cut parts from about a metre."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The line measures the bar position itself with measuring wheels (Voortman); loading has no published ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "Crane and conveyors move the load."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: fail, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: pass, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T4_variability]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Automatic infeed and outfeed with cross transports and a buffer, from the line supplier. The person stays at the crane and the part check."
+      de: "Automatischer Zu- und Ablauf mit Querförderern und Puffer vom Linienhersteller. Die Person bleibt am Kran und bei der Teilekontrolle."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [capacity, exposure]
+capabilities_required: [machine_tending, carry_payload]
+capabilities_optional: []
+solution_classes: [dedicated_machine, gantry]
+evidence:
+  - statement:
+      en: "Voortman's drill-saw lines use outfeed cross transports to sort finished products; gated light curtains allow loading and unloading while the machines continue processing, and with the gripper truck a production run can be started at night and found processed and sorted in the morning."
+      de: "Die Bohr-Säge-Linien von Voortman sortieren fertige Teile über Ablauf-Querförderer; Lichtgitter erlauben das Be- und Entladen, während die Maschinen weiterarbeiten, und mit dem Greiferwagen lässt sich ein Auftrag abends starten und morgens bearbeitet und sortiert abholen."
+    url: 'https://www.voortman.net/en/products/back-to-back'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: likely
+    note: "Undated product page; dated with the check date. Evidence for the dedicated machine."
+pilot:
+  metrics: [uptime_vs_shift_pct, operator_minutes_per_unit]
+  abort_rule:
+    en: "Not a humanoid pilot. Compare crane minutes per tonne before and after an automatic infeed and outfeed."
+    de: "Kein Humanoiden-Pilot. Kranminuten je Tonne vor und nach einem automatischen Zu- und Ablauf vergleichen."
+  scope_hint:
+    en: "One line, one shift, the main section sizes."
+    de: "Eine Linie, eine Schicht, die Hauptprofile."
+prerequisites:
+  - { en: "Section mix and bar lengths per month", de: "Profilmix und Stablängen je Monat" }
+open_questions:
+  - { en: "Is the line waiting for material, or the crane for the line?", de: "Wartet die Linie auf Material oder der Kran auf die Linie?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-09-25'

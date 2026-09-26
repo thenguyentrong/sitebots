@@ -1,0 +1,142 @@
+schema_version: 1
+id: site_ventilated_facade/insulation-fixing
+status: published
+setting: site_ventilated_facade
+family: assembly_fastening
+trades: [insulation, facade_roofing]
+title:
+  en: "Fix mineral-wool insulation boards behind the cladding"
+  de: "Mineralwolle-Dämmplatten hinter der Bekleidung befestigen"
+summary:
+  en: "Set the facade insulation boards tightly butted in bond between the brackets and fix them with insulation holders into the wall."
+  de: "Die Fassadendämmplatten dicht gestoßen im Verband zwischen den Konsolen verlegen und mit Dämmstoffhaltern in der Wand befestigen."
+description:
+  en: "ROCKWOOL's Fixrock 035 is a non-combustible stone-wool board of 1000 × 625 mm, 60 to 240 mm thick, for rainscreen facades. The boards go on permanently and without gaps, tightly butted in bond so that no voids form between wall and insulation. They are fixed with insulation holders, on average five per square metre, which only secure their position; from 100 mm thickness a single holder or two per board can be enough, after agreement with the manufacturer and the client. The boards are stored and installed dry, at 5 °C or more."
+  de: "Die ROCKWOOL Fixrock 035 ist eine nichtbrennbare Steinwolle-Platte von 1000 × 625 mm und 60 bis 240 mm Dicke für hinterlüftete Fassaden. Die Platten werden dauerhaft und lückenlos angebracht, dicht gestoßen im Verband, sodass zwischen Wand und Dämmung keine Hohlräume entstehen. Befestigt werden sie mit Dämmstoffhaltern, im Mittel fünf je Quadratmeter, die nur der Lagesicherung dienen; ab 100 mm Dicke können nach Abstimmung mit Hersteller und Bauherrn ein bis zwei Halter je Platte genügen. Gelagert und eingebaut wird trocken, bei mindestens 5 °C."
+also_in_settings: [site_etics]
+derived_from: null
+lv:
+  lb: '038'
+  atv: "DIN 18351"
+  position:
+    en: "Thermal insulation of mineral-wool facade boards behind rainscreen cladding, mechanically fixed"
+    de: "Wärmedämmung aus Mineralwolle-Fassadendämmplatten hinter vorgehängter hinterlüfteter Bekleidung, mechanisch befestigt"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    note: "The datasheet gives format and thicknesses but no density or weight, so the board mass is not established."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Full boards in bond on the open wall, cut pieces around every bracket, opening and building edge."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://brandportal.rockwool.com/original/gallery/39052/files/original/70a07aac-b7e9-4de5-863b-a7fef4c5b9ff.pdf'
+    note: "The boards must sit permanently, without gaps and tightly butted so that no voids form behind them (ROCKWOOL datasheet); a gap is reworked before the cladding closes the facade."
+  safety_criticality:
+    value: none
+    confidence: likely
+    evidence_url: 'https://brandportal.rockwool.com/original/gallery/39052/files/original/70a07aac-b7e9-4de5-863b-a7fef4c5b9ff.pdf'
+    note: "The insulation holders only secure the boards' position (ROCKWOOL datasheet); the load-bearing parts of the facade are the brackets and rails."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "From the scaffold deck to just above head height; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "On the scaffold, before the cladding goes on."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Cutting stone wool and drilling for the holders raise dust; outdoors, no classified zone."
+  wet:
+    value: damp
+    confidence: likely
+    note: "Outdoors; the boards have to be stored and installed dry (ROCKWOOL datasheet)."
+  floor:
+    value: level
+    confidence: likely
+    note: "Scaffold deck: level but narrow."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: assumed
+    note: "Boards are cut, set and fixed by hand; no machine for this step is recorded."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; about five holders per square metre set the pace (ROCKWOOL datasheet)."
+requirements:
+  object_size_m:
+    value: { min: 1.0, max: 1.0 }
+    confidence: confirmed
+    evidence_url: 'https://brandportal.rockwool.com/original/gallery/39052/files/original/70a07aac-b7e9-4de5-863b-a7fef4c5b9ff.pdf'
+    note: "Board format 1000 × 625 mm, 60 to 240 mm thick."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "The requirement is gap-free, tightly butted boards; no millimetre value is stated."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for setting the holders."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "The work is outdoors on the scaffold, where no humanoid publishes a usable ingress rating, and every board has to be cut and fitted around brackets. The installer stays; single-holder fixing, where the manufacturer allows it, cuts the drilling."
+      de: "Gearbeitet wird im Freien auf dem Gerüst, wofür kein Humanoide eine brauchbare Schutzart veröffentlicht, und jede Platte muss um Konsolen herum zugeschnitten und eingepasst werden. Der Monteur bleibt; die Ein-Dübel-Befestigung, wo der Hersteller sie zulässt, spart Bohrungen."
+  screened_at: '2026-09-25'
+  screened_by: sitebots
+value_drivers: [skills_shortage]
+capabilities_required: [drilling, carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process]
+evidence:
+  - statement:
+      en: "ROCKWOOL's Fixrock 035 datasheet: stone-wool facade board of 1000 × 625 mm, 60 to 240 mm thick, fixed permanently and without gaps, tightly butted in bond, with on average five insulation holders per square metre that only secure its position; single-holder fixing from 100 mm thickness after consultation; store and install dry, at 5 °C or more."
+      de: "Datenblatt ROCKWOOL Fixrock 035: Steinwolle-Fassadendämmplatte 1000 × 625 mm, 60 bis 240 mm dick, dauerhaft und lückenlos, dicht gestoßen im Verband angebracht, mit im Mittel fünf Dämmstoffhaltern je Quadratmeter, die nur der Lagesicherung dienen; Ein-Dübel-Befestigung ab 100 mm Dicke nach Beratung; trocken lagern und einbauen, bei mindestens 5 °C."
+    url: 'https://brandportal.rockwool.com/original/gallery/39052/files/original/70a07aac-b7e9-4de5-863b-a7fef4c5b9ff.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2022-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Technical datasheet, edition 07/2022; the day is not stated."
+  - statement:
+      en: "ROCKWOOL: according to DIN 18516, the boards of a rainscreen facade are usually fixed mechanically with five anchors per square metre; where holders cannot be used, the boards are bonded."
+      de: "ROCKWOOL: Gemäß DIN 18516 werden die Dämmplatten einer hinterlüfteten Fassade in der Regel mit fünf Dübeln pro Quadratmeter mechanisch fixiert; ist ein Einsatz von Dämmstoffhaltern nicht möglich, werden sie verklebt."
+    url: 'https://www.rockwool.com/de/anwendungen/fassadendaemmung/vorgehaengte-hinterlueftete-fassade/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-25'
+    type: claim
+    confidence: confirmed
+    note: "Undated application page; the date is the check date."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the drilling is the pain: holders and minutes per square metre with standard fixing against single-holder fixing, on one elevation."
+    de: "Falls das Bohren das Problem ist: Halter und Minuten je Quadratmeter bei Standardbefestigung gegenüber Ein-Dübel-Befestigung, an einer Fassadenseite."
+prerequisites: []
+open_questions:
+  - { en: "Is the wall suitable for anchors, or do the boards have to be bonded?", de: "Ist die Wand für Dübel geeignet, oder müssen die Platten geklebt werden?" }
+compliance_flags: []
+sources_reviewed_at: '2026-09-25'
