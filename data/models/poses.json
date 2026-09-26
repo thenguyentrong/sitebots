@@ -249,8 +249,10 @@
       },
       "presets": {},
       "rest": {
-        "right_shoulder_x_joint": 0.349066,
-        "left_shoulder_x_joint": -0.349066
+        "left_elbow_joint": 1.4,
+        "right_elbow_joint": 1.4,
+        "left_shoulder_x_joint": 0.1,
+        "right_shoulder_x_joint": -0.1
       }
     },
     "unitree/g1": {
@@ -268,25 +270,22 @@
     },
     "unitree/h2": {
       "rest": {
-        "left_shoulder_pitch_joint": 1,
-        "left_shoulder_roll_joint": -0.4,
-        "left_wrist_roll_joint": 0.4,
-        "right_shoulder_pitch_joint": 1,
-        "right_shoulder_roll_joint": 0.4,
-        "right_wrist_roll_joint": -0.4
+        "left_shoulder_roll_joint": 0.12,
+        "right_shoulder_roll_joint": -0.12,
+        "left_elbow_joint": 1.35,
+        "right_elbow_joint": 1.35
       },
       "family": "humanoid"
     },
     "unitree/h2#plus": {
       "rest": {
-        "left_shoulder_pitch_joint": 1,
-        "left_wrist_roll_joint": 0.4,
-        "left_wrist_yaw_joint": -0.4,
+        "left_shoulder_roll_joint": 0.12,
+        "right_shoulder_roll_joint": -0.12,
+        "left_elbow_joint": 1.35,
+        "right_elbow_joint": 1.35,
         "left_pinky_CMC": 0.2618,
         "left_pinky_MCP_FE": 0.4,
-        "left_pinky_PIP": 0.2,
-        "right_shoulder_pitch_joint": 1,
-        "right_wrist_roll_joint": 0.4
+        "left_pinky_PIP": 0.2
       },
       "family": "humanoid"
     },
@@ -312,18 +311,8 @@
     },
     "booster/t1": {
       "rest": {
-        "left_shoulder_pitch_joint": 1,
         "left_shoulder_roll_joint": -1.4,
-        "left_elbow_pitch_joint": 0.4,
-        "left_elbow_yaw_joint": -1,
-        "left_wrist_pitch_joint": -0.7,
-        "left_wrist_yaw_joint": -1.4,
-        "right_shoulder_pitch_joint": 1,
-        "right_shoulder_roll_joint": 1.4,
-        "right_elbow_pitch_joint": 0.4,
-        "right_elbow_yaw_joint": 1,
-        "right_wrist_pitch_joint": -0.7,
-        "right_wrist_yaw_joint": 1.4
+        "right_shoulder_roll_joint": 1.4
       },
       "family": "humanoid"
     },
@@ -336,12 +325,10 @@
     },
     "unitree/r1": {
       "rest": {
-        "left_shoulder_pitch_joint": 1,
-        "left_elbow_joint": -0.2,
-        "left_wrist_roll_joint": 0.4,
-        "right_shoulder_pitch_joint": 1,
-        "right_elbow_joint": -0.2,
-        "right_wrist_roll_joint": -0.4
+        "left_elbow_joint": 1.35,
+        "right_elbow_joint": 1.35,
+        "left_shoulder_roll_joint": 0.12,
+        "right_shoulder_roll_joint": -0.12
       },
       "family": "humanoid"
     },

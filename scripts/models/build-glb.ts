@@ -24,9 +24,17 @@ export type BuildResult = {
   stats: { trianglesBefore: number; trianglesAfter: number; bytes: number; links: number; joints: number; modelHeightM: number; perLink: { link: string; before: number; after: number }[] };
 };
 
-const MIN_LINK_TRIS = 300;
-const MAX_LINK_TRIS = 6000;
+/**
+ * Detail: the per-robot budgets in sources.json were set for the first cut
+ * (about 7 % of the source triangles for the G1). DETAIL scales them; the
+ * simplifier error and the per-link ceiling follow, so curved covers stay
+ * round and fingers keep their joints. MODEL_DETAIL overrides it for a test.
+ */
+const DETAIL = Number(process.env.MODEL_DETAIL ?? 4);
+const SIMPLIFY_ERROR = Number(process.env.MODEL_ERROR ?? 0.01);
 const MAX_BYTES = 6 * 1024 * 1024;
+/** Above this a build is redone with proportionally less detail, so the whole set stays deployable. */
+const TARGET_BYTES = 3 * 1024 * 1024;
 
 function hexToRgba(hex: string): Rgba {
   const h = hex.replace('#', '');
@@ -66,7 +74,9 @@ function decimate(p: Primitive, targetTris: number, error: number): Primitive {
   return { ...p, positions, normals: new Float32Array(0), indices };
 }
 
-export async function buildGlb(model: UrdfModel, src: ModelSource, log: (m: string) => void): Promise<BuildResult> {
+export async function buildGlb(model: UrdfModel, src: ModelSource, log: (m: string) => void, detail = DETAIL): Promise<BuildResult> {
+  const MIN_LINK_TRIS = 300 * Math.min(detail, 4);
+  const MAX_LINK_TRIS = 12000 * detail;
   await MeshoptEncoder.ready;
   await MeshoptSimplifier.ready;
 
@@ -106,7 +116,7 @@ export async function buildGlb(model: UrdfModel, src: ModelSource, log: (m: stri
     if (prims.length) loaded.set(link.name, prims);
     trianglesBefore += triangleCount(prims);
   }
-  const globalRatio = Math.min(1, src.targetTriangles / Math.max(1, trianglesBefore));
+  const globalRatio = Math.min(1, (src.targetTriangles * detail) / Math.max(1, trianglesBefore));
 
   // Nodes: DFS from the root link.
   const nodes = new Map<string, GltfNode>();
@@ -162,7 +172,7 @@ export async function buildGlb(model: UrdfModel, src: ModelSource, log: (m: stri
     for (const raw of prims) {
       const tris = raw.indices.length / 3;
       const share = before ? tris / before : 1;
-      const p = computeNormals(decimate(raw, Math.max(MIN_LINK_TRIS * share, linkTarget * share), 0.05));
+      const p = computeNormals(decimate(raw, Math.max(MIN_LINK_TRIS * share, linkTarget * share), SIMPLIFY_ERROR));
       const buffer = doc.getRoot().listBuffers()[0];
       const position = doc.createAccessor().setType('VEC3').setArray(p.positions).setBuffer(buffer);
       const normal = doc.createAccessor().setType('VEC3').setArray(p.normals).setBuffer(buffer);
@@ -188,6 +198,11 @@ export async function buildGlb(model: UrdfModel, src: ModelSource, log: (m: stri
   const io = new NodeIO().registerExtensions([EXTMeshoptCompression, KHRMeshQuantization]).registerDependencies({ 'meshopt.encoder': MeshoptEncoder });
   const glb = await io.writeBinary(doc);
 
+  if (glb.byteLength > TARGET_BYTES && detail > 1) {
+    const next = Math.max(1, Math.floor(detail * (TARGET_BYTES / glb.byteLength) * 0.95 * 100) / 100);
+    log(`${(glb.byteLength / 1024).toFixed(0)} KB at detail ${detail} is above ${TARGET_BYTES / 1024} KB; rebuilding at detail ${next}`);
+    return buildGlb(model, src, log, next);
+  }
   const modelHeightM = Number.isFinite(maxZ - minZ) ? Math.round((maxZ - minZ) * 100) / 100 : 0;
   log(`triangles ${trianglesBefore} → ${Math.round(trianglesAfter)}, ${(glb.byteLength / 1024).toFixed(0)} KB, height ${modelHeightM} m (published ${src.heightM} m)`);
   if (glb.byteLength > MAX_BYTES) throw new Error(`GLB is ${(glb.byteLength / 1e6).toFixed(1)} MB, above the 6 MB limit — lower targetTriangles`);
