@@ -7,8 +7,9 @@ import type { FormFactor } from '@/lib/spec/enums';
 import type { AvailabilityCurrent, PriceCurrent, RobotCard, RobotSource, SpecConflict } from '@/lib/spec/types';
 import { coerceRows } from './coerce';
 
-/** `pictures: 'with'` (the default) lists only robots that have a real picture — a render of the maker's geometry, a photograph or the maker's own preview. */
-export type CardFilter = { formFactor?: FormFactor; formFactors?: readonly FormFactor[]; q?: string; limit?: number; pictures?: 'with' | 'all' };
+/** `pictures: 'with'` (the default) lists only robots that have a real picture — a render of the maker's geometry, a photograph or the maker's own preview.
+ * `withPictureIds` are configurations whose pictures come from elsewhere, the Germany market research. */
+export type CardFilter = { formFactor?: FormFactor; formFactors?: readonly FormFactor[]; q?: string; limit?: number; pictures?: 'with' | 'all'; withPictureIds?: string[] };
 
 /**
  * Cards for the catalogue grid. Best-documented robots first: verified values,
@@ -24,13 +25,13 @@ export async function listRobotCards(filter: CardFilter = {}): Promise<{ robots:
     `select *, count(*) over () as total_count from robot_cards
      where ($1::text is null or form_factor = $1)
        and ($2::text is null or name ilike $2 or manufacturer_name ilike $2 or model_slug ilike $2)
-       and ($4::boolean or image_url is not null)
+       and ($4::boolean or image_url is not null or id::text = any($8::text[]))
        and manufacturer_slug = any($5::text[])
        and model_slug !~* $6
        and ($7::text[] is null or form_factor = any($7::text[]))
      order by coalesce(array_length(verified_fields, 1), 0) desc, completeness desc, manufacturer_name, name, variant
      limit $3`,
-    [filter.formFactor ?? null, q, filter.limit ?? 1000, all, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN, formFactors],
+    [filter.formFactor ?? null, q, filter.limit ?? 1000, all, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN, formFactors, filter.withPictureIds ?? []],
   );
   const total = rows.length ? Number(rows[0].total_count) : 0;
   // How many the picture rule keeps off the page, so the page can say so instead of silently shrinking.
@@ -41,10 +42,11 @@ export async function listRobotCards(filter: CardFilter = {}): Promise<{ robots:
          where ($1::text is null or form_factor = $1)
            and ($2::text is null or name ilike $2 or manufacturer_name ilike $2 or model_slug ilike $2)
            and image_url is null
+           and not (id::text = any($6::text[]))
            and manufacturer_slug = any($3::text[])
            and model_slug !~* $4
            and ($5::text[] is null or form_factor = any($5::text[]))`,
-        [filter.formFactor ?? null, q, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN, formFactors],
+        [filter.formFactor ?? null, q, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN, formFactors, filter.withPictureIds ?? []],
       );
   const hidden = hiddenRows.length ? Number(hiddenRows[0].n) : 0;
   return { robots: coerceRows<RobotCard>(rows), total, hidden };

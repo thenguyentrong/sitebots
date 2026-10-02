@@ -1,6 +1,6 @@
 import { BuyingPanel } from '@/components/robot/BuyingPanel';
 import { MarketBuyBox } from '@/components/market/MarketBuyBox';
-import { GermanySection } from '@/components/market/GermanyBuy';
+import { GermanySection, JobsSection, TrackRecordSection } from '@/components/market/GermanyBuy';
 import { marketForCatalogue } from '@/lib/market/links';
 import { marketImagesFor } from '@/lib/market/tiles';
 import type { Metadata } from 'next';
@@ -28,6 +28,7 @@ import { publicMetadata } from '@/lib/seo';
 import { FORM_FACTOR_LABEL, formatSpec, pickPayloadKey, qualifierLabel, STATUS_LABEL } from '@/lib/spec/display';
 import { fieldDef } from '@/lib/spec/fields';
 import type { RobotCard, Specs } from '@/lib/spec/types';
+import { cn } from '@/lib/utils';
 
 export const dynamic = 'force-dynamic';
 
@@ -90,6 +91,43 @@ function keyFigures(r: RobotCard, specs: Specs) {
   });
 }
 
+/** The key numbers that are published, as label and answer rows; the missing ones named in one line. */
+function KeyFacts({ figures, total, verified }: { figures: ReturnType<typeof keyFigures>; total: number; verified: number }) {
+  const known = figures.filter((f) => f.spec);
+  const missing = figures.filter((f) => !f.spec);
+  return (
+    <section className="card overflow-hidden" aria-labelledby="facts-title">
+      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
+        <h2 id="facts-title" className="text-sm font-semibold">Key facts</h2>
+        <a href="#specs" className="num text-xs text-muted underline underline-offset-2 hover:text-foreground">
+          {total} published value{total === 1 ? '' : 's'} · {verified} verified
+        </a>
+      </header>
+      {known.length ? (
+        <dl className="divide-y divide-edge/60">
+          {known.map((f) => (
+            <div key={f.label} className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 px-5 py-2.5 text-sm">
+              <dt className="text-muted">
+                {f.label}
+                {f.qualifier ? <span className="text-faint"> · {f.qualifier.split(',')[0]}</span> : null}
+              </dt>
+              <dd className="flex items-center gap-3">
+                <span className="num font-semibold">{formatSpec(f.key, f.spec!)}</span>
+                <EvidenceBadge trust={f.spec!.trust} />
+              </dd>
+            </div>
+          ))}
+        </dl>
+      ) : null}
+      {missing.length ? (
+        <p className={cn('px-5 py-3 text-xs text-muted', known.length && 'border-t border-edge/70')}>
+          Not published: {missing.map((f) => f.label).join(', ')}.
+        </p>
+      ) : null}
+    </section>
+  );
+}
+
 export default async function RobotPage({ params, searchParams }: { params: Params; searchParams: Search }) {
   const { manufacturer, slug } = await params;
   const { variant, render } = await searchParams;
@@ -99,7 +137,7 @@ export default async function RobotPage({ params, searchParams }: { params: Para
   // scripts/assets/render-models.ts to make the card images.
   const compact = render === '1';
 
-  const { robot, image, images, variants, prices, availability, sources, conflicts } = detail;
+  const { robot, images, variants, prices, availability, sources, conflicts } = detail;
   const market = marketForCatalogue(manufacturer, slug);
   // The German pictures were checked by eye, so they lead the gallery.
   const gallery = [...marketImagesFor(market, variants, robot.id, images.map((image) => image.url)), ...images];
@@ -108,15 +146,34 @@ export default async function RobotPage({ params, searchParams }: { params: Para
   const figures = keyFigures(robot, specs);
   const verified = robot.verified_fields?.length ?? 0;
   const total = Object.keys(specs).length;
+  const listed = isPublicRobot(manufacturer, slug);
 
   const path = `${base}${robot.variant === 'base' ? '' : `?variant=${robot.variant}`}`;
   const profile = profileFor({ card: robot, prices, availability });
   const model = getRobotModel(`${manufacturer}/${slug}`, robot.variant);
   const presets = model ? resolvePresets(`${manufacturer}/${slug}${robot.variant === 'base' ? '' : `#${robot.variant}`}`, robot.form_factor, model.joints.joints) : {};
+  const hasMedia = Boolean(model) || gallery.length > 0;
+  // Where German sellers are listed, prices that only third-party databases report fold away; a
+  // maker's store price or delivery status stays open.
+  const onlyReported = market.length > 0 && prices.every((p) => p.tier > 2) && availability.every((a) => a.source_tier == null || a.source_tier > 2);
+  const evidence = market.some((record) => record.evidence.length);
+  const glance = [
+    market.length ? <MarketBuyBox key="germany" robots={market} /> : null,
+    <KeyFacts key="facts" figures={figures} total={total} verified={verified} />,
+  ];
+  // The sections below, in page order, for the links under the glance.
+  const sections: [string, string][] = [];
+  if (market.length) sections.push(['germany', 'Buy in Germany']);
+  sections.push(['prices', 'Price and delivery']);
+  if (market.length) sections.push(['jobs', 'Jobs on the map']);
+  if (evidence) sections.push(['track-record', 'Where it has worked']);
+  sections.push(['specs', 'Specifications'], ['parts', 'Parts'], ['profile', 'Evidence profile']);
+  if (conflicts.length) sections.push(['conflicts', 'Sources disagree']);
+  sections.push(['sources', 'Sources']);
 
   return (
     <>
-      {isPublicRobot(manufacturer, slug) ? <JsonLd data={productJsonLd(robot, prices, availability, path)} /> : null}
+      {listed ? <JsonLd data={productJsonLd(robot, prices, availability, path)} /> : null}
       <JsonLd
         data={breadcrumbJsonLd([
           { name: 'Robots', path: '/robots' },
@@ -167,91 +224,110 @@ export default async function RobotPage({ params, searchParams }: { params: Para
       </div>
 
       <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
-        {!isPublicRobot(manufacturer, slug) ? <p className="card mb-6 p-4 text-sm text-muted">Reference only · This record has no named, reviewed current or upcoming commercial product offering. This robot is hidden from the supplier catalogue and matcher. <Link href={`/brands/${manufacturer}`} className="underline underline-offset-4">View manufacturer review</Link></p> : null}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
-          <div className="space-y-6">
+        {!listed ? <p className="card mb-6 p-4 text-sm text-muted">Reference only · This record has no named, reviewed current or upcoming commercial product offering. This robot is hidden from the supplier catalogue and matcher. <Link href={`/brands/${manufacturer}`} className="underline underline-offset-4">View manufacturer review</Link></p> : null}
+
+        {/* At a glance: the pictures, how to get it in Germany and the numbers that are published. */}
+        {hasMedia ? (
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
             <RobotMedia model={model} presets={presets} images={gallery} name={robot.name} formFactor={robot.form_factor} compact={compact} />
+            <div className="space-y-6">{glance}</div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">{glance}</div>
+        )}
 
-            <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {figures.map((f) => (
-                <div key={f.label} className="card p-4">
-                  <dt className="label">
-                    {f.label}
-                    {f.qualifier ? <span> · {f.qualifier.split(',')[0]}</span> : null}
-                  </dt>
-                  <dd className="num mt-1.5 text-xl font-semibold tracking-tight">
-                    {f.spec ? formatSpec(f.key, f.spec) : <span className="text-sm font-normal text-faint">not published</span>}
-                  </dd>
-                  <dd className="mt-2">
-                    <EvidenceBadge trust={f.spec ? f.spec.trust : 'unknown'} />
-                  </dd>
+        {compact ? null : (
+          <>
+            <nav aria-label="On this page" className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-edge/70 pt-4 text-sm">
+              <span className="label">On this page</span>
+              {sections.map(([id, label]) => (
+                <a key={id} href={'#' + id} className="text-muted underline-offset-4 transition hover:text-foreground hover:underline">
+                  {label}
+                </a>
+              ))}
+            </nav>
+
+            <GermanySection robots={market} pictures={!hasMedia} />
+            <div id="prices" className="mt-6 scroll-mt-6 space-y-6">
+              {onlyReported ? (
+                <details className="group">
+                  <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-3 gap-y-1 text-sm [&::-webkit-details-marker]:hidden">
+                    <span className="font-medium">Price and delivery outside Germany</span>
+                    <span className="text-xs text-faint">{prices.length ? prices.length + ' reported by databases, not by a seller' : 'nothing published'}</span>
+                    <span className="text-xs font-medium underline underline-offset-2 group-open:hidden">Show</span>
+                    <span className="hidden text-xs font-medium underline underline-offset-2 group-open:inline">Hide</span>
+                  </summary>
+                  <div className="mt-4">
+                    <PricePanel prices={prices} availability={availability} />
+                  </div>
+                </details>
+              ) : (
+                <PricePanel prices={prices} availability={availability} />
+              )}
+              {/* Market research replaces the older seller notes wherever it covers this robot. */}
+              {!market.length && listed ? <BuyingPanel manufacturer={manufacturer} model={slug} variant={robot.variant} prices={prices} /> : null}
+            </div>
+            {market.length ? (
+              <div className={cn('mt-6 grid grid-cols-1 items-start gap-6', evidence && 'lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]')}>
+                <JobsSection robots={market} />
+                <TrackRecordSection robots={market} />
+              </div>
+            ) : null}
+
+            <div className="mt-6 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
+              <section id="specs" className="card scroll-mt-6 overflow-hidden" aria-labelledby="specs-title">
+                <header className="flex items-center justify-between gap-3 border-b border-edge/70 px-4 py-3.5">
+                  <h2 id="specs-title" className="text-sm font-semibold">Specifications</h2>
+                  <span className="num text-xs text-faint">
+                    {total} value{total === 1 ? '' : 's'} · {verified} verified
+                  </span>
+                </header>
+                <div className="pb-3">
+                  <SpecTable specs={specs} formFactor={robot.form_factor} unpublishedAsList />
                 </div>
-              ))}
-            </dl>
-
-            {market.length ? <MarketBuyBox robots={market} /> : null}
-            <PricePanel prices={prices} availability={availability} />
-            {/* Market research replaces the older seller notes wherever it covers this robot. */}
-            {!market.length && isPublicRobot(manufacturer, slug) ? <BuyingPanel manufacturer={manufacturer} model={slug} variant={robot.variant} prices={prices} /> : null}
-          </div>
-
-          <section className="card overflow-hidden self-start">
-            <header className="flex items-center justify-between gap-3 border-b border-edge/70 px-4 py-3.5">
-              <h2 className="text-sm font-semibold">Specifications</h2>
-              <span className="num text-xs text-faint">
-                {total} value{total === 1 ? '' : 's'} · {verified} verified
-              </span>
-            </header>
-            <div className="pb-3">
-              <SpecTable specs={specs} formFactor={robot.form_factor} />
+              </section>
+              <div id="parts" className="scroll-mt-6 space-y-6">
+                <PartsPanel specs={specs} formFactor={robot.form_factor} alsoUnpublished={specs.equipment_options ? [] : ['Equipment options']} />
+                {specs.equipment_options ? <EquipmentPanel spec={specs.equipment_options} /> : null}
+              </div>
             </div>
-          </section>
-        </div>
 
-        {compact || !market.length ? null : <GermanySection robots={market} />}
-        {compact ? null : (
-          <div className="mt-6">
-            <UseCaseProfile profile={profile} name={robot.name} />
-          </div>
-        )}
-
-        {compact ? null : (
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            <PartsPanel specs={specs} formFactor={robot.form_factor} />
-            <EquipmentPanel spec={specs.equipment_options} />
-          </div>
-        )}
-
-        {conflicts.length ? (
-          <section className="card mt-6 border-safety/30 bg-safety-soft/30 p-5">
-            <div className="flex items-center gap-2">
-              <span className="inline-block h-2 w-2 rounded-full bg-safety" aria-hidden />
-              <h2 className="text-sm font-semibold">Sources disagree</h2>
+            <div id="profile" className="mt-6 scroll-mt-6">
+              <UseCaseProfile profile={profile} name={robot.name} collapsed />
             </div>
-            <ul className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
-              {conflicts.map((c) => (
-                <li key={c.key} className="rounded-xl border border-safety/20 bg-card/80 p-3">
-                  <span className="font-medium">{fieldDef(c.key.split(':')[0])?.label ?? c.key}</span>
-                  {c.key.includes(':') ? <span className="text-faint"> · {qualifierLabel(c.key.split(':')[1])}</span> : null}
-                  <ul className="num mt-1.5 space-y-0.5 text-muted">
-                    {c.values.map((v, i) => (
-                      <li key={i} className="flex items-baseline justify-between gap-3">
-                        <span>{String(v.value)}</span>
-                        <a href={v.source_url} rel="nofollow noopener" target="_blank" className="text-xs text-faint underline-offset-2 hover:text-foreground hover:underline">
-                          {new URL(v.source_url).hostname.replace(/^www\./, '')}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
 
-        <div className="mt-6">
-          <SourceList sources={sources} />
-        </div>
+            {conflicts.length ? (
+              <section id="conflicts" className="card mt-6 scroll-mt-6 border-safety/30 bg-safety-soft/30 p-5">
+                <div className="flex items-center gap-2">
+                  <span className="inline-block h-2 w-2 rounded-full bg-safety" aria-hidden />
+                  <h2 className="text-sm font-semibold">Sources disagree</h2>
+                </div>
+                <ul className="mt-3 grid gap-3 text-sm sm:grid-cols-2">
+                  {conflicts.map((c) => (
+                    <li key={c.key} className="rounded-xl border border-safety/20 bg-card/80 p-3">
+                      <span className="font-medium">{fieldDef(c.key.split(':')[0])?.label ?? c.key}</span>
+                      {c.key.includes(':') ? <span className="text-faint"> · {qualifierLabel(c.key.split(':')[1])}</span> : null}
+                      <ul className="num mt-1.5 space-y-0.5 text-muted">
+                        {c.values.map((v, i) => (
+                          <li key={i} className="flex items-baseline justify-between gap-3">
+                            <span>{String(v.value)}</span>
+                            <a href={v.source_url} rel="nofollow noopener" target="_blank" className="text-xs text-faint underline-offset-2 hover:text-foreground hover:underline">
+                              {new URL(v.source_url).hostname.replace(/^www\./, '')}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ) : null}
+
+            <div id="sources" className="mt-6 scroll-mt-6">
+              <SourceList sources={sources} />
+            </div>
+          </>
+        )}
       </main>
     </>
   );

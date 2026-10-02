@@ -4,7 +4,7 @@ import { RobotSearch, ScopeSwitch } from '@/components/market/RobotsToolbar';
 import { TileSection } from '@/components/market/TileSection';
 import { FOCUSED_FORM_FACTORS, isFocusedForm } from '@/lib/browse-scope';
 import { ROBOT_TYPES, type RobotType } from '@/lib/market/schema';
-import { worldTiles } from '@/lib/market/tiles';
+import { catalogueIdsWithMarketPictures, worldTiles } from '@/lib/market/tiles';
 import { listRobotCards } from '@/lib/queries/robots';
 import { publicMetadata } from '@/lib/seo';
 import { ui } from '@/lib/ui';
@@ -41,7 +41,9 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
   const formFactor = isFocusedForm(sp.form) ? sp.form as (typeof FOCUSED_FORM_FACTORS)[number] : undefined;
   const preview = !formFactor && !q;
   // Apply the scope in SQL before counting, including hidden-picture counts.
-  const { robots, total, hidden } = await listRobotCards({ formFactor, formFactors: FOCUSED_FORM_FACTORS, q, limit: 5000, pictures: showAllPictures ? 'all' : 'with' });
+  // German market pictures count as pictures too.
+  const withPictureIds = showAllPictures ? undefined : await catalogueIdsWithMarketPictures();
+  const { robots, total, hidden } = await listRobotCards({ formFactor, formFactors: FOCUSED_FORM_FACTORS, q, limit: 5000, pictures: showAllPictures ? 'all' : 'with', withPictureIds });
   const href = (params: Record<string, string | undefined>) => {
     const query = new URLSearchParams({ scope: 'world' });
     const merged: Record<string, string | undefined> = { form: formFactor, q, pictures: showAllPictures ? 'all' : undefined, ...params };

@@ -124,7 +124,7 @@ export function fitRobot(robot: Robot, job: JobContext): RobotFit | null {
 
 export type JobOptions = { options: RobotFit[]; preorder: RobotFit[]; notSold: RobotFit[] };
 
-/** Robots for one job, best first. Not-sold robots are kept apart so the page can say why they are missing. */
+/** Robots for one job, best first. Robots not sold in Germany are kept apart and never offered. */
 export function optionsForJob(robots: readonly Robot[], job: JobContext): JobOptions {
   const result: JobOptions = { options: [], preorder: [], notSold: [] };
   for (const robot of robots) {

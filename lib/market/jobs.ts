@@ -19,7 +19,7 @@ import type { ConditionId, WhereId } from './vocab';
 
 export { WHERE, type WhereId } from './vocab';
 
-export type JobFits = { options: RobotFit[]; preorder: RobotFit[]; notSold: string[] };
+export type JobFits = { options: RobotFit[]; preorder: RobotFit[] };
 export type JobPoint = {
   id: string; title: string; summary: string; setting: string; where: WhereId; family: FamilyId; clusterId: string;
   industries: IndustryId[]; href: string; needs: UseCaseNeeds | null; outdoor: boolean | null; conditions: ConditionId[]; x: number; y: number; fits: JobFits;
@@ -92,7 +92,7 @@ export function loadJobs(): Loaded {
     return {
       id: point.id, title: point.title, summary: point.summary, setting: point.setting, where, family: point.family, clusterId: point.clusterId,
       industries: point.industries, href: point.href, needs: job.needs, outdoor, conditions, x: point.x, y: point.y,
-      fits: { options: fits.options, preorder: fits.preorder, notSold: fits.notSold.map((fit) => fit.robotId) },
+      fits: { options: fits.options, preorder: fits.preorder },
     };
   });
   const robots = marketRobots.map((robot) => ({ ...toCard(robot), href: robotHref(robot.id) }));
@@ -157,7 +157,7 @@ export function loadJobDetail(id: string): JobDetail | null {
   const { jobs, robots } = loadJobs();
   const job = jobs.find((item) => item.id === id);
   if (!job) return null;
-  const ids = new Set([...job.fits.options.map((fit) => fit.robotId), ...job.fits.preorder.map((fit) => fit.robotId), ...job.fits.notSold]);
+  const ids = new Set([...job.fits.options.map((fit) => fit.robotId), ...job.fits.preorder.map((fit) => fit.robotId)]);
   return { ...job, robots: robots.filter((robot) => ids.has(robot.id)), workflow: stepStrip(job.id) };
 }
 

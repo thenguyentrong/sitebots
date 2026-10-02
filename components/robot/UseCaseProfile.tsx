@@ -12,8 +12,9 @@ function pct(v: number | null) {
   return v === null ? null : Math.round(v * 100);
 }
 
-/** The RPG sheet: a spider chart of site conditions or tasks, the numbers beside it, the tasks below. */
-export function UseCaseProfile({ profile, name }: { profile: Profile; name: string }) {
+/** The RPG sheet: a spider chart of site conditions or tasks, the numbers beside it, the tasks below.
+ * `collapsed` folds it behind its header line, which says how many axes rest on published values. */
+export function UseCaseProfile({ profile, name, collapsed = false }: { profile: Profile; name: string; collapsed?: boolean }) {
   const site = (
     <div className="grid gap-6 lg:grid-cols-[320px_minmax(0,1fr)]">
       <RadarChart
@@ -65,14 +66,15 @@ export function UseCaseProfile({ profile, name }: { profile: Profile; name: stri
       </div>
     </div>
   );
-  return (
-    <section className="card overflow-hidden" data-profile>
-      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
-        <h2 className="text-sm font-semibold">Robot evidence profile</h2>
-        <span className="flex items-center gap-2 text-xs text-faint">
-          tasks <EvidenceBadge trust={profile.taskTrust} />
-        </span>
-      </header>
+  const confirmed = profile.axes.filter((a) => (a.coverage ? a.coverage.supported > 0 : a.score !== null)).length;
+  const title = <h2 className="text-sm font-semibold">Robot evidence profile</h2>;
+  const meta = (
+    <span className="flex items-center gap-2 text-xs text-faint">
+      {confirmed} of {profile.axes.length} axes confirmed · tasks <EvidenceBadge trust={profile.taskTrust} />
+    </span>
+  );
+  const body = (
+    <>
       <div className="px-5 py-4">
         <ProfileToggle site={site} tasks={tasks} />
       </div>
@@ -80,6 +82,30 @@ export function UseCaseProfile({ profile, name }: { profile: Profile; name: stri
         Unweighted threshold ladders over published values, using the matcher&apos;s own rules; a gap means unconfirmed, never zero. Handling shows evidence coverage, not a performance score.{' '}
         <Link href="/methodology#profile" className="underline-offset-2 hover:text-foreground hover:underline">How the axes are built</Link>
       </p>
+    </>
+  );
+  if (collapsed) {
+    return (
+      <details className="card group overflow-hidden" data-profile>
+        <summary className="flex cursor-pointer list-none flex-wrap items-center justify-between gap-3 px-5 py-3.5 [&::-webkit-details-marker]:hidden">
+          {title}
+          <span className="flex items-center gap-3">
+            {meta}
+            <span className="text-xs font-medium underline underline-offset-2 group-open:hidden">Show</span>
+            <span className="hidden text-xs font-medium underline underline-offset-2 group-open:inline">Hide</span>
+          </span>
+        </summary>
+        <div className="border-t border-edge/70">{body}</div>
+      </details>
+    );
+  }
+  return (
+    <section className="card overflow-hidden" data-profile>
+      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
+        {title}
+        {meta}
+      </header>
+      {body}
     </section>
   );
 }

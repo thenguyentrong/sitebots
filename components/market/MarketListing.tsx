@@ -10,12 +10,12 @@ import { RobotSearch, ScopeSwitch } from './RobotsToolbar';
 import { TileSection } from './TileSection';
 import './market.css';
 
-// The robots page for buyers in Germany: what can be bought or ordered here, by type, then what cannot.
+// The robots page for buyers in Germany: what can be bought or ordered here, by type. Robots that are
+// not sold here only appear in the worldwide view.
 
 const ORDER: GermanyStatus[] = ['buy_now', 'quote', 'preorder'];
 // With all types on one page, each type shows its first rows; its own tab shows the rest.
 const PREVIEW = 9;
-const PREVIEW_NOT_SOLD = 12;
 const INTRO: Record<RobotType, string> = {
   humanoid: 'Two arms and a head, on legs or on a wheeled base.',
   quadruped: 'Four legs, some with wheels or an arm, mostly for inspection rounds.',
@@ -55,10 +55,8 @@ export async function MarketListing({ type, q }: { type: RobotType | ''; q?: str
   const words = (q ?? '').toLowerCase().split(/\s+/).filter(Boolean);
   const shown = robots.filter((robot) => (!type || robot.robotType === type) && matches(robot, words));
   const sold = shown.filter((robot) => robot.germany.status !== 'not_sold');
-  // By type, and within a type the robots with a track record first: those are the ones a buyer has heard of.
-  const notSold = shown.filter((robot) => robot.germany.status === 'not_sold').sort((a, b) => ROBOT_TYPES.indexOf(a.robotType) - ROBOT_TYPES.indexOf(b.robotType) || b.evidenceCount - a.evidenceCount || a.name.localeCompare(b.name));
-  const notSoldItem = (robot: RobotCardData) => <li key={robot.id}><Link href={robot.href}><strong>{robot.name}</strong></Link><span>{robot.germany.note}</span></li>;
   const preview = !type && !q;
+  const world = '/robots?scope=world' + (q ? '&q=' + encodeURIComponent(q) : '');
   const count = (status: GermanyStatus) => robots.filter((robot) => robot.germany.status === status).length;
   // Counted like the landing page: general robots and job-specific machines apart.
   const orderable = (machines: boolean) => robots.filter((robot) => (robot.robotType === 'specialised') === machines && (robot.germany.status === 'buy_now' || robot.germany.status === 'quote')).length;
@@ -77,7 +75,7 @@ export async function MarketListing({ type, q }: { type: RobotType | ''; q?: str
     <header className="mk-page-head">
       <ScopeSwitch world={false} q={q} />
       <h1>Robots you can buy in Germany</h1>
-      <p>{orderable(false)} robots and {orderable(true)} job-specific machines you can buy or order here, {count('preorder')} more on pre-order. {count('not_sold')} well-known robots and machines are not sold here; they are listed at the end with the reason. Every price and seller links to the page it was read from.</p>
+      <p>{orderable(false)} robots and {orderable(true)} job-specific machines you can buy or order here, {count('preorder')} more on pre-order. Every price and seller links to the page it was read from. Robots that are not sold here are under <Link href={world} className="underline underline-offset-2">Worldwide</Link>.</p>
     </header>
     <div className="card mt-6 flex flex-wrap items-center gap-3 p-2">
       <nav className={cn(ui.segment, 'max-w-full flex-wrap')} aria-label="Robot type">
@@ -86,7 +84,7 @@ export async function MarketListing({ type, q }: { type: RobotType | ''; q?: str
       </nav>
       <RobotSearch q={q} keep={{ type: type || undefined }} />
     </div>
-    {q ? <p className="label mt-6">{shown.length} robot{shown.length === 1 ? '' : 's'} matching “{q}” · <Link href={href(type)} className="normal-case tracking-normal underline underline-offset-2">clear</Link></p> : null}
+    {q ? <p className="label mt-6">{sold.length} robot{sold.length === 1 ? '' : 's'} matching “{q}” · <Link href={href(type)} className="normal-case tracking-normal underline underline-offset-2">clear</Link></p> : null}
     {groups.map(({ robotType, items, visible }) => robotType === 'specialised'
       ? <section key={robotType} className="mk-page-section" aria-labelledby={'type-' + robotType}>
         <div className="mk-page-section-head"><h2 id={'type-' + robotType}>{TYPE_PLURAL[robotType]} <span>{items.length}</span></h2><p>{INTRO[robotType]}</p></div>
@@ -95,14 +93,9 @@ export async function MarketListing({ type, q }: { type: RobotType | ''; q?: str
       : <TileSection key={robotType} id={'type-' + robotType} title={TYPE_PLURAL[robotType]} count={items.length} intro={INTRO[robotType]}
         tiles={visible.flatMap((robot) => tiles.get(robot.id) ?? [])}
         more={preview && items.length > PREVIEW ? { href: href(robotType), label: 'Show all ' + items.length + ' ' + TYPE_PLURAL[robotType].toLowerCase() } : null} />)}
-    {notSold.length ? <section className="mk-page-section" aria-labelledby="not-sold">
-      <div className="mk-page-section-head"><h2 id="not-sold">Not sold in Germany <span>{notSold.length}</span></h2><p>Well-known robots without a route for a buyer in Germany today.</p></div>
-      <ul className="mk-notsold">{(preview ? notSold.slice(0, PREVIEW_NOT_SOLD) : notSold).map(notSoldItem)}</ul>
-      {preview && notSold.length > PREVIEW_NOT_SOLD ? <details className="mk-notsold-more"><summary>Show the other {notSold.length - PREVIEW_NOT_SOLD}</summary><ul className="mk-notsold">{notSold.slice(PREVIEW_NOT_SOLD).map(notSoldItem)}</ul></details> : null}
-    </section> : null}
-    {q && !shown.length ? <div className="card mt-6 px-6 py-10 text-center text-muted">
-      <p>No robot sold in Germany matches “{q}”.</p>
-      <Link href={'/robots?scope=world&q=' + encodeURIComponent(q)} className={ui.btnSecondary + ' mt-5 whitespace-normal'}>Search all robots worldwide</Link>
+    {q && !sold.length ? <div className="card mt-6 px-6 py-10 text-center text-muted">
+      <p>No robot sold in Germany matches “{q}”.{shown.length ? ' ' + shown.length + (shown.length === 1 ? ' robot that is not sold here does.' : ' robots that are not sold here do.') : ''}</p>
+      <Link href={world} className={ui.btnSecondary + ' mt-5 whitespace-normal'}>Search all robots worldwide</Link>
     </div> : null}
     {!robots.length ? <p className="mk-muted">The market research is still running.</p> : null}
   </main>;

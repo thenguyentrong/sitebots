@@ -8,9 +8,12 @@ import './market.css';
 // Shared pieces of a robot page: how to buy it in Germany, the jobs it fits and where it has worked.
 
 const euro = (amount: number) => '€' + amount.toLocaleString('en-GB', { maximumFractionDigits: 0 });
+// Each list of jobs shows its first five; the rest fold away.
+const JOBS_SHOWN = 5;
 
-export function BuyBox({ robot, title, collapsed = false }: { robot: MarketRobot; title?: string; collapsed?: boolean }) {
+export function BuyBox({ robot, title, collapsed = false, picture = false }: { robot: MarketRobot; title?: string; collapsed?: boolean; picture?: boolean }) {
   const g = robot.germany;
+  const note = g.statusNote + (g.leadTime ? ' Lead time: ' + g.leadTime + '.' : '');
   const sellers = g.sellers.length ? <ul className="mk-detail-sellers">{g.sellers.map((seller) => <li key={seller.name + seller.country + (seller.productUrl ?? '')}>
     <p><strong>{seller.name}</strong> <span>{seller.country} · {seller.role}</span>{seller.priceEur ? <span className="mk-seller-price"> · {euro(seller.priceEur)}{seller.priceBasis === 'net' ? ' net' : seller.priceBasis === 'gross' ? ' incl. VAT' : ''}</span> : null}</p>
     <p className="mk-seller-links">
@@ -21,10 +24,13 @@ export function BuyBox({ robot, title, collapsed = false }: { robot: MarketRobot
     </p>
   </li>)}</ul> : null;
   return <div className="mk-buybox" data-s={g.status} data-version={robot.id}>
+    {picture && robot.picture ? <span className="mk-buybox-pic"><img src={robot.picture.src} alt={robot.picture.alt} width={robot.picture.width} height={robot.picture.height} loading="lazy" decoding="async" /></span> : null}
     {title ? <p className="mk-buybox-title">{title}</p> : null}
     <div className="mk-price"><strong>{priceText(toCard(robot))}</strong><span className="mk-status" data-s={g.status}>{STATUS_LABELS[g.status]}</span></div>
-    <p>{g.statusNote}{g.leadTime ? ' Lead time: ' + g.leadTime + '.' : ''}</p>
-    {sellers && collapsed ? <details className="mk-buybox-sellers"><summary>Where to buy · {g.sellers.length} seller{g.sellers.length > 1 ? 's' : ''}</summary>{sellers}</details> : sellers}
+    {/* Side by side, a version shows its price and status; how they were read sits with its sellers. */}
+    {collapsed
+      ? <details className="mk-buybox-sellers"><summary>{g.sellers.length ? 'Where to buy · ' + g.sellers.length + ' seller' + (g.sellers.length > 1 ? 's' : '') : 'How to buy'}</summary>{note ? <p className="mk-buybox-note">{note}</p> : null}{sellers}</details>
+      : <>{note ? <p>{note}</p> : null}{sellers}</>}
     <p className="mk-fine">Checked {g.checkedAt}. {robot.officialUrl ? <a href={robot.officialUrl} target="_blank" rel="noopener noreferrer">Maker’s page ↗</a> : null}</p>
   </div>;
 }
@@ -44,8 +50,8 @@ export function RobotJobs({ robotId }: { robotId: string }) {
   if (!jobs.length) return <p className="mk-muted">No job on the map fits this robot yet.</p>;
   return <div className="mk-job-columns">{groups.filter(([, list]) => list.length).map(([label, list]) => <div key={label}>
     <h3>{label} <span>{list.length}</span></h3>
-    <JobLinks jobs={list.slice(0, 8)} />
-    {list.length > 8 ? <details className="mk-siblings"><summary>Show {list.length - 8} more</summary><JobLinks jobs={list.slice(8)} /></details> : null}
+    <JobLinks jobs={list.slice(0, JOBS_SHOWN)} />
+    {list.length > JOBS_SHOWN ? <details className="mk-siblings"><summary>Show {list.length - JOBS_SHOWN} more</summary><JobLinks jobs={list.slice(JOBS_SHOWN)} /></details> : null}
   </div>)}</div>;
 }
 
@@ -64,24 +70,47 @@ export function RobotEvidence({ robots }: { robots: MarketRobot[] }) {
 }
 
 const RANK = { buy_now: 0, quote: 1, preorder: 2, not_sold: 3 } as const;
+// The version a German buyer can get most easily first.
+const byAccess = (robots: MarketRobot[]) => [...robots].sort((a, b) => RANK[a.germany.status] - RANK[b.germany.status] || a.name.localeCompare(b.name));
 
-/** On a catalogue robot page: every version a German buyer can choose, the jobs it fits and its track record. */
-export function GermanySection({ robots }: { robots: MarketRobot[] }) {
+/** On a catalogue robot page: every version a German buyer can choose, each with its own picture and
+ * name when there are several, or when the page has no picture of its own. */
+export function GermanySection({ robots, pictures = false }: { robots: MarketRobot[]; pictures?: boolean }) {
   if (!robots.length) return null;
-  const versions = [...robots].sort((a, b) => RANK[a.germany.status] - RANK[b.germany.status] || a.name.localeCompare(b.name));
-  const primary = versions[0];
+  const versions = byAccess(robots);
+  const several = versions.length > 1;
+  const named = several || pictures;
   const checked = versions.map((robot) => robot.germany.checkedAt).sort().at(-1);
   return <section id="germany" className="card mt-6 overflow-hidden mk-germany" aria-labelledby="germany-title">
     <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
       <h2 id="germany-title" className="text-sm font-semibold">Buy in Germany</h2>
-      <span className="num text-xs text-faint">{versions.length > 1 ? versions.length + ' versions · ' : ''}checked {checked}</span>
+      <span className="num text-xs text-faint">{several ? versions.length + ' versions · ' : ''}checked {checked}</span>
     </header>
     <div className="mk-germany-body">
       <p>Sellers, prices and stock as their pages showed them. No enquiry is sent from this site.</p>
-      <div className="mk-versions" data-count={versions.length}>{versions.map((robot) => <BuyBox key={robot.id} robot={robot} collapsed={versions.length > 1} title={versions.length > 1 ? robot.name + (robot.variant ? ' · ' + robot.variant : '') : undefined} />)}</div>
-      <h3>Jobs on the map{versions.length > 1 ? <span> · for the {primary.name}</span> : null}</h3>
-      <RobotJobs robotId={primary.id} />
-      {versions.some((robot) => robot.evidence.length) ? <><h3>Where it has worked</h3><RobotEvidence robots={versions} /></> : null}
+      <div className="mk-versions" data-count={versions.length}>{versions.map((robot) => <BuyBox key={robot.id} robot={robot} collapsed={several} picture={named} title={named ? robot.name + (robot.variant ? ' · ' + robot.variant : '') : undefined} />)}</div>
     </div>
+  </section>;
+}
+
+/** The jobs on the map the robot fits, for the version a German buyer can get most easily. */
+export function JobsSection({ robots }: { robots: MarketRobot[] }) {
+  if (!robots.length) return null;
+  const primary = byAccess(robots)[0];
+  return <section id="jobs" className="card overflow-hidden mk-germany" aria-labelledby="jobs-title">
+    <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
+      <h2 id="jobs-title" className="text-sm font-semibold">Jobs on the map{robots.length > 1 ? <span className="font-normal text-faint"> · for the {primary.name}</span> : null}</h2>
+      <Link href="/#explore" className="text-xs text-muted underline underline-offset-2 hover:text-foreground">Open the job map</Link>
+    </header>
+    <div className="mk-germany-body"><RobotJobs robotId={primary.id} /></div>
+  </section>;
+}
+
+/** Where the robot has worked, across its versions, each with its source. */
+export function TrackRecordSection({ robots }: { robots: MarketRobot[] }) {
+  if (!robots.some((robot) => robot.evidence.length)) return null;
+  return <section id="track-record" className="card overflow-hidden mk-germany" aria-labelledby="track-title">
+    <header className="border-b border-edge/70 px-5 py-3.5"><h2 id="track-title" className="text-sm font-semibold">Where it has worked</h2></header>
+    <div className="mk-germany-body"><RobotEvidence robots={byAccess(robots)} /></div>
   </section>;
 }

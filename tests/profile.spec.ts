@@ -4,6 +4,8 @@ test('a robot page carries the construction profile with both views', async ({ p
   await page.goto('/robots/boston-dynamics/spot');
   const profile = page.locator('[data-profile]');
   await expect(profile).toBeVisible();
+  // Folded under its header line until opened.
+  await profile.locator('summary').click();
   await expect(profile.locator('[data-profile-view="site"] [data-radar] [data-spoke]')).toHaveCount(10);
   await expect(profile.getByText('Carry', { exact: true }).first()).toBeVisible();
   await profile.getByRole('tab', { name: 'Tasks' }).click();
@@ -13,6 +15,7 @@ test('a robot page carries the construction profile with both views', async ({ p
 
 test('unknown axes read as not published, never as zero', async ({ page }) => {
   await page.goto('/robots/unitree/g1');
+  await page.locator('[data-profile] summary').click();
   const list = page.locator('[data-profile] ol');
   await expect(list.getByText('not published').first()).toBeVisible();
 });

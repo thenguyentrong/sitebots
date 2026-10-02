@@ -44,19 +44,14 @@ export function PricePanel({ prices, availability }: { prices: PriceCurrent[]; a
               <th className="px-5 pt-3 pb-2 font-medium">Region</th>
               <th className="px-2 pt-3 pb-2 font-medium">Config</th>
               <th className="px-2 pt-3 pb-2 text-right font-medium">Price</th>
-              <th className="px-5 pt-3 pb-2 font-medium">Evidence</th>
+              <th className="hidden px-5 pt-3 pb-2 font-medium sm:table-cell">Evidence</th>
             </tr>
           </thead>
           <tbody>
-            {prices.map((p) => (
-              <tr key={`${p.region}-${p.config}`} className="border-t border-edge/60 align-top">
-                <td className="px-5 py-2.5 font-medium">{p.region}</td>
-                <td className="px-2 py-2.5 text-muted">{p.config}</td>
-                <td className="num px-2 py-2.5 text-right font-semibold">
-                  {formatMoney(p.amount, p.currency)}
-                  {p.includes_vat === false ? <span className="block text-[11px] font-normal text-faint">ex VAT</span> : null}
-                </td>
-                <td className="px-5 py-2.5 text-xs text-muted">
+            {prices.map((p) => {
+              // On a phone the evidence goes under the configuration instead of a fourth column.
+              const evidence = (
+                <>
                   <span className="block">
                     {PRICE_TIER_LABEL[p.tier] ?? `tier ${p.tier}`}
                     {p.direct ? ' (read directly)' : ''}
@@ -68,9 +63,23 @@ export function PricePanel({ prices, availability }: { prices: PriceCurrent[]; a
                     · {formatDate(p.observed_at)}
                     {p.stale ? <span className="ml-1 font-medium text-safety">stale</span> : null}
                   </span>
+                </>
+              );
+              return (
+              <tr key={`${p.region}-${p.config}`} className="border-t border-edge/60 align-top">
+                <td className="px-5 py-2.5 font-medium">{p.region}</td>
+                <td className="px-2 py-2.5 text-muted">
+                  {p.config}
+                  <div className="mt-1 text-xs sm:hidden">{evidence}</div>
                 </td>
+                <td className="num px-2 py-2.5 text-right font-semibold">
+                  {formatMoney(p.amount, p.currency)}
+                  {p.includes_vat === false ? <span className="block text-[11px] font-normal text-faint">ex VAT</span> : null}
+                </td>
+                <td className="hidden px-5 py-2.5 text-xs text-muted sm:table-cell">{evidence}</td>
               </tr>
-            ))}
+              );
+            })}
           </tbody>
         </table>
       )}

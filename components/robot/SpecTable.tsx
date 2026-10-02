@@ -19,24 +19,29 @@ function hostOf(url: string): string {
  * Every field the registry knows, in registry order, with the trust badge and
  * the source it was read from. Fields nobody publishes are listed as unknown
  * rather than hidden — for a construction buyer "IP rating: not published" is
- * the finding.
+ * the finding. With `unpublishedAsList` they are named together at the end
+ * instead of one empty row each.
  */
-export function SpecTable({ specs, formFactor }: { specs: Specs; formFactor: string }) {
+export function SpecTable({ specs, formFactor, unpublishedAsList = false }: { specs: Specs; formFactor: string; unpublishedAsList?: boolean }) {
   const keys = Object.keys(specs);
   const present = new Set(keys.map((k) => splitSpecKey(k).field));
   const fields = visibleFields(formFactor, present);
+  const groups = GROUPS.filter((g) => !g.panel).map((group) => ({
+    group,
+    rows: fields.filter((f) => f.group === group.id).flatMap((def): Row[] => {
+      const matching = keys.filter((k) => splitSpecKey(k).field === def.id).sort();
+      if (matching.length === 0) return [{ key: def.id, def, spec: null }];
+      return matching.map((k) => ({ key: k, def, spec: specs[k] }));
+    }),
+  }));
+  const unpublished = unpublishedAsList ? groups.flatMap(({ rows }) => rows.filter((row) => !row.spec).map((row) => row.def.label)) : [];
 
   return (
     <div className="overflow-x-auto">
       <table className="w-full border-collapse text-sm">
         <tbody>
-          {GROUPS.filter((g) => !g.panel).map((group) => {
-            const defs = fields.filter((f) => f.group === group.id);
-            const rows: Row[] = defs.flatMap((def): Row[] => {
-              const matching = keys.filter((k) => splitSpecKey(k).field === def.id).sort();
-              if (matching.length === 0) return [{ key: def.id, def, spec: null }];
-              return matching.map((k) => ({ key: k, def, spec: specs[k] }));
-            });
+          {groups.map(({ group, rows: all }) => {
+            const rows = unpublishedAsList ? all.filter((row) => row.spec) : all;
             if (!rows.length) return null;
             return (
               <React.Fragment key={group.id}>
@@ -48,6 +53,22 @@ export function SpecTable({ specs, formFactor }: { specs: Specs; formFactor: str
                 {rows.map(({ key, def, spec }) => {
                   const { qualifier } = splitSpecKey(key);
                   const q = qualifierLabel(qualifier);
+                  // On a phone the source goes under the value instead of a fourth column.
+                  const source = spec && spec.source_url.startsWith('curated://') ? (
+                    <span className="text-faint" title={`Assessed by sitebots · ${spec.source_url.replace('curated://', 'data/curated/')}`}>
+                      curated
+                    </span>
+                  ) : spec ? (
+                    <a
+                      href={spec.source_url}
+                      rel="nofollow noopener"
+                      target="_blank"
+                      className="text-faint underline-offset-2 transition hover:text-foreground hover:underline"
+                      title={`${spec.source_url} · seen ${formatDate(spec.observed_at)}${spec.raw ? ` · "${spec.raw}"` : ''}`}
+                    >
+                      {hostOf(spec.source_url)}
+                    </a>
+                  ) : null;
                   return (
                     <tr key={key} className="border-t border-edge/60 align-top transition hover:bg-subtle/60">
                       <td className="w-[36%] px-4 py-2.5 text-muted">
@@ -57,33 +78,31 @@ export function SpecTable({ specs, formFactor }: { specs: Specs; formFactor: str
                       <td className="num px-2 py-2.5 font-medium">
                         {spec ? formatSpec(key, spec) : <span className="font-normal text-faint">not published</span>}
                         {spec?.note ? <div className="mt-0.5 text-xs font-normal text-faint">{spec.note}</div> : null}
+                        {source ? <div className="mt-0.5 text-xs font-normal sm:hidden">{source}</div> : null}
                       </td>
                       <td className="px-2 py-2.5">
                         <EvidenceBadge trust={spec ? spec.trust : 'unknown'} />
                       </td>
-                      <td className="px-4 py-2.5 text-right text-xs">
-                        {spec && spec.source_url.startsWith('curated://') ? (
-                          <span className="text-faint" title={`Assessed by sitebots · ${spec.source_url.replace('curated://', 'data/curated/')}`}>
-                            curated
-                          </span>
-                        ) : spec ? (
-                          <a
-                            href={spec.source_url}
-                            rel="nofollow noopener"
-                            target="_blank"
-                            className="text-faint underline-offset-2 transition hover:text-foreground hover:underline"
-                            title={`${spec.source_url} · seen ${formatDate(spec.observed_at)}${spec.raw ? ` · "${spec.raw}"` : ''}`}
-                          >
-                            {hostOf(spec.source_url)}
-                          </a>
-                        ) : null}
-                      </td>
+                      <td className="hidden px-4 py-2.5 text-right text-xs sm:table-cell">{source}</td>
                     </tr>
                   );
                 })}
               </React.Fragment>
             );
           })}
+          {unpublished.length ? (
+            <tr className="border-t border-edge/60" data-testid="spec-unpublished">
+              <td colSpan={4} className="px-4 pt-4 pb-2">
+                <p className="eyebrow">Not published · {unpublished.length}</p>
+                <ul className="mt-2 flex flex-wrap gap-1.5">
+                  {unpublished.map((label, index) => (
+                    <li key={label + index} className="rounded-full border border-edge px-2.5 py-1 text-xs text-muted">{label}</li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-xs text-faint">Not published anywhere we could find.</p>
+              </td>
+            </tr>
+          ) : null}
         </tbody>
       </table>
     </div>

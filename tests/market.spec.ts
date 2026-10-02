@@ -13,7 +13,7 @@ test.describe('job map', () => {
     await expect(page.getByTestId('selected-job')).toContainText('plant rooms');
     const cards = page.getByTestId('robot-grid').locator('[data-robot]');
     await expect(cards.first()).toBeVisible();
-    await expect(page.getByTestId('robot-grid').getByText('Not sold in Germany')).toHaveCount(0);
+    await expect(page.getByTestId('robot-choices').getByText(/Not sold in Germany/)).toHaveCount(0);
     await expect(page).toHaveURL(/usecase=facility_operation%2Fplant-room-rounds/);
   });
 
@@ -56,15 +56,25 @@ test.describe('job map', () => {
 });
 
 test.describe('robots page', () => {
-  test('shows the robots sold in Germany first, by type, with the ones that are not sold here', async ({ page }) => {
+  test('shows only the robots you can buy or order in Germany, by type', async ({ page }) => {
     await page.goto('/robots');
     await expect(page.getByRole('heading', { level: 1, name: 'Robots you can buy in Germany' })).toBeVisible();
     await expect(page.getByRole('navigation', { name: 'Where the robots are sold' }).getByRole('link', { name: 'In Germany' })).toHaveAttribute('aria-current', 'page');
     await expect(page.getByRole('heading', { name: /Humanoids/ })).toBeVisible();
-    await expect(page.getByRole('heading', { name: /Not sold in Germany/ })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Not sold in Germany/ })).toHaveCount(0);
+    await expect(page.getByText('Not sold in Germany')).toHaveCount(0);
     await page.getByRole('navigation', { name: 'Robot type' }).getByRole('link', { name: 'Robot dogs' }).click();
     await expect(page).toHaveURL(/type=quadruped/);
     await expect(page.getByRole('heading', { name: /Humanoids/ })).toHaveCount(0);
+  });
+
+  test('finds a robot that is not sold in Germany only worldwide', async ({ page }) => {
+    await page.goto('/robots?q=' + encodeURIComponent('1X NEO'));
+    await expect(page.getByText(/No robot sold in Germany matches/)).toBeVisible();
+    await page.getByRole('link', { name: 'Search all robots worldwide' }).click();
+    await expect(page).toHaveURL(/scope=world/);
+    await expect(page.getByRole('heading', { level: 1, name: 'All robots worldwide' })).toBeVisible();
+    await expect(page.locator('[data-robot]').first()).toContainText('NEO');
   });
 
   test('searches the German list and switches to every robot worldwide', async ({ page }) => {
@@ -86,8 +96,9 @@ test.describe('robots page', () => {
     await expect(page).toHaveURL(/[/]robots[/]boston-dynamics[/]spot#germany$/);
     const germany = page.getByRole('region', { name: 'Buy in Germany', exact: true });
     await expect(germany.locator('.mk-buybox .mk-status').first()).toBeVisible();
-    await expect(germany.getByRole('heading', { name: /Jobs on the map/ })).toBeVisible();
-    await germany.locator('.mk-job-columns a').first().click();
+    const jobs = page.getByRole('region', { name: /Jobs on the map/ });
+    await expect(jobs).toBeVisible();
+    await jobs.locator('.mk-job-columns a').first().click();
     await expect(page).toHaveURL(/usecase=/);
     await expect(page.getByTestId('selected-job')).toBeVisible();
   });

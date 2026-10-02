@@ -53,8 +53,9 @@ assumptions, written down so they can be argued with.
 - Stairs, rough ground and outdoor work need a stated capability. Heavy parts, two-arm
   lifts and tool work need a stated payload. Unknown never passes.
 - Power-tool work needs finger hands; a gripper is no option.
-- Robots you cannot order in Germany never appear as options. Where one would fit, the
-  job panel names it under "Not sold in Germany".
+- Robots you cannot order in Germany never appear as options, and the Germany views (the
+  job panel and "In Germany" on `/robots`) leave them out. They are only in the worldwide
+  view, where each card carries its German status.
 - Job-specific construction machines (layout printers, drilling robots, demolition and
   hydrodemolition, spray robots) show for their job and are grouped by maker, so 17 Brokk
   sizes are one card.
@@ -66,16 +67,26 @@ assumptions, written down so they can be argued with.
   where (site, factory, yard, buildings, lab), conditions, kind of work, search.
 - `/robots` one robots page with two views. "In Germany" (the default) lists what can be
   bought or ordered here by type, the first nine per type with a tab for the rest,
-  job-specific machines grouped by job and maker, then the robots that are not sold here
-  with the reason. "Worldwide" is the full catalogue, prototypes included. Both views use the
-  same card (`components/market/RobotTile.tsx`, data from `lib/market/tiles.ts`): pictures to
+  job-specific machines grouped by job and maker; robots that are not sold here are left
+  out. "Worldwide" is the full catalogue, prototypes included. Both views use the
+  same card (`components/market/RobotTile.tsx`, data from `lib/market/tiles.ts`). A Germany
+  record lands on the catalogue configuration with its name (accents, hyphen characters and
+  the maker prefix do not count); where the names differ for the same robot ("Kepler K2" is
+  the Forerunner K2) `data/market/catalogue-aliases.json` says so, checked by hand. Wheeled,
+  EDU or newer siblings are never aliases. Cards: pictures to
   page through, the 3D model where one is published (loaded on demand from `/api/models`, one
   card at a time), price, German status and compare. Maker pages use it too; the old cluster
   matrix is gone. `/market` redirects here.
-- One page per robot. Where the catalogue has the robot, its catalogue page carries a "Buy
-  in Germany" panel: every version with price, status and sellers, the jobs it fits and
-  where it has worked. `/market/<id>` redirects there. Machines the catalogue does not
-  carry, mostly job-specific construction machines, keep `/market/<id>` as their page.
+- One page per robot. Where the catalogue has the robot, its catalogue page opens with the
+  pictures, the German versions with price and status, and the key numbers that are
+  published (the missing ones in one line). Links below lead to the sections in page
+  order: "Buy in Germany" (every version with price, status and sellers, each with its own
+  picture when there are several), price and delivery outside Germany (folded when only
+  databases report it), the jobs it fits (five per list), where it has worked, the
+  specifications (published values, then the unpublished fields named together), the
+  evidence profile (folded) and the parts. `/market/<id>` redirects there. Machines the
+  catalogue does not carry, mostly job-specific construction machines, keep
+  `/market/<id>` as their page.
 - Task pages show the robots you can buy for that task on top.
 
 ## Refresh

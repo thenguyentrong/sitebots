@@ -1,3 +1,5 @@
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { getSql } from '@/lib/db';
 import { getRobotModel } from '@/lib/models/index';
 import { STATUS_LABEL, formatMoney } from '@/lib/spec/display';
@@ -41,7 +43,8 @@ const host = (url: string | null) => {
     return null;
   }
 };
-const norm = (name: string) => name.toLowerCase().split(' ').filter(Boolean).join(' ');
+// Accents and the different hyphen characters do not make two names differ ("Mirokaï", "XMAN‑R1").
+const norm = (name: string) => name.normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[‐-―]/g, '-').toLowerCase().split(' ').filter(Boolean).join(' ');
 
 /** The catalogue configuration a market record is about: the longest catalogue name the record's
  * name starts with as whole words ("Unitree G1 EDU with Dex3-1 hands" is a G1 EDU; "Unitree B2-W"
@@ -49,14 +52,32 @@ const norm = (name: string) => name.toLowerCase().split(' ').filter(Boolean).joi
  * No match, no borrowing: an A2-W must not show the A2's pictures or model. */
 function rowFor<T extends { name: string }>(name: string, rows: T[], maker = ''): T | null {
   const full = norm(name);
-  const prefix = norm(maker) + ' ';
-  const wanted = maker && full.startsWith(prefix) ? [full, full.slice(prefix.length)] : [full];
+  // Records name the maker the way it brands itself ("UBTECH Walker S2"), the maker field may be longer ("UBTECH Robotics").
+  const prefixes = [...new Set([norm(maker), norm(maker).split(' ')[0]])].filter(Boolean).map((prefix) => prefix + ' ');
+  const wanted = [full, ...prefixes.filter((prefix) => full.startsWith(prefix)).map((prefix) => full.slice(prefix.length))];
   let best: T | null = null;
   for (const row of rows) {
     const candidate = norm(row.name);
     if (wanted.some((item) => item === candidate || item.startsWith(candidate + ' ')) && (!best || candidate.length > norm(best.name).length)) best = row;
   }
   return best;
+}
+
+let aliases: Record<string, string> | null = null;
+/** Records that are a catalogue configuration under another name, checked by hand: "Kepler K2" is the
+ * Forerunner K2 (data/market/catalogue-aliases.json). */
+function aliasFor(id: string): string | null {
+  if (!aliases) {
+    const file = join(process.cwd(), 'data', 'market', 'catalogue-aliases.json');
+    aliases = existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')).aliases ?? {}) as Record<string, string> : {};
+  }
+  return aliases[id] ?? null;
+}
+
+/** The catalogue configuration a market record is about: its checked alias first, else by name. */
+function configurationFor<T extends { name: string }>(record: { id: string; name: string; maker: string }, rows: T[]): T | null {
+  const alias = aliasFor(record.id);
+  return (alias ? rows.find((row) => norm(row.name) === norm(alias)) : undefined) ?? rowFor(record.name, rows, record.maker);
 }
 
 async function catalogueRows(paths: string[]): Promise<Row[]> {
@@ -99,7 +120,7 @@ async function cataloguePictures(ids: string[]): Promise<Map<string, Shot[]>> {
  * configurations), in the robot page gallery's shape. Pictures the catalogue already holds are left out. */
 export function marketImagesFor(records: MarketRobot[], configurations: { id: string; name: string }[], id: string, known: string[] = []): RobotImage[] {
   const skip = new Set(known.map((url) => url.split('?')[0]));
-  return records.filter((record) => rowFor(record.name, configurations, record.maker)?.id === id).sort((a, b) => RANK[a.germany.status] - RANK[b.germany.status])
+  return records.filter((record) => configurationFor(record, configurations)?.id === id).sort((a, b) => RANK[a.germany.status] - RANK[b.germany.status])
     .flatMap((record) => [record.picture, ...record.gallery])
     .flatMap((picture) => picture && !skip.has((picture.sourceUrl ?? '').split('?')[0]) ? [marketImage(picture)] : []);
 }
@@ -157,7 +178,7 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
   return robots.map((card) => {
     const path = pathOf(card.id);
     const pageRows = path ? rowsByPath.get(path) ?? [] : [];
-    const row = rowFor(card.name, pageRows, card.maker);
+    const row = configurationFor(card, pageRows);
     const base = pageRows.find((item) => item.variant === 'base');
     const model = row ? modelFor(row) : null;
     const record = market.get(card.id);
@@ -180,6 +201,21 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
   });
 }
 
+/** Catalogue configurations that have German pictures, so the worldwide list does not hide them as
+ * robots without a picture. */
+export async function catalogueIdsWithMarketPictures(): Promise<string[]> {
+  const byPath = marketByPath();
+  const pages = new Map<string, Row[]>();
+  for (const row of await catalogueRows([...byPath.keys()])) pages.set(row.manufacturer_slug + '/' + row.model_slug, [...(pages.get(row.manufacturer_slug + '/' + row.model_slug) ?? []), row]);
+  const ids = new Set<string>();
+  for (const [path, records] of byPath) for (const record of records) {
+    if (!record.picture && !record.gallery.length) continue;
+    const row = configurationFor(record, pages.get(path) ?? []);
+    if (row) ids.add(row.id);
+  }
+  return [...ids];
+}
+
 /** Cards for the worldwide view: every catalogue configuration, with its German status where the market research covers it. */
 export async function worldTiles(rows: RobotCard[]): Promise<TileData[]> {
   const byPath = marketByPath();
@@ -190,7 +226,7 @@ export async function worldTiles(rows: RobotCard[]): Promise<TileData[]> {
   const bases = new Map([...pages].flatMap(([path, list]) => list.filter((row) => row.variant === 'base').map((row) => [path, row.id] as const)));
   const shots = await cataloguePictures([...rows.map((row) => row.id), ...bases.values()]);
   const recordsFor = (row: RobotCard) => (byPath.get(pathOf(row)) ?? [])
-    .filter((record) => rowFor(record.name, pages.get(pathOf(row)) ?? [], record.maker)?.id === row.id)
+    .filter((record) => configurationFor(record, pages.get(pathOf(row)) ?? [])?.id === row.id)
     // The record named exactly like the configuration first, then the easiest to buy, then the cheapest.
     .sort((a, b) => Number(rowFor(b.name, [row], b.maker) !== null && norm(b.name).endsWith(norm(row.name))) - Number(rowFor(a.name, [row], a.maker) !== null && norm(a.name).endsWith(norm(row.name))) || RANK[a.germany.status] - RANK[b.germany.status] || (a.germany.priceEur?.amount ?? Infinity) - (b.germany.priceEur?.amount ?? Infinity));
   return rows.map((row) => {

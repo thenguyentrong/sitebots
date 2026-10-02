@@ -24,8 +24,8 @@ test('a robot page shows every value with its trust badge and source', async ({ 
   await expect(weight).toContainText('Verified');
   await expect(weight.getByRole('link', { name: 'unitree.com' })).toHaveAttribute('href', 'https://www.unitree.com/g1');
 
-  // What nobody publishes is said so, not hidden.
-  await expect(page.getByRole('row', { name: /IP rating/ }).first()).toContainText('not published');
+  // What nobody publishes is said so, not hidden: named together under the published values.
+  await expect(page.getByTestId('spec-unpublished')).toContainText('IP rating');
 
   // The price carries its evidence: the store row says where it was read.
   const storeRow = page.getByRole('row').filter({ hasText: 'manufacturer store' }).first();
@@ -47,6 +47,34 @@ test('a quote-only robot never shows the placeholder price', async ({ page }) =>
   const panel = page.locator('section', { hasText: 'Price and delivery' });
   await expect(panel.getByRole('row').filter({ hasText: /manufacturer store|distributor listing/ }).filter({ hasText: '100,000' })).toHaveCount(0);
   await expect(panel.getByText('Enterprise only')).toBeVisible();
+});
+
+test('a robot sold in Germany under another name shows its German pictures and status', async ({ page }) => {
+  await page.goto('/robots/kepler/forerunner-k2');
+  const media = page.locator('[data-robot-media]');
+  await expect(media).toBeVisible();
+  expect(Number(await media.getAttribute('data-photos'))).toBeGreaterThan(0);
+  // The wheeled All-Runner and the Basic keep their own pictures, in their own version cards.
+  const versions = page.getByRole('region', { name: 'Buy in Germany', exact: true }).locator('.mk-buybox');
+  await expect(versions).toHaveCount(3);
+  await expect(versions.locator('.mk-buybox-pic img')).toHaveCount(3);
+  await page.goto('/robots?scope=world&q=forerunner');
+  const card = page.locator('.mk-tile').filter({ has: page.getByRole('link', { name: 'Kepler Forerunner K2', exact: true }) });
+  await expect(card.locator('.mk-status')).toHaveText('Buy in Germany');
+});
+
+test('a robot page leads with the published numbers and folds the long parts', async ({ page }) => {
+  await page.goto('/robots/kepler/forerunner-k2');
+  const facts = page.getByRole('region', { name: 'Key facts', exact: true });
+  await expect(facts).toContainText('1.75 m');
+  await expect(facts).toContainText('Not published: Payload');
+  await expect(page.getByTestId('spec-unpublished')).toContainText('IP rating');
+  const profile = page.locator('[data-profile]');
+  await expect(profile).not.toHaveAttribute('open', /.*/);
+  await profile.locator('summary').click();
+  await expect(profile).toHaveAttribute('open', '');
+  await page.getByRole('navigation', { name: 'On this page' }).getByRole('link', { name: 'Specifications', exact: true }).click();
+  await expect(page).toHaveURL(/#specs$/);
 });
 
 test('unknown robots 404', async ({ page }) => {

@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
     '/workflows{,/**}': ['./data/solutions/*.json'],
     '/use-cases{,/**}': CONTENT,
     '/robots{,/**}': ['./data/snapshot/pglite.tar.gz', ...CONTENT],
-    '/brands{,/**}': ['./data/snapshot/pglite.tar.gz'],
+    '/brands{,/**}': ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
     '/steps': CONTENT,
     '/costs': ['./data/costs/*.json'],
     '/compare': ['./data/snapshot/pglite.tar.gz'],

@@ -188,9 +188,6 @@
 .mk-page-section { margin-top: 48px; }
 .mk-show-all { margin-top: 16px; font-size: 14px; font-weight: 500; }
 .mk-show-all a { text-decoration: underline; text-underline-offset: 4px; }
-.mk-notsold-more { margin-top: 16px; }
-.mk-notsold-more summary { cursor: pointer; font-size: 14px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; }
-.mk-notsold-more .mk-notsold { margin-top: 16px; }
 .mk-page-section-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; }
 .mk-page-section-head h2 { font-size: 24px; font-weight: 600; }
 .mk-page-section-head h2 span { font-size: 16px; color: var(--faint); font-weight: 500; margin-left: 4px; }
@@ -198,10 +195,6 @@
 .mk-robot-link { transition: border-color 0.15s ease, box-shadow 0.15s ease; }
 .mk-robot-link:hover { border-color: var(--edge-strong); box-shadow: var(--shadow-card); }
 .mk-card-summary { font-size: 14px; line-height: 1.5; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.mk-notsold { margin-top: 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 32px; }
-.mk-notsold li { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; border-bottom: 1px solid var(--edge); font-size: 14px; }
-.mk-notsold li span { color: var(--muted); font-size: 12px; line-height: 1.5; }
-.mk-notsold a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
 
 .mk-crumbs { font-size: 12px; color: var(--muted); }
 .mk-crumbs a { text-decoration: underline; text-underline-offset: 3px; }
@@ -245,7 +238,6 @@
   .mk-detail-top { grid-template-columns: minmax(0, 1fr); }
   .mk-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .mk-job-columns { grid-template-columns: minmax(0, 1fr); }
-  .mk-notsold { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
   .mk-page-head h1, .mk-detail-info h1 { font-size: 24px; }
@@ -275,6 +267,11 @@
 .mk-versions[data-count="1"] .mk-buybox > p { max-width: 720px; }
 .mk-versions[data-count="1"] .mk-detail-sellers { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: 16px 32px; }
 .mk-versions .mk-buybox { margin-top: 0; }
+/* A version's own picture when a page lists several; light like the card pictures. */
+.mk-buybox-pic { position: relative; display: block; height: 140px; border-radius: 12px; background: #f4f4f5; overflow: hidden; }
+.mk-buybox-note { margin-top: 12px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.mk-buybox-pic img { position: absolute; inset: 12px; width: calc(100% - 24px); height: calc(100% - 24px); object-fit: contain; }
+.mk-versions[data-count="1"] .mk-buybox-pic { max-width: 320px; height: 200px; }
 .mk-buybox > p.mk-buybox-title { font-size: 16px; font-weight: 600; color: var(--foreground); }
 .mk-buybox-sellers { padding-top: 12px; border-top: 1px solid var(--edge); }
 .mk-buybox-sellers summary { cursor: pointer; font-size: 14px; font-weight: 500; }

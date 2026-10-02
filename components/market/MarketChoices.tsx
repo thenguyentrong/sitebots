@@ -147,7 +147,7 @@ export function MarketChoices({ job, type: initialType, contact }: { job: JobDet
   const later = job.fits.preorder.filter((fit) => robots[fit.robotId]);
   const fitting = all.filter(isStrong);
   const makers = new Set(fitting.map((fit) => robots[fit.robotId].maker)).size;
-  const away = job.fits.notSold.filter((id) => robots[id]);
+
   return <section className="mk-choices" aria-label="Robots for this job" data-testid="robot-choices">
     <div className="mk-choices-head">
       <h3>{fitting.length ? fitting.length + ' robot' + (fitting.length > 1 ? 's' : '') + (makers > 1 && makers < fitting.length ? ' from ' + makers + ' makers' : '') + ' you can buy in Germany fit this job' : all.length ? 'No robot fits outright; ' + all.length + ' could with add-ons or a trial' : 'No robot you can buy in Germany yet'}</h3>
@@ -165,9 +165,8 @@ export function MarketChoices({ job, type: initialType, contact }: { job: JobDet
       {compared.length >= 2 ? <Comparison items={compared} job={job} /> : null}
     </> : <p className="mk-muted">{job.needs?.generalPurpose === 'no' ? 'This job needs a dedicated machine or stays with people today.' : 'No robot sold in Germany matches what this job needs yet.'} {job.needs?.reason ?? ''}</p>}
     {contact ? <p className="mk-talk">Not sure which robot fits your site? <a href={'mailto:' + contact + '?subject=' + encodeURIComponent('Robots for: ' + job.title)}>Write to us</a> and we put you in touch with a seller or integrator.</p> : null}
-    {later.length || away.length ? <div className="mk-elsewhere">
-      {later.length ? <p><strong>Pre-order only:</strong> {later.map((fit, index) => <span key={fit.robotId}>{index ? ', ' : ''}<Link href={robots[fit.robotId].href}>{robots[fit.robotId].name}</Link></span>)}</p> : null}
-      {away.length ? <p><strong>Not sold in Germany:</strong> {away.map((id, index) => <span key={id}>{index ? ', ' : ''}<Link href={robots[id].href}>{robots[id].name}</Link></span>)}</p> : null}
+    {later.length ? <div className="mk-elsewhere">
+      <p><strong>Pre-order only:</strong> {later.map((fit, index) => <span key={fit.robotId}>{index ? ', ' : ''}<Link href={robots[fit.robotId].href}>{robots[fit.robotId].name}</Link></span>)}</p>
     </div> : null}
   </section>;
 }

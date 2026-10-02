@@ -29,10 +29,12 @@ function Provenance({ spec }: { spec: SpecValue }) {
 
 const fmt = (n: number, d = 0) => n.toLocaleString('en-GB', { maximumFractionDigits: d });
 
-/** Sensors, actuators and the battery pack as item lines; the scalar parts fields as rows above them. */
-export function PartsPanel({ specs, formFactor }: { specs: Specs; formFactor: string }) {
+/** Sensors, actuators and the battery pack as item lines; the scalar parts fields as lines above them,
+ * each value under its label so long text has the full width. What nobody publishes is named in one line. */
+export function PartsPanel({ specs, formFactor, alsoUnpublished = [] }: { specs: Specs; formFactor: string; alsoUnpublished?: string[] }) {
   const present = new Set(Object.keys(specs));
   const scalar = visibleFields(formFactor, present).filter((f) => f.group === 'parts' && f.kind !== 'json');
+  const unpublished = [...scalar.filter((f) => !specs[f.id]).map((f) => f.label), ...alsoUnpublished];
   const sensors = specs.sensors?.value as unknown as SensorItem[] | undefined;
   const actuators = specs.actuators?.value as unknown as ActuatorItem[] | undefined;
   const battery = specs.battery_pack?.value as unknown as BatteryPack | undefined;
@@ -44,20 +46,20 @@ export function PartsPanel({ specs, formFactor }: { specs: Specs; formFactor: st
         <h2 className="text-sm font-semibold">Built-in parts</h2>
         <span className="text-xs text-faint">{nothing ? 'nothing published' : 'what ships inside'}</span>
       </header>
-      <table className="w-full border-collapse text-sm">
-        <tbody>
-          {scalar.map((f) => {
-            const spec = specs[f.id];
-            return (
-              <tr key={f.id} className="border-t border-edge/60 first:border-t-0 align-top">
-                <td className="w-[36%] px-5 py-2.5 text-muted">{f.label}</td>
-                <td className="num px-2 py-2.5 font-medium">{spec ? formatSpec(f.id, spec) : <span className="font-normal text-faint">not published</span>}</td>
-                <td className="px-5 py-2.5 text-right">{spec ? <Provenance spec={spec} /> : <EvidenceBadge trust="unknown" />}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <ul className="divide-y divide-edge/60">
+        {scalar.filter((f) => specs[f.id]).map((f) => {
+          const spec = specs[f.id]!;
+          return (
+            <li key={f.id} className="px-5 py-3">
+              <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+                <p className="text-xs font-medium text-muted">{f.label}</p>
+                <Provenance spec={spec} />
+              </div>
+              <p className="num mt-1 text-sm font-medium">{formatSpec(f.id, spec)}</p>
+            </li>
+          );
+        })}
+      </ul>
       {[
         { key: 'sensors', label: 'Sensors', spec: specs.sensors, lines: sensors?.map((s) => `${s.count && s.count > 1 ? `${s.count}× ` : ''}${SENSOR_TYPE_LABEL[s.type] ?? s.type}${s.model ? ` · ${s.model}` : ''}${s.location ? ` · ${s.location}` : ''}${s.note ? `: ${s.note}` : ''}`) },
         { key: 'actuators', label: 'Actuators', spec: specs.actuators, lines: actuators?.map((a) => `${ACTUATOR_GROUP_LABEL[a.group] ?? a.group}${a.count ? ` · ${a.count}×` : ''}${a.type ? ` ${a.type}` : ''}${a.model ? ` ${a.model}` : ''}${a.peak_torque_nm ? ` · ${fmt(a.peak_torque_nm)} N·m peak` : ''}${a.note ? `: ${a.note}` : ''}`) },
@@ -77,6 +79,7 @@ export function PartsPanel({ specs, formFactor }: { specs: Specs; formFactor: st
           </div>
         ) : null,
       )}
+      {unpublished.length ? <p className="border-t border-edge/70 px-5 py-3 text-xs text-muted">Not published: {unpublished.join(', ')}.</p> : null}
     </section>
   );
 }
