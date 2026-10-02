@@ -1,0 +1,245 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-d1-pro",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "D1",
+ "variant": "Pro",
+ "name": "AGIBOT D1 Pro",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agibot.com/products/D1_Pro",
+ "summary": "A 15.5 kg remote-controlled robot dog with a camera feed and no programming interface; suited to demonstrations, not to site inspection.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Génération Robots sells the D1 Pro for 3,230 € net (3,876 € gross) with delivery in 2 to 4 weeks; the AGIBOT online store also ships it from China.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 3230,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "3,876 € incl. VAT."
+  },
+  "priceOther": {
+   "amount": 3200,
+   "currency": "USD",
+   "market": "AGIBOT online store (ships from China, duties extra)",
+   "sourceId": "s3"
+  },
+  "leadTime": "2 to 4 weeks (Génération Robots)",
+  "sellers": [
+   {
+    "name": "Génération Robots",
+    "country": "FR",
+    "role": "distributor",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "productUrl": "https://www.generationrobots.com/de/404438-quadruped-roboter-agibot-d1-pro.html",
+    "priceEur": 3230,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Add to cart; order on invoice possible."
+   },
+   {
+    "name": "AGIBOT online store",
+    "country": "CN",
+    "role": "manufacturer",
+    "contactUrl": "https://www.agibot.com/Contact/Business",
+    "email": "sales@agibot.com",
+    "phone": null,
+    "productUrl": "https://store.agibot.com/products/d1-pro",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Price in USD; shipments leave China, 20 to 45 business days, buyer pays duties and taxes."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 15.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Standing size (L x W x H)",
+   "value": "635 x 360 x 420",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Effective payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 3.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 1,
+   "unit": "h",
+   "conditions": "1 to 2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "range_km",
+   "label": "Range",
+   "value": 6,
+   "unit": "km",
+   "conditions": "6 ± 1 km",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "10 to 90 %",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Continuous stair climb height",
+   "value": 16,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. slope",
+   "value": 40,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "8-core CPU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "IMU; camera with real-time image transmission (DFOV 122°)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": "Not supported on the Pro (Edu version only)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 5,
+  "runtimeH": 1,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "No SDK or expansion interfaces on the Pro; buy the D1 Edu to program it or mount sensors.",
+   "No IP rating stated; operating range 0 to 40 °C, so not for wet or cold outdoor work.",
+   "Remote-controlled; no autonomous navigation."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.agibot.com/public/static/index/en/images/D1_Edu/D1Edu_One-bj1.jpg",
+   "pageUrl": "https://www.agibot.com/products/D1_Pro",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT D1 Pro/Edu quadruped climbing a staircase",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.agibot.com/public/uploads/images/20250924/e044a723bc5ab5aa5b3a8e0a09bd51e0.png",
+   "pageUrl": "https://www.agibot.com/products/D1_Pro",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT D1 Pro quadruped with front camera and yellow feet, three-quarter front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agibot.com/products/D1_Pro",
+   "title": "D1 Pro/Edu product page and specifications",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404438-quadruped-roboter-agibot-d1-pro.html",
+   "title": "Quadruped Roboter AgiBot D1 Pro",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://store.agibot.com/products/d1-pro",
+   "title": "AGIBOT D1 Pro",
+   "publisher": "AGIBOT online store",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Launch date not found on an opened source."
+ ],
+ "checkedAt": "2026-10-02"
+}

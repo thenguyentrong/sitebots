@@ -1,0 +1,202 @@
+{
+ "schemaVersion": 1,
+ "id": "anybotics-anymal-x",
+ "maker": "ANYbotics",
+ "makerCountry": "CH",
+ "model": "ANYmal X",
+ "variant": null,
+ "name": "ANYbotics ANYmal X",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.anybotics.com/robotics/anymal-x/",
+ "summary": "An explosion-proof version of ANYmal, ATEX and IECEx certified up to Zone 1 IIB, for autonomous inspection rounds in chemical and oil and gas plants.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request directly by ANYbotics (Zurich); tested in Ex zones at BASF Ludwigshafen in 2023. No German reseller and no public price.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "ANYbotics AG",
+    "country": "CH",
+    "role": "manufacturer",
+    "productUrl": "https://www.anybotics.com/robotics/anymal-x/",
+    "contactUrl": "https://www.anybotics.com/contact-sales/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Zurich; its reseller list names no German partner. Customers in Germany include W.R. Grace (Düren) and BASF (Ludwigshafen tests)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "ex_certification",
+   "label": "Explosion protection",
+   "value": "ATEX and IECEx up to Zone 1 IIB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Normal walking speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": "figure from the 2025 product page; 2026 specifications announced but not yet published",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Running time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "60 to 90 min, about 1.5 km per charge (2025 product page)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "360° lidar, 6 depth cameras, 2 tele-operation cameras; pan-tilt payload with 20x zoom camera, thermal camera -10 to 400 °C, microphone (audible range), spotlight",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_options",
+   "label": "Optional payloads",
+   "value": "gas sensor payload for combustible and toxic gases",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "2x Intel Core i7 8th gen (6-core)",
+   "unit": null,
+   "conditions": "2025 product page",
+   "sourceId": "s2"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": "industrial and open grated stairs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 1,
+  "ipRating": "IP67",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Only legged robot in this list certified for explosive atmospheres (Zone 1 IIB).",
+   "Delivered with charger, docking station, Ex-proof tablet and transport box (2025 product page).",
+   "Current 2026 specifications were announced as coming soon at the time of checking; weight and payload not published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://web.archive.org/web/20231120032309im_/https://www.anybotics.com/wp-content/uploads/2022/03/anymal-x-robot-inspection-ex-proof-environment.png",
+   "pageUrl": "https://www.anybotics.com/robotics/anymal-x/",
+   "credit": "ANYbotics (archived copy, Internet Archive)",
+   "alt": "ANYbotics ANYmal X explosion-proof inspection robot in dark grey, whole robot cut out on a plain background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.anybotics.com/wp-content/uploads/2023/07/ANYmal-X.jpg",
+   "pageUrl": "https://www.anybotics.com/robotics/anymal-x/",
+   "credit": "ANYbotics",
+   "alt": "ANYmal X in a process plant",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.anybotics.com/wp-content/uploads/2023/08/ANYmal-X-features-portrait-scaled.jpg",
+   "pageUrl": "https://www.anybotics.com/robotics/anymal-x/",
+   "credit": "ANYbotics",
+   "alt": "ANYmal X explosion-proof inspection robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/plant-room-rounds"
+   ],
+   "task": "Runs 20-minute autonomous visual, thermal and acoustic inspection missions in Ex-zone steamcracker and oxo plants",
+   "stage": "pilot",
+   "where": "BASF, Ludwigshafen, Germany",
+   "date": "2023-08",
+   "sourceId": "s3",
+   "note": "Part of the BASF legged inspection robot evaluation program."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.anybotics.com/robotics/anymal-x/",
+   "title": "ANYmal X",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://web.archive.org/web/2025/https://www.anybotics.com/robotics/anymal-x/",
+   "title": "ANYmal X product page (2025 archived version with specifications)",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.anybotics.com/news/anymal-x-basf-ludwigshafen-deployment/",
+   "title": "ANYmal X Tested for Autonomous Robot Inspections in Ex-zones at BASF",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "2026 ANYmal X specifications (weight, payload, runtime) not yet published.",
+  "No public price.",
+  "anybotics.com blocks curl and WebFetch (Cloudflare 403); pages and image URLs were checked in a browser, where the images return image/jpeg. Hotlinking may be blocked for some visitors."
+ ],
+ "checkedAt": "2026-10-02"
+}

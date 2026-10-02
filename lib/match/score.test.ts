@@ -27,22 +27,23 @@ describe('rankRobots', () => {
   it('strict mode excludes unknowns', () => {
     const out = rankRobots(FIXTURES, req({ payload_kg: 12, stairs: 'required', strict_unknowns: true }), { today });
     expect(out.ranked.map((r) => r.robot.id)).toEqual(['quad']);
-    expect(out.excluded.find((e) => e.robot.id === 'unknown')!.reasons[0]).toContain('not published');
+    expect(out.excluded.find((e) => e.robot.id === 'unknown')!.reasons).toContain('Payload: working payload not confirmed; 20 kg rated, both arms is reported');
   });
 
-  it('scores the shift runtime with swap and basis in the sentence', () => {
+  it('keeps nominal runtime unconfirmed while supported loaded runtime can meet a shift', () => {
     const out = rankRobots([smallHumanoid, siteQuadruped, wheeledEu], req({ runtime_h_per_shift: 8, hot_swap_acceptable: true }), { today });
     const w = out.ranked.find((r) => r.robot.id === 'wheeled')!;
     expect(w.results.find((r) => r.id === 'runtime')).toMatchObject({ status: 'pass', text: '8 h (loaded) covers an 8 h shift' });
     const q = out.ranked.find((r) => r.robot.id === 'quad')!;
     expect(q.results.find((r) => r.id === 'runtime')?.text).toContain('swappable');
     const s = out.ranked.find((r) => r.robot.id === 'small')!;
-    expect(s.results.find((r) => r.id === 'runtime')).toMatchObject({ status: 'partial' });
-    expect(s.results.find((r) => r.id === 'runtime')?.text).toContain('2 h (basis unstated) < 8 h shift');
+    expect(s.results.find((r) => r.id === 'runtime')).toMatchObject({ status: 'unknown' });
+    expect(s.results.find((r) => r.id === 'runtime')?.text).toContain('loaded work runtime not confirmed');
   });
 
   it('runtime becomes a hard fail when swapping is not acceptable', () => {
-    const out = rankRobots([smallHumanoid], req({ runtime_h_per_shift: 8, hot_swap_acceptable: false }), { today });
+    const loaded = { ...wheeledEu, card: { ...wheeledEu.card, specs: { ...wheeledEu.card.specs, 'runtime_h:loaded': { ...wheeledEu.card.specs['runtime_h:loaded'], value: 2 } } } };
+    const out = rankRobots([loaded], req({ runtime_h_per_shift: 8, hot_swap_acceptable: false }), { today });
     expect(out.ranked).toHaveLength(0);
     expect(out.excluded[0].reasons[0]).toContain('Runtime per shift');
   });

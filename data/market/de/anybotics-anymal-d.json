@@ -1,0 +1,319 @@
+{
+ "schemaVersion": 1,
+ "id": "anybotics-anymal-d",
+ "maker": "ANYbotics",
+ "makerCountry": "CH",
+ "model": "ANYmal",
+ "variant": "Generation D",
+ "name": "ANYbotics ANYmal (Generation D)",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.anybotics.com/robotics/anymal/",
+ "summary": "A 50 kg four-legged inspection robot with a pan-tilt head (zoom camera, thermal camera, ultrasonic microphone) that walks plant rounds on its own, climbs industrial stairs and docks to recharge.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request directly by ANYbotics (Zurich); in routine use at W.R. Grace in Düren and tested at BASF Ludwigshafen. No German reseller and no public price.",
+  "sourceIds": [
+   "s1",
+   "s4",
+   "s6"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "ANYbotics AG",
+    "country": "CH",
+    "role": "manufacturer",
+    "productUrl": "https://www.anybotics.com/robotics/anymal/",
+    "contactUrl": "https://www.anybotics.com/contact-sales/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Zurich; its reseller list names no German partner. Customers in Germany include W.R. Grace (Düren) and BASF (Ludwigshafen tests)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "55.7 kg with inspection payload",
+   "sourceId": "s2"
+  },
+  {
+   "key": "length_m",
+   "label": "Length",
+   "value": 0.93,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "height_m",
+   "label": "Height (default walking)",
+   "value": 0.89,
+   "unit": "m",
+   "conditions": "0.47 m lying on the ground",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Extra payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "nominal; up to 15 kg with reduced speed and runtime",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max walking speed",
+   "value": 1.3,
+   "unit": "m/s",
+   "conditions": "0.75 m/s recommended",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step",
+   "value": 25,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": "up to 45°, max rise 230 mm, min run 210 mm, min width 800 mm, open risers and grated steps",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "plus or minus 30 degrees",
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": "°C",
+   "conditions": "specified; typical -10 to 50 °C",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 932.4,
+   "unit": "Wh",
+   "conditions": "swappable Li-ion",
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Running time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "90 to 120 min per charge, about 4 km range",
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Full charge",
+   "value": 3,
+   "unit": "h",
+   "conditions": "70% in 100 min",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "16-channel lidar (100 m), 6 depth cameras, 2 tele-operation cameras; inspection payload with 20x zoom camera, thermal camera -40 to 550 °C, ultrasonic microphone 0-384 kHz, spotlight",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "payload_options",
+   "label": "Optional payloads",
+   "value": "up to two gas concentration sensors; acoustic imager for gas leaks and partial discharge",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "2x Intel Core i7 8th gen (6-core)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "gRPC ANYmal API, ROS-based plugins on robot",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 10,
+  "runtimeH": 1.5,
+  "ipRating": "IP67",
+  "sdk": "ANYmal API (gRPC), ROS",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Sold as an inspection solution with charger, docking station, rugged tablet and transport box.",
+   "Low light (min. 20 lux) is needed for automatic docking and tele-operation.",
+   "Not Ex-certified; for Ex zones see ANYmal X.",
+   "A research configuration with open ROS access and an optional manipulation payload is offered to universities."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://web.archive.org/web/20220313040037im_/https://www.anybotics.com/wp-content/uploads/2021/06/anymal-d-legged-robot-walking.png",
+   "pageUrl": "https://web.archive.org/web/20220313062408/https://www.anybotics.com/anymal-ex-proof-inspection-robot/",
+   "credit": "ANYbotics (archived copy, Internet Archive)",
+   "alt": "ANYbotics ANYmal D in red with lidar and pan-tilt inspection head, whole robot cut out on a plain background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.anybotics.com/wp-content/uploads/2023/07/A-tough-robot-for-rough-environments.jpg",
+   "pageUrl": "https://www.anybotics.com/robotics/anymal/",
+   "credit": "ANYbotics",
+   "alt": "ANYmal with its pan-tilt inspection head in an electrical room",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.anybotics.com/wp-content/uploads/2023/08/ANYmal-features-portrait-scaled.jpg",
+   "pageUrl": "https://www.anybotics.com/robotics/anymal/",
+   "credit": "ANYbotics",
+   "alt": "ANYmal inspection robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/plant-room-rounds"
+   ],
+   "task": "Reads gauges, records pump and compressor sound and checks hot spots on autonomous rounds in a chemical plant",
+   "stage": "pilot",
+   "where": "BASF, Ludwigshafen, Germany",
+   "date": "2021-03",
+   "sourceId": "s4",
+   "note": "Proof of concept using the plant CAD model. The 2021 case study does not say which ANYmal generation was used."
+  },
+  {
+   "taskIds": [
+    "facility_operation/plant-room-rounds"
+   ],
+   "task": "Runs over 120 thermal, visual and acoustic inspection points per mission in a chemical facility",
+   "stage": "deployment",
+   "where": "W.R. Grace chemical plant, Düren, Germany",
+   "date": "2022-11",
+   "sourceId": "s6",
+   "note": "Plant reports a 1.5% uptime increase attributed to ANYmal."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.anybotics.com/robotics/anymal/",
+   "title": "ANYmal - Autonomous Robotic Inspection Solution",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.anybotics.com/anymal-technical-specifications.pdf",
+   "title": "ANYmal Technical Specifications, Generation D",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.anybotics.com/partners/",
+   "title": "Partners (reseller network)",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.anybotics.com/news/anymal-case-basf-chemical-plant/",
+   "title": "Automation & Digitalization at Scale: ANYmal Makes the Case at BASF",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.anybotics.com/news/anymal-x-basf-ludwigshafen-deployment/",
+   "title": "ANYmal X Tested for Autonomous Robot Inspections in Ex-zones at BASF",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.anybotics.com/news/anymal-contributes-to-chemical-facility/",
+   "title": "ANYmal Contributes to Grace's Chemical Facility Uptime",
+   "publisher": "ANYbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No public price; sold as a solution, possibly also as robot-as-a-service.",
+  "Launch date of Generation D not confirmed from an opened source.",
+  "anybotics.com blocks curl and WebFetch (Cloudflare 403); pages and image URLs were checked in a browser, where the images return image/jpeg. Hotlinking may be blocked for some visitors."
+ ],
+ "checkedAt": "2026-10-02"
+}

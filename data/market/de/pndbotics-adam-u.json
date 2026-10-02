@@ -1,0 +1,208 @@
+{
+ "schemaVersion": 1,
+ "id": "pndbotics-adam-u",
+ "maker": "PNDbotics",
+ "makerCountry": "CN",
+ "model": "Adam-U",
+ "variant": "Adam-U / Pro / Pro Max / Ultra",
+ "name": "PNDbotics Adam-U",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.pndbotics.com/humanoid",
+ "summary": "A stationary humanoid upper body (31 joints, 6-DoF hands) on a height-adjustable stand (1.35 to 1.77 m) for teleoperated data collection and imitation learning.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/Adam-U",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Adam-U, Pro and Pro Max; price on request."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/PNDbotics-Adam-U-Ultra",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Adam-U Ultra; price on request."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Bipedal (Leverkusen) is the official PNDbotics distributor and lists this model with price on request. Variants: Adam-U, Pro (with motion capture and VR), Pro Max (Inspire RH56E2 hands with force sensors) and Ultra (with pre-trained Being-H model and datasets).",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.77,
+   "unit": "m",
+   "conditions": "adjustable 1.35 to 1.77 m on stand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 61,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "13 per arm incl. hand, 3 torso, 2 head",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. arm torque",
+   "value": 60,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1188,
+   "unit": "Wh",
+   "conditions": "can charge while running",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel NUC12WSKi7 and NVIDIA Jetson Orin NX 16 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "ZED Mini stereo camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Open-source SDK, ROS 2 Humble",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "ROS 2 Humble",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Upper body only on a stand: it does not walk or drive by itself.",
+   "For data collection, teleoperation and imitation learning at a workstation."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.bipedal.de/media/image/product/20/lg/adam-u~2.png",
+   "pageUrl": "https://www.bipedal.de/Adam-U",
+   "credit": "Bipedal GmbH",
+   "alt": "PNDbotics Adam-U upper body on adjustable stand",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations",
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Pick-and-place data collection and post-training of a vision-language-action model (Ultra package)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Seller states over 10,000 real pick-and-place records ship with the Ultra package."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bipedal.de/Adam-U",
+   "title": "PNDbotics Adam U, Pro & Pro Max",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bipedal.de/PNDbotics-Adam-U-Ultra",
+   "title": "PNDbotics Adam U Ultra",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No official PNDbotics product photo of Adam-U found; image is from the distributor.",
+  "Prices not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

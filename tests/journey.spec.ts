@@ -1,57 +1,77 @@
-import { expect, test } from '@playwright/test';
+import { expect, test, type Locator, type Page } from '@playwright/test';
 
 const RUNS = 'Bring fittings, fixings and tools to the installers';
 const DRILL = 'Drill anchor holes overhead for the installations';
 const OWN = 'Clear packaging waste from the floors';
 
-test('find, check and decide: from the landing to a brief that survives a reload', async ({ page }) => {
+async function reveal(page: Page, input: Locator) {
+  const disclosure = page.locator('details').filter({ has: input });
+  if (await disclosure.count() && !(await input.isVisible())) await disclosure.locator('summary').click();
+}
+
+test('discover, review and rank tasks without class-wide exclusions', async ({ page }) => {
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
-
-  // Landing: construction-wide, three steps, no matrix or finder form.
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toContainText('candidate');
-  await expect(page.getByRole('list', { name: 'The three steps' }).getByRole('link')).toHaveCount(3);
-  await expect(page.getByRole('list', { name: 'The five hard tests' }).getByRole('listitem')).toHaveCount(5);
-  await expect(page.locator('[data-priority-cell]')).toHaveCount(0);
-  await page.getByRole('link', { name: 'Find your work' }).click();
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('Which jobs can robots do today?');
+  await expect(page.getByRole('region', { name: 'Explore use cases', exact: true })).toBeVisible();
+  await page.screenshot({ path: '.out/journey-home-desktop.png', fullPage: true, animations: 'disabled' });
+  await page.getByRole('combobox').filter({ hasText: 'Everywhere' }).selectOption('site');
+  await page.locator('[data-job="site_setup_logistics/material-runs-to-installers"]').click();
+  await expect(page.getByTestId('selected-job')).toContainText(RUNS);
+  await page.getByTestId('selected-job').getByRole('link', { name: /Check it for your site/ }).click();
 
-  // Find: the library by LV trade.
-  await expect(page).toHaveURL(/\/use-cases$/);
-  await page.getByRole('group', { name: 'Where' }).getByRole('link', { name: /Construction site/ }).click();
-  await page.getByRole('link', { name: /Site setup and logistics/ }).click();
-  await expect(page).toHaveURL(/setting=site_setup_logistics/);
-  await expect(page.getByTestId('setting-note')).toContainText('LB 000/090');
-  const runs = page.locator('[data-task="site_setup_logistics/material-runs-to-installers"]');
-  await expect(runs).toHaveAttribute('data-verdict', 'candidate');
-  await runs.getByRole('link', { name: 'Check for my site' }).click();
-
-  // Check: the verdict starts from a typical site and moves with the answers.
   await expect(page).toHaveURL(/\/use-cases\/site_setup_logistics\/material-runs-to-installers#check$/);
   await expect(page.getByRole('navigation', { name: 'Journey stations' }).getByRole('link', { name: /Check/ })).toHaveAttribute('aria-current', 'step');
-  const result = page.getByTestId('check-result');
-  await expect(result).toHaveAttribute('data-verdict', 'candidate');
-  await expect(page.locator('#check [data-rule="T1_mass"]')).toHaveAttribute('data-status', 'pass');
+  const result = page.getByTestId('opportunity-result');
+  await expect(result).toHaveAttribute('data-status', 'needs_information');
+  await expect(result.locator('[data-requirement]')).toHaveCount(12);
+  await expect(result.locator('[data-requirement="runtime_continuous_min"]')).toHaveAttribute('data-status', 'missing');
   await page.getByRole('group', { name: 'Dust where the work happens' }).getByRole('button', { name: 'Classified dust area' }).click();
-  await expect(result).toHaveAttribute('data-verdict', 'ruled_out');
-  await expect(page.getByTestId('better-answer')).toContainText('process');
-  await page.getByRole('button', { name: 'Back to typical' }).click();
-  await expect(result).toHaveAttribute('data-verdict', 'candidate');
+  await expect(result.locator('[data-requirement="dust"]')).toHaveAttribute('data-status', 'known');
+  await expect(result).toHaveAttribute('data-status', 'needs_information');
+  await expect(page.getByRole('button', { name: 'Add to my shortlist' })).toBeEnabled();
   await page.screenshot({ path: '.out/journey-check.png', fullPage: true, animations: 'disabled' });
   await page.getByRole('button', { name: 'Add to my shortlist' }).click();
   await expect(page.getByTestId('task-added')).toBeVisible();
 
   await page.goto('/use-cases/site_electrical/overhead-drilling-anchors');
-  await expect(result).toHaveAttribute('data-verdict', 'ruled_out');
-  await expect(page.locator('#check [data-rule="T5_failure_tolerance"]')).toHaveAttribute('data-status', 'fail');
+  await expect(result).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Add to my shortlist' })).toBeEnabled();
   await page.getByRole('button', { name: 'Add to my shortlist' }).click();
+  await page.getByRole('link', { name: 'Go to my shortlist' }).click();
+  await expect(page).toHaveURL(/\/plan$/);
+  const rows = page.locator('.shortlist > li');
+  await expect(rows).toHaveCount(2);
+  await expect(rows.filter({ hasText: RUNS })).toBeVisible();
+  await expect(rows.filter({ hasText: DRILL })).toBeVisible();
+  await expect(page.getByRole('link', { name: /My shortlist/ })).toContainText('2');
+  await page.screenshot({ path: '.out/journey-shortlist.png', fullPage: true, animations: 'disabled' });
+  await page.getByRole('link', { name: 'Rank them' }).click();
 
-  // A task of your own: nothing assumed, the verdict waits for the hard tests.
+  await expect(page).toHaveURL(/\/plan\/priorities$/);
+  await page.getByLabel('Task', { exact: true }).selectOption({ label: DRILL });
+  await page.getByLabel('Business value', { exact: true }).selectOption('high');
+  await page.getByLabel('Deployment readiness', { exact: true }).selectOption('low');
+  await expect(page.locator('[data-priority-cell="high:low"]')).toContainText('Drill anchor holes');
+  await page.getByLabel('Task', { exact: true }).selectOption({ label: RUNS });
+  await page.getByLabel('Business value', { exact: true }).selectOption('high');
+  await page.getByLabel('Deployment readiness', { exact: true }).selectOption('medium');
+  await expect(page.locator('[data-priority-cell="high:medium"]')).toContainText('Bring fittings');
+  await page.reload();
+  await expect(page.locator('[data-priority-cell="high:low"]')).toContainText('Drill anchor holes');
+  await expect(page.locator('[data-priority-cell="high:medium"]')).toContainText('Bring fittings');
+  expect(errors).toEqual([]);
+});
+
+test('all twelve task requirements can be captured without claiming robot suitability', async ({ page }) => {
   await page.goto('/use-cases/custom');
-  await expect(result).toHaveAttribute('data-verdict', 'unscreened');
+  const result = page.getByTestId('opportunity-result');
+  await expect(result).toHaveAttribute('data-status', 'needs_information');
+  await expect(result.locator('[data-requirement][data-status="missing"]')).toHaveCount(12);
   await page.getByLabel('Task name').fill(OWN);
   await page.getByLabel('Kind of work').selectOption('cleaning_housekeeping_replenishment');
-  await page.getByRole('spinbutton', { name: 'Heaviest object handled (kg)' }).fill('3');
+  await page.getByRole('spinbutton', { name: 'Heaviest object handled (kg)' }).fill('80');
   await page.getByRole('group', { name: 'How much the task varies' }).getByRole('button', { name: 'High: different every time' }).click();
   await page.getByRole('group', { name: 'What an error costs' }).getByRole('button', { name: 'Caught and corrected' }).click();
   await page.getByRole('group', { name: 'Safety relevance' }).getByRole('button', { name: 'None', exact: true }).click();
@@ -59,83 +79,45 @@ test('find, check and decide: from the landing to a brief that survives a reload
   await page.getByRole('group', { name: 'Dust where the work happens' }).getByRole('button', { name: 'No relevant dust' }).click();
   await page.getByRole('group', { name: 'Indoors or outdoors?' }).getByRole('button', { name: 'Indoor', exact: true }).click();
   await page.getByRole('group', { name: 'Wet conditions' }).getByRole('button', { name: 'Dry', exact: true }).click();
-  await expect(result).toHaveAttribute('data-verdict', 'candidate');
+
+  const reach = page.getByLabel('Working height (m)', { exact: true });
+  await reveal(page, reach);
+  await reach.fill('2');
+  const floor = page.getByRole('group', { name: 'Floor', exact: true });
+  await reveal(page, floor);
+  await floor.getByRole('button', { name: 'Level floor' }).click();
+  await page.getByRole('group', { name: 'Cameras and data' }).getByRole('button', { name: 'No people in view' }).click();
+  await expect(result).toHaveAttribute('data-status', 'needs_information');
+  await expect(result.locator('[data-requirement][data-status="missing"]')).toHaveCount(1);
+  await page.getByRole('spinbutton', { name: 'Longest unbroken run (minutes)' }).fill('480');
+  await expect(result).toHaveAttribute('data-status', 'ready_to_compare');
+  await expect(result.locator('[data-requirement][data-status="known"]')).toHaveCount(12);
+  await expect(result).toContainText('Knowing the requirements does not show that any robot');
   await page.getByRole('button', { name: 'Add to my shortlist' }).click();
   await expect(page).toHaveURL(/\/use-cases\/custom\?project=/);
-  await page.getByRole('link', { name: 'Go to my shortlist' }).click();
-
-  // Decide: the shortlist, best first, the ruled-out task with its better answer.
-  await expect(page).toHaveURL(/\/plan$/);
-  const rows = page.locator('.shortlist > li');
-  await expect(rows).toHaveCount(3);
-  await expect(rows.filter({ hasText: RUNS })).toHaveAttribute('data-verdict', 'candidate');
-  await expect(rows.filter({ hasText: OWN })).toHaveAttribute('data-verdict', 'candidate');
-  await expect(rows.filter({ hasText: DRILL })).toHaveAttribute('data-verdict', 'ruled_out');
-  await expect(rows.filter({ hasText: DRILL })).toContainText('Better answer');
-  await expect(page.getByRole('link', { name: /My shortlist/ })).toContainText('3');
-  await page.screenshot({ path: '.out/journey-shortlist.png', fullPage: true, animations: 'disabled' });
-  await page.getByRole('link', { name: 'Rank them' }).click();
-
-  // Which first: the matrix over the survivors; the ruled-out task is listed, not ranked.
-  await expect(page).toHaveURL(/\/plan\/priorities$/);
-  await expect(page.getByTestId('ruled-out-note')).toContainText('Drill anchor holes');
-  await page.getByLabel('Task', { exact: true }).selectOption({ label: RUNS });
-  await page.getByLabel('Business value', { exact: true }).selectOption('high');
-  await page.getByLabel('Deployment readiness', { exact: true }).selectOption('medium');
-  await expect(page.locator('[data-priority-cell="high:medium"]')).toContainText('Bring fittings');
-  await expect(page.locator('[data-priority-cell] button', { hasText: 'Drill anchor holes' })).toHaveCount(0);
-
-  // Solutions: the matcher receives the checked facts of the task.
-  const response = page.waitForResponse((res) => res.url().endsWith('/api/plan') && res.request().method() === 'POST');
-  await page.getByRole('link', { name: /Continue to solutions/ }).click();
-  await expect(page).toHaveURL(/\/plan\/systems$/);
-  const sent = (await response).request().postDataJSON();
-  expect(sent.requirements).toMatchObject({ payload_kg: 12, environment: 'indoor', region: 'DE' });
-  await expect(page.getByTestId('systems-verdict')).toContainText('Candidate');
-  const candidate = page.getByRole('article').first();
-  await expect(candidate).toBeVisible();
-  const robotName = await candidate.getByRole('heading').innerText();
-  await candidate.getByRole('button', { name: 'Add to assessment', exact: true }).click();
-  await page.getByRole('button', { name: 'Estimate costs →' }).click();
-
-  // Cost and pilot: the business case and the brief.
-  await expect(page).toHaveURL(/\/plan\/implementation$/);
-  await page.getByLabel('Total initial spend (€)', { exact: false }).fill('120000');
-  await page.getByLabel('Net hours released per year', { exact: false }).fill('1800');
-  await page.getByLabel('Loaded labor cost (€/hour)', { exact: false }).fill('40');
-  await page.getByLabel('Hours converted to cash savings (%)', { exact: false }).fill('50');
-  await page.getByLabel('Additional operating cost (€/year)', { exact: false }).fill('12000');
-  await expect(page.getByTestId('plan-net')).toHaveText('€24,000');
-  await page.getByRole('button', { name: 'Prepare pilot brief →' }).click();
-  await page.locator('summary').filter({ hasText: 'Read the full decision brief' }).click();
-  await expect(page.locator('[data-plan-brief]')).toContainText(robotName);
-  await expect(page.locator('[data-plan-brief]')).toContainText(RUNS);
-
-  // Everything survives a reload; the step bar counts the shortlist.
   await page.reload();
-  await expect(page.getByTestId('plan-net')).toHaveText('€24,000');
-  await expect(page.getByRole('navigation', { name: 'Journey stations' })).toContainText('3 in your shortlist');
-  await page.emulateMedia({ media: 'print' });
-  await expect(page.locator('[data-plan-brief]')).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Print decision brief' })).toBeHidden();
-  await page.pdf({ path: '.out/journey-brief.pdf', format: 'A4', printBackground: true });
-  expect(errors).toEqual([]);
+  await expect(result).toHaveAttribute('data-status', 'ready_to_compare');
+  await expect(page.getByRole('spinbutton', { name: 'Heaviest object handled (kg)' })).toHaveValue('80');
 });
 
-test('a machine the visitor already runs for the step keeps the process', async ({ page }) => {
+test('existing equipment remains a comparison baseline rather than excluding the task', async ({ page }) => {
   await page.goto('/use-cases/prefab_timber/fittings-kitting');
-  const result = page.getByTestId('check-result');
-  await expect(result).toHaveAttribute('data-verdict', 'candidate');
+  const result = page.getByTestId('opportunity-result');
+  await expect(result).toBeVisible();
   await page.getByRole('group', { name: 'Does a machine already do this?' }).getByRole('button', { name: 'A dedicated machine does it' }).click();
-  await expect(result).toHaveAttribute('data-verdict', 'ruled_out');
-  await expect(page.getByTestId('better-answer')).toContainText('keep the existing process');
-  await page.getByRole('button', { name: 'Back to typical' }).click();
-  await expect(result).toHaveAttribute('data-verdict', 'candidate');
+  await expect(result.locator('[data-requirement="incumbent_automation"]')).toHaveAttribute('data-status', 'known');
+  await expect(result).toContainText('Existing equipment already covers');
+  await expect(page.getByRole('button', { name: 'Add to my shortlist' })).toBeEnabled();
+  await page.getByRole('button', { name: 'Add to my shortlist' }).click();
+  await page.reload();
+  await expect(page.getByRole('group', { name: 'Does a machine already do this?' }).getByRole('button', { name: 'A dedicated machine does it' })).toHaveAttribute('aria-pressed', 'true');
 });
 
-test('the landing, the check and the shortlist stay clean on a phone', async ({ page }) => {
+test('the landing, review and shortlist fit a phone', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  const noSideScroll = async () => expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  const noSideScroll = async () => {
+    await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  };
   await page.goto('/');
   await noSideScroll();
   await page.screenshot({ path: '.out/journey-home-mobile.png', fullPage: true, animations: 'disabled' });
@@ -151,4 +133,21 @@ test('the landing, the check and the shortlist stay clean on a phone', async ({ 
   await page.screenshot({ path: '.out/journey-shortlist-mobile.png', fullPage: true, animations: 'disabled' });
   await page.goto('/use-cases/custom');
   await noSideScroll();
+});
+
+
+
+
+test('an explicitly unknown site condition survives saving and can return to the task baseline', async ({ page }) => {
+  await page.goto('/use-cases/prefab_timber/fittings-kitting');
+  const dustRequirement = page.getByTestId('opportunity-result').locator('[data-requirement="dust"]');
+  await expect(dustRequirement).toHaveAttribute('data-status', 'known');
+  await page.getByRole('group', { name: 'Dust where the work happens' }).getByRole('button', { name: 'Not sure', exact: true }).click();
+  await expect(dustRequirement).toHaveAttribute('data-status', 'missing');
+  await page.getByRole('button', { name: 'Add to my shortlist' }).click();
+  await page.reload();
+  await expect(dustRequirement).toHaveAttribute('data-status', 'missing');
+  await expect(page.getByRole('group', { name: 'Dust where the work happens' }).getByRole('button', { name: 'Not sure', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Back to typical' }).click();
+  await expect(dustRequirement).toHaveAttribute('data-status', 'known');
 });

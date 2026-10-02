@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Configuration-specific humanoid research tasks, with physical learning experiments and historical tool-use demonstrations distinguished from production.",
+  "records": [
+    {
+      "id": "unitree-g1-edu-dex3-research",
+      "name": "Unitree G1 EDU with Dex3-1 research hands",
+      "manufacturer": "Unitree Robotics",
+      "robotClass": "humanoid",
+      "workflowId": "material_handling",
+      "industries": [
+        "research_education"
+      ],
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "exactConfiguration": "G1 EDU with 29 body degrees of freedom and two Dex3-1 hands, matching Unitree XR teleoperation and G1_29/dex3 learning examples. The seller calls the non-tactile 43-DoF package EDU ULTIMATE A; the base G1, 23-DoF EDU and other hand packages are separate.",
+      "description": "Record human-guided manipulation demonstrations, then evaluate learned arm-and-hand policies on a physical G1 in a controlled research setup.",
+      "operatingMode": {
+        "value": "Human XR teleoperation for demonstration collection; separate researcher-supervised learned-policy tests. This is a development workflow, not an unattended production application.",
+        "sourceIds": [
+          "xr",
+          "learning"
+        ],
+        "caveats": [
+          "The operator, camera, workstation, selected hands and software versions are part of the setup.",
+          "The repository distinguishes simulation, physical execution and dataset replay; simulation success is not physical task validation."
+        ]
+      },
+      "specs": [
+        {
+          "key": "height_mm",
+          "value": 1320,
+          "unit": "mm",
+          "semanticLabel": "Manufacturer G1 EDU standing height",
+          "conditions": [
+            "The current seller specification says 1270 mm; verify the shipped revision."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standing_dimensions_mm",
+          "value": "1320 × 450 × 200",
+          "unit": "mm",
+          "semanticLabel": "Manufacturer EDU standing envelope",
+          "conditions": [
+            "Confirm the exact hands and operating envelope."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_with_battery_kg",
+          "value": 35,
+          "unit": "kg",
+          "semanticLabel": "Published approximate lower mass reference",
+          "conditions": [
+            "Manufacturer writes approximately 35 kg+ for EDU; fitted hands and options affect mass."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "body_dof",
+          "value": 29,
+          "unit": null,
+          "semanticLabel": "Body configuration used in XR and learning examples",
+          "conditions": [
+            "Excludes the separately actuated hands.",
+            "The 29-DoF configuration is documented in the official GitHub repository; no matching exact value was checked on the manufacturer domain."
+          ],
+          "sourceIds": [
+            "xr",
+            "learning"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "configured_total_dof",
+          "value": 43,
+          "unit": null,
+          "semanticLabel": "Seller EDU ULTIMATE A total degrees of freedom",
+          "conditions": [
+            "Seller-specific package name; confirm against the quote."
+          ],
+          "sourceIds": [
+            "seller"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "hand_dof",
+          "value": 7,
+          "unit": null,
+          "semanticLabel": "Optional Dex3-1 active joints per hand",
+          "conditions": [
+            "Two hands required for the reviewed dual-arm setup; tactile arrays are optional."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_max_load_kg",
+          "value": 3,
+          "unit": "kg",
+          "semanticLabel": "Manufacturer approximate maximum arm load",
+          "conditions": [
+            "Strongly posture-dependent; not a sustained walking payload or a grasped-object rating."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 2,
+          "unit": "h",
+          "semanticLabel": "Manufacturer approximate battery duration",
+          "conditions": [
+            "Duty cycle is unstated; runtime with XR, compute and hand work remains unknown."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_capacity_mah",
+          "value": 9000,
+          "unit": "mAh",
+          "semanticLabel": "Quick-release battery capacity",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "sensing",
+          "value": "Depth camera and 3D LiDAR",
+          "unit": null,
+          "semanticLabel": "Listed onboard sensors",
+          "conditions": [
+            "Additional teleoperation cameras and their mounting must be agreed."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wireless",
+          "value": "Wi-Fi 6; Bluetooth 5.2",
+          "unit": null,
+          "semanticLabel": "Listed radio interfaces",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "development_access",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Secondary development listed for EDU",
+          "conditions": [
+            "Not the base G1; purchased permissions, APIs and support need confirmation."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "loaded_runtime_h",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Runtime for the full reviewed research setup",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "demonstration",
+          "task": "Collect arm-and-hand manipulation demonstrations through an XR operator and store episodes for learning.",
+          "configuration": "G1 29-DoF body with Dex3-1 hands, supported XR hardware and configured camera/workstation services.",
+          "operatingMode": "Human teleoperation and recording; the person supplies the action sequence.",
+          "sourceIds": [
+            "xr",
+            "learning"
+          ],
+          "limitations": [
+            "A developer must assemble and validate the software/hardware stack.",
+            "No autonomous factory throughput or intervention rate is established."
+          ]
+        },
+        {
+          "stage": "demonstration",
+          "task": "Evaluate trained manipulation policies and replay recorded datasets on a physical G1.",
+          "configuration": "G1_29 with dex3 end-effectors as shown in Unitree learning examples.",
+          "operatingMode": "Researcher-supervised physical testing after data collection and model training.",
+          "sourceIds": [
+            "learning"
+          ],
+          "limitations": [
+            "The toasted-bread example is a research dataset, not food-service certification or a general kitchen capability.",
+            "Acceptance rates, supported object variation and safe reset procedure must be measured."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Unitree Robotics",
+          "market": "Manufacturer enquiry for a German research project",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.unitree.com/contact/",
+            "email": "sales_global@unitree.com",
+            "phone": "+86 17621781139"
+          },
+          "sourceIds": [
+            "contact",
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Quotation required for this exact setup; German delivery, lead time and commissioning are not confirmed.",
+          "authorizationStatus": "Published manufacturer enquiry route.",
+          "caveats": [
+            "Manufacturer prices the EDU version by enquiry; the base G1 headline price is not the reviewed package price."
+          ]
+        },
+        {
+          "organization": "Génération Robots Deutschland",
+          "market": "German-language seller listing and German business contact",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.generationrobots.com/de/404241-humanoider-roboter-g1.html",
+            "email": "service@generationrobots.com",
+            "phone": "+49 176 20527472"
+          },
+          "sourceIds": [
+            "seller",
+            "seller-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Quotation required for this exact setup; German delivery, lead time and commissioning are not confirmed.",
+          "authorizationStatus": "Published seller listing; authorization for this exact package has not been separately verified.",
+          "caveats": [
+            "The live listing describes a research/development prototype and excludes current routine/industrial use.",
+            "The displayed starting price spans different variants; obtain a quote for the 29-body-DoF, dual Dex3 package, software and support."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Manufacturer height is 1320 mm; the checked seller technical table says 1270 mm. Retain the discrepancy until the delivered revision is confirmed.",
+        "The manufacturer presents EDU as a configurable family; the seller uses named package variants. A family-level base price or specification does not establish the selected package."
+      ],
+      "unknowns": [
+        "Exact delivered revision, hand configuration and development/software permissions.",
+        "Loaded runtime, grasp success and human intervention rate for the proposed objects.",
+        "German delivery date, total installed price and site-specific operating acceptance."
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.unitree.com/g1/",
+          "title": "G1 and G1 EDU product specification table",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "xr",
+          "url": "https://github.com/unitreerobotics/xr_teleoperate",
+          "title": "Official XR teleoperation, supported G1 hands and physical deployment",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "learning",
+          "url": "https://github.com/unitreerobotics/unitree_IL_lerobot",
+          "title": "Official G1 data collection, learning and physical evaluation workflow",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.unitree.com/contact/",
+          "title": "Unitree sales contact",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://www.generationrobots.com/de/404241-humanoider-roboter-g1.html",
+          "title": "G1 EDU package variants and research-use restriction",
+          "publisher": "Génération Robots",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "seller-contact",
+          "url": "https://www.generationrobots.com/de/content/127-Deutsche-Kunden",
+          "title": "German business contact",
+          "publisher": "Génération Robots",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.unitree.com/g1/",
+        "https://github.com/unitreerobotics/xr_teleoperate",
+        "https://github.com/unitreerobotics/unitree_IL_lerobot",
+        "https://www.unitree.com/contact/",
+        "https://www.generationrobots.com/de/404241-humanoider-roboter-g1.html",
+        "https://www.generationrobots.com/de/content/127-Deutsche-Kunden"
+      ]
+    },
+    {
+      "id": "pal-talos-tool-research",
+      "name": "PAL TALOS tool-use research platform",
+      "manufacturer": "PAL Robotics",
+      "robotClass": "humanoid",
+      "workflowId": "drilling_fastening",
+      "industries": [
+        "manufacturing",
+        "research_education"
+      ],
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "exactConfiguration": "Full-body TALOS research platform with project-specific end-effectors, controllers and tool fixtures. Memmo/ICRA evidence is from a 2018–2022 research project; the current catalogue is a purchasing reference, not proof of the historical demonstrator hardware revision.",
+      "description": "Prototype handheld-tool work and torque-controlled manipulation in a supervised research cell, including historical drilling experiments in an Airbus experimental line.",
+      "operatingMode": {
+        "value": "Configured whole-body and torque control developed and supervised by a research team. Historical experimental-line demonstrations do not establish routine aircraft production.",
+        "sourceIds": [
+          "product",
+          "memmo",
+          "icra"
+        ],
+        "caveats": [
+          "Task software, tools, fixtures and motion validation are part of the project.",
+          "Memmo ended in 2022; its experiments are historical evidence, not a current production deployment."
+        ]
+      },
+      "specs": [
+        {
+          "key": "height_mm",
+          "value": 1750,
+          "unit": "mm",
+          "semanticLabel": "Current TALOS catalogue height",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 95,
+          "unit": "kg",
+          "semanticLabel": "Current TALOS catalogue mass",
+          "conditions": [
+            "Custom grippers, tooling and project hardware may change the total."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_payload_kg",
+          "value": 6,
+          "unit": "kg",
+          "semanticLabel": "Published payload per fully extended arm",
+          "conditions": [
+            "Confirm whether gripper/tool mass is included; this is not verified drilling force or hole quality."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_walking",
+          "value": 1.5,
+          "unit": "h",
+          "semanticLabel": "Catalogue battery autonomy while walking",
+          "conditions": [
+            "Current standard platform; no loaded research-task duty cycle is specified."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_standby",
+          "value": 3,
+          "unit": "h",
+          "semanticLabel": "Catalogue standby autonomy",
+          "conditions": [
+            "Standby is not an active manipulation runtime."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "control_network",
+          "value": "EtherCAT",
+          "unit": null,
+          "semanticLabel": "Realtime joint communication",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "control_rate_nominal_hz",
+          "value": 2000,
+          "unit": "Hz",
+          "semanticLabel": "Listed control loop rate",
+          "conditions": [
+            "The same page says up to 5 kHz; achievable rate depends on setup."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "torque_feedback",
+          "value": "Joint torque sensing except head, wrists and grippers",
+          "unit": null,
+          "semanticLabel": "Technical table torque-sensor scope",
+          "conditions": [
+            "The feature paragraph says all joints; the specification footnote supplies these exceptions."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "control_software",
+          "value": "ROS; Ubuntu LTS and realtime OS",
+          "unit": null,
+          "semanticLabel": "Published development environment",
+          "conditions": [
+            "Ask which software, controllers and support are included."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "accepted_drilling_rate",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Accepted production drilling output",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "demonstration",
+          "task": "Test humanoid drilling and tool handling in an experimental aircraft assembly line.",
+          "configuration": "Historical TALOS configuration used by the Memmo research project; exact drill, fixtures and control revision are not published in these pages.",
+          "operatingMode": "Research team trials and demonstration work, not established routine production.",
+          "sourceIds": [
+            "memmo",
+            "icra"
+          ],
+          "limitations": [
+            "The project ran from 2018 to 2022.",
+            "Hole quality, feed force, cycle time, tool-change process and production acceptance are not established.",
+            "Do not infer a turnkey drilling package from arm payload."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Develop torque-controlled object handling and whole-body manipulation in a laboratory.",
+          "configuration": "TALOS with configured grippers, whole-body control and experiment-specific tooling.",
+          "operatingMode": "Researcher-developed controllers with experiment supervision.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Published hardware/control capabilities identify a research platform, not a prevalidated task.",
+            "Define force limits, grasp performance and fault recovery for the chosen tools and objects."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "PAL Robotics",
+          "market": "EU manufacturer in Spain; German research-project enquiry",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://pal-robotics.com/contact/",
+            "email": "business@pal-robotics.com",
+            "phone": "+34 93 414 53 47"
+          },
+          "sourceIds": [
+            "contact",
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Quotation required for this exact setup; German delivery, lead time and commissioning are not confirmed.",
+          "authorizationStatus": "Published manufacturer enquiry route.",
+          "caveats": [
+            "Request the exact body, hands, controllers, tooling and support package.",
+            "A historical research partnership does not imply that an Airbus drilling package is offered for sale."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Product copy describes torque feedback in all joints; the specification footnote excludes head, wrists and grippers.",
+        "Current catalogue specifications are not a verified bill of materials for the historical Memmo demonstrator."
+      ],
+      "unknowns": [
+        "Current hardware revision, tooling, software licenses, commissioning and total price.",
+        "Availability of a supported drilling package rather than the research platform alone.",
+        "Task-specific quality, throughput, interventions and acceptance for a German site."
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://pal-robotics.com/robot/talos/",
+          "title": "TALOS current hardware and research-control specifications",
+          "publisher": "PAL Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "memmo",
+          "url": "https://pal-robotics.com/projects/memmo/",
+          "title": "Finished Memmo project and TALOS experimental-line tasks",
+          "publisher": "PAL Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "icra",
+          "url": "https://pal-robotics.com/blog/icra-2020-live-demos-talos-tiago-robots/",
+          "title": "ICRA 2020 TALOS research demonstrations",
+          "publisher": "PAL Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://pal-robotics.com/contact/",
+          "title": "PAL Robotics sales contact and EU offices",
+          "publisher": "PAL Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://pal-robotics.com/robot/talos/",
+        "https://pal-robotics.com/projects/memmo/",
+        "https://pal-robotics.com/blog/icra-2020-live-demos-talos-tiago-robots/",
+        "https://pal-robotics.com/contact/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:restaurant-tray-delivery",
+      "title": "Carry meals from the restaurant pass to table handoff points",
+      "summary": "Move loaded food trays along restaurant routes. Staff or guests remove the dishes; the robot does not place them on a table.",
+      "industries": [
+        "retail_hospitality"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Restaurant dining areas",
+      "reviewLinks": [
+        {
+          "taskId": "research:restaurant-tray-delivery",
+          "reviewId": "pudu-bellabot-pro-tray-delivery",
+          "relationship": "task_candidate",
+          "rationale": "This exact model is offered for open-tray restaurant delivery.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Humans load and unload trays.",
+            "Validate passage clearance, crowd handling, load stability and exception response."
+          ]
+        },
+        {
+          "taskId": "research:restaurant-tray-delivery",
+          "reviewId": "keenon-dinerbot-t10-tray-delivery",
+          "relationship": "task_candidate",
+          "rationale": "This exact model is offered for open-tray restaurant delivery.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Humans load and unload trays.",
+            "Validate passage clearance, crowd handling, load stability and exception response."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:hotel-room-item-delivery",
+      "title": "Bring drinks and room-service items to hotel room doors",
+      "summary": "Deliver stocked drawers to a guest’s floor and room-door handoff point. People replenish items and guests retrieve them; lifts and payment systems need integration.",
+      "industries": [
+        "retail_hospitality"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Hotel corridors and room-door handoff points",
+      "reviewLinks": [
+        {
+          "taskId": "research:hotel-room-item-delivery",
+          "reviewId": "robotise-jeeves-five-drawer-hotel",
+          "relationship": "task_candidate",
+          "rationale": "The hotel model supports drawer-based room service and configured elevator journeys.",
+          "sourceIds": [
+            "technical",
+            "integration"
+          ],
+          "limitations": [
+            "Confirm exact drawer/cooling configuration and lift interface.",
+            "Human replenishment, receipt, cleaning and exceptions remain required."
+          ]
+        }
+      ]
+    }
+  ]
+}

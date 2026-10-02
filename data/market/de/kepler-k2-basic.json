@@ -1,0 +1,140 @@
+{
+ "schemaVersion": 1,
+ "id": "kepler-k2-basic",
+ "maker": "Kepler",
+ "makerCountry": "CN",
+ "model": "Forerunner K2",
+ "variant": "Basic Version (30 DoF, no dexterous hands)",
+ "name": "Kepler K2 Basic",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.gotokepler.com/productDetailK2",
+ "summary": "The entry version of the 1.75 m Kepler K2 humanoid with 30 joints, without dexterous hands or force sensors, for display and exhibition use.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Kepler Exploration Robot (Shanghai)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.gotokepler.com/contact",
+    "email": "sales@gotokepler.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sales email; no EU price for the Basic Version."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "German sellers list only the development versions; Kepler sells K2 into Germany through Bipedal and RBTX, so ask Kepler or Bipedal for the Basic Version.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.75,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 75,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 30,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "warranty",
+   "label": "Warranty",
+   "value": "8 months",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "lead_time_days",
+   "label": "Delivery lead time",
+   "value": 90,
+   "unit": "days",
+   "conditions": "maker",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "No dexterous hands, no 6-axis force sensors and no secondary development platform in this version.",
+   "Maker lists display and exhibition hall functions only for the Basic Version."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/WecomSave_9a0919b520-iKZq2WjC.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/kepler-k2-humanoid-robot-52-dof",
+   "credit": "Kepler (via RBTX)",
+   "kind": "product",
+   "alt": "Kepler Forerunner K2 Basic humanoid, full body, front view (same body as shown in Kepler’s Basic Version graphic)"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.gotokepler.com/productDetailK2",
+   "title": "KEPLERBOT Forerunner K2 product page",
+   "publisher": "Kepler",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bipedal.de/Kepler-K2-Advanced",
+   "title": "Kepler K2 Advanced (shows Kepler is sold in Germany)",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price of the Basic Version unknown."
+ ],
+ "checkedAt": "2026-10-02"
+}

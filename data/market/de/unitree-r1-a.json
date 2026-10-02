@@ -1,0 +1,285 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-r1-a",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "R1-A",
+ "variant": "Fixed base (R1-A5 / R1-A7)",
+ "name": "Unitree R1-A",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/R1-D",
+ "summary": "A stationary dual-arm upper body of 11 to 13 kg with 5- or 7-axis arms carrying 2 to 4 kg each and a choice of gripper or three- or five-finger hands, for bench-top handling and manipulation research.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Not orderable yet. Terra Robotics (DE) lists R1-A5 and R1-A7 versions with net EUR prices, but every version is marked 'Auf Anfrage' (on request) and none can be put in the cart. quadruped.de shows 'price on request, available from 15.02.2027', and Unitree's own store shows the R1-A5 at USD 4,290 but marks it unavailable.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": {
+   "amount": 7548.17,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s3",
+   "note": "Terra Robotics, R1-A5 Smart A (Dex1-1 gripper), excl. VAT. R1-A5 Smart: EUR 7,548.17 to 20,072.05 net; R1-A7 Smart: 8,225.14 to 20,749.02. Price depends on the hand option. All versions shown as on request."
+  },
+  "priceOther": {
+   "amount": 4290,
+   "currency": "USD",
+   "market": "Unitree online store, R1-A5 (listed as unavailable)",
+   "sourceId": "s4"
+  },
+  "leadTime": "quadruped.de: available from 15.02.2027",
+  "sellers": [
+   {
+    "name": "Terra Robotics",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://terra-robotics.de/products/unitree-r1-a7-smart-serie",
+    "contactUrl": "https://terra-robotics.de/pages/contact",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": 8225.14,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "R1-A7 Smart, 8 hand versions A to H from EUR 8,225.14 to 20,749.02 excl. VAT; button reads 'Auf Anfrage', no version can be put in the cart. R1-A5 Smart on a separate page from EUR 7,548.17 net."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-R1-A",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "One page for R1-A5, R1-A7, R1-A5-D and R1-A7-D in Smart and Flagship versions; 'Preis auf Anfrage', 'Verfügbar ab: 15.02.2027'. Also lists R1-A spare parts (battery EUR 700 net, charger EUR 100 net)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.835,
+   "unit": "m",
+   "conditions": "R1-A7, 835 x 357 x 190 mm; R1-A5 700 x 357 x 190 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 13,
+   "unit": "kg",
+   "conditions": "R1-A7, approx., with external power supply; R1-A5 approx. 11 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total DOF",
+   "value": 19,
+   "unit": null,
+   "conditions": "R1-A7 with gripper; R1-A5 15. Unitree states 15 to 31 depending on end effector; Terra lists 31 for R1-A7 with Dex3-1 hands.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "R1-A7; R1-A5 has 5",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Max payload per arm",
+   "value": 4,
+   "unit": "kg",
+   "conditions": "stated as 2 to 4 kg; varies strongly with arm extension posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_length_mm",
+   "label": "Forearm + upper arm length",
+   "value": 555,
+   "unit": "mm",
+   "conditions": "R1-A7; R1-A5 420 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "waist_yaw_deg",
+   "label": "Waist yaw range",
+   "value": 150,
+   "unit": "deg",
+   "conditions": "plus/minus, fixed-base models",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "approx., when battery-powered; external power also supported",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Head: 8-core CPU + 10 TOPS; body: 8-core CPU; optional module such as Orin 40-100 TOPS",
+   "unit": null,
+   "conditions": "Terra Smart versions include a 40 TOPS dock",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular camera (146 x 124 deg FOV), optional wrist camera, 4-mic array, dual speakers",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "end_effectors",
+   "label": "End effectors",
+   "value": "Two-finger gripper, three-finger or five-finger dexterous hand",
+   "unit": null,
+   "conditions": "chosen per order; Terra lists 8 versions (Dex1-1 gripper, Dex3-1, Revo 2, Linker Hand O6, tendon hand)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "Open interfaces for underlying system, arms, audio, lighting and vision; OTA updates",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "warranty_months",
+   "label": "Warranty",
+   "value": 12,
+   "unit": "months",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 4,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "Open interfaces for secondary development (Unitree)",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Fixed base: it does not move on its own; Unitree sells the mobile version as R1-A-D.",
+   "Arm payload is a maximum of 2 to 4 kg that drops with arm extension; no rated value published.",
+   "The end effector is chosen per order: the cheapest Terra version has a two-finger gripper, others have three- or five-finger hands.",
+   "Unitree warns users to keep a safe distance from the arms; no safety certification or IP rating is published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/c22fa19f81b746809c3a969031d31c3a_1434x1470.png",
+   "pageUrl": "https://www.unitree.com/R1-D",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree R1-A dual-arm upper body on a fixed base plate with grippers",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/8eb79f8579d34c8d8a677fd07ef5355d_1720x1178.png",
+   "pageUrl": "https://www.unitree.com/R1-D",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree R1-A upper body on its base plate with one gripper raised, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/acb8ab749ddc45c9a35a6696144a3b19_3840x2411.png",
+   "pageUrl": "https://www.unitree.com/R1-D",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree R1-A holding a puzzle cube and a ball in its grippers, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Platform for dual-arm manipulation research and AI algorithm development in labs",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Seller description; no named deployment found."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/R1-D",
+   "title": "Unitree Dual-Arm Humanoid Robot (R1-A / R1-A-D)",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/products/unitree-r1-a7-smart-serie",
+   "title": "Unitree R1-A7 Smart Serie",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://terra-robotics.de/products/unitree-r1-a5-smart-serie",
+   "title": "Unitree R1-A5 Smart Serie",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://shop.unitree.com/products/unitree-r1-d",
+   "title": "Unitree R1-D (store listing)",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.quadruped.de/Unitree-R1-A",
+   "title": "Unitree R1-A",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "When will Terra Robotics and quadruped.de actually deliver to German customers (quadruped.de says from 15.02.2027)?",
+  "The Terra R1-A5 Smart page text describes a four-legged robot (12 DOF, 3.7 m/s, 15 kg payload); only its prices and version names are used here.",
+  "Rated (not maximum) arm payload at full extension?",
+  "Does the USD 4,290 Unitree price include an end effector?"
+ ],
+ "checkedAt": "2026-10-02"
+}

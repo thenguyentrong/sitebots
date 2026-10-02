@@ -1,3 +1,4 @@
+import { isFocusedForm } from '@/lib/browse-scope';
 import { getSql } from '@/lib/db';
 import { isPublicRobot } from '@/lib/catalogue-policy';
 import { coerceRows } from '@/lib/queries/coerce';
@@ -29,7 +30,7 @@ export async function loadCandidates(): Promise<{ candidates: Candidate[]; usdTo
     l.push(a);
     byRobotAvail.set(a.robot_id, l);
   }
-  const candidates = coerceRows<RobotCard>(cards).filter((card) => isPublicRobot(card.manufacturer_slug, card.model_slug)).map((card) => ({
+  const candidates = coerceRows<RobotCard>(cards).filter((card) => isPublicRobot(card.manufacturer_slug, card.model_slug) && isFocusedForm(card.form_factor)).map((card) => ({
     card,
     prices: byRobotPrice.get(card.id) ?? [],
     availability: byRobotAvail.get(card.id) ?? [],

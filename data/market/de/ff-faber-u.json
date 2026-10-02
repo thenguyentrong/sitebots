@@ -1,0 +1,204 @@
+{
+ "schemaVersion": 1,
+ "id": "ff-faber-u",
+ "maker": "Faraday Future",
+ "makerCountry": "US",
+ "model": "Faber",
+ "variant": "Faber U",
+ "name": "Faraday Future FF Faber U",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://faber.ff.com/us/",
+ "summary": "A 185 kg two-armed robot with a head on a wheeled base, height 1.2 to 1.7 m, 5 kg per arm, dual 3D LiDAR and Jetson Thor compute, for factory and logistics handling.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route into the EU found: FF sells Faber U through US contact sales; a US-run web shop (Roboter Deutschland) lists it for quotation only, no price, \"allow 2-4 weeks for delivery\".",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.225–1.7",
+   "unit": "m",
+   "conditions": "height-adjustable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 185,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 26,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 1652,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "more than 4 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Thor T5000, up to 2070 TOPS (500–2070 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Dual 3D LiDAR, 2 RGB-D, 3 fisheye and 7 stereo cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Navigation speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "up to, series-level figure",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "Ubuntu 22.04 + ROS, open SDK / API, OTA updates",
+   "unit": null,
+   "conditions": "series-level statement",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "ROS, open SDK / API",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Two arms and a head on a wheeled base (FF calls the series mobile manipulators); wheeled, so no stairs.",
+   "Photos show five-finger hands; the Faber U spec panel names no end effector and the series has interchangeable end effectors.",
+   "The reseller spec table gives 88.5 kg, 35 DoF and 15 kg per arm for Faber U; on the FF page those figures sit under the Faber T tab."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://ff-genesis-cdn.s3.us-west-2.amazonaws.com/FF-EAI-Robotics/faber/images/faber-u-3-4.png",
+   "pageUrl": "https://faber.ff.com/us/",
+   "credit": "Faraday Future",
+   "alt": "FF Faber U wheeled two-arm robot, three-quarter view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Machine tending: part picking, assembly and transfer",
+   "stage": "claim",
+   "where": "FF factory line (USA)",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Series-level claim; FF names its own factory line as proof, model not stated."
+  },
+  {
+   "taskIds": [],
+   "task": "Goods recognition, sorting and handling in warehouses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Series-level claim."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://faber.ff.com/us/",
+   "title": "FF Faber series page (Faber U tab: available now)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.roboterdeutschland.de/FF-Faber-U.htm",
+   "title": "FF Faber U Industrial EAI Mobile Manipulator at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/terms-conditions/",
+   "title": "Roboter Deutschland terms and conditions (Robots International)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which spec set is Faber U? FF page markup mixes tab labels and panel ids; image file names and the FF menu photo match the 185 kg Thor version used here.",
+  "Does FF sell or support Faber U in the EU, and is it CE marked?"
+ ],
+ "checkedAt": "2026-10-02"
+}

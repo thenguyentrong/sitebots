@@ -1,0 +1,216 @@
+{
+ "schemaVersion": 1,
+ "id": "realman-dual-arm-lift",
+ "maker": "RealMan Robotics",
+ "makerCountry": "CN",
+ "model": "Dual-Arm Lift",
+ "variant": null,
+ "name": "RealMan Dual-Arm Lift",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.realman-robotics.com/en/products/dual-arm-lift.html",
+ "summary": "A 157 kg mobile robot with two 5 kg RM65 arms on a 900 mm lift column, reaching from the floor to 2.4 m, with 3-4 h runtime.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "MYBOTSHOP (Germany) lists it as \"Realman Embodied Dual-arm Lifting Platform\" at €95,999.95 incl. 19% VAT with a cart button; delivery about 4 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 95999.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Incl. 19% VAT, plus shipping."
+  },
+  "priceOther": null,
+  "leadTime": "About 4 weeks (MYBOTSHOP)",
+  "sellers": [
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Realman-Embodied-Dual-arm-Lifting-Platform",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": 95999.95,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Listed under the name Embodied Dual-arm Lifting Platform."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.78,
+   "unit": "m",
+   "conditions": "640 x 450 x 1,780 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 157,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": "RM65-B-V; RM75-B-V optional",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "lift_travel_m",
+   "label": "Lift stroke",
+   "value": 0.9,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "vertical_reach_m",
+   "label": "Vertical reach",
+   "value": "0-2.4",
+   "unit": "m",
+   "conditions": "fully extended",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Lateral reach",
+   "value": 0.79,
+   "unit": "m",
+   "conditions": "per side",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "3-4",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Jetson AGX Orin 64 GB (seller)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Gripper CTAG2F90D per maker; seller lists RMG24 parallel gripper.",
+   "Indoor robot; 5-40 °C."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.realman-robotics.com/prop/products-images/%E5%A4%8D%E5%90%88%E5%8D%87%E9%99%8D%E6%9C%BA%E5%99%A8%E4%BA%BA/%E5%8F%8C%E8%87%82%E5%8D%87%E9%99%8D%E6%9C%BA%E5%99%A8%E4%BA%BA/%E5%85%B7%E8%BA%AB%E5%8F%8C%E8%87%82%E5%8D%87%E9%99%8D%E5%B9%B3%E5%8F%B0PNG.png",
+   "pageUrl": "https://www.realman-robotics.com/en/products/dual-arm-lift.html",
+   "credit": "RealMan Robotics",
+   "alt": "RealMan Dual-Arm Lift with two arms on a lift column",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.realman-robotics.com/prop/products-images/%E5%A4%8D%E5%90%88%E5%8D%87%E9%99%8D%E6%9C%BA%E5%99%A8%E4%BA%BA/%E5%8F%8C%E8%87%82%E5%8D%87%E9%99%8D%E6%9C%BA%E5%99%A8%E4%BA%BA/%E5%85%B7%E8%BA%AB%E5%8F%8C%E8%87%82%E5%8D%87%E9%99%8D%E5%B9%B3%E5%8F%B0.png",
+   "pageUrl": "https://www.realman-robotics.com/en/products/dual-arm-lift.html",
+   "credit": "RealMan Robotics",
+   "alt": "RealMan Dual-Arm Lift side view showing the lift column, one arm with gripper and the mobile base",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.realman-robotics.com/prop/products-images/%E5%A4%8D%E5%90%88%E5%8D%87%E9%99%8D%E6%9C%BA%E5%99%A8%E4%BA%BA/%E5%8F%8C%E8%87%82%E5%8D%87%E9%99%8D%E6%9C%BA%E5%99%A8%E4%BA%BA/%E5%85%B7%E8%BA%AB%E5%8F%8C%E8%87%82%E5%8D%87%E9%99%8D%E5%B9%B3%E5%8F%B0%E9%A1%B6%E8%A7%86%E5%9B%BEPNG.png",
+   "pageUrl": "https://www.realman-robotics.com/en/products/dual-arm-lift.html",
+   "credit": "RealMan Robotics",
+   "alt": "RealMan Dual-Arm Lift seen from above, showing the base and both arms",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Seller offers it for dual-arm data collection, model training, inspection and remote operation",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.realman-robotics.com/en/products/dual-arm-lift.html",
+   "title": "Dual-Arm Lift product page",
+   "publisher": "RealMan Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.mybotshop.de/Realman-Embodied-Dual-arm-Lifting-Platform",
+   "title": "Realman Embodied Dual-arm Lifting Platform",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

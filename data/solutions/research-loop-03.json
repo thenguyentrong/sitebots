@@ -1,0 +1,767 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Restaurant tray and hotel room-door delivery, with human handoffs, optional integrations and German buying evidence separated.",
+  "records": [
+    {
+      "id": "pudu-bellabot-pro-tray-delivery",
+      "name": "PUDU BellaBot Pro tray delivery",
+      "manufacturer": "Pudu Robotics",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "retail_hospitality"
+      ],
+      "exactConfiguration": "BellaBot Pro with open delivery trays and 18.5-inch advertising screen; not original BellaBot. Optional covers and call devices are separate.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Carry prepared dishes to restaurant handoff points and return loaded trays along mapped indoor routes.",
+      "operatingMode": {
+        "value": "Autonomous mapped travel after staff load trays and dispatch a destination; people remove dishes and handle exceptions.",
+        "sourceIds": [
+          "technical"
+        ],
+        "caveats": [
+          "It does not place dishes on tables or clear them by itself.",
+          "Door interfaces, covers and call accessories need configuration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "dimensions_cm",
+          "value": "57 × 55 × 129",
+          "unit": "cm",
+          "semanticLabel": "Published body dimensions",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 55,
+          "unit": "kg",
+          "semanticLabel": "Published robot mass",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "total_tray_payload_kg",
+          "value": 40,
+          "unit": "kg",
+          "semanticLabel": "Maximum total tray load",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "per_tray_payload_kg",
+          "value": 10,
+          "unit": "kg",
+          "semanticLabel": "Maximum load per tray",
+          "conditions": [
+            "Total and individual tray limits both apply."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "tray_size_mm",
+          "value": "410 × 500",
+          "unit": "mm",
+          "semanticLabel": "Published tray surface dimensions",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_unloaded_h",
+          "value": 11,
+          "unit": "h",
+          "semanticLabel": "Published runtime without load",
+          "conditions": [
+            "Not loaded-shift endurance."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charge_time_h",
+          "value": 4.5,
+          "unit": "h",
+          "semanticLabel": "Published charging duration",
+          "conditions": [
+            "Starting charge level is not stated."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "speed_range_m_s",
+          "value": "0.2–1.2",
+          "unit": "m/s",
+          "semanticLabel": "Adjustable cruise speed range",
+          "conditions": [
+            "Route risk assessment may require slower speed."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_passage_cm",
+          "value": 65,
+          "unit": "cm",
+          "semanticLabel": "Minimum passage width in specification table",
+          "conditions": [
+            "Marketing section says 64 cm; confirm actual operating clearance."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Move prepared dishes between restaurant serving and table handoff areas.",
+          "configuration": "BellaBot Pro open-tray configuration.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Human loading, unloading and table service remain required.",
+            "No exact-restaurant accepted throughput or spill-rate evidence reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Pudu Robotics",
+          "market": "Global enquiry through German-language contact route",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.pudurobotics.com/de/contact-us"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": []
+        },
+        {
+          "organization": "Giobotics",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.giobotics.de/bellabot-pro",
+            "phone": "+49 431 530223-0",
+            "email": "info@giobotics.de"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization not independently confirmed.",
+          "caveats": [
+            "Exact-model listing read; authorization, stock and installed scope require confirmation."
+          ]
+        },
+        {
+          "organization": "ALMEX Robotics",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.robotics-almex.de/pudu-bellabotpro"
+          },
+          "sourceIds": [
+            "seller-check"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization not independently confirmed.",
+          "caveats": [
+            "Seller advertises commissioning and Hannover repair service; contractual terms require enquiry."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Official marketing copy says 64 cm passage while its specification table gives 65 cm.",
+        "Official German page marks dish recognition/announcement as in development; German seller copy presents it as available. Confirm software before relying on it.",
+        "ALMEX lists 10–24 hours battery use; the manufacturer specifies 11 hours without load. Conditions are not equivalent."
+      ],
+      "unknowns": [
+        "Loaded runtime, real route clearance and spill tolerance.",
+        "Delivered dish-recognition software and accessory package.",
+        "Installed price, German lead time, warranty and support scope."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.pudurobotics.com/de/products/bellabotpro",
+          "title": "BellaBot Pro German product page, read through browser research",
+          "publisher": "Pudu Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.pudurobotics.com/de/contact-us",
+          "title": "German-language manufacturer enquiry",
+          "publisher": "Pudu Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://www.giobotics.de/bellabot-pro",
+          "title": "BellaBot Pro listing and German contact",
+          "publisher": "Giobotics",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "seller-check",
+          "url": "https://www.robotics-almex.de/pudu-bellabotpro",
+          "title": "BellaBot Pro runtime and service listing",
+          "publisher": "ALMEX Robotics",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.pudurobotics.com/de/products/bellabotpro",
+        "https://www.pudurobotics.com/de/contact-us",
+        "https://www.giobotics.de/bellabot-pro",
+        "https://www.robotics-almex.de/pudu-bellabotpro"
+      ]
+    },
+    {
+      "id": "keenon-dinerbot-t10-tray-delivery",
+      "name": "KEENON DINERBOT T10 tray delivery",
+      "manufacturer": "KEENON Robotics",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "retail_hospitality"
+      ],
+      "exactConfiguration": "DINERBOT T10 open-tray catering delivery robot with 23.8-inch display; not T10 Pro or T11.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Move prepared food trays to restaurant destinations where people take the items off the robot.",
+      "operatingMode": {
+        "value": "Autonomous mapped delivery with human tray loading and removal; remote calling and task management are available.",
+        "sourceIds": [
+          "technical"
+        ],
+        "caveats": [
+          "People serve the table and recover failed deliveries.",
+          "Minimum passage dimensions are not a crowd-clearance guarantee."
+        ]
+      },
+      "specs": [
+        {
+          "key": "dimensions_cm",
+          "value": "48.6 × 55.5 × 139.9",
+          "unit": "cm",
+          "semanticLabel": "Width × depth × height",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 58,
+          "unit": "kg",
+          "semanticLabel": "Published vehicle mass",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 1,
+          "unit": "m/s",
+          "semanticLabel": "Maximum moving speed",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_range_h",
+          "value": "9–12.5",
+          "unit": "h",
+          "semanticLabel": "Published battery life range",
+          "conditions": [
+            "Depends on use, settings and battery age."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charge_time_h",
+          "value": 5.5,
+          "unit": "h",
+          "semanticLabel": "Charging from 15% to 100%",
+          "conditions": [
+            "Robot powered on; charger or charging pile."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_slope_deg",
+          "value": 5,
+          "unit": "degrees",
+          "semanticLabel": "Published slope angle",
+          "conditions": [
+            "Load stability and actual route still require assessment."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "total_payload_kg",
+          "value": 40,
+          "unit": "kg",
+          "semanticLabel": "Total tray load capacity",
+          "conditions": [
+            "Per-tray distribution limits need confirmation."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_passage_cm",
+          "value": 59,
+          "unit": "cm",
+          "semanticLabel": "Published minimum passage width",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "seller_listed_price_eur",
+          "value": 14666.75,
+          "unit": "EUR",
+          "semanticLabel": "Indexed German seller price including VAT",
+          "conditions": [
+            "Search-index observation only; shipping extra and live stock unconfirmed."
+          ],
+          "sourceIds": [
+            "seller"
+          ],
+          "verification": "reported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Deliver prepared food trays to restaurant handoff points.",
+          "configuration": "DINERBOT T10 with open-access trays and configured map.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Human handling at both ends is required.",
+            "No exact-site delivery rate or intervention denominator reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "KEENON Robotics",
+          "market": "Global enquiry; Germany selectable in contact form",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.keenon.com/de/contactus",
+            "email": "global@keenon.com"
+          },
+          "sourceIds": [
+            "technical",
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": []
+        },
+        {
+          "organization": "PICCObot",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://piccobot.de/keenon-dinerbot-t10/sw10615",
+            "email": "piccobot@piccogruppe.de",
+            "phone": "0800 5757551"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization not independently confirmed.",
+          "caveats": [
+            "Indexed exact-model listing; direct refresh failed because robots.txt was unavailable.",
+            "Listed price and 2–5 day delivery statement are not confirmed stock or delivery commitments."
+          ]
+        }
+      ],
+      "conflicts": [],
+      "unknowns": [
+        "Per-tray limits, loaded duty cycle and installed configuration.",
+        "German seller authorization and current live price/stock.",
+        "Site traffic performance, support and commissioning cost."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.keenon.com/en/product/T10",
+          "title": "DINERBOT T10 current specification and operating features",
+          "publisher": "KEENON Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.keenon.com/de/contactus",
+          "title": "German-language manufacturer contact",
+          "publisher": "KEENON Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://piccobot.de/keenon-dinerbot-t10/sw10615",
+          "title": "Indexed T10 listing, price and German contacts",
+          "publisher": "PICCObot",
+          "kind": "seller",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.keenon.com/en/product/T10",
+        "https://www.keenon.com/de/contactus",
+        "https://piccobot.de/keenon-dinerbot-t10/sw10615"
+      ]
+    },
+    {
+      "id": "robotise-jeeves-five-drawer-hotel",
+      "name": "Robotise JEEVES five-drawer hotel system",
+      "manufacturer": "Robotise Technologies GmbH",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "retail_hospitality"
+      ],
+      "exactConfiguration": "JEEVES hotel configuration with five configurable drawers and optional chilled storage, as specified on the current hospitality page. Current delivered revision and drawer layout require quotation.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Bring stocked drinks, snacks and room-service items to hotel room doors using configured corridors and elevators.",
+      "operatingMode": {
+        "value": "Autonomous multi-stop delivery; staff replenish drawers and guests remove selected items at the room-door handoff.",
+        "sourceIds": [
+          "technical",
+          "integration"
+        ],
+        "caveats": [
+          "Elevator interfaces are installed with the lift manufacturer.",
+          "Replenishment, cleaning, payment setup and exception response remain operational work."
+        ]
+      },
+      "specs": [
+        {
+          "key": "mass_approx_kg",
+          "value": 100,
+          "unit": "kg",
+          "semanticLabel": "Approximate vehicle mass",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "payload_kg",
+          "value": 45,
+          "unit": "kg",
+          "semanticLabel": "Published loading capacity",
+          "conditions": [
+            "Drawer load distribution is not specified."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "drawer_count",
+          "value": 5,
+          "unit": "drawers",
+          "semanticLabel": "Published configurable drawer count",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "chilled_volume_max_l",
+          "value": 70,
+          "unit": "L",
+          "semanticLabel": "Maximum chilled volume for hotel configuration",
+          "conditions": [
+            "Optional cooling and selected drawer layout."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "height_cm",
+          "value": 124,
+          "unit": "cm",
+          "semanticLabel": "Published vehicle height",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "width_cm",
+          "value": 56,
+          "unit": "cm",
+          "semanticLabel": "Published vehicle width",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "depth_cm",
+          "value": 65,
+          "unit": "cm",
+          "semanticLabel": "Published vehicle depth",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_max_h",
+          "value": 8,
+          "unit": "h",
+          "semanticLabel": "Published maximum battery duration",
+          "conditions": [
+            "Duty and cooling conditions are unstated."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "chill_temperature_c",
+          "value": 7,
+          "unit": "°C",
+          "semanticLabel": "Published chilling temperature",
+          "conditions": [
+            "Not a validated food cold-chain guarantee."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "display_inch",
+          "value": 18.5,
+          "unit": "in",
+          "semanticLabel": "Published touchscreen size",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Deliver stocked minibar and room-service items to hotel room doors.",
+          "configuration": "JEEVES configured hotel drawer system with lift and ordering integration.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical",
+            "case"
+          ],
+          "limitations": [
+            "Historical Rilano Munich use is described by the manufacturer; hardware revision and present operation are not independently confirmed.",
+            "Guest retrieval, stock replenishment and cold-chain procedures remain human responsibilities."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Robotise Technologies GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://robotise.eu/contact",
+            "email": "sales@robotise.eu",
+            "phone": "+49 89 890 828 41"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": []
+        },
+        {
+          "organization": "imrox GmbH",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://www.imrox.de/robotik",
+            "email": "info@imrox.de",
+            "phone": "+49 89 3815 740 20"
+          },
+          "sourceIds": [
+            "integrator"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization not independently confirmed.",
+          "caveats": [
+            "Published JEEVES offering; current build, service responsibilities and authorization need confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Current hospitality page gives up to 70 L chilled volume; general functionality page says around 100 L total drawers. These are different scope measures.",
+        "The 2018 Rilano article states 1.20 m height and 100 L chilled drawers; those historical values are not merged with the current 124 cm hotel specification."
+      ],
+      "unknowns": [
+        "Delivered revision, drawer/cooling layout and payload distribution.",
+        "Lift compatibility, payment integration, charge time and loaded runtime.",
+        "Current commercial terms, service scope and installed price."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://robotise.eu/de/hospitality",
+          "title": "JEEVES hotel configuration and technical data",
+          "publisher": "Robotise Technologies",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "integration",
+          "url": "https://robotise.eu/de/functionality",
+          "title": "JEEVES drawers, base and elevator interface",
+          "publisher": "Robotise Technologies",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "case",
+          "url": "https://robotise.eu/blog/robotise-1/post/reinventing-the-minibar-16",
+          "title": "Historical Rilano Munich room-service application, 8 October 2018",
+          "publisher": "Robotise",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://robotise.eu/contact",
+          "title": "German manufacturer sales contact",
+          "publisher": "Robotise Technologies",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "integrator",
+          "url": "https://www.imrox.de/robotik",
+          "title": "JEEVES offering and German integrator contact",
+          "publisher": "imrox GmbH",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://robotise.eu/de/hospitality",
+        "https://robotise.eu/de/functionality",
+        "https://robotise.eu/blog/robotise-1/post/reinventing-the-minibar-16",
+        "https://robotise.eu/contact",
+        "https://www.imrox.de/robotik"
+      ]
+    }
+  ]
+}

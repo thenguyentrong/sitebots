@@ -1,0 +1,262 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-d1-max-pro",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "D1",
+ "variant": "MaxPro",
+ "name": "AGIBOT D1 MaxPro",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agibot.com/products/D1_MaxPro",
+ "summary": "A 68 kg IP67 heavy-load quadruped that carries 50 kg up 30 cm stairs, with a 96-line lidar and front and rear cameras.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Génération Robots sells the D1 Max Pro for 69,400 € net (83,280 € gross) with delivery in 2 to 4 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 69400,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "83,280 € incl. VAT."
+  },
+  "priceOther": null,
+  "leadTime": "2 to 4 weeks (Génération Robots)",
+  "sellers": [
+   {
+    "name": "Génération Robots",
+    "country": "FR",
+    "role": "distributor",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "productUrl": "https://www.generationrobots.com/de/404440-agibot-d1-max-pro-quadruped-roboter.html",
+    "priceEur": 69400,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Add to cart; seller checks battery, start-up and controls before shipping."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 68,
+   "unit": "kg",
+   "conditions": "Génération Robots states 64 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Standing size (L x W x H)",
+   "value": "1270 x 520 x 730",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 12,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Rated payload",
+   "value": 50,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "software-limited; 3 m/s in lab tests; continuous 0 to 1.2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 5.5,
+   "unit": "h",
+   "conditions": "unloaded; 2 h or more with 50 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "range_km",
+   "label": "Range",
+   "value": 21,
+   "unit": "km",
+   "conditions": "21 ± 1 km unloaded; 11 ± 1 km at full load",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 2081,
+   "unit": "Wh",
+   "conditions": "45 Ah; quick swap",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick battery swap",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 4.5,
+   "unit": "h",
+   "conditions": "10 to 90 %",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Continuous stair climb height",
+   "value": 30,
+   "unit": "cm",
+   "conditions": "also open-riser industrial stairs",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": "wading up to 20 cm water",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "117 TOPS GPU, ARM CPU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Front 96-line lidar (360° x 90°, 120 m), front and rear 2 MP wide-angle cameras, IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "3x Gigabit Ethernet, 2x USB 3.0, 100 Mbit Ethernet, serial; power 12/24/48 V up to 720 W",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "SDK over TCP and ROS, for x86 and ARM",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 50,
+  "runtimeH": 2,
+  "ipRating": "IP67",
+  "sdk": "SDK (TCP, ROS)",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runtime drops from 5.5 h unloaded to about 2 h at the 50 kg rated load.",
+   "Autonomous charging station optional.",
+   "At 68 kg and 1.27 m long it needs two people or a lift to handle."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.agibot.com/public/static/index/en/images/products/D1MaxPro/D1MaxPro-banner.webp",
+   "pageUrl": "https://www.agibot.com/products/D1_MaxPro",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT D1 MaxPro carrying a load up a rocky slope",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Heavy-load transport, logistics and emergency rescue",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Application areas named on the product page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agibot.com/products/D1_MaxPro",
+   "title": "D1 MaxPro product page and specification table",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404440-agibot-d1-max-pro-quadruped-roboter.html",
+   "title": "AgiBot D1 Max Pro Quadruped Roboter",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Weight: 68 kg on the AGIBOT table, 64 kg at Génération Robots.",
+  "No named customer in Germany found.",
+  "Launch date not found on an opened source."
+ ],
+ "checkedAt": "2026-10-02"
+}

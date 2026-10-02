@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Loop 10: exact legged industrial inspection platforms, Germany buying routes and conflicting seller specifications.",
+  "records": [
+    {
+      "id": "unitree-b2-legged-inspection",
+      "name": "Unitree B2 · legged inspection platform",
+      "manufacturer": "Unitree",
+      "robotClass": "quadruped",
+      "workflowId": "inspection",
+      "industries": [
+        "energy",
+        "manufacturing",
+        "facilities"
+      ],
+      "exactConfiguration": "B2 legged platform, battery included; advertised LiDAR/depth-camera configuration subject to quote. Excludes B2-W, arm, thermal payload and autonomous charging kit.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Carries inspection sensors on routes with stairs or uneven ground. Published locomotion capability is separate from a commissioned measurement and reporting package.",
+      "operatingMode": {
+        "value": "Supervised platform with configuration-dependent autonomous functions and developer integration.",
+        "sourceIds": [
+          "b2-product"
+        ],
+        "caveats": [
+          "Unitree states that some functions need human operation or secondary development.",
+          "Thermal sensing, reporting, docking and exception recovery must be specified."
+        ]
+      },
+      "specs": [
+        {
+          "key": "mass_kg",
+          "value": 60,
+          "unit": "kg",
+          "semanticLabel": "Approximate platform mass including battery",
+          "conditions": [
+            "Legged B2; not the wheeled B2-W."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standing_dimensions_mm",
+          "value": "1098 × 450 × 645",
+          "unit": "mm",
+          "semanticLabel": "Approximate standing length × width × height",
+          "conditions": [
+            "Published legged configuration."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "folded_dimensions_mm",
+          "value": "880 × 460 × 330",
+          "unit": "mm",
+          "semanticLabel": "Approximate folded dimensions",
+          "conditions": [
+            "Not operating clearance."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "walking_payload_kg",
+          "value": ">40",
+          "unit": "kg",
+          "semanticLabel": "Published continuous walking load",
+          "conditions": [
+            "Manufacturer threshold; not a rated limit for every gait or sensor mount."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standing_load_kg",
+          "value": "≥120",
+          "unit": "kg",
+          "semanticLabel": "Published standing load",
+          "conditions": [
+            "Static load claim; never substitute for walking payload."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_unloaded_hours",
+          "value": ">5",
+          "unit": "h",
+          "semanticLabel": "Unloaded continuous walking endurance",
+          "conditions": [
+            "Manufacturer claim; terrain and configuration affect results."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_loaded_hours",
+          "value": ">4",
+          "unit": "h",
+          "semanticLabel": "Continuous walking endurance with 20 kg load",
+          "conditions": [
+            "Does not establish runtime with a 40 kg payload."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "range_loaded_km",
+          "value": ">15",
+          "unit": "km",
+          "semanticLabel": "Walking range with 20 kg load",
+          "conditions": [
+            "Published test condition; route-specific trial needed."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_energy_wh",
+          "value": 2250,
+          "unit": "Wh",
+          "semanticLabel": "Published battery energy label",
+          "conditions": [
+            "45 Ah and 58 V are also listed; delivered battery specification must be confirmed."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "continuous_stair_height_mm",
+          "value": "200–250",
+          "unit": "mm",
+          "semanticLabel": "Sustained stair climbing step height",
+          "conditions": [
+            "Separate from the 400 mm frontal obstacle claim."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": ">6",
+          "unit": "m/s",
+          "semanticLabel": "Special-configuration running-speed claim",
+          "conditions": [
+            "Unitree explicitly specifies special configurations and practical safety speed limiting."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ingress_protection",
+          "value": "IP67",
+          "unit": null,
+          "semanticLabel": "Published ingress protection",
+          "conditions": [
+            "Does not establish explosive-atmosphere certification."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "operating_temperature_c",
+          "value": "−20 to 55",
+          "unit": "°C",
+          "semanticLabel": "Published ambient operating range",
+          "conditions": [
+            "Application and configuration conditions apply."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "navigation_sensors",
+          "value": "1 LiDAR + 2 depth + 2 optical cameras",
+          "unit": null,
+          "semanticLabel": "Advertised sensor configuration",
+          "conditions": [
+            "Manufacturer says sensor set varies by configuration; seller offers LiDAR separately."
+          ],
+          "sourceIds": [
+            "b2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "measurement_accuracy",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Inspection measurement accuracy",
+          "conditions": [
+            "Thermal/acoustic payload and calibration not defined."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Industrial and power inspection using an integrated sensor payload.",
+          "configuration": "B2 platform application examples; precise thermal payload and software are not identified.",
+          "operatingMode": "Configuration-dependent operation under an integrator-defined workflow.",
+          "sourceIds": [
+            "b2-product"
+          ],
+          "limitations": [
+            "Locomotion specifications do not establish calibrated defect detection or autonomous end-to-end rounds.",
+            "No customer-verified routine deployment for this exact package was established."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Unitree",
+          "market": "Global; Germany fulfilment to confirm",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.unitree.com/contact/",
+            "email": "sales_global@unitree.com",
+            "phone": "+8617621781139"
+          },
+          "sourceIds": [
+            "unitree-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Direct sales enquiry; no confirmed delivery date.",
+          "authorizationStatus": "Manufacturer contact.",
+          "caveats": [
+            "Request EU documentation, sensor configuration, support and integration scope."
+          ]
+        },
+        {
+          "organization": "QUADRUPED Robotics",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.quadruped.de/QUADRUPED-B2",
+            "email": "info@quadruped.de",
+            "phone": "+492271588930"
+          },
+          "sourceIds": [
+            "b2-seller",
+            "quadruped-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Live listing says immediately available but requires variant selection and quote; selected-unit stock unconfirmed.",
+          "authorizationStatus": "Public German seller listing; manufacturer authorization not established by these sources.",
+          "caveats": [
+            "Do not transfer availability between B2, B2-W and LiDAR variants."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Seller documentation reverses standing/walking load values (40/120 kg); manufacturer gives standing ≥120 kg and walking >40 kg.",
+        "Seller documentation mixes folded height and runtime figures. Primary legged dimensions and load-conditioned runtime retained.",
+        "Manufacturer advertises a LiDAR sensor set while seller separates LiDAR variants; exact delivery scope unresolved."
+      ],
+      "unknowns": [
+        "Exact sensor/software bill of materials and calibrated measurement performance.",
+        "Site validation, EU documentation, lead time and support contract."
+      ],
+      "sourceURLs": [
+        "https://www.unitree.com/b2/",
+        "https://www.quadruped.de/QUADRUPED-B2",
+        "https://docs.quadruped.de/projects/b2/html/",
+        "https://www.unitree.com/contact/",
+        "https://www.quadruped.de/Imprint"
+      ],
+      "sources": [
+        {
+          "id": "b2-product",
+          "url": "https://www.unitree.com/b2/",
+          "title": "Unitree B2 specifications and conditions",
+          "publisher": "Unitree",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "b2-seller",
+          "url": "https://www.quadruped.de/QUADRUPED-B2",
+          "title": "German B2 configuration listing",
+          "publisher": "QUADRUPED Robotics",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "b2-seller-doc",
+          "url": "https://docs.quadruped.de/projects/b2/html/",
+          "title": "B2 reseller technical documentation",
+          "publisher": "QUADRUPED Robotics",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "unitree-contact",
+          "url": "https://www.unitree.com/contact/",
+          "title": "Unitree sales contacts",
+          "publisher": "Unitree",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "quadruped-contact",
+          "url": "https://www.quadruped.de/Imprint",
+          "title": "QUADRUPED German business contact",
+          "publisher": "QUADRUPED Robotics",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "id": "deep-robotics-x30-pro-inspection",
+      "name": "DEEP Robotics X30 Pro · inspection platform",
+      "manufacturer": "DEEP Robotics",
+      "robotClass": "quadruped",
+      "workflowId": "inspection",
+      "industries": [
+        "energy",
+        "manufacturing",
+        "facilities"
+      ],
+      "exactConfiguration": "X30 Pro 59 kg platform, Generation Robots article 404277 / A-000000-07421. Excludes base X30 56 kg and the customized SPock pilot payload.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Legged inspection platform with a German quote route. The Pro configuration remains distinct from the base X30 and customized tunnel-inspection deployments.",
+      "operatingMode": {
+        "value": "Configured autonomous navigation with supervised task commissioning.",
+        "sourceIds": [
+          "x30-product"
+        ],
+        "caveats": [
+          "Inspection sensors, task software, docking and recovery procedure require an exact quote.",
+          "X30-series tunnel deployment does not prove the listed Pro package has identical capabilities."
+        ]
+      },
+      "specs": [
+        {
+          "key": "mass_kg",
+          "value": 59,
+          "unit": "kg",
+          "semanticLabel": "X30 Pro mass including battery",
+          "conditions": [
+            "Pro column; base X30 is 56 kg."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standing_dimensions_mm",
+          "value": "1000 × 715 × 470",
+          "unit": "mm",
+          "semanticLabel": "Pro standing dimensions",
+          "conditions": [
+            "Primary current Pro column; seller width differs."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_hours",
+          "value": "2.5–4",
+          "unit": "h",
+          "semanticLabel": "Published endurance interval",
+          "conditions": [
+            "Laboratory data; payload and duty cycle unspecified."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "range_km",
+          "value": "≥10",
+          "unit": "km",
+          "semanticLabel": "Published travel distance",
+          "conditions": [
+            "Laboratory data; not guaranteed loaded route range."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": "≥4",
+          "unit": "m/s",
+          "semanticLabel": "Published maximum-speed threshold",
+          "conditions": [
+            "Laboratory claim; commissioned site speed may be lower."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "slope_degrees",
+          "value": "≤45",
+          "unit": "°",
+          "semanticLabel": "Published climbable slope",
+          "conditions": [
+            "Traction, stair geometry and site restrictions require trial."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "obstacle_height_mm",
+          "value": "≥200",
+          "unit": "mm",
+          "semanticLabel": "Published obstacle/step threshold",
+          "conditions": [
+            "Not an unconditional maximum permitted riser."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ingress_protection",
+          "value": "IP67",
+          "unit": null,
+          "semanticLabel": "Published ingress protection",
+          "conditions": [
+            "No ATEX rating established."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "operating_temperature_c",
+          "value": "−20 to 55",
+          "unit": "°C",
+          "semanticLabel": "Published ambient operating range",
+          "conditions": [
+            "Laboratory data; real conditions can differ."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "interfaces",
+          "value": "USB 2.0 / USB 3.0 / Ethernet / Wi-Fi",
+          "unit": null,
+          "semanticLabel": "Pro interfaces",
+          "conditions": [
+            "Base X30 has a different published interface set."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "payload_power_v",
+          "value": "5 / 12 / 24",
+          "unit": "V",
+          "semanticLabel": "Pro accessory power outputs",
+          "conditions": [
+            "Output current and total power need confirmation."
+          ],
+          "sourceIds": [
+            "x30-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "payload_kg",
+          "value": 20,
+          "unit": "kg",
+          "semanticLabel": "Seller-reported payload",
+          "conditions": [
+            "Not corroborated by the current manufacturer product table."
+          ],
+          "sourceIds": [
+            "x30-seller"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "listed_price_eur_net",
+          "value": 95000,
+          "unit": "EUR",
+          "semanticLabel": "Seller starting price excluding VAT",
+          "conditions": [
+            "Observed 2026-10-01; package, freight, integration and final quote must be confirmed."
+          ],
+          "sourceIds": [
+            "x30-seller"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "measurement_accuracy",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Inspection measurement accuracy",
+          "conditions": [
+            "Delivered sensor payload and calibration unspecified."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Industrial route inspection, observation and mapping with configured sensors.",
+          "configuration": "X30 Pro product platform; specific inspection payload must be selected.",
+          "operatingMode": "Autonomous navigation capability with commissioned task integration.",
+          "sourceIds": [
+            "x30-product"
+          ],
+          "limitations": [
+            "The SPock cable-tunnel pilot identifies X30-series customization but not the Pro revision.",
+            "Do not transfer pilot defect detection, thermal sensing or reporting to the base sales package."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "DEEP Robotics",
+          "market": "Global; German delivery to confirm",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.deeprobotics.cn/en/index/buy.html",
+            "email": "partner@deeprobotics.cn"
+          },
+          "sourceIds": [
+            "deep-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Manufacturer enquiry form; Pro package and regional service require confirmation.",
+          "authorizationStatus": "Manufacturer contact.",
+          "caveats": [
+            "Request Germany delivery, conformity documentation and service scope."
+          ]
+        },
+        {
+          "organization": "Generation Robots",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.generationrobots.com/de/404277-x30-quadruped-roboter.html",
+            "email": "service@generationrobots.com",
+            "phone": "+4917620527472"
+          },
+          "sourceIds": [
+            "x30-seller",
+            "generation-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Seller advertises 6–9 weeks and a starting price; no reserved stock or binding delivery confirmed.",
+          "authorizationStatus": "German customer route and public product listing verified; current manufacturer authorization not independently established.",
+          "caveats": [
+            "Displayed CE icon is not a reviewed declaration of conformity.",
+            "On-site service, payloads and software scope need an exact quote."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Current manufacturer Pro width is 715 mm; seller lists 585 mm. Confirm delivered revision before clearance planning.",
+        "Seller lists 20 kg payload and thermal imaging; manufacturer product table does not substantiate the exact supplied payload/sensor package."
+      ],
+      "unknowns": [
+        "Exact Pro inspection payload, licensing and measurement accuracy.",
+        "German service terms, delivered dimensions and current quote.",
+        "SPock pilot variant and transferability to this Pro listing."
+      ],
+      "sourceURLs": [
+        "https://www.deeprobotics.cn/en/index/product3.html",
+        "https://www.generationrobots.com/de/404277-x30-quadruped-roboter.html",
+        "https://www.deeprobotics.cn/en/index/article/id/241.html",
+        "https://www.deeprobotics.cn/en/index/buy.html",
+        "https://www.generationrobots.com/de/content/127-Deutsche-Kunden"
+      ],
+      "sources": [
+        {
+          "id": "x30-product",
+          "url": "https://www.deeprobotics.cn/en/index/product3.html",
+          "title": "X30 and X30 Pro specification columns",
+          "publisher": "DEEP Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "x30-seller",
+          "url": "https://www.generationrobots.com/de/404277-x30-quadruped-roboter.html",
+          "title": "X30 Pro German product and quote listing",
+          "publisher": "Generation Robots",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "x30-pilot",
+          "url": "https://www.deeprobotics.cn/en/index/article/id/241.html",
+          "title": "SPock cable-tunnel pilot (X30-series variant unspecified)",
+          "publisher": "DEEP Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "deep-contact",
+          "url": "https://www.deeprobotics.cn/en/index/buy.html",
+          "title": "DEEP Robotics purchase enquiry",
+          "publisher": "DEEP Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "generation-contact",
+          "url": "https://www.generationrobots.com/de/content/127-Deutsche-Kunden",
+          "title": "German customer contact",
+          "publisher": "Generation Robots",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        }
+      ]
+    }
+  ]
+}

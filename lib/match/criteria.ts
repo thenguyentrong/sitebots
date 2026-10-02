@@ -1,4 +1,4 @@
-import { conservativePayload } from '@/lib/ingest/current';
+import { conservativePayload, publishedLowerBound } from '@/lib/spec/payload';
 import { FORM_FACTOR_LABEL, qualifierLabel } from '@/lib/spec/display';
 import type { Requirements } from './requirements';
 import type { Candidate, CriterionResult, CriterionStatus, PriceQuote } from './types';
@@ -38,17 +38,14 @@ export function formFactor(c: Candidate, req: Requirements): CriterionResult | n
 export function payload(c: Candidate, req: Requirements): CriterionResult | null {
   if (req.payload_kg === undefined) return null;
   const choice = conservativePayload(c.card.specs ?? {});
-  const v = c.card.payload_kg_conservative;
-  if (choice.estimated) return r('payload', 'hard', 'unknown', 0, 'working payload not confirmed; only a peak or unqualified load is published');
-  if (v === null) return r('payload', 'hard', 'unknown', 0, 'payload not published');
-  const key = choice.key;
-  const q = key ? qualifierLabel(key.split(':')[1]) : null;
-  const basis = choice.estimated ? `estimated at 50% of ${q ?? 'unspecified payload'}` : q;
-  const reported = key && c.card.specs[key]?.trust === 'reported' ? '; reported' : '';
-  const label = basis ? ` ${basis}${reported}` : reported;
-  const verb = v >= req.payload_kg ? 'meets' : 'fails';
-  const sign = v >= req.payload_kg ? '≥' : '<';
-  return r('payload', 'hard', v >= req.payload_kg ? 'pass' : 'fail', v >= req.payload_kg ? 1 : 0, `${verb}: ${f1(v)} kg${label} ${sign} ${f1(req.payload_kg)} kg needed`);
+  if (choice.estimated) return r('payload', 'hard', 'unknown', 0, 'working payload not confirmed; preferred source gives only a peak or unqualified load');
+  if (choice.conservative === null || !choice.key) return r('payload', 'hard', 'unknown', 0, 'working payload not published with a usable measurement basis');
+  const spec = c.card.specs[choice.key];
+  const basis = qualifierLabel(choice.key.split(':')[1]);
+  if (spec.trust === 'reported' || spec.trust === 'unknown') return r('payload', 'hard', 'unknown', 0, 'working payload not confirmed; ' + f1(choice.conservative) + ' kg ' + basis + ' is ' + spec.trust);
+  const v = choice.conservative;
+  const ok = v >= req.payload_kg;
+  return r('payload', 'hard', ok ? 'pass' : 'fail', ok ? 1 : 0, (ok ? 'meets' : 'fails') + ': ' + f1(v) + ' kg' + (basis ? ' ' + basis : '') + (ok ? ' ≥ ' : ' < ') + f1(req.payload_kg) + ' kg needed');
 }
 
 export function reach(c: Candidate, req: Requirements): CriterionResult | null {
@@ -140,16 +137,23 @@ export function temperature(c: Candidate, req: Requirements): CriterionResult | 
 
 export function runtime(c: Candidate, req: Requirements): CriterionResult | null {
   if (req.runtime_h_per_shift === undefined) return null;
-  const v = c.card.runtime_h;
+  const loaded = c.card.specs['runtime_h:loaded'];
+  const v = publishedLowerBound(loaded);
   const swap = c.card.hot_swap;
-  if (v === null) return r('runtime', 'soft', 'unknown', 0, 'runtime not published');
-  const basis = c.card.runtime_basis && c.card.runtime_basis !== 'unstated' ? c.card.runtime_basis : 'basis unstated';
-  if (v >= req.runtime_h_per_shift) return r('runtime', 'soft', 'pass', 1, `${f1(v)} h (${basis}) covers an ${f1(req.runtime_h_per_shift)} h shift`);
-  if (swap === true && req.hot_swap_acceptable) return r('runtime', 'soft', 'pass', 0.9, `${f1(v)} h per battery, swappable, so swapping covers the shift`);
+  const kind = req.hot_swap_acceptable ? 'soft' : 'hard';
+  // Nameplate, walking and idle runtime cannot certify a loaded work shift.
+  if (v === null || loaded.trust === 'reported' || loaded.trust === 'unknown') {
+    const nominal = c.card.runtime_h;
+    const basis = c.card.runtime_basis && c.card.runtime_basis !== 'unstated' ? c.card.runtime_basis : 'basis unstated';
+    const published = nominal === null ? 'runtime not published' : f1(nominal) + ' h (' + basis + ') published';
+    const swapping = swap === true ? '; battery is swappable, but swap logistics and loaded endurance need confirmation' : '';
+    return r('runtime', kind, 'unknown', 0, published + '; loaded work runtime not confirmed' + swapping);
+  }
+  if (v >= req.runtime_h_per_shift) return r('runtime', kind, 'pass', 1, f1(v) + ' h (loaded) covers an ' + f1(req.runtime_h_per_shift) + ' h shift');
+  if (!req.hot_swap_acceptable) return r('runtime', 'hard', 'fail', 0, f1(v) + ' h (loaded) < ' + f1(req.runtime_h_per_shift) + ' h shift; battery swaps are not acceptable');
   const ratio = v / req.runtime_h_per_shift;
-  const swapText = swap === false ? 'no battery swap' : 'battery swap not published';
-  if (!req.hot_swap_acceptable) return r('runtime', 'hard', 'fail', 0, `${f1(v)} h (${basis}) < ${f1(req.runtime_h_per_shift)} h shift; ${swapText}`);
-  return r('runtime', 'soft', 'partial', Math.max(0.1, Math.min(0.8, ratio)), `${f1(v)} h (${basis}) < ${f1(req.runtime_h_per_shift)} h shift; ${swapText}`);
+  const swapText = swap === true ? 'battery is swappable; spare batteries, charging and downtime need confirmation' : swap === false ? 'no battery swap' : 'battery swap not published';
+  return r('runtime', 'soft', 'partial', Math.max(0.1, Math.min(0.8, ratio)), f1(v) + ' h (loaded) < ' + f1(req.runtime_h_per_shift) + ' h shift; ' + swapText);
 }
 
 export function autonomy(c: Candidate, req: Requirements): CriterionResult | null {

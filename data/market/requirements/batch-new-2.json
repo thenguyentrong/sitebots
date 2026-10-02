@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "useCases": [
+    {
+      "id": "site_concrete/ground-slab",
+      "movement": "rough_ground",
+      "handWork": "two_arm",
+      "maxObjectKg": 132,
+      "tool": "concrete pump hose, poker vibrator, screed board, rebar tying tool",
+      "sensing": "concrete cover, slab level and flatness",
+      "generalPurpose": "no",
+      "specialisedJob": "concrete_finishing",
+      "reason": "Mesh mats of 34 to 132 kg carried across the open excavation and a load-bearing pour; pumps and laser screeds already do the machine part."
+    },
+    {
+      "id": "site_concrete/precast-element-erection",
+      "movement": "stairs_ladders",
+      "handWork": "two_arm",
+      "maxObjectKg": 9600,
+      "tool": "crane, tag line, push-pull props, shims and bedding mortar",
+      "sensing": "position and plumbness against the erection plan",
+      "generalPurpose": "no",
+      "specialisedJob": "material_lifting",
+      "reason": "Stairs, walls and columns weighing tonnes (a stair flight alone 1.4 to 9.6 t, large solid walls more) hang on the crane, are load-bearing and must be braced before the hook is released from a ladder or platform."
+    },
+    {
+      "id": "site_concrete/semi-precast-slab-laying",
+      "movement": "rough_ground",
+      "handWork": "two_arm",
+      "maxObjectKg": 5250,
+      "tool": "crane with 4- or 8-leg sling or spreader beam, props and beams",
+      "sensing": "element position and bearing against the laying plan",
+      "generalPurpose": "no",
+      "specialisedJob": "material_lifting",
+      "reason": "Slab elements of about 2.5 to 5 t hang on the crane and become formwork and bottom reinforcement of the slab, laid at the open edge; this stays with the crane and a laying crew."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:hospital-cart-delivery",
+      "title": "Move meal and linen carts between hospital departments",
+      "summary": "Carry prepared carts from hospital support areas to wards and return them. Cart compatibility, clean and dirty separation, doors and lifts need an agreed workflow.",
+      "industries": [
+        "healthcare_logistics"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Hospital corridors and support departments",
+      "reviewLinks": [
+        {
+          "taskId": "research:hospital-cart-delivery",
+          "reviewId": "aethon-t3-hospital-cart",
+          "relationship": "task_candidate",
+          "rationale": "The manufacturer describes hospital cart pickup and material delivery.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Prepared compatible carts and commissioned routes are required.",
+            "Validate load limits, hygiene segregation, lifts and staff handoff."
+          ]
+        },
+        {
+          "taskId": "research:hospital-cart-delivery",
+          "reviewId": "otsaw-transcar-500kg-hospital",
+          "relationship": "task_candidate",
+          "rationale": "The manufacturer describes hospital cart pickup and material delivery.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Prepared compatible carts and commissioned routes are required.",
+            "Validate load limits, hygiene segregation, lifts and staff handoff."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:hospital-supply-runs",
+      "title": "Deliver requested supplies to hospital wards",
+      "summary": "Move prepared supplies between hospital departments and ward handoff points. Staff retain responsibility for clinical handling, loading rules and receipt.",
+      "industries": [
+        "healthcare_logistics"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Hospital ward and supply-room routes",
+      "reviewLinks": [
+        {
+          "taskId": "research:hospital-supply-runs",
+          "reviewId": "diligent-moxi-2-hospital-delivery",
+          "relationship": "task_candidate",
+          "rationale": "The exact-generation release describes hospital supply and medication logistics.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Define each package pickup and receipt step; no universal picking ability is implied.",
+            "German availability and hospital integration remain unconfirmed."
+          ]
+        }
+      ]
+    }
+  ]
+}

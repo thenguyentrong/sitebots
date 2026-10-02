@@ -1,0 +1,276 @@
+{
+ "schemaVersion": 1,
+ "id": "casbot-02",
+ "maker": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+ "makerCountry": "CN",
+ "model": "02",
+ "variant": null,
+ "name": "CASBOT 02",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.casbot.tech/product/02",
+ "summary": "A 1.63 m, 50 kg bipedal humanoid with two dexterous hands and 1.5 kg per arm, for demonstrations, service, teaching and research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists the CASBOT 02 with price on request and about three weeks delivery.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/casbot-02-humanoid-robot-37-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Price on request; usual delivery time 3 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.63,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "standard edition with battery; EDU about 52 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 37,
+   "unit": null,
+   "conditions": "with hands: 2 neck, 5 per arm, 1 waist, 6 per leg, 6 per hand",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 11,
+   "unit": null,
+   "conditions": "6 actuated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1.5,
+   "unit": "kg",
+   "conditions": "single arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": "maker table; RBTX states 2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Maximum joint torque",
+   "value": 150,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 10 Ah, ternary lithium, removable",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "about; RBTX states 2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Orin AGX (275 TOPS) + RK3588",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5 to 40",
+   "unit": "°C",
+   "conditions": "humidity 25–85 %, non-condensing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RGB-D camera, stereo camera, 2 fisheye cameras, IMU, microphone array; EDU adds LiDAR and 2 more RGB-D cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "Secondary development only on the EDU edition; OTA updates; VR teleoperation kit optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 1.5,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "EDU edition only (secondary development and teaching kit)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Maker says it walks on sand, grass and gravel; no IP rating or weather spec published.",
+   "Standard and EDU editions differ: only EDU has LiDAR, navigation, wireless charging and secondary development. The sellers do not say which edition they list.",
+   "Light payload (1.5 kg per arm) and about 1.5 h runtime; warranty 6 months."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/WecomSave_b03c484191-6fDbs13t.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/casbot-02-humanoid-robot-37-dof",
+   "credit": "CASBOT (via RBTX)",
+   "alt": "CASBOT 02 bipedal humanoid, full body, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/index/casbot_02.jpg",
+   "pageUrl": "https://www.casbot.tech/",
+   "credit": "CASBOT",
+   "alt": "CASBOT 02 humanoid upper body, waving",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/02/mobile/slice_2.png",
+   "pageUrl": "https://www.casbot.tech/product/02",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "CASBOT 02 humanoid standing upright, full-body three-quarter view on a light background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/02/mobile/slice_12.png",
+   "pageUrl": "https://www.casbot.tech/product/02",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "CASBOT 02 humanoid upper body with its hands held together in front of the torso",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/02/mobile/slice_1.png",
+   "pageUrl": "https://www.casbot.tech/product/02",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "CASBOT 02 humanoid head and torso in side view, gesturing with an open hand",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/02/mobile/slice_6.png",
+   "pageUrl": "https://www.casbot.tech/product/02",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "Close-up of the CASBOT 02 head with its multi-fingered hands crossed in front of the visor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Commercial service, interactive demonstrations, research and education",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Use list on the RBTX product page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.casbot.tech/product/02",
+   "title": "CASBOT 02 product page and spec table",
+   "publisher": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/casbot-02-humanoid-robot-37-dof",
+   "title": "CASBOT 02 | Humanoider Roboter | 37 DOF on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/Casbot-02-Bipedal-Humanoid-Robot-02.htm",
+   "title": "Casbot 02 bipedaler humanoider Roboter at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which edition (standard or EDU) do RBTX and the reseller supply, and what does RBTX charge?",
+  "Speed and runtime differ between maker (1 m/s, 1.5 h) and RBTX (2 m/s, 2 h)."
+ ],
+ "checkedAt": "2026-10-02"
+}

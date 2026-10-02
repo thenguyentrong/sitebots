@@ -1,0 +1,247 @@
+{
+ "schemaVersion": 1,
+ "id": "maxtronics-nao6",
+ "maker": "Maxtronics (formerly Aldebaran)",
+ "makerCountry": "FR",
+ "model": "NAO",
+ "variant": "NAO6 (V6)",
+ "name": "Maxtronics NAO6",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://maxtronics.com/en/nao6/",
+ "summary": "A 58 cm, 5.5 kg programmable bipedal humanoid for education, research and demonstrations; in stock in Germany from about 8,350 EUR net, but far too small for site work.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots lists NAO V6 in its German shop with price and delivery within 3 weeks. Maxtronics (Paris) took over the Aldebaran NAO business in 2025 and sells and supports NAO6.",
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 8350,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "10,020 EUR including VAT; \"from\" price on the German shop page."
+  },
+  "priceOther": null,
+  "leadTime": "Delivery within 3 weeks (Generation Robots).",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/403100-programmierbarer-humanoider-roboter-nao-version-6.html",
+    "contactUrl": "https://www.generationrobots.com/de/",
+    "email": null,
+    "phone": "+49 (030) 800 982 602",
+    "priceEur": 8350,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "German-language shop with German phone number; quote option in the cart."
+   },
+   {
+    "name": "Maxtronics Robotics SAS",
+    "country": "FR",
+    "role": "manufacturer",
+    "productUrl": "https://maxtronics.com/en/nao6/",
+    "contactUrl": "https://maxtronics.com/en/contact-us/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Get a quote on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.574,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 5.48,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 25,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 62.5,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Run time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "Normal use; 60 min active use",
+   "sourceId": "s3"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IPX0",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Working temperature",
+   "value": "-5 to 35",
+   "unit": "C",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "compute",
+   "label": "Computer",
+   "value": "Intel Atom E3845, 4 GB RAM, 32 GB eMMC",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Python and C++ SDK, Choregraphe, NAO Activities (generative AI)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": "IPX0",
+  "sdk": "Python, C++, Choregraphe",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "58 cm tall toy-scale humanoid; hands hold only very light objects; no payload rating.",
+   "No splash protection (IPX0); indoor use.",
+   "CE marked per datasheet.",
+   "roughGround, stairs and outdoor set to false given size and IPX0 rating."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://maxtronics.com/wp-content/uploads/2024/12/nao-hp-1.png",
+   "pageUrl": "https://maxtronics.com/en/nao6/",
+   "credit": "Maxtronics",
+   "alt": "NAO6 humanoid robot, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://maxtronics.com/wp-content/uploads/nao-print-24-1-2048x1452.png",
+   "pageUrl": "https://maxtronics.com/en/nao6/",
+   "credit": "Maxtronics (formerly Aldebaran)",
+   "alt": "NAO6 humanoid balancing on one leg in a dynamic pose, with the other leg and one arm stretched out, cut-out.",
+   "kind": "product"
+  },
+  {
+   "url": "https://maxtronics.com/wp-content/uploads/nao_edu_specialisee_1.webp",
+   "pageUrl": "https://maxtronics.com/en/nao6/",
+   "credit": "Maxtronics (formerly Aldebaran)",
+   "alt": "NAO6 humanoid touching hands with children.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://maxtronics.com/wp-content/uploads/vision.png",
+   "pageUrl": "https://maxtronics.com/en/nao6/",
+   "credit": "Maxtronics (formerly Aldebaran)",
+   "alt": "Close-up of the NAO6 head showing its eyes.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Teaching, HRI research, autism therapy and elderly-care stimulation",
+   "stage": "claim",
+   "where": "Schools, universities and care settings in over 70 countries",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker says more than 20,000 NAO units were produced and delivered to schools, universities and care settings in over 70 countries; no single customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://maxtronics.com/en/nao6/",
+   "title": "NAO6 product page",
+   "publisher": "Maxtronics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/403100-programmierbarer-humanoider-roboter-nao-version-6.html",
+   "title": "Programmierbarer humanoider Roboter NAO Version 6",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://maxtronics.com/wp-content/uploads/nao-v6-datasheet-en-20260605-maxtronics_v5.pdf",
+   "title": "NAO V6 datasheet (2026-06-05)",
+   "publisher": "Maxtronics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://maxtronics.com/en/company/",
+   "title": "Company: Maxtronics takes over NAO from Aldebaran",
+   "publisher": "Maxtronics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

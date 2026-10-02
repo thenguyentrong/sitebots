@@ -1,0 +1,133 @@
+{
+ "schemaVersion": 1,
+ "id": "pal-robotics-reem-c",
+ "maker": "PAL Robotics",
+ "makerCountry": "ES",
+ "model": "REEM-C",
+ "variant": null,
+ "name": "PAL Robotics REEM-C",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://pal-robotics.com/robot/reem-c/",
+ "summary": "PAL Robotics' first bipedal humanoid from 2013, now listed by the maker as a legacy robot.",
+ "launched": "2013",
+ "lifecycle": "discontinued",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Listed under \"Legacy Robots / Hall of Fame\" on the PAL site (conceived in 2013); replaced by TALOS and KANGAROO. The legacy page still shows a generic quote button, but PAL no longer lists REEM-C among its current robots.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 68,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Hand payload",
+   "value": 1,
+   "unit": "kg",
+   "conditions": "Arm stretched",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery autonomy",
+   "value": 3,
+   "unit": "h",
+   "conditions": "Walking; 6 h stand-by",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Walking speed",
+   "value": 2.5,
+   "unit": "km/h",
+   "conditions": "Up to",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": 1,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Legacy research humanoid; 1 kg hand payload with the arm stretched.",
+   "Hand type is not described on the PAL page; recorded as gripper."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/04/REE-C-Robot-3.webp",
+   "pageUrl": "https://pal-robotics.com/robots/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics REEM-C humanoid",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://pal-robotics.com/robots/",
+   "title": "Our Robots (Legacy Robots: REEM-C)",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://pal-robotics.com/robot/reem-c/",
+   "title": "REEM-C robot page (legacy, Hall of Fame)",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

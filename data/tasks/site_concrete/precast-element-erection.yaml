@@ -1,0 +1,207 @@
+schema_version: 1
+id: site_concrete/precast-element-erection
+status: published
+setting: site_concrete
+family: heavy_element_handling
+trades: [concrete]
+title:
+  en: "Erect precast walls, columns and stairs by crane"
+  de: "Betonfertigteile (Wände, Stützen, Treppen) mit dem Kran montieren"
+summary:
+  en: "Sling the element on its transport anchors, guide it on the crane hook into position, set it on shims, mortar bed, socket or bearings, secure it with push-pull props or wedges before the hook is released, and align it plumb."
+  de: "Das Fertigteil an den Transportankern anschlagen, am Kranhaken in Position führen, auf Unterleger, Mörtelbett, Köcher oder Lager absetzen, vor dem Aushängen mit Schrägstützen oder Keilen sichern und lotrecht ausrichten."
+description:
+  en: "Precast stairs, walls and columns arrive by truck and are set by crane, preferably straight from the vehicle. A straight precast stair weighs about 180 to 200 kg per step and metre of width; a double wall about 300 kg per square metre before it is filled; solid walls stand up to 4.5 m high. The elements hang on cast-in transport anchors; a double wall, for example, has at least two of 3 or 5 t. The crew slings each element, guides large ones with a tag line and never stands beneath a suspended load, then sets walls on plastic shims in a cement mortar bed, columns on a centring cone in their socket foundation, and stairs on acoustic bearings. Walls and pinned columns are braced with at least two push-pull props before the hook is released and aligned plumb with the prop spindles; the props stay until the joints are grouted and the structure holds the element."
+  de: "Fertigteiltreppen, -wände und -stützen kommen per Lkw und werden mit dem Kran versetzt, möglichst direkt vom Fahrzeug. Eine gerade Fertigteiltreppe wiegt etwa 180 bis 200 kg je Stufe und Meter Breite, eine Doppelwand vor dem Verfüllen rund 300 kg je Quadratmeter; Massivwände sind bis 4,5 m hoch. Die Elemente hängen an einbetonierten Transportankern; eine Doppelwand etwa hat mindestens zwei zu 3 oder 5 t. Die Kolonne schlägt jedes Element an, führt große Elemente mit einem Führungsseil, hält sich nie unter der schwebenden Last auf und setzt Wände auf Kunststoffplättchen in ein Mörtelbett, Stützen auf den Zentrierkegel im Köcherfundament und Treppen auf Schallschutzlager. Wände und Pendelstützen werden mit mindestens zwei Druck-Zug-Schrägstützen gesichert, bevor der Haken gelöst wird, und mit den Spindeln lotrecht ausgerichtet; die Stützen bleiben, bis die Fugen vergossen sind und das Tragwerk das Element hält."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Precast concrete elements (walls, columns, stairs): erect, align and brace"
+    de: "Betonfertigteile (Wände, Stützen, Treppen) versetzen, ausrichten und abstützen"
+  unit: pcs
+attributes:
+  object_mass_kg:
+    value: { min: 1440, max: 9600 }
+    confidence: likely
+    evidence_url: 'https://www.meier-betonwerke.de/files/fileadmin/content/1.5-Download-Center/1.5.2-Betonfertigteile/MEIER_PDB_Fertigteiltreppen_2024-1.pdf'
+    note: "Worked examples, element sizes chosen here: MEIER gives straight stairs at about 180 to 200 kg per step and metre of width, up to 3.00 m wide, so a 1.00 m wide flight of 8 steps weighs about 1,440 kg and a 3.00 m wide flight of 16 steps about 9,600 kg. Rohrdorfer gives double walls at about 300 kg/m² unfilled, so a 2.75 × 8 m wall weighs about 6,600 kg; each element has at least two transport anchors of 3 or 5 t. Heidelberg Materials makes solid walls up to 9 × 3 m and about 40 cm thick, and the largest of these weigh more than the examples; no maker found publishes their weight, so 9,600 kg is not an upper bound."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The setting routine repeats, but every element has its own position, bearing, connections and bracing in the erection plan."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.thomas-gruppe.de/wp-content/uploads/2024/11/Thomas-Gruppe_Montageanleitung_FT_09-2024.pdf'
+    note: "Position, plumbness and alignment are checked before the joints are grouted and corrected with the prop spindles (Thomas, 09/2024); once the joints are grouted, a wrongly set element is costly to correct."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://www.thomas-gruppe.de/wp-content/uploads/2024/11/Thomas-Gruppe_Montageanleitung_FT_09-2024.pdf'
+    note: "The elements are load-bearing parts of the structure; Thomas requires a safe temporary support or a fixed position before unhooking, and the props may only be removed once stability is ensured by slabs, ring beams or other members."
+  reach_height_m:
+    value: { min: 0, max: 5 }
+    confidence: likely
+    evidence_url: 'https://www.thomas-gruppe.de/wp-content/uploads/2024/11/Thomas-Gruppe_Montageanleitung_FT_09-2024.pdf'
+    note: "Props are fixed above the element's centre of gravity and the hooks sit at its top. Thomas makes solid walls up to 4.5 m high (product page for solid walls), and for beams its instructions ask for workplaces reachable by scaffold, working platform or ladder, ladders up to 5 m standing height."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Elements are erected on the open shell."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Setting finished elements makes no relevant dust; mixing the bedding and grout mortar is a small local step."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Crane work continues in light rain."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Ground slab with starter bars, slab edges, ladders and platforms."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    evidence_url: 'https://www.meier-betonwerke.de/files/fileadmin/content/1.5-Download-Center/1.5.2-Betonfertigteile/MEIER_PDB_Fertigteiltreppen_2024-1.pdf'
+    note: "The crane does the lifting on cast-in transport anchors (MEIER); slinging, guiding, bedding, aligning, bracing and unhooking are done by the crew."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; elements are priced per piece and set at the crane's pace."
+requirements:
+  object_size_m:
+    value: { min: 3, max: 10 }
+    confidence: likely
+    evidence_url: 'https://www.thomas-gruppe.de/betonbauteile/waende/elementwaende/'
+    note: "Storey-high walls, columns and stair flights are about 3 m and more. Thomas makes element walls up to 10 m high; Heidelberg Materials makes solid walls up to 9 m long, 3 m wide and about 40 cm thick."
+  tolerance_mm:
+    value: 8
+    confidence: confirmed
+    evidence_url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    note: "Plumbness of a storey-high wall or column: DIN 18202 table 2, 8 mm as the limit for vertical surfaces at nominal dimensions over 1 up to 3 m, 12 mm over 3 up to 6 m (as reproduced by bauforumstahl). A limit, not a ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The load hangs on the crane; no guiding force is published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Crane plus a trained erection crew stays the answer: elements weighing tonnes hang on the hook, a stair flight alone 1.4 to 9.6 t and large solid walls more, they are load-bearing, and they need bracing before release. If climbing to unhook is the risk, remote-release lifting gear is the step to look at."
+      de: "Kran plus geschulte Montagekolonne bleibt die Antwort: Elemente von mehreren Tonnen hängen am Haken, allein ein Treppenlauf 1,4 bis 9,6 t und große Massivwände mehr, sie sind tragend und brauchen vor dem Aushängen eine Abstützung. Ist das Hochsteigen zum Aushängen das Risiko, sind fernauslösbare Gehänge der zu prüfende Schritt."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [exposure, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, gantry]
+evidence:
+  - statement:
+      en: "Thomas betonbauteile's installation instructions for structural precast elements: set solid walls on plastic shims in a cement mortar bed MG III, secure each element with two push-pull props fixed above its centre of gravity at about 45°, align it plumb with the prop spindles, add props for walls over 4.00 m, and remove props only after the grout has hardened. Columns are raised with a column sling, set on a centring cone in the socket, wedged, checked with a theodolite and grouted; stairs go on acoustic bearings. Never stand under a suspended element; use a tag line for large elements."
+      de: "Montageanleitung von thomas betonbauteile für konstruktive Fertigteile: Massivwände auf Kunststoffplättchen in ein Mörtelbett aus Zementmörtel MG III setzen, jedes Element mit zwei Druck-Zug-Schrägstützen oberhalb des Schwerpunkts unter ca. 45° sichern, mit den Stützenspindeln lotrecht ausrichten, Wände über 4,00 m zusätzlich abstützen und Schrägstützen erst nach Aushärtung des Vergusses entfernen. Stützen werden mit Stützengehänge aufgerichtet, im Köcher auf den Zentrierkegel abgesetzt, verkeilt, mit dem Theodolit geprüft und vergossen; Treppen kommen auf Schallschutzlager. Nie unter dem schwebenden Element aufhalten; bei großen Fertigteilen ein Führungsseil verwenden."
+    url: 'https://www.thomas-gruppe.de/wp-content/uploads/2024/11/Thomas-Gruppe_Montageanleitung_FT_09-2024.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-09-26'
+    type: claim
+    confidence: confirmed
+    note: "Rev. 09/2024; PDF created 26.09.2024, read on 2026-10-02."
+  - statement:
+      en: "MEIER's precast stair data sheet: straight stairs up to 300 cm wide at about 180 to 200 kg per step and metre of step width, winding stairs at about 180 to 200 kg per step; precast stairs are usually set by crane on transport anchors cast into the stair, and the sling is removed only once the stair sits correctly on its bearings."
+      de: "Produktdatenblatt Fertigteiltreppen von MEIER: gerade Treppen bis 300 cm breit mit ca. 180 bis 200 kg je 1 m Stufenbreite, gewendelte Treppen mit ca. 180 bis 200 kg je Stufe; Fertigtreppen werden in der Regel mit einem Kran an einbetonierten Transportankern versetzt, das Gehänge wird erst entfernt, wenn die Treppe richtig versetzt und gelagert ist."
+    url: 'https://www.meier-betonwerke.de/files/fileadmin/content/1.5-Download-Center/1.5.2-Betonfertigteile/MEIER_PDB_Fertigteiltreppen_2024-1.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-11-01'
+    type: claim
+    confidence: confirmed
+    note: "Data sheet valid from 1 November 2024, read on 2026-10-02."
+  - statement:
+      en: "Rohrdorfer's 2023 price list for RBW double walls: wall weight without infill concrete about 300 kg/m², transport anchors of 3 or 5 t with at least two per element, at least two brace anchors per element, and push-pull props for wall heights up to 3.0, 3.9, 4.5 and 6.7 m."
+      de: "Preisliste 2023 von Rohrdorfer für RBW-Doppelwände: Wandgewicht ohne Füllbeton ca. 300 kg/m², Transportanker 3 oder 5 Tonnen mit mindestens zwei je Element, mindestens zwei Schrägstützenanker je Element und Schrägstützen für Wandhöhen bis 3,0, 3,9, 4,5 und 6,7 m."
+    url: 'https://www.rohrdorferfertigteile.de/media/upload/downloads/RBW_Doppelwaende.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2023-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Price list valid from 01.01.2023; only the technical data are used here."
+  - statement:
+      en: "Thomas betonbauteile's product page for solid walls: a solid precast element with untensioned reinforcement, made in wall thicknesses from 10 cm and wall heights up to 4.5 m."
+      de: "Produktseite Massivwände von thomas betonbauteile: schlaff bewehrtes Vollfertigteil, ab 10 cm Wanddicke, Wandhöhen bis zu 4,5 m."
+    url: 'https://www.thomas-gruppe.de/betonbauteile/waende/massivwaende/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, read on 2026-10-02."
+  - statement:
+      en: "Thomas betonbauteile's product page for element walls: two reinforced-concrete shells 5 to 7 cm thick joined by lattice girders, in wall thicknesses from 18 to 42 cm and heights up to 10 m."
+      de: "Produktseite Elementwände von thomas betonbauteile: zwei 5 bis 7 cm dicke Stahlbetonplatten, durch Gitterträger verbunden, in Wandstärken von 18 bis 42 cm und Höhen bis zu 10 m."
+    url: 'https://www.thomas-gruppe.de/betonbauteile/waende/elementwaende/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, read on 2026-10-02."
+  - statement:
+      en: "Heidelberg Materials' product page for precast solid walls: lengths up to 9 m, widths up to 3 m and thicknesses up to about 40 cm, concrete C20/25 or higher."
+      de: "Produktseite Massivwände von Heidelberg Materials: Länge bis 9 m, Breite bis 3 m, Dicke bis ca. 40 cm, Betongüte C20/25 oder höher."
+    url: 'https://www.heidelbergmaterials.de/de/betonelemente/produkte/wandelemente'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, read on 2026-10-02."
+  - statement:
+      en: "fdu's installation instructions for element walls: every element is secured with at least two push-pull props at no more than 50° to the slab; the crane hooks may be released only after both props are fixed, secured and checked, then the element is aligned vertically with the prop spindles."
+      de: "Montageanleitung von fdu für Elementwände: Jedes Element wird mit mindestens zwei Schrägstützen gesichert, Winkel zur Bodenplatte max. 50°; erst nachdem beide Schrägstützen befestigt, gesichert und kontrolliert wurden, dürfen die Kranhaken ausgehängt werden, dann wird das Element mit den Spindeln vertikal ausgerichtet."
+    url: 'https://fdu.de/wp-content/uploads/2020/08/fdu_Montageanleitung_Gesamtuebersicht_02_25-S.10-geaendert.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Overview of fdu installation instructions, pages marked 'Stand: 02-2025', read on 2026-10-02."
+  - statement:
+      en: "DIN 18202 table 2 as reproduced by bauforumstahl: angular deviations of vertical, horizontal and inclined surfaces are limited to 8 mm at nominal dimensions over 1 up to 3 m and 12 mm over 3 up to 6 m."
+      de: "DIN 18202 Tabelle 2, wiedergegeben von bauforumstahl: Winkelabweichungen vertikaler, horizontaler und geneigter Flächen sind bei Nennmaßen über 1 bis 3 m auf 8 mm und über 3 bis 6 m auf 12 mm begrenzt."
+    url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Steel-construction trade body worksheet 10.1, 1st edition 04/2020, citing DIN 18202; read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If climbing to unhook is the concern, trial remote-release lifting gear on one element type and compare ladder climbs and time per element."
+    de: "Kein Roboterpilot. Wenn das Hochsteigen zum Aushängen das Anliegen ist, fernauslösbare Gehänge an einem Elementtyp erproben und Leiteraufstiege und Zeit je Element vergleichen."
+prerequisites: []
+open_questions:
+  - { en: "Which elements do you erect most, stairs, walls or columns, and what do the heaviest weigh?", de: "Welche Elemente montieren Sie am häufigsten, Treppen, Wände oder Stützen, und was wiegen die schwersten?" }
+  - { en: "How are the hooks released today: from a ladder, a platform or with remote-release gear?", de: "Wie werden die Haken heute gelöst: von der Leiter, von einer Bühne oder mit fernauslösbaren Gehängen?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

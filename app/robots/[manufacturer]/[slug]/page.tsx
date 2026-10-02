@@ -1,4 +1,8 @@
 import { BuyingPanel } from '@/components/robot/BuyingPanel';
+import { MarketBuyBox } from '@/components/market/MarketBuyBox';
+import { GermanySection } from '@/components/market/GermanyBuy';
+import { marketForCatalogue } from '@/lib/market/links';
+import { marketImagesFor } from '@/lib/market/tiles';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -36,10 +40,11 @@ export async function generateMetadata({ params, searchParams }: { params: Param
   const detail = await getRobotDetail(manufacturer, slug, variant);
   if (!detail) return {};
   const r = detail.robot;
+  const payloadKey = pickPayloadKey(r.specs ?? {});
   const bits = [
     r.height_m !== null ? `${r.height_m} m` : null,
     r.weight_kg !== null ? `${r.weight_kg} kg` : null,
-    r.payload_kg_conservative !== null ? `${r.payload_kg_conservative} kg payload` : null,
+    payloadKey ? formatSpec(payloadKey, r.specs[payloadKey]) + ' payload (' + (qualifierLabel(payloadKey.split(':')[1]) ?? 'basis unstated') + ')' : null,
     r.ip_rating,
   ].filter(Boolean);
   return { ...publicMetadata({
@@ -95,6 +100,9 @@ export default async function RobotPage({ params, searchParams }: { params: Para
   const compact = render === '1';
 
   const { robot, image, images, variants, prices, availability, sources, conflicts } = detail;
+  const market = marketForCatalogue(manufacturer, slug);
+  // The German pictures were checked by eye, so they lead the gallery.
+  const gallery = [...marketImagesFor(market, variants, robot.id, images.map((image) => image.url)), ...images];
   const specs = robot.specs ?? {};
   const base = `/robots/${manufacturer}/${slug}`;
   const figures = keyFigures(robot, specs);
@@ -162,7 +170,7 @@ export default async function RobotPage({ params, searchParams }: { params: Para
         {!isPublicRobot(manufacturer, slug) ? <p className="card mb-6 p-4 text-sm text-muted">Reference only · This record has no named, reviewed current or upcoming commercial product offering. This robot is hidden from the supplier catalogue and matcher. <Link href={`/brands/${manufacturer}`} className="underline underline-offset-4">View manufacturer review</Link></p> : null}
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <div className="space-y-6">
-            <RobotMedia model={model} presets={presets} images={images} name={robot.name} formFactor={robot.form_factor} compact={compact} />
+            <RobotMedia model={model} presets={presets} images={gallery} name={robot.name} formFactor={robot.form_factor} compact={compact} />
 
             <dl className="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {figures.map((f) => (
@@ -181,8 +189,10 @@ export default async function RobotPage({ params, searchParams }: { params: Para
               ))}
             </dl>
 
+            {market.length ? <MarketBuyBox robots={market} /> : null}
             <PricePanel prices={prices} availability={availability} />
-            {isPublicRobot(manufacturer, slug) ? <BuyingPanel manufacturer={manufacturer} model={slug} variant={robot.variant} prices={prices} /> : null}
+            {/* Market research replaces the older seller notes wherever it covers this robot. */}
+            {!market.length && isPublicRobot(manufacturer, slug) ? <BuyingPanel manufacturer={manufacturer} model={slug} variant={robot.variant} prices={prices} /> : null}
           </div>
 
           <section className="card overflow-hidden self-start">
@@ -198,6 +208,7 @@ export default async function RobotPage({ params, searchParams }: { params: Para
           </section>
         </div>
 
+        {compact || !market.length ? null : <GermanySection robots={market} />}
         {compact ? null : (
           <div className="mt-6">
             <UseCaseProfile profile={profile} name={robot.name} />

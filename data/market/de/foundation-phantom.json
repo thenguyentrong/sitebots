@@ -1,0 +1,156 @@
+{
+ "schemaVersion": 1,
+ "id": "foundation-phantom",
+ "maker": "Foundation Future Industries",
+ "makerCountry": "US",
+ "model": "Phantom",
+ "variant": null,
+ "name": "Foundation Phantom",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://foundation.bot/phantom",
+ "summary": "A bipedal humanoid with cycloid actuators from a US start-up that targets manufacturing, logistics and defence; there is no public way to buy one.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No sales route, price or distributor; the website only offers a newsletter sign-up. Foundation says it works with the US Department of Defense and its allies.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.8,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload capacity",
+   "value": "40 kg (one layout of the page shows 20 kg)",
+   "unit": null,
+   "conditions": "conflicting values on the product page",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 29,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.7,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "actuator_peak_torque_nm",
+   "label": "Max actuator peak torque",
+   "value": 160,
+   "unit": "Nm",
+   "conditions": "legs >160 Nm, shoulder 119 Nm, wrist 20 Nm",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Payload figure is inconsistent on the maker page (40 kg vs 20 kg).",
+   "Hand type taken from the product image (five-finger hands); no hand specification published.",
+   "Foundation calls Phantom its \"first production humanoid\"; no customer deliveries were found."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://framerusercontent.com/images/2w3k3rSCuwTu8rDr2OvOnUEznk.png",
+   "pageUrl": "https://foundation.bot/phantom",
+   "credit": "Foundation Future Industries",
+   "alt": "Foundation Phantom humanoid in black, standing, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Heavy-payload handling and a mortar demo shown in company videos",
+   "stage": "demo",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s3",
+   "note": "Video titles only (Mortar Demo May 2026, Heavy Payload Demo July 2026); the page does not say what the demos show."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://foundation.bot/phantom",
+   "title": "Phantom product page",
+   "publisher": "Foundation Future Industries",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://foundation.bot/master-plan",
+   "title": "Master Plan",
+   "publisher": "Foundation Future Industries",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://foundation.bot/",
+   "title": "Foundation home page",
+   "publisher": "Foundation Future Industries",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which payload value is correct, 40 kg or 20 kg?",
+  "Hand design and runtime are not published.",
+  "Does Foundation sell or lease outside the US?"
+ ],
+ "checkedAt": "2026-10-02"
+}

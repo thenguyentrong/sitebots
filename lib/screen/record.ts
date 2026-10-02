@@ -30,7 +30,7 @@ export function factsFromRecord(r: TaskRecord): FactSource {
   const meta: FactMeta = {};
   for (const k of Object.keys(facts) as (keyof TaskFacts)[]) {
     const entry = a[k];
-    meta[k] = { confidence: entry.confidence, note: entry.note };
+    meta[k] = { confidence: entry.confidence, note: entry.note, ...(entry.evidence_url ? { evidence_url: entry.evidence_url } : {}) };
   }
   return { setting: r.setting, facts, meta };
 }

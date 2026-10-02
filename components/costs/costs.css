@@ -1,0 +1,68 @@
+/* Where the money goes: one grid with the robots and job pages (1152 px), bars drawn in the accent. */
+.cs-page { width: 100%; max-width: 1152px; margin: 0 auto; padding: 48px 16px 64px; }
+.cs-head h1 { font-size: 40px; line-height: 1.1; font-weight: 600; letter-spacing: -0.03em; }
+.cs-head p { margin-top: 12px; max-width: 720px; font-size: 16px; line-height: 1.5; color: var(--muted); }
+.cs-section { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--edge); }
+.cs-section > h2, .cs-section-head h2 { font-size: 24px; line-height: 1.25; font-weight: 600; }
+.cs-section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.cs-lede { margin-top: 8px; max-width: 720px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.cs-answer { margin-top: 16px; max-width: 720px; font-size: 16px; line-height: 1.5; }
+.cs-group { margin-top: 32px; }
+.cs-group h3 { font-size: 18px; font-weight: 600; }
+.cs-group h3 small { margin-left: 8px; font-size: 14px; font-weight: 400; color: var(--muted); }
+.cs-group > p { margin-top: 4px; font-size: 14px; color: var(--muted); }
+.cs-civil { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
+.cs-fine { margin-top: 16px; font-size: 12px; line-height: 1.5; color: var(--faint); max-width: 720px; }
+.cs-fine a, .cs-sources a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* The split of each building type into shell, finishing and building services. */
+.cs-split { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+.cs-split-row { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: center; gap: 16px; }
+.cs-split-row > p { font-size: 14px; font-weight: 600; }
+.cs-split-row > p small { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
+.cs-split-bar { display: flex; height: 40px; border-radius: 8px; overflow: hidden; }
+.cs-split-bar > span { display: flex; align-items: center; padding: 0 12px; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; overflow: hidden; }
+.cs-split-bar > [data-part=rohbau] { background: var(--accent); color: #fff; }
+.cs-split-bar > [data-part=ausbau] { background: color-mix(in srgb, var(--accent) 45%, var(--card)); color: var(--foreground); }
+.cs-split-bar > [data-part=tga] { background: var(--subtle); color: var(--foreground); }
+.cs-legend { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 14px; color: var(--muted); }
+.cs-legend span::before { content: ''; display: inline-block; width: 12px; height: 12px; margin-right: 8px; border-radius: 4px; vertical-align: -1px; }
+.cs-legend [data-part=rohbau]::before { background: var(--accent); }
+.cs-legend [data-part=ausbau]::before { background: color-mix(in srgb, var(--accent) 45%, var(--card)); }
+.cs-legend [data-part=tga]::before { background: var(--subtle); border: 1px solid var(--edge-strong); }
+
+/* Horizontal bars with an optional range line. */
+.cs-bars { margin-top: 16px; }
+.cs-bars ol { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+.cs-bars li { display: grid; grid-template-columns: minmax(160px, 300px) minmax(0, 1fr) 56px; align-items: center; gap: 12px; }
+.cs-label { display: flex; flex-direction: column; min-width: 0; font-size: 14px; line-height: 1.3; }
+.cs-label a, .cs-label > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cs-label a { text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 3px; }
+.cs-label a:hover { text-decoration-color: currentColor; }
+.cs-label small { font-size: 12px; color: var(--faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cs-track { position: relative; height: 24px; border-radius: 4px; background: var(--subtle); }
+.cs-bar { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--accent); }
+.cs-range { position: absolute; top: 50%; height: 2px; margin-top: -1px; background: var(--foreground); }
+.cs-range::before, .cs-range::after { content: ''; position: absolute; top: -5px; width: 2px; height: 12px; background: var(--foreground); }
+.cs-range::before { left: 0; }
+.cs-range::after { right: 0; }
+.cs-value { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; text-align: right; }
+.cs-axis { display: flex; justify-content: space-between; margin: 4px 68px 0 calc(min(300px, 40%) + 12px); font-size: 12px; color: var(--faint); }
+.cs-sources { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; }
+.cs-sources small { display: block; color: var(--muted); }
+
+/* Narrow columns: the label on its own line above the bar. */
+.cs-civil .cs-bars li { grid-template-columns: minmax(0, 1fr) 48px; gap: 4px 8px; }
+.cs-civil .cs-label { grid-column: 1 / -1; }
+.cs-civil .cs-axis { margin: 4px 56px 0 0; }
+@media (max-width: 960px) {
+  .cs-civil { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .cs-head h1 { font-size: 24px; }
+  .cs-split-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .cs-split-bar > span { padding: 0 8px; font-size: 12px; }
+  .cs-bars li { grid-template-columns: minmax(0, 1fr) 48px; gap: 4px 8px; }
+  .cs-label { grid-column: 1 / -1; }
+  .cs-axis { margin: 4px 56px 0 0; }
+}

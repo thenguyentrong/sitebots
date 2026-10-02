@@ -34,6 +34,21 @@ export const FactsSchema = z.object({
   data_sensitivity: z.enum(DATA_SENSITIVITY).nullable().default(null),
   runtime_continuous_min: z.number().min(0).max(100000).nullable().default(null),
 });
+/** Zod defaults inside partial() still produce nulls; overrides must distinguish absent from explicitly unknown. */
+export const FactOverridesSchema = z.object({
+  object_mass_kg: FactsSchema.shape.object_mass_kg.removeDefault().optional(),
+  variability: FactsSchema.shape.variability.removeDefault().optional(),
+  error_tolerance: FactsSchema.shape.error_tolerance.removeDefault().optional(),
+  safety_criticality: FactsSchema.shape.safety_criticality.removeDefault().optional(),
+  reach_height_m: FactsSchema.shape.reach_height_m.removeDefault().optional(),
+  environment: FactsSchema.shape.environment.removeDefault().optional(),
+  dust: FactsSchema.shape.dust.removeDefault().optional(),
+  wet: FactsSchema.shape.wet.removeDefault().optional(),
+  floor: FactsSchema.shape.floor.removeDefault().optional(),
+  incumbent_automation: FactsSchema.shape.incumbent_automation.removeDefault().optional(),
+  data_sensitivity: FactsSchema.shape.data_sensitivity.removeDefault().optional(),
+  runtime_continuous_min: FactsSchema.shape.runtime_continuous_min.removeDefault().optional(),
+});
 export type Facts = z.infer<typeof FactsSchema>;
 export const emptyFacts = (): Facts => FactsSchema.parse({});
 

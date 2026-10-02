@@ -1,6 +1,6 @@
 // render-lineup.mjs — the landing's lineup image.
 //
-//   node scripts/assets/render-lineup.mjs        (dev server running on :3000)
+//   node scripts/assets/render-lineup.mjs        (dev server running on :3000, or set LINEUP_ORIGIN)
 //
 // Screenshots the dev-only /render/lineup scene with a transparent background,
 // trims it to the robots and their shadows, names it by content hash so no
@@ -17,7 +17,7 @@ const PAGE = join('components', 'journey', 'JourneyStart.tsx');
 
 const browser = await chromium.launch({ args: ['--use-angle=d3d11', '--enable-gpu', '--ignore-gpu-blocklist'] });
 const page = await browser.newPage({ viewport: { width: 1648, height: 1000 }, colorScheme: 'dark', deviceScaleFactor: 2 });
-await page.goto('http://localhost:3000/render/lineup', { waitUntil: 'load', timeout: 120_000 });
+await page.goto((process.env.LINEUP_ORIGIN ?? 'http://localhost:3000') + '/render/lineup', { waitUntil: 'load', timeout: 120_000 });
 await page.waitForFunction(() => document.querySelector('[data-lineup]')?.getAttribute('data-ready') === 'true', null, { timeout: 120_000 });
 await page.waitForTimeout(2500);
 const shot = await page.locator('[data-lineup] canvas').screenshot({ omitBackground: true });

@@ -1,0 +1,164 @@
+{
+ "schemaVersion": 1,
+ "id": "falch-surface-rob-250-e",
+ "maker": "Falch",
+ "makerCountry": "DE",
+ "model": "surface rob 250 e",
+ "variant": null,
+ "name": "Falch surface rob 250 e",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_concrete_repair/hydrodemolition"
+ ],
+ "officialUrl": "https://www.falch.com/en/product/surface-rob-250-e-z0000828",
+ "summary": "Electric water-jetting robot from Falch for concrete renovation and surface preparation on large surfaces at up to 3,000 bar.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker; catalogue page shows \"ask for price\" and marks the robot as available for rent.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Falch GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.falch.com/en/product/surface-rob-250-e-z0000828",
+    "contactUrl": "https://www.falch.com/en/contact",
+    "email": "info@falch.com",
+    "phone": "+49 7344 9244-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Blaubeuren-Seissen; sale or rental."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "water_pressure_bar",
+   "label": "Working pressure",
+   "value": 3000,
+   "unit": "bar",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reaction_force_n",
+   "label": "Maximum recoil force",
+   "value": 600,
+   "unit": "N",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Empty weight",
+   "value": 240,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Length x width x height",
+   "value": "2200 x 2100 x 1200",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "400 V / 50 Hz, 16 A",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Drive type not stated on the catalogue page.",
+   "Listed by Falch under robots for concrete renovation.",
+   "Needs a separate high-pressure pump."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://shop-api.falch.com/thumbnail/cf/7b/ff/1761726343/z0000828_prod_01_800x800.jpg?ts=1761726570",
+   "pageUrl": "https://www.falch.com/en/product/surface-rob-250-e-z0000828",
+   "credit": "Falch GmbH",
+   "alt": "Falch surface rob 250 e",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete_repair/hydrodemolition"
+   ],
+   "task": "Concrete renovation by water jetting",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.falch.com/en/product/surface-rob-250-e-z0000828",
+   "title": "surface rob 250 e",
+   "publisher": "Falch GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.falch.com/en/products/robots/1-robotics-by-application",
+   "title": "Robotics by application",
+   "publisher": "Falch GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "How the robot moves over the surface (drive type) and its removal rate.",
+  "Price."
+ ],
+ "checkedAt": "2026-10-02"
+}

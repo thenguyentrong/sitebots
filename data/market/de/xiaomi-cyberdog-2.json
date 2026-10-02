@@ -1,0 +1,136 @@
+{
+ "schemaVersion": 1,
+ "id": "xiaomi-cyberdog-2",
+ "maker": "Xiaomi",
+ "makerCountry": "CN",
+ "model": "CyberDog 2",
+ "variant": null,
+ "name": "Xiaomi CyberDog 2",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.mi.com/cyberdog2",
+ "summary": "A 9 kg consumer and developer robot dog sold by Xiaomi in China; not an industrial robot and not sold in Germany.",
+ "launched": "2023-08",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold only through Xiaomi's Chinese online store; no German or EU sales channel found. Not an industrial inspection robot.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 12999,
+   "currency": "CNY",
+   "market": "China (Xiaomi official channels)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 8.9,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size",
+   "value": "562 x 339 x 481",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.6,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "about 90 min",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "19 sensors incl. RealSense depth camera, RGB and fisheye cameras, ToF and laser sensor, 4 microphones",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu and ROS2, open-source oriented",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "ROS2",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Consumer companion and developer platform; no IP rating or payload stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.cnbj1.fds.api.mi-img.com/product-images/cyberdog2wm2bn5/index/4239.png",
+   "pageUrl": "https://www.mi.com/cyberdog2",
+   "credit": "Xiaomi",
+   "alt": "Xiaomi CyberDog 2 head and body, close-up",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.mi.com/cyberdog2",
+   "title": "CyberDog 2 product page (Xiaomi China store)",
+   "publisher": "Xiaomi",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://newatlas.com/robotics/xiaomi-cyberdog-2/",
+   "title": "Xiaomi lets more pooch-like CyberDog 2 off the leash",
+   "publisher": "New Atlas",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

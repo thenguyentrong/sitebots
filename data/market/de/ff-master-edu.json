@@ -1,0 +1,223 @@
+{
+ "schemaVersion": 1,
+ "id": "ff-master-edu",
+ "maker": "Faraday Future",
+ "makerCountry": "US",
+ "model": "Master",
+ "variant": "Master Edu",
+ "name": "Faraday Future FF Master Edu",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://robotics.ff.com/us/ff-master/",
+ "summary": "A 1.31 m, 35 kg teaching humanoid with visual programming and about 2 h runtime, for schools, labs and demonstrations.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Faraday Future's own shop ships to the US only, and the only listing for Germany is Roboter Deutschland, a web shop run from Las Vegas without a named company.",
+  "sourceIds": [
+   "s3",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 37990,
+   "currency": "USD",
+   "market": "FF online store (ships to the US only)",
+   "sourceId": "s1"
+  },
+  "leadTime": "Usually ships in 3-5 business days (reseller)",
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.31,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 35,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 25,
+   "unit": null,
+   "conditions": "not including hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "maker states \"max 3 kg\" without saying per arm or both arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 120,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 500,
+   "unit": "Wh",
+   "conditions": "approximately",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RGB camera, head touch sensor, 6-axis IMU; no LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "Basic visual programming platform, Openclaw no-code tool, OTA updates",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Visual programming and Openclaw no-code tool",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Maker gives no hand specification (\"25 DOF, not include hand\"); whether the hands can grip is not stated.",
+   "Teaching and demonstration robot: no LiDAR, no VR teleoperation, mobile app still in development.",
+   "Payload \"max 3 kg\" is not split per arm."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0713/5415/5170/files/Master_Edu_Main_2048.jpg",
+   "pageUrl": "https://shop.ff.com/products/master",
+   "credit": "Faraday Future",
+   "alt": "FF Master Edu humanoid, standing, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Teaching, research and interactive demonstrations at universities and schools",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://shop.ff.com/products/master",
+   "title": "FF Master product page (Master Edu spec table)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.ff.com/meta.json",
+   "title": "FF online store settings (ships_to_countries: US)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/FF-Master-EDU.htm",
+   "title": "FF Master Edu Humanoid Robot at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/terms-conditions/",
+   "title": "Roboter Deutschland terms and conditions (Robots International)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "The only seller for Germany is a US-run reseller; is it authorised by FF, who handles warranty in the EU, and is the robot CE marked?",
+  "Is the reseller price net or gross, and does it include import duty?"
+ ],
+ "checkedAt": "2026-10-02"
+}

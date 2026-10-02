@@ -1,0 +1,280 @@
+{
+ "schemaVersion": 1,
+ "id": "robotis-ai-worker-ffw-sg2",
+ "maker": "ROBOTIS",
+ "makerCountry": "KR",
+ "model": "AI Worker",
+ "variant": "FFW-SG2 (mobile, swerve drive)",
+ "name": "ROBOTIS AI Worker FFW-SG2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://ai.robotis.com/ai_worker/introduction_ai_worker.html",
+ "summary": "A wheeled semi-humanoid research robot with two 7-DoF arms (3 kg each), grippers and a lift, sold by ROBOTIS for imitation-learning work at USD 60,000.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "On request: Generation Robots (France) lists the FFW-SG2 in its EU shop with a quote button, but stock is 0 and only a from-price of €54,000 net for the AI Worker range is shown. ROBOTIS’ global shop lists it at USD 60,000, ordered by email, \"temporarily out of stock\", shipped by DHL from Korea with import tax and duty extra.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 60000,
+   "currency": "USD",
+   "market": "ROBOTIS global shop, international version",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "ROBOTIS Co., Ltd.",
+    "country": "KR",
+    "role": "manufacturer",
+    "productUrl": "https://en.robotis.com/shop_en/item.php?it_id=905-0054-000",
+    "contactUrl": "https://ai.robotis.com/contact.html",
+    "email": "contactus2@robotis.com",
+    "phone": "+82-70-8671-2629",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Global shop lists the price; purchase via the sales email. Ships from Korea by DHL."
+   },
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404427-robot-semi-humanoide-robotis-ai-worker-2148.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "EU shop lists both versions (FFW-SG2 mobile, FFW-BG2 stationary) under one product with \"From €54,000 excl. VAT (€64,800 incl. 20 % French VAT)\"; that from-price belongs to the BG2 default and no separate SG2 price appears. Stock 0, marked not available for sale; \"Ask for a quote\" button."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.623,
+   "unit": "m",
+   "conditions": "604 x 602 x 1623 mm (W x D x H)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 90,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 25,
+   "unit": null,
+   "conditions": "arms 2 x 7, grippers 2 x 1, head 2, lift 1, mobile base 6",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "nominal; 5 kg peak",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload both arms",
+   "value": 6,
+   "unit": "kg",
+   "conditions": "nominal; 10 kg peak",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.641,
+   "unit": "m",
+   "conditions": "to wrist, plus hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Base speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 2040,
+   "unit": "Wh",
+   "conditions": "25 V, 80 Ah",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Orin",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3 RGBD cameras, 2 LiDARs, IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "end_effector",
+   "label": "Standard end effector",
+   "value": "RH-P12-RN gripper (dexterous finger actuator in development)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2, open source (Apache-2.0)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 2; open-source physical AI tools",
+  "sourceIds": [
+   "s1",
+   "s4"
+  ],
+  "notes": [
+   "3 kg per arm is nominal; 5 kg peak.",
+   "Omnidirectional swerve-drive base; a stationary version FFW-BG2 also exists.",
+   "Ships with the LG2 leader device (wearable) for teleoperation and data collection.",
+   "Operating temperature 0 to 40 °C; no IP rating stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en.robotis.com/data/item/1758876704/tn_AW_SG2_2.png",
+   "pageUrl": "https://en.robotis.com/shop_en/item.php?it_id=905-0054-000",
+   "credit": "ROBOTIS",
+   "alt": "ROBOTIS AI Worker FFW-SG2 on its mobile base next to the wearable leader device",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Wiring harness assembly, welding and inspection learned from human demonstrations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": "Maker claim; no named customer."
+  },
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Record teleoperated demonstrations and train imitation-learning policies",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://ai.robotis.com/ai_worker/hardware_ai_worker.html",
+   "title": "AI Worker hardware specifications",
+   "publisher": "ROBOTIS",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.robotis.com/shop_en/item.php?it_id=905-0054-000",
+   "title": "AI Worker FFW-SG2 [INTL] in the ROBOTIS global shop",
+   "publisher": "ROBOTIS",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://ai.robotis.com/contact.html",
+   "title": "Contact Us (Physical AI lineup sales)",
+   "publisher": "ROBOTIS",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://ai.robotis.com/ai_worker/introduction_ai_worker.html",
+   "title": "AI Worker introduction",
+   "publisher": "ROBOTIS",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.generationrobots.com/en/404427-robot-semi-humanoide-robotis-ai-worker-2148.html",
+   "title": "Robotis AI Worker semi-humanoid robot (FFW-SG2 / FFW-BG2)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Does the international version carry a CE mark?",
+  "When will it be back in stock?"
+ ],
+ "checkedAt": "2026-10-02"
+}

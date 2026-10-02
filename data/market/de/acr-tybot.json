@@ -1,0 +1,129 @@
+{
+ "schemaVersion": 1,
+ "id": "acr-tybot",
+ "maker": "Advanced Construction Robotics",
+ "makerCountry": "US",
+ "model": "TyBOT",
+ "variant": null,
+ "name": "ACR TyBOT",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "rebar_tying",
+  "site_concrete/rebar-tying-slabs"
+ ],
+ "officialUrl": "https://www.constructionrobots.com/tybot",
+ "summary": "Gantry robot that rides on the screed rails of a bridge deck and ties rebar intersections on its own, over 1,200 ties per hour.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Offered through US \"Certified Innovators\" in a list of US states (FL, MD, NC, NY, OH, PA); no European route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "tie_rate_h",
+   "label": "Active tie rate",
+   "value": 1200,
+   "unit": "ties/h",
+   "conditions": "1,200+",
+   "sourceId": "s1"
+  },
+  {
+   "key": "working_width_ft",
+   "label": "Working width",
+   "value": "10-117",
+   "unit": "ft",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_bar",
+   "label": "Largest bar intersection",
+   "value": "#8 x #9",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime without refuelling",
+   "value": 10,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "setup_h",
+   "label": "Set-up time",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runs on existing edge forms or screed rails; ties horizontal mats only."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/693dcb2dcf07a35645333596/69a0a5bcfbb6681c03c8db5f_tybot-optimized.jpg",
+   "pageUrl": "https://www.constructionrobots.com/tybot",
+   "credit": "Advanced Construction Robotics",
+   "alt": "TyBOT rebar tying robot on a bridge deck",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete/rebar-tying-slabs"
+   ],
+   "task": "Tying bridge-deck rebar mats",
+   "stage": "claim",
+   "where": "USA",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.constructionrobots.com/tybot",
+   "title": "TyBOT",
+   "publisher": "Advanced Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

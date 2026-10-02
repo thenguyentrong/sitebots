@@ -1,0 +1,1218 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "H2 identity resolution and detailed humanoid research evidence: programmable H2 EDU base versus official H2 PLUS Sharpa/Thor reference; German package and supply limits retained.",
+  "records": [
+    {
+      "id": "unitree-h2-edu-research",
+      "name": "Unitree H2 EDU · research base",
+      "manufacturer": "Unitree Robotics",
+      "robotClass": "humanoid",
+      "workflowId": "robotics_research",
+      "industries": [
+        "research_education"
+      ],
+      "exactConfiguration": "H2 EDU 31-DOF bipedal research base, Intel Core i5 platform computer and Core i7 development computer. Hand model and high-performance compute expansion excluded until specified; not standard H2 or H2 PLUS.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Full-size development platform for supervised experiments in balance, whole-body coordination and perception. Published platform capability does not establish an industrial task package.",
+      "operatingMode": {
+        "value": "Researcher-developed and supervised control, with supplied handheld controller for commissioning.",
+        "sourceIds": [
+          "h2-product",
+          "german-h2-listing"
+        ],
+        "caveats": [
+          "Unitree requires safe separation from people and says some displayed functions are still in development.",
+          "No unattended production workflow or standard H2 programming access is inferred."
+        ]
+      },
+      "specs": [
+        {
+          "key": "arm_payload_rated_kg",
+          "value": 7,
+          "unit": "kg",
+          "semanticLabel": "Published rated arm load",
+          "conditions": [
+            "Manufacturer arm-load wording; not a per-hand or full-reach guarantee."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_payload_peak_kg",
+          "value": 15,
+          "unit": "kg",
+          "semanticLabel": "Published peak arm load",
+          "conditions": [
+            "Transient claim; never substitute for the rated value."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "dimensions_standing_mm",
+          "value": "1820 × 456 × 218",
+          "unit": "mm",
+          "semanticLabel": "Standing height × width × depth",
+          "conditions": [
+            "Not the moving workspace or safety clearance."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_with_battery_kg",
+          "value": 70,
+          "unit": "kg",
+          "semanticLabel": "Approximate body mass with battery",
+          "conditions": [
+            "Exact hand/camera configuration may change supplied mass."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "body_dof",
+          "value": 31,
+          "unit": null,
+          "semanticLabel": "Body joint motors excluding hands",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_dof_each",
+          "value": 7,
+          "unit": null,
+          "semanticLabel": "Joint motors per arm",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "leg_dof_each",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Joint motors per leg",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "waist_dof",
+          "value": 3,
+          "unit": null,
+          "semanticLabel": "Waist joint motors",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "head_dof",
+          "value": 2,
+          "unit": null,
+          "semanticLabel": "Head joint motors",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_peak_joint_torque_nm",
+          "value": 120,
+          "unit": "N·m",
+          "semanticLabel": "Maximum arm-joint peak torque",
+          "conditions": [
+            "Joint-specific peak; not end-effector force."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "leg_peak_joint_torque_nm",
+          "value": 360,
+          "unit": "N·m",
+          "semanticLabel": "Maximum leg-joint peak torque",
+          "conditions": [
+            "Not continuous torque at every joint."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_segment_length_mm",
+          "value": 690,
+          "unit": "mm",
+          "semanticLabel": "Upper arm plus forearm length",
+          "conditions": [
+            "Not a measured loaded reach envelope."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "leg_segment_length_mm",
+          "value": 1045,
+          "unit": "mm",
+          "semanticLabel": "Thigh plus lower-leg length",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_capacity_ah",
+          "value": 15,
+          "unit": "Ah",
+          "semanticLabel": "Battery charge capacity",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_energy_wh",
+          "value": 972,
+          "unit": "Wh",
+          "semanticLabel": "Published battery energy",
+          "conditions": [
+            "Converted from 0.972 kWh; do not calculate energy from maximum voltage."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_max_voltage_v",
+          "value": 75.6,
+          "unit": "V",
+          "semanticLabel": "Maximum battery voltage",
+          "conditions": [
+            "Maximum, not nominal voltage."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 3,
+          "unit": "h",
+          "semanticLabel": "Approximate published battery duration",
+          "conditions": [
+            "Load and motion duty cycle unspecified."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "computers",
+          "value": "Intel Core i5 + Core i7",
+          "unit": null,
+          "semanticLabel": "Platform and development computers",
+          "conditions": [
+            "i5 serves platform functions; i7 serves user development."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wireless",
+          "value": "Wi-Fi 6; Bluetooth 5.2",
+          "unit": null,
+          "semanticLabel": "Published wireless interfaces",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_quick_release",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Quick-release battery",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "secondary_development",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Secondary development supported",
+          "conditions": [
+            "Exact APIs and software delivery require confirmation."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Loaded-task duration not established",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "ip_rating",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Ingress rating not established",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "loaded_reach_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Rated-load reach not established",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "head_sensor",
+          "value": "Wide-FOV stereo camera",
+          "unit": null,
+          "semanticLabel": "Published head perception sensor",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "voice_io",
+          "value": "Microphone array and speaker",
+          "unit": null,
+          "semanticLabel": "Voice interaction hardware",
+          "conditions": [],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute_expansion",
+          "value": "Optional; several models including Thor",
+          "unit": null,
+          "semanticLabel": "High-performance compute option",
+          "conditions": [
+            "The base EDU review does not include a Thor module."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_configuration",
+          "value": "Not selected",
+          "unit": null,
+          "semanticLabel": "EDU supports optional hand models",
+          "conditions": [
+            "No dexterous hand or hand DOF added to this base configuration."
+          ],
+          "sourceIds": [
+            "h2-product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Develop and evaluate coordinated walking, balance and posture transitions.",
+          "configuration": "H2 EDU programmable body in a controlled robotics laboratory.",
+          "operatingMode": "Supervised algorithm development and controlled hardware trials.",
+          "sourceIds": [
+            "h2-product",
+            "german-h2-listing"
+          ],
+          "limitations": [
+            "No comparative balance benchmark, accepted task rate or field deployment established.",
+            "Nominal load and battery figures do not define a safe experiment envelope."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Prototype head-camera perception and spoken robot interaction.",
+          "configuration": "H2 EDU camera, microphones, speaker and development computer; application software is project work.",
+          "operatingMode": "Researcher-run perception and interface experiments.",
+          "sourceIds": [
+            "h2-product",
+            "german-h2-listing"
+          ],
+          "limitations": [
+            "Hardware presence does not prove language understanding, perception accuracy or service-task readiness."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Generation Robots",
+          "market": "German-language sales route / Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.generationrobots.com/de/404449-humanoider-roboter-h2-von-unitree-robotics.html",
+            "phone": "+49 30 800 982 602"
+          },
+          "sourceIds": [
+            "german-h2-listing",
+            "german-h2-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "H2 EDU is an explicit selectable version; seller requests contact for lead time. Stock and exact delivery date unconfirmed.",
+          "authorizationStatus": "Published seller listing; manufacturer authorization for this exact configuration was not independently established.",
+          "caveats": [
+            "Select H2 EDU and specify hands, compute, commissioning and support in the quote.",
+            "The displayed from-price is not a confirmed H2 EDU package price."
+          ]
+        },
+        {
+          "organization": "Unitree Robotics",
+          "market": "International manufacturer enquiry; German delivery unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.unitree.com/contact/",
+            "email": "sales_global@unitree.com",
+            "phone": "+86 17621781139"
+          },
+          "sourceIds": [
+            "h2-product",
+            "unitree-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Manufacturer table says contact sales for H2 EDU; German supply and support need a written offer.",
+          "authorizationStatus": "Direct manufacturer contact.",
+          "caveats": [
+            "The standard H2 advertised price and no-secondary-development configuration do not describe H2 EDU."
+          ]
+        }
+      ],
+      "conflicts": [
+        "H2 marketing mentions 2070 compute capability; the detailed table makes high-performance modules an EDU option, not included base equipment.",
+        "Standard H2 has no published secondary-development support; H2 EDU does. Do not merge their package features."
+      ],
+      "unknowns": [
+        "Exact delivered hand and compute package, software versions and support contract.",
+        "Loaded endurance, task accuracy, IP rating and rated-load reach.",
+        "German delivery date, complete-system conformity and experiment-specific safety integration."
+      ],
+      "sources": [
+        {
+          "id": "h2-product",
+          "url": "https://www.unitree.com/H2/",
+          "title": "H2 / H2 EDU manufacturer comparison",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "tier": 1,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "german-h2-listing",
+          "url": "https://www.generationrobots.com/de/404449-humanoider-roboter-h2-von-unitree-robotics.html",
+          "title": "German H2 / H2 EDU listing and enquiry",
+          "publisher": "Generation Robots",
+          "kind": "seller",
+          "tier": 2,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "german-h2-contact",
+          "url": "https://www.generationrobots.com/de/content/127-Deutsche-Kunden",
+          "title": "German business contact",
+          "publisher": "Generation Robots",
+          "kind": "seller",
+          "tier": 2,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "unitree-contact",
+          "url": "https://www.unitree.com/contact/",
+          "title": "Published international sales contacts",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "tier": 1,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "sourceURLs": [
+        "https://www.unitree.com/H2/",
+        "https://www.generationrobots.com/de/404449-humanoider-roboter-h2-von-unitree-robotics.html",
+        "https://www.generationrobots.com/de/content/127-Deutsche-Kunden",
+        "https://www.unitree.com/contact/"
+      ]
+    },
+    {
+      "id": "unitree-h2-plus-sharpa-research",
+      "name": "Unitree H2 PLUS · Sharpa / Thor research reference",
+      "manufacturer": "Unitree Robotics",
+      "robotClass": "humanoid",
+      "workflowId": "robotics_research",
+      "industries": [
+        "research_education"
+      ],
+      "exactConfiguration": "Official H2 PLUS reference configuration with Jetson AGX Thor T5000, dual Sharpa Wave tactile five-finger hands and wrist cameras: 31 body + 44 hand DOF. These optional attachments must be explicitly ordered; not the handless Smart package.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Integrated humanoid research reference for collecting demonstrations, training and evaluating manipulation policies, and investigating tactile contact. It is not evidence of a completed industrial deployment.",
+      "operatingMode": {
+        "value": "Human-guided data capture and supervised policy experiments using the announced Isaac development workflow.",
+        "sourceIds": [
+          "h2plus-product",
+          "reference-design"
+        ],
+        "caveats": [
+          "Remote emergency stop is described; it does not establish safe close-contact operation.",
+          "Unitree warns that some showcased functions are still under development. Researchers must validate versions and execution boundaries."
+        ]
+      },
+      "specs": [
+        {
+          "key": "arm_payload_rated_kg",
+          "value": 7,
+          "unit": "kg",
+          "semanticLabel": "Published rated arm load",
+          "conditions": [
+            "Manufacturer arm-load wording; not a per-hand or full-reach guarantee."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_payload_peak_kg",
+          "value": 15,
+          "unit": "kg",
+          "semanticLabel": "Published peak arm load",
+          "conditions": [
+            "Transient claim; never substitute for the rated value."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "dimensions_standing_mm",
+          "value": "1820 × 456 × 218",
+          "unit": "mm",
+          "semanticLabel": "Standing height × width × depth",
+          "conditions": [
+            "Not the moving workspace or safety clearance."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_with_battery_kg",
+          "value": 70,
+          "unit": "kg",
+          "semanticLabel": "Approximate body mass with battery",
+          "conditions": [
+            "Exact hand/camera configuration may change supplied mass."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "body_dof",
+          "value": 31,
+          "unit": null,
+          "semanticLabel": "Body joint motors excluding hands",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_dof_each",
+          "value": 7,
+          "unit": null,
+          "semanticLabel": "Joint motors per arm",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "leg_dof_each",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Joint motors per leg",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "waist_dof",
+          "value": 3,
+          "unit": null,
+          "semanticLabel": "Waist joint motors",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "head_dof",
+          "value": 2,
+          "unit": null,
+          "semanticLabel": "Head joint motors",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_peak_joint_torque_nm",
+          "value": 120,
+          "unit": "N·m",
+          "semanticLabel": "Maximum arm-joint peak torque",
+          "conditions": [
+            "Joint-specific peak; not end-effector force."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "leg_peak_joint_torque_nm",
+          "value": 360,
+          "unit": "N·m",
+          "semanticLabel": "Maximum leg-joint peak torque",
+          "conditions": [
+            "Not continuous torque at every joint."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_segment_length_mm",
+          "value": 690,
+          "unit": "mm",
+          "semanticLabel": "Upper arm plus forearm length",
+          "conditions": [
+            "Not a measured loaded reach envelope."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "leg_segment_length_mm",
+          "value": 1045,
+          "unit": "mm",
+          "semanticLabel": "Thigh plus lower-leg length",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_capacity_ah",
+          "value": 15,
+          "unit": "Ah",
+          "semanticLabel": "Battery charge capacity",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_energy_wh",
+          "value": 972,
+          "unit": "Wh",
+          "semanticLabel": "Published battery energy",
+          "conditions": [
+            "Converted from 0.972 kWh; do not calculate energy from maximum voltage."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_max_voltage_v",
+          "value": 75.6,
+          "unit": "V",
+          "semanticLabel": "Maximum battery voltage",
+          "conditions": [
+            "Maximum, not nominal voltage."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 3,
+          "unit": "h",
+          "semanticLabel": "Approximate published battery duration",
+          "conditions": [
+            "Load and motion duty cycle unspecified."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "computers",
+          "value": "Intel Core i5 + Core i7",
+          "unit": null,
+          "semanticLabel": "Platform and development computers",
+          "conditions": [
+            "i5 serves platform functions; i7 serves user development."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wireless",
+          "value": "Wi-Fi 6; Bluetooth 5.2",
+          "unit": null,
+          "semanticLabel": "Published wireless interfaces",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_quick_release",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Quick-release battery",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "secondary_development",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Secondary development supported",
+          "conditions": [
+            "Exact APIs and software delivery require confirmation."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Loaded-task duration not established",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "ip_rating",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Ingress rating not established",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "loaded_reach_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Rated-load reach not established",
+          "conditions": [],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "total_dof_with_hands",
+          "value": 75,
+          "unit": null,
+          "semanticLabel": "Body and two configured hands",
+          "conditions": [
+            "31 body + 22 active DOF per hand; not the Smart base count."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_active_dof_each",
+          "value": 22,
+          "unit": null,
+          "semanticLabel": "Active DOF per Sharpa Wave hand",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_mass_each_kg",
+          "value": 1.3,
+          "unit": "kg",
+          "semanticLabel": "Published mass per hand",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_dimensions_mm",
+          "value": "208 × 90 × 50",
+          "unit": "mm",
+          "semanticLabel": "Published hand dimensions",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_grip_force_n",
+          "value": 150,
+          "unit": "N",
+          "semanticLabel": "Published hand grip force",
+          "conditions": [
+            "Not robot arm payload."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "fingertip_force_n",
+          "value": 20,
+          "unit": "N",
+          "semanticLabel": "Published fingertip force",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "fingertip_repeatability_mm",
+          "value": "±1",
+          "unit": "mm",
+          "semanticLabel": "Hand fingertip positional repeatability",
+          "conditions": [
+            "Does not establish whole-robot placement accuracy."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "tactile_pixels_per_fingertip",
+          "value": ">1000",
+          "unit": null,
+          "semanticLabel": "Tactile pixels per fingertip",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_force_sensing_n",
+          "value": "0–30",
+          "unit": "N",
+          "semanticLabel": "Hand force-detection range",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_force_sensitivity_n",
+          "value": 0.005,
+          "unit": "N",
+          "semanticLabel": "Published hand force sensitivity",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute_module",
+          "value": "Jetson AGX Thor T5000",
+          "unit": null,
+          "semanticLabel": "Selected onboard AI module",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ai_compute_fp4_sparse_tflops",
+          "value": 2070,
+          "unit": "TFLOPS",
+          "semanticLabel": "FP4 sparse AI compute claim",
+          "conditions": [
+            "Precision and sparsity specific; not comparable directly to generic TOPS."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "unified_memory_gb",
+          "value": 128,
+          "unit": "GB",
+          "semanticLabel": "Compute-module unified memory",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute_cpu_cores",
+          "value": 14,
+          "unit": null,
+          "semanticLabel": "Compute-module Arm CPU cores",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute_power_w",
+          "value": "40–130",
+          "unit": "W",
+          "semanticLabel": "Configurable compute-module power",
+          "conditions": [
+            "Not whole-robot consumption or continuous battery load."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "head_camera_fov_deg",
+          "value": "140 ± 3 horizontal; 102 ± 3 vertical",
+          "unit": "°",
+          "semanticLabel": "Head stereo-camera field of view",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "head_camera_focus_range_m",
+          "value": "0.4–infinity",
+          "unit": "m",
+          "semanticLabel": "Published head-camera depth of field",
+          "conditions": [
+            "Optical focus range, not validated depth-estimation range."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wrist_camera_fov_deg",
+          "value": "196 horizontal; 154 vertical",
+          "unit": "°",
+          "semanticLabel": "Optional wrist-camera field of view",
+          "conditions": [
+            "Included in this reference configuration; verify exact supplied camera model."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wrist_camera_resolution_mp",
+          "value": 3,
+          "unit": "MP",
+          "semanticLabel": "Optional global-shutter wrist cameras",
+          "conditions": [],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "remote_emergency_stop",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Published remote emergency-stop function",
+          "conditions": [
+            "Function description is not complete-system certification."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "external_interfaces",
+          "value": "USB 3.0 ×3; USB+DP ×3; GMSL ×4; GbE ×4; USB 2.0 ×2; RS485 ×4; CAN ×2",
+          "unit": null,
+          "semanticLabel": "Published external interface counts",
+          "conditions": [
+            "Confirm exposed connectors and pinout in the supplied integration manual."
+          ],
+          "sourceIds": [
+            "h2plus-product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Capture humanoid manipulation demonstrations for policy training.",
+          "configuration": "H2 PLUS, dual Sharpa Wave hands, wrist cameras, T5000 and Isaac TeleOp reference workflow.",
+          "operatingMode": "A human supplies demonstrations; recording and training are research work.",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "No reproduced dataset quality, success rate or independently evaluated task performance reviewed."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Simulate, train and evaluate learned robot behaviors on hardware.",
+          "configuration": "Announced Isaac GR00T, Sim/Lab, ROS and Thor pipeline for the H2 PLUS reference.",
+          "operatingMode": "Supervised simulation-to-hardware research; not general autonomous work.",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Version compatibility, supported examples and physical validation must be established before execution."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Study tactile grasping and fingertip contact on controlled objects.",
+          "configuration": "Dual Sharpa Wave tactile hands on the H2 PLUS reference.",
+          "operatingMode": "Researcher-designed grasp and contact experiments.",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Hand force and repeatability specifications do not prove whole-body task accuracy.",
+            "No industrial grasping cycle or unattended task deployment established."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Unitree Robotics",
+          "market": "International manufacturer enquiry; Germany delivery unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://shop.unitree.com/collections/humanoid-robot/products/unitree-h2-plus",
+            "email": "sales_global@unitree.cc",
+            "phone": "+86 17621781139"
+          },
+          "sourceIds": [
+            "h2plus-shop",
+            "unitree-contact",
+            "reference-design"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Official product is contact-sales. Reference announcement targets late 2026; a current shipment or German delivery date is not confirmed.",
+          "authorizationStatus": "Official manufacturer shop and contact routes.",
+          "caveats": [
+            "Order the exact Sharpa Wave, wrist-camera and T5000 bill of materials.",
+            "Public shop amount is not treated as a binding configured quote; customs and import terms need confirmation."
+          ]
+        },
+        {
+          "organization": "reichelt elektronik",
+          "market": "Germany; business, institutional and government buyers",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.reichelt.de/de/de/shop/produkt/h2_plus_ultimate_n_-_humanoider_forschungsroboter-441509",
+            "email": "angebot@reichelt.de",
+            "phone": "+49 4422 955333"
+          },
+          "sourceIds": [
+            "german-plus-package",
+            "german-plus-smart"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Ultimate N special-order listing states expected Q1 2027. No current stock or committed delivery confirmed.",
+          "authorizationStatus": "Published German seller route; exact-model manufacturer authorization not independently verified.",
+          "caveats": [
+            "Ultimate N lists Sharpa Hand 2 and Senyun SHF3L; confirm equivalence to the official Sharpa Wave reference before ordering.",
+            "Listed Ultimate N price €211,579.99 includes 19% VAT, excludes normal shipping and adds €35.70 special shipping; this is a seller listing, not a validated reference-package quote.",
+            "H2 PLUS Smart is a different 31-DOF package without standard dexterous hands."
+          ]
+        }
+      ],
+      "conflicts": [
+        "NVIDIA targets late 2026; the German seller targets Q1 2027. Both are announced dates, not stock confirmation.",
+        "Unitree labels hands and wrist cameras optional despite reference imagery showing them; Smart and Ultimate packages must stay distinct.",
+        "Seller Sharpa Hand 2 naming is not verified as the same hardware revision as Sharpa Wave.",
+        "Hand-only 30 kg payload is not the robot arm rating; the arm remains rated about 7 kg with a separate 15 kg peak claim."
+      ],
+      "unknowns": [
+        "Exact hand/camera hardware revision, supplied software and release schedule.",
+        "German delivery and service commitments, loaded endurance, complete-system conformity and task success rate."
+      ],
+      "sources": [
+        {
+          "id": "h2plus-product",
+          "url": "https://www.unitree.com/H2plus/",
+          "title": "H2 PLUS product and optional hand specifications",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "tier": 1,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "reference-design",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design",
+          "title": "Isaac GR00T reference design announcement · 2026-05-31",
+          "publisher": "NVIDIA",
+          "kind": "manufacturer",
+          "tier": 1,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "h2plus-shop",
+          "url": "https://shop.unitree.com/collections/humanoid-robot/products/unitree-h2-plus",
+          "title": "Official H2 Plus purchase enquiry",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "tier": 1,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "unitree-contact",
+          "url": "https://www.unitree.com/contact/",
+          "title": "Published international sales contacts",
+          "publisher": "Unitree Robotics",
+          "kind": "manufacturer",
+          "tier": 1,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "german-plus-package",
+          "url": "https://www.reichelt.de/de/de/shop/produkt/h2_plus_ultimate_n_-_humanoider_forschungsroboter-441509",
+          "title": "German Ultimate N package, buyer terms and expected date",
+          "publisher": "reichelt elektronik",
+          "kind": "seller",
+          "tier": 2,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        },
+        {
+          "id": "german-plus-smart",
+          "url": "https://www.reichelt.de/de/de/shop/produkt/h2_plus_smart_-_humanoider_forschungsroboter-440930",
+          "title": "German H2 PLUS Smart package distinction",
+          "publisher": "reichelt elektronik",
+          "kind": "seller",
+          "tier": 2,
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01"
+        }
+      ],
+      "sourceURLs": [
+        "https://www.unitree.com/H2plus/",
+        "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design",
+        "https://shop.unitree.com/collections/humanoid-robot/products/unitree-h2-plus",
+        "https://www.unitree.com/contact/",
+        "https://www.reichelt.de/de/de/shop/produkt/h2_plus_ultimate_n_-_humanoider_forschungsroboter-441509",
+        "https://www.reichelt.de/de/de/shop/produkt/h2_plus_smart_-_humanoider_forschungsroboter-440930"
+      ]
+    }
+  ]
+}

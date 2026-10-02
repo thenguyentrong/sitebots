@@ -1,0 +1,153 @@
+{
+ "schemaVersion": 1,
+ "id": "mentee-robotics-menteebot",
+ "maker": "Mentee Robotics (Mobileye)",
+ "makerCountry": "IL",
+ "model": "MenteeBot",
+ "variant": "V3",
+ "name": "MenteeBot V3",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.menteebot.com/bot/",
+ "summary": "A 1.75 m bipedal humanoid prototype from Mobileye’s Mentee Robotics; customer proof-of-concepts start in 2026 and series production is targeted for 2028.",
+ "launched": "2025-02",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Prototype stage: Mobileye expects first on-site proof-of-concept deployments with customers in 2026 and targets series production and commercialisation for 2028. No price or sales route.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.75,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Carry capacity",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "\"can carry up to 25 kg\"",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 40,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 25,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Interacts by voice; trained by human demonstration and simulation.",
+   "Hand type taken from the product image (multi-finger hands); no hand specification published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.menteebot.com/demo-videos/MenteeBot_v3.png",
+   "pageUrl": "https://www.menteebot.com/bot/",
+   "credit": "Mentee Robotics",
+   "alt": "MenteeBot V3 humanoid in dark grey, standing, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Proof-of-concept deployments in factories and warehouses",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s3",
+   "note": "Planned for 2026; customers not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.menteebot.com/bot/",
+   "title": "MenteeBot specifications",
+   "publisher": "Mentee Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.menteebot.com/company/",
+   "title": "About Mentee Robotics",
+   "publisher": "Mentee Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.mobileye.com/news/mobileye-to-acquire-mentee-robotics-to-accelerate-physical-ai-leadership/",
+   "title": "Mobileye To Acquire Mentee Robotics (6 Jan 2026)",
+   "publisher": "Mobileye",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.menteebot.com/news/",
+   "title": "In the News (V3 unveiled Feb 2025)",
+   "publisher": "Mentee Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Hand type and payload per arm."
+ ],
+ "checkedAt": "2026-10-02"
+}

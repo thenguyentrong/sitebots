@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "unix-ai-martian",
+ "maker": "UniX AI",
+ "makerCountry": "CN",
+ "model": "Martian",
+ "variant": null,
+ "name": "UniX AI Martian",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unix-group.ai/Martian",
+ "summary": "A 1.48 m, 40 kg bipedal humanoid with 11-DOF hands and a 5 kg total payload.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "No European office, distributor or EU customer found for UniX AI.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.48,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 40,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 11,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Total payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 4,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "9 Ah, 48 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "40 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "High- and low-level APIs, OTA",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runtime not published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unixai.net/public/static/index/en/images/feetRobot/feetTwo-img.png",
+   "pageUrl": "https://www.unix-group.ai/Martian",
+   "credit": "UniX AI",
+   "alt": "UniX AI Martian carrying a case",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unix-group.ai/Martian",
+   "title": "Martian product page",
+   "publisher": "UniX AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.unix-group.ai/Contact",
+   "title": "UniX AI contact",
+   "publisher": "UniX AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

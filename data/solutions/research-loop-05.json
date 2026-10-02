@@ -1,0 +1,645 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Concrete floor preparation and polishing: three exact configurations with automatic-mode versus teleoperation distinctions and current revision conflicts.",
+  "records": [
+    {
+      "id": "husqvarna-autogrinder8d-eu",
+      "name": "Husqvarna Autogrinder 8 D · EU",
+      "manufacturer": "Husqvarna Construction",
+      "robotClass": "dedicated_robot",
+      "workflowId": "surface_finishing",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "exactConfiguration": "Autogrinder8D EU article970748401, 3-phase380–480V,15+1.5kW; not PG8DR.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Area-defined automatic grinding with human setup and fault recovery; published EU package is distinct from the remote-only PG8DR.",
+      "operatingMode": {
+        "value": "Operator defines the work area and pattern; Auto mode follows the planned path, with remote takeover and human fault recovery.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "The operator must rectify safety stops and reset the system before automatic work resumes.",
+          "Tool changes, edge work, extraction, cables and acceptance remain human responsibilities."
+        ]
+      },
+      "specs": [
+        {
+          "key": "grinding_width_mm",
+          "value": 800,
+          "unit": "mm",
+          "semanticLabel": "Published grinding width",
+          "conditions": [
+            "Width is not accepted area per hour."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "machine_mass_kg",
+          "value": 680,
+          "unit": "kg",
+          "semanticLabel": "Published product weight",
+          "conditions": [
+            "Confirm tools/options and floor loading."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "maximum_output_power_kw",
+          "value": 16.5,
+          "unit": "kW",
+          "semanticLabel": "Manufacturer-labelled maximum output power",
+          "conditions": [
+            "EU configuration is listed15+1.5kW; do not confuse with site current demand."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "supply_voltage_v",
+          "value": "380–480",
+          "unit": "V",
+          "semanticLabel": "Specified EU supply voltage range",
+          "conditions": [
+            "Three-phase configuration."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "supply_phases",
+          "value": 3,
+          "unit": null,
+          "semanticLabel": "Number of supply phases",
+          "conditions": [
+            "Electrical installation must match the exact machine and extractor."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "tool_holder_diameter_mm",
+          "value": 270,
+          "unit": "mm",
+          "semanticLabel": "EZchange Airflow tool-holder diameter",
+          "conditions": [
+            "Holder size is separate from total800mm grinding width."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "automatic_navigation",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Area-defined automatic operating mode",
+          "conditions": [
+            "Manufacturer claim; no unattended-shift result or intervention rate established."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Prepare, grind and polish concrete or stone floors within a defined area.",
+          "configuration": "Autogrinder8D EU configuration on the current German product page.",
+          "operatingMode": "Automatic planned-path work with operator setup and remote takeover.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "No independently observed accepted-area, stop frequency, quality or labour result was reviewed.",
+            "Automatic mode does not cover every edge or eliminate dust-extraction and cable management.",
+            "Launch-era planned Europe availability is not a present stock commitment."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Husqvarna Construction",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/autogrinder-8d/"
+          },
+          "sourceIds": [
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; exact package, stock, lead time and service require a quotation.",
+          "authorizationStatus": "Manufacturer or its own group business route; no external reseller authorization inferred.",
+          "caveats": [
+            "German product page offers quote, dealer and demonstration routes.",
+            "Confirm exact EU article, diamond tools, dust extractor and operator training."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Autogrinder8D and PG8DR share a platform but differ in navigation and mass; their specification tables must not be merged.",
+        "Autonomous-mode marketing does not establish unattended operation or freedom from human recovery."
+      ],
+      "unknowns": [
+        "Actual accepted surface profile, removal rate, gloss and operator minutes.",
+        "Required tool/chemical sequence and dust extraction for the substrate.",
+        "Delivered firmware, auto-mode limits and local support terms."
+      ],
+      "sourceURLs": [
+        "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/autogrinder-8d/"
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/autogrinder-8d/",
+          "title": "Autogrinder8D exact EU model and automatic-mode recovery description",
+          "publisher": "Husqvarna Construction",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "schwamborn-dsm800rc-grinding",
+      "name": "Schwamborn DSM 800RC",
+      "manufacturer": "Schwamborn",
+      "robotClass": "dedicated_robot",
+      "workflowId": "surface_finishing",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "exactConfiguration": "DSM800RC article716500,400V,15kW with job-specific tools and extraction.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Remote-controlled grinder for large floor preparation jobs, with separate operating mass and selectable grinding-load figures.",
+      "operatingMode": {
+        "value": "Human remote control with assisted straight travel, overlap and turning functions.",
+        "sourceIds": [
+          "product",
+          "sheet"
+        ],
+        "caveats": [
+          "Travel assistance is not obstacle-aware autonomous navigation.",
+          "Operator controls the work area, tooling, extraction and finish inspection."
+        ]
+      },
+      "specs": [
+        {
+          "key": "grinding_width_mm",
+          "value": 800,
+          "unit": "mm",
+          "semanticLabel": "Published working width",
+          "conditions": [
+            "No site-throughput claim."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_mass_kg",
+          "value": 615,
+          "unit": "kg",
+          "semanticLabel": "Published working weight",
+          "conditions": [
+            "Confirm ballast and tooling in the supplied setup."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "output_power_kw",
+          "value": 15,
+          "unit": "kW",
+          "semanticLabel": "Published output power",
+          "conditions": [
+            "Electrical input and extractor demand must be assessed separately."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "supply_voltage_v",
+          "value": 400,
+          "unit": "V",
+          "semanticLabel": "Published supply voltage",
+          "conditions": [
+            "Listed50/60Hz; verify site connections."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "tool_speed_rpm",
+          "value": "400–1200",
+          "unit": "rpm",
+          "semanticLabel": "Published tool rotational speed range",
+          "conditions": [
+            "Not machine travel speed."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "grinding_load_kg",
+          "value": "160 / 215 / 270",
+          "unit": "kg",
+          "semanticLabel": "Published selectable floor-loading figures",
+          "conditions": [
+            "Manufacturer expresses loading as kg; this is not pressure per unit area."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "water_tank_l",
+          "value": 26,
+          "unit": "L",
+          "semanticLabel": "Published water tank volume",
+          "conditions": [
+            "Does not establish hours of wet operation."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "edge_distance_mm",
+          "value": 10,
+          "unit": "mm",
+          "semanticLabel": "Published residual edge distance",
+          "conditions": [
+            "A residual strip remains; application geometry may increase it."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Remove floor coatings and grind/polish suitable concrete, screed and stone surfaces.",
+          "configuration": "DSM800RC with application-specific ETX/decoating or polishing tools.",
+          "operatingMode": "Human-operated remote control.",
+          "sourceIds": [
+            "product",
+            "sheet"
+          ],
+          "limitations": [
+            "Published application list and tool guidance do not establish measured job output.",
+            "Wet polishing and coating removal use different tooling and waste management.",
+            "No exact-model accepted-area, failure or operator-time denominator reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Schwamborn Gerätebau GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+            "phone": "+49 7161 2005-0"
+          },
+          "sourceIds": [
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; exact package, stock, lead time and service require a quotation.",
+          "authorizationStatus": "Manufacturer or its own group business route; no external reseller authorization inferred.",
+          "caveats": [
+            "Manufacturer headquarters in Wangen/GP; product page links consultation/contact.",
+            "Specify article716500; the URL slug is misleading and does not identify a separate DSM850RC."
+          ]
+        }
+      ],
+      "conflicts": [
+        "URL contains dsm-850rc, but page heading, article number and technical table explicitly identify DSM800RC.",
+        "kg-valued grinding load is not a surface-pressure unit."
+      ],
+      "unknowns": [
+        "Removal rate, substrate damage and accepted finish with the intended tools.",
+        "Dust extraction, slurry collection, edge finishing and total crew effort.",
+        "Current delivered gearbox revision, tools and service package."
+      ],
+      "sourceURLs": [
+        "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+        "https://www.schwamborn.com/media/pages/download/56dd7b1115-1647622322/schwamborn_katalog_de_dsm_800rc.pdf"
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+          "title": "DSM800RC article716500 current specification and Wangen contact",
+          "publisher": "Schwamborn",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "sheet",
+          "url": "https://www.schwamborn.com/media/pages/download/56dd7b1115-1647622322/schwamborn_katalog_de_dsm_800rc.pdf",
+          "title": "DSM800RC manufacturer application/tool and technical sheet",
+          "publisher": "Schwamborn",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "scanmaskin32-ws-rc-400v-grinding",
+      "name": "Scanmaskin 32 World Series RC · 400V",
+      "manufacturer": "Scanmaskin / Tyrolit",
+      "robotClass": "dedicated_robot",
+      "workflowId": "surface_finishing",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "exactConfiguration": "32 World Series RC,400–480V three-phase15kW/32A version; not230V11kW, manual or propane versions.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Joystick-controlled floor grinding with constant forward-speed assistance; current RC mass differs from older shared datasheets.",
+      "operatingMode": {
+        "value": "Human joystick control of drive and grinding speed; optional constant-forward-speed mode assists straight work.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Constant speed does not establish autonomous routing or obstacle response.",
+          "People manage tooling, vacuum, cables, positioning and result acceptance."
+        ]
+      },
+      "specs": [
+        {
+          "key": "grinding_width_mm",
+          "value": 800,
+          "unit": "mm",
+          "semanticLabel": "Current product-page grinding width",
+          "conditions": [
+            "Older manual lists785mm; confirm offered grinding assembly."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "machine_mass_kg",
+          "value": 640,
+          "unit": "kg",
+          "semanticLabel": "Current RC product weight",
+          "conditions": [
+            "Do not use the610kg figure from older/shared tables."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "motor_power_kw",
+          "value": 15,
+          "unit": "kW",
+          "semanticLabel": "Motor power for400–480V version",
+          "conditions": [
+            "230V configuration is11kW and excluded."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "rated_current_a",
+          "value": 32,
+          "unit": "A",
+          "semanticLabel": "Published current for400–480V version",
+          "conditions": [
+            "Extractor load is separate."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "tool_speed_rpm",
+          "value": "200–825",
+          "unit": "rpm",
+          "semanticLabel": "Current grinding-disc speed range",
+          "conditions": [
+            "Older manual differs; delivered revision needs confirmation."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "grinding_disc_count",
+          "value": 3,
+          "unit": null,
+          "semanticLabel": "Number of grinding discs",
+          "conditions": [
+            "Current page specifies280mm discs."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "grinding_disc_diameter_mm",
+          "value": 280,
+          "unit": "mm",
+          "semanticLabel": "Individual grinding-disc diameter",
+          "conditions": [
+            "Not the overall working width."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "water_tank_l",
+          "value": 20,
+          "unit": "L",
+          "semanticLabel": "Water tank volume",
+          "conditions": [
+            "No operating-duration inference."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Grind large concrete floors using selected tools and extraction.",
+          "configuration": "Scanmaskin32 World Series RC, current electrical configuration.",
+          "operatingMode": "Human-controlled radio joystick or constant-forward-speed assist.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Product application description is not a site performance study.",
+            "Dust-free marketing does not establish zero exposure without the complete extractor/tool/material assessment.",
+            "No observed quality, intervention or labour denominator."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Tyrolit Construction Sweden AB / Scanmaskin",
+          "market": "European enquiry; exact German supply unresolved",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://scanmaskin.com/contact/",
+            "email": "info.sweden@tyrolit.com",
+            "phone": "+46 31 99 49 70"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; exact package, stock, lead time and service require a quotation.",
+          "authorizationStatus": "Manufacturer or its own group business route; no external reseller authorization inferred.",
+          "caveats": [
+            "Current contact page identifies Scanmaskin as part of Tyrolit.",
+            "Ask for the German supplying and servicing entity for this exact version."
+          ]
+        },
+        {
+          "organization": "Tyrolit · floor preparation team",
+          "market": "German-language regional enquiry",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.tyrolit.com/de/unsere-industrien/bodenschleifen-und-untergrundvorbereitung"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; exact package, stock, lead time and service require a quotation.",
+          "authorizationStatus": "Manufacturer or its own group business route; no external reseller authorization inferred.",
+          "caveats": [
+            "Regional page explicitly includes Scanmaskin in the group offering and a consultation route.",
+            "This is not an exact-model German dealer, stock or service commitment."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Current product page lists640kg/800mm/200–825rpm; older shared sources include610kg,785mm and different speeds. Values are not averaged.",
+        "Use current Tyrolit contact details rather than assuming older Scanmaskin footer details remain the responsible sales entity."
+      ],
+      "unknowns": [
+        "Delivered electrical/mechanical revision and matching manual.",
+        "Exact German seller and service coverage.",
+        "Measured accepted profile, tool wear, dust/slurry handling and total labour."
+      ],
+      "sourceURLs": [
+        "https://scanmaskin.com/product/scanmaskin-32-world-series-rc-2/",
+        "https://scanmaskin.com/contact/",
+        "https://www.tyrolit.com/de/unsere-industrien/bodenschleifen-und-untergrundvorbereitung",
+        "https://scanmaskin.com/wp-content/uploads/2020/08/Produktblad-Scanmaskin-28-32-RC-ENG.pdf",
+        "https://scanmaskin.com/wp-content/uploads/2021/12/Scanmaskin_S32_ENG_SWE.pdf"
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://scanmaskin.com/product/scanmaskin-32-world-series-rc-2/",
+          "title": "Current32WS RC product specification",
+          "publisher": "Scanmaskin",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://scanmaskin.com/contact/",
+          "title": "Current Tyrolit/Scanmaskin sales and service contacts",
+          "publisher": "Scanmaskin",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.tyrolit.com/de/unsere-industrien/bodenschleifen-und-untergrundvorbereitung",
+          "title": "German regional floor-preparation offering including Scanmaskin",
+          "publisher": "Tyrolit",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "older-sheet",
+          "url": "https://scanmaskin.com/wp-content/uploads/2020/08/Produktblad-Scanmaskin-28-32-RC-ENG.pdf",
+          "title": "Older shared28/32RC indexed technical sheet",
+          "publisher": "Scanmaskin",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "older-manual",
+          "url": "https://scanmaskin.com/wp-content/uploads/2021/12/Scanmaskin_S32_ENG_SWE.pdf",
+          "title": "Older32WS indexed manual mechanical specification",
+          "publisher": "Scanmaskin",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+}

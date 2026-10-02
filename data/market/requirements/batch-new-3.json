@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "useCases": [
+    {
+      "id": "site_masonry/facing-brickwork",
+      "movement": "stairs_ladders",
+      "handWork": "two_arm",
+      "maxObjectKg": 5.33,
+      "tool": "trowel, jointing iron, wet stone saw",
+      "sensing": "line and level to the string, joint depth, colour mix of the bricks",
+      "generalPurpose": "stretch",
+      "specialisedJob": "bricklaying",
+      "reason": "Bricks of 2.5 to 5.3 kg are light, but mortar, wall ties and a visible face on an outdoor scaffold are hard; one maker's bricklaying robots work on sites abroad, none is named for German sites."
+    },
+    {
+      "id": "site_earthworks/excavation",
+      "movement": "rough_ground",
+      "handWork": "tool",
+      "maxObjectKg": 26050,
+      "tool": "hydraulic excavator with digging bucket",
+      "sensing": "dig depth and slope against the design, buried services",
+      "generalPurpose": "no",
+      "specialisedJob": "excavation",
+      "reason": "Pits are dug by 23 to 26 t excavators; a robot could only take the cab seat, where machine control and assistance systems already help the operator."
+    },
+    {
+      "id": "site_roads_paving/asphalt-paving",
+      "movement": "rough_ground",
+      "handWork": "tool",
+      "maxObjectKg": 25300,
+      "tool": "paver with screed, rollers",
+      "sensing": "mat temperature, layer thickness, grade and cross slope",
+      "generalPurpose": "no",
+      "specialisedJob": "other",
+      "reason": "A 20 to 25 t paver and rollers lay hot mix at up to 700 t/h; the crew drives, runs the screed and works in bitumen fumes."
+    }
+  ]
+}

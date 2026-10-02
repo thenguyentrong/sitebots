@@ -1,0 +1,229 @@
+{
+ "schemaVersion": 1,
+ "id": "magiclab-magicbot-x1",
+ "maker": "MagicLab",
+ "makerCountry": "CN",
+ "model": "MagicBot X1",
+ "variant": "X1 / X1 Ultra",
+ "name": "MagicLab MagicBot X1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.magiclab.top/en/x1",
+ "summary": "A 1.80 m, 70 kg full-size humanoid with 31 joints and hot-swappable dual batteries, offered for material transfer in factories and warehouses, guided tours and research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "MagicLab (Magiclab Robotics Technology Wuxi)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.magiclabglobal.com/contact/",
+    "email": "contacts@magiclabglobal.com",
+    "phone": "+86 400 828 8022",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Contact form, email or phone; X1 was shown at IFA 2026 in Berlin."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "No German seller lists X1 with a price; MagicLab says it has sales and support teams in Germany, Italy and Spain, so ask MagicLab. MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.8,
+   "unit": "m",
+   "conditions": "180 x 55.4 x 28 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Active degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "2 head, 7 per arm, 3 waist, 6 per leg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 400,
+   "unit": "Nm",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "Dual 18 Ah, hot-swappable",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "8-core CPU; Orin NX (X1) or up to NVIDIA Jetson AGX Thor (X1 Ultra)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Stereo camera module, head and waist RGB-D cameras (Ultra), LiDAR optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": "X1 Ultra only",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Hands are not listed in the X1 specification table.",
+   "Payload and runtime are not stated.",
+   "Only X1 Ultra allows secondary development.",
+   "MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260812/magicbot-x1.webp",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicbot-x1/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot X1 humanoid, full body front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260720/human-size-robot.jpg",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicbot-x1/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot X1 humanoid walking",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclab.top/imgs/x1/x1-ecosystem.png",
+   "pageUrl": "https://www.magiclab.top/en/x1",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot X1 with arms stretched out sideways in front of a bright light strip, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclab.top/imgs/x1/x1-banner.png",
+   "pageUrl": "https://www.magiclab.top/en/x1",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot X1 upper body in three-quarter view with its purple head light band, dark backdrop",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclab.top/imgs/x1/x1-power.png",
+   "pageUrl": "https://www.magiclab.top/en/x1",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot X1 running, side view, dark studio",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Cross-zone material transfer and bulky item grasping in factories and warehouses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Shown to European industry at IFA 2026, Berlin",
+   "stage": "demo",
+   "where": "IFA Berlin, Germany",
+   "date": "2026-09",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.magiclab.top/en/x1",
+   "title": "MagicBot X1",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.magiclabglobal.com/magiclab-brings-physical-ai-to-europes-factory-floors-at-ifa-2026-debuting-full-stack-embodied-intelligence-stack.html",
+   "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Hands, payload and runtime not published.",
+  "EU price unknown."
+ ],
+ "checkedAt": "2026-10-02"
+}

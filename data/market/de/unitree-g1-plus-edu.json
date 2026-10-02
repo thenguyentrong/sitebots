@@ -1,0 +1,232 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-g1-plus-edu",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "G1+",
+ "variant": "EDU",
+ "name": "Unitree G1+ EDU",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/G1pl",
+ "summary": "The programmable version of the upgraded G1+ humanoid (2-DOF head, stronger arms); hands are optional.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "G1+ EDU: QUADRUPED Robotics (Germany) takes orders with availability from late January 2027; no EU seller delivers yet and Unitree's online store does not list the G1+.",
+  "sourceIds": [
+   "s4",
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 24043.5,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s4",
+   "note": "QUADRUPED Robotics, excl. 19% VAT, delivery from January 2027."
+  },
+  "priceOther": null,
+  "leadTime": "available from 30.01.2027 (QUADRUPED Robotics)",
+  "sellers": [
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.unitree.com/G1pl",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "No EU office named by Unitree; global sales contact and order form. EDU price: contact sales."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-G1-PLUS",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 24043.5,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": "Variant \"Edu\" 24,043.50 EUR net; EDU PLUS 29,308.50; EDU Ultimate A (Dex3-1) 38,083.50; all \"available from\" 21.-30.01.2027."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height (standing)",
+   "value": 1.34,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 35,
+   "unit": "kg",
+   "conditions": "approx. 35 kg plus options",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 25,
+   "unit": null,
+   "conditions": "25-45 depending on options",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": "2 wrist DOF can be added",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm maximum load",
+   "value": 4,
+   "unit": "kg",
+   "conditions": "approx., varies strongly with arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 2,
+   "unit": "h",
+   "conditions": "approx. 2 h; external power supply supported for long runs",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": "9000 mAh",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular camera + chest wide-angle camera + 3D LiDAR, 6-microphone array, head touch sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU; optional high-compute module such as Orin",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 4,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Unitree secondary development interface (EDU)",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Different dexterous hands can be added (EDU only).",
+   "No IP rating published; supports external power for long research or demo sessions."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.quadruped.de/media/image/product/2111/lg/unitree-g1-plus.png",
+   "pageUrl": "https://www.quadruped.de/Unitree-G1-PLUS",
+   "credit": "Unitree Robotics (via quadruped.de)",
+   "alt": "Unitree G1+ EDU humanoid robot, full body (same body as the G1+)",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/7cd23f6903e748ff95a8150c234476d1_1902x2160.png",
+   "pageUrl": "https://www.unitree.com/G1pl",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1+ upper body from behind with a power cable plugged into its back",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/4763305d0f6347d49acb6a8b5d5607ed_2138x1960.png",
+   "pageUrl": "https://www.unitree.com/G1pl",
+   "credit": "Unitree Robotics",
+   "alt": "Close-up of the Unitree G1+ head with a hand touching its top",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "G1+ launch date not stated on the product page.",
+  "Whether Unitree already ships the G1+ outside Europe (the product page shows a price but no delivery date)."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/G1pl",
+   "title": "Unitree G1+ product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.unitree.com/booking",
+   "title": "Unitree order form and global sales contact",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.unitree.com/policies/shipping-policy",
+   "title": "Unitree online store shipping policy",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.quadruped.de/Unitree-G1-PLUS",
+   "title": "Unitree G1 PLUS at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

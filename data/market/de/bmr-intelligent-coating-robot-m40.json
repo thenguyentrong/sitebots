@@ -1,0 +1,241 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-intelligent-coating-robot-m40",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Intelligent Coating Robot M40",
+ "variant": "grinding version (putty sanding)",
+ "name": "BMR Intelligent Coating Robot M40",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drywall_finishing"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/176.html",
+ "summary": "Indoor robot that sands putty on walls and ceilings up to 4 m at about 60 m²/h with a 100 L dust container.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route to Germany found. BMR sells direct from China and names markets in Asia, the Middle East and Brazil, none in the EU. The only German listing is a US reseller not named by BMR, and BMR states no CE marking for this machine. Roboter Deutschland, a web shop run from Las Vegas without a named company, also lists it; it is not counted as a seller here.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Shenzhen BrightMaster Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://en.bm-robot.com/detail/176.html",
+    "contactUrl": "https://en.bm-robot.com/contact.html",
+    "email": "sales@bm-robot.com",
+    "phone": "400 988 2007 (ext. 2)",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Direct export enquiries via form, email or WhatsApp from Shenzhen; no EU office or EU distributor named."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 450,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions (L x W x H)",
+   "value": "860 x 760 x 1700",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": 4,
+   "unit": "m",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "capacity",
+   "label": "Dust container",
+   "value": 100,
+   "unit": "L",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_rate_m2_h",
+   "label": "Putty grinding rate",
+   "value": 60,
+   "unit": "m²/h",
+   "conditions": "single coat / single pass",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 5,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Moving speed",
+   "value": 0.5,
+   "unit": "m/s",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "obstacle_height_mm",
+   "label": "Obstacle crossing height",
+   "value": 30,
+   "unit": "mm",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "trench_width_mm",
+   "label": "Trench crossing width",
+   "value": 50,
+   "unit": "mm",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing angle",
+   "value": 10,
+   "unit": "°",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Positioning accuracy",
+   "value": "±30",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "software",
+   "label": "Software",
+   "value": "RTPC real-time perception; one-click start, no pre-scanning or path planning",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 5,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "One platform with different modules: P45/P65 spray putty and emulsion paint, M40/M60 sand putty.",
+   "M40 is 860 x 760 mm in plan; check door and lift sizes.",
+   "Crosses at most 30 mm steps and 50 mm gaps, slopes up to 10°.",
+   "Maker advises manual touch-up where needed and a material test for new coatings."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260528/59a68bc8e2df3e8da6f9f11b4b985c41.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/176.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BMR Intelligent Coating Robot on a construction floor (banner with text; model not labelled)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sanding putty on interior walls and ceilings before painting",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/176.html",
+   "title": "Intelligent Coating Robot (Latex Paint & Wall Putty Spraying Robot) product page",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/contact.html",
+   "title": "Contact Us",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/BMR-Intelligent-Coating-Robot.htm",
+   "title": "BMR Intelligent Coating Robot at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact",
+   "title": "Roboter Deutschland contact page (Las Vegas, NV, USA)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is this machine CE-marked and does it come with an EU declaration of conformity? BMR states CE only for its Measuring Robot.",
+  "Does BMR have, or plan, an authorised distributor or service partner in the EU or Germany?",
+  "Is Roboter Deutschland / Robots International authorised by BMR, and who provides service and spare parts in Germany?",
+  "Can one chassis be switched between P and M modules, or is each model a separate machine?",
+  "The page lists three coverage rates (above 95 %, 85 %, 90 %) for four models; which applies to this model?"
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,268 @@
+{
+ "schemaVersion": 1,
+ "id": "okibo-eg7",
+ "maker": "Okibo",
+ "makerCountry": "IL",
+ "model": "EG7",
+ "variant": null,
+ "name": "Okibo EG7",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "drywall_finishing",
+  "site_painting/wall-ceiling-painting",
+  "site_drywall/drywall-joint-finishing"
+ ],
+ "officialUrl": "https://okibo.com/our-robot/",
+ "summary": "Battery-powered wheeled robot with an arm that scans rooms and sprays, plasters or sands interior walls and ceilings up to about 3 m by itself.",
+ "launched": "2025-04",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Okibo has a German office in Heilbronn and says the EG7 is CE certified and its robots have covered over one million sq ft in Europe, but its order form still only registers pre-orders for Europe; no German price, delivery date or dealer is published.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Okibo",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": "https://okibo.com/our-robot/",
+    "contactUrl": "https://okibo.com/our-robot/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Pre-order registration form (\"Europe and USA only\"); not a binding offer."
+   },
+   {
+    "name": "Okibo (Germany office)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://okibo.com/our-robot/",
+    "contactUrl": "https://okibo.com/contact/",
+    "email": "info@okibo.com",
+    "phone": "+49 61546963570",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Bildungscampus 1, 74076 Heilbronn. Contact for the European pre-order list."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.673,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "length_mm",
+   "label": "Length",
+   "value": 1170,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "width_mm",
+   "label": "Width",
+   "value": 680,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 389,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Manipulator reach",
+   "value": 3.272,
+   "unit": "m",
+   "conditions": "effective reach 3.048 m",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 5380,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "pump_flow_lmin",
+   "label": "Pump max. flow",
+   "value": 6,
+   "unit": "l/min",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "pump_pressure_bar",
+   "label": "Pump max. pressure",
+   "value": 227,
+   "unit": "bar",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "container_l",
+   "label": "Material container",
+   "value": 70,
+   "unit": "l",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "force/torque, lidars",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "4 swerve drive wheels",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ce_marking",
+   "label": "CE certification",
+   "value": true,
+   "unit": null,
+   "conditions": "machinery and EMC standards listed",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Onboard pump and hopper swap for a dust collector for sanding.",
+   "Needs no external pump, cord, total station or markings per maker.",
+   "Targets drywall, concrete and brick walls and ceilings."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://okibo.com/wp-content/uploads/2025/03/EG7-A.png",
+   "pageUrl": "https://okibo.com/our-robot/",
+   "credit": "Okibo",
+   "alt": "Okibo EG7 finishing robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://okibo.com/wp-content/uploads/2025/03/EG7-C.png",
+   "pageUrl": "https://okibo.com/our-robot/",
+   "credit": "Okibo",
+   "alt": "Okibo EG7 with its arm raised, seen from the side with the touchscreen.",
+   "kind": "product"
+  },
+  {
+   "url": "https://okibo.com/wp-content/uploads/2025/03/EG7-B.png",
+   "pageUrl": "https://okibo.com/our-robot/",
+   "credit": "Okibo",
+   "alt": "Okibo EG7 with its arm folded, side view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://okibo.com/wp-content/uploads/2025/03/Robot-EG7-Bkgd.jpg",
+   "pageUrl": "https://okibo.com/our-robot/",
+   "credit": "Okibo",
+   "alt": "Okibo EG7 holding a round sanding tool against a dark concrete wall.",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting",
+    "site_drywall/drywall-joint-finishing"
+   ],
+   "task": "Autonomous painting, plastering and sanding of interior walls alongside workers",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://okibo.com/our-robot/",
+   "title": "Our Robot (EG7)",
+   "publisher": "Okibo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://okibo.com/wp-content/uploads/2025/04/EG7-okibo-data-sheet-digital.pdf",
+   "title": "EG7 technical data sheet",
+   "publisher": "Okibo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://okibo.com/contact/",
+   "title": "Contact and locations (US, Israel, Germany)",
+   "publisher": "Okibo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://okibo.com/",
+   "title": "Okibo home page (EG7 launch text, CE certification)",
+   "publisher": "Okibo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price.",
+  "Whether the Heilbronn office delivers EG7 units to German customers now or only takes pre-orders."
+ ],
+ "checkedAt": "2026-10-02"
+}

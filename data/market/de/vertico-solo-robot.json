@@ -1,0 +1,205 @@
+{
+ "schemaVersion": 1,
+ "id": "vertico-solo-robot",
+ "maker": "Vertico",
+ "makerCountry": "NL",
+ "model": "Solo Robot",
+ "variant": null,
+ "name": "Vertico Solo Robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.vertico.com/technology/solo-robot",
+ "summary": "A 6-axis robot arm on a 50 cm pedestal that 3D prints concrete around its base (270 degrees), for prefab elements, design pieces and research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by the Dutch maker, which offers shipping with on-site installation support and lists 5 printers shipped to Germany and 19 to other European countries (all Vertico models together). No public price.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Vertico B.V.",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://www.vertico.com/technology/solo-robot",
+    "contactUrl": "https://www.vertico.com/contact",
+    "email": "info@vertico3d.com",
+    "phone": "+31 85 004 35 54",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Eindhoven, Netherlands. Sells the printers directly; price on request. Offers worldwide shipping with on-site installation support."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "reach_m",
+   "label": "Reach",
+   "value": 2.3,
+   "unit": "m",
+   "conditions": "product page; the catalogue states 3.2 m reach on a 50 cm pedestal",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_depth_mm",
+   "label": "Reach depth",
+   "value": 3400,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Robot payload",
+   "value": 150,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "height_m",
+   "label": "Total height",
+   "value": 2.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "print_angle_deg",
+   "label": "Print area around base",
+   "value": 270,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "layer_height_mm",
+   "label": "Layer height",
+   "value": "3-18",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "pump_output_lmin",
+   "label": "Pump output",
+   "value": "1.5-8",
+   "unit": "l/min",
+   "conditions": "variable speed; 1K or 2K printhead",
+   "sourceId": "s1"
+  },
+  {
+   "key": "pedestal_mm",
+   "label": "Pedestal (H x W x D)",
+   "value": "1030 x 750 x 2010",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Vertico Slicer (Rhino + Grasshopper), licence-free",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": 150,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Vertico Slicer (Rhino + Grasshopper), licence-free",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "A complete cell needs a printhead (Accelerator 2K or Standard 1K), a concrete mixing pump (Mai Multimix named) and printable mortar; Vertico says any suitable material supplier can be used.",
+   "Stationary industrial robot cell for printing elements in a hall (prefab, design pieces, research); it does not move around a building site on its own.",
+   "Slicer software (Rhino + Grasshopper) is included without a yearly licence fee.",
+   "Reach is stated as 2.3 m on the product page and 3.2 m in the 2025 catalogue; confirm with Vertico.",
+   "Options: height and reach extension, rotating printhead, light curtains, safety fences, print bed, silo, dust extractor."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/663b6a0ed48ad1f36b6a02db/67dad6a0efc77b1c7e8eee79_Solo%20Robot%203D%20Concrete%20Printing.webp",
+   "pageUrl": "https://www.vertico.com/technology/solo-robot",
+   "credit": "Vertico",
+   "alt": "Vertico Solo Robot with print head on its black pedestal in a workshop, mixer-pump behind it",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/663de072aed25872de06c783/6826d001f96eaf21773eb27d_solo-robot-3d-printer.webp",
+   "pageUrl": "https://www.vertico.com/technology/solo-robot",
+   "credit": "Vertico",
+   "alt": "Vertico Solo Robot on its black pedestal printing a U-shaped concrete element on a pallet",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Installed customer machine on a pedestal",
+   "stage": "claim",
+   "where": "Madrid, Spain (customer not named)",
+   "date": "2024",
+   "sourceId": "s3",
+   "note": "Catalogue photo caption only."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.vertico.com/technology/solo-robot",
+   "title": "Solo Robot",
+   "publisher": "Vertico",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.vertico.com/3d-concrete-printer-for-sale",
+   "title": "3D concrete printer for sale",
+   "publisher": "Vertico",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://cdn.prod.website-files.com/663b6a0ed48ad1f36b6a02db/692e9fb3dd9c2f6c8bd663d0_Vertico%20Catalogue%202025.pdf",
+   "title": "Vertico Catalogue 2025 (PDF)",
+   "publisher": "Vertico",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and delivery time for Germany.",
+  "Names of the German customers behind the 5 printers Vertico lists as shipped to Germany, and which models they are.",
+  "Which industrial robot arm brand is supplied (the catalogue says the Solo is offered in different brands).",
+  "Reach: 2.3 m (product page) or 3.2 m (catalogue)."
+ ],
+ "checkedAt": "2026-10-02"
+}

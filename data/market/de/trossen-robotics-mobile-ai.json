@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "trossen-robotics-mobile-ai",
+ "maker": "Trossen Robotics",
+ "makerCountry": "US",
+ "model": "Mobile AI",
+ "variant": null,
+ "name": "Trossen Robotics Mobile AI",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.trossenrobotics.com/mobile-ai",
+ "summary": "A wheeled cart with two WidowX AI follower arms and two leader arms for recording teleoperated demonstrations and training imitation-learning models.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots lists it with an order button from €38,500 net (delivery 4-6 weeks); MYBOTSHOP in Germany, Trossen's listed distributor, lists it with price on request.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s5"
+  ],
+  "priceEur": {
+   "amount": 38500,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Base version without computer; €46,200 including 20% VAT as shown."
+  },
+  "priceOther": {
+   "amount": 33695.95,
+   "currency": "USD",
+   "market": "Trossen Robotics US price without laptop",
+   "sourceId": "s1"
+  },
+  "leadTime": "4-6 weeks (Generation Robots)",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404331-mobile-ai-1969.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 38500,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Option with Trossen TOTL workstation also listed."
+   },
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.mybotshop.de/Trossen-Mobile-AI",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Trossen's listed distributor for Germany. Shop lists Mobile AI with 'Preis auf Anfrage'; deliverable 10 days after order."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "arms",
+   "label": "Arms",
+   "value": "2 WidowX AI follower arms plus 2 leader arms",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Cameras",
+   "value": "3x Intel RealSense D405",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "None in base version; optional laptop or TOTL workstation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "LeRobot, ROS 2, MuJoCo, Gazebo, NVIDIA Isaac, OpenPI",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 2, LeRobot",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "The arms sit on a wheeled frame that is moved between sites; Trossen points to its SLATE base for autonomous navigation, while Generation Robots calls the platform motorised. Whether this kit drives itself is not clear.",
+   "Arm payload not stated on the pages read.",
+   "Trossen calls its systems research and supervised-deployment systems, not safety-rated cobots."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static.wixstatic.com/media/d3716d_ec99b580b70c457d88f3ca7e8cf84eb3~mv2.png",
+   "pageUrl": "https://www.trossenrobotics.com/mobile-ai",
+   "credit": "Trossen Robotics",
+   "alt": "Trossen Mobile AI cart with four WidowX AI arms",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for bimanual teleoperation and imitation-learning data collection",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.trossenrobotics.com/mobile-ai",
+   "title": "Mobile AI product page",
+   "publisher": "Trossen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404331-mobile-ai-1969.html",
+   "title": "Mobile AI - Trossen Robotics",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.trossenrobotics.com/distributors",
+   "title": "Distributors",
+   "publisher": "Trossen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.trossenrobotics.com/2026-product-lineup",
+   "title": "2026 product lineup",
+   "publisher": "Trossen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.mybotshop.de/Trossen-Mobile-AI",
+   "title": "Trossen Mobile AI",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Trossen's site files Mobile AI under legacy AI hardware; how long it stays on sale next to Rivet.",
+  "Arm payload per WidowX AI arm on this kit."
+ ],
+ "checkedAt": "2026-10-02"
+}

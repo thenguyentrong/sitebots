@@ -2,6 +2,8 @@
 
 import Link from 'next/link';
 import { jobById, settingLabel } from '@/lib/plan/jobs';
+import { reviewForSite, resolvedFactsOf, siteContext } from '@/lib/plan/screen';
+import { retainedLegacyTerrain, legacyRequirementIssues } from '@/lib/plan/legacy-requirements';
 import { costResult, euro, nextAction, type Project } from '@/lib/plan/model';
 import { ui } from '@/lib/ui';
 import { Field, Notes } from './Fields';
@@ -13,11 +15,15 @@ import { useAssessment } from './useAssessment';
 
 export function PilotBrief({ project, update }: { project: Project; update: (patch: Partial<Project>) => void }) {
   const job = jobById(project.jobId);
+  const taskReview = reviewForSite(project);
+  const resolved = resolvedFactsOf(project, siteContext(project));
+  const retainedTerrain = retainedLegacyTerrain(project.needs.terrain, resolved.floor.value);
+  const legacyIssues = legacyRequirementIssues(project.needs, { object_mass_kg: resolved.object_mass_kg.value, reach_height_m: resolved.reach_height_m.value, runtime_continuous_min: resolved.runtime_continuous_min.value });
   const ids = project.options.flatMap((option) => option.robotId ? [option.robotId] : []);
   const assessment = useAssessment(project, ids, ids.length > 0);
   const chosen = project.options.find((option) => option.id === project.selectedOptionId) ?? project.options[0];
   const checked = assessment.data?.results.find((result) => result.id === chosen?.robotId);
-  const open = !project.gateNote.trim() || !chosen || !chosen.package || !chosen.operator || (chosen.kind === 'robot' ? !checked || checked.open > 0 : !chosen.evidence);
+  const open = taskReview.missingFacts.length > 0 || !project.gateNote.trim() || !chosen || !chosen.package || !chosen.operator || (chosen.kind === 'robot' ? !checked || checked.open > 0 : !chosen.evidence);
   const action = nextAction(project, checked?.blocked, open);
   const pilot = (key: keyof Project['pilot'], value: string) => update({ pilot: { ...project.pilot, [key]: value } });
   return <div className="space-y-6">
@@ -48,10 +54,20 @@ export function PilotBrief({ project, update }: { project: Project; update: (pat
         <section><h3 className="font-semibold">Current process</h3><p className="mt-2 whitespace-pre-wrap text-sm">{project.baseline || 'Baseline not recorded.'}</p></section>
       </div>
       {project.description ? <section><h3 className="font-semibold">Job description</h3><p className="mt-2 whitespace-pre-wrap text-sm">{project.description}</p></section> : null}
-      <section><h3 className="font-semibold">Requirements supplied</h3><p className="mt-2 text-sm">Robot focus: {project.focus === 'humanoid' ? 'Humanoids only' : 'Any robot that could fit'}</p><ul className="mt-2 grid gap-2 text-sm sm:grid-cols-2">
-        {Object.entries(project.needs).map(([key, value]) => <li key={key}><span className="font-medium">{{ payload: 'Carried load (kg)', reach: 'Working reach (m)', runtime: 'Continuous work (hours)', terrain: 'Ground', stairs: 'Stairs', environment: 'Exposure', autonomy: 'Operation' }[key]}: </span>{value || 'Not specified'}</li>)}
-      </ul></section>
-      <section><h3 className="font-semibold">Business priority</h3><p className="mt-2 text-sm">Value: {project.value || 'not assessed'} · Readiness: {project.readiness || 'not assessed'}</p><p className="mt-2 whitespace-pre-wrap text-sm">{project.rationale || 'Assessment rationale not recorded.'}</p></section><section><h3 className="font-semibold">Critical evidence and dependencies</h3><p className="mt-2 whitespace-pre-wrap text-sm">{project.gateNote || 'Confirmation evidence has not been recorded.'}</p><p className="mt-2 text-sm text-muted">Client review: {project.gate}. {open ? 'Configuration, task evidence or human responsibilities remain open.' : 'Review the cited configuration and evidence.'}</p></section>
+      <section><h3 className="font-semibold">Requirements supplied</h3>
+        <p className="mt-2 text-sm">{taskReview.requirements.length - taskReview.missingFacts.length} of {taskReview.requirements.length} task requirements provided. {taskReview.scopeNote}</p>
+        <p className="mt-2 text-sm">Robot focus: {project.focus === 'humanoid' ? 'Humanoids only' : 'Any robot that could fit'}{project.needs.autonomy ? ` · Requested operation: ${{ teleop_ok: 'teleoperation acceptable', supervised: 'supervised autonomy', autonomous: 'autonomous' }[project.needs.autonomy]}` : ''}</p>
+        {legacyIssues.length ? <ul className="mt-2 list-disc pl-4 text-sm" data-testid="legacy-requirement-issues">{legacyIssues.map((issue) => <li key={issue}>{issue}</li>)}</ul> : null}
+        {retainedTerrain ? <p className="mt-2 text-xs text-muted" data-testid="legacy-terrain-note">Ground detail from your saved plan: {retainedTerrain}. Confirm this still describes the current route.</p> : null}
+        <dl className="mt-3 grid gap-4 text-sm sm:grid-cols-2">{taskReview.requirements.map((item) => <div key={item.key} data-brief-requirement={item.key}>
+          <dt className="font-medium">{item.label}</dt><dd className="mt-1">{item.value}</dd>
+          <dd className="mt-1 text-xs text-muted">{item.origin === 'visitor' ? 'Your answer' : item.origin === 'record' ? 'Task record' : item.origin === 'context' ? 'Company context' : 'Unknown'}{item.confidence ? ` · ${item.confidence}` : ''}</dd>
+          {item.note ? <dd className="mt-1 text-xs text-muted">{item.note}</dd> : null}
+          {item.evidenceUrl ? <dd className="mt-1 break-words text-xs"><a href={item.evidenceUrl} target="_blank" rel="noopener noreferrer" className="underline">Source: {item.evidenceUrl}</a></dd> : null}
+          {item.status === 'missing' ? <dd className="mt-1 text-xs text-muted">Open question: {item.question}</dd> : null}
+        </div>)}</dl>
+      </section>
+      <section><h3 className="font-semibold">Business priority</h3><p className="mt-2 text-sm">Value: {project.value || 'not assessed'} · Readiness: {project.readiness || 'not assessed'}</p><p className="mt-2 whitespace-pre-wrap text-sm">{project.rationale || 'Assessment rationale not recorded.'}</p></section><section><h3 className="font-semibold">Critical evidence and dependencies</h3><p className="mt-2 whitespace-pre-wrap text-sm">{project.gateNote || 'Confirmation evidence has not been recorded.'}</p><p className="mt-2 text-sm text-muted">Client review: {project.gate}. {open ? 'Task requirements, configuration evidence or human responsibilities remain open.' : 'Review the cited configuration and evidence.'}</p></section>
       {project.options.length ? <PlanComparison project={project} results={assessment.data?.results} /> : <p className="text-sm text-muted">No alternative solutions recorded yet.</p>}
       {checked ? <PriceReference result={checked} /> : null}
       <section><h3 className="font-semibold">Cost assumptions by solution</h3><div className="mt-3 space-y-4">{project.options.map((option) => {

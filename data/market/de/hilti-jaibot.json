@@ -1,0 +1,245 @@
+{
+ "schemaVersion": 1,
+ "id": "hilti-jaibot",
+ "maker": "Hilti",
+ "makerCountry": "LI",
+ "model": "Jaibot",
+ "variant": null,
+ "name": "Hilti Jaibot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_electrical/overhead-drilling-anchors"
+ ],
+ "officialUrl": "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot",
+ "summary": "A battery-powered tracked robot that drills anchor holes in ceilings and walls from the digital drilling plan, located by a Hilti total station.",
+ "launched": "2020",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot",
+    "contactUrl": "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot",
+    "email": null,
+    "phone": "0800 888 55 22",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Contact form for Jaibot experts on the page. Trade press (2023) describes rental from Hilti with measurement concept, data preparation, training, support and an operator on request; an outright purchase is not described.",
+    "name": "Hilti Deutschland AG",
+    "country": "DE",
+    "role": "manufacturer",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Offered in Germany by Hilti Deutschland AG on request; trade press describes rental from Hilti including measurement concept, data preparation, training, support and, if needed, the operator. No public price.",
+  "sourceIds": [
+   "s1",
+   "s5",
+   "s6"
+  ]
+ },
+ "specs": [
+  {
+   "key": "working_height_ceiling_m",
+   "label": "Ceiling drilling height",
+   "value": "1.2-4.8",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "working_height_wall_m",
+   "label": "Wall drilling height",
+   "value": "0.9-4.8",
+   "unit": "m",
+   "conditions": "June 2022 Hilti release; the May 2023 release gives 1.2-4.8 m for both ceilings and walls",
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "up to, between charges, cordless (Hilti); trade press gives 8-10 h",
+   "sourceId": "s4"
+  },
+  {
+   "key": "holes_per_day",
+   "label": "Output",
+   "value": "1,000+",
+   "unit": "holes/day",
+   "conditions": "customer result (Geiger, obstacle-free new office building) quoted in the Hilti release",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Gradient",
+   "value": 15,
+   "unit": "deg",
+   "conditions": "trade press report",
+   "sourceId": "s5"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step it can cross",
+   "value": 15,
+   "unit": "cm",
+   "conditions": "single step, trade press report; it cannot climb stairs",
+   "sourceId": "s5"
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "Hilti PLT 300 total station; PLC 400 tablet",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "materials",
+   "label": "Base materials",
+   "value": "concrete ceilings and walls, metal composite (trapezoidal) ceilings",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dust_extraction",
+   "label": "Dust extraction",
+   "value": true,
+   "unit": null,
+   "conditions": "integrated; optional upgrade for 30% more suction",
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Semi-autonomous: an operator drives it between positions by remote control; drilling runs automatically.",
+   "Rubber-track drive; climbs a 15 cm step and tolerates 15° incline but cannot climb stairs (trade press). Delivered to site by crane in a special box.",
+   "Detects existing installations and adapts its arm movement; documents every hole in Hilti Cloud."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://content-images-hol.hilti.com/dgm73lza1x7q/5R5BJtTaabeMKhTkBq7PO5/0f2f262a0151f7c249f3f56f58558f68/L146294.png",
+   "pageUrl": "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot",
+   "credit": "Hilti",
+   "alt": "Hilti Jaibot on tracks in a building under construction with an operator",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Drilled 2,500 ceiling holes in eight days for acoustic baffles on a ceiling almost 5 m high (rented from Hilti)",
+   "stage": "deployment",
+   "where": "Frietsch Gipser und Stukkateur, Wildpark-Stadion Karlsruhe, Germany",
+   "date": "2023",
+   "sourceId": "s5",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Drilled about 15,500 ceiling holes for anchors in an office building, over 1,000 per day",
+   "stage": "deployment",
+   "where": "Geiger Schlüsselfertigbau, Wave 2, Reutlingen, Germany",
+   "date": "2023",
+   "sourceId": "s6",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot",
+   "title": "Jaibot Bohrroboter",
+   "publisher": "Hilti Deutschland AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.hilti.de/content/company/press-releases/local/jaibot",
+   "title": "Jaibot press release, May 2023",
+   "publisher": "Hilti Deutschland AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.hilti.de/content/dam/images/e3/mo-de/PI_Hilti_Jaibot_neue_Funktionalit%C3%A4ten_20220621.pdf",
+   "title": "Hilti stellt neue Funktionen für den Jaibot vor, June 2022",
+   "publisher": "Hilti Deutschland AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.hilti.com/content/hilti/W1/US/en/business/business/trends/jaibot.html",
+   "title": "Jaibot semi-automated drilling robot",
+   "publisher": "Hilti",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://bau.bi/baumagazin/hochbau/bauroboter-jaibot-hilft-stukkateurbetrieb-bei-stressiger-baustelle-b16159",
+   "title": "Bauroboter Jaibot hilft Stukkateurbetrieb",
+   "publisher": "bau.bi",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.protrader.one/aktuelles/hilti-jaibot-1000-und-1-bohrloch",
+   "title": "Hilti Jaibot: 1000 und 1 Bohrloch",
+   "publisher": "protrader",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.hilti.group/content/hilti/CP/XX/en/company/corporate-information/imprint.html",
+   "title": "Imprint (Hilti Corporation, Schaan, Liechtenstein)",
+   "publisher": "Hilti Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Weight, dimensions and maximum drill diameter and depth.",
+  "Purchase and rental prices."
+ ],
+ "checkedAt": "2026-10-02"
+}

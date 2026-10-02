@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "pal-robotics-talos",
+ "maker": "PAL Robotics",
+ "makerCountry": "ES",
+ "model": "TALOS",
+ "variant": null,
+ "name": "PAL Robotics TALOS",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://pal-robotics.com/robot/talos/",
+ "summary": "A 1.75 m, 95 kg torque-controlled bipedal research humanoid with 6 kg payload per arm, sold to research labs on quote.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Barcelona, Spain) that sells directly to customers across Europe on quote; no German distributor found and no public price. TALOS is offered as a research platform.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "PAL Robotics",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://pal-robotics.com/robot/talos/",
+    "contactUrl": "https://pal-robotics.com/contact/",
+    "email": "business@pal-robotics.com",
+    "phone": "+34 934 145 347",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Barcelona; quote request on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.75,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 95,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 32,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 6,
+   "unit": "kg",
+   "conditions": "Arm stretched",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1080,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery autonomy",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "Walking; 3 h stand-by",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Torque sensors in all joints except head, wrists and grippers; 4x 6-axis F/T (ankles, wrists); IMU; RGB-D head camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu LTS RT, ROS, OROCOS, ros_control, MoveIt, Gazebo model",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 6,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "ROS, ros_control",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Research humanoid; grippers are 3-finger, 1 actuator, customisable.",
+   "Runtime 1.5 h walking, 3 h stand-by.",
+   "Designed with heavy industrial tools in mind, but used mainly in research."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/04/TALOS-Robot.webp",
+   "pageUrl": "https://pal-robotics.com/robots/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics TALOS bipedal humanoid",
+   "kind": "product"
+  },
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/04/TALOS-features-torque.webp",
+   "pageUrl": "https://pal-robotics.com/robot/talos/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics TALOS legs and gripper in side close-up, with TALOS lettering on the thigh",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Torque-controlled locomotion research in unknown environments",
+   "stage": "demo",
+   "where": "PAL Robotics with French partners",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Preparing TALOS for work at Airbus in the MEMMO project",
+   "stage": "demo",
+   "where": "Airbus, EU project MEMMO",
+   "date": null,
+   "sourceId": "s1",
+   "note": "News item on the product page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://pal-robotics.com/robot/talos/",
+   "title": "TALOS product page",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://pal-robotics.com/wp-content/uploads/2025/09/TALOS-DataSheet-1.pdf",
+   "title": "TALOS datasheet",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://pal-robotics.com/robots/",
+   "title": "Our Robots",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Is TALOS still built to order?"
+ ],
+ "checkedAt": "2026-10-02"
+}

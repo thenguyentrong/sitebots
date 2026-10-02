@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Loop06: three exact remotely operated sewer-inspection camera/crawler configurations, German manufacturer buying routes, configuration-dependent limits and conservative task evidence.",
+  "records": [
+    {
+      "id": "ibak-t76-hd-orpheus3-hd-inspection",
+      "name": "IBAK T76 HD + ORPHEUS 3 HD",
+      "manufacturer": "IBAK",
+      "robotClass": "dedicated_robot",
+      "workflowId": "inspection",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "exactConfiguration": "T76 HD crawler with ORPHEUS 3 HD pan-and-tilt camera. Compatible HD reel, control unit, wheels and reporting software must be specified in the quotation.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "A cable-connected sewer camera crawler for an inspector to drive and record pipe interiors from DN150. The camera is a measuring and recording tool; acceptance decisions remain with the inspection team.",
+      "operatingMode": {
+        "value": "Human-operated crawler and camera; powered steering, focus and inspection-assistance features.",
+        "sourceIds": [
+          "ibak-orpheus-sheet",
+          "ibak-modular"
+        ],
+        "caveats": [
+          "A surface operator controls the inspection. No unattended inspection or automatic acceptance is established.",
+          "Launching, cable management, wheel selection and recovery require a site procedure."
+        ]
+      },
+      "specs": [
+        {
+          "key": "minimum_pipe_diameter",
+          "value": 150,
+          "unit": "mm",
+          "semanticLabel": "Published minimum nominal pipe size",
+          "conditions": [
+            "DN150; access, wheels, water level and geometry still constrain passage."
+          ],
+          "sourceIds": [
+            "ibak-orpheus-sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "camera_diameter",
+          "value": 110,
+          "unit": "mm",
+          "semanticLabel": "ORPHEUS 3 HD camera-head diameter",
+          "conditions": [
+            "Camera component only; not the crawler envelope."
+          ],
+          "sourceIds": [
+            "ibak-orpheus-sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "camera_length",
+          "value": 170,
+          "unit": "mm",
+          "semanticLabel": "ORPHEUS 3 HD camera-head length",
+          "conditions": [
+            "HD column; the SD camera is 160mm and is not substituted."
+          ],
+          "sourceIds": [
+            "ibak-orpheus-sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "optical_zoom",
+          "value": 10,
+          "unit": "x",
+          "semanticLabel": "Camera optical zoom",
+          "conditions": [
+            "Optical magnification; optional digital zoom is a separate feature."
+          ],
+          "sourceIds": [
+            "ibak-orpheus-sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_focus_distance",
+          "value": 10,
+          "unit": "mm",
+          "semanticLabel": "Published lower focus distance",
+          "conditions": [
+            "Camera specification; not a validated minimum defect-detection distance."
+          ],
+          "sourceIds": [
+            "ibak-orpheus-sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "video_interface",
+          "value": "Full HD (SDI)",
+          "unit": null,
+          "semanticLabel": "Camera video standard",
+          "conditions": [
+            "ORPHEUS 3 HD; requires compatible HD system components."
+          ],
+          "sourceIds": [
+            "ibak-orpheus-sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "measurement_lasers",
+          "value": 2,
+          "unit": "lasers",
+          "semanticLabel": "Integrated camera measurement lasers",
+          "conditions": [
+            "No job-specific measurement accuracy was established."
+          ],
+          "sourceIds": [
+            "ibak-orpheus-sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "crawler_mass",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Complete quoted crawler-and-camera mass",
+          "conditions": [
+            "Current assembled weight with selected wheels and accessories has not been confirmed."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Capture sewer interior imagery and camera-assisted measurements from a remotely driven crawler.",
+          "configuration": "ORPHEUS 3 HD with compatible T76 HD as listed in the camera brochure.",
+          "operatingMode": "Inspector drives the crawler and operates the pan-and-tilt camera from the surface.",
+          "sourceIds": [
+            "ibak-orpheus-sheet",
+            "ibak-modular"
+          ],
+          "limitations": [
+            "No independent defect-detection denominator, repeatability result or metres-per-shift measurement reviewed.",
+            "The April2026 GMB delivery names T76 and ORPHEUS3 with HD-SDI, but omits exact HD suffixes; it supports current family supply, not proof that this precise quoted configuration completed routine work.",
+            "The complete acceptance workflow includes cleaning/visibility preparation, coded findings, report review and contractual acceptance."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "IBAK Helmut Hunger GmbH & Co. KG",
+          "market": "Germany — regional manufacturer sales contacts",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.ibak.de/kontakt/vertrieb"
+          },
+          "sourceIds": [
+            "ibak-sales"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Product advice and quotations are published; exact HD configuration, lead time and stock require confirmation.",
+          "authorizationStatus": "Manufacturer's own sales directory.",
+          "caveats": [
+            "Select the German region and inspection-systems contact.",
+            "Ask for current camera generation, compatibility, software licence, training and service coverage."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Older brochures distinguish ORPHEUS3 SD and ORPHEUS3 HD. The 2026 delivery article uses ORPHEUS3 without the HD suffix while describing HD-SDI; these names must be reconciled on the quote.",
+        "Explosion-protection features are component/configuration-specific; a brochure flag is not confirmation that the complete quoted system is approved for a particular site."
+      ],
+      "unknowns": [
+        "Current exact bill of materials and full configured dimensions/mass.",
+        "Inspection speed, missed-defect rate, repeatability and operator intervention frequency in the user's pipes.",
+        "Current exact-model product photograph was not resolved; use the explicit class illustration fallback."
+      ],
+      "sourceURLs": [
+        "https://www.ibak.de/fileadmin/website/ansprechpartner/flyer_prospekte/orpheus_profilvermessung_10s_de.pdf",
+        "https://www.ibak.de/fileadmin/website/ansprechpartner/flyer_prospekte/kompaktanlagen_baukastenprinzip_a4_de.pdf",
+        "https://www.ibak.de/unternehmen/news-und-presse/meldung/elektro-inspektionsfahrzeug-fuer-gmb",
+        "https://www.ibak.de/kontakt/vertrieb"
+      ],
+      "sources": [
+        {
+          "id": "ibak-orpheus-sheet",
+          "url": "https://www.ibak.de/fileadmin/website/ansprechpartner/flyer_prospekte/orpheus_profilvermessung_10s_de.pdf",
+          "title": "ORPHEUS 2/3 and HD variants: profile measurement and camera specifications",
+          "publisher": "IBAK",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ibak-modular",
+          "url": "https://www.ibak.de/fileadmin/website/ansprechpartner/flyer_prospekte/kompaktanlagen_baukastenprinzip_a4_de.pdf",
+          "title": "IBAK inspection and rehabilitation modular systems",
+          "publisher": "IBAK",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ibak-gmb-2026",
+          "url": "https://www.ibak.de/unternehmen/news-und-presse/meldung/elektro-inspektionsfahrzeug-fuer-gmb",
+          "title": "Electric inspection vehicle delivered to GMB, 21 April 2026",
+          "publisher": "IBAK",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ibak-sales",
+          "url": "https://www.ibak.de/kontakt/vertrieb",
+          "title": "German and international sales contacts",
+          "publisher": "IBAK",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "ipek-rx130-rcx90x-hd-inspection",
+      "name": "iPEK ROVION RX130 + RCX90X HD",
+      "manufacturer": "iPEK",
+      "robotClass": "dedicated_robot",
+      "workflowId": "inspection",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "exactConfiguration": "ROVION RX130 crawler with RCX90X HD pan-and-tilt camera. RAX300 is a published reel option; the compatible HD controller, cable, wheels and lift must be confirmed in an itemised quotation.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "A steerable sewer crawler with a separate pan-and-tilt camera and surface controller. The inspector drives, logs observations and prepares the inspection report.",
+      "operatingMode": {
+        "value": "Human-operated via joysticks and touchscreen; powered crawler, camera and cable reel.",
+        "sourceIds": [
+          "ipek-mainline",
+          "ipek-configurator"
+        ],
+        "caveats": [
+          "Human control and defect coding remain part of the published workflow.",
+          "Automatic focus and reporting tools do not establish autonomous inspection or validated automatic defect classification."
+        ]
+      },
+      "specs": [
+        {
+          "key": "minimum_pipe_diameter",
+          "value": 150,
+          "unit": "mm",
+          "semanticLabel": "RX130 published nominal pipe minimum",
+          "conditions": [
+            "RX130, not smaller RX95; passage depends on camera/wheel configuration."
+          ],
+          "sourceIds": [
+            "ipek-mainline",
+            "ipek-german-van"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_pipe_upper_diameter",
+          "value": 300,
+          "unit": "mm",
+          "semanticLabel": "RX130 base range upper diameter in English configurator",
+          "conditions": [
+            "Configurator separates a150–300mm base range from optional extensions."
+          ],
+          "sourceIds": [
+            "ipek-configurator"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "optional_pipe_upper_diameter",
+          "value": 1000,
+          "unit": "mm",
+          "semanticLabel": "RX130 stated upper range with options",
+          "conditions": [
+            "Correct lifts, wheels and accessories are required; not the base configuration."
+          ],
+          "sourceIds": [
+            "ipek-mainline",
+            "ipek-configurator"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "reel_cable_capacity",
+          "value": 300,
+          "unit": "m",
+          "semanticLabel": "RAX300 maximum cable length",
+          "conditions": [
+            "Published RAX300 reel option; installed cable length and HD compatibility must be quoted. Cable capacity is not guaranteed inspection distance through obstructions."
+          ],
+          "sourceIds": [
+            "ipek-mainline",
+            "ipek-configurator"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "camera_nominal_pipe_range",
+          "value": "100–2000",
+          "unit": "mm",
+          "semanticLabel": "RCX90X HD camera component range",
+          "conditions": [
+            "Camera alone; does not expand the RX130 crawler's150mm minimum or optional1000mm upper range."
+          ],
+          "sourceIds": [
+            "ipek-configurator"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "camera_autofocus",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "RCX90X HD automatic focus feature",
+          "conditions": [
+            "Operator still chooses views and evaluates images."
+          ],
+          "sourceIds": [
+            "ipek-configurator"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "camera_parallel_laser",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "RCX90X HD parallel laser feature",
+          "conditions": [
+            "Measurement accuracy/calibration limits were not reviewed."
+          ],
+          "sourceIds": [
+            "ipek-configurator"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "rear_view_camera",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "RX130 rear-view camera listed in configurator",
+          "conditions": [
+            "Confirm included version in the quote."
+          ],
+          "sourceIds": [
+            "ipek-configurator"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Drive a mainline sewer inspection, record imagery and manually code observations for a report.",
+          "configuration": "ROVION mainline system with RX130 and RCX90X HD selected from the official component range.",
+          "operatingMode": "Operator uses separate crawler/camera joysticks, touchscreen annotations and reporting tools.",
+          "sourceIds": [
+            "ipek-mainline",
+            "ipek-configurator",
+            "ipek-german-van"
+          ],
+          "limitations": [
+            "No exact-configuration customer production study or independent missed-defect benchmark reviewed.",
+            "Camera range, general ROVION family range and RX130 crawler range are different limits.",
+            "Manhole access, cable traction, water visibility and configuration compatibility require a site-specific review."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "iPEK International GmbH",
+          "market": "Germany — Sulzberg manufacturer enquiry",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://ipek.at/de-de/cctv-orders",
+            "email": "isg_info@idexcorp.com",
+            "phone": "+49 8376 92180-0"
+          },
+          "sourceIds": [
+            "ipek-german-van",
+            "ipek-mainline"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "The German page advertises ready inspection vehicles. No dated stock allocation or lead time for this exact component set was confirmed.",
+          "authorizationStatus": "Manufacturer's own enquiry page and German business contact.",
+          "caveats": [
+            "The advertised vehicle package includes several camera/crawler choices; request the exact RX130/RCX90X HD/controller/reel combination.",
+            "Confirm software licence, German reporting templates, training and service terms."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The mainline overview gives RX130 DN150–1000, while the English configurator clarifies150–300mm plus options to1000mm; both are retained with their conditions.",
+        "Product pages also display RX130L and newer RCX100HD; their lift, dimensional and performance claims are not transferred to RX130/RCX90X HD."
+      ],
+      "unknowns": [
+        "As-configured crawler mass, envelope, cable pulling limits and current controller compatibility.",
+        "A live German stock position and guaranteed delivery date for the exact set.",
+        "Quantified inspection completeness, productivity and intervention rates."
+      ],
+      "sourceURLs": [
+        "https://ipek.at/de/hauptkanal-fahrwagen",
+        "https://ipek.at/pc-mainline",
+        "https://ipek.at/de-de/cctv-orders"
+      ],
+      "sources": [
+        {
+          "id": "ipek-mainline",
+          "url": "https://ipek.at/de/hauptkanal-fahrwagen",
+          "title": "ROVION mainline crawler models and operator controls",
+          "publisher": "iPEK",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ipek-configurator",
+          "url": "https://ipek.at/pc-mainline",
+          "title": "Mainline system component configurator",
+          "publisher": "iPEK",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ipek-german-van",
+          "url": "https://ipek.at/de-de/cctv-orders",
+          "title": "German inspection-vehicle enquiry: RX130 and RCX90X",
+          "publisher": "iPEK",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "rausch-fw135-ks135-hd-inspection",
+      "name": "Rausch FW135 + KS135 HD",
+      "manufacturer": "Rausch International Group",
+      "robotClass": "dedicated_robot",
+      "workflowId": "inspection",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "exactConfiguration": "FW135 crawler with KS135 HD camera in an RCA5.0/Rausch Premium surface-control system. Required wheel sets, reel and optional large-pipe carrier are selected separately.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "A remotely operated mainline sewer crawler with electric camera lift and HD pan-and-tilt imaging. It supports inspection capture and measurements while an inspector controls the work and interprets findings.",
+      "operatingMode": {
+        "value": "Human-operated with two multifunction joysticks; assisted steering and automatic reverse functions.",
+        "sourceIds": [
+          "rausch-premium"
+        ],
+        "caveats": [
+          "Automatic steering/reverse are motion assistance, not autonomous inspection or defect acceptance.",
+          "The operator manages launch, cable, view selection and reporting."
+        ]
+      },
+      "specs": [
+        {
+          "key": "minimum_pipe_diameter",
+          "value": 135,
+          "unit": "mm",
+          "semanticLabel": "FW135 published nominal pipe minimum",
+          "conditions": [
+            "Basic application range; electric lift/rear-view accessories have separate150mm conditions."
+          ],
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_pipe_upper_diameter",
+          "value": 1600,
+          "unit": "mm",
+          "semanticLabel": "FW135 published upper range without Lafette extension",
+          "conditions": [
+            "Appropriate wheel/height accessories still required; not one fixed setup for the entire range."
+          ],
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "optional_pipe_upper_diameter",
+          "value": 3000,
+          "unit": "mm",
+          "semanticLabel": "FW135 upper pipe range with Lafette carrier",
+          "conditions": [
+            "Optional carrier configuration, not supplied-base crawler capability."
+          ],
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "camera_video_resolution",
+          "value": "1920 ×1080",
+          "unit": "pixels",
+          "semanticLabel": "KS135 HD video image resolution",
+          "conditions": [
+            "HD camera/system; the separate SD TV-line figure is not used as the HD resolution."
+          ],
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "optical_zoom",
+          "value": 10,
+          "unit": "x",
+          "semanticLabel": "KS135 HD optical magnification",
+          "conditions": [
+            "Digital12x zoom is separately listed and does not add optical detail."
+          ],
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "measurement_lasers",
+          "value": 2,
+          "unit": "lasers",
+          "semanticLabel": "KS135 HD integrated measurement lasers",
+          "conditions": [
+            "No task-specific precision tolerance established."
+          ],
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "camera_rotation_speed",
+          "value": "2–75",
+          "unit": "rpm",
+          "semanticLabel": "Published variable camera rotation speed",
+          "conditions": [
+            "Camera motion only; not crawler travel speed or inspection throughput."
+          ],
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "electric_camera_lift",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Powered camera height adjustment",
+          "conditions": [
+            "Accessory section lists stepless positioning from150mm pipe diameter."
+          ],
+          "sourceIds": [
+            "rausch-premium",
+            "rausch-mobile"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Inspect mainline pipe interiors with remotely driven HD video capture and camera-assisted measurements.",
+          "configuration": "FW135 with KS135 HD in the published mainline combination; RCA5.0 surface control.",
+          "operatingMode": "Inspector controls crawler and camera; assisted reverse/steering and focus functions.",
+          "sourceIds": [
+            "rausch-premium",
+            "rausch-mobile"
+          ],
+          "limitations": [
+            "A named customer quotation on the product page discusses image quality but supplies no exact-configuration operating denominator or measured defect rate.",
+            "This configuration does not include the separate M-Series lateral-launch modules.",
+            "Coded acceptance reporting, inspection completeness and site suitability require competent human review."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Rausch International Group GmbH",
+          "market": "Germany — Weissensberg manufacturer sales",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.rausch.international/products/rausch-premium",
+            "email": "sales-rde@rausch.international",
+            "phone": "+49 8389 898-0"
+          },
+          "sourceIds": [
+            "rausch-premium"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published German manufacturer sales route; stock, lead time, vehicle fit-out and selected crawler options require a quote.",
+          "authorizationStatus": "Manufacturer's own product page and German sales contact.",
+          "caveats": [
+            "Confirm exact FW135/KS135HD naming and available revision; do not substitute historical L135 figures.",
+            "Request installation, reporting software, wheel sets, service and training as itemised scope."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Rausch Premium mentions up to500m camera cable in the overview and up to550m for ELKA600 in the reel section. Cable capacity remains quote-dependent and is not treated as guaranteed crawler reach.",
+        "Historical L135 data from other regions are not assumed identical to the current German FW135 configuration."
+      ],
+      "unknowns": [
+        "Complete configured mass, clearance envelope and verified bend/grade limits.",
+        "Inspection productivity, recovery rate and missed-defect rate in the intended pipe conditions.",
+        "Current delivery date, complete system price and exact software/licensing scope."
+      ],
+      "sourceURLs": [
+        "https://www.rausch.international/products/rausch-premium",
+        "https://www.rausch.international/en/products/Rausch-mobile"
+      ],
+      "sources": [
+        {
+          "id": "rausch-premium",
+          "url": "https://www.rausch.international/products/rausch-premium",
+          "title": "Rausch Premium: FW135 crawler, KS135 HD and RCA5.0",
+          "publisher": "Rausch International Group",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "rausch-mobile",
+          "url": "https://www.rausch.international/en/products/Rausch-mobile",
+          "title": "Rausch Mobile: crawler-camera combinations and accessories",
+          "publisher": "Rausch International Group",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "fourier-n1",
+ "maker": "Fourier",
+ "makerCountry": "CN",
+ "model": "N1",
+ "variant": null,
+ "name": "Fourier N1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.fftai.com/ecosystem/n1",
+ "summary": "A 1.3 m, 38 kg open-source humanoid for locomotion research that can run at 3.5 m/s, climb 20 cm steps and handle 15 to 20 degree slopes.",
+ "launched": "2025",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Fourier (Shanghai Fourier Intelligence)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.fftai.com/fourier/contact",
+    "email": "generalrobot@fftai.com",
+    "phone": "+86 400 800 7671",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Contact form and business email; no EU price found."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "No German or EU seller lists N1; Fourier sells other models in Germany through RBTX, so ask Fourier directly.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.3,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 38,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 23,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 3.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "continuous",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 20,
+   "unit": "deg",
+   "conditions": "15 to 20 degrees",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step height",
+   "value": 20,
+   "unit": "cm",
+   "conditions": "stairs",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Open source",
+   "value": "Design schematics, BOM, assembly manuals and basic operating code",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "23-joint body for motion-control research; no hands are listed, so it is not a manipulation platform.",
+   "Hardware is open source."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.fftai.com/images/n1/1.jpg",
+   "pageUrl": "https://www.fftai.com/ecosystem/n1",
+   "credit": "Fourier",
+   "alt": "Fourier N1 humanoid walking in a rehab centre",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Locomotion and motion-control research (running, stairs, single-leg balance)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.fftai.com/ecosystem/n1",
+   "title": "Fourier N1 product page",
+   "publisher": "Fourier",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.fftai.com/fourier/about",
+   "title": "About Fourier (company timeline)",
+   "publisher": "Fourier",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://rbtx.de/de-DE/components/humanoid/fourier-gr2-humanoid-robot-53-dof",
+   "title": "Fourier on RBTX (shows Fourier sells into Germany)",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price for European buyers unknown.",
+  "Does N1 come with hands or grippers at all?"
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,328 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-g1-edu-dex3",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "G1",
+ "variant": "EDU with two Dex3-1 three-finger hands (U3/U4, also U9/U10)",
+ "name": "Unitree G1 EDU with Dex3-1 hands",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/g1",
+ "summary": "The programmable G1 humanoid with two force-controlled three-finger Dex3-1 hands for grasping research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU sells G1 EDU Ultimate A (U3) and B (U4, tactile) with price and cart; QUADRUPED Robotics (Germany) shows U4 in stock at 50,000 EUR net; Conrad sells to business customers.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": {
+   "amount": 53550,
+   "basis": "gross",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Ultimate A (U3) at RobotShop EU, tax included; U4 tactile EUR 63,070."
+  },
+  "priceOther": null,
+  "leadTime": "about 3-4 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-g1-edu-ultimate-u3-humanoid-robot-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 53550,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "G1-EDU-U3-EU: two Dex3-1 hands; ships in about 3-4 weeks."
+   },
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-g1-edu-ultimate-b-u4-humanoid-robot-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 63070,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "G1-EDU-U4-EU: two Dex3-1 hands with tactile sensors."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404241-g1-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Lists EDU ULTIMATE A/B and EDU PRO A/B (Dex3-1); quote on request."
+   },
+   {
+    "name": "MYBOTSHOP GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Unitree-G1",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Lists EDU-U3, U4, U9, U10 with Dex3-1; price on request. MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-G1",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 49000,
+    "priceBasis": "net",
+    "sourceId": "s7",
+    "note": "EDU-U3 49,000 EUR net (\"ordered, expected from 23.10.2026\"); EDU-U4 50,000 EUR net (\"sofort verfügbar\")."
+   },
+   {
+    "name": "Conrad Electronic (conrad.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.conrad.de/de/p/x-3804261.html",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 80659,
+    "priceBasis": "gross",
+    "sourceId": "s8",
+    "note": "Hst.-Teile-Nr. G1edu-U3; 80,659.00 EUR incl. VAT; business customers only. EDU-U4 (Bestell-Nr. 3804269) 84,695.00 EUR incl. VAT."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height (standing)",
+   "value": 1.32,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 35,
+   "unit": "kg",
+   "conditions": "about 35 kg plus options",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": "2 extra wrist DOF optional on EDU",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 2,
+   "unit": "h",
+   "conditions": "about 2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": "9000 mAh smart battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU; optional high-compute module such as NVIDIA Orin",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Depth camera + 3D LiDAR, 4-microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 43,
+   "unit": null,
+   "conditions": "U3/U4 on the 29-DOF body; 37 DOF for U9/U10 on the 23-DOF body",
+   "sourceId": "s5"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 7,
+   "unit": null,
+   "conditions": "Dex3-1: thumb 3, index 2, middle 2",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm maximum load",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "maximum arm load, about 3 kg (EDU); varies strongly with arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": "EDU versions",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Unitree secondary development interface (EDU)",
+  "sourceIds": [
+   "s1",
+   "s5"
+  ],
+  "notes": [
+   "Three-finger hands; tactile sensor arrays only in U4/U10.",
+   "Arm load about 3 kg and highly posture dependent; no IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/432cf5ea3e8a413497f6b92902feb6e8_1920x1080.jpg",
+   "pageUrl": "https://www.unitree.com/g1",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1 with Dex3-1 three-finger hands picking walnuts from a bowl",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/6613c61ef0d1412682b771fc62432a50_1464x1400.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1 humanoid robot, full body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations",
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Force-controlled grasping and object manipulation with three-finger hands",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/g1",
+   "title": "Unitree G1 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-g1-edu-ultimate-u3-humanoid-robot-eu",
+   "title": "Unitree G1 EDU Ultimate A (U3) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://eu.robotshop.com/products/unitree-g1-edu-ultimate-b-u4-humanoid-robot-eu",
+   "title": "Unitree G1 EDU Ultimate B (U4) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.generationrobots.com/en/404241-g1-humanoid-robot.html",
+   "title": "Unitree G1 humanoid robot at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.mybotshop.de/Unitree-G1",
+   "title": "Unitree G1 at MYBOTSHOP",
+   "publisher": "MYBOTSHOP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.quadruped.de/Unitree-G1",
+   "title": "Unitree G1 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.conrad.de/de/p/x-3804261.html",
+   "title": "UNITREE G1 EDU-U3 (Bestell-Nr. 3804261) at Conrad",
+   "publisher": "Conrad Electronic",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

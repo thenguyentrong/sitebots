@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:bulky-waste-fraction-sorting",
+      "title": "Sort bulky waste into recoverable fractions",
+      "summary": "Separate suitable wood, inert material, metal and plastic objects on a prepared sorting line.",
+      "industries": [
+        "waste_recycling"
+      ],
+      "family": "kitting_picking_sorting",
+      "setting": "Material recovery facility",
+      "reviewLinks": [
+        {
+          "taskId": "research:bulky-waste-fraction-sorting",
+          "reviewId": "zenrobotics-heavy-picker-4-sorting",
+          "relationship": "task_candidate",
+          "rationale": "Exact configured sorting system is described for this material workflow.",
+          "sourceIds": [
+            "product",
+            "brochure"
+          ],
+          "limitations": [
+            "Requires feed preparation and fraction-specific testing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:light-recyclable-residue-recovery",
+      "title": "Recover light recyclables from residue belts",
+      "summary": "Pick target packaging and light objects from a prepared reject or side-stream conveyor.",
+      "industries": [
+        "waste_recycling"
+      ],
+      "family": "kitting_picking_sorting",
+      "setting": "Material recovery facility",
+      "reviewLinks": [
+        {
+          "taskId": "research:light-recyclable-residue-recovery",
+          "reviewId": "zenrobotics-fast-picker-4-sorting",
+          "relationship": "task_candidate",
+          "rationale": "Exact configured sorting system is described for this material workflow.",
+          "sourceIds": [
+            "product",
+            "brochure"
+          ],
+          "limitations": [
+            "One-kilogram object limit; suitable geometry and presentation required."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:fibre-line-carton-recovery",
+      "title": "Recover beverage cartons from paper lines",
+      "summary": "Identify and lift target cartons from a dry paper/fibre conveyor with trained operators maintaining the cell.",
+      "industries": [
+        "waste_recycling"
+      ],
+      "family": "kitting_picking_sorting",
+      "setting": "Material recovery facility",
+      "reviewLinks": [
+        {
+          "taskId": "research:fibre-line-carton-recovery",
+          "reviewId": "recycleye-qualibot-dmr-cell",
+          "relationship": "task_candidate",
+          "rationale": "Exact configured sorting system is described for this material workflow.",
+          "sourceIds": [
+            "product",
+            "operation"
+          ],
+          "limitations": [
+            "Dust control, material distribution and gripper maintenance affect results."
+          ]
+        }
+      ]
+    }
+  ]
+}

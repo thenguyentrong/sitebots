@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "taskId": "site_sewers/sewer-camera-inspection",
+      "reviewId": "ibak-t76-hd-orpheus3-hd-inspection",
+      "relationship": "partial_task",
+      "rationale": "The sourced configuration supports camera traversal and recording of sewer interiors. The task also requires coded findings and acceptance reporting by the inspection team.",
+      "sourceIds": [
+        "ibak-orpheus-sheet",
+        "ibak-modular"
+      ],
+      "limitations": [
+        "Human operation, pipe preparation, defect interpretation and acceptance reporting remain required.",
+        "From DN150 with compatible HD system; exact current suffix and options need confirmation."
+      ]
+    },
+    {
+      "taskId": "site_sewers/sewer-camera-inspection",
+      "reviewId": "ipek-rx130-rcx90x-hd-inspection",
+      "relationship": "partial_task",
+      "rationale": "The sourced configuration supports camera traversal and recording of sewer interiors. The task also requires coded findings and acceptance reporting by the inspection team.",
+      "sourceIds": [
+        "ipek-mainline",
+        "ipek-configurator",
+        "ipek-german-van"
+      ],
+      "limitations": [
+        "Human operation, pipe preparation, defect interpretation and acceptance reporting remain required.",
+        "RX130 starts at DN150; the1000mm upper range requires options. Camera-only limits do not override crawler limits."
+      ]
+    },
+    {
+      "taskId": "site_sewers/sewer-camera-inspection",
+      "reviewId": "rausch-fw135-ks135-hd-inspection",
+      "relationship": "partial_task",
+      "rationale": "The sourced configuration supports camera traversal and recording of sewer interiors. The task also requires coded findings and acceptance reporting by the inspection team.",
+      "sourceIds": [
+        "rausch-premium",
+        "rausch-mobile"
+      ],
+      "limitations": [
+        "Human operation, pipe preparation, defect interpretation and acceptance reporting remain required.",
+        "FW135 base published range135–1600mm; optional Lafette extends to3000mm. Accessory clearances must be checked."
+      ]
+    }
+  ]
+}

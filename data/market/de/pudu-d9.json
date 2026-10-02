@@ -1,0 +1,156 @@
+{
+ "schemaVersion": 1,
+ "id": "pudu-d9",
+ "maker": "Pudu Robotics",
+ "makerCountry": "CN",
+ "model": "D9",
+ "variant": null,
+ "name": "PUDU D9",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.pudurobotics.com/en/products/d9",
+ "summary": "PUDU's 1.7 m bipedal humanoid with 11-DOF tactile hands and 10 kg per arm in tests; PUDU says it is still moving towards commercial use.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "PUDU shows the D9 with a demo-request form and says it is \"aiming towards commercially viable\" embodied intelligence; no price, seller or delivery in Europe found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 42,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": "6 active + 5 passive",
+   "unit": null,
+   "conditions": "PUDU DH11, 12 tactile areas",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Single-arm payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "test environment; 20 kg max total",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max walking speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 720,
+   "unit": "Wh",
+   "conditions": "15 Ah",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "275 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 10,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Payload measured in a test environment.",
+   "PUDU warns some advertised features are not yet available to customers."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.pudutech.com/official-website/d9/d9.webp",
+   "pageUrl": "https://www.pudurobotics.com/en/products/d9",
+   "credit": "Pudu Robotics",
+   "alt": "PUDU D9 bipedal humanoid",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.pudurobotics.com/en/products/d9",
+   "title": "PUDU D9 product page",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pudurobotics.com/de/contact-us",
+   "title": "Pudu Robotics Kontakt (German site)",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

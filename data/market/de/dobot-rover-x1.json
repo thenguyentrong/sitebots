@@ -1,0 +1,216 @@
+{
+ "schemaVersion": 1,
+ "id": "dobot-rover-x1",
+ "maker": "DOBOT",
+ "makerCountry": "CN",
+ "model": "Rover X1",
+ "variant": null,
+ "name": "DOBOT Rover X1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dobot.cn/products/humanoid-robots/rover-x1.html",
+ "summary": "A 15.5 kg consumer robot dog that follows a person, films with front and rear cameras and carries 3 to 7 kg; a home and hobby device, not a site machine.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Génération Robots (France) sells it online to EU customers at EUR 2,199 net / EUR 2,638.80 incl. VAT with delivery within 4 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 2199,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "EUR 2,638.80 incl. VAT (French VAT shown on the shop)."
+  },
+  "priceOther": {
+   "amount": 7499,
+   "currency": "CNY",
+   "market": "China launch reservation price on dobot.cn",
+   "sourceId": "s1"
+  },
+  "leadTime": "Delivery within 4 weeks (Génération Robots)",
+  "sellers": [
+   {
+    "name": "Génération Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404435-dobot-rover-x1-quadruped-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 2199,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Order button and quote request on the product page; also has a German shop page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 15.5,
+   "unit": "kg",
+   "conditions": "approximately",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size",
+   "value": "820 x 480 x 180",
+   "unit": "mm",
+   "conditions": "as listed by the seller",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": "3-7",
+   "unit": "kg",
+   "conditions": "depending on configuration",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": "1.5-3",
+   "unit": "h",
+   "conditions": "announced; 4000 mAh standard or 8000 mAh high-capacity battery",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. slope",
+   "value": 30,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Obstacle / step height",
+   "value": 16,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Cameras",
+   "value": "Front and rear cameras, 1920 x 1080 at 30 fps; forward obstacle detection with stop",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "Voice, Wi-Fi app, remote control, auto-follow, leash-assist mode; OTA; upgradeable to 4G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "wheel_kit",
+   "label": "Wheel-foot kit",
+   "value": "Sold separately as an accessory (EUR 1,000 net at Terra Robotics)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 3,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Payload 3 to 7 kg depending on configuration; 3 kg used here as the safe value.",
+   "Runtime 1.5 to 3 h depending on battery; 1.5 h used here.",
+   "Consumer product for following, filming and carrying small items; no IP rating, SDK or industrial payload interface named by the seller.",
+   "Rough ground and outdoor use are maker claims (slopes, trails, camping); DOBOT marks visual obstacle avoidance and AI voice as features delivered later by OTA.",
+   "For research and development DOBOT offers the Rover X1 Explorer EDU versions with SDK (separate record)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.generationrobots.com/21368-product_cover/dobot-rover-x1-quadruped-robot.jpg",
+   "pageUrl": "https://www.generationrobots.com/en/404435-dobot-rover-x1-quadruped-robot.html",
+   "credit": "DOBOT (image on Génération Robots)",
+   "alt": "DOBOT Rover X1 robot dog with point feet, side view on white background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/night-security-patrol"
+   ],
+   "task": "Autonomous patrolling of hallways, rooms and some outdoor areas",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Seller claim for a consumer robot; no site or customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dobot.cn/products/humanoid-robots/rover-x1.html",
+   "title": "Rover X1 home robot dog (Chinese product page)",
+   "publisher": "DOBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/404435-dobot-rover-x1-quadruped-robot.html",
+   "title": "DOBOT Rover X1 Quadruped Robot",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://terra-robotics.de/products/dobot-rover-x1-wheeled-foot-accessory-kit-one-set",
+   "title": "Dobot Rover X1 Wheeled-foot Accessory Kit",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "CE marking and German-language documentation.",
+  "The English DOBOT website does not list the Rover X1; is there an EU distributor named by DOBOT?",
+  "Stair climbing not stated."
+ ],
+ "checkedAt": "2026-10-02"
+}

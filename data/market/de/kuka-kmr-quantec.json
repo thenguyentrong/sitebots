@@ -1,0 +1,141 @@
+{
+ "schemaVersion": 1,
+ "id": "kuka-kmr-quantec",
+ "maker": "KUKA",
+ "makerCountry": "DE",
+ "model": "KMR QUANTEC",
+ "variant": null,
+ "name": "KUKA KMR QUANTEC",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-quantec",
+ "summary": "A heavy mobile robot: a KR QUANTEC industrial arm (150 kg, 3.3 m reach) on an omniMove platform that carries 7 t, positioning to ±5 mm, for very large parts.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany by KUKA directly; platform size and payload are configured per project, price on request.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "KUKA",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-quantec",
+    "contactUrl": "https://www.kuka.com/en-de/company/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "German maker (Augsburg); quotes through KUKA sales or KUKA system partners."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 150,
+   "unit": "kg",
+   "conditions": "KR QUANTEC robot",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 3.3,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 7000,
+   "unit": "kg",
+   "conditions": "standard; platform size and payload selectable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "position_accuracy_mm",
+   "label": "Position accuracy",
+   "value": "±5",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "KUKA omniMove omnidirectional wheels, battery powered, wireless",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 150,
+  "carryPayloadKg": 7000,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Industrial robot, not a cobot: needs a safety concept for work near people.",
+   "Built per project for large components."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.kuka.com/-/media/kuka-corporate/images/products/mobility/mobile-robots/kmr-quantec.jpg",
+   "pageUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-quantec",
+   "credit": "KUKA",
+   "alt": "KUKA KMR QUANTEC with orange industrial robot on an omniMove platform",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for handling very large and heavy components with ±5 mm positioning",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-quantec",
+   "title": "KMR QUANTEC product page",
+   "publisher": "KUKA",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime, speed and typical project price."
+ ],
+ "checkedAt": "2026-10-02"
+}

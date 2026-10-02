@@ -1,0 +1,216 @@
+{
+ "schemaVersion": 1,
+ "id": "elephant-robotics-mercury-x1",
+ "maker": "Elephant Robotics",
+ "makerCountry": "CN",
+ "model": "Mercury X1",
+ "variant": null,
+ "name": "Elephant Robotics Mercury X1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.elephantrobotics.com/en/mercury-x1-en/",
+ "summary": "A small 1.18 m wheeled dual-arm humanoid for teaching and research with 7-axis arms but only 1 kg payload, sold online.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 15999,
+   "currency": "USD",
+   "market": "Elephant Robotics online shop (ships to DE)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Elephant Robotics online shop",
+    "country": "HK",
+    "role": "manufacturer",
+    "productUrl": "https://shop.elephantrobotics.com/products/mercury-humanoid-robot-series",
+    "contactUrl": "https://shop.elephantrobotics.com/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Variant \"Mercury X1 - Universal Wheeled Humanoid Robot\"; price in USD."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Orderable in Elephant Robotics' online shop, which ships to Germany, at USD 15,999; grippers are separate products.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.18,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 55,
+   "unit": "kg",
+   "conditions": "net",
+   "sourceId": "s4"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 19,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Maximum payload",
+   "value": 1,
+   "unit": "kg",
+   "conditions": "stated as \"Maximum Payload 1KG\"; not stated whether per arm",
+   "sourceId": "s4"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max climbing angle",
+   "value": 15,
+   "unit": "°",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max climbing height",
+   "value": 2,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 8,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Orin Nano Super 8 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Python (pymycobot), C++ Mercury API, ROS, MoveIt, Gazebo, MuJoCo",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 1,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "Python, C++, ROS",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "Grippers (e.g. myGripper F100/H100) are sold separately.",
+   "1 kg payload: a teaching and research platform, not for handling building materials."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0055/1826/2358/files/Mercury-X1-new.jpg?v=1788247882",
+   "pageUrl": "https://shop.elephantrobotics.com/products/mercury-humanoid-robot-series",
+   "credit": "Elephant Robotics",
+   "alt": "Elephant Robotics Mercury X1 wheeled humanoid",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Teleoperated data collection with the myController S570 exoskeleton",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.elephantrobotics.com/en/mercury-x1-en/",
+   "title": "Mercury X1 product page",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.elephantrobotics.com/products/mercury-humanoid-robot-series",
+   "title": "Mercury Wheeled Humanoid Robot Series (shop)",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.elephantrobotics.com/meta.json",
+   "title": "Elephant Robotics shop metadata (currency USD, ships to DE)",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://docs.elephantrobotics.com/docs/Mercury_X1_en/2-ProductFeature/",
+   "title": "Mercury X1 product specifications (docs)",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is any gripper included with the X1?",
+  "Price in EUR from a European reseller."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,229 @@
+{
+ "schemaVersion": 1,
+ "id": "ff-master-ultra",
+ "maker": "Faraday Future",
+ "makerCountry": "US",
+ "model": "Master",
+ "variant": "Master Ultra",
+ "name": "Faraday Future FF Master Ultra",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://robotics.ff.com/us/ff-master/",
+ "summary": "A 1.31 m, 39 kg humanoid with 30 DoF, 3D LiDAR, Jetson Orin NX compute and an open SDK, for research and development teams.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route right now: the only listing for Germany (Roboter Deutschland, a US-run web shop) marks it currently unavailable; FF's own shop sells it for USD 64,990 but ships to the US only.",
+  "sourceIds": [
+   "s3",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 64990,
+   "currency": "USD",
+   "market": "FF online store (ships to the US only)",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.31,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 39,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 30,
+   "unit": null,
+   "conditions": "not including hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "maker states \"max 3 kg\" without saying per arm or both arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 120,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 500,
+   "unit": "Wh",
+   "conditions": "approximately",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "optional auto-charging dock",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Orin NX 16 GB, 157 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3D LiDAR, RGB-D camera, interactive RGB camera, front stereo RGB, rear RGB camera, 6-axis IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "SDK and APIs on Ubuntu 22.04, Python visual programming, simulation platform, VR teleoperation with extra accessories",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "SDK and APIs (Ubuntu 22.04)",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Maker gives no hand specification (\"30 DOF, not include hand\"); whether the hands can grip is not stated.",
+   "Payload \"max 3 kg\" is not split per arm; runtime about 2 h."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0713/5415/5170/files/Master_Ultra_Main_2048.jpg",
+   "pageUrl": "https://shop.ff.com/products/master",
+   "credit": "Faraday Future",
+   "alt": "FF Master Ultra humanoid, standing, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Research, enterprise deployments and custom AI model development",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://shop.ff.com/products/master",
+   "title": "FF Master product page (Master Ultra spec table)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.ff.com/meta.json",
+   "title": "FF online store settings (ships_to_countries: US)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/FF-Master-Ultra.htm",
+   "title": "FF Master Ultra Humanoid Robot at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/terms-conditions/",
+   "title": "Roboter Deutschland terms and conditions (Robots International)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "When will the reseller list it as available again, and does FF plan an EU sales channel?"
+ ],
+ "checkedAt": "2026-10-02"
+}

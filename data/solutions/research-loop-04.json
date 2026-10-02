@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Facade-window washing and assisted glass installation: three exact configurations, with operating-mode and buying-market limits.",
+  "records": [
+    {
+      "id": "skyline-ozmo-bmu-window-cleaning",
+      "name": "Skyline Ozmo · BMU installation",
+      "manufacturer": "Skyline Robotics",
+      "robotClass": "integrated_cell",
+      "workflowId": "window_cleaning",
+      "industries": [
+        "facilities"
+      ],
+      "exactConfiguration": "Ozmo robotic-arm system integrated with a building maintenance unit; site-engineered facade configuration, hardware revision unreported.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Supervised robotic facade washing with a documented New York installation; German delivery and building-specific integration remain unresolved.",
+      "operatingMode": {
+        "value": "Robotic cleaning movements supervised by a trained human using a rooftop computer.",
+        "sourceIds": [
+          "product",
+          "deployment",
+          "training"
+        ],
+        "caveats": [
+          "A building-specific access unit, installation and operating method are required.",
+          "No unrestricted autonomy or all-weather operation is established."
+        ]
+      },
+      "specs": [
+        {
+          "key": "surface_sensing",
+          "value": "LiDAR",
+          "unit": null,
+          "semanticLabel": "Manufacturer-described facade sensing",
+          "conditions": [
+            "Sensor configuration and accuracy are not specified."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "force_feedback",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Cleaning-contact force sensing",
+          "conditions": [
+            "No allowable contact-force range was published."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "remote_stop",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Operator-initiated process stop",
+          "conditions": [
+            "A product feature claim, not a reviewed functional-safety rating."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "bmu_integration",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Uses a building maintenance unit",
+          "conditions": [
+            "Compatibility is building-specific."
+          ],
+          "sourceIds": [
+            "platform"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "configured_mass_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Complete installed system mass",
+          "conditions": [
+            "Not published in reviewed sources; obtain the building-specific load schedule."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "wind_limit_m_s",
+          "value": null,
+          "unit": "m/s",
+          "semanticLabel": "Permitted operating wind limit",
+          "conditions": [
+            "Marketing stability language does not define a permitted weather envelope."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "pilot",
+          "task": "Wash exterior glazing at 1133 Avenue of the Americas, New York.",
+          "configuration": "Ozmo integrated on the 45-storey building, with Palladium Window Solutions and Durst; announced August 2024.",
+          "operatingMode": "Human rooftop supervision during robotic cleaning.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "Initial commercial deployment announcement is retained conservatively as a site introduction; no measured long-term operation interval was reviewed.",
+            "No accepted-area, intervention, weather downtime or total labour denominator.",
+            "German building approval, service and supply are not established by the US installation."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Skyline Robotics",
+          "market": "International; Germany unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.skylinerobotics.com/contact-us"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; exact configuration, stock, delivery and service terms require a written quotation.",
+          "authorizationStatus": "Manufacturer's own public business route.",
+          "caveats": [
+            "Enquiry form publishes Israel and New York locations.",
+            "No reviewed German dealer, installation or service commitment."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Marketing describes autonomy, while the customer and training pages explicitly retain a human operator.",
+        "Maximum winds and building access limits cannot be inferred from stability marketing."
+      ],
+      "unknowns": [
+        "German installation/service route and conformity documents for the complete BMU integration.",
+        "Installed mass, arm reach, water/power requirements and weather limits.",
+        "Measured cleaning acceptance and full-process human effort."
+      ],
+      "sourceURLs": [
+        "https://www.skylinerobotics.com/meet-ozmo",
+        "https://www.skylinerobotics.com/",
+        "https://www.durst.org/news_items/5821",
+        "https://www.skylinerobotics.com/training",
+        "https://www.skylinerobotics.com/contact-us"
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.skylinerobotics.com/meet-ozmo",
+          "title": "Ozmo sensing and cleaning features",
+          "publisher": "Skyline Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "platform",
+          "url": "https://www.skylinerobotics.com/",
+          "title": "Ozmo use of existing maintenance units",
+          "publisher": "Skyline Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.durst.org/news_items/5821",
+          "title": "Owner announcement: Ozmo at 1133 Avenue of the Americas",
+          "publisher": "The Durst Organization",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "training",
+          "url": "https://www.skylinerobotics.com/training",
+          "title": "Ozmo operator training and human control",
+          "publisher": "Skyline Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.skylinerobotics.com/contact-us",
+          "title": "Manufacturer enquiry form and locations",
+          "publisher": "Skyline Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "smartlift-sl609-hle-rt-glass",
+      "name": "Smartlift SL 609 HLE RT",
+      "manufacturer": "Smartlift",
+      "robotClass": "dedicated_robot",
+      "workflowId": "material_handling",
+      "industries": [
+        "construction"
+      ],
+      "exactConfiguration": "SL 609 HLE RT Outdoor with powered rotating yoke; distinct from SL609 HL, HLE without RT and SLI609.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Operator-controlled glass handling; extended-boom capacity is much lower than the headline lifting maximum.",
+      "operatingMode": {
+        "value": "Human-controlled powered travel and vacuum lifting; optional wireless remote must be specified.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Tracking and stored positions do not establish autonomous installation.",
+          "People prepare suction contact, guide placement and complete glazing blocks, beads and fixings."
+        ]
+      },
+      "specs": [
+        {
+          "key": "rated_lift_kg",
+          "value": 600,
+          "unit": "kg",
+          "semanticLabel": "Maximum listed lifting capacity",
+          "conditions": [
+            "Not available across the entire reach envelope; use the configuration's load chart."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "extended_boom_lift_kg",
+          "value": 150,
+          "unit": "kg",
+          "semanticLabel": "Listed capacity with extended boom",
+          "conditions": [
+            "A separate load condition from the 600 kg maximum."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "lift_height_cm",
+          "value": 425,
+          "unit": "cm",
+          "semanticLabel": "Published lifting height",
+          "conditions": [
+            "Exact glass geometry and yoke orientation affect usable installation height."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "machine_mass_kg",
+          "value": 950,
+          "unit": "kg",
+          "semanticLabel": "Published machine weight",
+          "conditions": [
+            "Confirm options and load before transport/floor-load planning."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "transport_width_cm",
+          "value": 83,
+          "unit": "cm",
+          "semanticLabel": "Published machine width",
+          "conditions": [
+            "Not a guaranteed doorway or turning clearance."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_hours",
+          "value": 10,
+          "unit": "h",
+          "semanticLabel": "Published operating duration",
+          "conditions": [
+            "Duty cycle, battery state and lifting load are unspecified."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_extension_cm",
+          "value": 160,
+          "unit": "cm",
+          "semanticLabel": "Combined listed arm extension",
+          "conditions": [
+            "70 cm plus 90 cm extensions; verify allowed load at the required reach."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Lift and position glass units for installation.",
+          "configuration": "Exact SL609 HLE RT product listing.",
+          "operatingMode": "Operator-controlled vacuum handling.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "No exact HLE RT glass-installation job with measured cycles or operator effort was reviewed.",
+            "Related SL609 customer stories do not establish this exact rotating-yoke revision.",
+            "Fixing, sealing and acceptance remain human work."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Smartlift Deutschland GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://smartlift.com/de/p/sl609-hle-rt",
+            "email": "mein@smartlift.com",
+            "phone": "+49 212 937 668 90"
+          },
+          "sourceIds": [
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; exact configuration, stock, delivery and service terms require a written quotation.",
+          "authorizationStatus": "Manufacturer's own public business route.",
+          "caveats": [
+            "Published Haan address and exact-model configurator.",
+            "Obtain the load chart, vacuum cup package, remote option and training requirements."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The RT listing's 425 cm height and 150 kg extended load must not be replaced with other SL/SLI609 figures.",
+        "The product page uses a shared SL609 family photo; it illustrates the listed model but does not prove every supplied option."
+      ],
+      "unknowns": [
+        "Load capacity at the actual glass centre of gravity, reach and inclination.",
+        "Surface compatibility, wind limit and access on the proposed site.",
+        "Current price, stock and local service response."
+      ],
+      "sourceURLs": [
+        "https://smartlift.com/de/p/sl609-hle-rt"
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://smartlift.com/de/p/sl609-hle-rt",
+          "title": "Exact German SL609 HLE RT specification, configurator and contact",
+          "publisher": "Smartlift",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    },
+    {
+      "id": "riebsamen-glasboy380-600-glass",
+      "name": "Riebsamen Glasboy 380 · 600 kg suction setup",
+      "manufacturer": "Maschinenbau Riebsamen",
+      "robotClass": "dedicated_robot",
+      "workflowId": "material_handling",
+      "industries": [
+        "construction"
+      ],
+      "exactConfiguration": "Glasboy380 tracked crane with 600 kg vacuum-head option; 1000 kg suction configuration is excluded.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Radio-controlled glass-positioning crane; manufacturer rental is available only with specialist personnel.",
+      "operatingMode": {
+        "value": "Human-controlled hydraulic crane and vacuum head; radio-control equipment must be confirmed in the offer.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Hydraulic tilt, slew and rotation assist people; installation is not autonomous.",
+          "Stabilisers, ground bearing, suction contact and the reach-dependent load chart govern lifting."
+        ]
+      },
+      "specs": [
+        {
+          "key": "vacuum_head_capacity_kg",
+          "value": 600,
+          "unit": "kg",
+          "semanticLabel": "Selected suction-head maximum capacity",
+          "conditions": [
+            "600 kg option, not capacity at all boom radii; 1000 kg is a different head/package."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "maximum_outreach_m",
+          "value": 6.8,
+          "unit": "m",
+          "semanticLabel": "Published maximum arm outreach",
+          "conditions": [
+            "No 600 kg load is implied at maximum outreach."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "machine_mass_kg",
+          "value": 2000,
+          "unit": "kg",
+          "semanticLabel": "Published weight including suction head",
+          "conditions": [
+            "Confirm exact 600 kg package and options."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "transport_width_mm",
+          "value": 900,
+          "unit": "mm",
+          "semanticLabel": "Width across rubber tracks",
+          "conditions": [
+            "Stabiliser working footprint is larger."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "transport_height_mm",
+          "value": 1950,
+          "unit": "mm",
+          "semanticLabel": "Published overall height",
+          "conditions": [
+            "Transport configuration must be confirmed."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "transport_length_mm",
+          "value": 3400,
+          "unit": "mm",
+          "semanticLabel": "Published overall length",
+          "conditions": [
+            "Glass load and boom setup change the operating footprint."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "slew_degrees",
+          "value": 330,
+          "unit": "deg",
+          "semanticLabel": "Listed crane slewing range",
+          "conditions": [
+            "Distinguish crane slew from the separate glass-head rotation."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Handle large glass panes and position them at building openings.",
+          "configuration": "Glasboy380 manufacturer application page with job photographs; 600/1000 kg head options shown in the range.",
+          "operatingMode": "Controlled by an operator; rental requires specialist personnel.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Photos and application descriptions do not provide accepted-cycle or labour denominators.",
+            "Exact head package in each illustrated job is unidentified.",
+            "The machine does not install glazing blocks, fasten beads or seal joints."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Maschinenbau Riebsamen GmbH & Co. KG",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://glasboy.eu/de/kontakt/",
+            "phone": "+49 7582 791"
+          },
+          "sourceIds": [
+            "product",
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; exact configuration, stock, delivery and service terms require a written quotation.",
+          "authorizationStatus": "Manufacturer's own public business route.",
+          "caveats": [
+            "German manufacturer in Allmannsweiler; product page offers demonstrations and rental enquiries.",
+            "Rental is explicitly only with specialist personnel; quote delivery, operator and site requirements."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Current web text lists three hydraulic extensions; the 2023 brochure search excerpt lists four. Confirm offered boom revision before relying on the load chart.",
+        "The page lists radio control as yes/optional; inclusion must be explicit in the offer."
+      ],
+      "unknowns": [
+        "Revision-specific load chart for the selected 600 kg head.",
+        "Site bearing, stabiliser clearances, glass geometry and permitted wind.",
+        "Exact rental or sale package and lead time."
+      ],
+      "sourceURLs": [
+        "https://glasboy.eu/de/glasboy/glasboy-380/",
+        "https://glasboy.eu/de/kontakt/",
+        "https://glasboy.eu/de/PDF/broschuere_DIN_lang_2023_web.pdf"
+      ],
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://glasboy.eu/de/glasboy/glasboy-380/",
+          "title": "Glasboy380 technical data, application and staffed rental restriction",
+          "publisher": "Maschinenbau Riebsamen",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://glasboy.eu/de/kontakt/",
+          "title": "German manufacturer public business contact",
+          "publisher": "Maschinenbau Riebsamen",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "older-brochure",
+          "url": "https://glasboy.eu/de/PDF/broschuere_DIN_lang_2023_web.pdf",
+          "title": "2023 brochure indexed boom-extension description",
+          "publisher": "Maschinenbau Riebsamen",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+}

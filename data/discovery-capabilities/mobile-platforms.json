@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Capability evidence for six exact mobile-manipulator configurations. Profiles support provisional platform comparison; they do not turn capabilities into task demonstrations. Specialized finishing and hospital-delivery records are explicitly restricted.",
+  "profiles": [
+    {
+      "reviewId": "okibo-eg7-surface-finishing",
+      "mobility": [
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Omnidirectional wheeled motion is published for interior finishing work.",
+            "Stair travel or loaded rough-ground operation is not established."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "tool_use",
+          "support": "configured",
+          "sourceIds": [
+            "technical",
+            "launch"
+          ],
+          "limitations": [
+            "Only the documented spraying/sanding setup; select the matching end effector, pump/hopper or dust-collection package.",
+            "No general gripper transfer, bimanual work, drilling or unrelated tool process is established."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "commercial_enquiry",
+        "sourceIds": [
+          "technical",
+          "contact",
+          "launch"
+        ],
+        "limitations": [
+          "Published manufacturer order/enquiry route; current page describes pre-order registration rather than a binding offer.",
+          "Confirm EG7 rather than EG7+, German supply, exact tools and service."
+        ]
+      },
+      "limitations": [
+        "Specialized finishing platform; exact-task restrictions prevent generic manipulation or unrelated finishing recommendations.",
+        "Surface preparation, material handling, changeover and exception response remain separate work."
+      ],
+      "allowedTaskIds": [
+        "site_painting/wall-ceiling-painting",
+        "site_drywall/drywall-joint-finishing"
+      ]
+    },
+    {
+      "reviewId": "canvas-1200cx-surface-finishing",
+      "mobility": [
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Self-drive and all-wheel steering support repositioning in interior work areas.",
+            "No stairs or rough-site travel capability is established for this exact model."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "tool_use",
+          "support": "configured",
+          "sourceIds": [
+            "launch",
+            "technical"
+          ],
+          "limitations": [
+            "Only the documented joint-compound application and interchangeable sanding process.",
+            "Human setup, drying and head changeover are required; no general grasping hand is documented."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "commercial_enquiry",
+        "sourceIds": [
+          "technical",
+          "contact",
+          "ownership"
+        ],
+        "limitations": [
+          "Current JLG manufacturer enquiry route; German delivery and delivered revision remain unconfirmed."
+        ]
+      },
+      "limitations": [
+        "Specialized drywall finishing tool; do not match to generic picking, assembly, drilling or household manipulation.",
+        "US finishing-level claims require separate local finish-quality acceptance."
+      ],
+      "allowedTaskIds": [
+        "site_drywall/drywall-joint-finishing"
+      ]
+    },
+    {
+      "reviewId": "diligent-moxi-2-hospital-delivery",
+      "allowedTaskIds": [
+        "research:hospital-supply-runs"
+      ],
+      "mobility": [
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Exact-generation release describes movement through hospital corridors and elevator environments.",
+            "No stairs, rough terrain or clinical handling capability is established."
+          ]
+        }
+      ],
+      "manipulation": [],
+      "lifecycle": {
+        "state": "commercial_enquiry",
+        "sourceIds": [
+          "technical",
+          "contact"
+        ],
+        "limitations": [
+          "The manufacturer announces US health-system rollout and actively taking orders.",
+          "German commercial availability, configuration and support remain unconfirmed."
+        ]
+      },
+      "limitations": [
+        "The source calls Moxi a mobile-manipulation platform, but the exact 2.0 release does not specify a gripper, transferable object set or generalized hand/tool skills.",
+        "The empty manipulation list means evidence is not established; do not infer universal pick/place from drawer-based hospital deliveries.",
+        "Keep this record tied to hospital supply delivery; do not convert it into hotel delivery or general manual-work evidence."
+      ]
+    },
+    {
+      "reviewId": "limx-tron-1-arm-research",
+      "mobility": [
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "t1-kit",
+            "t1-spec"
+          ],
+          "limitations": [
+            "Arm-kit datasheet supports sole or wheeled movement; kit speeds are 0.5 m/s and 1 m/s respectively.",
+            "Base-only obstacle/slope/speed limits are not validated for a loaded arm-kit experiment."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "t1-kit",
+            "t1-product"
+          ],
+          "limitations": [
+            "Single arm and included gripper support mobile-manipulation research; object/policy success remains unmeasured.",
+            "Rated arm payload 1.5 kg; the separate 3.5 kg maximum is not a continuous rating."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "research_order",
+        "sourceIds": [
+          "t1-product",
+          "t1-kit",
+          "t1-seller"
+        ],
+        "limitations": [
+          "Official inquiry and German procurement-on-request routes exist.",
+          "EDU software access, TRON1-AP-YG kit, foot hardware and complete German delivery require an itemized quote."
+        ]
+      },
+      "limitations": [
+        "Research-order hardware is a candidate platform for development, not a ready-made task implementation.",
+        "No second arm, dexterous hand, generic handheld-tool support or fully autonomous task completion is established.",
+        "Step/uneven mobility is intentionally absent until the loaded arm-kit configuration is supported."
+      ]
+    },
+    {
+      "reviewId": "limx-tron-2-mobile-manipulation",
+      "mobility": [
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "t2-spec",
+            "t2-product"
+          ],
+          "limitations": [
+            "Mobile-kit table supports biped/wheeled-biped operation, remote travel and navigation patrol 0–1 m/s.",
+            "Do not substitute base-only 5 m/s, 30 kg carrying or 20 cm step figures for loaded kit performance."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "t2-spec",
+            "t2-product"
+          ],
+          "limitations": [
+            "One 6-DoF arm with standard two-finger gripper; published arm payload 1.5 kg.",
+            "Floor pickup, placing and moving grasps are research application claims without trial denominators."
+          ]
+        },
+        {
+          "capability": "dexterous",
+          "support": "requires_tooling",
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "limitations": [
+            "The kit tab lists an optional BrainCo Revo 2 Bionic Dexterous Hand, Basic Version.",
+            "It is not the standard gripper configuration; ordering, integration and task-level dexterity require confirmation."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "research_order",
+        "sourceIds": [
+          "t2-product",
+          "t2-reichelt"
+        ],
+        "limitations": [
+          "Manufacturer mobile-kit inquiry route exists; German reichelt listing supports only the separate 2-in-1 base.",
+          "Full mobile arm-kit supply, sensors, compute revision and local service require quotation."
+        ]
+      },
+      "limitations": [
+        "One mobile arm is reviewed; the tabletop dual-arm package cannot establish bimanual capability here.",
+        "Navigation and arm component measures do not prove a complete industrial task, general tool use or production acceptance.",
+        "Uneven/step capability under manipulation load is not promoted from base-only specifications."
+      ]
+    },
+    {
+      "reviewId": "boston-dynamics-spot-arm-inspection",
+      "mobility": [
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "spot-product",
+            "spot-arm-product"
+          ],
+          "limitations": [
+            "Arm integrates whole-body positioning and mobile manipulation; confirm total payload and clearance."
+          ]
+        },
+        {
+          "capability": "uneven_or_steps",
+          "sourceIds": [
+            "spot-product",
+            "spot-arm-product"
+          ],
+          "limitations": [
+            "Spot base supports stairs/uneven terrain and the arm page states mobility is retained when equipped.",
+            "This is a mobility-platform capability, not approval to carry maximum arm load on any stair/slope; qualify the configured route and stability."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "spot-arm-product",
+            "spot-arm-spec"
+          ],
+          "limitations": [
+            "Manufacturer documents grasp/lift/carry/place/drag with its single gripper arm.",
+            "Continuous lift is 5 kg at 0.5 m and 22 °C; the advertised 11 kg maximum is a different limit."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "commercial_enquiry",
+        "sourceIds": [
+          "spot-arm-product",
+          "spot-contact",
+          "reply-germany",
+          "reply-arm"
+        ],
+        "limitations": [
+          "Manufacturer and German integrator inquiry routes exist; exact hardware, controls, support, price and delivery require a quote."
+        ]
+      },
+      "limitations": [
+        "Only Spot with the manufacturer Arm has this profile; base robot dogs inherit no hand capability.",
+        "Gripper motion and valve/door interaction do not establish a dexterous hand, bimanual assembly or generic powered-tool use.",
+        "Task-specific programs, grip geometry, human supervision and recovery remain to be evaluated."
+      ]
+    }
+  ]
+}

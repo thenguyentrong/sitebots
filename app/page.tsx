@@ -3,14 +3,12 @@ import { JourneyStart } from '@/components/journey/JourneyStart';
 import { RequirementForm } from '@/components/match/RequirementForm';
 import { ResultList } from '@/components/match/ResultList';
 import { EvidenceBadge } from '@/components/robot/EvidenceBadge';
-import { loadContent } from '@/lib/content/load';
-import { SETTING_GROUPS } from '@/lib/content/vocab';
+import { explorerData } from '@/lib/market/landing';
 import { loadCandidates } from '@/lib/match/candidates';
 import { hasAnyRequirement, requirementsFromParams } from '@/lib/match/requirements';
 import { rankRobots } from '@/lib/match/score';
 import { HOME_DESCRIPTION, publicMetadata } from '@/lib/seo';
 import { SITE } from '@/lib/site';
-import { pickExamples, settingOptions, taskCards } from '@/lib/tasks/cards';
 import { TRUST_HINT } from '@/lib/spec/display';
 import type { Trust } from '@/lib/spec/enums';
 import { ui } from '@/lib/ui';
@@ -28,20 +26,11 @@ export default async function Home({ searchParams }: { searchParams: Search }) {
   const active = asked && hasAnyRequirement(req);
   // Existing specification-search URLs remain usable; the main entry is the journey.
   if (!active && sp.details !== '1') {
-    const content = loadContent();
-    const limits = content.humanoidLimits.map((limit) => ({ id: limit.id, label: limit.label.en, figure: limit.figure ?? limit.value, value: limit.value, basis: limit.basis }));
-    const settings = settingOptions(content);
-    const cards = taskCards(content);
-    const groups = SETTING_GROUPS.map((group) => {
-      const ids = settings.filter((s) => s.group === group).map((s) => s.id);
-      const tasks = cards.filter((c) => ids.includes(c.setting));
-      const verdicts = { candidate: 0, marginal: 0, ruled_out: 0, unscreened: 0 };
-      for (const c of tasks) verdicts[c.reference_verdict] += 1;
-      return { group, count: tasks.length, settings: new Set(tasks.map((c) => c.setting)).size, verdicts, examples: pickExamples(tasks, group === 'site' ? 5 : 1).map((c) => ({ title: c.title.en, href: '/use-cases/' + c.setting + '/' + c.slug, verdict: c.reference_verdict })) };
-    });
-    return <main className="jp-page plan-page">
+    const one = (value: string | string[] | undefined) => (Array.isArray(value) ? value[0] : value) ?? '';
+    const initial = { layout: one(sp.layout), x: one(sp.x), y: one(sp.y), robot: one(sp.robot) as never, where: one(sp.where), condition: one(sp.conditions), cluster: one(sp.work), query: one(sp.search), withRobots: one(sp.robots) === '1', selected: one(sp.usecase), view: one(sp.view) };
+    return <main className="jp-page plan-page visual-home">
       <noscript><p>The plan keeps your work in this browser and needs JavaScript. <Link className="underline" href="/use-cases">Browse the use cases</Link> or <Link className="underline" href="/?details=1#matcher">search by specifications</Link>.</p></noscript>
-      <JourneyStart limits={limits} groups={groups} />
+      <JourneyStart {...explorerData(initial.selected)} initial={initial} />
     </main>;
   }
 

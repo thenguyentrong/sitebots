@@ -1,0 +1,203 @@
+{
+ "schemaVersion": 1,
+ "id": "neura-mipa",
+ "maker": "NEURA Robotics",
+ "makerCountry": "DE",
+ "model": "MiPA",
+ "variant": null,
+ "name": "NEURA MiPA",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://neura-robotics.com/products/mipa/",
+ "summary": "A wheeled German service robot with two light arms (3 kg per arm) and swappable attachments for carrying and handing items indoors; reservation only.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Made in Germany. Refundable 100 EUR reservation on the NEURA site for the MiPA Home model; release expected in late 2026. Commercial buyers are sent to the sales contact. No deliveries confirmed.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 9999,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Introductory price for the MiPA Home model for private households only; commercial pricing on request."
+  },
+  "priceOther": null,
+  "leadTime": "Expected late 2026 (maker reservation page).",
+  "sellers": [
+   {
+    "name": "NEURA Robotics GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://neura-robotics.com/product/mipa-reservation/",
+    "contactUrl": "https://neura-robotics.com/contact-us/",
+    "email": null,
+    "phone": null,
+    "priceEur": 9999,
+    "priceBasis": "unknown",
+    "sourceId": "s2",
+    "note": "Online reservation for MiPA Home; commercial and industrial inquiries via the NEURA sales contact."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 17,
+   "unit": null,
+   "conditions": "Base robot without end effectors (datasheet); reservation page says 16 DoF",
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "Single arm",
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Motion endurance",
+   "value": "2-8",
+   "unit": "h",
+   "conditions": "Range as given on the datasheet; automatic recharging",
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR, navigation sensors, RGB camera and webcam, ultrasonic, temperature, humidity; touch display, projector, microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open platform with APIs; no-code apps via Neuraverse",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Indoor service robot; attachments: backpack, shelf, table, hook, clip, tool change.",
+   "Two small arms with simple hands on a wheeled column with a linear axis.",
+   "Runtime given only as a 2-8 h range.",
+   "roughGround and stairs set to false because the robot drives on small wheels and the maker names indoor uses only."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2025/06/MiPA_pre_order_square.jpg",
+   "pageUrl": "https://neura-robotics.com/product/mipa-reservation/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA MiPA wheeled service robot with two arms",
+   "kind": "product"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/04/MiPA_concrete_Transparent_1-desktop-scaled.webp",
+   "pageUrl": "https://neura-robotics.com/products/mipa/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA MiPA service robot with both arms lowered, three-quarter view, cut-out.",
+   "kind": "product"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/02/260205-mipa-use-case-04.webp",
+   "pageUrl": "https://neura-robotics.com/products/mipa/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA MiPA putting a cup into a dishwasher in a kitchen.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/02/260205-mipa-use-case-03-1.webp",
+   "pageUrl": "https://neura-robotics.com/products/mipa/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA MiPA in a supermarket aisle next to stocked shelves.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/02/260205-mipa-use-case-02-2.webp",
+   "pageUrl": "https://neura-robotics.com/products/mipa/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA MiPA reaching toward a man in a care bed while a woman sits beside him.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/02/DNR06474-1.jpg",
+   "pageUrl": "https://neura-robotics.com/products/mipa/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA MiPA carrying a tray with both arms in a room with a bed.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2025/06/MiPA_NEURA_Robotics_Header_Image.webp",
+   "pageUrl": "https://neura-robotics.com/products/mipa/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA MiPA reaching onto a desk in a bare room, side view.",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Service tasks in homes, elderly care, hospitality and workplaces",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker use-case list; no named customer."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://neura-robotics.com/products/mipa/",
+   "title": "MiPA product page",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://neura-robotics.com/product/mipa-reservation/",
+   "title": "Reserve MiPA (features, price)",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://neurarobotics.px.media/plk/7D/MiPA_NEURA_Robotics_Datasheet_Web.pdf",
+   "title": "MiPA datasheet V5 05.06.2026",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the 9,999 EUR home price gross or net?",
+  "Commercial version price and delivery date?",
+  "Height and weight not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

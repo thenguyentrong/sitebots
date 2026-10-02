@@ -1,0 +1,166 @@
+{
+ "schemaVersion": 1,
+ "id": "husqvarna-autogrinder-8-d",
+ "maker": "Husqvarna Construction",
+ "makerCountry": "SE",
+ "model": "Autogrinder 8 D",
+ "variant": "EU, 3x380-480 V",
+ "name": "Husqvarna Autogrinder 8 D",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors",
+  "research:polish-concrete-terrazzo-floors"
+ ],
+ "officialUrl": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/autogrinder-8d/",
+ "summary": "Autonomous 800 mm planetary floor grinder that scans the room and grinds a set area on its own, with remote control as fallback.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Listed by Husqvarna Construction Germany (art. 970 74 84-01) with \"Angebot anfordern\" and dealer finder; no public price found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Husqvarna Deutschland GmbH, Construction",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/autogrinder-8d/",
+    "contactUrl": "https://www.husqvarnaconstruction.com/de/kontaktieren-sie-uns/",
+    "email": "verkauf.construction@husqvarnagroup.com",
+    "phone": "+49 731 490 2540",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Bahnhofstr. 50, 89168 Niederstotzingen; dealers via the dealer finder."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "power_kw",
+   "label": "Max. output power",
+   "value": 16.5,
+   "unit": "kW",
+   "conditions": "15 + 1.5 kW motors",
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_width_mm",
+   "label": "Grinding width",
+   "value": 800,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 680,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "3x380-480 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "article_number",
+   "label": "Article number (EU)",
+   "value": "970 74 84-01",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "navigation scanner, bumper sensor, hose/cable detection, vacuum pressure sensor",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Operator sets the area, start point and pattern on the touchscreen; faults are reported to the remote.",
+   "Needs a dust extractor; included: remote, charger, transport wheel."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.husqvarnaconstruction.com/-/images/aprimo/husqvarna-construction/floor-grinders/photos/studio/sw-754468.png?v=58bdfc1a510b5b9c&format=SCHEMA_ORG_1_1",
+   "pageUrl": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/autogrinder-8d/",
+   "credit": "Husqvarna Construction",
+   "alt": "Husqvarna Autogrinder 8 D floor grinder",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors",
+    "research:polish-concrete-terrazzo-floors"
+   ],
+   "task": "Autonomous grinding and polishing of concrete and stone floors",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/autogrinder-8d/",
+   "title": "Husqvarna Autogrinder 8 D (Germany)",
+   "publisher": "Husqvarna AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.husqvarnaconstruction.com/de/kontaktieren-sie-uns/",
+   "title": "Kontaktieren Sie uns",
+   "publisher": "Husqvarna Deutschland GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro price.",
+  "Area rate in automatic mode."
+ ],
+ "checkedAt": "2026-10-02"
+}

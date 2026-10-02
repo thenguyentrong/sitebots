@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "robotnik-rb-summit-plus",
+ "maker": "Robotnik",
+ "makerCountry": "ES",
+ "model": "RB-SUMMIT+",
+ "variant": null,
+ "name": "Robotnik RB-SUMMIT+",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://robotnik.eu/products/mobile-manipulators/xl-gen/",
+ "summary": "A skid-steer or Mecanum indoor/outdoor R&D platform with a Kinova arm (Gen3 lite as standard, Gen3 optional), up to 2.5 m/s and 5 h runtime.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots lists it in its German shop from €27,950 net with an order button (with Kinova Gen3 lite arm).",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 27950,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "With Kinova Gen3 lite; €33,540 incl. 20% VAT as shown."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404393-mobiler-manipulator-roboter-rb-summit.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 27950,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Kinova Gen3 6- or 7-DOF arms optional."
+   },
+   {
+    "name": "Robotnik Automation S.L.",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://robotnik.eu/products/mobile-manipulators/xl-gen/",
+    "contactUrl": "https://robotnik.eu/contact/",
+    "email": null,
+    "phone": "+34 96 147 54 00",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "720 x 614 x 767",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": "platform; arm 5.4 or 8.2 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 42,
+   "unit": "kg",
+   "conditions": "up to (seller); maker page says 15 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 0.5,
+   "unit": "kg",
+   "conditions": "Kinova Gen3 lite (standard); 4 kg with optional Kinova Gen3",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.76,
+   "unit": "m",
+   "conditions": "Gen3 lite; 0.891-0.902 m with Gen3",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2.5,
+   "unit": "m/s",
+   "conditions": "seller; maker page says 3 m/s",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 5,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP22",
+   "unit": null,
+   "conditions": "IP54 chassis optional",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_pct",
+   "label": "Max. slope",
+   "value": 80,
+   "unit": "%",
+   "conditions": "grade in percent, as stated by the seller",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 50",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": 0.5,
+  "carryPayloadKg": 42,
+  "runtimeH": 5,
+  "ipRating": "IP22",
+  "sdk": "ROS",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Standard arm lifts only 0.5 kg; choose the Kinova Gen3 option for 4 kg.",
+   "Maker page and seller differ: platform payload 15 kg vs 42 kg, top speed 3 vs 2.5 m/s, protection IP40 vs IP22 (seller values used).",
+   "The maker page photo shows the platform with an older Kinova arm, not the Gen3 lite sold by Generation Robots."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://robotnik.eu/wp-content/uploads/2020/05/featured-manipuladores-xl-gen-1.png",
+   "pageUrl": "https://robotnik.eu/products/mobile-manipulators/xl-gen/",
+   "credit": "Robotnik",
+   "alt": "Robotnik RB-SUMMIT+ four-wheel platform with a Kinova arm (the arm in the photo differs from the Gen3 lite configuration)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for R&D in inspection, medicine and logistics",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://robotnik.eu/products/mobile-manipulators/xl-gen/",
+   "title": "RB-SUMMIT+ mobile manipulator page",
+   "publisher": "Robotnik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404393-mobiler-manipulator-roboter-rb-summit.html",
+   "title": "Mobiler Manipulator-Roboter RB-SUMMIT+",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which platform payload is right: 15 kg (maker page) or 42 kg (seller)?"
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,233 @@
+{
+ "schemaVersion": 1,
+ "id": "dobot-atom-d-edu",
+ "maker": "Dobot",
+ "makerCountry": "CN",
+ "model": "Atom D",
+ "variant": "Education Version (hands, stand, VR kit)",
+ "name": "DOBOT Atom D Education",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dobot-robots.com/products/humanoid-robots/atom.html",
+ "summary": "The DOBOT Atom D upper body with two 6-DoF hands, hand cameras, the Atom mobile base and a VR teleoperation kit, sold as a package for teaching and data collection.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 51000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": null
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://terra-robotics.de/products/dobot-atom-d-education-version",
+    "contactUrl": "https://terra-robotics.de/pages/impressum",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": 51000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   },
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "productUrl": "https://eu.robotshop.com/products/dobot-atom-d-edu-data-collection-humanoid-robot",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "priceEur": 54704.3,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "Tax included; orderable. Whether the RobotShop EDU package includes the mobile base is not stated."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Terra Robotics (Löhne) lists it at 51,000 EUR net, orderable; RobotShop EU lists an Atom D EDU.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 26,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 16,
+   "unit": null,
+   "conditions": "without hands: 2 head, 7 per arm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "repeatability_mm",
+   "label": "Repeatability",
+   "value": 0.05,
+   "unit": "mm",
+   "conditions": "+/-",
+   "sourceId": "s2"
+  },
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.65,
+   "unit": "m",
+   "conditions": "without gripper",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "end_effector_speed_ms",
+   "label": "End-effector speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "arm end-effector speed, not travel speed",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel i5 basic computing module plus AI computing module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RGB-D camera and full-HD binocular camera in head, 2 hand depth cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Full SDK, data collection toolchain, VR Quest teleoperation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "warranty",
+   "label": "Warranty",
+   "value": "1 year",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 3.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Dobot SDK",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Terra lists the Atom Mobile Base (part 1200000399) in the EDU delivery; drive speed and runtime of the base are not published.",
+   "For data collection and teaching on level indoor floors."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/dobot-atom-d-education-versionpng-2775849.png",
+   "pageUrl": "https://terra-robotics.de/products/dobot-atom-d-education-version",
+   "credit": "Terra Robotics / Dobot",
+   "alt": "DOBOT Atom D Education upper body with hands on its stand",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "VR-teleoperated data collection for AI teaching and research",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dobot-robots.com/products/humanoid-robots/atom.html",
+   "title": "DOBOT ATOM humanoid robot",
+   "publisher": "Dobot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/products/dobot-atom-d-education-version",
+   "title": "Dobot Atom-D (Education Version)",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://eu.robotshop.com/products/dobot-atom-d-edu-data-collection-humanoid-robot",
+   "title": "DOBOT Atom D EDU Data Collection Humanoid Robot",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

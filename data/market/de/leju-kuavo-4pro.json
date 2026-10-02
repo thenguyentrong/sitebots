@@ -1,0 +1,146 @@
+{
+ "schemaVersion": 1,
+ "id": "leju-kuavo-4pro",
+ "maker": "Leju Robotics",
+ "makerCountry": "CN",
+ "model": "Kuavo 4Pro (Kuavo MY)",
+ "variant": null,
+ "name": "Leju Kuavo 4Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.lejurobot.com/en/products/kuavo-my",
+ "summary": "A 1.66 m, 55 kg humanoid from Leju for research data collection, teaching and exhibition guiding, available with 22, 30 or 40 joints and optional 6-DoF dexterous hands.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor found; Leju lists only a Shenzhen phone number and a Chinese Tmall shop, so there is no known route for a German buyer.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.66,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 55,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Running speed",
+   "value": 1.39,
+   "unit": "m/s",
+   "conditions": "up to 5 km/h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 40,
+   "unit": null,
+   "conditions": "22, 30 or 40 depending on configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "5 or 7",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Dexterous hand",
+   "value": 6,
+   "unit": null,
+   "conditions": "6 DoF, 10 movable joints",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Specs from the Chinese-language spec graphic on the maker page.",
+   "Joint count and hands depend on configuration."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://website-file.lejugym.com/images/d4f370d83a1b13935c1691f15fbbb40b.jpg",
+   "pageUrl": "https://www.lejurobot.com/en/products/kuavo-my",
+   "credit": "Leju Robotics",
+   "alt": "Leju Kuavo 4Pro humanoid spec graphic",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Imitation-learning dataset collection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker lists rapid dataset collection and exhibition guiding."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.lejurobot.com/en/products/kuavo-my",
+   "title": "KUAVO MY / Kuavo 4Pro product page",
+   "publisher": "Leju Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.lejurobot.com/en/about-us/contact-us",
+   "title": "Contact Leju Robotics",
+   "publisher": "Leju Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime, payload and price not published in English."
+ ],
+ "checkedAt": "2026-10-02"
+}

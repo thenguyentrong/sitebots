@@ -1,0 +1,207 @@
+schema_version: 1
+id: site_specialist_foundations/bored-piles
+status: published
+setting: site_specialist_foundations
+family: machine_operation_dedicated
+trades: [civil_earthworks, concrete]
+title:
+  en: "Drill and concrete bored piles"
+  de: "Bohrpfähle bohren und betonieren"
+summary:
+  en: "Drill the bore with a rotary drilling rig, keep it open with casing or support fluid, set the reinforcement cage and concrete the pile."
+  de: "Das Bohrloch mit dem Drehbohrgerät bohren, mit Verrohrung oder Stützflüssigkeit offen halten, den Bewehrungskorb einstellen und den Pfahl betonieren."
+description:
+  en: "Bored piles carry the loads of a structure down into firmer ground, singly, in groups or side by side as a bored pile wall. A rotary drilling rig, 83.8 t for a Bauer BG 30 H, turns a telescopic Kelly bar with a drilling bucket or auger while a casing or a support fluid holds the bore wall; the casing goes in with the rotary drive, a torque multiplier or a casing oscillator. Kelly piles reach 600 to 3,000 mm in diameter and up to 125 m in depth; with the continuous flight auger the concrete is pumped through the hollow stem and the rig's assistance systems control drilling and concreting. In Bauer's BlueLine range for casings of 620 to 1,500 mm, a single drilling tool weighs 0.4 to 1.8 t. The crew works at the open bore next to suspended cages, casing and tools. In VOB/C the drilling falls under ATV DIN 18301 and turning the bore into a pile under ATV DIN 18302."
+  de: "Bohrpfähle tragen die Lasten eines Bauwerks in tiefere, tragfähigere Bodenschichten ab, einzeln, in Gruppen oder aneinandergereiht als Bohrpfahlwand. Ein Drehbohrgerät, 83,8 t bei einem Bauer BG 30 H, dreht über eine teleskopierbare Kellystange einen Kastenbohrer oder eine Bohrschnecke, während eine Verrohrung oder eine Stützflüssigkeit die Bohrlochwand hält; die Bohrrohre werden mit dem Drehgetriebe, einem Drehmomentwandler oder einer Verrohrungsanlage eingebaut. Kellybohrpfähle erreichen 600 bis 3.000 mm Durchmesser und bis 125 m Tiefe; beim Endlosschneckenbohren wird der Beton durch die Hohlseele gepumpt, und die Assistenzsysteme des Geräts regeln Abbohren und Betonieren. In der BlueLine-Reihe von Bauer für Verrohrungen von 620 bis 1.500 mm wiegt ein einzelnes Bohrwerkzeug 0,4 bis 1,8 t. Die Kolonne arbeitet am offenen Bohrloch neben schwebenden Bewehrungskörben, Bohrrohren und Werkzeugen. In der VOB/C fällt das Bohren unter die ATV DIN 18301 und der Ausbau der Bohrung zum Pfahl unter die ATV DIN 18302."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '006'
+  atv: "DIN 18301"
+  position:
+    en: "Bored pile to DIN EN 1536 of in-situ concrete, bore cased or uncased: drill and concrete; reinforcement paid separately"
+    de: "Bohrpfahl DIN EN 1536 aus Ortbeton herstellen, Bohrung verrohrt oder unverrohrt; Bewehrung wird gesondert vergütet"
+  unit: m
+attributes:
+  object_mass_kg:
+    value: { min: 407, max: 1763 }
+    confidence: confirmed
+    evidence_url: 'https://equipment.bauer.de/de/media/7350/download?inline'
+    note: "Bauer BlueLine drilling tools for casing outer diameters (OD) of 620 to 1,500 mm, brochure 03/2026: core barrels KR-R from 407 kg (D 520 mm), augers SB/SB-2 from 411 kg, drilling buckets KB/KB-2 503 to 1,705 kg, rock drilling buckets KBF-K2 up to 1,763 kg (D 1,350 mm). Larger piles take larger tools, which this brochure does not list. The rig lifts and empties the tools; reinforcement cages and casing segments are lifted by the rig's winches or a crane, and their mass depends on the pile, so it is not given here."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The cycle of drilling, casing, cage and concrete repeats, but diameter, depth, ground, groundwater and drilling method change from job to job."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.bauindustrie.de/fileadmin/bauindustrie.de/Media/Veroeffentlichungen/Merkblatt_Toleranzen__3.471_web.pdf'
+    note: "A finished pile cannot be reworked. When set-out points deviate beyond the rules, the Bauindustrie leaflet says an adjusted structural calculation often absorbs it, but in single cases the reinforcement of the element above has to change or extra piles are needed, at the contractor's cost where the setting-out was theirs."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://equipment.bauer.de/de/bohrverfahren-im-spezialtiefbau'
+    note: "Bauer describes bored piles as the foundation elements of a structure; a defective pile weakens what stands on it."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "The crew guides tools, casing joints, the cage and concreting pipes at the pile head near ground level; the DGUV rule also names elevated workplaces for threading the reinforcement. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open site on a prepared working platform."
+  dust:
+    value: { type: none, zone: none }
+    confidence: assumed
+    note: "Spoil comes up on the tool and the concrete is placed wet; no relevant dust at the pile."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather, with groundwater, support fluid and fresh concrete at the bore."
+  floor:
+    value: uneven
+    confidence: likely
+    evidence_url: 'https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/DGUV-Regeln/101_604.pdf'
+    note: "Working platform of prepared ground that must carry the rig; the DGUV rule names insufficient bearing capacity of the platform as a cause of rigs overturning."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://equipment.bauer.de/de/media/6085/download?inline'
+    note: "Rotary drilling rigs drill, install and pull the casing. For single-pass piles an automatic mode controls the drilling and extraction speed and, Bauer says, allows hands-free operation (BG 30 H, 06/2026); assistance systems show the Kelly locking position and watch the tool fill level and the casing lead. Cages, casing joints and concreting pipes still need the crew. The taxonomy has no class for rotary drilling rigs yet."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; drilled metres per shift depend on diameter, depth, ground and method."
+requirements:
+  object_size_m:
+    value: { min: 1.54, max: 2.095 }
+    confidence: confirmed
+    evidence_url: 'https://equipment.bauer.de/de/media/7350/download?inline'
+    note: "Overall length of the Bauer BlueLine drilling tools for casings of 620 to 1,500 mm: 1,540 mm (bucket KB-L) to 2,095 mm (auger SB/SB-2), at tool diameters of 520 to 1,350 mm. Same scope as the mass: cages and casing segments are not covered, their length follows the pile. The piles themselves are 600 to 3,000 mm in diameter and up to 125 m deep with the Kelly method, 600 to 1,200 mm and up to 50 m with the continuous flight auger (Bauer drilling methods page)."
+  tolerance_mm:
+    value: 100
+    confidence: confirmed
+    evidence_url: 'https://www.bauindustrie.de/fileadmin/bauindustrie.de/Media/Veroeffentlichungen/Merkblatt_Toleranzen__3.471_web.pdf'
+    note: "DIN EN 1536:2015-10 as tabulated in the Bauindustrie leaflet: position deviation at the starting point 100 mm for D up to 1.0 m, 0.1 D up to 1.5 m and 150 mm above; inclination deviation 0.02 m/m for piles up to 4°; cage installation height ±150 mm. The position value is a limit, not a ± value."
+  force_n:
+    value: 330000
+    confidence: confirmed
+    evidence_url: 'https://equipment.bauer.de/de/media/6085/download?inline'
+    note: "Effective crowd force of the Bauer BG 30 H feed winch, 330 kN (423 kN nominal), at up to 300 kNm torque: the force the rig can put on the tool for drilling. What a bore actually takes depends on the ground."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "The rotary drilling rig is the machine for this job and is gaining automatic functions: for single-pass piles an automatic mode controls drilling and extraction hands-free. Drilling tools of 0.4 to 1.8 t, a pile that carries the structure and work in the open rule out a walking or wheeled robot."
+      de: "Das Drehbohrgerät ist die Maschine für diese Arbeit und erhält zunehmend Automatikfunktionen: Bei Single-Pass-Pfählen regelt eine Automatik das Abbohren und Ziehen im Hands-free-Betrieb. Bohrwerkzeuge von 0,4 bis 1,8 t, ein Pfahl, der das Bauwerk trägt, und Arbeit im Freien schließen einen laufenden oder fahrenden Roboter aus."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [exposure, capacity]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "ATV DIN 18301 'Bohrarbeiten' (2023-09) applies to bores of every kind, inclination and depth, among them bores for bored, displacement and micro piles and for bored pile, shoring and cut-off walls."
+      de: "Die ATV DIN 18301 „Bohrarbeiten“ (2023-09) gilt für Bohrungen jeder Art, Neigung und Tiefe, unter anderem für Bohr-, Verdrängungs- und Mikropfähle sowie für Bohrpfahl-, Verbau- und Dichtwände."
+    url: 'https://www.vob-online.de/de/norm/din-18301/369847706'
+    kind: standard
+    tier: 1
+    date: '2023-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Publisher's abstract of the 2023-09 edition (VOB supplement 2023); no day given."
+  - statement:
+      en: "ATV DIN 18302 'Spezialtiefbauarbeiten zum Ausbau von Bohrungen' (2023-09) applies to completing bores as bored piles, micro piles and energy piles and to installing anchors, soil nails and bearing elements."
+      de: "Die ATV DIN 18302 „Spezialtiefbauarbeiten zum Ausbau von Bohrungen“ (2023-09) gilt für den Ausbau von Bohrungen zu Bohrpfählen, Mikropfählen und Energiepfählen sowie für den Einbau von Ankern, Bodennägeln und Tragelementen."
+    url: 'https://www.vob-online.de/de/norm/din-18302/369847726'
+    kind: standard
+    tier: 1
+    date: '2023-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Publisher's abstract of the 2023-09 edition; ATV DIN 18302 is not yet among the ATVs of this setting, so the LV anchor uses DIN 18301."
+  - statement:
+      en: "STLB-Bau 2026-04 lists bored piles in LB 006 Spezialtiefbauarbeiten; its sample position reads 'bored pile to DIN EN 1536 of in-situ concrete, reinforcement paid separately', unit of measurement m."
+      de: "STLB-Bau 2026-04 führt Bohrpfähle im LB 006 Spezialtiefbauarbeiten; der Beispieltext lautet „Bohrpfahl DIN EN 1536 aus Ortbeton, ... Bewehrung wird gesondert vergütet“, Abrechnungseinheit m."
+    url: 'https://www.stlb-bau-online.de/Ausschreibungstext/Bohrpfaehle-Ortbeton/1105/STLB-Bau/T/LongText'
+    kind: standard
+    tier: 1
+    date: '2026-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Public sample text of STLB-Bau version 2026-04, read on 2026-10-02."
+  - statement:
+      en: "Bauer describes Kelly drilling for bored piles as foundation elements: torque and crowd go through a telescopic Kelly bar, casing or a support fluid holds the bore wall, diameters run from 600 to 3,000 mm and depths up to 125 m; with the continuous flight auger the concrete is pumped through the hollow stem and the B-Tronic assistance systems control drilling and concreting."
+      de: "Bauer beschreibt das Kellybohren für Bohrpfähle als Gründungselemente: Drehmoment und Vorschubkraft gehen über eine teleskopierbare Kellystange, Bohrrohr oder Suspension stützen die Bohrlochwand, Durchmesser von 600 bis 3.000 mm und Tiefen bis 125 m; beim Endlosschneckenbohren wird der Beton durch die Hohlseele gepumpt, und die Assistenzsysteme der B-Tronic regeln Abbohr- und Betoniervorgang."
+    url: 'https://equipment.bauer.de/de/bohrverfahren-im-spezialtiefbau'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "Bauer's BG 30 H brochure gives an operating weight of 83.8 t, 300 kNm torque, an effective crowd force of 330 kN and assistance systems including an automatic drilling and extraction mode for single-pass piles that allows hands-free operation."
+      de: "Die Broschüre zum Bauer BG 30 H nennt 83,8 t Einsatzgewicht, 300 kNm Drehmoment, 330 kN effektive Druckkraft und Assistenzsysteme, darunter eine Abbohr- und Ziehautomatik für Single-Pass-Verfahren, die einen Hands-free-Betrieb ermöglicht."
+    url: 'https://equipment.bauer.de/de/media/6085/download?inline'
+    kind: manufacturer
+    tier: 1
+    date: '2026-06-01'
+    type: claim
+    confidence: confirmed
+    note: "Brochure footer 06/2026, no day given."
+  - statement:
+      en: "Bauer's BlueLine drilling tools brochure lists tools for casing outer diameters of 620 to 1,500 mm from 407 kg (core barrel KR-R, D 520 mm) to 1,763 kg (rock drilling bucket KBF-K2, D 1,350 mm), with overall lengths of 1,540 to 2,095 mm; the drilling buckets KB/KB-2 weigh 503 kg (D 520 mm, for 620 mm casing) to 1,705 kg (D 1,350 mm, for 1,500 mm casing)."
+      de: "Die Bauer-Broschüre BlueLine-Bohrwerkzeuge nennt Werkzeuge für Verrohrungsaußendurchmesser von 620 bis 1.500 mm von 407 kg (Kernrohr KR-R, D 520 mm) bis 1.763 kg (Felskastenbohrer KBF-K2, D 1.350 mm), bei Gesamtlängen von 1.540 bis 2.095 mm; die Kastenbohrer KB/KB-2 wiegen 503 kg (D 520 mm, für 620-mm-Verrohrung) bis 1.705 kg (D 1.350 mm, für 1.500-mm-Verrohrung)."
+    url: 'https://equipment.bauer.de/de/media/7350/download?inline'
+    kind: manufacturer
+    tier: 1
+    date: '2026-03-01'
+    type: claim
+    confidence: confirmed
+    note: "Brochure footer 03/2026 (file name 04-26), no day given. The tables give tool diameter D and OD without a key; OD is drawn as a casing ring, so it is read as the casing outer diameter."
+  - statement:
+      en: "The Bauindustrie leaflet on tolerances in specialist foundation work tabulates DIN EN 1536:2015-10 for bored piles: position deviation at the starting point 0.10 m for D up to 1.0 m, 0.1 D up to 1.5 m, 0.15 m above; inclination deviation 0.02 m/m up to 4°; cage installation height ±0.15 m."
+      de: "Das Merkblatt Toleranzen im Spezialtiefbau der Bauindustrie gibt für Bohrpfähle nach DIN EN 1536:2015-10 an: Lageabweichung am Ansatzpunkt 0,10 m bei D bis 1,0 m, 0,1 D bis 1,5 m, 0,15 m darüber; Neigungsabweichung 0,02 m/m bis 4°; Einbauhöhe der Bewehrungskörbe ±0,15 m."
+    url: 'https://www.bauindustrie.de/fileadmin/bauindustrie.de/Media/Veroeffentlichungen/Merkblatt_Toleranzen__3.471_web.pdf'
+    kind: standard
+    tier: 2
+    date: '2025-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Version 1.1, January 2025, published with the Bundesfachabteilung Spezialtiefbau of the HDB; the leaflet says it is not a standard. No day given."
+  - statement:
+      en: "DGUV Regel 101-604 notes that bored pile and piling rigs have a high centre of gravity and weight and move long, heavy elements such as pipes and reinforcement cages; it lists falling loads, overturning rigs and falls from elevated workplaces, for example when threading the reinforcement."
+      de: "Die DGUV Regel 101-604 hält fest, dass Bohr- und Rammgeräte einen hohen Schwerpunkt und ein hohes Eigengewicht haben und lange, schwere Elemente wie Rohre und Bewehrungskörbe bewegen; sie nennt herabfallende Lasten, Maschinenumsturz und Absturz von hochgelegenen Arbeitsplätzen, zum Beispiel beim Einfädeln der Bewehrung."
+    url: 'https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/DGUV-Regeln/101_604.pdf'
+    kind: regulator
+    tier: 1
+    date: '2023-12-01'
+    type: claim
+    confidence: confirmed
+    note: "DGUV Regel 101-604 'Branche Tiefbau', edition December 2023, section 3.7.1; no day given."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If the rig's assistance systems are unused on your sites, compare one pile group with and without them: drilled metres per shift and piles outside tolerance."
+    de: "Kein Roboterpilot. Wenn die Assistenzsysteme des Bohrgeräts auf Ihren Baustellen ungenutzt bleiben, eine Pfahlgruppe mit und ohne sie vergleichen: gebohrte Meter je Schicht und Pfähle außerhalb der Toleranz."
+prerequisites: []
+open_questions:
+  - { en: "Which pile method do you use most, cased Kelly, continuous flight auger or displacement, and who couples the cage and the concreting pipe?", de: "Welches Pfahlverfahren nutzen Sie am häufigsten, verrohrtes Kellybohren, Endlosschnecke oder Verdrängerbohren, und wer kuppelt Bewehrungskorb und Betonierrohr?" }
+compliance_flags: []
+sources_reviewed_at: '2026-10-02'

@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "ubtech-walker-tienkung-voice-vision",
+ "maker": "UBTECH Robotics",
+ "makerCountry": "CN",
+ "model": "Walker Tienkung",
+ "variant": "Voice & Vision (no hands)",
+ "name": "UBTECH Walker Tienkung Voice & Vision",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.ubtrobot.com/en/ai-education/products/walker-tienkung",
+ "summary": "The 21-DOF entry version of the Walker Tienkung research humanoid for walking, speech and vision work; its hands do not grip. Orderable from RobotShop Europe as Walker E Lite.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 70318.18,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "RobotShop Europe price shown with VAT for Germany; includes wireless controller and 200 W power adapter."
+  },
+  "priceOther": null,
+  "leadTime": "RobotShop: on-demand item, ordered from the supplier; due date shown at checkout",
+  "sellers": [
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "productUrl": "https://eu.robotshop.com/products/ubtech-humanoid-robot-walker-e-voice-vision",
+    "priceEur": 70318.18,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "Listed as Walker E Voice & Vision, manufacturer no. Walker E Lite; on-demand item with add-to-cart and quote request."
+   },
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://terra-robotics.de/products/ubtech-walker-tienkung",
+    "contactUrl": "https://terra-robotics.de/pages/contact",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Variant \"Voice & Vision\"; metadata price EUR 104,000, basis not stated, not displayed."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RobotShop Europe sells this robot as \"Walker E Voice & Vision\" (Walker E Lite, also known as Tienkung) at EUR 70,318.18 incl. VAT, on demand, with delivery to Germany; Terra Robotics quotes on request.",
+  "sourceIds": [
+   "s4",
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.72,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 61,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 21,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 4,
+   "unit": null,
+   "conditions": "shoulder 3, elbow 1; no wrist or hand",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 3,
+   "unit": "h",
+   "conditions": "operation; 6 h standby",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Running speed",
+   "value": 10,
+   "unit": "km/h",
+   "conditions": "up to; Terra states 10 km/h, RobotShop about 7 km/h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel Core i7 + NVIDIA Jetson AGX Orin (275 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2, full motor and sensor API",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": "ROS 2, open motor/sensor API",
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "4-DOF arms without wrists; RobotShop calls the hands non-functional, so it cannot pick objects and is recorded with 0 working arms.",
+   "For locomotion, speech and vision research."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/ubtech-walker-tienkung-1png-2739423.png?v=1769504294",
+   "pageUrl": "https://terra-robotics.de/products/ubtech-walker-tienkung?variant=50063513452901",
+   "credit": "Terra Robotics / UBTECH",
+   "alt": "UBTECH Walker Tienkung Voice & Vision humanoid (no gripping hands), full body front view on white background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Locomotion research platform (terrain, balance, impact resistance)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.ubtrobot.com/en/ai-education/products/walker-tienkung",
+   "title": "Walker Tienkung product page",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/products/ubtech-walker-tienkung",
+   "title": "UBtech Walker Tienkung",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ubtrobot.com/en/about/news/826574022332485",
+   "title": "UBTECH partners with collaborators to accelerate global expansion (Terra Robotics, ROSSMANN)",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://eu.robotshop.com/products/ubtech-humanoid-robot-walker-e-voice-vision",
+   "title": "Ubtech Humanoid Robot Walker E Voice & Vision (Walker E Lite, also known as Tienkung) at RobotShop Europe",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

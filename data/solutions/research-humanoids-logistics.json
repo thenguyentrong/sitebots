@@ -1,0 +1,619 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Humanoid-only logistics expansion: exact deployed Digit 4 tote workcell and historical original Apollo bipedal pilot platform; current-generation boundaries retained.",
+  "records": [
+    {
+      "id": "agility-digit-4-tote-handling",
+      "name": "Agility Digit 4 · tote-handling workcell",
+      "manufacturer": "Agility Robotics",
+      "robotClass": "humanoid",
+      "workflowId": "material_handling",
+      "industries": [
+        "warehousing",
+        "manufacturing"
+      ],
+      "exactConfiguration": "Digit 4 bipedal robot with tote grippers, Agility Arc and a commissioned, guarded material-handling workcell. Excludes Digit 5 and its announced specifications.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Transfers prepared totes between automation handoff points. Commercial evidence covers a defined warehouse workflow; other tasks and facilities need separate validation.",
+      "operatingMode": {
+        "value": "Manufacturer describes autonomous execution of predefined production workflows within a restricted workcell.",
+        "sourceIds": [
+          "digit4-faq",
+          "digit4-gxo",
+          "digit4-portrait"
+        ],
+        "caveats": [
+          "Teleoperation is described for setup and off-site training; people retain maintenance and exception responsibilities.",
+          "Barrier-free Digit 5 claims do not apply to this Digit 4 configuration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 15.88,
+          "unit": "kg",
+          "semanticLabel": "Published maximum lifted object load, converted from 35 lb",
+          "conditions": [
+            "Rounded conversion; not a per-arm rating or loaded-reach curve."
+          ],
+          "sourceIds": [
+            "digit4-pilot"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "height_mm",
+          "value": 1753,
+          "unit": "mm",
+          "semanticLabel": "Published platform height, converted from 5 ft 9 in",
+          "conditions": [
+            "Rounded conversion; deployed revision and clearance require confirmation."
+          ],
+          "sourceIds": [
+            "digit4-pilot"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 63.5,
+          "unit": "kg",
+          "semanticLabel": "Published platform mass, converted from 140 lb",
+          "conditions": [
+            "Original pilot description; auxiliary workcell equipment excluded."
+          ],
+          "sourceIds": [
+            "digit4-pilot"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "reach_height_max_m",
+          "value": 1.68,
+          "unit": "m",
+          "semanticLabel": "Digit 4 reach-height comparison, converted from 5.5 ft",
+          "conditions": [
+            "Retrospective comparison; load and reference point not specified."
+          ],
+          "sourceIds": [
+            "digit-generations"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "operating_temperature_c",
+          "value": "0–35",
+          "unit": "°C",
+          "semanticLabel": "Published deployment ambient range",
+          "conditions": [
+            "Dry industrial indoor floors; the FAQ is not a revision-specific datasheet."
+          ],
+          "sourceIds": [
+            "digit4-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charging_supply_v_ac",
+          "value": "208–240",
+          "unit": "V AC",
+          "semanticLabel": "Published dock supply range",
+          "conditions": [
+            "FAQ specifies a 25 A connection; German installation requirements need confirmation."
+          ],
+          "sourceIds": [
+            "digit4-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charging_supply_current_a",
+          "value": 25,
+          "unit": "A",
+          "semanticLabel": "Published dock connection current",
+          "conditions": [
+            "Connection requirement, not continuous robot power consumption."
+          ],
+          "sourceIds": [
+            "digit4-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "network_requirement",
+          "value": "Industrial Wi-Fi with internet",
+          "unit": null,
+          "semanticLabel": "Published communication requirement",
+          "conditions": [
+            "Facility integration with Arc must be scoped."
+          ],
+          "sourceIds": [
+            "digit4-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Loaded work duration per charge not established",
+          "conditions": [
+            "No exact Digit 4 loaded-duty test reviewed. Digit 5 figures excluded."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "ip_rating",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Exact Digit 4 ingress rating not established",
+          "conditions": [
+            "Dry-floor guidance is not an IP certification."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Transfer loaded totes from a mobile carrier onto a conveyor.",
+          "configuration": "Digit 4 with Arc in a commissioned warehouse handoff cell; customer commercial agreement followed a prior pilot.",
+          "operatingMode": "Predefined workflow orchestration; manufacturer describes autonomous production execution.",
+          "sourceIds": [
+            "digit4-gxo",
+            "digit-generations",
+            "digit4-faq"
+          ],
+          "limitations": [
+            "Tote geometry, handoff height and intervention rate are not disclosed for reuse at another site.",
+            "Evidence does not establish item picking inside the tote or general warehouse work."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Pick up and return empty totes after inventory has been removed.",
+          "configuration": "Original industrial Digit in a customer-announced R&D test programme; the stated initial application is empty-tote recycling.",
+          "operatingMode": "Test application; the announcement does not establish unattended production operation.",
+          "sourceIds": [
+            "digit4-empty-totes"
+          ],
+          "limitations": [
+            "The reviewed announcement is an intended research use, not evidence of routine empty-tote production.",
+            "Nesting, denesting, cleaning and damaged-tote recovery are outside the supported task claim."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Agility Robotics",
+          "market": "Manufacturer enquiry; Germany delivery and local service unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.agilityrobotics.com/sales"
+          },
+          "sourceIds": [
+            "digit-contact",
+            "digit-lifecycle"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry only. Digit 4 supply to a new German customer is not established; the current sales navigation promotes Digit 5.",
+          "authorizationStatus": "Manufacturer-owned contact form; no reseller authorization asserted.",
+          "caveats": [
+            "Ask which generation is offered, integration scope, German support and delivery date.",
+            "The announced Digit 5 commercial target is the second half of 2027, not present availability."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Digit 5 payload, charging and cooperative-safety claims describe a later product and are excluded from Digit 4.",
+        "The generic FAQ is used only for deployment requirements; confirm its applicability to the offered hardware revision."
+      ],
+      "unknowns": [
+        "German supply, service commitment and CE documentation for the complete workcell.",
+        "Loaded runtime, accepted throughput and recovery staffing for the proposed task.",
+        "Exact gripper geometry, permitted totes and customer-specific hardware revision."
+      ],
+      "sources": [
+        {
+          "id": "digit4-pilot",
+          "url": "https://www.agilityrobotics.com/content/gxo-conducting-industry-leading-pilot-of-human-centric-robot",
+          "title": "Original Digit pilot dimensions and lift load",
+          "publisher": "Agility Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "digit4-gxo",
+          "url": "https://investors.gxo.com/news-releases/news-release-details/gxo-signs-industry-first-multi-year-agreement-agility-robotics/",
+          "title": "Commercial tote handoff agreement · 2024-06-27",
+          "publisher": "GXO",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "digit4-empty-totes",
+          "url": "https://www.aboutamazon.com/news/operations/amazon-introduces-new-robotics-solutions",
+          "title": "Empty-tote research application · 2023 announcement",
+          "publisher": "Amazon",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "digit4-faq",
+          "url": "https://www.agilityrobotics.com/faq",
+          "title": "Deployment operation and workcell requirements",
+          "publisher": "Agility Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "digit-generations",
+          "url": "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale",
+          "title": "Digit 4 history and Digit 5 announcement · 2026-09-15",
+          "publisher": "Agility Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "digit4-portrait",
+          "url": "https://www.agilityrobotics.com/company/vision",
+          "title": "Labeled Digit 4 and Digit 5 comparison",
+          "publisher": "Agility Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "digit-lifecycle",
+          "url": "https://www.agilityrobotics.com/content/agility-robotics-announces-new-directors-for-planned-public-company-board",
+          "title": "Current Digit 4 and planned Digit 5 availability · 2026-09-29",
+          "publisher": "Agility Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "digit-contact",
+          "url": "https://www.agilityrobotics.com/sales",
+          "title": "Manufacturer deployment enquiry",
+          "publisher": "Agility Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.agilityrobotics.com/content/gxo-conducting-industry-leading-pilot-of-human-centric-robot",
+        "https://investors.gxo.com/news-releases/news-release-details/gxo-signs-industry-first-multi-year-agreement-agility-robotics/",
+        "https://www.aboutamazon.com/news/operations/amazon-introduces-new-robotics-solutions",
+        "https://www.agilityrobotics.com/faq",
+        "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale",
+        "https://www.agilityrobotics.com/company/vision",
+        "https://www.agilityrobotics.com/content/agility-robotics-announces-new-directors-for-planned-public-company-board",
+        "https://www.agilityrobotics.com/sales"
+      ]
+    },
+    {
+      "id": "apptronik-apollo-original-bipedal-pilot",
+      "name": "Apptronik Apollo · original bipedal pilot platform",
+      "manufacturer": "Apptronik",
+      "robotClass": "humanoid",
+      "workflowId": "material_handling",
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ],
+      "exactConfiguration": "Original Apollo bipedal platform announced in 2023, associated with 2024 industrial pilot agreements. Historical platform review; excludes wheeled/stationary configurations, Apollo 2 and Apollo 3. Later customer hardware revisions are not specified.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Historical trial platform for carrying prepared assembly kits and exploring component checks. Public trial evidence does not establish a generally available autonomous production package.",
+      "operatingMode": {
+        "value": "Pilot development with human task teaching and teleoperation; autonomous operation is a development objective, not a blanket established capability.",
+        "sourceIds": [
+          "apollo-german-trial",
+          "apollo-gxo-research"
+        ],
+        "caveats": [
+          "A 2025 customer update describes data collection and teleoperation training; its exact hardware revision is unspecified.",
+          "Human setup, task supervision, validation and recovery remain part of the proposed project."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 24.95,
+          "unit": "kg",
+          "semanticLabel": "Original platform published lift load, converted from 55 lb",
+          "conditions": [
+            "Not a per-arm rating; no loaded reach or duty cycle published."
+          ],
+          "sourceIds": [
+            "apollo-launch"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "height_mm",
+          "value": 1727,
+          "unit": "mm",
+          "semanticLabel": "Original platform height, converted from 5 ft 8 in",
+          "conditions": [
+            "Rounded conversion; not an Apollo 2 measurement."
+          ],
+          "sourceIds": [
+            "apollo-launch"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 72.57,
+          "unit": "kg",
+          "semanticLabel": "Original platform mass, converted from 160 lb",
+          "conditions": [
+            "Rounded conversion; installed tooling and later revisions unspecified."
+          ],
+          "sourceIds": [
+            "apollo-launch"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 4,
+          "unit": "h",
+          "semanticLabel": "Original platform stated runtime per battery pack",
+          "conditions": [
+            "Load, speed and duty cycle unspecified; not confirmed shift endurance."
+          ],
+          "sourceIds": [
+            "apollo-launch"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "swappable_battery",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Original platform uses replaceable battery packs",
+          "conditions": [
+            "Battery replacement requires a defined operator and charging process."
+          ],
+          "sourceIds": [
+            "apollo-launch"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mobility_configuration",
+          "value": "Bipedal",
+          "unit": null,
+          "semanticLabel": "Selected original-platform mobility configuration",
+          "conditions": [
+            "Launch also offered wheel and stationary concepts; neither is included."
+          ],
+          "sourceIds": [
+            "apollo-launch"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "status_displays",
+          "value": "Face and chest",
+          "unit": null,
+          "semanticLabel": "Published original-platform communication panels",
+          "conditions": [
+            "Status communication is not safety certification."
+          ],
+          "sourceIds": [
+            "apollo-launch"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_reach_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Loaded arm reach not established",
+          "conditions": [
+            "No exact original-platform working envelope reviewed."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "ip_rating",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Ingress rating not established",
+          "conditions": [
+            "No outdoor or wet-environment qualification inferred."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Loaded battery endurance not established",
+          "conditions": [
+            "Do not treat the four-hour nominal claim as a loaded-work measurement."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "pilot",
+          "task": "Deliver prepared assembly-kit totes to a production-line handoff.",
+          "configuration": "2024 pilot agreement for original Apollo; subsequent customer trial report does not identify its hardware revision.",
+          "operatingMode": "Human teaching and trial development; continuous autonomous production is not established.",
+          "sourceIds": [
+            "apollo-pilot",
+            "apollo-german-trial"
+          ],
+          "limitations": [
+            "Prepared kits and human assembly remain outside the robot delivery task.",
+            "No accepted delivery rate, intervention rate or general commercial availability is published."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Perform preliminary component checks during parts handling.",
+          "configuration": "Application explored in the original industrial pilot agreement; exact sensing package and inspection method unspecified.",
+          "operatingMode": "Proposed trial application requiring operator-defined acceptance criteria.",
+          "sourceIds": [
+            "apollo-pilot",
+            "apollo-german-trial"
+          ],
+          "limitations": [
+            "This is not validated metrology or final quality release.",
+            "No defect set, detection performance, false-reject rate or autonomous inspection result is established."
+          ]
+        },
+        {
+          "stage": "pilot",
+          "task": "Evaluate box and tote handling in a warehouse laboratory.",
+          "configuration": "2024 customer proof of concept evaluated the prototype in a lab before a possible distribution-centre phase.",
+          "operatingMode": "Research evaluation; deployment was conditional on readiness.",
+          "sourceIds": [
+            "apollo-gxo-research"
+          ],
+          "limitations": [
+            "The announcement does not establish a completed production deployment or specific pick performance."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Apptronik",
+          "market": "Manufacturer enquiry; Germany delivery and service unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://apptronik.com/contact"
+          },
+          "sourceIds": [
+            "apollo-contact",
+            "apollo-generation"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry only. No orderable stock or lead time for the original platform established; current development is described as Apollo 2 training and future Apollo 3 commercial hardware.",
+          "authorizationStatus": "Manufacturer-owned business enquiry form; no authorized German reseller established.",
+          "caveats": [
+            "Request the exact offered generation and project access conditions.",
+            "German customer trials do not establish third-party German availability."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Original 2023 dimensions, lift load and runtime are not specifications for Apollo 2 or the announced Apollo 3.",
+        "The 2025 customer trial does not disclose hardware revision; its teaching process is context, not confirmation of original-platform measurements."
+      ],
+      "unknowns": [
+        "Whether a new buyer can access the original platform; price and delivery date.",
+        "German service, integration responsibility and applicable conformity documentation.",
+        "Task cycle time, loaded reach, perception package, autonomy boundaries and recovery effort."
+      ],
+      "sources": [
+        {
+          "id": "apollo-launch",
+          "url": "https://apptronik.com/news-collection/apptronik-unveils-apollo",
+          "title": "Original Apollo launch specifications · 2023-08-23",
+          "publisher": "Apptronik",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "apollo-pilot",
+          "url": "https://apptronik.com/news-collection/apptronik-and-mercedes-benz-enter-commercial-agreement",
+          "title": "Assembly-kit and component-check pilot agreement · 2024-03-15",
+          "publisher": "Apptronik",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "apollo-german-trial",
+          "url": "https://group.mercedes-benz.com/company/production/production-network/mbdfc-humanoid-robots.html",
+          "title": "German production trial and teleoperation training · 2025-03-18",
+          "publisher": "Mercedes-Benz",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "apollo-gxo-research",
+          "url": "https://gxo.com/news_article/gxo-announces-multi-phase-r-and-d-initiative-with-apptronik/",
+          "title": "Apollo laboratory proof of concept · 2024-06-20",
+          "publisher": "GXO",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "apollo-generation",
+          "url": "https://apptronik.com/news-collection/welcome-to-robot-park-where-apptroniks-apollo-goes-to-work",
+          "title": "Apollo 2 training platform and Apollo 3 roadmap · 2026-06-30",
+          "publisher": "Apptronik",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "apollo-original-imagery",
+          "url": "https://apptronik.com/news-collection/this-is-apptroniks-humanoid-robot-apollo",
+          "title": "Original Apollo imagery in manufacturer-hosted launch coverage",
+          "publisher": "Apptronik; reprinted launch coverage",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "apollo-contact",
+          "url": "https://apptronik.com/contact",
+          "title": "Manufacturer operations enquiry form",
+          "publisher": "Apptronik",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://apptronik.com/news-collection/apptronik-unveils-apollo",
+        "https://apptronik.com/news-collection/apptronik-and-mercedes-benz-enter-commercial-agreement",
+        "https://group.mercedes-benz.com/company/production/production-network/mbdfc-humanoid-robots.html",
+        "https://gxo.com/news_article/gxo-announces-multi-phase-r-and-d-initiative-with-apptronik/",
+        "https://apptronik.com/news-collection/welcome-to-robot-park-where-apptroniks-apollo-goes-to-work",
+        "https://apptronik.com/news-collection/this-is-apptroniks-humanoid-robot-apollo",
+        "https://apptronik.com/contact"
+      ]
+    }
+  ]
+}

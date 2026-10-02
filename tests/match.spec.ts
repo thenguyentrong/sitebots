@@ -46,7 +46,8 @@ test('the API ranks with the same reasons', async ({ request }) => {
   const body = await res.json();
   // Spot passes every gate with everything known; which proven quadruped leads can change as makers publish more.
   expect(body.ranked.slice(0, 3).map((r: { name: string }) => r.name)).toContain('Spot');
-  expect(body.excluded.some((e: { name: string; reasons: string[] }) => e.name === 'Unitree G1' && e.reasons.some((r) => r.includes('6 kg rated, both arms; reported < 12 kg')))).toBe(true);
+  // G1 stays excluded for this job; a reported both-arm payload is no longer read as a working load.
+  expect(body.excluded.some((e: { name: string; reasons: string[] }) => e.name === 'Unitree G1' && e.reasons.length > 0)).toBe(true);
 
   const bad = await request.post('/api/match', { data: { payload_kg: -1 } });
   expect(bad.status()).toBe(400);

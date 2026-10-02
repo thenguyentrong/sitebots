@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "taskId": "site_painting/wall-ceiling-painting",
+      "reviewId": "conbotics-malerroboter-2-surface-finishing",
+      "relationship": "partial_task",
+      "rationale": "Current manufacturer describes 2.0 spraying walls and ceilings; it can address open-surface coating within the larger painting task.",
+      "sourceIds": [
+        "current"
+      ],
+      "limitations": [
+        "Masking, cutting in, sloped/complex geometry, coating supply and finish inspection are not established as automated.",
+        "The exact 2.0 technical envelope and achieved site performance remain unresolved."
+      ]
+    },
+    {
+      "taskId": "site_painting/wall-ceiling-painting",
+      "reviewId": "nova-s-wall-surface-finishing",
+      "relationship": "partial_task",
+      "rationale": "The wall pillar is designed for wall spraying and has a manufacturer-described room demonstration.",
+      "sourceIds": [
+        "technical",
+        "demonstrations"
+      ],
+      "limitations": [
+        "This configuration covers wall surfaces, not the ceiling portion of the task.",
+        "Masking, detailed edges, paint servicing and drying remain separate; advertised spray rate is not complete-job throughput."
+      ]
+    },
+    {
+      "taskId": "site_painting/wall-ceiling-painting",
+      "reviewId": "nova-s-ceiling-surface-finishing",
+      "relationship": "partial_task",
+      "rationale": "The ceiling pillar is designed for ceiling spraying and has a manufacturer-described room demonstration.",
+      "sourceIds": [
+        "technical",
+        "demonstrations"
+      ],
+      "limitations": [
+        "This configuration covers ceiling surfaces, not the wall portion of the task.",
+        "Access, masking, boundary areas and material supply require people; no full-shift accepted-area denominator is published."
+      ]
+    },
+    {
+      "taskId": "site_painting/wall-ceiling-painting",
+      "reviewId": "okibo-eg7-surface-finishing",
+      "relationship": "partial_task",
+      "rationale": "The exact EG7 product page describes coating application using the scanning platform and exchangeable tools.",
+      "sourceIds": [
+        "technical",
+        "launch"
+      ],
+      "limitations": [
+        "Match coating, substrate and reachable surface before a trial; German supply remains unconfirmed.",
+        "Preparation, masking, edges, refilling and recovery effort are outside the reviewed application claim."
+      ]
+    },
+    {
+      "taskId": "site_drywall/drywall-joint-finishing",
+      "reviewId": "okibo-eg7-surface-finishing",
+      "relationship": "partial_task",
+      "rationale": "EG7 offers drywall finishing and a sanding configuration that exchanges the coating hopper for dust collection.",
+      "sourceIds": [
+        "technical",
+        "launch"
+      ],
+      "limitations": [
+        "Sanding/coating capability does not establish automatic taping, screw treatment, corner finishing or drying management.",
+        "German Q-level acceptance, material compatibility and exact EG7 production results require a site trial."
+      ]
+    },
+    {
+      "taskId": "site_drywall/drywall-joint-finishing",
+      "reviewId": "canvas-1200cx-surface-finishing",
+      "relationship": "partial_task",
+      "rationale": "The 1200CX launch describes robotic joint-compound application followed by sanding with an interchangeable head.",
+      "sourceIds": [
+        "technical",
+        "launch"
+      ],
+      "limitations": [
+        "Human preparation, taping, drying, changeover and final acceptance remain part of the complete task.",
+        "US Level 4/5 claims do not establish German Q classifications; German orderability and support remain unconfirmed."
+      ]
+    },
+    {
+      "taskId": "site_demolition/concrete-breaking",
+      "reviewId": "brokk-110-demolition",
+      "relationship": "task_candidate",
+      "rationale": "The manufacturer documents interior concrete demolition with Brokk 110 and publishes an attachment-specific working envelope.",
+      "sourceIds": [
+        "technical",
+        "deployment"
+      ],
+      "limitations": [
+        "A human operator continuously controls demolition; this is not autonomous breaking.",
+        "Select and approve the actual attachment, structural method, dust control, power and debris handling; published reach uses a reference hammer."
+      ]
+    },
+    {
+      "taskId": "site_demolition/concrete-breaking",
+      "reviewId": "brokk-300-demolition",
+      "relationship": "task_candidate",
+      "rationale": "The manufacturer documents Brokk 300 concrete crushing with a Darda attachment and publishes an attachment-specific working envelope.",
+      "sourceIds": [
+        "technical",
+        "deployment"
+      ],
+      "limitations": [
+        "A human operator continuously controls demolition; this is not autonomous breaking.",
+        "Select and approve the actual attachment, structural method, dust control, power and debris handling; published reach uses a reference hammer."
+      ]
+    },
+    {
+      "taskId": "site_demolition/concrete-breaking",
+      "reviewId": "husqvarna-dxr145-demolition",
+      "relationship": "task_candidate",
+      "rationale": "The manufacturer offers DXR 145 for demolition with compatible breakers and concrete crushers.",
+      "sourceIds": [
+        "technical",
+        "international"
+      ],
+      "limitations": [
+        "Application claim only; an exact-model productive site case with usable outcome data was not established.",
+        "Continuous human control, attachment selection, structural survey, dust control and debris logistics are required."
+      ]
+    }
+  ]
+}

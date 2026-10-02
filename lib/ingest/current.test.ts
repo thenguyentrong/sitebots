@@ -25,7 +25,7 @@ it('keeps conservative payload values tied to their actual measurement basis', a
  const {conservativePayload}=await import('./current');
  const make=(field:string,qualifier:string,value:number,tier=1)=>({...row('https://maker.test/robot',value,'2026-09-13',tier),field,qualifier});
  const specs=projectSpecs([make('payload_kg','peak',2),make('payload_kg','rated_dual',6,3)]).specs;
- expect(conservativePayload(specs)).toMatchObject({conservative:6,key:'payload_kg:rated_dual',estimated:false});
+ expect(conservativePayload(specs)).toMatchObject({conservative:null,key:'payload_kg:peak',estimated:true});
  const peakOnly=projectSpecs([make('payload_kg','peak',2)]).specs;
- expect(conservativePayload(peakOnly)).toMatchObject({conservative:1,key:'payload_kg:peak',estimated:true});
+ expect(conservativePayload(peakOnly)).toMatchObject({conservative:null,key:'payload_kg:peak',estimated:true});
 });

@@ -1,0 +1,294 @@
+{
+ "schemaVersion": 1,
+ "id": "zerith-h1",
+ "maker": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "H1",
+ "variant": null,
+ "name": "Zerith H1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.zerith.com/product/ZerithH1/",
+ "summary": "A wheeled humanoid with two 7-axis arms and grippers on a lifting body that reaches from the floor to 2.16 m; 1 kg rated per arm, 4 to 7 h runtime.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists the Zerith H1 with price on request and about three weeks delivery.",
+  "sourceIds": [
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/zerith-h1-humanoid-robot-23-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Price on request; usual delivery time 3 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "0.955–1.756",
+   "unit": "m",
+   "conditions": "lifting body",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 111,
+   "unit": "kg",
+   "conditions": "with battery; RBTX states 55 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 23,
+   "unit": null,
+   "conditions": "2 head, 7 per arm, 3 waist incl. lift, 2 chassis, 1 per gripper",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1,
+   "unit": "kg",
+   "conditions": "rated; 1.5 kg peak, depends on arm pose",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach",
+   "value": 2.156,
+   "unit": "m",
+   "conditions": "highest point; reaches down to the floor; arm span 1.788 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": "differential base; RBTX states 2.5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "20,000 mAh",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "4–7",
+   "unit": "h",
+   "conditions": "depends on use",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "battery swap or plug-in operation",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "20-core CPU, 32 GB DDR5, 1 TB SSD, RTX 5060 GPU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head depth camera, wrist depth cameras, LiDAR, 6-axis IMU, voice module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "Open SDK (upper and low level), Python and C++, URDF, VR teleoperation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 1,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "Python and C++ SDK, URDF",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Ships with two-finger grippers; an OYMotion ROH-LiteS001 dexterous hand is optional and cannot be swapped back to the gripper.",
+   "Light payload: 1 kg rated per arm. Wheeled base, so no stairs.",
+   "RBTX figures (55 kg, 5 kg payload, 2.5 m/s) differ from the maker table; maker values used."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/H1_Bild%2002-Sa90I-y-.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/zerith-h1-humanoid-robot-23-dof",
+   "credit": "Zerith (via RBTX)",
+   "alt": "Zerith H1 wheeled humanoid with grippers, three-quarter view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.zerith.com/dist/images/img_197.png",
+   "pageUrl": "https://www.zerith.com/product/ZerithH1/",
+   "credit": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "alt": "Zerith H1 front view with both arms stretched out sideways",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.zerith.com/dist/images/img_205.png",
+   "pageUrl": "https://www.zerith.com/product/ZerithH1/",
+   "credit": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "alt": "Zerith H1 holding a box with both grippers, three-quarter view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.zerith.com/dist/images/img_201.png",
+   "pageUrl": "https://www.zerith.com/product/ZerithH1/",
+   "credit": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "alt": "Zerith H1 side view showing the lifting column, wheeled base and gripper",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.zerith.com/dist/images/img_204.png",
+   "pageUrl": "https://www.zerith.com/product/ZerithH1/",
+   "credit": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "alt": "Zerith H1 with its torso lowered on the column, reaching towards the floor",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.zerith.com/uploads/image_1789529318.png",
+   "pageUrl": "https://www.zerith.com/product/ZerithH1/",
+   "credit": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "alt": "Zerith H1 swinging a diabolo while an operator controls it with VR hand controllers",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.zerith.com/dist/images/img_203.png",
+   "pageUrl": "https://www.zerith.com/product/ZerithH1/",
+   "credit": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "alt": "Zerith H1 head and shoulders, front close-up",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Hotel housekeeping, building cleaning and facility support",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": "Use list on the RBTX product page."
+  },
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Data collection centres for robot training",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Solution listed on the maker site; VR teleoperation supported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.zerith.com/product/comparison/",
+   "title": "Zerith H1 parameter table",
+   "publisher": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.zerith.com/product/ZerithH1/",
+   "title": "Zerith H1 product page",
+   "publisher": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://rbtx.de/de-DE/components/humanoid/zerith-h1-humanoid-robot-23-dof",
+   "title": "Zerith H1 | Humanoider Roboter | 23 DOF on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/Zerith-H1-Wheeled-Humanoid-Robot.htm",
+   "title": "Zerith H1 humanoider Roboter auf Rädern at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "What does RBTX charge for H1, and which configuration (gripper or dexterous hand) is supplied?",
+  "Weight, payload and speed differ between maker and RBTX."
+ ],
+ "checkedAt": "2026-10-02"
+}

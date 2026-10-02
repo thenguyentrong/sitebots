@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "cobod-bod3",
+ "maker": "COBOD International",
+ "makerCountry": "DK",
+ "model": "BOD3",
+ "variant": null,
+ "name": "COBOD BOD3",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://cobod.com/technology/3d-construction-printers/bod3/",
+ "summary": "Gantry 3D construction printer on ground rails that moves from house to house along a row, for serial low-rise housing.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Denmark) sells directly on quote; PERI 3D Construction in Germany lists only the BOD2, so ask COBOD.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "COBOD International A/S",
+    "country": "DK",
+    "role": "manufacturer",
+    "productUrl": "https://cobod.com/technology/3d-construction-printers/bod3/",
+    "contactUrl": "https://cobod.com/contact/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Quote via the COBOD configurator and contact form."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "print_area_m",
+   "label": "Max. printable width x height",
+   "value": "11.91 x 8.3",
+   "unit": "m",
+   "conditions": "smaller configuration; 16.75 x 11.8 m also listed",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_mms",
+   "label": "Max. printing speed",
+   "value": 500,
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "layer_width_mm",
+   "label": "Layer width",
+   "value": 500,
+   "unit": "mm",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "layer_height_mm",
+   "label": "Layer height",
+   "value": 75,
+   "unit": "mm",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": 4,
+   "unit": "people",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ce_marking",
+   "label": "CE certified",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Travels on ground rails between buildings without re-assembly."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cobod.com/wp-content/uploads/2026/07/bod3-row-houses.png",
+   "pageUrl": "https://cobod.com/technology/3d-construction-printers/bod3/",
+   "credit": "COBOD International",
+   "alt": "COBOD BOD3 printing row houses",
+   "kind": "product"
+  },
+  {
+   "url": "https://cobod.com/wp-content/uploads/2026/06/blog-post-cover-2-1.jpg",
+   "pageUrl": "https://cobod.com/technology/3d-construction-printers/bod3/",
+   "credit": "COBOD International",
+   "alt": "COBOD BOD3 on its ground rail above freshly printed concrete house walls, aerial view with palm trees behind",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://cobod.com/wp-content/uploads/2026/07/3dcp-group-x-cobod-8-1.jpg",
+   "pageUrl": "https://cobod.com/technology/3d-construction-printers/bod3/",
+   "credit": "COBOD International",
+   "alt": "COBOD BOD3 bridge and print head above freshly printed concrete walls, with an operator holding a laptop",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://cobod.com/wp-content/uploads/2026/07/bod3-printhead.jpg",
+   "pageUrl": "https://cobod.com/technology/3d-construction-printers/bod3/",
+   "credit": "COBOD International",
+   "alt": "Close-up of the COBOD BOD3 print head on its bridge above printed walls, with palm trees behind",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Serial printing of row and low-rise houses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cobod.com/technology/3d-construction-printers/bod3/",
+   "title": "BOD3",
+   "publisher": "COBOD International",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.peri3dconstruction.com/en/cobod-bod2",
+   "title": "PERI 3D Construction product page (BOD2 only)",
+   "publisher": "PERI 3D Construction GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price.",
+  "Whether PERI 3D Construction can supply the BOD3."
+ ],
+ "checkedAt": "2026-10-02"
+}

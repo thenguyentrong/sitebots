@@ -1,0 +1,235 @@
+{
+ "schemaVersion": 1,
+ "id": "robotera-m7",
+ "maker": "RobotEra",
+ "makerCountry": "CN",
+ "model": "M7",
+ "variant": null,
+ "name": "RobotEra M7",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.robotera.com/en/#/product/M7",
+ "summary": "A full-size upper-body humanoid on a stand:two 7-DoF arms with 12-DoF XHAND1 hands covering a 2.1 m workspace, for bench work, sorting and data collection.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "On request from RobotEra, which sells its L7 and Q5 in Germany through RBTX (igus, Cologne); no German seller lists the M7 itself.",
+  "sourceIds": [
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "RobotEra (Beijing Xingdongjiyuan Co., Ltd.)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.robotera.com/en/#/product/M7",
+    "contactUrl": "https://www.robotera.com/en/#/purchase?product=M7",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Enterprise purchase inquiry form with country field."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.792,
+   "unit": "m",
+   "conditions": "upper body",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": "maker; reseller states 33 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 43,
+   "unit": null,
+   "conditions": "with dexterous hands; 19 without hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 12,
+   "unit": null,
+   "conditions": "XHAND1, fully direct-driven",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_length_m",
+   "label": "Arm length",
+   "value": 0.717,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Workspace diameter",
+   "value": 2.1,
+   "unit": "m",
+   "conditions": "arm span 1.66 m without hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular vision, 3D LiDAR, Intel RealSense / stereo depth",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "teleoperation",
+   "label": "Teleoperation",
+   "value": "Meta Quest",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Stationary: the upper body sits on a stand (the reseller photo shows a castor stand); it does not drive or walk.",
+   "No payload, runtime or SDK figure published for M7.",
+   "Whether the 12-DoF hands are included in the listed price is not stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cos.robotera.com/img/m7.CKumIKR1.png",
+   "pageUrl": "https://www.robotera.com/en/#/product/M7",
+   "credit": "RobotEra",
+   "alt": "RobotEra M7 upper-body humanoid scanning a parcel at a workstation",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.roboterdeutschland.de/media/catalog/product/r/o/robtotera-m7-6-2.jpg",
+   "pageUrl": "https://www.roboterdeutschland.de/RobotEra-M7-Upper-Body-Wheeled-Humanoid-Robot.htm",
+   "credit": "RobotEra (via Roboter Deutschland)",
+   "alt": "RobotEra M7 upper body on a castor stand, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://cos.robotera.com/20260509/97e20d97d7234003a15e7837022e4ac5.png",
+   "pageUrl": "https://www.robotera.com/en/",
+   "credit": "RobotEra",
+   "alt": "RobotEra M7 upper-body robots on pedestals at a parcel sorting line, seen from above",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Logistics sorting and scanning, workstation operations, assembly and inspection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Scenario tabs on the maker page."
+  },
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Data collection for robot learning",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Research scenario on the maker page; Meta Quest teleoperation."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotera.com/en/#/product/M7",
+   "title": "ROBOTERA M7 product page and spec table",
+   "publisher": "RobotEra",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid",
+   "title": "RBTX humanoid category (RobotEra L7 and Q5 listed, no M7)",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/RobotEra-M7-Upper-Body-Wheeled-Humanoid-Robot.htm",
+   "title": "RobotEra M7 Oberkörper-Humanoidroboter at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://rbtx.de/de-DE/components/humanoid/robotera-l7-humanoid-robot-55-dof",
+   "title": "ROBOTERA L7 on RBTX (RobotEra sells into Germany)",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "The reseller price equals its L7 price and is far below the RBTX L7 price; ask RobotEra or RBTX for an M7 quote.",
+  "Weight differs: maker 65 kg, reseller 33 kg.",
+  "www.robotera.com reports a revoked TLS certificate on Windows; the page was read with the revocation check turned off."
+ ],
+ "checkedAt": "2026-10-02"
+}

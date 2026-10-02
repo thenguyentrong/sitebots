@@ -1,0 +1,618 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Loop 08: three distinct dairy-barn tasks, exact product scope and German enquiry routes.",
+  "records": [
+    {
+      "id": "lely-juno-feed-pusher",
+      "name": "Lely Juno",
+      "manufacturer": "Lely",
+      "robotClass": "dedicated_robot",
+      "industries": [
+        "agriculture"
+      ],
+      "workflowId": "farm_operations",
+      "exactConfiguration": "Current Juno feed pusher; exclude Juno Max and discontinued Juno 100/150 specifications. Optional Flex equipment must be quoted separately.",
+      "description": "Pushes roughage already placed on the feed table back toward cattle.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.lely.com/de/loesungen/fuettern/juno/",
+          "title": "Current Juno German product page",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "brochure-index",
+          "url": "https://www.lely.com/media/filer_public/e5/6c/e56c7743-960e-4ad5-9074-c0078f0720e9/webres_bf17001-juno_brochure_v2_de.pdf",
+          "title": "Juno German brochure v2 — indexed technical table",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "brochure-height",
+          "url": "https://www.lely.com/media/lely-centers-files/brochures/published/Lely_Juno_New_Lit_E05Fd0o.pdf",
+          "title": "Juno English brochure — conflicting height range",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "farm-case",
+          "url": "https://www.lely.com/de/centers/westerstede/berichte-von-betrieben/pachtstall-astronaut-a5-juno-klee/",
+          "title": "German farm report dated 17 September 2026",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "german-center",
+          "url": "https://www.lely.com/de/centers/grueb/",
+          "title": "German product sales and service Center",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.lely.com/de/loesungen/fuettern/juno/",
+        "https://www.lely.com/media/filer_public/e5/6c/e56c7743-960e-4ad5-9074-c0078f0720e9/webres_bf17001-juno_brochure_v2_de.pdf",
+        "https://www.lely.com/media/lely-centers-files/brochures/published/Lely_Juno_New_Lit_E05Fd0o.pdf",
+        "https://www.lely.com/de/centers/westerstede/berichte-von-betrieben/pachtstall-astronaut-a5-juno-klee/",
+        "https://www.lely.com/de/centers/grueb/"
+      ],
+      "conflicts": [
+        "German brochure lists height 110–155; English brochure 110–177. Do not select one as the current German value."
+      ],
+      "unknowns": [
+        "Current technical brochure could not be directly read; numerical brochure values remain Reported.",
+        "Quote-specific dimensions, option package, continuous loaded runtime, installed price and delivery date remain unknown."
+      ],
+      "operatingMode": {
+        "value": "Scheduled automatic feed pushing after route setup.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "People prepare and deliver the ration, keep routes usable and handle maintenance.",
+          "Automatic feed pushing does not prepare or mix a new ration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "diameter",
+          "value": 110,
+          "unit": "cm",
+          "semanticLabel": "Reported machine diameter",
+          "conditions": [
+            "Indexed brochure; current quote revision must be confirmed."
+          ],
+          "sourceIds": [
+            "brochure-index"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "mass",
+          "value": 620,
+          "unit": "kg",
+          "semanticLabel": "Reported machine mass",
+          "conditions": [
+            "No exact option list."
+          ],
+          "sourceIds": [
+            "brochure-index"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "speed",
+          "value": 12,
+          "unit": "m/min",
+          "semanticLabel": "Reported travel speed",
+          "conditions": [
+            "Not a guaranteed feed-pushing throughput."
+          ],
+          "sourceIds": [
+            "brochure-index"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "battery_capacity",
+          "value": 55,
+          "unit": "Ah",
+          "semanticLabel": "Reported battery capacity",
+          "conditions": [
+            "12 V brochure value; not loaded endurance."
+          ],
+          "sourceIds": [
+            "brochure-index"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "navigation",
+          "value": "Gyroscope and ultrasound",
+          "unit": null,
+          "semanticLabel": "Reported navigation sensors",
+          "conditions": [],
+          "sourceIds": [
+            "brochure-index"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "feed_alley",
+          "value": "1.25 m plus feed width",
+          "unit": null,
+          "semanticLabel": "Reported minimum feed-table clearance",
+          "conditions": [
+            "Site layout approval required."
+          ],
+          "sourceIds": [
+            "brochure-index"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "height",
+          "value": null,
+          "unit": "cm",
+          "semanticLabel": "Unresolved overall height",
+          "conditions": [
+            "German and English brochures disagree."
+          ],
+          "sourceIds": [
+            "brochure-index",
+            "brochure-height"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Repeated feed pushing along a dairy feed table.",
+          "configuration": "Juno installed alongside a milking robot in 2025; option package unspecified.",
+          "operatingMode": "Manufacturer farm report describes hourly scheduled passes.",
+          "sourceIds": [
+            "farm-case"
+          ],
+          "limitations": [
+            "Reported farm operation; no independent performance audit.",
+            "Exact installed hardware revision is not stated."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Lely Center Grüb",
+          "market": "Germany — Franken and Schwaben; regional coverage must be confirmed",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.lely.com/de/centers/grueb/",
+            "email": "info-gru@lelycenter.com",
+            "phone": "+49 981 487 542 90"
+          },
+          "sourceIds": [
+            "german-center"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Listed by Lely on its official German Center site with product sales and service.",
+          "caveats": [
+            "Site assessment and the responsible regional Center are required."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lely-discovery-collector-c2",
+      "name": "Lely Discovery Collector C2",
+      "manufacturer": "Lely",
+      "robotClass": "dedicated_robot",
+      "industries": [
+        "agriculture"
+      ],
+      "workflowId": "farm_operations",
+      "exactConfiguration": "Discovery Collector C2 with combined charging/discharge station; Sand Flush is an additional configuration for sand bedding.",
+      "description": "Vacuums manure from suitable solid or semi-solid cattle-barn floors and returns to a discharge station.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.lely.com/de/loesungen/guelle/discovery-collector/",
+          "title": "Discovery Collector C1/C2 product page",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "c2-release",
+          "url": "https://www.lely.com/ch/de/ueber-lely/nachrichten/lely-fuehrt-die-guellesammlung-fuer-staelle-mit-sandeinstreu-ein/",
+          "title": "C2 and Sand Flush specification context",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "german-center",
+          "url": "https://www.lely.com/de/centers/grueb/",
+          "title": "German sales and technical-service Center",
+          "publisher": "Lely",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.lely.com/de/loesungen/guelle/discovery-collector/",
+        "https://www.lely.com/ch/de/ueber-lely/nachrichten/lely-fuehrt-die-guellesammlung-fuer-staelle-mit-sandeinstreu-ein/",
+        "https://www.lely.com/de/centers/grueb/"
+      ],
+      "conflicts": [],
+      "unknowns": [
+        "Exact dimensions, mass, tank capacity, continuous loaded runtime and installation cost remain unresolved.",
+        "German Center lists the Collector family; C2 configuration and local commissioning capacity require confirmation."
+      ],
+      "operatingMode": {
+        "value": "Autonomous programmed collection routes with automatic station visits.",
+        "sourceIds": [
+          "product",
+          "c2-release"
+        ],
+        "caveats": [
+          "Technicians commission the floor layout, route and station; farm staff maintain the system and manage interruptions.",
+          "Sand bedding requires suitability review and Sand Flush configuration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "battery_voltage",
+          "value": 24,
+          "unit": "V",
+          "semanticLabel": "C2 battery voltage",
+          "conditions": [],
+          "sourceIds": [
+            "c2-release"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "daily_driving",
+          "value": 14,
+          "unit": "h/day",
+          "semanticLabel": "Claimed maximum daily driving time",
+          "conditions": [
+            "Includes a daily operating schedule; not continuous operation on one charge."
+          ],
+          "sourceIds": [
+            "c2-release"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charging",
+          "value": "Wireless",
+          "unit": null,
+          "semanticLabel": "C2 charging method",
+          "conditions": [],
+          "sourceIds": [
+            "c2-release"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "station",
+          "value": "Combined charging and manure discharge",
+          "unit": null,
+          "semanticLabel": "Required C2 station functions",
+          "conditions": [],
+          "sourceIds": [
+            "c2-release"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "floor_type",
+          "value": "Solid or semi-solid",
+          "unit": null,
+          "semanticLabel": "Specified barn-floor class",
+          "conditions": [
+            "Suitability depends on layout and manure."
+          ],
+          "sourceIds": [
+            "c2-release"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "navigation",
+          "value": "Programmed routes without guide cables or channels",
+          "unit": null,
+          "semanticLabel": "Navigation infrastructure",
+          "conditions": [],
+          "sourceIds": [
+            "c2-release"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "tank_capacity",
+          "value": null,
+          "unit": "L",
+          "semanticLabel": "Exact C2 manure tank capacity",
+          "conditions": [
+            "Directly readable current technical table not found."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Automated manure collection from appropriate cattle-barn floors.",
+          "configuration": "C2; add Sand Flush for a validated sand-bedding installation.",
+          "operatingMode": "Programmed collection and station servicing.",
+          "sourceIds": [
+            "product",
+            "c2-release"
+          ],
+          "limitations": [
+            "No exact C2 named-farm operating report reviewed in this pass.",
+            "Example barn capacity is not a guaranteed installation capacity."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Lely Center Grüb",
+          "market": "Germany — Franken and Schwaben; regional coverage must be confirmed",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.lely.com/de/centers/grueb/",
+            "email": "info-gru@lelycenter.com",
+            "phone": "+49 981 487 542 90"
+          },
+          "sourceIds": [
+            "german-center"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Listed by Lely on its official German Center site with product sales and service.",
+          "caveats": [
+            "Site assessment and the responsible regional Center are required."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "delaval-optiduo-feed-remixer",
+      "name": "DeLaval OptiDuo",
+      "manufacturer": "DeLaval",
+      "robotClass": "dedicated_robot",
+      "industries": [
+        "agriculture"
+      ],
+      "workflowId": "farm_operations",
+      "exactConfiguration": "OptiDuo feed remixer without optional concentrate dispenser; current German hardware revision requires confirmation.",
+      "description": "An auger loosens and remixes feed already delivered to the feed table while moving it toward cattle.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.delaval.com/nl/onze-oplossingen/voeren/delaval-optiduo/",
+          "title": "Current OptiDuo product and technical table",
+          "publisher": "DeLaval",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "german-brochure",
+          "url": "https://www.delaval.com/globalassets/germany/Prospekte/dl956-delaval-optiduo-futter-anschieben-und-auflockern.pdf",
+          "title": "German OptiDuo brochure DL956, May 2022",
+          "publisher": "DeLaval",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "farm-case",
+          "url": "https://www.delaval.com/sv/aktuellt/kundberattelser/skovgarden-optiduo/",
+          "title": "OptiDuo farm operating report",
+          "publisher": "DeLaval",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "german-contact",
+          "url": "https://www.delaval.com/de/informationen/impressum/",
+          "title": "German business contact and configuration caveats",
+          "publisher": "DeLaval",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.delaval.com/nl/onze-oplossingen/voeren/delaval-optiduo/",
+        "https://www.delaval.com/globalassets/germany/Prospekte/dl956-delaval-optiduo-futter-anschieben-und-auflockern.pdf",
+        "https://www.delaval.com/sv/aktuellt/kundberattelser/skovgarden-optiduo/",
+        "https://www.delaval.com/de/informationen/impressum/"
+      ],
+      "conflicts": [
+        "Current NL table and German May 2022 brochure differ on mass, battery capacity, travel speed and daily charging requirement; no current German value selected."
+      ],
+      "unknowns": [
+        "Current German configuration revision, installed price, delivery time and continuous loaded endurance require confirmation."
+      ],
+      "operatingMode": {
+        "value": "Automatic scheduled remixing along an installed induction guide line.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "People prepare and deliver feed and maintain the guide route and robot.",
+          "Safety sensors support automatic stops; a site-specific installation remains necessary."
+        ]
+      },
+      "specs": [
+        {
+          "key": "working_width",
+          "value": 1.05,
+          "unit": "m",
+          "semanticLabel": "Feed-working width",
+          "conditions": [],
+          "sourceIds": [
+            "product",
+            "german-brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_feed_alley",
+          "value": 3.3,
+          "unit": "m",
+          "semanticLabel": "Minimum feed-table width",
+          "conditions": [],
+          "sourceIds": [
+            "product",
+            "german-brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "maximum_slope",
+          "value": 5,
+          "unit": "%",
+          "semanticLabel": "Published maximum gradient",
+          "conditions": [
+            "Requires installation assessment."
+          ],
+          "sourceIds": [
+            "product",
+            "german-brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "navigation",
+          "value": "Induction guide line",
+          "unit": null,
+          "semanticLabel": "Navigation infrastructure",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "feed_direction",
+          "value": "Right",
+          "unit": null,
+          "semanticLabel": "Feed movement direction",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Unresolved current German mass",
+          "conditions": [
+            "NL table 565 kg without dispenser; German 2022 brochure 560 kg."
+          ],
+          "sourceIds": [
+            "product",
+            "german-brochure"
+          ],
+          "verification": "unknown"
+        },
+        {
+          "key": "battery_capacity",
+          "value": null,
+          "unit": "Ah",
+          "semanticLabel": "Unresolved current German battery capacity",
+          "conditions": [
+            "NL 100 Ah versus German brochure 110 Ah."
+          ],
+          "sourceIds": [
+            "product",
+            "german-brochure"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Scheduled remixing and pushing of dairy feed.",
+          "configuration": "Two OptiDuo units installed in 2021 and 2024; revision unspecified.",
+          "operatingMode": "Farm report describes six runs daily with farm staff responsible for care.",
+          "sourceIds": [
+            "farm-case"
+          ],
+          "limitations": [
+            "Manufacturer-published customer account, not independent validation.",
+            "No milk-yield benefit is generalized from the testimonial."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "DeLaval GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.delaval.com/de/informationen/impressum/",
+            "email": "deutschland.info@delaval.com",
+            "phone": "+49 40 30 33 44 100"
+          },
+          "sourceIds": [
+            "german-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Direct manufacturer enquiry; no reseller claim.",
+          "caveats": [
+            "Ask the German office to confirm exact model revision and the responsible dealer."
+          ]
+        }
+      ]
+    }
+  ]
+}

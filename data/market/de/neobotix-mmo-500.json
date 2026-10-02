@@ -1,0 +1,174 @@
+{
+ "schemaVersion": 1,
+ "id": "neobotix-mmo-500",
+ "maker": "Neobotix",
+ "makerCountry": "DE",
+ "model": "MMO-500",
+ "variant": null,
+ "name": "Neobotix MMO-500",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-500",
+ "summary": "A Mecanum-wheel platform carrying a cobot arm (for example Universal Robots), with 80 kg platform payload and about 5 h runtime, mainly for research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Built and sold by Neobotix GmbH in Germany; price on request via the maker's contact page or info@neobotix.de.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Neobotix GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-500",
+    "contactUrl": "https://www.neobotix-robots.com/contact/contact-details",
+    "email": "info@neobotix.de",
+    "phone": "+49 7131 89969-10",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "German maker; quotes on request."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 80,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "up to, depending on the arm fitted",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "986 x 662 x 804",
+   "unit": "mm",
+   "conditions": "L x W x H",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 0.8,
+   "unit": "m/s",
+   "conditions": "below",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 5,
+   "unit": "h",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "1-2 2D laser scanners",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS; PlatformPilot for industrial use",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 25,
+  "carryPayloadKg": 80,
+  "runtimeH": 5,
+  "ipRating": null,
+  "sdk": "ROS, PlatformPilot",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arm and gripper are chosen per order.",
+   "Omnidirectional base on Mecanum wheels (MPO-500).",
+   "Product text mentions cobot arms up to 12 kg; the data table says up to 25 kg."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.neobotix-robots.com/fileadmin/images/produkte/Mobile_Manipulatoren/MMO-500/Manipulator-MMO-500-Hauptansicht-Render.jpg",
+   "pageUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-500",
+   "credit": "Neobotix",
+   "alt": "Neobotix MMO-500 Mecanum platform with cobot arm",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.neobotix-robots.com/fileadmin/images/produkte/Mobile_Manipulatoren/MMO-500/MMO-500-UR10-A-b.jpg",
+   "pageUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-500",
+   "credit": "Neobotix",
+   "alt": "Neobotix MMO-500 Mecanum platform with control cabinet and Universal Robots arm, side view.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for research and industrial mobile manipulation with ROS 2 or PlatformPilot",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-500",
+   "title": "MMO-500 product page",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.neobotix-robots.com/contact/contact-details",
+   "title": "Contact details",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Prices are not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

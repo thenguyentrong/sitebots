@@ -1,0 +1,65 @@
+{
+ "schemaVersion": 1,
+ "id": "galileo-gh1",
+ "maker": "Galileo (Tianjin) Technology",
+ "makerCountry": "CN",
+ "model": "GH1",
+ "variant": null,
+ "name": "Galileo GH1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galileotime.com/en/main/Robot",
+ "summary": "A 1.55 m, 45 kg walking humanoid with 31 degrees of freedom and optional dexterous hands, sold in China on request.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Galileo sells from Tianjin by phone and email (intent orders); no EU office, distributor or customer found. Only a US-run German-language shop (Roboter Deutschland) lists it as a quote item with no price.",
+  "sourceIds": ["s1", "s2", "s3"],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  { "key": "height_m", "label": "Height", "value": 1.55, "unit": "m", "conditions": "500 x 255 x 1550 mm (L x W x H)", "sourceId": "s2" },
+  { "key": "weight_kg", "label": "Weight", "value": 45, "unit": "kg", "conditions": null, "sourceId": "s2" },
+  { "key": "dof_total", "label": "Degrees of freedom", "value": 31, "unit": null, "conditions": "head 2, waist 3, per arm 7, per leg 6", "sourceId": "s2" },
+  { "key": "dof_per_arm", "label": "DoF per arm", "value": 7, "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "reach_m", "label": "Arm length", "value": 0.615, "unit": "m", "conditions": "single arm", "sourceId": "s2" },
+  { "key": "battery_wh", "label": "Battery", "value": 444, "unit": "Wh", "conditions": "10 Ah", "sourceId": "s2" },
+  { "key": "charging_time_h", "label": "Charging time", "value": 2, "unit": "h", "conditions": "auto-charging optional", "sourceId": "s2" },
+  { "key": "max_speed_ms", "label": "Movement speed", "value": 4, "unit": "m/s", "conditions": null, "sourceId": "s2" },
+  { "key": "sensors", "label": "Perception", "value": "Depth camera", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "compute", "label": "Compute", "value": "Onboard edge computing unit (not specified)", "unit": null, "conditions": null, "sourceId": "s2" }
+ ],
+ "capabilities": {
+  "legs": true, "wheels": false, "tracks": false,
+  "levelFloors": true, "roughGround": null, "stairs": null, "outdoor": null,
+  "arms": 2, "hands": "optional", "handsIncluded": null,
+  "armPayloadKg": null, "carryPayloadKg": null, "runtimeH": null, "ipRating": null,
+  "sdk": null,
+  "sourceIds": ["s2"],
+  "notes": [
+   "Dexterous hands are optional.",
+   "No payload, runtime, IP rating or SDK published."
+  ]
+ },
+ "images": [
+  { "url": "https://www.roboterdeutschland.de/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/g/a/galileo-gh1-humanoid-robot.jpg", "pageUrl": "https://www.roboterdeutschland.de/GALILEO-GH1.htm", "credit": "Galileo (Tianjin) Technology, image hosted by Roboter Deutschland", "alt": "Galileo GH1 bipedal humanoid robot", "kind": "product" }
+ ],
+ "evidence": [
+  { "taskIds": [], "task": "Humanoid for industrial and daily-life scenarios", "stage": "claim", "where": null, "date": null, "sourceId": "s2", "note": "Maker description only; no named customer found." }
+ ],
+ "sources": [
+  { "id": "s1", "url": "https://www.galileotime.com/en/main/Robot", "title": "GH1 Humanoid Robot", "publisher": "Galileo (Tianjin) Technology", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s2", "url": "https://www.galileotime.com/config/lang.json", "title": "Galileo website content file (GH1 parameters, procurement page)", "publisher": "Galileo (Tianjin) Technology", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s3", "url": "https://www.roboterdeutschland.de/GALILEO-GH1.htm", "title": "Galileo GH1 Humanoid Robot", "publisher": "Roboter Deutschland (Robots International)", "kind": "seller", "checkedAt": "2026-10-02" }
+ ],
+ "openQuestions": [
+  "Price, payload, runtime and delivery outside China.",
+  "The maker image server (vx.galileotime.com:10901) did not answer during this check, so the image is the shop copy."
+ ],
+ "checkedAt": "2026-10-02"
+}

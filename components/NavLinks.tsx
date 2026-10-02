@@ -5,8 +5,10 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const ITEMS = [
-  { href: '/use-cases', label: 'Use cases', match: (p: string) => p.startsWith('/use-cases') },
-  { href: '/robots', label: 'Robots', match: (p: string) => p.startsWith('/robots') || p.startsWith('/brands') },
+  { href: '/#explore', label: 'Job map', match: (p: string) => p === '/' || p.startsWith('/use-cases') || p.startsWith('/workflows') },
+  { href: '/steps', label: 'Steps', match: (p: string) => p.startsWith('/steps') },
+  { href: '/robots', label: 'Robots', match: (p: string) => p.startsWith('/robots') || p.startsWith('/market') || p.startsWith('/brands') || p.startsWith('/solutions') },
+  { href: '/costs', label: 'Costs', match: (p: string) => p.startsWith('/costs') },
   { href: '/compare', label: 'Compare', match: (p: string) => p.startsWith('/compare') },
 ];
 
@@ -21,7 +23,7 @@ export function NavLinks({ className }: { className?: string }) {
             key={it.href}
             href={it.href}
             aria-current={active ? 'page' : undefined}
-            className={cn('whitespace-nowrap rounded-full px-3 py-1.5 text-sm transition', active ? 'bg-card font-medium text-foreground shadow-sm' : 'text-muted hover:text-foreground')}
+            className={cn('whitespace-nowrap rounded-full px-2.5 py-1.5 text-sm transition sm:px-3', active ? 'bg-card font-medium text-foreground shadow-sm' : 'text-muted hover:text-foreground')}
           >
             {it.label}
           </Link>

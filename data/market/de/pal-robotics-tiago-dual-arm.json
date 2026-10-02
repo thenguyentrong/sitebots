@@ -1,0 +1,202 @@
+{
+ "schemaVersion": 1,
+ "id": "pal-robotics-tiago-dual-arm",
+ "maker": "PAL Robotics",
+ "makerCountry": "ES",
+ "model": "TIAGo",
+ "variant": "Dual arm (TIAGo++)",
+ "name": "PAL Robotics TIAGo++",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://pal-robotics.com/robot/tiago/",
+ "summary": "The two-arm configuration of TIAGo: two 7-DoF arms (3 kg each) on a lifting torso and indoor wheeled base.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Barcelona, Spain) that sells directly to customers across Europe on quote; no German distributor found and no public price. TIAGo is used in 40 collaborative projects across 14 EU countries according to PAL.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "PAL Robotics",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://pal-robotics.com/robot/tiago/",
+    "contactUrl": "https://pal-robotics.com/contact/",
+    "email": "business@pal-robotics.com",
+    "phone": "+34 934 145 347",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Barcelona; quote request on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.10-1.45",
+   "unit": "m",
+   "conditions": "Lifting torso, 35 cm range",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "As stated on the datasheet; configuration not specified",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "At full extension, without end effector",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.87,
+   "unit": "m",
+   "conditions": "Without end effector",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery autonomy",
+   "value": "4-5 (1 battery) / 8-10 (2 batteries)",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Navigation laser 5.6 m (10 m or 25 m optional), rear sonars, RGB-D head camera, microphones",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu LTS RT, ROS (ROS 2 announced), open simulation model",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "ROS",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Datasheet lists operational environment: indoor.",
+   "Configurable: differential or omnidirectional base, parallel gripper, Robotiq 2F-85/2F-140, ePick vacuum, optional force/torque sensors.",
+   "Runtime 4-5 h with one battery, 8-10 h with two.",
+   "A version without arm exists (not a manipulator)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/03/TIAGo_side.png",
+   "pageUrl": "https://pal-robotics.com/robot/tiago/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics TIAGo++ with two 7-DoF arms and grippers on the round differential base, cut-out",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Healthcare demonstrations in the EU project OpenDR",
+   "stage": "demo",
+   "where": "EU project OpenDR",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Video listed on the product page."
+  },
+  {
+   "taskIds": [],
+   "task": "Trials in hybrid production systems based on human-robot interaction",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Video listed on the product page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://pal-robotics.com/robot/tiago/",
+   "title": "TIAGo product page, configurator and specs",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/04/Datasheet-TIAGo.pdf",
+   "title": "TIAGo datasheet",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://pal-robotics.com/robots/",
+   "title": "Our Robots",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "German customers or resellers?"
+ ],
+ "checkedAt": "2026-10-02"
+}

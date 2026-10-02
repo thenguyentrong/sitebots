@@ -1,0 +1,202 @@
+{
+ "schemaVersion": 1,
+ "id": "trossen-robotics-rivet",
+ "maker": "Trossen Robotics",
+ "makerCountry": "US",
+ "model": "Rivet",
+ "variant": "with 2 WidowX Pro arms",
+ "name": "Trossen Robotics Rivet",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.trossenrobotics.com/rivet",
+ "summary": "A holonomic three-wheel base with an 890 mm lift that carries two WidowX Pro arms (4 kg each), onboard Jetson compute and a hand-swappable battery.",
+ "launched": "2026",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Trossen sells by quote and calls its 2026 lineup prices proposed. MYBOTSHOP (Germany) lists Rivet at €35,694.95 incl. VAT but marks it not available at the moment; no delivery to Germany confirmed.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 35694.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "MYBOTSHOP price incl. 19% VAT; shown as not available at the moment."
+  },
+  "priceOther": {
+   "amount": 30785,
+   "currency": "USD",
+   "market": "Trossen list price, Rivet + 2 WidowX Pro + cameras (proposed)",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Trossen Robotics",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": "https://www.trossenrobotics.com/rivet",
+    "contactUrl": "https://www.trossenrobotics.com/contact-us",
+    "email": "sales@trossenrobotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Request a quote; base without arms also offered."
+   },
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.mybotshop.de/TrossenRobotics-Rivet",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": 35694.95,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "Trossen's listed distributor for Germany. Listed at €35,694.95 incl. 19% VAT but marked 'Momentan nicht verfügbar' (not available at the moment); configuration not stated."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 4,
+   "unit": "kg",
+   "conditions": "per arm, WidowX Pro",
+   "sourceId": "s1"
+  },
+  {
+   "key": "lift_travel_m",
+   "label": "Vertical axis travel",
+   "value": 0.89,
+   "unit": "m",
+   "conditions": "both arms, floor to high shelf",
+   "sourceId": "s1"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "Holonomic swerve drive, 3 wheels",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Orin 64 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Front 2D RPLiDAR, GMSL2 camera positions",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "removed by hand",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 4,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Trossen SDK, ROS 2, LeRobot",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Indoor research and supervised deployment; Trossen says its systems are not safety-rated cobots.",
+   "Weight, runtime and speed not published on the product page."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static.wixstatic.com/media/4fdcde_2386339290ab488c80260f9f15fb704b~mv2.png",
+   "pageUrl": "https://www.trossenrobotics.com/rivet",
+   "credit": "Trossen Robotics",
+   "alt": "Trossen Rivet mobile base with lift column and two arms",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for mobile data collection and deployment of learned manipulation policies",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.trossenrobotics.com/rivet",
+   "title": "Rivet product page",
+   "publisher": "Trossen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.trossenrobotics.com/2026-product-lineup",
+   "title": "2026 Physical AI lineup (pricing proposed)",
+   "publisher": "Trossen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.trossenrobotics.com/distributors",
+   "title": "Distributors",
+   "publisher": "Trossen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.mybotshop.de/TrossenRobotics-Rivet",
+   "title": "TrossenRobotics Rivet",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Has Rivet started shipping, and to Europe?",
+  "Weight, runtime, speed and CE status."
+ ],
+ "checkedAt": "2026-10-02"
+}

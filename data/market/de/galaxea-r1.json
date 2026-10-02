@@ -1,0 +1,131 @@
+{
+ "schemaVersion": 1,
+ "id": "galaxea-r1",
+ "maker": "Galaxea Dynamics",
+ "makerCountry": "CN",
+ "model": "R1",
+ "variant": null,
+ "name": "Galaxea R1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galaxea-ai.com/products/R1",
+ "summary": "The original 1.7 m Galaxea wheeled dual-arm robot with 24 joints and grippers, listed on the Chinese site but not in the international store.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not offered in Galaxea's international online store, which lists only R1 Pro and R1 Lite; no German or EU seller found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": "width 675 mm (R1 column of the maker comparison table)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 24,
+   "unit": null,
+   "conditions": "with standard grippers",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 2,
+   "unit": "kg",
+   "conditions": "rated per arm at 0.5 m; 3.5 kg max",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Base speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "vertical_reach_m",
+   "label": "Vertical working range",
+   "value": "0-2",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 2,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Superseded for export by R1 Pro and R1 Lite."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.galaxea-ai.com/images/products/R1pro/param_R1.png",
+   "pageUrl": "https://www.galaxea-ai.com/products/R1",
+   "credit": "Galaxea AI",
+   "alt": "Galaxea R1 wheeled dual-arm robot with grippers, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://galaxea-dynamics.com/products.json",
+   "title": "Galaxea international store product list (no R1)",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.galaxea-ai.com/products/R1",
+   "title": "R1 product page (Chinese)",
+   "publisher": "Galaxea AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

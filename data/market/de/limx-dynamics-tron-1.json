@@ -1,0 +1,338 @@
+{
+ "schemaVersion": 1,
+ "id": "limx-dynamics-tron-1",
+ "maker": "LimX Dynamics",
+ "makerCountry": "CN",
+ "model": "TRON 1",
+ "variant": "Standard / EDU",
+ "name": "LimX Dynamics TRON 1",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.limxdynamics.com/en/products/tron1",
+ "summary": "A 20 kg two-legged research robot with swappable point feet, soles or wheels for locomotion and reinforcement-learning research; an arm is an optional add-on kit.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU sells the TRON1 EDU for 21,636.37 € incl. VAT (on demand) with an add-to-cart button; Bipedal (Leverkusen) offers new units on request and one demo unit for 12,999 € incl. VAT. Muzix (Hungary) also lists it.",
+  "sourceIds": [
+   "s5",
+   "s6",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 21636.37,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s5",
+   "note": "TRON1 EDU at RobotShop EU, tax included; Bipedal demo unit 12,999 € incl. VAT."
+  },
+  "priceOther": null,
+  "leadTime": "On demand at RobotShop EU (no date shown); about 4 weeks for the Bipedal demo unit",
+  "sellers": [
+   {
+    "name": "Muzix Group Co. Ltd.",
+    "country": "HU",
+    "role": "reseller",
+    "productUrl": "https://www.muzix.eu/de/LimX-Dynamics/Robotic/LIMX-TRON1-EDU/LIMX-DYNAMICS-TRON1-Multi-Modal-Biped-Robot",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "TRON1 EDU listed without a price."
+   },
+   {
+    "name": "LimX Dynamics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.limxdynamics.com/en/products/tron1",
+    "contactUrl": "https://www.limxdynamics.com/en/order",
+    "email": "bd@limxdynamics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Order consultation form lists Germany as a country option."
+   },
+   {
+    "name": "RobotShop EU (eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "productUrl": "https://eu.robotshop.com/products/limx-dynamics-tron1-multi-modal-biped-robot-edu",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 21636.37,
+    "priceBasis": "gross",
+    "sourceId": "s5",
+    "note": "TRON1 EDU (point-foot, sole and wheel modes), 21,636.37 € tax included for a German visitor; On Demand item ordered from the supplier, add to cart."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.bipedal.de/LimX-Dynamics-TRON1-EDU-Biped-Robot",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s6",
+    "note": "New TRON1 EDU: price on request, shown as \"Sofort verfügbar\"."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.bipedal.de/LimX-Dynamics-TRON1-EDU-Biped-Robot_1",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 12999,
+    "priceBasis": "gross",
+    "sourceId": "s7",
+    "note": "DEMO UNIT, 12,999 € incl. 19% VAT (was 23,798.81 €), delivery about 4 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Net weight",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "at most",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size",
+   "value": "392 x 420 x 845",
+   "unit": "mm",
+   "conditions": "at most",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load capacity",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "up to; manual states maximum 15 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3,
+   "unit": "m/s",
+   "conditions": "wheeled mode; point foot and sole below 1 m/s",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max climbing angle",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "wheeled mode",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max obstacle height",
+   "value": 20,
+   "unit": "cm",
+   "conditions": "wheeled mode",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery range",
+   "value": 2,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "full; under 1 h for 20-80%",
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick battery swap",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating environment",
+   "value": "-5 to 40",
+   "unit": "°C",
+   "conditions": "favourable weather only",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "12th Gen Intel i3, 16 GB, 512 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "open SDK, Python, URDF, Isaac/MuJoCo/Gazebo simulation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": 10,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "LimX SDK (Python, C++)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Two-legged platform without arms or head; no category fits exactly. Arm, sensor and voice kits are optional add-ons.",
+   "Wheels are one of three swappable foot modules.",
+   "Rated only for favourable weather (-5 to 40 °C); no IP rating."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron1/home/1.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron1",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics TRON 1 biped with point feet",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron1/kits/TRON_1_6cbd20d641.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron1",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics TRON 1 on wheel feet with a sensor frame mounted on top, studio render",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron1/kits/908_8dfbada101.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron1",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics TRON 1 with the optional robot arm and sole feet, studio render",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.muzix.eu/shop_ordered/96483/pic/Oktatasi_Celu_Robotok_Kategoria/Humanoid_Robotok_Kategoria/3modes.png",
+   "pageUrl": "https://www.muzix.eu/de/LimX-Dynamics/Robotic/LIMX-TRON1-EDU/LIMX-DYNAMICS-TRON1-Multi-Modal-Biped-Robot",
+   "credit": "Muzix Group Co. Ltd. / LimX Dynamics",
+   "alt": "LimX Dynamics TRON 1 in its three foot configurations, wheels, soles and point feet, side view",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron1/cases/4_21_5bddc32b82.webp",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron1",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics TRON 1 on wheel feet with a cargo rack and camera unit on top, on a paved walkway beside a lawn",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:tron-coordinate-arm-leg-control",
+    "research:tron-mapping-navigation-validation"
+   ],
+   "task": "Research platform for legged locomotion, arm-leg control and mapping/navigation with add-on kits",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.limxdynamics.com/en/products/tron1",
+   "title": "TRON 1 product page",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.limxdynamics.com/en/products/tron1/spec",
+   "title": "TRON 1 specifications",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.muzix.eu/de/LimX-Dynamics/Robotic/LIMX-TRON1-EDU/LIMX-DYNAMICS-TRON1-Multi-Modal-Biped-Robot",
+   "title": "LIMX DYNAMICS TRON1 - Multi-modaler zweibeiniger Roboter",
+   "publisher": "Muzix Group Co. Ltd.",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.limxdynamics.com/en/order",
+   "title": "Contact Sales / order consultation",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://eu.robotshop.com/products/limx-dynamics-tron1-multi-modal-biped-robot-edu",
+   "title": "Limx Dynamics TRON 1 Multi-Modal Biped Robot (EDU)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.bipedal.de/LimX-Dynamics-TRON1-EDU-Biped-Robot",
+   "title": "LimX Dynamics TRON1 EDU Biped Robot",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.bipedal.de/LimX-Dynamics-TRON1-EDU-Biped-Robot_1",
+   "title": "LimX Dynamics TRON1 EDU Biped Robot - Demo Unit",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "robotType: TRON 1 is a biped without arms; \"mobile_manipulator\" chosen only because an arm kit is sold."
+ ],
+ "checkedAt": "2026-10-02"
+}

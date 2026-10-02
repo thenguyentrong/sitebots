@@ -1,0 +1,132 @@
+{
+ "schemaVersion": 1,
+ "id": "canvas-1200cx",
+ "maker": "Canvas (JLG Industries)",
+ "makerCountry": "US",
+ "model": "1200CX",
+ "variant": null,
+ "name": "Canvas 1200CX",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drywall_finishing",
+  "site_drywall/drywall-joint-finishing"
+ ],
+ "officialUrl": "https://www.jlg.com/en/canvas/1200cx",
+ "summary": "Self-driving drywall finishing robot that sprays and sands joint compound for Level 4 and 5 finishes, reaching 12 ft.",
+ "launched": "2024-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Offered by JLG in the US only; all listed projects are in San Francisco and there is no Canvas page on JLG's European sites.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "footprint_in",
+   "label": "Footprint",
+   "value": "30 x 35.4",
+   "unit": "in",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_lb",
+   "label": "Weight",
+   "value": 1200,
+   "unit": "lb",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_ft",
+   "label": "Reach",
+   "value": 12,
+   "unit": "ft",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "min_opening_in",
+   "label": "Minimum opening",
+   "value": 30,
+   "unit": "in",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Battery powered, self-drive with all-wheel steer."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://dam.jlg.com/DigizuiteCore/LegacyService/api/assetstream/194226/-1.jpg",
+   "pageUrl": "https://www.jlg.com/en/canvas/1200cx",
+   "credit": "JLG Industries",
+   "alt": "Canvas 1200CX drywall finishing robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_drywall/drywall-joint-finishing"
+   ],
+   "task": "Drywall finishing on airport terminal project",
+   "stage": "deployment",
+   "where": "SFO Harvey Milk Terminal 1, San Francisco, USA",
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.jlg.com/en/canvas/1200cx",
+   "title": "Canvas 1200CX",
+   "publisher": "JLG Industries",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.jlg.com/en/canvas",
+   "title": "Canvas home with project references",
+   "publisher": "JLG Industries",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime per charge in hours."
+ ],
+ "checkedAt": "2026-10-02"
+}

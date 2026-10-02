@@ -1,0 +1,67 @@
+{
+  "checkedAt": "2026-10-01T00:45:44.275Z",
+  "opportunities": 201,
+  "opportunitiesWithCandidates": 42,
+  "explicitTaskLinks": 45,
+  "configurationReviews": 43,
+  "configurationsWithImages": 37,
+  "specificationFields": 253,
+  "manufacturerSupportedFields": 220,
+  "buyingRoutes": 61,
+  "uniqueSourceURLs": 141,
+  "conflicts": 70,
+  "openQuestions": 128,
+  "broaderCatalogue": {
+    "configurations": 572,
+    "missingImage": 363,
+    "missingCoreSpecs": 533,
+    "status": "Stored inventory audit; separate from these configuration reviews. Not refreshed or source-verified by this command."
+  },
+  "sourceHealth": {
+    "retrieved": 118,
+    "unavailable": 23
+  },
+  "imageCrawlerHealth": {
+    "unavailable": 16,
+    "ok": 21
+  },
+  "configurationsWithoutConfirmedImage": [
+    {
+      "id": "conbotics-malerroboter-2-surface-finishing",
+      "name": "ConBotics MalerRoboter 2.0"
+    },
+    {
+      "id": "hundegger-robot-drive650-joinery",
+      "name": "Hundegger ROBOT-Drive 650"
+    },
+    {
+      "id": "yaskawa-arcworld-cs-v2500-l1300",
+      "name": "Yaskawa ArcWorld CS V2-500 Y3 L1300"
+    },
+    {
+      "id": "omron-md-900-transport",
+      "name": "OMRON MD-900 — transport platform"
+    },
+    {
+      "id": "anybotics-anymal-d-inspection",
+      "name": "ANYmal Generation D — standard inspection"
+    },
+    {
+      "id": "anybotics-anymal-x-inspection",
+      "name": "ANYmal X — Ex-zone inspection"
+    }
+  ],
+  "validation": {
+    "unitTests": 369,
+    "browserTests": 23,
+    "contentTasks": 189,
+    "productionBuild": "passed",
+    "browserErrors": 0
+  },
+  "limitations": [
+    "Source observations include cache reuse; successful retrieval is not factual verification.",
+    "Image references have model provenance. Crawler access can be refused while ordinary page images still render; failed browser images use an explicit class illustration.",
+    "The 572-record legacy inventory is separate and remains queued for exact-model review. No wholesale scrape import or catalogue snapshot rewrite occurred.",
+    "159 mapped opportunities still lack reviewed candidates. Current stock, Germany delivery and site fit are not inferred from published contact details."
+  ]
+}

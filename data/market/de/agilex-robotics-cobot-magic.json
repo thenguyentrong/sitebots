@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "agilex-robotics-cobot-magic",
+ "maker": "AgileX Robotics",
+ "makerCountry": "CN",
+ "model": "Cobot Magic",
+ "variant": null,
+ "name": "AgileX Cobot Magic",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://global.agilex.ai/products/cobot-magic",
+ "summary": "A Mobile ALOHA-style teleoperation kit: two follower and two leader arms with three cameras on a wheeled AgileX Tracer base, for recording demonstrations.",
+ "launched": "2024-03",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots lists it in its German shop with an order button, from €52,000 net, delivery within 2 months.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 52000,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "€62,400 including 20% VAT as shown."
+  },
+  "priceOther": null,
+  "leadTime": "Within 2 months (Generation Robots)",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404223-cobot-magic-teleoperierte-plattform.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 52000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Base weight",
+   "value": 28,
+   "unit": "kg",
+   "conditions": "seller states 28-30 kg; base dimensions 685 x 570 x 155 mm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 1.5,
+   "unit": "kg",
+   "conditions": "per arm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.626,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Base payload",
+   "value": 100,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Base speed",
+   "value": 1.6,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Cameras",
+   "value": "2 wrist cameras and 1 top camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Mobile ALOHA code, ROS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 1.5,
+  "carryPayloadKg": 100,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS, Mobile ALOHA",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Four arms in total: two leader arms for the operator, two follower arms that do the work.",
+   "Light 1.5 kg arms; built for lab data collection, not site work."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0551/0630/6141/files/CobotMagic-_45.png?v=1790152448",
+   "pageUrl": "https://global.agilex.ai/products/cobot-magic",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX Cobot Magic with four arms on a wheeled base",
+   "kind": "product"
+  },
+  {
+   "url": "https://global.agilex.ai/cdn/shop/files/CobotMagic.png?v=1790152448&width=1946",
+   "pageUrl": "https://global.agilex.ai/products/cobot-magic",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX Cobot Magic side view with its arms, monitor pole and wheeled base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Seller shows it opening water bottles, watering plants and cooking meals under teleoperation",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://global.agilex.ai/products/cobot-magic",
+   "title": "COBOT MAGIC product page",
+   "publisher": "AgileX Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404223-cobot-magic-teleoperierte-plattform.html",
+   "title": "Cobot Magic - teleoperierte Plattform",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime of the base not stated."
+ ],
+ "checkedAt": "2026-10-02"
+}

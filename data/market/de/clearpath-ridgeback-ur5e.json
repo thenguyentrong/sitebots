@@ -1,0 +1,207 @@
+{
+ "schemaVersion": 1,
+ "id": "clearpath-ridgeback-ur5e",
+ "maker": "Clearpath Robotics",
+ "makerCountry": "CA",
+ "model": "Ridgeback",
+ "variant": "UR5e Manipulation Package",
+ "name": "Clearpath Ridgeback with UR5e",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://clearpathrobotics.com/ridgeback-indoor-robot-platform/",
+ "summary": "Clearpath's 135 kg omnidirectional indoor research platform with a preconfigured UR5e arm, Robotiq two-finger gripper and wrist cameras, for teaching and R&D in mobile manipulation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Clearpath names Generation Robots (Berlin) and MYBOTSHOP as German distributors. Both list only the bare base (€40,185.60 net at Generation Robots, €45,218.81 incl. VAT at MYBOTSHOP); the UR5e package is quoted on request. Generation Robots reports Ridgebacks with arms delivered to Universität Freiburg.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "About 4 months for the base (MYBOTSHOP)",
+  "sellers": [
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Clearpath-Ridgeback",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Lists the Ridgeback base (without arm) at €45,218.81 incl. 19% VAT; arms such as UR, Franka or xArm on request."
+   },
+   {
+    "name": "Generation Robots",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": null,
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 255 555 730",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Berlin office listed by Clearpath as a German distributor. Its shop lists the Ridgeback base (no arm) at €40,185.60 net, 5-6 weeks, and says it integrated 4 Ridgebacks with collaborative arms for Universität Freiburg."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 135,
+   "unit": "kg",
+   "conditions": "platform",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "960 x 793 x 311",
+   "unit": "mm",
+   "conditions": "platform",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Max payload",
+   "value": 100,
+   "unit": "kg",
+   "conditions": "platform",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.1,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Obstacle clearance",
+   "value": 1.8,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "base, per seller",
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "Universal Robots UR5e with Robotiq 2-finger gripper, wireless safety controller, teach pendant, Intel D435 wrist cameras",
+   "unit": null,
+   "conditions": "UR5e Manipulation Package",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 Jazzy, MoveIt, MoveIt Pro",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 100,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "ROS 2, MoveIt",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Indoor platform with 18 mm obstacle clearance.",
+   "UR5e arm payload not stated on the Clearpath page.",
+   "Package aimed at teaching and R&D."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://clearpathrobotics.com/wp-content/uploads/2015/09/ridgeback-ur-bee-config.png",
+   "pageUrl": "https://clearpathrobotics.com/ridgeback-indoor-robot-platform/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Ridgeback with a single Universal Robots arm and Robotiq two-finger gripper, Clearpath configuration render (earlier set-up with a camera mast)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers the package for graduate robotics courses, R&D proofs of concept and teleoperated mobile manipulation",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clearpathrobotics.com/ridgeback-indoor-robot-platform/",
+   "title": "Ridgeback product page (UR5e Manipulation Package)",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://clearpathrobotics.com/contact-a-global-distributor/",
+   "title": "Contact a global distributor",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.mybotshop.de/Clearpath-Ridgeback",
+   "title": "Clearpath Robotics Ridgeback",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.generationrobots.com/de/402768-ridgeback-omnidirektionale-mobile-plattform.html",
+   "title": "Ridgeback omnidirektionale mobile Plattform",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Package price in Germany.",
+  "No official image of the Ridgeback with UR5e found; Clearpath shows the bare base only."
+ ],
+ "checkedAt": "2026-10-02"
+}

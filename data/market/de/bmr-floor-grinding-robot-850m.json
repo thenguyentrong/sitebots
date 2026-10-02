@@ -1,0 +1,312 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-floor-grinding-robot-850m",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Floor Grinding Robot 850M",
+ "variant": "with built-in dust collection",
+ "name": "BMR Floor Grinding Robot 850M",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors",
+  "research:polish-concrete-terrazzo-floors"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/177.html",
+ "summary": "Autonomous 850 mm planetary floor grinder (18.5 kW, 380 V) that maps walls and columns with LiDAR and grinds concrete floors on its own, with built-in dust collection.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route to Germany found. BMR sells direct from China and names markets in Asia, the Middle East and Brazil, none in the EU. The only German listing is a US reseller not named by BMR, and BMR states no CE marking for this machine. Roboter Deutschland, a web shop run from Las Vegas without a named company, also lists it; it is not counted as a seller here.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Shenzhen BrightMaster Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://en.bm-robot.com/detail/177.html",
+    "contactUrl": "https://en.bm-robot.com/contact.html",
+    "email": "sales@bm-robot.com",
+    "phone": "400 988 2007 (ext. 2)",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Direct export enquiries via form, email or WhatsApp from Shenzhen; no EU office or EU distributor named."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "380 VAC three-phase five-wire, 50/60 Hz",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_kw",
+   "label": "Grinding power",
+   "value": 18.5,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dust_collection_kw",
+   "label": "Dust collection power",
+   "value": 2.4,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_width_mm",
+   "label": "Working width",
+   "value": "850 ±50",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_disc",
+   "label": "Grinding disc",
+   "value": "planetary",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_speed_rpm",
+   "label": "Grinding speed",
+   "value": "400-2000",
+   "unit": "r/min",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 0.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 30 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "travel_range_km",
+   "label": "Operating range",
+   "value": 9,
+   "unit": "km",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing",
+   "value": 15,
+   "unit": "°",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Positioning accuracy",
+   "value": 50,
+   "unit": "mm",
+   "conditions": "5 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions (L x W x H)",
+   "value": "2030 x 915 x 1275",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 754,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR scanning for walls and columns; obstacle stop",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Grinds on 380 V mains power; the 48 V battery is listed separately (travel range 9 km).",
+   "Automatic dust collection is built in (850M series).",
+   "Removes laitance before epoxy, hardener and terrazzo floors; also offered for polishing."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260420/aa5f2c7c159273b0a0a55ad889733216.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/177.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BMR Floor Grinding Robots in a hall (banner with text; 850M and 850S not labelled)",
+   "kind": "product"
+  },
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260420/a5e0e5d5ee63b89ec209819db4619097.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/177.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BrightMaster Floor Grinding Robot in a warehouse (model not labelled)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors"
+   ],
+   "task": "Automatic floor grinding at 300 m²/h per pass before epoxy coating",
+   "stage": "deployment",
+   "where": "Lake City Project, Kuala Lumpur, Malaysia",
+   "date": "2022-12",
+   "sourceId": "s6",
+   "note": "Case does not say 850M or 850S."
+  },
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors"
+   ],
+   "task": "Grinding a 30,000 m² basement floor at about 100 m² per 30 minutes",
+   "stage": "deployment",
+   "where": "Residential project, Toa Payoh, Singapore",
+   "date": "2026-09",
+   "sourceId": "s7",
+   "note": "News does not say 850M or 850S."
+  },
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors"
+   ],
+   "task": "Laitance removal with automatic dust collection and cable reel",
+   "stage": "deployment",
+   "where": "DAMAC BAY, Dubai, UAE",
+   "date": null,
+   "sourceId": "s8",
+   "note": "Case mentions automatic dust collection, which the page lists for the 850M series; model not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/177.html",
+   "title": "Floor Grinding Robot (850M / 850S) product page",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/contact.html",
+   "title": "Contact Us",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/BMR-Floor-Grinding-Robot-850M.htm",
+   "title": "BMR Floor Grinding Robot 850M at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact",
+   "title": "Roboter Deutschland contact page (Las Vegas, NV, USA)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://en.bm-robot.com/detail/215.html",
+   "title": "Lake City Project, Kuala Lumpur (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://en.bm-robot.com/detail/300.html",
+   "title": "BrightMaster deploys two robots at Singapore housing project (news, 2026-09-17)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://en.bm-robot.com/detail/223.html",
+   "title": "DAMAC BAY, Dubai (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is this machine CE-marked and does it come with an EU declaration of conformity? BMR states CE only for its Measuring Robot.",
+  "Does BMR have, or plan, an authorised distributor or service partner in the EU or Germany?",
+  "Is Roboter Deutschland / Robots International authorised by BMR, and who provides service and spare parts in Germany?",
+  "What grinding rate in m²/h does BMR rate for this model? The page gives none."
+ ],
+ "checkedAt": "2026-10-02"
+}

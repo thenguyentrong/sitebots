@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Hospital cart and small-supply transport, with clinical handling excluded and German buying gaps explicit.",
+  "records": [
+    {
+      "id": "aethon-t3-hospital-cart",
+      "name": "Aethon T3 hospital cart system",
+      "manufacturer": "ST Engineering Aethon",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "healthcare_logistics"
+      ],
+      "exactConfiguration": "Standard T3 with compatible cart base and building integration, June 2025 linked specification. T3XL capacity is excluded.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Collect a prepared meal or linen cart, travel along configured hospital routes and release it at a destination.",
+      "operatingMode": {
+        "value": "Autonomous cart pickup, transport, dropoff and charging; staff load carts, dispatch work and handle exceptions.",
+        "sourceIds": [
+          "technical",
+          "sheet"
+        ],
+        "caveats": [
+          "Door and lift hardware/software integration is site specific.",
+          "Existing carts may need a compatible base retrofit."
+        ]
+      },
+      "specs": [
+        {
+          "key": "cart_payload_kg",
+          "value": 340,
+          "unit": "kg",
+          "semanticLabel": "Standard T3 total cart capacity",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_cart_length_cm",
+          "value": 111.76,
+          "unit": "cm",
+          "semanticLabel": "Maximum cart length",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_cart_width_cm",
+          "value": 81.3,
+          "unit": "cm",
+          "semanticLabel": "Maximum cart width",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "travel_speed_cm_s",
+          "value": 76,
+          "unit": "cm/s",
+          "semanticLabel": "Maximum travel speed",
+          "conditions": [
+            "Reduce for route safety and traffic."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "turning_envelope_cm",
+          "value": 125.56,
+          "unit": "cm",
+          "semanticLabel": "Turning envelope, not turning radius",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_sheet_h",
+          "value": 9,
+          "unit": "h",
+          "semanticLabel": "Datasheet effective runtime",
+          "conditions": [
+            "Current product page advertises 12 hours; duty conditions are unresolved."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "depleted_charge_time_h",
+          "value": 3.2,
+          "unit": "h",
+          "semanticLabel": "Datasheet charge time from depleted",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_threshold_mm",
+          "value": 12.7,
+          "unit": "mm",
+          "semanticLabel": "Maximum threshold height",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "environment",
+          "value": "Interior use",
+          "unit": null,
+          "semanticLabel": "Published operating environment",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Deliver prepared meal and linen carts between hospital departments.",
+          "configuration": "Standard T3 with compatible cart base and commissioned routes.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Staff remain responsible for cart contents, hygiene segregation and receipt.",
+            "No exact-site accepted delivery rate or intervention denominator reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ST Engineering Aethon",
+          "market": "US manufacturer; German project enquiry",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://aethon.com/contact/",
+            "email": "inquiries@aethon.com",
+            "phone": "+1 412 322 2975"
+          },
+          "sourceIds": [
+            "sheet",
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": []
+        },
+        {
+          "organization": "imrox GmbH",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://www.imrox.de/robotik",
+            "email": "info@imrox.de",
+            "phone": "+49 89 3815 740 20"
+          },
+          "sourceIds": [
+            "german-integrator"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization not independently confirmed.",
+          "caveats": [
+            "Published T3 integration offering; exclusivity and manufacturer authorization not independently established.",
+            "The website contains inconsistent telephone links; email/contact form is also available."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Product-page headline says 1,000 lb but standard T3 body and sheet specify 750 lb / 340 kg; the larger value belongs to T3XL.",
+        "Product page advertises 12 hours while the linked standard T3 sheet gives 9 hours effective runtime."
+      ],
+      "unknowns": [
+        "Applicable runtime conditions and delivered revision.",
+        "Cart retrofit, hygiene workflow, lift interface and recovery labour.",
+        "German installed price, delivery and commissioning scope."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://aethon.com/t3/",
+          "title": "T3 and T3XL product page",
+          "publisher": "Aethon",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "sheet",
+          "url": "https://cdn.aethon.com/wp-content/uploads/2025/06/Aethon_SpecSheet_T3-1.pdf",
+          "title": "Standard T3 specification linked June 2025",
+          "publisher": "Aethon",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://aethon.com/contact/",
+          "title": "Manufacturer contact",
+          "publisher": "Aethon",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "german-integrator",
+          "url": "https://www.imrox.de/robotik",
+          "title": "T3 offering and German business contact",
+          "publisher": "imrox GmbH",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://aethon.com/t3/",
+        "https://cdn.aethon.com/wp-content/uploads/2025/06/Aethon_SpecSheet_T3-1.pdf",
+        "https://aethon.com/contact/",
+        "https://www.imrox.de/robotik"
+      ]
+    },
+    {
+      "id": "otsaw-transcar-500kg-hospital",
+      "name": "OTSAW TransCar 500 kg hospital cart system",
+      "manufacturer": "OTSAW",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "healthcare_logistics"
+      ],
+      "exactConfiguration": "Current TransCar 500 kg cart-lift AGV as published by OTSAW. Current hardware revision is not stated; legacy K2 battery and dimensional specifications are not merged.",
+      "reviewStatus": "needs_follow_up",
+      "description": "Lift a compatible trolley clear of the floor and transport hospital materials along configured routes.",
+      "operatingMode": {
+        "value": "Automated guided cart transport on predetermined hospital paths; staff prepare carts and manage exceptions.",
+        "sourceIds": [
+          "technical"
+        ],
+        "caveats": [
+          "Cart interface, fleet controller and building integration require a project design.",
+          "Published fleet-scale throughput is not a guarantee for one robot or this site."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 500,
+          "unit": "kg",
+          "semanticLabel": "Published cart payload capacity",
+          "conditions": [
+            "Confirm whether cart tare is included."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "navigation",
+          "value": "Predetermined healthcare-facility paths",
+          "unit": null,
+          "semanticLabel": "Published route operation",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "cart_interface",
+          "value": "Lifts trolley off the floor",
+          "unit": null,
+          "semanticLabel": "Published load transfer mechanism",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "maneuvering",
+          "value": "Forward, reverse and turn on the spot",
+          "unit": null,
+          "semanticLabel": "Published manoeuvring capability",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "load_weighing",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Published onboard weight sensors",
+          "conditions": [
+            "Sensor calibration and integration are not specified."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_monitoring",
+          "value": "Battery temperature monitoring",
+          "unit": null,
+          "semanticLabel": "Published BMS function",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Runtime per charge",
+          "conditions": [
+            "24/7 operation wording does not specify battery endurance."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Move prepared hospital material carts between departments.",
+          "configuration": "TransCar cart-lift system and configured fleet/building interfaces.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "No independent hygiene-effect claim or exact-site cycle result established.",
+            "Current hardware revision and cart geometry require confirmation."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "OTSAW Healthcare Robotics",
+          "market": "Global enquiry; Germany office listed on manufacturer site",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://otsaw.com/transcar/",
+            "email": "sales@otsaw.com"
+          },
+          "sourceIds": [
+            "technical",
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": [
+            "German office is listed in Augsburg; service territory, current legal entity and delivery require confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Older Swisslog/K2 documents describe earlier configurations; their battery and dimensions are not assigned to this current model.",
+        "The old otsaw-swisslog.com link redirected to unrelated content during research and is excluded as a buying/evidence route."
+      ],
+      "unknowns": [
+        "Current revision, cart geometry, dimensions, speed and runtime.",
+        "German service coverage, installed price and delivery.",
+        "Workflow-specific hygiene controls and accepted throughput."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://otsaw.com/transcar/",
+          "title": "Current TransCar product page",
+          "publisher": "OTSAW",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://otsaw.com/camelloplus/",
+          "title": "Manufacturer footer listing the Augsburg healthcare robotics office",
+          "publisher": "OTSAW",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://otsaw.com/transcar/",
+        "https://otsaw.com/camelloplus/"
+      ]
+    },
+    {
+      "id": "diligent-moxi-2-hospital-delivery",
+      "name": "Diligent Moxi 2.0 hospital delivery",
+      "manufacturer": "Diligent Robotics",
+      "robotClass": "mobile_manipulator",
+      "workflowId": "transport",
+      "industries": [
+        "healthcare_logistics"
+      ],
+      "exactConfiguration": "Moxi 2.0 generation announced in the 17 August 2026 US rollout release; earlier Moxi fleet results are not assigned to this generation.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Carry requested supplies and medications between hospital departments, with people controlling clinical handling and receipt.",
+      "operatingMode": {
+        "value": "Onboard autonomous navigation and mobile manipulation, configured for hospital logistics; staff handle clinical decisions and exception recovery.",
+        "sourceIds": [
+          "technical"
+        ],
+        "caveats": [
+          "Task preparation, package access and hospital workflow must be agreed.",
+          "No hands-on patient care or general-purpose manipulation capability is inferred."
+        ]
+      },
+      "specs": [
+        {
+          "key": "runtime_max_h",
+          "value": 9,
+          "unit": "h",
+          "semanticLabel": "Published maximum runtime at a time",
+          "conditions": [
+            "Up to figure; workload and test conditions are not stated."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "daily_operating_time_max_h",
+          "value": 18,
+          "unit": "h/day",
+          "semanticLabel": "Published maximum daily operating time",
+          "conditions": [
+            "Includes charging intervals; not 18 hours per battery charge."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute",
+          "value": "NVIDIA A2000",
+          "unit": null,
+          "semanticLabel": "Published onboard compute upgrade",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "storage",
+          "value": "Redesigned storage drawers",
+          "unit": null,
+          "semanticLabel": "Published storage interface",
+          "conditions": [
+            "Drawer dimensions, temperature control and payload are not specified."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "connectivity",
+          "value": "Cellular fallback for Wi-Fi gaps",
+          "unit": null,
+          "semanticLabel": "Published network fallback",
+          "conditions": [
+            "Confirm local carrier, IT and workflow connectivity requirements."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "autonomy_processing",
+          "value": "Safety and autonomy behaviours run onboard",
+          "unit": null,
+          "semanticLabel": "Published autonomy execution location",
+          "conditions": [
+            "Does not establish whole-system offline availability."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "payload_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Payload of the reviewed generation",
+          "conditions": [
+            "No numeric capacity found in the reviewed primary release."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Deliver supplies and medications around hospital departments.",
+          "configuration": "Moxi 2.0, announced initial deployment at named US health systems.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "Manufacturer reports rollout; no generation-specific accepted-cycle or intervention data reviewed.",
+            "Earlier fleet delivery totals are not Moxi 2.0 performance evidence."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Diligent Robotics",
+          "market": "US health-system orders; Germany unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.diligentrobots.com/contact"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": [
+            "Primary rollout explicitly names US health systems; German sale, conformity and support have not been established."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The 18-hour daily operation figure and 9-hour continuous runtime refer to different measures.",
+        "Historical Moxi fleet totals and older model images/specifications must not be attributed to Moxi 2.0."
+      ],
+      "unknowns": [
+        "Payload, drawer size, dimensions and charge duration.",
+        "German commercial route, support and delivered configuration.",
+        "Exact-task integration, intervention rate and installed price."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.diligentrobots.com/blog/diligent-robotics-a-serve-robotics-company-begins-rolling-out-moxi-20",
+          "title": "Moxi 2.0 rollout release, 17 August 2026",
+          "publisher": "Diligent Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.diligentrobots.com/contact",
+          "title": "Hospital enquiry form",
+          "publisher": "Diligent Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.diligentrobots.com/blog/diligent-robotics-a-serve-robotics-company-begins-rolling-out-moxi-20",
+        "https://www.diligentrobots.com/contact"
+      ]
+    }
+  ]
+}

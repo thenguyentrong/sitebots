@@ -1,0 +1,289 @@
+{
+ "schemaVersion": 1,
+ "id": "limx-dynamics-oli-edu",
+ "maker": "LimX Dynamics",
+ "makerCountry": "CN",
+ "model": "Oli",
+ "variant": "EDU",
+ "name": "LimX Dynamics Oli EDU",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.limxdynamics.com/en/products/oli",
+ "summary": "A 1.65 m, 55 kg research humanoid with 7-axis arms carrying 3 kg each and about 1.5 h runtime; hands are optional extras.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU (77,890.91 €, on demand), Funduino (84,999 €, 21 working days), Bipedal (84,999 €, about 4 weeks) and Reichelt (85,680 €, about 5 weeks, business customers only) sell the Oli EDU, all incl. VAT.",
+  "sourceIds": [
+   "s5",
+   "s4",
+   "s6",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 77890.91,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s5",
+   "note": "RobotShop EU, tax included; Funduino and Bipedal 84,999 €, Reichelt 85,680 €."
+  },
+  "priceOther": null,
+  "leadTime": "21 working days (Funduino); about 4 weeks (Bipedal); about 5 weeks (Reichelt); on demand (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduinoshop.com/robotik/limx-dynamics/oli-edu/limx-dynamics-oli-edu",
+    "contactUrl": "https://funduinoshop.com/impressum",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 84999,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "Pre-assembled; two RealSense D435i (head, chest)."
+   },
+   {
+    "name": "reichelt elektronik GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.reichelt.de/de/de/shop/produkt/limx_dynamics_oli_edu_-_humanoider_roboter-425036",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 85680,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "Special order item; about 5 weeks; delivered only to businesses, institutions and authorities."
+   },
+   {
+    "name": "RobotShop EU (eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "productUrl": "https://eu.robotshop.com/products/full-size-general-purpose-humanoid-robot-limx-oli",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 77890.91,
+    "priceBasis": "gross",
+    "sourceId": "s5",
+    "note": "Oli EDU (manufacturer no. Oli_EDU_GL), tax included; On Demand item, add to cart or request a quote."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.bipedal.de/LimX-Dynamics-Oli-EDU",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 84999,
+    "priceBasis": "gross",
+    "sourceId": "s6",
+    "note": "84,999 € incl. 19% VAT, shown as \"Sofort verfügbar\", delivery about 4 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 55,
+   "unit": "kg",
+   "conditions": "at most",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Active DoF",
+   "value": 33,
+   "unit": null,
+   "conditions": "spec page; product page states 31",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Arm DoF",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Max load per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.4,
+   "unit": "m/s",
+   "conditions": "stated as 5 km/h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Slide-out battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Hand options",
+   "value": "2-finger gripper (1 DoF), 3-finger gripper (4 DoF) or 5-finger hand (6 DoF)",
+   "unit": null,
+   "conditions": "all optional",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "head and chest depth cameras, 6-axis IMU; lidar optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "RK3588 motion control, Jetson Orin NX 157 TOPS perception; optional AGX Orin backpack",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "High- and low-level APIs, Python",
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "End effectors are optional on the spec sheet.",
+   "Research and education robot; no IP rating."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://funduinoshop.com/media/image/8f/23/85/Oli-EDU.png",
+   "pageUrl": "https://funduinoshop.com/robotik/limx-dynamics/oli-edu/limx-dynamics-oli-edu",
+   "credit": "LimX Dynamics (via Funduino)",
+   "alt": "LimX Dynamics Oli EDU humanoid robot, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/oli-bg.webp",
+   "pageUrl": "https://www.limxdynamics.com/en/products/oli",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Oli humanoid robot, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img2-2.webp",
+   "pageUrl": "https://www.limxdynamics.com/en/products/oli",
+   "credit": "LimX Dynamics",
+   "alt": "Close-up of the LimX Dynamics Oli head with its camera visor and upper torso, dark background",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/oli/img2-3.webp",
+   "pageUrl": "https://www.limxdynamics.com/en/products/oli",
+   "credit": "LimX Dynamics",
+   "alt": "Close-up of the LimX Dynamics Oli chest with status lights, chest camera and LimX Dynamics lettering",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.limxdynamics.com/en/products/oli",
+   "title": "LimX Oli product page",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.limxdynamics.com/en/products/oli/spec",
+   "title": "LimX Oli specifications",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.reichelt.de/de/de/shop/produkt/limx_dynamics_oli_edu_-_humanoider_roboter-425036",
+   "title": "LimX Dynamics Oli EDU - Humanoider Roboter",
+   "publisher": "reichelt elektronik GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://funduinoshop.com/robotik/limx-dynamics/oli-edu/limx-dynamics-oli-edu",
+   "title": "LimX Dynamics Oli EDU",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://eu.robotshop.com/products/full-size-general-purpose-humanoid-robot-limx-oli",
+   "title": "Limx Dynamics Oli EDU Humanoid Robot",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.bipedal.de/LimX-Dynamics-Oli-EDU",
+   "title": "LimX Dynamics Oli EDU",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price of hands/grippers in Germany."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,18 +1,18 @@
 import Link from 'next/link';
 import { EvidenceBadge } from '@/components/robot/EvidenceBadge';
 import type { CompareRow } from '@/lib/queries/compare';
-import { FORM_FACTOR_LABEL, formatMoney, formatSpec, PRICE_TIER_LABEL, qualifierLabel } from '@/lib/spec/display';
-import { GROUPS, splitSpecKey, visibleFields } from '@/lib/spec/fields';
+import { FORM_FACTOR_LABEL, formatMoney, formatSpec, pickPayloadKey, PRICE_TIER_LABEL, qualifierLabel } from '@/lib/spec/display';
+import { GROUPS, splitSpecKey, visibleFieldsFor } from '@/lib/spec/fields';
 import type { SpecValue } from '@/lib/spec/types';
 import { cn } from '@/lib/utils';
 
 /**
  * Robots as columns, fields as rows, registry order. A row is shown when any
  * column has a value or the field is one a site buyer needs to see missing.
- * Numeric rows mark the best value; "best" means more for payload, runtime,
+ * Numeric rows mark the best value; "best" means more for runtime,
  * speed, slope and step height, and less for weight — nothing else is judged.
  */
-const MORE_IS_BETTER = new Set(['payload_kg', 'runtime_h', 'max_speed_ms', 'walk_speed_ms', 'max_slope_deg', 'step_height_m', 'battery_wh', 'reach_m', 'dof_total']);
+const MORE_IS_BETTER = new Set(['runtime_h', 'max_speed_ms', 'walk_speed_ms', 'max_slope_deg', 'step_height_m', 'battery_wh', 'reach_m', 'dof_total']);
 const LESS_IS_BETTER = new Set(['weight_kg', 'charge_time_h', 'noise_db']);
 
 function numeric(s: SpecValue | undefined): number | null {
@@ -28,8 +28,7 @@ type TableRow = { key: string; label: string; cells: Cell[] };
 export function CompareTable({ rows }: { rows: CompareRow[] }) {
   const allKeys = new Set(rows.flatMap((r) => Object.keys(r.card.specs ?? {})));
   const present = new Set([...allKeys].map((k) => splitSpecKey(k).field));
-  const formFactor = rows.every((r) => r.card.form_factor === rows[0].card.form_factor) ? rows[0].card.form_factor : 'humanoid';
-  const fields = visibleFields(formFactor, present);
+  const fields = visibleFieldsFor(rows.map((r) => r.card.form_factor), present);
 
   return (
     <div className="card overflow-x-auto" data-compare-table>
@@ -76,6 +75,14 @@ export function CompareTable({ rows }: { rows: CompareRow[] }) {
                   )}
                 </td>
               );
+            })}
+          </tr>
+          <tr className="border-b border-edge/60 bg-subtle/40">
+            <th className="px-5 py-2.5 text-left text-xs font-medium text-muted">Published payload</th>
+            {rows.map((r) => {
+              const key = pickPayloadKey(r.card.specs ?? {});
+              const spec = key ? r.card.specs[key] : null;
+              return <td key={r.card.id} className="px-4 py-2.5 align-top">{key && spec ? <><span className="num font-semibold">{formatSpec(key, spec)}</span><span className="block text-xs text-faint">{qualifierLabel(key.split(':')[1]) ?? 'basis unstated'}</span><EvidenceBadge trust={spec.trust} /></> : <span className="text-xs text-faint">not published</span>}</td>;
             })}
           </tr>
         </thead>

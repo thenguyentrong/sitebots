@@ -1,0 +1,174 @@
+schema_version: 1
+id: site_concrete/ground-slab
+status: published
+setting: site_concrete
+family: machine_operation_dedicated
+trades: [concrete, steel]
+title:
+  en: "Build a reinforced ground slab: blinding, reinforcement, pour"
+  de: "Bodenplatte herstellen: Sauberkeitsschicht, Bewehrung, Betonage"
+summary:
+  en: "Place the blinding layer, set spacers and chairs, lay and tie the bottom and top mesh, then pour the slab from the pump, compact it and pull it to level."
+  de: "Sauberkeitsschicht einbringen, Abstandhalter und Unterstützungskörbe setzen, untere und obere Mattenlage verlegen und verrödeln, dann die Platte von der Pumpe aus betonieren, verdichten und abziehen."
+description:
+  en: "A ground slab sits on a blinding layer of lean concrete, at least 5 to 10 cm of a low strength class such as C8/10 and unreinforced, which gives a clean, level, dry surface and keeps the reinforcement out of the soil. On it the crew sets spacers and chairs and lays the mesh: stock mats 6.00 m long and 2.30 or 2.35 m wide weigh 33.6 to 132 kg each, so they are carried by two or more people or set by crane, then lapped, tied and topped with bars. The concrete usually comes from a truck-mounted pump, is compacted with poker vibrators and pulled to level; on large slabs a boom laser screed levels it to a laser height. As a foundation slab it carries the building; its top has to meet a flatness limit and, where precast walls are set on it, a height accuracy of ±1 cm."
+  de: "Eine Bodenplatte liegt auf einer Sauberkeitsschicht aus Magerbeton, mindestens 5 bis 10 cm einer niedrigen Festigkeitsklasse wie C8/10 und unbewehrt, die eine saubere, ebene, trockene Fläche schafft und die Bewehrung vom Erdreich fernhält. Darauf setzt die Kolonne Abstandhalter und Unterstützungskörbe und verlegt die Matten: Lagermatten von 6,00 m Länge und 2,30 oder 2,35 m Breite wiegen je 33,6 bis 132 kg, sie werden also zu zweit oder mehreren getragen oder per Kran gesetzt, dann gestoßen, verrödelt und mit Zulagen ergänzt. Der Beton kommt meist von der Autobetonpumpe, wird mit Innenrüttlern verdichtet und abgezogen; auf großen Flächen zieht ein Laser-Screed mit Ausleger ihn auf Laserhöhe ab. Als Fundamentplatte trägt sie das Gebäude; ihre Oberseite muss eine Ebenheitsgrenze einhalten und, wo Fertigteilwände daraufgestellt werden, eine Höhengenauigkeit von ±1 cm."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Reinforced-concrete ground slab on blinding layer: reinforce and concrete"
+    de: "Stahlbeton-Bodenplatte auf Sauberkeitsschicht bewehren und betonieren"
+  unit: m3
+attributes:
+  object_mass_kg:
+    value: { min: 33.6, max: 132 }
+    confidence: confirmed
+    evidence_url: 'https://www.isb-ev.de/wp-content/uploads/2018/04/ISB_Lagermattenprogramm_web-1.pdf'
+    note: "The heaviest pieces the crew moves by hand are stock mesh mats: 33.6 kg (R188A) to 100.9 kg (Q524A) at 6.00 × 2.30 m and 132.0 kg (Q636A, 6.00 × 2.35 m) per mat (ISB stock mat programme, 2018). Poker vibrators and the pump hose are lighter or guided, not carried."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The steps repeat on every slab, but outline, thickness, pits, thickenings, penetrations and reinforcement change from project to project."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "The reinforcement is checked and corrected before the pour; once the concrete is in, missing bars, wrong cover or a wrong level can only be repaired at high cost."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The reinforced ground slab is a load-bearing foundation member; the blinding layer may not be counted as concrete cover or structural depth (Cemex)."
+  reach_height_m:
+    value: { min: 0, max: 1.2 }
+    confidence: assumed
+    note: "Work at ground level, bent over the mats or guiding the pump hose at hip height. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "In the open excavation before anything stands on the slab."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Ready-mixed concrete is placed wet; laying mats makes no relevant dust. Fresh concrete is alkaline on the skin."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work with wet material; pours continue in light rain."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Compacted subgrade, then the blinding layer, then the crew stands on the mats themselves."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    evidence_url: 'https://www.somero.com/wp-content/uploads/2025/02/NA_S22EZ.pdf'
+    note: "The crane brings the mat bundles and a truck-mounted pump places the concrete; on large slabs a boom laser screed such as Somero's S-22EZ levels it under laser control. Spacers, mats, tying and compaction stay hand work."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; the slab is priced per cubic metre of concrete, the mesh per tonne."
+requirements:
+  object_size_m:
+    value: { min: 6.0, max: 6.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.isb-ev.de/wp-content/uploads/2018/04/ISB_Lagermattenprogramm_web-1.pdf'
+    note: "The range is the stock mat, the heaviest piece: 6.00 m long and 2.30 m wide (Q636A: 2.35 m) (ISB). Reinforcing bars are supplied in lengths of 12 to 15 m (ISB); how long the bars on a given slab are depends on its bending schedule."
+  tolerance_mm:
+    value: 8
+    confidence: confirmed
+    evidence_url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    note: "Top of a slab that receives screed, an industrial floor or tiles in a mortar bed: DIN 18202 table 3, 8 mm as the limit at a measuring point distance of 1 m; 15 mm for unfinished tops and blinding concrete without such requirements (as reproduced by bauforumstahl). fdu asks for a height accuracy of ±1 cm where its walls are set on the slab."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published; the pump and vibrators do the placing and compacting."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the slab with a concrete and rebar crew, the crane for mat bundles and a boom pump for the pour; on large slabs a laser screed is the machine for levelling. Mats of up to 132 kg in the open excavation and a load-bearing result are not a case for a general-purpose robot."
+      de: "Die Bodenplatte bei Beton- und Bewehrungskolonne lassen, mit Kran für die Mattenbündel und Autobetonpumpe für die Betonage; auf großen Flächen ist ein Laser-Screed die Maschine zum Abziehen. Matten bis 132 kg in der offenen Baugrube und ein tragendes Ergebnis sind kein Fall für einen Universalroboter."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "The ISB stock mat programme lists mats of 6.00 × 2.30 m from R188A at 33.6 kg and Q188A at 41.7 kg to Q524A at 100.9 kg, and Q636A (6.00 × 2.35 m) at 132.0 kg per mat; reinforcing bars come in lengths of 12 to 15 m."
+      de: "Das Lagermattenprogramm des ISB führt Matten 6,00 × 2,30 m von R188A mit 33,6 kg und Q188A mit 41,7 kg bis Q524A mit 100,9 kg sowie Q636A (6,00 × 2,35 m) mit 132,0 kg je Matte; Betonstabstahl kommt in Längen von 12 bis 15 m."
+    url: 'https://www.isb-ev.de/wp-content/uploads/2018/04/ISB_Lagermattenprogramm_web-1.pdf'
+    kind: standard
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Institut für Stahlbetonbewehrung e.V., programme 'Stand 2018', read on 2026-10-02."
+  - statement:
+      en: "Cemex on the blinding layer: it creates a clean, level and dry surface for the following work and keeps the reinforcement from being pressed into the subgrade; at least 5 to 10 cm of a concrete of low strength class such as C8/10, no reinforcement required; its height may not be counted as structural depth or concrete cover."
+      de: "Cemex zur Sauberkeitsschicht: Sie schafft eine saubere, ebene und trockene Fläche für die folgenden Arbeiten und verhindert, dass die Bewehrung in den Baugrund gedrückt wird; mindestens 5 bis 10 cm eines Betons niedriger Festigkeitsklasse wie C8/10, keine Bewehrung erforderlich; ihre Höhe darf nicht auf Nutzhöhe oder Betondeckung angerechnet werden."
+    url: 'https://www.cemex.de/produkte/beton/sauberkeitsschicht'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page of a ready-mix supplier, read on 2026-10-02."
+  - statement:
+      en: "DIN 18202 table 3 as reproduced by bauforumstahl: unfinished tops of slabs or ground slabs that receive floor build-ups such as screeds, industrial floors or tiles in a mortar bed allow 8 mm at a measuring point distance of 1 m; unfinished tops of slabs, blinding concrete and sub-floors 15 mm."
+      de: "DIN 18202 Tabelle 3, wiedergegeben von bauforumstahl: Nichtflächenfertige Oberseiten von Decken oder Bodenplatten zur Aufnahme von Bodenaufbauten wie Estrichen, Industrieböden, Fliesen- und Plattenbelägen im Mörtelbett erlauben 8 mm bei 1 m Messpunktabstand; nichtflächenfertige Oberseiten von Decken, Unterbeton und Unterböden 15 mm."
+    url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Steel-construction trade body worksheet 10.1, 1st edition 04/2020, citing DIN 18202; read on 2026-10-02."
+  - statement:
+      en: "fdu's installation instructions list, among the works the client provides before precast walls are erected, a ground slab height accuracy of ±1 cm and a ground slab strong enough for the brace anchors."
+      de: "Die Montageanleitung von fdu nennt unter den bauseitigen Leistungen vor der Wandmontage eine Höhengenauigkeit der Bodenplatte von ±1 cm und eine für die Montage (Dübel setzen) ausreichende Betonfestigkeit der Bodenplatte."
+    url: 'https://fdu.de/wp-content/uploads/2020/08/fdu_Montageanleitung_Gesamtuebersicht_02_25-S.10-geaendert.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Overview of fdu installation instructions, pages marked 'Stand: 02-2025', read on 2026-10-02."
+  - statement:
+      en: "Somero's S-22EZ datasheet: a Laser Screed machine with a 20 ft telescopic boom, 360° machine rotation and the OASIS laser control system, a 4.44 m standard screed head, and a weight of 6,668 kg with a 3.7 m (12 ft) screed head."
+      de: "Datenblatt S-22EZ von Somero: Laser-Screed-Maschine mit 20-Fuß-Teleskopausleger, 360°-Maschinendrehung und dem Lasersteuerungssystem OASIS, 4,44 m Standard-Abziehkopf und 6.668 kg Gewicht mit 3,7-m-Abziehkopf (12 Fuß)."
+    url: 'https://www.somero.com/wp-content/uploads/2025/02/NA_S22EZ.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "North American datasheet, PDF created 21.03.2023, read on 2026-10-02. It says nothing about German deployments."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If levelling hours matter on large slabs: one pour with a laser screed against hand screeding, hours per square metre and flatness measured to DIN 18202."
+    de: "Wenn Abziehstunden auf großen Flächen zählen: eine Betonage mit Laser-Screed gegen Abziehen von Hand, Stunden je Quadratmeter und Ebenheit nach DIN 18202 gemessen."
+prerequisites: []
+open_questions:
+  - { en: "How large are your ground slabs, and are they levelled by hand or by a laser screed today?", de: "Wie groß sind Ihre Bodenplatten, und werden sie heute von Hand oder mit Laser-Screed abgezogen?" }
+  - { en: "Which flatness row of DIN 18202 does the slab top have to meet: screed on top, an industrial floor or precast walls set on it?", de: "Welche Zeile der DIN 18202 muss die Plattenoberseite einhalten: Estrich darauf, Industrieboden oder aufgestellte Fertigteilwände?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

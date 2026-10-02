@@ -1,0 +1,219 @@
+{
+ "schemaVersion": 1,
+ "id": "pal-robotics-kangaroo",
+ "maker": "PAL Robotics",
+ "makerCountry": "ES",
+ "model": "KANGAROO",
+ "variant": null,
+ "name": "PAL Robotics KANGAROO",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://pal-robotics.com/robot/kangaroo/",
+ "summary": "A 1.60 m bipedal research humanoid (50-65 kg) with configurable arms and hands for locomotion and AI research, sold on quote.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Barcelona, Spain) that sells directly to customers across Europe on quote; no German distributor found and no public price. KANGAROO is configured per project (legs only, or with 4, 5 or 7-DoF arms).",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "PAL Robotics",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://pal-robotics.com/robot/kangaroo/",
+    "contactUrl": "https://pal-robotics.com/contact/",
+    "email": "business@pal-robotics.com",
+    "phone": "+34 934 145 347",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Barcelona; quote request on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.6,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": "50-65",
+   "unit": "kg",
+   "conditions": "Depends on configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": "14-40",
+   "unit": null,
+   "conditions": "Depends on configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": "4, 5 or 7",
+   "unit": null,
+   "conditions": "Configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "4-DoF arm, fully extended; 5-DoF arm 5 kg; 7-DoF arm 3 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Both arms payload",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "Bimanual, 4-DoF arms; 28 kg with 5-DoF arms, 25 kg with 7-DoF arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "Up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 976,
+   "unit": "Wh",
+   "conditions": "15 Ah, 63 V",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Autonomy",
+   "value": 3,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "4x RGB-D cameras (RealSense D435i), IMU/AHRS, optional 6-axis F/T in wrists and feet",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu LTS, ROS 2, ros2_control, URDF/MJCF models, MuJoCo, RL policies (walking, stairs, box picking), C++/Python API",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": "ROS 2, C++/Python API",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Arms are a configuration choice; a legs-and-torso version exists.",
+   "End effectors chosen per order: parallel gripper, Seed Robotics RH8D or Inspire hands.",
+   "Stair climbing is listed in the RL policies library, not as a rated capability.",
+   "Emergency stop to SIL 2 (IEC 61508) and PL d (EN ISO 13849-1).",
+   "Arm payload 7 kg applies to the 4-DoF arm; the 7-DoF arm carries 3 kg."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2026/02/RobotFeatured-KANGAROO.webp",
+   "pageUrl": "https://pal-robotics.com/robots/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics KANGAROO bipedal humanoid",
+   "kind": "product"
+  },
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2025/01/KOO-Run-1-scaled-e1760633002197.png",
+   "pageUrl": "https://pal-robotics.com/robot/kangaroo/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics KANGAROO biped in a running pose with simple arms and no hands, side view.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Platform for locomotion, reinforcement learning and whole-body control research",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://pal-robotics.com/robot/kangaroo/",
+   "title": "KANGAROO product page and technical specifications",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://pal-robotics.com/wp-content/uploads/2026/05/Datasheet_ENG_KANGAROO-2026.pdf",
+   "title": "KANGAROO datasheet 2026",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://pal-robotics.com/robots/",
+   "title": "Our Robots",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Named customers in Germany?"
+ ],
+ "checkedAt": "2026-10-02"
+}

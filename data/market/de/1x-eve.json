@@ -1,0 +1,148 @@
+{
+ "schemaVersion": 1,
+ "id": "1x-eve",
+ "maker": "1X Technologies",
+ "makerCountry": "US",
+ "model": "EVE",
+ "variant": null,
+ "name": "1X EVE",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.1x.tech/eve",
+ "summary": "A wheeled humanoid for security rounds and light logistics that 1X sold before NEO; today 1X only shows an interest form for it.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "1X no longer shows EVE specifications or a sales offer; the EVE page is only an \"EVE Industrial\" interest form. In 2024 the page said \"EVE is available now. Contact us\"; no European seller or price found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.88,
+   "unit": "m",
+   "conditions": "stated as 6 ft 2 in (2024 page)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 87,
+   "unit": "kg",
+   "conditions": "stated as 192 lb (2024 page)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Top speed",
+   "value": 4.0,
+   "unit": "m/s",
+   "conditions": "stated as 9 mph (2024 page)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Carry capacity",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "stated as 33 lb (2024 page)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "on a 1-hour charge (2024 page)",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 15,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Hand type is not stated in the sources; recorded as gripper pending confirmation.",
+   "Operators can control a fleet of EVEs remotely (shared autonomy).",
+   "Multi-terrain wheels; can take elevators (2024 page)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.sanity.io/images/qka6yvsc/production/5f8053806272114ee891bba1091ceddca06c32af-1920x1281.png",
+   "pageUrl": "https://www.1x.tech/press",
+   "credit": "1X Technologies",
+   "alt": "1X EVE humanoid with LED face display, upper body in a warehouse",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/night-security-patrol"
+   ],
+   "task": "Patrol an office building and check employee ID badges",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Named in the 2024 EVE FAQ as an example task."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.1x.tech/eve",
+   "title": "EVE page (interest form only)",
+   "publisher": "1X Technologies",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://web.archive.org/web/20241104022218/https://www.1x.tech/eve",
+   "title": "EVE product page, archived 4 Nov 2024",
+   "publisher": "1X Technologies (via Internet Archive)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.1x.tech/press",
+   "title": "Press gallery with EVE Industrial images",
+   "publisher": "1X Technologies",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is EVE still built and sold, and to whom?",
+  "What end effectors does EVE use?"
+ ],
+ "checkedAt": "2026-10-02"
+}

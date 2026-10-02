@@ -1,0 +1,259 @@
+{
+ "schemaVersion": 1,
+ "id": "booster-k1-geek",
+ "maker": "Booster Robotics",
+ "makerCountry": "CN",
+ "model": "K1",
+ "variant": "Geek (48 TOPS)",
+ "name": "Booster K1 Geek",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.booster.tech/booster-k1/",
+ "summary": "A 0.95 m, 19.5 kg kid-size humanoid for teaching and robot soccer; the Geek version has the smallest computer and battery (about 30 minutes walking).",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 10499,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "RBTX net price; Generation Robots 7500 EUR net, Bipedal 11999 EUR incl. VAT."
+  },
+  "priceOther": null,
+  "leadTime": "3 weeks (RBTX); 3 to 4 weeks (Generation Robots); about 4 weeks (Bipedal)",
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/Booster-Robotics-K1-Geek-50-TOPS_1",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 11999,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": null
+   },
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/booster-k1-geek-qualcomm-qcs-8550-48-tops",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 10499,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": null
+   },
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404324-humanoider-roboter-booster-k1-2030.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800982602",
+    "priceEur": 7500,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   },
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "productUrl": "https://eu.robotshop.com/products/booster-robotics-k1-geek-humanoid-robot",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "priceEur": 11537.59,
+    "priceBasis": "gross",
+    "sourceId": "s5",
+    "note": "Tax included; \"On Demand\" item, ordered from the supplier after purchase."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Orderable with prices at Bipedal (Leverkusen, about 4 weeks), RBTX (igus, Cologne, 3 weeks), Generation Robots (3 to 4 weeks) and RobotShop EU (on demand).",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.95,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 19.5,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 22,
+   "unit": null,
+   "conditions": "6 per leg, 4 per arm, 2 head",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 4,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 60,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Qualcomm board, 48 TOPS (dense)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "2 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 0.5,
+   "unit": "h",
+   "conditions": "walking at 0.4 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Stereo depth camera, 9-axis IMU, 3-microphone array and speaker",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "warranty",
+   "label": "Warranty",
+   "value": "3 months",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 0.5,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arms have 4 joints and no hands or grippers; no hand option is listed for K1, so it cannot grasp objects.",
+   "Kid-size robot (0.95 m) for teaching, robot soccer and development, not for carrying loads."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.booster.tech/_astro/specification-k1.CqLuX2Lk_2pgwi9.webp",
+   "pageUrl": "https://www.booster.tech/booster-k1/",
+   "credit": "Booster Robotics",
+   "alt": "Booster K1 kid-size humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Entry-level development platform for teaching and embodied AI development",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Booster calls K1 its introductory embodied development platform."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.booster.tech/booster-k1/",
+   "title": "Booster K1 product page",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404324-humanoider-roboter-booster-k1-2030.html",
+   "title": "Humanoider Roboter Booster K1",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bipedal.de/Booster-Robotics-K1-Geek-50-TOPS_1",
+   "title": "Booster K1 at Bipedal",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://rbtx.de/de-DE/components/humanoid/booster-k1-geek-qualcomm-qcs-8550-48-tops",
+   "title": "Booster K1 on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://eu.robotshop.com/products/booster-robotics-k1-geek-humanoid-robot",
+   "title": "Booster K1 at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

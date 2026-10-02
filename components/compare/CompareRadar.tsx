@@ -36,16 +36,17 @@ export function CompareRadar({ rows }: { rows: CompareRow[] }) {
                 <tr key={a.id} className="border-t border-edge/60">
                   <td className="py-1.5 pr-3 text-muted">{a.label}</td>
                   {profiles.map((p) => {
-                    const v = p.profile.axes[i].score;
+                    const axis = p.profile.axes[i];
+                    const v = axis.score;
                     return (
-                      <td key={p.name} className="num py-1.5 pr-3 font-medium">{v === null ? <span className="font-normal text-faint">not published</span> : Math.round(v * 100)}</td>
+                      <td key={p.name} className="num py-1.5 pr-3 font-medium">{axis.coverage ? <span title={axis.basis}>{axis.coverage.supported}/{axis.coverage.total} supported<br /><span className="text-xs font-normal text-faint">{axis.coverage.reported} reported · {axis.coverage.unknown} unconfirmed</span></span> : v === null ? <span className="font-normal text-faint">unconfirmed</span> : <span title={axis.basis}>{Math.round(v * 100)}{axis.status === 'partial' ? <span className="text-xs font-normal text-faint"> · partial evidence</span> : null}</span>}</td>
                     );
                   })}
                 </tr>
               ))}
             </tbody>
           </table>
-          <p className="mt-2 text-xs text-faint">Unweighted ladders over published values; a gap on the chart means not published.</p>
+          <p className="mt-2 text-xs text-faint">Unweighted ladders over published values. Handling shows evidence coverage; incomplete evidence leaves a chart gap.</p>
         </div>
       </div>
     </section>

@@ -1,0 +1,256 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-exterior-wall-coating-robot-t100",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Exterior Wall Coating Robot T100",
+ "variant": null,
+ "name": "BMR Exterior Wall Coating Robot T100",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/179.html",
+ "summary": "Spray module for standard 2-4 m facade gondolas that paints primer and topcoat on mid- and high-rise facades up to 100 m.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route to Germany found. BMR sells direct from China and names markets in Asia, the Middle East and Brazil, none in the EU. The only German listing is a US reseller not named by BMR, and BMR states no CE marking for this machine. Roboter Deutschland, a web shop run from Las Vegas without a named company, also lists it; it is not counted as a seller here.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Shenzhen BrightMaster Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://en.bm-robot.com/detail/179.html",
+    "contactUrl": "https://en.bm-robot.com/contact.html",
+    "email": "sales@bm-robot.com",
+    "phone": "400 988 2007 (ext. 2)",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Direct export enquiries via form, email or WhatsApp from Shenzhen; no EU office or EU distributor named."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 400,
+   "unit": "kg",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "module_weight_kg",
+   "label": "Module weight",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "at most, per module",
+   "sourceId": "s1"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": 100,
+   "unit": "m",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "gondola_length_m",
+   "label": "Effective stroke / gondola length",
+   "value": "2-4",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_kw",
+   "label": "Rated power",
+   "value": 4,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_supply",
+   "label": "Operating voltage",
+   "value": "380 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "paint_tank_l",
+   "label": "Material tank",
+   "value": 80,
+   "unit": "L",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "obstacle_height_mm",
+   "label": "Obstacle crossing height",
+   "value": 200,
+   "unit": "mm",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "coverage_pct",
+   "label": "Overall coverage",
+   "value": 80,
+   "unit": "%",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "coatings",
+   "label": "Coatings",
+   "value": "latex paint, real stone paint, relief paint, multicolour paint",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "modes",
+   "label": "Trajectory planning",
+   "value": "manual or fully automatic",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Mounts on industry-standard 2-4 m aerial work gondolas; the gondola is not described as part of the delivery.",
+   "Sprays flat walls, balconies, corners, bay windows and curved surfaces; obstacles up to 200 mm.",
+   "Maker asks for a coating sample before deployment to confirm spray compatibility."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260330/657b3a9d45064c8353b5fbf3c630fbcf.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/179.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BMR Exterior Wall Coating Robot T100 mounted on a gondola at a facade (banner with text)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Trial facade spraying of 50 m² in 10 minutes for the housing board",
+   "stage": "pilot",
+   "where": "Hi Tek C13 site, MacPherson Road, Singapore (trial for HDB)",
+   "date": "2025-01-08",
+   "sourceId": "s6",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Exterior wall spraying of a residential plot",
+   "stage": "deployment",
+   "where": "Meihao Weilai Community Plot 9, Xinyang, Henan, China",
+   "date": "2024-07",
+   "sourceId": "s7",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/179.html",
+   "title": "Exterior Wall Coating Robot T100 product page",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/contact.html",
+   "title": "Contact Us",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/BMR-Exterior-Wall-Coating-Robot.htm",
+   "title": "BMR Exterior Wall Coating Robot T100 at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact",
+   "title": "Roboter Deutschland contact page (Las Vegas, NV, USA)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://en.bm-robot.com/detail/212.html",
+   "title": "Hi Tek C13 external wall spraying, Singapore (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://en.bm-robot.com/detail/134.html",
+   "title": "Henan Xinyang Meihao Weilai Community (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is this machine CE-marked and does it come with an EU declaration of conformity? BMR states CE only for its Measuring Robot.",
+  "Does BMR have, or plan, an authorised distributor or service partner in the EU or Germany?",
+  "Is Roboter Deutschland / Robots International authorised by BMR, and who provides service and spare parts in Germany?",
+  "Is the gondola included, and is the module certified for use on EU gondolas (EN 1808)?"
+ ],
+ "checkedAt": "2026-10-02"
+}

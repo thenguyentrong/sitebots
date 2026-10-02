@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Source-backed hardware and development capabilities of nine exact humanoid configurations. These profiles support labelled potential-platform matching beyond directly evidenced tasks; they do not prove deployment, autonomous task completion, suitability, orderability or German delivery.",
+  "profiles": [
+    {
+      "reviewId": "unitree-h2-edu-research",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "h2-product"
+          ],
+          "limitations": [
+            "A fixed work position still requires balance control, a safe operating area and researcher supervision."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "h2-product"
+          ],
+          "limitations": [
+            "Research locomotion platform; route navigation, loaded walking and recovery must be developed and tested. No industrial route acceptance is established."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "requires_tooling",
+          "sourceIds": [
+            "h2-product"
+          ],
+          "limitations": [
+            "This exact H2 EDU base review excludes hands. Select, integrate and verify an optional hand or gripper before any grasp-and-transfer experiment."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "requires_tooling",
+          "sourceIds": [
+            "h2-product"
+          ],
+          "limitations": [
+            "Two seven-joint arms provide a development basis, but both end effectors and coordinated task control are required."
+          ]
+        },
+        {
+          "capability": "dexterous",
+          "support": "requires_tooling",
+          "sourceIds": [
+            "h2-product"
+          ],
+          "limitations": [
+            "Dexterous hands are optional configuration items, not included hardware. Identify the exact hand, interface, grasp limits and software before matching fine manipulation."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "research_order",
+        "sourceIds": [
+          "h2-product",
+          "german-h2-listing"
+        ],
+        "limitations": [
+          "An exact EDU configuration can be requested through published manufacturer and German seller enquiry routes; this is not confirmed stock or delivery.",
+          "The reviewed base does not include H2 Plus compute or its dual Sharpa hands."
+        ]
+      },
+      "limitations": [
+        "Potential research platform only; task programming, perception, safeguarding and acceptance testing are required.",
+        "No configured manipulation match is permitted until hands or tooling are specified. Arm load figures alone do not establish grasp or tool performance."
+      ]
+    },
+    {
+      "reviewId": "unitree-h2-plus-sharpa-research",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Reference hardware supports supervised whole-body manipulation research; fixed-position work still needs validated balance and control."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Whole-body research platform; a demonstrated reliable loaded route or autonomous workplace navigation package is not established."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "This reference configuration specifies two Sharpa Wave hands. Object-specific grasping and load limits still require testing."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "configured",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Dual hands and arms plus the described training stack support coordinated research; a validated two-arm production task is not established."
+          ]
+        },
+        {
+          "capability": "dexterous",
+          "support": "configured",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "The exact reference uses 22 active degrees of freedom per Sharpa Wave hand and fingertip sensing. Dexterous hardware does not prove task success, tactile-policy quality or tool compatibility."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "announced",
+        "sourceIds": [
+          "reference-design",
+          "german-plus-package",
+          "german-plus-smart"
+        ],
+        "limitations": [
+          "The reference announcement targets late 2026, while the German Ultimate N listing gives expected Q1 2027 availability. Delivery and the final order bill of materials are unconfirmed.",
+          "Seller Smart and Ultimate packages differ; neither a handless Smart package nor a differently named Sharpa hand is silently treated as this exact reference."
+        ]
+      },
+      "limitations": [
+        "Potential platform for development, not evidence of deployed industrial work.",
+        "Requires exact hand and compute confirmation, task data, controllers, safety engineering and acceptance tests. Listed hand grip or payload values are not interchangeable with arm carrying limits."
+      ]
+    },
+    {
+      "reviewId": "unitree-g1-edu-dex3-research",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "product",
+            "xr"
+          ],
+          "limitations": [
+            "Supervised manipulation experiments can use a fixed work position; balance, workspace separation and controller setup remain necessary."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Bipedal research locomotion does not establish loaded travel, stairs with objects or autonomous navigation through an operating workplace."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "product",
+            "xr",
+            "learning"
+          ],
+          "limitations": [
+            "Only the reviewed 29-body-DoF EDU platform with two Dex3-1 hands; grasp geometry, object mass and controller settings must be tested."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "configured",
+          "sourceIds": [
+            "xr",
+            "learning"
+          ],
+          "limitations": [
+            "Official G1_29/dex3 examples support dual-arm and hand teleoperation, data capture and policy development; they do not establish unattended task completion."
+          ]
+        },
+        {
+          "capability": "dexterous",
+          "support": "configured",
+          "sourceIds": [
+            "product",
+            "xr"
+          ],
+          "limitations": [
+            "Dex3-1 is a three-finger hand with seven active degrees of freedom, not a five-finger human-equivalent hand. Fine manipulation remains object- and policy-specific."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "research_order",
+        "sourceIds": [
+          "product",
+          "seller",
+          "seller-contact"
+        ],
+        "limitations": [
+          "Manufacturer and German seller enquiries support exact research-package quotations; current stock, delivery date and commissioning are not confirmed.",
+          "The seller describes a research/development prototype, not a validated routine industrial application."
+        ]
+      },
+      "limitations": [
+        "Potential matches identify tasks worth a supervised feasibility experiment; teleoperation examples and hardware specifications are not proof of deployment.",
+        "Task-specific perception, data collection, controller tuning, safeguarding, hand durability and recovery must be established."
+      ]
+    },
+    {
+      "reviewId": "agility-digit-4-tote-handling",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "digit4-pilot",
+            "digit4-gxo"
+          ],
+          "limitations": [
+            "Configured tote pickup and placement positions in a commissioned workcell; this does not remove guarding or integration needs."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "digit4-pilot",
+            "digit4-gxo",
+            "digit4-faq"
+          ],
+          "limitations": [
+            "Reviewed evidence concerns predefined indoor tote routes and workcell handoffs. Mixed-traffic, stairs, wet floors and rough-ground handling are not established for this configuration."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "digit4-pilot",
+            "digit4-gxo"
+          ],
+          "limitations": [
+            "Digit 4 tote grippers support qualified tote handling. Small-item picking, finger dexterity and arbitrary object shapes are not established."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "configured",
+          "sourceIds": [
+            "digit4-pilot",
+            "digit4-gxo"
+          ],
+          "limitations": [
+            "Both arms cooperate on qualified totes; this is not evidence of independent two-hand assembly or hand-tool use."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "commercial_enquiry",
+        "sourceIds": [
+          "digit4-gxo",
+          "digit-generations",
+          "digit-lifecycle",
+          "digit-contact"
+        ],
+        "limitations": [
+          "Digit 4 has customer commercial-use evidence and a manufacturer sales route. New-customer German supply, integration, lead time and service require confirmation.",
+          "Digit 5 is a separate generation; its announced features are not assigned to Digit 4."
+        ]
+      },
+      "limitations": [
+        "Potential transfers remain limited by tote-compatible end effectors, object presentation and a commissioned operating area.",
+        "Do not infer fine manipulation, tool use or generic delivery capability from bipedal mobility. Staffing, exception handling and new-task acceptance remain project-specific."
+      ],
+      "allowedTaskIds": [
+        "research:humanoid-empty-tote-return",
+        "research:humanoid-handle-stacked-totes",
+        "research:humanoid-tote-conveyor-handoff",
+        "material_yard_warehouse/tote-handling"
+      ]
+    },
+    {
+      "reviewId": "apptronik-apollo-original-bipedal-pilot",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "apollo-launch",
+            "apollo-pilot"
+          ],
+          "limitations": [
+            "Original bipedal platform in supervised pilot work; no fixed-position production acceptance is established."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "apollo-launch",
+            "apollo-pilot"
+          ],
+          "limitations": [
+            "Original bipedal material-handling concept and pilot scope; route performance and intervention rates are not established. Wheeled Apollo variants are excluded."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "apollo-launch",
+            "apollo-pilot",
+            "apollo-gxo-research"
+          ],
+          "limitations": [
+            "Original material-handling end effectors support a case/tote handling development basis; exact grasp envelope and task acceptance require testing."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "configured",
+          "sourceIds": [
+            "apollo-launch",
+            "apollo-original-imagery"
+          ],
+          "limitations": [
+            "The original two-arm handling configuration supports coordinated load experiments; do not import later Apollo hands, control revisions or dexterity claims."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "historical",
+        "sourceIds": [
+          "apollo-launch",
+          "apollo-generation"
+        ],
+        "limitations": [
+          "This review describes the original 2023/2024 bipedal generation and its historical pilot evidence. Later Apollo 2 training and Apollo 3 plans are distinct.",
+          "Historical here qualifies the exact reviewed generation; it is not a claim that every Apollo product is discontinued. No current original-generation German offer was verified."
+        ]
+      },
+      "limitations": [
+        "Retain exact pilot evidence for context; exclude this historical generation from default new-platform recommendations.",
+        "Customer application scopes do not establish routine operation, general autonomy or later-generation compatibility."
+      ]
+    },
+    {
+      "reviewId": "figure-02-bmw-sheet-metal",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "f02-deployment",
+            "f02-bmw"
+          ],
+          "limitations": [
+            "Historical integrated body-shop loading workcell; setup, support and safe stopping were part of the project."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "f02-deployment"
+          ],
+          "limitations": [
+            "Local movement within the reviewed factory cell does not establish general transport routes, loaded stairs or unsupervised shared-space navigation."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "f02-deployment",
+            "f02-bmw"
+          ],
+          "limitations": [
+            "Historical grasp-and-place evidence concerns selected sheet-metal components and fixtures, with unspecified part load limits."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "configured",
+          "sourceIds": [
+            "f02-deployment",
+            "f02-launch"
+          ],
+          "limitations": [
+            "The reviewed two-arm and fourth-generation-hand configuration supports coordinated manipulation; a different task still needs its own grasp and motion validation."
+          ]
+        },
+        {
+          "capability": "dexterous",
+          "support": "configured",
+          "sourceIds": [
+            "f02-launch",
+            "f02-deployment"
+          ],
+          "limitations": [
+            "The manufacturer describes articulated fourth-generation hands; the 16-DoF launch figure remains Reported from its official social post. This does not establish arbitrary fine assembly."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "historical",
+        "sourceIds": [
+          "f02-deployment",
+          "f02-bmw"
+        ],
+        "limitations": [
+          "Figure announced Figure 02 fleet retirement in November 2025. BMW describes the completed pilot; no current supply or support offer for this exact generation was verified."
+        ]
+      },
+      "limitations": [
+        "Exclude from default new-platform recommendations while retaining labelled historical task evidence.",
+        "Figure 02 loaded welding fixtures; separate industrial robots performed the welding. Tool use, weld quality and Figure 03 specifications must not be inferred."
+      ]
+    },
+    {
+      "reviewId": "figure-03-bmw-sequencing",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "f03-product",
+            "f03-bmw-demo"
+          ],
+          "limitations": [
+            "Whole-body picking and placement demonstrated within a defined work area; support and intervention requirements are not quantified."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "f03-product",
+            "f03-bmw-demo",
+            "f03-bmw-customer"
+          ],
+          "limitations": [
+            "Demonstrated local movement includes handling a trolley toward collection. Separate transport equipment performs onward delivery; arbitrary route or towing acceptance is not established."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "f03-bmw-demo",
+            "f03-bmw-customer"
+          ],
+          "limitations": [
+            "Demonstration evidence covers selected automotive components. New part geometry, mass and presentation require qualification."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "configured",
+          "sourceIds": [
+            "f03-intro",
+            "f03-bmw-demo"
+          ],
+          "limitations": [
+            "Helix 02 coordinates both hands, arms and body for demonstrated sequencing and trolley work; human supervision and recovery are not quantified."
+          ]
+        },
+        {
+          "capability": "dexterous",
+          "support": "configured",
+          "sourceIds": [
+            "f03-intro"
+          ],
+          "limitations": [
+            "Figure 03 hands include tactile sensing and palm cameras. These support a manipulation development basis, not measured precision, tool force or general assembly acceptance."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "pilot_access",
+        "sourceIds": [
+          "f03-bmw-demo",
+          "f03-bmw-customer",
+          "f03-product"
+        ],
+        "limitations": [
+          "Current exact-generation customer-project and manufacturer enquiry evidence; this state does not mean a public pilot programme or an orderable ready-made application.",
+          "No German delivery, price, local service package or production acceptance offer was verified."
+        ]
+      },
+      "limitations": [
+        "Potential matches extend beyond the demonstrated sequence only as engineering candidates requiring task development and testing.",
+        "Do not assign Figure 02 operating totals to Figure 03, or treat tactile sensing as proof of quality inspection."
+      ]
+    },
+    {
+      "reviewId": "ubtech-walker-s2-industrial",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "s2-product",
+            "s2-results"
+          ],
+          "limitations": [
+            "Handling within a configured industrial workspace still requires system integration and recovery arrangements."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "s2-product",
+            "s2-spec-graphic"
+          ],
+          "limitations": [
+            "Published navigation and walking capability supports an indoor industrial development basis; loaded speed, route acceptance and rough-ground operation are not established."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "configured",
+          "sourceIds": [
+            "s2-product",
+            "s2-results"
+          ],
+          "limitations": [
+            "Manufacturer-reported tote and component handling; exact object geometry, presentation and acceptance rates remain unverified."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "configured",
+          "sourceIds": [
+            "s2-product",
+            "s2-results"
+          ],
+          "limitations": [
+            "Two-arm handling is described for industrial work; published load figures are not guarantees at every posture or across a shift."
+          ]
+        },
+        {
+          "capability": "dexterous",
+          "support": "configured",
+          "sourceIds": [
+            "s2-spec-graphic",
+            "s2-results"
+          ],
+          "limitations": [
+            "Only the industrial fourth-generation 11-DoF hands reviewed here. EDU or later hand revisions are not substituted; material-specific task training is required."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "commercial_enquiry",
+        "sourceIds": [
+          "s2-results",
+          "s2-product",
+          "s2-contact"
+        ],
+        "limitations": [
+          "Manufacturer reports industrial production/delivery and publishes industrial and EU enquiry routes; no exact German stock, lead time or commissioned application was verified.",
+          "A German country choice on the enquiry form and an EU office do not establish German field service or conformity acceptance."
+        ]
+      },
+      "limitations": [
+        "Manufacturer capability and application claims identify candidates, not independently measured task performance.",
+        "Battery swapping does not prove continuous accepted output. Define the exact hand package, task software, safeguarding and human support."
+      ]
+    },
+    {
+      "reviewId": "pal-talos-tool-research",
+      "mobility": [
+        {
+          "capability": "stationary",
+          "sourceIds": [
+            "product",
+            "icra"
+          ],
+          "limitations": [
+            "Torque-controlled whole-body research at a fixed work position requires experiment-specific balance and contact control."
+          ]
+        },
+        {
+          "capability": "level_travel",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Catalogue walking capability supports controlled research; loaded route performance and unattended workplace navigation are not established."
+          ]
+        }
+      ],
+      "manipulation": [
+        {
+          "capability": "grip_transfer",
+          "support": "requires_tooling",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "The review allows project-specific grippers, not one fixed included hand. Select the gripper and validate grasp force, object geometry and control."
+          ]
+        },
+        {
+          "capability": "bimanual",
+          "support": "requires_tooling",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Two arms and whole-body control support coordinated handling research once both end effectors and the task controller are specified."
+          ]
+        },
+        {
+          "capability": "tool_use",
+          "support": "requires_tooling",
+          "sourceIds": [
+            "product",
+            "memmo",
+            "icra"
+          ],
+          "limitations": [
+            "Historical drilling/tool experiments establish a research basis only. The current quotation must specify the tool, fixture, force control and software; a ready-made drilling package is not verified."
+          ]
+        }
+      ],
+      "lifecycle": {
+        "state": "research_order",
+        "sourceIds": [
+          "product",
+          "contact"
+        ],
+        "limitations": [
+          "Current manufacturer catalogue and EU quotation route support a research-platform enquiry; exact hardware, hands, controllers, delivery and commissioning require agreement.",
+          "The 2018–2022 Memmo demonstrator is historical. Its existence does not make the current research platform discontinued or establish an identical current tool package."
+        ]
+      },
+      "limitations": [
+        "A candidate for a research and integration project, not a turnkey factory task.",
+        "Tool mass, contact forces, hole quality, fault recovery and safety must be established for each experiment. No general dexterous-hand package is inferred."
+      ]
+    }
+  ]
+}

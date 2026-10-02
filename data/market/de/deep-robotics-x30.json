@@ -1,0 +1,270 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-x30",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "X30",
+ "variant": "Basic",
+ "name": "DEEP Robotics X30",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/product3.html",
+ "summary": "A 56 kg industrial quadruped rated IP67 for -20 to 55 °C that climbs 45° stairs and carries about 20 kg of inspection sensors, sold in Germany through Funduino and the integrator Sebotics.",
+ "launched": "2023-10",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Funduino (Nordhorn) lists the X30 Basic at 95,179 € incl. VAT with an add-to-cart button (battery not included); Sebotics (Remscheid) offers the X30 on request.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 95179,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "X30 Basic at Funduino, incl. VAT and shipping; battery not included."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduinoshop.com/robotik/deep-robotics/rhino-x30/deep-robotics-rhino-x30",
+    "contactUrl": "https://funduinoshop.com/impressum",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 95179,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Sold as \"Rhino X30\", versions Basic and Pro; add-to-cart and request buttons. Battery not included (7,127.90 € incl. VAT extra)."
+   },
+   {
+    "name": "Sebotics GmbH",
+    "country": "DE",
+    "role": "integrator",
+    "productUrl": "https://sebotics.com/x30-rhino/",
+    "contactUrl": "https://sebotics.com/roboter-anfrage/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Integrator; sells the X30 Rhino on request with set-up and training."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 56,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Standing size",
+   "value": "1000 x 695 x 470",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 4,
+   "unit": "m/s",
+   "conditions": "stated as at least 4 m/s, lab data",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "stated as up to 45°",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step / obstacle height",
+   "value": 20,
+   "unit": "cm",
+   "conditions": "stated as at least 20 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": "climbs industrial stairs up to 45°",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "2.5 to 4 h, at least 10 km",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick battery swap",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2x Livox Mid360 lidar (front and rear), wide-angle camera",
+   "unit": null,
+   "conditions": "Funduino listing",
+   "sourceId": "s2"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "Ethernet, 72 V battery power output",
+   "unit": null,
+   "conditions": "X30 base version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS, ROS2, Ubuntu",
+   "unit": null,
+   "conditions": "Funduino listing",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": 2.5,
+  "ipRating": "IP67",
+  "sdk": "ROS / ROS2",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "All maker figures are lab data.",
+   "Base X30 has only Ethernet and battery power output for payloads; the X30 Pro adds USB, WiFi and 5/12/24 V outputs.",
+   "Inspection cameras (zoom/thermal PTZ) and the charging dock are separate add-ons."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/x30.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product3.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics X30 quadruped, side view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p1.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product3.html",
+   "credit": "DEEP Robotics",
+   "alt": "X30 walking in an industrial plant",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/cable-tunnel-inspection",
+    "asset_inspection_infrastructure/substation-rounds"
+   ],
+   "task": "Offered for power substation patrols and cable tunnel inspection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/product3.html",
+   "title": "X30 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://funduinoshop.com/robotik/deep-robotics/rhino-x30/deep-robotics-rhino-x30",
+   "title": "Deep Robotics Rhino X30",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://sebotics.com/x30-rhino/",
+   "title": "X30 Rhino Industrieroboter für Inspektion",
+   "publisher": "Sebotics GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.deeprobotics.cn/en/index/industry.html",
+   "title": "Industry applications",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Launch month taken from DEEP news headline on the X30 page (\"launches X30\", shown with GITEX 2023); exact date not opened.",
+  "Price of the battery and inspection payloads."
+ ],
+ "checkedAt": "2026-10-02"
+}

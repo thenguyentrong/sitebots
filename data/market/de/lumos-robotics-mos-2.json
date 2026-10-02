@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "id": "lumos-robotics-mos-2",
+ "maker": "Lumos Robotics (Lumos Robot Technology, Shenzhen)",
+ "makerCountry": "CN",
+ "model": "MOS 2",
+ "variant": null,
+ "name": "Lumos MOS 2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.lumosbot.tech/products/mos",
+ "summary": "A 1.65 m, up to 350 kg wheeled dual-arm robot with a camera head that lifts 30 kg rated (50 kg max) with both arms and runs 8 h on swappable batteries, sold from China on request.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Lumos has offices only in Shenzhen and Suzhou and takes purchase inquiries by web form; no EU distributor, office or customer found. A US-run German-language shop (Roboter Deutschland) lists a 'MOS' as a quote item without a real price.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 350,
+   "unit": "kg",
+   "conditions": "up to, incl. battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 22,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Dual-arm payload",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "rated; 50 kg maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Working height",
+   "value": "0-2.0 m",
+   "unit": null,
+   "conditions": "operating range; lift travel 750 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "up to; omnidirectional swerve drive",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Gradeability",
+   "value": "5 %",
+   "unit": null,
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step crossing",
+   "value": 2.5,
+   "unit": "cm",
+   "conditions": "up to; trench crossing up to 35 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "2 x 19.5 Ah LiFePO4, 48 V; manual swap standard, automatic swap or dock charging optional",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0-45",
+   "unit": "°C",
+   "conditions": "humidity 20-80 %",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 base 3D LiDARs, 2 wrist cameras, head camera, bumper strip, 2 six-axis force-torque sensors",
+   "unit": null,
+   "conditions": "standard",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA AGX Orin (275 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "SDK plus graphical task orchestration; VR teleoperation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "SDK with graphical task orchestration",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Payload is stated for both arms together (30 kg rated, 50 kg max); per-arm value not stated.",
+   "Factory floors only: 5 % slope, 25 mm steps, 35 mm gaps.",
+   "Standard flange with quick-swap end effectors and dexterous hands; which tool ships as standard is not stated.",
+   "Listed as a humanoid because it has a camera head and two arms on a wheeled base; the maker calls it a wheeled mobile manipulation robot."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.lumosbot.tech/images/products/mos/front.webp",
+   "pageUrl": "https://www.lumosbot.tech/products/mos",
+   "credit": "Lumos Robotics",
+   "alt": "Lumos MOS 2 wheeled dual-arm robot with camera head, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Visual inspection and quality checks, heavy-load transfer and teleoperated work in hazardous areas in factories",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker scenarios; partners named on the about page (Mitsubishi Electric China, COSCO SHIPPING) without a named MOS task."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.lumosbot.tech/products/mos",
+   "title": "Lumos MOS 2",
+   "publisher": "Lumos Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.lumosbot.tech/about",
+   "title": "About Lumos",
+   "publisher": "Lumos Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.lumosbot.tech/contact",
+   "title": "Contact Us",
+   "publisher": "Lumos Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/Lumos-Robotics-MOS-Dual-Arm-Humanoid-Robot-MOS.htm",
+   "title": "Lumos Robotics MOS Dual Arm humanoider Roboter (MOS)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and delivery outside China.",
+  "The shop lists 'MOS' without a generation; the maker now shows MOS 2 (MOS 1 launched 2025-08). Which one the shop would deliver is unknown.",
+  "Per-arm payload and standard end effector."
+ ],
+ "checkedAt": "2026-10-02"
+}

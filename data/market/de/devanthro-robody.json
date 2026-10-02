@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "devanthro-robody",
+ "maker": "Devanthro",
+ "makerCountry": "DE",
+ "model": "Robody",
+ "variant": null,
+ "name": "Devanthro Robody",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.devanthro.com/",
+ "summary": "A 1.65 m wheeled home-care humanoid from Munich with two light arms (1.5 kg each), run by AI plus remote human operators; offered only inside a care service.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Made in Munich and in private homes since early 2024, but not sold as a robot: Devanthro places Robodies itself as part of its \"Robody Cares\" service with care organisations and families (contact care@devanthro.com). No purchase offer or price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 60,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "Self-docking",
+   "sourceId": "s3"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Orin + Orin Nano",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "4K fisheye RGB, mm-wave radar, stereo microphones",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sdk",
+   "label": "Middleware",
+   "value": "ROS 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 1.5,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": "ROS 2",
+  "sourceIds": [
+   "s3"
+  ],
+  "notes": [
+   "Differential-drive base for apartments; soft skin, deliberately weak arms.",
+   "Two-finger grippers; teleoperated through VR with under 200 ms latency, AI for routine chores.",
+   "Built for homes, not for industrial or site work."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.devanthro.com/wp-content/uploads/latest_gen.jpg",
+   "pageUrl": "https://www.devanthro.com/about-us/",
+   "credit": "Devanthro",
+   "alt": "Devanthro Robody (latest generation) on its wheeled base, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.devanthro.com/wp-content/uploads/care_homes.jpg",
+   "pageUrl": "https://www.devanthro.com/about-us/",
+   "credit": "Devanthro",
+   "alt": "Devanthro Robody offering food to residents in a care home",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Home care and companionship with teleoperated chores in private homes",
+   "stage": "pilot",
+   "where": "Private homes, Germany",
+   "date": "2024",
+   "sourceId": "s1",
+   "note": "Maker says Robodies have lived in private homes since early 2024."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.devanthro.com/",
+   "title": "Devanthro home page",
+   "publisher": "Devanthro GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.devanthro.com/care/",
+   "title": "Robody Cares",
+   "publisher": "Devanthro GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.devanthro.com/technology/",
+   "title": "Robody technology and hardware specs",
+   "publisher": "Devanthro GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.devanthro.com/about-us/",
+   "title": "About us",
+   "publisher": "Devanthro",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Will Robody be sold or leased outside the care service?"
+ ],
+ "checkedAt": "2026-10-02"
+}

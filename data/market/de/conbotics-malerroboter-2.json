@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "conbotics-malerroboter-2",
+ "maker": "ConBotics",
+ "makerCountry": "DE",
+ "model": "MalerRoboter",
+ "variant": "2.0",
+ "name": "ConBotics MalerRoboter 2.0",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://www.conbotics.com/en/paintingrobot",
+ "summary": "Battery-powered painting robot from Berlin that sprays walls with any airless unit up to 3.2 m high while a painter prepares, masks and refills.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Made in Berlin; rented and ordered through the maker's contact form (\"Order now\", \"Rent a Robot\"). The FAQ still says sales start was planned for 2025 and rental is the main route; price on request.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "ConBotics GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.conbotics.com/en/paintingrobot",
+    "contactUrl": "https://www.conbotics.com/#contact",
+    "email": "info@conbotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Bismarckstrasse 10-12, 10625 Berlin. Rental and purchase on request; TechnoMaler service pairs the robot with painting firms."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_cm",
+   "label": "Dimensions",
+   "value": "60 x 190 x 80",
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "spray_height_m",
+   "label": "Spray height",
+   "value": 3.2,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Total weight",
+   "value": 140,
+   "unit": "kg",
+   "conditions": "without airless unit; the same page also says 130 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "paint_bucket_l",
+   "label": "Paint bucket",
+   "value": 35,
+   "unit": "l",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "spec block; the FAQ says up to 8 h with a swappable battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 3.5,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charge_voltage",
+   "label": "Charge voltage",
+   "value": "110-240 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "FAQ",
+   "sourceId": "s1"
+  },
+  {
+   "key": "robots_per_operator",
+   "label": "Robots per operator",
+   "value": 3,
+   "unit": null,
+   "conditions": "up to; 2 recommended",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Uses the customer's airless sprayer; walls only, ceilings and sloped ceilings still in development per FAQ.",
+   "Operator draws a rough floor plan in the app; masking and detail work stay manual.",
+   "Dismantles into four parts for carrying between floors."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/656f49bb6f0920242da751f1/6617f195c97e073b9d7a8c36_f6f4052e-bbe2-43d3-bb92-944fc17a69ac-poster-00001.jpg",
+   "pageUrl": "https://www.conbotics.com/en/paintingrobot",
+   "credit": "ConBotics",
+   "alt": "ConBotics MalerRoboter spraying a masked wall",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Wall coating on a pilot project",
+   "stage": "pilot",
+   "where": "Nietiedt (painting and construction contractor), Germany",
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Painting robot used and advised on by a master painter",
+   "stage": "pilot",
+   "where": "Malermeister Sachs (master painter)",
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Wall coating in a new hospital building and in a garage and basement",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker describes these projects on its home page without naming the customer, so they are not counted as a named deployment."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.conbotics.com/en/paintingrobot",
+   "title": "The Painter Robot (specs, FAQ, buying process)",
+   "publisher": "ConBotics GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.conbotics.com/",
+   "title": "ConBotics home: MalerRoboter 2.0 and pilot projects",
+   "publisher": "ConBotics GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Purchase price and whether purchase (not only rental) is open to all German buyers today.",
+  "Which weight and runtime apply to revision 2.0 (page gives 130/140 kg and 4/8 h)."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,144 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-x2-edu",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "X2",
+ "variant": "EDU",
+ "name": "AGIBOT X2 EDU",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A 1.3 m modular research and teaching humanoid with 7-DOF arms and open interfaces, launched in July 2026.",
+ "launched": "2026-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "AGIBOT",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.agibot.com/Contact/Business",
+    "email": "sales@agibot.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "X2 EDU is selectable in AGIBOT's product enquiry form."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Selectable as \"AGIBOT X2 EDU\" in AGIBOT's business enquiry form; AGIBOT sells into Europe, but no European seller, listing or price for the EDU was found.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.3,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 29,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "End-effector payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open motion-control and hardware interfaces",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "End effectors, sensors and compute modules are added by the user."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Education, competitions and research",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agibot.com/article/231/detail/85.html",
+   "title": "AGIBOT Unveils Four New Products at WAIC 2026",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agibot.com/Contact/Business",
+   "title": "AGIBOT business contact and product enquiry form",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.agibot.com/article/231/detail/43.html",
+   "title": "AGIBOT and Minth Group Launch Full Robot Portfolio in Germany",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price, delivery start and whether the EDU is offered in Europe.",
+  "No product image on AGIBOT's English site."
+ ],
+ "checkedAt": "2026-10-02"
+}

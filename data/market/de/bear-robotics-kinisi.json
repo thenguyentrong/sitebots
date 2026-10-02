@@ -1,0 +1,141 @@
+{
+ "schemaVersion": 1,
+ "id": "bear-robotics-kinisi",
+ "maker": "Bear Robotics",
+ "makerCountry": "US",
+ "model": "Kinisi",
+ "variant": null,
+ "name": "Bear Robotics Kinisi (formerly Kinisi KR1)",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.bearrobotics.ai/kinisi",
+ "summary": "A wheeled humanoid for picking, placing and sorting boxes and totes, taken over by Bear Robotics with Kinisi Robotics in 2026; key specs are still \"to be confirmed at launch\".",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not launched: Bear lists payload, reach and base as \"to be confirmed at launch\" and offers pilots through a sales contact form. No European seller or price for Kinisi.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 4.0,
+   "unit": "m/s",
+   "conditions": "stated as up to 14.4 km/h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "a full shift per battery",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IP65",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "mobility",
+   "label": "Mobility",
+   "value": "autonomous omnidirectional mobile base",
+   "unit": null,
+   "conditions": "to be confirmed at launch",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP65",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Payload and reach are \"to be confirmed at launch\".",
+   "End effector type is not stated; recorded as gripper from the product rendering.",
+   "Operating environment: indoor commercial, logistics and industrial sites."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.squarespace-cdn.com/content/v1/652cbb3fb1f91809d4610dc0/67affd04-1cc8-4203-9683-c88b958528e7/bear-robotics-kinisi-humanoid-robot-warehouse-hero.webp",
+   "pageUrl": "https://www.bearrobotics.ai/kinisi",
+   "credit": "Bear Robotics",
+   "alt": "Rendering of Kinisi wheeled humanoids picking boxes in a warehouse aisle",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sort glass by shape, size and material",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Bear says Kinisi is already sorting glass in live deployments; customer not named."
+  },
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Pick, place, sort and kit boxes, bins and totes from shelves, conveyors or the floor",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bearrobotics.ai/kinisi",
+   "title": "Kinisi wheeled humanoid robot",
+   "publisher": "Bear Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bearrobotics.ai/company-history",
+   "title": "Company history (2026: Kinisi Robotics acquisition)",
+   "publisher": "Bear Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Launch date, payload, reach and price.",
+  "Will Bear Robotics sell Kinisi through its European service-robot channel?",
+  "Is the product image a rendering or a photo?"
+ ],
+ "checkedAt": "2026-10-02"
+}

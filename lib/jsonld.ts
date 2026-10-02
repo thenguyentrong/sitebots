@@ -1,4 +1,4 @@
-import { AVAILABILITY_LABEL } from '@/lib/spec/display';
+import { AVAILABILITY_LABEL, FORM_FACTOR_LABEL } from '@/lib/spec/display';
 import type { AvailabilityCurrent, PriceCurrent, RobotCard } from '@/lib/spec/types';
 import { SITE } from '@/lib/site';
 
@@ -53,7 +53,7 @@ export function productJsonLd(robot: RobotCard, prices: PriceCurrent[], availabi
     name: robot.name,
     url,
     brand: { '@type': 'Brand', name: robot.manufacturer_name },
-    category: robot.form_factor === 'humanoid' ? 'Humanoid robot' : robot.form_factor === 'quadruped' ? 'Quadruped robot' : 'Mobile manipulator',
+    category: FORM_FACTOR_LABEL[robot.form_factor],
     ...(robot.summary ? { description: robot.summary } : {}),
     ...(robot.image_url ? { image: robot.image_url } : {}),
     ...(props.length ? { additionalProperty: props } : {}),

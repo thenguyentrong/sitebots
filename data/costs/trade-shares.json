@@ -1,0 +1,958 @@
+{
+ "checkedAt": "2026-10-02",
+ "sources": {
+  "weights": {
+   "title": "Preisindizes für die Bauwirtschaft – Wägungsschemata 2021",
+   "publisher": "Statistisches Bundesamt (Destatis)",
+   "published": "2024-07-10",
+   "url": "https://www.destatis.de/DE/Themen/Wirtschaft/Preise/Baupreise-Immobilienpreisindex/Methoden/Downloads/waegungsschema-baupreise-2021-pdf.pdf?__blob=publicationFile&v=2",
+   "basis": "Share of each construction trade in the cost of the work on the structure (Bauleistungen am Bauwerk, DIN 276 cost groups 300 and 400), from settled accounts of real projects; base year 2021."
+  },
+  "labour": {
+   "title": "Kostenstruktur im Baugewerbe nach Rechtlichen Einheiten – Sonderauswertung 2021, Tabelle 10",
+   "publisher": "Statistisches Bundesamt (Destatis)",
+   "published": "2023-12-13",
+   "url": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Bauen/Tabellen/sonderauswertung-kse-bau.xlsx?__blob=publicationFile&v=6",
+   "basis": "Personnel costs (wages plus statutory and other social costs) as a share of gross output, firms with 20 or more employees, 2021."
+  }
+ },
+ "buildings": {
+  "types": [
+   {
+    "id": "wohn",
+    "de": "Wohngebäude",
+    "en": "Residential buildings"
+   },
+   {
+    "id": "buero",
+    "de": "Bürogebäude",
+    "en": "Office buildings"
+   },
+   {
+    "id": "gewerbe",
+    "de": "Gewerbliche Betriebsgebäude",
+    "en": "Commercial and industrial buildings"
+   }
+  ],
+  "totals": {
+   "wohn": {
+    "rohbau": 44.25,
+    "ausbau": 55.75
+   },
+   "buero": {
+    "rohbau": 37.2,
+    "ausbau": 62.8
+   },
+   "gewerbe": {
+    "rohbau": 51.6,
+    "ausbau": 48.4
+   }
+  },
+  "trades": [
+   {
+    "de": "Erdarbeiten",
+    "en": "Earthworks",
+    "section": "rohbau",
+    "values": {
+     "wohn": 3.65,
+     "buero": 3.27,
+     "gewerbe": 5.65
+    },
+    "setting": "site_earthworks",
+    "where": "PDF S. 3, Tab. 'Gebäude', Spalte 110, Nr. 100"
+   },
+   {
+    "de": "Ramm-, Rüttel- u. Pressarbeiten",
+    "en": "Piling, vibrating and pressing works (sheet piles)",
+    "section": "rohbau",
+    "values": {
+     "wohn": 0.24,
+     "buero": null,
+     "gewerbe": null
+    },
+    "setting": "site_specialist_foundations",
+    "where": "PDF S. 3, Tab. 'Gebäude', Spalte 110, Nr. 140"
+   },
+   {
+    "de": "Entwässerungskanalarbeiten",
+    "en": "Drainage sewer works",
+    "section": "rohbau",
+    "values": {
+     "wohn": 0.73,
+     "buero": 0.42,
+     "gewerbe": 0.75
+    },
+    "setting": "site_sewers",
+    "where": "PDF S. 3, Tab. 'Gebäude', Spalte 110, Nr. 160"
+   },
+   {
+    "de": "Mauerarbeiten",
+    "en": "Masonry works",
+    "section": "rohbau",
+    "values": {
+     "wohn": 8.13,
+     "buero": 3.37,
+     "gewerbe": 3.28
+    },
+    "setting": "site_masonry",
+    "where": "PDF S. 3, Tab. 'Gebäude', Spalte 110, Nr. 280"
+   },
+   {
+    "de": "Betonarbeiten",
+    "en": "Concrete works",
+    "section": "rohbau",
+    "values": {
+     "wohn": 17.34,
+     "buero": 16.98,
+     "gewerbe": 22.04
+    },
+    "setting": "site_concrete",
+    "where": "PDF S. 3, Tab. 'Gebäude', Spalte 110, Nr. 300"
+   },
+   {
+    "de": "Zimmer- und Holzbauarbeiten",
+    "en": "Carpentry and timber construction works",
+    "section": "rohbau",
+    "values": {
+     "wohn": 4.3,
+     "buero": 3.63,
+     "gewerbe": 3.04
+    },
+    "setting": "site_timber_frame",
+    "where": "PDF S. 3, Tab. 'Gebäude', Spalte 110, Nr. 320"
+   },
+   {
+    "de": "Stahlbauarbeiten",
+    "en": "Structural steelwork",
+    "section": "rohbau",
+    "values": {
+     "wohn": 0.16,
+     "buero": 0.15,
+     "gewerbe": 4.6
+    },
+    "setting": "site_steelwork",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 340"
+   },
+   {
+    "de": "Abdichtungsarbeiten",
+    "en": "Waterproofing works",
+    "section": "rohbau",
+    "values": {
+     "wohn": 2.03,
+     "buero": 1.41,
+     "gewerbe": 1.52
+    },
+    "setting": "site_waterproofing",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 360"
+   },
+   {
+    "de": "Dachdeckungsarbeiten",
+    "en": "Roofing works (roof covering and roof waterproofing)",
+    "section": "rohbau",
+    "values": {
+     "wohn": 4.5,
+     "buero": 5.17,
+     "gewerbe": 7.46
+    },
+    "setting": "site_roofing",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 380"
+   },
+   {
+    "de": "Klempnerarbeiten",
+    "en": "Sheet-metal roofing and roof drainage works",
+    "section": "rohbau",
+    "values": {
+     "wohn": 2.11,
+     "buero": 1.23,
+     "gewerbe": 1.63
+    },
+    "setting": "site_sheet_metal",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 400"
+   },
+   {
+    "de": "Gerüstarbeiten",
+    "en": "Scaffolding works",
+    "section": "rohbau",
+    "values": {
+     "wohn": 1.06,
+     "buero": 1.13,
+     "gewerbe": 1.45
+    },
+    "setting": "site_scaffolding",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 420"
+   },
+   {
+    "de": "Naturwerksteinarbeiten",
+    "en": "Natural stone works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 0.31,
+     "buero": 0.11,
+     "gewerbe": 0.11
+    },
+    "setting": "site_stone",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 440"
+   },
+   {
+    "de": "Betonwerksteinarbeiten",
+    "en": "Cast stone works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 0.34,
+     "buero": 0.14,
+     "gewerbe": 0.29
+    },
+    "setting": "site_stone",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 460"
+   },
+   {
+    "de": "Putz- und Stuckarbeiten",
+    "en": "Plastering and stucco works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 3.37,
+     "buero": 1.2,
+     "gewerbe": 1.11
+    },
+    "setting": "site_plaster",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 480"
+   },
+   {
+    "de": "Wärmedämm-Verbundsysteme",
+    "en": "External thermal insulation composite systems (ETICS)",
+    "section": "ausbau",
+    "values": {
+     "wohn": 4.24,
+     "buero": 1.93,
+     "gewerbe": 1.53
+    },
+    "setting": "site_etics",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 490"
+   },
+   {
+    "de": "Trockenbauarbeiten",
+    "en": "Drywall works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 3.11,
+     "buero": 5.43,
+     "gewerbe": 3.71
+    },
+    "setting": "site_drywall",
+    "where": "PDF S. 4, Tab. 'Gebäude', Spalte 110, Nr. 500"
+   },
+   {
+    "de": "Vorgehängte Hinterlüftete Fassaden",
+    "en": "Ventilated rainscreen facades",
+    "section": "ausbau",
+    "values": {
+     "wohn": 0.46,
+     "buero": 3.11,
+     "gewerbe": 4.35
+    },
+    "setting": "site_ventilated_facade",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 520"
+   },
+   {
+    "de": "Fliesen- und Plattenarbeiten",
+    "en": "Tiling works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 1.98,
+     "buero": 1.1,
+     "gewerbe": 1.74
+    },
+    "setting": "site_tiling",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 540"
+   },
+   {
+    "de": "Estricharbeiten",
+    "en": "Screed works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 1.83,
+     "buero": 1.91,
+     "gewerbe": 1.37
+    },
+    "setting": "site_screed",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 560"
+   },
+   {
+    "de": "Tischlerarbeiten",
+    "en": "Joinery works (windows, doors)",
+    "section": "ausbau",
+    "values": {
+     "wohn": 6.01,
+     "buero": 5.24,
+     "gewerbe": 1.73
+    },
+    "setting": "site_joinery",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 600"
+   },
+   {
+    "de": "Parkett- und Holzpflasterarbeiten",
+    "en": "Parquet and wood-block flooring works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 1.63,
+     "buero": 0.5,
+     "gewerbe": null
+    },
+    "setting": "site_flooring",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 620"
+   },
+   {
+    "de": "Beschlagarbeiten",
+    "en": "Hardware works (locking systems, mailboxes)",
+    "section": "ausbau",
+    "values": {
+     "wohn": 0.13,
+     "buero": 0.12,
+     "gewerbe": 0.23
+    },
+    "setting": "site_joinery",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 630"
+   },
+   {
+    "de": "Rollladenarbeiten",
+    "en": "Roller shutter and blind works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 1.45,
+     "buero": 2.02,
+     "gewerbe": 0.67
+    },
+    "setting": "site_windows_doors",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 640"
+   },
+   {
+    "de": "Metallbauarbeiten",
+    "en": "Metalwork (metal windows, doors, railings, stairs)",
+    "section": "ausbau",
+    "values": {
+     "wohn": 6.7,
+     "buero": 8.36,
+     "gewerbe": 5.43
+    },
+    "setting": "site_metalwork",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 660"
+   },
+   {
+    "de": "Verglasungsarbeiten",
+    "en": "Glazing works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 0.53,
+     "buero": 3.63,
+     "gewerbe": 0.91
+    },
+    "setting": "site_windows_doors",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 680"
+   },
+   {
+    "de": "Maler- und Lackierarbeiten – Beschichtungen",
+    "en": "Painting and varnishing – coatings",
+    "section": "ausbau",
+    "values": {
+     "wohn": 2.55,
+     "buero": 1.74,
+     "gewerbe": 1.59
+    },
+    "setting": "site_painting",
+    "where": "PDF S. 5, Tab. 'Gebäude', Spalte 110, Nr. 700"
+   },
+   {
+    "de": "Bodenbelagarbeiten",
+    "en": "Resilient and textile floor covering works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 0.87,
+     "buero": 1.78,
+     "gewerbe": 0.61
+    },
+    "setting": "site_flooring",
+    "where": "PDF S. 6, Tab. 'Gebäude', Spalte 110, Nr. 740"
+   },
+   {
+    "de": "Tapezierarbeiten",
+    "en": "Wallpapering works",
+    "section": "ausbau",
+    "values": {
+     "wohn": 0.41,
+     "buero": 0.39,
+     "gewerbe": 0.07
+    },
+    "setting": "site_painting",
+    "where": "PDF S. 6, Tab. 'Gebäude', Spalte 110, Nr. 760"
+   },
+   {
+    "de": "Raumluftechnische Anlagen",
+    "en": "Ventilation and air-conditioning systems",
+    "section": "tga",
+    "values": {
+     "wohn": 1.04,
+     "buero": 3.39,
+     "gewerbe": 4.16
+    },
+    "setting": "site_ventilation",
+    "where": "PDF S. 6, Tab. 'Gebäude', Spalte 110, Nr. 780"
+   },
+   {
+    "de": "Heizanlagen und zentrale Wassererwärmungsanlagen",
+    "en": "Heating and central hot-water systems",
+    "section": "tga",
+    "values": {
+     "wohn": 6.93,
+     "buero": 5.98,
+     "gewerbe": 4.52
+    },
+    "setting": "site_heating",
+    "where": "PDF S. 6, Tab. 'Gebäude', Spalte 110, Nr. 800"
+   },
+   {
+    "de": "Gas-, Wasser- und Entwässerungsanlagen innerhalb von Gebäuden",
+    "en": "Gas, water and drainage installations inside buildings",
+    "section": "tga",
+    "values": {
+     "wohn": 4.46,
+     "buero": 2.19,
+     "gewerbe": 2.53
+    },
+    "setting": "site_plumbing",
+    "where": "PDF S. 6, Tab. 'Gebäude', Spalte 110, Nr. 820"
+   },
+   {
+    "de": "Elektro-, Sicherheits- und Informationstechnische Anlagen",
+    "en": "Electrical, safety and IT installations",
+    "section": "tga",
+    "values": {
+     "wohn": 5.1,
+     "buero": 6.95,
+     "gewerbe": 7.11
+    },
+    "setting": "site_electrical",
+    "where": "PDF S. 6, Tab. 'Gebäude', Spalte 110, Nr. 840"
+   },
+   {
+    "de": "Gebäudeautomation",
+    "en": "Building automation",
+    "section": "tga",
+    "values": {
+     "wohn": 0.69,
+     "buero": 3.53,
+     "gewerbe": 2.7
+    },
+    "setting": "site_building_automation",
+    "where": "PDF S. 7, Tab. 'Gebäude', Spalte 110, Nr. 860"
+   },
+   {
+    "de": "Blitzschutz-, Überspannungsschutz- und Erdungsanlagen",
+    "en": "Lightning protection, surge protection and earthing",
+    "section": "tga",
+    "values": {
+     "wohn": 0.26,
+     "buero": 0.25,
+     "gewerbe": 0.49
+    },
+    "setting": "site_lightning_protection",
+    "where": "PDF S. 7, Tab. 'Gebäude', Spalte 110, Nr. 880"
+   },
+   {
+    "de": "Dämm- und Brandschutzarbeiten an technischen Anlagen",
+    "en": "Insulation and fire stopping on building services",
+    "section": "tga",
+    "values": {
+     "wohn": 0.68,
+     "buero": 1.12,
+     "gewerbe": 1.26
+    },
+    "setting": "site_insulation_fire_stopping",
+    "where": "PDF S. 7, Tab. 'Gebäude', Spalte 110, Nr. 900"
+   },
+   {
+    "de": "Aufzugsanlagen, Fahrtreppen, Fahrsteige, Förderanlagen",
+    "en": "Lifts, escalators, moving walkways, conveyors",
+    "section": "tga",
+    "values": {
+     "wohn": 0.67,
+     "buero": 0.67,
+     "gewerbe": 0.14
+    },
+    "setting": "site_lifts",
+    "where": "PDF S. 7, Tab. 'Gebäude', Spalte 110, Nr. 920"
+   },
+   {
+    "de": "Verbauarbeiten",
+    "en": "Excavation shoring works",
+    "section": "rohbau",
+    "values": {
+     "wohn": null,
+     "buero": 0.45,
+     "gewerbe": 0.17
+    },
+    "setting": "site_specialist_foundations",
+    "where": "PDF S. 3, Tab. 'Gebäude', Spalte 120, Nr. 120"
+   },
+   {
+    "de": "Korrosionschutzarbeiten an Stahlbauten",
+    "en": "Corrosion protection of steel structures",
+    "section": "ausbau",
+    "values": {
+     "wohn": null,
+     "buero": null,
+     "gewerbe": 0.04
+    },
+    "setting": "site_corrosion_protection",
+    "where": "PDF S. 6, Tab. 'Gebäude', Spalte 130, Nr. 720"
+   }
+  ]
+ },
+ "civil": {
+  "types": [
+   {
+    "id": "strasse",
+    "de": "Straßenbau",
+    "en": "Roads"
+   },
+   {
+    "id": "kanal",
+    "de": "Ortskanäle",
+    "en": "Local sewers"
+   },
+   {
+    "id": "bruecke",
+    "de": "Brücken im Straßenbau",
+    "en": "Road bridges"
+   }
+  ],
+  "works": [
+   {
+    "de": "Erdarbeiten",
+    "en": "Earthworks",
+    "values": {
+     "strasse": 35.72,
+     "kanal": 34.4,
+     "bruecke": 9.83
+    },
+    "setting": "site_earthworks",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 100 (Bauarbeit); printed 357,18 ‰"
+   },
+   {
+    "de": "Entwässerungskanalarbeiten",
+    "en": "Drainage sewer works",
+    "values": {
+     "strasse": 5.66,
+     "kanal": 44.2,
+     "bruecke": 0.49
+    },
+    "setting": "site_sewers",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 160 (Bauarbeit); printed 56,61 ‰"
+   },
+   {
+    "de": "Verkehrswegebauarbeiten – Oberbauschichten ohne Bindemittel",
+    "en": "Road construction works – unbound pavement layers",
+    "values": {
+     "strasse": 14.72,
+     "kanal": 4.69,
+     "bruecke": 0.21
+    },
+    "setting": "site_roads_paving",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 180 (Bauarbeit); printed 147,21 ‰"
+   },
+   {
+    "de": "Verkehrswegebauarbeiten – Oberbauschichten mit hydraulischen Bindemitteln",
+    "en": "Road construction works – hydraulically bound pavement layers",
+    "values": {
+     "strasse": 2.92,
+     "kanal": 0.23,
+     "bruecke": null
+    },
+    "setting": "site_roads_paving",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 200 (Bauarbeit); printed 29,17 ‰"
+   },
+   {
+    "de": "Verkehrswegebauarbeiten – Oberbauschichten aus Asphalt",
+    "en": "Road construction works – asphalt pavement layers",
+    "values": {
+     "strasse": 33.09,
+     "kanal": 7.51,
+     "bruecke": 2.13
+    },
+    "setting": "site_roads_paving",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 220 (Bauarbeit); printed 330,86 ‰"
+   },
+   {
+    "de": "Verkehrswegebauarbeiten – Pflasterdecken und Plattenbeläge, Einfassungen",
+    "en": "Road construction works – block paving, slab paving and edgings (kerbs)",
+    "values": {
+     "strasse": 2.76,
+     "kanal": 3.92,
+     "bruecke": 1.02
+    },
+    "setting": "site_roads_paving",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 240 (Bauarbeit); printed 27,59 ‰"
+   },
+   {
+    "de": "Mauerarbeiten",
+    "en": "Masonry works",
+    "values": {
+     "strasse": 0.06,
+     "kanal": 0.75,
+     "bruecke": 0.42
+    },
+    "setting": "site_masonry",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 280 (Bauarbeit); printed 0,56 ‰"
+   },
+   {
+    "de": "Betonarbeiten",
+    "en": "Concrete works",
+    "values": {
+     "strasse": 2.7,
+     "kanal": 2.99,
+     "bruecke": 58.71
+    },
+    "setting": "site_concrete",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 8, Nr. 300 (Bauarbeit); printed 26,95 ‰"
+   },
+   {
+    "de": "Metallbauarbeiten",
+    "en": "Metalwork",
+    "values": {
+     "strasse": 2.08,
+     "kanal": null,
+     "bruecke": 4.09
+    },
+    "setting": "site_metalwork",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 9, Nr. 660 (Bauarbeit); printed 20,81 ‰"
+   },
+   {
+    "de": "Maler- und Lackierarbeiten – Beschichtungen",
+    "en": "Painting and varnishing works – coatings",
+    "values": {
+     "strasse": 0.31,
+     "kanal": null,
+     "bruecke": 1.16
+    },
+    "setting": "site_painting",
+    "where": "Wägungsschemata 2021, Straßenbau (col. 210), p. 9, Nr. 700 (Bauarbeit); printed 3,06 ‰"
+   },
+   {
+    "de": "Verbauarbeiten",
+    "en": "Excavation shoring works",
+    "values": {
+     "strasse": null,
+     "kanal": 0.44,
+     "bruecke": 0.66
+    },
+    "setting": "site_specialist_foundations",
+    "where": "Wägungsschemata 2021, Brücken im Straßenbau (col. 220), p. 10, Nr. 120 (Bauarbeit); printed 6,63 ‰"
+   },
+   {
+    "de": "Ramm-, Rüttel- und Pressarbeiten",
+    "en": "Pile driving, vibrating and pressing works",
+    "values": {
+     "strasse": null,
+     "kanal": null,
+     "bruecke": 5.6
+    },
+    "setting": "site_specialist_foundations",
+    "where": "Wägungsschemata 2021, Brücken im Straßenbau (col. 220), p. 10, Nr. 140 (Bauarbeit); printed 55,95 ‰"
+   },
+   {
+    "de": "Stahlbauarbeiten",
+    "en": "Structural steelwork",
+    "values": {
+     "strasse": null,
+     "kanal": null,
+     "bruecke": 5.56
+    },
+    "setting": "site_steelwork",
+    "where": "Wägungsschemata 2021, Brücken im Straßenbau (col. 220), p. 10, Nr. 340 (Bauarbeit); printed 55,63 ‰"
+   },
+   {
+    "de": "Abdichtungsarbeiten",
+    "en": "Waterproofing works",
+    "values": {
+     "strasse": null,
+     "kanal": 0.88,
+     "bruecke": 1.78
+    },
+    "setting": "site_waterproofing",
+    "where": "Wägungsschemata 2021, Brücken im Straßenbau (col. 220), p. 11, Nr. 360 (Bauarbeit); printed 17,76 ‰"
+   },
+   {
+    "de": "Korrosionsschutzarbeiten an Stahlbauten",
+    "en": "Corrosion protection works on steel structures",
+    "values": {
+     "strasse": null,
+     "kanal": null,
+     "bruecke": 0.63
+    },
+    "setting": "site_corrosion_protection",
+    "where": "Wägungsschemata 2021, Brücken im Straßenbau (col. 220), p. 11, Nr. 720 (Bauarbeit); printed 6,34 ‰"
+   },
+   {
+    "de": "Entwässerungsanlagen",
+    "en": "Drainage installations",
+    "values": {
+     "strasse": null,
+     "kanal": null,
+     "bruecke": 1.24
+    },
+    "setting": null,
+    "where": "Wägungsschemata 2021, Brücken im Straßenbau (col. 220), p. 11, Nr. 820 (Bauarbeit); printed 12,37 ‰"
+   },
+   {
+    "de": "Gerüstarbeiten",
+    "en": "Scaffolding works",
+    "values": {
+     "strasse": null,
+     "kanal": null,
+     "bruecke": 6.47
+    },
+    "setting": "site_scaffolding",
+    "where": "Wägungsschemata 2021, Brücken im Straßenbau (col. 220), p. 11, Nr. 420 (Bauarbeit); printed 64,65 ‰"
+   }
+  ]
+ },
+ "labour": [
+  {
+   "wz": "41.1",
+   "de": "Erschließung von Grundstücken; Bauträger",
+   "en": "WZ 41.10 Development of building projects (land development; property developers)",
+   "value": 9.8,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.1 Erschließung von Grundstücken; Bauträger', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G35; the group has a single class, WZ 41.10"
+  },
+  {
+   "wz": "41.10.3",
+   "de": "Bauträger für Wohngebäude",
+   "en": "Developers of residential buildings",
+   "value": 8.9,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.10.3 Bauträger für Wohngebäude', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G39"
+  },
+  {
+   "wz": "41.2",
+   "de": "Bau von Gebäuden",
+   "en": "WZ 41.20 Construction of residential and non-residential buildings",
+   "value": 20.7,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.2 Bau von Gebäuden', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G47; the group has a single class, WZ 41.20"
+  },
+  {
+   "wz": "41.20.1",
+   "de": "Bau von Gebäuden (ohne Fertigteilbau)",
+   "en": "Construction of buildings (excluding prefabricated construction)",
+   "value": 20.6,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.20.1 Bau von Gebäuden (ohne Fertigteilbau)', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G55"
+  },
+  {
+   "wz": "41.20.2",
+   "de": "Errichtung von Fertigteilbauten",
+   "en": "Erection of prefabricated buildings",
+   "value": 23.1,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.20.2 Errichtung von Fertigteilbauten', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G60"
+  },
+  {
+   "wz": "42.11",
+   "de": "Bau von Straßen",
+   "en": "Construction of roads",
+   "value": 30.3,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.11 Bau von Straßen', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G82"
+  },
+  {
+   "wz": "42.12",
+   "de": "Bau von Bahnverkehrsstrecken",
+   "en": "Construction of railways",
+   "value": 32.6,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.12 Bau von Bahnverkehrsstrecken', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G87"
+  },
+  {
+   "wz": "42.13",
+   "de": "Brücken- und Tunnelbau",
+   "en": "Construction of bridges and tunnels",
+   "value": 23.4,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.13 Brücken- und Tunnelbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G92"
+  },
+  {
+   "wz": "42.21",
+   "de": "Rohrleitungstiefbau, Brunnenbau und Kläranlagenbau",
+   "en": "Pipeline construction, well construction and sewage-plant construction",
+   "value": 30.7,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.21 Rohrleitungstiefbau, Brunnenbau und Kläranlagenbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G104"
+  },
+  {
+   "wz": "42.22",
+   "de": "Kabelnetzleitungstiefbau",
+   "en": "Construction of cable networks (electricity and telecommunications)",
+   "value": 28.2,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.22 Kabelnetzleitungstiefbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G109"
+  },
+  {
+   "wz": "42.91",
+   "de": "Wasserbau",
+   "en": "Hydraulic engineering (water projects)",
+   "value": 25.5,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.91 Wasserbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G119"
+  },
+  {
+   "wz": "42.99",
+   "de": "Sonstiger Tiefbau a. n. g.",
+   "en": "Other civil engineering n.e.c.",
+   "value": 30,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.99 Sonstiger Tiefbau a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G124 (printed 30.0)"
+  },
+  {
+   "wz": "43.11",
+   "de": "Abbrucharbeiten",
+   "en": "Demolition",
+   "value": 23.7,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.11 Abbrucharbeiten', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G142"
+  },
+  {
+   "wz": "43.12",
+   "de": "Vorbereitende Baustellenarbeiten",
+   "en": "Site preparation",
+   "value": 27,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.12 Vorbereitende Baustellenarbeiten', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G147 (printed 27.0)"
+  },
+  {
+   "wz": "43.13",
+   "de": "Test- und Suchbohrung",
+   "en": "Test drilling and boring",
+   "value": 31.7,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.13 Test- und Suchbohrung', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G151"
+  },
+  {
+   "wz": "43.21",
+   "de": "Elektroinstallation",
+   "en": "Electrical installation",
+   "value": 32.4,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.21 Elektroinstallation', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G166"
+  },
+  {
+   "wz": "43.22",
+   "de": "Gas-, Wasser-, Heizungs- sowie Lüftungs- und Klimainstallation",
+   "en": "Plumbing, heating, ventilation and air-conditioning installation",
+   "value": 31.7,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.22 Gas-, Wasser-, Heizungs- sowie Lüftungs- und Klimainstallation', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G173"
+  },
+  {
+   "wz": "43.29",
+   "de": "Sonstige Bauinstallation",
+   "en": "Other construction installation",
+   "value": 31.8,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.29 Sonstige Bauinstallation', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G181"
+  },
+  {
+   "wz": "43.29.1",
+   "de": "Dämmung gegen Kälte, Wärme, Schall und Erschütterung",
+   "en": "Insulation against cold, heat, sound and vibration",
+   "value": 29.8,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.29.1 Dämmung gegen Kälte, Wärme, Schall und Erschütterung', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G187"
+  },
+  {
+   "wz": "43.29.9",
+   "de": "Sonstige Bauinstallation a. n. g.",
+   "en": "Other construction installation n.e.c.",
+   "value": 32.8,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.29.9 Sonstige Bauinstallation a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G193"
+  },
+  {
+   "wz": "43.31",
+   "de": "Anbringen von Stuckaturen, Gipserei und Verputzerei",
+   "en": "Plastering (stucco, plaster and render work)",
+   "value": 31.2,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.31 Anbringen von Stuckaturen, Gipserei und Verputzerei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G204"
+  },
+  {
+   "wz": "43.32",
+   "de": "Bautischlerei und -schlosserei",
+   "en": "Joinery installation (building joinery and metalwork)",
+   "value": 30.4,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.32 Bautischlerei und -schlosserei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G209"
+  },
+  {
+   "wz": "43.33",
+   "de": "Fußboden-, Fliesen- und Plattenlegerei, Tapeziererei",
+   "en": "Floor and wall covering (flooring, tiling, wallpapering)",
+   "value": 31.7,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.33 Fußboden-, Fliesen- und Plattenlegerei, Tapeziererei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G213"
+  },
+  {
+   "wz": "43.34",
+   "de": "Malerei und Glaserei",
+   "en": "Painting and glazing",
+   "value": 38.5,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.34 Malerei und Glaserei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G218"
+  },
+  {
+   "wz": "43.34.1",
+   "de": "Maler- und Lackierergewerbe",
+   "en": "Painting and varnishing trade",
+   "value": 38.7,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.34.1 Maler- und Lackierergewerbe', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G223"
+  },
+  {
+   "wz": "43.34.2",
+   "de": "Glasergewerbe",
+   "en": "Glazing trade",
+   "value": 35,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.34.2 Glasergewerbe', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G227 (printed 35.0)"
+  },
+  {
+   "wz": "43.39",
+   "de": "Sonstiger Ausbau a. n. g.",
+   "en": "Other building completion and finishing n.e.c.",
+   "value": 26.6,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.39 Sonstiger Ausbau a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G232"
+  },
+  {
+   "wz": "43.91",
+   "de": "Dachdeckerei und Zimmerei",
+   "en": "Roofing and carpentry",
+   "value": 31.3,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.91 Dachdeckerei und Zimmerei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G244"
+  },
+  {
+   "wz": "43.91.1",
+   "de": "Dachdeckerei und Bauspenglerei",
+   "en": "Roofing and roof sheet-metal work",
+   "value": 32.9,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.91.1 Dachdeckerei und Bauspenglerei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G249"
+  },
+  {
+   "wz": "43.91.2",
+   "de": "Zimmerei und Ingenieurholzbau",
+   "en": "Carpentry and engineered timber construction",
+   "value": 29.2,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.91.2 Zimmerei und Ingenieurholzbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G254"
+  },
+  {
+   "wz": "43.99",
+   "de": "Sonstige spezialisierte Bautätigkeiten a. n. g.",
+   "en": "Other specialised construction activities n.e.c.",
+   "value": 31.4,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99 Sonstige spezialisierte Bautätigkeiten a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G261"
+  },
+  {
+   "wz": "43.99.1",
+   "de": "Gerüstbau",
+   "en": "Scaffolding",
+   "value": 39.2,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99.1 Gerüstbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G266"
+  },
+  {
+   "wz": "43.99.2",
+   "de": "Schornstein-, Feuerungs- und Industrieofenbau",
+   "en": "Chimney, furnace and industrial-kiln construction",
+   "value": 38.4,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99.2 Schornstein-, Feuerungs- und Industrieofenbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G271"
+  },
+  {
+   "wz": "43.99.9",
+   "de": "Baugewerbe a. n. g.",
+   "en": "Construction n.e.c. (WZ 2008 puts masonry and paving, concrete and reinforced-concrete work, foundations and waterproofing in this subclass)",
+   "value": 29.6,
+   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99.9 Baugewerbe a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G277. Subclass content per Destatis 'Klassifikation der Wirtschaftszweige 2008 mit Erläuterungen', p. 358"
+  }
+ ]
+}

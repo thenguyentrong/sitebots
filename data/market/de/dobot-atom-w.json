@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "dobot-atom-w",
+ "maker": "Dobot",
+ "makerCountry": "CN",
+ "model": "Atom-W",
+ "variant": "Standard / EDU",
+ "name": "DOBOT Atom-W",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A 1.79 m wheeled DOBOT humanoid with two 7-joint arms (3.5 kg rated each), LiDAR navigation up to 1.5 m/s and optional 6-DoF hands, for mobile manipulation and AI research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 75000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "EDU version; Standard 59,000 EUR net, not available at the time of checking."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://terra-robotics.de/products/dobot-atom-w-serie",
+    "contactUrl": "https://terra-robotics.de/pages/impressum",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": 75000,
+    "priceBasis": "net",
+    "sourceId": "s1",
+    "note": null
+   },
+   {
+    "name": "DOBOT Europe GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.dobot-robots.com/about/contact-us",
+    "email": "sales@dobot-robots.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Terra Robotics (Löhne) lists Atom-W EDU at 75,000 EUR net as orderable; the Standard version (59,000 EUR net) is shown not available.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.785,
+   "unit": "m",
+   "conditions": "1785 x 500 x 500 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 20,
+   "unit": null,
+   "conditions": "without hands: 2 head, 7 per arm, 4 waist",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3.5,
+   "unit": "kg",
+   "conditions": "rated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "repeatability_mm",
+   "label": "Repeatability",
+   "value": 0.05,
+   "unit": "mm",
+   "conditions": "+/-",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "45 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel i9 (24 cores) plus GPU with 41.15 TFLOPS FP32",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Depth camera and HD binocular camera in head, LiDAR navigation, 360 degree microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Optional dexterous hand",
+   "value": 6,
+   "unit": null,
+   "conditions": "per hand, optional",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 3.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Dobot SDK",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Passes gaps from 500 mm width.",
+   "Hands are an optional module."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/dobot-atom-wpng-2775091.png",
+   "pageUrl": "https://terra-robotics.de/products/dobot-atom-w-serie",
+   "credit": "Terra Robotics / Dobot",
+   "alt": "DOBOT Atom-W wheeled humanoid",
+   "kind": "product"
+  },
+  {
+   "url": "https://terra-robotics.de/cdn/shop/files/dobot-atom-w-intralogistik-materialhandling.jpg?v=1786007772&width=1400",
+   "pageUrl": "https://terra-robotics.de/products/dobot-atom-w-serie",
+   "credit": "Terra Robotics / Dobot",
+   "alt": "Render of a DOBOT Atom-W taking a cardboard box from a warehouse shelf, with a grey bin on a tray in front of it",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Mobile manipulation with a vision-language-action model and VR data collection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://terra-robotics.de/products/dobot-atom-w-serie",
+   "title": "Dobot ATOM-W Serie",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.dobot-robots.com/about/contact-us",
+   "title": "Dobot global branches (DOBOT Europe GmbH, Neu-Isenburg)",
+   "publisher": "Dobot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No product page for Atom-W found on the Dobot website; image is from the reseller.",
+  "Weight and runtime not stated."
+ ],
+ "checkedAt": "2026-10-02"
+}

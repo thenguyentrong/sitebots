@@ -1,0 +1,110 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-dr01",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "DR01",
+ "variant": null,
+ "name": "DEEP Robotics DR01",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/humanoid.html",
+ "summary": "A research humanoid for embodied-AI training that walks at 1.6 m/s and takes 18 cm steps; not a work robot.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller lists the DR01; only DEEP's global purchase form names it.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1.6,
+   "unit": "m/s",
+   "conditions": "over 1.6 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step height",
+   "value": 18,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 25,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Hand type is not published by DEEP Robotics; \"optional\" here only marks it as unknown.",
+   "Payload and runtime not stated by the maker."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p222222.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/humanoid.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics DR01 humanoid stepping onto a block",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/humanoid.html",
+   "title": "DR01 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.deeprobotics.cn/en/index/buy.html",
+   "title": "Product Purchase Intention Form",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight, hands and price."
+ ],
+ "checkedAt": "2026-10-02"
+}

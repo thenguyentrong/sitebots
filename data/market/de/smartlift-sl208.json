@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "smartlift-sl208",
+ "maker": "Smartlift",
+ "makerCountry": "DK",
+ "model": "SL 208",
+ "variant": null,
+ "name": "Smartlift SL 208",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "glazing_installation",
+  "site_windows_doors/large-pane-glazing",
+  "site_windows_doors/window-unit-setting"
+ ],
+ "officialUrl": "https://smartlift.com/de/p/sl208",
+ "summary": "Compact indoor glazing robot with a vacuum head that lifts and sets glass and panels up to 200 kg, lifting height 2.65 m.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany by Smartlift Deutschland GmbH via the online configurator and quote form; prices are sent on request.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Smartlift Deutschland GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://smartlift.com/de/p/sl208",
+    "contactUrl": "https://smartlift.com/de",
+    "email": "mein@smartlift.com",
+    "phone": "+49 212 937 668 90",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "German subsidiary (Ohligser Straße 82, Halle 1 A, 42781 Haan); configurator on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "lift_capacity_kg",
+   "label": "Lifting capacity",
+   "value": 200,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "lift_height_m",
+   "label": "Lifting height",
+   "value": 2.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_extension_m",
+   "label": "Arm extension",
+   "value": 0.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "capacity_extended_kg",
+   "label": "Lifting capacity, arm extended",
+   "value": 150,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Own weight",
+   "value": 480,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "width_m",
+   "label": "Width",
+   "value": 0.72,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "drive_speed_kmh",
+   "label": "Driving speed",
+   "value": 6,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 10,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 8,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 200,
+  "carryPayloadKg": null,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Battery-powered, operator-driven lifter with a vacuum suction head; options such as rotating yoke, electric arm extension and radio remote are configured per order.",
+   "Not autonomous: the operator controls every movement."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://smartliftblob.blob.core.windows.net/pim/sl208/SL_208_07793_01.png",
+   "pageUrl": "https://smartlift.com/de/p/sl208",
+   "credit": "Smartlift",
+   "alt": "Smartlift SL 208 glazing robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_windows_doors/large-pane-glazing"
+   ],
+   "task": "Lifting and setting glass, stone and steel elements",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://smartlift.com/de/p/sl208",
+   "title": "Smartlift SL 208 (Germany)",
+   "publisher": "Smartlift",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://smartlift.com/de",
+   "title": "Smartlift Deutschland GmbH",
+   "publisher": "Smartlift Deutschland GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro price."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,131 @@
+{
+ "schemaVersion": 1,
+ "id": "magiclab-magicdog-t1",
+ "maker": "MagicLab",
+ "makerCountry": "CN",
+ "model": "MagicDog T1",
+ "variant": null,
+ "name": "MagicLab MagicDog T1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A 19 kg IP54 quadruped for one-person deployment on inspection and light transport jobs, with 15 kg continuous payload; MagicLab has shown it with a rear gripper arm.",
+ "launched": "2026-08",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Launched in August 2026 and shown at IFA Berlin, but MagicLab has no product page or offer for it yet; European use is only announced as a plan (hospital transport). MagicLab states CE-RED certification is targeted for Q4 2026; check the CE marking before use in Germany.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 19,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous payload",
+   "value": 15,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 15,
+  "runtimeH": null,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A rear-mounted gripper arm was shown at WAIC 2026 as an add-on; it is not counted here because no configuration with arm is offered.",
+   "Runtime, speed and stair ability not published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260826/lightweight-industrial-robot.webp",
+   "pageUrl": "https://www.magiclabglobal.com/magicdog-t1-debuts-at-waic-2026-a-single-person-deployable-robot-for-distributed-industrial-and-park-inspection.html",
+   "credit": "MagicLab",
+   "alt": "MagicDog T1 with the add-on rear gripper arm picking up a bottle at the WAIC 2026 demo",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Patrols a zone, finds plastic bottles and picks them up with a rear gripper arm",
+   "stage": "demo",
+   "where": "WAIC 2026",
+   "date": "2026",
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Live inspection demonstrations",
+   "stage": "demo",
+   "where": "IFA 2026, Messe Berlin, Germany",
+   "date": "2026-09",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.magiclabglobal.com/magiclab-brings-physical-ai-to-europes-factory-floors-at-ifa-2026-debuting-full-stack-embodied-intelligence-stack.html",
+   "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.magiclabglobal.com/magicdog-t1-debuts-at-waic-2026-a-single-person-deployable-robot-for-distributed-industrial-and-park-inspection.html",
+   "title": "MagicDog T1 Debuts at WAIC 2026",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price, runtime and sales start in Europe.",
+  "No product page yet; the only official image shows the T1 with its add-on gripper arm at WAIC 2026."
+ ],
+ "checkedAt": "2026-10-02"
+}

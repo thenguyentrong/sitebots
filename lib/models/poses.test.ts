@@ -14,3 +14,10 @@ it('does not advertise presets that have no matching joints', () => {
   const entry = index.robots['engineai/pm01'];
   expect(Object.keys(resolvePresets('engineai/pm01', 'humanoid', entry.joints.joints))).toEqual(['standing']);
 });
+
+it('does not create humanoid poses for other classes even when joint names resemble an arm', () => {
+  const joints = index.robots['unitree/h2#plus'].joints.joints;
+  for (const form of ['mobile_manipulator', 'amr_agv', 'industrial_arm', 'cobot', 'dedicated_robot', 'integrated_cell'] as const) {
+    expect(resolvePresets('synthetic/unmapped', form, joints)).toEqual({ standing: {} });
+  }
+});

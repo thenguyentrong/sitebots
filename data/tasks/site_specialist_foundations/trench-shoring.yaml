@@ -1,0 +1,196 @@
+schema_version: 1
+id: site_specialist_foundations/trench-shoring
+status: published
+setting: site_specialist_foundations
+family: heavy_element_handling
+trades: [civil_earthworks]
+title:
+  en: "Shore a pipe trench with trench boxes"
+  de: "Rohrgraben mit Grabenverbaugeräten sichern"
+summary:
+  en: "Assemble the box from two shoring plates and struts beside the trench, have the excavator set it into the trench and push it down as digging goes deeper, and pull it again while backfilling."
+  de: "Die Box neben dem Graben aus zwei Verbauplatten und Streben zusammenbauen, vom Bagger in den Graben stellen und mit fortschreitendem Aushub nachdrücken lassen; beim Verfüllen wird sie wieder gezogen."
+description:
+  en: "In stable soil a trench may have vertical, unshored walls only up to 1.25 m deep; deeper pipe trenches are sloped or shored. Sliding soil and failing shoring can bury people, and for trenches the DGUV rule prefers trench shoring devices assessed by a testing body. A trench box is two steel plates of 2 to 5 m length joined by adjustable struts; in one maker's range a base plate weighs 575 to 1,560 kg and a complete base element 1,430 to 3,410 kg, so the excavator lifts it on four lifting eyes; another maker specifies 9 to 13 t excavators for a base box and 18 to 30 t with a stacking box. The crew assembles plates, spring connectors, struts and extension tubes on level ground with bolts and pins and spindles the struts out to the trench width. In the lowering method the box goes into a pre-excavation of at most 1.25 m and is pushed down alternately at either end, never more than 0.5 m on one side, as digging continues; nobody enters the trench in this phase. The shoring must bear against the soil without gaps and stand at least 5 cm above ground. After the pipes are laid the box is pulled in steps while the trench is backfilled and compacted. STLB-Bau also lists trench sheets and the standard horizontal and vertical shoring of DIN 4124 for trenches."
+  de: "In standfestem Boden dürfen Grabenwände nur bis 1,25 m Tiefe senkrecht und ohne Verbau stehen; tiefere Rohrgräben werden geböscht oder verbaut. Abrutschender Boden und versagender Verbau können Menschen verschütten, und für Gräben empfiehlt die DGUV-Regel vorzugsweise Grabenverbaugeräte, die von einer Prüfstelle bewertet worden sind. Eine Verbaubox besteht aus zwei Stahlplatten von 2 bis 5 m Länge, die über verstellbare Streben verbunden sind; bei einem Hersteller wiegt eine Grundplatte 575 bis 1.560 kg und ein komplettes Grundelement 1.430 bis 3.410 kg, deshalb hebt sie der Bagger an vier Ösen; ein anderer Hersteller nennt Bagger von 9 bis 13 t für eine Grundbox und 18 bis 30 t mit Aufstockungsbox. Die Kolonne baut Platten, Federpilze, Streben und Verbreiterungsrohre auf ebenem Gelände mit Bolzen und Federsteckern zusammen und spindelt die Streben auf Grabenbreite aus. Im Absenkverfahren kommt die Box in einen Voraushub von höchstens 1,25 m und wird mit dem weiteren Aushub wechselseitig nachgedrückt, nie mehr als 0,5 m einseitig; in dieser Phase betritt niemand den Graben. Der Verbau muss lückenlos am Erdreich anliegen und mindestens 5 cm über das Gelände ragen. Nach der Rohrverlegung wird die Box schrittweise gezogen, während der Graben verfüllt und verdichtet wird. STLB-Bau führt für Gräben außerdem Kanaldielen sowie den waagerechten und senkrechten Normverbau nach DIN 4124."
+also_in_settings: [site_sewers]
+derived_from: null
+lv:
+  lb: '006'
+  atv: "DIN 18303"
+  position:
+    en: "Trench shoring with a trench shoring device to DIN 4124: install and remove; end shoring paid separately"
+    de: "Verbau mit Grabenverbaugerät DIN 4124 herstellen und wieder rückbauen; Stirnverbau wird gesondert vergütet"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 15.5, max: 3410 }
+    confidence: confirmed
+    evidence_url: 'https://ltw-verbau.de/wp-content/uploads/2016/10/TD-Verbaubox-VB100VB120-D.pdf'
+    note: "LTW VB 100 / VB 120 data sheet (28.04.2014): base plates 575 to 1,560 kg, complete base elements 1,430 to 3,410 kg, top plates 350 to 1,015 kg; the standard strut weighs 71 kg and extension tubes 15.5 to 64.5 kg. Plates and boxes are lifted by the excavator; struts and tubes are set and pinned by the crew, and LTW's installation instructions name no lifting gear for them."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The boxes are standard parts, but trench width and depth, soil, crossing pipes and the choice between lowering and setting in change from job to job."
+  error_tolerance:
+    value: critical
+    confidence: likely
+    evidence_url: 'https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/DGUV-Regeln/101_604.pdf'
+    note: "The DGUV rule requires shoring that is tight, gap-free and stable in every construction and removal stage and never loaded beyond the manufacturer's limit; shoring that fails lets the trench wall down onto the people in it."
+  safety_criticality:
+    value: life_safety
+    confidence: confirmed
+    evidence_url: 'https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/DGUV-Regeln/101_604.pdf'
+    note: "DGUV Regel 101-604 lists burial by sliding or falling soil and burial by failing shoring among the hazards in shored trenches."
+  reach_height_m:
+    value: { min: 0, max: 2 }
+    confidence: assumed
+    note: "The box is assembled lying on level ground; the upper plate is set onto the struts at about the working width above the ground, 0.99 to 1.29 m with the VB 100 standard strut, and bolted there. Extension tubes widen the box up to a 3.79 m working width, which puts the upper plate higher; the 2 m is our assumption for narrower pipe trenches. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open trench in the street or the field."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: assumed
+    note: "Excavated soil in the open; no relevant dust from setting the box."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Outdoor work in the weather, often with groundwater in the trench."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Trench edge, spoil heap and the assembly area beside the trench."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://ltw-verbau.de/wp-content/uploads/2016/10/VA-Verbaubox-VB100VB120-D.pdf'
+    note: "The box is lifted on four eyes, set and later pulled with lifting gear, and its plates are pushed down, not hammered (LTW installation instructions, 28.04.2014); SBH names wheeled or crawler excavators of 9 to 13 t for a base box. Assembly with bolts, pins and spindles and the banksman stay with the crew. The taxonomy has no excavator class."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; shoring is priced per square metre of shored trench wall."
+requirements:
+  object_size_m:
+    value: { min: 2.0, max: 5.0 }
+    confidence: confirmed
+    evidence_url: 'https://ltw-verbau.de/wp-content/uploads/2016/10/TD-Verbaubox-VB100VB120-D.pdf'
+    note: "Plate lengths 2.00 to 5.00 m, base plate heights 2.36 or 2.56 m, top plates 1.33 or 1.57 m (LTW VB 100 / VB 120)."
+  tolerance_mm:
+    value: 50
+    confidence: likely
+    evidence_url: 'https://www.bauindustrie.de/fileadmin/bauindustrie.de/Media/Veroeffentlichungen/Merkblatt_Toleranzen__3.471_web.pdf'
+    note: "Default values of ATV DIN 18303 where no other rule applies, as quoted in the Bauindustrie leaflet: position deviation at the starting point max. 50 mm, plumb deviation max. 1 %, top edge no more than 20 cm too high. Applying them to trench boxes is our reading. The DGUV rule adds that shoring stands at least 5 cm above ground up to 2 m depth and 10 cm deeper."
+  force_n:
+    value: 229000
+    confidence: likely
+    evidence_url: 'https://ltw-verbau.de/wp-content/uploads/2016/10/TD-Verbaubox-VB100VB120-D.pdf'
+    note: "Design pulling force at the lifting eye on the post head, 229 kN (47 kN at the lower attachments): the most the excavator may apply when pulling the box. The force actually needed depends on the soil; nobody applies it by hand."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the excavator lifting, pushing and pulling the box and the crew assembling it at ground level, outside the unshored trench. Boxes of 1.4 to 3.4 t that keep a trench from burying people are no job for a humanoid."
+      de: "Beim Bagger bleiben, der die Box hebt, nachdrückt und zieht, und bei der Kolonne, die sie oben auf ebenem Gelände zusammenbaut, außerhalb des ungesicherten Grabens. Boxen von 1,4 bis 3,4 t, die Menschen im Graben vor Verschüttung schützen, sind keine Aufgabe für einen Humanoiden."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [exposure, ergonomics]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "ATV DIN 18303 'Verbauarbeiten' applies to the temporary or permanent securing of level differences and banks and of excavation pits, trenches and the like with shoring."
+      de: "Die ATV DIN 18303 „Verbauarbeiten“ gilt für die vorübergehende oder dauerhafte Sicherung von Geländesprüngen und Ufern sowie von Baugruben, Gräben und dergleichen mit Verbau."
+    url: 'https://www.vob-online.de/de/norm/din-18303/256231553'
+    kind: standard
+    tier: 1
+    date: '2016-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Publisher's abstract of the 2016-09 edition, unchanged in VOB 2019; no day given."
+  - statement:
+      en: "STLB-Bau 2026-04 lists trench shoring (Grabenverbau, including trench shoring devices and trench sheets) in LB 006 Spezialtiefbauarbeiten; its sample position 'shoring with a trench shoring device to DIN 4124, install and remove, end shoring paid separately' is measured in m²."
+      de: "STLB-Bau 2026-04 führt Grabenverbau, darunter Grabenverbaugeräte und Kanaldielen, im LB 006 Spezialtiefbauarbeiten; der Beispieltext „Verbau mit Grabenverbaugerät DIN 4124, ... herstellen und wieder rückbauen, Stirnverbau wird gesondert vergütet“ hat die Abrechnungseinheit m²."
+    url: 'https://www.stlb-bau-online.de/Ausschreibungstext/Verbau-Grabenverbaugeraete/737/STLB-Bau/T/LongText'
+    kind: standard
+    tier: 1
+    date: '2026-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Public sample text of STLB-Bau version 2026-04, read on 2026-10-02. LB 009 Entwässerungskanalarbeiten has no shoring section."
+  - statement:
+      en: "LTW's data sheet for the VB 100 / VB 120 trench box gives plate lengths of 2.00 to 5.00 m, base plates of 575 to 1,560 kg, complete base elements of 1,430 to 3,410 kg, design earth pressures of 97.5 to 34.3 kN/m², a 71 kg standard strut and a design pulling force of 229 kN at the post-head lifting eye."
+      de: "Das Datenblatt von LTW zur Verbaubox VB 100 / VB 120 nennt Plattenlängen von 2,00 bis 5,00 m, Grundplatten von 575 bis 1.560 kg, komplette Grundelemente von 1.430 bis 3.410 kg, Bemessungserddrücke von 97,5 bis 34,3 kN/m², eine Standardstrebe von 71 kg und eine Bemessungszugkraft von 229 kN an der Zieh-Öse am Pfostenkopf."
+    url: 'https://ltw-verbau.de/wp-content/uploads/2016/10/TD-Verbaubox-VB100VB120-D.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2014-04-28'
+    type: claim
+    confidence: confirmed
+    note: "Data sheet dated 28.04.2014 in the footer."
+  - statement:
+      en: "LTW's installation instructions: assemble plates, spring connectors and struts lying on level ground; in the lowering method pre-excavate at most 1.25 m, set the box with lifting gear on four eyes and push the plates down alternately, no more than 0.5 m on one side; the trench must not be entered in this phase; pull the box in steps of at most 0.5 m while backfilling."
+      de: "Die Verwendungsanleitung von LTW: Platten, Federpilze und Streben liegend auf ebenem Gelände montieren; im Absenkverfahren höchstens 1,25 m vorausschachten, die Box mit Hebezeug an vier Ösen einstellen und die Platten wechselseitig eindrücken, nicht mehr als 0,5 m einseitig; in dieser Phase darf der Graben nicht betreten werden; beim Verfüllen die Box in Schritten von höchstens 0,5 m ziehen."
+    url: 'https://ltw-verbau.de/wp-content/uploads/2016/10/VA-Verbaubox-VB100VB120-D.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2014-04-28'
+    type: claim
+    confidence: confirmed
+    note: "Installation instructions dated 28.04.2014; LTW names itself as manufacturer."
+  - statement:
+      en: "SBH Tiefbautechnik says its Standardbox 600 series is used mainly in sewer construction at depths up to 4 m, its hinged strut allows the lowering method in unstable soil, and it specifies trench widths of 1.20 to 4.48 m and a wheeled or crawler excavator of 9 to 13 t for the base box alone and 18 to 30 t with a stacking box."
+      de: "SBH Tiefbautechnik schreibt, dass die Standardbox der 600er Serie vorrangig im Kanalbau bei Tiefenlagen bis 4 m eingesetzt wird und die gelenkig gelagerte Strebe den Einsatz bei nicht standfesten Böden im Absenkverfahren erlaubt; angegeben sind Grabenbreiten von 1,20 bis 4,48 m und ein Mobil- oder Kettenbagger von 9 bis 13 t für die Grundbox und 18 bis 30 t mit Aufstockungsbox."
+    url: 'https://sbh-verbau.de/verbauloesungen/verbauboxen/standardbox-600er-serie'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, dated with the check date."
+  - statement:
+      en: "DGUV Regel 101-604 lists burial by sliding soil and by failing shoring as hazards in shored trenches, prefers tested trench shoring devices for trenches, allows unsecured work only to 1.25 m depth and requires shoring that is tight, gap-free and at least 5 cm above ground up to 2 m depth, 10 cm deeper."
+      de: "Die DGUV Regel 101-604 nennt Verschüttung durch abrutschende Erdmassen und durch Versagen von Verbau als Gefährdungen in verbauten Gräben, empfiehlt für Gräben geprüfte Grabenverbaugeräte, lässt Arbeiten im ungesicherten Bereich nur bis 1,25 m Tiefe zu und verlangt einen dichten, lückenlosen Verbau, der bis 2 m Tiefe mindestens 5 cm, darüber 10 cm über das Gelände ragt."
+    url: 'https://www.bgbau.de/fileadmin/Medien-Objekte/Medien/DGUV-Regeln/101_604.pdf'
+    kind: regulator
+    tier: 1
+    date: '2023-12-01'
+    type: claim
+    confidence: confirmed
+    note: "DGUV Regel 101-604 'Branche Tiefbau', edition December 2023, sections 3.5.1 and 3.5.2; no day given."
+  - statement:
+      en: "The Bauindustrie leaflet on tolerances in specialist foundation work quotes the defaults of ATV DIN 18303 for shoring where no other rule applies: plumb deviation max. 1 %, position deviation at the starting point max. 50 mm, top edge max. 20 cm too high."
+      de: "Das Merkblatt Toleranzen im Spezialtiefbau der Bauindustrie zitiert die Werte der ATV DIN 18303 für Verbau, wo keine normativen Regelungen getroffen sind: Lotabweichung max. 1 %, Lageabweichung am Ansatzpunkt max. 50 mm, Abweichung von der vorgegebenen Oberseite nach oben max. 20 cm."
+    url: 'https://www.bauindustrie.de/fileadmin/bauindustrie.de/Media/Veroeffentlichungen/Merkblatt_Toleranzen__3.471_web.pdf'
+    kind: standard
+    tier: 2
+    date: '2025-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Version 1.1, January 2025; the leaflet says it is not a standard. No day given."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If crews still step into partly shored trenches, measure on one sewer run how far the shored length stays ahead of the pipe laying."
+    de: "Kein Roboterpilot. Wenn Kolonnen noch in teilweise verbaute Gräben steigen, auf einer Kanalhaltung messen, wie weit die verbaute Länge der Rohrverlegung vorausbleibt."
+prerequisites: []
+open_questions:
+  - { en: "Which shoring system and excavator class do your sewer crews use, and how often are their trenches deeper than 1.25 m?", de: "Welches Verbausystem und welche Baggerklasse nutzen Ihre Kanalbaukolonnen, und wie oft sind ihre Gräben tiefer als 1,25 m?" }
+compliance_flags: []
+sources_reviewed_at: '2026-10-02'

@@ -1,0 +1,275 @@
+{
+ "schemaVersion": 1,
+ "id": "galileo-ex-1",
+ "maker": "Galileo (Tianjin) Technology",
+ "makerCountry": "CN",
+ "model": "EX-1",
+ "variant": null,
+ "name": "Galileo EX-1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galileotime.com/en/main/DogEX1",
+ "summary": "A 120 kg explosion-protected robot dog (maker marking Ex IIB T4 Gb, IP67) for gas and inspection rounds in hazardous areas, carrying 30 kg for about 2 h.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer found: GalileoTime (Tianjin, China) takes enquiries and non-binding reservation orders by email and a Chinese sales hotline, and names no EU office, distributor or customer. The only German-language listing is Roboter Deutschland, a US-run web shop (Las Vegas) not named by GalileoTime, at EUR 22,741.72 converted from its base currency, marked \"subject to availability\". No CE marking information found.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Galileo (Tianjin) Technology Co., Ltd. (GalileoTime)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.galileotime.com/en/main/DogEX1",
+    "contactUrl": "https://www.galileotime.com/en/aboutUs/ContactUs",
+    "email": "galileo@galileotime.com",
+    "phone": "+86 22 5989 3220",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Website orders are non-binding reservations; sales contact by email or the sales hotline. Industry versions on request."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "1300 x 650 x 790",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 12,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 120,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 2160,
+   "unit": "Wh",
+   "conditions": "45.2 Ah, 48 V lithium",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking load",
+   "value": 30,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 30,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": "25 cm steps",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Obstacle height",
+   "value": 25,
+   "unit": "cm",
+   "conditions": "ditch crossing 30 cm wide",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "joint_torque_nm",
+   "label": "Max. joint torque",
+   "value": 500,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "1 lidar, dual depth cameras, 4G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "payload_options",
+   "label": "Payloads",
+   "value": "Dual-light PTZ camera, gas sensor (methane only), voice intercom, speaker",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ex_rating",
+   "label": "Explosion-protection marking",
+   "value": "Ex IIB T4 Gb",
+   "unit": null,
+   "conditions": "as stated by the maker; certificate not named",
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 50",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "controller",
+   "label": "Controller",
+   "value": "Explosion-proof tablet controller",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": "Supported (SDK not named); autonomous navigation supported",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 30,
+  "runtimeH": 2,
+  "ipRating": "IP67",
+  "sdk": "Secondary development supported (SDK not named)",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Explosion-protection marking Ex IIB T4 Gb is the maker's statement; no ATEX or IECEx certificate is named. Ask for one before any use in an Ex zone in Germany.",
+   "Gas sensor detects methane only.",
+   "Slow (1.0 m/s) and about 2 h runtime."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.roboterdeutschland.de/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/g/a/galileo-ex-1-intelligent-bionic-explosion-proof-quadruped-robot.jpg",
+   "pageUrl": "https://www.roboterdeutschland.de/GALILEO-EX-1.htm",
+   "credit": "GalileoTime (image hosted by Roboter Deutschland)",
+   "alt": "Galileo EX-1 explosion-protected robot dog, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Inspection in petrochemical plants and security inspection in hazardous areas",
+   "stage": "claim",
+   "where": "China (no site named)",
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker says the robots are widely used in these fields; no customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.galileotime.com/en/main/DogEX1",
+   "title": "Robot Dog EX-1 Series",
+   "publisher": "GalileoTime",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.galileotime.com/config/lang.json",
+   "title": "GalileoTime website content file (product specifications, purchase and contact text shown on the site)",
+   "publisher": "GalileoTime",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/GALILEO-EX-1.htm",
+   "title": "Galileo EX-1 Explosion-Proof Quadruped Robot",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/about-us/",
+   "title": "About us",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and delivery from GalileoTime for Germany.",
+  "CE marking and EU declaration of conformity.",
+  "Who operates Roboter Deutschland and whether it is authorised by GalileoTime.",
+  "Manufacturer images are on vx.galileotime.com:10901, which did not respond; the image used is the shop copy.",
+  "ATEX or IECEx certificate number for the explosion protection."
+ ],
+ "checkedAt": "2026-10-02"
+}

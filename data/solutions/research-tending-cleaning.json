@@ -1,0 +1,2039 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Exact-configuration evidence review for six machine-tending arms and four autonomous floor cleaners, with German public buying/support routes. All records retain unresolved application and purchasing gaps.",
+  "records": [
+    {
+      "id": "ur5e-machine-tending",
+      "name": "UR5e",
+      "manufacturer": "Universal Robots",
+      "robotClass": "cobot",
+      "workflowId": "machine_tending",
+      "exactConfiguration": "UR5e e-Series, 5 kg / 850 mm legacy specification; application tooling sold separately.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Compact arm for parts handling and machine loading, subject to cell engineering and a parts trial.",
+      "operatingMode": {
+        "value": "Programmed stationary arm in an integrated machine cell; operators load material buffers, supervise faults and service tooling.",
+        "sourceIds": [
+          "technical",
+          "deployment",
+          "cnc-care"
+        ],
+        "caveats": [
+          "Application safety and human access depend on the complete cell and validated operating mode.",
+          "IP ratings do not establish resistance to every cutting fluid."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 5,
+          "unit": "kg",
+          "semanticLabel": "Rated arm payload",
+          "conditions": [
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "reach_mm",
+          "value": 850,
+          "unit": "mm",
+          "semanticLabel": "Published UR5e arm reach",
+          "conditions": [
+            "Legacy UR5e specification; do not replace with current UR7e-920 reach terminology."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ingress_protection",
+          "value": "IP54",
+          "unit": null,
+          "semanticLabel": "Robot arm ingress protection",
+          "conditions": [
+            "Does not rate the complete machine-tending cell or chemical compatibility."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pose_repeatability_mm",
+          "value": 0.03,
+          "unit": "mm",
+          "semanticLabel": "Pose repeatability, ± value under ISO 9283",
+          "conditions": [
+            "Repeatability is not absolute positioning accuracy or an application success rate."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Pick VCT parts from bins, orient them and feed an assembly conveyor.",
+          "configuration": "Schaeffler Cheraw: ActiNav system with UR5e, 3D sensing and a reorientation station.",
+          "operatingMode": "Operators replenish bins; the integrated system performs the picking and transfer sequence.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "Manufacturer customer story reports routine use; this is assembly feeding rather than evidence for every CNC process.",
+            "No raw cycle count, observation window, failure count or intervention-time denominator is published."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Teradyne Robotics (Germany) GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.universal-robots.com/de/legal/impressum/",
+            "phone": "+49 89 121 8972 0",
+            "email": "ur.we@universal-robots.com"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        },
+        {
+          "organization": "ETU Automation & Robotik GmbH",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://etu-robotik.com/cobots.php",
+            "phone": "+49 7622 666949-0"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Seller/integrator listing reviewed; manufacturer authorization was not independently confirmed.",
+          "caveats": [
+            "Published German integration/contact route; the listing is not a stock or current-model orderability confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "UR5e and newer UR7e/UR7e-920 naming must not be merged. The FAQ describes newer generation and reach conventions; a quote must identify the supplied hardware/software."
+      ],
+      "unknowns": [
+        "Arm specifications do not describe a complete cell; tooling, fixtures, machine interface and commissioning must be specified.",
+        "Cycle time, success rate and operator interventions for the buyer's actual parts remain unmeasured.",
+        "Whether a new UR5e configuration or a newer renamed model will be quoted in Germany."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.universal-robots.com/manuals/EN/TechSheets/UR5e_techsheet_pdf_online/UR5e_techsheet_en.pdf",
+          "title": "UR5e technical specification",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.universal-robots.com/case-stories/schaeffler-group-usa/",
+          "title": "Schaeffler Group USA ActiNav and UR5e case story",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.universal-robots.com/de/legal/impressum/",
+          "title": "German legal entity and business contact",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "naming",
+          "url": "https://www.universal-robots.com/de/einblicke/faq/",
+          "title": "Product naming, generations and reach measurement FAQ",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "cnc-care",
+          "url": "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/",
+          "title": "Recommendations for CNC tending applications",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://etu-robotik.com/cobots.php",
+          "title": "UR cobot range and Schopfheim contact",
+          "publisher": "ETU Automation & Robotik GmbH",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.universal-robots.com/manuals/EN/TechSheets/UR5e_techsheet_pdf_online/UR5e_techsheet_en.pdf",
+        "https://www.universal-robots.com/case-stories/schaeffler-group-usa/",
+        "https://www.universal-robots.com/de/legal/impressum/",
+        "https://www.universal-robots.com/de/einblicke/faq/",
+        "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/",
+        "https://etu-robotik.com/cobots.php"
+      ],
+      "industries": [
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "ur10e-machine-tending",
+      "name": "UR10e 12.5 kg",
+      "manufacturer": "Universal Robots",
+      "robotClass": "cobot",
+      "workflowId": "machine_tending",
+      "exactConfiguration": "UR10e e-Series 12.5 kg / 1300 mm; distinct from original 10 kg UR10e and newer UR12e.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Longer-reach arm for machine loading; payload generation must be explicit in a supplier quote.",
+      "operatingMode": {
+        "value": "Programmed stationary arm in an integrated machine cell; operators load material buffers, supervise faults and service tooling.",
+        "sourceIds": [
+          "technical",
+          "deployment",
+          "cnc-care"
+        ],
+        "caveats": [
+          "Application safety and human access depend on the complete cell and validated operating mode.",
+          "IP ratings do not establish resistance to every cutting fluid."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 12.5,
+          "unit": "kg",
+          "semanticLabel": "Rated payload of the 12.5 kg UR10e configuration",
+          "conditions": [
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "reach_mm",
+          "value": 1300,
+          "unit": "mm",
+          "semanticLabel": "Published UR10e arm reach",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ingress_protection",
+          "value": "IP54",
+          "unit": null,
+          "semanticLabel": "Robot arm ingress protection",
+          "conditions": [
+            "Cutting-fluid compatibility must be checked separately."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pose_repeatability_mm",
+          "value": 0.05,
+          "unit": "mm",
+          "semanticLabel": "Pose repeatability, ± value under ISO 9283",
+          "conditions": [
+            "Not absolute accuracy or a machining tolerance guarantee."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Load and unload CNC equipment, including a reported night shift.",
+          "configuration": "Endutec GmbH: UR10e with application-specific machine-tending integration; payload generation is not stated.",
+          "operatingMode": "Programmed tending with operator setup and replenishment; the story does not quantify recovery staffing.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "The case identifies UR10e, but does not establish whether its hardware is the 10 kg or 12.5 kg variant.",
+            "No cycle/failure/intervention denominator or measured unattended duration is supplied."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Teradyne Robotics (Germany) GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.universal-robots.com/de/legal/impressum/",
+            "phone": "+49 89 121 8972 0",
+            "email": "ur.we@universal-robots.com"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        },
+        {
+          "organization": "ETU Automation & Robotik GmbH",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://etu-robotik.com/cobots.php",
+            "phone": "+49 7622 666949-0"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Seller/integrator listing reviewed; manufacturer authorization was not independently confirmed.",
+          "caveats": [
+            "Published German integration/contact route; the listing is not a stock or current-model orderability confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "UR10e names span different payload generations. Newer UR12e/UR12e-1300 naming and generation details must not overwrite the reviewed 12.5 kg UR10e configuration."
+      ],
+      "unknowns": [
+        "Arm specifications do not describe a complete cell; tooling, fixtures, machine interface and commissioning must be specified.",
+        "Cycle time, success rate and operator interventions for the buyer's actual parts remain unmeasured.",
+        "Exact payload generation in the Endutec case and the model currently offered by a German supplier."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.universal-robots.com/media/1829346/11_2023_collective_data-sheet.pdf",
+          "title": "Universal Robots collective technical datasheet",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.universal-robots.com/de/fallbeispiele/endutec-gmbh/",
+          "title": "Endutec GmbH CNC tending case",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.universal-robots.com/de/legal/impressum/",
+          "title": "German legal entity and business contact",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "naming",
+          "url": "https://www.universal-robots.com/de/einblicke/faq/",
+          "title": "Product naming, generations and reach measurement FAQ",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "cnc-care",
+          "url": "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/",
+          "title": "Recommendations for CNC tending applications",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://etu-robotik.com/cobots.php",
+          "title": "UR cobot range and Schopfheim contact",
+          "publisher": "ETU Automation & Robotik GmbH",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.universal-robots.com/media/1829346/11_2023_collective_data-sheet.pdf",
+        "https://www.universal-robots.com/de/fallbeispiele/endutec-gmbh/",
+        "https://www.universal-robots.com/de/legal/impressum/",
+        "https://www.universal-robots.com/de/einblicke/faq/",
+        "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/",
+        "https://etu-robotik.com/cobots.php"
+      ],
+      "industries": [
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "ur20-machine-tending",
+      "name": "UR20 / UR20-1750",
+      "manufacturer": "Universal Robots",
+      "robotClass": "cobot",
+      "workflowId": "machine_tending",
+      "exactConfiguration": "UR20, 20 kg baseline / 1750 mm; 25 kg capability is conditional and must be specified.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Higher-payload arm promoted for machine tending; the complete tending system still needs application evidence.",
+      "operatingMode": {
+        "value": "Programmed stationary arm in an integrated machine cell; operators load material buffers, supervise faults and service tooling.",
+        "sourceIds": [
+          "technical",
+          "application",
+          "cnc-care"
+        ],
+        "caveats": [
+          "Application safety and human access depend on the complete cell and validated operating mode.",
+          "IP ratings do not establish resistance to every cutting fluid."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 20,
+          "unit": "kg",
+          "semanticLabel": "Baseline rated payload",
+          "conditions": [
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "conditional_payload_kg",
+          "value": 25,
+          "unit": "kg",
+          "semanticLabel": "Conditional increased payload",
+          "conditions": [
+            "Only within boundary conditions stated in the applicable UR manual; not a universal 25 kg workspace rating.",
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "reach_mm",
+          "value": 1750,
+          "unit": "mm",
+          "semanticLabel": "Published arm reach",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ingress_protection",
+          "value": "IP65",
+          "unit": null,
+          "semanticLabel": "Robot arm ingress protection",
+          "conditions": [
+            "Does not certify resistance to cutting fluids or rate the complete cell."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_mass_kg",
+          "value": 64,
+          "unit": "kg",
+          "semanticLabel": "Robot arm mass",
+          "conditions": [
+            "Published arm figure; complete cell and tooling excluded."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_diameter_mm",
+          "value": 245,
+          "unit": "mm",
+          "semanticLabel": "Mounting footprint diameter",
+          "conditions": [
+            "Arm base, not cell working envelope."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pose_repeatability_mm",
+          "value": 0.01,
+          "unit": "mm",
+          "semanticLabel": "Published repeatability (±)",
+          "conditions": [
+            "Repeatability is not absolute positioning accuracy or loaded application accuracy."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_tcp_speed_m_s",
+          "value": 5,
+          "unit": "m/s",
+          "semanticLabel": "Maximum tool-centre-point speed",
+          "conditions": [
+            "Maximum specification; installed application and safety settings can reduce speed."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Load and unload machines using a configured end effector.",
+          "configuration": "UR20/UR20-1750 product application; tooling and machine interface are not defined.",
+          "operatingMode": "Programmed arm motions in an engineered tending cell.",
+          "sourceIds": [
+            "application"
+          ],
+          "limitations": [
+            "The reviewed product page names machine tending; no exact UR20 tending deployment with measured outcomes was reviewed.",
+            "Palletizing references cannot establish CNC-tending performance."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Teradyne Robotics (Germany) GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.universal-robots.com/de/legal/impressum/",
+            "phone": "+49 89 121 8972 0",
+            "email": "ur.we@universal-robots.com"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        },
+        {
+          "organization": "ETU Automation & Robotik GmbH",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://etu-robotik.com/cobots.php",
+            "phone": "+49 7622 666949-0"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Seller/integrator listing reviewed; manufacturer authorization was not independently confirmed.",
+          "caveats": [
+            "Published German integration/contact route; the listing is not a stock or current-model orderability confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The UR20 datasheet gives ±0.1 mm pose repeatability, while the current product table gives ±0.01 mm. The conflicting value is not normalized into a verified spec.",
+        "ETU calls its listing 'UR20e'; the manufacturer calls the reviewed model UR20/UR20-1750. Confirm exact quoted configuration."
+      ],
+      "unknowns": [
+        "Arm specifications do not describe a complete cell; tooling, fixtures, machine interface and commissioning must be specified.",
+        "Cycle time, success rate and operator interventions for the buyer's actual parts remain unmeasured.",
+        "Applicable manual conditions for 25 kg operation and resolution of the repeatability discrepancy."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.universal-robots.com/manuals/EN/TechSheets/UR20_techsheet_pdf_online/UR20_techsheet_en.pdf",
+          "title": "UR20 technical specification",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "application",
+          "url": "https://www.universal-robots.com/products/ur20-1750/",
+          "title": "UR20-1750 product and applications",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.universal-robots.com/de/legal/impressum/",
+          "title": "German legal entity and business contact",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "cnc-care",
+          "url": "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/",
+          "title": "Recommendations for CNC tending applications",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://etu-robotik.com/cobots.php",
+          "title": "UR cobot range and Schopfheim contact",
+          "publisher": "ETU Automation & Robotik GmbH",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.universal-robots.com/manuals/EN/TechSheets/UR20_techsheet_pdf_online/UR20_techsheet_en.pdf",
+        "https://www.universal-robots.com/products/ur20-1750/",
+        "https://www.universal-robots.com/de/legal/impressum/",
+        "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/",
+        "https://etu-robotik.com/cobots.php"
+      ],
+      "industries": [
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "ur30-machine-tending",
+      "name": "UR30 / UR30-1300",
+      "manufacturer": "Universal Robots",
+      "robotClass": "cobot",
+      "workflowId": "machine_tending",
+      "exactConfiguration": "UR30, 30 kg baseline / 1300 mm; 35 kg capability is conditional and must be specified.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Heavy-payload arm promoted for tending with multiple grippers; production performance depends on the integrated cell.",
+      "operatingMode": {
+        "value": "Programmed stationary arm in an integrated machine cell; operators load material buffers, supervise faults and service tooling.",
+        "sourceIds": [
+          "technical",
+          "application",
+          "cnc-care"
+        ],
+        "caveats": [
+          "Application safety and human access depend on the complete cell and validated operating mode.",
+          "IP ratings do not establish resistance to every cutting fluid."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 30,
+          "unit": "kg",
+          "semanticLabel": "Baseline rated payload",
+          "conditions": [
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "conditional_payload_kg",
+          "value": 35,
+          "unit": "kg",
+          "semanticLabel": "Conditional increased payload",
+          "conditions": [
+            "Requires the boundary conditions in the applicable UR manual; do not assume full-workspace availability.",
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "reach_mm",
+          "value": 1300,
+          "unit": "mm",
+          "semanticLabel": "Published arm reach",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ingress_protection",
+          "value": "IP65",
+          "unit": null,
+          "semanticLabel": "Robot arm ingress protection",
+          "conditions": [
+            "Cutting-fluid compatibility remains application-specific."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_mass_kg",
+          "value": 63.5,
+          "unit": "kg",
+          "semanticLabel": "Robot arm mass",
+          "conditions": [
+            "Published arm figure; complete cell and tooling excluded."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_diameter_mm",
+          "value": 245,
+          "unit": "mm",
+          "semanticLabel": "Mounting footprint diameter",
+          "conditions": [
+            "Arm base, not cell working envelope."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pose_repeatability_mm",
+          "value": 0.01,
+          "unit": "mm",
+          "semanticLabel": "Published repeatability (±)",
+          "conditions": [
+            "Repeatability is not absolute positioning accuracy or loaded application accuracy."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_tcp_speed_m_s",
+          "value": 4,
+          "unit": "m/s",
+          "semanticLabel": "Maximum tool-centre-point speed",
+          "conditions": [
+            "Maximum specification; installed application and safety settings can reduce speed."
+          ],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Tend machines using multiple grippers to reduce material exchange steps.",
+          "configuration": "UR30/UR30-1300 product application; grippers and CNC interface require integration.",
+          "operatingMode": "Programmed handling cycle with operator setup, material supply and fault response.",
+          "sourceIds": [
+            "application"
+          ],
+          "limitations": [
+            "The application claim does not provide exact-configuration tending cycle counts or intervention data.",
+            "Maximum motion specifications do not establish machine-tending cycle time."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Teradyne Robotics (Germany) GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.universal-robots.com/de/legal/impressum/",
+            "phone": "+49 89 121 8972 0",
+            "email": "ur.we@universal-robots.com"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        }
+      ],
+      "conflicts": [],
+      "unknowns": [
+        "Arm specifications do not describe a complete cell; tooling, fixtures, machine interface and commissioning must be specified.",
+        "Cycle time, success rate and operator interventions for the buyer's actual parts remain unmeasured.",
+        "Applicable software/manual conditions for 35 kg operation and a German integration/service quotation."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.universal-robots.com/manuals/EN/TechSheets/UR30_techsheet_pdf_online/UR30_techsheet_en.pdf",
+          "title": "UR30 technical specification",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "application",
+          "url": "https://www.universal-robots.com/products/ur30-1300/",
+          "title": "UR30-1300 product and applications",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.universal-robots.com/de/legal/impressum/",
+          "title": "German legal entity and business contact",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "cnc-care",
+          "url": "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/",
+          "title": "Recommendations for CNC tending applications",
+          "publisher": "Universal Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.universal-robots.com/manuals/EN/TechSheets/UR30_techsheet_pdf_online/UR30_techsheet_en.pdf",
+        "https://www.universal-robots.com/products/ur30-1300/",
+        "https://www.universal-robots.com/de/legal/impressum/",
+        "https://www.universal-robots.com/articles/ur/robot-care-maintenance/recommendations-for-cnc-tending-applications/"
+      ],
+      "industries": [
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "fanuc-crx-10ia-machine-tending",
+      "name": "FANUC CRX-10iA",
+      "manufacturer": "FANUC",
+      "robotClass": "cobot",
+      "workflowId": "machine_tending",
+      "exactConfiguration": "CRX-10iA, 10 kg / 1249 mm; not the longer-reach CRX-10iA/L.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Collaborative arm shown integrated with a vertical lathe and bin-to-conveyor handling.",
+      "operatingMode": {
+        "value": "Programmed machine-cell operation with part presentation, robot tooling and machine control integration.",
+        "sourceIds": [
+          "technical",
+          "deployment"
+        ],
+        "caveats": [
+          "Operator replenishment and fault-recovery workload are not quantified in the reviewed example.",
+          "Safe human access depends on the integrated system and application validation."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 10,
+          "unit": "kg",
+          "semanticLabel": "Rated robot payload",
+          "conditions": [
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "reach_mm",
+          "value": 1249,
+          "unit": "mm",
+          "semanticLabel": "CRX-10iA maximum reach",
+          "conditions": [
+            "Do not substitute the CRX-10iA/L reach."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "axes",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Controlled arm axes",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ingress_protection",
+          "value": "IP67",
+          "unit": null,
+          "semanticLabel": "Published robot body and wrist protection",
+          "conditions": [
+            "This rating does not cover the entire machine cell or demonstrate coolant compatibility."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pose_repeatability_mm",
+          "value": 0.05,
+          "unit": "mm",
+          "semanticLabel": "Published repeatability (±)",
+          "conditions": [
+            "Manufacturer describes repeatability up to this value; complete cell accuracy remains unestablished."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "controller_supply_voltage_v",
+          "value": "200–240",
+          "unit": "V",
+          "semanticLabel": "Published controller supply voltage",
+          "conditions": [
+            "Confirm the ordered controller and local electrical installation."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mounting_positions",
+          "value": "Floor, ceiling, angled",
+          "unit": null,
+          "semanticLabel": "Listed mounting positions",
+          "conditions": [
+            "Mounting structure and application must be engineered."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "demonstration",
+          "task": "Transfer parts between a bin and a vertical-lathe conveyor.",
+          "configuration": "Famar Ciao 6 vertical lathe integration with CRX-10iA.",
+          "operatingMode": "Automated bin picking and conveyor transfer in a machine-builder integration.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "The manufacturer shows a specific integrated application, but does not publish a named end-user production window or intervention denominator.",
+            "This evidence does not establish routine throughput for the buyer's parts or factory."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "FANUC Deutschland GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.fanuc.eu/de-de/contacting-fanuc",
+            "phone": "+49 7158 1282 0"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        },
+        {
+          "organization": "FANUC Deutschland robotics support",
+          "market": "Germany",
+          "routeType": "service",
+          "contact": {
+            "url": "https://www.fanuc.eu/de-de/contacting-fanuc",
+            "phone": "+49 7158 1282-5300",
+            "email": "service-robotics@fanuc.de"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published service contact.",
+          "caveats": [
+            "Published robotics support route; obtain a project-specific support scope and response terms."
+          ]
+        }
+      ],
+      "conflicts": [
+        "CRX-10iA/L is a separate reach variant. Case studies naming /L must not be presented as evidence for this 1249 mm configuration."
+      ],
+      "unknowns": [
+        "Arm specifications do not describe a complete cell; tooling, fixtures, machine interface and commissioning must be specified.",
+        "Cycle time, success rate and operator interventions for the buyer's actual parts remain unmeasured.",
+        "End-effector specification, supported machine interface and measured operator recovery effort for the proposed application."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.fanuc.eu/de-de/produkt/roboter/crx-10ia",
+          "title": "CRX-10iA German product specifications",
+          "publisher": "FANUC",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.fanuc.eu/uk-en/case-studies/fanuc-cobot-brings-flexibility-vertical-lathe-operations",
+          "title": "FANUC cobot brings flexibility to vertical lathe operations",
+          "publisher": "FANUC",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.fanuc.eu/de-de/contacting-fanuc",
+          "title": "FANUC German sales and support contacts",
+          "publisher": "FANUC",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.fanuc.eu/de-de/produkt/roboter/crx-10ia",
+        "https://www.fanuc.eu/uk-en/case-studies/fanuc-cobot-brings-flexibility-vertical-lathe-operations",
+        "https://www.fanuc.eu/de-de/contacting-fanuc"
+      ],
+      "industries": [
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "abb-gofa-5-machine-tending",
+      "name": "ABB GoFa 5",
+      "manufacturer": "ABB Robotics",
+      "robotClass": "cobot",
+      "workflowId": "machine_tending",
+      "exactConfiguration": "GoFa 5 / CRB 15000-5/0.95, six axes, 5 kg; not an unconfirmed 'GoFa 6' model.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Collaborative arm with manufacturer machine-tending claims; reviewed deployment evidence identifies the wider GoFa family.",
+      "operatingMode": {
+        "value": "Programmed stationary collaborative arm with application tooling, machine interfaces and defined operator access.",
+        "sourceIds": [
+          "technical",
+          "application"
+        ],
+        "caveats": [
+          "The complete cell determines safeguarding and supervision.",
+          "The German deployment does not state which GoFa payload variant was used."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 5,
+          "unit": "kg",
+          "semanticLabel": "Rated GoFa 5 payload",
+          "conditions": [
+            "Flange load budget must include tooling and parts; validate centre of gravity, inertia and the programmed motion."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wrist_reach_mm",
+          "value": 950,
+          "unit": "mm",
+          "semanticLabel": "Reach to wrist reference point",
+          "conditions": [
+            "Distinct from reach to mounting flange."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "flange_reach_mm",
+          "value": 1050,
+          "unit": "mm",
+          "semanticLabel": "Reach to mounting flange",
+          "conditions": [
+            "Use the correct reference point when comparing arm reach."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "axes",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Controlled arm axes",
+          "conditions": [],
+          "sourceIds": [
+            "application"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Machine tending and parts handling.",
+          "configuration": "GoFa CRB 15000 launch configuration with 5 kg payload.",
+          "operatingMode": "Programmed collaborative arm application; fixtures and cell design unspecified.",
+          "sourceIds": [
+            "application"
+          ],
+          "limitations": [
+            "Application suitability is a manufacturer claim without task-specific cycle or recovery measurements."
+          ]
+        },
+        {
+          "stage": "unknown",
+          "task": "Load a Saeilo Contur M1000 machining centre.",
+          "configuration": "METEC in Germany: GoFa CRB 15000 with STiMA twin grippers, blow-off nozzle, trolley buffer and SafeMove; payload variant unreported.",
+          "operatingMode": "Family-level story reports repeated machining-centre loading and unattended cycles.",
+          "sourceIds": [
+            "family-case"
+          ],
+          "limitations": [
+            "Routine operation is reported for the GoFa family, but the source does not establish the exact GoFa 5 configuration.",
+            "No raw production-cycle count, failure rate or intervention-time denominator is supplied."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ABB Robotics Deutschland GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://new.abb.com/products/robotics/de/service/kontakt",
+            "phone": "+49 6031 85 0",
+            "email": "robotervertrieb@de.abb.com"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        },
+        {
+          "organization": "ABB Robotics Germany service",
+          "market": "Germany",
+          "routeType": "service",
+          "contact": {
+            "url": "https://new.abb.com/products/robotics/de/service/kontakt",
+            "phone": "+49 6031 85 307",
+            "email": "roboterservice@de.abb.com"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published service contact.",
+          "caveats": [
+            "Published German service route; project-specific coverage requires confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The requested 'GoFa 6' was not confirmed as a model. This record uses the documented GoFa 5; six axes must not be mistaken for a 6 kg payload.",
+        "GoFa 10/12 specifications and conditional payloads do not apply to this GoFa 5 record."
+      ],
+      "unknowns": [
+        "Arm specifications do not describe a complete cell; tooling, fixtures, machine interface and commissioning must be specified.",
+        "Cycle time, success rate and operator interventions for the buyer's actual parts remain unmeasured.",
+        "Exact GoFa variant used at METEC and current controller, tooling and integration quotation for GoFa 5."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.abb.com/global/en/areas/robotics/products/robots/collaborative-robots/gofa",
+          "title": "GoFa model range and reference-point reaches",
+          "publisher": "ABB Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "application",
+          "url": "https://new.abb.com/news/detail/74323/prsrl-abb-launches-gofa-higher-payload-cobot-for-collaborative-tasks-up-to-5kg",
+          "title": "GoFa CRB 15000 5 kg launch and applications",
+          "publisher": "ABB Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "family-case",
+          "url": "https://new.abb.com/news/detail/112633/cstmr-cobot-colleague-tirelessly-lends-a-hand",
+          "title": "GoFa and STiMA integration at METEC",
+          "publisher": "ABB Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://new.abb.com/products/robotics/de/service/kontakt",
+          "title": "ABB Robotics German sales and service contacts",
+          "publisher": "ABB Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.abb.com/global/en/areas/robotics/products/robots/collaborative-robots/gofa",
+        "https://new.abb.com/news/detail/74323/prsrl-abb-launches-gofa-higher-payload-cobot-for-collaborative-tasks-up-to-5kg",
+        "https://new.abb.com/news/detail/112633/cstmr-cobot-colleague-tirelessly-lends-a-hand",
+        "https://new.abb.com/products/robotics/de/service/kontakt"
+      ],
+      "industries": [
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "karcher-kira-b50-floor-cleaning",
+      "name": "Kärcher KIRA B 50",
+      "manufacturer": "Kärcher",
+      "robotClass": "dedicated_robot",
+      "workflowId": "floor_cleaning",
+      "exactConfiguration": "KIRA B 50, German order number 1.533-002.0; docking station configuration to be quoted.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Autonomous scrubber-dryer with documented German factory use and optional docking infrastructure.",
+      "operatingMode": {
+        "value": "Mapped autonomous scrubbing with operator setup, maintenance and fault response; a configured dock can refill, drain and recharge.",
+        "sourceIds": [
+          "technical",
+          "deployment"
+        ],
+        "caveats": [
+          "Continuous scheduled service with docking is different from a single battery runtime.",
+          "Site readiness and human maintenance remain necessary."
+        ]
+      },
+      "specs": [
+        {
+          "key": "cleaning_width_mm",
+          "value": 550,
+          "unit": "mm",
+          "semanticLabel": "Brush working width",
+          "conditions": [
+            "Suction-bar width is 750 mm; these are different measurements."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "solution_tank_l",
+          "value": 55,
+          "unit": "L",
+          "semanticLabel": "Clean-water tank capacity",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "recovery_tank_l",
+          "value": 55,
+          "unit": "L",
+          "semanticLabel": "Dirty-water tank capacity",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "theoretical_autonomous_area_m2_h",
+          "value": 2365,
+          "unit": "m²/h",
+          "semanticLabel": "Theoretical autonomous area performance",
+          "conditions": [
+            "Not an achieved-site cleaning rate; turns, congestion, refilling and recovery affect output."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_hours",
+          "value": 3.5,
+          "unit": "h",
+          "semanticLabel": "Approximate battery operating duration",
+          "conditions": [
+            "Manufacturer approximate figure; route, surface and settings affect runtime."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_passage_width_m",
+          "value": 0.9,
+          "unit": "m",
+          "semanticLabel": "Minimum autonomous passage width",
+          "conditions": [
+            "Turning width is separately stated as 1.5 m; validate the actual site layout."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Scrub logistics traffic routes and production floors.",
+          "configuration": "DEUTZ Cologne-Kalk logistics and Cologne-Porz production, KIRA B 50 with docking.",
+          "operatingMode": "Scheduled cleaning with automated docking and daily human maintenance.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "Manufacturer case reports German operation beginning in 2023; reviewed claims are not independent test results.",
+            "Reported 96%/98% completed-route figures omit route counts, observation windows and completion definitions.",
+            "Large scheduled floor areas describe site scope, not a measured m²/h rate."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Alfred Kärcher Vertriebs-GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.karcher.com/de/de/professional/produkte/kira-b-50-p15330020"
+          },
+          "sourceIds": [
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        },
+        {
+          "organization": "Kärcher Center Benne / Andrä Benne Vertragshandel & Werksvertretungen GmbH",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://kaercher-center-benne.de/autonome-scheuersaugmaschine/",
+            "phone": "+49 30 6932077",
+            "email": "info@benne.de"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization was not independently confirmed.",
+          "caveats": [
+            "Berlin business/contact route is published; the business name and listing alone do not independently confirm manufacturer authorization."
+          ]
+        }
+      ],
+      "conflicts": [],
+      "unknowns": [
+        "A floor trial establishing achieved area, cleaning quality, obstacle recoveries and operator minutes at the buyer's site.",
+        "Dock installation requirements and an exact German equipment, consumables and service quotation."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://d201jv09wbq6e1.cloudfront.net/product_information/deu/1.533-002.0_PI_de_DE.pdf",
+          "title": "KIRA B 50 German product information, order 1.533-002.0",
+          "publisher": "Kärcher",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "product",
+          "url": "https://www.karcher.com/de/de/professional/produkte/kira-b-50-p15330020",
+          "title": "KIRA B 50 German product page and manufacturer contact",
+          "publisher": "Kärcher",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.kaercher.com/de/de/professional/industriereinigung-referenzen",
+          "title": "Industrial cleaning reference: DEUTZ KIRA B 50 deployment",
+          "publisher": "Kärcher",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://kaercher-center-benne.de/autonome-scheuersaugmaschine/",
+          "title": "KIRA autonomous scrubber and Berlin sales enquiry",
+          "publisher": "Kärcher Center Benne",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://d201jv09wbq6e1.cloudfront.net/product_information/deu/1.533-002.0_PI_de_DE.pdf",
+        "https://www.karcher.com/de/de/professional/produkte/kira-b-50-p15330020",
+        "https://www.kaercher.com/de/de/professional/industriereinigung-referenzen",
+        "https://kaercher-center-benne.de/autonome-scheuersaugmaschine/"
+      ],
+      "industries": [
+        "facilities",
+        "warehousing",
+        "retail_hospitality"
+      ]
+    },
+    {
+      "id": "tennant-x4-rovr-floor-cleaning",
+      "name": "Tennant X4 ROVR",
+      "manufacturer": "Tennant",
+      "robotClass": "dedicated_robot",
+      "workflowId": "floor_cleaning",
+      "exactConfiguration": "X4 ROVR autonomous dual-disc scrubber, German/EMEA listing; software and battery package to be quoted.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Compact autonomous scrubber with a reported Frankfurt Airport deployment.",
+      "operatingMode": {
+        "value": "BrainOS-based autonomous route cleaning with staff setup, tank servicing, charging and exception response.",
+        "sourceIds": [
+          "technical",
+          "deployment"
+        ],
+        "caveats": [
+          "The reviewed airport example emphasizes off-peak operation.",
+          "Published battery duration and tank coverage do not define unattended service duration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "cleaning_width_mm",
+          "value": 500,
+          "unit": "mm",
+          "semanticLabel": "Dual-disc cleaning path",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "solution_tank_l",
+          "value": 38,
+          "unit": "L",
+          "semanticLabel": "Solution tank capacity",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "recovery_tank_l",
+          "value": 38,
+          "unit": "L",
+          "semanticLabel": "Recovery tank capacity",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_hours",
+          "value": 2.5,
+          "unit": "h",
+          "semanticLabel": "Maximum published runtime",
+          "conditions": [
+            "Up-to figure; site conditions and cleaning settings affect runtime."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "estimated_area_per_tank_m2",
+          "value": 1860,
+          "unit": "m²",
+          "semanticLabel": "Estimated coverage per solution tank",
+          "conditions": [
+            "This is an area-per-tank estimate, not an hourly productivity specification."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "empty_tank_mass_kg",
+          "value": 183,
+          "unit": "kg",
+          "semanticLabel": "Machine mass with battery and empty tanks",
+          "conditions": [
+            "Does not include a full working liquid load."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Clean smaller and congested terminal floor areas.",
+          "configuration": "Frankfurt Airport Terminal 1: X4 ROVR alongside Tennant T16AMR units.",
+          "operatingMode": "Autonomous route cleaning, mainly off peak, within a staff-managed cleaning operation.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "The reported six-month total area combines X4 ROVR and T16AMR; it must not be attributed to X4 alone.",
+            "No model-specific cycle count, uptime, intervention workload or cleaning-quality denominator is published.",
+            "Exact hardware/software versions and current fleet status require confirmation."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Tennant Germany",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.tennantco.com/de_de/1/machines/scrubbers/product.x4-rovr.autonome-scheuersaugmaschine.m-x4rovr.html",
+            "phone": "+49 2303 2580-0",
+            "email": "de.info@tennantco.com"
+          },
+          "sourceIds": [
+            "technical",
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        }
+      ],
+      "conflicts": [
+        "The German April 2024 brochure lists 94 cm length, while the current product page lists 96 cm. Confirm the offered revision and use a site drawing; length is omitted from normalized specifications."
+      ],
+      "unknowns": [
+        "X4-specific achieved area, cleaning results and staff intervention data at the proposed site.",
+        "Quoted battery/software revision, consumables, training, maintenance and German delivery terms."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.tennantco.com/de_de/1/machines/scrubbers/product.x4-rovr.autonome-scheuersaugmaschine.m-x4rovr.html",
+          "title": "X4 ROVR German product specifications",
+          "publisher": "Tennant",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.tennantco.com/content/dam/tennant/tennantco/products/machines/scrubber%20walk-behinds/x4-rovr/x4-rovr-brochure-de-de.pdf",
+          "title": "X4 ROVR German brochure and German contact, April 2024",
+          "publisher": "Tennant",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.tennantco.com/content/dam/resources/case-studies/new-fraport-case-study-en-noam.pdf",
+          "title": "Fraport autonomous cleaning case study",
+          "publisher": "Tennant",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.tennantco.com/de_de/1/machines/scrubbers/product.x4-rovr.autonome-scheuersaugmaschine.m-x4rovr.html",
+        "https://www.tennantco.com/content/dam/tennant/tennantco/products/machines/scrubber%20walk-behinds/x4-rovr/x4-rovr-brochure-de-de.pdf",
+        "https://www.tennantco.com/content/dam/resources/case-studies/new-fraport-case-study-en-noam.pdf"
+      ],
+      "industries": [
+        "facilities",
+        "warehousing",
+        "retail_hospitality"
+      ]
+    },
+    {
+      "id": "nilfisk-liberty-sc50-floor-cleaning",
+      "name": "Nilfisk Liberty SC50",
+      "manufacturer": "Nilfisk",
+      "robotClass": "dedicated_robot",
+      "workflowId": "floor_cleaning",
+      "exactConfiguration": "LIBERTY SC50, German product number 56104508; cleaning-head, battery and software revision need supplier confirmation.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Autonomous scrubber with teaching modes and reported school operation; several exact-SKU specifications remain unresolved.",
+      "operatingMode": {
+        "value": "Operator-taught cleaning through recorded routes or Fill-in area coverage; staff perform manual spot cleaning and respond to exceptions.",
+        "sourceIds": [
+          "technical",
+          "deployment"
+        ],
+        "caveats": [
+          "The school case does not state the exact German SKU or software version.",
+          "Route recording and routine tank, brush and battery care remain human tasks."
+        ]
+      },
+      "specs": [
+        {
+          "key": "runtime_hours",
+          "value": 6,
+          "unit": "h",
+          "semanticLabel": "Maximum advertised duration on one charge",
+          "conditions": [
+            "Up-to claim on the exact German product page; battery package, route and cleaning settings affect runtime."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "cleaning_width_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Exact-SKU cleaning width",
+          "conditions": [
+            "The directly fetched German product body did not expose a numeric specification; no family or alternate-head value was substituted."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "solution_tank_l",
+          "value": null,
+          "unit": "L",
+          "semanticLabel": "Exact-SKU solution tank capacity",
+          "conditions": [
+            "Requires a current manufacturer technical sheet matched to product 56104508."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "recovery_tank_l",
+          "value": null,
+          "unit": "L",
+          "semanticLabel": "Exact-SKU recovery tank capacity",
+          "conditions": [
+            "Requires a current manufacturer technical sheet matched to product 56104508."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Clean school floors during custodial operations.",
+          "configuration": "St. Michael-Albertville High School, Minnesota: Liberty SC50, exact SKU unreported.",
+          "operatingMode": "Staff teach routes; Fill-in covers suitable areas, CopyCat handles more complex paths, and staff retain manual spot-cleaning tasks.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "Manufacturer customer story reports more than a year of use relative to its publication; a current operating audit was not available.",
+            "No machine-hour, cycle-count, failure or intervention-time denominator is published.",
+            "Equivalent configuration to German product 56104508 is not established."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Nilfisk GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.nilfisk.com/de-de/professional/kontaktieren-sie-uns/",
+            "phone": "+49 7306 72-444",
+            "email": "info.de@nilfisk.com"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Manufacturer's own published business contact.",
+          "caveats": []
+        }
+      ],
+      "conflicts": [
+        "SC50 family and alternate-head catalogues must not be treated as an exact specification for product 56104508 without a configuration match."
+      ],
+      "unknowns": [
+        "Current exact-SKU cleaning-head width, tank capacities, battery package and software support lifecycle.",
+        "Representative German site trial and measured staff time for teaching, servicing and recoveries.",
+        "German delivery, training, service coverage and total installed-price quotation."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.nilfisk.com/de-de/professional/produkte/bodenreinigung/autonome-bodenreinigung/sc50%2B56104508/",
+          "title": "German LIBERTY SC50 product 56104508",
+          "publisher": "Nilfisk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.nilfisk.com/global/case-studies/st-michael-albertville-high-school/",
+          "title": "Liberty SC50 at St. Michael-Albertville High School",
+          "publisher": "Nilfisk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.nilfisk.com/de-de/professional/kontaktieren-sie-uns/",
+          "title": "Nilfisk Germany business contact",
+          "publisher": "Nilfisk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.nilfisk.com/de-de/professional/produkte/bodenreinigung/autonome-bodenreinigung/sc50%2B56104508/",
+        "https://www.nilfisk.com/global/case-studies/st-michael-albertville-high-school/",
+        "https://www.nilfisk.com/de-de/professional/kontaktieren-sie-uns/"
+      ],
+      "industries": [
+        "facilities",
+        "warehousing",
+        "retail_hospitality"
+      ]
+    },
+    {
+      "id": "pudu-cc1-floor-cleaning",
+      "name": "Pudu CC1",
+      "manufacturer": "Pudu Robotics",
+      "robotClass": "dedicated_robot",
+      "workflowId": "floor_cleaning",
+      "exactConfiguration": "PUDU CC1 standard model, not CC1 Pro; current manufacturer listing compared with a German seller.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Multi-mode floor-cleaning robot with a German care-home evaluation reference and unresolved seller-version differences.",
+      "operatingMode": {
+        "value": "Mapped autonomous sweeping, scrubbing, vacuuming or mopping, with staff setup, consumable care and exception response.",
+        "sourceIds": [
+          "technical"
+        ],
+        "caveats": [
+          "Water-service/charging workstation and carpet attachments are configuration-dependent.",
+          "Published runtime differs substantially by cleaning mode; do not present quiet mopping runtime as scrubbing runtime."
+        ]
+      },
+      "specs": [
+        {
+          "key": "solution_tank_l",
+          "value": 15,
+          "unit": "L",
+          "semanticLabel": "Current manufacturer clean-water tank capacity",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "recovery_tank_l",
+          "value": 15,
+          "unit": "L",
+          "semanticLabel": "Current manufacturer waste-water tank capacity",
+          "conditions": [
+            "German seller lists 17 L; confirm hardware revision before purchasing."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "scrubbing_runtime_hours",
+          "value": 5,
+          "unit": "h",
+          "semanticLabel": "Published scrubbing operating duration",
+          "conditions": [
+            "Mode-specific advertised value; route and settings affect runtime."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "quiet_mopping_runtime_hours",
+          "value": 9,
+          "unit": "h",
+          "semanticLabel": "Published quiet-mopping operating duration",
+          "conditions": [
+            "Must not be transferred to scrubbing or carpet vacuuming."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charge_time_hours",
+          "value": 3,
+          "unit": "h",
+          "semanticLabel": "Manufacturer charging time upper bound, less than this value",
+          "conditions": [
+            "Manufacturer states <3 h; seller states <4 h. Starting charge and offered charger/battery require confirmation."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "advertised_area_rate_m2_h",
+          "value": "700–1000",
+          "unit": "m²/h",
+          "semanticLabel": "Manufacturer-advertised cleaning efficiency range",
+          "conditions": [
+            "No standardized test method or achieved-site denominator was reviewed; not guaranteed productive coverage."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "pilot",
+          "task": "Evaluate use of a cleaning robot in a residential care setting.",
+          "configuration": "Pudu CC1 evaluated at Haus Curanum Karlsfeld in the Pflege2030 context, described by Landshut University of Applied Sciences.",
+          "operatingMode": "Research evaluation in a care setting; supervision and recovery arrangements are not specified.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "This is evidence of a pilot/evaluation, not proof of sustained autonomous production cleaning.",
+            "The reviewed source does not publish CC1-specific cleaning-quality, uptime, cycle or staff-intervention results.",
+            "Exact CC1 hardware/software revision and optional equipment are unspecified."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "EnergieReich Consulting",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.energiereich-consulting.com/wisch-saugroboter-pudu-cc1/",
+            "phone": "+49 6131 4822520",
+            "email": "info@energiereich-consulting.com"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; exact configuration, stock, delivery date and installed price require a quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization was not independently confirmed.",
+          "caveats": [
+            "Published Mainz business contact and product enquiry route; current stock, manufacturer authorization and service scope remain unconfirmed.",
+            "Obtain a revision-specific specification because the listing differs from the current manufacturer page."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Current manufacturer lists 15 L waste-water capacity and charging <3 h; German seller lists 17 L and <4 h. These may reflect revisions or stale content; the discrepancy is unresolved.",
+        "The seller's maximum runtime must be qualified by mode; the current manufacturer attributes 9 h to quiet mopping."
+      ],
+      "unknowns": [
+        "Exact hardware, charger, firmware, optional workstation and tank revision being sold in Germany.",
+        "Achieved cleaning quality, coverage, obstruction recoveries and staff minutes at the proposed site.",
+        "Automated refresh stopped when robots.txt was unavailable; the current product body was separately readable through web browsing."
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.pudurobotics.com/de/products/puduCC1",
+          "title": "PUDU CC1 German manufacturer product page",
+          "publisher": "Pudu Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.haw-landshut.de/forschung/forschungsbereiche/medizintechnik/mensch-maschine-interaktion",
+          "title": "Human-machine interaction research and Pflege2030 care-setting evaluation",
+          "publisher": "Landshut University of Applied Sciences",
+          "kind": "other",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "seller",
+          "url": "https://www.energiereich-consulting.com/wisch-saugroboter-pudu-cc1/",
+          "title": "Pudu CC1 listing and Mainz contact",
+          "publisher": "EnergieReich Consulting",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.pudurobotics.com/de/products/puduCC1",
+        "https://www.haw-landshut.de/forschung/forschungsbereiche/medizintechnik/mensch-maschine-interaktion",
+        "https://www.energiereich-consulting.com/wisch-saugroboter-pudu-cc1/"
+      ],
+      "industries": [
+        "facilities",
+        "warehousing",
+        "retail_hospitality"
+      ]
+    }
+  ]
+}

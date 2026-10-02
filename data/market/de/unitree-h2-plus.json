@@ -1,0 +1,271 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-h2-plus",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "H2 Plus",
+ "variant": null,
+ "name": "Unitree H2 Plus",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/H2plus",
+ "summary": "H2 humanoid with an on-board NVIDIA Jetson Thor computer and optional 22-DOF tactile hands, built as a reference robot for academic AI research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Not yet delivered in Germany: QUADRUPED Robotics lists it from 28.01.2027, Unitree's store shows it unavailable, Generation Robots quotes on request without stock.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s6"
+  ],
+  "priceEur": {
+   "amount": 55000,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Lowest version on the Generation Robots page; VAT excluded."
+  },
+  "priceOther": null,
+  "leadTime": "available from 28.01.2027 (QUADRUPED Robotics)",
+  "sellers": [
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404470-unitree-h2-plus-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 55000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Page 'from' price excl. VAT for H2 PLUS STANDARD/SMART/ULTIMATE A-N; cart disabled."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-H2-Plus",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 58400,
+    "priceBasis": "net",
+    "sourceId": "s6",
+    "note": "\"H2 Plus Smart\" 58,400 EUR net; Ultimate A-N 59,300-178,400 net; parent page says price on request; all \"available from 28.01.2027\"."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.82,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "body joints, without hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "rated about 7 kg; peak about 15 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 972,
+   "unit": "Wh",
+   "conditions": "15 Ah, quick release",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 3,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Wide-angle humanoid binocular camera; microphone array; optional wrist cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "NVIDIA Jetson T5000 (Thor), 2070 FP4 TFLOPS, 128 GB; plus Intel Core i5 and i7",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 22,
+   "unit": null,
+   "conditions": "optional SharpaWave tactile hand; 75 DOF total with hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "NVIDIA Isaac GR00T, Isaac Sim / Lab, Isaac ROS, Isaac TeleOp",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": "NVIDIA Isaac stack (GR00T, Sim, Lab, ROS, TeleOp)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "SharpaWave hands optional: 1.3 kg each, 30 kg hand payload, 150 N grip.",
+   "Has remote emergency stop.",
+   "No IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/76658a29925a49a397efe2f726f5e1e3_800x800.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree H2 Plus humanoid robot, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/2379ab338b3c457e892e7dec9a3ecbe0_1042x1018.jpg",
+   "pageUrl": "https://www.unitree.com/H2plus",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree H2 Plus humanoid in a running pose, front three-quarter view, on a dark background with light streaks",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations",
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Captures teleoperated demonstration data and trains manipulation policies",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "Unitree's own store shows no orderable price for H2 Plus.",
+  "Launch date: the cited Unitree news page did not show an H2 Plus launch item when re-checked."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/H2plus",
+   "title": "Unitree H2 Plus product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/404470-unitree-h2-plus-humanoid-robot.html",
+   "title": "Unitree H2 Plus humanoid robot at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.unitree.com/news",
+   "title": "Unitree news center",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://shop.unitree.com/products/unitree-h2-plus",
+   "title": "Unitree H2 Plus in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.quadruped.de/Unitree-H2-Plus",
+   "title": "Unitree H2 Plus at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

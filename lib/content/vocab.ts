@@ -39,6 +39,7 @@ export const FAMILY_IDS = [
   'packaging_palletising_loading',
   'monitoring_safety_patrol',
   'machine_operation_dedicated',
+  'robotics_research',
 ] as const;
 export type FamilyId = (typeof FAMILY_IDS)[number];
 

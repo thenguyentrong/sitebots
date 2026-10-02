@@ -1,0 +1,164 @@
+{
+ "schemaVersion": 1,
+ "id": "husarion-rosbot-xl-manipulation",
+ "maker": "Husarion",
+ "makerCountry": "PL",
+ "model": "ROSbot XL",
+ "variant": "Manipulation Package",
+ "name": "Husarion ROSbot XL Manipulation Package",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://store.husarion.com/products/rosbot-xl",
+ "summary": "A small ROS 2 indoor rover with Mecanum wheels, lidar and a ROBOTIS OpenMANIPULATOR-X arm with gripper, for teaching and prototyping mobile manipulation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Sold in Husarion's EU online store (Poland, prices in EUR) with Germany among the shipping countries; from €7,519 for the Manipulation Package.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 7519,
+   "basis": "unknown",
+   "kind": "from",
+   "sourceId": "s1",
+   "note": "Manipulation Package with 1-year warranty; Manipulation PRO Package (Jetson Orin Nano, ZED Mini) from €8,339. VAT handling not stated on the product data."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Husarion",
+    "country": "PL",
+    "role": "manufacturer",
+    "productUrl": "https://store.husarion.com/products/rosbot-xl",
+    "contactUrl": null,
+    "email": "sales@husarion.com",
+    "phone": null,
+    "priceEur": 7519,
+    "priceBasis": "unknown",
+    "sourceId": "s1",
+    "note": "Online store; quotes via sales@husarion.com."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "ROBOTIS OpenMANIPULATOR-X with gripper",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 86,
+   "unit": "Wh",
+   "conditions": "Li-Ion 3S 11.1 V 7,800 mAh",
+   "sourceId": "s1"
+  },
+  {
+   "key": "drive",
+   "label": "Wheels",
+   "value": "4 regular and 4 Mecanum wheels included",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "ASUS NUC 14 (Core 3, 16 GB RAM); PRO package: NVIDIA Jetson Orin Nano",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "SLAMTEC RPLIDAR S3; PRO package adds Stereolabs ZED Mini",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 2",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Indoor research and teaching rover; the arm is a small education manipulator, payload not stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/2545/8446/files/MANIPULATION-2.jpg?v=1713778596",
+   "pageUrl": "https://store.husarion.com/products/rosbot-xl",
+   "credit": "Husarion",
+   "alt": "Husarion ROSbot XL with OpenMANIPULATOR-X arm on Mecanum wheels",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for mobile manipulation with autonomous navigation, with a reference project",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://store.husarion.com/products/rosbot-xl",
+   "title": "ROSbot XL store page (configuration packages)",
+   "publisher": "Husarion",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://store.husarion.com/meta.json",
+   "title": "Husarion store settings (EUR, ships to DE)",
+   "publisher": "Husarion",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether the EUR store price includes VAT for German buyers.",
+  "Arm payload of the OpenMANIPULATOR-X as fitted."
+ ],
+ "checkedAt": "2026-10-02"
+}

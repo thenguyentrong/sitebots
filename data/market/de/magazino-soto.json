@@ -1,0 +1,355 @@
+{
+ "schemaVersion": 1,
+ "id": "magazino-soto",
+ "maker": "Magazino (Jungheinrich)",
+ "makerCountry": "DE",
+ "model": "SOTO",
+ "variant": null,
+ "name": "Magazino SOTO",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.magazino.eu/produktionslogistik/",
+ "summary": "A mobile robot that grips small load carriers (KLT, up to 20 kg each) at 0.4 to 1.7 m and carries 8 to 24 of them between storage and production lines on industrial floors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Made in Germany by Magazino (Munich) and sold by Jungheinrich Vertrieb Deutschland; consultation on request, no public price. In routine use at VEGA, Bosch, MAN and others in Germany.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Jungheinrich Vertrieb Deutschland AG & Co. KG",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.jungheinrich.de/automatisierung/mobile-robots/soto-1484930",
+    "contactUrl": "https://www.jungheinrich.de/automatisierung/mobile-robots/soto-1484930",
+    "email": "info@jungheinrich.de",
+    "phone": "0800 222 585858",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Hamburg; free phone within Germany; contact form and consultation booking on the product page."
+   },
+   {
+    "name": "Magazino GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.magazino.eu/produktionslogistik/",
+    "contactUrl": "https://www.magazino.eu/kontakt/",
+    "email": "info@magazino.eu",
+    "phone": "+49 89 21552415-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Product page refers buyers to the Jungheinrich sales team or info@magazino.de."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 695,
+   "unit": "kg",
+   "conditions": "standard configuration; 686 to 735 kg depending on backpack",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions (L x W x H)",
+   "value": "2230 x 1060 x 2160",
+   "unit": "mm",
+   "conditions": "plus 80 mm for the laser scanner in operation",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Total payload",
+   "value": 240,
+   "unit": "kg",
+   "conditions": "standard configuration; 200 to 249 kg depending on backpack (Magazino web page says up to 250 kg)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "item_weight_max_kg",
+   "label": "Max weight per KLT",
+   "value": 20,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_capacity_items",
+   "label": "KLTs carried at once",
+   "value": 24,
+   "unit": null,
+   "conditions": "300 x 200 or 400 x 300 mm; 8 when 600 x 400 mm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "item_size_mm",
+   "label": "Supported KLT sizes",
+   "value": "300 x 200, 400 x 300, 600 x 400; height 80 to 320",
+   "unit": "mm",
+   "conditions": "VDA 4500 R-KLT and RL-KLT; width must exceed height",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_height_m",
+   "label": "Gripping height",
+   "value": "0.4 to 1.7",
+   "unit": "m",
+   "conditions": "min 500 mm frontal, 400 mm sideways",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "needs aisles of 2.51 m; 0.3 m/s from 1.65 m aisle width",
+   "sourceId": "s2"
+  },
+  {
+   "key": "turning_circle_mm",
+   "label": "Min turning circle",
+   "value": 3100,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "up to, without charging",
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1.6,
+   "unit": "h",
+   "conditions": "charge-to-drive ratio 1:5; opportunity charging possible",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "8 x Li-ion, 25.6 V, 21 Ah each",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP20",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "15 to 25",
+   "unit": "C",
+   "conditions": "up to 35 C for up to 1 h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "floor",
+   "label": "Floor",
+   "value": "Industrial floor to DIN 18202:2019-07; bumps up to 5 mm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2D laser scanners front and rear, 3D cameras, light curtains at the gripper, barcode and QR scanners",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Integration",
+   "value": "VDA 5050 or Magazino Fleet Manager via REST interface to the WMS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 20,
+  "carryPayloadKg": 240,
+  "runtimeH": 8,
+  "ipRating": "IP20",
+  "sdk": "VDA 5050; Magazino Fleet Manager REST interface",
+  "sourceIds": [
+   "s2",
+   "s1"
+  ],
+  "notes": [
+   "The gripper is a KLT handling unit on a lift, not a jointed arm; it picks containers from three sides and rotates them by 90 or 180 degrees.",
+   "Indoor only: IP20, 15 to 25 C, flat industrial floors with bumps up to 5 mm.",
+   "Needs aisles of at least 1.65 m (2.51 m for full speed) and weighs about 695 kg.",
+   "Handles standard KLTs only; other carriers such as EPP or cardboard must be checked case by case."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2023/08/SOTO-Standalone-01-corridor-1.jpg",
+   "pageUrl": "https://www.magazino.eu/produktionslogistik/",
+   "credit": "Magazino",
+   "alt": "Magazino SOTO robot in a production corridor",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2023/03/magazino_logistik_roboter_soto_klt_produktion_02-1.jpg",
+   "pageUrl": "https://www.magazino.eu/produktionslogistik/",
+   "credit": "Magazino (Jungheinrich)",
+   "alt": "Magazino SOTO in white, straight-on view, studio",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2025/06/SOTO-at-VEGA-scaled.jpg",
+   "pageUrl": "https://www.magazino.eu/produktionslogistik/",
+   "credit": "Magazino (Jungheinrich)",
+   "alt": "Magazino SOTO with fleet number 16 standing between parts racks in a factory",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2025/06/SOTO-at-WAGO-scaled.jpg",
+   "pageUrl": "https://www.magazino.eu/produktionslogistik/",
+   "credit": "Magazino (Jungheinrich)",
+   "alt": "Magazino SOTO in yellow Jungheinrich livery carrying grey small load carriers in a factory hall",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2025/06/SOTO-at-the-production-line.jpg",
+   "pageUrl": "https://www.magazino.eu/produktionslogistik/",
+   "credit": "Magazino (Jungheinrich)",
+   "alt": "Magazino SOTO next to a worker placing blue small load carriers on a flow rack",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2025/06/Autonomous_logistics_robot_SOTO.jpg",
+   "pageUrl": "https://www.magazino.eu/produktionslogistik/",
+   "credit": "Magazino (Jungheinrich)",
+   "alt": "Two Magazino SOTO robots in a factory aisle with yellow floor markings",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Delivers KLTs from the automated small-parts store to engine assembly lines with a fleet of 12 robots",
+   "stage": "deployment",
+   "where": "MAN Truck & Bus, Nuremberg, Germany",
+   "date": "2024-02",
+   "sourceId": "s4",
+   "note": "Full roll-out after a one-year pilot."
+  },
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Moves KLTs between compact storage and heating-technology production lines (3 robots)",
+   "stage": "deployment",
+   "where": "Bosch Home Comfort Group, Wernau, Germany",
+   "date": "2025-02",
+   "sourceId": "s5",
+   "note": "First robot running since mid-2024; all three moving to regular operation in 2025."
+  },
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Supplies assembly lines from the small-parts store and returns empty containers, around the clock (3 robots)",
+   "stage": "deployment",
+   "where": "VEGA Grieshaber KG, Schiltach, Germany",
+   "date": null,
+   "sourceId": "s6",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.magazino.eu/produktionslogistik/",
+   "title": "Autonomer Logistik-Roboter SOTO",
+   "publisher": "Magazino",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://media-live2.prod.scw.jungheinrichcloud.com/resource/blob/1484964/680d1d92ef918196967c75a952f3bce7/download-technical-data-amr-soto-data.pdf",
+   "title": "SOTO technical specification (datasheet 12.2023)",
+   "publisher": "Jungheinrich",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.jungheinrich.de/automatisierung/mobile-robots/soto-1484930",
+   "title": "Autonomer Mobile Robot SOTO",
+   "publisher": "Jungheinrich",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.jungheinrich.com/newsroom/man-automatisiert-produktionslogistik-mit-magazino-1548722",
+   "title": "MAN automatisiert Produktionslogistik mit Magazino",
+   "publisher": "Jungheinrich",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.jungheinrich.com/presse-events/automatisierte-produktionsversorgung-mit-soto-robotern-1905338",
+   "title": "Automatisierte Produktionsversorgung mit SOTO-Robotern",
+   "publisher": "Jungheinrich",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.magazino.eu/case-studies/vega-grieshaber-kg/",
+   "title": "Case study VEGA Grieshaber KG",
+   "publisher": "Magazino",
+   "kind": "customer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price or lease terms in Germany?",
+  "Total payload: datasheet says 240 kg standard (200 to 249 kg), Magazino web page says up to 250 kg."
+ ],
+ "checkedAt": "2026-10-02"
+}

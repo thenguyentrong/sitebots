@@ -1,0 +1,295 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-b2-w",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "B2-W",
+ "variant": null,
+ "name": "Unitree B2-W",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/b2-w",
+ "summary": "Wheeled version of the B2 industrial quadruped (85 kg, IP67), driving up to 15 km/h and about 25 km with 40 kg load.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU lists the B2-W with price (about 6 weeks, restocking); Generation Robots and MYBOTSHOP quote it.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 65000,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s3",
+   "note": "Generation Robots, version without LiDAR; RobotShop EU EUR 96,173.63 incl. tax."
+  },
+  "priceOther": null,
+  "leadTime": "about 6 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-b2-w-wheeled-robotic-dog-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 96173.63,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "B2-W; with navigation kit EUR 102,340; ships in about 6 weeks, re-stocking."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404199-b2-wheeled-quadruped-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 65000,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "Page 'from' price excl. VAT; versions without LiDAR or with SLAM kit; cart disabled."
+   },
+   {
+    "name": "MYBOTSHOP GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Unitree-B2",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "B2 page offers 'B2 oder B2-W'; price on request. MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-B2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 69747.06,
+    "priceBasis": "net",
+    "sourceId": "s8",
+    "note": "Variant \"B2-Wheeled\" 69,747.06 EUR net (21 days after order); \"B2-Wheeled mit 3DLiDAR\" 79,000 net in stock. Not the older \"QUADRUPED B-W\" page, which describes a B1-based wheeled robot."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 85,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load while walking",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "more than 40 kg; standing load 120 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Maximum speed",
+   "value": 15,
+   "unit": "km/h",
+   "conditions": "in special configuration; speed-limited in practice",
+   "sourceId": "s1"
+  },
+  {
+   "key": "range_km",
+   "label": "Range",
+   "value": 25,
+   "unit": "km",
+   "conditions": "with 40 kg load; about 30 km unloaded",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 2000,
+   "unit": "Wh",
+   "conditions": "more than 2 kWh, 58 V",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step climbing",
+   "value": 40,
+   "unit": "cm",
+   "conditions": "up and down 40 cm forward; continuous stairs 20-25 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing angle",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "over 45 deg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "Intel Core i5 (platform) + Intel Core i7 (user); optional Orin NX, up to 3 devices",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 40,
+  "runtimeH": null,
+  "ipRating": "IP67",
+  "sdk": "Intel Core i7 user computer; secondary development",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runtime stated as range (km), not hours."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0620/4932/1193/files/1_8046f099-5c7f-48b9-bf2a-a9738b5e7adf.jpg",
+   "pageUrl": "https://shop.unitree.com/products/unitree-b2-w",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree B2-W wheeled quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/26502b7ec70c4b35b636c7f45aae236d_3840x2160.jpg",
+   "pageUrl": "https://www.unitree.com/b2-w",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree B2-W wheeled quadruped among angled concrete columns, front three-quarter view",
+   "kind": "product"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/34677cb849b349f4bb44edbab089ab5d_1917x989.png",
+   "pageUrl": "https://www.unitree.com/b2-w",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree B2-W standing in fog, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "Runtime in hours not stated."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/b2-w",
+   "title": "Unitree B2-W product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-b2-w-wheeled-robotic-dog-eu",
+   "title": "Unitree B2-W Wheeled Robotic Dog (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404199-b2-wheeled-quadruped-robot.html",
+   "title": "Unitree B2-W at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.mybotshop.de/Unitree-B2",
+   "title": "Unitree B2 / B2-W at MYBOTSHOP",
+   "publisher": "MYBOTSHOP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://shop.unitree.com/products/unitree-b2-w",
+   "title": "Unitree B2-W in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.quadruped.de/QUADRUPED-B2",
+   "title": "QUADRUPED B2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

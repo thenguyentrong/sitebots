@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "useCases": [
+    {
+      "id": "site_concrete/slab-formwork",
+      "movement": "stairs_ladders",
+      "handWork": "two_arm",
+      "maxObjectKg": 26,
+      "tool": "beam fork, hammer and nails",
+      "sensing": "prop and beam spacing, level of the soffit",
+      "generalPurpose": "no",
+      "specialisedJob": null,
+      "reason": "Props, beams and sheets of 8.5 to 26 kg set up to 3.5 m high, beams with forks from the floor and sheets from platform stairs or the deck, in the open, as a formwork that carries the fresh slab."
+    },
+    {
+      "id": "site_concrete/column-formwork",
+      "movement": "rough_ground",
+      "handWork": "two_arm",
+      "maxObjectKg": 185,
+      "tool": "locking hooks, spacer bolts, panel clamps and struts",
+      "sensing": "column size and plumbness",
+      "generalPurpose": "no",
+      "specialisedJob": null,
+      "reason": "Panels of 22 to 185 kg hold up to 90 kN/m² of fresh concrete; the crane moves the whole unit and a crew locks and plumbs it among starter bars."
+    },
+    {
+      "id": "site_concrete/slab-concrete-pour",
+      "movement": "rough_ground",
+      "handWork": "tool",
+      "maxObjectKg": null,
+      "tool": "pump end hose, vibrating screed or straightedge",
+      "sensing": "slab level against laser or level marks, concrete flow",
+      "generalPurpose": "no",
+      "specialisedJob": "concrete_finishing",
+      "reason": "Guiding an end hose that can whip while walking on rebar mats, then screeding the fresh concrete, in the open on a load-bearing slab; the screed weighs over 16.3 kg with its blade, the pump boom places the concrete, and crane-set laser screeds for elevated slabs are not listed for Germany."
+    }
+  ]
+}

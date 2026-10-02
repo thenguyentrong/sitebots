@@ -1,0 +1,258 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-g1-d-ultimate",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "G1-D",
+ "variant": "Ultimate (mobile wheeled base)",
+ "name": "Unitree G1-D Ultimate",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/G1-D",
+ "summary": "G1 upper body with two 7-DOF arms on a lifting column and a wheeled base, built to collect robot training data and do light handling.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU lists G1-D Ultimate A-E with euro prices (ships in about 6 weeks); Generation Robots quotes Standard and Ultimate versions.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 42126,
+   "basis": "gross",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Ultimate A with grippers, tax included."
+  },
+  "priceOther": null,
+  "leadTime": "about 6 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-g1-d-ultimate-a-humanoid-robot-platform-dex1-1-grippers",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 42126,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Ultimate A with Dex1-1 grippers; Ultimate B-E with Dex3-1 or BrainCo hands EUR 51,170-56,763; ships in about 6 weeks."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404479-unitree-g-d-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Lists STANDARD A-E and ULTIMATE A-E; page 'from' price EUR 31,500 excl. VAT; quote on request."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-G1D",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 35400,
+    "priceBasis": "net",
+    "sourceId": "s5",
+    "note": "G1D-U6 35,400 EUR net (RobotShop gives G1-D-U6 as the manufacturer number of Ultimate A); U7-U10 43,000-47,700 net; all \"available from 02.11.2026\". Page range starts at 25,900 net for the stationary U1."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.68,
+   "unit": "m",
+   "conditions": "1.26 m at minimum, 1.68 m at maximum column height",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 90,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 19,
+   "unit": null,
+   "conditions": "excluding end effectors",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Max. payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "maximum per arm, about 3 kg; varies strongly with arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum base speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "differential drive",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 6,
+   "unit": "h",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head binocular camera, 2 wrist cameras; base LiDAR, 2 depth cameras, collision and low-obstacle sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU; optional Orin NX 16GB (100 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": "Unitree secondary development; data collection and training platform",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Every Ultimate version ships with an end effector: Ultimate A has Dex1-1 two-finger grippers; B-E use three-finger Dex3-1 or five-finger BrainCo hands.",
+   "Wheeled base for flat indoor floors; the cheaper G1-D Standard has no drive base.",
+   "No IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/a9884c71bc514abe8d928b58fad573fe_585x1270.png",
+   "pageUrl": "https://www.unitree.com/G1-D",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1-D upper body on a lifting column with wheeled base",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/927760b398064807b31e3423c70ed6c0_1960x1270.png",
+   "pageUrl": "https://www.unitree.com/G1-D",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1-D with two grippers handling a cardboard box at a roller conveyor in a warehouse",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations",
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Collects teleoperated manipulation data and runs trained models",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "Lifting column travel for the Ultimate version is not stated separately."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/G1-D",
+   "title": "Unitree G1-D product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-g1-d-ultimate-a-humanoid-robot-platform-dex1-1-grippers",
+   "title": "Unitree G1-D Ultimate A at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404479-unitree-g-d-humanoid-robot.html",
+   "title": "Unitree G1-D humanoid robot at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.quadruped.de/Unitree-G1D",
+   "title": "Unitree G1D at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "aquajet-aqua-cutter-750v",
+ "maker": "Aquajet Systems",
+ "makerCountry": "SE",
+ "model": "Aqua Cutter 750V",
+ "variant": null,
+ "name": "Aquajet Aqua Cutter 750V",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_concrete_repair/hydrodemolition"
+ ],
+ "officialUrl": "https://aquajet.se/products/aqua-cutter-750v-2/",
+ "summary": "Diesel tracked hydrodemolition robot with an extendable tower (5 m unsupported, 20 m with support) for roads, bridges and large structures.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Brokk Deutschland (Brokk DA GmbH, same Brokk group) is the named Aquajet contact for Germany and Austria; price on request.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Brokk DA GmbH (Brokk Deutschland)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.brokk.com/de/aquajet-hochdruckwasserstrahltechnik/",
+    "contactUrl": "https://www.brokk.com/de/kontakt/",
+    "email": "info@brokk.de",
+    "phone": "+49 7654 21297-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Aquajet page on the Brokk Deutschland site names Brokk DA GmbH as Aquajet contact for Germany and Austria; the model list is on aquajet.se."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "power_source",
+   "label": "Power",
+   "value": "diesel 18 kW (hybrid electric kit optional)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "water_pressure_bar",
+   "label": "Maximum water pressure",
+   "value": 3000,
+   "unit": "bar",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reaction_force_n",
+   "label": "Maximum reaction force",
+   "value": 3000,
+   "unit": "N",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "noise_db",
+   "label": "Noise level",
+   "value": 70,
+   "unit": "dB",
+   "conditions": "as stated by maker",
+   "sourceId": "s1"
+  },
+  {
+   "key": "control_system",
+   "label": "Control system",
+   "value": "Evolution 3.0 with Infinity oscillation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Total weight",
+   "value": 2340,
+   "unit": "kg",
+   "conditions": "including power control module where applicable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Tower reach",
+   "value": 5,
+   "unit": "m",
+   "conditions": "unsupported; up to 20 m with support",
+   "sourceId": "s1"
+  },
+  {
+   "key": "remote_range_m",
+   "label": "Radio remote range",
+   "value": 300,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Evolution 3.0 control with patented Infinity (figure-eight) oscillation.",
+   "Remote controlled with automated lance movement; needs a separate high-pressure pump."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://aquajet.se/bed/uploads/2022/01/Evolution-3.0_aqua-cutter-750v-2025-vit-scaled.jpg",
+   "pageUrl": "https://aquajet.se/products/aqua-cutter-750v-2/",
+   "credit": "Aquajet Systems AB",
+   "alt": "Aquajet Aqua Cutter 750V",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete_repair/hydrodemolition"
+   ],
+   "task": "Selective concrete removal and surface preparation with high-pressure water",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://aquajet.se/products/aqua-cutter-750v-2/",
+   "title": "Aquajet Aqua Cutter 750V product page",
+   "publisher": "Aquajet Systems AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.brokk.com/de/aquajet-hochdruckwasserstrahltechnik/",
+   "title": "AQUAJET Hochdruckwasserstrahltechnik (contact for Germany)",
+   "publisher": "Brokk DA GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro price not public.",
+  "Price of the matching high-pressure pump."
+ ],
+ "checkedAt": "2026-10-02"
+}

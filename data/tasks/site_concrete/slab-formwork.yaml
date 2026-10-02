@@ -1,0 +1,154 @@
+schema_version: 1
+id: site_concrete/slab-formwork
+status: published
+setting: site_concrete
+family: assembly_fastening
+trades: [concrete]
+title:
+  en: "Set up slab formwork from props, beams and sheets"
+  de: "Deckenschalung aus Deckenstützen, Trägern und Schalungsplatten aufstellen"
+summary:
+  en: "Stand the floor props with tripods and lowering heads, lift the primary beams into the heads and level them, lay the secondary beams across, add the intermediate props and cover the grid with formwork sheets; strike it once the slab can carry itself."
+  de: "Deckenstützen mit Stützbeinen und Absenkköpfen stellen, Jochträger in die Köpfe einlegen und einnivellieren, Querträger auflegen, Zwischenstützen stellen und die Fläche mit Schalungsplatten belegen; ausschalen, sobald die Decke sich selbst trägt."
+description:
+  en: "Beam-and-prop slab formwork such as Doka's Dokaflex is carried and set by hand: Eurex 20 top floor props of 14.3 to 17.4 kg for storeys up to 3.50 m, H20 top timber beams of 8.5 to 26.0 kg and 3-SO three-ply sheets of 9.7 to 15.1 kg. The primary beams are lifted into the prop heads with beam forks from below, and the sheets are laid from a mobile scaffold underneath or from the deck. The formwork carries the fresh slab and the working load until the concrete takes over; overloaded props or beams and missing bracing can make it collapse, and open edges and the deck itself are fall hazards. The props are checked again before the pour, and the struck soffit has to meet the flatness limit for soffits of unfinished slabs."
+  de: "Trägerdeckenschalung wie Dokaflex von Doka wird von Hand getragen und gestellt: Deckenstützen Eurex 20 top von 14,3 bis 17,4 kg für Geschosse bis 3,50 m, Schalungsträger H20 top von 8,5 bis 26,0 kg und Dreischichtplatten 3-SO von 9,7 bis 15,1 kg. Die Jochträger werden mit Trägergabeln von unten in die Stützenköpfe gelegt, die Platten von einem Fahrgerüst darunter oder von der Schalfläche aus verlegt. Die Schalung trägt die frische Decke und die Verkehrslast, bis der Beton sie übernimmt; überlastete Stützen oder Träger und fehlende Aussteifung können sie einstürzen lassen, offene Ränder und die Schalfläche selbst sind Absturzstellen. Vor dem Betonieren werden die Stützen nochmals kontrolliert, und die ausgeschalte Deckenunterseite muss die Ebenheitsgrenze für Unterseiten von Rohdecken einhalten."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Formwork for slabs: erect and strike, props up to storey height included"
+    de: "Schalung für Deckenplatten herstellen und beseitigen, einschließlich Unterstützung bis Geschosshöhe"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 8.5, max: 26.0 }
+    confidence: confirmed
+    evidence_url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999776001_2024_07_online.pdf'
+    note: "Doka Dokaflex item list (user information 07/2024): 3-SO sheets from 9.7 kg (21 mm, 2.00 × 0.50 m) to 15.1 kg (27 mm, 2.50 × 0.50 m); H20 top beams from 8.5 kg (N, 1.80 m) to 26.0 kg (P, 4.90 m), 18.3 to 20.7 kg for the 3.90 m primary beam of Dokaflex 1-2-4; Eurex 20 top props 14.3 kg (300, 1.73–3.00 m) and 17.4 kg (350, 1.98–3.50 m). In a Dokaflex 1-2-4 deck for storeys up to 3.50 m the heaviest part is that 3.90 m beam at up to 20.7 kg; the 26.0 kg comes from the longest H20 top beam. The same list has XT20 beams of up to 29.5 kg (5.90 m) for Dokaflex XT, and props for high rooms weigh more: 32.3 kg for the 550 (2.98–5.50 m)."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same parts and steps on every floor, but each floor plan has its own spans, edges, downstand beams, openings and fill-in strips along the walls."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Prop spacing, bracing and the beam grid are checked before the pour, and Doka asks for the props to be checked again; a mistake found then is fixed, one that is missed shows under the load of the fresh slab."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_136/b_136.htm'
+    note: "The formwork carries the fresh slab. BG BAU: overloaded props and formwork beams or insufficient or missing bracing can make slab formwork collapse; erection and dismantling only under the constant supervision of a competent person."
+  reach_height_m:
+    value: { min: 0, max: 3.5 }
+    confidence: likely
+    evidence_url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999776001_2024_07_online.pdf'
+    note: "From the floor up to the soffit: Eurex 20 top props reach 3.00 m (300) or 3.50 m (350); beams are laid into the heads with beam forks from below, sheets laid from a mobile scaffold or platform stairs or from the deck. Higher rooms take longer props."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "The formwork is set up on the floor below before the slab above exists; the deck is open to the weather."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Setting and striking formwork makes no relevant dust; release agent is sprayed onto the sheets."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Work continues in rain."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "The slab below among props, tripods and stacked material, platform stairs or a mobile scaffold, and the formwork deck itself."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    note: "The tower crane lifts stacks of props, beams and sheets onto the floor and moves slab tables where they are used; beam-and-prop formwork itself is set by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; slab formwork is priced per square metre of formed area."
+requirements:
+  object_size_m:
+    value: { min: 1.8, max: 4.9 }
+    confidence: likely
+    evidence_url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999776001_2024_07_online.pdf'
+    note: "Beams from 1.80 to 4.90 m (2.65 and 3.90 m in Dokaflex 1-2-4), sheets 2.00 or 2.50 × 0.50 m, props extended to 3.00–3.50 m in normal storeys. Taken from the Doka item list."
+  tolerance_mm:
+    value: 10
+    confidence: confirmed
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Flatness of the struck soffit: DIN 18202 table 3, row 5 (unfinished walls and soffits of rough slabs), 10 mm as the limit at a measuring point distance of 1 m. A limit, not a ± value."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for setting the parts. The Dokaflex 20 design tables assume props with a permissible load of at least 20 kN and loads to EN 12812 with fresh concrete at 2,500 kg/m³."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep slab formwork with a trained crew under a competent supervisor: it carries the fresh slab, it is built in the open, and its beams of up to 26 kg are lifted overhead. Where carrying is the problem, compare crane-moved slab tables, a lighter panel system or semi-precast slabs, which replace the sheets but still need props."
+      de: "Die Deckenschalung bei einer geschulten Kolonne unter fachkundiger Aufsicht lassen: Sie trägt die frische Decke, entsteht im Freien, und ihre Träger von bis zu 26 kg werden über Kopf gehoben. Wo das Tragen das Problem ist, Deckentische mit Kran, ein leichteres Paneelsystem oder Elementdecken vergleichen, die die Schalungsplatten ersetzen, aber weiterhin unterstützt werden müssen."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, gantry]
+evidence:
+  - statement:
+      en: "Doka's Dokaflex user information lists Eurex 20 top floor props from 8.0 kg (150) to 32.3 kg (550), 14.3 kg for the 300 and 17.4 kg for the 350; H20 top beams from 8.5 kg (N, 1.80 m) to 26.0 kg (P, 4.90 m) and XT20 beams up to 29.5 kg (5.90 m); and 3-SO formwork sheets of 9.7 to 15.1 kg. It has the props checked again before concreting and forbids stacking Dokaflex on top of itself, which can collapse."
+      de: "Die Anwenderinformation Dokaflex von Doka listet Deckenstützen Eurex 20 top von 8,0 kg (150) bis 32,3 kg (550), 14,3 kg für die 300 und 17,4 kg für die 350; Doka-Träger H20 top von 8,5 kg (N, 1,80 m) bis 26,0 kg (P, 4,90 m) und Doka-Träger XT20 bis 29,5 kg (5,90 m); und Schalungsplatten 3-SO von 9,7 bis 15,1 kg. Sie verlangt, die Deckenstützen vor dem Betonieren nochmals zu kontrollieren, und verbietet aufgestocktes Dokaflex, weil es einstürzen kann."
+    url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999776001_2024_07_online.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-07-01'
+    type: claim
+    confidence: confirmed
+    note: "User information 999776001, edition 07/2024; the day is not given, so the first of the month is used. Weights are mean values for new material. Read on 2026-10-02."
+  - statement:
+      en: "BG BAU sheet B 136 on slab formwork and falsework: missing protection during erection, moving and dismantling and deficient side protection can lead to falls; overloaded props and formwork beams or insufficient or missing bracing can make the formwork collapse. Erection and dismantling only under the constant supervision of a competent person; extendable steel props must comply with DIN EN 1065 or hold a general building-authority approval."
+      de: "Baustein B 136 der BG BAU zu Deckenschalungen und Tragkonstruktionen: Fehlende Sicherungsmaßnahmen beim Auf-, Um- und Abbau sowie mangelhaft ausgebildeter Seitenschutz können zu Absturzunfällen führen; Überlastung von Stützen und Schalungsträgern oder unzureichende oder fehlende Aussteifungen können zum Einsturz der Schalungskonstruktion führen. Auf- und Abbau nur unter ständiger Aufsicht einer fachkundigen Person; ausziehbare Baustützen aus Stahl müssen der DIN EN 1065 entsprechen oder bedürfen einer allgemeinen bauaufsichtlichen Zulassung."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_136/b_136.htm'
+    kind: regulator
+    tier: 1
+    date: '2021-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Sheet dated 07/2021, read on 2026-10-02."
+  - statement:
+      en: "DIN 18202 table 3 (as reproduced in the screed trade handbook of the ZDB): unfinished walls and soffits of rough slabs (row 5) allow 10 mm as the limit at a measuring point distance of 1 m."
+      de: "DIN 18202 Tabelle 3 (wiedergegeben im Handbuch für das Estrich- und Belaggewerbe des ZDB): Nichtflächenfertige Wände und Unterseiten von Rohdecken (Zeile 5) erlauben 10 mm als Grenzwert bei 1 m Messpunktabstand."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Copy of the table published by a screed contractor; the values at 0.1, 1, 4, 10 and 15 m are from the standard, the others interpolated. Read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If the aim is less carrying: compare crane-moved slab tables or a lighter panel system with beam-and-prop formwork on one typical floor, hours per square metre formed."
+    de: "Wenn weniger Tragen das Ziel ist: Deckentische mit Kran oder ein leichteres Paneelsystem gegen Trägerschalung auf einem Regelgeschoss vergleichen, Stunden je Quadratmeter Schalfläche."
+prerequisites: []
+open_questions:
+  - { en: "Which slab formwork do you use (beams and props, panels or tables), for which clear storey heights, and how much of it is carried by hand?", de: "Welche Deckenschalung setzen Sie ein (Träger und Stützen, Paneele oder Tische), für welche lichten Geschosshöhen, und wie viel davon wird von Hand getragen?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

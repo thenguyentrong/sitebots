@@ -1,0 +1,90 @@
+{
+ "schemaVersion": 1,
+ "id": "xiaomi-cyberone",
+ "maker": "Xiaomi",
+ "makerCountry": "CN",
+ "model": "CyberOne",
+ "variant": null,
+ "name": "Xiaomi CyberOne",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.mi.com/cyberone",
+ "summary": "A full-size humanoid shown by Xiaomi's robotics lab as a research showcase; no sales offer exists.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Xiaomi presents CyberOne only as a robotics-lab showcase on its Chinese site; no sales route anywhere.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Joint DOF",
+   "value": 21,
+   "unit": null,
+   "conditions": "whole-body control",
+   "sourceId": "s1"
+  },
+  {
+   "key": "depth_accuracy",
+   "label": "Depth accuracy",
+   "value": "1 % within 8 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Xiaomi publishes no manipulation or payload data; recorded with 0 working arms."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.cnbj1.fds.api.mi-img.com/product-images/cyberone/swiper1.jpg",
+   "pageUrl": "https://www.mi.com/cyberone",
+   "credit": "Xiaomi",
+   "alt": "Xiaomi CyberOne holding a flower",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.mi.com/cyberone",
+   "title": "CyberOne full-size humanoid bionic robot (Chinese page)",
+   "publisher": "Xiaomi",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

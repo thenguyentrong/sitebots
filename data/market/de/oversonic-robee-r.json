@@ -1,0 +1,250 @@
+{
+ "schemaVersion": 1,
+ "id": "oversonic-robee-r",
+ "maker": "Oversonic Robotics",
+ "makerCountry": "IT",
+ "model": "RoBee",
+ "variant": "Series R (industry)",
+ "name": "Oversonic RoBee Series R",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.oversonicrobotics.com/robee-r/",
+ "summary": "A CE-marked Italian industrial humanoid on an omnidirectional wheeled base with two arms (7.5 kg each) and grippers for pick-and-place, machine tending and inspection.",
+ "launched": "2026",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Italy); CE marked under the Machinery Directive 2006/42/EC, so it can be sold in Germany. Direct sales on request; no German distributor or German customer found; no public price.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Oversonic Robotics Srl",
+    "country": "IT",
+    "role": "manufacturer",
+    "productUrl": "https://www.oversonicrobotics.com/robee-r/",
+    "contactUrl": "https://www.oversonicrobotics.com/contacts/",
+    "email": "info@oversonicrobotics.com",
+    "phone": "+39 0362 080120",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Carate Brianza, Italy; assessment and contact forms on the site."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.65-1.99",
+   "unit": "m",
+   "conditions": "Adjustable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 293,
+   "unit": "kg",
+   "conditions": "Up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.95,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 7.5,
+   "unit": "kg",
+   "conditions": "Max.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Bimanual payload",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "Double arm, product sheet 10/2026",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 1.2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_pct",
+   "label": "Max. slope",
+   "value": 8,
+   "unit": "%",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery autonomy",
+   "value": 8,
+   "unit": "h",
+   "conditions": "Up to; 2 batteries, quick change, inductive auto recharge",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick battery change",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IPX4",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5 to 50",
+   "unit": "C",
+   "conditions": "Indoor",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDARs, 3D laser, depth cameras, face recognition camera, SIL 3 obstacle detection; thermal camera on request",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "towable_weight_kg",
+   "label": "Towable weight",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "Product sheet 10/2026",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 7.5,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": "IPX4",
+  "sdk": "APIs for ERP/MES, cloud console (BeeOS platform)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Jointed leg section on a wheeled base used to change height; it does not walk.",
+   "Indoor working environment; max. slope 8 %.",
+   "Mechanical grippers in the shown configuration.",
+   "Differential and omnidirectional drive included.",
+   "Product sheet lists supported end effectors: mechanical gripper, vacuum gripper, humanoid hand and others."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-r-022.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-r/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series R humanoid upper body with two arms",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-r-021.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-r/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series R upper body with grippers, front three-quarter view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-r-020.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-r/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series R upper body with both arms and grippers extended, on black.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Pick and place, machine tending and quality inspection in manufacturing",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": "Maker application list; no named customer on the page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.oversonicrobotics.com/robee-r/",
+   "title": "RoBee Series R product page and technical specs",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.oversonicrobotics.com/download/Oversonic_Robee-R-2026-eng.pdf",
+   "title": "RoBee Series R product sheet 10/2026",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.oversonicrobotics.com/certifications/",
+   "title": "Certifications (CE, Machinery Directive 2006/42/EC, IPX4)",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.oversonicrobotics.com/manufacturing/",
+   "title": "RoBee in manufacturing",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Named industrial customers, any in Germany?",
+  "German-speaking support or service partner?"
+ ],
+ "checkedAt": "2026-10-02"
+}

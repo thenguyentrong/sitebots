@@ -1,0 +1,354 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-g1",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "G1",
+ "variant": "Basic (23 DOF, no programming)",
+ "name": "Unitree G1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/g1",
+ "summary": "A 1.32 m, 35 kg humanoid for demonstrations and walking research; the base version has fixed hands and cannot be programmed.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU sells the G1 Basic with price and cart (ships in about 3-4 weeks, 1 unit left); German dealers QUADRUPED Robotics (23,000 EUR net, 21 days) and Conrad (business customers only) list it too.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 19461.91,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "RobotShop EU price, tax included."
+  },
+  "priceOther": {
+   "amount": 13500,
+   "currency": "USD",
+   "market": "Unitree list price (tax and shipping excluded)",
+   "sourceId": "s1"
+  },
+  "leadTime": "about 3-4 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-g1-humanoid-robot-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 19461.91,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Manufacturer no. G1-Basic; tax included as displayed; ships in about 3-4 weeks."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404241-g1-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "G1 page lists BASIC among 23 versions with a page 'from' price of EUR 22,500 excl. VAT; cart disabled, quote on request."
+   },
+   {
+    "name": "MYBOTSHOP GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Unitree-G1",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Price on request; deliverable 21 days after order. MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
+   },
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://shop.unitree.com/products/unitree-g1",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Unitree online store, USD, ships from China; customs borne by buyer. Germany is listed in the store country selector."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-G1",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 23000,
+    "priceBasis": "net",
+    "sourceId": "s8",
+    "note": "Variant \"G1 Basic\": 23,000 EUR excl. 19% VAT; \"must be ordered, deliverable 21 days after order\". Same page: G1 Pro 24,100 net."
+   },
+   {
+    "name": "Conrad Electronic (conrad.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.conrad.de/de/p/x-3804254.html",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 36745,
+    "priceBasis": "gross",
+    "sourceId": "s9",
+    "note": "Hst.-Teile-Nr. G1base, Bestell-Nr. 3804254; 36,745.00 EUR incl. VAT plus 74.97 EUR bulky-goods surcharge (30,878.15 net); sold and shipped by Conrad; business customers only."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height (standing)",
+   "value": 1.32,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 35,
+   "unit": "kg",
+   "conditions": "about 35 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 2,
+   "unit": "h",
+   "conditions": "about 2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": "9000 mAh smart battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Depth camera + 3D LiDAR, 4-microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 23,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm maximum load",
+   "value": 2,
+   "unit": "kg",
+   "conditions": "maximum arm load, about 2 kg; varies strongly with arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": false,
+   "unit": null,
+   "conditions": "not available on the base G1",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 2,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Ships with fixed, non-functional hand shapes; working hands only on G1 EDU versions.",
+   "No secondary development: runs Unitree's built-in motions only.",
+   "Arm load about 2 kg and highly posture dependent; no IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/6613c61ef0d1412682b771fc62432a50_1464x1400.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1 humanoid robot, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/5e100d4349924287869c7f1ff6c0316b_2740x1720.jpg",
+   "pageUrl": "https://www.unitree.com/g1",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1 humanoid standing, front three-quarter view on a grey background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/a20ba1ebc0724df8a8135744dee8bbea_2740x1720.jpg",
+   "pageUrl": "https://www.unitree.com/g1",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1 humanoid walking, side view on a grey background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/8992fd91eed0495696ca876f86699523_2740x1720.jpg",
+   "pageUrl": "https://www.unitree.com/g1",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1 humanoid in a deep squat on a grey background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/ee3fc23204054aa491c7950bfa399c1a_2740x1720.jpg",
+   "pageUrl": "https://www.unitree.com/g1",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree G1 humanoid in a wide-legged stance on a grey background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Walks, balances and plays back built-in motions for demonstrations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "No official stair, slope or outdoor rating for the G1.",
+  "Unitree also sells a 29-DOF 'G1 Pro' entertainment version (USD 21,500 in its store) that has no record yet."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/g1",
+   "title": "Unitree G1 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-g1-humanoid-robot-eu",
+   "title": "Unitree G1 Humanoid Robot (G1-Basic) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404241-g1-humanoid-robot.html",
+   "title": "Unitree G1 humanoid robot at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.mybotshop.de/Unitree-G1",
+   "title": "Unitree G1 at MYBOTSHOP",
+   "publisher": "MYBOTSHOP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://shop.unitree.com/products/unitree-g1",
+   "title": "Unitree G1 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://shop.unitree.com/policies/shipping-policy",
+   "title": "Unitree online store shipping policy",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.quadruped.de/Unitree-G1",
+   "title": "Unitree G1 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.conrad.de/de/p/x-3804254.html",
+   "title": "UNITREE G1 base (Bestell-Nr. 3804254) at Conrad",
+   "publisher": "Conrad Electronic",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

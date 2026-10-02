@@ -1,0 +1,253 @@
+{
+ "schemaVersion": 1,
+ "id": "hello-robot-stretch-4",
+ "maker": "Hello Robot",
+ "makerCountry": "US",
+ "model": "Stretch 4",
+ "variant": null,
+ "name": "Hello Robot Stretch 4",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://hello-robot.com/stretch-4/",
+ "summary": "A 46 kg, 1.6 m tall one-arm mobile robot with a telescoping arm on a lift that picks up to 2.5 kg at full reach on level indoor floors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold direct by Hello Robot (USA) through a request-for-quote form that lists Germany as a shipping country; no German or EU reseller found. The maker states it is certified for laboratory and research use only.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 29950,
+   "currency": "USD",
+   "market": "Hello Robot purchase page (direct, USA)",
+   "sourceId": "s2"
+  },
+  "leadTime": "Ships within 2-4 weeks from purchase order or pre-payment (maker statement)",
+  "sellers": [
+   {
+    "name": "Hello Robot Inc.",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": "https://hello-robot.com/purchase/",
+    "contactUrl": "https://hello-robot.com/contact/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Order by quote request; payment by check, wire transfer or purchase order. Ships to most countries not subject to ITAR or similar restrictions."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.6,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 46,
+   "unit": "kg",
+   "conditions": "with ballast; 33 kg with ballast removed for transport",
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 9,
+   "unit": null,
+   "conditions": "3-wheel omnidirectional base, lift, telescoping arm, 3-axis wrist, optional tool",
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 2.5,
+   "unit": "kg",
+   "conditions": "arm extended; 4 kg with arm retracted",
+   "sourceId": "s3"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm extension",
+   "value": 0.55,
+   "unit": "m",
+   "conditions": "plus 6 cm wrist; lift range 120 cm",
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Top base speed",
+   "value": 0.6,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "light CPU load",
+   "sourceId": "s3"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 512,
+   "unit": "Wh",
+   "conditions": "LiFePO4, quick-swap",
+   "sourceId": "s3"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step / threshold",
+   "value": 2,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP20",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "10 to 30",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel NUC 15 (Core Ultra 5 225H, 32 GB) plus NVIDIA Jetson Orin NX",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2x Hesai 3D hemispherical lidar (J128 per data sheet), 2x 2.3 MP and 1x 12 MP head cameras, OAK-D SR wrist depth camera, 6 floor hazard sensors, IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Open source ROS 2 and Python SDK",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 2.5,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": "IP20",
+  "sdk": "ROS 2, Python",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "2.5 kg at full arm extension, 4 kg retracted.",
+   "Handles thresholds up to 20 mm only; built for smooth indoor floors and carpet.",
+   "Operating range 10-30 °C, IP20: not for building sites.",
+   "Maker: certified for laboratory and research use only; lidar maker is on the US DoD 1260H list."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://hello-robot.com/wp-content/uploads/2026/05/bould_stretch_grey.jpg",
+   "pageUrl": "https://hello-robot.com/",
+   "credit": "Hello Robot (render: BOULD Design)",
+   "alt": "Hello Robot Stretch 4 with telescoping arm raised on its mast, single robot in a living room",
+   "kind": "product"
+  },
+  {
+   "url": "https://hello-robot.com/wp-content/uploads/2026/05/quad_green-e1778479775445.jpg",
+   "pageUrl": "https://hello-robot.com/stretch-4/",
+   "credit": "Hello Robot",
+   "alt": "Four Hello Robot Stretch 4 robots with the arm at different lift heights",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for work in homes and workplaces, with mapping, navigation and VLM grasping demos",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://hello-robot.com/stretch-4/",
+   "title": "Stretch 4 product page",
+   "publisher": "Hello Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://hello-robot.com/purchase/",
+   "title": "Buy Stretch 4 (price, terms, shipping FAQ)",
+   "publisher": "Hello Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://hello-robot.com/wp-content/uploads/2026/05/HelloRobot-DataSheet-Stretch-4-Rev5_AsLaunched.pdf",
+   "title": "Stretch 4 data sheet Rev5",
+   "publisher": "Hello Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No CE marking or EU conformity statement found; the maker says it is certified for lab and research use only.",
+  "Launch month of Stretch 4 not stated on the pages read (data sheet uploaded 2026-05)."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -78,6 +78,7 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
     .trim();
   if (!value || NOT_AVAILABLE.test(value)) return [];
   const quad = ctx.formFactor === 'quadruped';
+  const legacyBody = !ctx.formFactor || ['humanoid', 'quadruped', 'mobile_manipulator'].includes(ctx.formFactor);
   const section = (ctx.section ?? '').toLowerCase();
   const out: RawField[] = [];
 
@@ -102,7 +103,15 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
     return count && !count.unit ? f('dof_total', fmt(count)) : [];
   }
   if (/(single|each) leg|^legs$/i.test(label) && (/degree|dof/i.test(label) || section.includes('freedom'))) return multiplied(value, 'per leg, both legs counted').map((x) => ({ ...x, field: 'dof_legs' }));
-  if (/(single|each) arm degrees|dof of each arm|^arms$/i.test(label) && (/degree|dof/i.test(label) || section.includes('freedom'))) return multiplied(value, 'per arm, both arms counted').map((x) => ({ ...x, field: 'dof_arms' }));
+  if (/(single|each) arm degrees|dof of each arm|^arms$/i.test(label) && (/degree|dof/i.test(label) || section.includes('freedom'))) {
+    // A newly supported arm/cell has no implied second arm. Only explicit totals are combined.
+    if (!legacyBody) {
+      const pair = /(\d+)\s*[x×]\s*(\d+)/i.exec(value);
+      return pair ? f('dof_arms', Number(pair[1]) * Number(pair[2]), { note: `${label}: ${value}` })
+        : f('dof_arms', fmt(parseQuantity(value.replace(/\s*dof\s*$/i, ''))), { note: `${label}: ${value}` });
+    }
+    return multiplied(value, 'per arm, both arms counted').map((x) => ({ ...x, field: 'dof_arms' }));
+  }
   if (/(single|each) hand degrees|^hands$/i.test(label) && (/degree|dof/i.test(label) || section.includes('freedom'))) {
     const m = /(\d+)\s*[x×]\s*(\d+)/.exec(value);
     if (m) return f('dof_hands', Number(m[1]) * Number(m[2]), { note: `${value} — both hands counted` });
@@ -130,8 +139,9 @@ export function mapSpecLabel(labelRaw: string, valueRaw: string, ctx: SpecContex
   if (/^(max )?payload( capacity)?$/i.test(label)) {
     const main = extractQuantity(value.replace(/\(.*?\)/g, ''), 'kg');
     const max = /\((?:max(?:imum)?|peak)[^\d]*(\d+(?:\.\d+)?)\s*kg\)/i.exec(value);
-    out.push(...f('payload_kg', fmt(main), { qualifier: quad ? 'sustained' : /^max/i.test(label) ? 'peak' : 'rated', note: `${label}: ${value}` }));
-    if (max) out.push(...f('payload_kg', `${max[1]} kg`, { qualifier: quad ? 'instant' : 'peak', note: `${label}: ${value}` }));
+    // A generic load for an AMR, arm or cell does not state the existing per-arm/whole-body basis.
+    out.push(...f('payload_kg', fmt(main), { ...(legacyBody ? { qualifier: quad ? 'sustained' : /^max/i.test(label) ? 'peak' : 'rated' } : {}), note: `${label}: ${value}` }));
+    if (max && legacyBody) out.push(...f('payload_kg', `${max[1]} kg`, { qualifier: quad ? 'instant' : 'peak', note: `${label}: ${value}` }));
     return out;
   }
 

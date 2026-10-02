@@ -1,0 +1,165 @@
+{
+ "schemaVersion": 1,
+ "id": "schindler-rise",
+ "maker": "Schindler",
+ "makerCountry": "CH",
+ "model": "R.I.S.E",
+ "variant": null,
+ "name": "Schindler R.I.S.E",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_lifts/shaft-anchor-drilling"
+ ],
+ "officialUrl": "https://group.schindler.com/en/company/innovations/schindler-rise.html",
+ "summary": "A self-climbing robot that drills anchor holes and sets bolts for guide rails and shaft doors inside a lift shaft.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Not sold as a machine. Schindler uses it itself as part of its own lift installation contracts on high-rise projects, e.g. 030BLN in Berlin (2026). You get it only by ordering Schindler lifts for such a project.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "anchors_per_shaft",
+   "label": "Anchor bolts per shaft",
+   "value": "~1,000",
+   "unit": null,
+   "conditions": "standard shaft; up to 5,000 in high-rise or seismic zones",
+   "sourceId": "s2"
+  },
+  {
+   "key": "time_saving",
+   "label": "Time saving",
+   "value": "up to 40%",
+   "unit": null,
+   "conditions": "on shaft preparation",
+   "sourceId": "s2"
+  },
+  {
+   "key": "robot_arm",
+   "label": "Robot arm",
+   "value": "ABB IRB 2600",
+   "unit": null,
+   "conditions": "reach 1.65 m, payload 20 kg (2020 report)",
+   "sourceId": "s4"
+  },
+  {
+   "key": "systems_in_use",
+   "label": "Systems in use",
+   "value": 7,
+   "unit": null,
+   "conditions": "worldwide; about 40 deployments and over 50,000 anchor bolts by June 2026",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Climbs inside the lift shaft by itself; it does not drive on floors.",
+   "Measures the shaft walls, detects reinforcement and obstacles, drills and sets bolts around the clock with remote monitoring.",
+   "First used as a prototype in 2017; Schindler runs the seven systems itself.",
+   "A Schindler operator monitors the work on site by camera."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.schindler.de/content/dam/website/de/medien/schindler-rise.jpg",
+   "pageUrl": "https://www.schindler.de/de/medien/presse/schindler-startet-schindler-rise-am-hochhausprojekt-030bln-in-berlin.html",
+   "credit": "Schindler",
+   "alt": "Schindler R.I.S.E robot fixed in a lift shaft",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_lifts/shaft-anchor-drilling"
+   ],
+   "task": "Measures shaft walls, drills anchor holes and sets bolts for guide rails and shaft doors in a 130 m high-rise",
+   "stage": "deployment",
+   "where": "030BLN (Covivio), Berlin Alexanderplatz, Germany",
+   "date": "2026-06",
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_lifts/shaft-anchor-drilling"
+   ],
+   "task": "Shaft anchor installation on high-rise projects",
+   "stage": "deployment",
+   "where": "TrIIIple Vienna, Varso Place Warsaw, Three ITC Shanghai and others",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://group.schindler.com/en/company/innovations/schindler-rise.html",
+   "title": "Schindler R.I.S.E",
+   "publisher": "Schindler Group",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.schindler.de/de/medien/presse/schindler-startet-schindler-rise-am-hochhausprojekt-030bln-in-berlin.html",
+   "title": "Schindler startet Schindler R.I.S.E am Hochhausprojekt 030BLN in Berlin",
+   "publisher": "Schindler Deutschland",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.schindler.de/de/ratgeber/schindler-rise.html",
+   "title": "Schindler R.I.S.E Ratgeber",
+   "publisher": "Schindler Deutschland",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.lift-journal.com/news/autonomous-drilling-robot",
+   "title": "Autonomous drilling robot",
+   "publisher": "Lift Journal",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Minimum building height or number of lifts for which Schindler uses R.I.S.E."
+ ],
+ "checkedAt": "2026-10-02"
+}

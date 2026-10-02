@@ -1,0 +1,224 @@
+{
+ "schemaVersion": 1,
+ "id": "ff-futurist",
+ "maker": "Faraday Future",
+ "makerCountry": "US",
+ "model": "Futurist",
+ "variant": "All-New Futurist (standard)",
+ "name": "Faraday Future FF Futurist",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://robotics.ff.com/us/ff-futurist/",
+ "summary": "A 1.73 m, 54 kg bipedal humanoid for reception, guiding, events, teaching and research; each arm lifts about 1 kg.",
+ "launched": "2026-06",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Faraday Future sells the Futurist in the US only; the only listing for Germany is a pre-order at Roboter Deutschland, a web shop run from Las Vegas without a named company.",
+  "sourceIds": [
+   "s3",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 89900,
+   "currency": "USD",
+   "market": "FF online store (ships to the US only)",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.73,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 54,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "standard version, no dexterous hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1,
+   "unit": "kg",
+   "conditions": "single arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 5,
+   "unit": "m/s",
+   "conditions": "running; walking 1.2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak knee torque",
+   "value": 320,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 1152,
+   "unit": "Wh",
+   "conditions": "dual battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "continuous walking; 6 h standing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "RK3588 x 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 interactive RGB cameras, 8-microphone array, IMU, GPS, UWB tag, shoulder touch sensor",
+   "unit": null,
+   "conditions": "standard version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "SDK / API, OTA updates, NVIDIA Sonic whole-body control",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 1,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "SDK / API",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The standard Futurist lists no dexterous hands; the Futurist Ultra (USD 129,900, 51 DoF, Jetson Thor) has dexterous hands, LiDAR and autonomous charging.",
+   "Maker gives 1 kg per arm; the reseller text says about 5 kg per arm.",
+   "Made for reception, events, teaching and research; FF names industrial handling only as a future use."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0713/5415/5170/files/All_New_Futurist_Main.jpg",
+   "pageUrl": "https://shop.ff.com/products/ff-all-new-futurist",
+   "credit": "Faraday Future",
+   "alt": "FF All-New Futurist humanoid, standing, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Reception and guiding, education and research, events and performance",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Use list on the FF shop page; industrial handling and retail named as future expansion."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://shop.ff.com/products/ff-all-new-futurist",
+   "title": "FF All-New Futurist product page and spec table",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.ff.com/meta.json",
+   "title": "FF online store settings (ships_to_countries: US)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/FF-Futurist.htm",
+   "title": "FF Futurist Full-Size Humanoid Robot at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/terms-conditions/",
+   "title": "Roboter Deutschland terms and conditions (Robots International)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Does FF or any authorised partner deliver the Futurist to the EU, and does it carry CE marking?",
+  "FF shop shows an add-to-cart button while the reseller marks it PRE-ORDER; delivery start date unknown.",
+  "Reseller text claims about 5 kg per arm; maker spec says 1 kg."
+ ],
+ "checkedAt": "2026-10-02"
+}

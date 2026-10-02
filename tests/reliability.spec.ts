@@ -62,15 +62,15 @@ test('compact render URLs still activate the model automatically', async ({ page
   await expect(page.locator('[data-robot-viewer]')).toHaveAttribute('data-ready', 'true', { timeout: 60000 });
 });
 
-test('catalogue thumbnails request small optimized images', async ({ page }) => {
-  await page.goto('/robots');
-  const photo = page.locator('img[sizes="64px"]').first();
+test('robot cards request optimized images sized for the card', async ({ page }) => {
+  await page.goto('/robots?scope=world');
+  const photo = page.locator('.mk-tile-photo img').first();
   await photo.scrollIntoViewIfNeeded();
   await expect(photo).toHaveJSProperty('complete', true);
   const src = await photo.evaluate((image: HTMLImageElement) => image.currentSrc);
   const url = new URL(src);
   expect(url.pathname).toBe('/_next/image');
-  expect(Number(url.searchParams.get('w'))).toBeLessThanOrEqual(128);
+  expect(Number(url.searchParams.get('w'))).toBeLessThanOrEqual(828);
   expect(await photo.evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
 });
 

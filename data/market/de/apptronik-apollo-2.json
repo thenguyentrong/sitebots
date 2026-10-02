@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "apptronik-apollo-2",
+ "maker": "Apptronik",
+ "makerCountry": "US",
+ "model": "Apollo 2",
+ "variant": null,
+ "name": "Apptronik Apollo 2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://apptronik.com/apollo/apollo-2",
+ "summary": "A general-purpose humanoid with five-finger hands, offered on legs or on a wheeled base, that today only works in Apptronik’s own data-collection sites and at pilot customers.",
+ "launched": "2026-06",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not for sale: Apptronik uses Apollo 2 fleets for data collection and training at its Robot Park sites (Austin and partner sites such as Mercedes-Benz and GXO) and names Apollo 3 as its upcoming commercial fleet. No price, no distributor, only a \"get started\" contact form. Mercedes-Benz is an investor and pilot partner, not a reseller.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "mobility",
+   "label": "Mobility options",
+   "value": "bipedal legs or wheeled base (modular)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "enables 7x22 operation; opportunity charging or tethering also possible",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Sold in two mobility configurations (legs or wheeled base); the record covers both.",
+   "No payload, runtime, size or weight figures are published for Apollo 2. The first Apollo (2024) was stated as 5 ft 8 in, 160 lb, able to lift 55 lb.",
+   "Hardware safety zones pause motion when a person or object enters a set radius."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/6a0dd86942776facbc2f6ba4%2F6a3c31aa4229fb0e38c437f1_Website-Header-v3-web_poster.0000000.jpg",
+   "pageUrl": "https://apptronik.com/",
+   "credit": "Apptronik",
+   "alt": "Apptronik Apollo humanoid, upper body with five-finger hand, still from the home page video",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-assembly-kit-delivery",
+    "research:humanoid-component-precheck"
+   ],
+   "task": "Deliver kits of parts and totes to the assembly line and inspect components",
+   "stage": "pilot",
+   "where": "Mercedes-Benz manufacturing (location not stated)",
+   "date": "2024-03",
+   "sourceId": "s3",
+   "note": "Commercial agreement to pilot the first Apollo; Mercedes-Benz is also named as an Apollo Robot Park site in 2026 (s2). Plants not named."
+  },
+  {
+   "taskIds": [],
+   "task": "Apollo data collection and training at a GXO Robot Park site",
+   "stage": "pilot",
+   "where": "GXO (site not stated)",
+   "date": "2026",
+   "sourceId": "s2",
+   "note": "GXO named as a Robot Park site; location and tasks not stated."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://apptronik.com/apollo/apollo-2",
+   "title": "Apollo 2 product page",
+   "publisher": "Apptronik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://apptronik.com/news-collection/welcome-to-robot-park-where-apptroniks-apollo-goes-to-work",
+   "title": "Welcome to Robot Park: Where Apptronik’s Apollo Goes to Work (30 Jun 2026)",
+   "publisher": "Apptronik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://apptronik.com/news-collection/apptronik-and-mercedes-benz-enter-commercial-agreement",
+   "title": "Apptronik and Mercedes-Benz Enter Commercial Agreement (15 Mar 2024)",
+   "publisher": "Apptronik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://apptronik.com/news-collection/apptronik-closes-over-935-million-series-a",
+   "title": "Apptronik Closes Over $935 Million Series A (11 Feb 2026)",
+   "publisher": "Apptronik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://apptronik.com/",
+   "title": "Apptronik home page",
+   "publisher": "Apptronik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Payload, runtime, height and weight of Apollo 2 are not published.",
+  "Which Mercedes-Benz plants run Apollo pilots?",
+  "When will Apollo 3 be sold, and will it be offered in Europe?"
+ ],
+ "checkedAt": "2026-10-02"
+}

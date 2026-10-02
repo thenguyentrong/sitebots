@@ -1,0 +1,66 @@
+{
+ "schemaVersion": 1,
+ "id": "galbot-et1",
+ "maker": "Galbot (Beijing Galaxy General Robot)",
+ "makerCountry": "CN",
+ "model": "ET1",
+ "variant": null,
+ "name": "Galbot ET1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galbot.com/et1",
+ "summary": "A 1.25 m, 32 kg walking humanoid for stage shows, theme parks and shop-front greeting, on pre-order in China only.",
+ "launched": "2026-09",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Pre-orders run through JD.com and Galbot's Chinese site; no Galbot distributor or customer in the EU found. A US-run German-language shop (Roboter Deutschland) takes quote requests, but its listing gives specs that contradict the maker (1.73 m, 65 kg instead of 1.25 m, 32 kg).",
+  "sourceIds": ["s1", "s2", "s3", "s4"],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  { "key": "height_m", "label": "Standing height", "value": 1.25, "unit": "m", "conditions": null, "sourceId": "s1" },
+  { "key": "weight_kg", "label": "Weight", "value": 32, "unit": "kg", "conditions": "with battery", "sourceId": "s1" },
+  { "key": "dof_total", "label": "Degrees of freedom", "value": "26 (Standard); 26 + 12 with dexterous hands (Pro, Flagship)", "unit": null, "conditions": null, "sourceId": "s1" },
+  { "key": "compute", "label": "Compute", "value": "RK3588 + RDK X5; Pro adds Jetson Orin Nano (40 TOPS), Flagship Orin NX (100 TOPS)", "unit": null, "conditions": null, "sourceId": "s1" },
+  { "key": "sensors", "label": "Vision", "value": "Stereo camera", "unit": null, "conditions": null, "sourceId": "s1" }
+ ],
+ "capabilities": {
+  "legs": true, "wheels": false, "tracks": false,
+  "levelFloors": true, "roughGround": null, "stairs": null, "outdoor": null,
+  "arms": 2, "hands": "optional", "handsIncluded": null,
+  "armPayloadKg": null, "carryPayloadKg": null, "runtimeH": null, "ipRating": null,
+  "sdk": null,
+  "sourceIds": ["s1"],
+  "notes": [
+   "Built for entertainment: dancing, theme-park and storefront interaction, stage comedy. No payload, runtime or IP rating published.",
+   "Dexterous hands only on the Pro and Flagship versions (+12 DoF); the Standard version has none.",
+   "Galbot's site links a developer portal, but no SDK for the ET1 is described."
+  ]
+ },
+ "images": [
+  { "url": "https://oss-cn-beijing.galbot.com/online/portal/website/posters/et1-spec-robot-v3.webp", "pageUrl": "https://www.galbot.com/et1", "credit": "Galbot", "alt": "Galbot ET1 bipedal humanoid, white with purple accents, standing", "kind": "product" }
+ ],
+ "evidence": [
+  { "taskIds": [], "task": "Greets customers and introduces products at a street-side shop", "stage": "claim", "where": null, "date": null, "sourceId": "s1", "note": "Maker scenario; not a construction or industrial task." },
+  { "taskIds": [], "task": "Over 200 pre-orders in the first 24 hours after pre-orders opened", "stage": "claim", "where": "China (JD.com and Galbot website)", "date": "2026-09", "sourceId": "s2", "note": "Pre-orders, not deliveries." }
+ ],
+ "sources": [
+  { "id": "s1", "url": "https://www.galbot.com/et1", "title": "Galbot ET1", "publisher": "Galbot", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s2", "url": "https://www.humanoidsdaily.com/news/galbot-opens-pre-orders-for-et1-bipedal-humanoid-aimed-at-entertainment-and-performance", "title": "Galbot Opens Pre-Orders for ET1 Bipedal Humanoid Aimed at Entertainment and Performance", "publisher": "Humanoids Daily", "kind": "press", "checkedAt": "2026-10-02" },
+  { "id": "s3", "url": "https://www.roboterdeutschland.de/Galbot-ET1.htm", "title": "Galbot ET1 Galaxy Star Bipedal Humanoid Robot", "publisher": "Roboter Deutschland (Robots International)", "kind": "seller", "checkedAt": "2026-10-02" },
+  { "id": "s4", "url": "https://robottoday.com/industry-briefing/galbot-launches-pre-orders-for-et1-bipedal-humanoid-robot-targeting-entertainment-sector/13128", "title": "Galbot Launches Pre-Orders for ET1 Bipedal Humanoid Robot Targeting Entertainment Sector", "publisher": "Robot Today", "kind": "press", "checkedAt": "2026-10-02" },
+  { "id": "s5", "url": "https://www.galbot.com/contact", "title": "Contact", "publisher": "Galbot", "kind": "manufacturer", "checkedAt": "2026-10-02" }
+ ],
+ "openQuestions": [
+  "Price per version (Standard, Pro, Flagship): not published; the JD.com listing did not load.",
+  "Delivery dates and any plan to sell outside China.",
+  "Payload, runtime, battery and stair ability are not published.",
+  "The Roboter Deutschland page describes a 1.73 m, 65 kg robot with 48 + 24 DoF and Jetson Thor, which does not match Galbot's own ET1 spec table; its data should not be used."
+ ],
+ "checkedAt": "2026-10-02"
+}

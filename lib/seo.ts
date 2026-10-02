@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE } from '@/lib/site';
 
 export const HOME_DESCRIPTION =
-  'Humanoids, quadrupeds and mobile manipulators compared for construction sites: payload, reach, stairs, IP rating, runtime, price by region and delivery, every number with its source.';
+  'Explore humanoids, robot dogs and mobile platforms in map and list views. Compare sourced specifications, task evidence and supplier contacts.';
 
 type PublicMetadataOptions = {
   title: string;

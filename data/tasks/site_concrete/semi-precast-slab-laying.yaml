@@ -1,0 +1,166 @@
+schema_version: 1
+id: site_concrete/semi-precast-slab-laying
+status: published
+setting: site_concrete
+family: heavy_element_handling
+trades: [concrete]
+title:
+  en: "Lay semi-precast lattice-girder floor slabs on props"
+  de: "Elementdecken (Filigrandecken) auf Montageunterstützung verlegen"
+summary:
+  en: "Set props and beams to the laying plan, guide each slab element on the crane hook onto walls and props, check its bearing and position, and unhook."
+  de: "Stützen und Joche nach Verlegeplan stellen, jedes Deckenelement am Kranhaken auf Wände und Joche führen, Auflager und Lage prüfen und aushängen."
+description:
+  en: "Semi-precast floor slabs are reinforced-concrete plates 5 to 7 cm thick with lattice girders cast in and projecting from the top, 2.40 to 3.00 m wide and up to 13 or 14 m long. At about 125 kg per square metre a single element weighs several tonnes. Before laying, the crew sets props with beams across the girders at the spacing given in the laying plan. The crane lifts each element straight from the truck on a four- or eight-leg sling hooked at the girder nodes, or on a spreader beam for long elements; the crew guides it onto walls and props, checks a bearing of 3.5 to 4 cm and unhooks. The plates are the formwork and usually carry the bottom reinforcement of the finished slab, so position, bearing and props are checked before the in-situ concrete goes on."
+  de: "Elementdecken sind 5 bis 7 cm dicke Stahlbetonplatten mit einbetonierten, oben herausragenden Gitterträgern, 2,40 bis 3,00 m breit und bis 13 oder 14 m lang. Bei rund 125 kg je Quadratmeter wiegt ein einzelnes Element mehrere Tonnen. Vor dem Verlegen stellt die Kolonne Stützen mit Jochen quer zu den Gitterträgern im Abstand nach Verlegeplan. Der Kran hebt jedes Element direkt vom Lkw an einem Vier- oder Achtstranggehänge, eingehängt an den Knoten der Gitterträger, bei langen Platten an einer Verlegetraverse; die Kolonne führt es auf Wände und Joche, prüft das Auflager von 3,5 bis 4 cm und hängt aus. Die Platten sind Schalung und tragen in der Regel die untere Bewehrung der fertigen Decke, deshalb werden Lage, Auflager und Unterstützung vor dem Aufbringen des Ortbetons geprüft."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Semi-precast floor slabs of lattice-girder elements: prop and lay"
+    de: "Elementdecke aus Gitterträger-Fertigplatten unterstützen und verlegen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 2450, max: 5250 }
+    confidence: likely
+    evidence_url: 'https://fdu.de/wp-content/uploads/2020/08/fdu_Elementdecken_Montageanleitung.pdf'
+    note: "fdu gives about 125 kg/m² at standard thickness (at least 5 cm), standard widths of 2.45 to 3.00 m and lengths up to 14 m. At 8 m, the lower end of the practical element length of 8 to 9 m in Baustatik-Wiki (HS Wismar), a 2.45 × 8 m element weighs about 2.45 × 8 × 125 ≈ 2,450 kg; at fdu's largest format, 3.00 × 14 m, about 5,250 kg. Baustatik-Wiki gives 125 to 175 kg/m² as usual, so thicker plates weigh more; fitting elements are smaller."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The laying routine repeats, but every element has its own position number, size, openings and bearing in the laying plan."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.thomas-gruppe.de/wp-content/uploads/2024/11/Thomas-Gruppe_Montageanleitung_ED_08-2024.pdf'
+    note: "Before the in-situ concrete goes on, position, bearings, props and flush joints on the soffit are checked and corrected if needed (Thomas laying instructions, 08/2024). A missing prop or short bearing found during the pour is costly."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://fdu.de/wp-content/uploads/2020/08/fdu_Elementdecken_Montageanleitung.pdf'
+    note: "The precast plates generally contain the structurally required span reinforcement (fdu), and until the concrete has hardened the props carry the slab with its fresh concrete."
+  reach_height_m:
+    value: { min: 0, max: 3 }
+    confidence: assumed
+    note: "Props and beams are set from the storey below up to the soffit, about one storey height; the elements are guided at wall-crown level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Slabs are laid on the open shell before the storey is closed."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Laying finished elements makes no relevant dust."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Crane work continues in light rain; the open slab is exposed."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Wall crowns, laid elements with protruding lattice girders and open slab edges; props stand on the floor below."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    evidence_url: 'https://fdu.de/wp-content/uploads/2020/08/fdu_Elementdecken_Montageanleitung.pdf'
+    note: "The site or mobile crane unloads the elements from the truck and lays them in the same operation (fdu); slinging, guiding, aligning, propping and unhooking are done by the crew."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; laying is priced per square metre and follows the crane cycle."
+requirements:
+  object_size_m:
+    value: { min: 8, max: 14 }
+    confidence: likely
+    evidence_url: 'https://fdu.de/wp-content/uploads/2020/08/fdu_Elementdecken_Montageanleitung.pdf'
+    note: "Element length: practical lengths of 8 to 9 m (Baustatik-Wiki), up to 13 m (Thomas) or 14 m (fdu); widths 2.40 to 3.00 m."
+  tolerance_mm:
+    value: 10
+    confidence: likely
+    evidence_url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    note: "Flatness of the soffit as an unfinished slab underside: DIN 18202 table 3, 10 mm as the limit at a measuring point distance of 1 m (as reproduced by bauforumstahl). A limit, not a ± value. fdu adds that adjacent elements must show no height offset along the joints."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The load hangs on the crane; no guiding force is published."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Crane plus a trained laying crew stays the answer: elements of several tonnes hang on the hook, the plates carry the bottom reinforcement of the slab, and the work happens at the open edge in the weather. Where the crew's risk is the concern, look at spreader beams and edge protection, not a robot."
+      de: "Kran plus geschulte Verlegekolonne bleibt die Antwort: Elemente von mehreren Tonnen hängen am Haken, die Platten tragen die untere Bewehrung der Decke, und gearbeitet wird an der offenen Kante im Wetter. Wo das Risiko der Kolonne das Anliegen ist, Verlegetraversen und Absturzsicherung betrachten, keinen Roboter."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [exposure, skills_shortage]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, gantry]
+evidence:
+  - statement:
+      en: "Thomas betonbauteile's laying instructions: semi-precast slabs to DIN EN 13747 are usually 5 to 7 cm thick, 2.40 to 3.00 m wide depending on the plant and up to 13 m long. Hook only at the junctions of top chord and diagonals, at least four lifting points, the outer ones about 1/5 of the length from the ends, sling angle not below 60°; an eight-hook sling above 5.00 m length and 2.50 m width, a spreader beam above 5.60 m length. Bearing 3.5 to 4.0 cm, edge props below 3.5 cm; never stand under a suspended element."
+      de: "Montageanleitung von thomas betonbauteile: Elementdecken nach DIN EN 13747 sind in der Regel 5 bis 7 cm dick, je nach Lieferwerk 2,40 bis 3,00 m breit und bis 13 m lang. Anschlagen nur an den Verbindungen von Obergurt und Diagonalen, mindestens vier Anschlagpunkte, die äußeren ca. 1/5 der Länge vom Ende, Anschlagwinkel nicht unter 60°; ab 5,00 m Länge und 2,50 m Breite Gehänge mit 8 Haken, ab 5,60 m Länge Verlegetraverse. Auflager 3,5 bis 4,0 cm, unter 3,5 cm Randjoche; nie unter schwebenden Elementen aufhalten."
+    url: 'https://www.thomas-gruppe.de/wp-content/uploads/2024/11/Thomas-Gruppe_Montageanleitung_ED_08-2024.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2024-08-28'
+    type: claim
+    confidence: confirmed
+    note: "Rev. 08/2024; PDF created 28.08.2024, read on 2026-10-02."
+  - statement:
+      en: "fdu's laying instructions for semi-precast slabs: plates at least 5 cm thick in standard widths of 2.45, 2.48, 2.50 and 3.00 m, up to 14 m long, weighing about 125 kg/m² at standard thickness; they generally contain the structurally required span reinforcement and are lifted from the truck by site or mobile crane and laid in the same operation, with an eight-leg equalising sling above 5 m length or 2.5 m width. The joints must show no height offset on the soffit."
+      de: "Montageanleitung von fdu für Elementdecken: mindestens 5 cm dicke Platten in Standardbreiten von 2,45, 2,48, 2,50 und 3,00 m, bis 14 m lang, rund 125 kg/m² bei Standarddicke; sie enthalten im Allgemeinen die statisch erforderliche Feldbewehrung und werden mit dem Baustellen- oder Autokran vom Lkw abgeladen und im gleichen Arbeitsgang verlegt, ab 5 m Länge oder 2,5 m Breite mit 8-Stranggehänge mit Lastausgleich. Die Stöße dürfen in der Untersicht keine Höhenunterschiede aufweisen."
+    url: 'https://fdu.de/wp-content/uploads/2020/08/fdu_Elementdecken_Montageanleitung.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Brochure marked 'Stand: 05-2018', read on 2026-10-02."
+  - statement:
+      en: "Baustatik-Wiki (HS Wismar) on semi-precast slabs: usual plate thickness 50 to 70 mm, standard widths 2.40, 2.45, 2.48 and 2.50 m and 3.00 m in special cases, practical element lengths of 8 to 9 m, element weight usually 125 to 175 kg/m²."
+      de: "Baustatik-Wiki (HS Wismar) zu Elementdecken: übliche Plattendicke 50 bis 70 mm, Standardbreiten 2,40, 2,45, 2,48 und 2,50 m, in Sonderfällen 3,00 m, praktikable Elementlängen 8 bis 9 m, Elementgewicht im Regelfall 125 bis 175 kg/m²."
+    url: 'https://baustatik-wiki.fiw.hs-wismar.de/mediawiki/index.php/Elementdecken_-_Anwendungsregeln'
+    kind: academic
+    tier: 2
+    date: '2020-07-28'
+    type: claim
+    confidence: confirmed
+    note: "Wiki page of the Hochschule Wismar, last edited 28.07.2020."
+  - statement:
+      en: "DIN 18202 table 3 as reproduced by bauforumstahl: unfinished walls and undersides of raw slabs allow 10 mm as the limit at a measuring point distance of 1 m."
+      de: "DIN 18202 Tabelle 3, wiedergegeben von bauforumstahl: Nichtflächenfertige Wände und Unterseiten von Rohdecken erlauben 10 mm als Grenzwert bei 1 m Messpunktabstand."
+    url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Steel-construction trade body worksheet 10.1, 1st edition 04/2020, citing DIN 18202; read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If edge work and slinging are the concern, plan edge protection, spreader beams and the laying sequence with the supplier's laying plan on one storey."
+    de: "Kein Roboterpilot. Wenn Kantenarbeit und Anschlagen das Anliegen sind, Absturzsicherung, Verlegetraversen und Verlegefolge mit dem Verlegeplan des Lieferwerks an einem Geschoss planen."
+prerequisites: []
+open_questions:
+  - { en: "Where does the laying crew lose time: setting props, slinging and guiding, or edge protection?", de: "Wo verliert die Verlegekolonne Zeit: beim Stellen der Joche, beim Anschlagen und Führen oder bei der Absturzsicherung?" }
+  - { en: "Which element sizes and weights does your supplier deliver, and does the crane reach them at full radius?", de: "Welche Elementgrößen und -gewichte liefert Ihr Werk, und reicht der Kran dafür bei voller Ausladung?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

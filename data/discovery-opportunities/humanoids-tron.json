@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:tron-coordinate-arm-leg-control",
+      "title": "Develop coordinated arm-and-leg control",
+      "summary": "Compare motion planning and whole-body control on a biped with one added arm. TRON kits are research hardware; success on a laboratory policy does not establish a factory task.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "robotics_research",
+      "setting": "Supervised mobile-manipulation research area",
+      "reviewLinks": [
+        {
+          "taskId": "research:tron-coordinate-arm-leg-control",
+          "reviewId": "limx-tron-1-arm-research",
+          "relationship": "task_candidate",
+          "rationale": "The TRON1-AP-YG datasheet explicitly supports separate arm/leg control and integrated whole-body-control research.",
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "limitations": [
+            "Use sole or wheeled mode; point-foot operation with this arm is not listed.",
+            "Researchers supply the task controller and measure stability, failures and recovery."
+          ]
+        },
+        {
+          "taskId": "research:tron-coordinate-arm-leg-control",
+          "reviewId": "limx-tron-2-mobile-manipulation",
+          "relationship": "task_candidate",
+          "rationale": "LimX describes coordinated arm-leg control and grasping while moving for the mobile kit.",
+          "sourceIds": [
+            "t2-product",
+            "t2-spec"
+          ],
+          "limitations": [
+            "Manufacturer application claim, without a published evaluation dataset or success rate.",
+            "Use the single-arm 1.5 kg configuration; tabletop dual-arm specifications do not apply."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:tron-floor-level-pickup",
+      "title": "Research picking objects from floor level",
+      "summary": "Develop a mobile robot policy that lowers the body and reaches forward to grasp a light object. The published TRON 2 kit workspace supports research; reliable pickup remains to be measured.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "robotics_research",
+      "setting": "Controlled laboratory floor and tabletop",
+      "reviewLinks": [
+        {
+          "taskId": "research:tron-floor-level-pickup",
+          "reviewId": "limx-tron-2-mobile-manipulation",
+          "relationship": "task_candidate",
+          "rationale": "The mobile-kit product page explicitly describes squatting and arm reach for floor-level pickup.",
+          "sourceIds": [
+            "t2-product",
+            "t2-spec"
+          ],
+          "limitations": [
+            "Research claim; no accepted-pick throughput, object set or failure denominator.",
+            "Qualify gripper opening, object mass, centre of mass and whole-body stability."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:tron-reach-switches-buttons",
+      "title": "Research reaching switches and control buttons",
+      "summary": "Evaluate mobile approach and arm positioning at switches or buttons within the kit workspace. This supports controlled interaction research, not unrestricted elevator or building access.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "robotics_research",
+      "setting": "Instrumented laboratory wall and control-panel mock-up",
+      "reviewLinks": [
+        {
+          "taskId": "research:tron-reach-switches-buttons",
+          "reviewId": "limx-tron-2-mobile-manipulation",
+          "relationship": "task_candidate",
+          "rationale": "LimX names switches and elevator buttons as interaction points within the mobile-kit working-height range.",
+          "sourceIds": [
+            "t2-product",
+            "t2-spec"
+          ],
+          "limitations": [
+            "Confirm force control, button geometry and permission/interlocks in each test.",
+            "No certified elevator integration or unattended building-operation evidence was reviewed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:tron-mapping-navigation-validation",
+      "title": "Validate mapping and navigation on a legged platform",
+      "summary": "Build and evaluate maps, localization and obstacle-avoidance routes using the TRON 2 mobile kit sensors. Research teams measure map failures, route completion and operator interventions.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "robotics_research",
+      "setting": "Supervised indoor/outdoor robotics test route",
+      "reviewLinks": [
+        {
+          "taskId": "research:tron-mapping-navigation-validation",
+          "reviewId": "limx-tron-2-mobile-manipulation",
+          "relationship": "task_candidate",
+          "rationale": "The dedicated mobile-kit specification tab publishes its sensor suite, navigation functions and mapping measures.",
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "limitations": [
+            "Published 90% mapping success lacks a trial count and benchmark definition.",
+            "Navigation support is not evidence of defect detection, site inspection acceptance or continuous unattended operation."
+          ]
+        }
+      ]
+    }
+  ]
+}

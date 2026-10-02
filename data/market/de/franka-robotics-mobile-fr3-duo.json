@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "franka-robotics-mobile-fr3-duo",
+ "maker": "Franka Robotics",
+ "makerCountry": "DE",
+ "model": "Mobile FR3 Duo",
+ "variant": null,
+ "name": "Franka Robotics Mobile FR3 Duo",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://franka.de/mobile-fr3-duo?hsLang=en",
+ "summary": "Two torque-sensing Franka Research 3 arms (3 kg each) on Franka's omnidirectional Tactile Mobile Robot base, a prototype reference platform for physical-AI research.",
+ "launched": "2026",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Marked as a prototype by Franka Robotics (Munich); the page offers early access and quotes, no delivery date.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Franka Robotics GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://franka.de/mobile-fr3-duo?hsLang=en",
+    "contactUrl": "https://franka.de/contact?hsLang=en",
+    "email": "info@franka.de",
+    "phone": "+49 89 2006069 20",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Early access / request a quote."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Base dimensions",
+   "value": "800 x 580 x 294",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "FR3, seven joint torque sensors per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach per arm",
+   "value": 0.855,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Base payload",
+   "value": 100,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.75,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Base operating time",
+   "value": 8,
+   "unit": "h",
+   "conditions": "TMR base at 460 W",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "14 arm torque sensors, 2 lidars, 7 cameras, IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Orin",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Franka Control Interface (1 kHz), ROS 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 3,
+  "carryPayloadKg": 100,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "FCI, ROS 2",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Grippers and cameras come with the optional FR3 Duo Vision and Manipulation Kit (two Robotiq 2F-85).",
+   "Prototype: specs may change before release."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://franka.de/hubfs/MobileFR3Duo_mobileversion.png",
+   "pageUrl": "https://franka.de/mobile-fr3-duo?hsLang=en",
+   "credit": "Franka Robotics",
+   "alt": "Franka Mobile FR3 Duo: two FR3 arms on the TMR mobile base at a table",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for teleoperation, dataset generation and policy execution beyond fixed workcells",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://franka.de/mobile-fr3-duo?hsLang=en",
+   "title": "Mobile FR3 Duo (prototype)",
+   "publisher": "Franka Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://franka.de/tmr?hsLang=en",
+   "title": "Tactile Mobile Robot (prototype)",
+   "publisher": "Franka Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Release date and price."
+ ],
+ "checkedAt": "2026-10-02"
+}

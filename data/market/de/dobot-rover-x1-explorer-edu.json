@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "dobot-rover-x1-explorer-edu",
+ "maker": "DOBOT",
+ "makerCountry": "CN",
+ "model": "Rover X1 Explorer",
+ "variant": "Basic EDU / Smart EDU / Max EDU",
+ "name": "DOBOT Rover X1 Explorer EDU",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dobot.cn/products/humanoid-robots/rover-x1.html",
+ "summary": "A low-cost wheel-leg robot dog for teaching and robotics research with an SDK; the Max EDU adds a Livox Mid360 lidar for mapping and navigation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Terra Robotics (Germany) lists Basic EDU EUR 3,999, Smart EDU EUR 4,999 and Max EDU EUR 6,999 (all net) with an order button; on 2026-10-02 only the Max EDU was orderable, Basic and Smart showed as not available.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 3999,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s1",
+   "note": "Basic EDU; Smart EDU EUR 4,999, Max EDU EUR 6,999 net."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://terra-robotics.de/products/dobot-rover-x1-explorer-roboterhund",
+    "contactUrl": "https://terra-robotics.de/pages/contact",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": 3999,
+    "priceBasis": "net",
+    "sourceId": "s1",
+    "note": "German shop of Terra Connect GmbH (Löhne); prices shown excl. VAT; Max EDU EUR 6,999 is the only variant in stock."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Net weight",
+   "value": "15.5-18.5",
+   "unit": "kg",
+   "conditions": "15.5 kg with point feet, 18.5 kg with wheel feet",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "761 x 440 x 516",
+   "unit": "mm",
+   "conditions": "wheel legs; 761 x 372 x 428 mm with point legs",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 3,
+   "unit": "m/s",
+   "conditions": "wheel legs; 1.8 m/s with point legs",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Extra payload",
+   "value": "3-7",
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. climbing angle",
+   "value": 35,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 3,
+   "unit": "h",
+   "conditions": "Basic EDU up to 3 h; Smart and Max EDU about 2.5 h; 8000 mAh battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "40 TOPS computing platform",
+   "unit": null,
+   "conditions": "Smart EDU and Max EDU; Basic EDU has the standard platform",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Front and rear cameras; Intel RealSense D435i (Smart, Max); Livox Mid360 lidar SLAM (Max only)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Unified SDK for secondary development, high- and low-level control",
+   "unit": null,
+   "conditions": "same code across Basic, Smart and Max",
+   "sourceId": "s1"
+  },
+  {
+   "key": "wheel_kit",
+   "label": "Wheel-foot kit",
+   "value": "Sold separately as an accessory (EUR 1,000 net)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 3,
+  "runtimeH": 2.5,
+  "ipRating": null,
+  "sdk": "Unified SDK (high- and low-level control)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Wheel-leg operation needs the wheel-foot kit, which Terra sells as a separate accessory; the seller does not say whether it is included.",
+   "Payload 3 to 7 kg; 3 kg used here as the safe value.",
+   "Runtime about 2.5 h for Smart and Max EDU, up to 3 h for Basic EDU.",
+   "No IP rating stated; an education and research platform, not a site machine."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/dobot-rover-x1-explorer-1png-2764574.png?v=1781769262",
+   "pageUrl": "https://terra-robotics.de/products/dobot-rover-x1-explorer-roboterhund",
+   "credit": "DOBOT (image on Terra Robotics)",
+   "alt": "DOBOT Rover X1 Explorer robot dog with point feet on black background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:tron-mapping-navigation-validation"
+   ],
+   "task": "Lidar SLAM mapping and autonomous route planning for research (Max EDU)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Seller description; no customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://terra-robotics.de/products/dobot-rover-x1-explorer-roboterhund",
+   "title": "Dobot Rover X1 Explorer Roboterhund",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/products/dobot-rover-x1-wheeled-foot-accessory-kit-one-set",
+   "title": "Dobot Rover X1 Wheeled-foot Accessory Kit",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.dobot.cn/products/humanoid-robots/rover-x1.html",
+   "title": "Rover X1 home robot dog (Chinese product page)",
+   "publisher": "DOBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "DOBOT does not publish the Explorer EDU versions on its own websites; confirm configuration and SDK with DOBOT or Terra.",
+  "Delivery time for Basic and Smart EDU, which showed as not available.",
+  "CE marking.",
+  "Stair climbing not stated."
+ ],
+ "checkedAt": "2026-10-02"
+}

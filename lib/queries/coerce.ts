@@ -1,3 +1,6 @@
+import { conservativePayload } from '@/lib/spec/payload';
+import type { Specs } from '@/lib/spec/types';
+
 /**
  * Postgres `numeric` comes back as a string from both drivers, and
  * `timestamptz` as a Date. The types in lib/spec/types.ts promise numbers and
@@ -46,6 +49,14 @@ export function coerceRow<T>(row: Record<string, unknown>): T {
     } else {
       out[k] = v;
     }
+  }
+  // Old snapshots can contain a payload projection selected from a different source.
+  // Recompute it from the evidence ledger without mutating the database.
+  if ('payload_kg_conservative' in out && out.specs && typeof out.specs === 'object') {
+    const payload = conservativePayload(out.specs as Specs);
+    out.payload_kg_conservative = payload.conservative;
+    out.payload_kg_rated = payload.rated;
+    out.payload_kg_peak = payload.peak;
   }
   return out as T;
 }

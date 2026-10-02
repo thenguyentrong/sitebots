@@ -1,0 +1,293 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-go2-air",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "Go2",
+ "variant": "Air",
+ "name": "Unitree Go2 Air",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/go2",
+ "summary": "Entry version of the 15 kg Go2 robot dog with 4D LiDAR, about 7 kg payload and 1-2 h runtime; not programmable.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Several sellers ship to Germany: QUADRUPED Robotics (2,200 EUR net, in stock), Galaxus (2,625.99 EUR incl. VAT), RobotShop EU (4 in stock) and Conrad (business customers).",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 2616.81,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Tax included."
+  },
+  "priceOther": {
+   "amount": 1600,
+   "currency": "USD",
+   "market": "Unitree list price (tax and freight excluded)",
+   "sourceId": "s1"
+  },
+  "leadTime": "about 3-4 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-go2-air-robotic-dog-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 2616.81,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Go2-AIR-EU; ships in about 3-4 weeks."
+   },
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://shop.unitree.com/products/unitree-go2",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Unitree store USD 1,600 without controller. Germany is listed in the store country selector."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-Go2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 2200,
+    "priceBasis": "net",
+    "sourceId": "s5",
+    "note": "Variant \"Go2 Air\" 2,200 EUR net, \"sofort verfügbar\"."
+   },
+   {
+    "name": "Conrad Electronic (conrad.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.conrad.de/de/p/unitree-go2-air-unitree-robotics-3804240.html",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 3515,
+    "priceBasis": "gross",
+    "sourceId": "s6",
+    "note": "3,515.00 EUR incl. VAT (2,953.78 net); business customers only."
+   },
+   {
+    "name": "Galaxus (galaxus.de, Galaxus Deutschland GmbH, Hamburg)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.galaxus.de/de/s1/product/unitree-go2-air-roboterhund-robotik-kit-69422346",
+    "contactUrl": "https://www.galaxus.de/de/guide/47",
+    "email": null,
+    "phone": null,
+    "priceEur": 2625.99,
+    "priceBasis": "gross",
+    "sourceId": "s7",
+    "note": "2,625.99 EUR incl. VAT; delivery shown as 09.10.-13.10.; more than 10 units on order."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "max about 10 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max climb drop height",
+   "value": 15,
+   "unit": "cm",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max climb angle",
+   "value": 30,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 1,
+   "unit": "h",
+   "conditions": "about 1-2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Unitree 4D LiDAR L2 (360x96 deg), HD wide-angle camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": false,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 7,
+  "runtimeH": 1,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Consumer/education quadruped; no IP rating published.",
+   "Some functions need manual operation or secondary development (Unitree note).",
+   "No voice, 4G or side-follow functions in the Air."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/a0811393701b4b95ba66ab1663c96fa4_1830x1600.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0620/4932/1193/files/df9f333424ff6cc6164ce421b019fb94_a6f832b0-479e-4294-ac75-6516208b91f4.png",
+   "pageUrl": "https://shop.unitree.com/products/unitree-go2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 quadruped robot, side view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/7b830fccde8d41ac8e3fcec334e84735_3840x1988.jpg",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 standing in fog, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/a35af0c7768b4840b3ae2ba4ee704561_3840x2160.jpg?x-oss-process=image/quality,q_60/format,webp",
+   "pageUrl": "https://www.unitree.com/go2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 on a striped rug next to a kneeling man in a bedroom",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/f3afd2338d574621b84d4b5f23aa345b_1620x816.png",
+   "pageUrl": "https://www.unitree.com/go2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 with event decals carrying a javelin across a stadium infield",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/go2",
+   "title": "Unitree Go2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-go2-air-robotic-dog-eu",
+   "title": "Unitree Go2 AIR Robotic Dog (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.unitree.com/products/unitree-go2",
+   "title": "Unitree Go2 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.quadruped.de/QUADRUPED-Go2",
+   "title": "QUADRUPED Go2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.conrad.de/de/p/unitree-go2-air-unitree-robotics-3804240.html",
+   "title": "Unitree Go2 Air (Bestell-Nr. 3804240) at Conrad",
+   "publisher": "Conrad Electronic",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.galaxus.de/de/s1/product/unitree-go2-air-roboterhund-robotik-kit-69422346",
+   "title": "Unitree Go2 Air at Galaxus",
+   "publisher": "Galaxus Deutschland GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

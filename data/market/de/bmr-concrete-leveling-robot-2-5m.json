@@ -1,0 +1,290 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-concrete-leveling-robot-2-5m",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Concrete Leveling Robot",
+ "variant": "2.5 m head (25SY / 25MY)",
+ "name": "BMR Concrete Leveling Robot 2.5 m (25SY / 25MY)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "concrete_finishing"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/173.html",
+ "summary": "Remote-controlled laser screed with a 2.5 m head that levels fresh concrete slabs to a laser height at 300 m²/h or more.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route to Germany found. BMR sells direct from China and names markets in Asia, the Middle East and Brazil, none in the EU. The only German listing is a US reseller not named by BMR, and BMR states no CE marking for this machine. Roboter Deutschland, a web shop run from Las Vegas without a named company, also lists it; it is not counted as a seller here.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Shenzhen BrightMaster Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://en.bm-robot.com/detail/173.html",
+    "contactUrl": "https://en.bm-robot.com/contact.html",
+    "email": "sales@bm-robot.com",
+    "phone": "400 988 2007 (ext. 2)",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Direct export enquiries via form, email or WhatsApp from Shenzhen; no EU office or EU distributor named."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "head_width_mm",
+   "label": "Leveling head width",
+   "value": 2500,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 350,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions (L x W x H)",
+   "value": "2500 x 2200 x 2100",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "laser_system",
+   "label": "Laser system",
+   "value": "Topcon (25SY) or MOBA (25MY)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "tyres",
+   "label": "Tyres",
+   "value": "26x4-18 tubeless tyres; optional AT26x9-14 all-terrain tyres",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "leveling_thickness_mm",
+   "label": "Leveling thickness",
+   "value": "30-250",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "area_rate_m2_h",
+   "label": "Area rate",
+   "value": 300,
+   "unit": "m²/h",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Power supply",
+   "value": "48 V, 90 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 10,
+   "unit": "h",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum travel speed",
+   "value": 0.8,
+   "unit": "m/s",
+   "conditions": "800 mm/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 45",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "modes",
+   "label": "Operating mode",
+   "value": "remote control (semi-automatic)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Operator drives it by remote control; the head adjusts screed height, vibration and speed automatically to the laser.",
+   "Works fresh concrete before initial set: leveling, slurry lifting and elevation control.",
+   "SY variants use a Topcon laser system, MY variants MOBA."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260528/8259f304f15416666057de6eece7f6c2.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/173.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BMR Concrete Leveling Robots on a concrete floor (banner with text; model sizes not labelled)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Leveling factory and warehouse slabs together with a follow-up concrete placing pump",
+   "stage": "deployment",
+   "where": "Shenzhen Semiconductor and Advanced Manufacturing Industrial Park, China Construction Third Engineering Bureau, China",
+   "date": null,
+   "sourceId": "s6",
+   "note": "Case names 2.5 m leveling robots."
+  },
+  {
+   "taskIds": [],
+   "task": "Concrete floor leveling with contractor ALEC, over 3,000 m² and 20 staff trained",
+   "stage": "deployment",
+   "where": "Abu Dhabi Data Center and RAK Central, Ras Al Khaimah, UAE (ALEC)",
+   "date": "2026-02",
+   "sourceId": "s7",
+   "note": "Case does not name the head size."
+  },
+  {
+   "taskIds": [],
+   "task": "Floor leveling and finishing robots on station works, over 30,000 m² in 3 months",
+   "stage": "deployment",
+   "where": "Tianjin Binhai West Station, China Railway Construction Corporation, China",
+   "date": "2023-06",
+   "sourceId": "s8",
+   "note": "Case does not name the head size."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/173.html",
+   "title": "Concrete Leveling Robot product page",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/contact.html",
+   "title": "Contact Us",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/BMR-Concrete-Leveling-Robot.htm",
+   "title": "BMR Concrete Leveling Robot at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact",
+   "title": "Roboter Deutschland contact page (Las Vegas, NV, USA)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://en.bm-robot.com/detail/114.html",
+   "title": "Shenzhen Semiconductor and Advanced Manufacturing Industrial Park (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://en.bm-robot.com/detail/218.html",
+   "title": "Abu Dhabi Data Center and RAK Central (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://en.bm-robot.com/detail/113.html",
+   "title": "Tianjin Binhai West Station (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is this machine CE-marked and does it come with an EU declaration of conformity? BMR states CE only for its Measuring Robot.",
+  "Does BMR have, or plan, an authorised distributor or service partner in the EU or Germany?",
+  "Is Roboter Deutschland / Robots International authorised by BMR, and who provides service and spare parts in Germany?",
+  "Which variant does the reseller price of 39,353.73 EUR / 44,550.53 USD buy, and is the laser system included?",
+  "The Samsung case mentions GNSS navigation while the spec table lists remote control only; which is current?"
+ ],
+ "checkedAt": "2026-10-02"
+}

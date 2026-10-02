@@ -1,0 +1,317 @@
+{
+ "schemaVersion": 1,
+ "id": "hp-siteprint",
+ "maker": "HP Inc.",
+ "makerCountry": "US",
+ "model": "SitePrint",
+ "variant": null,
+ "name": "HP SitePrint",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": "https://www.hp.com/de-de/printers/site-print/layout-robot.html",
+ "summary": "A small wheeled robot that prints wall lines, openings and other layout from a CAD file onto the slab, guided by a robotic total station.",
+ "launched": "2023",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 45000,
+   "basis": "unknown",
+   "kind": "quoted_example",
+   "sourceId": "s7",
+   "note": "Robot price reported by trade press in April 2024 (Allsat demo); monthly usage fees come on top, capped at EUR 12,000 or 10,000 m² per month. Confirm current price with the seller."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.allsat.de/produktvertrieb/produktportfolio/hp-siteprint/",
+    "contactUrl": "https://www.allsat.de/produktvertrieb/produktportfolio/hp-siteprint-miete/",
+    "email": "info@allsat.de",
+    "phone": "+49 511 30399-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Listed by HP as sales partner for Germany. Sells and rents (weekly or monthly billing, price on request).",
+    "name": "ALLSAT GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s3"
+   },
+   {
+    "productUrl": "https://g-nestle.de/en/products/markierroboter/26101000",
+    "contactUrl": "https://g-nestle.de/en/products/markierroboter/26101000",
+    "email": "info@g-nestle.de",
+    "phone": "+49 7443 9637-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Listed by HP as sales partner for Germany; product 26101000, price not shown.",
+    "name": "Gottlieb Nestle GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s4"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "HP lists Allsat (Hannover) and Gottlieb Nestle (Dornstetten) as its sales partners for Germany; Allsat also rents it out. No public price; HP adds an area-based fee for software, service and ink.",
+  "sourceIds": [
+   "s6",
+   "s3",
+   "s4",
+   "s2",
+   "s7"
+  ]
+ },
+ "specs": [
+  {
+   "key": "marking_accuracy_mm",
+   "label": "Marking accuracy",
+   "value": "±2",
+   "unit": "mm",
+   "conditions": "average layout tolerance at 5-30 m, with the HP SMR prism in high-accuracy mode and a 1\" total station (HP footnote)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "marking_accuracy_range_mm",
+   "label": "Accuracy over distance",
+   "value": "±3",
+   "unit": "mm",
+   "conditions": "at 5-30 m from the total station (seller data sheet)",
+   "sourceId": "s4"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 9,
+   "unit": "kg",
+   "conditions": "19.1 kg with transport case",
+   "sourceId": "s4"
+  },
+  {
+   "key": "dimensions_cm",
+   "label": "Dimensions",
+   "value": "52.5 x 31.7 x 26.1",
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "print_speed_m_h",
+   "label": "Print speed",
+   "value": 1260,
+   "unit": "m/h",
+   "conditions": "up to",
+   "sourceId": "s4"
+  },
+  {
+   "key": "line_width_mm",
+   "label": "Line width",
+   "value": "2-51",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Maximum inclination",
+   "value": 2.5,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "max_obstacle_cm",
+   "label": "Obstacle it can cross",
+   "value": 2,
+   "unit": "cm",
+   "conditions": "FAQ answer on rough concrete; another FAQ answer on the same page says up to 5 cm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime per battery",
+   "value": 4,
+   "unit": "h",
+   "conditions": "per battery, continuous printing; two batteries included, together about one working day",
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "two Li-ion batteries in the box",
+   "sourceId": "s4"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP44",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-10 to 50",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "total_stations",
+   "label": "Compatible total stations",
+   "value": "Leica TS16, TS60, iCON iCR80, iCR70; Topcon LN-150, GT-600, GT-1200; Trimble RTS 573, S9",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "file_format",
+   "label": "Input file",
+   "value": "2D CAD (DXF)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": "IP44",
+  "sdk": null,
+  "notes": [
+   "Needs a robotic total station (bought separately) with continuous line of sight to the prism on the robot.",
+   "Prints on concrete, asphalt, plywood, pavers, terrazzo, vinyl and epoxy; the HP FAQ gives obstacle crossing as 2 cm in one answer and 5 cm in another.",
+   "Stairs set to false because it is a small floor robot that is carried between levels; no source mentions stairs.",
+   "Version 3.0 upgrade adds depth-camera obstacle avoidance and up to 30% more speed.",
+   "Works on damp floors but not in puddles or rain (HP FAQ); keeps about 20 cm from walls according to the 2024 German demo report."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.hp.com/content/dam/sites/worldwide/printers/large-formats/sitejet/comp-1-3-1@2x.jpg",
+   "pageUrl": "https://www.hp.com/de-de/printers/site-print/layout-robot.html",
+   "credit": "HP Inc.",
+   "alt": "HP SitePrint layout robot with prism on top, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Printed layout and floor levelness points for server rack installation (about 4,500 anchor positions) in a data centre",
+   "stage": "deployment",
+   "where": "Redman Robotics, data centre (country not named; the US case study gives the area as 120,000 sq ft)",
+   "date": null,
+   "sourceId": "s5",
+   "note": "HP case study; not shown to be a German project."
+  },
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Printed the floor plan on site for a police station under construction (demo by Allsat)",
+   "stage": "demo",
+   "where": "Gottfried Stehnke Bauunternehmung, Polizeirevier Geestemünde, Bremerhaven, Germany",
+   "date": "2024-04",
+   "sourceId": "s7",
+   "note": "Demo was moved indoors because of rain; Allsat was then the exclusive German distributor."
+  },
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Printed wall, partition, sprinkler and electrical layouts on two projects (12,000 m²)",
+   "stage": "deployment",
+   "where": "Betonmast Buskerud-Vestfold, Norway",
+   "date": null,
+   "sourceId": "s5",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.hp.com/de-de/printers/site-print/layout-robot.html",
+   "title": "HP SitePrint product page (DE)",
+   "publisher": "HP Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.hp.com/de-de/printers/site-print/layout-robot/faq.html",
+   "title": "HP SitePrint FAQ (DE)",
+   "publisher": "HP Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.allsat.de/produktvertrieb/produktportfolio/hp-siteprint/",
+   "title": "HP SitePrint at ALLSAT",
+   "publisher": "ALLSAT GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://g-nestle.de/en/products/markierroboter/26101000",
+   "title": "HP SitePrint Robot 26101000",
+   "publisher": "Gottlieb Nestle GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.hp.com/de-de/printers/site-print/layout-robot/case-studies.html",
+   "title": "HP SitePrint case studies",
+   "publisher": "HP Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08926914",
+   "title": "HP SitePrint reseller list (PDF)",
+   "publisher": "HP Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://bau.bi/baumagazin/hochbau/digitalisierung-am-bau-roboter-druckt-grundrisse-auf-den-baustellenboden-b17833",
+   "title": "Roboter druckt Grundrisse auf den Baustellenboden",
+   "publisher": "bau.bi",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Current purchase price and usage fee in EUR (2024 report: EUR 45,000 plus capped monthly fees).",
+  "Exact battery capacity and charging time."
+ ],
+ "checkedAt": "2026-10-02"
+}

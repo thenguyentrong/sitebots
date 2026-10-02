@@ -1,0 +1,235 @@
+{
+ "schemaVersion": 1,
+ "id": "booster-t1",
+ "maker": "Booster Robotics",
+ "makerCountry": "CN",
+ "model": "T1",
+ "variant": "Basic / Standard (no hands)",
+ "name": "Booster T1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.booster.tech/booster-t1/",
+ "summary": "A 1.18 m, 30 kg humanoid research platform with 23 joints and 4-joint arms without hands, used mainly for locomotion and robot soccer research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 26000,
+   "basis": "net",
+   "kind": "quoted_example",
+   "sourceId": "s2",
+   "note": "USED demonstration unit (Standard version) at Generation Robots, 20 % below the 39,000 EUR gross list price; shown as 31,200 EUR incl. 20 % French VAT. Only while stock lasts."
+  },
+  "priceOther": null,
+  "leadTime": "24 to 48 h for the used unit at Generation Robots; new units not available",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404278-humanoider-roboter-booster-t1-2270.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800982602",
+    "priceEur": 26000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Used demonstration robot (\"Gebrauchter Roboter\"), Standard version, in stock, delivery 24 to 48 h; no longer available once sold."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/Booster-Robotics-T1-Standard-Intel-i7-200-TOPS",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 44500,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "T1 Standard 44,500 EUR incl. VAT and T1 Basic 39,000 EUR incl. VAT (https://www.bipedal.de/Booster-Robotics-T1-Basic-100-TOPS), both \"Momentan nicht verfügbar\"."
+   },
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "productUrl": "https://eu.robotshop.com/products/booster-t1-humanoid-robot-standard",
+    "priceEur": 40091.1,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "Tax included; shown as not available (sold out)."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Only a used demonstration unit is orderable (Generation Robots, 26,000 EUR net, 24 to 48 h). New T1 units are shown not available at Bipedal and RobotShop EU, and Booster no longer lists T1 among its robots (only K1 and T2).",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.18,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 23,
+   "unit": null,
+   "conditions": "Basic/Standard; Customized up to 31 with grippers or 41 with dexterous hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 4,
+   "unit": null,
+   "conditions": "extensible to 7 with gripper",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 130,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "10.5 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "walking; about 4 h standing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA AGX Orin (200 TOPS); Intel i7-1370P CPU on Standard and Customized",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Depth camera, 9-axis IMU, 6-microphone array and speaker",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Basic and Standard arms end without hands and cannot grasp; grippers or dexterous hands only on the Customized versions (see booster-t1-gripper, booster-t1-dexterous).",
+   "No payload figure published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.booster.tech/_astro/specification-t1.CmWYO9Pz_zox76.webp",
+   "pageUrl": "https://www.booster.tech/booster-t1/",
+   "credit": "Booster Robotics",
+   "alt": "Booster T1 humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Locomotion and applied research platform",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Generation Robots describes T1 as a platform for proofs of concept in applied research."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.booster.tech/booster-t1/",
+   "title": "Booster T1 product page",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404278-humanoider-roboter-booster-t1-2270.html",
+   "title": "Humanoider Roboter Booster T1",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bipedal.de/Booster-Robotics-T1-Standard-Intel-i7-200-TOPS",
+   "title": "Booster Robotics T1 Standard Intel i7 200 TOPS",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://eu.robotshop.com/products/booster-t1-humanoid-robot-standard",
+   "title": "Booster T1 Humanoid Robot (Standard)",
+   "publisher": "RobotShop Europe",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is T1 still in production now that Booster shows only K1 and T2 on its home page?",
+  "Payload per arm not published.",
+  "When will new T1 units be available again in Europe, if at all?"
+ ],
+ "checkedAt": "2026-10-02"
+}

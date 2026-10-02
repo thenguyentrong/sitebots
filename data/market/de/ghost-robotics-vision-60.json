@@ -1,0 +1,269 @@
+{
+ "schemaVersion": 1,
+ "id": "ghost-robotics-vision-60",
+ "maker": "Ghost Robotics",
+ "makerCountry": "US",
+ "model": "Vision 60",
+ "variant": null,
+ "name": "Ghost Robotics Vision 60",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.ghostrobotics.io/vision-60",
+ "summary": "A 51 kg IP67 quadruped built mainly for defence and security, rated -40 to 55 °C, walking about 3 hours with up to 10 kg of sensors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Imported into Germany on request by ATC SiPro GmbH (Thuringia), which supplied Vision 60 units to the Bundeswehr in 2024; Ghost Robotics also takes requests directly. Focus is defence and security; no public euro price.",
+  "sourceIds": [
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "ATC SiPro GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.atc-sipro.de/produkte/vision-60-robot",
+    "contactUrl": "https://www.atc-sipro.de/kontakt",
+    "email": "info@atc-sipro.com",
+    "phone": "+49 36602 514710",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Importer; supplied four units to the German armed forces procurement office (BAAINBw) in 2024. Product page names defence, homeland security and enterprise use."
+   },
+   {
+    "name": "Ghost Robotics",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.ghostrobotics.io/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Contact form lists construction and industrial as industries."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Tare weight",
+   "value": 51,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size (L x W x H standing)",
+   "value": "950 x 570 x 685",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2.4,
+   "unit": "m/s",
+   "conditions": "sprint; standard walk 0.9 m/s, fast walk 1.2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 3.15,
+   "unit": "h",
+   "conditions": "continuous walking at 0.9 m/s, about 10 km; 21 h standby",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charge time",
+   "value": 3,
+   "unit": "h",
+   "conditions": "standard battery, approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-40 to 55",
+   "unit": "°C",
+   "conditions": "no cold start below -20 °C, no charging below 0 °C",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": "perception-aided stair climbing",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Integrated sensors",
+   "value": "5 RGB cameras (1080p), 4 Intel D435 depth sensors, dual-antenna RTK GPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_options",
+   "label": "Payload options",
+   "value": "manipulator arm, security payload, lidar, low-light camera",
+   "unit": null,
+   "conditions": "sold separately",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Xavier, 32 GB RAM, 2 TB SSD",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "APIs",
+   "value": "C/C++, ROS, ROS2, MAVLink, ATAK, JSON missions; simulator",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "export_control",
+   "label": "Export control",
+   "value": "EAR99, no ITAR restrictions",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 10,
+  "runtimeH": 3.15,
+  "ipRating": "IP67",
+  "sdk": "ROS / ROS2, C/C++ API",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Marketed mainly for military, public safety and security; construction and industrial inspection are secondary markets.",
+   "Wireless charging station available for 24/7 operation.",
+   "Manipulator arm is an optional payload."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/67b418349cd29a4f7829b4a5/67d91652b0261c57f838257a_Images-2.avif",
+   "pageUrl": "https://www.ghostrobotics.io/vision-60",
+   "credit": "Ghost Robotics",
+   "alt": "Ghost Robotics Vision 60 quadruped, side view against a plain wall",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67b418349cd29a4f7829b4a5/6813d4d52fe18437fc73b836_ghost-robotics-commercial.webp",
+   "pageUrl": "https://www.ghostrobotics.io/vision-60",
+   "credit": "Ghost Robotics",
+   "alt": "Vision 60 with an operator at an open-pit site",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/67bd8c9109ade28c797338aa/6814f9f2e370511f240691e3_Autonomous%20Ground%20Robots%20for%20Construction%20Site%20Inspection%20-%20Ghost%20Robotics.jpg",
+   "pageUrl": "https://www.ghostrobotics.io/case-studies/autonomous-ground-robots-for-construction-site-inspection",
+   "credit": "Ghost Robotics",
+   "alt": "Vision 60 walking on a site yard with an operator",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/progress-capture-walks"
+   ],
+   "task": "Daily autonomous patrols on large construction sites with lidar, 360° and thermal cameras for progress and hazard monitoring",
+   "stage": "claim",
+   "where": null,
+   "date": "2025-09",
+   "sourceId": "s2",
+   "note": "Maker case study dated 23 Sept 2025; no customer, site or country named, so counted as a claim."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.ghostrobotics.io/vision-60",
+   "title": "Vision 60 product page and technical specifications",
+   "publisher": "Ghost Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.ghostrobotics.io/case-studies/autonomous-ground-robots-for-construction-site-inspection",
+   "title": "Autonomous Ground Robots for Construction Site Inspection",
+   "publisher": "Ghost Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.atc-sipro.de/produkte/vision-60-robot",
+   "title": "Vision 60 Q-UGV - Robot",
+   "publisher": "ATC SiPro GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.hartpunkt.de/ghost-vision-60-bundeswehr-beschafft-mehrere-schreitroboter/",
+   "title": "Ghost Vision 60: Bundeswehr beschafft mehrere Schreitroboter",
+   "publisher": "hartpunkt",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether ATC SiPro sells to civil construction companies, not only to defence and security customers.",
+  "Price."
+ ],
+ "checkedAt": "2026-10-02"
+}

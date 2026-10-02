@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "agility-robotics-digit-5",
+ "maker": "Agility Robotics",
+ "makerCountry": "US",
+ "model": "Digit",
+ "variant": "Digit 5",
+ "name": "Agility Robotics Digit 5",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agilityrobotics.com/solutions/digit-5",
+ "summary": "A bipedal tote-handling humanoid with swappable grippers that lifts up to 22.7 kg; Agility plans EU and UK early access from the first half of 2027.",
+ "launched": "2026-09",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Not orderable yet: for the first time Agility plans to offer Digit outside North America, starting with the EU and UK. Early access to Digit 5 is expected in the first half of 2027 and general availability by the end of 2027, with a CE mark expected. Today only the Agility sales contact form; no EU price or partner.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "EU early access expected H1 2027; general availability expected end of 2027",
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.81,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 129,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload",
+   "value": 22.7,
+   "unit": "kg",
+   "conditions": "repeated lifts, stated as 50 lb; both arms together",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach height",
+   "value": 2.2,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "90-minute battery; charges in 9 minutes (10:1 run-to-charge)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 0.15,
+   "unit": "h",
+   "conditions": "stated as 9 minutes, autonomous charging",
+   "sourceId": "s2"
+  },
+  {
+   "key": "work_per_day_h",
+   "label": "Work per day",
+   "value": 20,
+   "unit": "h",
+   "conditions": "more than 20 h in a 24 h day",
+   "sourceId": "s2"
+  },
+  {
+   "key": "end_effectors",
+   "label": "End effectors",
+   "value": "swappable grippers on ISO-standard mounting flanges",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Safety compute",
+   "value": "independent safety controller; NVIDIA IGX Thor and Halos",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "onboard cameras, depth sensors, IMUs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Payload 22.7 kg is for the robot, lifting with both arms.",
+   "Designed to work near people without fences (human detection, safety controller); Agility contributes to ISO 25785-1.",
+   "Fleet software Agility Arc connects to WMS, WES, MES and AMRs."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/6980c63561bbbeb67b4b7ab5/6aa8825fea09aad25effc9cf_260831_Agility_V5_Product_Hero_Front_0183_BASE__V2_FINAL-Extended-16-9-p-1600.jpg",
+   "pageUrl": "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale",
+   "credit": "Agility Robotics",
+   "alt": "Agility Digit 5 humanoid in teal and black, front view, standing",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6c3fbd90e0d765ae6afc3_Solutions.avif",
+   "pageUrl": "https://www.agilityrobotics.com/solutions/digit-5",
+   "credit": "Agility Robotics",
+   "alt": "Agility Digit 5 in a three-quarter side view with knees bent and grippers forward, grey studio background",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6b7013da4674c75830739_data-security.avif",
+   "pageUrl": "https://www.agilityrobotics.com/solutions/digit-5",
+   "credit": "Agility Robotics",
+   "alt": "Agility Digit 5 crouching beside a cardboard box in a warehouse aisle as a worker walks past",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6b70027f3ee081dff46df_card-industrial.avif",
+   "pageUrl": "https://www.agilityrobotics.com/solutions/digit-5",
+   "credit": "Agility Robotics",
+   "alt": "Agility Digit 5 standing at a steel work table next to a blue tote of metal parts",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/6aa6b70097ee19af5dd9db6c_card-autonomous.avif",
+   "pageUrl": "https://www.agilityrobotics.com/solutions/digit-5",
+   "credit": "Agility Robotics",
+   "alt": "Agility Digit 5 squatting in a warehouse aisle to reach a box on a low shelf",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling",
+    "research:humanoid-tote-conveyor-handoff"
+   ],
+   "task": "Move totes between racks, conveyors and AMRs; depalletize, kit, sequence, tend machines and palletize",
+   "stage": "claim",
+   "where": null,
+   "date": "2026-09",
+   "sourceId": "s2",
+   "note": "Planned Digit 5 workflows; Digit 4 handles totes today."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agilityrobotics.com/solutions/digit-5",
+   "title": "Digit 5 product page",
+   "publisher": "Agility Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale",
+   "title": "Agility Unveils Digit 5 Humanoid Robot (15 Sep 2026)",
+   "publisher": "Agility Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.agilityrobotics.com/sales",
+   "title": "Contact sales: Get Digit in your facility",
+   "publisher": "Agility Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and contract model (sale or robots-as-a-service) for the EU.",
+  "Which EU partner or entity will deliver and service Digit 5?"
+ ],
+ "checkedAt": "2026-10-02"
+}

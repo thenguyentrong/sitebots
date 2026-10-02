@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "taskId": "site_electrical/overhead-drilling-anchors",
+      "reviewId": "hilti-jaibot-drilling",
+      "relationship": "task_candidate",
+      "rationale": "Manufacturer documents supervised ceiling-hole drilling for building-services fixings.",
+      "sourceIds": [
+        "jaibot-de",
+        "jaibot-2022",
+        "jaibot-malmo"
+      ],
+      "limitations": [
+        "Validate hole schedule, substrate and current reach envelope.",
+        "Anchor insertion, fastening and acceptance are not performed by this drilling configuration."
+      ]
+    },
+    {
+      "taskId": "site_survey_documentation/layout-marking-slabs",
+      "reviewId": "dusty-fieldprinter-2-layout",
+      "relationship": "task_candidate",
+      "rationale": "FP2 prints coordinated wall, opening and fixing-point layout onto a prepared slab.",
+      "sourceIds": [
+        "dusty-spec",
+        "dusty-overview",
+        "dusty-app"
+      ],
+      "limitations": [
+        "Survey control and approved files remain prerequisites.",
+        "German procurement and service remain unestablished."
+      ]
+    },
+    {
+      "taskId": "site_survey_documentation/layout-marking-slabs",
+      "reviewId": "hp-siteprint-layout",
+      "relationship": "task_candidate",
+      "rationale": "SitePrint's documented floor-layout workflow matches transferring wall lines and fixing points from a prepared drawing.",
+      "sourceIds": [
+        "hp-product",
+        "hp-cases"
+      ],
+      "limitations": [
+        "Select and validate the exact station/prism/software package.",
+        "Layout marks do not construct or inspect the downstream elements."
+      ]
+    },
+    {
+      "taskId": "site_concrete/rebar-tying-slabs",
+      "reviewId": "acr-tybot-rebar-tying",
+      "relationship": "task_candidate",
+      "rationale": "TyBOT detects and ties horizontal mat intersections on supported deck work zones.",
+      "sourceIds": [
+        "tybot-product",
+        "tybot-i30"
+      ],
+      "limitations": [
+        "Bars must already be placed; unsupported ties remain manual.",
+        "Truss width, supports, bar geometry, tie schedule and German acceptance require review."
+      ]
+    },
+    {
+      "taskId": "site_scaffolding/frame-scaffold-erection",
+      "reviewId": "kewazo-liftbot-material-lifting",
+      "relationship": "partial_task",
+      "rationale": "LIFTBOT can carry scaffold components vertically while the scaffolders erect the structure.",
+      "sourceIds": [
+        "liftbot-product",
+        "liftbot-faq"
+      ],
+      "limitations": [
+        "This is material transport only: no frame placement, guardrail installation or anchoring.",
+        "Human loading/unloading and an engineered rail/platform arrangement remain required."
+      ]
+    },
+    {
+      "taskId": "site_scaffolding/frame-scaffold-dismantling",
+      "reviewId": "kewazo-liftbot-material-lifting",
+      "relationship": "partial_task",
+      "rationale": "Manufacturer reports LIFTBOT moving scaffold material during dismantling at BASF Ludwigshafen.",
+      "sourceIds": [
+        "liftbot-basf"
+      ],
+      "limitations": [
+        "People dismantle, remove anchors and stack parts; the robot provides vertical transport.",
+        "The published industrial scaffold case does not establish every facade-scaffold configuration."
+      ]
+    },
+    {
+      "taskId": "site_masonry/masonry-wall-laying",
+      "reviewId": "fbr-hadrian-bricklaying",
+      "relationship": "task_candidate",
+      "rationale": "Current Hadrian offer automates digital-plan block placement using the manufacturer's wall-system configuration.",
+      "sourceIds": [
+        "hadrian-product"
+      ],
+      "limitations": [
+        "Compatible blocks and Fastbrick adhesive change the conventional masonry process.",
+        "German structural approval, complete wall detail, site access and exact-version deployment remain unresolved."
+      ]
+    }
+  ]
+}

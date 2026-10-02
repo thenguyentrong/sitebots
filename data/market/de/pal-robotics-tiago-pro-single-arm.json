@@ -1,0 +1,197 @@
+{
+ "schemaVersion": 1,
+ "id": "pal-robotics-tiago-pro-single-arm",
+ "maker": "PAL Robotics",
+ "makerCountry": "ES",
+ "model": "TIAGo Pro",
+ "variant": "Single arm",
+ "name": "PAL Robotics TIAGo Pro (single arm)",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://pal-robotics.com/robot/tiago-pro/",
+ "summary": "The single-arm version of the TIAGo Pro indoor mobile manipulator: one 7-DoF arm (3 kg), lifting torso, omnidirectional base.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Barcelona, Spain) that sells directly to customers across Europe on quote; no German distributor found and no public price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "PAL Robotics",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://pal-robotics.com/robot/tiago-pro/",
+    "contactUrl": "https://pal-robotics.com/contact/",
+    "email": "business@pal-robotics.com",
+    "phone": "+34 934 145 347",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Barcelona; quote request on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.20-1.55",
+   "unit": "m",
+   "conditions": "Lifting torso, 35 cm range",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "Extended arm, excluding end effector",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Horizontal reach",
+   "value": 2.36,
+   "unit": "m",
+   "conditions": "As stated by maker (workspace span); vertical reach 0.92 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Autonomy",
+   "value": 8,
+   "unit": "h",
+   "conditions": "Additional battery available as upgrade",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Computer",
+   "value": "Intel i5, 16 GB RAM, 512 GB SSD; i7 and NVIDIA Jetson upgrades",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2x 360-degree LiDAR (10 m), RGB-D head camera, 4-mic array, torque sensing in every arm joint",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu LTS RT, ROS 2, MoveIt 2, Nav2, ros2_control, Docker image with PAL SDK, MuJoCo and Gazebo models",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "ROS 2, PAL SDK",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Omnidirectional base with 4 mecanum wheels; built for indoor floors.",
+   "Default end effector is the PAL parallel gripper; Allegro 16-DoF hand with tactile fingertips available as option.",
+   "Arms absorb impact energy and have joint brakes for work near people.",
+   "roughGround, stairs and outdoor set to false: mecanum base for indoor use."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2025/09/Robot_TIAGo-Pro.webp",
+   "pageUrl": "https://pal-robotics.com/robots/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics TIAGo Pro shown in the default dual-arm configuration (no official photo of the single-arm version found)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Research platform for mobile manipulation, HRI and embodied AI",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Mobile manipulation in food processing in the ROSALYA project",
+   "stage": "claim",
+   "where": "ROSALYA project, food industry",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Listed in TIAGo Pro news on the product page; site and dates not checked in detail."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://pal-robotics.com/robot/tiago-pro/",
+   "title": "TIAGo Pro product page and technical specifications",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://pal-robotics.com/wp-content/uploads/2026/05/2026-Datasheet_ENG_TIAGoPro.pdf",
+   "title": "TIAGo Pro datasheet 2026",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://pal-robotics.com/robots/",
+   "title": "Our Robots",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Exact weight and DoF of the single-arm version?",
+  "German customers or resellers?",
+  "Official photo of the single-arm TIAGo Pro? PAL only shows the dual-arm robot."
+ ],
+ "checkedAt": "2026-10-02"
+}

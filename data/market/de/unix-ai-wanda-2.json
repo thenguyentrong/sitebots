@@ -1,0 +1,157 @@
+{
+ "schemaVersion": 1,
+ "id": "unix-ai-wanda-2",
+ "maker": "UniX AI",
+ "makerCountry": "CN",
+ "model": "Wanda 2.0",
+ "variant": null,
+ "name": "UniX AI Wanda 2.0",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unix-group.ai/Wanda",
+ "summary": "A wheeled dual-arm humanoid with 8-DOF arms and two-finger grippers for service and household tasks, 12 kg on both arms and 8-16 h runtime.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "UniX AI sells from Suzhou via global@unix-group.ai; no European office, distributor or EU customer found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.40-1.68",
+   "unit": "m",
+   "conditions": "torso lift 280 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 8,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Single-arm payload",
+   "value": 6,
+   "unit": "kg",
+   "conditions": "12 kg both arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Single-arm reach",
+   "value": 0.982,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "differential-drive base",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": "8-16",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "275 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "passage_width_cm",
+   "label": "Minimum passage width",
+   "value": 75,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 6,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Adaptive two-finger grippers; repeatability ±0.5 mm."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unixai.net/public/static/index/en/images/wanda2/wanda2One-img.png",
+   "pageUrl": "https://www.unix-group.ai/Wanda",
+   "credit": "UniX AI",
+   "alt": "UniX AI Wanda 2.0 wheeled humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Household, office, mall and reception service tasks",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unix-group.ai/Wanda",
+   "title": "Wanda 2.0 product page",
+   "publisher": "UniX AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.unix-group.ai/Contact",
+   "title": "UniX AI contact",
+   "publisher": "UniX AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

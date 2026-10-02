@@ -1,0 +1,210 @@
+{
+ "schemaVersion": 1,
+ "id": "riebsamen-glasboy-510",
+ "maker": "Maschinenbau Riebsamen",
+ "makerCountry": "DE",
+ "model": "Glasboy 510",
+ "variant": null,
+ "name": "Glasboy 510",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "glazing_installation",
+  "site_windows_doors/large-pane-glazing",
+  "site_windows_doors/window-unit-setting"
+ ],
+ "officialUrl": "https://glasboy.eu/de/glasboy/glasboy-510/",
+ "summary": "Radio-controlled tracked glass-setting crane with a 1,000 kg 3D vacuum head on an endless slewing ring, diesel powered.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker sells on request and rents it out, rental only with its own operators.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Maschinenbau Riebsamen GmbH & Co. KG",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://glasboy.eu/de/glasboy/glasboy-510/",
+    "contactUrl": "https://glasboy.eu/de/kontakt/",
+    "email": null,
+    "phone": "+49 7582 791",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Allmannsweiler; sale on request; rental only with the maker's own operating staff."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "lift_capacity_kg",
+   "label": "Lifting capacity (front suction head)",
+   "value": 1000,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "height_m",
+   "label": "Overall height",
+   "value": 1.98,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "width_m",
+   "label": "Overall width",
+   "value": 0.95,
+   "unit": "m",
+   "conditions": "with side transport suction cup",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with suction head",
+   "value": 2650,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "suction_head_kg",
+   "label": "Suction head weight",
+   "value": 200,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "engine",
+   "label": "Engine",
+   "value": "3-cylinder Kubota diesel, 25 PS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "remote_control",
+   "label": "Control",
+   "value": "radio remote",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 1000,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Operator-controlled by radio remote; not autonomous."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://glasboy.eu/default-wAssets/img/galleries/gallery-index-3ec97/20170410_162149.jpg",
+   "pageUrl": "https://glasboy.eu/de/glasboy/glasboy-510/",
+   "credit": "Maschinenbau Riebsamen",
+   "alt": "Glasboy on site (gallery of the Glasboy 510 page)",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://glasboy.eu/default-wAssets/img/IMG_20180913_131252.jpg",
+   "pageUrl": "https://glasboy.eu/de/glasboy/glasboy-510/",
+   "credit": "Maschinenbau Riebsamen",
+   "alt": "Glasboy 510 on spread outriggers setting a glass pane into a shop front",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://glasboy.eu/default-wAssets/img/20171207_142907.jpg",
+   "pageUrl": "https://glasboy.eu/de/glasboy/glasboy-510/",
+   "credit": "Maschinenbau Riebsamen",
+   "alt": "Glasboy 510 lifting a large glass pane to the upper floor of a building in snow",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://glasboy.eu/default-wAssets/img/weblication/wThumbnails/20170410_112106-kopi-045a09b00e90e91g0e775c573a823ae9.jpg",
+   "pageUrl": "https://glasboy.eu/de/glasboy/glasboy-510/",
+   "credit": "Maschinenbau Riebsamen",
+   "alt": "Glasboy 510 lifting a glass pane to an upper-floor window of a building shell under construction",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://glasboy.eu/default-wAssets/img/20180618_145955.jpg",
+   "pageUrl": "https://glasboy.eu/de/glasboy/glasboy-510/",
+   "credit": "Maschinenbau Riebsamen",
+   "alt": "Glasboy 510 holding a glass pane at the rounded corner of a glass facade while two workers on a scissor lift fit it",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_windows_doors/large-pane-glazing"
+   ],
+   "task": "Setting large glass panes",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://glasboy.eu/de/glasboy/glasboy-510/",
+   "title": "Glasboy 510",
+   "publisher": "Maschinenbau Riebsamen GmbH & Co. KG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://glasboy.eu/de/kontakt/",
+   "title": "Kontakt",
+   "publisher": "Maschinenbau Riebsamen GmbH & Co. KG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://glasboy.eu/de/glasboy-mietservice/",
+   "title": "Glasboy Mietservice",
+   "publisher": "Maschinenbau Riebsamen GmbH & Co. KG",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price.",
+  "Outreach.",
+  "The gallery photo is not captioned with the model."
+ ],
+ "checkedAt": "2026-10-02"
+}

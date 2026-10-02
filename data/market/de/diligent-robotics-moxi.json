@@ -1,0 +1,86 @@
+{
+ "schemaVersion": 1,
+ "id": "diligent-robotics-moxi",
+ "maker": "Diligent Robotics",
+ "makerCountry": "US",
+ "model": "Moxi",
+ "variant": null,
+ "name": "Diligent Robotics Moxi",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.diligentrobots.com/moxi",
+ "summary": "A one-arm hospital service robot that runs supplies, lab samples and medications between departments in US hospitals.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Offered to hospitals by Diligent Robotics in the USA; its customer stories are US hospitals and no European sales route was found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Opens doors and uses elevators by itself (maker).",
+   "Hospital logistics only; no technical data published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static1.squarespace.com/static/606f1bb0f7e05e3329035ff8/t/6079b1b2212c1504000f6d88/1618588082450/moxi-hospital-robot-diligent.jpeg?format=1500w",
+   "pageUrl": "https://www.diligentrobots.com/moxi",
+   "credit": "Diligent Robotics",
+   "alt": "Moxi hospital robot in a hospital corridor",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:hospital-supply-runs"
+   ],
+   "task": "Runs supplies and items for clinical staff",
+   "stage": "deployment",
+   "where": "Medical City Denton, USA",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Staff quote on the maker page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.diligentrobots.com/moxi",
+   "title": "Moxi product page",
+   "publisher": "Diligent Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,241 @@
+{
+ "schemaVersion": 1,
+ "id": "brokk-200-plus",
+ "maker": "Brokk",
+ "makerCountry": "SE",
+ "model": "Brokk 200+",
+ "variant": "SmartPower+ generation",
+ "name": "Brokk 200+",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_demolition/concrete-breaking"
+ ],
+ "officialUrl": "https://www.brokk.com/product/brokk-200-plus/",
+ "summary": "Remote-controlled tracked demolition machine (2,100 kg, electric); mid-size machine, 780 mm wide, longer reach than the 170+.",
+ "launched": "2024-01",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold and serviced in Germany by Brokk Deutschland (Brokk DA GmbH), which lists this model; price on request. Rental also offered.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Brokk DA GmbH (Brokk Deutschland)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.brokk.com/de/product/brokk-200plus/",
+    "contactUrl": "https://www.brokk.com/de/kontakt/",
+    "email": "info@brokk.de",
+    "phone": "+49 7654 21297-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Listed by Brokk as dealer and service for Germany, Austria and Poland (Friedenweiler; second site in Rheinberg). Price on request."
+   },
+   {
+    "name": "Brokk-Rental (Brokk Deutschland)",
+    "country": "DE",
+    "role": "rental",
+    "productUrl": null,
+    "contactUrl": "https://www.brokk.com/de/mietpark/",
+    "email": "info@brokk-rental.de",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Brokk Deutschland rents machines by the day or long term; which models are in the rental fleet is not listed."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Machine weight",
+   "value": 2100,
+   "unit": "kg",
+   "conditions": "without attachment",
+   "sourceId": "s1"
+  },
+  {
+   "key": "motor_power_kw",
+   "label": "Electric motor power",
+   "value": 27.5,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_source",
+   "label": "Power source",
+   "value": "electric (SmartPower+)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Vertical reach",
+   "value": 5.45,
+   "unit": "m",
+   "conditions": "including breaker",
+   "sourceId": "s1"
+  },
+  {
+   "key": "horizontal_reach_m",
+   "label": "Horizontal reach",
+   "value": 5.1,
+   "unit": "m",
+   "conditions": "including breaker",
+   "sourceId": "s1"
+  },
+  {
+   "key": "width_mm",
+   "label": "Minimum width",
+   "value": 780,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "height_mm",
+   "label": "Minimum height",
+   "value": 1351,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "transport_speed_kmh",
+   "label": "Transport speed",
+   "value": 2.1,
+   "unit": "km/h",
+   "conditions": "max.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing inclination",
+   "value": 30,
+   "unit": "°",
+   "conditions": "max.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "noise_lwa_db",
+   "label": "Sound power level LWA",
+   "value": 87,
+   "unit": "dB(A)",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "fuse_a",
+   "label": "Recommended fuse size",
+   "value": 63,
+   "unit": "A",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "remote_control",
+   "label": "Remote control",
+   "value": "portable control box, radio or cable, radio range up to 300 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote-controlled tracked carrier with one hydraulic arm; the tool (breaker, crusher, shear, bucket, drum cutter) is an attachment chosen per job.",
+   "An operator walks next to the machine with the control box; there is no autonomous mode."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.brokk.com/uploads/2024/01/products_brokk200sp-1280x853.jpg",
+   "pageUrl": "https://www.brokk.com/product/brokk-200-plus/",
+   "credit": "Brokk AB",
+   "alt": "Brokk 200+ demolition robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_demolition/concrete-breaking"
+   ],
+   "task": "Break out concrete walls and slabs with a hydraulic breaker or crusher, operated by remote control",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker claim from the product page; attachments sold separately."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.brokk.com/product/brokk-200-plus/",
+   "title": "Brokk 200+ product page",
+   "publisher": "Brokk AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.brokk.com/find-dealers-and-service/",
+   "title": "Find dealers and service (Germany: Brokk DA GmbH)",
+   "publisher": "Brokk AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.brokk.com/de/product/brokk-200plus/",
+   "title": "Brokk 200+ on Brokk Deutschland",
+   "publisher": "Brokk DA GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.brokk.com/de/mietpark/",
+   "title": "Brokk-Rental: mieten statt kaufen",
+   "publisher": "Brokk DA GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro list price not public.",
+  "Which attachments are included in a standard German offer."
+ ],
+ "checkedAt": "2026-10-02"
+}

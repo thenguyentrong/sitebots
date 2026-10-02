@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "dobot-atom-d",
+ "maker": "Dobot",
+ "makerCountry": "CN",
+ "model": "Atom D",
+ "variant": "Trainer D (data collection)",
+ "name": "DOBOT Atom D",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dobot-robots.com/products/humanoid-robots/atom.html",
+ "summary": "A stationary DOBOT humanoid upper body (two 7-joint arms, 3.5 kg each) for collecting robot training data, without legs or wheels.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 34200,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": null
+  },
+  "priceOther": null,
+  "leadTime": "about 3 months (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/dobot-atom-humanoid-robot-trainer-d-ai-data-platform",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 34200,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   },
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "productUrl": "https://eu.robotshop.com/products/dobot-atom-d-data-collection-humanoid-robot",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "priceEur": 22749.55,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "Tax included; RobotShop lists it with the Intel i5 basic computing module and a 2 h swappable battery; mobile base, wrist cameras and end effectors optional."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RBTX lists Atom Trainer D at 34,200 EUR net (about 3 months) and RobotShop EU lists Atom D.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.65,
+   "unit": "m",
+   "conditions": "upper body without stand",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 20,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 16,
+   "unit": null,
+   "conditions": "without hands: 2 head, 7 per arm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "repeatability_mm",
+   "label": "Repeatability",
+   "value": 0.05,
+   "unit": "mm",
+   "conditions": "+/-",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel i5 with AI module up to 1500 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "HD binocular cameras, Intel RealSense D455, 360 degree LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 3.5,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Upper body only: it does not walk or drive.",
+   "Hands are not specified for this version."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/dobot-atom-d-education-versionpng-2775849.png",
+   "pageUrl": "https://terra-robotics.de/products/dobot-atom-d-education-version",
+   "credit": "Terra Robotics / Dobot",
+   "alt": "DOBOT Atom D upper body on its wheeled stand",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Collecting manipulation data for AI training",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dobot-robots.com/products/humanoid-robots/atom.html",
+   "title": "DOBOT ATOM humanoid robot",
+   "publisher": "Dobot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/dobot-atom-humanoid-robot-trainer-d-ai-data-platform",
+   "title": "Dobot Atom Trainer D, AI data platform on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://eu.robotshop.com/products/dobot-atom-d-data-collection-humanoid-robot",
+   "title": "DOBOT Atom D Data Collection Humanoid Robot",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "RBTX (34,200 EUR net) and RobotShop EU (22,749.55 EUR gross, i5 module only) probably sell different compute configurations."
+ ],
+ "checkedAt": "2026-10-02"
+}

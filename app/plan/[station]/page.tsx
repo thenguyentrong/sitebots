@@ -1,3 +1,4 @@
+import { isFocusedReview } from '@/lib/browse-scope';
 import type { Metadata } from 'next';
 import { notFound, redirect } from 'next/navigation';
 import { ImplementationStation } from '@/components/journey/ImplementationStation';
@@ -6,6 +7,8 @@ import { SystemsStation } from '@/components/journey/SystemsStation';
 import { loadContent } from '@/lib/content/load';
 import { isPlanStation } from '@/lib/journey/stations';
 import { PRIVATE_METADATA } from '@/lib/seo';
+import { loadSolutionReviews } from '@/lib/solutions/load';
+import { reviewSoldInGermany } from '@/lib/market/links';
 import { journeyContent } from '@/lib/tasks/cards';
 
 export const dynamic = 'force-dynamic';
@@ -29,7 +32,7 @@ export default async function StationPage({ params }: { params: Params }) {
     case 'priorities':
       return <PrioritiesStation content={content} />;
     case 'systems':
-      return <SystemsStation content={content} />;
+      return <SystemsStation content={content} reviews={loadSolutionReviews().filter(isFocusedReview).filter((review) => reviewSoldInGermany(review.id))} />;
     case 'implementation':
       return <ImplementationStation />;
   }

@@ -1,0 +1,250 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-as2-pro",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "As2",
+ "variant": "Pro",
+ "name": "Unitree As2 Pro",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/As2",
+ "summary": "20 kg As2 quadruped, IP54, about 13 kg payload and 2.5 h loaded runtime with follow mode; not programmable.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Only through Unitree's online store (USD, ships from China, customs paid by the buyer; Germany is in its country selector). EU dealers do not stock the As2 Pro: QUADRUPED Robotics lists it from 15.03.2027.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 4650,
+   "currency": "USD",
+   "market": "Unitree online store (tax and shipping excluded)",
+   "sourceId": "s2"
+  },
+  "leadTime": "ships within 30 business days plus 20-45 business days transit",
+  "sellers": [
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://shop.unitree.com/products/unitree-as2",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "As2 Pro USD 4,650 in the Unitree store; ships from China, customs paid by buyer. Germany is listed in the store country selector."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-As2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Variant \"Pro\": price on request, \"available from 15.03.2027\"."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking load",
+   "value": 13,
+   "unit": "kg",
+   "conditions": "approx.; max standing load approx. 55 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3.7,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life (loaded)",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "With 13 kg >2.5 h; unloaded ~4 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair climbing",
+   "value": 25,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 40,
+   "unit": "deg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 50",
+   "unit": "C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "HD camera, Industrial 64-128-line LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": false,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection rating",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 648,
+   "unit": "Wh",
+   "conditions": "15000 mAh",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 13,
+  "runtimeH": 2.5,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runtime given with load; unloaded runtime about 4 h (Air about 2 h)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/11d0a76afbb74e8fb7f692652b4c33e0_800x800.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/dc7b96d2599143f5901d5ba27db48672_1815x1080.png",
+   "pageUrl": "https://www.unitree.com/As2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 stepping over concrete rubble and rebar in a collapsed building",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/ca71f7417e7e4ef5a505c3b447cddc6a_1920x1365.png",
+   "pageUrl": "https://www.unitree.com/As2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 walking on a rocky ridge with mountains behind",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/e6a8c27345324a69b5cb3c72b402bf9d_1401x742.jpg",
+   "pageUrl": "https://www.unitree.com/As2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 carrying an orange duffel bag beside a hiker on a grassy hilltop",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "As2 launch date and EU service arrangements."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/As2",
+   "title": "Unitree As2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.unitree.com/products/unitree-as2",
+   "title": "Unitree As2 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.unitree.com/policies/shipping-policy",
+   "title": "Unitree online store shipping policy",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.quadruped.de/Unitree-As2",
+   "title": "Unitree As2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

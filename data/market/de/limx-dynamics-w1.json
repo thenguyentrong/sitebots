@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "limx-dynamics-w1",
+ "maker": "LimX Dynamics",
+ "makerCountry": "CN",
+ "model": "W1",
+ "variant": null,
+ "name": "LimX Dynamics W1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A 40 kg four-legged robot with wheels on its feet, carrying 15 kg; LimX's first product, no longer on the maker's current product list.",
+ "launched": "2023-09",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Bipedal GmbH (Leverkusen) lists the W1 as available at once, price on request. LimX no longer shows the W1 among its current products, so check support and spare parts before buying.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.bipedal.de/LimX-W1-wheeled-quadruped-robot",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Listed as \"Sofort verfügbar\", price on request."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 40,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size",
+   "value": "940 x 450 x 650",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load",
+   "value": 15,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed (wheeled mode)",
+   "value": 5.98,
+   "unit": "m/s",
+   "conditions": "optional 10 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 864,
+   "unit": "Wh",
+   "conditions": "48 V / 18,000 mAh",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick battery swap",
+   "value": true,
+   "unit": null,
+   "conditions": "also automatic recharging",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "5 stereo cameras, 360° field of view",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": "climbs stairs, slopes and curbs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 15,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Can also balance and drive on two legs (biped mode).",
+   "No IP rating found."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.bipedal.de/media/image/product/37/lg/limx-w1-wheeled-quadruped-robot.png",
+   "pageUrl": "https://www.bipedal.de/LimX-W1-wheeled-quadruped-robot",
+   "credit": "LimX Dynamics (via Bipedal GmbH)",
+   "alt": "LimX Dynamics W1 wheeled quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.bipedal.de/media/image/product/37/lg/limx-w1-wheeled-quadruped-robot~2.png",
+   "pageUrl": "https://www.bipedal.de/LimX-W1-wheeled-quadruped-robot",
+   "credit": "Bipedal GmbH / LimX Dynamics",
+   "alt": "LimX Dynamics W1 wheeled quadruped, front three-quarter view from the right, studio render",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.bipedal.de/media/image/product/37/lg/limx-w1-wheeled-quadruped-robot~4.png",
+   "pageUrl": "https://www.bipedal.de/LimX-W1-wheeled-quadruped-robot",
+   "credit": "Bipedal GmbH / LimX Dynamics",
+   "alt": "LimX Dynamics W1 on its four wheeled legs, side view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.bipedal.de/media/image/product/37/lg/limx-w1-wheeled-quadruped-robot~3.png",
+   "pageUrl": "https://www.bipedal.de/LimX-W1-wheeled-quadruped-robot",
+   "credit": "Bipedal GmbH / LimX Dynamics",
+   "alt": "LimX Dynamics W1 climbing onto a low step on its wheeled legs",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bipedal.de/LimX-W1-wheeled-quadruped-robot",
+   "title": "LimX W1 wheeled quadruped robot",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.limxdynamics.com/en/news/BK000034",
+   "title": "LimX Dynamics W1 Evolves into a Biped Robot",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.therobotreport.com/limx-dynamics-launches-w1-wheeled-quadruped/",
+   "title": "LimX Dynamics launches W1 wheeled quadruped",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether LimX still produces and supports the W1.",
+  "IP rating and runtime."
+ ],
+ "checkedAt": "2026-10-02"
+}

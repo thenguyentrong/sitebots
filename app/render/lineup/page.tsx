@@ -8,11 +8,11 @@ import { PRIVATE_METADATA } from '@/lib/seo';
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { ...PRIVATE_METADATA, title: 'Lineup render' };
 
-/** Humanoid, wheeled mobile manipulator, quadrupeds: the three body types the catalogue covers. */
+/** Humanoids, a wheeled humanoid and robot dogs that can be bought or ordered in Germany. */
 const LINEUP = [
-  { key: 'unitree/h2', form: 'humanoid', turn: -1.05 },
+  { key: 'unitree/h1-2', form: 'humanoid', turn: -1.05 },
   { key: 'unitree/g1', form: 'humanoid', turn: -1.1 },
-  { key: 'rainbow/rb-y1', form: 'mobile_manipulator', turn: -1.0 },
+  { key: 'unitree/g1-d', form: 'mobile_manipulator', turn: -1.0 },
   { key: 'boston-dynamics/spot', form: 'quadruped', turn: -0.5 },
   { key: 'unitree/b2', form: 'quadruped', turn: -0.5 },
 ] as const;

@@ -1,0 +1,119 @@
+{
+ "schemaVersion": 1,
+ "id": "iit-ergocub",
+ "maker": "Istituto Italiano di Tecnologia (IIT)",
+ "makerCountry": "IT",
+ "model": "ergoCub",
+ "variant": null,
+ "name": "IIT ergoCub",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://ergocub.eu/robot",
+ "summary": "A 1.5 m, 55.7 kg research humanoid from the IIT/INAIL ergoCub project for collaborative lifting to reduce worker strain; a research prototype, not for sale.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Research robot of the ergoCub project (IIT with INAIL, Italy); no sales offer, price or customer deliveries found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 55.7,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Load-bearing",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "Approximately, as stated by the project",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Research prototype; walks at about human speed and carries several kilograms while walking (project page)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://ergocub.eu/images/IMAGES/ergoCUb_robot/ergoCub_working_air.jpg",
+   "pageUrl": "https://ergocub.eu/robot",
+   "credit": "ergoCub project / IIT",
+   "alt": "IIT ergoCub humanoid robot at work",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-force-controlled-handling-research"
+   ],
+   "task": "Collaborative lifting with a sensorised worker; load transport and navigation in a simulated warehouse",
+   "stage": "demo",
+   "where": "IIT, Genoa, Italy",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://ergocub.eu/robot",
+   "title": "ergoCub robot",
+   "publisher": "ergoCub project (IIT, INAIL)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://ergocub.eu/",
+   "title": "ergoCub project home",
+   "publisher": "ergoCub project (IIT, INAIL)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

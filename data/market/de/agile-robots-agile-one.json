@@ -1,0 +1,213 @@
+{
+ "schemaVersion": 1,
+ "id": "agile-robots-agile-one",
+ "maker": "Agile Robots",
+ "makerCountry": "DE",
+ "model": "Agile ONE",
+ "variant": null,
+ "name": "Agile Robots Agile ONE",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agile-robots.com/en/products/agile-one/",
+ "summary": "A 1.74 m, 69 kg industrial humanoid from Munich with two five-finger hands and 20 kg payload, built in series in Germany and sold on request.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker (Munich). Series production in Fuerstenfeldbruck since late summer 2026; units ship daily. Most shipped units are the wheeled version, because the maker says no certification framework yet exists in Europe for bipedal humanoids working next to people. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Agile Robots SE",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.agile-robots.com/en/products/agile-one/",
+    "contactUrl": "https://www.agile-robots.com/en/lets-connect/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Direct sales from the Munich headquarters; Hitachi will also offer it through HMAX Industry."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.74,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 69,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "As stated on the product page; not specified per arm or for both arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Joints per hand",
+   "value": 21,
+   "unit": null,
+   "conditions": "Product page: hands with modular fingers and 21 joints; not stated whether per hand or for both hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Cameras, LiDARs, speech recognition, proximity sensor; force and torque sensor in every joint",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "AgileCore software platform",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Specs are for the legged version shown on the product page.",
+   "A wheeled version is built on the same line and makes up most shipments; the maker says it already carries its certification. No separate specs published.",
+   "Payload 20 kg is not stated per arm.",
+   "No runtime, IP rating or stair capability published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.agile-robots.com/media/_processed_/9/4/csm_AgileRobots-AgileONE-Content-Pose-Front_3ca80b4c02.png",
+   "pageUrl": "https://www.agile-robots.com/en/products/agile-one/",
+   "credit": "Agile Robots SE",
+   "alt": "Agile ONE humanoid, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.agile-robots.com/media/_processed_/8/e/csm_AgileRobots-AgileONE-Content-01-486_Web_4b50c1b785.jpg",
+   "pageUrl": "https://www.agile-robots.com/en/products/agile-one/",
+   "credit": "Agile Robots SE",
+   "alt": "Agile ONE at an assembly station in a factory hall",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.agile-robots.com/media/_processed_/7/2/csm_AgileRobots-AgileONE-Stage-Thumbnail_Desktop_6a4b47fe73.png",
+   "pageUrl": "https://www.agile-robots.com/en/products/agile-one/",
+   "credit": "Agile Robots",
+   "alt": "Close-up of the Agile ONE head and shoulders with its 01 badge, grey background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Assembled a miniature robot arm during live demonstrations",
+   "stage": "demo",
+   "where": "Hannover Messe 2026, Germany",
+   "date": "2026-04",
+   "sourceId": "s3",
+   "note": "Assembly station on the Agile Robots booth."
+  },
+  {
+   "taskIds": [],
+   "task": "Moves between workstations in the maker's own humanoid plant",
+   "stage": "claim",
+   "where": "Agile Robots plant Fuerstenfeldbruck, Germany",
+   "date": "2026-09",
+   "sourceId": "s2",
+   "note": "Blog describes a mobile humanoid carrying a tray of parts between stations; not a named customer."
+  },
+  {
+   "taskIds": [],
+   "task": "Industrial tasks in production with Hitachi as partner",
+   "stage": "claim",
+   "where": "Hitachi partnership",
+   "date": "2026-09",
+   "sourceId": "s4",
+   "note": "Partnership to commercialise and roll out in real production; no task or site named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agile-robots.com/en/products/agile-one/",
+   "title": "Agile ONE product page",
+   "publisher": "Agile Robots SE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agile-robots.com/en/news/detail/from-lab-to-line-six-months-to-a-humanoid-factory/",
+   "title": "From lab to line: six months to a humanoid factory",
+   "publisher": "Agile Robots SE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.agile-robots.com/en/news/detail/humanoid-agile-one-embodies-physical-ai-at-hannover-messe-2026/",
+   "title": "Humanoid Agile ONE at Hannover Messe 2026",
+   "publisher": "Agile Robots SE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.agile-robots.com/en/news/detail/agile-robots-and-hitachi-partner-on-physical-ai-for-manufacturing/",
+   "title": "Agile Robots and Hitachi partner on Physical AI for manufacturing",
+   "publisher": "Agile Robots SE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Name and specs of the wheeled version that ships today?",
+  "Named customers in Germany?",
+  "Runtime and battery?",
+  "Agile ONE S (smaller R&D humanoid shown at Hannover Messe 2026): specs and sales status unknown."
+ ],
+ "checkedAt": "2026-10-02"
+}

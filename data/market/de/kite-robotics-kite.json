@@ -1,0 +1,253 @@
+{
+ "schemaVersion": 1,
+ "id": "kite-robotics-kite",
+ "maker": "KITE Robotics",
+ "makerCountry": "NL",
+ "model": "KITE",
+ "variant": null,
+ "name": "KITE Robotics facade cleaning robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "facade_cleaning",
+  "facility_operation/facade-window-cleaning"
+ ],
+ "officialUrl": "https://www.kiterobotics.de/der-roboter/",
+ "summary": "A facade cleaning robot that hangs from four anchor points at the roof corners and cleans glass and panel facades 15 to 200 m high at 300 to 800 m² per hour, with nobody on the facade.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "The Dutch maker sells or leases the robot per building and takes quote requests on its German website; no public price. Reference buildings are in the Netherlands and London; no German project, office or partner was found.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Kite Robotics International B.V.",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://www.kiterobotics.de/der-roboter/",
+    "contactUrl": "https://www.kiterobotics.de/kontakt/",
+    "email": "info@kiterobotics.com",
+    "phone": "+31 541 217016",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Oldenzaal, Netherlands. Quote (\"Angebot anfordern\") needs the building data; robot can be bought or leased (FAQ)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "cleaning_rate_m2h",
+   "label": "Cleaning rate",
+   "value": "300-800",
+   "unit": "m²/h",
+   "conditions": "depending on facade structure and reveal depth",
+   "sourceId": "s1"
+  },
+  {
+   "key": "building_height_m",
+   "label": "Building height",
+   "value": "15-200",
+   "unit": "m",
+   "conditions": "from 15 m to 200 m and higher; FAQ gives 200 m as standard maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "facade_width",
+   "label": "Facade width",
+   "value": "No limit; large facades are split into sections",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "anchoring",
+   "label": "Anchoring",
+   "value": "4 anchor points at the corners of the facade",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "reveal_depth_cm",
+   "label": "Window reveal depth",
+   "value": "15-20",
+   "unit": "cm",
+   "conditions": "standard; custom systems up to 45 cm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "facade_types",
+   "label": "Facade types",
+   "value": "Vertical, positively sloped and round facades; aluminium, stone, natural stone and composite; atrium roofs as special systems",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "water",
+   "label": "Cleaning water",
+   "value": "Reverse-osmosis (demineralised) water, streak-free drying without chemicals",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "Manual by joystick or automatic (autonomous cleaning)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Installed per building: needs four anchor points at the facade corners; the system is configured to the building, so it is not a robot you move from site to site.",
+   "Building owner or cleaning contractor can buy or lease it; remote diagnostics and maintenance contracts are offered.",
+   "Replaces a building maintenance unit (BMU) for cleaning; KITE also offers a facade inspection system (KFIS), not covered here.",
+   "Weight, power supply and wind limits are not published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.kiterobotics.de/wp-content/uploads/2024/12/Fassadenwartungsinstallation-im-Einsatz-an-einem-hohen-Gebaude-Kite-Robotics.jpg",
+   "pageUrl": "https://www.kiterobotics.de/der-roboter/",
+   "credit": "KITE Robotics",
+   "alt": "KITE facade cleaning robot working on the glass facade of an office building",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.kiterobotics.de/wp-content/uploads/2024/12/KITE-Fassadenreinigungsroboter-Wartungstechnologie-Bursten-Kite-Robot-1.png",
+   "pageUrl": "https://www.kiterobotics.de/der-roboter/",
+   "credit": "KITE Robotics",
+   "alt": "Close-up of the KITE Robotics robot's brush roller under its light grey cover on a wet facade",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/facade-window-cleaning"
+   ],
+   "task": "Cleans the glass roof over the stairs to the Uithoflijn platforms every month; the roof cannot be cleaned by hand",
+   "stage": "deployment",
+   "where": "Utrecht Centraal station, Netherlands",
+   "date": null,
+   "sourceId": "s3",
+   "note": "Operator and start date not named on the page."
+  },
+  {
+   "taskIds": [
+    "facility_operation/facade-window-cleaning"
+   ],
+   "task": "Facade cleaning at PwC Westgate II; large facade access systems were removed and the roof used for PV",
+   "stage": "deployment",
+   "where": "PwC Amsterdam (Westgate II), Netherlands",
+   "date": null,
+   "sourceId": "s4",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Life cycle assessment with Fraunhofer comparing the robot with conventional facade access systems",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s7",
+   "note": "Study announced by KITE; no figures published on the page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.kiterobotics.de/der-roboter/",
+   "title": "Der Roboter",
+   "publisher": "KITE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.kiterobotics.de/faq-3/",
+   "title": "FAQ",
+   "publisher": "KITE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.kiterobotics.de/roboter-reinigungsgeraet-haelt-die-ueberdachung-der-bahnhofstreppe-in-utrecht-sauber/",
+   "title": "Roboter-Reinigungsgerät hält die Überdachung der Bahnhofstreppe in Utrecht sauber",
+   "publisher": "KITE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.kiterobotics.de/von-traditionellen-fassadenbefahranlagen-zu-paris-proof-wie-pwc-raum-und-energie-gewann/",
+   "title": "Von traditionellen Fassadenbefahranlagen zu Paris Proof: wie PwC Raum und Energie gewann",
+   "publisher": "KITE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.kiterobotics.de/impressum/",
+   "title": "Impressum",
+   "publisher": "KITE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.kiterobotics.com/en/project-map/",
+   "title": "Project Map",
+   "publisher": "KITE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.kiterobotics.de/co2-einsparungen-durch-roboter-gegenueber-konventionellen-fassadenbefahranlagen/",
+   "title": "CO2-Einsparungen durch Roboter gegenüber konventionellen Fassadenbefahranlagen",
+   "publisher": "KITE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Purchase and lease prices.",
+  "Any installation or service partner in Germany.",
+  "Robot weight, power supply and wind limits.",
+  "Whether KITE also offers cleaning as a service or only sells and leases the system."
+ ],
+ "checkedAt": "2026-10-02"
+}

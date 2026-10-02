@@ -1,0 +1,217 @@
+{
+ "schemaVersion": 1,
+ "id": "civ-robotics-civdot-plus",
+ "maker": "Civ Robotics",
+ "makerCountry": "US",
+ "model": "CivDot+",
+ "variant": null,
+ "name": "Civ Robotics CivDot+",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_roads_paving/stakeout-kerb-lines"
+ ],
+ "officialUrl": "https://www.civrobotics.com/robots/layout-robots/civdot-plus",
+ "summary": "A four-wheeled GNSS stake-out robot that marks points to 8 mm for piling, drilling and foundations.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.civrobotics.com/robots/layout-robots/civdot-plus",
+    "contactUrl": "https://www.civrobotics.com/contact",
+    "email": "info@civrobotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Direct sale or rental from San Francisco; formal quote via website. No German or EU office, distributor or reseller found.",
+    "name": "Civ Robotics Inc.",
+    "country": "US",
+    "role": "manufacturer",
+    "sourceId": "s3"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Sold direct by the US maker on request (pricing page: buy or rent, formal quote). The maker lists Germany among about 40 countries where its robots have worked and said in 2025 it is expanding into Europe, the Middle East and Africa. No German or EU distributor, office or CE information found; check service and CE conformity before ordering.",
+  "sourceIds": [
+   "s4",
+   "s3",
+   "s5"
+  ]
+ },
+ "specs": [
+  {
+   "key": "accuracy",
+   "label": "Accuracy",
+   "value": "3/100 ft (8 mm)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "points_per_minute",
+   "label": "Stake-out rate",
+   "value": 3,
+   "unit": "points/min",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "tilt_compensation",
+   "label": "Tilt compensation",
+   "value": "6-axis IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP65",
+   "unit": null,
+   "conditions": "FAQ states IP65 for \"the CivDot\"; not confirmed separately for the CivDot+",
+   "sourceId": "s2"
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "GNSS RTK via NTRIP or Trimble, Topcon, Leica base stations",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "points_per_day",
+   "label": "Points per day",
+   "value": 1200,
+   "unit": "points/day",
+   "conditions": "up to, one operator",
+   "sourceId": "s6"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "4WD rover, 25 cm (10 in) ground clearance",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s6"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Slower than CivDot (3 vs 8 points per minute) but more accurate.",
+   "GNSS only, so for open-sky sites.",
+   "The maker describes the marking method inconsistently: a robotic laser pointer on the overview page, a robotic arm that spray paints on the product page.",
+   "IP65 and 10 h runtime are stated in the FAQ for the CivDot; not confirmed for the CivDot+."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s6"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://d3bf96qx5wreyx.cloudfront.net/Civ_Dot_Medium_9e838181d2.jpeg",
+   "pageUrl": "https://www.civrobotics.com/robots/layout-robots",
+   "credit": "Civ Robotics",
+   "alt": "Civ Robotics CivDot+ on a field",
+   "kind": "product"
+  },
+  {
+   "url": "https://d3bf96qx5wreyx.cloudfront.net/Civ_Dot_In_Canada_Medium_530db91615.jpeg",
+   "pageUrl": "https://www.civrobotics.com/robots/layout-robots/civdot-plus",
+   "credit": "Civ Robotics",
+   "alt": "Civ Robotics CivDot+ standing in a harvested grain field, three-quarter view",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/stakeout-kerb-lines"
+   ],
+   "task": "Lays out points for piling, drilling and foundations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.civrobotics.com/robots/layout-robots",
+   "title": "Layout robots",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.civrobotics.com/faq",
+   "title": "FAQ",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.civrobotics.com/pricing",
+   "title": "Pricing",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.civrobotics.com/",
+   "title": "Home page with country list",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://solarbuildermag.com/projects/civ-robotics-secures-7-5m-to-modernize-renewable-energy-construction/",
+   "title": "Civ Robotics secures $7.5M",
+   "publisher": "Solar Builder",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.civrobotics.com/robots/layout-robots/civdot-plus",
+   "title": "CivDot+ product page",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price of CivDot+ (pricing page gives \"as little as $60,000\" for CivDots without model).",
+  "CE marking and EU service support.",
+  "Product pages show \"Reserve\" buttons; whether deliveries to Germany are possible today is not stated."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:warehouse-pallet-racking",
+      "title": "Put pallets into warehouse storage racks",
+      "summary": "Collect a prepared pallet and place it at an agreed storage position. Rack clearance, load capacity and inventory confirmation need a configured system.",
+      "industries": [
+        "warehousing",
+        "manufacturing"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Warehouse pallet storage",
+      "reviewLinks": [
+        {
+          "taskId": "research:warehouse-pallet-racking",
+          "reviewId": "agilox-ocf1200-1500-pallet-handling",
+          "relationship": "task_candidate",
+          "rationale": "Manufacturer describes pallet lifting into storage or low station positions.",
+          "sourceIds": [
+            "technical",
+            "sheet"
+          ],
+          "limitations": [
+            "AGILOX OCF is limited to low stations; Linde height remains subject to residual capacity and configuration.",
+            "Validate rack interface, load geometry and confirmation workflow."
+          ]
+        },
+        {
+          "taskId": "research:warehouse-pallet-racking",
+          "reviewId": "linde-lmatic-ac-k1171-pallet-handling",
+          "relationship": "task_candidate",
+          "rationale": "Manufacturer describes pallet lifting into storage or low station positions.",
+          "sourceIds": [
+            "technical",
+            "sheet"
+          ],
+          "limitations": [
+            "AGILOX OCF is limited to low stations; Linde height remains subject to residual capacity and configuration.",
+            "Validate rack interface, load geometry and confirmation workflow."
+          ]
+        }
+      ]
+    }
+  ]
+}

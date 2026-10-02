@@ -9,7 +9,6 @@ import { EvidenceDetails } from './EvidenceDetails';
 import { Field, Notes } from './Fields';
 import { PlanComparison } from './PlanComparison';
 import { PriceReference } from './PriceReference';
-import { alternativesFor } from '@/lib/plan/intake';
 import { useAssessment } from './useAssessment';
 
 export function SolutionPicker({ project, update, next }: { project: Project; update: (patch: Partial<Project>) => void; next: () => void }) {
@@ -47,9 +46,8 @@ export function SolutionPicker({ project, update, next }: { project: Project; up
     <section className="card p-5 sm:p-6">
       <h2 className="text-xl font-semibold">Solutions to compare</h2>
       <p className="mt-3 max-w-3xl text-sm text-muted">Keep up to four setups to compare. Select a robot above, or add another approach below.</p>
-      <div className="finder-alternative"><div><p className="plan-kicker">Also worth comparing</p><p>{alternativesFor(project)}</p></div><button className="plan-secondary" disabled={full || project.options.some((option) => option.id === 'alternative-' + project.jobId)} onClick={() => add({ id: 'alternative-' + project.jobId, kind: 'custom', name: alternativesFor(project), package: '', operator: '', evidence: '', costs: emptyCosts() })}>Add this alternative</button></div>
       <form className="mt-5 flex flex-wrap items-end gap-3" onSubmit={(event) => { event.preventDefault(); if (custom.trim()) { add({ id: crypto.randomUUID(), kind: 'custom', name: custom.trim(), package: '', operator: '', evidence: '', costs: emptyCosts() }); setCustom(''); } }}>
-        <div className="min-w-0 flex-[1_1_20rem]"><Field label="Add another solution"><input className={ui.input} maxLength={160} value={custom} onChange={(event) => setCustom(event.target.value)} placeholder="For example: AMR with carts, a fixed cell, process changes" /></Field></div>
+        <div className="min-w-0 flex-[1_1_20rem]"><Field label="Add another solution"><input className={ui.input} maxLength={160} value={custom} onChange={(event) => setCustom(event.target.value)} placeholder="For example: a wheeled robot with arms, a humanoid, or a robot dog with inspection sensors" /></Field></div>
         <button type="submit" className={ui.btnSecondary} disabled={full || !custom.trim()}>Add custom solution</button>
       </form>
       {full ? <p role="status" className="mt-3 text-sm text-muted">Four solutions selected. Remove one to add another.</p> : null}

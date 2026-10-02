@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "omron-moma-tm5-ld90",
+ "maker": "OMRON",
+ "makerCountry": "JP",
+ "model": "Mobile Manipulator (MoMa)",
+ "variant": "TM5 + LD90",
+ "name": "OMRON MoMa TM5 + LD90",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://industrial.omron.eu/en/solutions/product-solutions/omron-mobile-manipulator-solution",
+ "summary": "An OMRON TM collaborative arm mounted on an OMRON LD-90 autonomous mobile robot (90 kg payload) for pick-and-place, machine tending and inspection, built by integrators from OMRON parts.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "OMRON says it does not sell the integrated mobile manipulator as one product; it provides integration guides and integrator partners for the TM5 + LD90 combination. Ask OMRON Europe (German contact page) for a partner.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "OMRON Industrial Automation Europe",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://industrial.omron.eu/en/solutions/product-solutions/omron-mobile-manipulator-solution",
+    "contactUrl": "https://industrial.omron.de/de/contact",
+    "email": null,
+    "phone": "+31 23 568 1300",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "OMRON sells the arm and the mobile robot; integration is done by OMRON integrator partners. German contact page available."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Mobile robot payload",
+   "value": 90,
+   "unit": "kg",
+   "conditions": "LD-90 platform alone",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Mobile robot max speed",
+   "value": 1.35,
+   "unit": "m/s",
+   "conditions": "LD-90 platform alone",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "TM5 collaborative robot (OMRON TM series)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": "4-6",
+   "unit": "kg",
+   "conditions": "TM5-900: 4 kg at 900 mm reach; TM5-700: 6 kg at 700 mm reach (arm data sheet values)",
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 4,
+  "carryPayloadKg": 90,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Integrated system, so payload, runtime and safety depend on the integrator's build.",
+   "Arm payload 4 kg (TM5-900) or 6 kg (TM5-700) per OMRON's arm data; the lower value is used here."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://8z1xg04k.tinifycdn.com/images/ld90_arm_moma_background_fcard_prod.jpg",
+   "pageUrl": "https://industrial.omron.eu/en/solutions/product-solutions/omron-mobile-manipulator-solution",
+   "credit": "OMRON",
+   "alt": "OMRON TM cobot arm on an LD-90 mobile robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker names pick and place, machine tending, inspection and moving parts to inspection stations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://industrial.omron.eu/en/solutions/product-solutions/omron-mobile-manipulator-solution",
+   "title": "Omron Mobile Manipulator Solution",
+   "publisher": "OMRON Europe",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://industrial.omron.eu/en/products/ld-series",
+   "title": "LD series mobile robots",
+   "publisher": "OMRON Europe",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://industrial.omron.eu/en/products/tm-cobot",
+   "title": "TM collaborative robots",
+   "publisher": "OMRON Industrial Automation Europe",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which integrators in Germany build OMRON MoMa systems, and at what price."
+ ],
+ "checkedAt": "2026-10-02"
+}

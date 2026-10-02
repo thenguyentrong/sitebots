@@ -1,0 +1,380 @@
+{
+ "schemaVersion": 1,
+ "id": "boston-dynamics-spot",
+ "maker": "Boston Dynamics",
+ "makerCountry": "US",
+ "model": "Spot",
+ "variant": null,
+ "name": "Boston Dynamics Spot",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://bostondynamics.com/products/spot/",
+ "summary": "A 34 kg four-legged robot that walks routes on its own and carries up to 14 kg of cameras, thermal sensors or laser scanners for site documentation and plant inspection rounds.",
+ "launched": "2020",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany on request: Boston Dynamics runs its European sales and service office near Frankfurt, and ELP GmbH (Wuppertal) is a listed EMEA reseller offering Spot packages. No public euro price. Génération Robots has one used Spot Explorer package for 20,016 € net.",
+  "sourceIds": [
+   "s3",
+   "s4",
+   "s5",
+   "s10"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Boston Dynamics (European office near Frankfurt)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://bostondynamics.com/products/spot/",
+    "contactUrl": "https://bostondynamics.com/spot-sales/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "European office co-located at Hyundai WIA near Frankfurt handles local sales, service and field application engineering."
+   },
+   {
+    "name": "ELP GmbH European Logistic Partners",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.elp-gmbh.com/produkte/spot-agiler-und-autonomer-laufroboter/",
+    "contactUrl": "https://www.elp-gmbh.com/impressum/",
+    "email": "elp@elp-gmbh.de",
+    "phone": "+49 202 69894-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Listed as Boston Dynamics reseller partner for EMEA. Offers Basic Spot and the Spot EAM inspection package (dock, CAM 2). Sells only to business and public-authority customers; focus is public safety."
+   },
+   {
+    "name": "Génération Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/403764-spot-explorer-package.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 20016,
+    "priceBasis": "net",
+    "sourceId": "s10",
+    "note": "USED Spot (Explorer package with 2 batteries, charger, tablet), one unit, delivery 24 to 48 h; 24,019.20 € incl. VAT. Year, condition and warranty not stated. New Spot is quote only."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 33.8,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "height_m",
+   "label": "Height walking (default)",
+   "value": 0.61,
+   "unit": "m",
+   "conditions": "adjustable 0.52 to 0.70 m while walking",
+   "sourceId": "s1"
+  },
+  {
+   "key": "width_m",
+   "label": "Width",
+   "value": 0.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload on body",
+   "value": 14,
+   "unit": "kg",
+   "conditions": "maximum on M5 T-slot rails, mounting area 850 x 240 x 270 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.6,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max slope",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "plus or minus 30 degrees",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max step height",
+   "value": 30,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": "climbs metal staircases in plant use",
+   "sourceId": "s7"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 564,
+   "unit": "Wh",
+   "conditions": "battery weighs 5.2 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Average runtime",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "90 min average, varies with payload and environment; standby 180 min",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Recharge time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "60 min with charger",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Built-in terrain sensing",
+   "value": "360° perception, 4 m range, needs more than 2 lux",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_options",
+   "label": "Inspection payloads",
+   "value": "Spot CAM 2 (camera), Spot EAP 2 (lidar), Sorama L642 acoustic camera, MFE gas detection, Spot Core I/O, Spot Arm; kits for inspection (EAM), public safety and research",
+   "unit": null,
+   "conditions": "sold separately",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Spot SDK and API, Orbit fleet software",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "self_charging",
+   "label": "Self-charging",
+   "value": "with Spot Dock (sold separately)",
+   "unit": null,
+   "conditions": "dock needs shelter, operating -20 to 35 °C, charge 2 to 3.5 h",
+   "sourceId": "s6"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 14,
+  "runtimeH": 1.5,
+  "ipRating": "IP54",
+  "sdk": "Spot SDK / API",
+  "sourceIds": [
+   "s1",
+   "s7"
+  ],
+  "notes": [
+   "The base robot has no inspection camera; Spot CAM 2, the EAP 2 lidar, acoustic or gas payloads are sold separately and share the 14 kg limit.",
+   "Autonomous charging needs the separate Spot Dock, which must be sheltered.",
+   "Not for private buyers: Boston Dynamics sells only for commercial, industrial and research use."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.generationrobots.com/16434-large_default/spot-explorer-package.jpg",
+   "pageUrl": "https://www.generationrobots.com/de/403764-spot-explorer-package.html",
+   "credit": "Boston Dynamics / Génération Robots",
+   "alt": "Boston Dynamics Spot, side view of the whole robot on a plain light background",
+   "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2026/01/spot-banner-cam2-scaled.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/",
+   "credit": "Boston Dynamics",
+   "alt": "Three Boston Dynamics Spot robots with inspection payloads",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/07/spot-construction-site-with-rebar1-min.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/",
+   "credit": "Boston Dynamics",
+   "alt": "Spot walking over rebar on a construction site",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/progress-capture-walks",
+    "site_survey_documentation/as-built-laser-scanning"
+   ],
+   "task": "Carries a Faro laser scanner through a building site to compare the as-built state with the plan",
+   "stage": "pilot",
+   "where": "Drees & Sommer, new headquarters OWP 12, Stuttgart, Germany",
+   "date": "2022-08",
+   "sourceId": "s8",
+   "note": "Steered by tablet on site; autonomous walking was not used there at the time."
+  },
+  {
+   "taskIds": [
+    "site_survey_documentation/as-built-laser-scanning"
+   ],
+   "task": "Scans tunnels under construction with a Trimble laser scanner",
+   "stage": "pilot",
+   "where": "Acciona tunnel sites, Spain",
+   "date": "2021",
+   "sourceId": "s9",
+   "note": "Still in testing as of autumn 2021."
+  },
+  {
+   "taskIds": [
+    "facility_operation/plant-room-rounds"
+   ],
+   "task": "Walks autonomous inspection rounds in a power plant, reading gauges, oil levels and thermal images",
+   "stage": "deployment",
+   "where": "Wien Energie, Simmering power plant, Vienna, Austria",
+   "date": "2023",
+   "sourceId": "s7",
+   "note": "Over 4,000 patrols; four more robots planned for other Vienna plants."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://bostondynamics.com/products/spot/",
+   "title": "Spot - The Agile Mobile Robot (specifications)",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://bostondynamics.com/products/spot/payload/",
+   "title": "Spot Payloads",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://bostondynamics.com/blog/boston-dynamics-opens-first-european-office/",
+   "title": "Boston Dynamics Opens First European Office",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://bostondynamics.com/partner/elp-gmbh/",
+   "title": "Partner: ELP GmbH (Reseller Partner, EMEA)",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.elp-gmbh.com/produkte/spot-agiler-und-autonomer-laufroboter/",
+   "title": "Boston Dynamics Spot Laufroboter",
+   "publisher": "ELP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://bostondynamics.com/extras/spot-dock/",
+   "title": "Spot Dock",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://bostondynamics.com/case-studies/spot-working-at-more-austrian-power-plants/",
+   "title": "Spot Working at More Austrian Power Plants",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.dreso.com/de/aktuelles/details/auf-den-hund-gekommen-roboterhund-spot-digitalisiert-baustellen",
+   "title": "Auf den Hund gekommen: Roboterhund Spot digitalisiert Baustellen",
+   "publisher": "Drees & Sommer SE",
+   "kind": "customer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://bostondynamics.com/case-studies/acciona/",
+   "title": "Acciona case study",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s10",
+   "url": "https://www.generationrobots.com/de/403764-spot-explorer-package.html",
+   "title": "Spot Explorer Package (used)",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No public euro price; a quote from Boston Dynamics Europe is needed.",
+  "Spot Enterprise (self-charging variant announced in 2021) is no longer shown as a separate model; check with sales whether it is still a distinct configuration or replaced by base Spot plus Spot Dock."
+ ],
+ "checkedAt": "2026-10-02"
+}

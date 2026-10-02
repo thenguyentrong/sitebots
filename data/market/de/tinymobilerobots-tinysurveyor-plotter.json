@@ -1,0 +1,224 @@
+{
+ "schemaVersion": 1,
+ "id": "tinymobilerobots-tinysurveyor-plotter",
+ "maker": "TinyMobileRobots",
+ "makerCountry": "DK",
+ "model": "TinySurveyor Plotter",
+ "variant": null,
+ "name": "TinyMobileRobots TinySurveyor Plotter",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_roads_paving/stakeout-kerb-lines"
+ ],
+ "officialUrl": "https://tinysurveyor.com/plotter/",
+ "summary": "A small wheeled robot that sprays points and lines for road works and other paved or level ground, positioned by GNSS or a total station.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.sitech.de/produkte/bauvermessung/absteckroboter",
+    "contactUrl": "https://www.sitech.de/kontakt/anfrage/",
+    "email": "vertrieb@sitech.de",
+    "phone": "+49 208 302137-33",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Official German distributor of TinyMobileRobots (exclusive according to the SITECH flyer); sales, demo, support and repairs. Plotter variants: TinyS Plotter and TinySR Plotter.",
+    "name": "SITECH Deutschland GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Sold in Germany by SITECH Deutschland, the official German distributor (exclusive according to its flyer); price on request. Offered as TinyS Plotter (bring your own GNSS or total station) or TinySR Plotter (cabled for Trimble R780 or MT1000 prism with SPS730/930 and TSC7).",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "points_per_hour",
+   "label": "Stake-out rate",
+   "value": 600,
+   "unit": "points/h",
+   "conditions": "up to, on hard surfaces",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "per charge; battery exchangeable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "tilt_compensation_deg",
+   "label": "Automatic tilt compensation",
+   "value": 15,
+   "unit": "deg",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 22,
+   "unit": "kg",
+   "conditions": "SITECH figure; maker presentation gives 18 kg (40 lb) on its feature slides and 18-25 kg excluding battery across models",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Driving speed",
+   "value": 4,
+   "unit": "km/h",
+   "conditions": "maker presentation",
+   "sourceId": "s5"
+  },
+  {
+   "key": "accuracy",
+   "label": "Accuracy",
+   "value": "2 cm with GNSS, 10 mm with total station",
+   "unit": null,
+   "conditions": "maker presentation",
+   "sourceId": "s5"
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "GNSS receivers or total stations of all major makers",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "marking",
+   "label": "Marking",
+   "value": "standard aerosol spray cans",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "file_format",
+   "label": "Input files",
+   "value": "DXF, CSV",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "For asphalt, concrete, fine grade and rolled gravel; for rough ground the Terra model is meant.",
+   "Ultrasonic sensors stop it in front of obstacles; beacon light for night work; 12 V outlet for the GNSS receiver.",
+   "Indoor and tunnel use needs a total station instead of GNSS.",
+   "GNSS receiver, total station and field computer are not included in the base TinyS version."
+  ],
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s5"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.sitech.de/fileadmin/_processed_/8/f/csm_TinyMobileRobots-TinySurveyor-Plotter-20_bearbeitet_fce7d03782.jpg",
+   "pageUrl": "https://www.sitech.de/produkte/bauvermessung/absteckroboter",
+   "credit": "TinyMobileRobots / SITECH Deutschland",
+   "alt": "TinySurveyor Plotter with labelled parts on an asphalt road",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/stakeout-kerb-lines"
+   ],
+   "task": "Pre-marks road edges for asphalt paving, utility lines and traffic-management positions",
+   "stage": "claim",
+   "where": "Germany (SITECH application list)",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.sitech.de/produkte/bauvermessung/absteckroboter",
+   "title": "TinyS Absteckroboter",
+   "publisher": "SITECH Deutschland GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.sitech.de/fileadmin//sitech-content/Brochures/Brochures_DE/Positionierung/Track_Construction/Flyer_TinySurvyeor_German_Web.pdf",
+   "title": "TinyS flyer (PDF)",
+   "publisher": "SITECH Deutschland GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://tinysurveyor.com/plotter/",
+   "title": "TinySurveyor Plotter",
+   "publisher": "TinyMobileRobots ApS",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://tinysurveyor.com/terra/",
+   "title": "TinySurveyor Terra",
+   "publisher": "TinyMobileRobots ApS",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.geometius.nl/wp-content/uploads/2024/06/TinyMobileRobots-Intro-TinySurveyor-Terra-Plotter.pdf",
+   "title": "TinySurveyor Terra and Plotter introduction (PDF)",
+   "publisher": "TinyMobileRobots ApS via Geometius",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price in EUR for TinyS Plotter and TinySR Plotter.",
+  "IP rating and operating temperature."
+ ],
+ "checkedAt": "2026-10-02"
+}

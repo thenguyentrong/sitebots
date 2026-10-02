@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "id": "kewazo-liftbot",
+ "maker": "KEWAZO",
+ "makerCountry": "DE",
+ "model": "LIFTBOT",
+ "variant": null,
+ "name": "KEWAZO LIFTBOT",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "material_lifting",
+  "site_scaffolding/frame-scaffold-erection",
+  "site_scaffolding/frame-scaffold-dismantling"
+ ],
+ "officialUrl": "https://www.kewazo.com/product",
+ "summary": "A battery-powered lifting robot that runs up and down a rail fixed to the scaffold and carries scaffold parts and other material to the work level.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.kewazo.com/product",
+    "contactUrl": "https://www.kewazo.com/contact",
+    "email": "info@kewazo.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Lichtenbergstraße 8, 85748 Garching bei München. Service package KEWAZO CARE: training, hotline, emergency support, annual maintenance.",
+    "name": "KEWAZO GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "sourceId": "s3"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Made by KEWAZO GmbH in Garching near Munich; sold on request via the maker's quote form. Pilot test units are available in Europe. No public price.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "lift_speed_m_min",
+   "label": "Lifting speed",
+   "value": 42,
+   "unit": "m/min",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "throughput_kg_shift",
+   "label": "Throughput",
+   "value": 6000,
+   "unit": "kg",
+   "conditions": "on average per 8-hour shift with 3 people",
+   "sourceId": "s1"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": 50,
+   "unit": "m",
+   "conditions": "certified; higher on site-specific assessment",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_wind_kmh",
+   "label": "Maximum wind speed",
+   "value": 72,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 10,
+   "unit": "h",
+   "conditions": "product page; FAQ gives 8-10 h under heavy use",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 3,
+   "unit": "h",
+   "conditions": "regular 110/230 V outlet; FAQ gives 2-3 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "setup_time_min",
+   "label": "Setup time",
+   "value": 20,
+   "unit": "min",
+   "conditions": "done by the crew; no access bay or extra anchors needed",
+   "sourceId": "s1"
+  },
+  {
+   "key": "footprint",
+   "label": "Footprint",
+   "value": "7 x 14 ft",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "certification",
+   "label": "Certification",
+   "value": "CE, UL, CSA",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "scaffold_systems",
+   "label": "Scaffold systems",
+   "value": "Layher, Ringlock, Cuplock, Safway, PeriUp, Kwikstage, Turner, frame and brace, tube and clamp",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Moves only along its rail on the scaffold or structure; it does not drive on the ground.",
+   "Runs automatically between levels without an active operator; swappable platforms for scaffold parts or general material.",
+   "Payload of a single lift is not published; the 6,000 kg figure is per shift.",
+   "Not ATEX certified; hazardous sites only after risk assessment.",
+   "Not approved for lifting people."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://framerusercontent.com/images/MhVm9fUQgdsv75oStlSTRpmQlSc.png?width=666&height=1244",
+   "pageUrl": "https://www.kewazo.com/product",
+   "credit": "KEWAZO",
+   "alt": "Front view of the KEWAZO LIFTBOT lifting unit with its handles and control panel",
+   "kind": "product"
+  },
+  {
+   "url": "https://framerusercontent.com/images/ggvYoOxPlYycZLyfP0tcr6D8nI.jpg?width=5691&height=3794",
+   "pageUrl": "https://www.kewazo.com/product",
+   "credit": "KEWAZO",
+   "alt": "KEWAZO LIFTBOT lifting unit and platform on the rail at an upper scaffold level of an industrial plant, worker reaching onto the platform",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Moved scaffold parts during dismantling of a 52 m flare scaffold in an ATEX zone (assembly had been done by crane), plus ventilation, steel and electrical material; 30% fewer man-hours",
+   "stage": "deployment",
+   "where": "BASF, Ludwigshafen, Germany",
+   "date": "2024-10",
+   "sourceId": "s4",
+   "note": "Industrial scaffold on a flare, not a facade scaffold."
+  },
+  {
+   "taskIds": [
+    "site_scaffolding/frame-scaffold-erection"
+   ],
+   "task": "Moves scaffold parts, insulation, paint, piping and electrical material vertically",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.kewazo.com/product",
+   "title": "LIFTBOT product page",
+   "publisher": "KEWAZO GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.kewazo.com/faq",
+   "title": "FAQ",
+   "publisher": "KEWAZO GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.kewazo.com/legal_notice",
+   "title": "Legal notice",
+   "publisher": "KEWAZO GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.kewazo.com/blog/liftbot-replaced-a-crane-at-basf",
+   "title": "LIFTBOT replaced a crane at BASF",
+   "publisher": "KEWAZO GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Maximum load per lift.",
+  "Purchase or rental price.",
+  "Robot and rail weights."
+ ],
+ "checkedAt": "2026-10-02"
+}

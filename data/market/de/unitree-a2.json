@@ -1,0 +1,313 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-a2",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "A2",
+ "variant": "Standard / Pro",
+ "name": "Unitree A2",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/A2",
+ "summary": "Mid-size 42 kg industrial quadruped (IP56) carrying about 25 kg for over 3 h, with hot-swappable batteries and 30 cm step climbing.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "QUADRUPED Robotics (Germany) shows the A2 Standard in stock at 23,000 EUR net; RobotShop EU and Generation Robots still list it as pre-order.",
+  "sourceIds": [
+   "s7",
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 23000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s7",
+   "note": "QUADRUPED Robotics A2 Standard, excl. 19% VAT."
+  },
+  "priceOther": null,
+  "leadTime": "QUADRUPED Robotics: in stock (Standard), 21 days (Pro)",
+  "sellers": [
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404403-unitree-a2-quadruped-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 26000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Standard; page 'from' price excl. VAT; pre-order."
+   },
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-a2-robotic-dog-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 34510,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "A2-EU pre-order; Pro EUR 44,246.37."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-A2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 23000,
+    "priceBasis": "net",
+    "sourceId": "s7",
+    "note": "\"A2 Standard\" 23,000 EUR net, \"sofort verfügbar\"; A2 Pro 30,200 net (21 days after order)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 42,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking load",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "about 25 kg (up to about 35 kg ideally); standing load about 100 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3.7,
+   "unit": "m/s",
+   "conditions": "up to about 5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 3,
+   "unit": "h",
+   "conditions": ">3 h with 25 kg; >5 h unloaded",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 907.2,
+   "unit": "Wh",
+   "conditions": "two hot-swappable 453.6 Wh batteries",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swappable batteries",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP56",
+   "unit": null,
+   "conditions": "standard version; Pro IP56-IP67",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max step height",
+   "value": 30,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU (platform) + Intel Core i7 (user development)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR x1 + HD camera (Pro: LiDAR x2)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 25,
+  "runtimeH": 3,
+  "ipRating": "IP56",
+  "sdk": "Intel Core i7 user computer; secondary development",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Pro version adds a rear LiDAR, GPS, 4G and follow module."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/bba11f01833641a89ca07ca9ddcbb862_1589x1476.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree A2 quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/77f4f4fe22a4405397e461af8d503242_2380x1196.jpg",
+   "pageUrl": "https://www.unitree.com/A2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree A2 carrying a red duffel bag next to a hiker on a forest slope",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/a9853f90254e4809a537884a5cb75a5d_2380x1196.jpg",
+   "pageUrl": "https://www.unitree.com/A2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree A2 rearing up on its hind legs in a rocky canyon beside water",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/6d08f583c53c4651b05d78db96f8cb9a_2380x1196.jpg",
+   "pageUrl": "https://www.unitree.com/A2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree A2 carrying a person standing on its back among cut rock walls",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered for logistics, industrial inspection and emergency rescue",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/A2",
+   "title": "Unitree A2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/404403-unitree-a2-quadruped-robot.html",
+   "title": "Unitree A2 at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://eu.robotshop.com/products/unitree-a2-robotic-dog-eu",
+   "title": "Unitree A2 Robotic Dog (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://shop.unitree.com/products/unitree-a2",
+   "title": "Unitree A2 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.quadruped.de/QUADRUPED-A2",
+   "title": "QUADRUPED A2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

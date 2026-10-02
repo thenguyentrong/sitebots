@@ -27,6 +27,7 @@ const PATHS: Record<string, string[]> = {
   packaging_palletising_loading: ['M3 9h18v12H3z', 'M3 9l4-6h10l4 6', 'M12 3v6'],
   monitoring_safety_patrol: ['M12 3l8 3v6c0 5-8 9-8 9s-8-4-8-9V6z', 'M8 12l3 3 5-6'],
   machine_operation_dedicated: ['M4 17h4l2-4h4l2 4h4', 'M8 17v3', 'M16 17v3', 'M10 13V6h4v7'],
+  robotics_research: ['M9 3h6', 'M10 3v7L4 19a1 1 0 0 0 1 2h14a1 1 0 0 0 1-2l-6-9V3', 'M7 16h10'],
   // the ten tests
   T1_mass: ['M8 7a4 4 0 1 1 8 0', 'M4 21l2-14h12l2 14z'],
   T2_dust: ['M7 17a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1.5A3.5 3.5 0 0 1 17 17z'],

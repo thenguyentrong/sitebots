@@ -1,0 +1,231 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-lite3",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "Lite3",
+ "variant": "Basic, Venture, Pro (without LiDAR)",
+ "name": "DEEP Robotics Lite3 (Basic, Venture, Pro)",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/product1.html",
+ "summary": "A 12 kg teaching and research quadruped without lidar: it stops for obstacles and follows a person, but does not navigate a route on its own.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Funduino sells the Lite3 Basic for 3,990 € and the Venture AI for 5,990 € incl. VAT; Génération Robots lists Lite 3 from 7,000 € net. The LiDAR version is a separate record.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 3990,
+   "basis": "gross",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Lite3 Basic (sold as SID1) at Funduino; Venture AI 5,990 € incl. VAT."
+  },
+  "priceOther": {
+   "amount": 2890,
+   "currency": "USD",
+   "market": "US online shop shop.deeprobotics.us (Basic; Venture 6,480 USD, Pro 12,510 USD)",
+   "sourceId": "s4"
+  },
+  "leadTime": "7 working days (Funduino, Basic)",
+  "sellers": [
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduinoshop.com/robotik/deep-robotics/sid1-roboterhund/deep-robotics-sid-1-lite-3",
+    "contactUrl": "https://funduinoshop.com/impressum",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 3990,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Sold as \"SID1\"; versions Basic (3,990 €) and Venture AI (5,990 €) incl. VAT; add to cart."
+   },
+   {
+    "name": "Génération Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/de/404276-lite-3-vierbeiniger-roboter-1846.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 7000,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "Versions Basic, Venture, Pro and LiDAR on one page; the shown 7,000 € net is the lowest price, version not stated. Delivery 2 weeks (Pro, Venture) or 5 to 7 weeks (Basic, LiDAR)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 12,
+   "unit": "kg",
+   "conditions": "Basic; Venture 12.2 kg, Pro 12.9 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Walking load",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "Basic; Venture 4.5 kg, Pro 4 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 40,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair height",
+   "value": 18,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "1.5 to 2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Perception",
+   "value": "Basic and Venture: front/rear obstacle stop, visual following; Pro adds forward obstacle avoidance",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Venture and Pro: motion control SDK and APIs, perception interfaces with sample code; Basic has no expansion interfaces",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 5,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "Motion control SDK (Venture, Pro)",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "A research and education platform, not an industrial inspection robot: no IP rating stated.",
+   "No autonomous route navigation in these versions; the Lite3 LiDAR is needed for that.",
+   "Basic has no expansion interfaces or SDK."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/lite_01.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product1.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics Lite3 quadruped",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p444.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product1.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics Lite3 standing on a carpeted floor in a dim hall, front view with its eye lights on",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p333.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product1.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics Lite3 in a stretching pose on a platform in a workshop",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Carries an electronic nose for an olfaction research exhibit",
+   "stage": "demo",
+   "where": "TU Dresden exhibition \"Future of Smell\", Germany",
+   "date": "2026-06",
+   "sourceId": "s5",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/product1.html",
+   "title": "Lite3 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://funduinoshop.com/robotik/deep-robotics/sid1-roboterhund/deep-robotics-sid-1-lite-3",
+   "title": "Deep Robotics SID 1 (Lite 3)",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/de/404276-lite-3-vierbeiniger-roboter-1846.html",
+   "title": "Lite 3 Quadruped Roboter",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://shop.deeprobotics.us/products/lite-3",
+   "title": "DEEP Robotics Lite3",
+   "publisher": "Deep Robotics Online Shop (US)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.deeprobotics.cn/en/index/article/id/257.html",
+   "title": "Impressing a German Research Team: DEEP Robotics' Robot Dog Has Developed a \"Sense of Smell\"",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro price of the Pro (camera) version in Germany.",
+  "IP rating not stated by DEEP or the sellers."
+ ],
+ "checkedAt": "2026-10-02"
+}

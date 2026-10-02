@@ -1,0 +1,142 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-lynx-s10",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "LYNX S10",
+ "variant": null,
+ "name": "DEEP Robotics LYNX S10",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/lynxs10.html",
+ "summary": "A small wheel-legged robot under 20 kg, IP66, for patrols and light inspection in narrow spaces, launched May 2026.",
+ "launched": "2026-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Launched May 2026; no German or EU seller lists the S10 yet. DEEP takes requests through its global purchase form.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "stated as at most 20 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Top speed on flat ground",
+   "value": 8,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Obstacle height",
+   "value": 50,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP66",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "four-direction ultra-wide-angle HDR cameras, omnidirectional perception",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP66",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Payload and runtime not published on the maker page."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/s10_main.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/lynxs10.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics LYNX S10 crossing rubble",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/lynxs10.html",
+   "title": "Lynx S10 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.deeprobotics.cn/en/index/buy.html",
+   "title": "Product Purchase Intention Form",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.accessnewswire.com/newsroom/en/industrial-and-manufacturing/deep-robotics-launches-industry-grade-small-wheeled-legged-robot-setti-1169347",
+   "title": "Deep Robotics Launches Industry-Grade Small Wheeled-Legged Robot",
+   "publisher": "DEEP Robotics",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Payload, runtime and price."
+ ],
+ "checkedAt": "2026-10-02"
+}

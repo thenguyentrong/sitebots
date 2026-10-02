@@ -1,0 +1,136 @@
+{
+ "schemaVersion": 1,
+ "id": "okibo-eg7-plus",
+ "maker": "Okibo",
+ "makerCountry": "IL",
+ "model": "EG7+",
+ "variant": null,
+ "name": "Okibo EG7+",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "drywall_finishing",
+  "site_painting/wall-ceiling-painting",
+  "site_drywall/drywall-joint-finishing"
+ ],
+ "officialUrl": "https://okibo.com/okibo-announces-national-launch-of-eg7-robot-following-successful-premiere-at-hensel-phelps-innovation-day/",
+ "summary": "High-wall version of the Okibo finishing robot that sands, paints and finishes drywall up to 24 ft (about 7.3 m).",
+ "launched": "2025-12",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Launched for the US market (December 2025 national launch). Okibo has a German office in Heilbronn, but no European offer for the EG7+ is published; the Europe pre-order form covers the wall-finishing robot in general.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "reach_ft",
+   "label": "Working height",
+   "value": 24,
+   "unit": "ft",
+   "conditions": "sanding, painting and level 4 finishing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_lb",
+   "label": "Weight",
+   "value": 800,
+   "unit": "lb",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "width_in",
+   "label": "Width",
+   "value": 27,
+   "unit": "in",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "rate_sqft_h",
+   "label": "Average finishing rate",
+   "value": 1000,
+   "unit": "sq ft/h",
+   "conditions": "maker claim",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Battery powered, omnidirectional swerve drive."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_drywall/drywall-joint-finishing"
+   ],
+   "task": "Premiered at an AEC innovation day hosted by a general contractor",
+   "stage": "demo",
+   "where": "Hensel Phelps Federal and AEC Innovation Day, Phoenix, USA",
+   "date": "2025-11",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://okibo.com/okibo-announces-national-launch-of-eg7-robot-following-successful-premiere-at-hensel-phelps-innovation-day/",
+   "title": "Okibo announces national launch of EG7+",
+   "publisher": "Okibo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://okibo.com/our-robot/",
+   "title": "Our Robot (pre-orders Europe and USA)",
+   "publisher": "Okibo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://okibo.com/contact/",
+   "title": "Contact and locations (US, Israel, Germany)",
+   "publisher": "Okibo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No official EG7+ product photo found on the maker site.",
+  "Whether the EG7+ will be offered in Europe."
+ ],
+ "checkedAt": "2026-10-02"
+}

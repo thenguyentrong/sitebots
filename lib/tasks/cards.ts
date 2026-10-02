@@ -1,3 +1,4 @@
+import { legacyIndustries } from '@/lib/content/industries';
 import type { Content } from '@/lib/content/load';
 import type { TaskRecord } from '@/lib/content/schema';
 import { machineClassFamilies } from '@/lib/screen/record';
@@ -20,6 +21,7 @@ export function toTaskCard(record: TaskRecord): TaskCard {
     setting: record.setting,
     family: record.family,
     trades: record.trades,
+    industries: record.industries.length ? record.industries : legacyIndustries(record.setting),
     title: record.title,
     summary: record.summary,
     description: record.description,
@@ -74,6 +76,7 @@ export const settingOptions = (c: Content): SettingOption[] =>
     .map((s) => ({
       id: s.id,
       group: s.group,
+      industries: s.industries.length ? s.industries : legacyIndustries(s.id),
       title: s.title,
       coverage: s.coverage,
       coverage_note: s.coverage_note,

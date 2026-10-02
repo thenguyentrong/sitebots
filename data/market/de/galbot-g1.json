@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "id": "galbot-g1",
+ "maker": "Galbot",
+ "makerCountry": "CN",
+ "model": "G1",
+ "variant": null,
+ "name": "Galbot G1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galbot.com/g1/",
+ "summary": "A wheeled dual-arm humanoid with a 650 mm leg lift that reaches from floor to 2.1 m, carries 5 kg per arm and runs 8 h, used in Chinese retail and warehouses.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Galbot sells through JD.com in China and a contact form (pr@galbot.com); no European sales office, distributor or EU customer found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height (max)",
+   "value": 1.73,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 92.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 21,
+   "unit": null,
+   "conditions": "without chassis and end effector",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "at wrist centre; 10 kg both arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Workspace",
+   "value": "0-2.1 m vertical, 1.9 m horizontal",
+   "unit": null,
+   "conditions": "wrist centre",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0-40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 3.5,
+   "unit": "h",
+   "conditions": "adapter",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "4-wheel omnidirectional base",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA AGX Orin 64 GB (275 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "binocular head camera, 4 RGB cameras, 2 wrist depth cameras, 2 wrist 6-axis force sensors, 3D LiDAR, 8 ultrasonic",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "End effector can be swapped between dexterous hand, suction cup and gripper; delivered type not stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.galbot.com/_nuxt/g1-spec-robot.BYUAn6RQ.jpg",
+   "pageUrl": "https://www.galbot.com/g1/",
+   "credit": "Galbot",
+   "alt": "Galbot G1 wheeled humanoid with raised leg column",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Picking, packing and dispatch in instant-retail warehouses, 24/7 for over 1.5 years",
+   "stage": "deployment",
+   "where": "About 100 instant-retail warehouses, China",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Customer not named on the page."
+  },
+  {
+   "taskIds": [],
+   "task": "Unmanned retail kiosks (\"Galbot Space Capsule\") in more than 170 locations in 40 cities",
+   "stage": "deployment",
+   "where": "China",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.galbot.com/g1/",
+   "title": "Galbot G1 product page (Chinese, with specification table and JD.com buy link)",
+   "publisher": "Galbot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.galbot.com/contact/",
+   "title": "Galbot contact page",
+   "publisher": "Galbot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

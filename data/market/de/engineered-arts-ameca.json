@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "engineered-arts-ameca",
+ "maker": "Engineered Arts",
+ "makerCountry": "GB",
+ "model": "Ameca",
+ "variant": "Gen 2.6 full size",
+ "name": "Engineered Arts Ameca",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://engineeredarts.com/robots/ameca",
+ "summary": "A 1.87 m stationary social humanoid with a highly expressive face, used for receptions, exhibitions and AI interaction; it does not walk and is not built to handle loads.",
+ "launched": "2021",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "UK maker; spec sheet lists CE certification and the website has a German language version. Sold and rented on quote (\"Get a customized Ameca quote\"); no German reseller found and no public price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Engineered Arts Ltd",
+    "country": "GB",
+    "role": "manufacturer",
+    "productUrl": "https://engineeredarts.com/robots/ameca",
+    "contactUrl": "https://engineeredarts.com/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Quote, rental and demo requests through the website."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.87,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 62,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 61,
+   "unit": null,
+   "conditions": "27 in the head",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": "Plus 4 per shoulder",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DoF per hand",
+   "value": 4,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "power",
+   "label": "Power",
+   "value": "Mains, 2 x 110-240 V AC outlets, 400 W",
+   "unit": null,
+   "conditions": "No battery listed",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "10 to 30",
+   "unit": "C",
+   "conditions": "Indoor; 45-60 % humidity",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 x 8 MP eye cameras, microphones, 360-degree LiDAR safety sensors (safety zone at least 3.2 m diameter)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Control API",
+   "value": "REST, WebSocket, Python and Node.js SDKs; Tritium robot OS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "REST, WebSocket, Python, Node.js",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Stands on a 600 mm base and runs on mains power; it does not move around.",
+   "Four-DoF hands are for gestures; no payload rating is published.",
+   "Indoor only, 10-30 C.",
+   "Smaller desktop versions (Ameca Desktop, Ami, Azi) exist and are not covered here."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://media.engineeredarts.com/wp-content/uploads/2025/07/Ameca-Gen-2-6-Fullfigure-Humanoid-Robot-Engineered-Arts.webp",
+   "pageUrl": "https://engineeredarts.com/robots/",
+   "credit": "Engineered Arts",
+   "alt": "Engineered Arts Ameca full-figure humanoid robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Concierge, reception, exhibitions and keynote appearances",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker use cases; no construction relevance."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://engineeredarts.com/robots/ameca",
+   "title": "Ameca product page",
+   "publisher": "Engineered Arts",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://engineeredarts.com/robots/ameca/specs",
+   "title": "Ameca specifications",
+   "publisher": "Engineered Arts",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price or rental rate in EUR?",
+  "German partner for service?"
+ ],
+ "checkedAt": "2026-10-02"
+}

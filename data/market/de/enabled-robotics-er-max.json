@@ -1,0 +1,209 @@
+{
+ "schemaVersion": 1,
+ "id": "enabled-robotics-er-max",
+ "maker": "Enabled Robotics",
+ "makerCountry": "DK",
+ "model": "ER-MAX",
+ "variant": "MC600 family (MiR600 + UR20 or UR30)",
+ "name": "Enabled Robotics ER-MAX",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.enabled-robotics.com/er-max",
+ "summary": "A MiR600 mobile robot with a heavy UR20 or UR30 arm (up to 35 kg) that carries up to 380 kg, for heavy lifting and transport around the clock.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany through two partners named by the maker, JUGARD + KÜNSTNER and NEXT robotics (as MC600); price on request.",
+  "sourceIds": [
+   "s2",
+   "s4",
+   "s6"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "JUGARD + KÜNSTNER",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://jk.de/Mobile-Cobot-ER-FLEX-MiR600-UR20/420110071",
+    "contactUrl": "https://jk.de/Kontakt/",
+    "email": null,
+    "phone": "+49 9187 936 69-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s6",
+    "note": "Listed as German partner by Enabled Robotics. Sold as 'Mobile Cobot ER-FLEX MiR600/UR20' (text calls it MC600; the attached files are the ER-MAX spec sheet and CAD model); UR20 or UR30; prices after login or on request."
+   },
+   {
+    "name": "NEXT robotics",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://next-robotics.de/robotics/mobile-roboter/",
+    "contactUrl": "https://next-robotics.de/kontakt/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Listed as German partner by Enabled Robotics; its mobile robot page lists a mobile cobot MC600 on request (the page does not name Enabled Robotics)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 35,
+   "unit": "kg",
+   "conditions": "maximum with UR30; 25 kg with UR20 (ER-MAX page)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Base payload",
+   "value": 380,
+   "unit": "kg",
+   "conditions": "maximum",
+   "sourceId": "s5"
+  },
+  {
+   "key": "drive",
+   "label": "Base",
+   "value": "MiR600 (Mobile Industrial Robots)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s5"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 460,
+   "unit": "kg",
+   "conditions": "MiR600 with UR20 (seller, data per maker)",
+   "sourceId": "s6"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "seller, data per maker",
+   "sourceId": "s6"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 35,
+  "carryPayloadKg": 380,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ER-ABILITY",
+  "sourceIds": [
+   "s5"
+  ],
+  "notes": [
+   "Heaviest Enabled Robotics option; arm reach depends on UR20 or UR30."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static.wixstatic.com/media/cbc0bc_04af210821c4428198c9f696e7e2a1cf~mv2.png",
+   "pageUrl": "https://www.enabled-robotics.com/mobilecobots",
+   "credit": "Enabled Robotics",
+   "alt": "Enabled Robotics ER-MAX 600-20: UR20 arm on a MiR600 base",
+   "kind": "product"
+  },
+  {
+   "url": "https://jk.de/media/d6/b8/27/1787338911/420110071-Mobile-Cobot-ER-FLEX-MiR600_UR20-Titelbild.jpg?ts=1787338911",
+   "pageUrl": "https://jk.de/Mobile-Cobot-ER-FLEX-MiR600-UR20/420110071",
+   "credit": "JUGARD + KÜNSTNER / Enabled Robotics",
+   "alt": "Enabled Robotics ER-MAX with its UR arm folded above the tower on a MiR600 base, white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://jk.de/media/e2/53/e6/1787338914/420110071-Mobile-Cobot-ER-FLEX-MiR600_UR20-Anwendung.jpg?ts=1787338914",
+   "pageUrl": "https://jk.de/Mobile-Cobot-ER-FLEX-MiR600-UR20/420110071",
+   "credit": "JUGARD + KÜNSTNER / Enabled Robotics",
+   "alt": "Enabled Robotics ER-MAX carrying two black bins between shelving in a factory",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for heavy lifting and transport tasks",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s5",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.enabled-robotics.com/er-max",
+   "title": "ER-MAX product page",
+   "publisher": "Enabled Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.enabled-robotics.com/partnernetwork",
+   "title": "Partner network (Germany: JUGARD+KÜNSTNER, NEXT)",
+   "publisher": "Enabled Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://jk.de/Produkte/Mobile-Robotik/Autonome-Mobile-Roboter/",
+   "title": "Autonome Mobile Roboter",
+   "publisher": "JUGARD + KÜNSTNER",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://next-robotics.de/robotics/mobile-roboter/",
+   "title": "Mobile Roboter",
+   "publisher": "NEXT robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.enabled-robotics.com/mobilecobots",
+   "title": "Mobile Cobots overview",
+   "publisher": "Enabled Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://jk.de/Mobile-Cobot-ER-FLEX-MiR600-UR20/420110071",
+   "title": "Mobile Cobot ER-FLEX MiR600/UR20 (MC600)",
+   "publisher": "JUGARD + KÜNSTNER",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime and prices."
+ ],
+ "checkedAt": "2026-10-02"
+}

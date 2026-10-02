@@ -1,0 +1,128 @@
+{
+ "schemaVersion": 1,
+ "id": "pudu-d7",
+ "maker": "Pudu Robotics",
+ "makerCountry": "CN",
+ "model": "D7",
+ "variant": null,
+ "name": "PUDU D7",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A wheeled industrial semi-humanoid announced in June 2026 that handles up to 14 kg up to 2 m height and swaps its own batteries.",
+ "launched": "2026-06",
+ "lifecycle": "prototype",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Announced in Shenzhen in June 2026; not on PUDU's product pages (English or German) and no European seller or price found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 14,
+   "unit": "kg",
+   "conditions": "up to; not split per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Working height",
+   "value": 2,
+   "unit": "m",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Autonomous battery swap",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "front and rear LiDAR, tactile sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 14,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Wheeled base shown in PUDU's launch photo; hand type not stated in text.",
+   "Can push carts."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.pudutech.com/D7_5f5baa2780.webp",
+   "pageUrl": "https://www.pudurobotics.com/en/news/pudu-d7-industrial-humanoid-robot-launch",
+   "credit": "Pudu Robotics",
+   "alt": "PUDU D7 carrying a box between warehouse shelves",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Material handling, shelf picking, replenishment and cart pushing in warehouses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.pudurobotics.com/en/news/pudu-d7-industrial-humanoid-robot-launch",
+   "title": "PUDU D7 launch announcement",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pudurobotics.com/de/contact-us",
+   "title": "Pudu Robotics Kontakt (German site)",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Hand type, size, runtime and delivery start."
+ ],
+ "checkedAt": "2026-10-02"
+}

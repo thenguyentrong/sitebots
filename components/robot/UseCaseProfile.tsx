@@ -20,19 +20,21 @@ export function UseCaseProfile({ profile, name }: { profile: Profile; name: stri
         axes={profile.axes.map((a) => ({ id: a.id, label: a.label }))}
         series={[{ name, values: profile.radar.site, tone: 0 }]}
         title={`${name}: site-condition profile`}
-        desc={profile.axes.map((a) => `${a.label} ${a.score === null ? 'not published' : `${pct(a.score)} of 100`}`).join(', ')}
+        desc={profile.axes.map((a) => `${a.label} ${a.coverage ? `${a.coverage.supported} of ${a.coverage.total} tasks supported, ${a.coverage.reported} reported, ${a.coverage.unknown} unconfirmed` : a.score === null ? 'unconfirmed' : `${pct(a.score)} of 100`}`).join(', ')}
         className="mx-auto max-w-full"
       />
       <ol className="divide-y divide-edge/60 text-sm">
         {profile.axes.map((a) => (
-          <li key={a.id} className="flex items-start gap-3 py-2" title={a.hint}>
-            <span className="w-28 shrink-0 font-medium">{a.label}</span>
-            {a.score === null ? (
-              <Badge variant="neutral" className="shrink-0">not published</Badge>
+          <li key={a.id} className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-3 gap-y-1 py-2 sm:flex sm:items-start" title={a.hint}>
+            <span className="font-medium sm:w-28 sm:shrink-0">{a.label}</span>
+            {a.coverage ? (
+              <Badge variant={a.coverage.unknown || a.coverage.reported ? 'warn' : 'ink'} className="num shrink-0">{a.coverage.supported}/{a.coverage.total} supported</Badge>
+            ) : a.score === null ? (
+              <Badge variant="neutral" className="shrink-0">unconfirmed</Badge>
             ) : (
               <Badge variant={a.status === 'partial' ? 'warn' : 'ink'} className="num shrink-0">{pct(a.score)}</Badge>
             )}
-            <span className="min-w-0 text-xs text-muted">{a.basis}{a.status === 'partial' ? ' · some parts not published' : ''}</span>
+            <span className="col-span-2 min-w-0 text-xs text-muted">{a.basis}{a.status === 'partial' ? ' · some parts not published' : ''}</span>
           </li>
         ))}
       </ol>
@@ -66,7 +68,7 @@ export function UseCaseProfile({ profile, name }: { profile: Profile; name: stri
   return (
     <section className="card overflow-hidden" data-profile>
       <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
-        <h2 className="text-sm font-semibold">Construction profile</h2>
+        <h2 className="text-sm font-semibold">Robot evidence profile</h2>
         <span className="flex items-center gap-2 text-xs text-faint">
           tasks <EvidenceBadge trust={profile.taskTrust} />
         </span>
@@ -75,7 +77,7 @@ export function UseCaseProfile({ profile, name }: { profile: Profile; name: stri
         <ProfileToggle site={site} tasks={tasks} />
       </div>
       <p className="border-t border-edge/70 bg-subtle/40 px-5 py-2.5 text-xs text-faint">
-        Unweighted threshold ladders over published values, using the matcher&apos;s own rules; a gap means not published, never zero.{' '}
+        Unweighted threshold ladders over published values, using the matcher&apos;s own rules; a gap means unconfirmed, never zero. Handling shows evidence coverage, not a performance score.{' '}
         <Link href="/methodology#profile" className="underline-offset-2 hover:text-foreground hover:underline">How the axes are built</Link>
       </p>
     </section>

@@ -25,6 +25,17 @@ test('research records remain reference pages while aliases lead to one supplier
   await expect(page.getByRole('heading', { name: 'X-Humanoid', exact: true })).toBeVisible();
 });
 
+test('maker pages show the location map and their robots as robot cards, without the cluster matrix', async ({ page }) => {
+  await page.goto('/brands');
+  await expect(page.getByRole('group', { name: 'World map of robot manufacturers' })).toBeVisible();
+  await expect(page.locator('[data-cluster]')).toHaveCount(0);
+  await page.goto('/brands/unitree');
+  const robots = page.getByTestId('maker-robots');
+  await expect(robots.locator('.mk-tile').first()).toBeVisible();
+  for (const href of await robots.locator('a.mk-tile-link').evaluateAll((links) => links.map((link) => link.getAttribute('href') ?? ''))) expect(href).toMatch(/^[/]robots[/]unitree[/]/);
+  await expect(page.locator('[data-cluster]')).toHaveCount(0);
+});
+
 test('robot browsing excludes academic manufacturer entries even with all pictures selected', async ({ page }) => {
   await page.goto('/robots?pictures=all&q=MIT');
   await expect(page.locator('a[href^="/robots/mit/"]')).toHaveCount(0);
@@ -34,7 +45,6 @@ test('the manufacturer map zooms and filters the list by country', async ({ page
   const errors: string[] = [];
   page.on('pageerror', e => errors.push(e.message));
   await page.goto('/brands');
-  await page.getByRole('button', { name: 'Manufacturer locations', exact: true }).click();
   await page.getByRole('button', { name: 'Zoom in map' }).click();
   await expect(page.getByText('150%', { exact: true })).toBeVisible();
   await page.getByRole('button', { name: 'Reset map' }).click();

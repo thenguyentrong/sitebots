@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:seed-and-hoe-row-crops",
+      "title": "Seed and hoe planned row crops",
+      "summary": "Sow mapped rows and remove weeds around recorded plant positions on prepared soil.",
+      "industries": [
+        "agriculture"
+      ],
+      "family": "machine_operation_dedicated",
+      "setting": "Outdoor crop field",
+      "reviewLinks": [
+        {
+          "taskId": "research:seed-and-hoe-row-crops",
+          "reviewId": "farmdroid-fd20-seed-weed",
+          "relationship": "task_candidate",
+          "rationale": "FD20 combines sowing-position recording and mechanical inter/intra-row weeding.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Crop, seed/tool package and seasonal field capacity require validation."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:weed-vegetable-rows",
+      "title": "Mechanically weed vegetable rows",
+      "summary": "Guide compatible cultivation tools along mapped vegetable rows, with human setup and crop-clearance checks.",
+      "industries": [
+        "agriculture"
+      ],
+      "family": "machine_operation_dedicated",
+      "setting": "Outdoor crop field",
+      "reviewLinks": [
+        {
+          "taskId": "research:weed-vegetable-rows",
+          "reviewId": "naio-oz-rtk-weeding",
+          "relationship": "task_candidate",
+          "rationale": "Current OZ specifies mapped RTK operation and mechanical weeding implements.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Tools and soil conditions determine coverage; user handles preparation and exceptions."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:spot-spray-supported-crops",
+      "title": "Spot-spray selected plants in supported crops",
+      "summary": "Use a driver-operated tractor and vision-controlled implement to treat detected targets selectively.",
+      "industries": [
+        "agriculture"
+      ],
+      "family": "machine_operation_dedicated",
+      "setting": "Outdoor crop field",
+      "reviewLinks": [
+        {
+          "taskId": "research:spot-spray-supported-crops",
+          "reviewId": "ecorobotix-ara620-sg2-spraying",
+          "relationship": "task_candidate",
+          "rationale": "ARA 620 recognizes targets and controls individual nozzles.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Driver, crop software and approved treatment remain necessary; no autonomous tractor claim."
+          ]
+        }
+      ]
+    }
+  ]
+}

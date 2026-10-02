@@ -1,0 +1,124 @@
+{
+ "schemaVersion": 1,
+ "id": "kuka-kmr-iiwa",
+ "maker": "KUKA",
+ "makerCountry": "DE",
+ "model": "KMR iiwa",
+ "variant": null,
+ "name": "KUKA KMR iiwa",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iiwa",
+ "summary": "The sensitive LBR iiwa arm (seven joint torque sensors) on an omnidirectional autonomous platform for human-robot collaboration without fences; a cleanroom version exists.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany by KUKA directly; price on request through KUKA's contact page.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "KUKA",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iiwa",
+    "contactUrl": "https://www.kuka.com/en-de/company/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "German maker (Augsburg); quotes through KUKA sales or KUKA system partners."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "Omnidirectional (Mecanum-type wheels with 45° rollers)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Seven joint torque sensors in the arm, laser scanners on the platform",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Payload, runtime and dimensions are not on the product page; ask KUKA for the data sheet.",
+   "KMR iiwa CR version for wafer handling in cleanrooms with inductive charging."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.kuka.com/-/media/kuka-corporate/images/products/mobility/kmr-iiwa/kuka-kmr-iiwa-autonomous-transportation-solution.jpg?rev=576dd30b9b234e4e9fd1b4a12fe653b0&w=1900&hash=202778AB201F7C41402236F850830E58",
+   "pageUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iiwa",
+   "credit": "KUKA",
+   "alt": "Worker hand-guiding the arm of a KUKA KMR iiwa carrying grey plastic bins in a factory hall",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.kuka.com/-/media/kuka-corporate/images/products/mobility/kmr-iiwa/kmr_iiwa_cr_variants.jpg?rev=-1&w=767&hash=9672A9A280C687F2F40B34E1E77EC6F3",
+   "pageUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iiwa",
+   "credit": "KUKA",
+   "alt": "KUKA KMR iiwa in the standard version next to the cleanroom version, studio",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers a cleanroom version for safe wafer handling in semiconductor production",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iiwa",
+   "title": "KMR iiwa product page",
+   "publisher": "KUKA",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Arm payload (LBR iiwa 7 or 14), platform payload and runtime."
+ ],
+ "checkedAt": "2026-10-02"
+}

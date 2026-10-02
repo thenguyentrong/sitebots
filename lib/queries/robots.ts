@@ -1,4 +1,5 @@
 import { cache } from 'react';
+import { FOCUSED_FORM_FACTORS, isFocusedForm } from '@/lib/browse-scope';
 import { isPublicRobot, PLACEHOLDER_MODEL_PATTERN } from '@/lib/catalogue-policy';
 import { getSql } from '@/lib/db';
 import { publicManufacturerSlugs } from '@/lib/manufacturers';
@@ -7,7 +8,7 @@ import type { AvailabilityCurrent, PriceCurrent, RobotCard, RobotSource, SpecCon
 import { coerceRows } from './coerce';
 
 /** `pictures: 'with'` (the default) lists only robots that have a real picture — a render of the maker's geometry, a photograph or the maker's own preview. */
-export type CardFilter = { formFactor?: FormFactor; q?: string; limit?: number; pictures?: 'with' | 'all' };
+export type CardFilter = { formFactor?: FormFactor; formFactors?: readonly FormFactor[]; q?: string; limit?: number; pictures?: 'with' | 'all' };
 
 /**
  * Cards for the catalogue grid. Best-documented robots first: verified values,
@@ -18,6 +19,7 @@ export async function listRobotCards(filter: CardFilter = {}): Promise<{ robots:
   const sql = await getSql();
   const q = filter.q?.trim() ? `%${filter.q.trim().replace(/[%_]/g, '')}%` : null;
   const all = filter.pictures === 'all';
+  const formFactors = (filter.formFactors ?? FOCUSED_FORM_FACTORS).filter(isFocusedForm);
   const rows = await sql.query(
     `select *, count(*) over () as total_count from robot_cards
      where ($1::text is null or form_factor = $1)
@@ -25,9 +27,10 @@ export async function listRobotCards(filter: CardFilter = {}): Promise<{ robots:
        and ($4::boolean or image_url is not null)
        and manufacturer_slug = any($5::text[])
        and model_slug !~* $6
+       and ($7::text[] is null or form_factor = any($7::text[]))
      order by coalesce(array_length(verified_fields, 1), 0) desc, completeness desc, manufacturer_name, name, variant
      limit $3`,
-    [filter.formFactor ?? null, q, filter.limit ?? 1000, all, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN],
+    [filter.formFactor ?? null, q, filter.limit ?? 1000, all, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN, formFactors],
   );
   const total = rows.length ? Number(rows[0].total_count) : 0;
   // How many the picture rule keeps off the page, so the page can say so instead of silently shrinking.
@@ -39,8 +42,9 @@ export async function listRobotCards(filter: CardFilter = {}): Promise<{ robots:
            and ($2::text is null or name ilike $2 or manufacturer_name ilike $2 or model_slug ilike $2)
            and image_url is null
            and manufacturer_slug = any($3::text[])
-           and model_slug !~* $4`,
-        [filter.formFactor ?? null, q, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN],
+           and model_slug !~* $4
+           and ($5::text[] is null or form_factor = any($5::text[]))`,
+        [filter.formFactor ?? null, q, publicManufacturerSlugs(), PLACEHOLDER_MODEL_PATTERN, formFactors],
       );
   const hidden = hiddenRows.length ? Number(hiddenRows[0].n) : 0;
   return { robots: coerceRows<RobotCard>(rows), total, hidden };
@@ -76,6 +80,7 @@ export const getRobotDetail = cache(async function getRobotDetail(
   const sql = await getSql();
   const cards = coerceRows<RobotCard>(
     await sql`select * from robot_cards where manufacturer_slug = ${manufacturerSlug} and model_slug = ${modelSlug}
+              and form_factor = any(${FOCUSED_FORM_FACTORS}::text[])
               order by case variant when 'base' then 0 else 1 end, variant`,
   );
   if (!cards.length) return null;
@@ -127,6 +132,7 @@ export async function listRobotPaths(): Promise<{ manufacturer: string; slug: st
     select m.slug as manufacturer, r.model_slug as slug, max(coalesce(rc.built_at, r.updated_at)) as updated
     from robots r join manufacturers m on m.id = r.manufacturer_id
     left join robot_current rc on rc.robot_id = r.id
+    where r.form_factor = any(${FOCUSED_FORM_FACTORS}::text[])
     group by m.slug, r.model_slug order by m.slug, r.model_slug`;
   return rows.filter((r) => isPublicRobot(String(r.manufacturer), String(r.slug))).map((r) => ({
     manufacturer: String(r.manufacturer),

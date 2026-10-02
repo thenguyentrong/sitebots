@@ -1,0 +1,140 @@
+{
+ "schemaVersion": 1,
+ "id": "toyota-hsr",
+ "maker": "Toyota",
+ "makerCountry": "JP",
+ "model": "Human Support Robot (HSR)",
+ "variant": null,
+ "name": "Toyota HSR",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://global.toyota/en/detail/8709541",
+ "summary": "A 37 kg home-helper research robot with a folding arm that picks up objects up to 1.2 kg; Toyota loans it to partner research groups and does not sell it.",
+ "launched": "2012",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not for sale: Toyota loans HSRs to partner organisations in its HSR Developers' Community.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.005-1.35",
+   "unit": "m",
+   "conditions": "body diameter 430 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 37,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm length",
+   "value": 0.6,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Object weight",
+   "value": 1.2,
+   "unit": "kg",
+   "conditions": "or less, up to 130 mm wide",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Max speed",
+   "value": 0.8,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step",
+   "value": 0.5,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Incline",
+   "value": 5,
+   "unit": "°",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 1.2,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Research loan programme only."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://global.toyota/pages/news/images/2015/07/16/1330/rendition/20150716_01_01_W610_H407.jpg",
+   "pageUrl": "https://global.toyota/en/detail/8709541",
+   "credit": "Toyota",
+   "alt": "Toyota Human Support Robot holding a bottle",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Picks objects off the floor and from shelves in home-care research",
+   "stage": "demo",
+   "where": "HSR Developers' Community, Japan",
+   "date": "2015",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://global.toyota/en/detail/8709541",
+   "title": "Toyota Shifts Home Helper Robot R&D into High Gear (2015-07-16)",
+   "publisher": "Toyota Motor Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

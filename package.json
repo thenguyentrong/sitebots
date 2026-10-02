@@ -17,8 +17,18 @@
     "content": "node --import tsx scripts/content-check.ts",
     "report": "node --env-file-if-exists=.env.local --import tsx scripts/report-coverage.ts",
     "shot": "node --import tsx tests/shot.ts",
+    "audit:review-queue": "node --import tsx scripts/review-queue.ts",
     "audit:catalogue": "node --env-file-if-exists=.env.local --import tsx scripts/audit-catalogue.ts",
-    "audit:media": "node --import tsx scripts/audit-media.ts"
+    "audit:media": "node --import tsx scripts/audit-media.ts",
+    "audit:solutions": "node --import tsx scripts/check-solutions.ts",
+    "audit:discovery": "node --import tsx scripts/audit-discovery.ts",
+    "research:refresh": "node --import tsx scripts/research-refresh.ts",
+    "research:sync": "node --import tsx scripts/sync-research.ts",
+    "market:index": "node --import tsx scripts/market-index.ts",
+    "market:check": "node --import tsx scripts/check-market.ts",
+    "market:pictures": "node --import tsx scripts/assets/market-pictures.ts",
+    "market:links": "node --import tsx scripts/market-links.ts",
+    "workflows": "node --import tsx scripts/workflows/build.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",

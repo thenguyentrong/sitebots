@@ -1,0 +1,232 @@
+{
+ "schemaVersion": 1,
+ "id": "clearpath-husky-observer",
+ "maker": "Clearpath Robotics",
+ "makerCountry": "CA",
+ "model": "Husky Observer",
+ "variant": null,
+ "name": "Clearpath Husky Observer",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "scanning_documentation",
+  "site_survey_documentation/progress-capture-walks"
+ ],
+ "officialUrl": "https://clearpathrobotics.com/husky-observer/",
+ "summary": "A four-wheeled outdoor robot with cameras, 3D lidar and RTK GPS that drives repeatable inspection rounds and records images and data.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 113050,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "incl. 19% VAT, plus shipping"
+  },
+  "priceOther": null,
+  "leadTime": "about 7 weeks (listing also says deliverable 21 days after order)",
+  "sellers": [
+   {
+    "productUrl": "https://www.mybotshop.de/Clearpath-Husky-Observer",
+    "contactUrl": "https://www.mybotshop.de/Clearpath-Husky-Observer",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 113050,
+    "priceBasis": "gross",
+    "note": "Willy-Messerschmitt-Strasse 12, 50126 Bergheim. Made to order; MYBOTSHOP also lists a rental service.",
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s2"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Listed with price by MYBOTSHOP.DE (Bergheim); made to order, about 7 weeks delivery.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1061 x 854 x 1224",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Extra payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "standard; 12 h upgraded, 18 h extended battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP55",
+   "unit": null,
+   "conditions": "designed for",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-10 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ground_clearance_mm",
+   "label": "Ground clearance",
+   "value": 130,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "PTZ camera 30-31x zoom, front and rear depth cameras, 2D lidar, 16-channel 3D lidar (option on maker page, included in seller listing), RTK GPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Computer",
+   "value": "Intel i7-12700TE, 32 GB RAM, 1 TB SSD",
+   "unit": null,
+   "conditions": "seller listing",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "OutdoorNav autonomy software; browser control",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 10,
+  "runtimeH": 6,
+  "ipRating": "IP55",
+  "sdk": "OutdoorNav, web interface, ROS API",
+  "notes": [
+   "A general inspection robot; the maker lists construction progress monitoring as one use, but it carries no survey-grade laser scanner.",
+   "Built as a developer platform for inspection solutions; plan time for setting up missions.",
+   "Cannot climb stairs, so on a building site it is limited to one level or outdoor areas."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://s3.amazonaws.com/assets.clearpathrobotics.com/wp-content/uploads/2023/07/06121734/Husky-Observer.png",
+   "pageUrl": "https://clearpathrobotics.com/husky-observer/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Husky Observer four-wheeled robot with sensor mast in a field",
+   "kind": "product"
+  },
+  {
+   "url": "https://s3.amazonaws.com/assets.clearpathrobotics.com/wp-content/uploads/2023/10/08202200/Observer.120.png",
+   "pageUrl": "https://clearpathrobotics.com/husky-observer/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Husky Observer with pan-tilt camera, lidar and GNSS mast, front three-quarter render",
+   "kind": "product"
+  },
+  {
+   "url": "https://s3.amazonaws.com/assets.clearpathrobotics.com/wp-content/uploads/2024/08/23141233/Observer_shadow.194.png",
+   "pageUrl": "https://clearpathrobotics.com/husky-observer/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Husky Observer render from a raised front three-quarter angle",
+   "kind": "product"
+  },
+  {
+   "url": "https://s3.amazonaws.com/assets.clearpathrobotics.com/wp-content/uploads/2024/01/19130718/DSC00688-scaled.jpg",
+   "pageUrl": "https://clearpathrobotics.com/husky-observer/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Husky Observer on a grassy track with its headlights on, front view",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/progress-capture-walks"
+   ],
+   "task": "Monitors remote construction sites and tracks progress",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clearpathrobotics.com/husky-observer/",
+   "title": "Husky Observer",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.mybotshop.de/Clearpath-Husky-Observer",
+   "title": "Clearpath Husky Observer",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Any construction site deployment in Germany.",
+  "Whether a survey-grade scanner can be mounted and integrated."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,235 @@
+{
+ "schemaVersion": 1,
+ "id": "magazino-toru",
+ "maker": "Magazino (Jungheinrich)",
+ "makerCountry": "DE",
+ "model": "TORU",
+ "variant": null,
+ "name": "Magazino TORU",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.magazino.eu/schuhlogistik/",
+ "summary": "A mobile picking robot with a vacuum gripper on a lifting column that takes single boxes up to 5.8 kg from shelves 8 to 250 cm high and carries up to 16 of them to a hand-over point.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Made and sold in Germany by Magazino GmbH (Munich), a Jungheinrich company; project sale on request. NEOintralogistics offers TORU in its storage system on a pay-per-pick basis. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "NEOintralogistics system: 6 to 8 weeks to operation",
+  "sellers": [
+   {
+    "name": "Magazino GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.magazino.eu/schuhlogistik/",
+    "contactUrl": "https://www.magazino.eu/kontakt/",
+    "email": "info@magazino.eu",
+    "phone": "+49 89 21552415-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Landsberger Str. 234, 80687 München; contact form on the product page."
+   },
+   {
+    "name": "NEOintralogistics GmbH",
+    "country": "DE",
+    "role": "integrator",
+    "productUrl": null,
+    "contactUrl": "https://www.neointralogistics.com/",
+    "email": "sales@neointralogistics.com",
+    "phone": "+49 211 936 724 23",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Supplies a complete system (containers, TORU robots, buffer station, software); payment per pick."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "item_weight_max_kg",
+   "label": "Max box weight",
+   "value": 5.8,
+   "unit": "kg",
+   "conditions": "single box or KLT; NEO system article states 5 kg per container",
+   "sourceId": "s1"
+  },
+  {
+   "key": "item_size_max_mm",
+   "label": "Max box size (L x W x H)",
+   "value": "390 x 280 x 145",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_height_cm",
+   "label": "Gripping height range",
+   "value": "8 to 250",
+   "unit": "cm",
+   "conditions": "above floor; NEO system article states up to 220 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_capacity_items",
+   "label": "Boxes carried at once",
+   "value": 16,
+   "unit": null,
+   "conditions": "in the backpack shelf",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_hours_per_day",
+   "label": "Operating time",
+   "value": 20,
+   "unit": "h/day",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "throughput_picks_h",
+   "label": "Pick rate",
+   "value": 350,
+   "unit": "picks/h",
+   "conditions": "more than, for the NEOintralogistics system",
+   "sourceId": "s2"
+  },
+  {
+   "key": "gripper",
+   "label": "Gripper",
+   "value": "Vacuum gripper moving in a lifting column; can lift stacks",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2D and 3D cameras, barcode reading, certified person-detection system",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "fleet_software",
+   "label": "Fleet software",
+   "value": "ARC (Advanced Robot Control), WLAN link to the warehouse management system",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 5.8,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Handles shoe boxes and standard small containers (NEO-KLT) in shelving, not loose or irregular items.",
+   "Hands over to conveyors, flow racks, pick carts or put walls.",
+   "Operating time up to 20 h per day; battery runtime per charge is not published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2023/03/Toru_slider_antriebsbasis.png",
+   "pageUrl": "https://www.magazino.eu/schuhlogistik/",
+   "credit": "Magazino",
+   "alt": "Magazino TORU picking robot, side view with drive base highlighted",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2023/03/magazino_logistik_roboter_toru_hohe_transportkapazitaet-1-scaled.jpg",
+   "pageUrl": "https://www.magazino.eu/schuhlogistik/",
+   "credit": "Magazino (Jungheinrich)",
+   "alt": "Rows of Magazino TORU robots parked along a warehouse aisle, with one in the middle of the aisle",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.magazino.eu/wp-content/uploads/2023/03/magazino_logistik_roboter_ARC_flotte-1.jpg",
+   "pageUrl": "https://www.magazino.eu/schuhlogistik/",
+   "credit": "Magazino (Jungheinrich)",
+   "alt": "Overhead view of a row of parked Magazino TORU robots and several more on the open warehouse floor, a worker walking past",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Picks shoe boxes from shelving and brings them to packing",
+   "stage": "deployment",
+   "where": "Zalando, Gabor, Schuurman",
+   "date": "2025-02",
+   "sourceId": "s2",
+   "note": "Magazino says TORU is established at these companies; sites and fleet sizes not given."
+  },
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Picks small containers (KLT) from shelving in a pay-per-pick storage system for e-commerce, spare parts and production parts",
+   "stage": "deployment",
+   "where": "NEOintralogistics, Germany",
+   "date": "2025-02",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.magazino.eu/schuhlogistik/",
+   "title": "Kommissionier-Roboter TORU",
+   "publisher": "Magazino",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.magazino.eu/tech-articles/toru-als-teil-des-logisik-systems-von-neointralogistics/",
+   "title": "NEOintralogistics macht Pick-Roboter TORU zum Allrounder",
+   "publisher": "Magazino",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.magazino.eu/kontakt/",
+   "title": "Kontakt",
+   "publisher": "Magazino",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price, lease or pick-fee level in Germany?",
+  "Battery runtime per charge, robot weight and footprint are not published.",
+  "Which named customers (BMW, Bosch, Miele and others shown as logos) use TORU rather than SOTO?"
+ ],
+ "checkedAt": "2026-10-02"
+}

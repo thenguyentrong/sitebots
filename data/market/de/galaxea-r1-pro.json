@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "id": "galaxea-r1-pro",
+ "maker": "Galaxea Dynamics",
+ "makerCountry": "CN",
+ "model": "R1 Pro",
+ "variant": null,
+ "name": "Galaxea R1 Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://galaxea-dynamics.com/products/galaxea-r1-pro-7-dof-dual-arm-wheeled-universal-humanoid-robot",
+ "summary": "A 1.7 m wheeled humanoid with two 7-joint arms (3.5 kg rated each), a 4-joint torso that reaches from the floor to 2 m, and an omnidirectional base.",
+ "launched": "2025-09",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Sold in Galaxea's own online store in USD with Germany among the shipping countries; no German or EU reseller found. Import VAT and duty are not stated.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 69999,
+   "currency": "USD",
+   "market": "Galaxea online store (ships to Germany)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Galaxea Dynamics",
+    "country": "HK",
+    "role": "manufacturer",
+    "productUrl": "https://galaxea-dynamics.com/products/galaxea-r1-pro-7-dof-dual-arm-wheeled-universal-humanoid-robot",
+    "contactUrl": "https://galaxea-dynamics.com/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Online store operated from Hong Kong; prices in USD."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": "width 675 mm",
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 26,
+   "unit": null,
+   "conditions": "with standard grippers",
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 3.5,
+   "unit": "kg",
+   "conditions": "rated per arm at 0.62 m; 5 kg max",
+   "sourceId": "s3"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Both arms payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "maximum",
+   "sourceId": "s3"
+  },
+  {
+   "key": "vertical_reach_m",
+   "label": "Vertical working range",
+   "value": "0-2",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Base speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Orin 32GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "7 HD cameras and 1 lidar as standard; optional arm force sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s3"
+  ],
+  "notes": [
+   "Dexterous hands can be fitted instead of grippers.",
+   "Runtime, weight and IP rating not found."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0750/7437/1840/files/R1Pro-Main.jpg?v=1789702195",
+   "pageUrl": "https://galaxea-dynamics.com/products/galaxea-r1-pro-7-dof-dual-arm-wheeled-universal-humanoid-robot",
+   "credit": "Galaxea Dynamics",
+   "alt": "Galaxea R1 Pro wheeled humanoid robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Maker offers it for data collection, teleoperation and learned manipulation",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://galaxea-dynamics.com/meta.json",
+   "title": "Galaxea online store settings (ships to DE, USD prices)",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://galaxea-dynamics.com/products/galaxea-r1-pro-7-dof-dual-arm-wheeled-universal-humanoid-robot",
+   "title": "Galaxea R1 Pro store page",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.galaxea-ai.com/products/R1-Pro",
+   "title": "R1 Pro product page and parameters (Chinese)",
+   "publisher": "Galaxea AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "CE marking, import costs and warranty handling for Germany.",
+  "Weight, runtime and battery data."
+ ],
+ "checkedAt": "2026-10-02"
+}

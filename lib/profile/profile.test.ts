@@ -7,7 +7,10 @@ import { AXES, profileFor, TASK_BUCKETS } from './profile';
 const candidates = Object.values(fx).filter((v): v is Candidate => !!v && typeof v === 'object' && 'card' in (v as object));
 
 function withPayload(base: Candidate, kg: number | null): Candidate {
-  return { ...base, card: { ...base.card, payload_kg_conservative: kg, payload_kg_rated: kg } };
+  const specs = { ...base.card.specs };
+  for (const key of Object.keys(specs)) if (key === 'payload_kg' || key.startsWith('payload_kg:')) delete specs[key];
+  if (kg !== null) specs['payload_kg:rated'] = { value: kg, source_url: 'https://maker.example/load', source_tier: 1, observed_at: '2026-10-01', confidence: 1, trust: 'verified' };
+  return { ...base, card: { ...base.card, specs, payload_kg_conservative: kg, payload_kg_rated: kg } };
 }
 
 describe('profileFor', () => {
@@ -40,6 +43,18 @@ describe('profileFor', () => {
     const p = profileFor(blank);
     expect(p.tasks.every((t) => t.status === 'unknown')).toBe(true);
     expect(p.radar.tasks.every((v) => v === null)).toBe(true);
+  });
+
+  it('shows sparse handling coverage without a full-scale radar score', () => {
+    const base = candidates[0];
+    const candidate: Candidate = { ...base, card: { ...base.card, specs: { task_capabilities: { value: ['teleoperated_manipulation'], source_url: 'https://maker.example/tasks', source_tier: 1, observed_at: '2026-10-01', confidence: 1, trust: 'verified' } } } };
+    const profile = profileFor(candidate);
+    const axis = profile.axes.find((item) => item.id === 'manipulation')!;
+    expect(axis.coverage).toEqual({ supported: 1, reported: 0, unknown: 5, total: 6 });
+    expect(axis.score).toBeNull();
+    expect(profile.radar.site[profile.axes.indexOf(axis)]).toBeNull();
+    candidate.card.specs.task_capabilities.trust = 'reported';
+    expect(profileFor(candidate).axes.find((item) => item.id === 'manipulation')?.coverage).toEqual({ supported: 0, reported: 1, unknown: 5, total: 6 });
   });
 
   it('scores the fixtures without throwing and keeps values in 0..1', () => {

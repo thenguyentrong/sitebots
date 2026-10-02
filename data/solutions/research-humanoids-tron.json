@@ -1,0 +1,835 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "LimX TRON 1 and TRON 2 single-arm mobile research configurations. Generic TRON is a series/search term; neither base biped is reclassified as a production humanoid. Kit payloads, base specifications and German procurement routes remain separate.",
+  "records": [
+    {
+      "manufacturer": "LimX Dynamics",
+      "robotClass": "mobile_manipulator",
+      "workflowId": "robotics_research",
+      "industries": [
+        "research_education"
+      ],
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "id": "limx-tron-1-arm-research",
+      "name": "LimX TRON 1 EDU + Arm Expansion Kit",
+      "exactConfiguration": "TRON 1 EDU research biped with TRON1-AP-YG single-arm expansion kit, gripper and mounting hardware, configured with sole or wheeled feet. Base-only TRON 1 and point-foot locomotion are separate setups.",
+      "description": "Develop arm-and-leg coordination and motion-planning experiments on a compact mobile research platform. It has one added arm; it is not a full-body humanoid or a validated factory worker.",
+      "operatingMode": {
+        "value": "Researcher-operated mobile manipulation and developer-controlled policy experiments on the EDU platform.",
+        "sourceIds": [
+          "t1-kit",
+          "t1-spec"
+        ],
+        "caveats": [
+          "No unattended industrial task acceptance is established.",
+          "Confirm the control software, foot configuration, recovery procedure and operator supervision for each experiment."
+        ]
+      },
+      "specs": [
+        {
+          "key": "dof",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Arm-kit degrees of freedom",
+          "conditions": [
+            "Single added arm; excludes base leg joints and gripper."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_payload_kg",
+          "value": 1.5,
+          "unit": "kg",
+          "semanticLabel": "Arm-kit rated payload",
+          "conditions": [
+            "The datasheet separately lists 3.5 kg maximum; its posture, duty cycle and stability conditions are not published."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_peak_payload_kg",
+          "value": 3.5,
+          "unit": "kg",
+          "semanticLabel": "Arm-kit published maximum payload",
+          "conditions": [
+            "Not a continuous working rating; use the separately published 1.5 kg rated payload for initial screening.",
+            "Gripper/object mass accounting and allowable centre of mass need confirmation."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_reach_mm",
+          "value": 647,
+          "unit": "mm",
+          "semanticLabel": "Arm-kit maximum reach",
+          "conditions": [
+            "Arm reach, not whole-body workspace or navigation accuracy."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_height_range_mm",
+          "value": "0–1500",
+          "unit": "mm",
+          "semanticLabel": "Arm-kit working height above ground",
+          "conditions": [
+            "Published relative-to-ground range for configured sole/wheeled research setups."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_mass_kg",
+          "value": 3.5,
+          "unit": "kg",
+          "semanticLabel": "Added arm mass",
+          "conditions": [
+            "Not total robot mass; confirm inclusion of mounting hardware and gripper."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "kit_wheeled_speed_m_s",
+          "value": 1,
+          "unit": "m/s",
+          "semanticLabel": "Arm-kit wheeled movement speed",
+          "conditions": [
+            "Kit-specific figure; do not substitute the faster base-only speed."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "kit_sole_speed_m_s",
+          "value": 0.5,
+          "unit": "m/s",
+          "semanticLabel": "Arm-kit sole movement speed",
+          "conditions": [
+            "Kit-specific figure; payload and surface test conditions are not supplied."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "kit_compatible_modes",
+          "value": "Sole / wheeled",
+          "unit": null,
+          "semanticLabel": "Foot modes supported by this arm kit",
+          "conditions": [
+            "Point-foot compatibility is not listed."
+          ],
+          "sourceIds": [
+            "t1-kit"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_mass_upper_kg",
+          "value": 20,
+          "unit": "kg",
+          "semanticLabel": "Base-only published mass upper bound",
+          "conditions": [
+            "Manufacturer writes ≤20 kg; added arm and accessories are separate."
+          ],
+          "sourceIds": [
+            "t1-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_dimensions_mm",
+          "value": "≤392 × 420 × 845",
+          "unit": "mm",
+          "semanticLabel": "Published base-only dimensions",
+          "conditions": [
+            "Do not use this as the fitted arm-kit operating envelope."
+          ],
+          "sourceIds": [
+            "t1-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_capacity_ah",
+          "value": 4.5,
+          "unit": "Ah",
+          "semanticLabel": "Base battery capacity",
+          "conditions": [
+            "Ternary lithium; capacity does not establish loaded operating duration."
+          ],
+          "sourceIds": [
+            "t1-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_voltage_v",
+          "value": 46.8,
+          "unit": "V",
+          "semanticLabel": "Base battery supply voltage",
+          "conditions": [],
+          "sourceIds": [
+            "t1-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_charge_20_80_min",
+          "value": "<60",
+          "unit": "min",
+          "semanticLabel": "Published base charging time, 20–80%",
+          "conditions": [
+            "With the specified charging arrangement; not an arm-kit duty-cycle result."
+          ],
+          "sourceIds": [
+            "t1-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_cpu",
+          "value": "12th Gen Intel i3 / 16 GB / 512 GB",
+          "unit": null,
+          "semanticLabel": "Base computing configuration",
+          "conditions": [
+            "Confirm shipped revision and added-kit compute requirements."
+          ],
+          "sourceIds": [
+            "t1-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "edu_sdk",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "EDU secondary-development and SDK support",
+          "conditions": [
+            "Current edition table marks these unavailable for Standard; request EDU explicitly."
+          ],
+          "sourceIds": [
+            "t1-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Operating duration while manipulating",
+          "conditions": [
+            "No measured arm-kit workload runtime reviewed; base duration must not substitute."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "configured_mass_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Complete configured robot mass",
+          "conditions": [
+            "Base and arm mass figures do not establish the full fitted package mass."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Research mobile manipulation, motion planning and coordinated arm-and-leg control.",
+          "configuration": "TRON 1 EDU with TRON1-AP-YG, in sole or wheeled mode.",
+          "operatingMode": "Researcher-supervised software development and controlled trials.",
+          "sourceIds": [
+            "t1-kit",
+            "t1-product"
+          ],
+          "limitations": [
+            "The kit is a research platform; no named production deployment or accepted-task denominator is reported.",
+            "Objects, policies, gripping, sensing and recovery must be developed and measured for the experiment."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "LimX Dynamics",
+          "market": "International inquiry; German delivery and support require written confirmation",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.limxdynamics.com/en/order",
+            "email": "bd@limxdynamics.com",
+            "phone": "+86 180 2538 4639"
+          },
+          "sourceIds": [
+            "t1-product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published sales form and order contact; no confirmed German stock, lead time or complete-kit price.",
+          "authorizationStatus": "Direct manufacturer contact.",
+          "caveats": [
+            "Phone is published as a WhatsApp order route.",
+            "Request an itemized EDU base, exact arm kit, foot configuration, sensors, software, shipping and support quote."
+          ]
+        },
+        {
+          "organization": "MegaRobotics / Megaforce GmbH",
+          "market": "Germany; published Kaarst business address",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.megarobotics.de/de/contact",
+            "email": "info@megarobotics.de"
+          },
+          "sourceIds": [
+            "t1-seller",
+            "mega-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "TRON 1 page lists procurement on request and names arm expansion kits; exact EDU-plus-arm package, price and delivery require a quote.",
+          "authorizationStatus": "Seller page claims official distributor status; no independent manufacturer authorization was reviewed.",
+          "caveats": [
+            "An inquiry listing is not confirmed stock or an accepted order.",
+            "Specify TRON1-AP-YG and sole/wheeled foot hardware; the base listing alone does not establish a complete kit."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The overview markets three foot modes per purchase, while the current EDU specification table marks foot-end accessories optional. Confirm the delivered kit contents."
+      ],
+      "unknowns": [
+        "Measured grasp success, trial count, human intervention and recovery time.",
+        "Arm payload posture limits, loaded runtime and complete configured mass.",
+        "Exact German kit price, delivery, warranty coverage and operator support."
+      ],
+      "sources": [
+        {
+          "id": "t1-product",
+          "url": "https://www.limxdynamics.com/en/products/tron1",
+          "title": "TRON 1 overview",
+          "publisher": "LimX Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "t1-spec",
+          "url": "https://www.limxdynamics.com/en/products/tron1/spec",
+          "title": "TRON 1 edition specifications",
+          "publisher": "LimX Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "t1-kit",
+          "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron1/kits/Mobile%20Manipulation%20Extension%20Kit%20Page.pdf",
+          "title": "TRON1-AP-YG arm-kit datasheet",
+          "publisher": "LimX Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "t1-seller",
+          "url": "https://www.megarobotics.de/de/products/limx-tron1",
+          "title": "MegaRobotics TRON 1 inquiry listing",
+          "publisher": "MegaRobotics",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "mega-contact",
+          "url": "https://www.megarobotics.de/de/contact",
+          "title": "MegaRobotics Germany contact",
+          "publisher": "MegaRobotics",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.limxdynamics.com/en/products/tron1",
+        "https://www.limxdynamics.com/en/products/tron1/spec",
+        "https://limx-video-oss.limxdynamics.com/limx-website/products/tron1/kits/Mobile%20Manipulation%20Extension%20Kit%20Page.pdf",
+        "https://www.megarobotics.de/de/products/limx-tron1",
+        "https://www.megarobotics.de/de/contact"
+      ]
+    },
+    {
+      "manufacturer": "LimX Dynamics",
+      "robotClass": "mobile_manipulator",
+      "workflowId": "robotics_research",
+      "industries": [
+        "research_education"
+      ],
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "id": "limx-tron-2-mobile-manipulation",
+      "name": "LimX TRON 2 + Mobile Manipulation Kit",
+      "exactConfiguration": "TRON 2 EDU sole or wheeled-biped base plus the Autonomous Mobile Manipulation Expansion Kit: one 6-DoF arm, standard two-finger gripper, perception and compute package. The reconfigurable tabletop dual-arm setup and base-only 2-in-1 package are different configurations.",
+      "description": "Research floor-level pickup, switch interaction and arm-leg coordination with a mobile single-arm kit. Published kit-specific navigation and sensing data support experiment planning; they do not establish unattended industrial operation.",
+      "operatingMode": {
+        "value": "PS4 teleoperation, optional VR integration and researcher-supervised development of manipulation/navigation policies.",
+        "sourceIds": [
+          "t2-spec",
+          "t2-product"
+        ],
+        "caveats": [
+          "The kit name contains Autonomous, but task-level autonomy and human recovery have not been independently established.",
+          "The mobile kit has a single 1.5 kg arm; the separate dual-arm tabletop marketing figures do not apply."
+        ]
+      },
+      "specs": [
+        {
+          "key": "dof",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Mobile-kit arm degrees of freedom",
+          "conditions": [
+            "Single added arm; not the 7-DoF arms of the separate dual-arm setup."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_payload_kg",
+          "value": 1.5,
+          "unit": "kg",
+          "semanticLabel": "Mobile-kit published arm payload",
+          "conditions": [
+            "From the dedicated mobile-operation tab; arm extension, duty cycle and centre-of-mass limits need confirmation."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_reach_mm",
+          "value": 626.75,
+          "unit": "mm",
+          "semanticLabel": "Mobile-kit arm reach",
+          "conditions": [
+            "Distinct from the 73 cm reach advertised for the separate dual-arm configuration."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_height_range_mm",
+          "value": "0–1500",
+          "unit": "mm",
+          "semanticLabel": "Mobile-kit working height range",
+          "conditions": [
+            "Whole-body workspace claim; full load is not established at every point."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_repeatability_mm",
+          "value": 0.1,
+          "unit": "mm",
+          "semanticLabel": "Arm repeatability, ± bound",
+          "conditions": [
+            "Arm measure only; not absolute positioning or whole-body task accuracy."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "gripper_opening_range_mm",
+          "value": "0–70",
+          "unit": "mm",
+          "semanticLabel": "Standard two-finger gripper opening",
+          "conditions": [
+            "Optional dexterous hand is a different end effector."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "gripper_rated_force_n",
+          "value": 40,
+          "unit": "N",
+          "semanticLabel": "Standard gripper rated force",
+          "conditions": [
+            "Grip force does not guarantee retention of a given object or surface."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "gripper_positioning_accuracy_mm",
+          "value": 0.5,
+          "unit": "mm",
+          "semanticLabel": "Gripper positioning accuracy, ± bound",
+          "conditions": [
+            "Not arm or mobile-base positional accuracy."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wrist_camera",
+          "value": "Intel RealSense D405",
+          "unit": null,
+          "semanticLabel": "Mobile-kit end-effector camera",
+          "conditions": [],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "lidar_channels",
+          "value": 48,
+          "unit": null,
+          "semanticLabel": "Mobile-kit LiDAR channel count",
+          "conditions": [
+            "Separate from depth-camera resolution."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "lidar_detection_range_m",
+          "value": 80,
+          "unit": "m",
+          "semanticLabel": "LiDAR detection range at 10% reflectivity",
+          "conditions": [
+            "Manufacturer also lists a 150 m maximum without the same reflectivity condition; do not interchange them."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "depth_camera_range_m",
+          "value": "0.3–3",
+          "unit": "m",
+          "semanticLabel": "Depth-camera recommended operating range",
+          "conditions": [
+            "Not the LiDAR range or arm-camera working distance."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mapping_area_per_session_m2",
+          "value": 4000,
+          "unit": "m²",
+          "semanticLabel": "Published maximum mapping area per session",
+          "conditions": [
+            "Manufacturer kit tab; site geometry, lighting and acceptance criteria are unspecified."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mapping_success_rate_percent",
+          "value": 90,
+          "unit": "%",
+          "semanticLabel": "Manufacturer mapping-session success claim",
+          "conditions": [
+            "Trial count, benchmark route, failure definition and test distribution are not disclosed."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "navigation_accuracy_cm",
+          "value": 20,
+          "unit": "cm",
+          "semanticLabel": "Published navigation accuracy, ± bound",
+          "conditions": [
+            "Mobile navigation measure; not sub-millimetre arm placement accuracy."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "localization_heading_error_deg",
+          "value": 15,
+          "unit": "°",
+          "semanticLabel": "Localization heading-error upper bound",
+          "conditions": [
+            "Manufacturer writes ≤15°; test conditions are not given."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "patrol_speed_m_s",
+          "value": "0–1",
+          "unit": "m/s",
+          "semanticLabel": "Kit navigation patrol speed range",
+          "conditions": [
+            "Do not use base-only maximum wheeled speed as autonomous manipulation speed."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute_int8_tops",
+          "value": 100,
+          "unit": "TOPS",
+          "semanticLabel": "Kit compute performance at INT8",
+          "conditions": [
+            "Compute capability does not establish learned-policy task throughput."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute_memory_gb",
+          "value": 16,
+          "unit": "GB",
+          "semanticLabel": "Mobile-kit compute memory",
+          "conditions": [],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compute_storage_tb",
+          "value": 2,
+          "unit": "TB",
+          "semanticLabel": "Mobile-kit compute storage",
+          "conditions": [],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "development_interfaces",
+          "value": "Python / C++ / ROS 1 / ROS 2",
+          "unit": null,
+          "semanticLabel": "Mobile-kit development environments",
+          "conditions": [
+            "SDK and simulation support are published; confirm release and dependencies."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "teleoperation_input",
+          "value": "PS4 controller; VR integration supported",
+          "unit": null,
+          "semanticLabel": "Mobile-kit teleoperation interface",
+          "conditions": [
+            "PS4 controller is listed as included; VR integration is not a bundled headset claim."
+          ],
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Operating duration during mobile manipulation",
+          "conditions": [
+            "No loaded manipulation duty-cycle runtime was found."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "configured_mass_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Complete configured robot mass",
+          "conditions": [
+            "The kit and base combination needs a quoted mass and operating envelope."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Research floor pickup, switch/button interaction and coordinated grasping while moving.",
+          "configuration": "TRON 2 base with its single-arm Mobile Manipulation Kit.",
+          "operatingMode": "Human teleoperation and supervised policy development.",
+          "sourceIds": [
+            "t2-product",
+            "t2-spec"
+          ],
+          "limitations": [
+            "Manufacturer illustrations and application claims; no published task trial denominator or intervention rate.",
+            "Object pose, grip, reach and stability need experiment-specific qualification."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Validate mapping, localization, obstacle avoidance and patrol routes.",
+          "configuration": "Mobile Manipulation Kit with its specified LiDAR, depth sensor and computing package.",
+          "operatingMode": "Researcher-supervised navigation setup and evaluation.",
+          "sourceIds": [
+            "t2-spec"
+          ],
+          "limitations": [
+            "Published component/navigation limits do not establish inspection-detection quality or unattended site safety.",
+            "Mapping-success denominator and benchmark route are not disclosed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "LimX Dynamics",
+          "market": "International inquiry; German delivery and support require written confirmation",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.limxdynamics.com/en/order",
+            "email": "bd@limxdynamics.com",
+            "phone": "+86 180 2538 4639"
+          },
+          "sourceIds": [
+            "t2-product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published sales form and order contact; no confirmed German stock, lead time or complete-kit price.",
+          "authorizationStatus": "Direct manufacturer contact.",
+          "caveats": [
+            "Phone is published as a WhatsApp order route.",
+            "Request an itemized EDU base, exact arm kit, foot configuration, sensors, software, shipping and support quote."
+          ]
+        },
+        {
+          "organization": "reichelt elektronik GmbH",
+          "market": "Germany; Germany-country storefront and Sande business address",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.reichelt.com/de/en/shop/product/limx_dynamics_tron2_2-in-1-429867",
+            "email": "info@reichelt.de",
+            "phone": "+49 4422 955333"
+          },
+          "sourceIds": [
+            "t2-reichelt"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published TRON2_TWO_IN_ONE base listing is marked special order. The reviewed listing does not include the mobile arm kit; obtain a separate complete-configuration quote.",
+          "authorizationStatus": "Public reseller listing; manufacturer authorization not independently established.",
+          "caveats": [
+            "Listing explicitly includes core, wheeled legs, sole feet, sensors, battery and charger; no manipulation arm is listed.",
+            "Do not treat its listed base price or availability as the complete mobile-kit offer.",
+            "Web page was readable; later automated refresh was refused because robots.txt returned 503, so no current stock or lead time is confirmed."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The reichelt base listing names an Intel i7; current official EDU base specifications name Core Ultra, and the mobile kit separately lists an NVIDIA compute package. Confirm the bill of materials; these are not interchangeable.",
+        "Headline 10 kg dual-arm payload and 30 kg base carrying capacity describe other configurations/measures; neither is this mobile arm payload."
+      ],
+      "unknowns": [
+        "Task trial counts, accepted output, autonomy limits and human recovery time.",
+        "Loaded runtime, total configured mass and payload conditions while moving.",
+        "German availability, complete kit price, import/service terms and final software/hardware revision."
+      ],
+      "sources": [
+        {
+          "id": "t2-product",
+          "url": "https://www.limxdynamics.com/en/products/tron2",
+          "title": "TRON 2 mobile-kit overview",
+          "publisher": "LimX Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "t2-spec",
+          "url": "https://www.limxdynamics.com/en/products/tron2/spec",
+          "title": "TRON 2 dedicated mobile-kit specifications",
+          "publisher": "LimX Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "t2-reichelt",
+          "url": "https://www.reichelt.com/de/en/shop/product/limx_dynamics_tron2_2-in-1-429867",
+          "title": "reichelt TRON2 2-in-1 base listing",
+          "publisher": "reichelt elektronik",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://www.limxdynamics.com/en/products/tron2",
+        "https://www.limxdynamics.com/en/products/tron2/spec",
+        "https://www.reichelt.com/de/en/shop/product/limx_dynamics_tron2_2-in-1-429867"
+      ]
+    }
+  ]
+}

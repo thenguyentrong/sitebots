@@ -1,0 +1,169 @@
+{
+ "schemaVersion": 1,
+ "id": "dusty-robotics-fieldprinter-2",
+ "maker": "Dusty Robotics",
+ "makerCountry": "US",
+ "model": "FieldPrinter 2",
+ "variant": null,
+ "name": "Dusty Robotics FieldPrinter 2",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": "https://www.dustyrobotics.com/discover/construction-robot",
+ "summary": "A small floor robot that prints multi-trade layout from the BIM model onto the slab.",
+ "launched": "2024-01",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Dusty states the FieldPrinter is currently available in North America only; its listed partners cover the USA and Canada. No European seller or service partner found.",
+  "sourceIds": [
+   "s1",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_lb",
+   "label": "Weight",
+   "value": 23,
+   "unit": "lb",
+   "conditions": "including battery; source gives pounds",
+   "sourceId": "s2"
+  },
+  {
+   "key": "print_head_width",
+   "label": "Print head width",
+   "value": "1 inch",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "print_resolution_dpi",
+   "label": "Print resolution",
+   "value": 300,
+   "unit": "dpi",
+   "conditions": "press release 2024",
+   "sourceId": "s2"
+  },
+  {
+   "key": "marking_accuracy",
+   "label": "Accuracy",
+   "value": "1/16 inch",
+   "unit": null,
+   "conditions": "across the slab; product page states 600 DPI",
+   "sourceId": "s1"
+  },
+  {
+   "key": "area_per_day",
+   "label": "Output",
+   "value": "10,000-15,000 sq ft per day",
+   "unit": null,
+   "conditions": "one operator",
+   "sourceId": "s3"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Battery swap without stopping",
+   "value": true,
+   "unit": null,
+   "conditions": "\"Power Hold\" keeps it running during battery replacement (2024 press release)",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Not available in Germany.",
+   "Wheels visible on the product photo; drive details not published.",
+   "Prints up to edges and columns; AI obstacle avoidance.",
+   "Dusty partners for file preparation and layout service cover the USA and Canada only."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/64d2bbdae796ca9291a4c909/6723f1c3efa5e2155ce3b8d8_dusty-robotics-fieldprinter-obstacles-line-styles.webp",
+   "pageUrl": "https://www.dustyrobotics.com/discover/construction-robot",
+   "credit": "Dusty Robotics",
+   "alt": "Dusty FieldPrinter on a concrete slab next to printed lines",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Prints walls, MEP runs, embeds, anchor points and QR codes onto slabs",
+   "stage": "claim",
+   "where": "North America",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dustyrobotics.com/discover/construction-robot",
+   "title": "FieldPrinter construction robot page",
+   "publisher": "Dusty Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.prnewswire.com/news-releases/dusty-robotics-unveils-second-generation-robot-and-comprehensive-bim-to-field-automated-workflow-302041417.html",
+   "title": "Dusty Robotics unveils second-generation robot",
+   "publisher": "Dusty Robotics via PR Newswire",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.dustyrobotics.com/",
+   "title": "Dusty Robotics home page",
+   "publisher": "Dusty Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.dustyrobotics.com/partners",
+   "title": "Partners",
+   "publisher": "Dusty Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Any plan to sell in Europe.",
+  "Battery runtime and drive type."
+ ],
+ "checkedAt": "2026-10-02"
+}

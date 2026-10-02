@@ -9,11 +9,13 @@ import type { Trust } from '@/lib/spec/enums';
 
 const TRUSTS: Trust[] = ['verified', 'assessed', 'reported', 'unknown'];
 const LINKS = [
-  { href: '/use-cases', label: 'Use cases' },
-  { href: '/use-cases/criteria', label: 'How tasks are screened' },
+  { href: '/#explore', label: 'Job map' },
+  { href: '/steps', label: 'How the work is done' },
   { href: '/robots', label: 'Robots' },
   { href: '/brands', label: 'Makers' },
+  { href: '/costs', label: 'Where the money goes' },
   { href: '/compare', label: 'Compare' },
+  { href: '/use-cases/criteria', label: 'How tasks are screened' },
 ];
 
 export function SiteFooter() {

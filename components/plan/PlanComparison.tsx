@@ -15,7 +15,7 @@ export function PlanComparison({ project, results = [] }: { project: Project; re
           <tr><th>Human work</th><td>Record in the baseline</td>{project.options.map((option) => <td key={option.id} className="whitespace-pre-wrap">{option.operator || 'Operation, exceptions and fallback to confirm'}</td>)}</tr>
           <tr><th>Screening</th><td>Baseline to measure</td>{project.options.map((option) => {
             const result = results.find((row) => row.id === option.robotId);
-            return <td key={option.id}>{result ? result.blocked ? 'Requirement mismatch' : result.open ? result.open + ' criteria need confirmation' : 'Published requirements match; deployment still needs review' : 'Needs assessment'}</td>;
+            return <td key={option.id}>{result ? result.blocked ? 'Requirement mismatch' : result.open ? result.open + ' criteria need confirmation' : 'Published requirements match; deployment still needs review' : option.solutionReviewId ? 'Source review available; your task fit needs assessment' : 'Needs assessment'}</td>;
           })}</tr>
           {criteria.map((criterion) => <tr key={criterion.id}><th>{criterion.label}</th><td>Baseline to measure</td>{project.options.map((option) => {
             const match = results.find((row) => row.id === option.robotId)?.criteria.find((item) => item.id === criterion.id);
@@ -26,7 +26,7 @@ export function PlanComparison({ project, results = [] }: { project: Project; re
           <tr><th>Simple payback</th><td>Not applicable</td>{project.options.map((option) => { const cost = costResult(option.costs); return <td key={option.id} className="num">{cost.kind === 'ready' ? cost.payback !== null ? cost.payback.toFixed(1) + ' years' : 'No payback' : 'Estimate incomplete'}</td>; })}</tr>
           <tr><th>Supply and support</th><td>Existing arrangements</td>{project.options.map((option) => {
             const result = results.find((row) => row.id === option.robotId);
-            return <td key={option.id}>{result ? <Link href={result.href} className="underline underline-offset-4">Check buying details and configuration</Link> : 'Supplier and regional support to confirm'}</td>;
+            return <td key={option.id}>{result ? <Link href={result.href} className="underline underline-offset-4">Check buying details and configuration</Link> : option.solutionReviewId && option.href ? <Link href={option.href} className="underline underline-offset-4">Reviewed buying routes; confirm exact terms</Link> : 'Supplier and regional support to confirm'}</td>;
           })}</tr>
         </tbody>
       </table>

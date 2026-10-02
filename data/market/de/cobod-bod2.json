@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "cobod-bod2",
+ "maker": "COBOD International",
+ "makerCountry": "DK",
+ "model": "BOD2",
+ "variant": null,
+ "name": "COBOD BOD2",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://cobod.com/technology/3d-construction-printers/bod2/",
+ "summary": "Modular gantry 3D construction printer assembled on site that prints the concrete walls of buildings up to three storeys.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany by PERI 3D Construction (purchase in DE, AT, CH, FR, PL) with silo and mixing pump, training and project support; price on request.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "PERI 3D Construction GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.peri3dconstruction.com/en/cobod-bod2",
+    "contactUrl": "https://www.peri3dconstruction.com/en/kontakt",
+    "email": "info@peri3dconstruction.com",
+    "phone": "+49 7309 950 0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Weißenhorn. PERI is a key COBOD shareholder and says the BOD2 can be bought exclusively through PERI 3D Construction in Germany, Austria, Switzerland, France and Poland; extra modules can be rented."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "print_area_m",
+   "label": "Max. printable area",
+   "value": "14.62 x 49.41 x 8.53",
+   "unit": "m",
+   "conditions": "X x Y x Z incl. concrete bases, standard config",
+   "sourceId": "s1"
+  },
+  {
+   "key": "module_m",
+   "label": "Gantry module length",
+   "value": 2.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_mms",
+   "label": "Max. printing speed",
+   "value": 500,
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "layer_width_mm",
+   "label": "Layer width",
+   "value": 500,
+   "unit": "mm",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "layer_height_mm",
+   "label": "Layer height",
+   "value": 75,
+   "unit": "mm",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": 4,
+   "unit": "people",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ce_marking",
+   "label": "CE certified",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Not mobile: steel gantry is assembled around the building with a crane.",
+   "Needs a mixing pump and printable concrete; PERI includes silo and mixing pump with a purchase."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cobod.com/wp-content/uploads/2026/07/frame-11617.png",
+   "pageUrl": "https://cobod.com/technology/3d-construction-printers/bod2/",
+   "credit": "COBOD International",
+   "alt": "COBOD BOD2 gantry printer (render)",
+   "kind": "product"
+  },
+  {
+   "url": "https://cobod.com/wp-content/uploads/2026/07/dji-fly-20220824-132550-338-1661372757536-photo-optimized-2-1.jpg",
+   "pageUrl": "https://cobod.com/technology/3d-construction-printers/bod2/",
+   "credit": "COBOD International",
+   "alt": "COBOD BOD2 gantry printer set up over a house slab with mixing and pumping units beside it, aerial view",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printed the walls of a two-storey 364 m² office headquarters in about 105 hours",
+   "stage": "deployment",
+   "where": "Matthäi Schlüsselfertigbau, Selsingen, Germany",
+   "date": "2026-07",
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cobod.com/technology/3d-construction-printers/bod2/",
+   "title": "BOD2",
+   "publisher": "COBOD International",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.peri3dconstruction.com/en/cobod-bod2",
+   "title": "COBOD BOD2 at PERI 3D Construction",
+   "publisher": "PERI 3D Construction GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.peri3dconstruction.com/en/kontakt",
+   "title": "Contact",
+   "publisher": "PERI 3D Construction GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://cobod.com/german-construction-giant-launches-3d-printing-division-after-printing-its-own-headquarters/",
+   "title": "German construction giant launches 3D printing division",
+   "publisher": "COBOD International",
+   "kind": "customer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,65 @@
+{
+ "schemaVersion": 1,
+ "id": "example-robotics-x1-pro",
+ "maker": "Example Robotics",
+ "makerCountry": "CN",
+ "model": "X1",
+ "variant": "Pro with two dexterous hands",
+ "name": "Example Robotics X1 Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://example.com/x1",
+ "summary": "A 1.6 m humanoid with two five-finger hands for light picking at a workstation.",
+ "launched": "2025-06",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Europe through an authorised distributor in Germany; price on request.",
+  "sourceIds": ["s2"],
+  "priceEur": null,
+  "priceOther": { "amount": 99000, "currency": "USD", "market": "US online store", "sourceId": "s1" },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Example Distribution GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://example.de/x1-pro",
+    "contactUrl": "https://example.de/kontakt",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Listed as authorised distributor on the manufacturer partner page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  { "key": "height_m", "label": "Height", "value": 1.6, "unit": "m", "conditions": null, "sourceId": "s1" },
+  { "key": "arm_payload_kg", "label": "Payload per arm", "value": 3, "unit": "kg", "conditions": "rated, arm extended", "sourceId": "s1" }
+ ],
+ "capabilities": {
+  "legs": true, "wheels": false, "tracks": false,
+  "levelFloors": true, "roughGround": null, "stairs": null, "outdoor": null,
+  "arms": 2, "hands": "dexterous", "handsIncluded": true,
+  "armPayloadKg": 3, "carryPayloadKg": null, "runtimeH": 2, "ipRating": null,
+  "sdk": "ROS 2, Python SDK",
+  "sourceIds": ["s1"],
+  "notes": ["Runtime stated without load."]
+ },
+ "images": [
+  { "url": "https://example.com/img/x1-pro.png", "pageUrl": "https://example.com/x1", "credit": "Example Robotics", "alt": "Example Robotics X1 Pro, front view", "kind": "product" }
+ ],
+ "evidence": [
+  { "taskIds": ["research:humanoid-sort-flow-rack-components"], "task": "Picks parts from a flow rack in a car plant", "stage": "pilot", "where": "Example Auto, Germany", "date": "2026-03", "sourceId": "s3", "note": null }
+ ],
+ "sources": [
+  { "id": "s1", "url": "https://example.com/x1", "title": "X1 product page", "publisher": "Example Robotics", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s2", "url": "https://example.de/x1-pro", "title": "X1 Pro at Example Distribution", "publisher": "Example Distribution GmbH", "kind": "seller", "checkedAt": "2026-10-02" },
+  { "id": "s3", "url": "https://example.com/news/pilot", "title": "Pilot announcement", "publisher": "Example Auto", "kind": "customer", "checkedAt": "2026-10-02" }
+ ],
+ "openQuestions": ["Is the hand payload rated or peak?"],
+ "checkedAt": "2026-10-02"
+}

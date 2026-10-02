@@ -1,0 +1,204 @@
+{
+ "schemaVersion": 1,
+ "id": "civ-robotics-civdot-mini",
+ "maker": "Civ Robotics",
+ "makerCountry": "US",
+ "model": "CivDot Mini",
+ "variant": null,
+ "name": "Civ Robotics CivDot Mini",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_roads_paving/stakeout-kerb-lines"
+ ],
+ "officialUrl": "https://www.civrobotics.com/robots/layout-robots/civdot-mini",
+ "summary": "A small GNSS robot that sprays solid and dashed lines on paved surfaces such as roads, runways and car parks.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 40000,
+   "currency": "USD",
+   "market": "US purchase price",
+   "sourceId": "s3"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.civrobotics.com/robots/layout-robots/civdot-mini",
+    "contactUrl": "https://www.civrobotics.com/contact",
+    "email": "info@civrobotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Direct sale or rental from San Francisco; formal quote via website. No German or EU office, distributor or reseller found.",
+    "name": "Civ Robotics Inc.",
+    "country": "US",
+    "role": "manufacturer",
+    "sourceId": "s3"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Sold direct by the US maker on request (pricing page: buy or rent, formal quote). The maker lists Germany among about 40 countries where its robots have worked and said in 2025 it is expanding into Europe, the Middle East and Africa. No German or EU distributor, office or CE information found; check service and CE conformity before ordering.",
+  "sourceIds": [
+   "s4",
+   "s3",
+   "s5"
+  ]
+ },
+ "specs": [
+  {
+   "key": "accuracy",
+   "label": "Accuracy",
+   "value": "sub-inch (25 mm)",
+   "unit": null,
+   "conditions": "overview page says 25 mm, FAQ says 2 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "line_rate",
+   "label": "Line rate",
+   "value": "200 ft (60 m) per minute",
+   "unit": null,
+   "conditions": "solid and dashed lines, up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "paint_refill",
+   "label": "Paint can swap",
+   "value": "every 1,200 ft (350 m) of solid line",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "GNSS RTK",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_lb",
+   "label": "Weight",
+   "value": 50,
+   "unit": "lb",
+   "conditions": "maker gives pounds only",
+   "sourceId": "s6"
+  },
+  {
+   "key": "lines_per_day",
+   "label": "Line length per day",
+   "value": "17 miles",
+   "unit": null,
+   "conditions": "up to, solid or dashed",
+   "sourceId": "s6"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "For paved surfaces only.",
+   "GNSS only."
+  ],
+  "sourceIds": [
+   "s1",
+   "s6"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://d3bf96qx5wreyx.cloudfront.net/Untitled_design_40_b1a81b89b0.png",
+   "pageUrl": "https://www.civrobotics.com/robots/layout-robots",
+   "credit": "Civ Robotics",
+   "alt": "Civ Robotics CivDot Mini on asphalt",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/stakeout-kerb-lines"
+   ],
+   "task": "Marks highway striping, runway, car park, kerb and gutter lines",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.civrobotics.com/robots/layout-robots",
+   "title": "Layout robots",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.civrobotics.com/faq",
+   "title": "FAQ",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.civrobotics.com/pricing",
+   "title": "Pricing",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.civrobotics.com/",
+   "title": "Home page with country list",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://solarbuildermag.com/projects/civ-robotics-secures-7-5m-to-modernize-renewable-energy-construction/",
+   "title": "Civ Robotics secures $7.5M",
+   "publisher": "Solar Builder",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.civrobotics.com/robots/layout-robots/civdot-mini",
+   "title": "CivDot Mini product page",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "CE marking and EU service support.",
+  "Runtime.",
+  "Product pages show \"Reserve\" buttons; whether deliveries to Germany are possible today is not stated."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,195 @@
+schema_version: 1
+id: site_concrete/slab-concrete-pour
+status: published
+setting: site_concrete
+family: machine_operation_dedicated
+trades: [concrete]
+title:
+  en: "Place slab concrete with a truck-mounted pump and screed it off"
+  de: "Decke mit der Autobetonpumpe betonieren und abziehen"
+summary:
+  en: "Guide the end hose of the pump boom over the reinforced slab, fill the formwork to height section by section and strike the surface off to level with a straightedge or a vibrating screed."
+  de: "Den Endschlauch des Verteilermasts über die bewehrte Decke führen, die Schalung abschnittsweise auf Höhe füllen und die Oberfläche mit Abziehlatte oder Vibrationsbohle eben abziehen."
+description:
+  en: "The concrete comes from a truck-mounted pump such as Putzmeister's M38 (BSF 38-5): 37.5 m reach height, a 4 m end hose on a DN 125 line and up to 170 m³/h. The pump operator moves the boom by radio remote, one worker guides the end hose across the reinforcement, and the crew compacts the concrete (a separate task) and strikes it off with a straightedge or a vibrating screed whose drive unit alone weighs 16.3 kg. If the pump draws in air, the end hose can whip and injure the person guiding it, and while pumping starts nobody may stand in its danger zone. The slab is load-bearing, and its top has to meet the flatness limit for unfinished slab tops."
+  de: "Der Beton kommt von einer Autobetonpumpe wie der M38 (BSF 38-5) von Putzmeister: 37,5 m Reichhöhe, 4 m Endschlauch an einer DN-125-Leitung und bis zu 170 m³/h. Der Maschinist bewegt den Mast per Funkfernsteuerung, ein Arbeiter führt den Endschlauch über die Bewehrung, und die Kolonne verdichtet den Beton (eigene Aufgabe) und zieht ihn mit Abziehlatte oder einer Vibrationsbohle ab, deren Antriebseinheit allein 16,3 kg wiegt. Saugt die Pumpe Luft an, kann der Endschlauch ausschlagen und den Schlauchführer verletzen, und beim Anpumpen darf sich niemand in seinem Gefahrbereich aufhalten. Die Decke ist tragend, und ihre Oberseite muss die Ebenheitsgrenze für nichtflächenfertige Oberseiten von Decken einhalten."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Concrete for slabs: place with a truck-mounted pump and screed off"
+    de: "Beton für Deckenplatten mit Autobetonpumpe einbringen und abziehen"
+  unit: m3
+attributes:
+  object_mass_kg:
+    value: null
+    confidence: assumed
+    evidence_url: 'https://www.wackerneuson.de/produkte/betontechnik/vibrationsbohlen/p35a/technische-daten/tab'
+    note: "Not known. The heaviest item lifted and carried is the vibrating screed where one is used: the Wacker Neuson P35A drive unit alone weighs 16.3 kg in operation, and its magnesium blade of 1.2 to 4.9 m adds a weight the page does not give, so the screed as used weighs more than 16.3 kg; a hand straightedge weighs less. The 4 m end hose is guided, not carried: it hangs from the boom tip and, at DN 125, holds about 0.05 m³ of concrete (calculated). Weigh your screed with its blade."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The same routine on every slab, but outline, thickness, openings, embedded conduits and the pour sequence change from slab to slab."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Height and flatness are checked while the concrete is fresh and corrected by screeding again; once it has set, high or low spots cost grinding or levelling compound."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    note: "The slab is load-bearing; how it is placed decides its strength and cover. The person at the end hose is exposed as well: BG BAU names people in the end-hose danger zone during priming among the causes of accidents."
+  reach_height_m:
+    value: { min: 0, max: 1.5 }
+    confidence: assumed
+    note: "The end hose is held between knee and chest height and the screed is drawn at slab level. Not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Slabs are poured before the storey above exists, in the open."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Fresh concrete makes no dust; it is alkaline on the skin and splashes into the eyes."
+  wet:
+    value: rain
+    confidence: likely
+    evidence_url: 'https://publikationen.dguv.de/widgets/pdf/download/article/3713'
+    note: "Wet material, and pours continue in light rain; DGUV Regel 113-604 has pumping stopped and the boom retracted in thunderstorms and strong wind."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "The crew walks on the top reinforcement mats and the formwork deck."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.putzmeister.com/documents/20127/71434/M38-5+Prospekt+DE.pdf/ec2a938f-8f77-f680-5a0f-b098674fdbd1?t=1778569074432'
+    note: "The truck-mounted pump conveys and places the concrete; its boom is moved by radio remote, and Putzmeister's iBC control moves the end hose at a preset height with one joystick. A person still guides the end of the hose and the crew screeds. Crane-set laser screeds for elevated slabs exist (Somero SkyScreed 36), with availability listed for the US, the UK and India."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded. The pump delivers up to 160 to 170 m³/h (Putzmeister BSF 38-5); on a slab, placing, compaction and screeding set the pace."
+requirements:
+  object_size_m:
+    value: { min: 1.2, max: 4.9 }
+    confidence: likely
+    evidence_url: 'https://www.wackerneuson.de/produkte/betontechnik/vibrationsbohlen/p35a/module/tab'
+    note: "Screed blades for the P35A from 4 ft (1.2 m) to 16 ft (4.9 m), converted from the listed lengths; the end hose is 4 m long (Putzmeister)."
+  tolerance_mm:
+    value: 15
+    confidence: confirmed
+    evidence_url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    note: "Flatness of the slab top: DIN 18202 table 3, row 1 (unfinished tops of slabs), 15 mm as the limit at a measuring point distance of 1 m; row 2 (increased requirements, e.g. under floating screed, tiles or industrial floors) 8 mm. Limits, not ± values."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure published for guiding the end hose; DGUV Regel 113-604 warns that air drawn into the pump can make the end hose whip and injure the person guiding it."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: unknown, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the pour with the pump operator and a trained concrete crew: the boom already does the conveying under remote control, the slab is load-bearing and the work is in the open. Where the hose position or the screeding effort is the issue, ask the pump contractor about boom assistance and ask suppliers whether a laser screed for elevated slabs is offered in Germany."
+      de: "Das Betonieren beim Maschinisten und einer geschulten Betonkolonne lassen: Der Mast übernimmt das Fördern bereits per Fernsteuerung, die Decke ist tragend und die Arbeit findet im Freien statt. Wo die Schlauchführung oder der Aufwand beim Abziehen das Thema ist, beim Pumpendienst nach Mastassistenz fragen und bei Lieferanten klären, ob ein Laser-Screed für Geschossdecken in Deutschland angeboten wird."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [ergonomics, exposure, quality]
+capabilities_required: [carry_payload, surface_finishing]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "Putzmeister's BSF 38-5 truck-mounted pump: five-arm boom with 37.5 m reach height and 32.8 m reach, a 4 m end hose on a DN 125 delivery line, and up to 170 m³/h (piston side) or 160 m³/h (rod side) depending on the pump unit."
+      de: "Autobetonpumpe BSF 38-5 von Putzmeister: fünfarmiger Mast mit 37,5 m Reichhöhe und 32,8 m Reichweite, 4 m Endschlauch an einer Förderleitung DN 125 und je nach Pumpe bis zu 170 m³/h (kolbenseitig) oder 160 m³/h (stangenseitig)."
+    url: 'https://www.putzmeister.com/web/european-union/product-detail/-/product/172/bsf-38-5'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Product page, undated, read on 2026-10-02."
+  - statement:
+      en: "Putzmeister calls the M38 its best-selling truck-mounted pump. Its iBC boom control lets the operator move the boom with one hand on a joystick, damps boom vibration for steady guidance of the end hose and moves the end hose forwards, backwards or diagonally at a preset height."
+      de: "Putzmeister nennt die M38 seine meistverkaufte Autobetonpumpe. Die Maststeuerung iBC lässt den Bediener den Mast mit einer Hand am Joystick bewegen, dämpft Mastschwingungen für ein konstantes Führen des Endschlauchs und verfährt den Endschlauch nach vorne, hinten oder diagonal in vorgewählter Höhe."
+    url: 'https://www.putzmeister.com/documents/20127/71434/M38-5+Prospekt+DE.pdf/ec2a938f-8f77-f680-5a0f-b098674fdbd1?t=1778569074432'
+    kind: manufacturer
+    tier: 1
+    date: '2021-01-01'
+    type: claim
+    confidence: confirmed
+    note: "Brochure CT 4468-4 DE, © 2021; month not stated, dated to 1 January. Read on 2026-10-02."
+  - statement:
+      en: "BG BAU sheet B 216 on concrete pumps and placing booms: accidents happen through unstable set-up, too little distance to overhead lines, or people in the danger zone at the end hose during priming. When priming or re-priming, the end hose must hang free and nobody may stand in its danger zone; no fixed attachments or extensions on end hoses."
+      de: "Baustein B 216 der BG BAU zu Betonpumpen und Verteilermasten: Unfälle ereignen sich durch nicht standsichere Aufstellung, zu geringen Abstand zu Freileitungen oder Aufenthalt von Personen im Gefahrenbereich am Endschlauch beim Anpumpen. Beim Anpumpen oder Wiederanpumpen muss der Endschlauch frei pendelnd hängen, im Gefahrbereich darf sich niemand aufhalten; keine festen Anbauten und Verlängerungen an Endschläuchen."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_216/b_216.htm'
+    kind: regulator
+    tier: 1
+    date: '2021-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Sheet dated 07/2021, read on 2026-10-02."
+  - statement:
+      en: "DGUV Regel 113-604 (March 2021) on operating concrete pumps: air drawn into the hopper can make the end hose whip and injure the person at the end hose; pumping is stopped and the boom retracted in thunderstorms and strong wind; the end hose has to keep to the pump maker's limits on length and weight."
+      de: "DGUV Regel 113-604 (März 2021) zum Betrieb von Betonpumpen: Durch Ansaugen von Luft im Aufgabebehälter kann der Endschlauch ausschlagen und die Person am Endschlauch verletzen; bei Gewitter und starkem Wind werden die Pumparbeiten eingestellt und der Mast eingefahren; der Endschlauch muss die Festlegungen des Pumpenherstellers zu Länge und Gewicht einhalten."
+    url: 'https://publikationen.dguv.de/widgets/pdf/download/article/3713'
+    kind: regulator
+    tier: 1
+    date: '2021-03-01'
+    type: claim
+    confidence: confirmed
+    note: "Edition March 2021, read on 2026-10-02."
+  - statement:
+      en: "Wacker Neuson's P35A hand-guided vibrating screed: Honda GX35 petrol engine, 16.3 kg operating weight, 1.5 h runtime per tank and 4.1 m/s² hand-arm vibration."
+      de: "Handgeführte Vibrationsbohle P35A von Wacker Neuson: Benzinmotor Honda GX35, 16,3 kg Betriebsgewicht, 1,5 h Laufzeit je Tankfüllung und 4,1 m/s² Hand-Arm-Vibration."
+    url: 'https://www.wackerneuson.de/produkte/betontechnik/vibrationsbohlen/p35a/technische-daten/tab'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Technical data tab, undated, read on 2026-10-02. The listed size, 933 × 933 × 903 mm, is shorter than the shortest blade (4 ft), and the blades are separate module components, so the weight is for the drive unit without its blade."
+  - statement:
+      en: "Somero's SkyScreed 36 is a stationary laser screed for elevated slabs: 4,717 kg, a 10.97 m knuckle boom, a 2.4 m vibrating screed head, laser elevation control and wireless remote control; it is set from placement to placement by the tower crane. Somero lists availability for the United States, the United Kingdom and India."
+      de: "Der SkyScreed 36 von Somero ist ein stationärer Laser-Screed für Geschossdecken: 4.717 kg, 10,97 m Knickausleger, 2,4 m Vibrationsabziehkopf, Laser-Höhensteuerung und Funkfernsteuerung; er wird vom Turmdrehkran von Position zu Position gesetzt. Somero nennt als Verfügbarkeit die USA, Großbritannien und Indien."
+    url: 'https://www.somero.com/products/skyscreed-36/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Product page, undated, read on 2026-10-02. Not listed for Germany."
+  - statement:
+      en: "DIN 18202 table 3 (as reproduced in the screed trade handbook of the ZDB): unfinished tops of slabs (row 1) allow 15 mm as the limit at a measuring point distance of 1 m; with increased requirements, e.g. under floating screed, tiles or industrial floors (row 2), 8 mm."
+      de: "DIN 18202 Tabelle 3 (wiedergegeben im Handbuch für das Estrich- und Belaggewerbe des ZDB): Nichtflächenfertige Oberseiten von Decken (Zeile 1) erlauben 15 mm als Grenzwert bei 1 m Messpunktabstand; mit erhöhten Anforderungen, z. B. zur Aufnahme von schwimmenden Estrichen, Fliesen oder Industrieböden (Zeile 2), 8 mm."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Copy of the table published by a screed contractor; the values at 0.1, 1, 4, 10 and 15 m are from the standard, the others interpolated. Read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. If the hose position or the screeding crew is the concern, compare a pour with boom assistance and, where offered, a laser screed against your usual crew on one large open slab, hours per cubic metre and flatness measured to DIN 18202."
+    de: "Kein Roboterpilot. Wenn die Schlauchführung oder die Abziehkolonne das Anliegen ist, eine Betonage mit Mastassistenz und, wo angeboten, einem Laser-Screed gegen die übliche Kolonne auf einer großen offenen Decke vergleichen, Stunden je Kubikmeter und Ebenheit nach DIN 18202 gemessen."
+prerequisites: []
+open_questions:
+  - { en: "How large and how open are your slab pours, and does your pump contractor run boom assistance such as preset-height control?", de: "Wie groß und wie offen sind Ihre Deckenbetonagen, und setzt Ihr Pumpendienst Mastassistenz wie eine Höhenvorwahl ein?" }
+  - { en: "Do you strike off with a straightedge or a vibrating screed, and what does the screed weigh with its blade?", de: "Ziehen Sie mit der Abziehlatte oder einer Vibrationsbohle ab, und was wiegt die Bohle mit Klinge?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

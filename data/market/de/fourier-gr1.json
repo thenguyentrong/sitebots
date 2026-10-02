@@ -1,0 +1,173 @@
+{
+ "schemaVersion": 1,
+ "id": "fourier-gr1",
+ "maker": "Fourier",
+ "makerCountry": "CN",
+ "model": "GR-1",
+ "variant": null,
+ "name": "Fourier GR-1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "Fourier's first full-size humanoid (1.65 m, 55 kg, 44 joints), now superseded by GR-2 and GR-3 and offered in Germany only on request.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/fourier-gr1-humanoid-robot-44-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Price on request; usual delivery time shown as 3 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists GR-1 with price on request and Fourier as vendor; Fourier itself no longer shows GR-1 on its website.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 55,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 44,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 230,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1.4,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 483,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 1,
+   "unit": "h",
+   "conditions": "operation; 45 min walking",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel i7 platform",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu, ROS 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RealSense depth and RGB cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 1,
+  "ipRating": null,
+  "sdk": "ROS 2",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Short runtime: about 45 minutes of walking per charge.",
+   "Hand type and payload are not stated by the seller; the image shows hands but whether they grasp is not documented.",
+   "No longer on the maker website; check spare parts and support before buying."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.fftai.com/images/grx/gr1.jpg",
+   "pageUrl": "https://www.fftai.com/grx/about",
+   "credit": "Fourier",
+   "alt": "Fourier GR-1 humanoid, upper body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://rbtx.de/de-DE/components/humanoid/fourier-gr1-humanoid-robot-44-dof",
+   "title": "Fourier GR1 humanoid robot, 44 DOF on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is GR-1 still produced, or is RBTX selling remaining stock?",
+  "Hand type and payload not published by the seller."
+ ],
+ "checkedAt": "2026-10-02"
+}

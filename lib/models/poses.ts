@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { clamp } from './kinematics';
 import { resolveJointValues } from './joint-values';
 import { PosesFile, type JointDef } from './schemas';
+import type { FormFactor } from '@/lib/spec/enums';
 
 /**
  * Pose presets. Generic presets are written against semantic joint names
@@ -32,11 +33,12 @@ export function deriveSemantic(jointName: string): string {
     .replace(/^aa/, '');
 }
 
-export function resolvePresets(robotKey: string, formFactor: 'humanoid' | 'quadruped' | 'mobile_manipulator', joints: JointDef[]): Record<string, Pose> {
+export function resolvePresets(robotKey: string, formFactor: FormFactor, joints: JointDef[]): Record<string, Pose> {
   const file = loadPoses();
   const robot = file.robots[robotKey] ?? file.robots[robotKey.split('#')[0]];
-  const family = robot?.family ?? (formFactor === 'quadruped' ? 'quadruped' : 'humanoid');
-  const generic = family === 'quadruped' ? file._quadruped : file._humanoid;
+  const family = robot?.family ?? (formFactor === 'quadruped' || formFactor === 'humanoid' ? formFactor : undefined);
+  // Other platforms get only their recorded presets; joint names alone do not establish a body plan.
+  const generic = family === 'quadruped' ? file._quadruped : family === 'humanoid' ? file._humanoid : {};
   const byName = new Map(joints.map((j) => [j.name, j]));
   const semanticToJoint = new Map<string, JointDef>();
   for (const j of joints) {

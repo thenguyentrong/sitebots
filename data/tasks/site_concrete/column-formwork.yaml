@@ -1,0 +1,206 @@
+schema_version: 1
+id: site_concrete/column-formwork
+status: published
+setting: site_concrete
+family: heavy_element_handling
+trades: [concrete]
+title:
+  en: "Form columns with column formwork"
+  de: "Stützen mit Stützenschalung einschalen"
+summary:
+  en: "Set the column formwork around the reinforcement cage, close and lock it to the column size, plumb it with panel struts, and after the pour open it and move it to the next column."
+  de: "Die Stützenschalung um den Bewehrungskorb stellen, auf das Stützenmaß schließen und verriegeln, mit Elementstützen ausrichten und nach dem Betonieren öffnen und zur nächsten Stütze umsetzen."
+description:
+  en: "Square and rectangular columns are formed either with crane-set units such as Doka's KS Xlife, whose panels weigh 56 to 185 kg and which is moved whole in one crane lift, or with framed panels: DokaXlight at about 22 kg a panel is set by hand without a crane, Frami Xlife universal panels of 39 to 93 kg by hand or by crane. The formwork holds the full height of fresh concrete, up to 90 kN/m² for KS Xlife and 75 kN/m² for DokaXlight on columns, so locks, struts and the concreting platform are checked before every pour. Columns stand on the slab among starter bars, the top is reached by ladder or from a platform, and the finished column has to stay within the DIN 18202 limits for plumbness and for the flatness of unfinished walls."
+  de: "Quadratische und rechteckige Stützen werden entweder mit Kranschalungen wie KS Xlife von Doka geschalt, deren Elemente 56 bis 185 kg wiegen und die als Ganzes in einem Kranhub umgesetzt werden, oder mit Rahmentafeln: DokaXlight mit etwa 22 kg je Element wird ohne Kran von Hand gestellt, Frami Xlife-Universalelemente mit 39 bis 93 kg von Hand oder mit dem Kran. Die Schalung hält den Frischbeton über die volle Höhe, bis 90 kN/m² bei KS Xlife und 75 kN/m² bei DokaXlight als Stützenschalung, deshalb werden Verschlüsse, Elementstützen und Betonierbühne vor jedem Betonieren geprüft. Die Stützen stehen auf der Decke zwischen Anschlussbewehrung, oben wird von der Leiter oder einer Bühne aus gearbeitet, und die fertige Stütze muss die Grenzwerte der DIN 18202 für Winkelabweichungen und für die Ebenheit nichtflächenfertiger Wände einhalten."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '013'
+  atv: "DIN 18331"
+  position:
+    en: "Formwork for columns: erect and strike"
+    de: "Schalung für Stützen herstellen und beseitigen"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 22, max: 185 }
+    confidence: confirmed
+    evidence_url: 'https://www.doka.com/_ext/downloads/itemlists/de/64.pdf'
+    note: "Doka item lists and press release: crane-set KS Xlife panels from 56.0 kg (0.90 m) to 185.0 kg (3.30 m), 140.0 kg at 2.70 m, all 0.80 m wide; Frami Xlife universal panels, 0.75 m wide and set by hand or by crane, from 39.0 kg (1.20 m) to 93.0 kg (3.00 m); DokaXlight, set by hand, about 22 kg per 0.75 × 1.50 m panel."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. Columns repeat across a floor and the formwork adjusts to the section, but heights, sections, starter bars, slab edges and crane access change from column to column."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Locks, struts and plumbness are checked before the pour; a mistake found then is corrected, a column form that opens under the concrete pressure is costly."
+  safety_criticality:
+    value: structural
+    confidence: confirmed
+    evidence_url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999746001_2023_06_online.pdf'
+    note: "The formwork holds the fresh concrete pressure, 90 kN/m² permissible for KS Xlife (Doka); a lock or strut that fails lets it burst. The column itself is load-bearing."
+  reach_height_m:
+    value: { min: 0, max: 3.3 }
+    confidence: likely
+    evidence_url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999746001_2023_06_online.pdf'
+    note: "Panels stand 0.90 to 3.30 m high and are locked over their full height; the lifting rings and the concreting platform sit at the top, reached by ladder. KS Xlife is used for columns up to 6.60 m."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Columns are formed before the slab above is cast, in the open."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    note: "Setting and striking formwork makes no relevant dust; cleaning panels scrapes off concrete residue locally."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Work continues in rain."
+  floor:
+    value: uneven
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_134/b_134.htm'
+    note: "The slab with starter bars and reinforcement cages; BG BAU asks for exposed starter bars to be capped where ladders are used next to them."
+  incumbent_automation:
+    value: { status: partial, machine_classes: [site_crane] }
+    confidence: likely
+    evidence_url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999746001_2023_06_online.pdf'
+    note: "The tower crane moves a KS Xlife unit in one lift, and wheel sets move units up to 3.60 m high across the slab; DokaXlight is moved by hand without a crane, Frami panels by hand or by crane. Closing, locking and plumbing are done by hand."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: null
+    confidence: assumed
+    note: "Not recorded; column formwork is priced per square metre of formed area."
+requirements:
+  object_size_m:
+    value: { min: 0.9, max: 3.3 }
+    confidence: confirmed
+    evidence_url: 'https://www.doka.com/_ext/downloads/itemlists/de/64.pdf'
+    note: "KS Xlife panel heights 0.90, 1.20, 2.70 and 3.30 m, each 0.80 m wide. The user information adds column sections from 20 × 20 to 60 × 60 cm in 5 cm steps."
+  tolerance_mm:
+    value: 8
+    confidence: confirmed
+    evidence_url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    note: "Plumbness of the formed column: DIN 18202 table 2 (angular deviation of vertical surfaces), 8 mm as the limit at nominal dimensions over 1 up to 3 m, 12 mm over 3 up to 6 m, as reproduced by bauforumstahl. The struck faces also have to meet the flatness limit of table 3, row 5 (unfinished walls), 10 mm at a measuring point distance of 1 m; that row names walls, not columns. Limits, not ± values."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No force figure for setting panels. The formwork carries up to 90 kN/m² of fresh concrete pressure (KS Xlife) or 75 kN/m² (DokaXlight on columns)."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: marginal, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: marginal, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: gantry
+    note:
+      en: "Keep the lifting on the crane: a crane-set column unit is moved whole in one lift, and a crew closes, locks and plumbs it. Panels of 22 to 185 kg that hold up to 90 kN/m² of fresh concrete, in the open, are not a case for a walking or wheeled robot."
+      de: "Das Heben beim Kran lassen: Eine Kran-Stützenschalung wird als Ganzes in einem Kranhub umgesetzt, die Kolonne schließt, verriegelt und richtet sie aus. Elemente von 22 bis 185 kg, die bis zu 90 kN/m² Frischbetondruck halten, im Freien, sind kein Fall für einen laufenden oder fahrenden Roboter."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [ergonomics, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [gantry, keep_process]
+evidence:
+  - statement:
+      en: "Doka's item list for the KS Xlife column formwork gives panel weights of 185.0 kg (3.30 m), 140.0 kg (2.70 m), 66.0 kg (1.20 m) and 56.0 kg (0.90 m), each 0.80 m wide; the panel strut 340 weighs 24.0 kg without its head."
+      de: "Die Artikelliste von Doka für die Stützenschalung KS Xlife nennt Elementgewichte von 185,0 kg (3,30 m), 140,0 kg (2,70 m), 66,0 kg (1,20 m) und 56,0 kg (0,90 m), je 0,80 m breit; die Elementstütze 340 wiegt ohne Stützenkopf 24,0 kg."
+    url: 'https://www.doka.com/_ext/downloads/itemlists/de/64.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Item list without an edition date, read on 2026-10-02."
+  - statement:
+      en: "Doka's KS Xlife user information: permissible fresh concrete pressure 90 kN/m², square and rectangular sections from 20 × 20 to 60 × 60 cm in 5 cm steps, column heights up to 6.60 m; the whole unit is moved in a single crane lift, and wheel sets move units up to 3.60 m high across the slab."
+      de: "Anwenderinformation KS Xlife von Doka: zulässiger Frischbetondruck 90 kN/m², quadratische und rechteckige Querschnitte von 20 × 20 bis 60 × 60 cm im 5-cm-Raster, Stützenhöhen bis 6,60 m; die gesamte Schalungseinheit wird in einem einzigen Kranhub umgesetzt, Umsetzräder verfahren Einheiten bis 3,60 m Höhe auf der Decke."
+    url: 'https://direct.doka.com/_ext/downloads/downloadcenter/999746001_2023_06_online.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2023-06-01'
+    type: claim
+    confidence: confirmed
+    note: "User information 999746001, edition 06/2023; the day is not given, so the first of the month is used. Read on 2026-10-02."
+  - statement:
+      en: "Doka presented DokaXlight at NordBau 2019: about 22 kg per 0.75 × 1.50 m main panel, used by hand without a crane, for fresh concrete pressure up to 50 kN/m² on walls and 75 kN/m² on columns."
+      de: "Doka stellte DokaXlight auf der NordBau 2019 vor: ca. 22 kg je Hauptelement 0,75 × 1,50 m, ohne Kran von Hand einsetzbar, für einen Frischbetondruck bis 50 kN/m² bei Wänden und 75 kN/m² bei Stützen."
+    url: 'https://www.doka.com/de/news/press/Doka_auf_NordBau_2019'
+    kind: manufacturer
+    tier: 1
+    date: '2019-08-12'
+    type: claim
+    confidence: confirmed
+  - statement:
+      en: "Doka's Frami Xlife column formwork page: the universal panels form column sections by hand or by crane, up to 80 × 80 cm in 5 cm steps, in widths of 75 and 90 cm and heights of 1.20, 1.50, 2.70 and 3.00 m."
+      de: "Die Seite von Doka zur Stützenschalung Frami Xlife: Die Universalelemente schalen Stützenquerschnitte von Hand oder mit dem Kran, bis 80 × 80 cm im 5-cm-Raster, in den Breiten 75 und 90 cm und den Höhen 1,20, 1,50, 2,70 und 3,00 m."
+    url: 'https://www.doka.com/de/system-groups/doka-wall-systems/column-formwork/frami-xlife/index'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Product page, undated, read on 2026-10-02."
+  - statement:
+      en: "Doka's Frami Xlife item list gives the 0.75 m wide universal panels as 39.0 kg (1.20 m), 49.5 kg (1.50 m), 83.5 kg (2.70 m) and 93.0 kg (3.00 m)."
+      de: "Die Artikelliste von Doka für Frami Xlife nennt die 0,75 m breiten Universalelemente mit 39,0 kg (1,20 m), 49,5 kg (1,50 m), 83,5 kg (2,70 m) und 93,0 kg (3,00 m)."
+    url: 'https://www.doka.com/_ext/downloads/itemlists/de/82.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Item list without an edition date, read on 2026-10-02."
+  - statement:
+      en: "BG BAU sheet B 134 on wall and column formwork: falls from concreting platforms and unsafe access, wind on panels during crane transport, and exposed starter bars where ladders are used. The manufacturer's instructions for assembly and use and the contractor's assembly instruction on site must state the weight of each formwork element and the lifting points; climbing up the formwork is forbidden."
+      de: "Baustein B 134 der BG BAU zu Wand- und Stützenschalung: Absturz von Betoniergerüsten und unsicheren Zugängen, Windkräfte beim Krantransport und offenliegende Anschlussbewehrung bei der Verwendung von Leitern. Die Aufbau- und Verwendungsanleitung des Herstellers und die Montageanweisung des Verwenders auf der Baustelle müssen das Gewicht der einzelnen Schalelemente und die Anschlagpunkte angeben; das Hochklettern an der Schalung ist verboten."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_134/b_134.htm'
+    kind: regulator
+    tier: 1
+    date: '2021-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Sheet dated 07/2021, read on 2026-10-02."
+  - statement:
+      en: "DIN 18202 table 3 (as reproduced in the screed trade handbook of the ZDB): unfinished walls and soffits of rough slabs (row 5) allow 10 mm as the limit at a measuring point distance of 1 m."
+      de: "DIN 18202 Tabelle 3 (wiedergegeben im Handbuch für das Estrich- und Belaggewerbe des ZDB): Nichtflächenfertige Wände und Unterseiten von Rohdecken (Zeile 5) erlauben 10 mm als Grenzwert bei 1 m Messpunktabstand."
+    url: 'https://www.fichtnerestriche.de/wp-content/uploads/2026/02/fichtner-estriche_ebenheitstoleranzen_DIN18202.pdf'
+    kind: standard
+    tier: 2
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Copy of the table published by a screed contractor; the values at 0.1, 1, 4, 10 and 15 m are from the standard, the others interpolated. Read on 2026-10-02."
+  - statement:
+      en: "DIN 18202 table 2 as reproduced by bauforumstahl: angular deviations of vertical, horizontal and inclined surfaces are limited to 8 mm at nominal dimensions over 1 up to 3 m and 12 mm over 3 up to 6 m."
+      de: "DIN 18202 Tabelle 2, wiedergegeben von bauforumstahl: Winkelabweichungen vertikaler, horizontaler und geneigter Flächen sind bei Nennmaßen über 1 bis 3 m auf 8 mm und über 3 bis 6 m auf 12 mm begrenzt."
+    url: 'https://bauforumstahl.de/wp-content/uploads/2024/06/B.11.1.1.1_Arbeitshilfe_Allgemeines_Hochbautoleranzen.pdf'
+    kind: standard
+    tier: 2
+    date: '2020-04-01'
+    type: claim
+    confidence: confirmed
+    note: "Steel-construction trade body worksheet 10.1, 1st edition 04/2020, citing DIN 18202; the day is not given, so the first of the month is used. Read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If crane time or carrying is the concern: compare a crane-set column unit on wheel sets with hand-set panels on one floor, crane minutes and hours per column."
+    de: "Wenn Kranzeit oder Tragen das Thema ist: eine Kran-Stützenschalung mit Umsetzrädern und eine Handschalung auf einem Geschoss vergleichen, Kranminuten und Stunden je Stütze."
+prerequisites: []
+open_questions:
+  - { en: "Which column sections and heights repeat on your projects, and is the column formwork moved by crane or by hand?", de: "Welche Stützenquerschnitte und -höhen wiederholen sich auf Ihren Baustellen, und wird die Stützenschalung per Kran oder von Hand umgesetzt?" }
+  - { en: "Do your contracts ask for a tighter plumb tolerance than DIN 18202, and how is plumbness checked before the pour?", de: "Verlangen Ihre Verträge eine engere Lotabweichung als DIN 18202, und wie wird das Lot vor dem Betonieren geprüft?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

@@ -1,0 +1,123 @@
+{
+ "schemaVersion": 1,
+ "id": "x-humanoid-tien-kung-3",
+ "maker": "Beijing Humanoid Robot Innovation Center (X-Humanoid)",
+ "makerCountry": "CN",
+ "model": "Tien Kung 3.0",
+ "variant": null,
+ "name": "X-Humanoid Tien Kung 3.0 (Tiangong)",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.x-humanoid.com/detail/jstg.html",
+ "summary": "The Beijing innovation centre's full-size bipedal humanoid platform (Tiangong), offered in Lite, Plus and Pro versions with 4 kg rated load per arm.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Offered by the Beijing centre through business@x-humanoid.com for cooperation in China; no European distributor or EU customer found. UBTECH sells its own Walker Tienkung via Terra Robotics (separate records).",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Rated load per arm",
+   "value": 4,
+   "unit": "kg",
+   "conditions": "16 kg maximum for both arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "33 Ah, main and auxiliary battery",
+   "unit": null,
+   "conditions": "standard",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 4,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open joint, sensor and VLA training interfaces; URDF",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Several dexterous hands can be fitted; which version includes them is not stated in text.",
+   "Lite, Plus and Pro differ; their parameter tables are images only."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.x-humanoid.com/oss/static/img/jstg.png",
+   "pageUrl": "https://www.x-humanoid.com/detail/jstg.html",
+   "credit": "Beijing Humanoid Robot Innovation Center",
+   "alt": "Tien Kung 3.0 humanoid walking, product banner",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/plant-room-rounds"
+   ],
+   "task": "Security inspection: opening doors and reading complex instruments",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Picking and placing totes and sorting parts in logistics",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.x-humanoid.com/detail/jstg.html",
+   "title": "Embodied Tien Kung 3.0 product page",
+   "publisher": "Beijing Humanoid Robot Innovation Center (X-Humanoid)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.x-humanoid.com/serviceAndSales.html",
+   "title": "Services and cooperation",
+   "publisher": "Beijing Humanoid Robot Innovation Center (X-Humanoid)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight, DOF and runtime per version (tables are published as images only)."
+ ],
+ "checkedAt": "2026-10-02"
+}

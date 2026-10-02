@@ -1,0 +1,368 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-b2",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "B2",
+ "variant": null,
+ "name": "Unitree B2",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/b2",
+ "summary": "Industrial 60 kg quadruped, IP67, -20 to 55 C, carries over 40 kg while walking and climbs 20-25 cm stairs, for inspection and rescue.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU lists the B2 with price (about 5-6 weeks, restocking); Generation Robots and MYBOTSHOP quote it.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 49000,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s3",
+   "note": "Generation Robots, version without LiDAR; RobotShop EU EUR 83,191.82 incl. tax."
+  },
+  "priceOther": null,
+  "leadTime": "about 5-6 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-b2-robotic-dog-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 83191.82,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "B2; with navigation kit EUR 95,091.82; ships in about 5-6 weeks, re-stocking."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404198-b2-quadruped-robot-dog.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 49000,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "Page 'from' price excl. VAT; versions without LiDAR or with SLAM kit; cart disabled."
+   },
+   {
+    "name": "MYBOTSHOP GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Unitree-B2",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Price on request. MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-B2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 49596.64,
+    "priceBasis": "net",
+    "sourceId": "s10",
+    "note": "Variant \"B2\" 49,596.64 EUR net (21 days after order); \"B2 mit 3DLiDAR\" 58,898.32 net in stock. The parent page itself says price on request."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 60,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load while walking",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "more than 40 kg; standing load at least 120 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Running speed",
+   "value": 6,
+   "unit": "m/s",
+   "conditions": "over 6 m/s in special configuration; speed-limited in practice",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 4,
+   "unit": "h",
+   "conditions": "over 4 h with 20 kg load; over 5 h unloaded",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 2250,
+   "unit": "Wh",
+   "conditions": "45 Ah, 58 V, quick change",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-change battery",
+   "value": true,
+   "unit": null,
+   "conditions": "autonomous charging optional",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step climbing",
+   "value": 40,
+   "unit": "cm",
+   "conditions": "up and down 40 cm forward; continuous stairs 20-25 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing angle",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "over 45 deg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": "continuous stair climbing 20-25 cm steps",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "Intel Core i5 (platform) + Intel Core i7 (user); optional Orin NX, up to 3 devices",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3D LiDAR, 2 depth cameras, 2 optical cameras (varies by configuration)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 40,
+  "runtimeH": 4,
+  "ipRating": "IP67",
+  "sdk": "Intel Core i7 user computer; secondary development",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Wheeled feet optional (see B2-W).",
+   "Some functions need manual operation or secondary development."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0620/4932/1193/files/1_e701c6a6-1448-4504-a895-385a64140740.jpg",
+   "pageUrl": "https://shop.unitree.com/products/unitree-b2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree B2 industrial quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/3d10c077a5ae4fb1b385bdfee075e18f_3840x2160.jpg",
+   "pageUrl": "https://www.unitree.com/b2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree B2 with LiDAR standing on a rock with snowy mountains behind",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/2436d184fdf04161a78b49ee1b4650e6_941x498.jpg",
+   "pageUrl": "https://www.unitree.com/b2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree B2 carrying weight plates over a rocky slope",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/b19dd04b323f492285c4d56fbfe7c4a7_941x498.jpg",
+   "pageUrl": "https://www.unitree.com/b2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree B2 climbing a steel staircase beside a storage tank",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/substation-rounds"
+   ],
+   "task": "Substation and power-plant inspection rounds with thermal camera and gauge reading",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s5",
+   "note": "Unitree inspection solution page; it names no model, but its figures (40 kg load, 40 cm obstacles, 45 deg) match the B2."
+  },
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/cable-tunnel-inspection"
+   ],
+   "task": "Subway tunnel and underground utility inspection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s5",
+   "note": "Unitree inspection solution page; it names no model, but its figures (40 kg load, 40 cm obstacles, 45 deg) match the B2."
+  },
+  {
+   "taskIds": [],
+   "task": "Two B2 units equipped for fire rescue reconnaissance",
+   "stage": "deployment",
+   "where": "Qingdao Fire Rescue Support Team, China",
+   "date": null,
+   "sourceId": "s6",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "Date of the Qingdao fire service deployment.",
+  "Price difference between Generation Robots and RobotShop configurations."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/b2",
+   "title": "Unitree B2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-b2-robotic-dog-eu",
+   "title": "Unitree B2 Robotic Dog (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404198-b2-quadruped-robot-dog.html",
+   "title": "Unitree B2 at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.mybotshop.de/Unitree-B2",
+   "title": "Unitree B2 / B2-W at MYBOTSHOP",
+   "publisher": "MYBOTSHOP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.unitree.com/industry/electricity",
+   "title": "Unitree quadruped inspection solutions",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.unitree.com/industry/fireRescue",
+   "title": "Unitree quadruped fire rescue solutions",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://shop.unitree.com/products/unitree-b2",
+   "title": "Unitree B2 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s10",
+   "url": "https://www.quadruped.de/QUADRUPED-B2",
+   "title": "QUADRUPED B2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

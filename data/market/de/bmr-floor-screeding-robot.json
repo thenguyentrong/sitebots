@@ -1,0 +1,243 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-floor-screeding-robot",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Floor Screeding Robot",
+ "variant": null,
+ "name": "BMR Floor Screeding Robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "concrete_finishing",
+  "site_screed/screed-levelling"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/231.html",
+ "summary": "Compact 65 kg laser-guided robot that levels dry-mix mortar screed 0-10 cm thick at up to 130 m²/h, for example over underfloor heating.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route to Germany found. BMR sells direct from China and names markets in Asia, the Middle East and Brazil, none in the EU. The only German listing is a US reseller not named by BMR, and BMR states no CE marking for this machine. Roboter Deutschland, a web shop run from Las Vegas without a named company, also lists it; it is not counted as a seller here.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Shenzhen BrightMaster Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://en.bm-robot.com/detail/231.html",
+    "contactUrl": "https://en.bm-robot.com/contact.html",
+    "email": "sales@bm-robot.com",
+    "phone": "400 988 2007 (ext. 2)",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Direct export enquiries via form, email or WhatsApp from Shenzhen; no EU office or EU distributor named."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions (L x W x H)",
+   "value": "790 x 730 x 660",
+   "unit": "mm",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_w",
+   "label": "Operating power",
+   "value": 300,
+   "unit": "W",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "flatness",
+   "label": "Construction precision",
+   "value": "3 mm over 2 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "area_rate_m2_h",
+   "label": "Theoretical productivity",
+   "value": 130,
+   "unit": "m²/h",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "screed_thickness_mm",
+   "label": "Screeding thickness",
+   "value": "0-100",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Power supply",
+   "value": "48 V, 25 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 6,
+   "unit": "h",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Fast charging time",
+   "value": 3,
+   "unit": "h",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating environment",
+   "value": "-5 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "modes",
+   "label": "Operating mode",
+   "value": "one-touch fully automatic via remote controller",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Works dry-mix mortar spread by workers beforehand; the robot sets the height by laser and screeds.",
+   "Small enough for lifts and between floors (65 kg).",
+   "Drive type (wheels or tracks) is not stated by BMR."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260708/15fa8b140b3bf742b3a220b4d947885b.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/231.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BMR Floor Screeding Robot on a concrete floor (banner with text)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_screed/screed-levelling"
+   ],
+   "task": "Dry-mix mortar screeding in flats, public buildings, metro stations and over underfloor heating",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/231.html",
+   "title": "Floor Screeding Robot product page",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/contact.html",
+   "title": "Contact Us",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/BMR-Floor-Screeding-Robot.htm",
+   "title": "BMR Floor Screeding Robot at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact",
+   "title": "Roboter Deutschland contact page (Las Vegas, NV, USA)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is this machine CE-marked and does it come with an EU declaration of conformity? BMR states CE only for its Measuring Robot.",
+  "Does BMR have, or plan, an authorised distributor or service partner in the EU or Germany?",
+  "Is Roboter Deutschland / Robots International authorised by BMR, and who provides service and spare parts in Germany?",
+  "Is dry-mix mortar screeding as described comparable to German floating cement screed (DIN 18560), and which mortars are approved?",
+  "Does it run on wheels or tracks?"
+ ],
+ "checkedAt": "2026-10-02"
+}

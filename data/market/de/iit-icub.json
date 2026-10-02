@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "iit-icub",
+ "maker": "Istituto Italiano di Tecnologia (IIT)",
+ "makerCountry": "IT",
+ "model": "iCub",
+ "variant": "Full iCub 2.7",
+ "name": "IIT iCub",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://icub.iit.it/products/icub-robot",
+ "summary": "A 104 cm child-size open-source research humanoid with five-finger hands and tactile skin, supplied by IIT to research labs for an indicative 250,000 EUR.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "IIT (Genoa, Italy) supplies iCub to research labs for a fee; more than 40 robots are in labs across Europe, US and Asia. Official quotations via info@icub.org. For research use, not industrial work.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 250000,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Indicative cost to build a full iCub; upper body only about 200,000 EUR."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Istituto Italiano di Tecnologia, iCub Tech",
+    "country": "IT",
+    "role": "manufacturer",
+    "productUrl": "https://icub.iit.it/products/product-catalog",
+    "contactUrl": "https://icub.iit.it/contacts",
+    "email": "info@icub.org",
+    "phone": "+39 010 28961",
+    "priceEur": 250000,
+    "priceBasis": "unknown",
+    "sourceId": "s2",
+    "note": "Indicative price; IIT says it does not make a profit on iCub sales."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.04,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DoF per hand",
+   "value": 9,
+   "unit": null,
+   "conditions": "19 joints coupled",
+   "sourceId": "s3"
+  },
+  {
+   "key": "legs_dof",
+   "label": "DoF per leg",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Cameras, full-body tactile skin, force/torque sensing",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "YARP middleware; open source (GPL)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "YARP",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Child-size research platform; can crawl, walk and sit to manipulate objects.",
+   "Upper-body version without legs also offered (about 200,000 EUR).",
+   "Not intended for industrial or site work."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://icub.iit.it/documents/175012/176269/iCub+Balancing+small.png",
+   "pageUrl": "https://icub.iit.it/products/icub-robot",
+   "credit": "Istituto Italiano di Tecnologia",
+   "alt": "IIT iCub humanoid balancing",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-tactile-contact-experiments"
+   ],
+   "task": "Embodied AI, tactile and manipulation research in labs worldwide",
+   "stage": "claim",
+   "where": "Research labs in Europe, US and Asia",
+   "date": null,
+   "sourceId": "s1",
+   "note": "More than 40 robots built and used in research labs in Europe, US and Asia (maker); labs not named here."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://icub.iit.it/products/icub-robot",
+   "title": "iCub robot",
+   "publisher": "Istituto Italiano di Tecnologia",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://icub.iit.it/products/product-catalog",
+   "title": "iCub product catalog with indicative prices",
+   "publisher": "Istituto Italiano di Tecnologia",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.iit.it/documents/175012/528824/Technical-specs_iCub_robot_Rev_2.3_05082019+%281%29.pdf/44d1e600-7a09-12e0-5eeb-5e3a2444e78c",
+   "title": "Technical specifications of the iCub platform",
+   "publisher": "Istituto Italiano di Tecnologia",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Weight, runtime and payload of the current 2.7 version?"
+ ],
+ "checkedAt": "2026-10-02"
+}

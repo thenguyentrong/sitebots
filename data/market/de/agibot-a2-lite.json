@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-a2-lite",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "A2",
+ "variant": "Lite",
+ "name": "AGIBOT A2 Lite",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agibot.com/products/A2_Pro",
+ "summary": "A 1.69 m performance humanoid for dance and stage shows; it has no hands and cannot handle objects.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 44560,
+   "currency": "USD",
+   "market": "AGIBOT online store (global, ships to DE)",
+   "sourceId": "s2"
+  },
+  "leadTime": "Ships within 30 business days; delivery 20-45 business days",
+  "sellers": [
+   {
+    "name": "AGIBOT Store",
+    "country": "SG",
+    "role": "manufacturer",
+    "productUrl": "https://store.agibot.com/products/a2-lite",
+    "contactUrl": "https://www.agibot.com/Contact/Business",
+    "email": "sales@agibot.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Price in USD; duties and tariffs extra."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Orderable in the AGIBOT online store, which ships from China to Germany, at USD 44,560; customs duties are paid by the buyer.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.69,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 64,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 23,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": "no hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 0.8,
+   "unit": "m/s",
+   "conditions": "max",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "walking 1.5 h+, standing 4.5 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "5-DOF arms for dance moves, no hands; recorded with 0 working arms.",
+   "No LiDAR or depth cameras."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0628/8175/9275/files/A2-1_2cfdd06e-a2f4-4957-a49c-b32ee7092579.png?v=1765518468",
+   "pageUrl": "https://store.agibot.com/products/a2-lite",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT A2 Lite in a dance pose",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Stage and commercial performances",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agibot.com/products/A2_Pro",
+   "title": "AGIBOT A2 Lite product page and parameter table",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://store.agibot.com/products/a2-lite",
+   "title": "AGIBOT A2 Lite (store)",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://store.agibot.com/policies/shipping-policy",
+   "title": "AGIBOT Store shipping policy",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

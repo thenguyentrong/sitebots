@@ -1,0 +1,275 @@
+{
+ "schemaVersion": 1,
+ "id": "faraday-future-fx-aegis-pro",
+ "maker": "Faraday Future",
+ "makerCountry": "US",
+ "model": "FX Aegis",
+ "variant": "Pro",
+ "name": "Faraday Future FX Aegis Pro",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://robotics.ff.com/us/fx-aegis/",
+ "summary": "A 15 kg consumer robot dog (IP32) with a 4K camera, remote and app control, for companionship, demonstrations and light security patrol; no expansion ports.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Faraday Future sells the FX Aegis only in the US: its online shop ships to the US only and no EU distributor is named. Roboter Deutschland, a US-run web shop (Las Vegas) not named by Faraday Future, lists it at EUR 4,085.23 converted from its base currency, with an order button and \"usually ships in 3-5 business days\" from the US. No CE marking information found.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 4490,
+   "currency": "USD",
+   "market": "US online shop of Faraday Future",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Faraday Future",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": "https://shop.ff.com/products/aegis",
+    "contactUrl": "https://robotics.ff.com/us/fx-aegis/",
+    "email": "ffpar@ff.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "US online shop, USD 4,490; ships to the US only. ffpar@ff.com is the partnership contact."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 12,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Body weight",
+   "value": 15,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Top speed",
+   "value": 3.7,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_obstacle_cm",
+   "label": "Max. obstacle height",
+   "value": 35,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair climbing",
+   "value": 16,
+   "unit": "cm",
+   "conditions": "step height",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. gradient",
+   "value": 30,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "120 minutes (comparison table)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Max. payload",
+   "value": 8,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP32",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Camera",
+   "value": "4K wide-angle camera with live video",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "expansion",
+   "label": "Expansion",
+   "value": "Not supported",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing",
+   "value": "630 x 360 x 465",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 216,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": "°C",
+   "conditions": "stated for the Aegis family",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 8,
+  "runtimeH": 2,
+  "ipRating": "IP32",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Runtime: 120 minutes in the maker comparison table; the shop text says 12 hours, which looks like an error. 2 h used here.",
+   "No SDK or expansion ports; app control is listed as in development.",
+   "IP32 only; the maker points to the IP54 Ultra for semi-outdoor and industrial use.",
+   "Faraday Future also lists a base \"Aegis\" at USD 2,490, shown as unavailable; Roboter Deutschland lists it at EUR 2,265.53."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://genesis-cdn.ff.com/assets/pages/us/robotics/fx-aegis-classic/cmp-1.260919160415-default.jpg",
+   "pageUrl": "https://robotics.ff.com/us/fx-aegis/",
+   "credit": "Faraday Future",
+   "alt": "Faraday Future FX Aegis Pro robot dog, white, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/night-security-patrol"
+   ],
+   "task": "Security patrol and home companionship",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker use cases; no customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://robotics.ff.com/us/fx-aegis/",
+   "title": "FX Aegis Classic",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.ff.com/products/aegis",
+   "title": "FX Aegis (online shop)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.ff.com/meta.json",
+   "title": "Faraday Future shop metadata (ships to: US)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/FX-Aegis-Pro.htm",
+   "title": "FX Aegis Pro Quadruped Robot Dog",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/about-us/",
+   "title": "About us",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "CE marking and EU declaration of conformity.",
+  "Whether Faraday Future supports units bought through a third-party reseller in Germany.",
+  "Runtime: the comparison table gives 120 minutes, the shop text 12 hours."
+ ],
+ "checkedAt": "2026-10-02"
+}

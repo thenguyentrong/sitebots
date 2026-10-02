@@ -1,0 +1,173 @@
+{
+ "schemaVersion": 1,
+ "id": "pal-robotics-ari",
+ "maker": "PAL Robotics",
+ "makerCountry": "ES",
+ "model": "ARI",
+ "variant": null,
+ "name": "PAL Robotics ARI",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://pal-robotics.com/robot/ari/",
+ "summary": "A 1.65 m wheeled social humanoid with a touchscreen, speech and gesture arms for reception, guidance and HRI research; it cannot grasp objects.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Barcelona, Spain) that sells directly to customers across Europe on quote; no German distributor found and no public price.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "PAL Robotics",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://pal-robotics.com/robot/ari/",
+    "contactUrl": "https://pal-robotics.com/contact/",
+    "email": "business@pal-robotics.com",
+    "phone": "+34 934 145 347",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Barcelona; quote request on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": "Shoulder 2, upper arm 1, elbow 1, wrist 1; no gripper DoF listed",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Autonomy",
+   "value": "8-12",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head RGB camera (RGB-D optional), torso RGB-D (RealSense D435i), optional LiDAR and thermal camera, 4-mic array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu LTS RT, ROS Noetic, ROS4HRI, speech recognition in 20+ languages",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "ROS, ROS4HRI",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Has two 5-DoF arms for gestures only; no gripper is listed, so arms are counted as 0 for manipulation.",
+   "Indoor social robot: reception, presentations, healthcare and education pilots."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/04/ARI-Robot.webp",
+   "pageUrl": "https://pal-robotics.com/robots/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics ARI social humanoid robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/04/ARI-features-expressive-1.webp",
+   "pageUrl": "https://pal-robotics.com/robot/ari/",
+   "credit": "PAL Robotics",
+   "alt": "PAL Robotics ARI waving with one hand raised, three-quarter view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://pal-robotics.com/wp-content/uploads/2024/04/ARI-features-social.webp",
+   "pageUrl": "https://pal-robotics.com/robot/ari/",
+   "credit": "PAL Robotics",
+   "alt": "Visitors using the touchscreen on PAL Robotics ARI's chest.",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Assistive robot in the EU project SHAPES; education robot in PRO-CARED pilots",
+   "stage": "pilot",
+   "where": "EU projects SHAPES and PRO-CARED",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://pal-robotics.com/robot/ari/",
+   "title": "ARI product page",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://pal-robotics.com/wp-content/uploads/2025/02/ARI-Datasheet.pdf",
+   "title": "ARI datasheet",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://pal-robotics.com/robots/",
+   "title": "Our Robots",
+   "publisher": "PAL Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Weight not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

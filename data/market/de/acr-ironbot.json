@@ -1,0 +1,118 @@
+{
+ "schemaVersion": 1,
+ "id": "acr-ironbot",
+ "maker": "Advanced Construction Robotics",
+ "makerCountry": "US",
+ "model": "IronBOT",
+ "variant": null,
+ "name": "ACR IronBOT",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "rebar_placement"
+ ],
+ "officialUrl": "https://www.constructionrobots.com/ironbot",
+ "summary": "Gantry robot that lifts, carries and places transverse and longitudinal bars on bridge decks, about 5,000 lb per hour.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Robot-as-a-Service through US Certified Innovators only; no European route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "placement_rate_lb_h",
+   "label": "Average placement rate",
+   "value": 5000,
+   "unit": "lb/h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "working_width_ft",
+   "label": "Working width",
+   "value": "27-117",
+   "unit": "ft",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "bar_length_ft",
+   "label": "Bar length",
+   "value": "9-60",
+   "unit": "ft",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "setup_h",
+   "label": "Set-up time",
+   "value": "6-8",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "A robot supervisor positions it and singulates bars from the bundle."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/693dcb2dcf07a35645333596/69a0a5bcb466659558f744a5_Ironbot-optimized.jpg",
+   "pageUrl": "https://www.constructionrobots.com/ironbot",
+   "credit": "Advanced Construction Robotics",
+   "alt": "IronBOT placing rebar on a bridge deck",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Placing bridge-deck rebar",
+   "stage": "claim",
+   "where": "USA",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.constructionrobots.com/ironbot",
+   "title": "IronBOT",
+   "publisher": "Advanced Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

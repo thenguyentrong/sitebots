@@ -1,0 +1,108 @@
+{
+ "schemaVersion": 1,
+ "id": "weilan-alphadog",
+ "maker": "Weilan (Nanjing)",
+ "makerCountry": "CN",
+ "model": "AlphaDog",
+ "variant": "C and E series",
+ "name": "Weilan AlphaDog",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.weilan.com/en/en/babyAlpha.html",
+ "summary": "A consumer and education robot dog from China; not an industrial or construction robot and no German seller found.",
+ "launched": "2021",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. Weilan's English order page still lists AlphaDog C100 to E400L in USD (from 5,690 USD), but the site's news stops in 2020 and the company now promotes the BabyAlpha pet robot.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 16000,
+   "currency": "CNY",
+   "market": "China (2021 launch price)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 4.2,
+   "unit": "m/s",
+   "conditions": "stated as 15 km/h (2021 model)",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Consumer companion robot; no payload, IP rating or runtime published in the opened sources."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.weilan.com/en/images/section/ad_c200.png",
+   "pageUrl": "https://www.weilan.com/en/en/order.html",
+   "credit": "Weilan",
+   "alt": "Weilan AlphaDog C200 quadruped on a display base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.weilan.com/en/en/babyAlpha.html",
+   "title": "AlphaDog BabyAlpha-Series (product overview incl. AlphaDog C and E series)",
+   "publisher": "Weilan",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.euronews.com/2021/04/23/meet-the-robot-dog-looking-to-replace-man-s-best-friend",
+   "title": "Meet the robot dog looking to replace man's best friend",
+   "publisher": "Euronews",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.weilan.com/en/en/order.html",
+   "title": "AlphaDog order page (C100, C200, E300, E400L)",
+   "publisher": "Weilan",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Current specifications of the C and E series.",
+  "Whether the USD order page still takes orders and ships outside China."
+ ],
+ "checkedAt": "2026-10-02"
+}

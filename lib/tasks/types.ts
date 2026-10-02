@@ -1,3 +1,4 @@
+import type { IndustryId } from '@/lib/content/industries';
 import type { L10n } from '@/lib/content/l10n';
 import type { Coverage, DustType, DustZone, EvidenceKind, EvidenceType, Exposure, FamilyId, Floor, RuleId, RuleStatus, SettingGroup, SolutionClassId, ValueDriver, Verdict, LvUnit, SiteSection } from '@/lib/content/vocab';
 import type { Facts } from '@/lib/screen/facts';
@@ -22,6 +23,7 @@ export type TaskCard = {
   setting: string;
   family: FamilyId;
   trades: string[];
+  industries: IndustryId[];
   title: L10n;
   summary: L10n;
   description: L10n;
@@ -49,6 +51,7 @@ export type TaskCard = {
 export type SettingOption = {
   id: string;
   group: SettingGroup;
+  industries: IndustryId[];
   title: L10n;
   coverage: Coverage;
   coverage_note: L10n;

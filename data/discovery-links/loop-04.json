@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "taskId": "facility_operation/facade-window-cleaning",
+      "reviewId": "skyline-ozmo-bmu-window-cleaning",
+      "relationship": "task_candidate",
+      "rationale": "The owner describes Ozmo washing exterior glazing from a building-integrated access system under rooftop supervision.",
+      "sourceIds": [
+        "deployment",
+        "platform"
+      ],
+      "limitations": [
+        "Requires a compatible BMU, engineered installation and trained operator.",
+        "US deployment does not establish German availability, weather limits or complete facade coverage."
+      ]
+    },
+    {
+      "taskId": "site_windows_doors/large-pane-glazing",
+      "reviewId": "smartlift-sl609-hle-rt-glass",
+      "relationship": "partial_task",
+      "rationale": "Manufacturer describes suction lifting and positioning of glass units for installation.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Covers lifting and positioning only; glazing blocks, beads, fixings and seals remain separate.",
+        "Use the exact load chart, suction-contact requirements and site access plan; headline capacity is not full-reach capacity."
+      ]
+    },
+    {
+      "taskId": "site_windows_doors/large-pane-glazing",
+      "reviewId": "riebsamen-glasboy380-600-glass",
+      "relationship": "partial_task",
+      "rationale": "Manufacturer describes suction lifting and positioning of glass units for installation.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Covers lifting and positioning only; glazing blocks, beads, fixings and seals remain separate.",
+        "Use the exact load chart, suction-contact requirements and site access plan; headline capacity is not full-reach capacity."
+      ]
+    }
+  ]
+}

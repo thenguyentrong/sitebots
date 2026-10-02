@@ -1,0 +1,246 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-lite3-lidar",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "Lite3",
+ "variant": "LiDAR (Funduino: Pro LiDAR2 AI)",
+ "name": "DEEP Robotics Lite3 LiDAR",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/product1.html",
+ "summary": "The 13.5 kg Lite3 with a Livox Mid-360 lidar, depth camera and Jetson computer, so it can map an area and navigate on its own; it carries only 2.5 kg.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Funduino (Nordhorn) sells the Lite3 Pro LiDAR2 AI for 12,990 € incl. VAT with an order button; Génération Robots offers the LiDAR version on its Lite 3 page (5 to 7 weeks).",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 12990,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "10,915.97 € net; version \"SID1 - Pro Lidar2 Ai\" at Funduino."
+  },
+  "priceOther": {
+   "amount": 18270,
+   "currency": "USD",
+   "market": "US online shop shop.deeprobotics.us (LiDAR version)",
+   "sourceId": "s4"
+  },
+  "leadTime": "1 to 3 working days (Funduino); 5 to 7 weeks (Génération Robots)",
+  "sellers": [
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduinoshop.com/robotik/deep-robotics/sid1-roboterhund/deep-robotics-sid-1-lite-3",
+    "contactUrl": "https://funduinoshop.com/impressum",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 12990,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Choose the version \"SID1 - Pro Lidar2 Ai\" on the product page."
+   },
+   {
+    "name": "Génération Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/de/404276-lite-3-vierbeiniger-roboter-1846.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "LiDAR version listed on the shared Lite 3 page; its own price is not shown in the page text."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 13.5,
+   "unit": "kg",
+   "conditions": "LiDAR version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "height_m",
+   "label": "Standing height",
+   "value": 0.496,
+   "unit": "m",
+   "conditions": "LiDAR version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Walking load",
+   "value": 2.5,
+   "unit": "kg",
+   "conditions": "LiDAR version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "range_km",
+   "label": "Range",
+   "value": 2.7,
+   "unit": "km",
+   "conditions": "LiDAR version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "1.5 to 2 h, all versions",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 40,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair height",
+   "value": 18,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Perception",
+   "value": "Livox Mid-360 lidar, RealSense D435i depth camera; obstacle avoidance, person following, SLAM and autonomous navigation",
+   "unit": null,
+   "conditions": "Funduino version description",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Xavier NX with Ubuntu",
+   "unit": null,
+   "conditions": "Funduino version description",
+   "sourceId": "s2"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "USB 3.0, HDMI, Ethernet, power inputs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "ROS and ROS 2 integrated, motion control SDK and APIs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 2.5,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "ROS / ROS 2, motion control SDK",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A research and education platform, not an industrial inspection robot: no IP rating stated.",
+   "Payload is only 2.5 kg, too little for a survey laser scanner or a heavy inspection payload.",
+   "Stairs up to 18 cm step height."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0952/8967/1978/files/deep-robotics-lite3-lidar-quadruped-robot-autonomous-mapping-navigation-research.png?v=1760016257",
+   "pageUrl": "https://shop.deeprobotics.us/products/lite-3",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics Lite3 LiDAR with the lidar module on its back, whole robot on a plain white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p555.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product1.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics Lite3 with lidar module on its back",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p222.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product1.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics Lite3 LiDAR climbing carpeted stairs, side view",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/product1.html",
+   "title": "Lite3 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://funduinoshop.com/robotik/deep-robotics/sid1-roboterhund/deep-robotics-sid-1-lite-3",
+   "title": "Deep Robotics SID 1 (Lite 3), version Pro LiDAR2 AI",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/de/404276-lite-3-vierbeiniger-roboter-1846.html",
+   "title": "Lite 3 Quadruped Roboter",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://shop.deeprobotics.us/products/lite-3",
+   "title": "DEEP Robotics Lite3",
+   "publisher": "Deep Robotics Online Shop (US)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro price of the LiDAR version at Génération Robots.",
+  "IP rating not stated.",
+  "Launch date of the Lite3 not confirmed from an opened source."
+ ],
+ "checkedAt": "2026-10-02"
+}

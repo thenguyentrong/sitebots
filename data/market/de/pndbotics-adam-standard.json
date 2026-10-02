@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "pndbotics-adam-standard",
+ "maker": "PNDbotics",
+ "makerCountry": "CN",
+ "model": "Adam",
+ "variant": "Standard (no hands)",
+ "name": "PNDbotics Adam Standard",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.pndbotics.com/humanoid",
+ "summary": "A 1.67 m, 61 kg humanoid research platform with 29 joints and no hands, built for reinforcement-learning locomotion research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/PNDbotics-Adam-Standard-Plus",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Adam Standard and Standard Plus on one page; price on request."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Bipedal (Leverkusen) is the official PNDbotics distributor and lists this model with price on request.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.67,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. torque (knee, hip)",
+   "value": 340,
+   "unit": "Nm",
+   "conditions": "ankle 46 Nm, arm 60 Nm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1188,
+   "unit": "Wh",
+   "conditions": "max. 46.2 V, 25 A",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel NUC12WSKi7 and NVIDIA Jetson Orin NX 16 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 61,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 29,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Intel RealSense D455 depth camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Open-source SDK for low-level operations, URDF, Isaac Gym DRL training, PND software suite",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open-source SDK, Isaac Gym",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Delivered without hands; the Standard Plus adds 6-DoF hands.",
+   "Payload and runtime not published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.pndbotics.com/assets/home_part1_bg-Dw7d332k.jpg",
+   "pageUrl": "https://www.pndbotics.com/",
+   "credit": "PNDbotics",
+   "alt": "PNDbotics Adam humanoid, upper body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Deep reinforcement learning research on humanoid locomotion",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bipedal.de/PNDbotics-Adam-Standard-Plus",
+   "title": "PNDbotics Adam Standard & Standard Plus",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pndbotics.com/humanoid",
+   "title": "Humanoid robot Adam",
+   "publisher": "PNDbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price, runtime and payload not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

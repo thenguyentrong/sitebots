@@ -1,0 +1,94 @@
+{
+ "schemaVersion": 1,
+ "id": "brightpick-autopicker",
+ "maker": "Brightpick",
+ "makerCountry": "SK",
+ "model": "Autopicker",
+ "variant": null,
+ "name": "Brightpick Autopicker",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://brightpick.ai/autopicker/",
+ "summary": "A wheeled warehouse robot with a lifting mast and a picking arm that pulls storage totes from shelving and picks items up to 2.5 kg into order totes, sold as a complete system of at least 10 to 15 robots.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold as a full installation (robots, software, shelving, installation) by the maker, whose R&D and manufacturing base is in Bratislava; running at Dr. Max in Prague and Brightpick robots run at Knuspr in Munich. No public euro price; no single robots.",
+  "sourceIds": ["s1", "s2", "s4", "s5", "s6"],
+  "priceEur": null,
+  "priceOther": { "amount": 2190, "currency": "USD", "market": "Robots-as-a-Service per robot per month, 3-year term, plus USD 1,000 implementation fee per robot (min. USD 70k); Brightpick pricing page as served to this check", "sourceId": "s3" },
+  "leadTime": "4-7 months from order to installation, then 3-4 weeks on-site installation (maker FAQ)",
+  "sellers": [
+   {
+    "name": "Brightpick s.r.o.",
+    "country": "SK",
+    "role": "manufacturer",
+    "productUrl": "https://brightpick.ai/autopicker/",
+    "contactUrl": "https://brightpick.ai/contact-us/",
+    "email": "info@brightpick.ai",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "European base in Bratislava (Plynarenska 6); sells and installs directly with its own installation team, RaaS or purchase."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  { "key": "weight_kg", "label": "Weight", "value": 200, "unit": "kg", "conditions": "approximate, per robot", "sourceId": "s2" },
+  { "key": "min_clear_height_m", "label": "Minimum clear height", "value": 2.15, "unit": "m", "conditions": "needed by the robot, e.g. in mezzanines", "sourceId": "s2" },
+  { "key": "pick_item_max_kg", "label": "Heaviest item it picks", "value": 2.5, "unit": "kg", "conditions": "heavier items go to a goods-to-person station for a human picker", "sourceId": "s2" },
+  { "key": "pick_item_min_mm", "label": "Smallest item it picks", "value": 20, "unit": "mm", "conditions": "diameter", "sourceId": "s2" },
+  { "key": "carry_payload_kg", "label": "Tote weight", "value": 23, "unit": "kg", "conditions": "per tote", "sourceId": "s2" },
+  { "key": "tote_size_max_mm", "label": "Largest tote", "value": "600 x 400 mm, 300 mm high", "unit": null, "conditions": "for robotic picking", "sourceId": "s2" },
+  { "key": "runtime_h", "label": "Runtime", "value": 12, "unit": "h", "conditions": "full battery, up to; 1 h charging gives 6 h of work; robots charge themselves", "sourceId": "s2" },
+  { "key": "charging_power", "label": "Charging supply", "value": "standard 220 V outlet in Europe", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "floor_flatness", "label": "Floor flatness", "value": "max. 10 mm per m (shelving up to 3.5 m), 6 mm per m above 3.5 m", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "operating_temp_c", "label": "Operating environment", "value": "ambient and chilled, not frozen (sub-zero)", "unit": null, "conditions": "stable temperature and humidity", "sourceId": "s2" },
+  { "key": "sensors", "label": "Sensors", "value": "LiDARs and 3D vision; SLAM navigation without floor markers", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "sdk", "label": "Integration", "value": "APIs to the customer WMS/ERP; Brightpick Intuition fleet software", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "min_fleet", "label": "Minimum order", "value": "15 robots per installation (pricing page); FAQ says smallest deployment starts at 10 robots", "unit": null, "conditions": null, "sourceId": "s3" }
+ ],
+ "capabilities": {
+  "legs": false, "wheels": true, "tracks": false,
+  "levelFloors": true, "roughGround": false, "stairs": false, "outdoor": null,
+  "arms": 1, "hands": "gripper", "handsIncluded": true,
+  "armPayloadKg": 2.5, "carryPayloadKg": 23, "runtimeH": 12, "ipRating": null,
+  "sdk": "WMS/ERP integration via Brightpick APIs; no open robot SDK found",
+  "sourceIds": ["s1", "s2", "s4"],
+  "notes": [
+   "Works only inside its own shelving system on flat warehouse floors (max. 10 mm per m deviation); new racks are usually recommended.",
+   "Picks single items up to 2.5 kg; heavier items are brought to a human at a goods-to-person station.",
+   "Not sold as a single robot: complete installations only, at least 10 to 15 robots.",
+   "Not for frozen storage. The type of end effector (suction or fingers) is not stated on the pages opened.",
+   "roughGround and stairs set to false because the maker states floor flatness limits and the robot runs in shelving aisles."
+  ]
+ },
+ "images": [
+  { "url": "https://brightpick.ai/wp-content/uploads/2025/05/casestudies-drmax.jpg", "pageUrl": "https://brightpick.ai/resources/dr-max/", "credit": "Brightpick", "alt": "Two Brightpick Autopicker robots with blue totes in the shelving aisles of the Dr. Max warehouse in Prague", "kind": "in_use" }
+ ],
+ "evidence": [
+  { "taskIds": ["material_yard_warehouse/tote-handling"], "task": "Picks slow-moving pharmacy items, replenishes stock and re-slots totes in a distribution centre; 30 Autopickers pick about 20,000 items per day", "stage": "deployment", "where": "Dr. Max distribution centre, Prague, Czech Republic", "date": "2023", "sourceId": "s4", "note": "9 robots from late 2023, 21 more in 2025 and 2026." },
+  { "taskIds": [], "task": "Robotic picking of all 2,500 SKUs in the ambient zone of an e-grocery fulfilment centre, designed for 600 picks per hour", "stage": "deployment", "where": "Rohlik Group fulfilment centre, Prague, Czech Republic", "date": "2022-12", "sourceId": "s7", "note": "The article describes Brightpick robotic picking; it does not name the robot model in the lines checked." },
+  { "taskIds": [], "task": "Kitting and parts supply for manufacturers' fulfilment", "stage": "claim", "where": null, "date": null, "sourceId": "s8", "note": "Industrial page of the maker; no construction customer found." }
+ ],
+ "sources": [
+  { "id": "s1", "url": "https://brightpick.ai/autopicker/", "title": "Autopicker", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s2", "url": "https://brightpick.ai/faq/", "title": "FAQ", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s3", "url": "https://brightpick.ai/pricing/", "title": "Pricing", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s4", "url": "https://brightpick.ai/resources/dr-max/", "title": "Dr. Max automates pharmacy and hospital replenishment with Brightpick", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s5", "url": "https://brightpick.ai/legal-notice/", "title": "Legal notice", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s6", "url": "https://brightpick.ai/resources/knuspr/", "title": "Brightpick helps German e-grocer Knuspr unlock 3-hour delivery in Munich", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s7", "url": "https://brightpick.ai/resources/rohlik-installs-brightpick/", "title": "One of Europe's largest e-grocers chooses Brightpick solution for Prague fulfillment center", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s8", "url": "https://brightpick.ai/industrial/", "title": "Industrial", "publisher": "Brightpick", "kind": "manufacturer", "checkedAt": "2026-10-02" }
+ ],
+ "openQuestions": [
+  "Euro price for Germany: the pricing page shows USD 2,190 per robot per month, the FAQ says from USD 1,990 in the U.S.; no EUR price found.",
+  "Minimum order: 15 robots on the pricing and Autopicker pages vs. 10 robots in the FAQ.",
+  "The Munich (Knuspr) installation uses Brightpick Dispatcher robots, not Autopickers; no Autopicker site in Germany was found.",
+  "End effector type, robot dimensions, speed and CE/safety certificates are not on the pages opened."
+ ],
+ "checkedAt": "2026-10-02"
+}

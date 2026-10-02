@@ -1,0 +1,209 @@
+{
+ "schemaVersion": 1,
+ "id": "booster-t1-gripper",
+ "maker": "Booster Robotics",
+ "makerCountry": "CN",
+ "model": "T1",
+ "variant": "Customized with grippers (T1-G)",
+ "name": "Booster T1-G with grippers",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.booster.tech/booster-t1/",
+ "summary": "The Booster T1 research humanoid in its extended version with 7-joint arms and two grippers.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 49980,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Bipedal list price incl. 19 % VAT; currently not available."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/Booster-Robotics-T1-G-Extended-Version-with-Grippers",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 49980,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Listed incl. 19 % VAT; \"Momentan nicht verfügbar\"."
+   },
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "productUrl": "https://eu.robotshop.com/products/booster-t1-humanoid-robot-grippers",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "priceEur": 49525.63,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "Tax included; shown as not available (sold out)."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Bipedal (official Booster distributor) and RobotShop EU list T1 with grippers, but both show it out of stock; ask the distributor for availability.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.18,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "Customized version with grippers",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 130,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "10.5 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "walking; about 4 h standing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA AGX Orin (200 TOPS); Intel i7-1370P CPU on Standard and Customized",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Depth camera, 9-axis IMU, 6-microphone array and speaker",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "with gripper",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per gripper",
+   "value": 1,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "No payload figure published.",
+   "Out of stock at the sellers checked."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.booster.tech/_astro/specification-t1.CmWYO9Pz_zox76.webp",
+   "pageUrl": "https://www.booster.tech/booster-t1/",
+   "credit": "Booster Robotics",
+   "alt": "Booster T1 humanoid, front view (base version shown)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.booster.tech/booster-t1/",
+   "title": "Booster T1 product page",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bipedal.de/Booster-Robotics-T1-G-Extended-Version-with-Grippers",
+   "title": "Booster Robotics T1-G (Extended Version with Grippers)",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://eu.robotshop.com/products/booster-t1-humanoid-robot-grippers",
+   "title": "Booster T1 Humanoid Robot (Grippers)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Gripper payload not published.",
+  "Image shows the base T1 without grippers; no official photo of T1-G found."
+ ],
+ "checkedAt": "2026-10-02"
+}

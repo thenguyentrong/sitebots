@@ -1,0 +1,659 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Loop 07: row-crop sowing/hoeing, market-garden tool carrying and driver-operated precision spraying. Exact configurations and German route checks; no outreach or database writes.",
+  "records": [
+    {
+      "id": "farmdroid-fd20-seed-weed",
+      "name": "FarmDroid FD20 +Seed / +Weed",
+      "manufacturer": "FarmDroid",
+      "robotClass": "dedicated_robot",
+      "industries": [
+        "agriculture"
+      ],
+      "workflowId": "agricultural_fieldwork",
+      "exactConfiguration": "FD20 seeding and mechanical weeding platform; dimensional/speed values below are tied to the 2025 v2.5 sheet. Seed-meter, wheel and firmware revisions require quotation; +Spray excluded.",
+      "description": "Seeds and mechanically weeds planned row crops using recorded seed locations.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://farmdroid.com/de/products/farmdroid-fd20/",
+          "title": "FD20 current German product",
+          "publisher": "FarmDroid",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spec",
+          "url": "https://farmdroid.com/wp-content/uploads/Factsheet-FD20-metricimperial-2025.pdf",
+          "title": "FD20 2025 v2.5 sheet",
+          "publisher": "FarmDroid",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "weeding",
+          "url": "https://farmdroid.com/de/products/mechanical-weeding-system/",
+          "title": "+Weed operating boundaries",
+          "publisher": "FarmDroid",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://farmdroid.com/news/farmdroid-and-agravis-conclude-their-distribution-partnership-in-germany/",
+          "title": "German distribution handover, August 2026",
+          "publisher": "FarmDroid",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "case",
+          "url": "https://farmdroid.com/customer-stories/embracing-innovation-in-maize-cultivation-nils-experience-with-farmdroid/",
+          "title": "German maize grower case",
+          "publisher": "FarmDroid",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://farmdroid.com/de/products/farmdroid-fd20/",
+        "https://farmdroid.com/wp-content/uploads/Factsheet-FD20-metricimperial-2025.pdf",
+        "https://farmdroid.com/de/products/mechanical-weeding-system/",
+        "https://farmdroid.com/news/farmdroid-and-agravis-conclude-their-distribution-partnership-in-germany/",
+        "https://farmdroid.com/customer-stories/embracing-innovation-in-maize-cultivation-nils-experience-with-farmdroid/"
+      ],
+      "conflicts": [
+        "AGRAVIS ended active FarmDroid distribution in August 2026; historic dealer listings are not current buying evidence.",
+        "Current 6 ha/day claim differs from the 2025 v2.5 5 ha/day sheet; no silent upgrade."
+      ],
+      "unknowns": [
+        "Current delivered revision, seed-meter package, German lead time and local support arrangement.",
+        "Field-specific throughput and access/safety plan; complete battery endurance under load."
+      ],
+      "specs": [
+        {
+          "key": "working_width",
+          "value": 3.5,
+          "unit": "m",
+          "semanticLabel": "Maximum working width",
+          "conditions": [
+            "2025 v2.5 configuration"
+          ],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "row_count_max",
+          "value": 12,
+          "unit": "rows",
+          "semanticLabel": "Maximum configurable active rows",
+          "conditions": [],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "row_spacing_min",
+          "value": 22.5,
+          "unit": "cm",
+          "semanticLabel": "Minimum row spacing",
+          "conditions": [
+            "Seed-system dependent; not a universal tool clearance"
+          ],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "weight_standard",
+          "value": 1250,
+          "unit": "kg",
+          "semanticLabel": "Standard robot mass, not payload",
+          "conditions": [],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "auto_speed_max",
+          "value": 950,
+          "unit": "m/h",
+          "semanticLabel": "Highly automated-mode speed limit",
+          "conditions": [
+            "2025 v2.5 sheet; task and soil affect work rate"
+          ],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "seed_gap_min",
+          "value": 10,
+          "unit": "cm",
+          "semanticLabel": "Minimum seed spacing for intra-row weeding",
+          "conditions": [],
+          "sourceIds": [
+            "weeding"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "daily_capacity",
+          "value": null,
+          "unit": "ha/day",
+          "semanticLabel": "Current configuration daily output unresolved",
+          "conditions": [
+            "2025 sheet says up to 5; current page says 6."
+          ],
+          "sourceIds": [
+            "spec",
+            "product"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "operatingMode": {
+        "value": "Autonomous mapped-field seeding and hoeing with farmer setup, replenishment and exception response.",
+        "sourceIds": [
+          "product",
+          "weeding"
+        ],
+        "caveats": [
+          "In-row hoeing relies on the stored sowing positions; prepared soil and suitable spacing are necessary.",
+          "Solar-assisted operation is weather and duty dependent; road transport and field transfer are separate.",
+          "Manufacturer excludes rocky, muddy or flooded ground."
+        ]
+      },
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Maize seeding and hoeing at a German organic farm.",
+          "configuration": "FD20 customer system; seed/tool revision not specified in the indexed case.",
+          "operatingMode": "Farmer prepares seedbed and adjusts tools; robot performs field passes.",
+          "sourceIds": [
+            "case"
+          ],
+          "limitations": [
+            "Indexed case only; direct case retrieval was not established. No exact-version performance guarantee."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "FarmDroid sales",
+          "market": "Germany / manufacturer Europe",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://farmdroid.com/contact/",
+            "phone": "+45 8863 8766"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Direct manufacturer enquiry; no reseller claim.",
+          "caveats": []
+        },
+        {
+          "organization": "FarmDroid German-owner support handover",
+          "market": "Germany",
+          "routeType": "service",
+          "contact": {
+            "url": "https://farmdroid.com/news/farmdroid-and-agravis-conclude-their-distribution-partnership-in-germany/",
+            "phone": "+45 88 63 87 70"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Manufacturer explicitly assumes support after AGRAVIS exit.",
+          "caveats": [
+            "2027 service setup details were still forthcoming in the August 2026 notice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "naio-oz-rtk-weeding",
+      "name": "Naïo OZ — RTK tool carrier",
+      "manufacturer": "Naïo Technologies",
+      "robotClass": "dedicated_robot",
+      "industries": [
+        "agriculture"
+      ],
+      "workflowId": "agricultural_fieldwork",
+      "exactConfiguration": "Current OZ GNSS-RTK platform with selected mechanical weeding implement; tool package and Augmented Autonomy commissioning are separate.",
+      "description": "Carries tools for mapped vegetable-row cultivation; seeders and other implements are configuration-specific.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.naio-technologies.com/oz/",
+          "title": "Current OZ specifications and growers",
+          "publisher": "Naïo Technologies",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.naio-technologies.com/contactez-nous/",
+          "title": "Manufacturer distributor directory",
+          "publisher": "Naïo Technologies",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "legacy",
+          "url": "https://naio-technologies.com/wp-content/uploads/2021/04/2021_brochure-oz_fr.pdf",
+          "title": "OZ 2021 brochure, not current configuration",
+          "publisher": "Naïo Technologies",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.naio-technologies.com/oz/",
+        "https://www.naio-technologies.com/contactez-nous/",
+        "https://naio-technologies.com/wp-content/uploads/2021/04/2021_brochure-oz_fr.pdf"
+      ],
+      "conflicts": [
+        "The 2021 brochure is a different dated configuration; its mass, speed and towing figures are not promoted to current OZ specs."
+      ],
+      "unknowns": [
+        "Current mass, slope/ingress limits, supplied tool BOM and German delivery.",
+        "Conditions for leaving this exact field unattended and intervention frequency."
+      ],
+      "specs": [
+        {
+          "key": "runtime_max",
+          "value": 8,
+          "unit": "h",
+          "semanticLabel": "Claimed working time, up to",
+          "conditions": [
+            "Task, soil and implement duty not specified"
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "lift_capacity",
+          "value": 60,
+          "unit": "kg",
+          "semanticLabel": "Tool lift capacity",
+          "conditions": [
+            "Not towing capacity or payload at arbitrary reach"
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_width",
+          "value": 100,
+          "unit": "cm",
+          "semanticLabel": "Maximum implement working width",
+          "conditions": [
+            "Depends on selected tool"
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "navigation",
+          "value": "GNSS RTK",
+          "unit": null,
+          "semanticLabel": "Navigation method",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "compatible_tools",
+          "value": "More than 35",
+          "unit": null,
+          "semanticLabel": "Available implement range",
+          "conditions": [
+            "Options, not supplied bundle"
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Current platform mass not confirmed",
+          "conditions": [
+            "Do not transfer 2021 brochure weight to current configuration"
+          ],
+          "sourceIds": [
+            "legacy"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "operatingMode": {
+        "value": "Mapped autonomous tool-carrier passes; user creates crop maps, fits implements and handles exceptions.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Manufacturer advertises unattended-field operation; applicable commissioning and site conditions still require confirmation.",
+          "Maximum tool width and lift rating do not define crop clearance or towing capacity."
+        ]
+      },
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Market-garden sowing and mechanical weeding.",
+          "configuration": "OZ systems in named grower testimonials; exact attachment/revision unspecified.",
+          "operatingMode": "Grower prepares maps and soil; robot performs passes.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Manufacturer testimonials; exact proposed tool and field performance need a trial."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Naïo Technologies",
+          "market": "Europe / Germany enquiry",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.naio-technologies.com/contactez-nous/",
+            "phone": "+33 9 72 45 40 85"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Direct manufacturer enquiry; no reseller claim.",
+          "caveats": []
+        },
+        {
+          "organization": "Heinrich Schröder Landmaschinen KG",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.schroeder-gruppe.de/"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Listed by Naïo as a German distributor; exact OZ package availability not established.",
+          "caveats": [
+            "Business website linked by manufacturer; local model service and delivery require enquiry."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecorobotix-ara620-sg2-spraying",
+      "name": "Ecorobotix ARA 620 S G2",
+      "manufacturer": "Ecorobotix",
+      "robotClass": "dedicated_robot",
+      "industries": [
+        "agriculture"
+      ],
+      "workflowId": "agricultural_fieldwork",
+      "exactConfiguration": "ARA 620 S G2 UHP sprayer with front tank and selected crop algorithm; tractor and driver required. Not the older ARA 600 S G1 or an autonomous vehicle.",
+      "description": "Tractor-mounted vision system selectively actuates spray nozzles for compatible crops and treatments.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://ecorobotix.com/de/ara/",
+          "title": "ARA 620 German product",
+          "publisher": "Ecorobotix",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spec",
+          "url": "https://ecorobotix.com/wp-content/uploads/2025/11/Ecorobotix_Brochure_ARA_620_EN_20251114_LD.pdf",
+          "title": "ARA 620 S G2 brochure, November 2025",
+          "publisher": "Ecorobotix",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://ecorobotix.com/contact-us/",
+          "title": "Product enquiries and support",
+          "publisher": "Ecorobotix",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://www.agravis.de/de/unsere-leistungen/technik/smart-farming-und-robotik/technologien/ecorobotix-ara/",
+          "title": "AGRAVIS ARA enquiries",
+          "publisher": "AGRAVIS",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://ecorobotix.com/de/ara/",
+        "https://ecorobotix.com/wp-content/uploads/2025/11/Ecorobotix_Brochure_ARA_620_EN_20251114_LD.pdf",
+        "https://ecorobotix.com/contact-us/",
+        "https://www.agravis.de/de/unsere-leistungen/technik/smart-farming-und-robotik/technologien/ecorobotix-ara/"
+      ],
+      "conflicts": [
+        "Older ARA brochures quote 6.0 m width and 450 kg empty front tank; this record uses the 620 S G2 brochure, not merged generations."
+      ],
+      "unknowns": [
+        "German stock, precise software entitlement, tractor compatibility and integrated safety acceptance.",
+        "Task-specific detection/miss rates, labour including refill/cleaning and actual chemical savings."
+      ],
+      "specs": [
+        {
+          "key": "working_width",
+          "value": 6.2,
+          "unit": "m",
+          "semanticLabel": "Maximum spray width",
+          "conditions": [],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "nozzles",
+          "value": 156,
+          "unit": "nozzles",
+          "semanticLabel": "Individually controlled precision nozzles",
+          "conditions": [],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "sprayer_mass",
+          "value": 1200,
+          "unit": "kg",
+          "semanticLabel": "Rear sprayer mass, not total rig",
+          "conditions": [],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mixture_volume",
+          "value": 300,
+          "unit": "L",
+          "semanticLabel": "Spray-mixture tank volume",
+          "conditions": [],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "water_volume",
+          "value": 600,
+          "unit": "L",
+          "semanticLabel": "Clean-water tank volume",
+          "conditions": [],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "travel_speed",
+          "value": 7.2,
+          "unit": "km/h",
+          "semanticLabel": "Maximum treatment travel speed",
+          "conditions": [
+            "Crop and operating conditions apply"
+          ],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "output_max",
+          "value": 4,
+          "unit": "ha/h",
+          "semanticLabel": "Claimed area output, up to",
+          "conditions": [
+            "Not complete-shift output"
+          ],
+          "sourceIds": [
+            "spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "spray_spot",
+          "value": "6 × 6",
+          "unit": "cm",
+          "semanticLabel": "Nominal spray target footprint",
+          "conditions": [
+            "Not GNSS or plant-detection accuracy"
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "operatingMode": {
+        "value": "Human-driven tractor with automated vision-based nozzle selection and tablet configuration.",
+        "sourceIds": [
+          "spec"
+        ],
+        "caveats": [
+          "Driver, filling, cleaning and chemical handling remain human tasks.",
+          "Crop algorithm, growth stage and permitted treatment must be confirmed for the field."
+        ]
+      },
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Selective plant-by-plant treatment of supported crops.",
+          "configuration": "ARA 620 S G2 with crop-specific software and tractor.",
+          "operatingMode": "Driver controls vehicle; system recognizes targets and actuates nozzles.",
+          "sourceIds": [
+            "spec",
+            "product"
+          ],
+          "limitations": [
+            "ARA family testimonials do not prove this exact G2 configuration in every crop."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Ecorobotix",
+          "market": "Europe / Germany enquiry",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://ecorobotix.com/contact-us/",
+            "phone": "+41 21 561 07 00"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Direct manufacturer enquiry; no reseller claim.",
+          "caveats": []
+        },
+        {
+          "organization": "AGRAVIS Smart Farming",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.agravis.de/de/unsere-leistungen/technik/smart-farming-und-robotik/technologien/ecorobotix-ara/",
+            "email": "paul.buehnemann@agravis.de"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Seller's published ARA enquiry; current authorization not independently established.",
+          "caveats": [
+            "Listing says ARA generically; request exact ARA 620 S G2 offer."
+          ]
+        }
+      ]
+    }
+  ]
+}

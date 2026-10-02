@@ -1,0 +1,153 @@
+{
+ "schemaVersion": 1,
+ "id": "ubtech-walker-s1",
+ "maker": "UBTECH Robotics",
+ "makerCountry": "CN",
+ "model": "Walker S1",
+ "variant": null,
+ "name": "UBTECH Walker S1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.ubtrobot.com/en/humanoid/products/walker-s1",
+ "summary": "A 1.72 m walking industrial humanoid with dexterous hands, the predecessor of the Walker S2, trialled on car assembly lines.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "No seller lists the Walker S1. Terra Robotics, UBTECH's exclusive DACH distributor, sells the newer Walker S2; its S2 page says it can configure Walker S, S1 or S2, so ask Terra if the S1 is needed.",
+  "sourceIds": [
+   "s2",
+   "s4",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.72,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 76,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "stated as \"Load 15kg\", not split per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_joint_torque_nm",
+   "label": "Peak joint torque",
+   "value": 250,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROSA 2.0 robotic operating system framework",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROSA 2.0",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Hands have a 6-point tactile sensor array.",
+   "Runtime, IP rating and per-arm payload not published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://owebsite-cdn.ubtrobot.com/resources/image/2024/10/14/601089298387013.png",
+   "pageUrl": "https://www.ubtrobot.com/en/humanoid/products/walker-s1",
+   "credit": "UBTECH Robotics",
+   "alt": "UBTECH Walker S1 walking, with close-ups of head, hand and leg joint",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Assists car production on vehicle assembly lines together with AMRs/AGVs",
+   "stage": "pilot",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "UBTECH names no customer on the product page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.ubtrobot.com/en/humanoid/products/walker-s1",
+   "title": "Walker S1 product page",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/pages/hersteller-ub-tech",
+   "title": "UBtech humanoide Roboter Hersteller",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ubtrobot.com/en/about/news/826574022332485",
+   "title": "UBTECH partners with collaborators to accelerate global expansion (Terra Robotics, ROSSMANN)",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://terra-robotics.de/products/ubtech-walker-s2",
+   "title": "UBtech Walker S2 (Terra Robotics; text names Walker S, S1 and S2 as configurable variants)",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the Walker S1 still supplied now that the S2 is in series production? Terra's S2 page mentions the S1 only as a configurable variant."
+ ],
+ "checkedAt": "2026-10-02"
+}

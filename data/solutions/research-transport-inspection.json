@@ -1,0 +1,2447 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Bounded review of six warehouse/intralogistics transport configurations and four industrial inspection configurations. Public manufacturer and German integrator/contact sources; technical support is separate from deployment stage and German availability. No supplier contact, purchase, database write or deployment.",
+  "records": [
+    {
+      "id": "mir-250-transport",
+      "name": "MiR250 — transport platform",
+      "manufacturer": "Mobile Industrial Robots",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "exactConfiguration": "MiR250 base AMR; optional lift/conveyor/cart equipment excluded from base specifications.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Indoor material transport platform. A working solution requires a selected load carrier and transfer method.",
+      "operatingMode": {
+        "value": "Autonomous mapped indoor transport; mission, fleet and charging configuration required.",
+        "sourceIds": [
+          "mir250-spec",
+          "mir-denso"
+        ],
+        "caveats": [
+          "Base platform does not by itself pick pallets or load/unload goods; select and integrate the handling module.",
+          "Clean, dry floors and a site-specific route/safety assessment are required."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 250,
+          "unit": "kg",
+          "semanticLabel": "Maximum platform transport payload",
+          "conditions": [
+            "Base AMR capacity; a top module, carrier and load configuration need their own limit."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 2,
+          "unit": "m/s",
+          "semanticLabel": "Maximum travel speed",
+          "conditions": [
+            "Application and safety-field settings can reduce speed."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": 13,
+          "unit": "h",
+          "semanticLabel": "Active runtime at maximum payload, up to",
+          "conditions": [
+            "Not uninterrupted shift availability; route, auxiliary power and application affect endurance."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_unloaded",
+          "value": 17.5,
+          "unit": "h",
+          "semanticLabel": "Active runtime without payload, up to",
+          "conditions": [
+            "Do not use as loaded-work endurance."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP21",
+          "unit": null,
+          "semanticLabel": "Base robot ingress protection",
+          "conditions": [
+            "Indoor use; not permission for washing or wet-floor operation."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "default_corridor_width_mm",
+          "value": 1450,
+          "unit": "mm",
+          "semanticLabel": "Operational corridor width with default setup",
+          "conditions": [
+            "850 mm figure requires minimized footprint and muted protective fields; not a default safe aisle."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_length_mm",
+          "value": 800,
+          "unit": "mm",
+          "semanticLabel": "Base length",
+          "conditions": [
+            "Excludes application-specific attachments."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_width_mm",
+          "value": 580,
+          "unit": "mm",
+          "semanticLabel": "Base width",
+          "conditions": [
+            "Excludes application-specific attachments."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_height_mm",
+          "value": 300,
+          "unit": "mm",
+          "semanticLabel": "Base height",
+          "conditions": [
+            "Without a top module."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_mass_kg",
+          "value": 94,
+          "unit": "kg",
+          "semanticLabel": "Base robot mass",
+          "conditions": [
+            "Payload and added modules excluded."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ground_clearance_mm",
+          "value": "25–28",
+          "unit": "mm",
+          "semanticLabel": "Ground clearance",
+          "conditions": [
+            "Published range; route must be checked."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_incline_percent",
+          "value": 5,
+          "unit": "%",
+          "semanticLabel": "Maximum incline or decline",
+          "conditions": [
+            "Limited to 0.5 m/s in the published specification."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "default_doorway_width_mm",
+          "value": 1500,
+          "unit": "mm",
+          "semanticLabel": "Doorway width with default settings",
+          "conditions": [
+            "Do not substitute reduced protective-field dimensions."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "operating_temperature_c",
+          "value": "5–40",
+          "unit": "°C",
+          "semanticLabel": "Ambient operating temperature",
+          "conditions": [
+            "Upper ambient limit is specified for at most one hour."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charging_current_a",
+          "value": 35,
+          "unit": "A",
+          "semanticLabel": "Maximum charging current",
+          "conditions": [
+            "Up to; requires compatible charging equipment."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_standby",
+          "value": 22,
+          "unit": "h",
+          "semanticLabel": "Powered-on standby time",
+          "conditions": [
+            "Up to; robot idle, not completing transport missions."
+          ],
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Warehouse-to-production and line-side component transport at DENSO, Tennessee.",
+          "configuration": "MiR250 with shelf-lifter, ROEQ carts, fleet/API integration and door I/O.",
+          "operatingMode": "Autonomous transport after route, cart and facility integration.",
+          "sourceIds": [
+            "mir-denso"
+          ],
+          "limitations": [
+            "Manufacturer-published customer account; not independently audited.",
+            "Deployment uses attachments; its throughput and success claims are not evidence for an unconfigured base robot."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "SPIE AUTOMATION — robotics and intralogistics, Dormagen",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+            "email": "robert.lambertz@spie-isw.com",
+            "phone": "+49 2133 979 0123"
+          },
+          "sourceIds": [
+            "spie-mir"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer authorization not verified in this review; recorded as an integrator route.",
+          "caveats": [
+            "Listing includes MiR250; confirm exact top module, commissioning and service scope.",
+            "Published partner designation is the integrator's own claim."
+          ]
+        },
+        {
+          "organization": "Mobile Industrial Robots",
+          "market": "EU / manufacturer in Denmark; German routing on request",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://mobile-industrial-robots.com/products/robots/mir250/specifications",
+            "email": "mail@mir-robots.com",
+            "phone": "+45 20 377 577"
+          },
+          "sourceIds": [
+            "mir250-spec"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Public manufacturer footer contact; does not establish German inventory."
+          ]
+        }
+      ],
+      "conflicts": [
+        "SPIE's towing figures describe a different load mode; they do not raise the base platform's transport payload."
+      ],
+      "unknowns": [
+        "Exact top module/carrier, usable goods capacity, turning envelope with load, load center and commissioning scope remain project-specific.",
+        "No reviewed German stock, delivery commitment, installed price or service response agreement.",
+        "Outdoor, hazardous-area and washdown suitability are not established."
+      ],
+      "sourceURLs": [
+        "https://mobile-industrial-robots.com/products/robots/mir250/specifications",
+        "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+        "https://mobile-industrial-robots.com/cases/denso"
+      ],
+      "sources": [
+        {
+          "id": "mir250-spec",
+          "url": "https://mobile-industrial-robots.com/products/robots/mir250/specifications",
+          "title": "MiR250 manufacturer specifications",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spie-mir",
+          "url": "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+          "title": "MiR transport robots and German integration contact",
+          "publisher": "SPIE AUTOMATION",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "mir-denso",
+          "url": "https://mobile-industrial-robots.com/cases/denso",
+          "title": "DENSO MiR250 production transport case study",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "mir-600-transport",
+      "name": "MiR600 — transport platform",
+      "manufacturer": "Mobile Industrial Robots",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "exactConfiguration": "MiR600 base AMR; optional lift/conveyor/cart equipment excluded from base specifications.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Indoor material transport platform. A working solution requires a selected load carrier and transfer method.",
+      "operatingMode": {
+        "value": "Autonomous mapped indoor transport; mission, fleet and charging configuration required.",
+        "sourceIds": [
+          "mir600-spec",
+          "mir-cours"
+        ],
+        "caveats": [
+          "Base platform does not by itself pick pallets or load/unload goods; select and integrate the handling module.",
+          "Clean, dry floors and a site-specific route/safety assessment are required."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 600,
+          "unit": "kg",
+          "semanticLabel": "Maximum platform transport payload",
+          "conditions": [
+            "Base AMR capacity; a top module, carrier and load configuration need their own limit."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 2,
+          "unit": "m/s",
+          "semanticLabel": "Maximum travel speed",
+          "conditions": [
+            "Application and safety-field settings can reduce speed."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": 8.5,
+          "unit": "h",
+          "semanticLabel": "Active runtime at maximum payload, up to",
+          "conditions": [
+            "Not uninterrupted shift availability; route, auxiliary power and application affect endurance."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_unloaded",
+          "value": 11,
+          "unit": "h",
+          "semanticLabel": "Active runtime without payload, up to",
+          "conditions": [
+            "Do not use as loaded-work endurance."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP52",
+          "unit": null,
+          "semanticLabel": "Base robot ingress protection",
+          "conditions": [
+            "Indoor use; not permission for washing or wet-floor operation."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "default_passing_corridor_width_mm",
+          "value": 3500,
+          "unit": "mm",
+          "semanticLabel": "Default corridor width for two robots passing",
+          "conditions": [
+            "2700 mm figure requires minimized footprint and muted protective fields."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_length_mm",
+          "value": 1350,
+          "unit": "mm",
+          "semanticLabel": "Base length",
+          "conditions": [
+            "Attachments excluded."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_width_mm",
+          "value": 910,
+          "unit": "mm",
+          "semanticLabel": "Base width",
+          "conditions": [
+            "Attachments excluded."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_height_mm",
+          "value": 322,
+          "unit": "mm",
+          "semanticLabel": "Base height",
+          "conditions": [
+            "Without a top module."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "base_mass_kg",
+          "value": 240,
+          "unit": "kg",
+          "semanticLabel": "Base robot mass",
+          "conditions": [
+            "Payload and added modules excluded."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ground_clearance_mm",
+          "value": "25–27",
+          "unit": "mm",
+          "semanticLabel": "Ground clearance",
+          "conditions": [
+            "Published range; route must be checked."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "traversable_gap_mm",
+          "value": 29,
+          "unit": "mm",
+          "semanticLabel": "Maximum traversable gap",
+          "conditions": [
+            "Maximum0.5m/s, from all angles; application requires route validation."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "operating_temperature_c",
+          "value": "5–40",
+          "unit": "°C",
+          "semanticLabel": "Ambient operating temperature",
+          "conditions": [
+            "Upper ambient limit is specified for at most one hour."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_standby",
+          "value": 16,
+          "unit": "h",
+          "semanticLabel": "Powered-on standby time",
+          "conditions": [
+            "Up to; robot idle, not completing transport missions."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charging_current_a",
+          "value": 35,
+          "unit": "A",
+          "semanticLabel": "Maximum charging current",
+          "conditions": [
+            "Up to; compatible equipment required."
+          ],
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Internal component transport at Cours, Velbert, Germany.",
+          "configuration": "Mixed MiR600/MiR1350 fleet integrated with Cours Galvano, MiR Fleet and load-handling attachments; exact attachment SKU unreported.",
+          "operatingMode": "Autonomous fleet missions integrated into the production system.",
+          "sourceIds": [
+            "mir-cours"
+          ],
+          "limitations": [
+            "Manufacturer-published case; no independent audit.",
+            "Fleet-level activity is not attributable to one model; exact model-specific duty cycle and attachment capacity are unreported."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "SPIE AUTOMATION — robotics and intralogistics, Dormagen",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+            "email": "robert.lambertz@spie-isw.com",
+            "phone": "+49 2133 979 0123"
+          },
+          "sourceIds": [
+            "spie-mir"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer authorization not verified in this review; recorded as an integrator route.",
+          "caveats": [
+            "Listing includes MiR600; confirm exact top module, commissioning and service scope.",
+            "Published partner designation is the integrator's own claim."
+          ]
+        },
+        {
+          "organization": "Mobile Industrial Robots",
+          "market": "EU / manufacturer in Denmark; German routing on request",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://mobile-industrial-robots.com/products/robots/mir600/specifications",
+            "email": "mail@mir-robots.com",
+            "phone": "+45 20 377 577"
+          },
+          "sourceIds": [
+            "mir600-spec"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Public manufacturer footer contact; does not establish German inventory."
+          ]
+        }
+      ],
+      "conflicts": [
+        "SPIE shows differing runtime, load-surface and speed values in its table and configurator. Manufacturer base specifications take precedence; seller figures are not promoted to technical verification.",
+        "MiR's page gives different charging examples in the summary and detail. No guaranteed charging ratio is imported."
+      ],
+      "unknowns": [
+        "Exact top module/carrier, usable goods capacity, turning envelope with load, load center and commissioning scope remain project-specific.",
+        "No reviewed German stock, delivery commitment, installed price or service response agreement.",
+        "Net goods capacity with MiR Shelf Lift differs from base payload: the manufacturer application page advertises 500 kg. Do not assume 600 kg after adding an attachment."
+      ],
+      "sourceURLs": [
+        "https://mobile-industrial-robots.com/products/robots/mir600/specifications",
+        "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+        "https://mobile-industrial-robots.com/cases/cours",
+        "https://mobile-industrial-robots.com/products/applications/mir-shelf-lift-600"
+      ],
+      "sources": [
+        {
+          "id": "mir600-spec",
+          "url": "https://mobile-industrial-robots.com/products/robots/mir600/specifications",
+          "title": "MiR600 manufacturer specifications",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spie-mir",
+          "url": "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+          "title": "MiR transport robots and German integration contact",
+          "publisher": "SPIE AUTOMATION",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "mir-cours",
+          "url": "https://mobile-industrial-robots.com/cases/cours",
+          "title": "Cours case study with MiR600 and MiR1350",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "mir-shelf-lift",
+          "url": "https://mobile-industrial-robots.com/products/applications/mir-shelf-lift-600",
+          "title": "MiR Shelf Lift application capacity",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "mir-1350-transport",
+      "name": "MiR1350 — transport platform",
+      "manufacturer": "Mobile Industrial Robots",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "exactConfiguration": "MiR1350 base AMR; optional lift/conveyor/cart equipment excluded from base specifications.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Indoor material transport platform. A working solution requires a selected load carrier and transfer method.",
+      "operatingMode": {
+        "value": "Autonomous mapped indoor transport; mission, fleet and charging configuration required.",
+        "sourceIds": [
+          "mir1350-spec",
+          "mir-cours"
+        ],
+        "caveats": [
+          "Base platform does not by itself pick pallets or load/unload goods; select and integrate the handling module.",
+          "Clean, dry floors and a site-specific route/safety assessment are required."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 1350,
+          "unit": "kg",
+          "semanticLabel": "Maximum platform transport payload",
+          "conditions": [
+            "Base AMR capacity; a top module, carrier and load configuration need their own limit."
+          ],
+          "sourceIds": [
+            "mir1350-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 1.2,
+          "unit": "m/s",
+          "semanticLabel": "Maximum travel speed",
+          "conditions": [
+            "Application and safety-field settings can reduce speed."
+          ],
+          "sourceIds": [
+            "mir1350-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": 6.75,
+          "unit": "h",
+          "semanticLabel": "Active runtime at maximum payload",
+          "conditions": [
+            "Not uninterrupted shift availability; route, auxiliary power and application affect endurance."
+          ],
+          "sourceIds": [
+            "mir1350-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_unloaded",
+          "value": 9.8333,
+          "unit": "h",
+          "semanticLabel": "Active runtime without payload, up to",
+          "conditions": [
+            "Published as 9 h 50 min."
+          ],
+          "sourceIds": [
+            "mir1350-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP52",
+          "unit": null,
+          "semanticLabel": "Base robot ingress protection",
+          "conditions": [
+            "Indoor use; not permission for washing or wet-floor operation."
+          ],
+          "sourceIds": [
+            "mir1350-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "default_corridor_width_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Default operational corridor width unresolved",
+          "conditions": [
+            "English page: 1800 mm; German page: 2150 mm. Obtain version-specific space requirements."
+          ],
+          "sourceIds": [
+            "mir1350-spec",
+            "mir1350-spec-de"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Internal component transport at Cours, Velbert, Germany.",
+          "configuration": "Mixed MiR600/MiR1350 fleet integrated with Cours Galvano, MiR Fleet and load-handling attachments; exact attachment SKU unreported.",
+          "operatingMode": "Autonomous fleet missions integrated into the production system.",
+          "sourceIds": [
+            "mir-cours"
+          ],
+          "limitations": [
+            "Manufacturer-published case; no independent audit.",
+            "Fleet-level activity is not attributable to one model; exact model-specific duty cycle and attachment capacity are unreported."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "SPIE AUTOMATION — robotics and intralogistics, Dormagen",
+          "market": "Germany",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+            "email": "robert.lambertz@spie-isw.com",
+            "phone": "+49 2133 979 0123"
+          },
+          "sourceIds": [
+            "spie-mir"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer authorization not verified in this review; recorded as an integrator route.",
+          "caveats": [
+            "Listing includes MiR1350; confirm exact top module, commissioning and service scope.",
+            "Published partner designation is the integrator's own claim."
+          ]
+        },
+        {
+          "organization": "Mobile Industrial Robots",
+          "market": "EU / manufacturer in Denmark; German routing on request",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://mobile-industrial-robots.com/products/robots/mir1350/specifications",
+            "email": "mail@mir-robots.com",
+            "phone": "+45 20 377 577"
+          },
+          "sourceIds": [
+            "mir1350-spec"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Public manufacturer footer contact; does not establish German inventory."
+          ]
+        }
+      ],
+      "conflicts": [
+        "English/German official pages differ: mass 244/247 kg, default single corridor 1800/2150 mm and passing corridor 3500/4250 mm. No one definitive mass or corridor value is selected.",
+        "The headline rounds runtime to 10 h, while detailed unloaded runtime is 9 h 50 min and loaded runtime 6 h 45 min.",
+        "SPIE runtime and towing claims are not substituted for manufacturer loaded endurance or platform payload."
+      ],
+      "unknowns": [
+        "Exact top module/carrier, usable goods capacity, turning envelope with load, load center and commissioning scope remain project-specific.",
+        "No reviewed German stock, delivery commitment, installed price or service response agreement.",
+        "Operating temperature is not established by the reviewed specification pages: their 0–50 °C value is explicitly storage.",
+        "MiR Shelf Lift application page advertises 1250 kg cart capacity; base 1350 kg is not an automatic goods capacity with a module."
+      ],
+      "sourceURLs": [
+        "https://mobile-industrial-robots.com/products/robots/mir1350/specifications",
+        "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+        "https://mobile-industrial-robots.com/cases/cours",
+        "https://mobile-industrial-robots.com/products/applications/mir-shelf-lift-600",
+        "https://mobile-industrial-robots.com/de/produkte/roboter/mir1350/spezifikationen"
+      ],
+      "sources": [
+        {
+          "id": "mir1350-spec",
+          "url": "https://mobile-industrial-robots.com/products/robots/mir1350/specifications",
+          "title": "MiR1350 manufacturer specifications",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spie-mir",
+          "url": "https://www.spie-automation.com/leistungen/robotik/transportroboter/",
+          "title": "MiR transport robots and German integration contact",
+          "publisher": "SPIE AUTOMATION",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "mir-cours",
+          "url": "https://mobile-industrial-robots.com/cases/cours",
+          "title": "Cours case study with MiR600 and MiR1350",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "mir-shelf-lift",
+          "url": "https://mobile-industrial-robots.com/products/applications/mir-shelf-lift-600",
+          "title": "MiR Shelf Lift application capacity",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "mir1350-spec-de",
+          "url": "https://mobile-industrial-robots.com/de/produkte/roboter/mir1350/spezifikationen",
+          "title": "MiR1350 German manufacturer specifications",
+          "publisher": "Mobile Industrial Robots",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "omron-md-650-transport",
+      "name": "OMRON MD-650 — transport platform",
+      "manufacturer": "OMRON",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "exactConfiguration": "MD-650 base ordering code 37350-10000, without pendant or charging station; battery 73330-100 separately ordered. No top module included.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Indoor autonomous material transport. The payload platform must be fitted with a task-specific carrier or transfer module.",
+      "operatingMode": {
+        "value": "Autonomous navigation using mapped natural features and safety laser scanners; MobilePlanner setup and optional fleet management.",
+        "sourceIds": [
+          "omron-md-spec",
+          "omron-md-product"
+        ],
+        "caveats": [
+          "Top-module design, integration, facility risk assessment and safe load geometry are required.",
+          "Indoor non-hazardous environment only; no corrosive/explosive gas or liquid, smoke, oil mist, water/oil/dirt on floors."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 650,
+          "unit": "kg",
+          "semanticLabel": "Maximum platform payload",
+          "conditions": [
+            "Does not establish net goods capacity after adding a top module."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 2.2,
+          "unit": "m/s",
+          "semanticLabel": "Maximum forward/reverse translational speed",
+          "conditions": [
+            "Load, site and safety settings can reduce operating speed."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": 8,
+          "unit": "h",
+          "semanticLabel": "Runtime at full payload",
+          "conditions": [
+            "Auxiliary power draw affects endurance."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_unloaded",
+          "value": 10,
+          "unit": "h",
+          "semanticLabel": "Runtime without payload",
+          "conditions": [
+            "Not a loaded-shift claim."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP22",
+          "unit": null,
+          "semanticLabel": "AMR ingress protection",
+          "conditions": [
+            "Supplied top-plate plugs must be inserted; charging pads are IP10."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charge_time_min",
+          "value": 19.6,
+          "unit": "min",
+          "semanticLabel": "Battery charge from 20% to 80%",
+          "conditions": [
+            "Not a full recharge; temperature and state of charge affect time."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Pallet and heavy-load transfer between warehouse, staging and production.",
+          "configuration": "MD-650 with load-specific accessories; an exact deployed customer attachment was not identified.",
+          "operatingMode": "Autonomous mapped transport.",
+          "sourceIds": [
+            "omron-md-product"
+          ],
+          "limitations": [
+            "No reviewed model-specific named routine deployment in this bounded search.",
+            "Do not transfer deployment evidence from OMRON LD, HD or OL models to the MD series."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "OMRON ELECTRONICS GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://industrial.omron.de/de/contact",
+            "email": "info_de@omron.com",
+            "phone": "+49 2173 6800-0"
+          },
+          "sourceIds": [
+            "omron-de-contact",
+            "omron-md-lineup"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Request the exact battery, charger, top module and software/licence bill of materials."
+          ]
+        },
+        {
+          "organization": "OMRON technical support / robotics sales, Dortmund",
+          "market": "Germany",
+          "routeType": "service",
+          "contact": {
+            "url": "https://industrial.omron.de/de/contact",
+            "phone": "+49 2173 6800 500"
+          },
+          "sourceIds": [
+            "omron-de-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "General German robotics/support contact; no response-time commitment reviewed."
+          ]
+        }
+      ],
+      "conflicts": [],
+      "unknowns": [
+        "Task-specific autonomous pickup/drop-off, useful load after attachments and fleet/site throughput need validation.",
+        "No current German inventory, quote, lead time or service agreement reviewed.",
+        "No model-specific independently assessed routine-operation evidence found in this batch."
+      ],
+      "sourceURLs": [
+        "https://www.ia.omron.com/products/family/3951/specification.html",
+        "https://robotics.omron.com/products/mobile-robots/md-series/md-650-900/",
+        "https://www.ia.omron.com/products/family/3951/lineup.html",
+        "https://industrial.omron.de/de/contact"
+      ],
+      "sources": [
+        {
+          "id": "omron-md-spec",
+          "url": "https://www.ia.omron.com/products/family/3951/specification.html",
+          "title": "MD Series specifications, updated 2025-10-01",
+          "publisher": "OMRON",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "omron-md-product",
+          "url": "https://robotics.omron.com/products/mobile-robots/md-series/md-650-900/",
+          "title": "MD-650/900 product and applications",
+          "publisher": "OMRON Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "omron-md-lineup",
+          "url": "https://www.ia.omron.com/products/family/3951/lineup.html",
+          "title": "MD Series ordering configuration and battery exclusions",
+          "publisher": "OMRON",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "omron-de-contact",
+          "url": "https://industrial.omron.de/de/contact",
+          "title": "German sales, customer service and technical support",
+          "publisher": "OMRON Deutschland",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "omron-md-900-transport",
+      "name": "OMRON MD-900 — transport platform",
+      "manufacturer": "OMRON",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "exactConfiguration": "MD-900 base ordering code 37370-10000, without pendant or charging station; battery 73330-100 separately ordered. No top module included.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Indoor autonomous material transport. The payload platform must be fitted with a task-specific carrier or transfer module.",
+      "operatingMode": {
+        "value": "Autonomous navigation using mapped natural features and safety laser scanners; MobilePlanner setup and optional fleet management.",
+        "sourceIds": [
+          "omron-md-spec",
+          "omron-md-product"
+        ],
+        "caveats": [
+          "Top-module design, integration, facility risk assessment and safe load geometry are required.",
+          "Indoor non-hazardous environment only; no corrosive/explosive gas or liquid, smoke, oil mist, water/oil/dirt on floors."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 900,
+          "unit": "kg",
+          "semanticLabel": "Maximum platform payload",
+          "conditions": [
+            "Does not establish net goods capacity after adding a top module."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 1.8,
+          "unit": "m/s",
+          "semanticLabel": "Maximum forward/reverse translational speed",
+          "conditions": [
+            "Load, site and safety settings can reduce operating speed."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": 8,
+          "unit": "h",
+          "semanticLabel": "Runtime at full payload",
+          "conditions": [
+            "Auxiliary power draw affects endurance."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_unloaded",
+          "value": 10,
+          "unit": "h",
+          "semanticLabel": "Runtime without payload",
+          "conditions": [
+            "Not a loaded-shift claim."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP22",
+          "unit": null,
+          "semanticLabel": "AMR ingress protection",
+          "conditions": [
+            "Supplied top-plate plugs must be inserted; charging pads are IP10."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "charge_time_min",
+          "value": 19.6,
+          "unit": "min",
+          "semanticLabel": "Battery charge from 20% to 80%",
+          "conditions": [
+            "Not a full recharge; temperature and state of charge affect time."
+          ],
+          "sourceIds": [
+            "omron-md-spec"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Pallet and heavy-load transfer between warehouse, staging and production.",
+          "configuration": "MD-900 with load-specific accessories; an exact deployed customer attachment was not identified.",
+          "operatingMode": "Autonomous mapped transport.",
+          "sourceIds": [
+            "omron-md-product"
+          ],
+          "limitations": [
+            "No reviewed model-specific named routine deployment in this bounded search.",
+            "Do not transfer deployment evidence from OMRON LD, HD or OL models to the MD series."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "OMRON ELECTRONICS GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://industrial.omron.de/de/contact",
+            "email": "info_de@omron.com",
+            "phone": "+49 2173 6800-0"
+          },
+          "sourceIds": [
+            "omron-de-contact",
+            "omron-md-lineup"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Request the exact battery, charger, top module and software/licence bill of materials."
+          ]
+        },
+        {
+          "organization": "OMRON technical support / robotics sales, Dortmund",
+          "market": "Germany",
+          "routeType": "service",
+          "contact": {
+            "url": "https://industrial.omron.de/de/contact",
+            "phone": "+49 2173 6800 500"
+          },
+          "sourceIds": [
+            "omron-de-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "General German robotics/support contact; no response-time commitment reviewed."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The product summary lists only 10 h unloaded for MD-900; the detailed series specification explicitly gives 8 h full payload for both models. Loaded endurance uses the detailed specification."
+      ],
+      "unknowns": [
+        "Task-specific autonomous pickup/drop-off, useful load after attachments and fleet/site throughput need validation.",
+        "No current German inventory, quote, lead time or service agreement reviewed.",
+        "No model-specific independently assessed routine-operation evidence found in this batch."
+      ],
+      "sourceURLs": [
+        "https://www.ia.omron.com/products/family/3951/specification.html",
+        "https://robotics.omron.com/products/mobile-robots/md-series/md-650-900/",
+        "https://www.ia.omron.com/products/family/3951/lineup.html",
+        "https://industrial.omron.de/de/contact"
+      ],
+      "sources": [
+        {
+          "id": "omron-md-spec",
+          "url": "https://www.ia.omron.com/products/family/3951/specification.html",
+          "title": "MD Series specifications, updated 2025-10-01",
+          "publisher": "OMRON",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "omron-md-product",
+          "url": "https://robotics.omron.com/products/mobile-robots/md-series/md-650-900/",
+          "title": "MD-650/900 product and applications",
+          "publisher": "OMRON Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "omron-md-lineup",
+          "url": "https://www.ia.omron.com/products/family/3951/lineup.html",
+          "title": "MD Series ordering configuration and battery exclusions",
+          "publisher": "OMRON",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "omron-de-contact",
+          "url": "https://industrial.omron.de/de/contact",
+          "title": "German sales, customer service and technical support",
+          "publisher": "OMRON Deutschland",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "kuka-kmp-600-s-diffdrive-transport",
+      "name": "KUKA KMP 600-S diffDrive — historical configuration",
+      "manufacturer": "KUKA",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "exactConfiguration": "KMP 600-S diffDrive generation announced January 2023, with integrated lift. Current 600P offer is a different product and is not substituted.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Historical intralogistics platform with documented trade-show use. Exact current orderability and successor relationship require manufacturer confirmation.",
+      "operatingMode": {
+        "value": "Configured autonomous intralogistics, with manual commissioning controller and KUKA.NavigationSolution fleet management.",
+        "sourceIds": [
+          "kuka-600s-2023"
+        ],
+        "caveats": [
+          "Operating mode supported by historical documentation; current hardware/software supply not established.",
+          "A lifting platform is not independent pallet pickup from arbitrary floor positions."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 600,
+          "unit": "kg",
+          "semanticLabel": "Maximum platform transport payload",
+          "conditions": [
+            "Historical 2023 configuration."
+          ],
+          "sourceIds": [
+            "kuka-600s-2023"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 2,
+          "unit": "m/s",
+          "semanticLabel": "Maximum travel speed",
+          "conditions": [
+            "Historical 2023 configuration; application-dependent."
+          ],
+          "sourceIds": [
+            "kuka-600s-2023"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 8,
+          "unit": "h",
+          "semanticLabel": "Approximate operating time, load basis unstated",
+          "conditions": [
+            "Not verified loaded-shift endurance."
+          ],
+          "sourceIds": [
+            "kuka-600s-2023"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "lift_height_mm",
+          "value": 60,
+          "unit": "mm",
+          "semanticLabel": "Integrated platform lifting travel",
+          "conditions": [
+            "Not an arm reach or free-floor pallet pickup height."
+          ],
+          "sourceIds": [
+            "kuka-600s-2023"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP54",
+          "unit": null,
+          "semanticLabel": "Historical platform ingress protection",
+          "conditions": [
+            "Does not establish outdoor, hazardous-area or washdown suitability."
+          ],
+          "sourceIds": [
+            "kuka-600s-2023"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "demonstration",
+          "task": "Material transport coordinated with a palletizing/depalletizing cell at ProMat 2023.",
+          "configuration": "KMP 600-S diffDrive with separate KR IONTEC arm, Mujin controller and cameras.",
+          "operatingMode": "Coordinated demonstration in a trade-show cell.",
+          "sourceIds": [
+            "kuka-promat"
+          ],
+          "limitations": [
+            "The separate fixed robot performs manipulation; the AMR is not a mobile arm.",
+            "No named routine industrial installation of this exact version was established in this batch."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "KUKA Deutschland GmbH — sales, Augsburg",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.kuka.com/de-de/unternehmen/kuka-standorte",
+            "phone": "+49 821 797-0"
+          },
+          "sourceIds": [
+            "kuka-de-sales"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Phone is supported by indexed official contact content; direct page did not expose the dynamic contact list.",
+            "Ask explicitly for the historical 600-S lifecycle, support horizon and successor differences."
+          ]
+        },
+        {
+          "organization": "KUKA Deutschland GmbH — customer service, Augsburg",
+          "market": "Germany",
+          "routeType": "service",
+          "contact": {
+            "url": "https://www.kuka.com/de-de/services/customer-service-contacts",
+            "phone": "+49 821 797 1926"
+          },
+          "sourceIds": [
+            "kuka-de-service"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Indexed official contact; product-specific service scope and parts availability unconfirmed."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The requested 600-S URL now renders KMP 600P with different dimensions. This does not itself establish discontinuation or interchangeability.",
+        "An indexed official brochure uses KMP 600-S in prose and KMP 600S-2 in its table. The table's additional specs are not merged into the historical configuration."
+      ],
+      "unknowns": [
+        "Current orderability, lifecycle status and exact model/part number are unresolved.",
+        "Loaded runtime, current route-space requirements and attachment-specific net payload are unknown.",
+        "No manufacturer quote, German delivery schedule or support agreement reviewed."
+      ],
+      "sourceURLs": [
+        "https://www.kuka.com/de-de/unternehmen/presse/news/2023/01/kmp-600-s-diffdrive",
+        "https://www.kuka.com/de-de/produkte-leistungen/amr-autonome-mobile-roboter/mobile-plattformen/kmp-600-s-diffdrive",
+        "https://www.kuka.com/en-us/company/press/news/2023/03/kuka-featured-kmp-600-mobile-robot-at-promat-2023",
+        "https://www.kuka.com/-/media/kuka-downloads/files/87f2706ce77c4318877932fb36f6002d/mobile-platforms-and-mobile-robots-en.pdf?hash=840B0A6585683E1C7140EF47FE3F9193&rev=aeb4fdef9eef4731959359beb99e094f",
+        "https://www.kuka.com/de-de/unternehmen/kuka-standorte",
+        "https://www.kuka.com/de-de/services/customer-service-contacts"
+      ],
+      "sources": [
+        {
+          "id": "kuka-600s-2023",
+          "url": "https://www.kuka.com/de-de/unternehmen/presse/news/2023/01/kmp-600-s-diffdrive",
+          "title": "KMP 600-S diffDrive generation announcement, 2023-01-23",
+          "publisher": "KUKA",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "kuka-current-route",
+          "url": "https://www.kuka.com/de-de/produkte-leistungen/amr-autonome-mobile-roboter/mobile-plattformen/kmp-600-s-diffdrive",
+          "title": "Historical 600-S URL now displays KMP 600P",
+          "publisher": "KUKA",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "kuka-promat",
+          "url": "https://www.kuka.com/en-us/company/press/news/2023/03/kuka-featured-kmp-600-mobile-robot-at-promat-2023",
+          "title": "KMP 600-S with KR IONTEC / Mujin demonstration at ProMat 2023",
+          "publisher": "KUKA",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "kuka-brochure",
+          "url": "https://www.kuka.com/-/media/kuka-downloads/files/87f2706ce77c4318877932fb36f6002d/mobile-platforms-and-mobile-robots-en.pdf?hash=840B0A6585683E1C7140EF47FE3F9193&rev=aeb4fdef9eef4731959359beb99e094f",
+          "title": "Mobile platforms brochure with 600-S / 600S-2 naming discrepancy",
+          "publisher": "KUKA",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "kuka-de-sales",
+          "url": "https://www.kuka.com/de-de/unternehmen/kuka-standorte",
+          "title": "KUKA German sales locations; contact details indexed",
+          "publisher": "KUKA",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "kuka-de-service",
+          "url": "https://www.kuka.com/de-de/services/customer-service-contacts",
+          "title": "KUKA German customer service; contact details indexed",
+          "publisher": "KUKA",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "boston-dynamics-spot-base-inspection",
+      "name": "Spot — inspection platform without Arm",
+      "manufacturer": "Boston Dynamics",
+      "robotClass": "quadruped",
+      "workflowId": "inspection",
+      "exactConfiguration": "Current public Spot base platform, without Spot Arm. Thermal, acoustic and scanning payloads, Dock and software packages must be separately selected.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Mobile inspection platform. Routine-task evidence below uses added inspection sensors and a configured site, not the bare base robot.",
+      "operatingMode": {
+        "value": "Manual operation or configured autonomous inspection missions; autonomous charging requires the appropriate Dock/package.",
+        "sourceIds": [
+          "spot-product"
+        ],
+        "caveats": [
+          "Thermal/acoustic inspection needs task-specific payloads and data integration.",
+          "No arm or physical intervention is included in this configuration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "sensor_payload_kg",
+          "value": 14,
+          "unit": "kg",
+          "semanticLabel": "Published mounted payload capacity",
+          "conditions": [
+            "Mounted sensors/accessories, not lifting or manipulation capacity.",
+            "Conflicting indexed support limit is unresolved."
+          ],
+          "sourceIds": [
+            "spot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 1.5,
+          "unit": "h",
+          "semanticLabel": "Average runtime",
+          "conditions": [
+            "Payload and environmental conditions affect runtime; not loaded-work or uninterrupted-shift evidence."
+          ],
+          "sourceIds": [
+            "spot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP54",
+          "unit": null,
+          "semanticLabel": "Base robot ingress protection",
+          "conditions": [
+            "Not an ATEX/IECEx hazardous-atmosphere certificate."
+          ],
+          "sourceIds": [
+            "spot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_speed_m_s",
+          "value": 1.6,
+          "unit": "m/s",
+          "semanticLabel": "Base robot maximum speed",
+          "conditions": [
+            "Not inspection-task throughput."
+          ],
+          "sourceIds": [
+            "spot-product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Thermal, acoustic and visual maintenance rounds at BMW Hams Hall, UK.",
+          "configuration": "Spot with thermal camera, Fluke SV600, 360-degree camera, LiDAR and digital-twin integration; not a bare Spot.",
+          "operatingMode": "Programmed autonomous routes with supervised ad-hoc investigations.",
+          "sourceIds": [
+            "spot-bmw"
+          ],
+          "limitations": [
+            "Manufacturer-published customer account; no independent audit.",
+            "Exact base hardware revision and software bill of materials unreported; evidence applies to the configured inspection system."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Boston Dynamics",
+          "market": "Manufacturer inquiry for Germany / Europe",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://bostondynamics.com/contact/"
+          },
+          "sourceIds": [
+            "spot-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Contact form only; exact German sales/service assignment unconfirmed."
+          ]
+        },
+        {
+          "organization": "Roboverse Reply",
+          "market": "Germany — Gütersloh and Munich",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://www.reply.com/roboverse-reply/en"
+          },
+          "sourceIds": [
+            "reply-germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Integration relationship self-described by Reply; current reseller authorization not verified in this review.",
+          "caveats": [
+            "German integration route; supply, commissioning and maintenance scope need confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Direct product page publishes 14 kg mounted payload; indexed support content states 20.43 kg recommended under additional constraints, but direct refresh returned 404. Retain the lower directly read figure, flag unresolved configuration scope.",
+        "Product page has a 110 mm / 43.3 in length inconsistency. Length is withheld instead of silently corrected."
+      ],
+      "unknowns": [
+        "Exact supplied inspection kit, usable payload after accessories, runtime under the chosen sensor load and Dock/software inclusions need a quote.",
+        "No hazardous-atmosphere suitability established.",
+        "German stock, delivery, service SLA and exact reseller authorization are unconfirmed."
+      ],
+      "sourceURLs": [
+        "https://bostondynamics.com/products/spot/",
+        "https://support.bostondynamics.com/articles/Knowledge/Spot-Specifications-49916",
+        "https://bostondynamics.com/case-studies/spot-inspires-innovation-at-bmw-group-plant/",
+        "https://bostondynamics.com/contact/",
+        "https://www.reply.com/roboverse-reply/en"
+      ],
+      "sources": [
+        {
+          "id": "spot-product",
+          "url": "https://bostondynamics.com/products/spot/",
+          "title": "Spot base product and specifications",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spot-support-conflict",
+          "url": "https://support.bostondynamics.com/articles/Knowledge/Spot-Specifications-49916",
+          "title": "Indexed Spot payload specification; direct page returned 404",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spot-bmw",
+          "url": "https://bostondynamics.com/case-studies/spot-inspires-innovation-at-bmw-group-plant/",
+          "title": "Spot inspection at BMW Group Plant Hams Hall",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spot-contact",
+          "url": "https://bostondynamics.com/contact/",
+          "title": "Boston Dynamics sales inquiry",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "reply-germany",
+          "url": "https://www.reply.com/roboverse-reply/en",
+          "title": "Roboverse Reply integration services and German offices",
+          "publisher": "Roboverse Reply",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "industries": [
+        "energy",
+        "manufacturing",
+        "facilities"
+      ]
+    },
+    {
+      "id": "boston-dynamics-spot-arm-inspection",
+      "name": "Spot + Arm — inspection with remote intervention",
+      "manufacturer": "Boston Dynamics",
+      "robotClass": "mobile_manipulator",
+      "workflowId": "inspection",
+      "exactConfiguration": "Spot base robot plus manufacturer Spot Arm and gripper. Additional inspection sensors, Dock and application software are not assumed included.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "An arm-equipped inspection platform for viewing equipment and supervised physical intervention. It is a separate configuration from base Spot.",
+      "operatingMode": {
+        "value": "Manual, semi-automated or programmed autonomous actions; constrained interactions such as valves and doors are described as semi-autonomous.",
+        "sourceIds": [
+          "spot-arm-product"
+        ],
+        "caveats": [
+          "Do not treat generic autonomous walking as autonomous task completion.",
+          "Operator training, workspace clearance, task programming and integration remain necessary."
+        ]
+      },
+      "specs": [
+        {
+          "key": "arm_payload_kg_continuous",
+          "value": 5,
+          "unit": "kg",
+          "semanticLabel": "Continuous arm lift capacity at 0.5 m extension",
+          "conditions": [
+            "Measured at 22 °C; task geometry and temperature matter."
+          ],
+          "sourceIds": [
+            "spot-arm-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_payload_kg_peak",
+          "value": 11,
+          "unit": "kg",
+          "semanticLabel": "Maximum arm lift capacity, up to",
+          "conditions": [
+            "Measured at 22 °C; not a continuous working load."
+          ],
+          "sourceIds": [
+            "spot-arm-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_reach_mm",
+          "value": 984,
+          "unit": "mm",
+          "semanticLabel": "Arm length at full extension",
+          "conditions": [
+            "Not the whole-system reach envelope."
+          ],
+          "sourceIds": [
+            "spot-arm-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_mass_kg",
+          "value": 8,
+          "unit": "kg",
+          "semanticLabel": "Arm and gripper mass",
+          "conditions": [
+            "Do not interpret base mounted payload as additional cargo after installation."
+          ],
+          "sourceIds": [
+            "spot-arm-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Runtime of combined inspection/manipulation configuration",
+          "conditions": [
+            "No reviewed arm-plus-sensor duty-cycle endurance."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "ip_rating",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Complete Spot + Arm ingress rating unresolved",
+          "conditions": [
+            "Base is IP54; arm documentation says water/dust resistant without numeric IP. Do not propagate base rating to all equipment."
+          ],
+          "sourceIds": [
+            "spot-product",
+            "spot-arm-spec"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Close visual inspection and semi-autonomous valve, lever or door interaction.",
+          "configuration": "Spot with Spot Arm, gripper camera and application-specific control.",
+          "operatingMode": "Manual, semi-automated and programmed behaviors.",
+          "sourceIds": [
+            "spot-arm-product"
+          ],
+          "limitations": [
+            "Capability description is not proof of reliable unattended industrial intervention."
+          ]
+        },
+        {
+          "stage": "demonstration",
+          "task": "Remote mobile-robot manipulation in the AIRA 2024 competition.",
+          "configuration": "Roboverse Reply VR interface with Spot-compatible gripper-arm control; full hardware bill of materials not reported.",
+          "operatingMode": "Human teleoperation with VR hand tracking/controllers.",
+          "sourceIds": [
+            "reply-aira",
+            "reply-arm"
+          ],
+          "limitations": [
+            "Integrator-reported competition demonstration, not routine plant operation.",
+            "No independently verified production duty cycle or unattended valve-operation result."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Boston Dynamics",
+          "market": "Manufacturer inquiry for Germany / Europe",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://bostondynamics.com/contact/"
+          },
+          "sourceIds": [
+            "spot-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "Contact form only; exact German sales/service assignment unconfirmed."
+          ]
+        },
+        {
+          "organization": "Roboverse Reply",
+          "market": "Germany — Gütersloh and Munich",
+          "routeType": "integrator",
+          "contact": {
+            "url": "https://www.reply.com/roboverse-reply/en/revolutionizing-remote-control-for-mobile-robots"
+          },
+          "sourceIds": [
+            "reply-germany",
+            "reply-arm"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Current reseller authorization not verified; recorded as an integration route.",
+          "caveats": [
+            "Public inquiry route for remote arm-control integration; arm hardware stock and exact licence/support package unconfirmed."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The arm marketing headline emphasizes 11 kg, while the official technical document limits continuous lift at 0.5 m to 5 kg. Both are retained with distinct semantics.",
+        "Base Spot endurance and ingress claims do not establish the complete arm-equipped system's limits."
+      ],
+      "unknowns": [
+        "No reviewed routine industrial deployment of this exact arm-equipped configuration found in the bounded search.",
+        "Combined payload allowance, continuous operating temperature under the selected duty cycle and loaded endurance require confirmation.",
+        "No German stock, delivered price, lead time or task performance guarantee reviewed."
+      ],
+      "sourceURLs": [
+        "https://bostondynamics.com/products/spot/",
+        "https://bostondynamics.com/products/spot/arm/",
+        "https://dev.bostondynamics.com/docs/concepts/arm/arm_specification.html",
+        "https://bostondynamics.com/contact/",
+        "https://www.reply.com/roboverse-reply/en",
+        "https://www.reply.com/roboverse-reply/en/revolutionizing-remote-control-for-mobile-robots",
+        "https://www.reply.com/en/newsroom/news/aira-challenge-2024-prize-awarded-to-roboverse-reply"
+      ],
+      "sources": [
+        {
+          "id": "spot-product",
+          "url": "https://bostondynamics.com/products/spot/",
+          "title": "Spot base product and specifications",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spot-arm-product",
+          "url": "https://bostondynamics.com/products/spot/arm/",
+          "title": "Spot Arm product and operation modes",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spot-arm-spec",
+          "url": "https://dev.bostondynamics.com/docs/concepts/arm/arm_specification.html",
+          "title": "Spot 5.2 arm and gripper specifications",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "spot-contact",
+          "url": "https://bostondynamics.com/contact/",
+          "title": "Boston Dynamics sales inquiry",
+          "publisher": "Boston Dynamics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "reply-germany",
+          "url": "https://www.reply.com/roboverse-reply/en",
+          "title": "Roboverse Reply integration services and German offices",
+          "publisher": "Roboverse Reply",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "reply-arm",
+          "url": "https://www.reply.com/roboverse-reply/en/revolutionizing-remote-control-for-mobile-robots",
+          "title": "Spot remote arm integration with VR controls",
+          "publisher": "Roboverse Reply",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "reply-aira",
+          "url": "https://www.reply.com/en/newsroom/news/aira-challenge-2024-prize-awarded-to-roboverse-reply",
+          "title": "AIRA Challenge 2024 remote mobile-robot manipulation demonstration",
+          "publisher": "Roboverse Reply",
+          "kind": "integrator",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "industries": [
+        "energy",
+        "manufacturing",
+        "facilities"
+      ]
+    },
+    {
+      "id": "anybotics-anymal-d-inspection",
+      "name": "ANYmal Generation D — standard inspection",
+      "manufacturer": "ANYbotics",
+      "robotClass": "quadruped",
+      "workflowId": "inspection",
+      "exactConfiguration": "ANYmal Generation D with standard pan-tilt visual/thermal/ultrasonic inspection payload. Generation is established by the official May 2022 PDF; the current delivered revision is not confirmed.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Autonomous industrial inspection solution with integrated sensors and docking. Base ANYmal is separate from the Ex-rated ANYmal X.",
+      "operatingMode": {
+        "value": "Preconfigured autonomous inspection missions with automatic docking; manual guidance for commissioning and remote operation available.",
+        "sourceIds": [
+          "anymal-product",
+          "anymal-d-spec"
+        ],
+        "caveats": [
+          "Missions, instrument recognition and system integration need site setup.",
+          "Charging interrupts each robot's inspection work; autonomous docking is not continuous battery endurance."
+        ]
+      },
+      "specs": [
+        {
+          "key": "sensor_payload_kg",
+          "value": 10,
+          "unit": "kg",
+          "semanticLabel": "Additional sensor payload advertised on current product page",
+          "conditions": [
+            "For extra inspection sensors, not manipulation or goods lifting.",
+            "Exact allowance with standard payload and current hardware revision needs confirmation."
+          ],
+          "sourceIds": [
+            "anymal-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 1.5,
+          "unit": "h",
+          "semanticLabel": "Published battery-runtime headline",
+          "conditions": [
+            "Page also gives 90–120 min; route, payload and inspection points affect endurance. Not a specified loaded-shift test."
+          ],
+          "sourceIds": [
+            "anymal-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP67",
+          "unit": null,
+          "semanticLabel": "Robot ingress protection",
+          "conditions": [
+            "Not an explosion-protection certification."
+          ],
+          "sourceIds": [
+            "anymal-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "recommended_speed_m_s",
+          "value": 0.75,
+          "unit": "m/s",
+          "semanticLabel": "Recommended/normal walking speed",
+          "conditions": [
+            "Not task throughput or maximum speed."
+          ],
+          "sourceIds": [
+            "anymal-product",
+            "anymal-d-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_with_standard_inspection_kg",
+          "value": 55.7,
+          "unit": "kg",
+          "semanticLabel": "Gen D mass including standard inspection payload",
+          "conditions": [
+            "Historical May 2022 Gen D specification; current delivered revision unconfirmed."
+          ],
+          "sourceIds": [
+            "anymal-d-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "specified_operating_temperature_c",
+          "value": "0–40",
+          "unit": "°C",
+          "semanticLabel": "Specified Gen D operating temperature",
+          "conditions": [
+            "Historical PDF distinguishes this from typical -10–50 °C; do not substitute the wider range."
+          ],
+          "sourceIds": [
+            "anymal-d-spec"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Gauge monitoring, leak/hotspot detection and machinery condition inspection at Outokumpu sites, including Krefeld, Germany.",
+          "configuration": "ANYmal inspection robots with thermal and ultrasonic sensing; exact Gen D revision and per-site bill of materials unreported.",
+          "operatingMode": "Robot inspection with results sent to control rooms; exact intervention rate unreported.",
+          "sourceIds": [
+            "anymal-outokumpu"
+          ],
+          "limitations": [
+            "Manufacturer-published customer interview; not independently audited.",
+            "The Krefeld duty cycle is site-specific and is not a generic battery specification.",
+            "Supports the ANYmal inspection family; does not verify every current delivered hardware revision."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ANYbotics AG",
+          "market": "Switzerland / manufacturer route for German projects",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.anybotics.com/contact-sales/"
+          },
+          "sourceIds": [
+            "anybotics-sales",
+            "anybotics-partners"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "No German reseller was identified in the reviewed manufacturer partner list.",
+            "Ask the manufacturer to name the German deployment/service entity, import arrangement and support coverage."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The available official Gen D PDF is May 2022; current product naming does not expose a new hardware revision. This record must not be presented as a newly verified 2026 hardware version.",
+        "The current page advertises an additional 10 kg; the historical PDF describes 10 kg nominal custom payload and 15 kg with reduced performance. The higher value is not adopted or added to the standard payload.",
+        "The product page mixes a 90 min headline with a 90–120 min range. Neither is a loaded-work guarantee."
+      ],
+      "unknowns": [
+        "Exact 2026 delivered hardware/software revision, serial configuration and current manual need supplier confirmation.",
+        "German price, delivery, assigned integrator and service response terms are unknown.",
+        "Task-specific detection accuracy and false-alarm/intervention rates are not independently validated.",
+        "No Ex-area approval should be inferred for this base ANYmal record."
+      ],
+      "sourceURLs": [
+        "https://www.anybotics.com/robotics/anymal/",
+        "https://www.anybotics.com/anymal-technical-specifications.pdf",
+        "https://www.anybotics.com/news/exploring-safety-and-innovation-outokumpus-robotics-journey/",
+        "https://www.anybotics.com/contact-sales/",
+        "https://www.anybotics.com/partners/"
+      ],
+      "sources": [
+        {
+          "id": "anymal-product",
+          "url": "https://www.anybotics.com/robotics/anymal/",
+          "title": "ANYmal current inspection product page",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "anymal-d-spec",
+          "url": "https://www.anybotics.com/anymal-technical-specifications.pdf",
+          "title": "ANYmal Generation D technical specifications, V.1 May 2022",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "anymal-outokumpu",
+          "url": "https://www.anybotics.com/news/exploring-safety-and-innovation-outokumpus-robotics-journey/",
+          "title": "Outokumpu industrial inspection account, 2025-01-08",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "anybotics-sales",
+          "url": "https://www.anybotics.com/contact-sales/",
+          "title": "ANYbotics manufacturer sales and site assessment contact",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "anybotics-partners",
+          "url": "https://www.anybotics.com/partners/",
+          "title": "ANYbotics reseller network; Germany not identified in reviewed list",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "energy",
+        "manufacturing",
+        "facilities"
+      ]
+    },
+    {
+      "id": "anybotics-anymal-x-inspection",
+      "name": "ANYmal X — Ex-zone inspection",
+      "manufacturer": "ANYbotics",
+      "robotClass": "quadruped",
+      "workflowId": "inspection",
+      "exactConfiguration": "ANYmal X with standard pan-tilt inspection payload. Optional gas sensors excluded. Current page says 2026 specifications are forthcoming, so exact delivered revision remains unresolved.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Legged inspection platform advertised for hazardous gas zones. Certification scope and delivered hardware must be confirmed for the specific installation.",
+      "operatingMode": {
+        "value": "Autonomous inspection collection on configured missions, with remote operator control available.",
+        "sourceIds": [
+          "anymal-x-product"
+        ],
+        "caveats": [
+          "Gas detection requires the optional gas-sensor payload.",
+          "A product-page certification claim does not establish suitability for every gas group, temperature class, dust zone or accessory configuration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "ip_rating",
+          "value": "IP67",
+          "unit": null,
+          "semanticLabel": "Manufacturer-stated ingress protection",
+          "conditions": [
+            "Complete accessory configuration and charging equipment require their own confirmation."
+          ],
+          "sourceIds": [
+            "anymal-x-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hazardous_area_claim",
+          "value": "ATEX/IECEx Zone 1 IIB",
+          "unit": null,
+          "semanticLabel": "Manufacturer-stated Ex certification scope",
+          "conditions": [
+            "Certificate number, temperature class, special conditions and exact hardware were not reviewed."
+          ],
+          "sourceIds": [
+            "anymal-x-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_loaded",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Current configuration mission endurance unknown",
+          "conditions": [
+            "2026 technical specifications are forthcoming; do not copy ANYmal D endurance."
+          ],
+          "sourceIds": [
+            "anymal-x-product"
+          ],
+          "verification": "unknown"
+        },
+        {
+          "key": "sensor_payload_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Additional sensor payload allowance unknown",
+          "conditions": [
+            "Do not copy ANYmal D payload limits."
+          ],
+          "sourceIds": [
+            "anymal-x-product"
+          ],
+          "verification": "unknown"
+        },
+        {
+          "key": "camera_optical_zoom",
+          "value": 20,
+          "unit": "x",
+          "semanticLabel": "Standard inspection camera optical zoom",
+          "conditions": [
+            "Applies to the advertised pan-tilt inspection payload."
+          ],
+          "sourceIds": [
+            "anymal-x-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "thermal_measurement_range_c",
+          "value": "-10–400",
+          "unit": "°C",
+          "semanticLabel": "Thermal camera measurement range",
+          "conditions": [
+            "This is a sensing range, not robot ambient operating temperature."
+          ],
+          "sourceIds": [
+            "anymal-x-product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "pilot",
+          "task": "Visual, thermal and acoustic inspection in Zone 1 process areas at BASF Ludwigshafen.",
+          "configuration": "ANYmal X pilot at Steamcracker and Oxo Plant; pilot-era hardware revision unreported.",
+          "operatingMode": "Autonomous missions during a customer evaluation program.",
+          "sourceIds": [
+            "anymal-x-basf"
+          ],
+          "limitations": [
+            "Source explicitly describes testing/evaluation, so not promoted to routine operation.",
+            "Manufacturer case study; no independent assessment or current 2026 delivered-version equivalence.",
+            "Inspection observations do not establish autonomous maintenance/manipulation."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ANYbotics AG",
+          "market": "Switzerland / manufacturer route for German projects",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.anybotics.com/contact-sales/"
+          },
+          "sourceIds": [
+            "anybotics-sales",
+            "anybotics-partners"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German stock, price, lead time and exact delivered configuration are unconfirmed; request a configuration-specific quotation.",
+          "authorizationStatus": "Manufacturer's own published contact; reseller authorization not applicable.",
+          "caveats": [
+            "No German reseller was identified in the reviewed manufacturer partner list.",
+            "Ask the manufacturer to name the German deployment/service entity, import arrangement and support coverage."
+          ]
+        }
+      ],
+      "conflicts": [
+        "2023 pilot and early-adopter evidence cannot establish general 2026 stock, the final delivered hardware revision or its complete current specifications.",
+        "ANYmal and ANYmal X are distinct configurations. Base ANYmal payload, endurance, mass and ultrasonic specifications are not inherited."
+      ],
+      "unknowns": [
+        "2026 numeric endurance, operating temperature, mass, payload allowance and exact revision are not published in the reviewed current product page.",
+        "Review certificate and annex against delivered serial/configuration, gas group, temperature class, zone and accessories before asserting site suitability.",
+        "No current German reseller authorization, local stock, price, lead time or service agreement was established.",
+        "No independently checked routine-operation result for the current 2026 hardware configuration."
+      ],
+      "sourceURLs": [
+        "https://www.anybotics.com/robotics/anymal-x/",
+        "https://www.anybotics.com/news/anymal-x-basf-ludwigshafen-deployment/",
+        "https://www.anybotics.com/contact-sales/",
+        "https://www.anybotics.com/partners/"
+      ],
+      "sources": [
+        {
+          "id": "anymal-x-product",
+          "url": "https://www.anybotics.com/robotics/anymal-x/",
+          "title": "ANYmal X product page; 2026 specifications forthcoming",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "anymal-x-basf",
+          "url": "https://www.anybotics.com/news/anymal-x-basf-ludwigshafen-deployment/",
+          "title": "ANYmal X tested at BASF Ludwigshafen, 2023-08-04",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "anybotics-sales",
+          "url": "https://www.anybotics.com/contact-sales/",
+          "title": "ANYbotics manufacturer sales and site assessment contact",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "anybotics-partners",
+          "url": "https://www.anybotics.com/partners/",
+          "title": "ANYbotics reseller network; Germany not identified in reviewed list",
+          "publisher": "ANYbotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "energy",
+        "manufacturing",
+        "facilities"
+      ]
+    }
+  ]
+}

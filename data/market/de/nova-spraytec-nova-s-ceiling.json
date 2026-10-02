@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "nova-spraytec-nova-s-ceiling",
+ "maker": "Nova Spraytec",
+ "makerCountry": "DE",
+ "model": "NOVA-S",
+ "variant": "Ceiling Spray Pillar",
+ "name": "NOVA-S Ceiling Spray Pillar",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://www.novaspraytec.com/product",
+ "summary": "Compact drive unit with a ceiling spray pillar that sprays ceilings up to 3.5 m high with an airless pump, up to 400 m²/h.",
+ "launched": "2025-02",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Munich maker; pricing and delivery on request via contact or demo booking. First German painting contractor owner (Maler Damm GmbH) trained in November 2025.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Nova Spraytec GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.novaspraytec.com/product",
+    "contactUrl": "https://www.novaspraytec.com/product",
+    "email": "contact@novaspraytec.com",
+    "phone": "+49 151 15626516",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Am Kartoffelgarten 14, 81671 München; also offers a spraying service in Germany and the UK."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "spray_height_m",
+   "label": "Maximum spray height",
+   "value": 3.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "pillar_weight_kg",
+   "label": "Spray pillar weight",
+   "value": 15,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "drive_unit_weight_kg",
+   "label": "Compact drive unit weight",
+   "value": 25,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "spray_rate_m2h",
+   "label": "Spray rate",
+   "value": 400,
+   "unit": "m²/h",
+   "conditions": "up to, maker claim",
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "230 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "controller",
+   "label": "Controller",
+   "value": "Beckhoff PLC",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "1 m wide horizontal spray movement.",
+   "Works with any airless pump, which is not included.",
+   "Operator positions the unit and supplies paint; the pillar is swapped between wall and ceiling work."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/65d750e4a748ee017cd5d670/685b2e7af0f853f16ef27a70_nova-s-ceiling-spray-pillar.jpg",
+   "pageUrl": "https://www.novaspraytec.com/product",
+   "credit": "Nova Spraytec GmbH",
+   "alt": "NOVA-S with Ceiling Spray Pillar",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "First German painting subcontractor to own NOVA-S; delivery and team training",
+   "stage": "deployment",
+   "where": "Maler Damm GmbH, Germany",
+   "date": "2025-11",
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Wall and ceiling pillars shown working in the same room",
+   "stage": "demo",
+   "where": null,
+   "date": "2025-02",
+   "sourceId": "s2",
+   "note": "Video post dated 7 February 2025 on the maker news page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.novaspraytec.com/product",
+   "title": "NOVA-S product page",
+   "publisher": "Nova Spraytec GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.novaspraytec.com/news",
+   "title": "Nova Spraytec news",
+   "publisher": "Nova Spraytec GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price of drive unit and pillar.",
+  "Runtime and battery details."
+ ],
+ "checkedAt": "2026-10-02"
+}

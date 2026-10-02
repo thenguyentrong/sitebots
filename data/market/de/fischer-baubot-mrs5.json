@@ -1,0 +1,215 @@
+{
+ "schemaVersion": 1,
+ "id": "fischer-baubot-mrs5",
+ "maker": "fischer (Baubot GmbH)",
+ "makerCountry": "AT",
+ "model": "BauBot MRS5",
+ "variant": null,
+ "name": "fischer BauBot MRS5",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_electrical/overhead-drilling-anchors"
+ ],
+ "officialUrl": "https://www.baubot.com/products",
+ "summary": "A 500 kg compact tracked robot with a collaborative arm for drilling and other tasks in tight or load-sensitive areas, run by a fischer operator.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.fischer.de/de-de/produkte/innovationen/baubot",
+    "contactUrl": "https://www.fischer.de/de-de/kontakt",
+    "email": null,
+    "phone": "+49 7443 12-6000",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Offered as a full service: BIM model, anchor design, robot, certified operator and documentation. Site work is run by fischer BauBot Services GmbH. No machine sale found.",
+    "name": "fischerwerke GmbH & Co. KG (fischer BauBot Services GmbH)",
+    "country": "DE",
+    "role": "manufacturer",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Available in Germany as a drilling and anchoring service from fischer (robot with fischer operator, planning and documentation), not as a machine you buy. Price on request. MRS5 is named as one of the two systems fischer uses on sites.",
+  "sourceIds": [
+   "s3",
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 500,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": "10-20",
+   "unit": "kg",
+   "conditions": "depends on arm fitted",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": "1.1-1.9",
+   "unit": "m",
+   "conditions": "depends on arm fitted",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "2100 L x 2100 W x 950 H",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Driving speed",
+   "value": 10,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": 10,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP54",
+  "sdk": null,
+  "notes": [
+   "Arm payload 10-20 kg depending on arm; 10 kg used as the safe figure.",
+   "Application packages listed by Baubot: hammer drilling, core drilling, anchor setting, pick and place, milling, 3D printing.",
+   "Tracked base seen in Baubot photo; drive not described in text.",
+   "Service only in Germany; no German job with the MRS5 found.",
+   "Maker says it works indoors and outdoors (IP54-equivalent, 5-40 °C); suspension for uneven surfaces."
+  ],
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static.wixstatic.com/media/ea01cc_e6c1500e6fed40fb8352f92eb31dc2cf~mv2.png",
+   "pageUrl": "https://www.baubot.com/products",
+   "credit": "Baubot GmbH",
+   "alt": "Baubot MRS5 compact tracked robot with a collaborative arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered for confined or load-sensitive site areas",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.fischer.de/de-de/produkte/innovationen/baubot",
+   "title": "BauBot",
+   "publisher": "fischerwerke GmbH & Co. KG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.baubot.com/products",
+   "title": "Products",
+   "publisher": "Baubot GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://solidbau.at/news/120000-autos-am-tag-9000-loecher-in-der-nacht-roboter-sanieren-den-engelbergtunnel/",
+   "title": "120.000 Autos am Tag, 9.000 Löcher in der Nacht",
+   "publisher": "Solid Bau",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.fischer.group/de-de/newsroom/presseinformationen/fischer-befestigungssysteme/20250715-fischer-roboter-unterstuetzen-ertuechtigung-des-engelbergtunnels-in-leonberg",
+   "title": "fischer Roboter unterstützen Ertüchtigung des Engelbergtunnels",
+   "publisher": "fischer group",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.trendingtopics.eu/baubot-exit-fuer-wiener-robotik-startup-an-deutschen-konzern-fischer/",
+   "title": "BauBot: Exit für Wiener Robotik-Startup an fischer",
+   "publisher": "Trending Topics",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.baubot.com/post/fischer-baubot-achieves-guinness-world-records-title-in-drilling",
+   "title": "fischer BAUBOT achieves Guinness World Records title in drilling",
+   "publisher": "Baubot GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.kuka.com/en-de/industries/solutions-database/2024/11/baubot-kr-iontec",
+   "title": "Baubot with KR IONTEC",
+   "publisher": "KUKA",
+   "kind": "other",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Any German project with the MRS5.",
+  "Power supply and runtime.",
+  "Service price."
+ ],
+ "checkedAt": "2026-10-02"
+}

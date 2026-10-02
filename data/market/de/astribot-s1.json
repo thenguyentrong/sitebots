@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "id": "astribot-s1",
+ "maker": "Astribot",
+ "makerCountry": "CN",
+ "model": "S1",
+ "variant": null,
+ "name": "Astribot S1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.astribot.com/en/product",
+ "summary": "A fast, precise wheeled dual-arm humanoid for embodied-AI research, with 7-DOF arms carrying 5 kg each.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Astribot sells from Shenzhen via business@astribot.com; no European office, distributor or EU customer found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "at horizontal reach",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_span_m",
+   "label": "Arm span",
+   "value": 1.94,
+   "unit": "m",
+   "conditions": "both arms, as stated by Astribot",
+   "sourceId": "s1"
+  },
+  {
+   "key": "repeatability_mm",
+   "label": "Positioning repeatability",
+   "value": 0.1,
+   "unit": "mm",
+   "conditions": "±",
+   "sourceId": "s1"
+  },
+  {
+   "key": "end_effector_speed_ms",
+   "label": "Max end-effector speed",
+   "value": 10,
+   "unit": "m/s",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": "4-6",
+   "unit": "h",
+   "conditions": "supports plug-in operation",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "API, visual development interface, simulation support",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Research version; Astribot says some parameters can be unlocked.",
+   "Two-finger grippers and a wheeled base are visible in Astribot's photos; base specs not published.",
+   "Endurance 4-6 h per Astribot; supports plug-in operation."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.astribot.com/_nuxt/describe-s4-img1.B7j1XrFW.jpg",
+   "pageUrl": "https://www.astribot.com/en/product",
+   "credit": "Astribot",
+   "alt": "Astribot S1 wheeled dual-arm robot working at a kitchen counter",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "VR teleoperation data collection for universities and AI companies",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.astribot.com/en/product",
+   "title": "Astribot S1 product page",
+   "publisher": "Astribot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.astribot.com/en/contact",
+   "title": "Astribot contact page",
+   "publisher": "Astribot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

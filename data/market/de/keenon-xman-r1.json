@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "keenon-xman-r1",
+ "maker": "KEENON Robotics",
+ "makerCountry": "CN",
+ "model": "XMAN-R1",
+ "variant": null,
+ "name": "KEENON XMAN-R1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.keenon.com/en/product/XMAN-R1",
+ "summary": "A 1.74 m wheeled service humanoid with 7-DOF arms and 6-DOF hands for hotels, restaurants and reception.",
+ "launched": "2025-03",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "KEENON Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.keenon.com/de/product/XMAN-R1",
+    "contactUrl": "https://www.keenon.com/en/contactus",
+    "email": "global@keenon.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Model shown on KEENON's German site; enquiries via the contact form or global@keenon.com."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "KEENON lists the XMAN-R1 on its German website, has a subsidiary in the Netherlands and sells its delivery robots in Europe; no European price or reference for the XMAN found.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.74,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 110,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 36,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "275 TOPS, 64 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 LiDAR, 4 depth cameras, 4 wide-angle cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open hardware and software platform",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Payload and runtime not published.",
+   "VR dual-arm teleoperation available."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://storage.keenon.cn/uploads/20260916/28ef21f008c5ef192a81802265895f6f.jpg",
+   "pageUrl": "https://www.keenon.com/en/product/XMAN-R1",
+   "credit": "KEENON Robotics",
+   "alt": "KEENON XMAN-R1 wheeled humanoid robot, full body on white background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Service staff role in hotels, catering and reception",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.keenon.com/en/product/XMAN-R1",
+   "title": "XMAN-R1 product page and data sheet",
+   "publisher": "KEENON Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.keenon.com/de/product/XMAN-R1",
+   "title": "XMAN-R1 (German site)",
+   "publisher": "KEENON Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.keenon.com/en/about",
+   "title": "About KEENON (subsidiaries incl. the Netherlands)",
+   "publisher": "KEENON Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.keenon.com/en/contactus",
+   "title": "KEENON contact form",
+   "publisher": "KEENON Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the XMAN-R1 delivered to European customers? Payload and runtime."
+ ],
+ "checkedAt": "2026-10-02"
+}

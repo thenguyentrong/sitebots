@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "id": "ubtech-cruzr-s2",
+  "maker": "UBTECH Robotics",
+  "makerCountry": "CN",
+  "model": "Cruzr S2",
+  "variant": null,
+  "name": "UBTECH Cruzr S2",
+  "robotType": "humanoid",
+  "specialisedFor": [],
+  "officialUrl": "https://www.ubtrobot.com/en/humanoid/products/cruzr-s2",
+  "summary": "A 1.76 m wheeled industrial humanoid with a bending, lifting waist and Gen-4 dexterous hands that handles 15 kg from floor to 1.8 m.",
+  "launched": null,
+  "lifecycle": "shipping",
+  "germany": {
+    "priceEur": null,
+    "priceOther": null,
+    "leadTime": null,
+    "sellers": [
+      {
+        "name": "Terra Robotics (Terra Connect GmbH)",
+        "country": "DE",
+        "role": "distributor",
+        "productUrl": "https://terra-robotics.de/products/ubtech-cruzr-s2",
+        "contactUrl": "https://terra-robotics.de/pages/contact",
+        "email": "mail@terra-robotics.de",
+        "phone": "+49 5732 8411620",
+        "priceEur": null,
+        "priceBasis": null,
+        "sourceId": "s2",
+        "note": "Listing text describes 3-DOF gesture arms and an 11.6\" display, unlike UBTECH's Cruzr S2; metadata price EUR 103,200, basis not stated, not displayed. Shop data marks the item out of stock."
+      }
+    ],
+    "checkedAt": "2026-10-02",
+    "status": "quote",
+    "statusNote": "Terra Robotics lists a \"Cruzr S2\" with charging station, price on request; its description matches an older reception Cruzr, so confirm the exact model with Terra.",
+    "sourceIds": [
+      "s2",
+      "s3"
+    ]
+  },
+  "specs": [
+    {
+      "key": "height_m",
+      "label": "Height",
+      "value": 1.76,
+      "unit": "m",
+      "conditions": null,
+      "sourceId": "s1"
+    },
+    {
+      "key": "dof_total",
+      "label": "Degrees of freedom",
+      "value": 44,
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1"
+    },
+    {
+      "key": "both_arms_payload_kg",
+      "label": "Payload",
+      "value": 15,
+      "unit": "kg",
+      "conditions": "within a 0-1.8 m workspace",
+      "sourceId": "s1"
+    },
+    {
+      "key": "dof_per_hand",
+      "label": "DOF per hand",
+      "value": 11,
+      "unit": null,
+      "conditions": "Gen-4 industrial dexterous hand",
+      "sourceId": "s1"
+    },
+    {
+      "key": "hand_grasp_kg",
+      "label": "Single-hand grasp",
+      "value": 7.5,
+      "unit": "kg",
+      "conditions": "finger grasp 1 kg",
+      "sourceId": "s1"
+    },
+    {
+      "key": "max_speed_ms",
+      "label": "Moving speed",
+      "value": 2,
+      "unit": "m/s",
+      "conditions": null,
+      "sourceId": "s1"
+    },
+    {
+      "key": "lift_range_mm",
+      "label": "Lifting range",
+      "value": 400,
+      "unit": "mm",
+      "conditions": "waist rotation ±170°, pitch +90° to -35°",
+      "sourceId": "s1"
+    }
+  ],
+  "capabilities": {
+    "legs": false,
+    "wheels": true,
+    "tracks": false,
+    "levelFloors": true,
+    "roughGround": null,
+    "stairs": null,
+    "outdoor": null,
+    "arms": 2,
+    "hands": "dexterous",
+    "handsIncluded": null,
+    "armPayloadKg": null,
+    "carryPayloadKg": null,
+    "runtimeH": null,
+    "ipRating": null,
+    "sdk": null,
+    "sourceIds": [
+      "s1"
+    ],
+    "notes": [
+      "UBTECH says 15 kg payload; not split per arm.",
+      "Fits through 0.8 m passages per UBTECH."
+    ]
+  },
+  "images": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/ubtechcruzrs2-2764525.png?v=1788183935",
+      "pageUrl": "https://terra-robotics.de/products/ubtech-cruzr-s2",
+      "credit": "Terra Robotics / UBTECH",
+      "alt": "UBTECH Cruzr S2 wheeled humanoid robot, three-quarter view on white background",
+      "kind": "product"
+    },
+    {
+      "url": "https://owebsite-cdn.ubtrobot.com/resources/image/2025/08/29/714023027445829.png",
+      "pageUrl": "https://www.ubtrobot.com/en/humanoid/products/cruzr-s2",
+      "credit": "UBTECH Robotics",
+      "alt": "UBTECH Cruzr S2 wheeled humanoid with waist, head and hand details",
+      "kind": "product"
+    }
+  ],
+  "evidence": [
+    {
+      "taskIds": [],
+      "task": "Sorting and component assembly with dexterous hands",
+      "stage": "claim",
+      "where": null,
+      "date": null,
+      "sourceId": "s1",
+      "note": null
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.ubtrobot.com/en/humanoid/products/cruzr-s2",
+      "title": "Cruzr S2 product page",
+      "publisher": "UBTECH Robotics",
+      "kind": "manufacturer",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "s2",
+      "url": "https://terra-robotics.de/products/ubtech-cruzr-s2",
+      "title": "UBtech Cruzr S2 (Inklusive Ladestation)",
+      "publisher": "Terra Robotics",
+      "kind": "seller",
+      "checkedAt": "2026-10-02"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.ubtrobot.com/en/about/news/826574022332485",
+      "title": "UBTECH partners with collaborators to accelerate global expansion (Terra Robotics, ROSSMANN)",
+      "publisher": "UBTECH Robotics",
+      "kind": "manufacturer",
+      "checkedAt": "2026-10-02"
+    }
+  ],
+  "openQuestions": [
+    "Terra's Cruzr S2 listing text describes a reception robot; which model is actually supplied?",
+    "Weight and runtime not published."
+  ],
+  "checkedAt": "2026-10-02"
+}

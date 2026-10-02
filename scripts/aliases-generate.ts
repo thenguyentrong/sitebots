@@ -198,6 +198,7 @@ function main() {
 
   const out: AliasFile = { manufacturers: {}, robots: {} };
   let robots = 0;
+  let unclassified = 0;
   for (const g of [...groups.values()].sort((a, b) => a.slug.localeCompare(b.slug))) {
     if (!g.curated) {
       // Prefer the plain spelling over one with a bracketed alternative.
@@ -214,11 +215,12 @@ function main() {
     for (const m of [...g.models.values()].sort((a, b) => a.slug.localeCompare(b.slug))) {
       const name = top(m.names) ?? m.slug;
       const ff = top(m.formFactors);
+      // Preserve the scraped record for review rather than inventing a humanoid identity.
+      if (!ff) { unclassified++; continue; }
       out.robots[g.slug][m.slug] = {
         name,
-        form_factor: ff ?? 'humanoid',
+        form_factor: ff,
         aliases: [...m.names.keys()].filter((n) => n !== name),
-        note: ff ? undefined : 'form factor not stated by any source; defaulted to humanoid',
       };
       robots++;
     }
@@ -229,7 +231,7 @@ function main() {
     '# data/aliases.yaml (curated) wins every conflict; edit that file to correct a model,\n' +
     '# never this one. Regenerating overwrites it.\n';
   const yaml = header + stringify(out, { lineWidth: 0 });
-  console.log(`resolved by curated: ${resolvedCurated} · makers: ${groups.size} (${[...groups.values()].filter((g) => !g.curated).length} new) · models: ${robots}`);
+  console.log(`resolved by curated: ${resolvedCurated} · makers: ${groups.size} (${[...groups.values()].filter((g) => !g.curated).length} new) · models: ${robots} · unclassified models skipped: ${unclassified}`);
   if (dryRun) {
     console.log(yaml.slice(0, 3000));
     return;

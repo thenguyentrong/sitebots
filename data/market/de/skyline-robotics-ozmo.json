@@ -1,0 +1,92 @@
+{
+ "schemaVersion": 1,
+ "id": "skyline-robotics-ozmo",
+ "maker": "Skyline Robotics",
+ "makerCountry": "US",
+ "model": "Ozmo",
+ "variant": null,
+ "name": "Skyline Robotics Ozmo",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "facade_cleaning",
+  "facility_operation/facade-window-cleaning"
+ ],
+ "officialUrl": "https://www.skylinerobotics.com/meet-ozmo",
+ "summary": "Window-cleaning robot arm mounted on a building maintenance unit that cleans facade glass with force and lidar sensing.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Skyline Robotics lists offices only in Israel and New York and gives only a \"get in touch\" route; no European office, partner, price or installation found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "force sensor, lidar",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Needs an existing building maintenance unit (gondola).",
+   "Can be stopped from the operator station at any time."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/facade-window-cleaning"
+   ],
+   "task": "Automated window cleaning of high-rise facades",
+   "stage": "claim",
+   "where": "New York, USA",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.skylinerobotics.com/meet-ozmo",
+   "title": "Meet Ozmo",
+   "publisher": "Skyline Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No direct product image file found (site loads images by script)."
+ ],
+ "checkedAt": "2026-10-02"
+}

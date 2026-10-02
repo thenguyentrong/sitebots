@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "taskId": "prefab_timber/palletising-small-parts",
+      "reviewId": "robotiq-ax20-palletizing",
+      "relationship": "task_candidate",
+      "rationale": "AX20 explicitly provides patterned carton palletizing at a prepared station.",
+      "sourceIds": [
+        "sheet",
+        "product"
+      ],
+      "limitations": [
+        "Validate carton grip, weight, pattern and safeguards.",
+        "Arm is excluded from the reviewed German module listing."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/palletising-small-parts",
+      "reviewId": "abb-irb460-110-240-palletizing",
+      "relationship": "task_candidate",
+      "rationale": "ABB explicitly lists end-of-line palletizing for this arm.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Engineer the complete cell, gripper and pickup.",
+        "Loose components first need compatible containers."
+      ]
+    },
+    {
+      "taskId": "material_yard_warehouse/bagged-goods-picking",
+      "reviewId": "abb-irb460-110-240-palletizing",
+      "relationship": "partial_task",
+      "rationale": "ABB names bag palletizing with FlexGripper Claw; this addresses lifting/stacking at a defined station.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Mixed-SKU depalletizing from stock pallets is not proven.",
+        "Trial seams, porosity, damage, grip and recognition; order checking remains separate."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/stud-insertion-framing",
+      "reviewId": "weinmann-feedbot-f500-framing",
+      "relationship": "task_candidate",
+      "rationale": "Product explicitly places studs/plates into frames, including diagonal placements.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Confirm station, stock presentation and disputed section limits.",
+        "Whole-wall handling and site assembly are separate."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/board-handling-osb-gypsum",
+      "reviewId": "weinmann-feedbot-w500-sheathing",
+      "relationship": "task_candidate",
+      "rationale": "W-500 explicitly places sheathing panels onto frames.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "No directly published mass/material envelope; trial actual OSB/gypsum.",
+        "Supply, damaged boards and completed-element handling remain separate."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/multilayer-sheathing-gluing",
+      "reviewId": "weinmann-feedbot-w500-sheathing",
+      "relationship": "partial_task",
+      "rationale": "Panel placement is a supported step of multi-layer sheathing.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Adhesive application, open time and bond acceptance are not established.",
+        "Test each layer’s grip and sequence compatibility."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/nailing-sheathing",
+      "reviewId": "weinmann-wallteq-m300-nailing",
+      "relationship": "task_candidate",
+      "rationale": "M-300 explicitly nails/staples sheathing onto timber elements.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Specify heads and approved pattern for actual assemblies.",
+        "Define magazine replenishment and quality inspection."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/panel-sawing-routing",
+      "reviewId": "weinmann-wallteq-m300-nailing",
+      "relationship": "partial_task",
+      "rationale": "Bridge cuts/trims sheathing features over a compatible table.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Not evidence of arbitrary full-board nesting, feed and unloading.",
+        "Confirm tool depth, dust extraction and material."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/cnc-joinery-cutting",
+      "reviewId": "hundegger-robot-drive650-joinery",
+      "relationship": "task_candidate",
+      "rationale": "ROBOT-Drive performs timber cutting, drilling, milling and joinery with configured tools.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Only 650 variant envelope recorded.",
+        "Agree tooling, feed, unloading and machining tolerances."
+      ]
+    },
+    {
+      "taskId": "steel_fabrication/fit-and-tack-attachments",
+      "reviewId": "yaskawa-arcworld-cs-v2500-l1300",
+      "relationship": "partial_task",
+      "rationale": "An engineered arc-welding sequence on fixtured parts is relevant to the tack-welding step.",
+      "sourceIds": [
+        "sheet"
+      ],
+      "limitations": [
+        "Fitting/positioning loose attachments is not evidenced.",
+        "Full structural beams may exceed 1200 mm width / 900 mm diameter; limit trial to fitting subassemblies.",
+        "Qualify tack procedure, fixture and acceptance."
+      ]
+    },
+    {
+      "taskId": "construction_logistics_hub/kitting-per-crew",
+      "reviewId": "nomagic-pick-bin-picking",
+      "relationship": "partial_task",
+      "rationale": "Product picks items from presented single/mixed bins; Fiege DIY batch picking is a related application.",
+      "sourceIds": [
+        "product",
+        "deployment"
+      ],
+      "limitations": [
+        "Requires presented bins/ASRS, not free-roaming shelf retrieval.",
+        "Trial fittings/grips and retain final kit verification."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/fittings-kitting",
+      "reviewId": "nomagic-pick-bin-picking",
+      "relationship": "partial_task",
+      "rationale": "Piece picking may select/transfer tested hardware into an element kit.",
+      "sourceIds": [
+        "product",
+        "deployment"
+      ],
+      "limitations": [
+        "Reflective screws, tangles, counting and kit verification remain unproven.",
+        "Freeze station and warehouse-system integration BOM."
+      ]
+    },
+    {
+      "taskId": "prefab_timber/packaging-kitting-stable-volumes",
+      "reviewId": "nomagic-pick-bin-picking",
+      "relationship": "partial_task",
+      "rationale": "Station repeatedly places tested items into a destination bin.",
+      "sourceIds": [
+        "product"
+      ],
+      "limitations": [
+        "Bag opening, counting, sealing, labelling and final set verification are not included in reviewed evidence."
+      ]
+    }
+  ]
+}

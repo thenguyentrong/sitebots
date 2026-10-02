@@ -1,0 +1,208 @@
+schema_version: 1
+id: site_roads_paving/asphalt-paving
+status: published
+setting: site_roads_paving
+family: machine_operation_dedicated
+trades: [road]
+title:
+  en: "Lay and compact an asphalt course with a paver and rollers"
+  de: "Asphaltschicht mit Fertiger und Walzen einbauen und verdichten"
+summary:
+  en: "Feed the paver from the trucks, lay the hot mix to thickness, line and level with the screed, and compact it with rollers while it is still hot enough."
+  de: "Den Fertiger aus den Lkw beschicken, das heiße Mischgut mit der Bohle in Dicke, Flucht und Höhe einbauen und mit Walzen verdichten, solange es heiß genug ist."
+description:
+  en: "Rolled asphalt is laid by a paver, which pre-compacts it with its screed, and compacted by rollers that follow straight behind: rolling should start at the latest at 125 °C and be finished at 90 to 100 °C. A Vögele SUPER 1800-5 X weighs 20 to 25.3 t with its screed, paves 2.55 to 10 m wide at up to 700 t/h and holds 13 t of mix in its hopper. A machine-laid surface course of asphalt concrete must reach at least 98 % compaction and show at most 4 mm unevenness over 4 m on a binder course. The paver driver and the screed operators work in fumes and aerosols from the hot bitumen, whose exposure limit of 1.5 mg/m³ does not apply to rolled asphalt until the end of 2026 (TRGS 900); extraction at the paver and asphalt laid 30 to 40 °C cooler reduce them."
+  de: "Walzasphalt wird vom Straßenfertiger eingebaut und mit der Bohle vorverdichtet, die Walzen folgen direkt dahinter: Die Walzverdichtung soll spätestens bei 125 °C beginnen und bei 90 bis 100 °C abgeschlossen sein. Ein Vögele SUPER 1800-5 X wiegt mit Bohle 20 bis 25,3 t, baut 2,55 bis 10 m breit mit bis zu 700 t/h ein und fasst 13 t Mischgut im Behälter. Eine maschinell eingebaute Deckschicht aus Asphaltbeton muss mindestens 98 % Verdichtungsgrad erreichen und darf auf einer Binderschicht höchstens 4 mm Unebenheit auf 4 m aufweisen. Fertigerfahrer und Bohlenbediener arbeiten in Dämpfen und Aerosolen aus dem heißen Bitumen, deren Arbeitsplatzgrenzwert von 1,5 mg/m³ für Walzasphalt bis Ende 2026 nicht gilt (TRGS 900); Absaugung am Fertiger und um 30 bis 40 °C abgesenkte Temperaturen verringern sie."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '080'
+  atv: "DIN 18317"
+  position:
+    en: "Asphalt base, binder or surface course, laid by paver and compacted"
+    de: "Asphalttrag-, Asphaltbinder- oder Asphaltdeckschicht mit Fertiger einbauen und verdichten"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 20000, max: 25300 }
+    confidence: confirmed
+    evidence_url: 'https://www.wirtgen-group.com/binary/full/o337511v89_SUPER_18005_X_Datasheet_DE.pdf'
+    note: "Scope of this record: the paver. Vögele SUPER 1800-5 X with the AB 500 TV screed, 20,000 kg up to 5.00 m paving width and 25,300 kg up to 8.75 m (datasheet DE-09/26). The rollers behind it are separate machines."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The paving train repeats along the lane, but widths, joints, manholes and gullies, cross slopes and mixes change from job to job."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://asphalt.de/wp-content/uploads/woocommerce_uploads/2024/02/AvA-ND-2017-cwyegu.pdf'
+    note: "Compaction, layer thickness and evenness are tested against the ZTV limits after laying, and compaction only works while the mix is hot: the compaction effort rises quickly as it cools (DAV)."
+  safety_criticality:
+    value: none
+    confidence: likely
+    note: "A pavement course; a defect is a repair, not a structural failure."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "No working height measured. The driver works from the paver's operator platform and the screed operators at the screed; BG BAU asks for guardrails on operator platforms more than 1.00 m above ground."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Roads, car parks and yards in the open."
+  dust:
+    value: { type: none, zone: none }
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_186/b_186.htm'
+    note: "No relevant dust at the paver. The exposure is to fumes and aerosols from hot bitumen and to burns from the hot mix (BG BAU), which the dust test does not cover."
+  wet:
+    value: damp
+    confidence: likely
+    evidence_url: 'https://asphalt.de/wp-content/uploads/woocommerce_uploads/2024/02/AvA-ND-2017-cwyegu.pdf'
+    note: "The asphalt industry advises tendering early enough that paving falls into favourable weather; the crew still works in the open in damp conditions."
+  floor:
+    value: uneven
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_186/b_186.htm'
+    note: "Base course, milled surface and the fresh hot mat; the hot mat is crossed only on the walkway fitted to the paver (BG BAU)."
+  incumbent_automation:
+    value: { status: full, machine_classes: [autonomous_compactor] }
+    confidence: likely
+    evidence_url: 'https://www.wirtgen-group.com/binary/full/o337511v89_SUPER_18005_X_Datasheet_DE.pdf'
+    note: "The course is laid and compacted by machines. For this paver Vögele lists automatic grade and slope control with Grade Assist for roof and cross profiles, steering and width automation and a contactless mat temperature scan as options; people drive the paver and the rollers and run the screed."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier. The asphalt industry calls a constant paving speed without the paver stopping good for evenness."
+  cycle_or_volume:
+    value: "Up to 700 t/h laying capacity and up to 25 m/min paving speed (Vögele SUPER 1800-5 X)."
+    confidence: confirmed
+    evidence_url: 'https://www.wirtgen-group.com/binary/full/o337511v89_SUPER_18005_X_Datasheet_DE.pdf'
+    note: "Maker's maximum; real output follows the mix supply, which the paving speed has to match."
+requirements:
+  object_size_m:
+    value: { min: 2.55, max: 10.0 }
+    confidence: confirmed
+    evidence_url: 'https://www.wirtgen-group.com/binary/full/o337511v89_SUPER_18005_X_Datasheet_DE.pdf'
+    note: "Paving width from 2.55 m (basic width of the AB 500 screed) to 10.00 m (SB 300 screed); the paver with screed is 6.15 to 6.28 m long."
+  tolerance_mm:
+    value: 4
+    confidence: confirmed
+    evidence_url: 'https://asphalt.de/wp-content/uploads/woocommerce_uploads/2024/02/AvA-ND-2017-cwyegu.pdf'
+    note: "Machine-laid surface course of asphalt concrete on a binder course: at most 4 mm unevenness over 4 m; 6 mm on a base course, and base courses themselves 10 mm and ±1.0 cm from the target height. Limits of ZTV Asphalt-StB 07 as summarised by the DAV (Stand February 2013); check the current edition."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "The screed pre-compacts with tamper and vibration and the rollers finish; no source used here states a force."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: marginal, X1_reach: unknown, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Paving is machine work already, and the paver can level itself. Spend on the crew's exposure instead: fume extraction at the paver, whose retrofit BG BAU subsidises, and temperature-reduced asphalt; rolled asphalt is exempt from the bitumen exposure limit only until the end of 2026 (TRGS 900)."
+      de: "Asphalteinbau ist bereits Maschinenarbeit, und der Fertiger kann selbst nivellieren. Besser in die Belastung der Kolonne investieren: Absaugung am Fertiger, deren Nachrüstung die BG BAU fördert, und temperaturabgesenkter Asphalt; Walzasphalt ist nur bis Ende 2026 vom Arbeitsplatzgrenzwert für Bitumen ausgenommen (TRGS 900)."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [exposure, capacity, quality]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Vögele's SUPER 1800-5 X datasheet: paving width up to 10.00 m, laying capacity up to 700 t/h, paving speed up to 25 m/min, a 13.0 t hopper, and 20,000 kg with the AB 500 TV screed up to 5.00 m paving width or 25,300 kg up to 8.75 m; automatic levelling Auto Grade Plus with Grade Assist for roof and cross profiles is an option."
+      de: "Das Datenblatt des Vögele SUPER 1800-5 X: Einbaubreite bis 10,00 m, Einbaukapazität bis 700 t/h, Einbaugeschwindigkeit bis 25 m/min, 13,0 t Behälter, 20.000 kg mit Bohle AB 500 TV bis 5,00 m Einbaubreite oder 25.300 kg bis 8,75 m; die Nivellierautomatik Auto Grade Plus mit Grade Assist für Dach- und Querprofile ist eine Option."
+    url: 'https://www.wirtgen-group.com/binary/full/o337511v89_SUPER_18005_X_Datasheet_DE.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-09-01'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet DE-09/26, version V04; month given without a day."
+  - statement:
+      en: "The German Asphalt Association's tendering guide: the paver pre-compacts rolled asphalt and rollers finish it; rolling should start right behind the paver, at the latest at 125 °C, and be finished at 90 to 100 °C; a machine-laid surface course of asphalt concrete needs at least 98 % compaction and at most 4 mm unevenness over 4 m on a binder course."
+      de: "Der Leitfaden des Deutschen Asphaltverbands zum Ausschreiben: Walzasphalt wird vom Straßenfertiger vorverdichtet und durch Walzen verdichtet; die Walzverdichtung soll direkt hinter dem Fertiger, spätestens bei 125 °C beginnen und bei 90 bis 100 °C abgeschlossen sein; eine maschinell eingebaute Deckschicht aus Asphaltbeton braucht mindestens 98 % Verdichtungsgrad und höchstens 4 mm Unebenheit auf 4 m auf einer Binderschicht."
+    url: 'https://asphalt.de/wp-content/uploads/woocommerce_uploads/2024/02/AvA-ND-2017-cwyegu.pdf'
+    kind: standard
+    tier: 2
+    date: '2013-02-01'
+    type: claim
+    confidence: confirmed
+    note: "Deutscher Asphaltverband, Stand February 2013 without a day, print run 2017; it summarises ZTV Asphalt-StB 07. Check the current edition."
+  - statement:
+      en: "BG BAU module B 186 on asphalt pavers: the laying temperature of asphalt can burn people, and fumes can damage health in enclosed spaces; where the air is poor, for example between noise barriers or in tunnels, temperature-reduced asphalt is to be laid and ventilation provided; the hot mat is crossed on the walkway fitted to the paver."
+      de: "BG BAU Baustein B 186 zu Asphalt-Straßenfertigern: Aufgrund der Einbautemperaturen von Asphalt können sich Personen verbrennen, in geschlossenen Räumen können Dämpfe zu Gesundheitsschäden führen; bei ungünstigen Luftverhältnissen, zum Beispiel zwischen Lärmschutzwänden und in Tunnelabschnitten, ist temperaturgesenkter Asphalt einzubauen und für künstliche Bewetterung zu sorgen; der Heißbelag wird über den am Fertiger angebrachten Steg überquert."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_186/b_186.htm'
+    kind: regulator
+    tier: 1
+    date: '2019-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Baustein B 186, Stand 07/2019 without a day. Read on 2026-10-02."
+  - statement:
+      en: "BG BAU, on a page not updated since autumn 2019: in November 2019 an occupational exposure limit of 1.5 mg/m³ was set for fumes and aerosols from bitumen in hot processing, suspended for rolled and mastic asphalt until the end of 2024; besides temperature-reduced paving, extraction at the asphalt paver is the main measure."
+      de: "BG BAU, auf einer seit Herbst 2019 nicht aktualisierten Seite: Im November 2019 wurde für Dämpfe und Aerosole aus Bitumen bei der Heißverarbeitung ein Arbeitsplatzgrenzwert von 1,5 mg/m³ festgelegt, der für Walz- und Gussasphalt bis Ende 2024 ausgesetzt ist; neben der temperaturabgesenkten Bauweise steht vor allem die Absaugung am Asphaltstraßenfertiger im Fokus."
+    url: 'https://www.bgbau.de/die-bg-bau/ueber-uns/netzwerk-und-kooperationen/gespraechskreis-bitumen'
+    kind: regulator
+    tier: 1
+    date: '2019-11-01'
+    type: claim
+    confidence: confirmed
+    note: "The page states it has not been updated since autumn 2019. The suspension date is outdated for rolled asphalt: TRGS 900 in its version of 5 June 2026 exempts rolled asphalt until 31 December 2026 (see the TRGS 900 entry)."
+  - statement:
+      en: "TRGS 900 (version of 5 June 2026): the occupational exposure limit for fumes and aerosols from the hot processing of distillation and air-rectified bitumen is 1.5 mg/m³; it does not apply to rolled asphalt until 31 December 2026, while the exemption for mastic asphalt and bitumen membranes ran until 31 December 2024."
+      de: "TRGS 900 (Fassung 5.6.2026): Der Arbeitsplatzgrenzwert für Dampf und Aerosol bei der Heißverarbeitung von Destillations- und Air-Rectified-Bitumen beträgt 1,5 mg/m³; er gilt für den Bereich Walzasphalt nicht bis 31. Dezember 2026, die Ausnahme für Gussasphalt sowie Bitumen- und Polymerbitumenbahnen galt bis 31. Dezember 2024."
+    url: 'https://www.baua.de/DE/Angebote/Regelwerk/TRGS/pdf/TRGS-900.pdf?__blob=publicationFile'
+    kind: regulator
+    tier: 1
+    date: '2026-06-05'
+    type: claim
+    confidence: confirmed
+    note: "Technical rule of the Committee on Hazardous Substances (AGS), published by BAuA; bitumen entry with footnote 34. Read on 2026-10-02."
+  - statement:
+      en: "BG BAU pays an occupational safety premium for retrofitting extraction to existing asphalt pavers, which reduces the load from fumes and aerosols when rolled asphalt is laid: 50 % of the purchase cost per measure, at most EUR 3,000."
+      de: "Die BG BAU fördert mit einer Arbeitsschutzprämie die Nachrüstung von Absaugeinrichtungen an vorhandenen Asphaltfertigern, die die Belastung durch Dämpfe und Aerosole beim Einbau von Walzasphalt reduzieren: 50 % der Anschaffungskosten je Maßnahme, höchstens 3.000 EUR."
+    url: 'https://www.bgbau.de/service/angebote/arbeitsschutzpraemien/praemie/nachruestung-von-absaugeinrichtungen-an-asphaltfertigern'
+    kind: regulator
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Premium page undated; the conditions in its linked requirements PDF are not recorded here. Read on 2026-10-02."
+  - statement:
+      en: "The German Asphalt Association: temperature-reduced asphalt is produced and laid mostly 30 to 40 °C cooler than conventional hot asphalt, which improves working conditions on site, especially for the screed operators and the paver driver."
+      de: "Der Deutsche Asphaltverband: Temperaturabgesenkter Asphalt wird meist 30 bis 40 °C niedriger als herkömmlicher Heißasphalt hergestellt und eingebaut; das verbessert die Arbeitsbedingungen auf der Baustelle, insbesondere für die Bohlengänger und Fertigerfahrer."
+    url: 'https://asphalt.de/fokusthemen/temperaturabgesenkter-asphalt-arbeitsschutz-optimieren/'
+    kind: manufacturer
+    tier: 2
+    date: '2025-05-30'
+    type: claim
+    confidence: confirmed
+    note: "Industry association of asphalt producers and contractors."
+  - statement:
+      en: "Vögele: its ventilation system diverts the fumes and aerosols of hot asphalt and considerably reduces the exposure of paver drivers and screed operators; in a laboratory tracer gas test to the NIOSH method at least 80 % of the tracer gas was extracted."
+      de: "Vögele: Das Ventilationssystem leitet die Dämpfe und Aerosole des Heißasphalts um und reduziert so die Exposition der Fertigerfahrer und Bohlenbediener erheblich; im Tracergasversuch nach NIOSH-Verfahren wurden mindestens 80 % des Tracergases abgesaugt."
+    url: 'https://www.wirtgen-group.com/de-de/produkte/voegele/technologien/ventilationssystem/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Laboratory result stated by the maker; undated page, read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. On one job, compare a paver with fume extraction or temperature-reduced asphalt against the usual setup, with exposure measured at the driver's seat and at the screed."
+    de: "Kein Roboterpilot. Auf einer Baustelle einen Fertiger mit Absaugung oder temperaturabgesenkten Asphalt gegen den üblichen Einbau vergleichen, mit Expositionsmessung am Fahrerplatz und an der Bohle."
+prerequisites: []
+open_questions:
+  - { en: "Do your pavers have fume extraction, and how often do your clients accept temperature-reduced asphalt?", de: "Haben Ihre Fertiger eine Absaugung, und wie oft lassen Ihre Auftraggeber temperaturabgesenkten Asphalt zu?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

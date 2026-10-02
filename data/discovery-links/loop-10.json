@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "links": [
+    {
+      "taskId": "asset_inspection_infrastructure/substation-rounds",
+      "reviewId": "unitree-b2-legged-inspection",
+      "relationship": "partial_task",
+      "rationale": "Industrial inspection platform with manufacturer application examples; exact observation payload needs integration.",
+      "sourceIds": [
+        "b2-product"
+      ],
+      "limitations": [
+        "Route access, calibrated sensors, defect detection and reporting are not proven for this base package.",
+        "Human review, task-specific commissioning and recovery remain necessary."
+      ]
+    },
+    {
+      "taskId": "facility_operation/plant-room-rounds",
+      "reviewId": "unitree-b2-legged-inspection",
+      "relationship": "partial_task",
+      "rationale": "Industrial inspection platform with manufacturer application examples; exact observation payload needs integration.",
+      "sourceIds": [
+        "b2-product"
+      ],
+      "limitations": [
+        "Route access, calibrated sensors, defect detection and reporting are not proven for this base package.",
+        "Human review, task-specific commissioning and recovery remain necessary."
+      ]
+    },
+    {
+      "taskId": "asset_inspection_infrastructure/substation-rounds",
+      "reviewId": "deep-robotics-x30-pro-inspection",
+      "relationship": "partial_task",
+      "rationale": "Inspection locomotion platform; the X30-series tunnel pilot used a customized sensor and software setup.",
+      "sourceIds": [
+        "x30-product",
+        "x30-pilot"
+      ],
+      "limitations": [
+        "Route access, calibrated sensors, defect detection and reporting are not proven for this base package.",
+        "Human review, task-specific commissioning and recovery remain necessary."
+      ]
+    },
+    {
+      "taskId": "facility_operation/plant-room-rounds",
+      "reviewId": "deep-robotics-x30-pro-inspection",
+      "relationship": "partial_task",
+      "rationale": "Inspection locomotion platform; the X30-series tunnel pilot used a customized sensor and software setup.",
+      "sourceIds": [
+        "x30-product",
+        "x30-pilot"
+      ],
+      "limitations": [
+        "Route access, calibrated sensors, defect detection and reporting are not proven for this base package.",
+        "Human review, task-specific commissioning and recovery remain necessary."
+      ]
+    },
+    {
+      "taskId": "asset_inspection_infrastructure/cable-tunnel-inspection",
+      "reviewId": "deep-robotics-x30-pro-inspection",
+      "relationship": "partial_task",
+      "rationale": "Inspection locomotion platform; the X30-series tunnel pilot used a customized sensor and software setup.",
+      "sourceIds": [
+        "x30-product",
+        "x30-pilot"
+      ],
+      "limitations": [
+        "Route access, calibrated sensors, defect detection and reporting are not proven for this base package.",
+        "Human review, task-specific commissioning and recovery remain necessary."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+ "schemaVersion": 1,
+ "id": "limx-dynamics-tron-2",
+ "maker": "LimX Dynamics",
+ "makerCountry": "CN",
+ "model": "TRON 2",
+ "variant": "EDU 3-in-1 (dual arms, soles, wheeled legs)",
+ "name": "LimX Dynamics TRON 2 (3-in-1)",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.limxdynamics.com/en/products/tron2",
+ "summary": "A modular research robot with two 7-axis arms, a camera head and swappable walking or wheeled legs, carrying up to 5 kg per arm; sold in German shops.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU (34,942.40 €, on demand), Reichelt (38,675 €, about 2 weeks, business customers only), Funduino (38,999 €, 21 working days) and Bipedal (38,999 €, about 4 weeks) sell the 3-in-1 package, all incl. VAT. Cheaper packages: 2-in-1 legs only, or dual arms only.",
+  "sourceIds": [
+   "s6",
+   "s3",
+   "s4",
+   "s7"
+  ],
+  "priceEur": {
+   "amount": 34942.4,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s6",
+   "note": "3-in-1 EDU at RobotShop EU, tax included; Reichelt 38,675 €, Funduino and Bipedal 38,999 €."
+  },
+  "priceOther": null,
+  "leadTime": "about 2 weeks (Reichelt); 21 working days (Funduino); about 4 weeks (Bipedal); on demand (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "reichelt elektronik GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.reichelt.de/de/de/shop/produkt/limx_dynamics_tron2_3-in-1-429870",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 38675,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "Special order item; delivered only to businesses, institutions and authorities."
+   },
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduinoshop.com/robotik/limx-dynamics/tron-2/limx-dynamics-tron2-three-in-one",
+    "contactUrl": "https://funduinoshop.com/impressum",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 38999,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "Package: TRON2 core system, 2 arm modules, sole set, wheeled-leg set. Also sells 2-in-1 (24,999 €) and Dual Arm (26,999 €)."
+   },
+   {
+    "name": "LimX Dynamics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.limxdynamics.com/en/products/tron2",
+    "contactUrl": "https://www.limxdynamics.com/en/order",
+    "email": "bd@limxdynamics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Order consultation form lists Germany as a country option."
+   },
+   {
+    "name": "RobotShop EU (eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "productUrl": "https://eu.robotshop.com/products/limx-dynamics-tron-2-edu-3-in-1-embodied-robot-dual-arm-wheeled-sole",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 34942.4,
+    "priceBasis": "gross",
+    "sourceId": "s6",
+    "note": "TRON 2 EDU 3-in-1 (manufacturer no. TRON2-A-WSD-EDU), tax included; On Demand. Also 2-in-1 for 22,718.18 € and dual-arm fixed platform for 24,881.82 €."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.bipedal.de/limx-dynamics-tron2-3-in-1-edu-paket",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 38999,
+    "priceBasis": "gross",
+    "sourceId": "s7",
+    "note": "38,999 € incl. 19% VAT, shown as \"Sofort verfügbar\", delivery about 4 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dof_per_arm",
+   "label": "Arm DoF",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_leg",
+   "label": "Leg DoF",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "End effector load per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "maximum; 3 kg at full extension",
+   "sourceId": "s2"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Dual-arm payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.73,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load capacity",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "flat-ground walking; 20 kg when climbing stairs",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 5,
+   "unit": "m/s",
+   "conditions": "wheeled 3-5 m/s, soles 2-3 m/s",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max slope",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "wheeled; 15° on soles",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max step height",
+   "value": 20,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 0.9,
+   "unit": "h",
+   "conditions": "20-100% in 54 min",
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Battery replacement",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "waist RGBD camera, IMU; head and wrist RGBD cameras with dual arms",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "gripper",
+   "label": "End effector",
+   "value": "gripper (20 N, 85 mm opening) or dexterous hand",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "SDK, Python and C++, ROS1/ROS2, simulator",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": 30,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "LimX SDK, ROS1/ROS2",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Research and education platform; arms, soles and wheeled legs are swappable modules.",
+   "Which end effector (gripper or dexterous hand) the shop packages include is not stated.",
+   "No IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://funduinoshop.com/media/image/eb/22/00/Tron-2-5.png",
+   "pageUrl": "https://funduinoshop.com/robotik/limx-dynamics/tron-2/limx-dynamics-tron2-three-in-one",
+   "credit": "LimX Dynamics (via Funduino)",
+   "alt": "LimX Dynamics TRON 2 with dual arms and camera head on its stand",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron2/arm-ball-catch.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron2",
+   "credit": "LimX Dynamics",
+   "alt": "TRON 2 dual-arm module with camera head",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron2/img-1-new.webp",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron2",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics TRON 2 dual-arm torso on its column stand holding a crate of books, black background",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron2/biped-45deg.webp",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron2",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics TRON 2 body on its walking legs with sole feet, studio render",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/tron2/wheeled-45deg.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/tron2",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics TRON 2 body on its wheeled legs, studio render",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:tron-coordinate-arm-leg-control",
+    "research:tron-reach-switches-buttons",
+    "research:tron-floor-level-pickup",
+    "research:tron-mapping-navigation-validation"
+   ],
+   "task": "Mobile manipulation research: reaching switches, buttons and shelves up to 1.5 m, mapping in corridors and utility tunnels",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.limxdynamics.com/en/products/tron2",
+   "title": "TRON 2 product page",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.limxdynamics.com/en/products/tron2/spec",
+   "title": "TRON 2 specifications",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.reichelt.de/de/de/shop/produkt/limx_dynamics_tron2_3-in-1-429870",
+   "title": "LimX Dynamics TRON2 3-in-1",
+   "publisher": "reichelt elektronik GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://funduinoshop.com/robotik/limx-dynamics/tron-2/limx-dynamics-tron2-three-in-one",
+   "title": "LimX Dynamics TRON2 Three-in-one",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.limxdynamics.com/en/order",
+   "title": "Contact Sales / order consultation",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://eu.robotshop.com/products/limx-dynamics-tron-2-edu-3-in-1-embodied-robot-dual-arm-wheeled-sole",
+   "title": "LimX Dynamics TRON 2 EDU 3-in-1 Embodied Robot",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.bipedal.de/limx-dynamics-tron2-3-in-1-edu-paket",
+   "title": "LimX Dynamics TRON2 3-in-1 EDU package",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether the 3-in-1 package includes the Autonomous Mobile Manipulation Expansion Kit needed to run arms on the legs.",
+  "Weight and runtime not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

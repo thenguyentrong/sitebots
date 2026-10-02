@@ -58,9 +58,9 @@ export default function MethodologyPage() {
       </section>
 
       <section id="profile" className="card mt-6 scroll-mt-20 p-5">
-        <h2 className="text-base font-semibold">The construction profile</h2>
+        <h2 className="text-base font-semibold">The robot evidence profile</h2>
         <p className="mt-2 text-sm text-muted">
-          The spider chart on a robot page asks the matcher&apos;s own criteria at rising requirement values and takes the share that passes — a threshold ladder. The rungs are listed here; there is no other formula. Axes are unweighted. An axis whose inputs are not published is drawn as a gap, not as zero.
+          The spider chart on a robot page asks the matcher&apos;s own criteria at rising requirement values and takes the share that passes — a threshold ladder. The rungs are listed here. Axes are unweighted. Handling evidence instead shows how many tasks are supported, reported only or unconfirmed; it is not a performance score. Incomplete handling evidence and unpublished axis inputs leave a chart gap, not a zero.
         </p>
         <table className="mt-3 w-full text-sm">
           <tbody>

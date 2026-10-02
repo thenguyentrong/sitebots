@@ -1,0 +1,171 @@
+{
+ "schemaVersion": 1,
+ "id": "ff-faber-s",
+ "maker": "Faraday Future",
+ "makerCountry": "US",
+ "model": "Faber",
+ "variant": "Faber S",
+ "name": "Faraday Future FF Faber S",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://faber.ff.com/us/",
+ "summary": "A 1.7 m two-armed robot with a head on an omnidirectional wheeled base, 3.5 to 5 kg per arm, for research, data collection and light logistics.",
+ "launched": "2026-06",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Faraday Future marks the Faber S as coming soon; the only listing for Germany is Roboter Deutschland, a web shop run from Las Vegas without a named company.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 26,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": "3.5–5",
+   "unit": "kg",
+   "conditions": "per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "omnidirectional, 360° rotation",
+   "sourceId": "s1"
+  },
+  {
+   "key": "chassis",
+   "label": "Chassis",
+   "value": "Omnidirectional vector chassis with 3 steering motors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Orin 32 GB, 200 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "Ubuntu 22.04 + ROS, open SDK / API, OTA updates",
+   "unit": null,
+   "conditions": "family-level statement",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 3.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS, open SDK / API",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Two arms and a head on a wheeled base (FF calls the series mobile manipulators); wheeled, so no stairs.",
+   "Arm payload 3.5 to 5 kg per arm; the lower value is used here.",
+   "End effectors are interchangeable at series level; photos show a two-finger gripper and a five-finger hand. No runtime, weight or reach published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://ff-genesis-cdn.s3.us-west-2.amazonaws.com/FF-EAI-Robotics/faber/images/faber-s-front.png",
+   "pageUrl": "https://faber.ff.com/us/",
+   "credit": "Faraday Future",
+   "alt": "FF Faber S wheeled two-arm robot, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "R&D, scientific research and agile logistics",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Application line on the Faber S panel of the maker page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://faber.ff.com/us/",
+   "title": "FF Faber series page (Faber S panel)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.roboterdeutschland.de/FF-Faber-S.htm",
+   "title": "FF Faber S at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/contact/",
+   "title": "Roboter Deutschland contact details",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/terms-conditions/",
+   "title": "Roboter Deutschland terms and conditions (Robots International)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Delivery start, price, weight, runtime and reach of Faber S are not published.",
+  "Does FF plan an authorised EU sales channel for Faber?"
+ ],
+ "checkedAt": "2026-10-02"
+}

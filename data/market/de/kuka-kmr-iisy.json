@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "kuka-kmr-iisy",
+ "maker": "KUKA",
+ "makerCountry": "DE",
+ "model": "KMR iisy",
+ "variant": null,
+ "name": "KUKA KMR iisy",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iisy-autonomous-mobile-cobot",
+ "summary": "An autonomous mobile cobot: an LBR iisy arm (11 or 15 kg) on a SLAM-navigating platform that carries up to 200 kg, IP54, for loading machines and moving parts between stations.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany by KUKA directly; price on request through KUKA's contact page.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "KUKA",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iisy-autonomous-mobile-cobot",
+    "contactUrl": "https://www.kuka.com/en-de/company/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "German maker (Augsburg); quotes through KUKA sales or KUKA system partners."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": "11 or 15",
+   "unit": "kg",
+   "conditions": "LBR iisy, depending on version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 200,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "platform_area_mm",
+   "label": "Platform area",
+   "value": "695 x 1,120",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Safety laser scanners and 3D cameras (obstacles up to 2 m above floor)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Operation",
+   "value": "One smartPAD pro teach pendant for robot and platform; SLAM navigation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 11,
+  "carryPayloadKg": 200,
+  "runtimeH": null,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arm payload 11 kg or 15 kg depending on the LBR iisy version (lower value used here).",
+   "ESD-certified, low-particle version for cleanrooms.",
+   "Runtime not stated on the product page."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.kuka.com/-/media/kuka-corporate/images/products/mobility/kmr-iisy-mobile-cobot/kuka-kmr-iisy-mobile-cobot.jpg",
+   "pageUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iisy-autonomous-mobile-cobot",
+   "credit": "KUKA",
+   "alt": "KUKA KMR iisy mobile cobot, LBR iisy arm on the mobile platform, studio background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.kuka.com/-/media/kuka-corporate/images/products/mobility/kmr-iisy-mobile-cobot/teaser-kuka-kmr-iisy.jpg",
+   "pageUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iisy-autonomous-mobile-cobot",
+   "credit": "KUKA",
+   "alt": "KUKA KMR iisy mobile cobot next to a worker with a tablet",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.kuka.com/-/media/kuka-corporate/images/products/mobility/kmr-iisy-mobile-cobot/autonomous-mobile-manipulator-system-kmr-iisy.jpg?rev=abf9b387ea0841cfb41e7605755d2cd4&w=2400&hash=17BC43C6B9D869D9652B6847F5E96B69",
+   "pageUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iisy-autonomous-mobile-cobot",
+   "credit": "KUKA",
+   "alt": "Operator hand-guiding the arm of a KUKA KMR iisy in a warehouse hall",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.kuka.com/-/media/kuka-corporate/images/products/mobility/kmr-iisy-mobile-cobot/collaborative-autonomous-mobile-robot-kmr-iisy.jpg?rev=11e0cfd559884f7cb3b30356a5ee1494&w=1400&hash=491D075EE1FB94BF2A4735679E22622C",
+   "pageUrl": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iisy-autonomous-mobile-cobot",
+   "credit": "KUKA",
+   "alt": "KUKA KMR iisy beside a pallet with a KUKA carton on a low mobile platform, operator holding a teach pendant",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for loading and unloading, quality testing in the line and workpiece and material transport",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.kuka.com/en-de/products/amr-autonomous-mobile-robotics/mobile-robot-systems/kmr-iisy-autonomous-mobile-cobot",
+   "title": "KMR iisy product page",
+   "publisher": "KUKA",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime and charging data; price."
+ ],
+ "checkedAt": "2026-10-02"
+}

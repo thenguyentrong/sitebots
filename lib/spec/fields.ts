@@ -3,7 +3,7 @@
 // ones with a `column` into robot_current, and the spec table renders them in
 // this order. Adding a field means adding it here first.
 
-import { HAND_TYPES, PAYLOAD_QUALIFIERS, RUNTIME_BASIS } from './enums';
+import { HAND_TYPES, PAYLOAD_QUALIFIERS, RUNTIME_BASIS, type FormFactor } from './enums';
 
 export type FieldKind = 'number' | 'range' | 'text' | 'bool' | 'list' | 'json';
 
@@ -38,7 +38,7 @@ export type FieldDef = {
   /** Shown only when a value exists. Everything else is listed as "not published", because for a construction buyer the gap is the finding. */
   optional?: boolean;
   /** Only meaningful for these form factors; hidden for the others when unknown. */
-  formFactors?: readonly ('humanoid' | 'quadruped' | 'mobile_manipulator')[];
+  formFactors?: readonly FormFactor[];
   /** Closed vocabulary for a text field; the normaliser maps free text onto it or drops the fact. */
   values?: readonly string[];
   /** json lists from several sources are unioned (deduped on type + name) instead of picking one winner. */
@@ -46,6 +46,8 @@ export type FieldDef = {
 };
 
 const HANDED = ['humanoid', 'mobile_manipulator'] as const;
+const LEGGED = ['humanoid', 'quadruped'] as const;
+const MOBILE = ['humanoid', 'quadruped', 'mobile_manipulator', 'amr_agv', 'dedicated_robot'] as const;
 
 const f = (def: FieldDef): FieldDef => def;
 
@@ -53,7 +55,7 @@ export const FIELDS: readonly FieldDef[] = [
   // physical
   f({ id: 'height_m', label: 'Height', group: 'physical', kind: 'range', unit: 'm', family: 'length', decimals: 2, column: 'height_m' }),
   f({ id: 'weight_kg', label: 'Weight', group: 'physical', kind: 'number', unit: 'kg', family: 'mass', decimals: 1, column: 'weight_kg' }),
-  f({ id: 'reach_m', label: 'Reach', group: 'physical', kind: 'number', unit: 'm', family: 'length', decimals: 2, column: 'reach_m', hint: 'Vertical reach of the hand from the floor.' }),
+  f({ id: 'reach_m', label: 'Reach', group: 'physical', kind: 'number', unit: 'm', family: 'length', decimals: 2, column: 'reach_m', hint: 'Published vertical working reach from the floor for the stated setup. Arm radius alone does not establish working height.' }),
   f({ id: 'footprint', label: 'Footprint', group: 'physical', kind: 'text', hint: 'L × W × H standing or shipping.', optional: true }),
   f({ id: 'shipping_weight_kg', label: 'Shipping weight', group: 'physical', kind: 'number', unit: 'kg', family: 'mass', decimals: 1, optional: true }),
   f({ id: 'structural_material', label: 'Structure', group: 'physical', kind: 'text', optional: true }),
@@ -61,7 +63,7 @@ export const FIELDS: readonly FieldDef[] = [
   // kinematics
   f({ id: 'dof_total', label: 'Degrees of freedom', group: 'kinematics', kind: 'number', family: 'count', column: 'dof_total' }),
   f({ id: 'dof_body', label: 'DOF body', group: 'kinematics', kind: 'number', family: 'count', column: 'dof_body', optional: true }),
-  f({ id: 'dof_arms', label: 'DOF arms', group: 'kinematics', kind: 'number', family: 'count', column: 'dof_arms', hint: 'Both arms together.', optional: true }),
+  f({ id: 'dof_arms', label: 'DOF arms', group: 'kinematics', kind: 'number', family: 'count', column: 'dof_arms', hint: 'Check the source for a per-arm or combined count.', optional: true }),
   f({ id: 'dof_legs', label: 'DOF legs', group: 'kinematics', kind: 'number', family: 'count', column: 'dof_legs', optional: true }),
   f({ id: 'dof_hands', label: 'DOF hands', group: 'kinematics', kind: 'number', family: 'count', column: 'dof_hands', formFactors: HANDED }),
   f({ id: 'hand_type', label: 'Hands', group: 'parts', kind: 'text', formFactors: HANDED, values: HAND_TYPES }),
@@ -72,18 +74,18 @@ export const FIELDS: readonly FieldDef[] = [
   f({ id: 'payload_kg', label: 'Payload', group: 'payload', kind: 'number', unit: 'kg', family: 'mass', decimals: 1, qualifiers: PAYLOAD_QUALIFIERS }),
 
   // mobility
-  f({ id: 'walk_speed_ms', label: 'Walking speed', group: 'mobility', kind: 'number', unit: 'm/s', family: 'speed', decimals: 2, column: 'walk_speed_ms' }),
-  f({ id: 'max_speed_ms', label: 'Max speed', group: 'mobility', kind: 'number', unit: 'm/s', family: 'speed', decimals: 2, column: 'max_speed_ms' }),
-  f({ id: 'stair_capable', label: 'Stairs', group: 'mobility', kind: 'bool', column: 'stair_capable' }),
-  f({ id: 'max_slope_deg', label: 'Max slope', group: 'mobility', kind: 'number', unit: '°', family: 'angle', column: 'max_slope_deg' }),
-  f({ id: 'step_height_m', label: 'Step height', group: 'mobility', kind: 'number', unit: 'm', family: 'length', decimals: 2, column: 'step_height_m' }),
-  f({ id: 'terrain_notes', label: 'Terrain', group: 'mobility', kind: 'text' }),
+  f({ id: 'walk_speed_ms', label: 'Walking speed', group: 'mobility', kind: 'number', unit: 'm/s', family: 'speed', decimals: 2, column: 'walk_speed_ms', formFactors: LEGGED }),
+  f({ id: 'max_speed_ms', label: 'Max speed', group: 'mobility', kind: 'number', unit: 'm/s', family: 'speed', decimals: 2, column: 'max_speed_ms', formFactors: MOBILE }),
+  f({ id: 'stair_capable', label: 'Stairs', group: 'mobility', kind: 'bool', column: 'stair_capable', formFactors: MOBILE }),
+  f({ id: 'max_slope_deg', label: 'Max slope', group: 'mobility', kind: 'number', unit: '°', family: 'angle', column: 'max_slope_deg', formFactors: MOBILE }),
+  f({ id: 'step_height_m', label: 'Step height', group: 'mobility', kind: 'number', unit: 'm', family: 'length', decimals: 2, column: 'step_height_m', formFactors: MOBILE }),
+  f({ id: 'terrain_notes', label: 'Terrain', group: 'mobility', kind: 'text', formFactors: MOBILE }),
 
   // power
-  f({ id: 'battery_wh', label: 'Battery', group: 'power', kind: 'number', unit: 'Wh', family: 'energy', column: 'battery_wh' }),
-  f({ id: 'runtime_h', label: 'Runtime', group: 'power', kind: 'number', unit: 'h', family: 'time', decimals: 1, qualifiers: RUNTIME_BASIS, column: 'runtime_h', hint: 'Nameplate. A loaded shift yields roughly half.' }),
-  f({ id: 'charge_time_h', label: 'Charge time', group: 'power', kind: 'number', unit: 'h', family: 'time', decimals: 1, column: 'charge_time_h' }),
-  f({ id: 'hot_swap', label: 'Battery swap', group: 'power', kind: 'bool', column: 'hot_swap' }),
+  f({ id: 'battery_wh', label: 'Battery', group: 'power', kind: 'number', unit: 'Wh', family: 'energy', column: 'battery_wh', formFactors: MOBILE }),
+  f({ id: 'runtime_h', label: 'Runtime', group: 'power', kind: 'number', unit: 'h', family: 'time', decimals: 1, qualifiers: RUNTIME_BASIS, column: 'runtime_h', hint: 'Runtime applies only to the published workload and power setup. Loaded endurance is unknown unless stated.' }),
+  f({ id: 'charge_time_h', label: 'Charge time', group: 'power', kind: 'number', unit: 'h', family: 'time', decimals: 1, column: 'charge_time_h', formFactors: MOBILE }),
+  f({ id: 'hot_swap', label: 'Battery swap', group: 'power', kind: 'bool', column: 'hot_swap', formFactors: MOBILE }),
   f({ id: 'swap_time_min', label: 'Swap time', group: 'power', kind: 'number', unit: 'min', family: 'time', optional: true }),
 
   // built-in parts: what ships inside. Scalars render as rows; the json lists get their own panel.
@@ -110,7 +112,7 @@ export const FIELDS: readonly FieldDef[] = [
 
   // construction (curated)
   f({ id: 'certifications', label: 'Certifications', group: 'construction', kind: 'list', column: 'certifications' }),
-  f({ id: 'task_capabilities', label: 'Site tasks', group: 'construction', kind: 'list', column: 'task_capabilities' }),
+  f({ id: 'task_capabilities', label: 'Task capabilities', group: 'construction', kind: 'list', column: 'task_capabilities' }),
   f({ id: 'requires_operator', label: 'Operator', group: 'construction', kind: 'text', column: 'requires_operator' }),
   f({ id: 'trl', label: 'Readiness (TRL)', group: 'construction', kind: 'number', family: 'count', column: 'trl' }),
   f({ id: 'deployment_evidence', label: 'Deployments', group: 'construction', kind: 'json', optional: true }),
@@ -122,10 +124,16 @@ export const FIELDS: readonly FieldDef[] = [
 
 /** Fields to list for a robot: those with a value, plus the non-optional ones that apply to its form factor. */
 export function visibleFields(formFactor: string, presentIds: ReadonlySet<string>): FieldDef[] {
+  return visibleFieldsFor([formFactor], presentIds);
+}
+
+/** Mixed comparisons show applicable fields from each class, without inventing a humanoid default. */
+export function visibleFieldsFor(formFactors: readonly string[], presentIds: ReadonlySet<string>): FieldDef[] {
   return FIELDS.filter((d) => {
     if (presentIds.has(d.id)) return true;
     if (d.optional) return false;
-    if (d.formFactors && !d.formFactors.includes(formFactor as 'humanoid')) return false;
+    const applicable = d.formFactors;
+    if (applicable && !formFactors.some((formFactor) => applicable.includes(formFactor as FormFactor))) return false;
     return true;
   });
 }

@@ -43,7 +43,8 @@ export function resolveFacts(source: FactSource, overrides: Partial<TaskFacts>, 
 
   const fromOverride = (k: FactKey): ResolvedFact | null => {
     const v = overrides[k];
-    return v === undefined || v === null ? null : { value: v, origin: 'visitor' };
+    // Explicit unknown is an answer; only an absent override inherits the record or context.
+    return v === undefined ? null : { value: v, origin: 'visitor' };
   };
   const fromRecord = (k: FactKey): ResolvedFact | null => {
     const v = source.facts[k];

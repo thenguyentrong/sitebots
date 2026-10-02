@@ -1,0 +1,135 @@
+{
+ "schemaVersion": 1,
+ "id": "agilex-robotics-modular-aloha",
+ "maker": "AgileX Robotics",
+ "makerCountry": "CN",
+ "model": "Modular ALOHA",
+ "variant": null,
+ "name": "AgileX Modular ALOHA",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://global.agilex.ai/products/modular-aloha",
+ "summary": "A dual-arm teleoperation platform with height-adjustable arms on the AgileX Ranger Mini 3.0 base, with navigation and automatic recharging, for robot-learning data collection.",
+ "launched": "2026-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "New in 2026; no German shop lists it yet. AgileX sells worldwide by email (sales@agilex.ai), and its products are sold in Germany through resellers such as MYBOTSHOP and Generation Robots.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "AgileX Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://global.agilex.ai/products/modular-aloha",
+    "contactUrl": null,
+    "email": "sales@agilex.ai",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "No price shown; contact sales."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "drive",
+   "label": "Base",
+   "value": "AgileX Ranger Mini 3.0",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS drivers for lift; compatible with Mobile ALOHA and ACT",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arm model, payload and runtime not stated on the product page.",
+   "Leader arms can be placed apart from the robot for remote teleoperation."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0551/0630/6141/files/Cobot_Spark.320.png?v=1785311346",
+   "pageUrl": "https://global.agilex.ai/products/modular-aloha",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX Modular ALOHA dual-arm platform on a Ranger Mini base with separate leader station",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for teleoperation and embodied-AI data collection",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://global.agilex.ai/products/modular-aloha",
+   "title": "Modular ALOHA product page",
+   "publisher": "AgileX Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://global.agilex.ai/meta.json",
+   "title": "AgileX store settings (ships to all countries)",
+   "publisher": "AgileX Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/de/404223-cobot-magic-teleoperierte-plattform.html",
+   "title": "Generation Robots AgileX listing (Cobot Magic)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Arm model and payload, price, and first deliveries to Europe."
+ ],
+ "checkedAt": "2026-10-02"
+}

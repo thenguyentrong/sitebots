@@ -1,0 +1,165 @@
+schema_version: 1
+id: site_earthworks/excavation
+status: published
+setting: site_earthworks
+family: machine_operation_dedicated
+trades: [civil_earthworks]
+title:
+  en: "Excavate a building pit with an excavator and load trucks"
+  de: "Baugrube mit dem Bagger ausheben und Lkw beladen"
+summary:
+  en: "Dig the pit to the design depth and slopes with a hydraulic excavator, load the spoil onto trucks and leave the formation and the slopes intact."
+  de: "Die Baugrube mit dem Hydraulikbagger auf Solltiefe und Böschungsneigung ausheben, den Aushub auf Lkw laden und Sohle und Böschungen unversehrt lassen."
+description:
+  en: "Building pits are dug by hydraulic excavators. A crawler excavator of the 24-tonne class such as the Liebherr R 924 weighs 23.4 to 26.1 t in operation, takes buckets of 0.55 to 1.65 m³ and digs 6.5 to 7.5 m deep with its 5.70 m boom, depending on the stick. Unshored pits deeper than 1.75 m have to be sloped from the bottom to the top edge at an angle that suits the soil, and a strip of at least 0.60 m along the top edge stays clear; slopes that are not executed properly can bury people. Nobody may stand in the excavator's travel or swing range while it works."
+  de: "Baugruben werden mit Hydraulikbaggern ausgehoben. Ein Raupenbagger der 24-Tonnen-Klasse wie der Liebherr R 924 wiegt im Einsatz 23,4 bis 26,1 t, nimmt Tieflöffel von 0,55 bis 1,65 m³ auf und gräbt mit dem 5,70-m-Ausleger je nach Stiel 6,5 bis 7,5 m tief. Unverbaute Baugruben über 1,75 m Tiefe müssen von der Sohle bis zur Geländeoberkante mit einem Böschungswinkel nach Bodenart geböscht werden, und am oberen Rand bleibt ein mindestens 0,60 m breiter Schutzstreifen frei; nicht ordnungsgemäß ausgeführte Böschungen können zu Verschüttungen führen. Im Fahr- und Schwenkbereich des Baggers darf sich während der Arbeit niemand aufhalten."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '002'
+  atv: "DIN 18300"
+  position:
+    en: "Excavate building pit, load the spoil and haul it away"
+    de: "Baugrube ausheben, Boden laden und abfahren"
+  unit: m3
+attributes:
+  object_mass_kg:
+    value: { min: 23400, max: 26050 }
+    confidence: confirmed
+    evidence_url: 'https://www.liebherr.com/de-de/produkte/bagger/raupenbagger/r-924-3838614'
+    note: "Scope of this record: the excavator. Liebherr R 924 Litronic, 23,400 to 26,050 kg operating weight depending on undercarriage and boom; the figure includes a 1.25 m³ bucket of 910 kg (brochure). Smaller and larger excavators dig pits too."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The dig, swing and load cycle repeats, but soil, groundwater, buried services, obstructions and the truck cycle change from pit to pit."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    note: "Depth and slopes are checked as the pit goes down; soil dug below the formation has to be replaced and compacted, and slopes cut too steep have to be flattened or shored."
+  safety_criticality:
+    value: life_safety
+    confidence: confirmed
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_469/c_469.htm'
+    note: "BG BAU: slopes that are not executed properly can bury people. Unshored pits deeper than 1.75 m must be sloped to the top edge, and stability has to be proven, for example, for slopes higher than 5 m (DIN 4124)."
+  reach_height_m:
+    value: null
+    confidence: assumed
+    note: "No working height applies to a person: the operator works the joysticks from the cab, and the bucket digs from ground level down to 6.5 to 7.5 m with the 5.70 m boom (Liebherr R 924)."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "Open building pit."
+  dust:
+    value: { type: mixed, zone: none }
+    confidence: likely
+    note: "Dry soil can raise dust in the open; no classified area."
+  wet:
+    value: rain
+    confidence: likely
+    note: "Earthworks run in the open; rain softens the pit bottom, the ramps and the haul roads."
+  floor:
+    value: uneven
+    confidence: likely
+    note: "Pit bottom, slopes, ramps and spoil heaps."
+  incumbent_automation:
+    value: { status: full, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://assets-cdn.liebherr.com/versions/95efc4c8-e006-43e5-a8b4-54ba25f61f25/original/'
+    note: "Digging and loading is excavator work; the person operates the machine. For the R 924 Liebherr lists Leica machine control systems as options, 2D or 3D, passive or semi-automatic, and presents a bucket fill assist on the product page."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "One bucket of 0.55 to 1.65 m³ per dig cycle (Liebherr R 924)."
+    confidence: confirmed
+    evidence_url: 'https://www.liebherr.com/de-de/produkte/bagger/raupenbagger/r-924-3838614'
+    note: "Bucket range of one machine. Output per hour depends on soil, swing angle and how fast the trucks change; no hourly figure is stated."
+requirements:
+  object_size_m:
+    value: { min: 9.55, max: 9.95 }
+    confidence: confirmed
+    evidence_url: 'https://assets-cdn.liebherr.com/versions/95efc4c8-e006-43e5-a8b4-54ba25f61f25/original/'
+    note: "Transport length of the R 924 with its four boom versions, 9.55 to 9.95 m; the upper carriage is 2.545 m wide (Liebherr brochure)."
+  tolerance_mm:
+    value: null
+    confidence: assumed
+    note: "No source used here states a height tolerance for the pit bottom; depth and slopes follow the design and the soil report."
+  force_n:
+    value: 173000
+    confidence: confirmed
+    evidence_url: 'https://assets-cdn.liebherr.com/versions/95efc4c8-e006-43e5-a8b4-54ba25f61f25/original/'
+    note: "Maximum bucket breakout force of the R 924, 173 kN (ISO 6015); tearout force 106 to 135 kN depending on the stick. The force the job takes, delivered by the machine."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: fail, T2_dust: pass, T3_incumbent: fail, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: unknown, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T3_incumbent, T1_mass, T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: dedicated_machine
+    note:
+      en: "Digging is already machine work, so improve the excavator rather than replace the operator: makers offer machine control and assistance systems for it, up to semi-automatic 3D control. A robot would only take the seat of a 23 to 26 t machine in an open pit."
+      de: "Ausheben ist bereits Maschinenarbeit; also den Bagger verbessern statt den Fahrer zu ersetzen: Hersteller bieten dafür Maschinensteuerungen und Assistenzsysteme an, bis zur halbautomatischen 3D-Steuerung. Ein Roboter übernähme nur den Sitz einer 23 bis 26 t schweren Maschine in einer offenen Grube."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [capacity, skills_shortage, precision]
+capabilities_required: []
+capabilities_optional: []
+solution_classes: [dedicated_machine, keep_process]
+evidence:
+  - statement:
+      en: "Liebherr lists the R 924 Litronic crawler excavator at 23,400 to 26,050 kg operating weight, 129 kW and buckets of 0.55 to 1.65 m³; the product page shows videos on its Bucket Fill Assist and on the machine control system Leica designed for Liebherr."
+      de: "Liebherr gibt für den Raupenbagger R 924 Litronic 23.400 bis 26.050 kg Einsatzgewicht, 129 kW und Tieflöffel von 0,55 bis 1,65 m³ an; die Produktseite zeigt Videos zum Bucket Fill Assist und zum Maschinensteuerungssystem Leica designed for Liebherr."
+    url: 'https://www.liebherr.com/de-de/produkte/bagger/raupenbagger/r-924-3838614'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Undated product page, read on 2026-10-02."
+  - statement:
+      en: "Liebherr's R 924 brochure: with the 5.70 m mono boom the maximum digging depth is 6.53, 6.93 or 7.52 m for the 2.50, 2.90 and 3.50 m sticks; maximum breakout force 173 kN and tearout force 106 to 135 kN (ISO 6015); Leica machine control, 2D or 3D, passive or semi-automatic, is listed as an option."
+      de: "Die Broschüre des Liebherr R 924: Mit dem 5,70-m-Monoblockausleger beträgt die maximale Grabtiefe 6,53, 6,93 oder 7,52 m für die Stiele 2,50, 2,90 und 3,50 m; maximale Losbrechkraft 173 kN und Reißkraft 106 bis 135 kN (ISO 6015); das Maschinensteuerungssystem Leica, 2D oder 3D, passiv oder halbautomatisch, ist als Option gelistet."
+    url: 'https://assets-cdn.liebherr.com/versions/95efc4c8-e006-43e5-a8b4-54ba25f61f25/original/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-03-01'
+    type: claim
+    confidence: confirmed
+    note: "Brochure LFR/SP 12237870-0.3-03.26_de, March 2026 without a day."
+  - statement:
+      en: "BG BAU module C 469 on sloped pits and trenches: slopes that are not executed properly can bury people. Pits up to 1.25 m deep may have vertical walls under conditions; unshored pits deeper than 1.75 m must be sloped from the bottom to the top edge at an angle set by the soil; a protective strip of at least 0.60 m stays clear along the top edge; stability must be proven, for example, for slopes higher than 5.00 m."
+      de: "BG BAU Baustein C 469 zu geböschten Baugruben und Gräben: Durch nicht ordnungsgemäß ausgeführte Böschungen kann es zu Verschüttungen kommen. Baugruben bis 1,25 m Tiefe dürfen unter Bedingungen senkrechte Wände haben; unverbaute Baugruben über 1,75 m Tiefe müssen von der Sohle bis zur Geländeoberkante mit einem Böschungswinkel nach Bodenart geböscht werden; am oberen Rand bleibt ein mindestens 0,60 m breiter Schutzstreifen frei; die Standsicherheit ist zum Beispiel bei Böschungen über 5,00 m nachzuweisen."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/c_469/c_469.htm'
+    kind: regulator
+    tier: 1
+    date: '2021-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Baustein C 469, Stand 07/2021 without a day; it lists DIN 4124 among its references. Read on 2026-10-02."
+  - statement:
+      en: "BG BAU module B 181 on excavators: people must not stay in the travel or swing range, and the operator must not work while anyone is in it unless a risk assessment sets measures for unavoidable cases; operators must be at least 18, instructed and qualified, for example with the ZUMBau qualification."
+      de: "BG BAU Baustein B 181 zu Baggern: Personen dürfen sich nicht im Fahr- oder Schwenkbereich aufhalten, und der Maschinenführer darf nicht arbeiten, solange sich dort jemand aufhält, außer in unvermeidbaren Fällen mit Maßnahmen aus der Gefährdungsbeurteilung; Maschinenführer müssen mindestens 18 Jahre alt, unterwiesen und befähigt sein, zum Beispiel mit der ZUMBau Qualifikation."
+    url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_181/b_181.htm'
+    kind: regulator
+    tier: 1
+    date: '2021-07-01'
+    type: claim
+    confidence: confirmed
+    note: "Baustein B 181, Stand 07/2021 without a day. Read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "Not a robot pilot. On one pit, compare an excavator with machine control against one without: over-excavation, rework and surveying time."
+    de: "Kein Roboterpilot. An einer Baugrube einen Bagger mit Maschinensteuerung gegen einen ohne vergleichen: Mehraushub, Nacharbeit und Vermessungszeit."
+prerequisites: []
+open_questions:
+  - { en: "How deep are your building pits, and do your excavators already work with machine control?", de: "Wie tief sind Ihre Baugruben, und arbeiten Ihre Bagger bereits mit Maschinensteuerung?" }
+compliance_flags: [eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

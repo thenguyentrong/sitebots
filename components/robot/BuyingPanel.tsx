@@ -5,8 +5,8 @@ import type { PriceCurrent } from '@/lib/spec/types';
 
 function ContactLinks({ contact }: { contact: SalesContact }) {
   return <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-    <a href={`mailto:${contact.email}`} className="break-all underline underline-offset-2">{contact.email}</a>
-    <a href={contact.phoneLabel.startsWith('WhatsApp') ? `https://wa.me/${contact.phone.replace(/\D/g, '')}` : `tel:${contact.phone}`} rel="noopener noreferrer" className="underline underline-offset-2">{contact.phoneLabel}</a>
+    {contact.email ? <a href={`mailto:${contact.email}`} className="break-all underline underline-offset-2">{contact.email}</a> : null}
+    {contact.phone ? <a href={contact.phoneLabel.startsWith('WhatsApp') ? `https://wa.me/${contact.phone.replace(/\D/g, '')}` : `tel:${contact.phone}`} rel="noopener noreferrer" className="underline underline-offset-2">{contact.phoneLabel}</a> : null}
     <a href={contact.contactUrl} target="_blank" rel="noopener noreferrer" className="text-muted underline underline-offset-2">Contact page ↗</a>
   </div>;
 }

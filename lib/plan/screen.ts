@@ -1,3 +1,4 @@
+import { reviewOpportunity, type OpportunityReview } from '@/lib/assessment/opportunity';
 import { emptyContext, toScreenContext, type CompanyContext } from '@/lib/context/schema';
 import type { FamilyId } from '@/lib/content/vocab';
 import { resolveFacts, screen } from '@/lib/screen/engine';
@@ -62,4 +63,13 @@ export function siteContext(project: Project): CompanyContext {
 
 export function screenForSite(project: Project, machineClassFamilies: MachineClassFamilies = {}): ScreenResult {
   return screenProject(project, siteContext(project), machineClassFamilies);
+}
+
+/** General task review; comparison remains available while requirements are incomplete. */
+export function reviewProject(project: Project, context: CompanyContext, machineClassFamilies: MachineClassFamilies = {}): OpportunityReview {
+  return reviewOpportunity(resolvedFactsOf(project, context, machineClassFamilies), familyOf(project) || 'assembly_fastening', project.solutionClasses);
+}
+
+export function reviewForSite(project: Project, machineClassFamilies: MachineClassFamilies = {}): OpportunityReview {
+  return reviewProject(project, siteContext(project), machineClassFamilies);
 }

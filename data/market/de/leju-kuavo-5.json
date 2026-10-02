@@ -1,0 +1,129 @@
+{
+ "schemaVersion": 1,
+ "id": "leju-kuavo-5",
+ "maker": "Leju Robotics",
+ "makerCountry": "CN",
+ "model": "Kuavo 5",
+ "variant": "Biped",
+ "name": "Leju Kuavo 5",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.lejurobot.com/en/products/kuavo-5",
+ "summary": "A biped humanoid from Leju for factory work, with gripper hands, LiDAR and depth cameras, hot-swap battery and up to 20 kg whole-body payload.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor found; Leju lists only a Shenzhen phone number and a Chinese Tmall shop, so there is no known route for a German buyer.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "whole_body_payload_kg",
+   "label": "Whole-body maximum load",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "maximum, whole body (graphic: \"全身最大负载20kg\"); supports squatting, bending and large waist rotation",
+   "sourceId": "s1"
+  },
+  {
+   "key": "waist_rotation_deg",
+   "label": "Waist rotation",
+   "value": 180,
+   "unit": "deg",
+   "conditions": "+/-",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Battery swap without shutdown",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head depth camera, LiDAR, waist camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Specs are taken from the Chinese-language spec graphic on the maker page.",
+   "Height, weight and runtime not stated on the page."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://website-file.lejugym.com/images/6e768151a8379c3d412f2e4352987aaa.jpg",
+   "pageUrl": "https://www.lejurobot.com/en/products/kuavo-5",
+   "credit": "Leju Robotics",
+   "alt": "Leju Kuavo 5 biped humanoid with specification callouts",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Multi-task work in industrial production",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.lejurobot.com/en/products/kuavo-5",
+   "title": "KUAVO 5 product page",
+   "publisher": "Leju Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.lejurobot.com/en/about-us/contact-us",
+   "title": "Contact Leju Robotics",
+   "publisher": "Leju Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Does Leju have any European distributor?",
+  "Height, weight, runtime and price not published in English."
+ ],
+ "checkedAt": "2026-10-02"
+}

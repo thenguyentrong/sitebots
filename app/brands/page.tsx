@@ -1,7 +1,3 @@
-import { RobotLandscape } from '@/components/catalogue/RobotLandscape';
-import { MakerOverview } from '@/components/catalogue/MakerOverview';
-import { toClusterRobot } from '@/lib/catalogue/cluster-robot';
-import { listRobotCards } from '@/lib/queries/robots';
 import Link from 'next/link';
 import Form from 'next/form';
 import { ManufacturerMap } from '@/components/ManufacturerMap';
@@ -22,7 +18,7 @@ export const metadata = publicMetadata({
 
 type Search = Promise<{ q?: string; status?: string; country?: string }>;
 export default async function BrandsPage({ searchParams }: { searchParams: Search }) {
-  const [allMakers, search, landscape] = await Promise.all([listManufacturers(), searchParams, listRobotCards({ limit: 5000, pictures: 'all' })]);
+  const [allMakers, search] = await Promise.all([listManufacturers(), searchParams]);
   const q = typeof search.q === 'string' ? search.q.trim() : '';
   const status = search.status === 'commercial' || search.status === 'developing' ? search.status : '';
   const country = typeof search.country === 'string' ? search.country.toUpperCase() : '';
@@ -66,7 +62,7 @@ export default async function BrandsPage({ searchParams }: { searchParams: Searc
         <button type="submit" className={ui.btnSecondary}>Filter</button>
         {q || status || country ? <Link href="/brands" className="px-2 py-2 text-sm text-muted underline underline-offset-4">Clear</Link> : null}
       </Form>
-      <MakerOverview key={`overview:${q}:${status}:${country}`} landscape={<RobotLandscape robots={landscape.robots.map(toClusterRobot).filter((robot) => makers.some((maker) => maker.slug === robot.makerSlug))} scope="Robots from the manufacturers below" allowMakerFilter />} locations={<ManufacturerMap countries={countries} selected={country} unknown={allMakers.filter(m => !m.country).length} />} />
+      <div className="mb-7"><ManufacturerMap countries={countries} selected={country} unknown={allMakers.filter(m => !m.country).length} /></div>
       <p className="mb-3 text-xs text-muted"><span className="num">{makers.length}</span> companies · Supplier status does not guarantee that every model is available in your region.</p>
       <div className="card overflow-x-auto">
         <table className="w-full min-w-[620px] border-collapse text-sm">

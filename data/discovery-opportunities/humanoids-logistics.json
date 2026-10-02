@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:humanoid-tote-conveyor-handoff",
+      "title": "Transfer loaded totes onto a conveyor",
+      "summary": "Lift a prepared tote from a mobile carrier and place it at a commissioned conveyor handoff; keep the surrounding traffic outside the guarded workcell.",
+      "industries": [
+        "warehousing"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Warehouse automation handoff",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-tote-conveyor-handoff",
+          "reviewId": "agility-digit-4-tote-handling",
+          "relationship": "task_candidate",
+          "rationale": "A customer describes commercial tote-to-conveyor handling with Digit; a later manufacturer release identifies the deployed generation as Digit 4.",
+          "sourceIds": [
+            "digit4-gxo",
+            "digit-generations"
+          ],
+          "limitations": [
+            "Restricted workcell and exact tote geometry require integration.",
+            "Evidence covers the handoff, not transport across the whole warehouse or picking tote contents."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-empty-tote-return",
+      "title": "Return empty totes after picking",
+      "summary": "Explore repetitive pickup and movement of empty inventory containers after the contents have been removed.",
+      "industries": [
+        "warehousing"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Warehouse empty-container return",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-empty-tote-return",
+          "reviewId": "agility-digit-4-tote-handling",
+          "relationship": "task_candidate",
+          "rationale": "The customer named empty-tote recycling as the initial Digit research application. This establishes a task to investigate, not routine operation.",
+          "sourceIds": [
+            "digit4-empty-totes"
+          ],
+          "limitations": [
+            "R&D application announcement; completion and current operating status are unconfirmed.",
+            "Nesting, denesting, washing and damaged-container handling are not evidenced."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-assembly-kit-delivery",
+      "title": "Deliver prepared assembly kits to the line",
+      "summary": "Trial a humanoid carrying already prepared component kits to an agreed handoff for human assembly.",
+      "industries": [
+        "manufacturing"
+      ],
+      "family": "intralogistics_transport",
+      "setting": "Factory assembly-line handoff",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-assembly-kit-delivery",
+          "reviewId": "apptronik-apollo-original-bipedal-pilot",
+          "relationship": "task_candidate",
+          "rationale": "The original Apollo pilot agreement explicitly explores delivering assembly kits and totes of prepared parts.",
+          "sourceIds": [
+            "apollo-pilot",
+            "apollo-german-trial"
+          ],
+          "limitations": [
+            "Historical pilot evidence; exact later hardware revision and new-buyer availability are unknown.",
+            "Kit preparation, part assembly and a proven autonomous shift are not established."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-component-precheck",
+      "title": "Check components before assembly handoff",
+      "summary": "Explore preliminary observations while presenting parts for assembly, with human-defined acceptance criteria and final quality responsibility.",
+      "industries": [
+        "manufacturing"
+      ],
+      "family": "inspection_qa_documentation",
+      "setting": "Factory parts-preparation trial",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-component-precheck",
+          "reviewId": "apptronik-apollo-original-bipedal-pilot",
+          "relationship": "partial_task",
+          "rationale": "The pilot agreement proposes component inspection during logistics handling; no validated inspection-performance result was reviewed.",
+          "sourceIds": [
+            "apollo-pilot",
+            "apollo-german-trial"
+          ],
+          "limitations": [
+            "Proposed application only; sensing and defect coverage require development.",
+            "No metrology capability, final quality approval or replacement of qualified inspection is established."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-x20",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "X20",
+ "variant": null,
+ "name": "DEEP Robotics X20",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/product.html",
+ "summary": "The earlier 53 kg IP66 industrial quadruped from DEEP Robotics, now overshadowed by the X30; no German or EU seller lists it.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller lists the X20; German dealers list the X30 instead. DEEP still names the X20 in its global purchase form, so a direct import request is possible but unconfirmed.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 53,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Standing size",
+   "value": "950 x 470 x 700",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "listed under \"Endurance\" on the maker page",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 4,
+   "unit": "m/s",
+   "conditions": "stated as at least 4 m/s, lab data",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "stated as at least 30°",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step / obstacle height",
+   "value": 20,
+   "unit": "cm",
+   "conditions": "stated as at least 20 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP66",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 2,
+   "unit": "h",
+   "conditions": "2 to 4 h, 15 km",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": 2,
+  "ipRating": "IP66",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Older model; the X30 is the current flagship in German shops."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p11.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics X20 quadruped walking in rain",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/as-built-laser-scanning"
+   ],
+   "task": "Carried two surveying and mapping instruments to capture data on a construction site",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": "Test with TBNET, shown on video; location not stated."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/product.html",
+   "title": "X20 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.deeprobotics.cn/en/index/buy.html",
+   "title": "Product Purchase Intention Form",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.youtube.com/watch?v=T2zs2KN-EMc",
+   "title": "Jueying X20 robot dog construction on-site data capture test",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether DEEP still produces the X20 or has replaced it with the X30."
+ ],
+ "checkedAt": "2026-10-02"
+}

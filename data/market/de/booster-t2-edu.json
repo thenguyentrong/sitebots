@@ -1,0 +1,238 @@
+{
+ "schemaVersion": 1,
+ "id": "booster-t2-edu",
+ "maker": "Booster Robotics",
+ "makerCountry": "CN",
+ "model": "T2",
+ "variant": "Education (Edu E1/E2/E3)",
+ "name": "Booster T2 Edu",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.booster.tech/booster-t2/",
+ "summary": "A 1.4 m, 42 kg humanoid development platform with 31 joints; the Education version uses an ARM compute board and is sold with no hands, two grippers or two dexterous hands.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 22500,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Generation Robots \"from\" price for the T2 range (Edu E1 is the cheapest version); the page shows 27,060 EUR incl. 20 % French VAT and 22,500 EUR excl. VAT. Per-version prices appear only after choosing a version and could not be re-checked. Bipedal: Edu 30,821 EUR, Edu Gripper 41,531 EUR, Edu Dex Hand 47,481 EUR incl. 19 % VAT."
+  },
+  "priceOther": null,
+  "leadTime": "4 to 6 weeks (Generation Robots); about 4 weeks (Bipedal)",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404468-humanoider-roboter-booster-t2.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800982602",
+    "priceEur": 22500,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "\"From\" price for the T2 range (Edu E1, E2 gripper, E3-1 dexterous hand; Pro P1 to P3-3); delivery 4 to 6 weeks."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/https/wwwbipedalde/Booster-Robotics-T2-Edu",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 30821,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "T2 Edu (350 TOPS) 30,821 EUR incl. VAT, \"Sofort verfügbar\", delivery about 4 weeks. Edu Gripper 41,531 EUR (https://www.bipedal.de/https/wwwbipedalde/Booster-Robotics-T2-Edu-Gripper) and Edu Dex Hand 47,481 EUR (https://www.bipedal.de/https/wwwbipedalde/Booster-Robotics-T2-Edu-Dex-Hand), both incl. VAT."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Orderable from Bipedal (Leverkusen, 30,821 EUR incl. VAT, about 4 weeks) and Generation Robots (from 22,500 EUR net, 4 to 6 weeks).",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.4,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 42,
+   "unit": "kg",
+   "conditions": "approx.; varies by configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "body without hands: 6 per leg, 7 per arm, 3 waist, 2 head",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms together",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "maximum; maker notes it depends on configuration and arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 3,
+   "unit": "m/s",
+   "conditions": "maker figure; Generation Robots lists up to 2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 140,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 10 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "continuous walking",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "High-performance ARM processor",
+   "unit": null,
+   "conditions": "Education version; Generation Robots lists 350 TOPS",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular head camera, binocular waist camera, microphone array and speaker; wrist cameras and LiDAR optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Base Edu E1 has no hands; grippers (E2) or dexterous hands (E3-1) are separate configurations at a higher price.",
+   "The 10 kg payload is for both arms together and depends on arm posture.",
+   "No rough-ground, stair or outdoor claims found for T2."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.booster.tech/_astro/specification-t2-p1.Buh-XsDz_gmfWk.webp",
+   "pageUrl": "https://www.booster.tech/booster-t2/",
+   "credit": "Booster Robotics",
+   "alt": "Booster T2 humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sold as a development platform for embodied AI research and teaching",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Booster calls T2 its flagship embodied development platform."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.booster.tech/booster-t2/",
+   "title": "Booster T2 product page",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404468-humanoider-roboter-booster-t2.html",
+   "title": "Booster T2 at Generation Robots (DE shop)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bipedal.de/Humanoid",
+   "title": "Humanoid robots at Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.bipedal.de/https/wwwbipedalde/Booster-Robotics-T2-Edu",
+   "title": "Booster Robotics T2 Edu (350 Tops)",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Launch date of T2 not stated on the maker page.",
+  "Which SDK and ROS versions ship with T2?",
+  "Payload per single arm not stated."
+ ],
+ "checkedAt": "2026-10-02"
+}

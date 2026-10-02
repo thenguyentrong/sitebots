@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "galaxea-r1-lite",
+ "maker": "Galaxea Dynamics",
+ "makerCountry": "CN",
+ "model": "R1 Lite",
+ "variant": null,
+ "name": "Galaxea R1 Lite",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://galaxea-dynamics.com/products/galaxea-r1-lite-6-drof-general-mobile-manipulation-platform",
+ "summary": "A 1.28 m mobile manipulator with two top-mounted 6-joint arms (3 kg rated each) on a lifting torso that works from 0 to 1.7 m, on an omnidirectional base.",
+ "launched": "2025-11",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Sold in Galaxea's own online store in USD with Germany among the shipping countries; no German or EU reseller found. Import VAT and duty are not stated.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 39999,
+   "currency": "USD",
+   "market": "Galaxea online store (ships to Germany)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Galaxea Dynamics",
+    "country": "HK",
+    "role": "manufacturer",
+    "productUrl": "https://galaxea-dynamics.com/products/galaxea-r1-lite-6-drof-general-mobile-manipulation-platform",
+    "contactUrl": "https://galaxea-dynamics.com/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Online store operated from Hong Kong; prices in USD."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.28,
+   "unit": "m",
+   "conditions": "base width 600 mm, platform width 670 mm",
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 23,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": "A1X arms",
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "rated per arm at 600 mm; 5 kg max",
+   "sourceId": "s3"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm length",
+   "value": 0.6,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "vertical_reach_m",
+   "label": "Vertical working range",
+   "value": "0-1.7",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Base speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel Core i9-12900HK, 32 GB RAM, 1 TB SSD",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Stereo camera on platform; optional wrist depth cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s3"
+  ],
+  "notes": [
+   "Runtime, weight and IP rating not found.",
+   "Made for data collection; the maker calls it light and focused on collection."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0750/7437/1840/files/R1Lite-Main.jpg?v=1789893674",
+   "pageUrl": "https://galaxea-dynamics.com/products/galaxea-r1-lite-6-drof-general-mobile-manipulation-platform",
+   "credit": "Galaxea Dynamics",
+   "alt": "Galaxea R1 Lite with two arms on a lifting torso",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for teleoperated data collection and VLA model work",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://galaxea-dynamics.com/meta.json",
+   "title": "Galaxea online store settings (ships to DE, USD prices)",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://galaxea-dynamics.com/products/galaxea-r1-lite-6-drof-general-mobile-manipulation-platform",
+   "title": "Galaxea R1 Lite store page",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.galaxea-ai.com/products/R1-Lite",
+   "title": "R1 Lite product page and parameters (Chinese)",
+   "publisher": "Galaxea AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "CE marking, import costs and warranty handling for Germany."
+ ],
+ "checkedAt": "2026-10-02"
+}

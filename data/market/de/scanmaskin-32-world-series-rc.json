@@ -1,0 +1,154 @@
+{
+ "schemaVersion": 1,
+ "id": "scanmaskin-32-world-series-rc",
+ "maker": "Scanmaskin (Tyrolit Group)",
+ "makerCountry": "SE",
+ "model": "32 World Series RC",
+ "variant": "400-480 V, 15 kW",
+ "name": "Scanmaskin 32 World Series RC",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors"
+ ],
+ "officialUrl": "https://scanmaskin.com/product/scanmaskin-32-world-series-rc-2/",
+ "summary": "Radio-controlled 800 mm planetary floor grinder for concrete grinding, with constant forward speed set by joystick.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold by Tyrolit Construction Sweden AB (EU, Tyrolit Group); a German Tyrolit page could not be opened, so ask Tyrolit or Scanmaskin for the German dealer. No public price.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Tyrolit Construction Sweden AB (Scanmaskin)",
+    "country": "SE",
+    "role": "manufacturer",
+    "productUrl": "https://scanmaskin.com/product/scanmaskin-32-world-series-rc-2/",
+    "contactUrl": "https://scanmaskin.com/contact/",
+    "email": "info.sweden@tyrolit.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Scanmaskin is part of the Tyrolit Group."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "power_kw",
+   "label": "Motor power",
+   "value": 15,
+   "unit": "kW",
+   "conditions": "400-480 V 3-phase version; 11 kW at 200-240 V",
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_width_mm",
+   "label": "Grinding width",
+   "value": 800,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "tool_plates",
+   "label": "Grinding discs",
+   "value": "3 x 280 mm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 640,
+   "unit": "kg",
+   "conditions": "page also lists 367 kg without stating which is which",
+   "sourceId": "s1"
+  },
+  {
+   "key": "wheel_diameter_mm",
+   "label": "Quick-release wheels",
+   "value": 370,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote controlled by an operator; can be switched to manual handle operation."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://scanmaskin.com/wp-content/uploads/2019/07/Scanmaskin-32-WS-RC-995x1024.png",
+   "pageUrl": "https://scanmaskin.com/product/scanmaskin-32-world-series-rc-2/",
+   "credit": "Scanmaskin",
+   "alt": "Scanmaskin 32 World Series RC floor grinder",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors"
+   ],
+   "task": "Concrete floor grinding",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://scanmaskin.com/product/scanmaskin-32-world-series-rc-2/",
+   "title": "Scanmaskin 32 World Series RC",
+   "publisher": "Scanmaskin Sverige AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://scanmaskin.com/contact/",
+   "title": "Contact (Tyrolit Construction Sweden AB)",
+   "publisher": "Scanmaskin Sverige AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "German dealer.",
+  "Which weight figure is machine weight."
+ ],
+ "checkedAt": "2026-10-02"
+}

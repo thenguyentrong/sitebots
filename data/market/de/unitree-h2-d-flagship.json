@@ -1,0 +1,251 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-h2-d-flagship",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "H2-D",
+ "variant": "Flagship (mobile wheeled chassis)",
+ "name": "Unitree H2-D Flagship",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/H2-D",
+ "summary": "H2 upper body with two 7-DOF arms on a lifting column and wheeled base, for picking and handling from floor level to 2 m in factories and warehouses.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "QUADRUPED Robotics (Germany) takes orders for H2-A/H2-D with availability from 31.03.2027; no EU seller delivers yet; Unitree sells through its global sales team.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "available from 31.03.2027 (QUADRUPED Robotics)",
+  "sellers": [
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.unitree.com/H2-D",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "No EU office named by Unitree; global sales contact and order form. End effectors and price: contact sales."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-H2-A-H2-D",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Page covers H2-A (upper body, from 24,100 EUR net) and H2-D stationary (Standard) or mobile (Flagship) with 13 hand options; Flagship price not shown clearly; \"available from 31.03.2027\"."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": "1.2 m at minimum, 1.7 m at maximum column height",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 120,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 20,
+   "unit": null,
+   "conditions": "excluding end effectors",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "rated about 7 kg; peak about 15 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Single-arm reach",
+   "value": 0.6,
+   "unit": "m",
+   "conditions": "about, without hand; work height from floor to 2 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Base battery",
+   "value": 1440,
+   "unit": "Wh",
+   "conditions": "48 V / 30 Ah quick release",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 5,
+   "unit": "h",
+   "conditions": "approx.; replaceable battery or auto charging",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular head camera, 2 wrist cameras; base LiDAR, depth camera, collision and ultrasonic sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "Intel Core i5 (platform) + Intel Core i7 (development); optional module such as Thor",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": "SDKs, APIs and navigation stack",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": 5,
+  "ipRating": null,
+  "sdk": "Unitree SDKs, APIs and navigation stack",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "End effector chosen at purchase: gripper, 3-finger or 5-finger hand.",
+   "Wheeled base for flat indoor floors.",
+   "Fixed-base H2-A and manual-move H2-D Standard also exist.",
+   "No IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/c6d63d178df14ee3875513f8a8943679_428x404.png",
+   "pageUrl": "https://www.unitree.com/H2-D",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree H2-D: H2 upper body on a wheeled lifting base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered for industrial automation, high-speed sorting and automated warehousing",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Large-scale real-world data collection for embodied AI training",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "Price and EU delivery time.",
+  "Launch date."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/H2-D",
+   "title": "Unitree H2 series dual-arm humanoid (H2-D / H2-A) product page",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.unitree.com/booking",
+   "title": "Unitree order form and global sales contact",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.unitree.com/policies/shipping-policy",
+   "title": "Unitree online store shipping policy",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.quadruped.de/Unitree-H2-A-H2-D",
+   "title": "Unitree H2-A / H2-D at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

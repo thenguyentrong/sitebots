@@ -1,0 +1,159 @@
+{
+ "schemaVersion": 1,
+ "id": "rivr-delivery-robot",
+ "maker": "RIVR (formerly Swiss-Mile)",
+ "makerCountry": "CH",
+ "model": "RIVR delivery robot",
+ "variant": null,
+ "name": "RIVR wheel-legged delivery robot",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.rivr.ai/product.html",
+ "summary": "A four-legged robot with wheels on its feet that carries over 30 kg of parcels from a van to the doorstep, climbing stairs; offered only as a delivery service to logistics partners.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not for sale: RIVR runs doorstep delivery with logistics partners (e.g. Just Eat Takeaway in the UK) and was bought by Amazon in March 2026. No product sale to construction or industry.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "stated as over 30 kg of parcels",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Top speed",
+   "value": 3.9,
+   "unit": "m/s",
+   "conditions": "stated as up to 14 km/h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "range_km",
+   "label": "Range",
+   "value": 30,
+   "unit": "km",
+   "conditions": "over 30 km per charge",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Recharge",
+   "value": 2,
+   "unit": "h",
+   "conditions": "2 to 3 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": "climbs stairs and opens gates",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 30,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Built for parcel and food delivery with remote support, not for construction or inspection work."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.rivr.ai/videos/RIVR_C0088-poster-00001.jpg",
+   "pageUrl": "https://www.rivr.ai/product.html",
+   "credit": "RIVR",
+   "alt": "RIVR robot next to outdoor steps",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.rivr.ai/videos/RIVR_Specs_Card_C0017-poster-00001.jpg",
+   "pageUrl": "https://www.rivr.ai/product.html",
+   "credit": "RIVR",
+   "alt": "RIVR delivery robot standing at a building entrance",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Delivers takeaway orders to doorsteps",
+   "stage": "pilot",
+   "where": "Just Eat UK, Milton Keynes, UK",
+   "date": "2026-02",
+   "sourceId": "s3",
+   "note": "Small-scale trial with ten restaurant brands."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.rivr.ai/product.html",
+   "title": "RIVR product page",
+   "publisher": "RIVR Technologies AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.rivr.ai/solution.html",
+   "title": "RIVR solutions (partnering with logistics providers)",
+   "publisher": "RIVR Technologies AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://newsroom.justeattakeaway.com/en-GB/261670-delivery-robots-put-the-spark-back-into-valentine-s-takeaways-in-bristol-and-milton-keynes/",
+   "title": "Delivery Robots Put the Spark Back into Valentine's Takeaways in Bristol and Milton Keynes",
+   "publisher": "Just Eat Takeaway.com",
+   "kind": "customer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.swissinfo.ch/eng/workplace/amazon-acquires-swiss-delivery-robot-start-up-rivr/91144826",
+   "title": "Amazon acquires Swiss delivery robot start-up Rivr",
+   "publisher": "SWI swissinfo.ch",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Robot weight and IP rating not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

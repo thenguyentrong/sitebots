@@ -1,0 +1,214 @@
+{
+ "schemaVersion": 1,
+ "id": "noetix-n2",
+ "maker": "Noetix Robotics",
+ "makerCountry": "CN",
+ "model": "N2",
+ "variant": null,
+ "name": "Noetix N2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.noetixrobotics.com/en/detail/N2/",
+ "summary": "A 1.14 m, 30 kg compact humanoid with 150 Nm joints, made for performances, school outreach and university research; it can run and do flips.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 22715,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": null
+  },
+  "priceOther": null,
+  "leadTime": "6 to 8 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/noetix-robotics-n2",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 22715,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RBTX (igus, Cologne) lists N2 with a net price and 6 to 8 weeks delivery.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.14,
+   "unit": "m",
+   "conditions": "maker figure; RBTX lists 1.18 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 30,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 18,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 150,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload while walking",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "maximum, continuous walking",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 7.5 Ah, quick-release",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "1 to 2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "full charge",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "67 TOPS board (EDU Edition)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "SDK documentation provided (EDU Edition)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": 5,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Arms have no grasping hands; the 5 kg payload is a carried load while walking.",
+   "Made for shows, outreach and research, not for site work."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://image.noetixrobotics.com/pc/n2_zm.png",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/N2/",
+   "credit": "Noetix Robotics",
+   "alt": "Noetix N2 humanoid, upper body",
+   "kind": "product"
+  },
+  {
+   "url": "https://image.noetixrobotics.com/pc/n2_bm.png",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/N2/",
+   "credit": "Noetix Robotics",
+   "alt": "Close-up of the Noetix N2 back with the N2 label, HDMI, USB and Ethernet ports and a slide-out black module.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "University research on dynamic motion (running, flips)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker lists entertainment, campus outreach and university research."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.noetixrobotics.com/en/detail/N2/",
+   "title": "N2 Bipedal Humanoid Robot",
+   "publisher": "Noetix Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/noetix-robotics-n2",
+   "title": "NOETIX N2 humanoid robot on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the RBTX unit the EDU Edition with 67 TOPS compute?",
+  "Height differs between maker (114 cm) and RBTX (118 cm)."
+ ],
+ "checkedAt": "2026-10-02"
+}

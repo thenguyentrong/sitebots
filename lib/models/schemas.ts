@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { FORM_FACTORS } from '@/lib/spec/enums';
 
 /**
  * Contracts shared by the conversion scripts, the viewer and the tests.
@@ -109,7 +110,7 @@ export const PosesFile = z.object({
     .record(
       z.string(),
       z.object({
-        family: z.enum(['humanoid', 'quadruped']).optional(),
+        family: z.enum(FORM_FACTORS).optional(),
         /** semantic name → real joint name, where the automatic derivation is wrong. */
         semantic: z.record(z.string(), z.string()).default({}),
         /** Joint values every preset builds on — e.g. shoulder roll for a model whose zero pose is a T-pose. */

@@ -1,0 +1,104 @@
+{
+ "schemaVersion": 1,
+ "id": "sanctuary-ai-phoenix",
+ "maker": "Sanctuary AI",
+ "makerCountry": "CA",
+ "model": "Phoenix",
+ "variant": "Generation 8",
+ "name": "Sanctuary AI Phoenix (Gen 8)",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://sanctuary.ai/",
+ "summary": "A wheeled-base humanoid torso with hydraulic hands that Sanctuary uses for AI training data; the company now sells its AI on standard industrial robots instead.",
+ "launched": "2024-12",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Phoenix is not offered for sale. In June 2026 Sanctuary said that, \"rather than waiting for humanoid hardware to reach mass commercialization\", it deploys its AI on existing commercial robot platforms. The website has no Phoenix product page, only a commercial inquiry form.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "mobility",
+   "label": "Mobility",
+   "value": "wheeled base",
+   "unit": null,
+   "conditions": "Generation 8",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Generation 8 is optimised for data capture (cameras, telemetry).",
+   "Sanctuary develops hydraulic multi-finger hands.",
+   "Sanctuary chose a wheeled base for Generation 8 because customers found bipedal legs too frail to support a strong torso."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://sanctuary.ai/wp-content/uploads/2024/12/08_sanctuary_ai_phoenix_gen_7_full_body_not_a_render-scaled.webp",
+   "pageUrl": "https://sanctuary.ai/news/sanctuary-ai-releases-new-generation-of-ai-robots-for-high-quality-data-capture/",
+   "credit": "Sanctuary AI",
+   "alt": "Sanctuary AI Phoenix Generation 8 humanoid torso on a black wheeled base, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://sanctuary.ai/news/sanctuary-ai-releases-new-generation-of-ai-robots-for-high-quality-data-capture/",
+   "title": "Sanctuary AI Releases New Generation of AI Robots for High Quality Data Capture (16 Dec 2024)",
+   "publisher": "Sanctuary AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://sanctuary.ai/news/sanctuary-ai-expands-physical-ai-strategy-to-industrial-robotics-demonstrating-production-ready-ai-performance/",
+   "title": "Sanctuary AI Expands Physical AI Strategy to Industrial Robotics (17 Jun 2026)",
+   "publisher": "Sanctuary AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://sanctuary.ai/",
+   "title": "Sanctuary AI home page",
+   "publisher": "Sanctuary AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Will Sanctuary sell a humanoid again, and when?"
+ ],
+ "checkedAt": "2026-10-02"
+}

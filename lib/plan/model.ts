@@ -1,12 +1,14 @@
 import { z } from 'zod';
+import { INDUSTRY_IDS } from '@/lib/content/industries';
 import { FAMILY_IDS, RULE_STATUS, SOLUTION_CLASS_IDS, VERDICTS, type SolutionClassId } from '@/lib/content/vocab';
 import { CompanyContextSchema, emptyContext, type CompanyContext } from '@/lib/context/schema';
 import { RequirementSchema, hasAnyRequirement } from '@/lib/match/requirements';
-import { FactsSchema, emptyFacts } from '@/lib/screen/facts';
-import { CURATED_CONFIDENCE, TASK_CAPABILITIES } from '@/lib/spec/enums';
+import { FactsSchema, FactOverridesSchema, emptyFacts } from '@/lib/screen/facts';
+import { CURATED_CONFIDENCE, TASK_CAPABILITIES, type FormFactor } from '@/lib/spec/enums';
 import { jobById } from './jobs';
-import { familyForJob, type LegacySetting } from './legacy';
+import { familyForJob, jobForFamily, type LegacySetting } from './legacy';
 import { resolvedFactsOf, siteContext } from './screen';
+import { legacyFactsFromNeeds, retainedLegacyTerrain } from './legacy-requirements';
 
 /**
  * A workspace is one company context plus up to twelve projects, one task
@@ -25,7 +27,8 @@ export const CostSchema = z.object({
 export type Costs = z.infer<typeof CostSchema>;
 export const OptionSchema = z.object({
   id: z.string().min(1).max(100), name: z.string().min(1).max(160), kind: z.enum(['robot', 'custom']),
-  robotId: z.string().uuid().optional(), href: z.string().regex(/^\/robots\/[a-z0-9-]+\/[a-z0-9-]+(?:\?variant=[a-zA-Z0-9_%.-]+)?$/).optional(),
+  robotId: z.string().uuid().optional(), href: z.string().regex(/^\/(?:robots\/[a-z0-9-]+\/[a-z0-9-]+(?:\?variant=[a-zA-Z0-9_%.-]+)?|solutions\/[a-z0-9-]+)$/).optional(),
+  solutionReviewId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/).max(100).optional(),
   package: text.default(''), operator: text.default(''), evidence: text.default(''), costs: CostSchema,
 });
 export type PlanOption = z.infer<typeof OptionSchema>;
@@ -35,8 +38,9 @@ const L10nText = z.object({ en: z.string().max(600), de: z.string().max(600).def
 export const TaskSnapshotSchema = z.object({
   id: z.string().max(120), setting: z.string().max(60), family: z.enum(FAMILY_IDS),
   title: L10nText, summary: L10nText,
+  industries: z.array(z.enum(INDUSTRY_IDS)).optional(),
   facts: FactsSchema,
-  meta: z.record(z.string(), z.object({ confidence: z.enum(CURATED_CONFIDENCE), note: z.string().max(600) })).default({}),
+  meta: z.record(z.string(), z.object({ confidence: z.enum(CURATED_CONFIDENCE), note: z.string().max(600), evidence_url: z.url().max(4096).refine((url) => url.startsWith('https://'), 'https evidence URL expected').optional() })).default({}),
   reference_verdict: z.enum(VERDICTS),
   reference_results: z.record(z.string(), z.enum(RULE_STATUS)).default({}),
   better_answer: z.enum(SOLUTION_CLASS_IDS).nullable().default(null),
@@ -49,7 +53,7 @@ export const TaskSnapshotSchema = z.object({
 export type TaskSnapshot = z.infer<typeof TaskSnapshotSchema>;
 export const TaskRefSchema = z.discriminatedUnion('kind', [
   z.object({ kind: z.literal('library'), snapshot: TaskSnapshotSchema }),
-  z.object({ kind: z.literal('custom'), family: z.enum([...FAMILY_IDS, ''] as const).default(''), facts: FactsSchema.default(emptyFacts()) }),
+  z.object({ kind: z.literal('custom'), industry: z.enum(INDUSTRY_IDS).optional(), workflowId: z.string().max(60).optional(), opportunityId: z.string().regex(/^research:[a-z0-9-]+$/).max(120).optional(), family: z.enum([...FAMILY_IDS, ''] as const).default(''), facts: FactsSchema.default(emptyFacts()) }),
 ]);
 export type TaskRef = z.infer<typeof TaskRefSchema>;
 
@@ -74,9 +78,22 @@ export type ProjectV1 = z.infer<typeof ProjectV1Schema>;
 export const ProjectSchema = z.object({
   ...projectBase,
   task: TaskRefSchema,
-  factOverrides: FactsSchema.partial().default({}),
+  factOverrides: FactOverridesSchema.default({}),
+  overrideSemanticsVersion: z.literal(1).optional(),
   solutionClasses: z.array(z.enum(SOLUTION_CLASS_IDS)).max(10).default([]),
   screenConfirmedAt: z.string().max(30).default(''),
+}).transform((project) => {
+  let task = project.task;
+  let factOverrides = project.factOverrides;
+  if (project.overrideSemanticsVersion !== 1) {
+    // Old needs won over task values, while synthetic null overrides were ignored.
+    const imported = { ...Object.fromEntries(Object.entries(factOverrides).filter(([, value]) => value !== null)), ...legacyFactsFromNeeds(project.needs) } as z.infer<typeof FactOverridesSchema>;
+    if (task.kind === 'custom') {
+      task = { ...task, facts: { ...task.facts, ...imported } };
+      factOverrides = {};
+    } else factOverrides = imported;
+  }
+  return { ...project, task, factOverrides, overrideSemanticsVersion: 1 as const };
 });
 export type Project = z.infer<typeof ProjectSchema>;
 
@@ -99,7 +116,7 @@ export function newProject(id: string, jobId = 'custom', setting: LegacySetting 
     options: [], selectedOptionId: '',
     pilot: { scope: '', success: '', stop: '', owner: '', date: '' },
     task: { kind: 'custom', family: familyForJob(job.id), facts: emptyFacts() },
-    factOverrides: {}, solutionClasses: [], screenConfirmedAt: '',
+    factOverrides: {}, overrideSemanticsVersion: 1, solutionClasses: [], screenConfirmedAt: '',
   };
 }
 export function activeProject(workspace: Workspace | null): Project | undefined {
@@ -107,39 +124,44 @@ export function activeProject(workspace: Workspace | null): Project | undefined 
 }
 /** The capabilities the catalogue is asked for: the record's list, or the legacy job's list for a custom task. */
 export function tasksOf(project: Project) {
-  return project.task.kind === 'library' ? project.task.snapshot.capabilities_required : jobById(project.jobId).tasks;
+  if (project.task.kind === 'library') return project.task.snapshot.capabilities_required;
+  // A saved custom task may predate synchronization of the legacy job mirror.
+  const family = project.task.family;
+  const job = family && familyForJob(project.jobId) !== family ? jobForFamily(family) : project.jobId;
+  return jobById(job).tasks;
 }
-const CATALOGUE_CLASSES: Partial<Record<SolutionClassId, 'humanoid' | 'quadruped' | 'mobile_manipulator'>> = { humanoid: 'humanoid', quadruped_inspection: 'quadruped', mobile_manipulator_wheeled: 'mobile_manipulator' };
+const CATALOGUE_CLASSES: Partial<Record<SolutionClassId, FormFactor>> = { humanoid: 'humanoid', quadruped_inspection: 'quadruped', mobile_manipulator_wheeled: 'mobile_manipulator', amr_carts: 'amr_agv', dedicated_machine: 'dedicated_robot' };
 export function formFactorFor(project: Project) {
   if (project.focus === 'humanoid') return 'humanoid';
-  const catalogue = project.solutionClasses.map((c) => CATALOGUE_CLASSES[c]).filter(Boolean);
-  return catalogue.length === 1 ? catalogue[0] : 'any';
+  // Mixed or unmapped solution classes must not silently collapse to the one mapped platform.
+  const catalogue = project.solutionClasses.map((c) => CATALOGUE_CLASSES[c]);
+  return catalogue.length > 0 && catalogue[0] && catalogue.every((form) => form === catalogue[0]) ? catalogue[0] : 'any';
 }
 /**
- * What the matcher receives. Explicit technical inputs win; otherwise the
- * screened facts speak, and a fact nobody established stays out of the
- * request. Never a favourable default.
+ * Matching uses the same resolved facts shown in the task review. Older needs
+ * are migrated once; they never override a later answer or explicit unknown.
  */
 /** What the matcher is asked for a task: the same facts the site check reads, the record's typical site overridden by the visitor's answers. */
 export function requirementsFor(project: Project, context: CompanyContext = siteContext(project)) {
-  const numeric = (value: string) => value.trim() === '' ? undefined : Number(value);
   const needs = project.needs;
   const facts = resolvedFactsOf(project, context);
   const mass = facts.object_mass_kg.value;
   const reach = facts.reach_height_m.value;
   const floor = facts.floor.value;
   const zone = facts.dust.value?.zone;
+  const continuousMinutes = facts.runtime_continuous_min.value;
   return RequirementSchema.safeParse({
     tasks: tasksOf(project),
-    payload_kg: numeric(needs.payload) ?? (mass && mass.max > 0 ? mass.max : undefined),
-    reach_height_m: numeric(needs.reach) ?? (reach && reach.max > 0 ? reach.max : undefined),
-    runtime_h_per_shift: numeric(needs.runtime),
-    terrain: needs.terrain || (floor === 'level' ? 'paved' : floor === 'uneven' ? 'gravel' : undefined),
-    stairs: needs.stairs || (floor === 'stairs' ? 'required' : undefined),
-    environment: needs.environment || facts.environment.value || undefined,
+    payload_kg: mass && mass.max > 0 ? mass.max : undefined,
+    reach_height_m: reach && reach.max > 0 ? reach.max : undefined,
+    runtime_h_per_shift: continuousMinutes !== null && continuousMinutes > 0 ? continuousMinutes / 60 : undefined,
+    terrain: retainedLegacyTerrain(needs.terrain, floor) ?? (floor === 'level' ? 'paved' : floor === 'uneven' ? 'gravel' : undefined),
+    stairs: floor === 'stairs' ? 'required' : undefined,
+    environment: facts.environment.value ?? undefined,
     dust: zone === 'zone' || zone === 'atex' ? 'high' : zone === 'controlled' || zone === 'none' ? 'low' : undefined,
     wet: facts.wet.value ?? undefined,
     autonomy: needs.autonomy || undefined,
+    certifications_required: zone === 'atex' ? ['ATEX'] : [],
     region: 'DE', form_factor: formFactorFor(project),
   });
 }

@@ -1,0 +1,208 @@
+{
+ "schemaVersion": 1,
+ "id": "boston-dynamics-atlas",
+ "maker": "Boston Dynamics",
+ "makerCountry": "US",
+ "model": "Atlas",
+ "variant": "product version (electric)",
+ "name": "Boston Dynamics Atlas",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://bostondynamics.com/products/atlas/",
+ "summary": "An electric industrial humanoid (1.9 m, IP67) that swaps its own batteries; the first fleets go to Hyundai and a few early adopters.",
+ "launched": "2026-01",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Early-adopter programme only: Boston Dynamics says it starts with a select number of early adopters, and Hyundai’s fleet ships to its RMAC in 2026. No price and no standard offer; interested companies can only fill in a contact form.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.9,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 90,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Weight capacity (sustained)",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "repeated lifts",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_payload_kg",
+   "label": "Weight capacity (instant)",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "instant / peak",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 56,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach",
+   "value": 2.3,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 4,
+   "unit": "h",
+   "conditions": "typical use",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "robot swaps its own battery in under 3 minutes",
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensing",
+   "value": "tactile sensing and 360° camera view",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging",
+   "label": "Charging input",
+   "value": "110 V or 220 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": "IP67",
+  "sdk": "Orbit fleet platform (MES/WMS integration)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "30 kg is the sustained lift, 50 kg the instant peak; per-arm values not stated.",
+   "Detects people and pauses (fenceless operation); can be teleoperated by VR headset or tablet.",
+   "Limbs can be replaced in the field.",
+   "Hand design is not specified in the sources (the spec lists tactile sensing); recorded as multi-finger hands."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2025/12/atlas-hero-2026-scaled.jpg",
+   "pageUrl": "https://bostondynamics.com/products/atlas/",
+   "credit": "Boston Dynamics",
+   "alt": "Boston Dynamics Atlas humanoid standing in front of a fenced robot cell",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-sequence-components-into-trolleys"
+   ],
+   "task": "Sequence car parts in a plant (first customer pilot)",
+   "stage": "pilot",
+   "where": "Hyundai customer facility",
+   "date": "2025",
+   "sourceId": "s2",
+   "note": "Boston Dynamics calls Hyundai its first customer, with a completed deployment in 2025 and a fleet shipping to Hyundai’s RMAC in 2026; the product page calls it a first customer pilot on sequencing tasks."
+  },
+  {
+   "taskIds": [
+    "research:humanoid-sequence-components-into-trolleys"
+   ],
+   "task": "Part sequencing, machine tending and order fulfilment",
+   "stage": "claim",
+   "where": null,
+   "date": "2026-01",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://bostondynamics.com/products/atlas/",
+   "title": "Atlas product page",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://bostondynamics.com/blog/enterprise-robotics-redefined/",
+   "title": "Enterprise Robotics, Redefined (5 Jan 2026)",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "When will Atlas be offered to customers in Europe, and through which Boston Dynamics entity?"
+ ],
+ "checkedAt": "2026-10-02"
+}

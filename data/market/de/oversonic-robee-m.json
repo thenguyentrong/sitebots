@@ -1,0 +1,221 @@
+{
+ "schemaVersion": 1,
+ "id": "oversonic-robee-m",
+ "maker": "Oversonic Robotics",
+ "makerCountry": "IT",
+ "model": "RoBee",
+ "variant": "Series M (healthcare)",
+ "name": "Oversonic RoBee Series M",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.oversonicrobotics.com/robee-m/",
+ "summary": "A 1.80 m Italian healthcare humanoid on mecanum wheels, CE marked as a Class I medical device, for patient guidance, monitoring and ward logistics.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Italy); CE marked (industry and medical device Class I). Direct sales on request; no German distributor or customer found; no public price.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Oversonic Robotics Srl",
+    "country": "IT",
+    "role": "manufacturer",
+    "productUrl": "https://www.oversonicrobotics.com/robee-m/",
+    "contactUrl": "https://www.oversonicrobotics.com/contacts/",
+    "email": "info@oversonicrobotics.com",
+    "phone": "+39 0362 080120",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Carate Brianza, Italy; assessment and contact forms on the site."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.8,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 150,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.7,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "Max.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Both arms payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "Max.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 1.2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_pct",
+   "label": "Max. slope",
+   "value": 8,
+   "unit": "%",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery autonomy",
+   "value": 4,
+   "unit": "h",
+   "conditions": "Typical usage; contact auto recharge",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5 to 35",
+   "unit": "C",
+   "conditions": "Indoor; ground flatness < 5 mm/m2",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Legs with 6+6 DoF on an omnidirectional base with 8 mecanum wheels; Jointed leg section on a wheeled base used to change height; it does not walk.",
+   "Indoor only; ground flatness below 5 mm per m2.",
+   "End effector type for Series M not specified; recorded as gripper.",
+   "Runtime conflict on the product page: the spec table says up to 4 h (typical use), the feature list says up to 8 h; 4 h is recorded."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-m4-front.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-m/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series M healthcare humanoid, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-m4-arm.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-m/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series M render reaching forward with one arm, side view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-m4-001.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-m/",
+   "credit": "Oversonic Robotics",
+   "alt": "Two Oversonic RoBee Series M humanoids in front of a blurred corridor.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-m4-walk.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-m/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series M render in a walking stance, side view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-m4-squat.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-m/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series M render with knees bent, side view.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Clinical trials: rehabilitation exercises and patient support",
+   "stage": "pilot",
+   "where": "Fondazione Santa Lucia, Italy",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Named on the product page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.oversonicrobotics.com/robee-m/",
+   "title": "RoBee Series M product page and technical specs",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.oversonicrobotics.com/download/Oversonic_Robee-M-2026-eng.pdf",
+   "title": "RoBee Series M product sheet",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.oversonicrobotics.com/certifications/",
+   "title": "Certifications (CE, Machinery Directive 2006/42/EC, IPX4)",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Customers in Germany?"
+ ],
+ "checkedAt": "2026-10-02"
+}

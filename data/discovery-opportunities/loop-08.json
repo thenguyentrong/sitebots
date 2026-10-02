@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:dairy-feed-pushing",
+      "title": "Push dairy feed back toward cattle",
+      "summary": "Keep roughage already delivered to a feed table within reach through scheduled pushing.",
+      "industries": [
+        "agriculture"
+      ],
+      "family": "cleaning_housekeeping_replenishment",
+      "setting": "Dairy cattle barn",
+      "reviewLinks": [
+        {
+          "taskId": "research:dairy-feed-pushing",
+          "reviewId": "lely-juno-feed-pusher",
+          "relationship": "task_candidate",
+          "rationale": "Exact manufacturer workflow supports this task candidate.",
+          "sourceIds": [
+            "product",
+            "farm-case"
+          ],
+          "limitations": [
+            "Farm layout, installation and staff responsibilities require assessment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:dairy-manure-collection",
+      "title": "Collect manure from solid barn floors",
+      "summary": "Vacuum manure from suitable cattle walkways and empty it at a configured station.",
+      "industries": [
+        "agriculture"
+      ],
+      "family": "cleaning_housekeeping_replenishment",
+      "setting": "Dairy cattle barn",
+      "reviewLinks": [
+        {
+          "taskId": "research:dairy-manure-collection",
+          "reviewId": "lely-discovery-collector-c2",
+          "relationship": "task_candidate",
+          "rationale": "Exact manufacturer workflow supports this task candidate.",
+          "sourceIds": [
+            "product",
+            "c2-release"
+          ],
+          "limitations": [
+            "Farm layout, installation and staff responsibilities require assessment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:dairy-feed-remixing",
+      "title": "Remix feed along a cattle feed table",
+      "summary": "Loosen and shift an existing feed ration along a prepared dairy feed table.",
+      "industries": [
+        "agriculture"
+      ],
+      "family": "cleaning_housekeeping_replenishment",
+      "setting": "Dairy cattle barn",
+      "reviewLinks": [
+        {
+          "taskId": "research:dairy-feed-remixing",
+          "reviewId": "delaval-optiduo-feed-remixer",
+          "relationship": "task_candidate",
+          "rationale": "Exact manufacturer workflow supports this task candidate.",
+          "sourceIds": [
+            "product",
+            "farm-case"
+          ],
+          "limitations": [
+            "Farm layout, installation and staff responsibilities require assessment."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,290 @@
+{
+ "schemaVersion": 1,
+ "id": "ubtech-walker-s2",
+ "maker": "UBTECH Robotics",
+ "makerCountry": "CN",
+ "model": "Walker S2",
+ "variant": null,
+ "name": "UBTECH Walker S2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+ "summary": "A 1.76 m walking industrial humanoid with two dexterous hands that swaps its own battery and lifts up to 15 kg, orderable in Germany from RobotShop Europe or through Terra Robotics.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 238000,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s6",
+   "note": "RobotShop Europe price shown with VAT for Germany; kit includes two Gen-4 dexterous hands, charging station and two batteries."
+  },
+  "priceOther": null,
+  "leadTime": "RobotShop: on-demand item, ordered from the supplier; due date shown at checkout",
+  "sellers": [
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "productUrl": "https://eu.robotshop.com/products/ubtech-walker-s2-industrial-humanoid-robot",
+    "priceEur": 238000,
+    "priceBasis": "gross",
+    "sourceId": "s6",
+    "note": "On-demand item (not stocked) with add-to-cart and quote request; manufacturer no. Walker-S2-Kit."
+   },
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://terra-robotics.de/products/ubtech-walker-s2",
+    "contactUrl": "https://terra-robotics.de/pages/contact",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Product page shows \"Preis anfragen\"; the page metadata carries EUR 192,437 without stating VAT, not displayed to buyers. Two Gen-4 dexterous hands are a separate listing (EUR 25,126 in metadata)."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RobotShop Europe lists the Walker S2 with two Gen-4 dexterous hands at EUR 238,000 incl. VAT as an on-demand item with delivery to Germany; Terra Robotics, UBTECH's exclusive DACH distributor, quotes on request.",
+  "sourceIds": [
+   "s6",
+   "s2",
+   "s3",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.76,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "approx., without hands",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 52,
+   "unit": null,
+   "conditions": "44 active + 8 passive with Gen-4 hands; 30 active without hands",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Active DOF per hand",
+   "value": 7,
+   "unit": null,
+   "conditions": "Gen-4 hand; 6 with Gen-3 hand",
+   "sourceId": "s2"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "maximum; UBTECH states 15 kg within a 0-1.8 m workspace",
+   "sourceId": "s1"
+  },
+  {
+   "key": "hand_grasp_kg",
+   "label": "Single-hand grasp",
+   "value": 7.5,
+   "unit": "kg",
+   "conditions": "Gen-4 hand, whole-hand grasp; finger grasp 1 kg",
+   "sourceId": "s5"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Max walking speed",
+   "value": 7.2,
+   "unit": "km/h",
+   "conditions": "unloaded; loaded walking up to 2.5 km/h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 3.5,
+   "unit": "h",
+   "conditions": "at least 3.5 h in stepping mode (100-0 %); at least 2 h in transport mode (100-20 %), test values",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "2 x 48 V 9 Ah LiFePO4",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Autonomous battery swap",
+   "value": true,
+   "unit": null,
+   "conditions": "swaps its own battery in about 3 minutes at a swap station",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 3,
+   "unit": "h",
+   "conditions": "full charge in the robot; 10-90 % under 2.5 h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel i7-1185G7 + NVIDIA Jetson AGX Orin 64 GB (275 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "4 x 1 MP cameras, 2 x RGB-D, binocular stereo head, 2 x IMU, 2 x 6-axis force sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Ubuntu, ROSA 2.0",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 3.5,
+  "ipRating": null,
+  "sdk": "Ubuntu, ROSA 2.0",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s5",
+   "s6"
+  ],
+  "notes": [
+   "15 kg is the payload for both arms together; UBTECH gives no per-arm figure.",
+   "RobotShop's kit includes two Gen-4 dexterous hands; Terra lists the hands (2 pieces) as a separate product and its S2 scope of delivery names robot, flight case, display stand and charging station.",
+   "No IP rating, stair or outdoor rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/ubtech-walker-s2-1png-2729512.png?v=1773388155",
+   "pageUrl": "https://terra-robotics.de/products/ubtech-walker-s2",
+   "credit": "Terra Robotics / UBTECH",
+   "alt": "UBTECH Walker S2 humanoid robot walking, full body on white background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Material handling and sorting in retail logistics centres",
+   "stage": "pilot",
+   "where": "ROSSMANN logistics centres, Europe (country not stated)",
+   "date": "2026-07",
+   "sourceId": "s3",
+   "note": "UBTECH says Walker S2 units bought by Terra Robotics are deployed for material handling and sorting."
+  },
+  {
+   "taskIds": [],
+   "task": "Autonomous battery swap for continuous operation",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+   "title": "Walker S2 product page",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/products/ubtech-walker-s2",
+   "title": "UBtech Walker S2",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ubtrobot.com/en/about/news/826574022332485",
+   "title": "UBTECH partners with collaborators to accelerate global expansion (Terra Robotics, ROSSMANN)",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://terra-robotics.de/blogs/news/terra-robotics-wird-offizieller-ubtech-distributor",
+   "title": "Terra Robotics wird offizieller UBTECH Distributor",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://terra-robotics.de/products/ubtech-walker-s2-geschickte-roboter-hand-2-stuck",
+   "title": "UBtech Walker S2 geschickte Roboter Hand (2 Stück)",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://eu.robotshop.com/products/ubtech-walker-s2-industrial-humanoid-robot",
+   "title": "UBTECH Walker S2 Industrial Humanoid Robot (RobotShop Europe)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Does Terra's quoted configuration include the dexterous hands?",
+  "Per-arm rated payload is not published.",
+  "Actual delivery time for an on-demand Walker S2 from RobotShop."
+ ],
+ "checkedAt": "2026-10-02"
+}

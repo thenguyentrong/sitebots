@@ -1,0 +1,114 @@
+{
+ "schemaVersion": 1,
+ "id": "nlink-drilly",
+ "maker": "nLink",
+ "makerCountry": "NO",
+ "model": "Drilly",
+ "variant": null,
+ "name": "nLink Drilly mobile drilling robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_electrical/overhead-drilling-anchors"
+ ],
+ "officialUrl": "https://www.nlinkrobotics.com/projects/drilly-mobile-drilling-robot",
+ "summary": "An early ceiling drilling robot (robot arm on a tracked scissor lift) that nLink ran as a service from 2013 to 2018; the work led to the Hilti Jaibot.",
+ "launched": "2013",
+ "lifecycle": "discontinued",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Discontinued: nLink ended the Drilly project in 2018 and it was never sold as a product. Its successor is the Hilti Jaibot.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "holes_per_day",
+   "label": "Output",
+   "value": "500+",
+   "unit": "holes/day",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "undercarriage",
+   "label": "Undercarriage",
+   "value": "Alitrak DCT450 electric tracked carrier",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "setup_time_min",
+   "label": "Setup time on site",
+   "value": 30,
+   "unit": "min",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Historical record only; not available.",
+   "Robot arm on a scissor-lift frame on an Alitrak DCT450 tracked carrier; a worker aligned it via an app and a line laser."
+  ],
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.squarespace-cdn.com/content/v1/5f8d88e4bd0e8d6aaec3d842/1655207946900-ST6E2U8VNSNHJQ77P5JR/5-HHH_4619.jpg",
+   "pageUrl": "https://www.nlinkrobotics.com/projects/drilly-mobile-drilling-robot",
+   "credit": "nLink",
+   "alt": "nLink Drilly drilling robot on a tracked carrier with scissor lift in a building under construction",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Drilled over 30,000 holes on more than 25 construction sites, mostly for ceiling installations in commercial buildings",
+   "stage": "deployment",
+   "where": "Vintervoll (electrical contractor) and other sites; countries not listed",
+   "date": "2018",
+   "sourceId": "s1",
+   "note": "Period 2013-2018; date is the end year."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.nlinkrobotics.com/projects/drilly-mobile-drilling-robot",
+   "title": "Drilly mobile drilling robot",
+   "publisher": "nLink AS",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

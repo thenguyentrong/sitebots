@@ -1,0 +1,252 @@
+{
+ "schemaVersion": 1,
+ "id": "booster-t2-pro",
+ "maker": "Booster Robotics",
+ "makerCountry": "CN",
+ "model": "T2",
+ "variant": "Professional (Pro P1/P2/P3)",
+ "name": "Booster T2 Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.booster.tech/booster-t2/",
+ "summary": "The Professional version of the 1.4 m Booster T2 humanoid with an NVIDIA Jetson Thor computer, sold with no hands, grippers or dexterous hands.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 29999,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "RBTX, T2 Pro with NVIDIA Thor, no hands. Bipedal 35,581 EUR incl. VAT (Gripper 47,481, Dex-Hand 53,431, High-DoF Tactile 117,810 EUR incl. VAT). Generation Robots shows only a \"from\" price for the whole T2 range."
+  },
+  "priceOther": null,
+  "leadTime": "about 4 weeks (Bipedal), 4 to 6 weeks (Generation Robots), 6 to 8 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/Booster-Robotics-T2-Pro",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 35581,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "T2 Pro (2000 TOPS); also T2 Pro Gripper 47,481 EUR, Dex-Hand 53,431 EUR, High-DoF Tactile 117,810 EUR (incl. VAT)."
+   },
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/booster-t2-pro-nvidia-thor-orin-2000-tops",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 29999,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": "T2 Pro, 2000 TOPS; 6 to 8 weeks."
+   },
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404468-humanoider-roboter-booster-t2.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800982602",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Lists Pro P1, P2 (gripper) and P3-1/P3-2/P3-3 (dexterous hands); the Pro price appears only after choosing the version and could not be re-checked. The range starts at 22,500 EUR net (Edu E1). Delivery 4 to 6 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Orderable from Bipedal (Leverkusen, about 4 weeks), RBTX (igus, Cologne, 6 to 8 weeks) and Generation Robots (4 to 6 weeks).",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.4,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 42,
+   "unit": "kg",
+   "conditions": "approx.; varies by configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "body without hands: 6 per leg, 7 per arm, 3 waist, 2 head",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms together",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "maximum; maker notes it depends on configuration and arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 3,
+   "unit": "m/s",
+   "conditions": "maker figure; Generation Robots lists up to 2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 140,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 10 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "continuous walking",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Thor T5000",
+   "unit": null,
+   "conditions": "Professional version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular head camera, binocular waist camera, microphone array and speaker; wrist cameras and LiDAR optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Base Pro P1 has no hands; grippers and several dexterous-hand options are separate configurations.",
+   "The 10 kg payload is for both arms together and depends on arm posture.",
+   "No rough-ground, stair or outdoor claims found for T2."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.booster.tech/_astro/specification-t2-p1.Buh-XsDz_gmfWk.webp",
+   "pageUrl": "https://www.booster.tech/booster-t2/",
+   "credit": "Booster Robotics",
+   "alt": "Booster T2 humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sold as a development platform for embodied AI research",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.booster.tech/booster-t2/",
+   "title": "Booster T2 product page",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404468-humanoider-roboter-booster-t2.html",
+   "title": "Booster T2 at Generation Robots (DE shop)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bipedal.de/Booster-Robotics-T2-Pro",
+   "title": "Booster Robotics T2 Pro (2000 TOPS)",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://rbtx.de/de-DE/components/humanoid/booster-t2-pro-nvidia-thor-orin-2000-tops",
+   "title": "Booster T2 Pro on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Launch date of T2 not stated on the maker page.",
+  "Bipedal page description still says \"vorbestellen\" (pre-order) although it shows a delivery time; confirm stock when ordering.",
+  "RBTX also lists a \"T2 Pro Taktile Sensorik, Jetson AGX Orin 200 TOPS\" for 99,999 EUR whose configuration is unclear."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { AUTONOMY, DUST, ENVIRONMENTS, MATCH_REGIONS, TERRAINS, WET, type Requirements } from '@/lib/match/requirements';
+import { FOCUSED_FORM_FACTORS } from '@/lib/browse-scope';
 import { FORM_FACTOR_LABEL } from '@/lib/spec/display';
-import { CERTIFICATIONS, FORM_FACTORS, TASK_CAPABILITIES } from '@/lib/spec/enums';
+import { CERTIFICATIONS, TASK_CAPABILITIES } from '@/lib/spec/enums';
 import { ui } from '@/lib/ui';
 
 /**
@@ -189,9 +190,9 @@ export function RequirementForm({ req }: { req: Requirements }) {
             <Field label="Form factor">
               <select name="form_factor" className={ui.select} defaultValue={req.form_factor}>
                 <option value="any">Any</option>
-                {FORM_FACTORS.map((f) => (
+                {FOCUSED_FORM_FACTORS.map((f) => (
                   <option key={f} value={f}>
-                    {FORM_FACTOR_LABEL[f]}
+                    {f === 'quadruped' ? 'Robot dogs' : FORM_FACTOR_LABEL[f]}
                   </option>
                 ))}
               </select>

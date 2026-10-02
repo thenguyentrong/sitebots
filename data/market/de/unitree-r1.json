@@ -1,0 +1,279 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-r1",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "R1",
+ "variant": "Standard (R1-Basic)",
+ "name": "Unitree R1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/R1",
+ "summary": "A 1.23 m, 29 kg humanoid with 26 DOF, binocular camera and voice interaction for demos, reception and education; not programmable.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU sells the R1 (R1-Basic) with price and cart (3-4 weeks, 1 unit left); QUADRUPED Robotics (Germany) shows the R1 Base in stock at 8,400 EUR net.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 9996,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "RobotShop EU, tax included."
+  },
+  "priceOther": {
+   "amount": 5900,
+   "currency": "USD",
+   "market": "Unitree online store (tax and shipping excluded)",
+   "sourceId": "s4"
+  },
+  "leadTime": "3-4 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-r1-humanoid-robot-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 9996,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Manufacturer no. R1-Basic; dummy hands, no secondary development; ships in 3-4 weeks."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404414-unitree-r1-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Lists Basic and EDU versions; the page \"from\" price (15,000 EUR excl. VAT) is not tied to a version; quote on request."
+   },
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://shop.unitree.com/products/unitree-r1",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Unitree store USD 5,900, ships from China. Germany is listed in the store country selector."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-R1-Base",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 8400,
+    "priceBasis": "net",
+    "sourceId": "s6",
+    "note": "R1 Base 8,400 EUR net; white \"sofort verfügbar\", blue \"knapper Lagerbestand\"."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.23,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 29,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 26,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm maximum load",
+   "value": 2,
+   "unit": "kg",
+   "conditions": "about 2 kg, varies with arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 1,
+   "unit": "h",
+   "conditions": "about 1 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular camera, 4-microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": false,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 2,
+  "carryPayloadKg": null,
+  "runtimeH": 1,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Ships with dummy hands.",
+   "No secondary development.",
+   "About 1 h runtime; indoor use; no IP rating."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.quadruped.de/media/image/product/1356/lg/unitree-r1~8.png",
+   "pageUrl": "https://www.quadruped.de/Unitree-R1",
+   "credit": "Unitree Robotics (via quadruped.de)",
+   "alt": "Unitree R1 humanoid robot, full body, white",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/be9e7bde5e104a40bc1a8e8eccf71a00_1860x1550.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree R1 humanoid robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Seller lists facility patrol, reception and classroom demonstrations as uses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Seller claim; not shown at a named customer."
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/R1",
+   "title": "Unitree R1 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-r1-humanoid-robot-eu",
+   "title": "Unitree R1 Humanoid Robot (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404414-unitree-r1-humanoid-robot.html",
+   "title": "Unitree R1 humanoid robot at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://shop.unitree.com/products/unitree-r1",
+   "title": "Unitree R1 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.quadruped.de/Unitree-R1-Base",
+   "title": "Unitree R1 Base at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

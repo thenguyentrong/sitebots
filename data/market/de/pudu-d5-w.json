@@ -1,0 +1,264 @@
+{
+ "schemaVersion": 1,
+ "id": "pudu-d5-w",
+ "maker": "Pudu Robotics",
+ "makerCountry": "CN",
+ "model": "D5",
+ "variant": "W (wheel-legged)",
+ "name": "PUDU D5-W",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.pudurobotics.com/en/products/d5",
+ "summary": "The wheel-legged version of the PUDU D5: wheels on all four feet for longer, faster runs on paved ground, 25 cm steps, IP67 and autonomous navigation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request through Pudu, which has a German subsidiary and a German D5 page; Pudu says the D5 entered volume delivery in Europe in 2026 and showed it at IFA Berlin. No public price.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Pudu Robotics (German subsidiary)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.pudurobotics.com/de/products/d5",
+    "contactUrl": "https://www.pudurobotics.com/de/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Pudu lists a subsidiary in Germany and a German D5 page with a contact form; no dealer price list found."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 56,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Standing size (L x W x H)",
+   "value": "900 x 543 x 572",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "20 to 30 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "2 to 3 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1000,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max. step height",
+   "value": 25,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_obstacle_cm",
+   "label": "Climbing capability",
+   "value": 80,
+   "unit": "cm",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "45° up and down",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 5,
+   "unit": "m/s",
+   "conditions": "series figure from the product page",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": "cold start below -10 °C",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Orin AGX 64 GB + RK3588, up to 275 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Two 96-line 3D lidars (192-line on request), four fisheye cameras, 6-microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_options",
+   "label": "Options",
+   "value": "Inspection kit (gimbal), metal delivery crate, charging station; sold separately",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "navigation",
+   "label": "Autonomy",
+   "value": "Autonomous navigation and person following supported",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": 2,
+  "ipRating": "IP67",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s4"
+  ],
+  "notes": [
+   "Pudu notes that some features are not yet available to customers; check the delivered feature set.",
+   "Inspection gimbal and charging station are optional extras.",
+   "Shown climbing stairs and crossing gravel and sand at IFA 2026."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.pudutech.com/PUDU_D5_W_f7d5d1671d.png",
+   "pageUrl": "https://www.pudurobotics.com/en/products/d5",
+   "credit": "Pudu Robotics",
+   "alt": "PUDU D5-W wheel-legged quadruped, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/night-security-patrol",
+    "facility_operation/plant-room-rounds"
+   ],
+   "task": "Security and equipment inspection rounds with an inspection gimbal",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Named uses on the product page; no named customer site."
+  },
+  {
+   "taskIds": [],
+   "task": "Climbs stairs and crosses gravel and sand in a live demonstration",
+   "stage": "demo",
+   "where": "IFA 2026, Messe Berlin, Germany",
+   "date": "2026-09",
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.pudurobotics.com/en/products/d5",
+   "title": "PUDU D5 Series product page and specifications",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pudurobotics.com/de/products/d5",
+   "title": "PUDU D5 (German page)",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.pudurobotics.com/de/company",
+   "title": "Über PUDU (subsidiaries)",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.pudurobotics.com/en/news/pudu-d7-european-debut-ifa-2026-berlin",
+   "title": "Pudu Robotics Makes Its IFA Debut, Bringing Its Full Robotics Portfolio to Europe",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price in Germany.",
+  "Named European customers for the D5-W.",
+  "SDK availability.",
+  "Launch date not found on an opened source."
+ ],
+ "checkedAt": "2026-10-02"
+}

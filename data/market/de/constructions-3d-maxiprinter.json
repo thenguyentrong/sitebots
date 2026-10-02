@@ -1,0 +1,153 @@
+{
+ "schemaVersion": 1,
+ "id": "constructions-3d-maxiprinter",
+ "maker": "Constructions-3D",
+ "makerCountry": "FR",
+ "model": "MaxiPrinter",
+ "variant": null,
+ "name": "Constructions-3D MaxiPrinter",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.constructions-3d.com/en/maxiprinter",
+ "summary": "Mobile, foldable concrete 3D printer that is set up on site in under 15 minutes and prints at up to 250 mm/s.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (France) publishes a euro starting price and an online configurator; quote via configurator or contact; no German reseller found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 445000,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s1",
+   "note": "Starting at 445,000 EUR excl. tax."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Constructions-3D",
+    "country": "FR",
+    "role": "manufacturer",
+    "productUrl": "https://www.constructions-3d.com/en/maxiprinter",
+    "contactUrl": "https://www.constructions-3d.com/en/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 445000,
+    "priceBasis": "net",
+    "sourceId": "s1",
+    "note": "Configurator on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "max_speed_mms",
+   "label": "Print speed",
+   "value": 250,
+   "unit": "mm/s",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "setup_min",
+   "label": "Set-up time on site",
+   "value": 15,
+   "unit": "min",
+   "conditions": "under",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Built-in laser positioning aligns the print area with the CAD file.",
+   "Several printers can work on one building."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://mirwovimfyvfej8s.public.blob.vercel-storage.com/product-page/maxiprinter/hero-banner/main.webp",
+   "pageUrl": "https://www.constructions-3d.com/en/maxiprinter",
+   "credit": "Constructions-3D",
+   "alt": "Constructions-3D MaxiPrinter",
+   "kind": "product"
+  },
+  {
+   "url": "https://mirwovimfyvfej8s.public.blob.vercel-storage.com/product-page/maxiprinter/indoor-outdoor/indoor.webp?w=1920&q=100",
+   "pageUrl": "https://www.constructions-3d.com/en/maxiprinter",
+   "credit": "Constructions-3D",
+   "alt": "Constructions-3D MaxiPrinter with outriggers spread and boom raised in a hall, front view",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://mirwovimfyvfej8s.public.blob.vercel-storage.com/product-page/maxiprinter/compactness/2.webp?w=1920&q=100",
+   "pageUrl": "https://www.constructions-3d.com/en/maxiprinter",
+   "credit": "Constructions-3D",
+   "alt": "Constructions-3D MaxiPrinter folded on its tracks outside an industrial building",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://mirwovimfyvfej8s.public.blob.vercel-storage.com/product-page/maxiprinter/indoor-outdoor/outdoor.webp?w=1920&q=100",
+   "pageUrl": "https://www.constructions-3d.com/en/maxiprinter",
+   "credit": "Constructions-3D",
+   "alt": "Constructions-3D MaxiPrinter printing low concrete walls on an outdoor site",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://mirwovimfyvfej8s.public.blob.vercel-storage.com/product-page/maxiprinter/limits/limits.webp?w=1920&q=100",
+   "pageUrl": "https://www.constructions-3d.com/en/maxiprinter",
+   "credit": "Constructions-3D",
+   "alt": "Aerial view of two Constructions-3D MaxiPrinters printing walls on a concrete slab",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printed a 400 m² villa for the municipality of Dubai (built by 3DXB)",
+   "stage": "deployment",
+   "where": "Dubai, UAE",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.constructions-3d.com/en/maxiprinter",
+   "title": "MaxiPrinter",
+   "publisher": "Constructions-3D",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Drive type, weight and print envelope."
+ ],
+ "checkedAt": "2026-10-02"
+}

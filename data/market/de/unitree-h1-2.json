@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-h1-2",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "H1-2",
+ "variant": null,
+ "name": "Unitree H1-2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/h1",
+ "summary": "Full-size 70 kg humanoid with 7-DOF arms rated for about 7 kg each, for manipulation and locomotion research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Generation Robots lists the H1-2 as a version on its H1 page; price and delivery time on request.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "on request",
+  "sellers": [
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404154-h1-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "H1-2 selectable on the H1 / H1-2 page; page 'from' price EUR 93,496 excl. VAT likely refers to the cheaper version; cart disabled."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.78,
+   "unit": "m",
+   "conditions": "about 178 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 27,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "shoulder 3, elbow 1, wrist 3",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm load",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "rated about 7 kg; peak about 21 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Moving speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "below 2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 864,
+   "unit": "Wh",
+   "conditions": "15 Ah",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "Intel Core i5 (platform) + Intel Core i7 (user development); optional Orin NX, up to 3 devices",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3D LiDAR + depth camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Intel Core i7 user development computer",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Dexterous hands optional (Dex5-1 or others).",
+   "No IP rating or runtime published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/3acae84730004063af2d60d36a4b6956_389x225.png",
+   "pageUrl": "https://www.unitree.com/h1",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree H1-2 humanoid robot, upper body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "Runtime per battery not stated.",
+  "Separate euro price for H1-2 not public."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/h1",
+   "title": "Unitree H1 / H1-2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/404154-h1-humanoid-robot.html",
+   "title": "Unitree H1 / H1-2 humanoid robot at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

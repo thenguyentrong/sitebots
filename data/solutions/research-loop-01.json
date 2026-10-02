@@ -1,0 +1,627 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Integrated pallet pickup and warehouse storage; exact variants and regional buying gaps retained.",
+  "records": [
+    {
+      "id": "mir1200-pallet-jack-eu",
+      "name": "MiR1200 Pallet Jack EU",
+      "manufacturer": "Mobile Industrial Robots",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "warehousing",
+        "manufacturing"
+      ],
+      "exactConfiguration": "MiR1200 Pallet Jack EU, integrated pallet pickup forks; current official specification reviewed against German article 42010140. Supplied lift/height revision must be confirmed.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Pick up compatible pallets from the floor and move them to mapped indoor handoff locations.",
+      "operatingMode": {
+        "value": "Autonomous indoor pallet detection, pickup, travel and placement; people prepare loads and recover exceptions.",
+        "sourceIds": [
+          "technical"
+        ],
+        "caveats": [
+          "Indoor clean, dry floors only.",
+          "Confirm pallet geometry, load stability and mixed-traffic integration."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 1200,
+          "unit": "kg",
+          "semanticLabel": "Maximum carried pallet load",
+          "conditions": [
+            "Include pallet and goods in the load budget."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "speed_m_s",
+          "value": 1.5,
+          "unit": "m/s",
+          "semanticLabel": "Maximum travel speed",
+          "conditions": [
+            "Route safety configuration may reduce speed."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_max_h",
+          "value": 10,
+          "unit": "h",
+          "semanticLabel": "Published active time at maximum payload",
+          "conditions": [
+            "Up to figure; charging, traffic and route affect output."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "length_mm",
+          "value": 1934,
+          "unit": "mm",
+          "semanticLabel": "Published vehicle length",
+          "conditions": [],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "width_mm",
+          "value": 820,
+          "unit": "mm",
+          "semanticLabel": "Published vehicle width",
+          "conditions": [
+            "Metric figure retained; page imperial conversion is inconsistent."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "fork_lift_height_mm",
+          "value": 1140,
+          "unit": "mm",
+          "semanticLabel": "Current published maximum fork-lifting height",
+          "conditions": [
+            "Confirm current quoted mechanism/revision."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP52",
+          "unit": null,
+          "semanticLabel": "Vehicle ingress rating",
+          "conditions": [
+            "Not outdoor/washdown suitability."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Conflicting published mass",
+          "conditions": [
+            "Official page pairs 750 kg with 1786 lb, which is inconsistent; obtain current drawing."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Automatically collect and transport floor pallets.",
+          "configuration": "MiR1200 with its pallet pickup mechanism.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical"
+          ],
+          "limitations": [
+            "No exact-site accepted-cycle or intervention denominator reviewed.",
+            "Pallet detection is not verification of goods or pallet condition."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "MiR",
+          "market": "Europe; Germany project enquiry",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://mobile-industrial-robots.com/contacts/"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": []
+        },
+        {
+          "organization": "JUGARD+KÜNSTNER GmbH",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://jk.de/MiR1200-Pallet-Jack-EU/42010140",
+            "phone": "+49 9187 936 69-0"
+          },
+          "sourceIds": [
+            "seller"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization not independently confirmed.",
+          "caveats": [
+            "Price requires enquiry/login; stock and delivered revision not confirmed."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Official page says 2120 mm height while German seller says 1990 mm; confirm supplied revision and clearance.",
+        "Official metric/imperial mass and width conversions disagree; no inferred mass retained."
+      ],
+      "unknowns": [
+        "Delivered dimensional/lift revision and mass.",
+        "Pallet condition tolerance, doors, traffic and recovery labour.",
+        "Installed cost, service scope and German delivery."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://mobile-industrial-robots.com/products/robots/mir1200-pallet-jack/specifications",
+          "title": "MiR1200 current technical page",
+          "publisher": "MiR",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://mobile-industrial-robots.com/contacts/",
+          "title": "MiR sales enquiry",
+          "publisher": "MiR",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://jk.de/MiR1200-Pallet-Jack-EU/42010140",
+          "title": "MiR1200 EU article42010140",
+          "publisher": "JUGARD+KÜNSTNER",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://mobile-industrial-robots.com/products/robots/mir1200-pallet-jack/specifications",
+        "https://mobile-industrial-robots.com/contacts/",
+        "https://jk.de/MiR1200-Pallet-Jack-EU/42010140"
+      ]
+    },
+    {
+      "id": "agilox-ocf1200-1500-pallet-handling",
+      "name": "AGILOX OCF 1200 / 1500 kg",
+      "manufacturer": "AGILOX",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "warehousing",
+        "manufacturing"
+      ],
+      "exactConfiguration": "OCF standard-height version with1200 mm forks and1500 kg load option, February 2026 datasheet. Excludes750 kg,1400 mm fork and low-clearance variants; sensor/IO options require quotation.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Lift open or closed pallets from the floor and place them at low stations or storage positions.",
+      "operatingMode": {
+        "value": "Autonomous omnidirectional pallet pickup and delivery with fleet coordination and opportunity charging.",
+        "sourceIds": [
+          "technical",
+          "sheet"
+        ],
+        "caveats": [
+          "Charging claims do not establish uninterrupted production.",
+          "Site layout, clearances, pallet mass and accessories require engineering."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 1500,
+          "unit": "kg",
+          "semanticLabel": "Maximum selected load option",
+          "conditions": [
+            "1200 mm forks; include carrier and goods."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "fork_length_mm",
+          "value": 1200,
+          "unit": "mm",
+          "semanticLabel": "Selected fork length",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "lift_height_mm",
+          "value": 1600,
+          "unit": "mm",
+          "semanticLabel": "Maximum fork lift",
+          "conditions": [
+            "Standard-height version."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "station_height_mm",
+          "value": 1450,
+          "unit": "mm",
+          "semanticLabel": "Maximum station height",
+          "conditions": [
+            "EPAL reference; distinct from lift height."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "speed_m_s",
+          "value": 1.4,
+          "unit": "m/s",
+          "semanticLabel": "Maximum speed",
+          "conditions": [
+            "Site configuration may reduce speed."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "turning_circle_mm",
+          "value": 3500,
+          "unit": "mm",
+          "semanticLabel": "Published turning circle",
+          "conditions": [
+            "Load and surrounding clearance still require layout study."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 3600,
+          "unit": "kg",
+          "semanticLabel": "Published vehicle mass",
+          "conditions": [
+            "Check floor and axle loads."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Floor-to-station transport of open/closed pallets and low racking.",
+          "configuration": "OCF1200 with1500 kg load and standard mast.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical",
+            "sheet"
+          ],
+          "limitations": [
+            "Published application claim; no exact configuration shift log reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "AGILOX Deutschland GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.agilox.net/standorte/"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": [
+            "German offices/showroom published; installed availability needs proposal."
+          ]
+        }
+      ],
+      "conflicts": [
+        "German page length2784 mm differs from February 2026 sheet2795 mm; neither replaces a delivered clearance drawing.",
+        "1400 mm forks and low-clearance mast have different load/lift envelopes; no variant merging."
+      ],
+      "unknowns": [
+        "Exact footprint and load-centre diagram.",
+        "Required sensor/charging/door interfaces and pallet acceptance.",
+        "German installed price, delivery and service response."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.agilox.net/produkt/agilox-ocf/",
+          "title": "OCF application and options",
+          "publisher": "AGILOX",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "sheet",
+          "url": "https://www.agilox.net/media/agilox-ocf-datasheet-en.pdf",
+          "title": "OCF technical sheet02/2026",
+          "publisher": "AGILOX",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.agilox.net/standorte/",
+          "title": "AGILOX German offices",
+          "publisher": "AGILOX",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.agilox.net/produkt/agilox-ocf/",
+        "https://www.agilox.net/media/agilox-ocf-datasheet-en.pdf",
+        "https://www.agilox.net/standorte/"
+      ]
+    },
+    {
+      "id": "linde-lmatic-ac-k1171-pallet-handling",
+      "name": "Linde L-MATIC AC k, series 1171-01",
+      "manufacturer": "Linde Material Handling",
+      "robotClass": "amr_agv",
+      "workflowId": "transport",
+      "industries": [
+        "warehousing",
+        "manufacturing"
+      ],
+      "exactConfiguration": "L-MATIC AC k series 1171-01,1400 kg configuration in July 2025 technical sheet, standard 1050 mm forks and 9 kWh lithium-ion battery. Older L-MATIC AC series1170 is separate.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Collect closed load carriers from the floor and put pallets into configured warehouse storage locations.",
+      "operatingMode": {
+        "value": "Autonomous warehouse transport/storage with manual mode available; fleet integration through MATIC:move or move+.",
+        "sourceIds": [
+          "technical",
+          "sheet"
+        ],
+        "caveats": [
+          "Residual capacity at lift height/load centre must be checked.",
+          "Optional charging and sensor equipment are not automatic inclusions."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 1400,
+          "unit": "kg",
+          "semanticLabel": "Nominal capacity",
+          "conditions": [
+            "At stated load-centre basis; apply actual load diagram."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "load_center_mm",
+          "value": 525,
+          "unit": "mm",
+          "semanticLabel": "Rated load-centre distance",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_with_battery_kg",
+          "value": 2458,
+          "unit": "kg",
+          "semanticLabel": "Vehicle mass including specified battery",
+          "conditions": [
+            "Site floor/axle loading is separate."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "fork_length_mm",
+          "value": 1050,
+          "unit": "mm",
+          "semanticLabel": "Standard fork length",
+          "conditions": [],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_kwh",
+          "value": 9,
+          "unit": "kWh",
+          "semanticLabel": "Published lithium-ion battery energy",
+          "conditions": [
+            "Not a runtime guarantee."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "storage_height_max_mm",
+          "value": 3800,
+          "unit": "mm",
+          "semanticLabel": "Maximum advertised storage height",
+          "conditions": [
+            "Not identical to mechanical mast lift; verify residual load."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mast_lift_mm",
+          "value": 4144,
+          "unit": "mm",
+          "semanticLabel": "Technical-sheet mast lift",
+          "conditions": [
+            "Web table says 2844 mm; delivered mast must be confirmed."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Floor transport and putaway/retrieval in wide-aisle storage.",
+          "configuration": "L-MATIC AC k standard configuration with configured load interface.",
+          "operatingMode": "Configured autonomous transport with people responsible for preparation, dispatch, exceptions and receipt.",
+          "sourceIds": [
+            "technical",
+            "sheet"
+          ],
+          "limitations": [
+            "Supplier application claim; no reviewed exact-model productive site denominator."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Linde Material Handling GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.linde-mh.de/de/Formularseiten/Global-Contact-Form/",
+            "phone": "+49 6021 99 0",
+            "email": "info@linde-mh.de"
+          },
+          "sourceIds": [
+            "sheet",
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route only; configuration, installed price, German delivery and commissioning require quotation.",
+          "authorizationStatus": "Published manufacturer contact.",
+          "caveats": [
+            "Regional dealer/integrator and commissioned scope require proposal."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Current web table retains 12/16 labels, 2844 mm lift and 24V 375/500Ah values; July 2025 series 1171 sheet gives 4144 mm and 9 kWh Li-ion. This record pins the sheet configuration; supplier must reconcile the quote.",
+        "Storage height 3.8 m and mast lift 4144 mm have different meanings."
+      ],
+      "unknowns": [
+        "Exact delivered mast/battery revision and residual capacity diagram.",
+        "Pallet geometries, aisle clearances and interfaces.",
+        "Installed cost, delivery and accepted storage-cycle rate."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.linde-mh.de/de/Produkte/Automatisierte-Fahrzeuge/L-MATIC-AC-k/",
+          "title": "L-MATIC AC k product and options",
+          "publisher": "Linde Material Handling",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "sheet",
+          "url": "https://www.linde-mh.de/media/Datasheets/DE_tb_l_matic_ac_k_1171_dt_0725_view.pdf",
+          "title": "Series 1171-01 technical sheet 07/2025",
+          "publisher": "Linde Material Handling",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.linde-mh.de/de/Formularseiten/Global-Contact-Form/",
+          "title": "Linde German enquiry",
+          "publisher": "Linde Material Handling",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.linde-mh.de/de/Produkte/Automatisierte-Fahrzeuge/L-MATIC-AC-k/",
+        "https://www.linde-mh.de/media/Datasheets/DE_tb_l_matic_ac_k_1171_dt_0725_view.pdf",
+        "https://www.linde-mh.de/de/Formularseiten/Global-Contact-Form/"
+      ]
+    }
+  ]
+}

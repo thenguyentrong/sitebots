@@ -1,0 +1,69 @@
+{
+ "schemaVersion": 1,
+ "id": "lumos-robotics-lus2",
+ "maker": "Lumos Robotics (Lumos Robot Technology, Shenzhen)",
+ "makerCountry": "CN",
+ "model": "LUS2",
+ "variant": null,
+ "name": "Lumos LUS2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.lumosbot.tech/products/lus2/",
+ "summary": "A 1.60 m, 57 kg walking humanoid for research, teaching and stage shows, 3 kg per arm and about 2 h battery, sold from China on request.",
+ "launched": "2025-06",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Lumos has offices only in Shenzhen and Suzhou and takes purchase inquiries by web form; no EU distributor, office or customer found. A US-run German-language shop (Roboter Deutschland) lists it as a quote item without a real price.",
+  "sourceIds": ["s1", "s2", "s3", "s4"],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  { "key": "height_m", "label": "Height", "value": 1.6, "unit": "m", "conditions": null, "sourceId": "s1" },
+  { "key": "weight_kg", "label": "Weight", "value": 57, "unit": "kg", "conditions": null, "sourceId": "s1" },
+  { "key": "dof_total", "label": "Degrees of freedom", "value": 28, "unit": null, "conditions": "joint modules, without hands; 6 per leg, 7 per arm, 1 waist", "sourceId": "s1" },
+  { "key": "dof_per_arm", "label": "DoF per arm", "value": 7, "unit": null, "conditions": null, "sourceId": "s1" },
+  { "key": "arm_payload_kg", "label": "Payload per arm", "value": 3, "unit": "kg", "conditions": "single arm, rating not stated", "sourceId": "s1" },
+  { "key": "max_joint_torque_nm", "label": "Max joint torque", "value": 360, "unit": "N·m", "conditions": null, "sourceId": "s1" },
+  { "key": "battery", "label": "Battery", "value": "10 Ah ternary lithium, 54 V rated", "unit": null, "conditions": null, "sourceId": "s1" },
+  { "key": "runtime_h", "label": "Battery life", "value": 2, "unit": "h", "conditions": null, "sourceId": "s1" },
+  { "key": "sensors", "label": "Sensors", "value": "3D LiDAR, binocular depth camera, 4-microphone array", "unit": null, "conditions": null, "sourceId": "s1" },
+  { "key": "compute", "label": "Compute", "value": "NVIDIA Jetson AGX Orin (275 TOPS)", "unit": null, "conditions": null, "sourceId": "s1" },
+  { "key": "sdk", "label": "Secondary development", "value": "Supported", "unit": null, "conditions": null, "sourceId": "s1" }
+ ],
+ "capabilities": {
+  "legs": true, "wheels": false, "tracks": false,
+  "levelFloors": true, "roughGround": null, "stairs": null, "outdoor": null,
+  "arms": 2, "hands": "optional", "handsIncluded": null,
+  "armPayloadKg": 3, "carryPayloadKg": null, "runtimeH": 2, "ipRating": null,
+  "sdk": "Secondary development supported; no public SDK documentation found",
+  "sourceIds": ["s1"],
+  "notes": [
+   "Dexterous hand is 'configurable'; whether hands come as standard is not stated.",
+   "Maker scenarios are stage performance, guiding and research; no industrial deployment named for LUS2.",
+   "About 2 h battery life."
+  ]
+ },
+ "images": [
+  { "url": "https://www.lumosbot.tech/images/products/lus2/front.webp", "pageUrl": "https://www.lumosbot.tech/products/lus2/", "credit": "Lumos Robotics", "alt": "Lumos LUS2 black bipedal humanoid robot, front view", "kind": "product" }
+ ],
+ "evidence": [
+  { "taskIds": [], "task": "Group dance at the World Humanoid Robot Games (silver medal) and at the closing ceremony of China's National Games", "stage": "demo", "where": "China", "date": "2025-08", "sourceId": "s2", "note": "Entertainment only." }
+ ],
+ "sources": [
+  { "id": "s1", "url": "https://www.lumosbot.tech/products/lus2/", "title": "Lumos LUS 2", "publisher": "Lumos Robotics", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s2", "url": "https://www.lumosbot.tech/about", "title": "About Lumos", "publisher": "Lumos Robotics", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s3", "url": "https://www.lumosbot.tech/contact", "title": "Contact Us", "publisher": "Lumos Robotics", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s4", "url": "https://www.roboterdeutschland.de/Lumos-Robotics-LUS2-Full-Size-Humanoid-Robot-LUS2.htm", "title": "Lumos Robotics LUS2 Full Size humanoider Roboter (LUS2)", "publisher": "Roboter Deutschland (Robots International)", "kind": "seller", "checkedAt": "2026-10-02" }
+ ],
+ "openQuestions": [
+  "Price and delivery outside China.",
+  "Whether dexterous hands are included, and hand payload.",
+  "The Roboter Deutschland page shows a placeholder structured-data price (90.08) while the visible offer is quote only; it is not a real price."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "pollen-robotics-reachy-2",
+ "maker": "Pollen Robotics (Hugging Face)",
+ "makerCountry": "FR",
+ "model": "Reachy 2",
+ "variant": null,
+ "name": "Pollen Robotics Reachy 2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.pollen-robotics.com/reachy-2/",
+ "summary": "An open-source wheeled humanoid with two 7-DoF arms (about 3 kg each) and grippers, built for AI and robotics labs and VR teleoperation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "French maker (Bordeaux), part of Hugging Face. Reachy 2 is sold on request through the sales inbox; the Pollen online store serves Germany in EUR but lists only Reachy Mini and Microduck. No public Reachy 2 price.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Pollen Robotics SAS",
+    "country": "FR",
+    "role": "manufacturer",
+    "productUrl": "https://www.pollen-robotics.com/reachy-2/",
+    "contactUrl": "https://www.pollen-robotics.com/contact-us/",
+    "email": "contact@pollen-robotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Contact page routes \"pricing, quotations and orders\" to sales."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.36-1.66",
+   "unit": "m",
+   "conditions": "Adjustable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "Up to, full robot",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "Approximately (~3 kg)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Stereo and RGB-D cameras, LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 Humble, Python SDK, VR teleoperation app; open source",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 2 Humble, Python SDK",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Omnidirectional base with three omniwheels for indoor labs, offices and shops.",
+   "Parallel grippers; teleoperation by VR for data collection.",
+   "Runtime not published.",
+   "roughGround, stairs and outdoor set to false: small omniwheel base for indoor use."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://pollen-robotics.com/assets/og/og-reachy-2.jpg",
+   "pageUrl": "https://www.pollen-robotics.com/reachy-2/",
+   "credit": "Pollen Robotics",
+   "alt": "Pollen Robotics Reachy 2 humanoid upper body with two arms",
+   "kind": "product"
+  },
+  {
+   "url": "https://pollen-robotics.com/assets/reachy2/vr-teleop.webp",
+   "pageUrl": "https://www.pollen-robotics.com/reachy-2/",
+   "credit": "Pollen Robotics (Hugging Face)",
+   "alt": "Pollen Robotics Reachy 2 at a table in a lab, teleoperated by a man wearing a VR headset",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "VR teleoperation to collect manipulation data for embodied AI",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker use case for AI and robotics labs."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.pollen-robotics.com/reachy-2/",
+   "title": "Reachy 2 product page",
+   "publisher": "Pollen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pollen-robotics.com/contact-us/",
+   "title": "Contact us",
+   "publisher": "Pollen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://store.pollen-robotics.com/",
+   "title": "Pollen Robotics Store (Germany, EUR)",
+   "publisher": "Pollen Robotics SAS",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price in EUR?",
+  "Runtime and battery?",
+  "Is a version without mobile base sold?"
+ ],
+ "checkedAt": "2026-10-02"
+}

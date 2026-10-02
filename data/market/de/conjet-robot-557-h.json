@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "conjet-robot-557-h",
+ "maker": "Conjet",
+ "makerCountry": "SE",
+ "model": "Robot 557 H",
+ "variant": null,
+ "name": "Conjet Robot 557 H",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_concrete_repair/hydrodemolition"
+ ],
+ "officialUrl": "https://www.conjet.com/product/hydrodemolition-robot-557-h/",
+ "summary": "Tracked hydrodemolition robot for horizontal surfaces such as parking decks and bridge decks.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany by Falch GmbH (Blaubeuren), Conjet's named distributor, as \"crawl rob 500 conjet acr 557 h d\"; price on request.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Falch GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.falch.com/en/product/crawl-rob-500-conjet-acr-557-h-d-z0100004",
+    "contactUrl": "https://www.falch.com/en/contact",
+    "email": "info@falch.com",
+    "phone": "+49 7344 9244-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Conjet distributor for Germany, Austria and Switzerland (Blaubeuren-Seissen). \"Ask for price\" on the catalogue page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 2300,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "length_mm",
+   "label": "Length",
+   "value": 3480,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "width_mm",
+   "label": "Width, tracks extended",
+   "value": "1200-1900",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "cutting_width_mm",
+   "label": "Cutting width",
+   "value": 2100,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reaction_force_n",
+   "label": "Maximum reaction force",
+   "value": 3000,
+   "unit": "N",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_source",
+   "label": "Power",
+   "value": "diesel 18.7 kW, or electric 3x380-480 V 32 A / 3x200 V 63 A",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Built for horizontal slabs; for walls and ceilings use the 557 MPA.",
+   "Remote controlled with automated cutting (ConjetONE); needs a separate high-pressure pump."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.conjet.com/wp-content/uploads/2021/11/Conjet-ACR-Robot-557H.jpg",
+   "pageUrl": "https://www.conjet.com/product/hydrodemolition-robot-557-h/",
+   "credit": "Conjet AB",
+   "alt": "Conjet Robot 557 H hydrodemolition robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://shop-api.falch.com/thumbnail/6a/57/03/1764264427/z0100004_appl_01_1920x1920.jpg?ts=1764264446",
+   "pageUrl": "https://www.falch.com/en/product/crawl-rob-500-conjet-acr-557-h-d-z0100004",
+   "credit": "Falch GmbH / Conjet",
+   "alt": "Conjet Robot 557 removing concrete from a road deck with a water jet, mist rising around the shield",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete_repair/hydrodemolition"
+   ],
+   "task": "Concrete removal on parking garages, bridges and other horizontal surfaces",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.conjet.com/product/hydrodemolition-robot-557-h/",
+   "title": "Conjet Robot 557 H product page",
+   "publisher": "Conjet AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.conjet.com/conjetdistributors/",
+   "title": "Conjet distributors (Germany: Falch GmbH)",
+   "publisher": "Conjet AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.falch.com/en/product/crawl-rob-500-conjet-acr-557-h-d-z0100004",
+   "title": "Falch catalogue entry for the Conjet Robot 557 H",
+   "publisher": "Falch GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro price not public.",
+  "Price and supply of the matching high-pressure pump."
+ ],
+ "checkedAt": "2026-10-02"
+}

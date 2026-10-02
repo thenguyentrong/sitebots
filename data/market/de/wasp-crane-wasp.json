@@ -1,0 +1,173 @@
+{
+ "schemaVersion": 1,
+ "id": "wasp-crane-wasp",
+ "maker": "WASP",
+ "makerCountry": "IT",
+ "model": "Crane WASP",
+ "variant": null,
+ "name": "Crane WASP",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.3dwasp.com/en/3d-printer-house-crane-wasp/",
+ "summary": "Modular crane-type 3D printer that prints houses in concrete, clay or earth mixes within an 8.2 m diameter, 3.2 m high area.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Italy) shows a euro starting price and sells via quote form or resellers; no German reseller confirmed.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 160000,
+   "basis": "unknown",
+   "kind": "from",
+   "sourceId": "s1",
+   "note": "\"starting from 160.000 €\"; tax basis not stated."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "WASP",
+    "country": "IT",
+    "role": "manufacturer",
+    "productUrl": "https://www.3dwasp.com/en/3d-printer-house-crane-wasp/",
+    "contactUrl": "https://www.3dwasp.com/en/wasp-resellers/",
+    "email": "info@3dwasp.com",
+    "phone": "+39 0545 87858",
+    "priceEur": 160000,
+    "priceBasis": "unknown",
+    "sourceId": "s1",
+    "note": "Massa Lombarda, Italy."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "print_area_mm",
+   "label": "Printing volume",
+   "value": "Ø 8200 x H 3200",
+   "unit": "mm",
+   "conditions": "Ø min 2000 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_mms",
+   "label": "Max. printing speed",
+   "value": 200,
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "column_height_cm",
+   "label": "Column height",
+   "value": 520,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_length_cm",
+   "label": "Arm length",
+   "value": 430,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Printer weight",
+   "value": 700,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_kw",
+   "label": "Absorbed power",
+   "value": 1.5,
+   "unit": "kW",
+   "conditions": "below; 220/240 V",
+   "sourceId": "s1"
+  },
+  {
+   "key": "nozzle_mm",
+   "label": "Nozzle diameter",
+   "value": "25 / 30 / 38",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "pump_weight_kg",
+   "label": "Pumping system weight",
+   "value": 300,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Stationary crane on a column; several units can be combined.",
+   "Prints concrete, clay, lime and earth mixes up to 5 mm aggregate."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.3dwasp.com/wp-content/uploads/2025/07/house-3d-printer-Crane_WASP.png",
+   "pageUrl": "https://www.3dwasp.com/en/3d-printer-house-crane-wasp/",
+   "credit": "WASP",
+   "alt": "Crane WASP house 3D printer",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printing houses and service buildings",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.3dwasp.com/en/3d-printer-house-crane-wasp/",
+   "title": "House 3D printer: Crane WASP",
+   "publisher": "WASP",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether the price includes the pump."
+ ],
+ "checkedAt": "2026-10-02"
+}

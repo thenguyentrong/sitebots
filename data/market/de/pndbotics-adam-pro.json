@@ -1,0 +1,206 @@
+{
+ "schemaVersion": 1,
+ "id": "pndbotics-adam-pro",
+ "maker": "PNDbotics",
+ "makerCountry": "CN",
+ "model": "Adam",
+ "variant": "Pro / Pro Max",
+ "name": "PNDbotics Adam Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.pndbotics.com/humanoid",
+ "summary": "The top PNDbotics Adam research humanoid (1.67 m, 63 kg, 43 joints) with 6-DoF hands and a moving head; Pro Max adds a motion-capture suit and VR headset for teleoperation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/PNDbotics-Adam-Pro-Pro-Max",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Adam Pro and Pro Max; price on request."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Bipedal (Leverkusen) is the official PNDbotics distributor and lists this model with price on request.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.67,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. torque (knee, hip)",
+   "value": 340,
+   "unit": "Nm",
+   "conditions": "ankle 46 Nm, arm 60 Nm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1188,
+   "unit": "Wh",
+   "conditions": "max. 46.2 V, 25 A",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel NUC12WSKi7 and NVIDIA Jetson Orin NX 16 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 63,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 43,
+   "unit": null,
+   "conditions": "including 2-DoF head and hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "ZED Mini stereo camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "teleoperation",
+   "label": "Teleoperation kit",
+   "value": "Pro Max: Noitom PNLink wired motion capture and Meta Quest 3",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Open-source SDK for low-level operations, URDF, Isaac Gym DRL training, PND software suite",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open-source SDK",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Payload and runtime not published.",
+   "Pro Max is the same robot plus a teleoperation kit for imitation learning."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.pndbotics.com/assets/home_part1_bg-Dw7d332k.jpg",
+   "pageUrl": "https://www.pndbotics.com/",
+   "credit": "PNDbotics",
+   "alt": "PNDbotics Adam humanoid, upper body",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.pndbotics.com/assets/home_part2_right-BI2uyH3g.png",
+   "pageUrl": "https://www.pndbotics.com/",
+   "credit": "PNDbotics",
+   "alt": "PNDbotics Adam upper body with one hand raised palm up, studio render",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Teleoperation and imitation-learning data collection (Pro Max kit)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bipedal.de/PNDbotics-Adam-Pro-Pro-Max",
+   "title": "PNDbotics Adam Pro & Pro Max",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pndbotics.com/humanoid",
+   "title": "Humanoid robot Adam",
+   "publisher": "PNDbotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price, runtime and payload not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

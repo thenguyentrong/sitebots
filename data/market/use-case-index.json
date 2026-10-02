@@ -1,0 +1,2185 @@
+{
+ "generated": "npm run market:index",
+ "count": 235,
+ "useCases": [
+  {
+   "id": "asset_inspection_infrastructure/bridge-inspection",
+   "title": "Inspect bridges under DIN 1076",
+   "family": "inspection_qa_documentation",
+   "setting": "Inspection of infrastructure assets",
+   "industries": [
+    "construction",
+    "energy"
+   ]
+  },
+  {
+   "id": "asset_inspection_infrastructure/cable-tunnel-inspection",
+   "title": "Patrol utility and cable tunnels",
+   "family": "inspection_qa_documentation",
+   "setting": "Inspection of infrastructure assets",
+   "industries": [
+    "construction",
+    "energy"
+   ]
+  },
+  {
+   "id": "asset_inspection_infrastructure/parking-deck-condition-survey",
+   "title": "Document cracks and coating damage in parking decks",
+   "family": "inspection_qa_documentation",
+   "setting": "Inspection of infrastructure assets",
+   "industries": [
+    "construction",
+    "energy"
+   ]
+  },
+  {
+   "id": "asset_inspection_infrastructure/substation-rounds",
+   "title": "Patrol substations for hot spots and gauge readings",
+   "family": "monitoring_safety_patrol",
+   "setting": "Inspection of infrastructure assets",
+   "industries": [
+    "construction",
+    "energy"
+   ]
+  },
+  {
+   "id": "construction_3d_printing/place-reinforcement-in-printed-walls",
+   "title": "Place reinforcement in printed walls",
+   "family": "assembly_fastening",
+   "setting": "Construction 3D printing",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "construction_3d_printing/run-material-supply",
+   "title": "Run the mixing and pumping plant that feeds the printer",
+   "family": "machine_operation_dedicated",
+   "setting": "Construction 3D printing",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "construction_3d_printing/set-boxes-during-printing",
+   "title": "Set outlet boxes and opening covers into the wall while it prints",
+   "family": "assembly_fastening",
+   "setting": "Construction 3D printing",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "construction_logistics_hub/container-unloading",
+   "title": "Unload floor-loaded cartons from containers",
+   "family": "packaging_palletising_loading",
+   "setting": "Construction logistics hub",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "construction_logistics_hub/delivery-slot-staging",
+   "title": "Stage pallets in lanes by delivery slot",
+   "family": "intralogistics_transport",
+   "setting": "Construction logistics hub",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "construction_logistics_hub/kitting-per-crew",
+   "title": "Pick material kits per floor and crew",
+   "family": "kitting_picking_sorting",
+   "setting": "Construction logistics hub",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "equipment_rental_depot/concrete-tool-cleaning",
+   "title": "Clean concrete residue off returned vibrators and trowels",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Equipment rental depot and workshop",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "equipment_rental_depot/returned-tool-electrical-testing",
+   "title": "Test returned portable electrical tools before the next hire",
+   "family": "inspection_qa_documentation",
+   "setting": "Equipment rental depot and workshop",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "equipment_rental_depot/scaffold-parts-sorting",
+   "title": "Sort returned scaffold parts onto stillages by type",
+   "family": "kitting_picking_sorting",
+   "setting": "Equipment rental depot and workshop",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "facade_prefab/fit-windows-into-elements",
+   "title": "Fit windows into facade elements for serial renovation",
+   "family": "assembly_fastening",
+   "setting": "Facade element prefabrication",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "facade_prefab/fix-cladding-panels",
+   "title": "Rivet fibre-cement cladding panels onto facade elements",
+   "family": "assembly_fastening",
+   "setting": "Facade element prefabrication",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "facade_prefab/tape-airtight-window-connections",
+   "title": "Tape the airtight window connections in prefabricated facade elements",
+   "family": "assembly_fastening",
+   "setting": "Facade element prefabrication",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "facility_operation/facade-window-cleaning",
+   "title": "Clean facade glazing from the building maintenance unit",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Facility operation and building inspection",
+   "industries": [
+    "facilities"
+   ]
+  },
+  {
+   "id": "facility_operation/floor-scrubbing",
+   "title": "Scrub corridor, lobby and hall floors",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Facility operation and building inspection",
+   "industries": [
+    "facilities"
+   ]
+  },
+  {
+   "id": "facility_operation/night-security-patrol",
+   "title": "Walk the night security rounds inside the building",
+   "family": "monitoring_safety_patrol",
+   "setting": "Facility operation and building inspection",
+   "industries": [
+    "facilities"
+   ]
+  },
+  {
+   "id": "facility_operation/plant-room-rounds",
+   "title": "Walk inspection rounds through plant rooms",
+   "family": "monitoring_safety_patrol",
+   "setting": "Facility operation and building inspection",
+   "industries": [
+    "facilities"
+   ]
+  },
+  {
+   "id": "joinery_windows_doors/fit-sash-hardware",
+   "title": "Fit tilt-and-turn hardware to window sashes",
+   "family": "assembly_fastening",
+   "setting": "Joinery, window and door manufacturing",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "joinery_windows_doors/glaze-sashes",
+   "title": "Glaze window sashes with insulating glass units",
+   "family": "assembly_fastening",
+   "setting": "Joinery, window and door manufacturing",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "joinery_windows_doors/load-windows-onto-racks",
+   "title": "Load finished windows onto transport racks",
+   "family": "packaging_palletising_loading",
+   "setting": "Joinery, window and door manufacturing",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "material_yard_warehouse/bagged-goods-picking",
+   "title": "Pick bagged plaster and mortar onto customer pallets",
+   "family": "packaging_palletising_loading",
+   "setting": "Material yard and warehouse",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "material_yard_warehouse/stock-counting",
+   "title": "Count stock at the shelf for the rolling inventory",
+   "family": "inspection_qa_documentation",
+   "setting": "Material yard and warehouse",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "material_yard_warehouse/tote-handling",
+   "title": "Move totes between shelving, conveyor and packing",
+   "family": "intralogistics_transport",
+   "setting": "Material yard and warehouse",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "material_yard_warehouse/truck-loading",
+   "title": "Load customer orders onto trucks in the yard",
+   "family": "packaging_palletising_loading",
+   "setting": "Material yard and warehouse",
+   "industries": [
+    "construction",
+    "warehousing"
+   ]
+  },
+  {
+   "id": "mep_prefab/cut-large-bore-pipe-bars",
+   "title": "Take large-bore pipe bars from the rack and cut them to length",
+   "family": "machine_tending",
+   "setting": "Building-services prefabrication (TGA)",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "mep_prefab/pack-spools-per-floor",
+   "title": "Label finished pipe spools and pack them per floor for delivery",
+   "family": "packaging_palletising_loading",
+   "setting": "Building-services prefabrication (TGA)",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "mep_prefab/press-pipe-spools",
+   "title": "Cut, deburr and press small-bore pipe spools",
+   "family": "assembly_fastening",
+   "setting": "Building-services prefabrication (TGA)",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "modular_volumetric/board-module-walls-ceilings",
+   "title": "Board module walls and ceilings with gypsum boards",
+   "family": "assembly_fastening",
+   "setting": "Modular and volumetric construction",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "modular_volumetric/first-fix-electrics-in-modules",
+   "title": "Set boxes and lay cables in modules before the walls close",
+   "family": "assembly_fastening",
+   "setting": "Modular and volumetric construction",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "modular_volumetric/move-modules-between-stations",
+   "title": "Move room modules and bathroom pods between stations",
+   "family": "heavy_element_handling",
+   "setting": "Modular and volumetric construction",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "precast_concrete/check-element-dimensions",
+   "title": "Check finished elements against their tolerances and record the result",
+   "family": "inspection_qa_documentation",
+   "setting": "Precast concrete plant",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "precast_concrete/embedded-parts-placement",
+   "title": "Place electrical boxes, conduit and small inserts before concreting",
+   "family": "assembly_fastening",
+   "setting": "Precast concrete plant",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "precast_concrete/reinforcement-placement",
+   "title": "Place reinforcement mesh and lattice girders on the pallet",
+   "family": "assembly_fastening",
+   "setting": "Precast concrete plant",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "precast_concrete/shuttering-placement",
+   "title": "Set and strip shutters on the pallet",
+   "family": "assembly_fastening",
+   "setting": "Precast concrete plant",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/beam-glulam-handling",
+   "title": "Handle beams, posts and glulam members",
+   "family": "heavy_element_handling",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/board-handling-osb-gypsum",
+   "title": "Handle full OSB and gypsum boards",
+   "family": "heavy_element_handling",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/cnc-joinery-cutting",
+   "title": "Cut and joint studs and beams",
+   "family": "machine_operation_dedicated",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/consumable-replenishment-housekeeping",
+   "title": "Restock fastener magazines, clear packaging, tidy workstations",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/eifs-facade-application",
+   "title": "Apply EIFS facade panels and render in the plant",
+   "family": "surface_finishing",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/element-turning",
+   "title": "Turn elements for the second side",
+   "family": "heavy_element_handling",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/fittings-kitting",
+   "title": "Kit fittings and hardware for element assembly",
+   "family": "kitting_picking_sorting",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/insulation-batt-insertion",
+   "title": "Insert insulation batts into the frame bays",
+   "family": "assembly_fastening",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/intralogistics-between-stations",
+   "title": "Fetch tools, consumables and kit boxes to the line",
+   "family": "intralogistics_transport",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/machine-tending-clean-zone",
+   "title": "Feed small components to a station in the clean zone",
+   "family": "machine_tending",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/multilayer-sheathing-gluing",
+   "title": "Glue and apply multi-layer sheathing",
+   "family": "assembly_fastening",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/nailing-sheathing",
+   "title": "Nail and staple sheathing to the frame",
+   "family": "assembly_fastening",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/packaging-kitting-stable-volumes",
+   "title": "Pack standard fitting sets at stable volumes",
+   "family": "packaging_palletising_loading",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/palletising-small-parts",
+   "title": "Palletise small components at the end of the line",
+   "family": "packaging_palletising_loading",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/panel-sawing-routing",
+   "title": "Saw and rout boards, cut openings",
+   "family": "machine_operation_dedicated",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/qa-inspection-documentation",
+   "title": "Inspect and document elements before they leave the hall",
+   "family": "inspection_qa_documentation",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/stud-insertion-framing",
+   "title": "Insert studs into the frame",
+   "family": "assembly_fastening",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/truck-loading-finished-elements",
+   "title": "Load finished elements onto trucks",
+   "family": "heavy_element_handling",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/wall-element-handling",
+   "title": "Move and turn finished wall, floor and roof elements",
+   "family": "heavy_element_handling",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/window-door-unit-installation",
+   "title": "Install window and door units into elements",
+   "family": "assembly_fastening",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "prefab_timber/work-in-machining-dust-zone",
+   "title": "Clear offcuts and service the machines in the machining zone",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Prefab timber house factory",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "rebar_formwork_prep/cut-stock-mesh",
+   "title": "Cut stock mesh to size and cut out openings",
+   "family": "heavy_element_handling",
+   "setting": "Rebar cage and formwork preparation",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "rebar_formwork_prep/feed-bars-to-bender",
+   "title": "Feed reinforcing bars to the shear and bending machines",
+   "family": "machine_tending",
+   "setting": "Rebar cage and formwork preparation",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "rebar_formwork_prep/tie-reinforcement-cages",
+   "title": "Tie reinforcement cages for columns and beams",
+   "family": "assembly_fastening",
+   "setting": "Rebar cage and formwork preparation",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "site_building_automation/ceiling-presence-detector-installation",
+   "title": "Install presence detectors in suspended ceilings",
+   "family": "assembly_fastening",
+   "setting": "Building automation",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_building_automation/room-sensor-mounting",
+   "title": "Mount, connect and address room temperature controllers",
+   "family": "assembly_fastening",
+   "setting": "Building automation",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_cable_trenching/cable-duct-laying",
+   "title": "Lay cable protection ducts in the trench",
+   "family": "assembly_fastening",
+   "setting": "Cable trenching",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_cable_trenching/cable-pulling-into-ducts",
+   "title": "Pull power cables into the ground ducts",
+   "family": "assembly_fastening",
+   "setting": "Cable trenching",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_cleaning_waste/cleaning-between-trades",
+   "title": "Clear and sweep floors between trades",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Construction cleaning and waste",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_cleaning_waste/glazing-first-clean",
+   "title": "Clean windows and glazing at handover",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Construction cleaning and waste",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_cleaning_waste/waste-sorting-fractions",
+   "title": "Sort construction waste into the separate fractions",
+   "family": "kitting_picking_sorting",
+   "setting": "Construction cleaning and waste",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/column-formwork",
+   "title": "Form columns with column formwork",
+   "family": "heavy_element_handling",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/ground-slab",
+   "title": "Build a reinforced ground slab: blinding, reinforcement, pour",
+   "family": "machine_operation_dedicated",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/poker-vibrator-compaction",
+   "title": "Compact fresh concrete with a poker vibrator",
+   "family": "machine_operation_dedicated",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/precast-element-erection",
+   "title": "Erect precast walls, columns and stairs by crane",
+   "family": "heavy_element_handling",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/rebar-tying-slabs",
+   "title": "Tie rebar crossings on slab and deck mats",
+   "family": "assembly_fastening",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/semi-precast-slab-laying",
+   "title": "Lay semi-precast lattice-girder floor slabs on props",
+   "family": "heavy_element_handling",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/slab-concrete-pour",
+   "title": "Place slab concrete with a truck-mounted pump and screed it off",
+   "family": "machine_operation_dedicated",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/slab-formwork",
+   "title": "Set up slab formwork from props, beams and sheets",
+   "family": "assembly_fastening",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/slab-power-troweling",
+   "title": "Float and trowel slab surfaces with a power trowel",
+   "family": "surface_finishing",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete/wall-formwork-panels",
+   "title": "Set, tie and strike framed wall formwork",
+   "family": "heavy_element_handling",
+   "setting": "Concrete and reinforced concrete",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete_repair/hydrodemolition",
+   "title": "Remove damaged concrete down to the reinforcement",
+   "family": "surface_finishing",
+   "setting": "Concrete repair",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_concrete_repair/repair-mortar-application",
+   "title": "Mix and apply repair mortar to prepared areas",
+   "family": "surface_finishing",
+   "setting": "Concrete repair",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_corrosion_protection/abrasive-blasting",
+   "title": "Blast-clean steel before coating",
+   "family": "surface_finishing",
+   "setting": "Corrosion protection on steel structures",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_corrosion_protection/coating-thickness-check",
+   "title": "Measure the dry film thickness of the coating on steelwork",
+   "family": "inspection_qa_documentation",
+   "setting": "Corrosion protection on steel structures",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_demolition/asbestos-removal",
+   "title": "Remove weakly bound asbestos in an enclosed area",
+   "family": "surface_finishing",
+   "setting": "Demolition, stripping and hazardous-material removal",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_demolition/concrete-breaking",
+   "title": "Break out concrete walls and slabs",
+   "family": "machine_operation_dedicated",
+   "setting": "Demolition, stripping and hazardous-material removal",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_demolition/soft-strip-fit-out",
+   "title": "Strip out the fit-out and sort it into waste fractions",
+   "family": "assembly_fastening",
+   "setting": "Demolition, stripping and hazardous-material removal",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_drywall/ceiling-substructure",
+   "title": "Hang the substructure of a suspended plasterboard ceiling",
+   "family": "assembly_fastening",
+   "setting": "Drywall",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_drywall/drywall-joint-finishing",
+   "title": "Fill, spray and sand drywall joints",
+   "family": "surface_finishing",
+   "setting": "Drywall",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_drywall/plasterboard-installation",
+   "title": "Lift and fix plasterboard to walls and ceilings",
+   "family": "assembly_fastening",
+   "setting": "Drywall",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_drywall/stud-frame-setting",
+   "title": "Set the metal stud frame of a partition",
+   "family": "assembly_fastening",
+   "setting": "Drywall",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_earthworks/excavation",
+   "title": "Excavate a building pit with an excavator and load trucks",
+   "family": "machine_operation_dedicated",
+   "setting": "Earthworks",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_earthworks/formation-compaction-testing",
+   "title": "Test compaction on the formation with the light falling weight device",
+   "family": "inspection_qa_documentation",
+   "setting": "Earthworks",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_earthworks/geotextile-separation-layer",
+   "title": "Lay a geotextile separation layer on the formation",
+   "family": "assembly_fastening",
+   "setting": "Earthworks",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_earthworks/trench-backfill-compaction",
+   "title": "Compact trench backfill layer by layer",
+   "family": "machine_operation_dedicated",
+   "setting": "Earthworks",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_electrical/cable-pulling",
+   "title": "Lay cables on trays and pull them into conduits",
+   "family": "assembly_fastening",
+   "setting": "Electrical and communication installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_electrical/cable-tray-mounting",
+   "title": "Mount cable trays under the ceiling",
+   "family": "assembly_fastening",
+   "setting": "Electrical and communication installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_electrical/initial-verification",
+   "title": "Test the installation before it is switched on",
+   "family": "inspection_qa_documentation",
+   "setting": "Electrical and communication installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_electrical/overhead-drilling-anchors",
+   "title": "Drill anchor holes overhead for the installations",
+   "family": "assembly_fastening",
+   "setting": "Electrical and communication installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_etics/insulation-anchoring",
+   "title": "Drill and set insulation anchors through the boards",
+   "family": "assembly_fastening",
+   "setting": "External insulation and render systems (ETICS)",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_etics/insulation-board-bonding",
+   "title": "Bond insulation boards to the external wall",
+   "family": "assembly_fastening",
+   "setting": "External insulation and render systems (ETICS)",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_etics/reinforcing-layer",
+   "title": "Apply the base coat and embed the reinforcing mesh",
+   "family": "surface_finishing",
+   "setting": "External insulation and render systems (ETICS)",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_flooring/carpet-tile-laying",
+   "title": "Lay carpet tiles on tackifier",
+   "family": "surface_finishing",
+   "setting": "Floor coverings and parquet",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_flooring/click-parquet-laying",
+   "title": "Lay click parquet planks floating on an underlay",
+   "family": "surface_finishing",
+   "setting": "Floor coverings and parquet",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_flooring/click-vinyl-laying",
+   "title": "Lay click vinyl planks floating",
+   "family": "surface_finishing",
+   "setting": "Floor coverings and parquet",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_flooring/linoleum-sheet-gluing",
+   "title": "Lay and glue linoleum sheet from the roll",
+   "family": "surface_finishing",
+   "setting": "Floor coverings and parquet",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_heating/heat-pump-setting",
+   "title": "Set the outdoor and indoor units of an air-to-water heat pump",
+   "family": "assembly_fastening",
+   "setting": "Heating installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_heating/radiator-mounting",
+   "title": "Hang panel radiators on their wall brackets",
+   "family": "assembly_fastening",
+   "setting": "Heating installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_heating/thermostatic-valve-presetting",
+   "title": "Preset thermostatic radiator valves for hydraulic balancing",
+   "family": "assembly_fastening",
+   "setting": "Heating installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_heating/underfloor-heating-pipe-laying",
+   "title": "Lay and tack underfloor heating pipe",
+   "family": "assembly_fastening",
+   "setting": "Heating installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_insulation_fire_stopping/duct-fire-cladding",
+   "title": "Clad ventilation ducts with fire-protection boards",
+   "family": "assembly_fastening",
+   "setting": "Insulation and fire stopping on building services",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_insulation_fire_stopping/fire-stopping-penetrations",
+   "title": "Seal service penetrations through fire-rated walls and slabs",
+   "family": "assembly_fastening",
+   "setting": "Insulation and fire stopping on building services",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_insulation_fire_stopping/pipe-insulation-heating",
+   "title": "Insulate heating and hot-water pipes to GEG",
+   "family": "assembly_fastening",
+   "setting": "Insulation and fire stopping on building services",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_joinery/door-hardware-fitting",
+   "title": "Fit lever handles to interior doors",
+   "family": "assembly_fastening",
+   "setting": "Joinery, interior doors and hardware",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_joinery/door-leaf-hanging",
+   "title": "Hang interior door leaves into their frames",
+   "family": "assembly_fastening",
+   "setting": "Joinery, interior doors and hardware",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_joinery/wooden-frame-setting",
+   "title": "Set wooden door frames into the wall opening and foam them in",
+   "family": "assembly_fastening",
+   "setting": "Joinery, interior doors and hardware",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_landscaping/lawn-mowing-completion-care",
+   "title": "Mow new lawns until acceptance",
+   "family": "machine_operation_dedicated",
+   "setting": "Landscaping",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_landscaping/turf-laying",
+   "title": "Lay turf rolls on the prepared soil",
+   "family": "assembly_fastening",
+   "setting": "Landscaping",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_lifts/landing-door-installation",
+   "title": "Install and adjust the landing doors of a lift",
+   "family": "assembly_fastening",
+   "setting": "Lifts and escalators",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_lifts/shaft-anchor-drilling",
+   "title": "Drill anchor holes in the lift shaft for the guide rail brackets",
+   "family": "assembly_fastening",
+   "setting": "Lifts and escalators",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_lightning_protection/foundation-earth-electrode",
+   "title": "Lay the foundation earth electrode before the concrete is poured",
+   "family": "assembly_fastening",
+   "setting": "Lightning protection and earthing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_lightning_protection/roof-conductor-installation",
+   "title": "Lay roof conductors of the lightning protection on a flat roof",
+   "family": "assembly_fastening",
+   "setting": "Lightning protection and earthing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_masonry/facing-brickwork",
+   "title": "Lay facing brickwork in front of an insulated wall",
+   "family": "assembly_fastening",
+   "setting": "Masonry",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_masonry/fitting-pieces-cutting",
+   "title": "Cut fitting pieces at the masonry saw",
+   "family": "machine_operation_dedicated",
+   "setting": "Masonry",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_masonry/lintel-placing",
+   "title": "Set precast lintels over door and window openings",
+   "family": "heavy_element_handling",
+   "setting": "Masonry",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_masonry/masonry-wall-laying",
+   "title": "Lay masonry units for walls",
+   "family": "assembly_fastening",
+   "setting": "Masonry",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_masonry/unit-staging-at-wall",
+   "title": "Stock masonry units along the wall for the bricklayer",
+   "family": "intralogistics_transport",
+   "setting": "Masonry",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_metalwork/grating-laying",
+   "title": "Lay and clamp steel gratings on platforms and walkways",
+   "family": "assembly_fastening",
+   "setting": "Metalwork",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_metalwork/railing-installation",
+   "title": "Install railings on balconies and stair flights",
+   "family": "assembly_fastening",
+   "setting": "Metalwork",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_painting/door-frame-lacquering",
+   "title": "Lacquer steel door frames and wooden doors on site",
+   "family": "surface_finishing",
+   "setting": "Painting, coating and wallpapering",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_painting/masking-and-covering",
+   "title": "Cover floors and mask components before painting",
+   "family": "surface_finishing",
+   "setting": "Painting, coating and wallpapering",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_painting/wall-ceiling-painting",
+   "title": "Paint walls and ceilings",
+   "family": "surface_finishing",
+   "setting": "Painting, coating and wallpapering",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_painting/wallpaper-hanging",
+   "title": "Hang woodchip wallpaper",
+   "family": "surface_finishing",
+   "setting": "Painting, coating and wallpapering",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_plaster/corner-bead-setting",
+   "title": "Set corner beads before plastering",
+   "family": "assembly_fastening",
+   "setting": "Plaster and stucco",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_plaster/machine-plaster-application",
+   "title": "Spray and level machine-applied gypsum plaster",
+   "family": "surface_finishing",
+   "setting": "Plaster and stucco",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_plaster/plaster-bag-feeding",
+   "title": "Feed plaster bags into the mixing pump",
+   "family": "machine_tending",
+   "setting": "Plaster and stucco",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_plumbing/drainage-pipe-gradient",
+   "title": "Lay drainage pipes inside the building to falls",
+   "family": "assembly_fastening",
+   "setting": "Water, gas and drainage installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_plumbing/press-fitting-pipes",
+   "title": "Join metal water and heating pipes with a press tool",
+   "family": "assembly_fastening",
+   "setting": "Water, gas and drainage installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_plumbing/wc-ceramic-mounting",
+   "title": "Hang wall-hung WC bowls on the installation frame",
+   "family": "assembly_fastening",
+   "setting": "Water, gas and drainage installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_plumbing/wc-frame-setting",
+   "title": "Set pre-wall installation frames for wall-hung WCs",
+   "family": "assembly_fastening",
+   "setting": "Water, gas and drainage installations",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_roads_paving/asphalt-paving",
+   "title": "Lay and compact an asphalt course with a paver and rollers",
+   "family": "machine_operation_dedicated",
+   "setting": "Roads, paths and paving",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_roads_paving/kerb-setting",
+   "title": "Set concrete kerbs",
+   "family": "heavy_element_handling",
+   "setting": "Roads, paths and paving",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_roads_paving/paving-block-laying",
+   "title": "Lay concrete paving blocks",
+   "family": "assembly_fastening",
+   "setting": "Roads, paths and paving",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_roads_paving/stakeout-kerb-lines",
+   "title": "Stake out kerb lines and points for the road works",
+   "family": "layout_marking_surveying",
+   "setting": "Roads, paths and paving",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_roofing/membrane-seam-welding",
+   "title": "Weld the seams of plastic roofing membranes",
+   "family": "assembly_fastening",
+   "setting": "Roofing and roof waterproofing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_roofing/roof-battens",
+   "title": "Fix counter-battens and tiling battens on the rafters",
+   "family": "assembly_fastening",
+   "setting": "Roofing and roof waterproofing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_roofing/roof-tile-laying",
+   "title": "Lay concrete roof tiles on the battens and clip them",
+   "family": "assembly_fastening",
+   "setting": "Roofing and roof waterproofing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_scaffolding/frame-scaffold-dismantling",
+   "title": "Dismantle the frame scaffold and stack the parts",
+   "family": "assembly_fastening",
+   "setting": "Scaffolding",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_scaffolding/frame-scaffold-erection",
+   "title": "Erect a frame facade scaffold and anchor it to the building",
+   "family": "assembly_fastening",
+   "setting": "Scaffolding",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_scaffolding/scaffold-inspection-before-use",
+   "title": "Inspect the scaffold before use and after storms",
+   "family": "inspection_qa_documentation",
+   "setting": "Scaffolding",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_screed/cm-moisture-test",
+   "title": "Test screed moisture with the CM method before covering",
+   "family": "inspection_qa_documentation",
+   "setting": "Screed",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_screed/insulation-edge-strips",
+   "title": "Lay impact-sound insulation and edge strips under a floating screed",
+   "family": "assembly_fastening",
+   "setting": "Screed",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_screed/screed-levelling",
+   "title": "Spread and level cement screed",
+   "family": "surface_finishing",
+   "setting": "Screed",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_setup_logistics/bagged-material-distribution",
+   "title": "Distribute bagged plaster and mortar to the work areas",
+   "family": "intralogistics_transport",
+   "setting": "Site setup and logistics",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_setup_logistics/material-runs-to-installers",
+   "title": "Bring fittings, fixings and tools to the installers",
+   "family": "intralogistics_transport",
+   "setting": "Site setup and logistics",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_setup_logistics/site-fence-setup",
+   "title": "Set up and move the mobile site fence",
+   "family": "assembly_fastening",
+   "setting": "Site setup and logistics",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sewers/manhole-ring-setting",
+   "title": "Set precast manhole rings on the manhole base",
+   "family": "heavy_element_handling",
+   "setting": "Drainage sewers",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sewers/sewer-camera-inspection",
+   "title": "Inspect new sewers by camera before acceptance",
+   "family": "inspection_qa_documentation",
+   "setting": "Drainage sewers",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sewers/sewer-pipe-laying",
+   "title": "Lay concrete sewer pipes in the trench",
+   "family": "heavy_element_handling",
+   "setting": "Drainage sewers",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sheet_metal/downpipe-installation",
+   "title": "Install downpipes on the facade",
+   "family": "assembly_fastening",
+   "setting": "Sheet-metal work",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sheet_metal/gutter-installation",
+   "title": "Hang eaves gutters in their brackets and join the lengths",
+   "family": "assembly_fastening",
+   "setting": "Sheet-metal work",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sheet_metal/parapet-capping",
+   "title": "Fold and fit parapet cappings in sheet zinc",
+   "family": "assembly_fastening",
+   "setting": "Sheet-metal work",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_specialist_foundations/bored-piles",
+   "title": "Drill and concrete bored piles",
+   "family": "machine_operation_dedicated",
+   "setting": "Specialist foundation works",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_specialist_foundations/ground-anchor-installation",
+   "title": "Install prestressed ground anchors for a retaining wall",
+   "family": "assembly_fastening",
+   "setting": "Specialist foundation works",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_specialist_foundations/sheet-pile-driving",
+   "title": "Pitch and drive steel sheet piles",
+   "family": "heavy_element_handling",
+   "setting": "Specialist foundation works",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_specialist_foundations/trench-shoring",
+   "title": "Shore a pipe trench with trench boxes",
+   "family": "heavy_element_handling",
+   "setting": "Specialist foundation works",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sprinklers/flexible-sprinkler-drops",
+   "title": "Connect sprinklers to the branch lines with flexible hoses in suspended ceilings",
+   "family": "assembly_fastening",
+   "setting": "Sprinklers and extinguishing systems",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sprinklers/sprinkler-heads",
+   "title": "Install sprinklers and set them to the ceiling",
+   "family": "assembly_fastening",
+   "setting": "Sprinklers and extinguishing systems",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_sprinklers/sprinkler-pipework",
+   "title": "Hang sprinkler pipework under the ceiling",
+   "family": "assembly_fastening",
+   "setting": "Sprinklers and extinguishing systems",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_steelwork/hv-bolt-preloading",
+   "title": "Preload high-strength bolts in steel connections",
+   "family": "assembly_fastening",
+   "setting": "Steelwork",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_steelwork/shear-stud-welding",
+   "title": "Weld shear studs onto steel beams on site",
+   "family": "assembly_fastening",
+   "setting": "Steelwork",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_steelwork/steel-deck-laying",
+   "title": "Lay and fix trapezoidal steel roof decking",
+   "family": "assembly_fastening",
+   "setting": "Steelwork",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_stone/block-step-setting",
+   "title": "Set cast-stone block steps for outdoor stairs",
+   "family": "assembly_fastening",
+   "setting": "Natural and cast stone",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_stone/tread-step-setting",
+   "title": "Set cast-stone tread steps on a concrete stair core",
+   "family": "assembly_fastening",
+   "setting": "Natural and cast stone",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_survey_documentation/as-built-laser-scanning",
+   "title": "Scan the as-built state and compare it with the model",
+   "family": "inspection_qa_documentation",
+   "setting": "Survey, layout and documentation",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_survey_documentation/layout-marking-slabs",
+   "title": "Mark wall lines and openings on the slab",
+   "family": "layout_marking_surveying",
+   "setting": "Survey, layout and documentation",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_survey_documentation/pre-closure-documentation",
+   "title": "Photograph installations before ceilings and shafts close",
+   "family": "inspection_qa_documentation",
+   "setting": "Survey, layout and documentation",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_survey_documentation/progress-capture-walks",
+   "title": "Walk the shell and capture progress",
+   "family": "inspection_qa_documentation",
+   "setting": "Survey, layout and documentation",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_tiling/bathroom-wall-tiling",
+   "title": "Tile bathroom walls with 30 × 60 cm tiles",
+   "family": "surface_finishing",
+   "setting": "Tiling",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_tiling/bonded-waterproofing-wet-areas",
+   "title": "Apply bonded liquid waterproofing under tiles (DIN 18534)",
+   "family": "surface_finishing",
+   "setting": "Tiling",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_tiling/large-format-floor-tiles",
+   "title": "Lay large-format floor tiles in thin-bed adhesive",
+   "family": "surface_finishing",
+   "setting": "Tiling",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_tiling/tile-grouting",
+   "title": "Grout wall and floor tiles",
+   "family": "surface_finishing",
+   "setting": "Tiling",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_timber_frame/prefab-element-setting",
+   "title": "Set and fix prefabricated timber wall elements",
+   "family": "heavy_element_handling",
+   "setting": "Carpentry and timber construction",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_timber_frame/rafter-setting",
+   "title": "Set and fix rafters on the roof structure",
+   "family": "heavy_element_handling",
+   "setting": "Carpentry and timber construction",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_timber_frame/structural-screw-connections",
+   "title": "Drive self-drilling screws into structural timber connections",
+   "family": "assembly_fastening",
+   "setting": "Carpentry and timber construction",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_tunnelling/rock-bolt-setting",
+   "title": "Drill and set radial rock bolts in the tunnel",
+   "family": "assembly_fastening",
+   "setting": "Tunnelling",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_tunnelling/shotcrete-lining",
+   "title": "Spray the shotcrete lining",
+   "family": "surface_finishing",
+   "setting": "Tunnelling",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_ventilated_facade/facade-panel-mounting",
+   "title": "Lift and fix large fibre-cement facade panels",
+   "family": "assembly_fastening",
+   "setting": "Rainscreen facades",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_ventilated_facade/insulation-fixing",
+   "title": "Fix mineral-wool insulation boards behind the cladding",
+   "family": "assembly_fastening",
+   "setting": "Rainscreen facades",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_ventilated_facade/substructure-mounting",
+   "title": "Mount the aluminium sub-structure: wall brackets and rails",
+   "family": "assembly_fastening",
+   "setting": "Rainscreen facades",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_ventilation/ceiling-diffuser-installation",
+   "title": "Fit ceiling diffusers with plenum boxes",
+   "family": "assembly_fastening",
+   "setting": "Ventilation and air conditioning",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_ventilation/fire-damper-installation",
+   "title": "Install fire dampers in walls and floors",
+   "family": "assembly_fastening",
+   "setting": "Ventilation and air conditioning",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_ventilation/rectangular-duct-installation",
+   "title": "Hang rectangular sheet-metal ducts under the ceiling",
+   "family": "assembly_fastening",
+   "setting": "Ventilation and air conditioning",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_waterproofing/drainage-protection-membrane",
+   "title": "Lay a protection and drainage membrane over the basement waterproofing",
+   "family": "surface_finishing",
+   "setting": "Waterproofing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_waterproofing/pmbc-basement-coating",
+   "title": "Apply bitumen thick coating (PMBC) to basement walls",
+   "family": "surface_finishing",
+   "setting": "Waterproofing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_waterproofing/torch-on-membranes",
+   "title": "Torch-weld bitumen membranes onto basement walls and slabs",
+   "family": "surface_finishing",
+   "setting": "Waterproofing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_windows_doors/large-pane-glazing",
+   "title": "Lift large insulating glass units into their frames",
+   "family": "heavy_element_handling",
+   "setting": "Windows, external doors and glazing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_windows_doors/window-joint-sealing",
+   "title": "Seal the window joint in three levels",
+   "family": "assembly_fastening",
+   "setting": "Windows, external doors and glazing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "site_windows_doors/window-unit-setting",
+   "title": "Set window units into the opening and fix them",
+   "family": "assembly_fastening",
+   "setting": "Windows, external doors and glazing",
+   "industries": [
+    "construction"
+   ]
+  },
+  {
+   "id": "steel_fabrication/fit-and-tack-attachments",
+   "title": "Fit and tack-weld end plates, cleats and stiffeners to beams",
+   "family": "assembly_fastening",
+   "setting": "Steel fabrication shop",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "steel_fabrication/load-beam-drill-saw-line",
+   "title": "Load beams onto the drill and saw line and take the cut parts off",
+   "family": "machine_tending",
+   "setting": "Steel fabrication shop",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "steel_fabrication/sort-cut-plate-parts",
+   "title": "Take cut plate parts off the cutting table and sort them by assembly",
+   "family": "kitting_picking_sorting",
+   "setting": "Steel fabrication shop",
+   "industries": [
+    "construction",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-whole-body-balance",
+   "title": "Evaluate humanoid balance and whole-body coordination",
+   "family": "robotics_research",
+   "setting": "Locomotion and whole-body control laboratory",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:humanoid-tactile-contact-experiments",
+   "title": "Study fingertip contact during humanoid grasps",
+   "family": "robotics_research",
+   "setting": "Dexterous manipulation research cell",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:humanoid-tote-conveyor-handoff",
+   "title": "Transfer loaded totes onto a conveyor",
+   "family": "intralogistics_transport",
+   "setting": "Warehouse automation handoff",
+   "industries": [
+    "warehousing"
+   ]
+  },
+  {
+   "id": "research:humanoid-empty-tote-return",
+   "title": "Return empty totes after picking",
+   "family": "intralogistics_transport",
+   "setting": "Warehouse empty-container return",
+   "industries": [
+    "warehousing"
+   ]
+  },
+  {
+   "id": "research:humanoid-assembly-kit-delivery",
+   "title": "Deliver prepared assembly kits to the line",
+   "family": "intralogistics_transport",
+   "setting": "Factory assembly-line handoff",
+   "industries": [
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-component-precheck",
+   "title": "Check components before assembly handoff",
+   "family": "inspection_qa_documentation",
+   "setting": "Factory parts-preparation trial",
+   "industries": [
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-load-sheet-metal-fixtures",
+   "title": "Load sheet-metal parts into welding fixtures",
+   "family": "machine_tending",
+   "setting": "Automotive body shop",
+   "industries": [
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-sequence-components-into-trolleys",
+   "title": "Sequence automotive parts into delivery trolleys",
+   "family": "kitting_picking_sorting",
+   "setting": "Automotive assembly logistics",
+   "industries": [
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-handle-stacked-totes",
+   "title": "Lift and restack factory totes across pallet layers",
+   "family": "packaging_palletising_loading",
+   "setting": "Factory tote-handling station",
+   "industries": [
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-sort-flow-rack-components",
+   "title": "Pick automotive components from flow racks",
+   "family": "kitting_picking_sorting",
+   "setting": "Automotive parts-sorting station",
+   "industries": [
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-check-assembly-kit-completeness",
+   "title": "Check that automotive assembly kits contain every part",
+   "family": "inspection_qa_documentation",
+   "setting": "Automotive SPS kitting station",
+   "industries": [
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:humanoid-record-manipulation-demonstrations",
+   "title": "Record humanoid manipulation demonstrations",
+   "family": "kitting_picking_sorting",
+   "setting": "Humanoid learning and teleoperation laboratory",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:humanoid-test-learned-manipulation",
+   "title": "Test learned manipulation policies on a physical humanoid",
+   "family": "kitting_picking_sorting",
+   "setting": "Robot learning evaluation cell",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:humanoid-trial-aircraft-drilling",
+   "title": "Trial humanoid drilling in an experimental assembly line",
+   "family": "assembly_fastening",
+   "setting": "Experimental aircraft assembly research cell",
+   "industries": [
+    "manufacturing",
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:humanoid-force-controlled-handling-research",
+   "title": "Develop force-controlled humanoid handling",
+   "family": "heavy_element_handling",
+   "setting": "Whole-body manipulation research laboratory",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:tron-coordinate-arm-leg-control",
+   "title": "Develop coordinated arm-and-leg control",
+   "family": "robotics_research",
+   "setting": "Supervised mobile-manipulation research area",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:tron-floor-level-pickup",
+   "title": "Research picking objects from floor level",
+   "family": "robotics_research",
+   "setting": "Controlled laboratory floor and tabletop",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:tron-reach-switches-buttons",
+   "title": "Research reaching switches and control buttons",
+   "family": "robotics_research",
+   "setting": "Instrumented laboratory wall and control-panel mock-up",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:tron-mapping-navigation-validation",
+   "title": "Validate mapping and navigation on a legged platform",
+   "family": "robotics_research",
+   "setting": "Supervised indoor/outdoor robotics test route",
+   "industries": [
+    "research_education"
+   ]
+  },
+  {
+   "id": "research:warehouse-pallet-racking",
+   "title": "Put pallets into warehouse storage racks",
+   "family": "intralogistics_transport",
+   "setting": "Warehouse pallet storage",
+   "industries": [
+    "warehousing",
+    "manufacturing"
+   ]
+  },
+  {
+   "id": "research:hospital-cart-delivery",
+   "title": "Move meal and linen carts between hospital departments",
+   "family": "intralogistics_transport",
+   "setting": "Hospital corridors and support departments",
+   "industries": [
+    "healthcare_logistics"
+   ]
+  },
+  {
+   "id": "research:hospital-supply-runs",
+   "title": "Deliver requested supplies to hospital wards",
+   "family": "intralogistics_transport",
+   "setting": "Hospital ward and supply-room routes",
+   "industries": [
+    "healthcare_logistics"
+   ]
+  },
+  {
+   "id": "research:restaurant-tray-delivery",
+   "title": "Carry meals from the restaurant pass to table handoff points",
+   "family": "intralogistics_transport",
+   "setting": "Restaurant dining areas",
+   "industries": [
+    "retail_hospitality"
+   ]
+  },
+  {
+   "id": "research:hotel-room-item-delivery",
+   "title": "Bring drinks and room-service items to hotel room doors",
+   "family": "intralogistics_transport",
+   "setting": "Hotel corridors and room-door handoff points",
+   "industries": [
+    "retail_hospitality"
+   ]
+  },
+  {
+   "id": "research:prepare-hardened-concrete-floors",
+   "title": "Grind hardened concrete before recoating",
+   "family": "surface_finishing",
+   "setting": "Floor refurbishment",
+   "industries": [
+    "construction",
+    "facilities"
+   ]
+  },
+  {
+   "id": "research:polish-concrete-terrazzo-floors",
+   "title": "Polish concrete and terrazzo floor surfaces",
+   "family": "surface_finishing",
+   "setting": "Decorative and industrial floors",
+   "industries": [
+    "construction",
+    "facilities"
+   ]
+  },
+  {
+   "id": "research:seed-and-hoe-row-crops",
+   "title": "Seed and hoe planned row crops",
+   "family": "machine_operation_dedicated",
+   "setting": "Outdoor crop field",
+   "industries": [
+    "agriculture"
+   ]
+  },
+  {
+   "id": "research:weed-vegetable-rows",
+   "title": "Mechanically weed vegetable rows",
+   "family": "machine_operation_dedicated",
+   "setting": "Outdoor crop field",
+   "industries": [
+    "agriculture"
+   ]
+  },
+  {
+   "id": "research:spot-spray-supported-crops",
+   "title": "Spot-spray selected plants in supported crops",
+   "family": "machine_operation_dedicated",
+   "setting": "Outdoor crop field",
+   "industries": [
+    "agriculture"
+   ]
+  },
+  {
+   "id": "research:dairy-feed-pushing",
+   "title": "Push dairy feed back toward cattle",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Dairy cattle barn",
+   "industries": [
+    "agriculture"
+   ]
+  },
+  {
+   "id": "research:dairy-manure-collection",
+   "title": "Collect manure from solid barn floors",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Dairy cattle barn",
+   "industries": [
+    "agriculture"
+   ]
+  },
+  {
+   "id": "research:dairy-feed-remixing",
+   "title": "Remix feed along a cattle feed table",
+   "family": "cleaning_housekeeping_replenishment",
+   "setting": "Dairy cattle barn",
+   "industries": [
+    "agriculture"
+   ]
+  },
+  {
+   "id": "research:bulky-waste-fraction-sorting",
+   "title": "Sort bulky waste into recoverable fractions",
+   "family": "kitting_picking_sorting",
+   "setting": "Material recovery facility",
+   "industries": [
+    "waste_recycling"
+   ]
+  },
+  {
+   "id": "research:light-recyclable-residue-recovery",
+   "title": "Recover light recyclables from residue belts",
+   "family": "kitting_picking_sorting",
+   "setting": "Material recovery facility",
+   "industries": [
+    "waste_recycling"
+   ]
+  },
+  {
+   "id": "research:fibre-line-carton-recovery",
+   "title": "Recover beverage cartons from paper lines",
+   "family": "kitting_picking_sorting",
+   "setting": "Material recovery facility",
+   "industries": [
+    "waste_recycling"
+   ]
+  }
+ ]
+}

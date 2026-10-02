@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
+import { JobRobotsStrip } from '@/components/market/JobRobotsStrip';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Icon } from '@/components/journey/Icon';
 import { Steps } from '@/components/journey/Steps';
 import { TaskCheck } from '@/components/journey/TaskCheck';
 import { VerdictBadge } from '@/components/journey/VerdictBadge';
+import { StepFlow } from '@/components/workflows/StepFlow';
 import { loadContent } from '@/lib/content/load';
 import { factText } from '@/lib/journey/fact-text';
 import { GROUP_LABELS, LV_UNIT_LABELS, lbLabel } from '@/lib/journey/labels';
@@ -12,6 +14,7 @@ import { publicMetadata } from '@/lib/seo';
 import { FACT_LABELS, type Facts } from '@/lib/screen/facts';
 import { complianceLabels, findTaskCard, journeyContent } from '@/lib/tasks/cards';
 import type { RequirementEntry, TaskCard } from '@/lib/tasks/types';
+import { loadWorkflow } from '@/lib/workflows/load';
 import '../../../plan/plan.css';
 import '../../../plan/journey.css';
 
@@ -56,16 +59,19 @@ export default async function UseCasePage({ params }: { params: Params }) {
   const compliance = complianceLabels(content);
   const metrics = Object.fromEntries(content.pilotMetrics.map((m) => [m.id, m.label.en]));
   const machines = Object.fromEntries(journey.machineClasses.map((m) => [m.id, m.title.en]));
+  const workflow = loadWorkflow(card.id);
   return <main className="jp-page plan-page">
     <Steps />
     <nav className="jp-muted pt-8" aria-label="Breadcrumb"><Link className="jp-link" href="/use-cases">Use cases</Link>{home ? <> / <Link className="jp-link" href={'/use-cases?group=' + home.group}>{GROUP_LABELS[home.group]}</Link></> : null} / <Link className="jp-link" href={'/use-cases?setting=' + card.setting}>{lbLabel(home?.lv?.lb) ? lbLabel(home?.lv?.lb) + ' ' : ''}{settings[card.setting] ?? card.setting}</Link></nav>
     <header className="jp-head" style={{ paddingTop: 24 }}>
-      <div className="flex flex-wrap items-center gap-3"><VerdictBadge verdict={card.reference_verdict} reference /><span className="jp-muted inline-flex items-center gap-2"><Icon name={card.family} size={16} />{journey.families[card.family]?.en ?? card.family}</span></div>
+      <div className="flex flex-wrap items-center gap-3"><span className="jp-small">Task opportunity</span><span className="jp-muted inline-flex items-center gap-2"><Icon name={card.family} size={16} />{journey.families[card.family]?.en ?? card.family}</span></div>
       <h1 className="max-w-4xl">{card.title.en}</h1>
       <p className="jp-lede">{card.summary.en}</p>
-      <p className="jp-small mt-4">Screened for {settings[card.setting] ?? card.setting}, sources reviewed {card.sources_reviewed_at}. <Link className="jp-link" href="/use-cases/criteria">How tasks are screened</Link></p>
+      <p className="jp-small mt-4">Recorded for {settings[card.setting] ?? card.setting}, sources reviewed {card.sources_reviewed_at}. <Link className="jp-link" href="/use-cases/criteria">How evidence is assessed</Link></p>
     </header>
+    <JobRobotsStrip jobId={card.id} />
     <div className="jp-body">
+      {workflow ? <StepFlow workflow={workflow} /> : null}
       <TaskCheck card={card} group={home?.group ?? 'site'} machineClasses={journey.machineClasses} machineClassFamilies={journey.machineClassFamilies} solutionClasses={journey.solutionClasses} />
       <section className="jp-section" aria-labelledby="about"><h2 id="about">About the task</h2>
         <div className="flex flex-col gap-6">
@@ -88,12 +94,12 @@ export default async function UseCasePage({ params }: { params: Params }) {
       </section>
       <div className="grid gap-8 md:grid-cols-2 md:items-start md:gap-12">
         <section className="jp-section" aria-labelledby="evidence"><h2 id="evidence">Evidence</h2>
-          {card.evidence.length ? <ul className="flex flex-col gap-4">{card.evidence.map((e) => <li key={e.url}><p className="jp-text">{e.statement.en}</p><p className="jp-small mt-1"><a className="jp-link" href={e.url} target="_blank" rel="noopener noreferrer">{new URL(e.url).hostname}</a>, {e.kind}, {e.type}, {e.date}, tier {e.tier}</p>{e.note ? <p className="jp-small mt-1">{e.note}</p> : null}</li>)}</ul> : <p className="jp-muted">No humanoid precedent is claimed for this task; the verdict rests on the requirement profile above.</p>}
+          {card.evidence.length ? <ul className="flex flex-col gap-4">{card.evidence.map((e) => <li key={e.url}><p className="jp-text">{e.statement.en}</p><p className="jp-small mt-1"><a className="jp-link" href={e.url} target="_blank" rel="noopener noreferrer">{new URL(e.url).hostname}</a>, {e.kind}, {e.type}, {e.date}, tier {e.tier}</p>{e.note ? <p className="jp-small mt-1">{e.note}</p> : null}</li>)}</ul> : <p className="jp-muted">No deployment evidence is recorded for this task. Request evidence for the complete solution before treating it as usable.</p>}
         </section>
-        <section className="jp-section" aria-labelledby="pilot"><h2 id="pilot">Pilot</h2>
-          <div className="flex flex-col gap-3 jp-text">
+        <section className="jp-section" aria-labelledby="pilot"><h2 id="pilot">Pilot planning example</h2>
+          <div className="flex flex-col gap-3 jp-text"><p className="jp-small">Adapt these examples to your process and exact solution. Agree acceptance thresholds before the pilot; they are not universal robot limits.</p>
             <p><span className="font-medium">Scope: </span>{card.pilot.scope_hint.en}</p>
-            <p><span className="font-medium">Abort rule: </span>{card.pilot.abort_rule.en}</p>
+            <p><span className="font-medium">Original example stop criterion: </span>{card.pilot.abort_rule.en}</p>
             {card.pilot.metrics.length ? <p><span className="font-medium">Measure: </span>{card.pilot.metrics.map((m) => metrics[m] ?? m).join(', ')}</p> : null}
             {card.prerequisites.length ? <div><h3 className="font-semibold">Prerequisites</h3><ul className="mt-1 list-disc pl-5">{card.prerequisites.map((p) => <li key={p.en}>{p.en}</li>)}</ul></div> : null}
             {card.open_questions.length ? <div><h3 className="font-semibold">Open questions</h3><ul className="mt-1 list-disc pl-5">{card.open_questions.map((q) => <li key={q.en}>{q.en}</li>)}</ul></div> : null}
@@ -101,6 +107,7 @@ export default async function UseCasePage({ params }: { params: Params }) {
           </div>
         </section>
       </div>
+      <details className="jp-details"><summary>Previous humanoid screening assessment (legacy)</summary><p className="jp-muted my-3">This historical assessment used general humanoid assumptions. It does not determine whether other robot types or dedicated equipment can perform this task.</p><VerdictBadge verdict={card.reference_verdict} reference /></details>
       {card.also_in_settings.length ? <p className="jp-muted">Object facts may transfer to: {card.also_in_settings.map((s, i) => <span key={s}>{i ? ', ' : ''}<Link className="jp-link text-foreground" href={'/use-cases?setting=' + s}>{settings[s] ?? s}</Link></span>)}. The site conditions never transfer; you answer them in the check.</p> : null}
     </div>
   </main>;

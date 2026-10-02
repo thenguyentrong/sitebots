@@ -1,0 +1,273 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-x30-pro",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "X30",
+ "variant": "Pro",
+ "name": "DEEP Robotics X30 Pro",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/product3.html",
+ "summary": "The X30 with extra USB, WiFi and 5/12/24 V power ports for mounting inspection payloads; same IP67 legged base, sold in Germany through Génération Robots and Funduino.",
+ "launched": "2023-10",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Génération Robots lists the X30 Pro at 95,000 € net (114,000 € gross, 6 to 9 weeks); Funduino (Nordhorn) lists it at 107,087.90 € incl. VAT as the \"X30 Pro\" version of its Rhino X30 page.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 95000,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "114,000 € incl. VAT; listed as \"Von\" (from)."
+  },
+  "priceOther": {
+   "amount": 113400,
+   "currency": "USD",
+   "market": "US online shop shop.deeprobotics.us",
+   "sourceId": "s5"
+  },
+  "leadTime": "6 to 9 weeks (Génération Robots)",
+  "sellers": [
+   {
+    "name": "Génération Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/de/404277-x30-quadruped-roboter.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 95000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "French distributor with German shop and Berlin phone line; cart and quote request."
+   },
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduinoshop.com/robotik/deep-robotics/rhino-x30/deep-robotics-rhino-x30",
+    "contactUrl": "https://funduinoshop.com/impressum",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 107087.9,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": "Version \"X30 Pro\" on the Rhino X30 page; 89,989.83 € net. Battery not included; Funduino sells it for 7,127.90 € incl. VAT."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 59,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Standing size",
+   "value": "1000 x 715 x 470",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 4,
+   "unit": "m/s",
+   "conditions": "stated as at least 4 m/s, lab data",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step / obstacle height",
+   "value": 20,
+   "unit": "cm",
+   "conditions": "stated as at least 20 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": "climbs stairs up to 45°",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "2.5 to 4 h, at least 10 km",
+   "sourceId": "s1"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "USB 2.0, USB 3.0, Ethernet, WiFi, 5/12/24 V power outputs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "4x lidar plus camera, RTK module optional",
+   "unit": null,
+   "conditions": "Génération Robots listing",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": 2.5,
+  "ipRating": "IP67",
+  "sdk": "ROS / ROS2",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "All maker figures are lab data.",
+   "Inspection payloads such as a zoom/thermal PTZ camera are add-ons."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/x30.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product3.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics X30 series quadruped (X30 and X30 Pro share the body)",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.generationrobots.com/20631-large_default/x30-quadruped-roboter.jpg",
+   "pageUrl": "https://www.generationrobots.com/de/404277-x30-quadruped-roboter.html",
+   "credit": "Génération Robots / DEEP Robotics",
+   "alt": "DEEP Robotics X30 Pro with the raised interface box on its back, front three-quarter view, render on a white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p1.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/product3.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics X30 with a pan-tilt camera payload walking through an industrial plant, side view",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/cable-tunnel-inspection",
+    "asset_inspection_infrastructure/substation-rounds"
+   ],
+   "task": "Offered for power substation patrols and cable tunnel inspection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/product3.html",
+   "title": "X30 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404277-x30-quadruped-roboter.html",
+   "title": "X30 Pro Quadruped-Roboter",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://funduinoshop.com/robotik/deep-robotics/rhino-x30/deep-robotics-rhino-x30",
+   "title": "Deep Robotics Rhino X30",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.deeprobotics.cn/en/index/industry.html",
+   "title": "Industry applications",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://shop.deeprobotics.us/products/x30",
+   "title": "DEEP Robotics X30 Pro",
+   "publisher": "Deep Robotics Online Shop (US)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether the 95,000 € price includes battery and remote."
+ ],
+ "checkedAt": "2026-10-02"
+}

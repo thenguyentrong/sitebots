@@ -1,0 +1,211 @@
+{
+ "schemaVersion": 1,
+ "id": "neura-4ne1-mini-pro",
+ "maker": "NEURA Robotics",
+ "makerCountry": "DE",
+ "model": "4NE1 Mini",
+ "variant": "Pro (12-DoF dexterous hands)",
+ "name": "NEURA 4NE1 Mini Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://neura-robotics.com/products/4ne1-mini/",
+ "summary": "The 1.32 m compact German humanoid with two 12-DoF hands for research and light manipulation; reservation only.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Made in Germany. Refundable 100 EUR reservation on the NEURA site; the maker expects availability in 2026 (datasheet said spring 2026). No deliveries confirmed.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 29999,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "Estimated price, excluding taxes and shipping."
+  },
+  "priceOther": null,
+  "leadTime": "Expected in 2026 (maker reservation page).",
+  "sellers": [
+   {
+    "name": "NEURA Robotics GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://neura-robotics.com/product/4ne1-mini-reservation/",
+    "contactUrl": "https://neura-robotics.com/contact-us/",
+    "email": null,
+    "phone": null,
+    "priceEur": 29999,
+    "priceBasis": "net",
+    "sourceId": "s1",
+    "note": "Manufacturer in Metzingen, Germany. Online reservation for single units; commercial quantities through the contact form."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.32,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 36,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 25,
+   "unit": null,
+   "conditions": "Base unit only, without hands or end effectors",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DoF per hand",
+   "value": 12,
+   "unit": null,
+   "conditions": "Pro version",
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "As stated on the datasheet; not specified per arm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Walking speed",
+   "value": 4.6,
+   "unit": "km/h",
+   "conditions": "max.",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Motion endurance",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Interfaces",
+   "value": "Wi-Fi 6, Gigabit Ethernet, ROS 2, C++ and Python SDK, NeuraSync",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2.5,
+  "ipRating": null,
+  "sdk": "ROS 2, C++ and Python SDK; digital twin, teleoperation",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Pro adds 12-DoF dexterous hands, C++ SDK, digital twin access and teleoperation.",
+   "Maker says it works on ground level and uneven surfaces; stair walking is still under development.",
+   "Payload 3 kg (datasheet), not stated per arm."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2025/12/4NE1_Mini_showroom-e1767087861629.webp",
+   "pageUrl": "https://neura-robotics.com/product/4ne1-mini-reservation/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA 4NE1 Mini with five-finger hands in a showroom",
+   "kind": "product"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/01/NEURA_4NE1_Mini_pose5-scaled-e1768948421553.webp",
+   "pageUrl": "https://neura-robotics.com/products/4ne1-mini/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA 4NE1 Mini standing on one leg with arms spread, cut-out render.",
+   "kind": "product"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/01/4NE1_Mini_home_02-scaled.webp",
+   "pageUrl": "https://neura-robotics.com/products/4ne1-mini/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA 4NE1 Mini standing in front of a sunlit curtained window in a dim room.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/01/4NE1_Mini_home_04-2048x1105.webp",
+   "pageUrl": "https://neura-robotics.com/products/4ne1-mini/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA 4NE1 Mini showing a heart on its face display in a dim living room, people blurred in the foreground.",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Shown in live demonstrations at Automate 2026",
+   "stage": "demo",
+   "where": "Automate 2026, USA",
+   "date": "2026",
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://neura-robotics.com/product/4ne1-mini-reservation/",
+   "title": "Reserve 4NE1 Mini (Standard and Pro, prices, availability)",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://neurarobotics.px.media/plk/Jj/4NE1Minidatasheet.pdf",
+   "title": "4NE1 Mini datasheet V1 01.01.2026",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://neura-robotics.com/neura-robotics-showcases-full-stack-robotics-platform-at-automate-2026/",
+   "title": "NEURA Robotics at Automate 2026",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the 3 kg payload per arm?",
+  "Firm delivery date for Germany?"
+ ],
+ "checkedAt": "2026-10-02"
+}

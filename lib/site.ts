@@ -12,7 +12,7 @@ import { siteOrigin } from './site-origin';
  */
 export const SITE = {
   name: 'sitebots',
-  tagline: 'Which robot can work on your construction site',
+  tagline: 'Explore humanoids, robot dogs and mobile platforms',
   url: siteOrigin(process.env.SITE_URL, process.env.VERCEL_PROJECT_PRODUCTION_URL, process.env.NODE_ENV === 'production'),
   email: process.env.SCRAPER_CONTACT_EMAIL || '',
 

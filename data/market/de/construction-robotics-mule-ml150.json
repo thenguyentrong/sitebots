@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "construction-robotics-mule-ml150",
+ "maker": "Construction Robotics",
+ "makerCountry": "US",
+ "model": "MULE ML150",
+ "variant": null,
+ "name": "Construction Robotics MULE ML150",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "material_lifting",
+  "bricklaying",
+  "site_masonry/masonry-wall-laying"
+ ],
+ "officialUrl": "https://www.construction-robotics.com/ml150",
+ "summary": "A lift-assist arm on a ground base that carries the weight of blocks, panels or other parts up to 150 lb (200 lb option) while a worker guides them.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 1465,
+   "currency": "USD",
+   "market": "US, per month with 5-year financing at 7%",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "US product financed through JLG Financial; no European distributor, CE information or EU customer found. A US-registered web shop (ASIMOV Stores LLC) lists \"MULE\" with price \"TBD\" and no model, which is not an authorised channel.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "lift_capacity_lb",
+   "label": "Lift capacity",
+   "value": 150,
+   "unit": "lb",
+   "conditions": "standard; up to 200 lb with capacity option",
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_weight_lb",
+   "label": "Arm weight",
+   "value": 870,
+   "unit": "lb",
+   "conditions": "fork pockets add 290 lb",
+   "sourceId": "s3"
+  },
+  {
+   "key": "power",
+   "label": "Power",
+   "value": "20 A at 120 V AC, or inverter generator",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "grippers",
+   "label": "Grippers",
+   "value": "standard and custom grippers including vacuum",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_ft",
+   "label": "Reach radius",
+   "value": 12,
+   "unit": "ft",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "cable_reach_ft",
+   "label": "Cable reach",
+   "value": 11,
+   "unit": "ft",
+   "conditions": "without extension",
+   "sourceId": "s3"
+  },
+  {
+   "key": "core_weight_lb",
+   "label": "Core weight (arm and fork pockets)",
+   "value": 1160,
+   "unit": "lb",
+   "conditions": "ground base adds 950 lb; masts 145-200 lb",
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 68,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Not available in Germany.",
+   "Sits on separate bases (fork pockets); maker photos show it on a tracked carrier, but no own drive is described.",
+   "Arm payload converted from 150 lb."
+  ],
+  "sourceIds": [
+   "s1",
+   "s3"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://framerusercontent.com/images/Fv01g8X7YEm8TiPfWc9vV3ea1HM.jpeg",
+   "pageUrl": "https://www.construction-robotics.com/ml150",
+   "credit": "Construction Robotics",
+   "alt": "MULE ML150 lift-assist arm on a tracked carrier on a site",
+   "kind": "product"
+  },
+  {
+   "url": "https://framerusercontent.com/images/mtIdKtzrAXAK9Wvv5405UiENq3A.jpeg",
+   "pageUrl": "https://www.construction-robotics.com/ml150",
+   "credit": "Construction Robotics",
+   "alt": "MULE ML150 holding a block next to a block wall in a trench",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Holds blocks for masons laying block walls; photos also show solar panel handling",
+   "stage": "claim",
+   "where": "USA",
+   "date": null,
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.construction-robotics.com/products",
+   "title": "Products and pricing",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.construction-robotics.com/mz100",
+   "title": "MULE MZ100",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.construction-robotics.com/ml150",
+   "title": "MULE ML150",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://asimovstores.eu/product/mule-material-unit-lift-enhancer/",
+   "title": "MULE listing",
+   "publisher": "ASIMOV Stores LLC",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Any plan for Europe or CE marking."
+ ],
+ "checkedAt": "2026-10-02"
+}

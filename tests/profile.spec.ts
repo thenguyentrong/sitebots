@@ -24,7 +24,7 @@ test('the parts and equipment panels are on the page', async ({ page }) => {
 });
 
 test('the compare page overlays one polygon per robot', async ({ page }) => {
-  await page.goto('/robots?q=unitree');
+  await page.goto('/robots?view=list&q=unitree');
   const ids: string[] = [];
   for (const b of await page.locator('button[data-robot-id]').all()) {
     ids.push((await b.getAttribute('data-robot-id'))!);

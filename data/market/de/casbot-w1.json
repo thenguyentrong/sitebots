@@ -1,0 +1,293 @@
+{
+ "schemaVersion": 1,
+ "id": "casbot-w1",
+ "maker": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+ "makerCountry": "CN",
+ "model": "W1",
+ "variant": null,
+ "name": "CASBOT W1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.casbot.tech/product/w1",
+ "summary": "A 260 kg wheeled humanoid with two 7-axis arms (5 kg each) on a lifting column that reaches 0 to 2.1 m, for shelf picking, machine loading and inspection rounds.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "No shop price: Roboter Deutschland (US-run web shop) lists W1 for quotation only; CASBOT sells its 02 humanoid in Germany through RBTX, so a request to CASBOT or the reseller is the route.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "CASBOT (Beijing Zhongke Huiling Robot Technology Co., Ltd.)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.casbot.tech/product/w1",
+    "contactUrl": "https://www.casbot.tech/contact",
+    "email": "info@casbot.tech",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Maker contact; no buy link for W1 on the maker site."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.12–2.1",
+   "unit": "m",
+   "conditions": "lifting column retracted to extended",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 260,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 20,
+   "unit": null,
+   "conditions": "7 per arm, 2 neck, 1 waist, 1 lift, 2 chassis; grippers extra",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "per arm; 10 kg total",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload both arms",
+   "value": 10,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Working height",
+   "value": "0–2.1",
+   "unit": "m",
+   "conditions": "arm span 2.04 m with grippers; arm working radius 0.61 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.2,
+   "unit": "m/s",
+   "conditions": "unloaded",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 25 Ah, LiFePO4",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "4–5 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "autonomous docking",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection rating",
+   "value": "IP68",
+   "unit": null,
+   "conditions": "as printed in the maker table, next to local air cooling",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5 to 40",
+   "unit": "°C",
+   "conditions": "humidity 25–85 %, non-condensing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Industrial PC (Intel i9 + RTX 4060) plus RK3588",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head stereo and RGB-D cameras, RGB-D on each wrist and chest, LiDAR navigation, 2-mic array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Ships with 2-finger grippers; dexterous hands or suction cups can be fitted.",
+   "Differential-drive wheeled base with LiDAR navigation (±10 mm), autonomous charging; wheeled, so no stairs.",
+   "Maker table prints IP68 next to local air cooling; treated as unconfirmed, so no IP rating is given here."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.casbot.tech/images/index/casbot_w1.jpg",
+   "pageUrl": "https://www.casbot.tech/",
+   "credit": "CASBOT",
+   "alt": "CASBOT W1 wheeled humanoid with lifting column and two arms",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/w1/1.jpg",
+   "pageUrl": "https://www.casbot.tech/product/w1",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "Two CASBOT W1 wheeled humanoids on a dark surface with mountains at dusk behind them",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/w1/4.jpg",
+   "pageUrl": "https://www.casbot.tech/product/w1",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "Two CASBOT W1 wheeled humanoids reaching into bins on a black shelving unit",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.casbot.tech/images/w1/mobile/slice_9.png",
+   "pageUrl": "https://www.casbot.tech/product/w1",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "CASBOT W1 seen from above and behind, reaching with both arms into a toolbox on a workbench",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.casbot.tech/images/w1/mobile/slice_8.png",
+   "pageUrl": "https://www.casbot.tech/product/w1",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "CASBOT W1 seen from above, one arm stretched out to the side and the other reaching down past its base",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.casbot.tech/images/w1/mobile/slice_7.png",
+   "pageUrl": "https://www.casbot.tech/product/w1",
+   "credit": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "alt": "CASBOT W1 on its wheeled base in side view, arms reaching forward, with a second unit blurred in the foreground",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Machine loading and unloading, assembly support and spot quality checks",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Picking and placing on multi-level shelves and point-to-point transport in warehouses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.casbot.tech/product/w1",
+   "title": "CASBOT W1 product page and spec table",
+   "publisher": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.roboterdeutschland.de/Casbot-W1-Wheeled-Humanoid-Robot-W1.htm",
+   "title": "Casbot W1 humanoider Roboter auf Rädern at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://rbtx.de/de-DE/components/humanoid/casbot-02-humanoid-robot-37-dof",
+   "title": "CASBOT 02 on RBTX (CASBOT sells into Germany)",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.casbot.tech/contact",
+   "title": "CASBOT contact page",
+   "publisher": "CASBOT (Beijing Zhongke Huiling Robot Technology)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is W1 delivered outside China yet? The maker site has a buy link for 02 but not for W1.",
+  "IP68 in the maker table is doubtful for an air-cooled robot; confirm with CASBOT.",
+  "No SDK or development interface is named for W1."
+ ],
+ "checkedAt": "2026-10-02"
+}

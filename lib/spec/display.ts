@@ -1,6 +1,7 @@
 import { fieldDef, splitSpecKey } from './fields';
 import { summarizeJson } from './parts';
 import type { SpecValue } from './types';
+import type { FormFactor } from './enums';
 
 const QUALIFIER_LABELS: Record<string, string> = {
   rated: 'rated, one arm',
@@ -21,25 +22,7 @@ export function qualifierLabel(q: string | null | undefined): string | null {
   return QUALIFIER_LABELS[q] ?? q.replace(/_/g, ' ');
 }
 
-const PAYLOAD_PREFERENCE = ['rated', 'sustained', 'carry_walking', 'rated_dual', null, 'peak', 'peak_dual', 'instant'];
-
-/**
- * The payload spec to headline: best evidence first, then the most
- * conservative measurement. A tier-3 "strength" figure must not outrank the
- * maker's rated figure just because it sorts first in the object.
- */
-export function pickPayloadKey(specs: Record<string, SpecValue>): string | null {
-  const keys = Object.keys(specs).filter((k) => k === 'payload_kg' || k.startsWith('payload_kg:'));
-  if (!keys.length) return null;
-  keys.sort((a, b) => {
-    const t = specs[a].source_tier - specs[b].source_tier;
-    if (t) return t;
-    const qa = PAYLOAD_PREFERENCE.indexOf(a.split(':')[1] ?? null);
-    const qb = PAYLOAD_PREFERENCE.indexOf(b.split(':')[1] ?? null);
-    return (qa === -1 ? 99 : qa) - (qb === -1 ? 99 : qb);
-  });
-  return keys[0];
-}
+export { pickPayloadKey } from './payload';
 
 function num(n: number, decimals: number): string {
   return n.toLocaleString('en-GB', { maximumFractionDigits: decimals, minimumFractionDigits: 0 });
@@ -104,10 +87,15 @@ export const PRICE_TIER_LABEL: Record<number, string> = {
   3: 'reported estimate',
 };
 
-export const FORM_FACTOR_LABEL: Record<string, string> = {
+export const FORM_FACTOR_LABEL: Record<FormFactor, string> = {
   humanoid: 'Humanoid',
   quadruped: 'Quadruped',
   mobile_manipulator: 'Mobile manipulator',
+  amr_agv: 'AMR / AGV',
+  industrial_arm: 'Industrial arm',
+  cobot: 'Cobot',
+  dedicated_robot: 'Dedicated robot',
+  integrated_cell: 'Integrated cell',
 };
 
 export const STATUS_LABEL: Record<string, string> = {

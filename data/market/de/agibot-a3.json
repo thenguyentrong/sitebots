@@ -1,0 +1,313 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-a3",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "A3",
+ "variant": "Standard (31 DOF, not Ultra)",
+ "name": "AGIBOT A3",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://store.agibot.com/products/a3",
+ "summary": "A 1.73 m, 55 kg walking humanoid with 31 joints (hands not counted) and up to 10 h runtime with swappable batteries, built for stage shows, reception and research rather than handling work.",
+ "launched": "2026",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots (France) sells the A3 online at EUR 88,600 excl. VAT with add-to-cart and 4-5 weeks delivery within the EU. Bipedal GmbH (Leverkusen) lists the A3 and an A3 Developer version as 'sofort verfügbar', price on request. The AGIBOT store lists it contact-only.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4",
+   "s5",
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 88600,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Generation Robots, excl. VAT (EUR 106,320 incl. French VAT). A3 Ultra costs EUR 113,000 net at the same seller."
+  },
+  "priceOther": null,
+  "leadTime": "Generation Robots: delivery within 4 to 5 weeks; Bipedal: 'sofort verfügbar'",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404480-agibot-a3-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 88600,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "EUR 88,600 excl. VAT; add to cart or ask for a quote; delivery within 4 to 5 weeks; ships within the EU."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/https/wwwbipedalde/AgiBot-A3",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "'Preis auf Anfrage', 'Sofort verfügbar'. Separate A3 Developer listing (open interfaces for secondary development), also price on request. Also rents an A3 at EUR 7,735 gross per week."
+   },
+   {
+    "name": "AGIBOT Store",
+    "country": "SG",
+    "role": "manufacturer",
+    "productUrl": "https://store.agibot.com/products/a3",
+    "contactUrl": "https://store.agibot.com/products/a3",
+    "email": "sales@agibot.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Placeholder price only (USD 999,999); contact sales for delivery details."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.73,
+   "unit": "m",
+   "conditions": "173 x 52 x 30 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 55,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Active DOF",
+   "value": 31,
+   "unit": null,
+   "conditions": "excluding hands: neck 2, arms 2 x 7, waist 3, legs 2 x 6",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "up to; Bipedal adds 'with actuator'",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max walking speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": "everyday use; normal walking under 1.2 m/s; running up to 5 m/s",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 10,
+   "unit": "h",
+   "conditions": "up to, depending on workload (walking and standing)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1152,
+   "unit": "Wh",
+   "conditions": "two packs",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Battery swap",
+   "value": true,
+   "unit": null,
+   "conditions": "hot swap in about 10 s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "2 h or less",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "2 x RK3588 (interaction and motion control modules)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular RGB camera, shoulder touch sensors, 8-mic array, GPS and UWB positioning (under 10 cm)",
+   "unit": null,
+   "conditions": "no LiDAR or depth camera listed",
+   "sourceId": "s4"
+  },
+  {
+   "key": "hands",
+   "label": "Hands",
+   "value": "Demonstration hand (skin-like silicone hand)",
+   "unit": null,
+   "conditions": "as listed by Bipedal; not counted in the 31 DOF",
+   "sourceId": "s4"
+  },
+  {
+   "key": "sdk",
+   "label": "Development",
+   "value": "Open interfaces; secondary development depends on the version (A3 Developer)",
+   "unit": null,
+   "conditions": "Bipedal: standard version uses AGIBOT's released functions only, no platform-level secondary development",
+   "sourceId": "s4"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": "Open interfaces; full secondary development only in the A3 Developer version",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4",
+   "s5"
+  ],
+  "notes": [
+   "Built for stage shows, events, reception and research; AGIBOT says application skills are not enabled by default and need secondary development.",
+   "Bipedal lists a silicone 'demonstration hand'; no gripping hand is listed for the standard A3 and the 31 DOF exclude hands.",
+   "The standard version runs AGIBOT's released functions; platform-level development needs the A3 Developer version.",
+   "No LiDAR, no IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0628/8175/9275/files/1_1.png?v=1786349615",
+   "pageUrl": "https://store.agibot.com/products/a3",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT A3 humanoid standing, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://store.agibot.com/cdn/shop/files/1_3.png?v=1786349615&width=800",
+   "pageUrl": "https://store.agibot.com/products/a3",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT A3 head and upper body, three-quarter front view on a white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://store.agibot.com/cdn/shop/files/1_2.png?v=1786349615&width=800",
+   "pageUrl": "https://store.agibot.com/products/a3",
+   "credit": "AGIBOT",
+   "alt": "Close-up of the AGIBOT A3 head and chest, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Stage performances, trade-show demonstrations, reception and guided tours",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "AGIBOT notes these need secondary development and validation."
+  },
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Research platform for humanoid locomotion and human-robot interaction",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://store.agibot.com/products/a3",
+   "title": "AGIBOT A3 (store, specifications and FAQ)",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/404480-agibot-a3-humanoid-robot.html",
+   "title": "AGIBOT A3 Humanoid Robot (Generation Robots)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/content/3-terms-and-conditions-of-use",
+   "title": "Generation Robots terms of sale (delivery within the EU)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.bipedal.de/https/wwwbipedalde/AgiBot-A3",
+   "title": "AgiBot A3 (Bipedal)",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.bipedal.de/wwwbipedalde/AgiBot-A3-Developer",
+   "title": "AgiBot A3 Developer (Bipedal)",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Can the standard A3 grip objects at all, or are the included silicone hands for show only? Can AGIBOT OmniHands be fitted?",
+  "Price of the A3 Developer version in Germany?",
+  "What does the 5 kg arm payload assume (hand fitted, arm posture)?"
+ ],
+ "checkedAt": "2026-10-02"
+}

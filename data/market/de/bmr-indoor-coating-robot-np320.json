@@ -1,0 +1,308 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-indoor-coating-robot-np320",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Indoor Coating Robot NP320",
+ "variant": null,
+ "name": "BMR Indoor Coating Robot NP320",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/187.html",
+ "summary": "Indoor robot that sprays primer and topcoat emulsion paint on walls, ceilings, beams and bay windows up to 3.2 m at up to 180 m²/h.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route to Germany found. BMR sells direct from China and names markets in Asia, the Middle East and Brazil, none in the EU. The only German listing is a US reseller not named by BMR, and BMR states no CE marking for this machine. Roboter Deutschland, a web shop run from Las Vegas without a named company, also lists it; it is not counted as a seller here.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 153622.37,
+   "currency": "USD",
+   "market": "Robots International online shop (US reseller)",
+   "sourceId": "s6"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Shenzhen BrightMaster Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://en.bm-robot.com/detail/187.html",
+    "contactUrl": "https://en.bm-robot.com/contact.html",
+    "email": "sales@bm-robot.com",
+    "phone": "400 988 2007 (ext. 2)",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Direct export enquiries via form, email or WhatsApp from Shenzhen; no EU office or EU distributor named."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 350,
+   "unit": "kg",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1050 x 690 x 1780",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "paint_rate_m2_h",
+   "label": "Spraying rate",
+   "value": 180,
+   "unit": "m²/h",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Spraying height",
+   "value": 3.2,
+   "unit": "m",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 4,
+   "unit": "h",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Positioning accuracy",
+   "value": "±20",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "paint_bucket_l",
+   "label": "Bucket volume",
+   "value": 60,
+   "unit": "L",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Moving speed",
+   "value": 0.5,
+   "unit": "m/s",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "obstacle_height_mm",
+   "label": "Obstacle crossing height",
+   "value": 20,
+   "unit": "mm",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "trench_width_mm",
+   "label": "Trench crossing width",
+   "value": 50,
+   "unit": "mm",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing angle",
+   "value": 6,
+   "unit": "°",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "software",
+   "label": "Software",
+   "value": "automatic path planning, spray parameter control, app remote monitoring, offline simulation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Sprays emulsion paint only (primer and topcoat); for putty BMR points to the NP320 Pro.",
+   "Spraying height up to 3.2 m; crosses at most 20 mm steps and 6° slopes."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260604/4cdda25b3fc67941ef6c5f10950794a0.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/187.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BMR Indoor Coating Robot NP320, pink spraying robot on a wheeled base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Spraying interior walls and ceilings of a public housing unit in 15-20 minutes",
+   "stage": "deployment",
+   "where": "Public housing site, Tsing Yi Road, Hong Kong Housing Authority",
+   "date": "2023-02",
+   "sourceId": "s7",
+   "note": "Case says \"indoor spraying robot\" without naming NP320 or NP320 Pro."
+  },
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Wall and ceiling latex paint spraying of a 59.4 m² flat in 75 minutes",
+   "stage": "pilot",
+   "where": "Soilbuild ISO project, Toa Payoh, Singapore",
+   "date": "2024-08-03",
+   "sourceId": "s8",
+   "note": "Case does not name the model."
+  },
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Two indoor painting robots painted five units, about 4,000 m²",
+   "stage": "deployment",
+   "where": "The Myst, Bouygues Singapore",
+   "date": null,
+   "sourceId": "s9",
+   "note": "Case does not name the model; linked from both NP320 and NP320 Pro pages."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/187.html",
+   "title": "Indoor Coating Robot NP320 (Automatic Spraying Robot) product page",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/contact.html",
+   "title": "Contact Us",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/BMR-Indoor-Coating-Robot-NP320.htm",
+   "title": "BMR Indoor Coating Robot NP320 at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact",
+   "title": "Roboter Deutschland contact page (Las Vegas, NV, USA)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.robotsinternational.com/BMR-Indoor-Coating-Robot-NP320.htm",
+   "title": "BMR Indoor Coating Robot NP320 at Robots International",
+   "publisher": "Robots International",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://en.bm-robot.com/detail/138.html",
+   "title": "Hong Kong's first Housing Authority public housing project (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://en.bm-robot.com/detail/211.html",
+   "title": "Singapore ISO Project, Soilbuild (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://en.bm-robot.com/detail/221.html",
+   "title": "The Myst Singapore (case study)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is this machine CE-marked and does it come with an EU declaration of conformity? BMR states CE only for its Measuring Robot.",
+  "Does BMR have, or plan, an authorised distributor or service partner in the EU or Germany?",
+  "Is Roboter Deutschland / Robots International authorised by BMR, and who provides service and spare parts in Germany?",
+  "Which of the linked case projects used the NP320 rather than the NP320 Pro?"
+ ],
+ "checkedAt": "2026-10-02"
+}

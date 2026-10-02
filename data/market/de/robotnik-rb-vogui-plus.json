@@ -1,0 +1,221 @@
+{
+ "schemaVersion": 1,
+ "id": "robotnik-rb-vogui-plus",
+ "maker": "Robotnik",
+ "makerCountry": "ES",
+ "model": "RB-VOGUI+",
+ "variant": null,
+ "name": "Robotnik RB-VOGUI+",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://robotnik.eu/products/mobile-robots/rb-vogui-en/",
+ "summary": "A weather-resistant (IP53) outdoor platform with a UR5e or UR10e arm, up to 125 kg payload, 2.5 m/s and 47 % slopes, offered for agriculture and construction R&D.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots lists it in its German shop from €55,500 net (non-safety version) with an order button.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 55500,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Non-safety version with UR5e; €66,600 incl. 20% VAT as shown."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404266-mobiler-manipulator-roboter-rb-vogui-1805.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 55500,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Non-safety and safety versions."
+   },
+   {
+    "name": "Robotnik Automation S.L.",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://robotnik.eu/products/mobile-robots/rb-vogui-en/",
+    "contactUrl": "https://robotnik.eu/contact/",
+    "email": null,
+    "phone": "+34 96 147 54 00",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1,044 x 776 x 742",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 165,
+   "unit": "kg",
+   "conditions": "platform; arm 25-38 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 125,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "UR5e included; 12.5 kg with UR10e",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP53",
+   "unit": null,
+   "conditions": "weather-resistant",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_pct",
+   "label": "Max. slope",
+   "value": 47,
+   "unit": "%",
+   "conditions": "grade in percent, as stated by the seller",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-10 to 45",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 outdoor 2D safety scanners, safety PLC, RGBD camera, IMU; GPS optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 5,
+  "carryPayloadKg": 125,
+  "runtimeH": 6,
+  "ipRating": "IP53",
+  "sdk": "ROS 2",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "IP53 and -10 to 45 °C per seller; dual-Ackermann omnidirectional drive.",
+   "Grippers are options.",
+   "R&D platform: construction use is a stated target, not a documented deployment.",
+   "The maker page now offers UR7e, UR8 Long or UR12e arms; the Generation Robots configuration ships with a UR5e."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://robotnik.eu/wp-content/uploads/2024/07/Robotnik-RB-VOGUI5.png",
+   "pageUrl": "https://robotnik.eu/products/mobile-robots/rb-vogui-en/",
+   "credit": "Robotnik",
+   "alt": "Robotnik RB-VOGUI+ outdoor platform with cobot arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Seller offers it for transporting and positioning materials on construction sites and for planting, harvesting and crop monitoring",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Stated application for R&D; no named construction customer."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://robotnik.eu/products/mobile-robots/rb-vogui-en/",
+   "title": "RB-VOGUI page",
+   "publisher": "Robotnik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404266-mobiler-manipulator-roboter-rb-vogui-1805.html",
+   "title": "Mobiler Manipulator-Roboter RB-VOGUI+",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price with UR10e and of the safety version.",
+  "Any named construction pilot."
+ ],
+ "checkedAt": "2026-10-02"
+}

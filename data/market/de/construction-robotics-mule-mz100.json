@@ -1,0 +1,205 @@
+{
+ "schemaVersion": 1,
+ "id": "construction-robotics-mule-mz100",
+ "maker": "Construction Robotics",
+ "makerCountry": "US",
+ "model": "MULE MZ100",
+ "variant": null,
+ "name": "Construction Robotics MULE MZ100",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "material_lifting",
+  "bricklaying",
+  "site_masonry/masonry-wall-laying"
+ ],
+ "officialUrl": "https://www.construction-robotics.com/mz100",
+ "summary": "A battery-powered lift-assist arm mounted on the scaffold that carries the weight of concrete blocks up to 100 lb while the mason places them.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 1465,
+   "currency": "USD",
+   "market": "US, per month with 5-year financing at 7%",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "US product financed through JLG Financial; no European distributor, CE information or EU customer found. A US-registered web shop (ASIMOV Stores LLC) lists \"MULE\" with price \"TBD\" and no model, which is not an authorised channel.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "lift_capacity_lb",
+   "label": "Lift capacity",
+   "value": 100,
+   "unit": "lb",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "cycles_per_charge",
+   "label": "Lift cycles per charge",
+   "value": "5,000+",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 32,
+   "unit": "h",
+   "conditions": "up to, continuous (MZ100 page); products page says up to 30 h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 3.5,
+   "unit": "h",
+   "conditions": "full charge, as little as (MZ100 page); products page says 3 h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "single 24 V lithium-ion, 80 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "mounting",
+   "label": "Mounting",
+   "value": "crank-up, scissor lift, frame, mast-climbing and other scaffold systems",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "belt_speed_ms",
+   "label": "Belt (hoist) speed",
+   "value": 0.7,
+   "unit": "m/s",
+   "conditions": "max",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Machine weight",
+   "value": 367,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach radius",
+   "value": 3.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 45,
+  "carryPayloadKg": null,
+  "runtimeH": 32,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Not available in Germany.",
+   "Mounted on the scaffold or work platform; no own drive.",
+   "Arm payload 100 lb / 45 kg (maker gives both).",
+   "Weather-proof according to the maker."
+  ],
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://framerusercontent.com/images/GT2curW4rAWiVqVRnHRw5phP6M.png",
+   "pageUrl": "https://www.construction-robotics.com/mz100",
+   "credit": "Construction Robotics",
+   "alt": "MULE MZ100 lift-assist arm on its mast in a workshop",
+   "kind": "product"
+  },
+  {
+   "url": "https://framerusercontent.com/images/sul6GKXu5UdLNcVE5SEuQ7Qyk2M.jpeg",
+   "pageUrl": "https://www.construction-robotics.com/mz100",
+   "credit": "Construction Robotics",
+   "alt": "Mason placing a block held by the MULE MZ100",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Holds concrete blocks for masons building block walls from the scaffold",
+   "stage": "claim",
+   "where": "USA",
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.construction-robotics.com/products",
+   "title": "Products and pricing",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.construction-robotics.com/mz100",
+   "title": "MULE MZ100",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.construction-robotics.com/ml150",
+   "title": "MULE ML150",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://asimovstores.eu/product/mule-material-unit-lift-enhancer/",
+   "title": "MULE listing",
+   "publisher": "ASIMOV Stores LLC",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Any plan for Europe or CE marking."
+ ],
+ "checkedAt": "2026-10-02"
+}

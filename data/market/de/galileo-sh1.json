@@ -1,0 +1,66 @@
+{
+ "schemaVersion": 1,
+ "id": "galileo-sh1",
+ "maker": "Galileo (Tianjin) Technology",
+ "makerCountry": "CN",
+ "model": "SH1",
+ "variant": null,
+ "name": "Galileo SH1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galileotime.com/en/main/DualArmRobot",
+ "summary": "A 1.72 m dual-arm robot with a head and torso on an omnidirectional wheeled base, 5 kg per arm and about 4 h runtime, sold in China on request.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Galileo sells from Tianjin by phone and email (intent orders); no EU office, distributor or customer found. Only a US-run German-language shop (Roboter Deutschland) lists it as a quote item with no price.",
+  "sourceIds": ["s1", "s2", "s3"],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  { "key": "height_m", "label": "Height", "value": 1.72, "unit": "m", "conditions": "standard pose", "sourceId": "s2" },
+  { "key": "weight_kg", "label": "Weight", "value": 80, "unit": "kg", "conditions": null, "sourceId": "s2" },
+  { "key": "dof_total", "label": "Degrees of freedom", "value": 24, "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "arm_payload_kg", "label": "Payload per arm", "value": 5, "unit": "kg", "conditions": "maximum, single arm", "sourceId": "s2" },
+  { "key": "runtime_h", "label": "Runtime", "value": 4, "unit": "h", "conditions": "approximate", "sourceId": "s2" },
+  { "key": "max_speed_ms", "label": "Base speed", "value": 1.5, "unit": "m/s", "conditions": "omnidirectional base, turns on the spot", "sourceId": "s2" },
+  { "key": "end_effectors", "label": "End effectors", "value": "Optional: 2-finger gripper, 3-finger hand (with or without touch sensing), 5-finger hand", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "sensors", "label": "Sensors", "value": "Binocular head camera; 2 wrist depth cameras and 2 six-axis wrist force sensors; 4 RGB cameras and 2 IMUs in the torso; 3D LiDAR and 8 ultrasonic sensors in the base", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "compute", "label": "Compute", "value": "NVIDIA AGX Orin 64 GB (275 TOPS)", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "sdk", "label": "Secondary development", "value": "Supported (no SDK details published)", "unit": null, "conditions": null, "sourceId": "s2" }
+ ],
+ "capabilities": {
+  "legs": false, "wheels": true, "tracks": false,
+  "levelFloors": true, "roughGround": null, "stairs": false, "outdoor": null,
+  "arms": 2, "hands": "optional", "handsIncluded": null,
+  "armPayloadKg": 5, "carryPayloadKg": null, "runtimeH": 4, "ipRating": null,
+  "sdk": "Secondary development supported; no public SDK documentation found",
+  "sourceIds": ["s2"],
+  "notes": [
+   "Wheeled humanoid: head, torso and two arms on a single bending column over a wheeled base, so it is listed as a humanoid.",
+   "End effector is chosen at order (gripper or 3- or 5-finger hand); what comes as standard is not stated.",
+   "Stairs set to false because it rolls on a wheeled base."
+  ]
+ },
+ "images": [
+  { "url": "https://www.roboterdeutschland.de/media/catalog/product/cache/207e23213cf636ccdef205098cf3c8a3/g/a/galileo-sh1-dual-arm-robot.jpg", "pageUrl": "https://www.roboterdeutschland.de/GALILEO-SH1.htm", "credit": "Galileo (Tianjin) Technology, image hosted by Roboter Deutschland", "alt": "Galileo SH1 wheeled dual-arm robot with five-finger hands, side view", "kind": "product" }
+ ],
+ "evidence": [
+  { "taskIds": [], "task": "Dual-arm robot for industrial and service work", "stage": "claim", "where": null, "date": null, "sourceId": "s2", "note": "Maker description only; no named customer found." }
+ ],
+ "sources": [
+  { "id": "s1", "url": "https://www.galileotime.com/en/main/DualArmRobot", "title": "SH1 Dual Arm Robot", "publisher": "Galileo (Tianjin) Technology", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s2", "url": "https://www.galileotime.com/config/lang.json", "title": "Galileo website content file (SH1 parameters, procurement page)", "publisher": "Galileo (Tianjin) Technology", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s3", "url": "https://www.roboterdeutschland.de/GALILEO-SH1.htm", "title": "Galileo SH1 Dual Arm Wheeled Humanoid Robot", "publisher": "Roboter Deutschland (Robots International)", "kind": "seller", "checkedAt": "2026-10-02" }
+ ],
+ "openQuestions": [
+  "Price, standard end effector and delivery outside China.",
+  "The maker image server (vx.galileotime.com:10901) did not answer during this check, so the image is the shop copy of the maker photo."
+ ],
+ "checkedAt": "2026-10-02"
+}

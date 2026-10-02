@@ -1,0 +1,201 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-r1-air",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "R1",
+ "variant": "Air",
+ "name": "Unitree R1 Air",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/R1",
+ "summary": "Lightest and cheapest Unitree humanoid (1.23 m, 27 kg, 20 DOF) for demos and education; no head or waist joints, not programmable.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Only through Unitree's online store (USD, ships from China, customs paid by the buyer; Germany is in its country selector); no EU seller lists the R1 Air.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 4900,
+   "currency": "USD",
+   "market": "Unitree online store (tax and shipping excluded)",
+   "sourceId": "s2"
+  },
+  "leadTime": "ships within 30 business days plus 20-45 business days transit",
+  "sellers": [
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://shop.unitree.com/products/unitree-r1",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "USD 4,900; orders normally ship within 30 business days, 20-45 business days transit. Germany is listed in the store country selector."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.23,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 27,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 20,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 4,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm maximum load",
+   "value": 2,
+   "unit": "kg",
+   "conditions": "about 2 kg, varies with arm posture",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 1,
+   "unit": "h",
+   "conditions": "about 1 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Monocular camera, 4-microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": false,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 2,
+  "carryPayloadKg": null,
+  "runtimeH": 1,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "No working hands; 4-DOF arms.",
+   "No secondary development.",
+   "About 1 h runtime; no IP rating."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.quadruped.de/media/image/product/1356/lg/unitree-r1~8.png",
+   "pageUrl": "https://www.quadruped.de/Unitree-R1",
+   "credit": "Unitree Robotics (via quadruped.de)",
+   "alt": "Unitree R1 Air humanoid robot, full body (same body as the R1, without head joints)",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/be9e7bde5e104a40bc1a8e8eccf71a00_1860x1550.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree R1 humanoid robot (R1 Air shares the body, without head joints)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "EU after-sales service for robots bought from the Unitree store."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/R1",
+   "title": "Unitree R1 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.unitree.com/products/unitree-r1",
+   "title": "Unitree R1 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.unitree.com/policies/shipping-policy",
+   "title": "Unitree online store shipping policy",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:humanoid-load-sheet-metal-fixtures",
+      "title": "Load sheet-metal parts into welding fixtures",
+      "summary": "Pick prepared sheet-metal parts and place them into a welding fixture. Figure 02 provides historical BMW pilot evidence; the retired model did not perform the weld.",
+      "industries": [
+        "manufacturing"
+      ],
+      "family": "machine_tending",
+      "setting": "Automotive body shop",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-load-sheet-metal-fixtures",
+          "reviewId": "figure-02-bmw-sheet-metal",
+          "relationship": "partial_task",
+          "rationale": "BMW confirms this exact Figure 02 loading task in its completed Spartanburg pilot.",
+          "sourceIds": [
+            "f02-deployment",
+            "f02-bmw"
+          ],
+          "limitations": [
+            "Historical evidence: Figure 02 fleet retirement was announced in November 2025.",
+            "Loading supports the welding process; separate equipment welds and transfers the assembly.",
+            "The site still needs fixture integration, safeguarding and measured human recovery."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-sequence-components-into-trolleys",
+      "title": "Sequence automotive parts into delivery trolleys",
+      "summary": "Pick components from containers, sort them into a sequencing trolley and move it to a collection point. Figure 03 has a BMW demonstration; onward delivery uses other transport equipment.",
+      "industries": [
+        "manufacturing"
+      ],
+      "family": "kitting_picking_sorting",
+      "setting": "Automotive assembly logistics",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-sequence-components-into-trolleys",
+          "reviewId": "figure-03-bmw-sequencing",
+          "relationship": "partial_task",
+          "rationale": "Figure and BMW describe the new Figure 03 sequencing and trolley-handoff workflow in June 2026.",
+          "sourceIds": [
+            "f03-bmw-demo",
+            "f03-bmw-customer"
+          ],
+          "limitations": [
+            "Demonstration evidence; accepted output, intervention rates and staffing are not published.",
+            "The trolley’s final journey to the installation point is assigned to a tugger train or Smart Transport Robot.",
+            "Qualify each part family, cart rolling load and exception process."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-handle-stacked-totes",
+      "title": "Lift and restack factory totes across pallet layers",
+      "summary": "Move compatible totes between low, middle and high stack positions. UBTECH names this industrial Walker S2 application; published production acceptance figures are still missing.",
+      "industries": [
+        "manufacturing"
+      ],
+      "family": "packaging_palletising_loading",
+      "setting": "Factory tote-handling station",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-handle-stacked-totes",
+          "reviewId": "ubtech-walker-s2-industrial",
+          "relationship": "task_candidate",
+          "rationale": "UBTECH’s 2025 results name Walker S2 palletizing and depalletizing across multiple tote layers.",
+          "sourceIds": [
+            "s2-results"
+          ],
+          "limitations": [
+            "Manufacturer application claim, without a named-site cycle denominator or intervention rate.",
+            "Confirm tote load, handle geometry, stack stability and replenishment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-sort-flow-rack-components",
+      "title": "Pick automotive components from flow racks",
+      "summary": "Grasp compatible parts from flow racks and place them into the required production set. Walker S2 has a manufacturer-reported sorting application, with task coverage still to validate.",
+      "industries": [
+        "manufacturing"
+      ],
+      "family": "kitting_picking_sorting",
+      "setting": "Automotive parts-sorting station",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-sort-flow-rack-components",
+          "reviewId": "ubtech-walker-s2-industrial",
+          "relationship": "task_candidate",
+          "rationale": "UBTECH explicitly identifies Walker S2 flow-rack sorting in automotive plants.",
+          "sourceIds": [
+            "s2-results"
+          ],
+          "limitations": [
+            "Manufacturer application claim; no published accepted-cycle or SKU-coverage denominator.",
+            "Confirm gripper configuration, occlusion handling and human replenishment."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-check-assembly-kit-completeness",
+      "title": "Check that automotive assembly kits contain every part",
+      "summary": "Inspect a prepared assembly kit for missing components and pass findings to the factory system. Walker S2 is named for this task; a person must define acceptance and exception handling.",
+      "industries": [
+        "manufacturing"
+      ],
+      "family": "inspection_qa_documentation",
+      "setting": "Automotive SPS kitting station",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-check-assembly-kit-completeness",
+          "reviewId": "ubtech-walker-s2-industrial",
+          "relationship": "task_candidate",
+          "rationale": "UBTECH specifically names SPS kit completeness inspection for industrial Walker S2.",
+          "sourceIds": [
+            "s2-results"
+          ],
+          "limitations": [
+            "No false-accept, false-reject or missed-part rates are published.",
+            "Validate lighting, occlusion and part variants; this does not establish final quality-release authority."
+          ]
+        }
+      ]
+    }
+  ]
+}

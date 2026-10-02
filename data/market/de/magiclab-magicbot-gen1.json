@@ -1,0 +1,268 @@
+{
+ "schemaVersion": 1,
+ "id": "magiclab-magicbot-gen1",
+ "maker": "MagicLab",
+ "makerCountry": "CN",
+ "model": "MagicBot Gen1",
+ "variant": null,
+ "name": "MagicLab MagicBot Gen1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.magiclab.top/en/human",
+ "summary": "A 1.74 m, 70 kg general-purpose humanoid with 42 joints, two 11-DoF hands, up to 7.5 kg per arm and 3 to 5 hours runtime, offered for guided tours, service and factory tasks.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 105132.93,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": null
+  },
+  "priceOther": null,
+  "leadTime": "6 to 8 months (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/magicbot-z1",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 105132.93,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "RBTX lists it as \"Magiclab G1\" (URL slug says magicbot-z1): 174 cm, 42 DoF, 11-DoF Magic-Hand, dual-arm load 20 kg; usual delivery 6 to 8 months."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RBTX (igus, Cologne) lists it as \"Magiclab G1\" with a net price, but with a usual delivery time of 6 to 8 months. MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.74,
+   "unit": "m",
+   "conditions": "standing 1740 x 580 x 280 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 42,
+   "unit": null,
+   "conditions": "active: 2 neck, 7 per arm, 6 active per hand, 2 waist, 6 per leg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 11,
+   "unit": null,
+   "conditions": "6 active, 5 passive",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 7.5,
+   "unit": "kg",
+   "conditions": "up to; total static body load up to 40 kg; lab conditions",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.8,
+   "unit": "m",
+   "conditions": "shoulder to fingertip",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.11,
+   "unit": "m/s",
+   "conditions": "at least 4 km/h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 350,
+   "unit": "Nm",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1350,
+   "unit": "Wh",
+   "conditions": "25 Ah",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "3 to 5 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 3,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "8-core CPU and 100 TOPS AI processor",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3D LiDAR, 2 depth cameras, 3 fisheye cameras, microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "MagicBot-Gen1 SDK; secondary development supported",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 7.5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "MagicBot-Gen1 SDK",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Payload and runtime figures are lab values from the maker.",
+   "Maker lists \"all terrains\", but gives no stair, slope or IP rating figures.",
+   "MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260720/artificial-intelligence-humanoid.png",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicbot-gen1/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot Gen1 humanoid, full body front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclab.top/imgs/human/moonwalker.jpg",
+   "pageUrl": "https://www.magiclab.top/en/human",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot Gen1 sitting on a black block in a dark studio",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclab.top/imgs/human/desert_explorer.jpg",
+   "pageUrl": "https://www.magiclab.top/en/human",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicBot Gen1 walking, seen from a low angle against a blue sky",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclab.top/imgs/human/robot_lab.jpg",
+   "pageUrl": "https://www.magiclab.top/en/human",
+   "credit": "MagicLab",
+   "alt": "Two MagicLab MagicBot Gen1 robots handling parts at blue bins on a production line",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Guided tours with commentary in showrooms, museums and convention centres",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.magiclab.top/en/human",
+   "title": "General-Purpose Humanoid Robot MagicBot Gen1",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/magicbot-z1",
+   "title": "Humanoid Robot Magiclab G1 on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.magiclabglobal.com/magiclab-brings-physical-ai-to-europes-factory-floors-at-ifa-2026-debuting-full-stack-embodied-intelligence-stack.html",
+   "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Has CE marking been completed?",
+  "Is the RBTX 6 to 8 month lead time still current?"
+ ],
+ "checkedAt": "2026-10-02"
+}

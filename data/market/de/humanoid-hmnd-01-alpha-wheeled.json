@@ -1,0 +1,242 @@
+{
+ "schemaVersion": 1,
+ "id": "humanoid-hmnd-01-alpha-wheeled",
+ "maker": "Humanoid (SKL Robotics Ltd)",
+ "makerCountry": "GB",
+ "model": "HMND 01 Alpha",
+ "variant": "Wheeled",
+ "name": "Humanoid HMND 01 Alpha Wheeled",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://thehumanoid.ai/hmnd-01-alpha-wheeled/",
+ "summary": "A 2.20 m, 300 kg wheeled industrial humanoid from London for tote and box handling, tested at Siemens Erlangen and going into Schaeffler plants in Germany from December 2026 under robot-as-a-service.",
+ "launched": "2025",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Offered through an \"Early Access\" request; deployments run as robot-as-a-service. Pilots done in Germany (Siemens Erlangen, Schaeffler Herzogenaurach); first live production deployments at two Schaeffler sites in Germany run from December 2026 to June 2027. No public price and no general delivery date for other buyers.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "First German production deployments from December 2026 (Schaeffler).",
+  "sellers": [
+   {
+    "name": "Humanoid (SKL Robotics Ltd)",
+    "country": "GB",
+    "role": "manufacturer",
+    "productUrl": "https://thehumanoid.ai/hmnd-01-alpha-wheeled/",
+    "contactUrl": "https://thehumanoid.ai/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Early Access request form on the website; robot-as-a-service model."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 2.2,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 300,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 29,
+   "unit": null,
+   "conditions": "Excluding end effectors",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Average runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "As stated; not specified per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DoF per hand",
+   "value": 12,
+   "unit": null,
+   "conditions": "Optional 5-finger hand; 1-DoF parallel gripper as alternative",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RGB and depth cameras, 6D force/torque sensors, wrist cameras, haptic feedback sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "AI stack",
+   "value": "KinetIQ four-layer AI stack on NVIDIA compute",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Dual-arm payload in pilot",
+   "value": 8,
+   "unit": "kg",
+   "conditions": "Limit used in the Martur Fompak pilot",
+   "sourceId": "s4"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "Robot API; KinetIQ fleet orchestration; tested with SAP EWM and Siemens Xcelerator",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "notes": [
+   "Omnidirectional wheeled base, max. 7.2 km/h.",
+   "End effector chosen per deployment: 12-DoF five-finger hand or 1-DoF parallel gripper.",
+   "Siemens pilot: 60 tote moves per hour, more than 8 h uptime, over 90 % pick-and-place success.",
+   "Payload 15 kg is not stated per arm; an 8 kg dual-arm limit was used in one pilot."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://thehumanoid.ai/wp-content/uploads/2025/09/product.png",
+   "pageUrl": "https://thehumanoid.ai/hmnd-01-alpha-wheeled/",
+   "credit": "Humanoid",
+   "alt": "Humanoid HMND 01 Alpha Wheeled on its wheeled base",
+   "kind": "product"
+  },
+  {
+   "url": "https://thehumanoid.ai/wp-content/uploads/2026/04/HMND_SIEMENS_Cover3-scaled.png",
+   "pageUrl": "https://thehumanoid.ai/siemens-and-humanoid-bring-physical-ai-to-the-factory-floor-deploying-humanoids-in-industrial-operations-with-nvidia/",
+   "credit": "Humanoid",
+   "alt": "HMND 01 Alpha at the Siemens factory in Erlangen",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Picked, transported and placed totes for operators in factory logistics (60 tote moves per hour)",
+   "stage": "pilot",
+   "where": "Siemens electronics factory Erlangen, Germany",
+   "date": "2026-04",
+   "sourceId": "s3",
+   "note": "Factory logistics rather than a material yard."
+  },
+  {
+   "taskIds": [],
+   "task": "Box handling in live production (agreed first deployment phase)",
+   "stage": "claim",
+   "where": "Schaeffler Herzogenaurach and Schweinfurt, Germany",
+   "date": "2026-12",
+   "sourceId": "s2",
+   "note": "Agreement announced 2026-05-13: robot-as-a-service deployment from December 2026 to June 2027 at Herzogenaurach (box handling) and Schweinfurt (integration testing and validation); four-digit wheeled unit count targeted by 2032. Not started yet."
+  },
+  {
+   "taskIds": [
+    "research:humanoid-sequence-components-into-trolleys"
+   ],
+   "task": "Took KLT boxes from a pallet and delivered them to a trolley, tasked by SAP EWM",
+   "stage": "pilot",
+   "where": "Martur Fompak (automotive supplier; country not stated)",
+   "date": "2026-02",
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://thehumanoid.ai/hmnd-01-alpha-wheeled/",
+   "title": "HMND 01 Alpha Wheeled product page",
+   "publisher": "Humanoid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://thehumanoid.ai/humanoid-secures-landmark-deal-with-schaeffler-to-deploy-thousands-of-humanoid-robots/",
+   "title": "Humanoid secures landmark deal with Schaeffler",
+   "publisher": "Humanoid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://thehumanoid.ai/siemens-and-humanoid-bring-physical-ai-to-the-factory-floor-deploying-humanoids-in-industrial-operations-with-nvidia/",
+   "title": "Siemens and Humanoid bring Physical AI to the factory floor",
+   "publisher": "Humanoid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://thehumanoid.ai/hmnd-01-alpha-goes-to-work-humanoid-completes-automotive-manufacturing-logistics-poc-with-sap-and-martur-fompak/",
+   "title": "HMND 01 Alpha completes logistics POC with SAP and Martur Fompak",
+   "publisher": "Humanoid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Robot-as-a-service rate or purchase price?",
+  "When can buyers outside the partner programmes get units?",
+  "CE marking status?"
+ ],
+ "checkedAt": "2026-10-02"
+}

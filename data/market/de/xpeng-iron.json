@@ -1,0 +1,116 @@
+{
+ "schemaVersion": 1,
+ "id": "xpeng-iron",
+ "maker": "XPENG",
+ "makerCountry": "CN",
+ "model": "IRON",
+ "variant": null,
+ "name": "XPENG IRON",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.xpeng.com/technology/ai_robot_iron",
+ "summary": "XPENG's bipedal humanoid with 22-DOF hands and a solid-state battery, now coming off a pilot production line for guide and patrol roles; not for sale.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "XPENG presents IRON as a technology demonstration; no order, price or sales route in Germany or elsewhere.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 22,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "shoulder_dof",
+   "label": "Shoulder (scapula) DOF",
+   "value": 4,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "All-solid-state",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "3 XPENG Turing chips",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "No payload, runtime or size published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://s-cdn.xpeng.com/commoncms/prod/2026-08-03/4eba5c3ef740417788381bc2486acf03.jpg",
+   "pageUrl": "https://www.xpeng.com/technology/ai_robot_iron",
+   "credit": "XPENG",
+   "alt": "XPENG IRON gesturing in a building lobby",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Tour guide, shopping guide and patrol guide in commercial settings",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.xpeng.com/technology/ai_robot_iron",
+   "title": "XPENG Next-Gen IRON",
+   "publisher": "XPENG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

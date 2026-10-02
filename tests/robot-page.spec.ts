@@ -1,16 +1,16 @@
 import { expect, test } from '@playwright/test';
 
 test('the catalogue lists robots with a form-factor filter and search', async ({ page }) => {
-  await page.goto('/robots');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Robots');
+  await page.goto('/robots?view=list');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('All robots worldwide');
   await expect(page.getByRole('link', { name: /Unitree G1/ }).first()).toBeVisible();
 
-  await page.goto('/robots?form=quadruped');
+  await page.goto('/robots?view=list&form=quadruped');
   await expect(page.getByRole('link', { name: /Spot/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /Unitree G1/ })).toHaveCount(0);
 
-  await page.goto('/robots?q=booster');
-  await expect(page.getByRole('link', { name: /Booster T2/ })).toBeVisible();
+  await page.goto('/robots?view=list&q=booster');
+  await expect(page.getByRole('link', { name: /Booster T2/ }).first()).toBeVisible();
   await expect(page.getByRole('link', { name: /Spot/ })).toHaveCount(0);
 });
 
@@ -77,8 +77,10 @@ test('a variant without pictures of its own borrows the base model photograph', 
   await page.goto('/robots/unitree/g1?variant=edu');
   const media = page.locator('[data-robot-media]');
   await expect(media).toBeVisible();
-  // The EDU keeps the borrowed base photograph available in its gallery.
+  // The EDU keeps the borrowed base photographs in its gallery, after its own German pictures.
   await media.locator('[data-media-tab="photos"]').click();
+  const photos = Number(await media.getAttribute('data-photos'));
+  for (let i = 0; i < photos && !(await page.getByText('Base model').first().isVisible()); i++) await page.locator('[data-photo-next]').click();
   await expect(page.getByText('Base model').first()).toBeVisible();
 });
 
@@ -89,12 +91,14 @@ test('TRON 2 has reviewed commercial status and Germany buying contacts', async 
   const availability = page.locator('section').filter({ has: page.getByRole('heading', { name: 'Price and delivery', exact: true }) });
   await expect(availability).toContainText('Available to order through LimX sales');
   await expect(availability.getByRole('link', { name: 'limxdynamics.com', exact: true })).toHaveAttribute('href', 'https://www.limxdynamics.com/en/products/tron2');
-  const buying = page.getByRole('region', { name: 'Buying in Germany' });
-  await expect(buying.getByRole('link', { name: 'reichelt elektronik' })).toHaveAttribute('href', /reichelt.com.*tron2/);
-  await expect(buying).toContainText('Businesses, institutions and government agencies only');
-  await expect(buying).toContainText('live stock and price unconfirmed');
-  await expect(buying.getByRole('link', { name: 'bd@limxdynamics.com', exact: true })).toHaveAttribute('href', 'mailto:bd@limxdynamics.com');
-  await expect(buying.getByRole('link', { name: 'info@reichelt.de', exact: true })).toHaveAttribute('href', 'mailto:info@reichelt.de');
+  // The Germany market record replaces the older seller notes on this page.
+  const germany = page.getByRole('region', { name: 'In Germany', exact: true });
+  await expect(germany).toContainText('Buy in Germany');
+  await germany.getByRole('link').first().click();
+  await expect(page).toHaveURL(/[/]robots[/]limx-dynamics[/]tron-2#germany$/);
+  const sellers = page.getByRole('region', { name: 'Buy in Germany', exact: true }).locator('.mk-detail-sellers');
+  await expect(sellers).toContainText('reichelt elektronik');
+  await expect(sellers.getByRole('link', { name: 'Product page ↗' }).first()).toBeVisible();
 });
 
 test('B2 has commercial status backed by manufacturer availability', async ({ page }) => {

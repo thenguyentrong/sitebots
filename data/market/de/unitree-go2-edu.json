@@ -1,0 +1,302 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-go2-edu",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "Go2",
+ "variant": "EDU (Standard / Smart / Plus / Ultimate)",
+ "name": "Unitree Go2 EDU",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/go2",
+ "summary": "Programmable Go2 robot dog with foot force sensors, depth camera, long-range battery (2-4 h) and optional Orin compute and extra LiDAR.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "QUADRUPED Robotics (Germany) shows Go2 EDU in stock at 10,500 EUR net; RobotShop EU sells EDU Standard to Ultimate (3-4 weeks); Conrad sells to business customers.",
+  "sourceIds": [
+   "s7",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 10500,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s7",
+   "note": "QUADRUPED Robotics Go2 EDU, excl. 19% VAT, in stock. Generation Robots shows a lower page \"from\" price of 6,500 net that is not tied to a version."
+  },
+  "priceOther": null,
+  "leadTime": "about 3-4 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-go2-edu-standard-robotic-dog-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 12495,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "EDU Standard; Smart EUR 14,280, Plus U3 EUR 18,450.18, Ultimate EUR 20,230."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404127-go2-quadruped-robot-edu-plus.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 6500,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "Page 'from' price excl. VAT for EDU Standard (40 TOPS), Smart (100 TOPS), Plus (MID360), Ultimate (XT16); 'in stock (all versions combined)'."
+   },
+   {
+    "name": "MYBOTSHOP GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Unitree-Go2-Quadruped",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Lists EDU, EDU PLUS 2D/3D; price on request. MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-Go2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 10500,
+    "priceBasis": "net",
+    "sourceId": "s7",
+    "note": "\"Go2 EDU\" 10,500 EUR net, \"sofort verfügbar\"; EDU PLUS 12,600; EDU PLUS Mid 360 15,500 (21 days); EDU PLUS 3D LiDAR 17,000 (in stock)."
+   },
+   {
+    "name": "Conrad Electronic (conrad.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.conrad.de/de/p/x-3804242.html",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 16805,
+    "priceBasis": "gross",
+    "sourceId": "s8",
+    "note": "Go2 EDU 16,805.00 EUR incl. VAT; EDU PLUS (3804243) 20,065.00 incl. VAT; business customers only."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 8,
+   "unit": "kg",
+   "conditions": "max about 12 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3.7,
+   "unit": "m/s",
+   "conditions": "0-3.7 m/s, up to about 5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max climb drop height",
+   "value": 16,
+   "unit": "cm",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max climb angle",
+   "value": 40,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 2,
+   "unit": "h",
+   "conditions": "about 2-4 h with the 15000 mAh battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Unitree 4D LiDAR L2 (360x96 deg), HD wide-angle camera, depth camera, foot-end force sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU; optional Orin (40-100 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 8,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Unitree secondary development (EDU)",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Consumer/education quadruped; no IP rating published.",
+   "Some functions need manual operation or secondary development (Unitree note).",
+   "Higher EDU versions add Orin compute and Livox MID360 or Hesai XT16 LiDAR (per sellers)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/a0811393701b4b95ba66ab1663c96fa4_1830x1600.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/7b830fccde8d41ac8e3fcec334e84735_3840x1988.jpg",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 standing in fog, front view",
+   "kind": "product"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/a35af0c7768b4840b3ae2ba4ee704561_3840x2160.jpg?x-oss-process=image/quality,q_60/format,webp",
+   "pageUrl": "https://www.unitree.com/go2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 on a striped rug next to a kneeling man in a bedroom",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/f3afd2338d574621b84d4b5f23aa345b_1620x816.png",
+   "pageUrl": "https://www.unitree.com/go2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 with event decals carrying a javelin across a stadium infield",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "Why the Generation Robots 'from' price is about half the RobotShop EDU Standard price."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/go2",
+   "title": "Unitree Go2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-go2-edu-standard-robotic-dog-eu",
+   "title": "Unitree Go2 EDU Standard Robotic Dog (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404127-go2-quadruped-robot-edu-plus.html",
+   "title": "Unitree Go2 EDU at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.mybotshop.de/Unitree-Go2-Quadruped",
+   "title": "Unitree Go2 at MYBOTSHOP",
+   "publisher": "MYBOTSHOP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.quadruped.de/QUADRUPED-Go2",
+   "title": "QUADRUPED Go2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.conrad.de/de/p/x-3804242.html",
+   "title": "Unitree Go2 EDU (Bestell-Nr. 3804242) at Conrad",
+   "publisher": "Conrad Electronic",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

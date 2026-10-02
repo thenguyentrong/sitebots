@@ -1,0 +1,1418 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Eight exact construction finishing and remotely operated demolition configurations, reviewed against primary sources and published business enquiry routes. German supply remains unconfirmed where explicitly stated; component specifications and partial-task limits are retained.",
+  "records": [
+    {
+      "id": "conbotics-malerroboter-2-surface-finishing",
+      "name": "ConBotics MalerRoboter 2.0",
+      "manufacturer": "ConBotics",
+      "robotClass": "dedicated_robot",
+      "workflowId": "surface_finishing",
+      "exactConfiguration": "MalerRoboter 2.0 as named on the current German homepage; older MalerRoboter specifications are not assumed to describe this revision.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Sprays open wall and ceiling areas; the current revision has a German enquiry route and unresolved legacy-page specifications.",
+      "operatingMode": {
+        "value": "Automated spray application under a trained painter's supervision; staff handle preparation, paint supply and detailed areas.",
+        "sourceIds": [
+          "current",
+          "legacy"
+        ],
+        "caveats": [
+          "The manufacturer describes manual spraying for complex or sloped geometry.",
+          "No unattended-shift performance or staffing ratio is established by this review."
+        ]
+      },
+      "specs": [
+        {
+          "key": "runtime_hours",
+          "value": 4,
+          "unit": "h",
+          "semanticLabel": "Advertised continuous battery operation",
+          "conditions": [
+            "Current 2.0 homepage FAQ; duty cycle, battery revision and coating conditions are not specified."
+          ],
+          "sourceIds": [
+            "current"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "maximum_spray_height_m",
+          "value": null,
+          "unit": "m",
+          "semanticLabel": "Confirmed spray height for the 2.0 revision",
+          "conditions": [
+            "Legacy product page lists 3.20 m; the current exact revision needs its own technical sheet."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "machine_mass_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Confirmed 2.0 transport mass",
+          "conditions": [
+            "Older page contains both 130 kg and 140 kg; the latter excludes the airless unit. No unambiguous 2.0 mass was established."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Apply coatings to accessible walls and ceilings.",
+          "configuration": "Current MalerRoboter 2.0 product presentation.",
+          "operatingMode": "Painter-supervised automatic spraying with human preparation and manual treatment of complex areas.",
+          "sourceIds": [
+            "current"
+          ],
+          "limitations": [
+            "The homepage names customer projects, but their robot revisions are not identified.",
+            "No accepted-area, rework, uptime or operator-minute denominator for 2.0 is published in the reviewed evidence."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ConBotics GmbH",
+          "market": "Germany / DACH",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.conbotics.com/de/home",
+            "email": "info@conbotics.com"
+          },
+          "sourceIds": [
+            "current"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "The current manufacturer FAQ offers purchasing in DACH. This is a vendor offer, not confirmed stock or a dated delivery commitment.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "Published Berlin business address; exact supplied revision, commissioning, compatible coatings and local service need a quotation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The current homepage names 2.0 and 4 h operation; older product content includes 130/140 kg, an 8 h FAQ and obsolete ceiling-development language. Those legacy values are not merged into 2.0.",
+        "Placeholder testimonials on the homepage are excluded from evidence."
+      ],
+      "unknowns": [
+        "Revision-specific technical sheet, operating mass and reach envelope.",
+        "Accepted finish quality, overspray, masking and edge-work effort on representative German interiors.",
+        "Exact generations and observation periods of named pilot projects."
+      ],
+      "sourceURLs": [
+        "https://www.conbotics.com/de/home",
+        "https://www.conbotics.com/de/malerroboter",
+        "https://www.conbotics.com/en/about-us"
+      ],
+      "sources": [
+        {
+          "id": "current",
+          "url": "https://www.conbotics.com/de/home",
+          "title": "MalerRoboter 2.0, current FAQ, project descriptions and Berlin contact",
+          "publisher": "ConBotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "legacy",
+          "url": "https://www.conbotics.com/de/malerroboter",
+          "title": "Legacy MalerRoboter product page with inconsistent technical and lifecycle text",
+          "publisher": "ConBotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "history",
+          "url": "https://www.conbotics.com/en/about-us",
+          "title": "Company history and robot development generations",
+          "publisher": "ConBotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "nova-s-wall-surface-finishing",
+      "name": "NOVA-S · Wall Spray Pillar",
+      "manufacturer": "Nova Spraytec",
+      "robotClass": "dedicated_robot",
+      "workflowId": "surface_finishing",
+      "exactConfiguration": "NOVA-S compact drive unit with Wall Spray Pillar, two spray guns and compatible external airless equipment.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Dedicated wall-spraying configuration with a Munich supplier route; this record does not substitute the lighter ceiling pillar.",
+      "operatingMode": {
+        "value": "Operator-set and supervised powered spray movements; a painter prepares surfaces, configures the unit and manages coating supply.",
+        "sourceIds": [
+          "technical",
+          "demonstrations"
+        ],
+        "caveats": [
+          "Published demonstrations do not establish unattended navigation or a complete autonomous painting crew.",
+          "Wall and ceiling pillars are distinct configurations and must be quoted separately."
+        ]
+      },
+      "specs": [
+        {
+          "key": "spray_height_m",
+          "value": 3.2,
+          "unit": "m",
+          "semanticLabel": "Maximum advertised spray height",
+          "conditions": [
+            "Applies only to the named pillar; verify usable coverage near boundaries."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pillar_mass_kg",
+          "value": 30,
+          "unit": "kg",
+          "semanticLabel": "Pillar component mass",
+          "conditions": [
+            "Excludes the separate drive unit, coating supply and external airless equipment."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "drive_unit_mass_kg",
+          "value": 25,
+          "unit": "kg",
+          "semanticLabel": "Compact drive unit component mass",
+          "conditions": [
+            "Component mass, not the full supplied working system."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "advertised_spray_rate_m2_h",
+          "value": 250,
+          "unit": "m²/h",
+          "semanticLabel": "Up-to spray application rate",
+          "conditions": [
+            "Supplier maximum claim; excludes unreported preparation, masking, replenishment, drying and accepted-finish rework."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "power_supply_v",
+          "value": 230,
+          "unit": "V",
+          "semanticLabel": "Published mains supply",
+          "conditions": [
+            "Required site power and airless-pump compatibility must be checked for the complete quoted system."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "demonstration",
+          "task": "Spray an interior wall with the wall pillar.",
+          "configuration": "NOVA-S Wall Spray Pillar in the manufacturer's February 2025 room demonstration.",
+          "operatingMode": "Human-operated demonstration of the paired wall/ceiling system.",
+          "sourceIds": [
+            "demonstrations"
+          ],
+          "limitations": [
+            "The reviewed publication describes the demonstration; this review did not measure the video or verify finished-area quality.",
+            "A November 2025 delivery and training report names Maler Damm in Germany; it does not establish completed routine projects or the delivered pillar package.",
+            "No cycle count, accepted-area result or total labour denominator is published."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Nova Spraytec GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.novaspraytec.com/product",
+            "email": "contact@novaspraytec.com",
+            "phone": "+49 151 15626516"
+          },
+          "sourceIds": [
+            "technical"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; current stock, supplied configuration, price and delivery require a supplier quotation.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "Published Munich address and demo/pricing route.",
+            "Confirm pillar, airless unit, hoses, coating compatibility, training and service in the offer."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The page's 55 kg system headline must not be applied to every pillar configuration; component masses are retained separately.",
+        "Advertised maximum spray rate is not net accepted area per paid shift."
+      ],
+      "unknowns": [
+        "Exact airless-pump and coating combinations offered in Germany.",
+        "Achieved finish, edge access, overspray and total painter effort in an occupied or partitioned room.",
+        "Delivered pillar configuration and production results at the named German customer."
+      ],
+      "sourceURLs": [
+        "https://www.novaspraytec.com/product",
+        "https://www.novaspraytec.com/news"
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.novaspraytec.com/product",
+          "title": "NOVA-S drive unit, wall and ceiling pillar specifications and Munich contact",
+          "publisher": "Nova Spraytec",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "demonstrations",
+          "url": "https://www.novaspraytec.com/news",
+          "title": "February 2025 wall/ceiling demonstration and November 2025 Maler Damm delivery/training",
+          "publisher": "Nova Spraytec",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "nova-s-ceiling-surface-finishing",
+      "name": "NOVA-S · Ceiling Spray Pillar",
+      "manufacturer": "Nova Spraytec",
+      "robotClass": "dedicated_robot",
+      "workflowId": "surface_finishing",
+      "exactConfiguration": "NOVA-S compact drive unit with Ceiling Spray Pillar and compatible external airless equipment.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Dedicated ceiling-spraying configuration with a Munich supplier route; masking, edges and paint servicing remain separate.",
+      "operatingMode": {
+        "value": "Operator-set and supervised powered spray movements; a painter prepares surfaces, configures the unit and manages coating supply.",
+        "sourceIds": [
+          "technical",
+          "demonstrations"
+        ],
+        "caveats": [
+          "Published demonstrations do not establish unattended navigation or a complete autonomous painting crew.",
+          "Wall and ceiling pillars are distinct configurations and must be quoted separately."
+        ]
+      },
+      "specs": [
+        {
+          "key": "spray_height_m",
+          "value": 3.5,
+          "unit": "m",
+          "semanticLabel": "Maximum advertised spray height",
+          "conditions": [
+            "Applies only to the named pillar; verify usable coverage near boundaries."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pillar_mass_kg",
+          "value": 15,
+          "unit": "kg",
+          "semanticLabel": "Pillar component mass",
+          "conditions": [
+            "Excludes the separate drive unit, coating supply and external airless equipment."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "drive_unit_mass_kg",
+          "value": 25,
+          "unit": "kg",
+          "semanticLabel": "Compact drive unit component mass",
+          "conditions": [
+            "Component mass, not the full supplied working system."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "advertised_spray_rate_m2_h",
+          "value": 400,
+          "unit": "m²/h",
+          "semanticLabel": "Up-to spray application rate",
+          "conditions": [
+            "Supplier maximum claim; excludes unreported preparation, masking, replenishment, drying and accepted-finish rework."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "power_supply_v",
+          "value": 230,
+          "unit": "V",
+          "semanticLabel": "Published mains supply",
+          "conditions": [
+            "Required site power and airless-pump compatibility must be checked for the complete quoted system."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "demonstration",
+          "task": "Spray a ceiling with the ceiling pillar.",
+          "configuration": "NOVA-S Ceiling Spray Pillar in the manufacturer's February 2025 room demonstration.",
+          "operatingMode": "Human-operated demonstration of the paired wall/ceiling system.",
+          "sourceIds": [
+            "demonstrations"
+          ],
+          "limitations": [
+            "The reviewed publication describes the demonstration; this review did not measure the video or verify finished-area quality.",
+            "A November 2025 delivery and training report names Maler Damm in Germany; it does not establish completed routine projects or the delivered pillar package.",
+            "No cycle count, accepted-area result or total labour denominator is published."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Nova Spraytec GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.novaspraytec.com/product",
+            "email": "contact@novaspraytec.com",
+            "phone": "+49 151 15626516"
+          },
+          "sourceIds": [
+            "technical"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; current stock, supplied configuration, price and delivery require a supplier quotation.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "Published Munich address and demo/pricing route.",
+            "Confirm pillar, airless unit, hoses, coating compatibility, training and service in the offer."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The page's 55 kg system headline must not be applied to every pillar configuration; component masses are retained separately.",
+        "Advertised maximum spray rate is not net accepted area per paid shift."
+      ],
+      "unknowns": [
+        "Exact airless-pump and coating combinations offered in Germany.",
+        "Achieved finish, edge access, overspray and total painter effort in an occupied or partitioned room.",
+        "Delivered pillar configuration and production results at the named German customer."
+      ],
+      "sourceURLs": [
+        "https://www.novaspraytec.com/product",
+        "https://www.novaspraytec.com/news"
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.novaspraytec.com/product",
+          "title": "NOVA-S drive unit, wall and ceiling pillar specifications and Munich contact",
+          "publisher": "Nova Spraytec",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "demonstrations",
+          "url": "https://www.novaspraytec.com/news",
+          "title": "February 2025 wall/ceiling demonstration and November 2025 Maler Damm delivery/training",
+          "publisher": "Nova Spraytec",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "okibo-eg7-surface-finishing",
+      "name": "Okibo EG7",
+      "manufacturer": "Okibo",
+      "robotClass": "mobile_manipulator",
+      "workflowId": "surface_finishing",
+      "exactConfiguration": "EG7 standard battery platform introduced in 2025, with interchangeable coating or sanding setup; distinct from EG7+.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Scans and treats interior surfaces with interchangeable finishing tools; German delivery and exact deployment results remain unresolved.",
+      "operatingMode": {
+        "value": "Manufacturer-described autonomous surface scanning and path planning alongside workers, with interchangeable spraying or sanding equipment.",
+        "sourceIds": [
+          "technical",
+          "launch"
+        ],
+        "caveats": [
+          "Human material handling, changeover, surface preparation and exception response need a site plan.",
+          "No claim of a fully unattended finishing job or verified intervention rate is made."
+        ]
+      },
+      "specs": [
+        {
+          "key": "machine_mass_lb",
+          "value": 800,
+          "unit": "lb",
+          "semanticLabel": "Published EG7 machine mass",
+          "conditions": [
+            "Attachment and loaded-material basis are not fully specified."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "transport_width_in",
+          "value": 27,
+          "unit": "in",
+          "semanticLabel": "Published machine width",
+          "conditions": [
+            "Actual door clearance also depends on turning space and transported configuration."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_capacity_kwh",
+          "value": 5,
+          "unit": "kWh",
+          "semanticLabel": "Standard battery nominal capacity",
+          "conditions": [
+            "Energy capacity is not operating duration."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hopper_capacity_us_gal",
+          "value": 18,
+          "unit": "US gal",
+          "semanticLabel": "Published coating hopper volume",
+          "conditions": [
+            "Coating setup; the hopper cage is replaced by a dust collector for sanding."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_hours",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Measured duration for the selected finishing process",
+          "conditions": [
+            "No quantified duty-cycle runtime was established."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Spray coatings and sand drywall surfaces using interchangeable finishing equipment.",
+          "configuration": "EG7 described on the product page and in the April 2025 US launch publication.",
+          "operatingMode": "Autonomous scan/path execution with workers responsible for the surrounding process.",
+          "sourceIds": [
+            "technical",
+            "launch"
+          ],
+          "limitations": [
+            "Europe-wide treated-area claims refer to the company's fleet and do not identify exact EG7 jobs or German deployments.",
+            "The later Hensel Phelps launch concerns EG7+, so its height and performance figures are not transferred to EG7.",
+            "No raw accepted-area, failure, recovery or labour-time denominator is available."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Okibo",
+          "market": "International enquiry; Germany unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://okibo.com/contact/"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published manufacturer contact route; German delivery, CE documentation for the quoted revision, service and orderability were not established.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "The April 2025 launch specifically addresses the American market.",
+            "A European activity claim does not establish a German distributor, installation partner or delivery commitment."
+          ]
+        }
+      ],
+      "conflicts": [
+        "EG7 and EG7+ are separate generations; EG7+ height and Hensel Phelps demonstration claims are excluded from the EG7 specification.",
+        "The product page includes generic template/footer material; no discount or template marketing text is treated as a purchasing fact."
+      ],
+      "unknowns": [
+        "German supplier, training, spare parts, service coverage and exact supplied generation.",
+        "Compatibility and accepted finish for the buyer's coating/substrate; US finishing levels do not establish German Q classifications.",
+        "Exact configured mass, battery duration and operator effort."
+      ],
+      "sourceURLs": [
+        "https://okibo.com/our-robot/",
+        "https://okibo.com/wp-content/uploads/2025/03/Okibo-Launch-Press-Release-1.pdf",
+        "https://okibo.com/contact/",
+        "https://okibo.com/okibo-announces-national-launch-of-eg7-robot-following-successful-premiere-at-hensel-phelps-innovation-day/"
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://okibo.com/our-robot/",
+          "title": "EG7 product description and component specifications",
+          "publisher": "Okibo",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "launch",
+          "url": "https://okibo.com/wp-content/uploads/2025/03/Okibo-Launch-Press-Release-1.pdf",
+          "title": "April 2025 EG7 US launch release",
+          "publisher": "Okibo",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://okibo.com/contact/",
+          "title": "Manufacturer contact form",
+          "publisher": "Okibo",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "generation",
+          "url": "https://okibo.com/okibo-announces-national-launch-of-eg7-robot-following-successful-premiere-at-hensel-phelps-innovation-day/",
+          "title": "December 2025 EG7+ launch and Hensel Phelps demonstration",
+          "publisher": "Okibo",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "canvas-1200cx-surface-finishing",
+      "name": "Canvas 1200CX",
+      "manufacturer": "Canvas / JLG",
+      "robotClass": "mobile_manipulator",
+      "workflowId": "surface_finishing",
+      "exactConfiguration": "Canvas 1200CX as currently presented by JLG; spray and interchangeable sanding process, distinct from 1550 and 2000CX.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Worker-operated robotic drywall finishing tool; current JLG product evidence does not establish a German purchasing package.",
+      "operatingMode": {
+        "value": "Worker-operated robotic joint-compound spraying and sanding; staff position/configure the machine and change the sanding head after drying.",
+        "sourceIds": [
+          "launch",
+          "technical"
+        ],
+        "caveats": [
+          "Battery operation and self-drive do not establish a fully autonomous job.",
+          "Preparation, taping, drying, inspections and excluded detail areas must be included in the work plan."
+        ]
+      },
+      "specs": [
+        {
+          "key": "finishing_height_ft",
+          "value": 12,
+          "unit": "ft",
+          "semanticLabel": "Published finishing reach height",
+          "conditions": [
+            "Reach is not a guarantee of access around ceiling interfaces or obstacles."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "machine_mass_lb",
+          "value": 1200,
+          "unit": "lb",
+          "semanticLabel": "Published machine weight",
+          "conditions": [
+            "Attachment/material load basis requires the current technical sheet."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "footprint_in",
+          "value": "30 × 35.4",
+          "unit": "in",
+          "semanticLabel": "Current published machine footprint",
+          "conditions": [
+            "Current JLG listing; the 2024 launch published 30 × 34.5 in, so supplied revision and transport envelope need confirmation."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_hours",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Quantified operating duration",
+          "conditions": [
+            "JLG uses an all-day claim without a numeric duty cycle; no hours were inferred."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Apply joint compound and sand interior drywall to the manufacturer's stated Level 4/5 process.",
+          "configuration": "1200CX launch description, reviewed alongside JLG's current exact-model page.",
+          "operatingMode": "Trained worker controls a robotic tool, with drying and attachment change between application and sanding.",
+          "sourceIds": [
+            "launch",
+            "technical"
+          ],
+          "limitations": [
+            "Named airport, arena and medical projects on the family page do not identify 1200CX hardware; they are not counted as exact-model routine deployment.",
+            "US Level 4/5 terminology does not establish German Q1–Q4 compliance or acceptance.",
+            "No independent finish, uptime, cycle-count or total operator-time results for the exact configuration were reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Canvas / JLG Industries",
+          "market": "International enquiry; Germany unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.jlg.com/en/canvas/about-us/contact"
+          },
+          "sourceIds": [
+            "contact",
+            "ownership"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Current manufacturer enquiry route reviewed. German sales, import, conformity documents, local service and delivery for 1200CX remain unconfirmed.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "JLG announced acquisition of Canvas core technology and personnel in January 2026; legacy Canvas contacts or dealer assumptions should not replace a current written offer.",
+            "The page exposes a contact-form container; submission and response were not tested."
+          ]
+        }
+      ],
+      "conflicts": [
+        "JLG currently lists a 30 × 35.4 in footprint; the 2024 manufacturer-issued launch said 30 × 34.5 in. The exact offered machine should be measured/confirmed.",
+        "Historic family projects and older Canvas models are not evidence of current 1200CX operation."
+      ],
+      "unknowns": [
+        "German orderability, local service, training, electrical/conformity package and delivered revision.",
+        "Accepted coating system and finish on representative German drywall, including manual detail work.",
+        "Exact mass basis, numeric battery duration and full-process labour."
+      ],
+      "sourceURLs": [
+        "https://www.jlg.com/en/canvas/1200cx",
+        "https://www.businesswire.com/news/home/20240710771518/en/Canvas-Worlds-First-Robotic-Drywall-Finishing-Company-Launches-the-1200CX",
+        "https://www.jlg.com/en/canvas",
+        "https://www.jlg.com/en/press-releases/jlg-advances-job-site-of-the-future-vision-through-canvas-acquisition",
+        "https://www.jlg.com/en/canvas/about-us/contact"
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.jlg.com/en/canvas/1200cx",
+          "title": "Current Canvas 1200CX product specifications",
+          "publisher": "JLG Industries",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "launch",
+          "url": "https://www.businesswire.com/news/home/20240710771518/en/Canvas-Worlds-First-Robotic-Drywall-Finishing-Company-Launches-the-1200CX",
+          "title": "Canvas-issued 1200CX launch release, July 2024",
+          "publisher": "Canvas via Business Wire",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "family",
+          "url": "https://www.jlg.com/en/canvas",
+          "title": "Canvas range and family project references",
+          "publisher": "JLG Industries",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ownership",
+          "url": "https://www.jlg.com/en/press-releases/jlg-advances-job-site-of-the-future-vision-through-canvas-acquisition",
+          "title": "January 2026 acquisition of Canvas technology and personnel",
+          "publisher": "JLG Industries",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.jlg.com/en/canvas/about-us/contact",
+          "title": "Canvas manufacturer enquiry page",
+          "publisher": "JLG Industries",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "brokk-110-demolition",
+      "name": "Brokk 110",
+      "manufacturer": "Brokk",
+      "robotClass": "dedicated_robot",
+      "workflowId": "demolition",
+      "exactConfiguration": "Brokk 110 standard model, not 110+. Base platform with job-specific hydraulic attachment; published reach is measured with BHB 155 hammer.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Remotely operated demolition platform with an official German subsidiary and attachment-specific working limits.",
+      "operatingMode": {
+        "value": "Continuous human remote control over radio or cable; an operator controls travel, stabilisation and attachment work.",
+        "sourceIds": [
+          "technical",
+          "deployment"
+        ],
+        "caveats": [
+          "Remote control is not autonomous demolition.",
+          "Power, structural assessment, exclusion zones, dust control and debris logistics belong to the complete site method."
+        ]
+      },
+      "specs": [
+        {
+          "key": "machine_mass_kg",
+          "value": 990,
+          "unit": "kg",
+          "semanticLabel": "Machine weight excluding attachment and additional equipment",
+          "conditions": [
+            "Not total lifted or working mass; add the exact tool and extras."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "rated_input_power_kw",
+          "value": 19.5,
+          "unit": "kW",
+          "semanticLabel": "Published motor power",
+          "conditions": [
+            "Manufacturer lists 400 V / 50 Hz or 440 V / 60 Hz; verify the local power package."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "vertical_reach_m",
+          "value": 4.3,
+          "unit": "m",
+          "semanticLabel": "Maximum vertical working reach with reference hammer",
+          "conditions": [
+            "Measured with BHB 155; another attachment changes the useful envelope."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_width_mm",
+          "value": 780,
+          "unit": "mm",
+          "semanticLabel": "Minimum published machine width",
+          "conditions": [
+            "Transport access also depends on turning, ramps, tool position and floor loading."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "recommended_attachment_mass_kg",
+          "value": 160,
+          "unit": "kg",
+          "semanticLabel": "Maximum recommended attachment weight",
+          "conditions": [
+            "Attachment approval depends on geometry, hydraulic compatibility and stability; this is not a free payload rating."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Demolish interior concrete structures including bank vaults and a nightclub mezzanine.",
+          "configuration": "Bader's Group LLC using Brokk 110, described in Brokk's historical customer story.",
+          "operatingMode": "Trained human operator uses remote-controlled equipment in a demolition crew.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "Historical manufacturer story, not a current operating audit; exact hammer and supplied revision are unspecified.",
+            "Material quantities are anecdotal job descriptions without a machine-hour, failure or total crew-time denominator."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Brokk DA GmbH",
+          "market": "Germany / Austria",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.brokk.com/de/standort/",
+            "email": "info@brokk.de",
+            "phone": "+49 7654 21297-0"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; current stock, supplied configuration, price and delivery require a supplier quotation.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "Manufacturer-owned German subsidiary in Friedenweiler; confirm whether the quote supplies standard 110, newer 110+ or used stock.",
+            "Attachment, power supply, transport, training and service scope require an itemised offer."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Brokk 110 and Brokk 110+ must remain separate configurations; attachment limits and operating revisions are not interchangeable."
+      ],
+      "unknowns": [
+        "Current standard-model orderability, selected attachment and exact delivered revision.",
+        "Structural loads, access, tool compatibility and usable reach at the buyer's site.",
+        "Measured output, operator exposure, dust controls and total crew time including debris removal."
+      ],
+      "sourceURLs": [
+        "https://www.brokk.com/de/product/brokk-110/",
+        "https://www.brokk.com/us/news/brokk-articles/she-brokks-it/",
+        "https://www.brokk.com/de/standort/"
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.brokk.com/de/product/brokk-110/",
+          "title": "Brokk 110 German technical specification",
+          "publisher": "Brokk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.brokk.com/us/news/brokk-articles/she-brokks-it/",
+          "title": "Bader's Group Brokk 110 customer story",
+          "publisher": "Brokk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.brokk.com/de/standort/",
+          "title": "Brokk DA German sales and service subsidiary",
+          "publisher": "Brokk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "construction"
+      ]
+    },
+    {
+      "id": "brokk-300-demolition",
+      "name": "Brokk 300",
+      "manufacturer": "Brokk",
+      "robotClass": "dedicated_robot",
+      "workflowId": "demolition",
+      "exactConfiguration": "Brokk 300 standard model, not 300+. Base platform with job-specific hydraulic attachment; published reach is measured with BHB 455 hammer.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Remotely operated demolition platform with an official German subsidiary and attachment-specific working limits.",
+      "operatingMode": {
+        "value": "Continuous human remote control over radio or cable; an operator controls travel, stabilisation and attachment work.",
+        "sourceIds": [
+          "technical",
+          "deployment"
+        ],
+        "caveats": [
+          "Remote control is not autonomous demolition.",
+          "Power, structural assessment, exclusion zones, dust control and debris logistics belong to the complete site method."
+        ]
+      },
+      "specs": [
+        {
+          "key": "machine_mass_kg",
+          "value": 3650,
+          "unit": "kg",
+          "semanticLabel": "Machine weight excluding attachment and additional equipment",
+          "conditions": [
+            "Not total lifted or working mass; add the exact tool and extras."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "rated_input_power_kw",
+          "value": 37,
+          "unit": "kW",
+          "semanticLabel": "Published motor power",
+          "conditions": [
+            "Manufacturer lists 400 V / 50 Hz or 440 V / 60 Hz; verify the local power package."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "vertical_reach_m",
+          "value": 6.5,
+          "unit": "m",
+          "semanticLabel": "Maximum vertical working reach with reference hammer",
+          "conditions": [
+            "Measured with BHB 455; another attachment changes the useful envelope."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_width_mm",
+          "value": 1200,
+          "unit": "mm",
+          "semanticLabel": "Minimum published machine width",
+          "conditions": [
+            "Transport access also depends on turning, ramps, tool position and floor loading."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "recommended_attachment_mass_kg",
+          "value": 500,
+          "unit": "kg",
+          "semanticLabel": "Maximum recommended attachment weight",
+          "conditions": [
+            "Attachment approval depends on geometry, hydraulic compatibility and stability; this is not a free payload rating."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Use a concrete crusher for elevated structural demolition.",
+          "configuration": "Brokk 300 with Darda concrete crusher, City Circle Group, Melbourne; described on Brokk's construction page.",
+          "operatingMode": "Human-operated remote demolition with a selected crusher.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "Manufacturer project description reports work seven storeys up; exact tool model, power revision and project date are not specified.",
+            "No machine-hour, concrete-strength, debris-handling or total crew-time denominator is published.",
+            "The attachment differs from the reference hammer used for published reach."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Brokk DA GmbH",
+          "market": "Germany / Austria",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.brokk.com/de/standort/",
+            "email": "info@brokk.de",
+            "phone": "+49 7654 21297-0"
+          },
+          "sourceIds": [
+            "germany"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; current stock, supplied configuration, price and delivery require a supplier quotation.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "Manufacturer-owned German subsidiary in Friedenweiler; confirm whether the quote supplies standard 300, newer 300+ or used stock.",
+            "Attachment, power supply, transport, training and service scope require an itemised offer."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Brokk 300 and Brokk 300+ must remain separate configurations; attachment limits and operating revisions are not interchangeable."
+      ],
+      "unknowns": [
+        "Current standard-model orderability, selected attachment and exact delivered revision.",
+        "Structural loads, access, tool compatibility and usable reach at the buyer's site.",
+        "Measured output, operator exposure, dust controls and total crew time including debris removal."
+      ],
+      "sourceURLs": [
+        "https://www.brokk.com/de/product/brokk-300/",
+        "https://www.brokk.com/au/industry/construction/",
+        "https://www.brokk.com/de/standort/"
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.brokk.com/de/product/brokk-300/",
+          "title": "Brokk 300 German technical specification",
+          "publisher": "Brokk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://www.brokk.com/au/industry/construction/",
+          "title": "Construction project: City Circle Group Brokk 300 with Darda crusher",
+          "publisher": "Brokk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "germany",
+          "url": "https://www.brokk.com/de/standort/",
+          "title": "Brokk DA German sales and service subsidiary",
+          "publisher": "Brokk",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "industries": [
+        "construction"
+      ]
+    },
+    {
+      "id": "husqvarna-dxr145-demolition",
+      "name": "Husqvarna DXR 145",
+      "manufacturer": "Husqvarna Construction",
+      "robotClass": "dedicated_robot",
+      "workflowId": "demolition",
+      "exactConfiguration": "DXR 145 standard 18.5 kW configuration, German article 970509701; excludes factory P1 option and separately selected demolition attachment.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Compact remotely operated demolition platform with manufacturer and German seller enquiry routes; exact productive deployment evidence remains limited.",
+      "operatingMode": {
+        "value": "Human-controlled remote demolition over radio or cable; the operator directs machine and attachment movements.",
+        "sourceIds": [
+          "technical",
+          "international"
+        ],
+        "caveats": [
+          "Wireless control is not autonomy.",
+          "Tool selection, structural planning, access, dust control and debris removal are separate site requirements."
+        ]
+      },
+      "specs": [
+        {
+          "key": "machine_mass_kg",
+          "value": 1040,
+          "unit": "kg",
+          "semanticLabel": "Complete standard product weight, excluding separately packed articles",
+          "conditions": [
+            "Current exact-SKU manufacturer definition; optional extended hydraulic/cylinder-protection configuration is 1050 kg."
+          ],
+          "sourceIds": [
+            "international"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "rated_input_power_kw",
+          "value": 18.5,
+          "unit": "kW",
+          "semanticLabel": "Rated input power",
+          "conditions": [
+            "Standard product; electrical supply must match the offered machine."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "vertical_reach_m",
+          "value": 4.4,
+          "unit": "m",
+          "semanticLabel": "Published upward reach",
+          "conditions": [
+            "Useful reach with the selected tool must be checked; the page does not establish every attachment envelope."
+          ],
+          "sourceIds": [
+            "technical"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hydraulic_flow_l_min",
+          "value": 52,
+          "unit": "L/min",
+          "semanticLabel": "Maximum hydraulic oil flow",
+          "conditions": [
+            "Maximum figure, not continuous tool output under all load/temperature conditions."
+          ],
+          "sourceIds": [
+            "international"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "minimum_width_cm",
+          "value": 77,
+          "unit": "cm",
+          "semanticLabel": "Rounded width used in manufacturer access description",
+          "conditions": [
+            "Not a surveyed minimum doorway or turning envelope; obtain exact transport dimensions."
+          ],
+          "sourceIds": [
+            "international"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Break or crush building material using a suitable hydraulic demolition attachment.",
+          "configuration": "DXR 145 with selected breaker/crusher; attachment is separate from the standard base article.",
+          "operatingMode": "Continuous human remote operation.",
+          "sourceIds": [
+            "technical",
+            "international"
+          ],
+          "limitations": [
+            "Reviewed primary sources describe applications; no exact-model site deployment with a usable productivity denominator was established.",
+            "The German seller listing confirms an offer, not a witnessed demolition result.",
+            "No claim is made for waste sorting, asbestos removal or autonomous soft stripping."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Husqvarna Construction",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.husqvarnaconstruction.com/de/abbruch-anbaugeraete/dxr145/"
+          },
+          "sourceIds": [
+            "technical"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public enquiry route reviewed; current stock, supplied configuration, price and delivery require a supplier quotation.",
+          "authorizationStatus": "Manufacturer's own published business route.",
+          "caveats": [
+            "German exact-product page publishes quote, dealer and demonstration routes.",
+            "Confirm attachment, training, conformity package and local service with the supplying entity."
+          ]
+        },
+        {
+          "organization": "DEXES GmbH / Profi-Bau-Shop.de",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://www.profi-bau-shop.de/profi-bau-shop/shop/abbruchtechnik/husqvarna-dxr-145-abbruchroboter-18-5-kw-detail",
+            "email": "info@profi-bau-shop.de",
+            "phone": "+49 30 25 095 625"
+          },
+          "sourceIds": [
+            "seller",
+            "seller-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Refreshed seller page advertises immediate availability subject to prior sale and approximately 3–5 working days. These are seller claims, not independently confirmed stock or a delivery commitment.",
+          "authorizationStatus": "German seller listing and DEXES Berlin legal identity reviewed; manufacturer authorization was not independently confirmed.",
+          "caveats": [
+            "Exact article 970509701 listed; request written stock, attachment, freight, instruction and warranty confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Older indexed seller content reported 985 kg and a different lead time; the direct refresh now states 1040 kg. Current manufacturer weight semantics are retained; no explanation for the historical basis difference was established.",
+        "Standard 1040 kg and factory-option 1050 kg values must not be merged."
+      ],
+      "unknowns": [
+        "An exact-model customer deployment with observed accepted output, downtime and total human effort.",
+        "Attachment-specific mass, reach, site power and floor loading.",
+        "Confirmed stock, delivery date, supplier authorization and complete installed cost."
+      ],
+      "sourceURLs": [
+        "https://www.husqvarnaconstruction.com/de/abbruch-anbaugeraete/dxr145/",
+        "https://www.husqvarnaconstruction.com/int/demolition-equipment/dxr145/",
+        "https://www.profi-bau-shop.de/profi-bau-shop/shop/abbruchtechnik/husqvarna-dxr-145-abbruchroboter-18-5-kw-detail",
+        "https://www.profi-bau-shop.de/impressum",
+        "https://www.profi-bau-shop.de/profi-bau-shop/shop/anbauger%C3%A4te/abbruchtechnik/husqvarna-dxr-145-abbruchroboter-18-5-kw-detail"
+      ],
+      "sources": [
+        {
+          "id": "technical",
+          "url": "https://www.husqvarnaconstruction.com/de/abbruch-anbaugeraete/dxr145/",
+          "title": "German DXR 145 standard article 970509701 and quote route",
+          "publisher": "Husqvarna Construction",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "international",
+          "url": "https://www.husqvarnaconstruction.com/int/demolition-equipment/dxr145/",
+          "title": "DXR 145 technical data and explicit complete-product weight definition",
+          "publisher": "Husqvarna Construction",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://www.profi-bau-shop.de/profi-bau-shop/shop/abbruchtechnik/husqvarna-dxr-145-abbruchroboter-18-5-kw-detail",
+          "title": "Refreshed German exact-SKU listing",
+          "publisher": "Profi-Bau-Shop.de / DEXES GmbH",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "seller-contact",
+          "url": "https://www.profi-bau-shop.de/impressum",
+          "title": "DEXES GmbH Berlin legal identity and contact",
+          "publisher": "DEXES GmbH",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "older-index",
+          "url": "https://www.profi-bau-shop.de/profi-bau-shop/shop/anbauger%C3%A4te/abbruchtechnik/husqvarna-dxr-145-abbruchroboter-18-5-kw-detail",
+          "title": "Older indexed alternate-path listing with 985 kg value",
+          "publisher": "Profi-Bau-Shop.de / DEXES GmbH",
+          "kind": "seller",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "industries": [
+        "construction"
+      ]
+    }
+  ]
+}

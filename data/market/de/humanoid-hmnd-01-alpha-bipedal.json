@@ -1,0 +1,158 @@
+{
+ "schemaVersion": 1,
+ "id": "humanoid-hmnd-01-alpha-bipedal",
+ "maker": "Humanoid (SKL Robotics Ltd)",
+ "makerCountry": "GB",
+ "model": "HMND 01 Alpha",
+ "variant": "Bipedal",
+ "name": "Humanoid HMND 01 Alpha Bipedal",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://thehumanoid.ai/hmnd-01-alpha-bipedal/",
+ "summary": "A 1.79 m, 90 kg bipedal development humanoid from London for AI research and future home and service use; not offered as a product.",
+ "launched": "2025",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The page carries the same generic \"Early Access\" button as the wheeled version, but the maker describes the bipedal robot as an R&D platform for future home and service use; no price, delivery date or deployment found. Commercial deals so far cover the wheeled version only.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.79,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 90,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 29,
+   "unit": null,
+   "conditions": "Excluding end effectors",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Average runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "As stated; not specified per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DoF per hand",
+   "value": 12,
+   "unit": null,
+   "conditions": "Optional 5-finger hand; 1-DoF parallel gripper as alternative",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RGB and depth cameras, 6D force/torque sensors, wrist cameras, haptic feedback sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "AI stack",
+   "value": "KinetIQ four-layer AI stack on NVIDIA compute",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Walks, turns, sidesteps, squats, hops and runs with an RL-trained whole-body controller (maker).",
+   "Development platform; not for sale."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://thehumanoid.ai/wp-content/uploads/2026/02/Frame-1321316238-1.jpg",
+   "pageUrl": "https://thehumanoid.ai/hmnd-01-alpha-bipedal/",
+   "credit": "Humanoid",
+   "alt": "Humanoid HMND 01 Alpha Bipedal standing",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://thehumanoid.ai/hmnd-01-alpha-bipedal/",
+   "title": "HMND 01 Alpha Bipedal product page",
+   "publisher": "Humanoid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://thehumanoid.ai/humanoid-secures-landmark-deal-with-schaeffler-to-deploy-thousands-of-humanoid-robots/",
+   "title": "Humanoid secures landmark deal with Schaeffler (wheeled units)",
+   "publisher": "Humanoid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Will the bipedal version be sold, and when?"
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,751 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Exact Figure 02, Figure 03 and industrial Walker S2 factory evidence; generation, task maturity and German purchasing gaps retained.",
+  "records": [
+    {
+      "id": "figure-02-bmw-sheet-metal",
+      "name": "Figure 02 · historical BMW sheet-metal pilot",
+      "manufacturer": "Figure",
+      "robotClass": "humanoid",
+      "workflowId": "machine_tending",
+      "industries": [
+        "manufacturing"
+      ],
+      "exactConfiguration": "Figure 02 with fourth-generation hands in BMW Spartanburg body-shop fixture loading; historical deployment; fleet retirement announced. Excludes Figure 03 and welding equipment.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Historical factory evidence for picking sheet-metal components and placing them into welding fixtures. Figure announced this generation’s fleet retirement in November 2025; the welding was performed by separate industrial robots.",
+      "operatingMode": {
+        "value": "Manufacturer-described autonomous pick-and-place within an integrated factory cell, with human stop/reset and support processes.",
+        "sourceIds": [
+          "f02-deployment",
+          "f02-bmw"
+        ],
+        "caveats": [
+          "No complete intervention-rate or staffing record is published.",
+          "Fixture, production IT, safeguarding and shop-floor logistics integration were part of the BMW project."
+        ]
+      },
+      "specs": [
+        {
+          "key": "hand_degrees_of_freedom",
+          "value": 16,
+          "unit": "DoF",
+          "semanticLabel": "Launch-reported degrees of freedom per hand",
+          "conditions": [
+            "Fourth-generation Figure 02 hands. Official manufacturer social post; kept Reported because the reviewed technical source is hosted outside the manufacturer domain."
+          ],
+          "sourceIds": [
+            "f02-launch"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "battery_energy_kwh",
+          "value": 2.25,
+          "unit": "kWh",
+          "semanticLabel": "Launch-reported torso battery energy",
+          "conditions": [
+            "Energy capacity, not accepted-task runtime. Official manufacturer social post; kept Reported."
+          ],
+          "sourceIds": [
+            "f02-launch"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "rgb_camera_count",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Launch-reported onboard RGB cameras",
+          "conditions": [
+            "Camera count does not establish inspection accuracy. Official manufacturer social post; kept Reported."
+          ],
+          "sourceIds": [
+            "f02-launch"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "forearm_degrees_of_freedom",
+          "value": 3,
+          "unit": "DoF",
+          "semanticLabel": "Degrees of freedom in the Figure 02 forearm",
+          "conditions": [
+            "Described in the BMW reliability retrospective; not total-body or total-hand degrees of freedom."
+          ],
+          "sourceIds": [
+            "f02-deployment"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "payload_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Rated task payload",
+          "conditions": [
+            "No load envelope for the BMW sheet-metal configuration was established in the reviewed primary sources."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "runtime_loaded_hours",
+          "value": null,
+          "unit": "h",
+          "semanticLabel": "Single-charge runtime while loading parts",
+          "conditions": [
+            "A ten-hour work shift and cumulative deployment hours do not establish battery endurance."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "pilot",
+          "task": "Pick sheet-metal parts from racks or bins and load the BMW welding fixture.",
+          "configuration": "Figure 02 at BMW Spartanburg in 2025; BMW reports over 90,000 components, about 1,250 operating hours and support for over 30,000 X3 vehicles.",
+          "operatingMode": "Task-specific autonomous loading with integrated factory systems; human interventions and support were measured but actual counts were not disclosed.",
+          "sourceIds": [
+            "f02-deployment",
+            "f02-bmw"
+          ],
+          "limitations": [
+            "BMW explicitly calls this a completed pilot. It is not proof of current orderability or general factory autonomy.",
+            "Figure’s 84-second cycle, 37-second loading time, greater-than-99% success and zero-intervention figures are targets, not published achieved denominators.",
+            "Figure 02 did not weld the parts; other industrial robots performed that step."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Figure — manufacturer enquiry",
+          "market": "Global enquiry; German supply not established",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.figure.ai/news/production-at-bmw"
+          },
+          "sourceIds": [
+            "f02-deployment"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Figure 02 fleet retirement was announced in November 2025. The contact form supports an enquiry about successor projects; no Figure 02 offer or German delivery commitment was verified.",
+          "authorizationStatus": "Direct manufacturer form, not a reseller listing.",
+          "caveats": [
+            "Use the page’s Contact Us form. No form was submitted.",
+            "German commissioning, service terms, availability and pricing require a supplier response."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Figure describes an eleven-month deployment; BMW summarizes ten months of production contribution. The dates and denominators differ and are retained separately.",
+        "Current Figure 03 product specifications must not be applied retrospectively to Figure 02."
+      ],
+      "unknowns": [
+        "BMW achieved acceptance rate, interventions and total human support hours.",
+        "Exact part masses, grip limits and single-charge task endurance.",
+        "Any current supply or support offer for retired Figure 02 hardware."
+      ],
+      "sourceURLs": [
+        "https://www.figure.ai/news/production-at-bmw",
+        "https://www.press.bmwgroup.com/united-kingdom/article/detail/T0455870EN_GB/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time",
+        "https://www.linkedin.com/posts/figure-ai_meet-figure-02-the-worlds-most-advanced-activity-7226558884549705729-NnHI",
+        "https://www.press.bmwgroup.com/usa/photo/detail/P90563506?forceSitePreference=DESKTOP"
+      ],
+      "sources": [
+        {
+          "id": "f02-deployment",
+          "url": "https://www.figure.ai/news/production-at-bmw",
+          "title": "Figure 02 BMW deployment and retirement, 19 November 2025",
+          "publisher": "Figure",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "f02-bmw",
+          "url": "https://www.press.bmwgroup.com/united-kingdom/article/detail/T0455870EN_GB/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time",
+          "title": "BMW retrospective on the Figure 02 pilot, 27 February 2026",
+          "publisher": "BMW Group",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "f02-launch",
+          "url": "https://www.linkedin.com/posts/figure-ai_meet-figure-02-the-worlds-most-advanced-activity-7226558884549705729-NnHI",
+          "title": "Figure official Figure 02 launch post",
+          "publisher": "Figure on LinkedIn",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "f02-photo",
+          "url": "https://www.press.bmwgroup.com/usa/photo/detail/P90563506?forceSitePreference=DESKTOP",
+          "title": "Figure 02 at BMW Spartanburg, photo P90563506",
+          "publisher": "BMW Group",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "figure-03-bmw-sequencing",
+      "name": "Figure 03 · BMW sequencing demonstration",
+      "manufacturer": "Figure",
+      "robotClass": "humanoid",
+      "workflowId": "picking_sorting",
+      "industries": [
+        "manufacturing"
+      ],
+      "exactConfiguration": "Figure 03 using Helix 02 for BMW Spartanburg Hall 52 parts sequencing and trolley manipulation. Excludes Figure 02 deployment metrics and downstream tugger-train transport.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "A newer BMW demonstration selects components from containers, places them in a sequencing trolley and moves the trolley to a handoff. Published evidence does not yet establish sustained production performance for this workflow.",
+      "operatingMode": {
+        "value": "Helix 02 vision-to-action control coordinates hands, arms, torso and feet for the demonstrated task.",
+        "sourceIds": [
+          "f03-bmw-demo"
+        ],
+        "caveats": [
+          "Human supervision, resets and recovery staffing were not quantified.",
+          "The BMW project describes downstream transport by a tugger train or Smart Transport Robot."
+        ]
+      },
+      "specs": [
+        {
+          "key": "payload_kg",
+          "value": 20,
+          "unit": "kg",
+          "semanticLabel": "Published platform payload",
+          "conditions": [
+            "Current Figure 03 product-page figure; one-hand versus two-hand basis and loaded walking conditions are unstated. Not a demonstrated trolley towing capacity."
+          ],
+          "sourceIds": [
+            "f03-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 61,
+          "unit": "kg",
+          "semanticLabel": "Published robot mass",
+          "conditions": [
+            "Current Figure 03 value; included accessories and exact BMW equipment are unstated."
+          ],
+          "sourceIds": [
+            "f03-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "height_in",
+          "value": 68,
+          "unit": "in",
+          "semanticLabel": "Published standing height",
+          "conditions": [
+            "Product page states 5 feet 8 inches. This is height, not reach or access clearance."
+          ],
+          "sourceIds": [
+            "f03-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_hours",
+          "value": 5,
+          "unit": "h",
+          "semanticLabel": "Published runtime",
+          "conditions": [
+            "Load, duty cycle and test conditions are unstated; not BMW demonstration runtime."
+          ],
+          "sourceIds": [
+            "f03-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "travel_speed_m_s",
+          "value": 1.2,
+          "unit": "m/s",
+          "semanticLabel": "Published travel speed",
+          "conditions": [
+            "Product-page figure; loaded speed and mixed-traffic limits are unstated."
+          ],
+          "sourceIds": [
+            "f03-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "wireless_charge_power_kw",
+          "value": 2,
+          "unit": "kW",
+          "semanticLabel": "Wireless charging power",
+          "conditions": [
+            "Requires the compatible charging stand and foot coils; battery charge time is not established."
+          ],
+          "sourceIds": [
+            "f03-intro"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "palm_cameras",
+          "value": true,
+          "unit": null,
+          "semanticLabel": "Cameras embedded in both palms",
+          "conditions": [
+            "Figure 03 sensing feature; not evidence of dimensional inspection accuracy."
+          ],
+          "sourceIds": [
+            "f03-intro"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "demonstration",
+          "task": "Pick and sequence automotive components into a trolley, then manipulate the trolley toward the collection point.",
+          "configuration": "Figure 03 with Helix 02 at BMW Spartanburg Hall 52; manufacturer demonstration announced June 2026 and customer-confirmed new project.",
+          "operatingMode": "Whole-body learned control for picking, placement and cart movement; intervention and supervision rates not disclosed.",
+          "sourceIds": [
+            "f03-bmw-demo",
+            "f03-bmw-customer"
+          ],
+          "limitations": [
+            "No accepted-cycle count, operating-hours denominator, success rate or total staffing data is published for this Figure 03 task.",
+            "BMW describes onward movement to the assembly location by separate transport equipment.",
+            "Figure 02’s 30,000-vehicle and 90,000-part totals do not belong to Figure 03."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Figure — manufacturer enquiry",
+          "market": "Global enquiry; German supply not established",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.figure.ai/figure"
+          },
+          "sourceIds": [
+            "f03-product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Public manufacturer contact form; no reviewed German stock, delivery date, local integration package or production acceptance offer.",
+          "authorizationStatus": "Direct manufacturer channel; no German reseller authorization established.",
+          "caveats": [
+            "Open Contact Us on the product page. No form was submitted.",
+            "Hardware specifications do not imply an off-the-shelf BMW sequencing application."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Figure 03 is a separate hardware and software generation. BMW’s earlier Figure 02 pilot totals are historical evidence, not Figure 03 production results."
+      ],
+      "unknowns": [
+        "Task throughput, accepted-cycle rate, intervention frequency and staffing.",
+        "Representative part limits, cart rolling resistance and towing envelope.",
+        "German delivery, commissioning, conformity documentation, support and pricing."
+      ],
+      "sourceURLs": [
+        "https://www.figure.ai/figure",
+        "https://www.figure.ai/news/introducing-figure-03",
+        "https://www.figure.ai/news/f-03-at-bmw",
+        "https://www.press.bmwgroup.com/canada/article/detail/T0458794EN/bmw-group-advances-the-use-of-physical-ai-in-production-with-figure-03-project-in-spartanburg"
+      ],
+      "sources": [
+        {
+          "id": "f03-product",
+          "url": "https://www.figure.ai/figure",
+          "title": "Figure 03 current product specifications and contact form",
+          "publisher": "Figure",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "f03-intro",
+          "url": "https://www.figure.ai/news/introducing-figure-03",
+          "title": "Introducing Figure 03, 9 October 2025",
+          "publisher": "Figure",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "f03-bmw-demo",
+          "url": "https://www.figure.ai/news/f-03-at-bmw",
+          "title": "Figure 03 sequencing demonstration at BMW, 30 June 2026",
+          "publisher": "Figure",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "f03-bmw-customer",
+          "url": "https://www.press.bmwgroup.com/canada/article/detail/T0458794EN/bmw-group-advances-the-use-of-physical-ai-in-production-with-figure-03-project-in-spartanburg",
+          "title": "BMW Figure 03 sequencing project, 25 June 2026",
+          "publisher": "BMW Group",
+          "kind": "customer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ]
+    },
+    {
+      "id": "ubtech-walker-s2-industrial",
+      "name": "UBTECH Walker S2 · industrial configuration",
+      "manufacturer": "UBTECH",
+      "robotClass": "humanoid",
+      "workflowId": "picking_sorting",
+      "industries": [
+        "manufacturing"
+      ],
+      "exactConfiguration": "Industrial Walker S2 with the fourth-generation dexterous hands shown on the product page, BrainNet 2.0/Co-Agent task integration and compatible battery-swap station as required. Excludes Walker S2 EDU, Walker S1 and wheeled Cruzr S2.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Industrial humanoid offered for handling, sorting and quality-check workstations. UBTECH reports application capabilities, but task-level production acceptance and human-intervention figures remain unavailable in the reviewed material.",
+      "operatingMode": {
+        "value": "Manufacturer-described autonomous navigation, manipulation and battery swapping within configured industrial applications.",
+        "sourceIds": [
+          "s2-product",
+          "s2-results"
+        ],
+        "caveats": [
+          "Application training, system integration and human recovery arrangements remain task-specific.",
+          "Battery swapping supports replenishment; a 24/7 capability claim is not a measured uptime guarantee."
+        ]
+      },
+      "specs": [
+        {
+          "key": "handling_payload_kg",
+          "value": 15,
+          "unit": "kg",
+          "semanticLabel": "Published handling load",
+          "conditions": [
+            "Product-page capability within the described workspace; not a guaranteed one-hand or continuous walking payload."
+          ],
+          "sourceIds": [
+            "s2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "single_hand_grasp_kg",
+          "value": 7.5,
+          "unit": "kg",
+          "semanticLabel": "Published single-hand grasp load",
+          "conditions": [
+            "Fourth-generation hand graphic; grasp/load direction and duty-cycle envelope are unspecified."
+          ],
+          "sourceIds": [
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "height_cm",
+          "value": 176,
+          "unit": "cm",
+          "semanticLabel": "Published standing height",
+          "conditions": [
+            "Industrial product-page graphic; not arm reach."
+          ],
+          "sourceIds": [
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass_kg",
+          "value": 70,
+          "unit": "kg",
+          "semanticLabel": "Published robot mass",
+          "conditions": [
+            "Included hand, battery and accessory basis is not stated in the industrial graphic."
+          ],
+          "sourceIds": [
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "body_degrees_of_freedom",
+          "value": 52,
+          "unit": "DoF",
+          "semanticLabel": "Published whole-robot degrees of freedom",
+          "conditions": [
+            "Industrial configuration shown on the product page; do not substitute EDU or later hand configurations."
+          ],
+          "sourceIds": [
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hand_degrees_of_freedom",
+          "value": 11,
+          "unit": "DoF",
+          "semanticLabel": "Published fourth-generation hand degrees of freedom",
+          "conditions": [
+            "Per-hand graphic; fifth-generation hands mentioned in corporate reports are not assumed included."
+          ],
+          "sourceIds": [
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "travel_speed_m_s",
+          "value": 2,
+          "unit": "m/s",
+          "semanticLabel": "Published walking speed",
+          "conditions": [
+            "Load and endurance conditions are unstated."
+          ],
+          "sourceIds": [
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_height_range_m",
+          "value": "0–1.8",
+          "unit": "m",
+          "semanticLabel": "Published vertical handling workspace",
+          "conditions": [
+            "A vertical range, not radial reach or proof of 15 kg operation at every posture."
+          ],
+          "sourceIds": [
+            "s2-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "waist_rotation_deg",
+          "value": "±162",
+          "unit": "deg",
+          "semanticLabel": "Published waist rotation",
+          "conditions": [
+            "Joint motion range, not turning aisle clearance."
+          ],
+          "sourceIds": [
+            "s2-product",
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "waist_pitch_range_deg",
+          "value": "−35 to +90",
+          "unit": "deg",
+          "semanticLabel": "Published waist pitch endpoints",
+          "conditions": [
+            "The product text’s 125-degree pitch describes the total span between endpoints, not a positive 125-degree endpoint."
+          ],
+          "sourceIds": [
+            "s2-spec-graphic"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "battery_swap_time_minutes",
+          "value": 3,
+          "unit": "min",
+          "semanticLabel": "Advertised autonomous battery-swap time",
+          "conditions": [
+            "Product page says within three minutes with its compatible station. Does not establish accepted output or availability across a full shift."
+          ],
+          "sourceIds": [
+            "s2-product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Handle totes across multiple stack heights for palletizing and depalletizing.",
+          "configuration": "Industrial Walker S2 with task-specific grasping, navigation and workcell integration described in UBTECH’s 2025 annual results, page 10.",
+          "operatingMode": "Manufacturer-described autonomous handling; supervision and recovery rates unspecified.",
+          "sourceIds": [
+            "s2-results"
+          ],
+          "limitations": [
+            "No named-site accepted-cycle denominator, intervention count or load distribution is provided.",
+            "Tote geometry, stacking stability and presentation must be qualified."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Sort automotive components from flow racks and manipulate selected flexible protective materials.",
+          "configuration": "Industrial Walker S2 sorting applications reported on page 10 of UBTECH’s 2025 annual results.",
+          "operatingMode": "Task-trained dexterous manipulation; human replenishment and exception handling not quantified.",
+          "sourceIds": [
+            "s2-results"
+          ],
+          "limitations": [
+            "No verified SKU coverage, cycle rate, success denominator or per-site results are supplied.",
+            "Material-specific training and gripper suitability must be confirmed."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Check completeness of automotive SPS assembly kits.",
+          "configuration": "Industrial Walker S2 visual inspection application named on page 10 of the issuer’s annual results.",
+          "operatingMode": "Manufacturer-described inspection with factory-system data integration; quality responsibility and human review remain unspecified.",
+          "sourceIds": [
+            "s2-results"
+          ],
+          "limitations": [
+            "No false-accept, false-reject or missed-part rates are published.",
+            "This is not evidence of safety-critical final release or general-purpose defect inspection."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "UBTECH — industrial humanoid sales",
+          "market": "Global industrial enquiries; Germany supported only as an enquiry destination",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+            "email": "cooperate@ubtrobot.com"
+          },
+          "sourceIds": [
+            "s2-product",
+            "s2-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Manufacturer reports mass production and delivery, but no exact German allocation, lead time, price or commissioned application was verified.",
+          "authorizationStatus": "Direct manufacturer industrial contact.",
+          "caveats": [
+            "The product form includes Germany as a country choice; that does not prove delivery or local service.",
+            "Request the exact industrial hand configuration, task package and applicable conformity documentation."
+          ]
+        },
+        {
+          "organization": "UBTECH — EU office listed by the manufacturer",
+          "market": "European enquiry route in Nijmegen, Netherlands; German coverage requires confirmation",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.ubtrobot.com/en/about/company-profile",
+            "email": "richard@orcarobot.com"
+          },
+          "sourceIds": [
+            "s2-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Manufacturer-listed EU office; no Walker S2 stock or German field-support commitment published in the reviewed contact page.",
+          "authorizationStatus": "UBTECH publishes this EU contact. This does not establish a particular German reseller or application-integration authorization.",
+          "caveats": [
+            "Confirm whether this office supports the industrial Walker S2 configuration and the intended German site."
+          ]
+        },
+        {
+          "organization": "UBTECH — after-sales service",
+          "market": "Global support enquiry; German service level unconfirmed",
+          "routeType": "service",
+          "contact": {
+            "url": "https://www.ubtrobot.com/en/about/company-profile",
+            "email": "aftersales@ubtrobot.com"
+          },
+          "sourceIds": [
+            "s2-contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published manufacturer support mailbox; service response, parts and on-site support in Germany require agreement.",
+          "authorizationStatus": "Direct manufacturer support route.",
+          "caveats": [
+            "A support mailbox is not a warranty, service-level or spare-parts availability commitment."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Industrial product graphic states 52 DoF and fourth-generation 11-DoF hands. Separate walker-s2-edu documentation describes a 42-DoF research/teaching configuration; its scope and values are not merged here.",
+        "The industrial pitch graphic gives −35° to +90° endpoints; narrative copy calls this 125°. Both refer to the same total span.",
+        "Company-wide delivery totals and Walker S-series factory trials are not treated as Walker S2 per-task performance evidence."
+      ],
+      "unknowns": [
+        "Site-specific acceptance rates, interventions, uptime and operator effort.",
+        "Industrial package price, German delivery and local commissioning/support.",
+        "Load posture envelope, task runtime and included battery-swap infrastructure."
+      ],
+      "sourceURLs": [
+        "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+        "https://owebsite-cdn.ubtrobot.com/resources/image/2025/07/25/701620707123269.png",
+        "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0331/2026033102607.pdf",
+        "https://www.ubtrobot.com/en/about/company-profile",
+        "https://docs.ubtrobot.com/walker-s2-edu/docs/user-guide/5/"
+      ],
+      "sources": [
+        {
+          "id": "s2-product",
+          "url": "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
+          "title": "Walker S2 industrial product page",
+          "publisher": "UBTECH",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "s2-spec-graphic",
+          "url": "https://owebsite-cdn.ubtrobot.com/resources/image/2025/07/25/701620707123269.png",
+          "title": "Walker S2 industrial specifications graphic linked on the product page",
+          "publisher": "UBTECH",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "s2-results",
+          "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0331/2026033102607.pdf",
+          "title": "UBTECH 2025 annual results, pages 3 and 10",
+          "publisher": "UBTECH; issuer filing hosted by HKEX",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "s2-contact",
+          "url": "https://www.ubtrobot.com/en/about/company-profile",
+          "title": "UBTECH industrial sales, support and EU office contacts",
+          "publisher": "UBTECH",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "s2-edu-scope",
+          "url": "https://docs.ubtrobot.com/walker-s2-edu/docs/user-guide/5/",
+          "title": "Walker S2 EDU application scope and different configuration",
+          "publisher": "UBTECH",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ]
+    }
+  ]
+}

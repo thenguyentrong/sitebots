@@ -1,0 +1,141 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-lynx",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "DEEPRoboticsLynx",
+ "variant": null,
+ "name": "DEEP Robotics Lynx (original)",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/deeproboticslynx.html",
+ "summary": "The first 30 kg wheel-legged Lynx, IP54, for outdoor use and demonstrations; superseded for industry by the IP66 M20.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller lists this original Lynx; German dealers list the M20 series. DEEP still names it in its purchase form.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 30,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 12,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 3,
+   "unit": "h",
+   "conditions": "15 km",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step height",
+   "value": 22,
+   "unit": "cm",
+   "conditions": "platforms up to 80 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-10 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 12,
+  "runtimeH": 3,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Consumer-style controls (app, handheld remote); 1-year warranty."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/p_cat.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/deeproboticslynx.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics Lynx wheel-legged robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/deeproboticslynx.html",
+   "title": "DEEPRoboticsLynx product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.deeprobotics.cn/en/index/buy.html",
+   "title": "Product Purchase Intention Form",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether DEEP still ships the original Lynx."
+ ],
+ "checkedAt": "2026-10-02"
+}

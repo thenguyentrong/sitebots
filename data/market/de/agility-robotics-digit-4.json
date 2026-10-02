@@ -1,0 +1,121 @@
+{
+ "schemaVersion": 1,
+ "id": "agility-robotics-digit-4",
+ "maker": "Agility Robotics",
+ "makerCountry": "US",
+ "model": "Digit",
+ "variant": "Digit 4",
+ "name": "Agility Robotics Digit 4",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agilityrobotics.com/solutions",
+ "summary": "The current working Digit, a bipedal humanoid that moves totes at customer sites in North America; it is not offered in Europe.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Deployed only at North American customer sites (GXO, Schaeffler, Amazon, Toyota Canada). Agility says Digit 5 will be its first Digit offered outside North America (EU early access H1 2027); see the Digit 5 record.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "reach_m",
+   "label": "Reach height",
+   "value": 1.68,
+   "unit": "m",
+   "conditions": "stated as 5.5 ft",
+   "sourceId": "s2"
+  },
+  {
+   "key": "run_to_charge",
+   "label": "Run-to-charge ratio",
+   "value": "2:1",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Mostly used for tote-based material handling.",
+   "Superseded by Digit 5 (announced Sep 2026)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/68d6ca150ffa11fdc25d7575/699fdc15d1e9e4e839c2963f_Agility_Digit_06.jpg",
+   "pageUrl": "https://www.agilityrobotics.com/sales",
+   "credit": "Agility Robotics",
+   "alt": "Agility Digit 4 humanoid holding a grey plastic tote",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Move totes in a distribution center",
+   "stage": "deployment",
+   "where": "GXO, Flowery Branch near Atlanta, USA",
+   "date": "2026",
+   "sourceId": "s2",
+   "note": "Cumulative 100,000 totes at about 98 % accuracy while on task."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agilityrobotics.com/solutions/digit-5",
+   "title": "Digit 5 product page",
+   "publisher": "Agility Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agilityrobotics.com/content/agility-unveils-digit-5-humanoid-robot-built-for-cooperatively-safe-work-at-scale",
+   "title": "Agility Unveils Digit 5 Humanoid Robot (15 Sep 2026)",
+   "publisher": "Agility Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.agilityrobotics.com/sales",
+   "title": "Contact sales: Get Digit in your facility",
+   "publisher": "Agility Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Digit 4 payload and runtime are not on the current Agility pages."
+ ],
+ "checkedAt": "2026-10-02"
+}

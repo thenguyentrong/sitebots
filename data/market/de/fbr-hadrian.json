@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "fbr-hadrian",
+ "maker": "FBR",
+ "makerCountry": "AU",
+ "model": "Hadrian",
+ "variant": "32 m boom",
+ "name": "FBR Hadrian",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "bricklaying",
+  "site_masonry/masonry-wall-laying"
+ ],
+ "officialUrl": "https://www.fbr.com.au/view/hadrian",
+ "summary": "Truck-mounted block-laying robot with a 32 m stabilised boom that glues large blocks into the load-bearing walls of a house.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "FBR sells Hadrian only to \"select partners\" via a global form and otherwise builds walls as a service (WaaS) in Australia and the US; no European customer, office or delivery found. Uses FBR's own block and adhesive system.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 7800000,
+   "currency": "AUD",
+   "market": "Base price for select purchase partners, subject to final specification (FBR, Australia)",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "reach_m",
+   "label": "Telescopic boom",
+   "value": 32,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_block_mm",
+   "label": "Largest block",
+   "value": "600 x 400 x 300",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_block_kg",
+   "label": "Heaviest block",
+   "value": 45,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "rate_blocks_h",
+   "label": "Laying speed",
+   "value": 360,
+   "unit": "blocks/h",
+   "conditions": "up to, design figure; FAQ says over 300",
+   "sourceId": "s1"
+  },
+  {
+   "key": "adhesive_cure_min",
+   "label": "Adhesive cure time",
+   "value": 45,
+   "unit": "min",
+   "conditions": "approximately",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 45",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "crew",
+   "label": "Operating crew",
+   "value": 2,
+   "unit": "people",
+   "conditions": "one Hadrian operator, one telehandler operator",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_wind_kmh",
+   "label": "Wind limit",
+   "value": 60,
+   "unit": "km/h",
+   "conditions": "peak gusts; light rain only",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Builds walls up to three storeys from the roadside.",
+   "Dynamic Stabilisation Technology corrects boom movement in real time.",
+   "Works in light rain only and up to 60 km/h wind gusts; needs a telehandler and its operator to feed blocks."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://imgix.cms.io/2018.fbr.com.au/upload/navigation/hadrian/banner-hadrian-v3.png?version=1&fit=crop&crop=faces&w=1200&h=630&blend=00000000",
+   "pageUrl": "https://www.fbr.com.au/view/hadrian",
+   "credit": "FBR Ltd",
+   "alt": "FBR Hadrian laying blocks (render)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Built the walls of a home in a single shift during the US Demonstration Program",
+   "stage": "demo",
+   "where": "USA",
+   "date": null,
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.fbr.com.au/view/hadrian",
+   "title": "Hadrian product page",
+   "publisher": "FBR Ltd",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.fbr.com.au/view/faqs",
+   "title": "FAQs (purchase for select partners)",
+   "publisher": "FBR Ltd",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.fbr.com.au/view/waas",
+   "title": "Wall as a Service projects",
+   "publisher": "FBR Ltd",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether FBR plans European certification or partners."
+ ],
+ "checkedAt": "2026-10-02"
+}

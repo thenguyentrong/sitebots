@@ -1,0 +1,133 @@
+{
+ "schemaVersion": 1,
+ "id": "mojin-robotics-care-o-bot-4",
+ "maker": "Mojin Robotics / Fraunhofer IPA",
+ "makerCountry": "DE",
+ "model": "Care-O-bot 4",
+ "variant": null,
+ "name": "Care-O-bot 4",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.care-o-bot.de/en/care-o-bot-4.html",
+ "summary": "A 1.58 m, 140 kg service robot with head, torso and up to two 5 kg arms on an omnidirectional base, developed at Fraunhofer IPA.",
+ "launched": "2015",
+ "lifecycle": "discontinued",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No current seller found: the Mojin Robotics website did not respond on 2026-10-02 and Fraunhofer IPA's Care-O-bot site is a research page without a sales offer.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.58,
+   "unit": "m",
+   "conditions": "fully configured, 72 x 72 cm footprint",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 140,
+   "unit": "kg",
+   "conditions": "fully configured",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 29,
+   "unit": null,
+   "conditions": "fully configured",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "per arm (Schunk PowerBall joints)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.9,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Base speed",
+   "value": 1.1,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Modular: sold with zero, one or two arms.",
+   "Lifecycle inferred; no current supplier found."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.care-o-bot.de/en/care-o-bot-4/jcr:content/stage/stageParsys/stage_slide_0/image.img.2col.jpg/1556183227994/150114-Kueche.jpg",
+   "pageUrl": "https://www.care-o-bot.de/en/care-o-bot-4.html",
+   "credit": "Fraunhofer IPA",
+   "alt": "Care-O-bot 4 serving in a kitchen next to a person",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.care-o-bot.de/en/care-o-bot-4.html",
+   "title": "Care-O-bot 4",
+   "publisher": "Fraunhofer IPA",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.care-o-bot.de/en/care-o-bot-4/technical-data.html",
+   "title": "Care-O-bot 4 technical data",
+   "publisher": "Fraunhofer IPA",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is Mojin Robotics still trading, or has another company taken over Care-O-bot 4 sales?"
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -2,7 +2,7 @@
 // the matcher and the UI. The database check constraints in db/schema.sql
 // repeat the ones that matter for integrity; keep them in step.
 
-export const FORM_FACTORS = ['humanoid', 'quadruped', 'mobile_manipulator'] as const;
+export const FORM_FACTORS = ['humanoid', 'quadruped', 'mobile_manipulator', 'amr_agv', 'industrial_arm', 'cobot', 'dedicated_robot', 'integrated_cell'] as const;
 export type FormFactor = (typeof FORM_FACTORS)[number];
 
 export const ROBOT_STATUS = ['concept', 'prototype', 'pre_order', 'shipping', 'discontinued', 'unknown'] as const;

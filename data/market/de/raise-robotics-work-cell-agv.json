@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "raise-robotics-work-cell-agv",
+ "maker": "Raise Robotics",
+ "makerCountry": "US",
+ "model": "Raise Work Cell",
+ "variant": "on Raise AGV",
+ "name": "Raise Robotics Work Cell on AGV",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "layout_marking",
+  "scanning_documentation",
+  "site_electrical/overhead-drilling-anchors",
+  "site_survey_documentation/layout-marking-slabs",
+  "site_survey_documentation/as-built-laser-scanning"
+ ],
+ "officialUrl": "https://raiserobotics.ai/",
+ "summary": "A robot arm on a self-driving base that prints layout, drills anchor holes, fastens curtain-wall embeds or scans as-built geometry, depending on the tool fitted.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 40000,
+   "currency": "USD",
+   "market": "US, Raise V4 AGV base alone \"from\" (without work cell); lease options available",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02",
+  "status": "not_sold",
+  "statusNote": "Sold direct business to business by the US maker (Newark, NJ): purchase, lease or financing. No European seller, office or customer found; the maker only says each platform can be configured for ATEX Zone 2 in Europe.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "layout_accuracy_mm",
+   "label": "Layout print accuracy",
+   "value": "±3",
+   "unit": "mm",
+   "conditions": "Mark configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "configurations",
+   "label": "Configurations",
+   "value": "Mark, Drill, Fasten, Scan (deployed); Coat (pre-release)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "platforms",
+   "label": "Platforms",
+   "value": "Raise AGV, Genie scissor lifts, Genie boom lifts",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "base_weight_kg",
+   "label": "AGV base weight",
+   "value": 350,
+   "unit": "kg",
+   "conditions": "base platform only",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "AGV design payload",
+   "value": 500,
+   "unit": "kg",
+   "conditions": "base platform only; the work cell counts against it",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Top speed",
+   "value": 6,
+   "unit": "km/h",
+   "conditions": "peak; 5.3 km/h rated",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Continuous grade",
+   "value": 23,
+   "unit": "deg",
+   "conditions": "base platform; 35° peak",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 10240,
+   "unit": "Wh",
+   "conditions": "LiFePO4, 51.2 V, 200 Ah",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "15-18",
+   "unit": "h",
+   "conditions": "base platform at 500-600 W draw; runtime with work cell not stated",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Not available in Germany.",
+   "Omnidirectional four-wheel base; the fitted tool sets the job (mark, drill, fasten or scan).",
+   "The same work cell can also be mounted on Genie scissor and boom lifts."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://raiserobotics.ai/wp-content/uploads/2026/09/r-agv.png",
+   "pageUrl": "https://raiserobotics.ai/",
+   "credit": "Raise Robotics",
+   "alt": "Raise Robotics AGV with robot arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs",
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Layout, drilling and curtain-wall embed work with US contractors",
+   "stage": "deployment",
+   "where": "JR Butler, St. Jude Children's Research Hospital (USA); DPR Construction and Enclos shown as project logos",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Only the JR Butler case names a project."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://raiserobotics.ai/",
+   "title": "Raise Robotics home page",
+   "publisher": "Raise Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://raiserobotics.ai/agv/",
+   "title": "Raise V4 AGV specifications and pricing",
+   "publisher": "Raise Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Any plan for Europe or CE marking."
+ ],
+ "checkedAt": "2026-10-02"
+}

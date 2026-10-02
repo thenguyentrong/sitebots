@@ -1,0 +1,119 @@
+{
+ "schemaVersion": 1,
+ "id": "cybe-rc",
+ "maker": "CyBe Construction",
+ "makerCountry": "NL",
+ "model": "CyBe RC",
+ "variant": "Robot Crawler",
+ "name": "CyBe RC (Robot Crawler)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-crawler/",
+ "summary": "Tracked industrial robot arm that prints concrete on site or in a precast plant, covering about 5 m circumference and 3.2 m height per position.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Netherlands) sells directly via its sales team; no German distributor found; price on request.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "CyBe Construction",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-crawler/",
+    "contactUrl": "https://cybe.eu/contact/",
+    "email": null,
+    "phone": "+31 412 676 030",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "CyBe Construction B.V., Oss, Netherlands; contact the sales team via the website."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "print_area_m",
+   "label": "Circumference x height",
+   "value": "5 x 3.2",
+   "unit": "m",
+   "conditions": "standard; extended with hydraulic feet",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_mms",
+   "label": "Print speed",
+   "value": 500,
+   "unit": "mm/s",
+   "conditions": "maker claim for CyBe printers",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Hydraulic feet stabilise the machine and extend range; optional rotating nozzle.",
+   "Needs CyBe mortar and a mixing pump."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cybe.eu/wp-content/uploads/2021/10/IMG_3200.1-2-scaled.jpg",
+   "pageUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-crawler/",
+   "credit": "CyBe Construction",
+   "alt": "CyBe RC tracked 3D concrete printer with pump unit",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printed the walls of the Paremoremo House (off-site)",
+   "stage": "deployment",
+   "where": "QOROX, Auckland, New Zealand",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-crawler/",
+   "title": "CyBe RC (Robot Crawler)",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price, weight and reach of the arm."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,291 @@
+{
+ "schemaVersion": 1,
+ "id": "fischer-baubot-mrs15",
+ "maker": "fischer (Baubot GmbH)",
+ "makerCountry": "AT",
+ "model": "BauBot MRS15",
+ "variant": null,
+ "name": "fischer BauBot MRS15",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_electrical/overhead-drilling-anchors"
+ ],
+ "officialUrl": "https://www.fischer.de/de-de/produkte/innovationen/baubot",
+ "summary": "A 1.3 t tracked robot with an industrial arm that drills, cleans and sets fischer anchors in ceilings, walls and floors from the BIM model, run by a fischer operator.",
+ "launched": "2022-11",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.fischer.de/de-de/produkte/innovationen/baubot",
+    "contactUrl": "https://www.fischer.de/de-de/kontakt",
+    "email": null,
+    "phone": "+49 7443 12-6000",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Offered as a full service: BIM model, anchor design, robot, certified operator and documentation. Site work is run by fischer BauBot Services GmbH. No machine sale found.",
+    "name": "fischerwerke GmbH & Co. KG (fischer BauBot Services GmbH)",
+    "country": "DE",
+    "role": "manufacturer",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Available in Germany as a drilling and anchoring service from fischer (robot with fischer operator, planning and documentation), not as a machine you buy. Price on request.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": "<1300",
+   "unit": "kg",
+   "conditions": "maker; press gives about 1,300 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": "≥20",
+   "unit": "kg",
+   "conditions": "rated effective payload, at least",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_height_m",
+   "label": "Working height",
+   "value": 4,
+   "unit": "m",
+   "conditions": "up to, without lifting frame; with lifting frame used up to 7.5 m in a tunnel",
+   "sourceId": "s2"
+  },
+  {
+   "key": "transport_dimensions_mm",
+   "label": "Transport size",
+   "value": "<2100 L x 1800 H x 800 W",
+   "unit": "mm",
+   "conditions": "fits through a standard door in transport position",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_width_mm",
+   "label": "Operating width",
+   "value": "<1700",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Driving speed",
+   "value": 3,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_obstacle_mm",
+   "label": "Obstacle it can cross",
+   "value": 100,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Positioning accuracy",
+   "value": "±1",
+   "unit": "mm",
+   "conditions": "within a hole group",
+   "sourceId": "s1"
+  },
+  {
+   "key": "anchors",
+   "label": "Anchors set",
+   "value": "fischer EA II drop-in anchor, RSB resin capsule",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "hole_size_example",
+   "label": "Hole size done on site",
+   "value": "20 mm diameter, 240 mm deep",
+   "unit": null,
+   "conditions": "Engelberg tunnel",
+   "sourceId": "s4"
+  },
+  {
+   "key": "max_incline_pct",
+   "label": "Maximum incline",
+   "value": 50,
+   "unit": "%",
+   "conditions": "driving; 20° approach angle",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": 20,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP54",
+  "sdk": null,
+  "notes": [
+   "Not fully autonomous: an operator positions it, releases each work step and supervises; lidar safety zone around the robot.",
+   "Automatic drill bit change, hole cleaning, marking and anchor setting; integrated dust extraction.",
+   "Tracked base with outriggers seen in Baubot photos; drive not described in text. Stabilises itself hydraulically when working.",
+   "Service only in Germany; you hire the result, not the machine.",
+   "Maker says it works indoors and outdoors (IP54-equivalent, 5-40 °C, under 85% humidity)."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static.wixstatic.com/media/ea01cc_3a576d07704e45d4b02040ae3f384a09~mv2.png",
+   "pageUrl": "https://www.baubot.com/products",
+   "credit": "Baubot GmbH",
+   "alt": "Baubot MRS15 tracked robot with arm raised and outriggers down",
+   "kind": "product"
+  },
+  {
+   "url": "https://media.fischer.group/v7/_media-prod_/fixing-systems/rebrush/fide/produkte/innovationen/baubot/header-baubot-desktop.jpg",
+   "pageUrl": "https://www.fischer.de/de-de/produkte/innovationen/baubot",
+   "credit": "fischer",
+   "alt": "fischer BauBot drilling in an empty building",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Three MRS15 drilled over 9,000 anchor holes (20 mm, 240 mm deep) up to 7.5 m high in the tunnel wall during night closures",
+   "stage": "deployment",
+   "where": "Engelbergtunnel A81 Leonberg, for Baresel and Autobahn GmbH, Germany",
+   "date": "2025",
+   "sourceId": "s3",
+   "note": "Night shifts under live traffic; fischer supplied the drilling plan, operators, drill bits and documentation."
+  },
+  {
+   "taskIds": [],
+   "task": "Set anchors for handrails and water pipe fixings along the tunnel",
+   "stage": "deployment",
+   "where": "Koralmtunnel, Austria",
+   "date": null,
+   "sourceId": "s1",
+   "note": "fischer reference names the \"fischer BauBot\"; the model is not stated."
+  },
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Drilled 3,717 holes in walls, floors and ceilings in 24 hours (Guinness World Records title)",
+   "stage": "demo",
+   "where": "Baubot test site, Traiskirchen, Austria",
+   "date": "2025-09",
+   "sourceId": "s6",
+   "note": "Base model of the record robot not named in the source."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.fischer.de/de-de/produkte/innovationen/baubot",
+   "title": "BauBot",
+   "publisher": "fischerwerke GmbH & Co. KG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.baubot.com/products",
+   "title": "Products",
+   "publisher": "Baubot GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://solidbau.at/news/120000-autos-am-tag-9000-loecher-in-der-nacht-roboter-sanieren-den-engelbergtunnel/",
+   "title": "120.000 Autos am Tag, 9.000 Löcher in der Nacht",
+   "publisher": "Solid Bau",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.fischer.group/de-de/newsroom/presseinformationen/fischer-befestigungssysteme/20250715-fischer-roboter-unterstuetzen-ertuechtigung-des-engelbergtunnels-in-leonberg",
+   "title": "fischer Roboter unterstützen Ertüchtigung des Engelbergtunnels",
+   "publisher": "fischer group",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.trendingtopics.eu/baubot-exit-fuer-wiener-robotik-startup-an-deutschen-konzern-fischer/",
+   "title": "BauBot: Exit für Wiener Robotik-Startup an fischer",
+   "publisher": "Trending Topics",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.baubot.com/post/fischer-baubot-achieves-guinness-world-records-title-in-drilling",
+   "title": "fischer BAUBOT achieves Guinness World Records title in drilling",
+   "publisher": "Baubot GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.kuka.com/en-de/industries/solutions-database/2024/11/baubot-kr-iontec",
+   "title": "Baubot with KR IONTEC",
+   "publisher": "KUKA",
+   "kind": "other",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Service price per hole or per day in Germany.",
+  "Whether fischer sells or leases the MRS15 as a machine.",
+  "Battery or power supply and runtime."
+ ],
+ "checkedAt": "2026-10-02"
+}

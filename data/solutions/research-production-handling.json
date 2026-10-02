@@ -1,0 +1,1425 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Eight named production/handling configurations. Supplier claims and reported applications do not establish task fit, German stock or accepted deployment. Explicit task links cover only the supported step.",
+  "records": [
+    {
+      "id": "robotiq-ax20-palletizing",
+      "name": "Robotiq AX20 palletizing system",
+      "manufacturer": "Robotiq",
+      "robotClass": "integrated_cell",
+      "workflowId": "material_handling",
+      "exactConfiguration": "AX20 PAL Series with vertical seventh axis; a UR20 arm and application gripper must be explicitly included in the cell BOM. German article 5GREL136 includes PowerPick but excludes the UR robot.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Stack prepared cartons onto pallets at a fixed end-of-line station. The AX20 axis extends the arm’s working height.",
+      "operatingMode": {
+        "value": "Programmed palletizing with prepared infeed, configured patterns and operator pallet exchange.",
+        "sourceIds": [
+          "sheet",
+          "product",
+          "seller"
+        ],
+        "caveats": [
+          "A module order and a complete safeguarded installed cell are different scopes.",
+          "Box porosity, grip and layout need a trial."
+        ]
+      },
+      "specs": [
+        {
+          "key": "published_payload_kg",
+          "value": 23,
+          "unit": "kg",
+          "semanticLabel": "AX20 published configuration payload",
+          "conditions": [
+            "Conditional figure; tooling, load centre and robot settings must be checked."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pallet_height_max_mm",
+          "value": 3000,
+          "unit": "mm",
+          "semanticLabel": "Maximum loaded pallet height",
+          "conditions": [
+            "Depends on boxes and layout; not arm reach."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "published_cycles_per_min",
+          "value": 10,
+          "unit": "cycles/min",
+          "semanticLabel": "Published AX20 cycle claim",
+          "conditions": [
+            "Not measured sustained shift output; depends on product and pattern."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pallet_width_max_mm",
+          "value": 1219,
+          "unit": "mm",
+          "semanticLabel": "Maximum pallet width",
+          "conditions": [
+            "Confirm actual pallet compatibility."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pallet_depth_max_mm",
+          "value": 1219,
+          "unit": "mm",
+          "semanticLabel": "Maximum pallet depth",
+          "conditions": [
+            "Confirm actual pallet compatibility."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "accepted_boxes_per_shift",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Accepted boxes per shift",
+          "conditions": [
+            "Measure rejects, pallet exchange and interventions."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Palletize prepared boxes in configured patterns.",
+          "configuration": "AX20 integrated with arm, gripping, infeed and safeguards.",
+          "operatingMode": "Automatic placement with operator replenishment and recovery.",
+          "sourceIds": [
+            "sheet",
+            "product"
+          ],
+          "limitations": [
+            "No evidence for loose fittings, porous bags or arbitrary mixed depalletizing."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Robotiq Europe",
+          "market": "Europe; German project acceptance requires confirmation",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://robotiq.com/contact",
+            "phone": "+33 4 81 13 27 10"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": []
+        },
+        {
+          "organization": "JUGARD+KÜNSTNER GmbH",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://jk.de/Robotiq-Palletizer-AX20/5GREL136",
+            "phone": "+49 9187 936 69-0",
+            "email": "info@jk.de"
+          },
+          "sourceIds": [
+            "seller",
+            "seller-identity"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Seller listing reviewed; manufacturer authorization was not independently confirmed.",
+          "caveats": [
+            "Listing expressly excludes the UR arm.",
+            "No public price; request route does not confirm stock."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Seller title says 20 kg; body and September 2025 manufacturer sheet say 23 kg. Confirm the load-budget basis.",
+        "Seller body says 10 cycles/min but table says 13. Manufacturer AX20 sheet says 10; do not import PE20/AX10 rates.",
+        "Seller table says two patterns; current manufacturer sheet says unlimited. Establish installed software/licence."
+      ],
+      "unknowns": [
+        "Complete cell BOM and arm software/load settings.",
+        "Grip reliability and actual cycle time.",
+        "German installed price, delivery, acceptance and service."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "sheet",
+          "url": "https://robotiq.com/hubfs/PAL_Product_Sheet_EN_Recto_Verso_WEB.pdf",
+          "title": "PAL Series sheet September 2025, AX20 column",
+          "publisher": "Robotiq",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "product",
+          "url": "https://robotiq.com/solutions/palletizing",
+          "title": "Robotiq palletizing solutions",
+          "publisher": "Robotiq",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://robotiq.com/contact",
+          "title": "Robotiq Europe and sales contacts",
+          "publisher": "Robotiq",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "seller",
+          "url": "https://jk.de/Robotiq-Palletizer-AX20/5GREL136",
+          "title": "AX20 German article 5GREL136",
+          "publisher": "JUGARD+KÜNSTNER",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "seller-identity",
+          "url": "https://jk.de/impressum",
+          "title": "German legal identity",
+          "publisher": "JUGARD+KÜNSTNER",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        }
+      ],
+      "sourceURLs": [
+        "https://robotiq.com/hubfs/PAL_Product_Sheet_EN_Recto_Verso_WEB.pdf",
+        "https://robotiq.com/solutions/palletizing",
+        "https://robotiq.com/contact",
+        "https://jk.de/Robotiq-Palletizer-AX20/5GREL136",
+        "https://jk.de/impressum"
+      ],
+      "industries": [
+        "construction",
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "abb-irb460-110-240-palletizing",
+      "name": "ABB IRB 460-110/2.4 palletizer",
+      "manufacturer": "ABB",
+      "robotClass": "industrial_arm",
+      "workflowId": "material_handling",
+      "exactConfiguration": "Four-axis IRB 460 rated 110 kg at 2.40 m reach. Arm only; controller generation, gripper, conveyors and safeguards must be quoted separately.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "A stationary industrial arm for palletizing and depalletizing; ABB describes a bag-palletizing combination with FlexGripper Claw.",
+      "operatingMode": {
+        "value": "Programmed stationary arm in a safeguarded palletizing cell.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Base arm does not include the complete cell.",
+          "Loading, pallet exchange and fault recovery need assigned responsibility."
+        ]
+      },
+      "specs": [
+        {
+          "key": "arm_payload_kg",
+          "value": 110,
+          "unit": "kg",
+          "semanticLabel": "Rated arm payload",
+          "conditions": [
+            "Include tooling/product; validate load centre and inertia."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "arm_reach_mm",
+          "value": 2400,
+          "unit": "mm",
+          "semanticLabel": "Published arm reach",
+          "conditions": [
+            "Geometric reach is not loaded reach in every pose."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "axes",
+          "value": 4,
+          "unit": null,
+          "semanticLabel": "Robot axes",
+          "conditions": [
+            "Palletizing kinematics, not a six-axis manipulator."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "benchmark_cycles_per_hour",
+          "value": 2190,
+          "unit": "cycles/h",
+          "semanticLabel": "Manufacturer cycle benchmark",
+          "conditions": [
+            "Published with a 60 kg load; not actual line output including grip dwell and downtime."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "cell_throughput",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Accepted throughput of proposed cell",
+          "conditions": [
+            "Requires exact gripper, conveyor, pattern and product."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Palletizing and depalletizing; claw option for bags.",
+          "configuration": "IRB 460; bag application additionally requires FlexGripper Claw and integrated handling.",
+          "operatingMode": "Automatic stationary cell.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "No reviewed evidence for mixed construction-SKU recognition or damaged bags.",
+            "Claw and software are application components, not assumed arm-price inclusions."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ABB Robotics Deutschland GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://new.abb.com/products/robotics/de/service/kontakt",
+            "phone": "+49 6031 85 0",
+            "email": "robotervertrieb@de.abb.com"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": [
+            "Request the complete integrator scope."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Live page combines IRC5 and OmniCore V250XT wording while CAD entries retain IRC5. Confirm controller and supported software."
+      ],
+      "unknowns": [
+        "Controller generation, end effector and cell safety design.",
+        "Bag mix, pickup access and damage rate.",
+        "Installed price, lead time and cycle acceptance."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://new.abb.com/products/robotics/nl/onze-robots/articulated-robots/irb-460",
+          "title": "IRB 460, 110 kg / 2.40 m",
+          "publisher": "ABB",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://new.abb.com/products/robotics/de/service/kontakt",
+          "title": "ABB German sales contact",
+          "publisher": "ABB",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://new.abb.com/products/robotics/nl/onze-robots/articulated-robots/irb-460",
+        "https://new.abb.com/products/robotics/de/service/kontakt"
+      ],
+      "industries": [
+        "construction",
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "weinmann-feedbot-f500-framing",
+      "name": "WEINMANN FEEDBOT F-500 framing robot",
+      "manufacturer": "WEINMANN / HOMAG",
+      "robotClass": "integrated_cell",
+      "workflowId": "material_handling",
+      "exactConfiguration": "FEEDBOT F-500 six-axis handling robot integrated with timber framing station, gripper and wup data interface; exact station model and tooling require quotation.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Pick prepared studs and plates and place them into a wall frame, including transverse, longitudinal and diagonal placements.",
+      "operatingMode": {
+        "value": "Automatic stud placement from defined provision slots into the framing station.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Prepared timber, correct data, replenishment and recovery remain prerequisites.",
+          "Supplier availability language is not measured site uptime."
+        ]
+      },
+      "specs": [
+        {
+          "key": "workpiece_weight_max_kg",
+          "value": 75,
+          "unit": "kg",
+          "semanticLabel": "Maximum handled timber weight",
+          "conditions": [
+            "Workpiece limit, not bare-arm rated payload."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "workpiece_length_range_mm",
+          "value": "780–3500",
+          "unit": "mm",
+          "semanticLabel": "Timber length range",
+          "conditions": [
+            "Confirm selected gripper and station."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "web_cross_section_range_mm",
+          "value": "40 × 100 to 160 × 250",
+          "unit": "mm",
+          "semanticLabel": "Product-page cross-section range",
+          "conditions": [
+            "Conflicts with separately indexed brochure; confirm current supplied configuration."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "published_cycles_per_min",
+          "value": 6,
+          "unit": "cycles/min",
+          "semanticLabel": "Maximum insertion-cycle claim",
+          "conditions": [
+            "Part size, supply and recovery determine actual output."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "robot_axes",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Handling robot axes",
+          "conditions": [],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "actual_shift_output",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Accepted studs inserted per shift",
+          "conditions": [
+            "No raw shift log or intervention denominator reviewed."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Insert studs and top/bottom plates into wall frames.",
+          "configuration": "FEEDBOT F-500 with framing station and gripper.",
+          "operatingMode": "Programmed handling from provision slots.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Does not prove machining, site installation or lifting complete walls.",
+            "Linked customer videos were not used as independently validated deployment evidence."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "WEINMANN Holzbausystemtechnik GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.homag.com/impressum",
+            "email": "info@weinmann-partner.de",
+            "phone": "+49 7122 8294 0"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": [
+            "Factory layout, utilities, guarding, software and commissioning are quotation items."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Webpage section range is 40 × 100 to 160 × 250 mm; indexed Smartprefab brochure says width 40–190 and height 80–300 mm. Full brochure exceeded research-tool size limits. Keep indexed-only status and request current signed data."
+      ],
+      "unknowns": [
+        "Applicable cross-section range/revision.",
+        "Exact station, gripper, buffers and upstream interface.",
+        "Cycle distribution, warp tolerances and recovery for actual timber."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-handling-and-storage-systems-timber-construction/robot-feedbot-f-500",
+          "title": "FEEDBOT F-500 specification and framing application",
+          "publisher": "HOMAG / WEINMANN",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "brochure-index",
+          "url": "https://www.homag.com/fileadmin/product/houseconstruction/brochures/smartprefab/weinmann-robotics-FEEDBOT-en.pdf",
+          "title": "Smartprefab FEEDBOT brochure, indexed table only",
+          "publisher": "HOMAG / WEINMANN",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.homag.com/impressum",
+          "title": "WEINMANN German legal identity and contact",
+          "publisher": "HOMAG / WEINMANN",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-handling-and-storage-systems-timber-construction/robot-feedbot-f-500",
+        "https://www.homag.com/fileadmin/product/houseconstruction/brochures/smartprefab/weinmann-robotics-FEEDBOT-en.pdf",
+        "https://www.homag.com/impressum"
+      ],
+      "industries": [
+        "construction",
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "weinmann-feedbot-w500-sheathing",
+      "name": "WEINMANN FEEDBOT W-500 sheathing cell",
+      "manufacturer": "WEINMANN / HOMAG",
+      "robotClass": "integrated_cell",
+      "workflowId": "material_handling",
+      "exactConfiguration": "FEEDBOT W-500 panel robot with linear axis and fastening tooling, paired with WALLTEQ M-300 as shown by the manufacturer; tooling and cell envelope are project-specific.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Place sheathing panels onto timber frames and fix them in a production cell with a multifunction bridge.",
+      "operatingMode": {
+        "value": "Automatic panel placement/fixing in a configured cell, with material supply, inspection and exceptions arranged separately.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Autonomous production describes the configured cell, not arbitrary factory or site operation."
+        ]
+      },
+      "specs": [
+        {
+          "key": "linear_axis_length_max_m",
+          "value": 40,
+          "unit": "m",
+          "semanticLabel": "Available linear-axis option",
+          "conditions": [
+            "Up to 40 m; not standard fitted reach."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "panel_weight_max",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Admissible panel mass",
+          "conditions": [
+            "No exact mass limit on directly read product page."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "panel_size_range",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Panel dimensions/materials",
+          "conditions": [
+            "Trial OSB/gypsum size, thickness, porosity and surface."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "accepted_panels_per_hour",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Accepted panel-placement output",
+          "conditions": [
+            "No standardized throughput or failure denominator found."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Apply and fix sheathing panels onto timber elements.",
+          "configuration": "W-500 combined with M-300 and fastening tooling.",
+          "operatingMode": "Automatic cell with separate replenishment/recovery.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Adhesive application and arbitrary complete fastener schedules are not thereby confirmed.",
+            "No sustained shift log for the buyer’s panel programme reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "WEINMANN Holzbausystemtechnik GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.homag.com/impressum",
+            "email": "info@weinmann-partner.de",
+            "phone": "+49 7122 8294 0"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": [
+            "Factory layout, utilities, guarding, software and commissioning are quotation items."
+          ]
+        }
+      ],
+      "conflicts": [
+        "40 m is an available linear-axis option, not every installation’s reach."
+      ],
+      "unknowns": [
+        "Admissible board mass, sizes, gripping and materials.",
+        "Initial fixing versus complete engineered fastening schedule.",
+        "Stock supply, cell footprint, inspection and installed price."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-handling-and-storage-systems-timber-construction/robot-feedbot-w-500",
+          "title": "FEEDBOT W-500 panel placement/fixing cell",
+          "publisher": "HOMAG / WEINMANN",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.homag.com/impressum",
+          "title": "WEINMANN German legal identity and contact",
+          "publisher": "HOMAG / WEINMANN",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-handling-and-storage-systems-timber-construction/robot-feedbot-w-500",
+        "https://www.homag.com/impressum"
+      ],
+      "industries": [
+        "construction",
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "weinmann-wallteq-m300-nailing",
+      "name": "WEINMANN WALLTEQ M-300 multifunction bridge",
+      "manufacturer": "WEINMANN / HOMAG",
+      "robotClass": "dedicated_robot",
+      "workflowId": "drilling_fastening",
+      "exactConfiguration": "M-300 bridge with stapling/nailing units and 13.2 kW multifunction spindle. fastenerSwitch, additional saw, batten/facade shoes and wider working width are options.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Nail or staple sheathing on timber elements and machine openings with selected cutting tools on a compatible work table.",
+      "operatingMode": {
+        "value": "Programmed bridge processing over prepared elements; some accessories and tool changes require operator action.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Define fastening units, table, extraction and data preparation.",
+          "This is a factory bridge, not a mobile site installation robot."
+        ]
+      },
+      "specs": [
+        {
+          "key": "spindle_power_kw",
+          "value": 13.2,
+          "unit": "kW",
+          "semanticLabel": "Multifunction spindle power",
+          "conditions": [
+            "Not whole-cell electrical demand."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "saw_depth_max_mm",
+          "value": 80,
+          "unit": "mm",
+          "semanticLabel": "Maximum sawing depth",
+          "conditions": [
+            "Tool/material-specific; not every operation."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "electrical_connection_kw",
+          "value": 15,
+          "unit": "kW",
+          "semanticLabel": "Published machine electrical connection",
+          "conditions": [
+            "Account for options and extraction in site design."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "pneumatic_pressure_bar",
+          "value": 8,
+          "unit": "bar",
+          "semanticLabel": "Published pneumatic pressure",
+          "conditions": [
+            "Confirm air quality and flow."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "optional_fastening_units",
+          "value": 4,
+          "unit": null,
+          "semanticLabel": "Maximum units in optional fastenerSwitch",
+          "conditions": [
+            "Quick-change option, not four included heads."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "fastener_schedule_acceptance",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Acceptance of actual fastener pattern",
+          "conditions": [
+            "Verify spacing, edges, embedment and inspection."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Staple/nail sheathing and cut/trim features on timber elements.",
+          "configuration": "M-300 with selected tooling and compatible table.",
+          "operatingMode": "Programmed processing with preparation/change operations.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "No automatic approval for every structural fastener or onsite screw connection.",
+            "Marketing productivity uplift is not expected buyer ROI."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "WEINMANN Holzbausystemtechnik GmbH",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.homag.com/impressum",
+            "email": "info@weinmann-partner.de",
+            "phone": "+49 7122 8294 0"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": [
+            "Factory layout, utilities, guarding, software and commissioning are quotation items."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Page mentions 90 mm trimming and 80 mm technical-table processing depth. This record uses the explicitly stated 80 mm saw depth; confirm tool-specific limits."
+      ],
+      "unknowns": [
+        "Installed heads, consumables and material combinations.",
+        "Table size, handling, extraction and connected load.",
+        "Fastener defects, cycle time and operator minutes on actual elements."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-multifunction-bridge/multifunction-bridge-wallteq-m-300",
+          "title": "WALLTEQ M-300 functions and technical data",
+          "publisher": "HOMAG / WEINMANN",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.homag.com/impressum",
+          "title": "WEINMANN German legal identity and contact",
+          "publisher": "HOMAG / WEINMANN",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-multifunction-bridge/multifunction-bridge-wallteq-m-300",
+        "https://www.homag.com/impressum"
+      ],
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "hundegger-robot-drive650-joinery",
+      "name": "Hundegger ROBOT-Drive 650",
+      "manufacturer": "Hundegger",
+      "robotClass": "dedicated_robot",
+      "workflowId": "drilling_fastening",
+      "exactConfiguration": "ROBOT-Drive 650 with six-axis ROBOT machining unit and standard 12 kW spindle. Optional 29 kW spindle, drilling units, five-axis saw/slit/marking unit and handling must be identified separately.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Machine studs and beams in the factory: cut, drill, mill and form joinery with installed tools and a CNC programme.",
+      "operatingMode": {
+        "value": "CNC machining from CAMBIUM job data with configured infeed/outfeed and tool magazine.",
+        "sourceIds": [
+          "product"
+        ],
+        "caveats": [
+          "Timber size, tooling and operations must fit the exact variant.",
+          "Automated feed still requires stock supply and completed-part handling."
+        ]
+      },
+      "specs": [
+        {
+          "key": "cross_section_range_mm",
+          "value": "20 × 60 to 300 × 650",
+          "unit": "mm",
+          "semanticLabel": "ROBOT-Drive 650 cross-section envelope",
+          "conditions": [
+            "Do not substitute the wider 1300 envelope."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "robot_unit_axes",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Machining-unit axes",
+          "conditions": [
+            "Tool kinematics, not a material-carrying arm rating."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standard_spindle_power_kw",
+          "value": 12,
+          "unit": "kW",
+          "semanticLabel": "Standard spindle power",
+          "conditions": [
+            "29 kW is an alternative option."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standard_spindle_speed_max_rpm",
+          "value": 12000,
+          "unit": "rpm",
+          "semanticLabel": "Standard maximum spindle speed",
+          "conditions": [
+            "Tool/material limits may be lower."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "tool_positions_max",
+          "value": 24,
+          "unit": null,
+          "semanticLabel": "Published tool-selection capacity",
+          "conditions": [
+            "Confirm installed tooling and operations."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "part_mass_limit",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Admissible part mass for transport system",
+          "conditions": [
+            "Section envelope does not establish lifting/conveyor capacity."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Factory cutting, drilling, milling and joinery of timber.",
+          "configuration": "ROBOT-Drive 650 with selected tools and CNC data.",
+          "operatingMode": "Automatic machining with configured feed and operator recovery.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Does not install fasteners on site or transfer glulam between unrelated stations.",
+            "Optional spindle, saw unit and stockyard automation are not assumed inclusions."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Hans Hundegger AG",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.hundegger.com/de/kontakt",
+            "email": "info.de@hundegger.com",
+            "phone": "+49 8332 9233 0"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": [
+            "Quote the 650 variant, exact tooling, conveyors and extraction."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The page combines 450, 650 and 1300 widths; only 650 section limits are recorded.",
+        "Optional 29 kW / 15,000 rpm must not replace standard 12 kW / 12,000 rpm data."
+      ],
+      "unknowns": [
+        "Tooling/software for required joints.",
+        "Mass/length limits of supplied transport equipment.",
+        "Accuracy, output, tool life and extraction for actual timber."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.hundegger.com/de/maschinen/abbundmaschinen/robot-drive",
+          "title": "ROBOT-Drive German variant specifications",
+          "publisher": "Hundegger",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.hundegger.com/de/kontakt",
+          "title": "Hundegger German head-office contact",
+          "publisher": "Hundegger",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.hundegger.com/de/maschinen/abbundmaschinen/robot-drive",
+        "https://www.hundegger.com/de/kontakt"
+      ],
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "yaskawa-arcworld-cs-v2500-l1300",
+      "name": "Yaskawa ArcWorld CS V2-500 Y3 L1300",
+      "manufacturer": "Yaskawa",
+      "robotClass": "integrated_cell",
+      "workflowId": "welding",
+      "exactConfiguration": "ArcWorld CS V2-500 Y3, L = 1300 positioner, MOTOMAN-AR1440 and YRC1000, from June 2023 family brochure. Welding source, process package and fixtures are order-specific.",
+      "reviewStatus": "reviewed_with_gaps",
+      "description": "Weld prepared metal subassemblies in a positioner. Operators or upstream equipment fit, clamp, load and inspect parts.",
+      "operatingMode": {
+        "value": "Programmed arc-welding cell with fixtured parts and operator loading/recovery.",
+        "sourceIds": [
+          "sheet"
+        ],
+        "caveats": [
+          "Fixtures and welding procedure qualification are application-specific.",
+          "Arm payload and positioner load are different quantities."
+        ]
+      },
+      "specs": [
+        {
+          "key": "positioner_payload_per_station_kg",
+          "value": 500,
+          "unit": "kg",
+          "semanticLabel": "Positioner load per station",
+          "conditions": [
+            "Not arm payload; confirm fixture contribution and load distribution."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "workpiece_width_max_mm",
+          "value": 1200,
+          "unit": "mm",
+          "semanticLabel": "L1300 maximum workpiece width",
+          "conditions": [
+            "Fixture/torch access may reduce usable space."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "workpiece_diameter_max_mm",
+          "value": 900,
+          "unit": "mm",
+          "semanticLabel": "L1300 maximum workpiece diameter",
+          "conditions": [
+            "Do not import larger variant envelopes."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "cell_dimensions_mm",
+          "value": "2300 × 4435 × 2360",
+          "unit": "mm",
+          "semanticLabel": "Cell width × depth × height",
+          "conditions": [
+            "June 2023 brochure; obtain installation drawings and service clearances."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "robot_model",
+          "value": "MOTOMAN-AR1440",
+          "unit": null,
+          "semanticLabel": "Included robot model",
+          "conditions": [
+            "Larger variants use AR2010."
+          ],
+          "sourceIds": [
+            "sheet"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "accepted_weld_output",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Accepted welded assemblies per shift",
+          "conditions": [
+            "Depends on seams, fixtures, loading, procedure and inspection."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Arc-weld clamped assemblies in a positioner cell.",
+          "configuration": "CS V2-500 Y3 L1300, AR1440 and YRC1000 with selected TIG/MIG/MAG equipment.",
+          "operatingMode": "Automatic weld execution after fitting/clamping.",
+          "sourceIds": [
+            "sheet"
+          ],
+          "limitations": [
+            "Loose attachment placement and fitting are not automated by this record.",
+            "The 2021 German demonstration article identifies CS but not L1300; it is not proof of this variant’s production deployment."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Yaskawa Europe GmbH, Robotics Division",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.yaskawa.eu.com/header-meta/news-events/article/new-arcworld-cs-robot-welding-cell_n11415",
+            "email": "robotics@yaskawa.eu.com",
+            "phone": "+49 8166 90 0"
+          },
+          "sourceIds": [
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": [
+            "Confirm current L1300 orderability and package revision."
+          ]
+        }
+      ],
+      "conflicts": [
+        "CS variants use different arms/envelopes. L2050, L2400 and V2TL data must not be merged into L1300."
+      ],
+      "unknowns": [
+        "Current package revision, welding source and fixtures.",
+        "Fit of required beam geometry and tack positions.",
+        "Weld acceptance, qualified process, installed price and delivery."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "sheet",
+          "url": "https://www.yaskawa.eu.com/Global%20Assets/Downloads/Brochures_Catalogues/Robotics/System_Engineering/Welding_Systems/Yas_6S_ArcWorld%20Family_E.pdf",
+          "title": "ArcWorld Family A-06-2023, CS V2-500 Y3 L1300 table",
+          "publisher": "Yaskawa",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "product",
+          "url": "https://www.yaskawa.eu.com/header-meta/news-events/article/new-arcworld-cs-robot-welding-cell_n11415",
+          "title": "ArcWorld CS with AR1440, German demonstration, January 2021",
+          "publisher": "Yaskawa",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.yaskawa.eu.com/Global%20Assets/Downloads/Brochures_Catalogues/Robotics/System_Engineering/Welding_Systems/Yas_6S_ArcWorld%20Family_E.pdf",
+        "https://www.yaskawa.eu.com/header-meta/news-events/article/new-arcworld-cs-robot-welding-cell_n11415"
+      ],
+      "industries": [
+        "manufacturing",
+        "construction"
+      ]
+    },
+    {
+      "id": "nomagic-pick-bin-picking",
+      "name": "Nomagic Pick bin-picking station",
+      "manufacturer": "Nomagic",
+      "robotClass": "integrated_cell",
+      "workflowId": "picking_sorting",
+      "exactConfiguration": "Nomagic Pick station for single/multi-SKU source bins and destination bins, with vision and application grippers/tool changer. Public component BOM and software build are undisclosed; freeze them in the quote.",
+      "reviewStatus": "needs_follow_up",
+      "description": "Pick individual warehouse items from presented bins into destination bins or a configured trolley, integrated with warehouse software.",
+      "operatingMode": {
+        "value": "Automated picking with monitoring, remote operator support and local replenishment/recovery.",
+        "sourceIds": [
+          "product",
+          "deployment"
+        ],
+        "caveats": [
+          "Remote support is human labour; it is not guaranteed uninterrupted autonomy.",
+          "A fixed station does not retrieve items from arbitrary shelves."
+        ]
+      },
+      "specs": [
+        {
+          "key": "standard_item_weight_max_kg",
+          "value": 5,
+          "unit": "kg",
+          "semanticLabel": "Standard-use-case item mass",
+          "conditions": [
+            "FAQ envelope, not universally verified arm payload; custom setups differ."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "typical_item_dimensions_mm",
+          "value": "20 × 20 to 600 × 400",
+          "unit": "mm",
+          "semanticLabel": "Typical two-dimensional SKU size range",
+          "conditions": [
+            "No third dimension or complete packaging constraints published."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "input_bin_content",
+          "value": "Single- or multi-SKU",
+          "unit": null,
+          "semanticLabel": "Source-bin presentation claim",
+          "conditions": [
+            "Requires tested items, visibility and grip conditions."
+          ],
+          "sourceIds": [
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "hardware_bom",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Exact arm, grippers and perception hardware",
+          "conditions": [
+            "Not publicly frozen to a hardware SKU."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "accepted_picks_per_hour",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Accepted rate for buyer’s assortment",
+          "conditions": [
+            "Incomplete counters/headlines lack buyer-specific denominators."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Batch picking from AutoStore bins into adapted spring-floor trolleys at Fiege.",
+          "configuration": "Customer-specific Pick robots, adapted trolleys and compartmented bins; hardware revision unspecified.",
+          "operatingMode": "Integrated warehouse operation with support/recovery.",
+          "sourceIds": [
+            "deployment"
+          ],
+          "limitations": [
+            "Manufacturer customer story, not an independently audited run log.",
+            "DIY assortment is related context; construction-kit completeness and every loose fastener are unproven.",
+            "Raw failure and intervention denominators were not reviewed."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Nomagic GmbH / Nomagic sales",
+          "market": "Germany: published Berlin office and enquiry form",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://nomagic.ai/contact-us/"
+          },
+          "sourceIds": [
+            "contact"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Published enquiry route; installed price, stock, German delivery date and commissioning scope require an exact written quotation.",
+          "authorizationStatus": "Manufacturer’s published business contact.",
+          "caveats": [
+            "Site survey, item trial, integration and service require proposal.",
+            "Customer-story RaaS terms are not universal current pricing."
+          ]
+        }
+      ],
+      "conflicts": [
+        "Legacy justPick and current Pick naming describe a solution line, not a frozen hardware SKU. Retain configuration gaps.",
+        "Product-page numeric counters are incomplete; do not treat them as verified throughput/accuracy."
+      ],
+      "unknowns": [
+        "Exact BOM, software version and contractual support limits.",
+        "Gripping, counting, orientation and barcode recovery for actual fittings.",
+        "Kit completeness, downstream checks, cycle distribution and intervention labour."
+      ],
+      "checkedAt": "2026-10-01",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://nomagic.ai/solution/picking/",
+          "title": "Nomagic Pick station and integration FAQ",
+          "publisher": "Nomagic",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "deployment",
+          "url": "https://nomagic.ai/case-study/fiege/",
+          "title": "Fiege AutoStore picking and trolley adaptation",
+          "publisher": "Nomagic",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://nomagic.ai/contact-us/",
+          "title": "Nomagic Berlin location and enquiry form",
+          "publisher": "Nomagic",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "pick-image",
+          "url": "https://nomagic.ai/",
+          "title": "Nomagic Pick product image and product link",
+          "publisher": "Nomagic",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://nomagic.ai/solution/picking/",
+        "https://nomagic.ai/case-study/fiege/",
+        "https://nomagic.ai/contact-us/",
+        "https://nomagic.ai/"
+      ],
+      "industries": [
+        "manufacturing",
+        "warehousing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-dr02",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "DR02",
+ "variant": null,
+ "name": "DEEP Robotics DR02",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/dr02.html",
+ "summary": "A 1.75 m humanoid rated IP66 for outdoor work in rain and dust, with 10 kg arm payload, launched October 2025.",
+ "launched": "2025-10",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller lists the DR02, and DEEP's purchase form does not offer it yet. Status of deliveries outside China unclear.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.75,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "stated as 10 kg operational payload for two-arm tasks; per-arm figure not published",
+   "sourceId": "s3"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Whole-body carrying capacity",
+   "value": 20,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 4,
+   "unit": "m/s",
+   "conditions": "walking 1.5 m/s",
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair height",
+   "value": 25,
+   "unit": "cm",
+   "conditions": "continuous stairs",
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 20,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP66",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "up to 275 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "lidar, depth cameras, wide-angle cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": null,
+  "ipRating": "IP66",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Hand type is not published by DEEP Robotics; \"optional\" here only marks it as unknown.",
+   "Forearms, arms and legs are quick-swap modules for repair.",
+   "The 10 kg operational payload is for both arms together; no per-arm figure published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/pr2_4.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/dr02.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics DR02 humanoid running",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/dr02.html",
+   "title": "DR02 product page",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.deeprobotics.cn/en/index/buy.html",
+   "title": "Product Purchase Intention Form",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://finance.yahoo.com/news/deep-robotics-launches-worlds-first-145900028.html",
+   "title": "DEEP Robotics Launches the World's First All-Weather Humanoid (press release)",
+   "publisher": "DEEP Robotics",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Weight, hands, runtime and price.",
+  "Whether DEEP plans EU sales of the DR02.",
+  "Lifecycle: launched October 2025, but no sales channel or delivery found and DEEP's purchase form does not list it; marked prototype until deliveries are documented."
+ ],
+ "checkedAt": "2026-10-02"
+}

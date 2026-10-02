@@ -1,0 +1,231 @@
+{
+ "schemaVersion": 1,
+ "id": "ubtech-walker-tienkung-embodied",
+ "maker": "UBTECH Robotics",
+ "makerCountry": "CN",
+ "model": "Walker Tienkung",
+ "variant": "Embodied Intelligence (with dexterous hands)",
+ "name": "UBTECH Walker Tienkung Embodied Intelligence",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.ubtrobot.com/en/ai-education/products/walker-tienkung",
+ "summary": "A 1.72 m open research humanoid with two 6-DOF hands and full motor and sensor APIs, orderable in Germany from RobotShop Europe (as Walker E Pro) or through Terra Robotics.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 124409.1,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "RobotShop Europe price shown with VAT for Germany; includes two 6-DOF dexterous hands, wireless controller and 200 W power adapter."
+  },
+  "priceOther": null,
+  "leadTime": "RobotShop: on-demand item, ordered from the supplier; due date shown at checkout",
+  "sellers": [
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "productUrl": "https://eu.robotshop.com/products/ubtech-humanoid-robot-walker-e-embodied-intelligence",
+    "priceEur": 124409.1,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "Listed as Walker E Embodied Intelligence, manufacturer no. Walker E Pro; on-demand item with add-to-cart and quote request."
+   },
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://terra-robotics.de/products/ubtech-walker-tienkung",
+    "contactUrl": "https://terra-robotics.de/pages/contact",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Variant \"Embodied intelligence\"; metadata price EUR 178,000, basis not stated, not displayed."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RobotShop Europe sells this robot as \"Walker E Embodied Intelligence\" (Walker E Pro, also known as Tienkung) at EUR 124,409.10 incl. VAT, on demand, with delivery to Germany; Terra Robotics quotes on request.",
+  "sourceIds": [
+   "s4",
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.72,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 73,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 42,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "hand_payload_kg",
+   "label": "Single-hand payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 3,
+   "unit": "h",
+   "conditions": "UBTECH: 3 h endurance; Terra: 3.5 h operation, 6 h standby",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swap battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Intel Core i7 + 2 x NVIDIA Jetson AGX Orin (550 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2, full motor and sensor API, URDF models, RL training frameworks",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": "ROS 2, open motor/sensor API",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "Research and education platform; UBTECH sells it under AI Education, RobotShop under the name Walker E Pro.",
+   "The 3 kg payload is per hand, from UBTECH's product page.",
+   "Runtime about 3 h continuous, 6 h standby (RobotShop and Terra)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/ubtech-walker-tienkung-1png-2739518.png?v=1769504294",
+   "pageUrl": "https://terra-robotics.de/products/ubtech-walker-tienkung",
+   "credit": "Terra Robotics / UBTECH",
+   "alt": "UBTECH Walker Tienkung humanoid robot, full body front view on white background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Research platform for embodied manipulation and teleoperation data collection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.ubtrobot.com/en/ai-education/products/walker-tienkung",
+   "title": "Walker Tienkung product page",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/products/ubtech-walker-tienkung",
+   "title": "UBtech Walker Tienkung",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ubtrobot.com/en/about/news/826574022332485",
+   "title": "UBTECH partners with collaborators to accelerate global expansion (Terra Robotics, ROSSMANN)",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://eu.robotshop.com/products/ubtech-humanoid-robot-walker-e-embodied-intelligence",
+   "title": "Ubtech Humanoid Robot Walker E Embodied Intelligence (Walker E Pro, also known as Tienkung) at RobotShop Europe",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "How the Walker Tienkung relates to the Tien Kung robots of the Beijing Humanoid Robot Innovation Center is not stated by UBTECH."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,285 @@
+{
+ "schemaVersion": 1,
+ "id": "magiclab-magicdog-y1",
+ "maker": "MagicLab",
+ "makerCountry": "CN",
+ "model": "MagicDog Y1",
+ "variant": null,
+ "name": "MagicLab MagicDog Y1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.magiclabglobal.com/products/magicdog-y1/",
+ "summary": "A 70 kg IP67 industrial quadruped that carries 45 kg while walking, runs 4 to 6 h on a hot-swap battery and takes thermal, PTZ, gas and acoustic inspection payloads.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by MagicLab, which says it has sales and support teams in Germany and that the Y1 already runs inspections at European energy sites. No public price. MagicLab states CE-RED certification is targeted for Q4 2026; check the CE marking before use in Germany.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "MagicLab (Magiclab Robotics Technology Wuxi)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.magiclabglobal.com/products/magicdog-y1/",
+    "contactUrl": "https://www.magiclabglobal.com/products/magicdog-y1/",
+    "email": "contacts@magiclabglobal.com",
+    "phone": "+86-400-828-8022",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Enquiry form on the product page; MagicLab names sales and support teams in Germany but no German address or dealer for the Y1."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 70,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size (L x W x H)",
+   "value": "1050 x 458 x 810",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Dynamic payload",
+   "value": 45,
+   "unit": "kg",
+   "conditions": "while walking; maximum load 150 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 6,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 4,
+   "unit": "h",
+   "conditions": "4 to 6 h; more than 4 h walking with 20 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 2400,
+   "unit": "Wh",
+   "conditions": "45 Ah at 54 V, hot-swappable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_obstacle_cm",
+   "label": "Max. climbing height",
+   "value": 60,
+   "unit": "cm",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": "stairs named among handled terrain",
+   "sourceId": "s3"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "8-core CPU; optional computing module with 157 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3D lidar, two depth cameras, two optical cameras (configurations may vary)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_options",
+   "label": "Inspection payloads",
+   "value": "Thermal imager, dual-light PTZ camera, gas sensor, acoustic imager, partial-discharge sensor",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "4x 24 V + RS485, 4x USB 3.0, 3x 12 V + Ethernet, EtherCAT; rails and payload platform",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "connectivity",
+   "label": "Connectivity",
+   "value": "Wi-Fi 6, Bluetooth 5.2, optional 5G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 45,
+  "runtimeH": 4,
+  "ipRating": "IP67",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Inspection payloads are integrated per project; they are not part of the base robot.",
+   "MagicLab states CE-RED certification is targeted for Q4 2026; check the CE marking before use in Germany.",
+   "No SDK named on the product page."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260720/magicdog-y1.jpg",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicdog-y1/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicDog Y1 quadruped walking on rocky forest ground",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260720/about-humanoid-robot.jpg",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicdog-y1/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicDog Y1 quadruped with lidar and two antennas in front of dark rocks, three-quarter view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260702/magicdog-y1.png",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicdog-y1/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicDog Y1 standing on a lawn with a city skyline behind, side view.",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/substation-rounds"
+   ],
+   "task": "Automated inspections at energy sites and power stations",
+   "stage": "claim",
+   "where": "Energy sites and power stations in Europe (not named)",
+   "date": "2026-09",
+   "sourceId": "s2",
+   "note": "MagicLab press release; no customer or site named, so not counted as a deployment."
+  },
+  {
+   "taskIds": [
+    "facility_operation/plant-room-rounds"
+   ],
+   "task": "Inspection with thermal, PTZ, gas and acoustic payloads",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.magiclabglobal.com/products/magicdog-y1/",
+   "title": "MagicDog Y1 Industrial Quadruped Robot",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.magiclabglobal.com/magiclab-brings-physical-ai-to-europes-factory-floors-at-ifa-2026-debuting-full-stack-embodied-intelligence-stack.html",
+   "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.magiclab.top/en/dog-y",
+   "title": "MagicDog Y1 (previous product page)",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and lead time for Germany.",
+  "Name and address of the German sales team or dealer.",
+  "CE marking status.",
+  "Launch date not found on an opened source."
+ ],
+ "checkedAt": "2026-10-02"
+}

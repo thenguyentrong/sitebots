@@ -1,0 +1,166 @@
+{
+ "schemaVersion": 1,
+ "id": "neobotix-mmo-700",
+ "maker": "Neobotix",
+ "makerCountry": "DE",
+ "model": "MMO-700",
+ "variant": null,
+ "name": "Neobotix MMO-700",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-700",
+ "summary": "An omnidirectional platform on four steered drive modules carrying a cobot arm (for example Universal Robots), with 300 kg platform payload and about 4 h runtime.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Built and sold by Neobotix GmbH in Germany; price on request via the maker's contact page or info@neobotix.de.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Neobotix GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-700",
+    "contactUrl": "https://www.neobotix-robots.com/contact/contact-details",
+    "email": "info@neobotix.de",
+    "phone": "+49 7131 89969-10",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "German maker; quotes on request."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 300,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "up to, depending on the arm fitted",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "741 x 521 x 767",
+   "unit": "mm",
+   "conditions": "L x W x H",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 0.8,
+   "unit": "m/s",
+   "conditions": "below",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "1-2 2D laser scanners",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2; PlatformPilot for industrial use",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 25,
+  "carryPayloadKg": 300,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "ROS 2, PlatformPilot",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arm (e.g. Universal Robots) and gripper are chosen per order; the 25 kg figure is the largest arm offered.",
+   "OmniDriveModules tolerate small obstacles and uneven floors (maker)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.neobotix-robots.com/fileadmin/images/produkte/Mobile_Manipulatoren/MMO-700/Manipulator-MMO-700-Hauptansicht-Render.jpg",
+   "pageUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-700",
+   "credit": "Neobotix",
+   "alt": "Neobotix MMO-700 omnidirectional platform with cobot arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for research and industrial mobile manipulation with ROS 2 or PlatformPilot",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-mmo-700",
+   "title": "MMO-700 product page",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.neobotix-robots.com/contact/contact-details",
+   "title": "Contact details",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Prices are not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

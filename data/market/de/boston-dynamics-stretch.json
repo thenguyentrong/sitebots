@@ -1,0 +1,95 @@
+{
+ "schemaVersion": 1,
+ "id": "boston-dynamics-stretch",
+ "maker": "Boston Dynamics",
+ "makerCountry": "US",
+ "model": "Stretch",
+ "variant": null,
+ "name": "Boston Dynamics Stretch",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://bostondynamics.com/products/stretch/",
+ "summary": "A mobile robot with one long arm and a suction gripper that unloads floor-loaded cartons up to 50 lb (about 23 kg) from trailers and containers onto a conveyor, for up to 16 hours per charge.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request through Boston Dynamics sales; its European office near Frankfurt handles local sales and service. In Germany, Otto Group runs Stretch at the Hermes Fulfilment centre in Haldensleben; DHL Supply Chain has expanded Stretch to the UK and across Europe. No public price.",
+  "sourceIds": ["s1", "s3", "s4", "s5", "s6"],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Boston Dynamics (European office near Frankfurt)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://bostondynamics.com/products/stretch/",
+    "contactUrl": "https://bostondynamics.com/stretch-sales/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s6",
+    "note": "European office co-located at Hyundai WIA near Frankfurt for local sales, service and field engineering. Stretch sales via the web form."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  { "key": "case_weight_max", "label": "Max case weight", "value": 50, "unit": "lb", "conditions": null, "sourceId": "s1" },
+  { "key": "vertical_reach_ft", "label": "Vertical reach", "value": 10.5, "unit": "ft", "conditions": "into trailers", "sourceId": "s2" },
+  { "key": "runtime_h", "label": "Runtime", "value": 16, "unit": "h", "conditions": "up to, two full shifts", "sourceId": "s2" },
+  { "key": "throughput_cases_h", "label": "Unloading rate", "value": 700, "unit": "cases/h", "conditions": "up to, reported in DHL deployments", "sourceId": "s5" },
+  { "key": "gripper", "label": "Gripper", "value": "Suction gripper with multipick (several boxes per swing)", "unit": null, "conditions": null, "sourceId": "s2" },
+  { "key": "containers", "label": "Load types", "value": "Floor-loaded trailers and shipping containers; case picking", "unit": null, "conditions": null, "sourceId": "s2" }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 22.7,
+  "carryPayloadKg": null,
+  "runtimeH": 16,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": ["s1", "s2"],
+  "notes": [
+   "Payload stated as 50 lb per case; 22.7 kg is the converted value.",
+   "Works at dock doors with a conveyor; it moves between docks inside the warehouse.",
+   "No pre-programming of box sizes; operator certification typically takes two days (Otto case study).",
+   "Built for warehouse cartons, not for construction-site work."
+  ]
+ },
+ "images": [
+  { "url": "https://bostondynamics.com/wp-content/uploads/2026/03/stretch-otto-vertical.jpg", "pageUrl": "https://bostondynamics.com/products/stretch/", "credit": "Boston Dynamics", "alt": "Boston Dynamics Stretch unloading cartons from a shipping container onto a conveyor", "kind": "in_use" },
+  { "url": "https://bostondynamics.com/wp-content/uploads/2026/03/Stretch-flex.jpg", "pageUrl": "https://bostondynamics.com/products/stretch/", "credit": "Boston Dynamics", "alt": "Boston Dynamics Stretch arm lifting a carton inside a trailer", "kind": "in_use" }
+ ],
+ "evidence": [
+  { "taskIds": ["construction_logistics_hub/container-unloading"], "task": "Unloads cartons from trailers and shipping containers", "stage": "deployment", "where": "Hermes Fulfilment, Haldensleben, Germany (Otto Group)", "date": "2024-09", "sourceId": "s3", "note": "Case study; Otto Group planned Stretch in more than 20 facilities by 2025." },
+  { "taskIds": ["construction_logistics_hub/container-unloading"], "task": "Unloads loose-loaded boxes from trailers and containers", "stage": "deployment", "where": "Arvato, Louisville, Kentucky, USA", "date": "2024-10", "sourceId": "s7", "note": null },
+  { "taskIds": ["construction_logistics_hub/container-unloading"], "task": "Container unloading at DHL Supply Chain sites; MoU for more than 1,000 additional robots", "stage": "deployment", "where": "DHL Supply Chain, North America, UK and Europe", "date": "2025-05", "sourceId": "s5", "note": "Up to 700 cases per hour reported." }
+ ],
+ "sources": [
+  { "id": "s1", "url": "https://bostondynamics.com/products/stretch/", "title": "Stretch product page", "publisher": "Boston Dynamics", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s2", "url": "https://bostondynamics.com/solutions/warehouse-automation/trailer-unloading/", "title": "Trailer unloading with Stretch", "publisher": "Boston Dynamics", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s3", "url": "https://bostondynamics.com/case-studies/stretch-enhances-logistics-maintenance-at-otto-group/", "title": "Stretch enhances logistics maintenance at Otto Group", "publisher": "Boston Dynamics", "kind": "customer", "checkedAt": "2026-10-02" },
+  { "id": "s4", "url": "https://bostondynamics.com/news/otto-group-teams-up-with-boston-dynamics-to-strengthen-logistics-operations/", "title": "Otto Group teams up with Boston Dynamics", "publisher": "Boston Dynamics", "kind": "press", "checkedAt": "2026-10-02" },
+  { "id": "s5", "url": "https://bostondynamics.com/news/dhl-signs-mou-for-additional-1000-robot-deployment/", "title": "DHL signs MoU for additional 1,000 robot deployment", "publisher": "Boston Dynamics", "kind": "press", "checkedAt": "2026-10-02" },
+  { "id": "s6", "url": "https://bostondynamics.com/blog/boston-dynamics-opens-first-european-office/", "title": "Boston Dynamics opens first European office", "publisher": "Boston Dynamics", "kind": "manufacturer", "checkedAt": "2026-10-02" },
+  { "id": "s7", "url": "https://bostondynamics.com/case-studies/stretch-improves-safety-and-throughput-for-arvato/", "title": "Stretch improves safety and throughput for Arvato", "publisher": "Boston Dynamics", "kind": "customer", "checkedAt": "2026-10-02" }
+ ],
+ "openQuestions": [
+  "Price or lease terms in Germany?",
+  "Footprint, weight, arm DOF and charging time are not published on the product pages.",
+  "Which DHL sites in Germany use Stretch, if any?"
+ ],
+ "checkedAt": "2026-10-02"
+}

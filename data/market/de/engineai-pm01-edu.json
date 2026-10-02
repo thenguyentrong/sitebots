@@ -1,0 +1,230 @@
+{
+ "schemaVersion": 1,
+ "id": "engineai-pm01-edu",
+ "maker": "EngineAI",
+ "makerCountry": "CN",
+ "model": "PM01",
+ "variant": "2026 Education / Navigation Edition",
+ "name": "EngineAI PM01 Education",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://en.engineai.com.cn/product-pm01.html",
+ "summary": "The programmable versions of the 1.4 m EngineAI PM01 humanoid with open training and deployment code; the Navigation Edition adds a 3D LiDAR.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 188000,
+   "currency": "CNY",
+   "market": "China (EngineAI purchase page, links to JD.com)",
+   "sourceId": "s4"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "EngineAI (Shenzhen EngineAI Robotics)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://en.engineai.com.cn/contact-us.html",
+    "email": "sales@engineai.com.cn",
+    "phone": "+86 755 26999080",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Purchase inquiry by email or form; no EU price found."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "No German or EU seller lists the PM01 Education or Navigation Edition; EngineAI sells PM01 Basic in the EU through Research Robots (Portugal) and takes purchase inquiries by email, so ask EngineAI.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.4,
+   "unit": "m",
+   "conditions": "2026 Education Edition",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 44,
+   "unit": "kg",
+   "conditions": "approx., with battery, 2026 Education Edition",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 24,
+   "unit": null,
+   "conditions": "6 per leg, 5 per arm, 1 waist, 1 neck",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 164,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Moving speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "more than 2 m/s, hardware supported",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "full charge",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "8-core CPU; NVIDIA Jetson Orin NX (16 GB)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Wide-angle binocular cameras in head and waist; 3D LiDAR on Navigation Edition",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Open-source training and deployment code, ROS deployment framework",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "ROS, open-source training and deployment code",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arms have 5 joints; no grasping hands are listed.",
+   "The Navigation Edition adds a 3D LiDAR; the Education Edition has voice interaction."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en.engineai.com.cn/static/home/images/x-pm8.jpg",
+   "pageUrl": "https://en.engineai.com.cn/product-pm01.html",
+   "credit": "EngineAI",
+   "alt": "EngineAI PM01 humanoid, full body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-whole-body-balance"
+   ],
+   "task": "Reinforcement-learning locomotion research with open training code",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.engineai.com.cn/product-pm01.html",
+   "title": "PM01 product page",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://researchrobots.eu/engineai-pm01-basic-humanoid-robot.html",
+   "title": "EngineAI - PM01 Basic Humanoid Robot",
+   "publisher": "Research Robots (RoboSavvy)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.engineai.com.cn/contact-us.html",
+   "title": "EngineAI contact and purchase inquiry",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://en.engineai.com.cn/product-purchase.html",
+   "title": "Product Purchase",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "EU price and delivery time unknown.",
+  "EngineAI's purchase page lists \"PM01\" at 188,000 CNY without naming the edition; confirm it is the Education Edition."
+ ],
+ "checkedAt": "2026-10-02"
+}

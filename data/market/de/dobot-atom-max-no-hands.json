@@ -1,0 +1,253 @@
+{
+ "schemaVersion": 1,
+ "id": "dobot-atom-max-no-hands",
+ "maker": "Dobot",
+ "makerCountry": "CN",
+ "model": "Atom",
+ "variant": "Atom Max without dexterous hands",
+ "name": "DOBOT Atom Max (no hands)",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dobot-robots.com/products/humanoid-robots/atom.html",
+ "summary": "The 1.65 m DOBOT Atom Max humanoid sold without the five-finger hands, for buyers who fit their own end effectors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 79000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "RBTX; delivery about 3 months."
+  },
+  "priceOther": null,
+  "leadTime": "about 3 months (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/dobot-atom-humanoid-robot-trainer-29-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 79000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Listed as Atom Max without dexterous hands."
+   },
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://terra-robotics.de/products/dobot-atom-max-version",
+    "contactUrl": "https://terra-robotics.de/pages/impressum",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": 85836.91,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "Variant \"Ohne Hände\"."
+   },
+   {
+    "name": "DOBOT Europe GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.dobot-robots.com/about/contact-us",
+    "email": "sales@dobot-robots.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": null
+   },
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "productUrl": "https://eu.robotshop.com/products/dobot-atom-max-research-humanoid-robot",
+    "priceEur": 75177.71,
+    "priceBasis": "gross",
+    "sourceId": "s5",
+    "note": "Atom Max Research, 29 DoF; dexterous hands and grippers optional; tax included; orderable."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RBTX lists it at 79,000 EUR net and Terra Robotics (Löhne) at 85,836.91 EUR net, both orderable.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 60,
+   "unit": "kg",
+   "conditions": "RBTX description text; its spec table says 65 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Max. payload",
+   "value": 3.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Full-HD binocular vision, Intel RealSense D455, 3D LiDAR, 360 degree microphone",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "control",
+   "label": "Upper-body control",
+   "value": "28 upper-body DoF controlled at 200 Hz; straight-knee walking",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Interfaces",
+   "value": "ROS-compatible, VR/MR teleoperation modules",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 29,
+   "unit": null,
+   "conditions": "without hands (RBTX spec table; its headline still says 41 DoF)",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "ROS-compatible",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "No hands included; payload with your own end effector not stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/dobot-atom-max-1png-2733120.png",
+   "pageUrl": "https://terra-robotics.de/products/dobot-atom-max-version",
+   "credit": "Terra Robotics / Dobot",
+   "alt": "DOBOT Atom Max humanoid, full body (shown with the optional five-finger hands)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-assembly-kit-delivery"
+   ],
+   "task": "Material handling on automotive assembly lines",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker lists automotive line material handling, coffee-shop drinks and pharmacy dispensing."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dobot-robots.com/products/humanoid-robots/atom.html",
+   "title": "DOBOT ATOM humanoid robot",
+   "publisher": "Dobot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/dobot-atom-humanoid-robot-trainer-29-dof",
+   "title": "Dobot Atom Max, 41 DOF, without dexterous hands on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://terra-robotics.de/products/dobot-atom-max-version",
+   "title": "Dobot Atom Max Version",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.dobot-robots.com/about/contact-us",
+   "title": "Dobot global branches (DOBOT Europe GmbH, Neu-Isenburg)",
+   "publisher": "Dobot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://eu.robotshop.com/products/dobot-atom-max-research-humanoid-robot",
+   "title": "DOBOT Atom Max Research Humanoid Robot",
+   "publisher": "RobotShop Europe",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "RBTX copies text from the hand version (41 DoF, 60 kg) but its spec table says 29 DoF and 65 kg."
+ ],
+ "checkedAt": "2026-10-02"
+}

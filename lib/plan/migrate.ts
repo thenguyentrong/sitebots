@@ -1,6 +1,7 @@
 import { emptyContext } from '@/lib/context/schema';
 import { emptyFacts, type Facts } from '@/lib/screen/facts';
 import { GROUP_FOR_SETTING, familyForJob } from './legacy';
+import { legacyFactsFromNeeds } from './legacy-requirements';
 import { EMPTY_WORKSPACE, WorkspaceSchema, WorkspaceV1Schema, type ProjectV1, type Workspace, type WorkspaceV1 } from './model';
 
 /**
@@ -11,18 +12,8 @@ import { EMPTY_WORKSPACE, WorkspaceSchema, WorkspaceV1Schema, type ProjectV1, ty
  */
 
 export function factsFromNeeds(project: ProjectV1): Facts {
-  const facts = emptyFacts();
-  const kg = Number(project.needs.payload);
-  if (project.needs.payload.trim() && Number.isFinite(kg) && kg > 0) facts.object_mass_kg = { min: 0, max: kg };
-  const reach = Number(project.needs.reach);
-  if (project.needs.reach.trim() && Number.isFinite(reach) && reach > 0) facts.reach_height_m = { min: 0, max: reach };
-  if (project.variability) facts.variability = project.variability;
-  if (project.needs.environment) facts.environment = project.needs.environment;
-  if (project.needs.terrain) facts.floor = project.needs.terrain === 'paved' ? 'level' : 'uneven';
-  if (project.needs.stairs === 'required') facts.floor = 'stairs';
-  return facts;
+  return { ...emptyFacts(), ...legacyFactsFromNeeds(project.needs), variability: project.variability || null };
 }
-
 export function migrateV1(old: WorkspaceV1): Workspace {
   const first = old.projects[0];
   return {
@@ -33,6 +24,7 @@ export function migrateV1(old: WorkspaceV1): Workspace {
       ...project,
       task: { kind: 'custom' as const, family: familyForJob(project.jobId), facts: factsFromNeeds(project) },
       factOverrides: {},
+      overrideSemanticsVersion: 1 as const,
       solutionClasses: project.focus === 'humanoid' ? ['humanoid' as const] : [],
       screenConfirmedAt: '',
     })),
@@ -45,8 +37,12 @@ export type ReadResult = { workspace: Workspace; migrated: boolean; error: boole
 export function readWorkspace(rawV2: string | null, rawV1: string | null): ReadResult {
   if (rawV2) {
     try {
-      const parsed = WorkspaceSchema.safeParse(JSON.parse(rawV2));
-      if (parsed.success) return { workspace: parsed.data, migrated: false, error: false };
+      const input = JSON.parse(rawV2);
+      const parsed = WorkspaceSchema.safeParse(input);
+      if (parsed.success) {
+        const migrated = input.projects.some((project: { overrideSemanticsVersion?: number }) => project.overrideSemanticsVersion !== 1);
+        return { workspace: parsed.data, migrated, error: false };
+      }
     } catch {
       // fall through to the old key
     }

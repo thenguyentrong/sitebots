@@ -34,6 +34,7 @@ export const JOB_FOR_FAMILY: Record<FamilyId, string> = {
   packaging_palletising_loading: 'custom',
   monitoring_safety_patrol: 'monitoring',
   machine_operation_dedicated: 'custom',
+  robotics_research: 'custom',
 };
 
 export const GROUP_FOR_SETTING: Record<LegacySetting, SettingGroup | ''> = { '': '', site: 'site', factory: 'factory', yard: 'yard_logistics' };

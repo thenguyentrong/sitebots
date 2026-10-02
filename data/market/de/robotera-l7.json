@@ -1,0 +1,223 @@
+{
+ "schemaVersion": 1,
+ "id": "robotera-l7",
+ "maker": "RobotEra",
+ "makerCountry": "CN",
+ "model": "L7",
+ "variant": null,
+ "name": "RobotEra L7",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.robotera.com/en/#/product/L7",
+ "summary": "A 1.71 m, 65 kg full-size humanoid with 55 joints, two 12-DoF XHAND1 hands, 20 kg dual-arm payload, LiDAR and binocular vision, for logistics, manufacturing and service work.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 134783.08,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": null
+  },
+  "priceOther": null,
+  "leadTime": "3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/robotera-l7-humanoid-robot-55-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 134783.08,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RBTX (igus, Cologne) lists L7 with a net price and a usual delivery time of 3 weeks.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.71,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": "without dexterous hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 55,
+   "unit": null,
+   "conditions": "with dexterous hands: 2 neck, 7 per arm, 3 waist, 6 per leg, 12 per hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 12,
+   "unit": null,
+   "conditions": "XHAND1, fully direct-driven",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Dual-arm payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm span",
+   "value": 2.1,
+   "unit": "m",
+   "conditions": "2.1 m diameter workspace",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Running speed",
+   "value": 4,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Knee peak torque",
+   "value": 400,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "60 V, 15 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "80 TOPS (x86) + 275 TOPS (Orin)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular camera, 3D LiDAR, microphone array and speaker",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "RBTX spec table only; no maker figure found",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "20 kg is the payload for both arms together.",
+   "Runtime 6 h appears only in the RBTX spec table; the maker does not state it.",
+   "An upper-body-only version (M7) is also offered by RobotEra."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/WecomSave_32eb5a70b9-2xgD0iGy.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/robotera-l7-humanoid-robot-55-dof",
+   "credit": "RobotEra (via RBTX)",
+   "alt": "RobotEra L7 humanoid, arms crossed",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Logistics, manufacturing, bartending and commercial service tasks",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Application list on the maker page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotera.com/en/#/product/L7",
+   "title": "ROBOTERA L7 product page",
+   "publisher": "RobotEra",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/robotera-l7-humanoid-robot-55-dof",
+   "title": "ROBOTERA L7 humanoid robot, 55 DOF on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime: RBTX spec table says 6 h; no maker figure found.",
+  "Image is the vendor photo on RBTX; maker site images could not be extracted.",
+  "www.robotera.com currently serves a revoked TLS certificate, so maker figures could not be re-checked; RBTX gives 65 kg in its text and 70 kg in its spec table."
+ ],
+ "checkedAt": "2026-10-02"
+}

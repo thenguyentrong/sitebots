@@ -1,0 +1,123 @@
+{
+ "schemaVersion": 1,
+ "id": "persona-ai-humanoid",
+ "maker": "Persona AI",
+ "makerCountry": "US",
+ "model": "Persona humanoid",
+ "variant": null,
+ "name": "Persona AI humanoid",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://persona.ai/humanoid/",
+ "summary": "A modular industrial humanoid in development in Houston for welding, fabrication and inspection in shipyards, energy and construction; not available yet.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Still in development: Persona describes what its humanoids \"will\" do and offers a leasing-programme brochure and a contact form. No delivery, price or European sales route.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "operation",
+   "label": "Operation target",
+   "value": "2 work shifts per day",
+   "unit": null,
+   "conditions": "design target",
+   "sourceId": "s2"
+  },
+  {
+   "key": "outdoor",
+   "label": "Water and dust resistance",
+   "value": "designed to work outdoors",
+   "unit": null,
+   "conditions": "design target",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "All capabilities are design targets; no specifications published.",
+   "Planned role modules: welder, fabricator, assembler, miner, inspector.",
+   "Persona calls its robots bipedal and says they are designed to work outdoors; no IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://persona.ai/wp-content/uploads/Q3-Jul-23-2026-mid-front-of-Gen-4-v2-copy.jpg",
+   "pageUrl": "https://persona.ai/humanoid/",
+   "credit": "Persona AI",
+   "alt": "Persona AI humanoid in grey, upper body, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Welding, grinding and painting in shipyards; fabrication and assembly in construction and manufacturing",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Target applications; nothing deployed yet."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://persona.ai/",
+   "title": "Persona AI home page",
+   "publisher": "Persona AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://persona.ai/humanoid/",
+   "title": "Persona humanoid",
+   "publisher": "Persona AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://info.persona.ai/lease-a-humanoid",
+   "title": "Lease a Humanoid",
+   "publisher": "Persona AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "First deliveries and lease terms."
+ ],
+ "checkedAt": "2026-10-02"
+}

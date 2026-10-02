@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "engineai-pm01-basic",
+ "maker": "EngineAI",
+ "makerCountry": "CN",
+ "model": "PM01",
+ "variant": "Basic (no secondary development)",
+ "name": "EngineAI PM01 Basic",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://en.engineai.com.cn/product-pm01.html",
+ "summary": "A 1.4 m, 40 kg agile humanoid with 23 joints and 5-joint arms; the Basic version is sold in the EU but cannot be programmed by the buyer.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 18971.38,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Shown as 22,765.66 EUR incl. VAT and 18,971.38 EUR excl. VAT."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Research Robots (researchrobots.eu, RoboSavvy)",
+    "country": "PT",
+    "role": "reseller",
+    "productUrl": "https://researchrobots.eu/engineai-pm01-basic-humanoid-robot.html",
+    "contactUrl": "https://researchrobots.eu/contact",
+    "email": "info@researchrobots.eu",
+    "phone": "+351 21 145 25 21",
+    "priceEur": 22765.66,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Seller notes this version does not support secondary development."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Research Robots (Sintra, Portugal) lists PM01 Basic with an EU price and order button; the developer version is not listed there.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1388 x 490 x 220 mm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 40,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 23,
+   "unit": null,
+   "conditions": "leg 6, arm 5, waist 1",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 164,
+   "unit": "Nm",
+   "conditions": "current maker figure",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "maker figure",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Basic version does not support secondary development: you cannot program your own tasks.",
+   "Arms have 5 joints and no grasping hands are listed; 5 kg payload for both arms together."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en.engineai.com.cn/static/home/images/x-pm8.jpg",
+   "pageUrl": "https://en.engineai.com.cn/product-pm01.html",
+   "credit": "EngineAI",
+   "alt": "EngineAI PM01 humanoid, full body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Demonstrations and guided interaction (walking, running, waving)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.engineai.com.cn/product-pm01.html",
+   "title": "PM01 product page",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://researchrobots.eu/engineai-pm01-basic-humanoid-robot.html",
+   "title": "EngineAI - PM01 Basic Humanoid Robot",
+   "publisher": "Research Robots (RoboSavvy)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which software functions does the Basic version include?"
+ ],
+ "checkedAt": "2026-10-02"
+}

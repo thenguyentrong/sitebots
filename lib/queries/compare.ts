@@ -1,3 +1,4 @@
+import { FOCUSED_FORM_FACTORS } from '@/lib/browse-scope';
 import { getSql } from '@/lib/db';
 import type { AvailabilityCurrent, PriceCurrent, RobotCard } from '@/lib/spec/types';
 import { coerceRows } from './coerce';
@@ -14,7 +15,7 @@ export async function getCompareRows(ids: string[]): Promise<CompareRow[]> {
   if (!wanted.length) return [];
   const sql = await getSql();
   const [cards, prices, availability] = await Promise.all([
-    sql.query(`select * from robot_cards where id = any($1::uuid[])`, [wanted]),
+    sql.query(`select * from robot_cards where id = any($1::uuid[]) and form_factor = any($2::text[])`, [wanted, FOCUSED_FORM_FACTORS]),
     sql.query(`select * from price_current where robot_id = any($1::uuid[]) order by tier, region`, [wanted]),
     sql.query(`select * from availability_current where robot_id = any($1::uuid[])`, [wanted]),
   ]);

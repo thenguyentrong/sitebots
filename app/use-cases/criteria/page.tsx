@@ -21,7 +21,7 @@ const STLB = 'https://www.abst-brandenburg.de/wp-content/uploads/2024/09/STLB_%C
 const VOB = 'https://www.vob-online.de/resource/blob/714600/a6af4fca7686196bd540cbe9e8087eea/inhaltsverzeichnis-teil-c-vob-2019-gesamtausgabe-data.pdf';
 
 const CRITERIA: [string, string][] = [
-  ['LV anchor', 'On site, the task belongs to an LV position type of one STLB-Bau Leistungsbereich and falls under its VOB/C ATV, so a contractor finds it in their own Leistungsverzeichnis. Work outside the LV (surveying, site documentation) says so.'],
+  ['Construction classification', 'For the current construction collection, the task belongs to an LV position type of one STLB-Bau Leistungsbereich and falls under its VOB/C ATV, so a contractor finds it in their own Leistungsverzeichnis. Work outside the LV (surveying, site documentation) says so.'],
   ['It repeats', 'It recurs on most projects of that trade, not once per building.'],
   ['Physical and bounded', 'One kind of object, one place, a clear start and end: “fix CW studs into UW tracks”, not “build the drywall”.'],
   ['Done by people today', 'Or by a machine whose place is the question.'],
@@ -46,8 +46,8 @@ export default function CriteriaPage() {
   const settings = settingOptions(loadContent()).filter((s) => s.group === 'site');
   return <main className="jp-page plan-page">
     <Steps />
-    <StationHead title="How a task gets into the library" lede="The criteria every task meets, what each task records and where each value comes from. The five tests then decide the verdict." />
-    <div className="jp-body">
+    <StationHead title="How a task gets into the library" lede="The task library records requirements and possible approaches. Evidence for a specific robot and complete solution is reviewed separately." />
+    <div className="jp-body"><section className="jp-card"><div className="jp-card-head"><h2>Requirements first, product evidence second</h2><p>Loads, access, dust, water, runtime, accuracy and existing equipment describe the task. They do not impose one universal limit across robot types. Missing information remains a question; a complete task profile is not approval of any product.</p><p>Compare the current process, dedicated equipment, fixed cells and mobile robots where relevant. Verify the exact hardware, tooling, software, supervision and conditions for each option. Manufacturer-supported specifications, seller reports and deployment evidence are distinct.</p></div></section>
       <section className="jp-card" aria-labelledby="lv-structure">
         <div className="jp-card-head"><p className="jp-kicker">Where a task sits</p><h2 id="lv-structure">Construction sites, sorted like a Leistungsverzeichnis</h2><p>Each trade is an STLB-Bau Leistungsbereich (<a className="jp-link text-foreground" href={STLB} target="_blank" rel="noopener noreferrer">list as of April 2024</a>) with the VOB/C ATV that governs it (<a className="jp-link text-foreground" href={VOB} target="_blank" rel="noopener noreferrer">VOB 2019 contents</a>). The seven sections are our grouping, in LV order. Factories, yards and buildings in operation are sorted by kind of plant or asset.</p></div>
         <table className="criteria-table">
@@ -73,7 +73,7 @@ export default function CriteriaPage() {
       </section>
 
       <section className="jp-card" aria-labelledby="numbers">
-        <div className="jp-card-head"><p className="jp-kicker">Numbers on the page</p><h2 id="numbers">What the counts mean</h2><p>The count next to a trade, plant or group (“4 tasks”) is how many screened tasks the library holds for it. It is not a score. The verdict on each task comes from the five tests; the check on each task page reruns them with your own site conditions.</p></div>
+        <div className="jp-card-head"><p className="jp-kicker">Numbers on the page</p><h2 id="numbers">What the counts mean</h2><p>The count next to a trade, plant or group (“4 tasks”) is how many recorded task opportunities the library holds for it. A count is not a suitability score. The review shows which requirements are provided and which need clarification, alongside approaches and evidence to investigate. Previous humanoid verdicts are retained only as labelled historical assessments.</p></div>
       </section>
     </div>
   </main>;

@@ -1,0 +1,140 @@
+{
+ "schemaVersion": 1,
+ "id": "engineai-se01",
+ "maker": "EngineAI",
+ "makerCountry": "CN",
+ "model": "SE01",
+ "variant": null,
+ "name": "EngineAI SE01",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://en.engineai.com.cn/product-se01.html",
+ "summary": "A full-size humanoid known for its human-like gait, with five-finger hands, LiDAR, depth and infrared cameras and a quick-release battery.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "EngineAI (Shenzhen EngineAI Robotics)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://en.engineai.com.cn/contact-us.html",
+    "email": "sales@engineai.com.cn",
+    "phone": "+86 755 26999080",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Purchase inquiry by email or form."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "No German or EU seller lists SE01; EngineAI sells PM01 Basic in the EU through Research Robots (Portugal) and takes purchase inquiries by email, so ask EngineAI. The SE01 page shows no buy button and no specification table.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR, depth camera, infrared camera, RGB-D, IMU, force control sensor",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "page shows \"2hours Endurance\" next to \"1000 mAh\" and \"80% Charge\" without further conditions",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Height, weight and payload are not published on the maker page."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en.engineai.com.cn/static/home/images/SE01-box3-img2.jpg",
+   "pageUrl": "https://en.engineai.com.cn/product-se01.html",
+   "credit": "EngineAI",
+   "alt": "EngineAI SE01 humanoid walking",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.engineai.com.cn/product-se01.html",
+   "title": "SE01 product page",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://researchrobots.eu/engineai-pm01-basic-humanoid-robot.html",
+   "title": "EngineAI - PM01 Basic Humanoid Robot",
+   "publisher": "Research Robots (RoboSavvy)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.engineai.com.cn/contact-us.html",
+   "title": "EngineAI contact and purchase inquiry",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight and payload not published; runtime is given only as \"2hours Endurance\".",
+  "Is SE01 still produced alongside T800?"
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -22,6 +22,8 @@ const ROUTES = [
   '/use-cases?setting=prefab_timber',
   '/use-cases/prefab_timber/fittings-kitting',
   '/robots',
+  '/robots?scope=world',
+  '/robots?type=specialised',
   '/robots?form=quadruped',
   '/brands',
   '/robots/unitree/g1',

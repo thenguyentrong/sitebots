@@ -1,0 +1,178 @@
+{
+ "schemaVersion": 1,
+ "id": "schwamborn-dsm-800rc",
+ "maker": "Schwamborn",
+ "makerCountry": "DE",
+ "model": "DSM 800RC",
+ "variant": null,
+ "name": "Schwamborn DSM 800RC",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors"
+ ],
+ "officialUrl": "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+ "summary": "Radio-controlled 800 mm floor grinder for removing coatings and preparing large floors such as car parks and halls.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker (Wangen im Allgäu) lists the machine (art. 716500) with a contact-person finder; no public price on the page.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Schwamborn Gerätebau GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+    "contactUrl": "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Contact via \"Ansprechpartner finden\" on the product page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "power_kw",
+   "label": "Output power",
+   "value": 15,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_width_mm",
+   "label": "Working width",
+   "value": 800,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Operating weight",
+   "value": 615,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "grinding_pressure_kg",
+   "label": "Pressure on floor",
+   "value": "160 / 215 / 270",
+   "unit": "kg",
+   "conditions": "with additional weights",
+   "sourceId": "s1"
+  },
+  {
+   "key": "edge_distance_mm",
+   "label": "Edge distance",
+   "value": 10,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_supply",
+   "label": "Voltage",
+   "value": "400 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "tool_plates",
+   "label": "Tool plates",
+   "value": "3 x 270 mm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "extraction_mm",
+   "label": "Extraction diameter",
+   "value": 70,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "article_number",
+   "label": "Article number",
+   "value": "716500",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote controlled by an operator (speed and direction); no autonomous mode.",
+   "180° turn with overlap for an even grinding pattern."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.schwamborn.com/thumbnail/3c/89/8f/1769073011/SB_25.01.30_Produkte_2599_Kleiner_1280x1920.png",
+   "pageUrl": "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+   "credit": "Schwamborn",
+   "alt": "Schwamborn DSM 800RC floor grinder",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors"
+   ],
+   "task": "Coating removal and substrate preparation in car parks and industrial halls",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.schwamborn.com/dsm-850rc-ferngesteuerte-bodenschleifmaschine",
+   "title": "DSM 800RC product page",
+   "publisher": "Schwamborn",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price."
+ ],
+ "checkedAt": "2026-10-02"
+}

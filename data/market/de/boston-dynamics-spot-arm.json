@@ -1,0 +1,287 @@
+{
+ "schemaVersion": 1,
+ "id": "boston-dynamics-spot-arm",
+ "maker": "Boston Dynamics",
+ "makerCountry": "US",
+ "model": "Spot",
+ "variant": "with Spot Arm",
+ "name": "Boston Dynamics Spot with Arm",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://bostondynamics.com/products/spot/arm/",
+ "summary": "Spot with a 6-axis arm and gripper on its back that can open doors, turn valves, flip switches and lift up to 11 kg.",
+ "launched": "2021-02",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany on request through the Boston Dynamics European office near Frankfurt; ELP GmbH (Wuppertal), a listed EMEA reseller, offers Spot packages with the Arm for public safety and research. No public euro price.",
+  "sourceIds": [
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Boston Dynamics (European office near Frankfurt)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://bostondynamics.com/products/spot/arm/",
+    "contactUrl": "https://bostondynamics.com/spot-sales/",
+    "email": "sales@bostondynamics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Sales email from the Spot Arm datasheet; European office handles local sales and service."
+   },
+   {
+    "name": "ELP GmbH European Logistic Partners",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.elp-gmbh.com/produkte/spot-agiler-und-autonomer-laufroboter/",
+    "contactUrl": "https://www.elp-gmbh.com/impressum/",
+    "email": "elp@elp-gmbh.de",
+    "phone": "+49 202 69894-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Packages with Arm: Spot SLED (public safety) and Spot FE (research, with Core I/O). Business and authority customers only."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dof_per_arm",
+   "label": "Arm degrees of freedom",
+   "value": 6,
+   "unit": null,
+   "conditions": "plus gripper",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm length at full extension",
+   "value": 0.984,
+   "unit": "m",
+   "conditions": "max reach height on robot 1.8 m",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm lift capacity",
+   "value": 11,
+   "unit": "kg",
+   "conditions": "peak; continuous 5 kg at 0.5 m extension; measured at 22 °C",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_continuous_payload_kg",
+   "label": "Arm continuous lift",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "at 0.5 m extension",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_drag_kg",
+   "label": "Arm drag capacity",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "on carpet",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_weight_kg",
+   "label": "Arm weight incl. gripper",
+   "value": 8,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Total weight on robot",
+   "value": 39.7,
+   "unit": "kg",
+   "conditions": "Spot with Arm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "gripper",
+   "label": "Gripper",
+   "value": "max aperture 175 mm, peak clamp force 130 N, 4K RGB camera, ToF and IMU in gripper",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed (base robot)",
+   "value": 1.6,
+   "unit": "m/s",
+   "conditions": "base Spot figure",
+   "sourceId": "s6"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max step height (base robot)",
+   "value": 30,
+   "unit": "cm",
+   "conditions": "base Spot figure",
+   "sourceId": "s6"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max slope (base robot)",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "base Spot figure",
+   "sourceId": "s6"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Average runtime (base robot)",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "base Spot figure; the arm adds load",
+   "sourceId": "s6"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection (base robot)",
+   "value": "IP54",
+   "unit": null,
+   "conditions": "base Spot; the arm is stated only as water and dust resistant",
+   "sourceId": "s6"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature (arm)",
+   "value": "-20 to 45",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "Arm API with joint-space and end-effector control",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "Spot SDK / Arm API",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s6"
+  ],
+  "notes": [
+   "Arm payload: 5 kg continuous at 0.5 m extension, up to 11 kg peak.",
+   "The arm has no IP rating of its own (water and dust resistant); base Spot is IP54.",
+   "Mobility figures (stairs, slope, runtime) are stated for base Spot, not re-stated for Spot with Arm."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2022/06/spot-arm-extended-cam-ir.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Spot with the arm extended and a CAM+ IR payload",
+   "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/06/arm-industrial-pipe-min.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Spot Arm working at industrial piping",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Opens doors, turns valves and flips levers semi-autonomously",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://bostondynamics.com/products/spot/arm/",
+   "title": "Spot Arm",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://bostondynamics.com/wp-content/uploads/2020/10/spot-arm.pdf",
+   "title": "Spot Arm datasheet",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://bostondynamics.com/blog/boston-dynamics-opens-first-european-office/",
+   "title": "Boston Dynamics Opens First European Office",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://bostondynamics.com/partner/elp-gmbh/",
+   "title": "Partner: ELP GmbH (Reseller Partner, EMEA)",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.elp-gmbh.com/produkte/spot-agiler-und-autonomer-laufroboter/",
+   "title": "Boston Dynamics Spot Laufroboter",
+   "publisher": "ELP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://bostondynamics.com/products/spot/",
+   "title": "Spot specifications",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "No public euro price.",
+  "No named customer in Germany found using the arm on a construction site."
+ ],
+ "checkedAt": "2026-10-02"
+}

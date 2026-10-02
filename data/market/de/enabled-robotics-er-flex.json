@@ -1,0 +1,213 @@
+{
+ "schemaVersion": 1,
+ "id": "enabled-robotics-er-flex",
+ "maker": "Enabled Robotics",
+ "makerCountry": "DK",
+ "model": "ER-FLEX",
+ "variant": "MC250 family (MiR250 + UR arm)",
+ "name": "Enabled Robotics ER-FLEX",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.enabled-robotics.com/er-flex",
+ "summary": "A MiR250 mobile robot with a Universal Robots arm (UR7e to UR15, up to 17.5 kg) and ER-ABILITY software, carrying up to 186 kg, for machine tending and material transport.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold in Germany through two partners named by the maker, JUGARD + KÜNSTNER and NEXT robotics; price on request.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4",
+   "s6"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "JUGARD + KÜNSTNER",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://jk.de/Mobile-Cobot-ER-FLEX-MiR250-UR7e/420110070",
+    "contactUrl": "https://jk.de/Kontakt/",
+    "email": null,
+    "phone": "+49 9187 936 69-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s6",
+    "note": "Listed as German partner by Enabled Robotics; product page for ER-FLEX on MiR250 with UR7e, UR12e, UR15 or UR16; prices after login or on request."
+   },
+   {
+    "name": "NEXT robotics",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://next-robotics.de/robotics/mobile-roboter/",
+    "contactUrl": "https://next-robotics.de/kontakt/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Listed as German partner by Enabled Robotics; its mobile robot page lists a mobile cobot MC250 on request (the page does not name Enabled Robotics)."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 17.5,
+   "unit": "kg",
+   "conditions": "maximum, depending on UR arm (UR7e, UR12e, UR16e, UR15, UR8 Long)",
+   "sourceId": "s5"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Base payload",
+   "value": 186,
+   "unit": "kg",
+   "conditions": "maximum",
+   "sourceId": "s5"
+  },
+  {
+   "key": "drive",
+   "label": "Base",
+   "value": "MiR250 (Mobile Industrial Robots)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ER-ABILITY block programming, web interface",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 161,
+   "unit": "kg",
+   "conditions": "MiR250 with UR7e (seller, data per maker)",
+   "sourceId": "s6"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "seller, data per maker",
+   "sourceId": "s6"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 17.5,
+  "carryPayloadKg": 186,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ER-ABILITY",
+  "sourceIds": [
+   "s1",
+   "s5"
+  ],
+  "notes": [
+   "Four arm models; reach and payload depend on the arm chosen (17.5 kg is the top option).",
+   "Optional ESD coating for electronics production."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static.wixstatic.com/media/cbc0bc_88f217284a4f4fd5a336a11dd159ef21~mv2.png",
+   "pageUrl": "https://www.enabled-robotics.com/mobilecobots",
+   "credit": "Enabled Robotics",
+   "alt": "Enabled Robotics ER-FLEX 250-16e: UR arm on a MiR250 base",
+   "kind": "product"
+  },
+  {
+   "url": "https://jk.de/media/55/f2/d1/1790167419/420110070-Mobile-Cobot-ER-FLEX-MiR250_UR5e-Titelbild.jpg?ts=1790167419",
+   "pageUrl": "https://jk.de/Mobile-Cobot-ER-FLEX-MiR250-UR7e/420110070",
+   "credit": "JUGARD + KÜNSTNER / Enabled Robotics",
+   "alt": "Enabled Robotics ER-FLEX with a Universal Robots arm on a MiR250 base, side view on a white background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for production, testing, assembly and logistics workflows",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.enabled-robotics.com/er-flex",
+   "title": "ER-FLEX product page",
+   "publisher": "Enabled Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.enabled-robotics.com/partnernetwork",
+   "title": "Partner network (Germany: JUGARD+KÜNSTNER, NEXT)",
+   "publisher": "Enabled Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://jk.de/Produkte/Mobile-Robotik/Autonome-Mobile-Roboter/",
+   "title": "Autonome Mobile Roboter",
+   "publisher": "JUGARD + KÜNSTNER",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://next-robotics.de/robotics/mobile-roboter/",
+   "title": "Mobile Roboter",
+   "publisher": "NEXT robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.enabled-robotics.com/mobilecobots",
+   "title": "Mobile Cobots overview",
+   "publisher": "Enabled Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://jk.de/Mobile-Cobot-ER-FLEX-MiR250-UR7e/420110070",
+   "title": "Mobile Cobot ER-FLEX MiR250/UR7e",
+   "publisher": "JUGARD + KÜNSTNER",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Runtime and prices per arm option."
+ ],
+ "checkedAt": "2026-10-02"
+}

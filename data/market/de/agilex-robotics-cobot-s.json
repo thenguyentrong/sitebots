@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "agilex-robotics-cobot-s",
+ "maker": "AgileX Robotics",
+ "makerCountry": "CN",
+ "model": "COBOT S",
+ "variant": null,
+ "name": "AgileX COBOT S",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A tracked IP67 AgileX Bunker crawler carrying a 6-joint RM75 arm with an electric gripper, 2D and 3D lidar, for mobile handling indoors and outdoors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "MYBOTSHOP (Germany) lists it at €61,880.95 incl. 19% VAT with a cart button and 3-4 weeks delivery, but AgileX no longer shows a COBOT S page and Generation Robots has no listing; confirm the build before ordering.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 61880.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "Incl. 19% VAT, plus shipping."
+  },
+  "priceOther": null,
+  "leadTime": "3-4 weeks (MYBOTSHOP)",
+  "sellers": [
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/AgileX-Cobot-S",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": 61880.95,
+    "priceBasis": "gross",
+    "sourceId": "s1",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": "70-90",
+   "unit": "kg",
+   "conditions": "depending on configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Arm DOF",
+   "value": 6,
+   "unit": null,
+   "conditions": "RM75 arm as described by the seller",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.75,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 80,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "3-5",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": "Bunker platform",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "YDLIDAR G4 2D lidar, RS-Helios-16P 3D lidar, RealSense D435",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "APQ industrial PC, Intel i7 with RTX GPU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 80,
+  "runtimeH": 3,
+  "ipRating": "IP67",
+  "sdk": "ROS 1/2",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "IP67 applies to the Bunker crawler; the arm rating is not stated.",
+   "Arm payload not stated by the seller.",
+   "All data from the seller listing; no current maker page found.",
+   "The seller calls the RM75 arm 6-DOF; confirm the arm model and its DoF with the seller."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://global.agilex.ai/cdn/shop/files/Cobot_S-_.493.jpg",
+   "pageUrl": "https://web.archive.org/web/20250915002148/https://global.agilex.ai/products/cobot-s-kit",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX COBOT S: column with 6-axis arm, gripper, screen and pan-tilt head on a wheeled base, white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://web.archive.org/web/20250915002148im_/https://global.agilex.ai/cdn/shop/files/Cobot_S-_.513.jpg?v=1719971248&width=2200",
+   "pageUrl": "https://web.archive.org/web/20250915002148/https://global.agilex.ai/products/cobot-s-kit",
+   "credit": "web.archive.org",
+   "alt": "AgileX COBOT S side view: white column with an arm, gripper and screen on a four-wheeled base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Seller offers it for research, logistics, inspection and service tasks",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.mybotshop.de/AgileX-Cobot-S",
+   "title": "AgileX Cobot S",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the COBOT S still produced? The maker page (global.agilex.ai/products/cobot-s-kit) returns 404.",
+  "Arm payload and the arm's own IP rating.",
+  "Chassis: the MYBOTSHOP text says a tracked Bunker base, but the AgileX and MYBOTSHOP pictures show a wheeled base."
+ ],
+ "checkedAt": "2026-10-02"
+}

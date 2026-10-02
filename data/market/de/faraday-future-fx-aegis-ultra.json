@@ -1,0 +1,285 @@
+{
+ "schemaVersion": 1,
+ "id": "faraday-future-fx-aegis-ultra",
+ "maker": "Faraday Future",
+ "makerCountry": "US",
+ "model": "FX Aegis",
+ "variant": "Ultra",
+ "name": "Faraday Future FX Aegis Ultra",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://robotics.ff.com/us/fx-aegis/",
+ "summary": "A 16 kg IP54 robot dog with NVIDIA Orin NX compute, 10 kg payload and ports for lidar, depth camera, RTK and 4G, for patrol and development work.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Faraday Future sells the FX Aegis only in the US: its online shop ships to the US only and no EU distributor is named. Roboter Deutschland, a US-run web shop (Las Vegas) not named by Faraday Future, lists it at EUR 11,818.96 converted from its base currency, with an order button and \"usually ships in 3-5 business days\" from the US. No CE marking information found.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 12990,
+   "currency": "USD",
+   "market": "US online shop of Faraday Future (includes a USD 3,000 skills pack)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Faraday Future",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": "https://shop.ff.com/products/aegis",
+    "contactUrl": "https://robotics.ff.com/us/fx-aegis/",
+    "email": "ffpar@ff.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "US online shop, USD 12,990; ships to the US only. ffpar@ff.com is the partnership contact."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 12,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Body weight",
+   "value": 16,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Top speed",
+   "value": 5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_obstacle_cm",
+   "label": "Max. obstacle height",
+   "value": 35,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. gradient",
+   "value": 40,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "120 minutes (comparison table)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Max. payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Orin NX 16 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Camera",
+   "value": "4K wide-angle camera with live video",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "payload_options",
+   "label": "Supported expansion",
+   "value": "3D lidar, depth camera, RTK, 4G module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "SDK, APIs, Isaac Sim, Python, visual programming",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing",
+   "value": "630 x 360 x 465",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 216,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": "°C",
+   "conditions": "stated for the Aegis family",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 10,
+  "runtimeH": 2,
+  "ipRating": "IP54",
+  "sdk": "SDK and APIs, Isaac Sim, Python",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Runtime: 120 minutes in the maker comparison table; the shop text says 12 hours, which looks like an error. 2 h used here.",
+   "Lidar, depth camera, RTK and 4G are expansion options, not standard.",
+   "IP54 is described by the maker as suitable for semi-outdoor and industrial environments.",
+   "Faraday Future also lists Ultra+ (USD 22,990) and Ultra-W+ (USD 24,990), both unavailable and without published specs; Roboter Deutschland lists them at EUR 20,917.47 and EUR 22,737.17."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://genesis-cdn.ff.com/assets/pages/us/robotics/fx-aegis-classic/cmp-3.260919160415-default.jpg",
+   "pageUrl": "https://robotics.ff.com/us/fx-aegis/",
+   "credit": "Faraday Future",
+   "alt": "Faraday Future FX Aegis Ultra robot dog, beige, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/night-security-patrol"
+   ],
+   "task": "Security patrol",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker use case; no customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://robotics.ff.com/us/fx-aegis/",
+   "title": "FX Aegis Classic",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.ff.com/products/aegis",
+   "title": "FX Aegis (online shop)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.ff.com/meta.json",
+   "title": "Faraday Future shop metadata (ships to: US)",
+   "publisher": "Faraday Future",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/FX-Aegis-Ultra.htm",
+   "title": "FX Aegis Ultra Quadruped Robot Dog",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/about-us/",
+   "title": "About us",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "CE marking and EU declaration of conformity.",
+  "Whether Faraday Future supports units bought through a third-party reseller in Germany.",
+  "Runtime: the comparison table gives 120 minutes, the shop text 12 hours.",
+  "Stair climbing not stated for the Ultra.",
+  "Specs and differences of the Ultra+ version."
+ ],
+ "checkedAt": "2026-10-02"
+}

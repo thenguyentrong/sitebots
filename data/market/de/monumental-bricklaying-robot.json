@@ -1,0 +1,101 @@
+{
+ "schemaVersion": 1,
+ "id": "monumental-bricklaying-robot",
+ "maker": "Monumental",
+ "makerCountry": "NL",
+ "model": "Bricklaying robot fleet",
+ "variant": null,
+ "name": "Monumental bricklaying robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "bricklaying",
+  "site_masonry/masonry-wall-laying"
+ ],
+ "officialUrl": "https://www.monumental.co/",
+ "summary": "Autonomous bricklaying robots that Monumental runs itself as a contractor service on sites in the Netherlands, UK and US.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Robots are not sold: Monumental designs, builds and operates its own fleet as a service, and works only in the Netherlands, the UK and the US.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "fleet_size",
+   "label": "Robots in fleet",
+   "value": "100+",
+   "unit": null,
+   "conditions": "company figure",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Operated by Monumental robot operators on customer sites.",
+   "Drive type and specifications are not published; the legs/wheels/tracks flags are placeholders, not facts."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Walls for 100+ homes, a school, a community centre, a hotel and 150+ m of canals",
+   "stage": "deployment",
+   "where": "Netherlands and UK",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.monumental.co/",
+   "title": "Monumental: autonomous construction robots",
+   "publisher": "Monumental",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.monumental.co/llms-full.txt",
+   "title": "Monumental company text",
+   "publisher": "Monumental",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Robot specifications are not published.",
+  "Any plan to work in Germany."
+ ],
+ "checkedAt": "2026-10-02"
+}

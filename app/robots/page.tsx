@@ -1,126 +1,86 @@
-import { RobotLandscape } from '@/components/catalogue/RobotLandscape';
-import { toClusterRobot } from '@/lib/catalogue/cluster-robot';
 import Link from 'next/link';
-import { CompareToggle } from '@/components/compare/CompareBar';
-import { RobotCard } from '@/components/robot/RobotCard';
+import { MarketListing } from '@/components/market/MarketListing';
+import { RobotSearch, ScopeSwitch } from '@/components/market/RobotsToolbar';
+import { TileSection } from '@/components/market/TileSection';
+import { FOCUSED_FORM_FACTORS, isFocusedForm } from '@/lib/browse-scope';
+import { ROBOT_TYPES, type RobotType } from '@/lib/market/schema';
+import { worldTiles } from '@/lib/market/tiles';
 import { listRobotCards } from '@/lib/queries/robots';
 import { publicMetadata } from '@/lib/seo';
-import { FORM_FACTOR_LABEL } from '@/lib/spec/display';
-import { FORM_FACTORS, type FormFactor } from '@/lib/spec/enums';
 import { ui } from '@/lib/ui';
 import { cn } from '@/lib/utils';
+import '@/components/market/market.css';
 
 export const dynamic = 'force-dynamic';
+// With all types on one page, each type shows its first rows; its own tab shows the rest.
+const PREVIEW = 9;
+const TYPE_LABELS = { humanoid: 'Humanoids', quadruped: 'Robot dogs', mobile_manipulator: 'Mobile manipulators' };
+const INTRO = {
+  humanoid: 'Two arms and a head, on legs or on a wheeled base.',
+  quadruped: 'Four legs, some with wheels or an arm.',
+  mobile_manipulator: 'One or two arms on a wheeled base.',
+};
+type Params = { scope?: string; type?: string; form?: string; q?: string; all?: string; pictures?: string; view?: string };
+type Search = Promise<Params>;
 
-export const metadata = publicMetadata({
-  title: 'All robots',
-  description: 'Every humanoid, quadruped and mobile manipulator in the database with sourced specifications, prices by region and delivery status.',
-  path: '/robots',
-});
+// One robots page with two views. Old catalogue links (view, form, all, pictures) still open the worldwide view.
+const isWorld = (sp: Params) => sp.scope === 'world' || (sp.scope !== 'de' && Boolean(sp.view || sp.form || sp.all || sp.pictures));
 
-const PAGE_SIZE = 48;
-
-type Search = Promise<{ form?: string; q?: string; all?: string; pictures?: string }>;
+export async function generateMetadata({ searchParams }: { searchParams: Search }) {
+  return isWorld(await searchParams)
+    ? publicMetadata({ title: 'All robots worldwide', description: 'Every humanoid, robot dog and mobile manipulator we track, prototypes included, with pictures, 3D models and sourced specifications.', path: '/robots?scope=world' })
+    : publicMetadata({ title: 'Robots you can buy in Germany', description: 'Humanoids, robot dogs, mobile manipulators and job-specific construction robots, with their German sellers, prices where published, and the jobs they fit.', path: '/robots' });
+}
 
 export default async function RobotsPage({ searchParams }: { searchParams: Search }) {
-  const { form, q, all, pictures } = await searchParams;
-  // Robots with no real picture stay off the page unless asked for: a card without a picture is a card nobody can recognise.
-  const showAllPictures = pictures === 'all';
-  const formFactor = FORM_FACTORS.includes(form as FormFactor) ? (form as FormFactor) : undefined;
-  const [{ robots, total, hidden }, landscape] = await Promise.all([
-    listRobotCards({ formFactor, q, limit: all === '1' ? 5000 : PAGE_SIZE, pictures: showAllPictures ? 'all' : 'with' }),
-    listRobotCards({ formFactor, q, limit: 5000, pictures: 'all' }),
-  ]);
+  const sp = await searchParams;
+  const q = sp.q?.trim() || undefined;
+  if (!isWorld(sp)) return <MarketListing type={(ROBOT_TYPES as readonly string[]).includes(String(sp.type)) ? sp.type as RobotType : ''} q={q} />;
 
-  const hrefWith = (params: Record<string, string | undefined>) => {
-    const sp = new URLSearchParams();
-    const merged = { form: formFactor, q, pictures: showAllPictures ? 'all' : undefined, ...params };
-    for (const [k, v] of Object.entries(merged)) if (v) sp.set(k, v);
-    const s = sp.toString();
-    return s ? `/robots?${s}` : '/robots';
+  const showAllPictures = sp.pictures === 'all';
+  const formFactor = isFocusedForm(sp.form) ? sp.form as (typeof FOCUSED_FORM_FACTORS)[number] : undefined;
+  const preview = !formFactor && !q;
+  // Apply the scope in SQL before counting, including hidden-picture counts.
+  const { robots, total, hidden } = await listRobotCards({ formFactor, formFactors: FOCUSED_FORM_FACTORS, q, limit: 5000, pictures: showAllPictures ? 'all' : 'with' });
+  const href = (params: Record<string, string | undefined>) => {
+    const query = new URLSearchParams({ scope: 'world' });
+    const merged: Record<string, string | undefined> = { form: formFactor, q, pictures: showAllPictures ? 'all' : undefined, ...params };
+    for (const [key, value] of Object.entries(merged)) if (value) query.set(key, value);
+    return '/robots?' + query.toString();
   };
+  const groups = (formFactor ? [formFactor] : FOCUSED_FORM_FACTORS).map((form) => {
+    const items = robots.filter((robot) => robot.form_factor === form);
+    return { form, items, visible: preview ? items.slice(0, PREVIEW) : items };
+  }).filter((group) => group.items.length);
+  const tiles = new Map((await worldTiles(groups.flatMap((group) => group.visible))).map((tile) => [tile.id, tile]));
 
-  return (
-    <main className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6">
-      <header className="flex flex-wrap items-end justify-between gap-4 py-10">
-        <div>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Robots</h1>
-          <p className="mt-3 max-w-2xl text-muted">
-            Every number links to the page it was read from. To filter by what a site needs, use the{' '}
-            <Link href="/" className={ui.link}>
-              matcher
-            </Link>
-            .
-          </p>
-        </div>
-        <p className="num text-sm text-muted">
-          {total.toLocaleString('en-GB')} robot{total === 1 ? '' : 's'}
-        </p>
-      </header>
+  return <main className="mk-page">
+    <header className="mk-page-head">
+      <ScopeSwitch world q={q} />
+      <h1>All robots worldwide</h1>
+      <p>Every humanoid, robot dog and mobile manipulator we track, including prototypes and robots that are not sold in Germany. Choose robots to compare their specifications.</p>
+    </header>
 
-      <div className="card mb-6 flex flex-wrap items-center gap-3 p-2">
-        <nav className={ui.segment} aria-label="Form factor">
-          <Link href={hrefWith({ form: undefined })} className={cn(ui.segmentItem, !formFactor && ui.segmentActive)} aria-current={!formFactor ? 'page' : undefined}>
-            All
-          </Link>
-          {FORM_FACTORS.map((f) => (
-            <Link key={f} href={hrefWith({ form: f })} className={cn(ui.segmentItem, formFactor === f && ui.segmentActive)} aria-current={formFactor === f ? 'page' : undefined}>
-              {FORM_FACTOR_LABEL[f]}
-            </Link>
-          ))}
-        </nav>
-        <form action="/robots" method="get" className="ml-auto flex items-center gap-2">
-          {showAllPictures ? <input type="hidden" name="pictures" value="all" /> : null}
-          {formFactor ? <input type="hidden" name="form" value={formFactor} /> : null}
-          <label className="relative block">
-            <span className="sr-only">Search robots</span>
-            <svg viewBox="0 0 24 24" className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-faint" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <circle cx="11" cy="11" r="7" />
-              <path d="m20 20-3.5-3.5" />
-            </svg>
-            <input key={q ?? ''} type="search" name="q" defaultValue={q ?? ''} placeholder="Maker or model" className={`${ui.input} h-9 w-44 pl-9 sm:w-60`} />
-          </label>
-          <button type="submit" className={`${ui.btn} h-9 px-4`}>
-            Search
-          </button>
-        </form>
-      </div>
+    <div className="card mt-6 flex flex-wrap items-center gap-3 p-2">
+      <nav className={cn(ui.segment, 'max-w-full flex-wrap')} aria-label="Robot type">
+        <Link href={href({ form: undefined })} className={cn(ui.segmentItem, !formFactor && ui.segmentActive)} aria-current={!formFactor ? 'page' : undefined}>All</Link>
+        {FOCUSED_FORM_FACTORS.map((type) => <Link key={type} href={href({ form: type })} className={cn(ui.segmentItem, formFactor === type && ui.segmentActive)} aria-current={formFactor === type ? 'page' : undefined}>{TYPE_LABELS[type]}</Link>)}
+      </nav>
+      <RobotSearch q={q} keep={{ scope: 'world', pictures: showAllPictures ? 'all' : undefined, form: formFactor }} />
+    </div>
 
-      <RobotLandscape key={[formFactor, q].join(':' )} robots={landscape.robots.map(toClusterRobot)} allowMakerFilter scope="Matching catalogue · includes entries without images" />
+    <p className="label mt-6 flex flex-wrap items-center gap-x-3 gap-y-1">
+      <span data-testid="catalogue-count">{total} configuration{total === 1 ? '' : 's'}{q ? ' matching “' + q + '”' : ''}, best documented first</span>
+      {showAllPictures ? <Link href={href({ pictures: undefined })} className="normal-case tracking-normal text-faint underline-offset-2 hover:text-foreground hover:underline">Hide robots without a picture</Link> : hidden > 0 ? <Link href={href({ pictures: 'all' })} className="normal-case tracking-normal text-faint underline-offset-2 hover:text-foreground hover:underline">Show {hidden.toLocaleString('en-GB')} more without a picture</Link> : null}
+    </p>
 
-      <p className="label mb-4 flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span>
-          {robots.length < total ? `${robots.length} of ${total} robots, best documented first` : `${total} robot${total === 1 ? '' : 's'}`}
-          {q ? ` · matching “${q}”` : ''}
-        </span>
-        {showAllPictures ? (
-          <Link href={hrefWith({ pictures: undefined })} className="normal-case tracking-normal text-faint underline-offset-2 hover:text-foreground hover:underline">
-            Hide robots without a picture
-          </Link>
-        ) : hidden > 0 ? (
-          <Link href={hrefWith({ pictures: 'all' })} className="normal-case tracking-normal text-faint underline-offset-2 hover:text-foreground hover:underline">
-            Show {hidden.toLocaleString('en-GB')} more without a picture
-          </Link>
-        ) : null}
-      </p>
-
-      {robots.length === 0 ? (
-        <div className="card px-6 py-16 text-center text-muted">Nothing matches.</div>
-      ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {robots.map((r) => (
-            <RobotCard key={r.id} robot={r} action={<CompareToggle id={r.id} name={r.name} />} />
-          ))}
-        </div>
-      )}
-
-      {robots.length < total ? (
-        <div className="mt-10 text-center">
-          <Link href={hrefWith({ all: '1' })} className={ui.btnSecondary}>
-            Show all {total}
-          </Link>
-        </div>
-      ) : null}
-    </main>
-  );
+    {robots.length === 0 ? <div className="card mt-6 px-6 py-10 text-center text-muted" data-testid="catalogue-empty">
+      <p>No robots match this selection.</p>
+      <Link href={href({ q: undefined, form: undefined, pictures: 'all' })} className={ui.btnSecondary + ' mt-5 whitespace-normal'}>Clear filters</Link>
+    </div> : <div data-testid="catalogue-list">
+      {groups.map(({ form, items, visible }) => <TileSection key={form} id={'world-' + form} title={TYPE_LABELS[form]} count={items.length} intro={INTRO[form]}
+        tiles={visible.flatMap((robot) => tiles.get(robot.id) ?? [])}
+        more={preview && items.length > PREVIEW ? { href: href({ form }), label: 'Show all ' + items.length + ' ' + TYPE_LABELS[form].toLowerCase() } : null} />)}
+    </div>}
+  </main>;
 }

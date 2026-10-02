@@ -1,0 +1,237 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-facade-cleaning-robot-mq200",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Facade Cleaning Robot MQ200",
+ "variant": null,
+ "name": "BMR Facade Cleaning Robot MQ200",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "facade_cleaning",
+  "facility_operation/facade-window-cleaning",
+  "site_cleaning_waste/glazing-first-clean"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/180.html",
+ "summary": "Suspended robot that cleans glass, metal and stone curtain walls up to 200 m high at 350 m²/h or more and recovers the waste water.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No authorised route to Germany found. BMR sells direct from China and names markets in Asia, the Middle East and Brazil, none in the EU. The only German listing is a US reseller not named by BMR, and BMR states no CE marking for this machine. Roboter Deutschland, a web shop run from Las Vegas without a named company, also lists it; it is not counted as a seller here.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Shenzhen BrightMaster Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://en.bm-robot.com/detail/180.html",
+    "contactUrl": "https://en.bm-robot.com/contact.html",
+    "email": "sales@bm-robot.com",
+    "phone": "400 988 2007 (ext. 2)",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Direct export enquiries via form, email or WhatsApp from Shenzhen; no EU office or EU distributor named."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": 200,
+   "unit": "m",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "cleaning_rate_m2_h",
+   "label": "Cleaning rate",
+   "value": 350,
+   "unit": "m²/h",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "cleaning_width_mm",
+   "label": "Cleaning width",
+   "value": 1000,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Moving speed",
+   "value": 0.2,
+   "unit": "m/s",
+   "conditions": "0-0.2 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "surface_slope_deg",
+   "label": "Operating slope",
+   "value": "0-90",
+   "unit": "°",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "obstacle_height_mm",
+   "label": "Obstacle crossing height",
+   "value": 400,
+   "unit": "mm",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_supply",
+   "label": "Operating voltage",
+   "value": "220 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "water_supply",
+   "label": "Water supply",
+   "value": "from the ground",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "coverage_pct",
+   "label": "Overall coverage",
+   "value": 80,
+   "unit": "%",
+   "conditions": "at least",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Hangs from roof suspension; BMR checks building height, curtain wall type, projections, roof suspension, water and power before deployment.",
+   "AI vision plans the path and rates cleanliness; waste water is recovered.",
+   "Controlled from the ground; redundant safety system for work at height."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en-x-bm-robot-x-com.img.addlink.cn/upload/20260601/b8182f0de510254075218f91aea34646.jpg",
+   "pageUrl": "https://en.bm-robot.com/detail/180.html",
+   "credit": "BrightMaster Robotics",
+   "alt": "BMR Facade Cleaning Robot MQ200 on a glass curtain wall (banner with text)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/facade-window-cleaning",
+    "site_cleaning_waste/glazing-first-clean"
+   ],
+   "task": "Cleaning glass, metal and stone curtain walls on high-rise buildings, including post-construction cleaning",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/180.html",
+   "title": "Facade Cleaning Robot MQ200 product page",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/contact.html",
+   "title": "Contact Us",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics",
+   "publisher": "BrightMaster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/BMR-Facade-Cleaning-Robot.htm",
+   "title": "BMR Facade Cleaning Robot MQ200 at Roboter Deutschland",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.roboterdeutschland.de/contact",
+   "title": "Roboter Deutschland contact page (Las Vegas, NV, USA)",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is this machine CE-marked and does it come with an EU declaration of conformity? BMR states CE only for its Measuring Robot.",
+  "Does BMR have, or plan, an authorised distributor or service partner in the EU or Germany?",
+  "Is Roboter Deutschland / Robots International authorised by BMR, and who provides service and spare parts in Germany?",
+  "Is a roof suspension unit included, and what wind speed limit applies?",
+  "Are there any named reference buildings?"
+ ],
+ "checkedAt": "2026-10-02"
+}

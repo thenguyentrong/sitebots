@@ -353,3 +353,9 @@ alter table robot_facts add column if not exists invalidation_reason text;
 alter table availability_current add column if not exists source_id text references sources(id);
 alter table availability_current add column if not exists source_kind text;
 alter table availability_current add column if not exists source_tier smallint;
+
+-- Expand platform classification while preserving every existing robot/variant identity.
+-- Applied in the migration transaction; views already project form_factor without a closed list.
+alter table robots drop constraint if exists robots_form_factor_check;
+alter table robots add constraint robots_form_factor_check
+  check (form_factor in ('humanoid', 'quadruped', 'mobile_manipulator', 'amr_agv', 'industrial_arm', 'cobot', 'dedicated_robot', 'integrated_cell'));

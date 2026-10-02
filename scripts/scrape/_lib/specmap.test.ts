@@ -30,3 +30,12 @@ it('keeps day-based promises out of warranty months', () => {
  expect(mapSpecLabel('Warranty','30 day money-back guarantee')).toEqual([]);
  expect(mapSpecLabel('Warranty','2 years')).toEqual([expect.objectContaining({field:'warranty_months',value:24})]);
 });
+
+it('keeps new-class generic payload basis unstated and single arm DOF undoubled', () => {
+  for (const formFactor of ['amr_agv', 'industrial_arm', 'cobot', 'dedicated_robot', 'integrated_cell'] as const) {
+    expect(mapSpecLabel('Payload', '100 kg', { formFactor })).toEqual([{ field: 'payload_kg', value: '100 kg', note: 'Payload: 100 kg' }]);
+    expect(mapSpecLabel('Payload', '100 kg (peak 200 kg)', { formFactor })).toEqual([{ field: 'payload_kg', value: '100 kg', note: 'Payload: 100 kg (peak 200 kg)' }]);
+    expect(mapSpecLabel('DOF of each arm', '6', { formFactor })).toEqual([{ field: 'dof_arms', value: '6', note: 'DOF of each arm: 6' }]);
+    expect(mapSpecLabel('DOF of each arm', '6 x 2', { formFactor })).toEqual([{ field: 'dof_arms', value: 12, note: 'DOF of each arm: 6 x 2' }]);
+  }
+});

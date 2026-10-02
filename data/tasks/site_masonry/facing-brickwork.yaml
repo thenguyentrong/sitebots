@@ -1,0 +1,179 @@
+schema_version: 1
+id: site_masonry/facing-brickwork
+status: published
+setting: site_masonry
+family: assembly_fastening
+trades: [masonry]
+title:
+  en: "Lay facing brickwork in front of an insulated wall"
+  de: "Verblendmauerwerk vor einer gedämmten Wand mauern"
+summary:
+  en: "Lay facing bricks course by course in mortar as the outer leaf of a two-leaf wall, embed the wire anchors in the bed joints and strike the joints flush."
+  de: "Vormauerziegel als Außenschale einer zweischaligen Wand Schicht für Schicht in Mörtel verlegen, die Drahtanker in die Lagerfugen einbetten und die Fugen bündig glattstreichen."
+description:
+  en: "The facing leaf of a two-leaf external wall is non-load-bearing and usually 11.5 cm thick. It stands in front of the insulation and is fastened to the load-bearing inner leaf by stainless-steel wire anchors, whose diameter and minimum number per square metre follow DIN EN 1996-2/NA or an approval, by cavity width, height above ground and wind zone. One maker's facing clinker weighs about 2.5 kg (DF) to 5.3 kg (2DF), and a square metre takes about 48 NF bricks. DIN 18330 makes the joint struck while laying the standard finish, the joint may sit at most 2 mm behind the brick face, and fresh masonry has to be protected from rain, frost and direct sun."
+  de: "Die Außenschale einer zweischaligen Außenwand ist nichttragend und meist 11,5 cm dick. Sie steht vor der Dämmung und ist mit Drahtankern aus nichtrostendem Stahl an der tragenden Innenschale befestigt; Durchmesser und Mindestanzahl je Quadratmeter richten sich nach DIN EN 1996-2/NA oder einer Zulassung, abhängig von Schalenabstand, Höhe über Gelände und Windzone. Der Fassadenklinker eines Herstellers wiegt etwa 2,5 kg (DF) bis 5,3 kg (2DF), ein Quadratmeter braucht etwa 48 NF-Steine. DIN 18330 legt den Fugenglattstrich als Regelausführung fest, die Fuge darf höchstens 2 mm hinter der Steinfläche liegen, und frisches Mauerwerk ist vor Regen, Frost und direkter Sonne zu schützen."
+also_in_settings: []
+derived_from: null
+lv:
+  lb: '012'
+  atv: "DIN 18330"
+  position:
+    en: "Facing leaf of facing bricks or clinker, 11.5 cm, with wire anchors and struck joints"
+    de: "Verblendschale aus Vormauerziegeln oder Klinkern, 11,5 cm, mit Drahtankern und Fugenglattstrich"
+  unit: m2
+attributes:
+  object_mass_kg:
+    value: { min: 2.45, max: 5.33 }
+    confidence: likely
+    evidence_url: 'https://www.hagemeister.de/produkt/fassadenklinker-2df/alt-berlin-gt-2df.pdf'
+    note: "Derived from Hagemeister's declarations of performance for one facing clinker: gross dry density 1,710 kg/m³ in DF (240 × 115 × 52 mm), NF (240 × 115 × 71 mm) and 2DF (240 × 115 × 113 mm), so about 2.45, 3.35 and 5.33 kg per dry brick. Other products and formats weigh differently."
+  variability:
+    value: medium
+    confidence: assumed
+    note: "Analyst judgement. The bond repeats along the wall, but openings, corners, reveals, movement joints and supports differ on every facade, and bricks are taken from several packs at once to mix the colour."
+  error_tolerance:
+    value: limited
+    confidence: likely
+    evidence_url: 'https://www.ks-maurerfibel.de/maurerfibel/8-ks-sicht-und-ks-verblendmauerwerk/8-10-abnahme-und-beurteilung-von-ks-sichtmauerwerk/'
+    note: "The face stays visible. There are no binding rules for its look, so the KS-Maurerfibel recommends agreeing a sample panel in the tender. A wrong course is taken down while the mortar is fresh; later it means demolition."
+  safety_criticality:
+    value: structural
+    confidence: likely
+    evidence_url: 'https://www.ks-maurerfibel.de/maurerfibel/8-ks-sicht-und-ks-verblendmauerwerk/8-4-luftschichtanker-fuer-zweischaliges-verblendmauerwerk/'
+    note: "The facing leaf carries no floors, but it is tied to the inner leaf by stainless-steel wire anchors whose diameter and minimum number per m² follow DIN EN 1996-2/NA or an approval, by cavity width, height above ground and wind zone. An anchor left out is hidden once the leaf is up."
+  reach_height_m:
+    value: { min: 0.6, max: 0.9 }
+    confidence: likely
+    evidence_url: 'https://www.ks-maurerfibel.de/maurerfibel/6-mauern/6-2-mauern-von-hand/6-2-3-optimale-arbeitshoehe/'
+    note: "A bricklayer lays most units with least effort 60 to 90 cm above the standing level; crank trestles, work platforms or mobile scaffolds keep the work there (KS-Maurerfibel, hand laying in general). Courses below and above this zone occur between scaffold lifts; not measured."
+  environment:
+    value: outdoor
+    confidence: likely
+    note: "The facing leaf is built on the outside of the building, from the facade scaffold."
+  dust:
+    value: { type: mineral, zone: controlled }
+    confidence: likely
+    evidence_url: 'https://www.bgbau-medien.de/handlungshilfen_gb/daten/bausteine/b_207/b_207.htm'
+    note: "Bricks are cut for corners, openings and closers. BG BAU names quartz-bearing dust at stone saws and asks for wet cutting or low-dust saws with extraction (TRGS 559)."
+  wet:
+    value: damp
+    confidence: likely
+    evidence_url: 'https://www.vdpm.info/files/VDPM/Downloads/Brosch%C3%BCren%20und%20Merkbl%C3%A4tter/VDPM%20Verblendmauerwerk%20mit%20Werkm%C3%B6rtel%20-%20Hinweise%20f%C3%BCr%20die%20Planung%20und%20Ausf%C3%BChrung.pdf'
+    note: "No laying or jointing in sustained heavy rain; strongly absorbent bricks are wetted before laying and finished masonry is covered against rain until the mortar has set (mortar industry leaflet, 2014)."
+  floor:
+    value: mixed
+    confidence: likely
+    note: "Facade scaffold decks reached by ladder or stair tower, and the ground for the first courses."
+  incumbent_automation:
+    value: { status: none, machine_classes: [] }
+    confidence: likely
+    evidence_url: 'https://www.monumental.co/'
+    note: "No source used here names a machine that lays facing brick on German sites. One maker states that its autonomous robots lay bricks on live sites in the Netherlands, the United Kingdom and the United States."
+  data_sensitivity:
+    value: none
+    confidence: likely
+    note: "No cameras on people required."
+  runtime_continuous_min:
+    value: null
+    confidence: assumed
+    note: "Not relevant; ruled out earlier."
+  cycle_or_volume:
+    value: "About 48 NF bricks per m² (64 DF, 32 2DF)."
+    confidence: confirmed
+    evidence_url: 'https://www.hagemeister.de/produkt/fassadenklinker-nf/alt-berlin-gt-nf.pdf'
+    note: "Material requirement in Hagemeister's product data for one clinker range; it changes with format and joint width."
+requirements:
+  object_size_m:
+    value: { min: 0.24, max: 0.24 }
+    confidence: confirmed
+    evidence_url: 'https://www.hagemeister.de/produkt/fassadenklinker-2df/alt-berlin-gt-2df.pdf'
+    note: "Brick length 240 mm in DF, NF and 2DF; 115 mm deep and 52 to 113 mm high (Hagemeister)."
+  tolerance_mm:
+    value: 2
+    confidence: confirmed
+    evidence_url: 'https://www.vdpm.info/files/VDPM/Downloads/Brosch%C3%BCren%20und%20Merkbl%C3%A4tter/VDPM%20Verblendmauerwerk%20mit%20Werkm%C3%B6rtel%20-%20Hinweise%20f%C3%BCr%20die%20Planung%20und%20Ausf%C3%BChrung.pdf'
+    note: "The joint is made as flush as possible and at most 2 mm behind the face of the bricks (mortar industry leaflet, February 2014). A limit for the joint, not for the flatness of the wall."
+  force_n:
+    value: null
+    confidence: assumed
+    note: "No source used here states a force; bricks are pressed into the mortar bed by hand."
+screen:
+  verdict: ruled_out
+  results: { T1_mass: pass, T2_dust: pass, T3_incumbent: pass, T4_variability: marginal, T5_failure_tolerance: fail, X1_reach: pass, X2_outdoor: fail, X3_data: pass, X4_runtime: unknown, X5_atex: pass }
+  killed_by: [T5_failure_tolerance, X2_outdoor]
+  better_answer:
+    class: keep_process
+    note:
+      en: "Keep the bricklaying crew. The bricks are light, but the leaf is laid from a scaffold in the open and its wall ties are sized for the wind; no humanoid publishes an ingress rating for outdoor work. One maker states that its bricklaying robots work on live sites in the Netherlands, the UK and the US; ask for references before a trial."
+      de: "Bei der Maurerkolonne bleiben. Die Steine sind leicht, aber die Schale entsteht vom Gerüst aus im Freien, und ihre Drahtanker sind nach der Windlast bemessen; kein Humanoid veröffentlicht eine Schutzart für Arbeiten im Freien. Ein Hersteller gibt an, dass seine Mauerroboter auf Baustellen in den Niederlanden, Großbritannien und den USA arbeiten; vor einem Versuch nach Referenzen fragen."
+  screened_at: '2026-10-02'
+  screened_by: sitebots
+value_drivers: [ergonomics, skills_shortage, capacity]
+capabilities_required: [carry_payload]
+capabilities_optional: []
+solution_classes: [keep_process, dedicated_machine]
+evidence:
+  - statement:
+      en: "Hagemeister's datasheet and declaration of performance for the Alt Berlin GT facing clinker give the 2DF format at 240 × 115 × 113 mm and a gross dry density of 1,710 kg/m³; its DF and NF versions declare the same density and a material requirement of about 64 and 48 bricks per m²."
+      de: "Datenblatt und Leistungserklärung von Hagemeister für den Fassadenklinker Alt Berlin GT nennen für das Format 2DF 240 × 115 × 113 mm und eine Brutto-Trockenrohdichte von 1.710 kg/m³; die Ausführungen DF und NF erklären dieselbe Rohdichte und einen Materialbedarf von etwa 64 und 48 Steinen je m²."
+    url: 'https://www.hagemeister.de/produkt/fassadenklinker-2df/alt-berlin-gt-2df.pdf'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Datasheet generated on request on 2026-10-02 with the declaration of performance attached; the DF and NF datasheets were read the same day."
+  - statement:
+      en: "The lime-sandstone masonry handbook: the facing leaf is fastened to the load-bearing inner leaf by stainless-steel wire anchors to DIN EN 1996-2; their diameter and minimum number per m² follow DIN EN 1996-2/NA or an approval, by cavity width, height above ground and wind zone, at most 500 mm apart vertically and 750 mm horizontally. The anchors are laid into the bed joints of the load-bearing leaf as it is built."
+      de: "Die Kalksandstein-Maurerfibel: Die Verblendschale wird über Drahtanker aus nichtrostendem Stahl nach DIN EN 1996-2 an der tragenden Innenschale befestigt; Durchmesser und Mindestanzahl je m² richten sich nach DIN EN 1996-2/NA oder Zulassung, abhängig von Schalenabstand, Höhe über Gelände und Windzone, mit höchstens 500 mm vertikalem und 750 mm horizontalem Abstand. Die Anker werden beim Aufmauern in die Lagerfuge der tragenden Schale eingelegt."
+    url: 'https://www.ks-maurerfibel.de/maurerfibel/8-ks-sicht-und-ks-verblendmauerwerk/8-4-luftschichtanker-fuer-zweischaliges-verblendmauerwerk/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Published by the lime-sandstone industry for KS facing masonry; the anchor rules are those of DIN EN 1996-2/NA. Page undated, read on 2026-10-02."
+  - statement:
+      en: "The clay brick industry: a two-leaf external wall consists of a load-bearing inner leaf, a cavity and a non-load-bearing outer leaf, the facing masonry, which is usually 11.5 cm thick; the two leaves are connected by approved anchor systems."
+      de: "Die Ziegelindustrie: Eine zweischalige Außenwand besteht aus einer tragenden Innenschale, Hohlschicht und nichttragenden Außenschale (Verblendschale), das Verblendmauerwerk ist meist 11,5 cm dick; die beiden Wandschalen sind durch bauaufsichtlich zugelassene Ankersysteme verbunden."
+    url: 'https://www.ziegelindustrie.de/zweischaliges-mauerwerk/zweischalige-wand'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Fachverband Ziegelindustrie Nord, a regional trade association of the clay brick industry. Page undated, read on 2026-10-02."
+  - statement:
+      en: "The mortar industry's leaflet on facing masonry: DIN 18330 makes the joint struck while laying the standard finish for facing and fair-faced masonry; joints are made as flush as possible and at most 2 mm behind the face; no laying or jointing in sustained heavy rain, bricks from several packs are mixed for an even colour, and fresh masonry is protected from rain and sun."
+      de: "Das Merkblatt der Mörtelindustrie zum Verblendmauerwerk: DIN 18330 legt den Fugenglattstrich für Verblend- und Sichtmauerwerk als Regelausführung fest; die Verfugung ist möglichst bündig, höchstens aber 2 mm hinter den Sichtflächen einzubringen; bei anhaltendem starkem Regen wird nicht gemauert oder verfugt, Steine aus mehreren Paketen werden quergemischt, und frisches Mauerwerk ist vor Regen und Sonne zu schützen."
+    url: 'https://www.vdpm.info/files/VDPM/Downloads/Brosch%C3%BCren%20und%20Merkbl%C3%A4tter/VDPM%20Verblendmauerwerk%20mit%20Werkm%C3%B6rtel%20-%20Hinweise%20f%C3%BCr%20die%20Planung%20und%20Ausf%C3%BChrung.pdf'
+    kind: standard
+    tier: 2
+    date: '2014-02-01'
+    type: claim
+    confidence: confirmed
+    note: "Industrieverband WerkMörtel, Stand February 2014 without a day, hosted by the VDPM; it cites the September 2012 edition of ATV DIN 18330. Check the current edition."
+  - statement:
+      en: "Monumental states that it designs, builds and operates a fleet of autonomous robots that lay bricks on live construction sites, and that it works across the Netherlands, the United Kingdom and the United States."
+      de: "Monumental gibt an, eine Flotte autonomer Roboter zu entwickeln, zu bauen und zu betreiben, die auf laufenden Baustellen Steine verlegen, und in den Niederlanden, Großbritannien und den USA tätig zu sein."
+    url: 'https://www.monumental.co/'
+    kind: manufacturer
+    tier: 1
+    date: '2026-10-02'
+    type: claim
+    confidence: confirmed
+    note: "Company claims; the page names no German project and does not say which bricks or bonds the robots lay. Read on 2026-10-02."
+pilot:
+  metrics: []
+  abort_rule:
+    en: "Not applicable; ruled out at screening."
+    de: "Nicht anwendbar; im Screening ausgeschieden."
+  scope_hint:
+    en: "If a bricklaying robot is offered: one plain facade section without openings, square metres per day, joint rework and anchors checked, against the crew."
+    de: "Falls ein Mauerroboter angeboten wird: ein glatter Fassadenabschnitt ohne Öffnungen, Quadratmeter je Tag, Nacharbeit an den Fugen und geprüfte Anker, gegen die Kolonne."
+prerequisites: []
+open_questions:
+  - { en: "How much of your facing brickwork is plain wall without openings, and who places the wall ties today?", de: "Wie viel Ihres Verblendmauerwerks ist glatte Wand ohne Öffnungen, und wer setzt heute die Drahtanker?" }
+compliance_flags: [mineral_dust_trgs_559, eu_machinery_regulation_2023_1230]
+sources_reviewed_at: '2026-10-02'

@@ -1,0 +1,278 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-as2-x",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "As2",
+ "variant": "X",
+ "name": "Unitree As2 X",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/As2",
+ "summary": "20 kg As2 quadruped, IP54, 95 Nm joints, about 15 kg payload and 25 cm stairs; programmable.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU sells the As2 X with price and cart (on demand); Generation Robots lists it at 9,000 EUR net; QUADRUPED Robotics (Germany) lists it from 15.03.2027.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 9000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s3",
+   "note": "EUR 10,800 incl. VAT at Generation Robots."
+  },
+  "priceOther": null,
+  "leadTime": "RobotShop EU: on demand; QUADRUPED Robotics: from 15.03.2027",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-as2-x-quadruped-robot",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 10277.27,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Ships in about 6 weeks."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404474-unitree-as2-x-quadruped-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 9000,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "EUR 10,800 incl. VAT; contact for delivery time."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-As2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 8500,
+    "priceBasis": "net",
+    "sourceId": "s6",
+    "note": "Variant \"X\" 8,500 EUR net, \"available from 15.03.2027\"."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking load",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "approx.; max standing load approx. 65 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3.7,
+   "unit": "m/s",
+   "conditions": "up to about 5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life (loaded)",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "With 15 kg >2.5 h; unloaded ~4 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair climbing",
+   "value": 25,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 40,
+   "unit": "deg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "HD camera, Industrial 64-128-line LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection rating",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 648,
+   "unit": "Wh",
+   "conditions": "15000 mAh",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 15,
+  "runtimeH": 2.5,
+  "ipRating": "IP54",
+  "sdk": "Unitree secondary development",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runtime given with load; unloaded runtime about 4 h (Air about 2 h)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/11d0a76afbb74e8fb7f692652b4c33e0_800x800.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/dc7b96d2599143f5901d5ba27db48672_1815x1080.png",
+   "pageUrl": "https://www.unitree.com/As2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 stepping over concrete rubble and rebar in a collapsed building",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/ca71f7417e7e4ef5a505c3b447cddc6a_1920x1365.png",
+   "pageUrl": "https://www.unitree.com/As2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 walking on a rocky ridge with mountains behind",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/e6a8c27345324a69b5cb3c72b402bf9d_1401x742.jpg",
+   "pageUrl": "https://www.unitree.com/As2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2 carrying an orange duffel bag beside a hiker on a grassy hilltop",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/As2",
+   "title": "Unitree As2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-as2-x-quadruped-robot",
+   "title": "Unitree As2 X Quadruped Robot at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404474-unitree-as2-x-quadruped-robot.html",
+   "title": "Unitree As2 X at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.quadruped.de/Unitree-As2",
+   "title": "Unitree As2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

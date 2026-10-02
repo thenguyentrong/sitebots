@@ -1,0 +1,199 @@
+{
+ "schemaVersion": 1,
+ "id": "igus-iggyrob",
+ "maker": "igus",
+ "makerCountry": "DE",
+ "model": "iggyRob",
+ "variant": null,
+ "name": "igus iggyRob",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.igus.de/product/0-LCA-IROB",
+ "summary": "A low-cost German wheeled humanoid: two ReBeL cobot arms (2 kg each) with a gripper and a suction gripper on a ReBeLMove Pro AMR, for light parts transport and reception tasks indoors.",
+ "launched": "2025",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Listed in the igus.de online shop with price and cart button (\"zzgl. MwSt. und Versand\"); delivery time shown as \"Lieferzeit auf Anfrage\" (on request). CE certified. Made by igus in Cologne.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 51691.37,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "51,691.37 EUR per piece, \"zzgl. MwSt. und Versand\" on the rendered shop page."
+  },
+  "priceOther": null,
+  "leadTime": "Lieferzeit auf Anfrage (on request)",
+  "sellers": [
+   {
+    "name": "igus SE & Co. KG",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.igus.de/product/0-LCA-IROB",
+    "contactUrl": "https://www.igus.de/",
+    "email": null,
+    "phone": "+49 2203 9649-0",
+    "priceEur": 51691.37,
+    "priceBasis": "net",
+    "sourceId": "s1",
+    "note": "Online shop, article no. 0-LCA-IROB; also chat and WhatsApp advice."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.6,
+   "unit": "m",
+   "conditions": "Size 800 x 600 x 1600 mm (L x W x H)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 101,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": "ReBeL-6DOF-03 cobot arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 2,
+   "unit": "kg",
+   "conditions": "Max. part weight given as 1.5 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.664,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "AMR base payload",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "Base load capacity; up to 100 kg payload stated for the AMR",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "From product data",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "Up to, one battery charge",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR, 3D cameras in chest and base, face display",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "igus Robot Control, ROS 2 interface, VDE 5050 fleet interface",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 2,
+  "carryPayloadKg": 50,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "ROS 2, igus Robot Control, VDE 5050",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Supplied with one suction gripper (CobotPump) and one ReBeL gripper.",
+   "Max. part weight 1.5 kg; arm speed up to 45 deg/s.",
+   "Indoor AMR for factory halls, lobbies and canteens; roughGround, stairs and outdoor set to false.",
+   "CE certified."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://igus.widen.net/content/e8vjul2l63/webp/LCA_PROD_iggyRob_1.webp?quality=65",
+   "pageUrl": "https://www.igus.de/product/0-LCA-IROB",
+   "credit": "igus",
+   "alt": "igus iggyRob wheeled humanoid with two cobot arms",
+   "kind": "product"
+  },
+  {
+   "url": "https://igus.widen.net/content/1ebks4onpf/webp/LCA_VID_2025_10_31_iggyRob_v2_DE_RP_DE_2.webp?quality=65",
+   "pageUrl": "https://www.igus.de/product/0-LCA-IROB",
+   "credit": "igus",
+   "alt": "igus iggyRob reaching for a cardboard box held by a woman in a warehouse with yellow crates",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Transports parts through factory halls, reception duties, takes dishes to the wash-up in canteens",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker use cases; indoor factory transport rather than construction sites."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.igus.de/product/0-LCA-IROB",
+   "title": "iggyRob: Humanoider Roboter (igus shop)",
+   "publisher": "igus SE & Co. KG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "iggyRob Home (mentioned on the igus humanoid category page): price and availability?",
+  "Actual delivery time (shop shows \"Lieferzeit auf Anfrage\")?"
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,81 @@
+{
+ "schemaVersion": 1,
+ "id": "construction-robotics-sam",
+ "maker": "Construction Robotics",
+ "makerCountry": "US",
+ "model": "SAM",
+ "variant": "Semi-Automated Mason",
+ "name": "Construction Robotics SAM",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "bricklaying",
+  "site_masonry/masonry-wall-laying"
+ ],
+ "officialUrl": null,
+ "summary": "Semi-automated bricklaying robot from the US maker Construction Robotics, no longer listed by the maker.",
+ "launched": null,
+ "lifecycle": "discontinued",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The maker's current product page and sitemap list only MULE lift-assist arms; SAM has no page any more, and no European sales route was ever found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Lifecycle set to discontinued because the maker no longer lists SAM; no maker statement on it was found.",
+   "No open source describes the SAM hardware any more (maker page removed), so drive type, arm and gripper are not confirmed; the drive flags are left false."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.construction-robotics.com/products",
+   "title": "Products (MULE only)",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.construction-robotics.com/sitemap.xml",
+   "title": "Sitemap (no SAM page)",
+   "publisher": "Construction Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Official confirmation that SAM is discontinued.",
+  "SAM drive type and specifications (maker page removed; only an archived page exists, which could not be opened)."
+ ],
+ "checkedAt": "2026-10-02"
+}

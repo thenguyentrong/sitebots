@@ -1,0 +1,260 @@
+{
+ "schemaVersion": 1,
+ "id": "magiclab-magicdog-w",
+ "maker": "MagicLab",
+ "makerCountry": "CN",
+ "model": "MagicDog-W",
+ "variant": null,
+ "name": "MagicLab MagicDog-W",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.magiclabglobal.com/products/magicdog-w/",
+ "summary": "A 22.5 kg wheel-leg robot dog with lidar and cameras that carries up to 10 kg at up to 3 m/s, for patrol, survey, research and demonstrations.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "MagicLab sells on request and says it has sales and support teams in Germany; no German dealer is named for this model. Roboter Deutschland, an online shop with a Las Vegas (USA) contact address and no named company, lists it at EUR 11,373.13 (converted from its base currency) with an order button but marks availability \"subject to availability\". MagicLab states CE-RED certification is targeted for Q4 2026.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "MagicLab (Magiclab Robotics Technology Wuxi)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.magiclabglobal.com/products/magicdog-w/",
+    "contactUrl": "https://www.magiclabglobal.com/contact/",
+    "email": "contacts@magiclabglobal.com",
+    "phone": "+86-400-828-8022",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Enquiry form on the product page; MagicLab names sales and support teams in Germany but no German address."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "670 x 350 x 650",
+   "unit": "mm",
+   "conditions": "crouched 720 x 500 x 290 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 22.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3,
+   "unit": "m/s",
+   "conditions": "at least 3.0 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Climbs and drops",
+   "value": 60,
+   "unit": "cm",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 40,
+   "unit": "deg",
+   "conditions": "at least 40°",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": "2-4",
+   "unit": "h",
+   "conditions": "continuous operation",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "8200 mAh, 29.6 V rated",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Motors",
+   "value": "16 + 1",
+   "unit": null,
+   "conditions": "16 body motors plus 1 head motor; 7-inch pneumatic tyres",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "High-performance 8-core CPU plus standard high-performance computing accelerator module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Lidar, dual camera, depth vision, 4K camera, fisheye camera, ultrasonic sensors, touch sensors, microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "connectivity",
+   "label": "Connectivity",
+   "value": "Wi-Fi 5, 4G, Bluetooth 5.0",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-5 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "MagicDog SDK resources (motion control, sensors, status) and ROS 2 interfaces for navigation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 10,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "MagicDog SDK, ROS 2",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "No IP rating published; operating range -5 to 40 °C.",
+   "Runtime 2 to 4 h; 2 h used here.",
+   "Stair climbing is not stated; the maker gives up to 60 cm climbs and drops.",
+   "Backplate for extra lidar, gimbals or computing modules.",
+   "Roboter Deutschland shows the same price for the legged MagicDog; check the configuration before ordering."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260720/magicdog-w.jpg",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicdog-w/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicDog-W wheel-leg robot dog on a lawn in a park",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260720/smart-robot-dog.jpg",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicdog-w/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicDog-W wheel-legged robot dog on dark ground in front of rocks, front three-quarter view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.magiclabglobal.com/uploads/image/20260720/ai-robot-dog.jpg",
+   "pageUrl": "https://www.magiclabglobal.com/products/magicdog-w/",
+   "credit": "MagicLab",
+   "alt": "MagicLab MagicDog-W on its wheels on leaf-covered ground in a bamboo forest.",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Patrol, surveying and research applications",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker application list; no customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.magiclabglobal.com/products/magicdog-w/",
+   "title": "MagicDog-W Wheeled Quadruped Robot",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.magiclabglobal.com/magiclab-brings-physical-ai-to-europes-factory-floors-at-ifa-2026-debuting-full-stack-embodied-intelligence-stack.html",
+   "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/MagicLab-MagicDog-W-Wheeled-Quadruped-Robot-Dog.htm",
+   "title": "MagicLab MagicDog-W vierbeiniger Roboterhund mit Rädern",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/about-us/",
+   "title": "About us",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and delivery from MagicLab for Germany.",
+  "Name and address of the German sales team or an authorised dealer.",
+  "CE marking status.",
+  "IP rating.",
+  "Who operates Roboter Deutschland and whether it is authorised by MagicLab."
+ ],
+ "checkedAt": "2026-10-02"
+}

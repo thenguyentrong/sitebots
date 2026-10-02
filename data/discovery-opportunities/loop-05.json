@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:prepare-hardened-concrete-floors",
+      "title": "Grind hardened concrete before recoating",
+      "summary": "Remove suitable coatings or prepare a specified surface profile on hardened concrete, including extraction, edges and inspection.",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "family": "surface_finishing",
+      "setting": "Floor refurbishment",
+      "reviewLinks": [
+        {
+          "taskId": "research:prepare-hardened-concrete-floors",
+          "reviewId": "husqvarna-autogrinder8d-eu",
+          "relationship": "task_candidate",
+          "rationale": "Manufacturer lists concrete grinding or surface preparation for this exact configuration.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Choose tools for the substrate and contaminant; working width is not productive area per shift.",
+            "Include edges, extraction, cables, tool changes and accepted surface-profile checks."
+          ]
+        },
+        {
+          "taskId": "research:prepare-hardened-concrete-floors",
+          "reviewId": "schwamborn-dsm800rc-grinding",
+          "relationship": "task_candidate",
+          "rationale": "Manufacturer lists concrete grinding or surface preparation for this exact configuration.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Choose tools for the substrate and contaminant; working width is not productive area per shift.",
+            "Include edges, extraction, cables, tool changes and accepted surface-profile checks."
+          ]
+        },
+        {
+          "taskId": "research:prepare-hardened-concrete-floors",
+          "reviewId": "scanmaskin32-ws-rc-400v-grinding",
+          "relationship": "task_candidate",
+          "rationale": "Manufacturer lists concrete grinding or surface preparation for this exact configuration.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Choose tools for the substrate and contaminant; working width is not productive area per shift.",
+            "Include edges, extraction, cables, tool changes and accepted surface-profile checks."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:polish-concrete-terrazzo-floors",
+      "title": "Polish concrete and terrazzo floor surfaces",
+      "summary": "Run an agreed grinding and polishing sequence, inspect gloss and defects, and manage slurry or dust.",
+      "industries": [
+        "construction",
+        "facilities"
+      ],
+      "family": "surface_finishing",
+      "setting": "Decorative and industrial floors",
+      "reviewLinks": [
+        {
+          "taskId": "research:polish-concrete-terrazzo-floors",
+          "reviewId": "husqvarna-autogrinder8d-eu",
+          "relationship": "task_candidate",
+          "rationale": "Manufacturer lists concrete and stone polishing in the automatic/remote configuration.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Confirm substrate and diamond/chemical sequence; no blanket finish-quality guarantee.",
+            "Human setup, edges, consumables and exception recovery remain required."
+          ]
+        },
+        {
+          "taskId": "research:polish-concrete-terrazzo-floors",
+          "reviewId": "schwamborn-dsm800rc-grinding",
+          "relationship": "task_candidate",
+          "rationale": "DSM800RC sheet names wet polishing of concrete, screed, terrazzo and marble with the specified pad family.",
+          "sourceIds": [
+            "sheet"
+          ],
+          "limitations": [
+            "Wet polishing requires appropriate pads and slurry management.",
+            "Operator control and final acceptance remain human responsibilities."
+          ]
+        }
+      ]
+    }
+  ]
+}

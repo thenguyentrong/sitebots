@@ -1,3 +1,5 @@
+import { conservativePayload } from '@/lib/spec/payload';
+export { conservativePayload } from '@/lib/spec/payload';
 import { reconcileRobotLifecycle } from './lifecycle';
 import type { SqlClient } from '@/lib/db';
 import { fieldDef, specKey } from '@/lib/spec/fields';
@@ -235,21 +237,6 @@ export function parseIp(rating: string | null): { solid: number | null; liquid: 
     solid: m[1].toUpperCase() === 'X' ? null : Number(m[1]),
     liquid: m[2].toUpperCase() === 'X' ? null : Number(m[2]),
   };
-}
-
-/** The conservative payload the matcher compares against. */
-export function conservativePayload(specs: Specs): { rated: number | null; peak: number | null; conservative: number | null; key: string | null; estimated: boolean } {
-  const rated = low(specs, 'payload_kg:rated');
-  const peak = num(specs, 'payload_kg:peak');
-  const candidates = ['payload_kg:rated', 'payload_kg:sustained', 'payload_kg:carry_walking', 'payload_kg:rated_dual']
-    .map(key => ({ key, value: low(specs, key) }))
-    .filter((entry): entry is { key: string; value: number } => entry.value !== null)
-    .sort((a, b) => a.value - b.value);
-  const chosen = candidates[0];
-  if (chosen) return { rated, peak, conservative: chosen.value, key: chosen.key, estimated: false };
-  const key = ['payload_kg:peak', 'payload_kg:peak_dual', 'payload_kg:instant', 'payload_kg'].find(key => low(specs, key) !== null) ?? null;
-  const conservative = key ? Math.round(low(specs, key)! * 0.5 * 10) / 10 : null;
-  return { rated, peak, conservative, key, estimated: key !== null };
 }
 
 /** Runtime for a shift is the lowest published figure; the basis says what it was measured doing. */

@@ -1,0 +1,257 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-as2-w-edu",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "As2-W",
+ "variant": "EDU",
+ "name": "Unitree As2-W EDU",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/As2-W",
+ "summary": "Programmable wheeled As2 quadruped (IP54, 16 kg payload) with charging dock and optional Orin NX compute.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "No EU seller has stock: QUADRUPED Robotics (Germany) takes orders with availability from 15.03.2027; Generation Robots quotes on request and gives delivery time on request; Unitree's store does not list the As2-W.",
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 11500,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Excl. VAT."
+  },
+  "priceOther": null,
+  "leadTime": "available from 15.03.2027 (QUADRUPED Robotics)",
+  "sellers": [
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404477-unitree-as2-w-edu-wheeled-quadruped-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 11500,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "'From' EUR 11,500 excl. VAT; EDU Standard 40 TOPS, Smart 100 TOPS, Plus MID360, Ultimate XT16."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-As2-W",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 9500,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": "\"Edu Standard\" 9,500 EUR net; Smart 11,000, Plus 14,000, Ultimate 15,500 net; \"available from 15.03.2027\"."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking load",
+   "value": 16,
+   "unit": "kg",
+   "conditions": "approx.; static load approx. 150 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3.7,
+   "unit": "m/s",
+   "conditions": "max approx. 6 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life (loaded)",
+   "value": 2,
+   "unit": "h",
+   "conditions": ">2 h with 16 kg; ~3 h unloaded (about 30 km)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 648,
+   "unit": "Wh",
+   "conditions": "15000 mAh",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair climbing",
+   "value": 30,
+   "unit": "cm",
+   "conditions": "climb height approx. 0.4-0.8 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection rating",
+   "value": "IP54",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "HD camera, industrial 64-128-line LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "8-core CPU; optional expansion such as Orin NX",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 16,
+  "runtimeH": 2,
+  "ipRating": "IP54",
+  "sdk": "Unitree secondary development",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Charging dock included in EDU."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/b53aa7f28733499f9c5f93548fee2baa_800x800.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2-W wheeled quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/ee356257fb8c408eb1418107c382426b_1920x1080.jpg?x-oss-process=image/quality,q_60/format,webp",
+   "pageUrl": "https://www.unitree.com/As2-W",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2-W driving up a loose gravel slope, kicking up stones",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/6ab32a5d9308469c87192f5a06140571_1920x1365.png",
+   "pageUrl": "https://www.unitree.com/As2-W",
+   "credit": "Unitree Robotics",
+   "alt": "Mud-spattered Unitree As2-W driving over gravel in a rocky canyon",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.unitree.com/images/79faeae2e0ee43e49be9b8b56a7a7260_1401x742.jpg",
+   "pageUrl": "https://www.unitree.com/As2-W",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree As2-W with a top-mounted sensor cage and antennas on wet asphalt at an industrial plant at night",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/As2-W",
+   "title": "Unitree As2-W product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/404477-unitree-as2-w-edu-wheeled-quadruped-robot.html",
+   "title": "Unitree As2-W EDU at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.quadruped.de/Unitree-As2-W",
+   "title": "Unitree As2-W at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

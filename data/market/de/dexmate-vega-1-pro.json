@@ -1,0 +1,257 @@
+{
+ "schemaVersion": 1,
+ "id": "dexmate-vega-1-pro",
+ "maker": "Dexmate",
+ "makerCountry": "US",
+ "model": "Vega 1",
+ "variant": "Pro (mobile, without end effectors)",
+ "name": "Dexmate Vega 1 Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dexmate.com/product/meet-dexmate-vega",
+ "summary": "A wheeled humanoid research platform with two 7-DoF arms (5 kg each), a liftable torso reaching 2.2 m and 20 h runtime, sold online with grippers or hands ordered separately.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Orderable in Dexmate’s own online store (USD 72,000, end effectors extra, about 4 weeks lead time, freight quoted at checkout); Germany is in the store’s shipping-country list and Universität Freiburg is shown as a client. Import duties, VAT and CE marking are not stated.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 72000,
+   "currency": "USD",
+   "market": "Dexmate online store (US), without end effectors",
+   "sourceId": "s2"
+  },
+  "leadTime": "about 4 weeks from order confirmation (store)",
+  "sellers": [
+   {
+    "name": "Dexmate Inc.",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": "https://shop.dexmate.com/products/vega",
+    "contactUrl": "https://www.dexmate.com/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Manufacturer online store in USD; robots are crated and shipped by freight. Quotes and invoices via the contact page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Max height",
+   "value": 2.5,
+   "unit": "m",
+   "conditions": "arms raised",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach",
+   "value": "floor to 2.2 m",
+   "unit": null,
+   "conditions": "3-DoF torso",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 135,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 24,
+   "unit": null,
+   "conditions": "arms 14, torso 3, head 3, base 4; without hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "in any pose (stated 10+ lb)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 20,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Thor",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "stereo RGB camera on 3-DoF head, front and rear LiDAR, 4 RGB cameras on base",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Python, C++ and Rust APIs; URDF/USD sim models; VR and exoskeleton teleoperation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "folded_size",
+   "label": "Folded size",
+   "value": "0.66 x 0.56 x 0.66 m",
+   "unit": null,
+   "conditions": "L x W x H",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 20,
+  "ipRating": null,
+  "sdk": "Python, C++, Rust APIs; URDF/USD",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "End effectors are ordered separately: Dexmate 6-DoF hand, DexGripper S (USD 3,000) or D (USD 4,000), or your own tool.",
+   "Position-controlled arms; force/torque sensing is an optional add-on.",
+   "Omnidirectional wheeled base for indoor floors; folds down to pass through doorways.",
+   "Sold as a developer and research platform; it does not come with ready-made work skills.",
+   "The store also lists a cheaper Vega 1 U (USD 40,000); not covered by this record."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0930/0089/2708/files/Vega1-Specifications-01.png?v=1790530634",
+   "pageUrl": "https://shop.dexmate.com/products/vega",
+   "credit": "Dexmate",
+   "alt": "Dexmate Vega 1 Pro wheeled humanoid with raised arms on its white omnidirectional base, shown with optional five-finger hands",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.sanity.io/images/b8xzly2c/production/75a98f73b4a224542a44defde6cb27ea801398e2-1500x1500.png?auto=format&fit=max&w=3840&q=75",
+   "pageUrl": "https://www.dexmate.com/product/meet-dexmate-vega",
+   "credit": "Dexmate",
+   "alt": "Dexmate Vega with its torso half raised and one arm stretched out to the side, render on a white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.sanity.io/images/b8xzly2c/production/6453d6a0532af9a026115b3c95aff28aaa3ee995-1500x1500.png?auto=format&fit=max&w=3840&q=75",
+   "pageUrl": "https://www.dexmate.com/product/meet-dexmate-vega",
+   "credit": "Dexmate",
+   "alt": "Dexmate Vega with torso lowered and arms folded over its base, front view on a white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.sanity.io/images/b8xzly2c/production/7b1f08d21fb78827eab03d48b80d8da24b9336a3-1500x1500.png?auto=format&fit=max&w=3840&q=75",
+   "pageUrl": "https://www.dexmate.com/product/meet-dexmate-vega",
+   "credit": "Dexmate",
+   "alt": "Dexmate Vega with torso lowered and arms folded, side view on a white background",
+   "kind": "product"
+  },
+  {
+   "url": "https://cdn.sanity.io/images/b8xzly2c/production/50c7db4ca7a2ed59387a2325ac897dab9d11b397-1254x1254.png?auto=format&fit=max&w=3840&q=75",
+   "pageUrl": "https://www.dexmate.com/product/meet-dexmate-vega",
+   "credit": "Dexmate",
+   "alt": "Close-up of the Dexmate Vega upper body reaching out with one hand, render on a grey background",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Collect bimanual demonstration data for imitation learning by VR or exoskeleton teleoperation",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Develop and test learned manipulation skills on the robot",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Clients shown on the Dexmate home page (s3) include Universität Freiburg, UC Berkeley, Princeton and LG."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dexmate.com/product/meet-dexmate-vega",
+   "title": "Meet Vega: specifications",
+   "publisher": "Dexmate",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.dexmate.com/products/vega",
+   "title": "Vega 1 Pro in the Dexmate online store",
+   "publisher": "Dexmate",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.dexmate.com/",
+   "title": "Dexmate home page (client logos incl. Universität Freiburg)",
+   "publisher": "Dexmate",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Does Vega carry a CE mark / EU declaration of conformity?",
+  "Shipping cost, duties and service for Germany."
+ ],
+ "checkedAt": "2026-10-02"
+}

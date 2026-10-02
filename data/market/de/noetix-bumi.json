@@ -1,0 +1,214 @@
+{
+ "schemaVersion": 1,
+ "id": "noetix-bumi",
+ "maker": "Noetix Robotics",
+ "makerCountry": "CN",
+ "model": "Bumi",
+ "variant": null,
+ "name": "Noetix Bumi",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.noetixrobotics.com/en/detail/Bumi/",
+ "summary": "A 98 cm, 17 kg consumer and education humanoid with 21 joints for teaching, programming lessons and home companionship.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 5890,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Lowest RBTX variant; EDU Pro adds a Jetson Orin Nano Super module."
+  },
+  "priceOther": null,
+  "leadTime": "6 to 8 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/noetix-bumi-humanoid-robot-21-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 5890,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Variants Bumi Pro and Bumi EDU Pro."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RBTX (igus, Cologne) lists Bumi Pro and Bumi EDU Pro with a net price from 5,890 EUR and 6 to 8 weeks delivery.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.98,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 17,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 21,
+   "unit": null,
+   "conditions": "9 upper body (2 per shoulder, 2 per elbow, 1 waist), 12 legs",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 4,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 70,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 0.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 5.1 Ah, quick-release",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 3,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Structured-light depth camera, IMU, voice interaction",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Consumer and teaching robot without hands; cannot carry or handle site material."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://image.noetixrobotics.com/pc/bumi_waiguan_dantui.png",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/Bumi/",
+   "credit": "Noetix Robotics",
+   "alt": "Noetix Bumi small humanoid, full body, balancing on one leg",
+   "kind": "product"
+  },
+  {
+   "url": "https://image.noetixrobotics.com/pc/bumi_qunkong.png",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/Bumi/",
+   "credit": "Noetix Robotics",
+   "alt": "Three Noetix Bumi humanoids in matching dance poses, cut-out.",
+   "kind": "product"
+  },
+  {
+   "url": "https://image.noetixrobotics.com/pc/home_bumi_banner.jpg",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/Bumi/",
+   "credit": "Noetix Robotics",
+   "alt": "Noetix Bumi walking outdoors next to a man, a girl and a boy.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://image.noetixrobotics.com/pc/%E5%AE%B6%E5%BA%AD%E9%99%AA%E4%BC%B4.jpg",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/Bumi/",
+   "credit": "Noetix Robotics",
+   "alt": "Noetix Bumi dancing with a boy in a living room as two adults watch, rear view.",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Programming lessons, maker education and home companionship",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.noetixrobotics.com/en/detail/Bumi/",
+   "title": "Bumi Consumer Humanoid Robot",
+   "publisher": "Noetix Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/noetix-bumi-humanoid-robot-21-dof",
+   "title": "NOETIX Bumi humanoid robot, 21 DOF on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

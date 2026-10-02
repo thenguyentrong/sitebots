@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:humanoid-record-manipulation-demonstrations",
+      "title": "Record humanoid manipulation demonstrations",
+      "summary": "Use the selected robot’s supported teleoperation stack to collect human-guided arm and hand demonstrations for a learning dataset in a controlled laboratory.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "kitting_picking_sorting",
+      "setting": "Humanoid learning and teleoperation laboratory",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-record-manipulation-demonstrations",
+          "reviewId": "unitree-g1-edu-dex3-research",
+          "relationship": "task_candidate",
+          "rationale": "Unitree documents G1/Dex3 teleoperation, episode recording and physical hardware setup.",
+          "sourceIds": [
+            "xr",
+            "learning"
+          ],
+          "limitations": [
+            "A human provides the demonstrated actions.",
+            "Validate the exact camera, hands, software and workspace before collection."
+          ]
+        },
+        {
+          "taskId": "research:humanoid-record-manipulation-demonstrations",
+          "reviewId": "unitree-h2-plus-sharpa-research",
+          "relationship": "task_candidate",
+          "rationale": "The H2 PLUS reference explicitly supports Isaac TeleOp demonstration collection.",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Human-guided data collection; not autonomous task operation.",
+            "Validate exact hand/camera calibration, software versions and workspace."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-test-learned-manipulation",
+      "title": "Test learned manipulation policies on a physical humanoid",
+      "summary": "Develop and evaluate manipulation policies with a configured humanoid learning stack. Physical experiments require delivered hardware, compatible software and researcher supervision; see each robot’s evidence stage.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "kitting_picking_sorting",
+      "setting": "Robot learning evaluation cell",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-test-learned-manipulation",
+          "reviewId": "unitree-g1-edu-dex3-research",
+          "relationship": "task_candidate",
+          "rationale": "The official learning repository includes G1_29/dex3 physical evaluation and dataset replay.",
+          "sourceIds": [
+            "learning"
+          ],
+          "limitations": [
+            "Simulation and dataset evaluation are distinct from live robot execution.",
+            "A research example does not establish broad object handling or unattended operation."
+          ]
+        },
+        {
+          "taskId": "research:humanoid-test-learned-manipulation",
+          "reviewId": "unitree-h2-plus-sharpa-research",
+          "relationship": "task_candidate",
+          "rationale": "The official H2 PLUS reference connects GR00T models, Sim/Lab evaluation and ROS deployment to onboard Thor inference.",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Announced reference workflow; no reproduced task benchmark or unattended production established.",
+            "Hardware access, delivered software and safe physical test conditions remain to be confirmed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-trial-aircraft-drilling",
+      "title": "Trial humanoid drilling in an experimental assembly line",
+      "summary": "Investigate tool positioning and drilling with a configured humanoid research platform. Historical experiments require fresh validation of quality and operation.",
+      "industries": [
+        "manufacturing",
+        "research_education"
+      ],
+      "family": "assembly_fastening",
+      "setting": "Experimental aircraft assembly research cell",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-trial-aircraft-drilling",
+          "reviewId": "pal-talos-tool-research",
+          "relationship": "partial_task",
+          "rationale": "PAL identifies TALOS drilling trials in the finished Memmo project and its ICRA 2020 research demonstration.",
+          "sourceIds": [
+            "memmo",
+            "icra"
+          ],
+          "limitations": [
+            "Historical research evidence from the 2018–2022 project.",
+            "No accepted production throughput, hole quality or turnkey drilling package established."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-force-controlled-handling-research",
+      "title": "Develop force-controlled humanoid handling",
+      "summary": "Use joint torque feedback and whole-body control to research object and tool handling in a supervised laboratory cell.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "heavy_element_handling",
+      "setting": "Whole-body manipulation research laboratory",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-force-controlled-handling-research",
+          "reviewId": "pal-talos-tool-research",
+          "relationship": "partial_task",
+          "rationale": "PAL specifies torque control, configurable grippers and 6 kg per fully extended arm for TALOS.",
+          "sourceIds": [
+            "product"
+          ],
+          "limitations": [
+            "Research-platform capabilities are not a completed task implementation.",
+            "Review torque-sensor exceptions, tooling mass and the experiment-specific controller."
+          ]
+        }
+      ]
+    }
+  ]
+}

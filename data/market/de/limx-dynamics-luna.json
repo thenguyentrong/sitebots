@@ -1,0 +1,243 @@
+{
+ "schemaVersion": 1,
+ "id": "limx-dynamics-luna",
+ "maker": "LimX Dynamics",
+ "makerCountry": "CN",
+ "model": "Luna",
+ "variant": null,
+ "name": "LimX Dynamics Luna",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.limxdynamics.com/en/products/luna",
+ "summary": "A 1.6 m show and event humanoid with 27 joints and about 4 h runtime, built for dance and interaction, not for work tasks.",
+ "launched": "2026",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Funduino (92,900 €, 21 working days), Bipedal (92,900 €, about 4 weeks) and Reichelt (92,939 €, about 5 weeks, business customers only) sell Luna, all incl. VAT.",
+  "sourceIds": [
+   "s3",
+   "s5",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 92900,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s3",
+   "note": null
+  },
+  "priceOther": null,
+  "leadTime": "21 working days (Funduino); about 4 weeks (Bipedal); about 5 weeks (Reichelt)",
+  "sellers": [
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduinoshop.com/robotik/limx-dynamics/luna/limx-dynamics-luna",
+    "contactUrl": "https://funduinoshop.com/impressum",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 92900,
+    "priceBasis": "gross",
+    "sourceId": "s3",
+    "note": null
+   },
+   {
+    "name": "reichelt elektronik GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.reichelt.de/de/de/shop/produkt/limx_luna_-_interaktiver_humanoider_roboter-439638",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 92939,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "Special order item; about 5 weeks; delivered only to businesses, institutions and authorities."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.bipedal.de/https/wwwbipedalde/LimX-Dynamics-Luna",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 92900,
+    "priceBasis": "gross",
+    "sourceId": "s5",
+    "note": "92,900 € incl. 19% VAT, shown as \"Sofort verfügbar\", delivery about 4 weeks."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.6,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 56,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Active DoF",
+   "value": 27,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Arm DoF",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Max arm payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max walking speed",
+   "value": 1.4,
+   "unit": "m/s",
+   "conditions": "stated as 5 km/h",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 4,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s2"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Battery swapping",
+   "value": true,
+   "unit": null,
+   "conditions": "2 slide-out modules",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Standard hands are fist-shaped and cannot grasp; a 5-finger hand is optional.",
+   "Entertainment and interaction robot (dance, group shows), not for construction work."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-2-1.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/luna",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics Luna humanoid walking, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-11-4.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/luna",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics Luna dancing on a round platform in a white room with curved fin walls",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://limx-video-oss.limxdynamics.com/limx-website/products/luna/luna-11-2.png",
+   "pageUrl": "https://www.limxdynamics.com/en/products/luna",
+   "credit": "LimX Dynamics",
+   "alt": "LimX Dynamics Luna gesturing toward sculptures in a museum gallery",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.limxdynamics.com/en/products/luna",
+   "title": "LimX Luna product page",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.limxdynamics.com/en/products/luna/spec",
+   "title": "LimX Luna specifications",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://funduinoshop.com/robotik/limx-dynamics/luna/limx-dynamics-luna",
+   "title": "LimX Dynamics Luna",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.reichelt.de/de/de/shop/produkt/limx_luna_-_interaktiver_humanoider_roboter-439638",
+   "title": "LimX Luna - interaktiver humanoider Roboter",
+   "publisher": "reichelt elektronik GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.bipedal.de/https/wwwbipedalde/LimX-Dynamics-Luna",
+   "title": "LimX Dynamics Luna",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Launch date: product images on the LimX site are dated May 2026; exact launch not confirmed."
+ ],
+ "checkedAt": "2026-10-02"
+}

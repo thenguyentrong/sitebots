@@ -1,0 +1,288 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-h2",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "H2",
+ "variant": "Basic (no secondary development)",
+ "name": "Unitree H2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/H2",
+ "summary": "A 1.82 m, 70 kg full-size humanoid with 7-DOF arms rated for about 7 kg each; the basic version has no hands and is not programmable.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Not yet delivered in Germany: RobotShop EU takes pre-orders, QUADRUPED Robotics lists it from 28.12.2026 (42,000 EUR net) and Unitree's store shows it unavailable; Generation Robots says \"delivery within 8 weeks\" but shows no stock.",
+  "sourceIds": [
+   "s3",
+   "s2",
+   "s4",
+   "s7"
+  ],
+  "priceEur": {
+   "amount": 47600,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "RobotShop EU pre-order price, tax included."
+  },
+  "priceOther": {
+   "amount": 29900,
+   "currency": "USD",
+   "market": "Unitree list price (tax and shipping excluded)",
+   "sourceId": "s1"
+  },
+  "leadTime": "QUADRUPED Robotics: available from 28.12.2026; Generation Robots: \"delivery within 8 weeks\"",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-h2-humanoid-robot-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 47600,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "H2-EU basic, no dexterous hands, no secondary development; pre-order, phased deliveries announced from Q2 2026."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404449-unitree-robotics-h2-humanoid-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Lists H2 BASIC with EDU versions; page 'from' price EUR 45,000 excl. VAT; 'delivery within 8 weeks'."
+   },
+   {
+    "name": "MYBOTSHOP GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Unitree-H2-Humanoid-Robot",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Price on request. MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/Unitree-H2-Humanoid-Robot",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 42000,
+    "priceBasis": "net",
+    "sourceId": "s7",
+    "note": "Variant \"H2\" 42,000 EUR net; \"available from 28.12.2026\"."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.82,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total degrees of freedom",
+   "value": 31,
+   "unit": null,
+   "conditions": "body joints, without hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "rated about 7 kg; peak about 15 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 972,
+   "unit": "Wh",
+   "conditions": "15 Ah, quick release",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 3,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Wide-angle humanoid binocular camera; microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "Intel Core i5 (platform)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": false,
+   "unit": null,
+   "conditions": "basic H2",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Basic H2 ships without dexterous hands and without secondary development.",
+   "No IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/f951770ea2e74197a6b0c089d13efc5a_800x800.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree H2 humanoid robot, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/24585f511f8b4ba086c733abed084ea2_1126x1320.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree H2 humanoid upper body with its bionic face, front three-quarter view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "When RobotShop EU and QUADRUPED Robotics actually start delivering the H2 in Germany."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/H2",
+   "title": "Unitree H2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-h2-humanoid-robot-eu",
+   "title": "Unitree H2 Humanoid Robot (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404449-unitree-robotics-h2-humanoid-robot.html",
+   "title": "Unitree H2 humanoid robot at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.mybotshop.de/Unitree-H2-Humanoid-Robot",
+   "title": "Unitree H2 at MYBOTSHOP",
+   "publisher": "MYBOTSHOP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.quadruped.de/Unitree-H2-Humanoid-Robot",
+   "title": "Unitree H2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

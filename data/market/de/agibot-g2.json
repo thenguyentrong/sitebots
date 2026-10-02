@@ -1,0 +1,345 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-g2",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "G2",
+ "variant": null,
+ "name": "AGIBOT G2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agibot.com/products/G2",
+ "summary": "A wheeled industrial humanoid with two 7-axis torque-sensing arms (5 kg each), IP42 and swappable batteries for precise assembly and handling at a workstation; orderable online in the EU.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 140300,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s7",
+   "note": "Generation Robots \"from\" price excl. VAT; RobotShop Europe shows EUR 149,291.45 incl. VAT."
+  },
+  "priceOther": null,
+  "leadTime": "Generation Robots: delivery within 4 to 6 weeks; RobotShop: on demand",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "productUrl": "https://www.generationrobots.com/en/404469-agibot-g2-wheeled-humanoid-robot.html",
+    "priceEur": 140300,
+    "priceBasis": "net",
+    "sourceId": "s7",
+    "note": "\"From\" price EUR 140,300 excl. VAT (EUR 168,360 incl. French VAT); add-to-cart and quote request; delivery within 4 to 6 weeks. Ships within the EU."
+   },
+   {
+    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
+    "country": "CA",
+    "role": "reseller",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": "+33 8 01 90 23 42",
+    "productUrl": "https://eu.robotshop.com/products/agibot-g2-wheeled-humanoid-robot-eu",
+    "priceEur": 149291.45,
+    "priceBasis": "gross",
+    "sourceId": "s9",
+    "note": "Price shown with VAT for Germany; on-demand item (ordered from the supplier) with add-to-cart and quote request."
+   },
+   {
+    "name": "Tekpoint GmbH",
+    "country": "AT",
+    "role": "distributor",
+    "productUrl": "https://tekpoint.com/robotics",
+    "contactUrl": "https://tekpoint.com/robotics",
+    "email": "robotics@tekpoint.com",
+    "phone": "+43 1 3616670",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Lists AGIBOT A2 Ultra, X2 Ultra and G2."
+   },
+   {
+    "name": "AGIBOT",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.agibot.com/Contact/Business",
+    "email": "sales@agibot.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Direct enquiries through AGIBOT's business form."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Orderable online with delivery to Germany: Generation Robots (France) from EUR 140,300 excl. VAT, delivery 4-6 weeks; RobotShop Europe EUR 149,291.45 incl. VAT, on demand. Tekpoint (Vienna), AGIBOT's European distributor, quotes on request.",
+  "sourceIds": [
+   "s7",
+   "s9",
+   "s8",
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.225-1.795",
+   "unit": "m",
+   "conditions": "adjustable; 640 x 760 mm footprint",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 185,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Active DOF",
+   "value": 25,
+   "unit": null,
+   "conditions": "neck 3, arms 2 x 7, waist and leg 5, chassis 3; hands extra",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm rated load",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "per arm, rated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Chassis speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "omnidirectional, crab walk, in-place rotation",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1652,
+   "unit": "Wh",
+   "conditions": "2 batteries",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 4,
+   "unit": "h",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "at most; direct charging, swapping or auto-recharge with optional dock",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP42",
+   "unit": null,
+   "conditions": "full machine",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson T5000 (2070 TFLOPS FP4)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 x 3D LiDAR, stereo camera, 3 fisheye, head RGB-D, 2 wrist RGB-D, 8 ultrasonic, joint torque sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": "IP42",
+  "sdk": "Secondary development supported",
+  "sourceIds": [
+   "s1",
+   "s7",
+   "s9"
+  ],
+  "notes": [
+   "Dexterous hands and the OmniPicker gripper are optional extras on AGIBOT's page and at Generation Robots; RobotShop's package list names \"Hands\" while its spec text calls them optional, so confirm the end effector with the seller.",
+   "Wheeled base for level floors; the 2-DOF leg folds and lifts the torso."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.agibot.com/public/static/index/en/images/G2/G2One-img1.jpg",
+   "pageUrl": "https://www.agibot.com/products/G2",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT G2 wheeled humanoid waving, whole robot on its mobile base, dark studio background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.agibot.com/public/uploads/images/20251031/afa47f3a6d43c28b95a1534ed8310ad7.png",
+   "pageUrl": "https://www.agibot.com/products/G2",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT G2 wheeled humanoid on its rounded mobile base, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sub-millimetre precision assembly with force-controlled arms",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Live precision manipulation demonstration",
+   "stage": "demo",
+   "where": "IFA 2026, Berlin, Germany",
+   "date": "2026-09",
+   "sourceId": "s6",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Portfolio launch with live demonstrations",
+   "stage": "demo",
+   "where": "Munich, Germany",
+   "date": "2026-02",
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agibot.com/products/G2",
+   "title": "AGIBOT G2 product page and specification table",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://tekpoint.com/robotics",
+   "title": "Tekpoint: European regional distributor for AGIBOT robots",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.agibot.com/article/231/detail/43.html",
+   "title": "AGIBOT and Minth Group Launch Full Robot Portfolio in Germany",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://tekpoint.com/en/impressum/",
+   "title": "Tekpoint imprint",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.agibot.com/Contact/Business",
+   "title": "AGIBOT business contact and product enquiry form",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.agibot.com/article/231/detail/96.html",
+   "title": "AGIBOT Showcases Embodied AI Robots in Action at IFA 2026",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.generationrobots.com/en/404469-agibot-g2-wheeled-humanoid-robot.html",
+   "title": "AGIBOT G2 Wheeled Humanoid Robot (Generation Robots)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.generationrobots.com/en/content/3-terms-and-conditions-of-use",
+   "title": "Generation Robots terms of sale (delivery within the EU)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://eu.robotshop.com/products/agibot-g2-wheeled-humanoid-robot-eu",
+   "title": "AgiBot G2 Wheeled Humanoid Robot (EU) (RobotShop Europe)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which end effector, if any, is included at each seller's price."
+ ],
+ "checkedAt": "2026-10-02"
+}

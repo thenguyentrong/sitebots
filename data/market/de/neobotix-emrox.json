@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "neobotix-emrox",
+ "maker": "Neobotix",
+ "makerCountry": "DE",
+ "model": "EMROX",
+ "variant": null,
+ "name": "Neobotix EMROX",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-emrox",
+ "summary": "A configurable mobile manipulator: any ROX platform (differential, trike or omnidirectional) with a cobot arm, up to 200 kg platform payload and up to 2 m/s.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Built and sold by Neobotix GmbH in Germany; price on request via the maker's contact page or info@neobotix.de.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Neobotix GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-emrox",
+    "contactUrl": "https://www.neobotix-robots.com/contact/contact-details",
+    "email": "info@neobotix.de",
+    "phone": "+49 7131 89969-10",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "German maker; quotes on request."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 200,
+   "unit": "kg",
+   "conditions": "up to (product page; overview page says up to 400 kg)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "up to, depending on the arm fitted",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Minimum dimensions",
+   "value": "750 x 680 x 607",
+   "unit": "mm",
+   "conditions": "L x W x H",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "AGM 48 V 26-78 Ah or LiFePO4 48 V 21-63 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 safety laser scanners, 360° field of view; Sick Flexi Soft safety controller",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2; PlatformPilot for the platform",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 25,
+  "carryPayloadKg": 200,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 2, PlatformPilot",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runtime depends on the battery chosen.",
+   "Kinematics, arm and options are configured per order."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.neobotix-robots.com/fileadmin/images/produkte/Mobile_Manipulatoren/EMROX/Manipulator-EMROX-Hauptansicht-Render-UR5.jpg",
+   "pageUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-emrox",
+   "credit": "Neobotix",
+   "alt": "Neobotix EMROX ROX platform with UR5 arm",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.neobotix-robots.com/fileadmin/user_upload/DSC00889_Freigestellt.jpg",
+   "pageUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-emrox",
+   "credit": "Neobotix",
+   "alt": "Neobotix EMROX: ROX platform with a Universal Robots arm, three-quarter view.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.neobotix-robots.com/fileadmin/user_upload/DSC00838_Freigestellt.jpg",
+   "pageUrl": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-emrox",
+   "credit": "Neobotix",
+   "alt": "Neobotix EMROX: ROX platform with a Universal Robots arm carrying a large frame gripper.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for research and industrial mobile manipulation with ROS 2 or PlatformPilot",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.neobotix-robots.com/products/mobile-manipulators/mobile-manipulator-emrox",
+   "title": "EMROX product page",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.neobotix-robots.com/contact/contact-details",
+   "title": "Contact details",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Prices are not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

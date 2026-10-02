@@ -1,0 +1,1470 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Construction research batch A: seven drilling, floor-layout, rebar, vertical-material and masonry configurations. Technical statements, reported deployment and German buying access are separate. Research is not a site-suitability approval. No external enquiries, database writes or deployment.",
+  "records": [
+    {
+      "id": "hilti-jaibot-drilling",
+      "name": "Hilti Jaibot — supervised drilling system",
+      "manufacturer": "Hilti",
+      "robotClass": "dedicated_robot",
+      "workflowId": "drilling_fastening",
+      "exactConfiguration": "Jaibot with Hilti PLT 300 positioning, PLC 400 controller, drilling/marking equipment and extraction. Published 2022 wall/composite-ceiling capability; supplied hardware, tooling and upgrade revision need quotation confirmation.",
+      "description": "Drills planned installation holes from digital coordinates; human setup and repositioning remain part of the job.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "jaibot-de",
+          "url": "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot",
+          "title": "Jaibot German application and enquiry page",
+          "publisher": "Hilti",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "jaibot-2022",
+          "url": "https://www.hilti.de/content/company/press-releases/local/bohrroboter-jaibot",
+          "title": "Jaibot functions, October 2022",
+          "publisher": "Hilti",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "jaibot-update",
+          "url": "https://www.hilti.de/content/dam/images/e3/mo-de/PI_Hilti_Jaibot_neue_Funktionalit%C3%A4ten_20220621.pdf",
+          "title": "Jaibot function update, June 2022",
+          "publisher": "Hilti",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "jaibot-us",
+          "url": "https://www.hilti.com/content/hilti/W1/US/en/business/business/trends/jaibot.html",
+          "title": "Jaibot system and battery claim",
+          "publisher": "Hilti",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "jaibot-malmo",
+          "url": "https://reports.hilti.group/2021/our-strategy/direct-customer-relationship/jaibot-saves-workers-shoulders",
+          "title": "Jaibot at Malmö Hospital, 2021 report",
+          "publisher": "Hilti",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot",
+        "https://www.hilti.de/content/company/press-releases/local/bohrroboter-jaibot",
+        "https://www.hilti.de/content/dam/images/e3/mo-de/PI_Hilti_Jaibot_neue_Funktionalit%C3%A4ten_20220621.pdf",
+        "https://www.hilti.com/content/hilti/W1/US/en/business/business/trends/jaibot.html",
+        "https://reports.hilti.group/2021/our-strategy/direct-customer-relationship/jaibot-saves-workers-shoulders"
+      ],
+      "specs": [
+        {
+          "key": "working_height_max_m",
+          "value": 4.8,
+          "unit": "m",
+          "semanticLabel": "Published drilling/marking height ceiling",
+          "conditions": [
+            "2022 German feature configuration; obtain current reach envelope."
+          ],
+          "sourceIds": [
+            "jaibot-2022",
+            "jaibot-update"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_height_min_m",
+          "value": null,
+          "unit": "m",
+          "semanticLabel": "Minimum wall-drilling height unresolved",
+          "conditions": [
+            "German releases differ: 0.9 m in June versus 1.2 m in October 2022."
+          ],
+          "sourceIds": [
+            "jaibot-2022",
+            "jaibot-update"
+          ],
+          "verification": "unknown"
+        },
+        {
+          "key": "runtime_h_nominal",
+          "value": 8,
+          "unit": "h",
+          "semanticLabel": "Published operating time between charges, up to",
+          "conditions": [
+            "US application page; duty cycle and exact German supplied battery not established."
+          ],
+          "sourceIds": [
+            "jaibot-us"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": null,
+          "unit": null,
+          "semanticLabel": "Ingress rating not established",
+          "conditions": [
+            "No exact-unit ingress specification reviewed."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        },
+        {
+          "key": "hole_diameter_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Supported hole-diameter range not established",
+          "conditions": [
+            "Tool, substrate and current drilling package must be confirmed."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Overhead drilling for building services at Malmö Hospital.",
+          "configuration": "Jaibot used with the Skanska site team in 2021; delivered revision and later wall-drilling upgrades unspecified.",
+          "operatingMode": "Supervised BIM-to-field drilling with human site preparation.",
+          "sourceIds": [
+            "jaibot-malmo"
+          ],
+          "limitations": [
+            "Manufacturer case report, not an independent productivity audit.",
+            "This historical overhead deployment does not prove current wall, shaft or anchor-setting performance."
+          ]
+        },
+        {
+          "stage": "manufacturer_claim",
+          "task": "Drilling concrete walls and composite/concrete ceilings.",
+          "configuration": "Jaibot with the 2022 feature package.",
+          "operatingMode": "Remote positioning and automated drilling.",
+          "sourceIds": [
+            "jaibot-2022",
+            "jaibot-update"
+          ],
+          "limitations": [
+            "Exact accessible work envelope and hole schedule require a site trial."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Hilti Deutschland — Jaibot enquiry",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.hilti.de/content/landing-page/local/jaibot-semi-automated-drilling-robot"
+          },
+          "sourceIds": [
+            "jaibot-de"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German application enquiry is published; unit availability, lead time and commercial model require a quote.",
+          "authorizationStatus": "Direct manufacturer route; no reseller authorization claimed.",
+          "caveats": [
+            "The reviewed German landing page is the enquiry route; press contacts are not used as sales contacts."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The June 2022 wall-drilling release states 0.9–4.8 m; the October 2022 release states 1.2–4.8 m. The lower limit remains unknown.",
+        "Public application pages do not identify a current orderable SKU or prove that every unit includes the 2022 upgrade."
+      ],
+      "unknowns": [
+        "Current SKU, upgrade package and German delivery date.",
+        "Hole diameter/depth limits by substrate, rebar avoidance process, survey acceptance tolerance and service terms.",
+        "Complete installation productivity including repositioning, batteries, exceptions and anchor fitting."
+      ],
+      "operatingMode": {
+        "value": "Operator-guided positioning followed by automatic drilling of reachable planned holes under supervision.",
+        "sourceIds": [
+          "jaibot-de",
+          "jaibot-us"
+        ],
+        "caveats": [
+          "Survey reference and coordinated drilling file are required.",
+          "Hole making does not establish anchor installation, torque verification or a complete MEP installation."
+        ]
+      },
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "dusty-fieldprinter-2-layout",
+      "name": "Dusty FieldPrinter 2 — tracked floor layout",
+      "manufacturer": "Dusty Robotics",
+      "robotClass": "dedicated_robot",
+      "workflowId": "layout_marking",
+      "exactConfiguration": "FieldPrinter 2 (FP2), Leica AT500/AT930/AT930-NRT tracking kit as supplied, radio, iPad App/Portal and Milwaukee M18 battery. Tracker choice changes environmental limits.",
+      "description": "Prints coordinated layout on a prepared floor; survey control and an operator remain necessary.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "dusty-spec",
+          "url": "https://support.dustyrobotics.com/hc/en-us/articles/52682349645851-FieldPrinter-Specs",
+          "title": "FP2 technical specification, updated September 21, 2026",
+          "publisher": "Dusty Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "dusty-overview",
+          "url": "https://support.dustyrobotics.com/hc/en-us/articles/53228299459355-What-Is-the-Dusty-FieldPrinter-An-Overview-of-the-Layout-Printing-Robot-and-System",
+          "title": "FieldPrinter system overview, August 2026",
+          "publisher": "Dusty Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "dusty-app",
+          "url": "https://www.dustyrobotics.com/discover/construction-robot",
+          "title": "FP2 applications and reported use",
+          "publisher": "Dusty Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "dusty-contact",
+          "url": "https://www.dustyrobotics.com/contact/contact",
+          "title": "Dusty sales enquiry",
+          "publisher": "Dusty Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://support.dustyrobotics.com/hc/en-us/articles/52682349645851-FieldPrinter-Specs",
+        "https://support.dustyrobotics.com/hc/en-us/articles/53228299459355-What-Is-the-Dusty-FieldPrinter-An-Overview-of-the-Layout-Printing-Robot-and-System",
+        "https://www.dustyrobotics.com/discover/construction-robot",
+        "https://www.dustyrobotics.com/contact/contact"
+      ],
+      "specs": [
+        {
+          "key": "layout_accuracy_mm",
+          "value": 1.6,
+          "unit": "mm",
+          "semanticLabel": "Published absolute print tolerance, ±",
+          "conditions": [
+            "Requires accurate surveyed control; not an as-built survey guarantee."
+          ],
+          "sourceIds": [
+            "dusty-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "weight_kg",
+          "value": 10.4,
+          "unit": "kg",
+          "semanticLabel": "Robot mass including battery",
+          "conditions": [
+            "Excludes tracker, tripod and transport kits."
+          ],
+          "sourceIds": [
+            "dusty-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "line_print_speed_m_s",
+          "value": 0.75,
+          "unit": "m/s",
+          "semanticLabel": "Continuous solid-line printing speed",
+          "conditions": [
+            "Not completed floor area per shift."
+          ],
+          "sourceIds": [
+            "dusty-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_continuous_min",
+          "value": 2,
+          "unit": "h",
+          "semanticLabel": "Published continuous battery runtime, lower end",
+          "conditions": [
+            "Specified 2–3 h per battery; job intensity changes endurance."
+          ],
+          "sourceIds": [
+            "dusty-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_continuous_max",
+          "value": 3,
+          "unit": "h",
+          "semanticLabel": "Published continuous battery runtime, upper end",
+          "conditions": [
+            "Battery swaps and tracker power must be planned."
+          ],
+          "sourceIds": [
+            "dusty-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "Equivalent to IP51",
+          "unit": null,
+          "semanticLabel": "Manufacturer describes ingress equivalence",
+          "conditions": [
+            "Not a reviewed certification; no active rain or standing water."
+          ],
+          "sourceIds": [
+            "dusty-spec"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "print_resolution_dpi",
+          "value": null,
+          "unit": "dpi",
+          "semanticLabel": "Conflicting published print resolution",
+          "conditions": [
+            "Technical support specifies 308 DPI; current application marketing states 600 DPI."
+          ],
+          "sourceIds": [
+            "dusty-spec",
+            "dusty-app"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Repeated multi-trade floor-layout printing on North American construction projects.",
+          "configuration": "Manufacturer application page explicitly names FP2; aggregate installations do not identify each delivered tracker or software revision.",
+          "operatingMode": "Operator-prepared layout and supervised autonomous printing.",
+          "sourceIds": [
+            "dusty-app"
+          ],
+          "limitations": [
+            "Manufacturer reports recurring use; no independent audit of aggregate productivity or exact German deployment was reviewed.",
+            "No drilling, wall erection or anchor fitting is included."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Dusty Robotics — sales enquiry",
+          "market": "North America; Germany not established",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.dustyrobotics.com/contact/contact"
+          },
+          "sourceIds": [
+            "dusty-contact",
+            "dusty-overview"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Manufacturer currently lists North America. German sale, import, training and service coverage are unconfirmed.",
+          "authorizationStatus": "Direct manufacturer enquiry; no German reseller authorization evidence.",
+          "caveats": [
+            "Do not present this as a German stocked product."
+          ]
+        },
+        {
+          "organization": "Dusty Robotics — technical support",
+          "market": "Published manufacturer support; German service scope unknown",
+          "routeType": "service",
+          "contact": {
+            "url": "https://support.dustyrobotics.com/",
+            "email": "support@dustyrobotics.com",
+            "phone": "+1 (510) 210-3658"
+          },
+          "sourceIds": [
+            "dusty-spec"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Existing-customer support contact; deployment and delivery terms not established.",
+          "authorizationStatus": "Manufacturer support contact, not a German sales authorization.",
+          "caveats": []
+        }
+      ],
+      "conflicts": [
+        "FP2 support specification gives 308 DPI and ingress 'Equivalent to IP51'; application marketing gives 600 DPI. Resolution withheld; certification not inferred.",
+        "Support-page content was read through web retrieval, but the later politeFetch metadata request to the overview received HTTP 403 and was not retried or bypassed."
+      ],
+      "unknowns": [
+        "German delivery, conformity package, local support and acceptable procurement model.",
+        "Resolution applicable to the quoted FP2 firmware/hardware revision.",
+        "Accepted job output including survey setup, ink choice, control drift and obstructions."
+      ],
+      "operatingMode": {
+        "value": "Single operator stations the tracker and starts autonomous floor printing.",
+        "sourceIds": [
+          "dusty-overview"
+        ],
+        "caveats": [
+          "Prepared model, surveyed control and tracker visibility are required.",
+          "Flat stable surface and edge protection are still necessary; do not interpret cliff sensors as protection for every opening."
+        ]
+      },
+      "industries": [
+        "construction"
+      ]
+    },
+    {
+      "id": "hp-siteprint-layout",
+      "name": "HP SitePrint — floor-layout system",
+      "manufacturer": "HP",
+      "robotClass": "dedicated_robot",
+      "workflowId": "layout_marking",
+      "exactConfiguration": "HP SitePrint robot, tracked prism, compatible robotic total station, prepared DXF and suitable ink. Exact prism, total-station accuracy class and Value Pack revision must be specified; SMR/High-Accuracy upgrades are not assumed.",
+      "description": "Prints floor layout under operator setup and total-station tracking; additional work still needs qualified trades.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "hp-product",
+          "url": "https://www.hp.com/de-de/printers/site-print/layout-robot.html",
+          "title": "SitePrint German product and configuration conditions",
+          "publisher": "HP",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "hp-faq",
+          "url": "https://www.hp.com/de-de/printers/site-print/layout-robot/faq.html",
+          "title": "SitePrint German FAQ",
+          "publisher": "HP",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "hp-cases",
+          "url": "https://www.hp.com/de-de/printers/site-print/layout-robot/case-studies.html",
+          "title": "SitePrint project reports",
+          "publisher": "HP",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "hp-buy",
+          "url": "https://www.hp.com/de-de/printers/site-print/layout-robot/where-to-buy.html",
+          "title": "German SitePrint enquiry and dealer routes",
+          "publisher": "HP",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "hp-nestle",
+          "url": "https://g-nestle.de/en/products/markierroboter/26101000",
+          "title": "SitePrint listing PID 26101000 and contact",
+          "publisher": "Gottlieb NESTLE GmbH",
+          "kind": "seller",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 2
+        },
+        {
+          "id": "hp-sheet-unavailable",
+          "url": "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08929148",
+          "title": "German-page linked datasheet; retrieval timed out",
+          "publisher": "HP",
+          "kind": "manufacturer",
+          "retrievalMode": "unavailable",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.hp.com/de-de/printers/site-print/layout-robot.html",
+        "https://www.hp.com/de-de/printers/site-print/layout-robot/faq.html",
+        "https://www.hp.com/de-de/printers/site-print/layout-robot/case-studies.html",
+        "https://www.hp.com/de-de/printers/site-print/layout-robot/where-to-buy.html",
+        "https://g-nestle.de/en/products/markierroboter/26101000",
+        "https://h20195.www2.hp.com/v2/GetPDF.aspx/c08929148"
+      ],
+      "specs": [
+        {
+          "key": "runtime_h_printing",
+          "value": 4,
+          "unit": "h",
+          "semanticLabel": "Continuous printing per supplied battery, up to",
+          "conditions": [
+            "FAQ describes two batteries; 8 h needs a swap and is not one-battery endurance."
+          ],
+          "sourceIds": [
+            "hp-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "operators_required",
+          "value": 1,
+          "unit": "person",
+          "semanticLabel": "Published print-operation staffing",
+          "conditions": [
+            "Excludes model coordination, survey verification and downstream trades."
+          ],
+          "sourceIds": [
+            "hp-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "weight_kg",
+          "value": 9,
+          "unit": "kg",
+          "semanticLabel": "Seller-reported robot weight",
+          "conditions": [
+            "Nestle listing, excluding transport case; not verified against a fetched manufacturer datasheet."
+          ],
+          "sourceIds": [
+            "hp-nestle"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "ip_rating",
+          "value": "IP44",
+          "unit": null,
+          "semanticLabel": "Seller-reported protection class",
+          "conditions": [
+            "Current configuration and manufacturer documentation need confirmation; does not permit rain."
+          ],
+          "sourceIds": [
+            "hp-nestle"
+          ],
+          "verification": "reported"
+        },
+        {
+          "key": "layout_accuracy_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Base-package layout tolerance unresolved",
+          "conditions": [
+            "HP ±2 mm claim requires SMR prism, high-accuracy mode and a 1-arcsecond station at 5–30 m; seller lists ±3 mm for an unspecified package."
+          ],
+          "sourceIds": [
+            "hp-product",
+            "hp-nestle"
+          ],
+          "verification": "unknown"
+        },
+        {
+          "key": "obstacle_height_mm",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Traversable obstacle-height limit unresolved",
+          "conditions": [
+            "German FAQ states both 2 cm and 5 cm; no unqualified limit retained."
+          ],
+          "sourceIds": [
+            "hp-faq"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Interior wall layout on multiple projects; exhibition layout at Messe Düsseldorf.",
+          "configuration": "HP reports SitePrint work by Valley Interior Systems and ArtLab Studios; exact prism/firmware revision is not identified.",
+          "operatingMode": "Operator-managed floor printing with survey reference.",
+          "sourceIds": [
+            "hp-cases"
+          ],
+          "limitations": [
+            "Reported project use does not verify every current upgrade package or a site's tolerances.",
+            "Published relative productivity is not a guaranteed saving and is omitted from the specs."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "HP Deutschland — SitePrint enquiry",
+          "market": "Germany",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.hp.com/de-de/printers/site-print/layout-robot/where-to-buy.html"
+          },
+          "sourceIds": [
+            "hp-buy"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German enquiry and dealer-search routes are published; exact delivery and trial terms unknown.",
+          "authorizationStatus": "Direct manufacturer route.",
+          "caveats": [
+            "Some page text still mentions early access; confirm the current commercial offer."
+          ]
+        },
+        {
+          "organization": "Gottlieb NESTLE GmbH",
+          "market": "Germany",
+          "routeType": "reseller",
+          "contact": {
+            "url": "https://g-nestle.de/en/products/markierroboter/26101000",
+            "email": "info@g-nestle.de",
+            "phone": "+49 (0)7443 9637 – 0"
+          },
+          "sourceIds": [
+            "hp-nestle"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Listing offers rental or purchase and service. Live stock, price, included tracker/prism and delivery date are unknown.",
+          "authorizationStatus": "Seller describes itself as a SitePrint Service Point; separate manufacturer authorization was not reviewed.",
+          "caveats": [
+            "PID 26101000 is the seller listing number; do not treat it as HP's exact configuration identifier."
+          ]
+        }
+      ],
+      "conflicts": [
+        "German FAQ contradicts itself on 2 cm versus 5 cm obstacle traversal.",
+        "HP's ±2 mm figure is configuration-dependent; it must not replace a base-package figure without the specified prism, mode and station.",
+        "Seller specs remain reported because the linked manufacturer datasheet could not be retrieved."
+      ],
+      "unknowns": [
+        "Exact quoted prism, total station, firmware/Value Pack, accuracy acceptance and manufacturer ingress specification.",
+        "German delivery, trial, recurring print charges and onsite recovery/service terms."
+      ],
+      "operatingMode": {
+        "value": "One operator sets survey control, file and ink; robot follows its tracked print route.",
+        "sourceIds": [
+          "hp-product",
+          "hp-faq"
+        ],
+        "caveats": [
+          "Maintain line of sight to the total station and validate the coordinate control.",
+          "No active rain or puddles; floor printing is not construction of the marked elements."
+        ]
+      },
+      "industries": [
+        "construction"
+      ]
+    },
+    {
+      "id": "acr-tybot-rebar-tying",
+      "name": "ACR TyBOT — horizontal rebar tying",
+      "manufacturer": "Advanced Construction Robotics",
+      "robotClass": "dedicated_robot",
+      "workflowId": "rebar_tying",
+      "exactConfiguration": "TyBOT truss-based tying system sized to the deck and supported on suitable edge forms/screed rails or an optional rail arrangement; carry-hoist accessories excluded.",
+      "description": "Ties eligible horizontal rebar intersections after bars have been placed; it does not build reinforcement cages.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "tybot-product",
+          "url": "https://www.constructionrobots.com/tybot",
+          "title": "TyBOT product and operating scope",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "tybot-i30",
+          "url": "https://www.constructionrobots.com/news/i-30-crossing",
+          "title": "I-30 Crossing production case",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "acr-contact",
+          "url": "https://www.constructionrobots.com/contact",
+          "title": "ACR manufacturer quote route",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "tybot-sheet-unavailable",
+          "url": "https://cdn.prod.website-files.com/694601eb982190a0a03ecc31/6a72040e781fa97154041616_50-003-0010-C_TyBot_Product_Specs_Sheet.pdf",
+          "title": "Linked TyBOT specification sheet; unavailable to web reader",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "unavailable",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.constructionrobots.com/tybot",
+        "https://www.constructionrobots.com/news/i-30-crossing",
+        "https://www.constructionrobots.com/contact",
+        "https://cdn.prod.website-files.com/694601eb982190a0a03ecc31/6a72040e781fa97154041616_50-003-0010-C_TyBot_Product_Specs_Sheet.pdf"
+      ],
+      "specs": [
+        {
+          "key": "active_tie_rate_per_h",
+          "value": 1200,
+          "unit": "ties/h",
+          "semanticLabel": "Advertised active tying rate, 1,200+",
+          "conditions": [
+            "Uninterrupted tying, not whole-shift output; site work causes downtime."
+          ],
+          "sourceIds": [
+            "tybot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_width_min_ft",
+          "value": 10,
+          "unit": "ft",
+          "semanticLabel": "Published minimum configurable working width",
+          "conditions": [
+            "Truss and support configuration required."
+          ],
+          "sourceIds": [
+            "tybot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_width_max_ft",
+          "value": 117,
+          "unit": "ft",
+          "semanticLabel": "Published maximum configurable working width",
+          "conditions": [
+            "Not free-ranging coverage; engineering setup required."
+          ],
+          "sourceIds": [
+            "tybot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_before_refuel",
+          "value": 10,
+          "unit": "h",
+          "semanticLabel": "Published operation before refuelling, up to",
+          "conditions": [
+            "Fuel endurance, not battery runtime or guaranteed effective tie time."
+          ],
+          "sourceIds": [
+            "tybot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "bar_intersection_limit",
+          "value": "#8 × #9",
+          "unit": null,
+          "semanticLabel": "Published maximum crossing bar designations",
+          "conditions": [
+            "US bar nomenclature; do not silently convert into German reinforcement acceptance."
+          ],
+          "sourceIds": [
+            "tybot-product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Bridge-deck mat tying at I-30 Crossing, September 2023–April 2024.",
+          "configuration": "TyBOT working with the rebar contractor's site crew; historical unit revisions unspecified.",
+          "operatingMode": "Supervised automated deck tying alongside manual installation.",
+          "sourceIds": [
+            "tybot-i30"
+          ],
+          "limitations": [
+            "Manufacturer reports sustained production, including inactive equipment time; active rate is not shift rate.",
+            "The case page contains inconsistent aggregate totals, so no project throughput KPI is promoted to specification.",
+            "No German code acceptance or delivery demonstrated."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Advanced Construction Robotics — TyBOT quote",
+          "market": "United States; German deployment not established",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.constructionrobots.com/contact",
+            "phone": "+1 412-756-3360"
+          },
+          "sourceIds": [
+            "acr-contact",
+            "tybot-product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Manufacturer publishes quote/subcontract routes and a US coverage list. German shipping, service and lead time unknown.",
+          "authorizationStatus": "Direct manufacturer route; no German authorized distributor identified.",
+          "caveats": [
+            "Confirm whether sale, supervised service or a certified subcontractor is appropriate for the project."
+          ]
+        }
+      ],
+      "conflicts": [
+        "I-30 case body and lower summary show different total ties and deck area; retained as deployment evidence without importing inconsistent KPIs.",
+        "Current web specification sheet could not be read; product-page values remain manufacturer statements, not independently checked engineering limits."
+      ],
+      "unknowns": [
+        "German delivery, conformity documentation and approved reinforcement/tie schedule.",
+        "Exact current model/revision, load support calculations, weather limits and duty-cycle costs."
+      ],
+      "operatingMode": {
+        "value": "Automatic intersection detection and tying within its rail/truss work zone, monitored by a robot supervisor.",
+        "sourceIds": [
+          "tybot-product"
+        ],
+        "caveats": [
+          "Crew places bars and performs unsupported intersections and other installation steps.",
+          "Truss support, access, tie pattern and reinforcement geometry need project review."
+        ]
+      },
+      "industries": [
+        "construction",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "acr-ironbot-rebar-placement",
+      "name": "ACR IronBOT — bridge-deck bar placement",
+      "manufacturer": "Advanced Construction Robotics",
+      "robotClass": "dedicated_robot",
+      "workflowId": "material_handling",
+      "exactConfiguration": "IronBOT truss/rail bar-placement system with operator transmitter and a robot supervisor who singulates bars; configured to deck width. TyBOT tying system is separate.",
+      "description": "Moves and places transverse or longitudinal bridge-deck bars; it is not a rebar-tying or cage-assembly robot.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "ironbot-product",
+          "url": "https://www.constructionrobots.com/ironbot",
+          "title": "IronBOT placement system and human roles",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ironbot-port",
+          "url": "https://www.constructionrobots.com/news/port-st-lucie-bridge",
+          "title": "Port St. Lucie combined IronBOT/TyBOT production case",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "acr-contact",
+          "url": "https://www.constructionrobots.com/contact",
+          "title": "ACR manufacturer quote route",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "ironbot-sheet-unavailable",
+          "url": "https://cdn.prod.website-files.com/694601eb982190a0a03ecc31/69a0d402c686fc94c2267b7a_IronBOT%20Specifications%20Sheet%202025.pdf",
+          "title": "Linked IronBOT 2025 specification sheet; unavailable to web reader",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "unavailable",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "acr-home",
+          "url": "https://www.constructionrobots.com/",
+          "title": "ACR high-level automation summary",
+          "publisher": "Advanced Construction Robotics",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.constructionrobots.com/ironbot",
+        "https://www.constructionrobots.com/news/port-st-lucie-bridge",
+        "https://www.constructionrobots.com/contact",
+        "https://cdn.prod.website-files.com/694601eb982190a0a03ecc31/69a0d402c686fc94c2267b7a_IronBOT%20Specifications%20Sheet%202025.pdf",
+        "https://www.constructionrobots.com/"
+      ],
+      "specs": [
+        {
+          "key": "placement_rate_lb_h",
+          "value": 5000,
+          "unit": "lb/h",
+          "semanticLabel": "Manufacturer's published average bar-placement rate",
+          "conditions": [
+            "Material throughput, not payload capacity or guaranteed shift output."
+          ],
+          "sourceIds": [
+            "ironbot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_width_min_ft",
+          "value": 27,
+          "unit": "ft",
+          "semanticLabel": "Minimum configurable working width",
+          "conditions": [
+            "Deck-support setup required."
+          ],
+          "sourceIds": [
+            "ironbot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "working_width_max_ft",
+          "value": 117,
+          "unit": "ft",
+          "semanticLabel": "Maximum configurable working width",
+          "conditions": [
+            "Truss and site engineering required."
+          ],
+          "sourceIds": [
+            "ironbot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "bar_length_min_ft",
+          "value": 9,
+          "unit": "ft",
+          "semanticLabel": "Published minimum placed-bar length",
+          "conditions": [
+            "Within supported transverse/longitudinal bar configuration."
+          ],
+          "sourceIds": [
+            "ironbot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "bar_length_max_ft",
+          "value": 60,
+          "unit": "ft",
+          "semanticLabel": "Published maximum placed-bar length",
+          "conditions": [
+            "Confirm bar diameter, coating and deflection limits."
+          ],
+          "sourceIds": [
+            "ironbot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "payload_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Per-lift payload not established",
+          "conditions": [
+            "Do not treat 5,000 lb/h throughput as lifting capacity."
+          ],
+          "sourceIds": [],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Rebar placement on the Port St. Lucie bridge project in February 2023.",
+          "configuration": "IronBOT used alongside TyBOT and a five-person contractor crew; current unit revision not specified.",
+          "operatingMode": "Supervised bar handling with separate tying and remaining manual work.",
+          "sourceIds": [
+            "ironbot-port"
+          ],
+          "limitations": [
+            "Manufacturer production report, not an independent audit.",
+            "Combined-crew savings cannot be assigned to IronBOT alone.",
+            "Placement evidence does not establish tying or cage-fabrication capability."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Advanced Construction Robotics — IronBOT quote",
+          "market": "United States; German deployment not established",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.constructionrobots.com/contact",
+            "phone": "+1 412-756-3360"
+          },
+          "sourceIds": [
+            "acr-contact",
+            "ironbot-product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Product page offers a Robot-as-a-Service route through its programme; German supply and onsite support unknown.",
+          "authorizationStatus": "Direct manufacturer route; no German reseller authorization established.",
+          "caveats": [
+            "Confirm project acceptance and crew responsibilities before considering procurement."
+          ]
+        }
+      ],
+      "conflicts": [
+        "ACR's home-page summary can imply automated singulation, while the current IronBOT product page explicitly assigns bar singulation to the supervisor; this record retains the explicit human task.",
+        "Linked 2025 specification PDF could not be retrieved; no lifting-capacity value was inferred."
+      ],
+      "unknowns": [
+        "Per-lift load capacity, exact quoted bar limits and current hardware revision.",
+        "German delivery, compliance documents, service mobilisation and total project cost.",
+        "A dedicated existing use-case record for bridge-deck bar placement."
+      ],
+      "operatingMode": {
+        "value": "Supervisor sets first position and spacing and singulates bars; subsequent positioning and placement are automated.",
+        "sourceIds": [
+          "ironbot-product"
+        ],
+        "caveats": [
+          "Human bar separation remains explicit in the current product description.",
+          "Tying, unsupported bar work and deck preparation remain outside this configuration."
+        ]
+      },
+      "industries": [
+        "construction",
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "kewazo-liftbot-material-lifting",
+      "name": "KEWAZO LIFTBOT — rail-guided material lifting",
+      "manufacturer": "KEWAZO",
+      "robotClass": "dedicated_robot",
+      "workflowId": "material_handling",
+      "exactConfiguration": "LIFTBOT battery lifting unit, site-engineered vertical rail and selected scaffold/general-material platform; platform payload limits must be supplied for the quoted setup.",
+      "description": "Moves materials vertically while people load, unload and perform erection, dismantling or installation.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "liftbot-product",
+          "url": "https://www.kewazo.com/product",
+          "title": "LIFTBOT current product parameters",
+          "publisher": "KEWAZO",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "liftbot-faq",
+          "url": "https://www.kewazo.com/faq",
+          "title": "LIFTBOT engineering and operation FAQ",
+          "publisher": "KEWAZO",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "liftbot-basf",
+          "url": "https://www.kewazo.com/blog/liftbot-replaced-a-crane-at-basf",
+          "title": "LIFTBOT scaffold dismantling and material transport at BASF",
+          "publisher": "KEWAZO",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "liftbot-contact",
+          "url": "https://www.kewazo.com/contact",
+          "title": "KEWAZO manufacturer enquiry",
+          "publisher": "KEWAZO",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "liftbot-legal",
+          "url": "https://www.kewazo.com/legal_notice",
+          "title": "KEWAZO German office and published email",
+          "publisher": "KEWAZO",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.kewazo.com/product",
+        "https://www.kewazo.com/faq",
+        "https://www.kewazo.com/blog/liftbot-replaced-a-crane-at-basf",
+        "https://www.kewazo.com/contact",
+        "https://www.kewazo.com/legal_notice"
+      ],
+      "specs": [
+        {
+          "key": "vertical_speed_m_min",
+          "value": 42,
+          "unit": "m/min",
+          "semanticLabel": "Published vertical travel speed",
+          "conditions": [
+            "Not loaded cycle throughput including handoffs."
+          ],
+          "sourceIds": [
+            "liftbot-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "certified_height_m",
+          "value": 50,
+          "unit": "m",
+          "semanticLabel": "Manufacturer-stated certified working height",
+          "conditions": [
+            "Certificate itself not independently reviewed; higher installations need separate assessment."
+          ],
+          "sourceIds": [
+            "liftbot-product",
+            "liftbot-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_heavy_use_min",
+          "value": 8,
+          "unit": "h",
+          "semanticLabel": "Published heavy-use battery duration, lower end",
+          "conditions": [
+            "FAQ states 8–10 h; load/trip profile not quantified."
+          ],
+          "sourceIds": [
+            "liftbot-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "runtime_h_heavy_use_max",
+          "value": 10,
+          "unit": "h",
+          "semanticLabel": "Published heavy-use battery duration, upper end",
+          "conditions": [
+            "Battery swaps and charging logistics still apply."
+          ],
+          "sourceIds": [
+            "liftbot-faq"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "payload_kg",
+          "value": null,
+          "unit": "kg",
+          "semanticLabel": "Quoted-platform payload capacity not established",
+          "conditions": [
+            "The advertised 6,000 kg per shift is throughput, not maximum lifting load."
+          ],
+          "sourceIds": [
+            "liftbot-product"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Scaffold dismantling and vertical material movements at BASF Ludwigshafen.",
+          "configuration": "LIFTBOT with approximately 50 m of rail and rotating material platform; exact unit revision unspecified.",
+          "operatingMode": "Workers load/unload while the rail unit transports material.",
+          "sourceIds": [
+            "liftbot-basf"
+          ],
+          "limitations": [
+            "Manufacturer case account; reported man-hour benefit not independently audited.",
+            "Use under a site-specific hot-work permit is not ATEX certification.",
+            "Scaffold assembly, anchoring, inspection and disassembly remain human work."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "KEWAZO GmbH",
+          "market": "Germany / Europe",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.kewazo.com/contact",
+            "email": "info@kewazo.com"
+          },
+          "sourceIds": [
+            "liftbot-contact",
+            "liftbot-legal",
+            "liftbot-faq"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "German manufacturer contact and European pilot offering are published; site acceptance, unit allocation and delivery date require confirmation.",
+          "authorizationStatus": "Direct manufacturer route.",
+          "caveats": [
+            "Request platform-specific load documentation, installation review and the relevant conformity documents."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The product page states 10 h battery use while the FAQ gives an 8–10 h heavy-use range; retain the range and unspecified duty profile.",
+        "Marketing says no scaffold-design changes are required, but the FAQ also requires engineering load review. Do not generalize suitability to an unassessed structure."
+      ],
+      "unknowns": [
+        "Platform-specific lifting capacity, material envelope and rail/support loads.",
+        "German pilot availability, complete installed price and support response.",
+        "Validated duty cycle under the customer's height, load and handling process."
+      ],
+      "operatingMode": {
+        "value": "Battery-powered rail travel with automatic movement and remote controls; crews handle loading, unloading and task execution.",
+        "sourceIds": [
+          "liftbot-product",
+          "liftbot-basf"
+        ],
+        "caveats": [
+          "Engineering review of the installation, load and platform is still required.",
+          "No personnel transport; manufacturer says the system is not ATEX-certified."
+        ]
+      },
+      "industries": [
+        "construction",
+        "manufacturing",
+        "warehousing"
+      ]
+    },
+    {
+      "id": "fbr-hadrian-bricklaying",
+      "name": "FBR Hadrian — 32 m masonry system",
+      "manufacturer": "FBR",
+      "robotClass": "dedicated_robot",
+      "workflowId": "bricklaying",
+      "exactConfiguration": "Current FBR Hadrian product configuration: truck-mounted 32 m boom, block-delivery/saw modules and Fastbrick adhesive. Do not silently equate all historical Hadrian X units with this offer.",
+      "description": "Positions approved masonry blocks from a digital wall design; human operation, telehandler supply and construction acceptance remain necessary.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "hadrian-product",
+          "url": "https://www.fbr.com.au/view/hadrian",
+          "title": "Current FBR Hadrian product and specifications",
+          "publisher": "FBR",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "hadrian-waas",
+          "url": "https://www.fbr.com.au/view/waas",
+          "title": "Hadrian projects and US demonstration description",
+          "publisher": "FBR",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "hadrian-contact",
+          "url": "https://www.fbr.com.au/view/contact-us",
+          "title": "FBR manufacturer contact",
+          "publisher": "FBR",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "hadrian-x-demo",
+          "url": "https://www.fbr.com.au/upload/pages/20241223063546/2831854-fbr-completes-united-states-demonstration-program.pdf",
+          "title": "Hadrian X US demonstration completion, December 2024",
+          "publisher": "FBR",
+          "kind": "manufacturer",
+          "retrievalMode": "indexed_only",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.fbr.com.au/view/hadrian",
+        "https://www.fbr.com.au/view/waas",
+        "https://www.fbr.com.au/view/contact-us",
+        "https://www.fbr.com.au/upload/pages/20241223063546/2831854-fbr-completes-united-states-demonstration-program.pdf"
+      ],
+      "specs": [
+        {
+          "key": "boom_reach_m",
+          "value": 32,
+          "unit": "m",
+          "semanticLabel": "Published telescopic boom reach",
+          "conditions": [
+            "Not an unrestricted loaded workspace."
+          ],
+          "sourceIds": [
+            "hadrian-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "block_mass_max_kg",
+          "value": 45,
+          "unit": "kg",
+          "semanticLabel": "Maximum published individual block mass",
+          "conditions": [
+            "Block size, adhesion and system compatibility must also be satisfied."
+          ],
+          "sourceIds": [
+            "hadrian-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "block_dimensions_max_mm",
+          "value": "600 × 400 × 300",
+          "unit": "mm",
+          "semanticLabel": "Published maximum block dimensions",
+          "conditions": [
+            "Applies to the stated shuttle-block system."
+          ],
+          "sourceIds": [
+            "hadrian-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "design_lay_rate_blocks_h",
+          "value": 360,
+          "unit": "blocks/h",
+          "semanticLabel": "Published maximum designed laying rate",
+          "conditions": [
+            "Design claim; not a guaranteed accepted wall output including supply and stoppages."
+          ],
+          "sourceIds": [
+            "hadrian-product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "operators_required",
+          "value": 2,
+          "unit": "people",
+          "semanticLabel": "Published operating crew",
+          "conditions": [
+            "One robot operator and one telehandler operator; not total project staffing."
+          ],
+          "sourceIds": [
+            "hadrian-product"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Automated construction of masonry wall designs using compatible blocks and adhesive.",
+          "configuration": "Current Hadrian 32 m product offer.",
+          "operatingMode": "Automated placement with operator and telehandler support.",
+          "sourceIds": [
+            "hadrian-product"
+          ],
+          "limitations": [
+            "Current exact package lacks a revision-matched production case in this review."
+          ]
+        },
+        {
+          "stage": "demonstration",
+          "task": "Completed house walls during the manufacturer's US demonstration programme.",
+          "configuration": "WaaS page names Hadrian; the dated 2024 announcement calls the demonstrated machine Hadrian X. Current-offer equivalence remains unresolved.",
+          "operatingMode": "Crew-supported automated masonry demonstration.",
+          "sourceIds": [
+            "hadrian-waas",
+            "hadrian-x-demo"
+          ],
+          "limitations": [
+            "Historical demonstration does not establish routine current-version operation or German commercial availability.",
+            "Crew descriptions differ by configuration/date; no demonstrated cycle rate is carried into current specs."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "FBR — Hadrian acquisition enquiry",
+          "market": "Manufacturer in Australia; Germany unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.fbr.com.au/view/contact-us",
+            "phone": "+61 8 9380 0240"
+          },
+          "sourceIds": [
+            "hadrian-contact",
+            "hadrian-product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Current product page invites selected businesses to enquire about acquisition; German delivery, eligibility and mobilisation are unknown.",
+          "authorizationStatus": "Direct manufacturer route; no German distributor or integrator authorization reviewed.",
+          "caveats": [
+            "Regional conformity, local wall system acceptance and service arrangements require confirmation."
+          ]
+        }
+      ],
+      "conflicts": [
+        "The current product is branded Hadrian; historical deployment releases use Hadrian X. Revision equivalence is not assumed.",
+        "Current product states a two-person operating crew; the indexed December 2024 demonstration release describes three people onsite. These are different scopes/date contexts, not interchangeable staffing guarantees."
+      ],
+      "unknowns": [
+        "Current revision's relationship to Hadrian X demonstration machines.",
+        "German wall-system approvals, robot conformity, road transport and local service.",
+        "Customer eligibility, final package price, delivery and accepted wall productivity."
+      ],
+      "operatingMode": {
+        "value": "Automated block placement supervised by a Hadrian operator with a telehandler operator supplying material.",
+        "sourceIds": [
+          "hadrian-product"
+        ],
+        "caveats": [
+          "A whole wall package requires approved blocks/adhesive, digital preparation, site access and structural acceptance.",
+          "No universal approval for German masonry or conventional mortar processes was reviewed."
+        ]
+      },
+      "industries": [
+        "construction"
+      ]
+    }
+  ]
+}

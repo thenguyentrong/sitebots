@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "opportunities": [
+    {
+      "id": "research:humanoid-whole-body-balance",
+      "title": "Evaluate humanoid balance and whole-body coordination",
+      "summary": "Run supervised walking, posture and coordinated-joint experiments in a controlled laboratory, with a defined fall boundary and researcher-controlled stop conditions.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "robotics_research",
+      "setting": "Locomotion and whole-body control laboratory",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-whole-body-balance",
+          "reviewId": "unitree-h2-edu-research",
+          "relationship": "task_candidate",
+          "rationale": "The EDU configuration permits secondary development; manufacturer motion-control features and the German research listing support balance and coordination experiments.",
+          "sourceIds": [
+            "h2-product",
+            "german-h2-listing"
+          ],
+          "limitations": [
+            "Platform application claim, not a completed stability benchmark.",
+            "No material-transport or production task is implied."
+          ]
+        },
+        {
+          "taskId": "research:humanoid-whole-body-balance",
+          "reviewId": "unitree-h2-plus-sharpa-research",
+          "relationship": "task_candidate",
+          "rationale": "The exact reference design combines the programmable body with whole-body control and simulation-to-hardware research tools.",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Researchers must implement and validate the experiment.",
+            "No certified stability envelope or safe proximity to people is established."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research:humanoid-tactile-contact-experiments",
+      "title": "Study fingertip contact during humanoid grasps",
+      "summary": "Use tactile hands to examine contact signals and controlled grasps, then measure experimental outcomes under researcher supervision.",
+      "industries": [
+        "research_education"
+      ],
+      "family": "robotics_research",
+      "setting": "Dexterous manipulation research cell",
+      "reviewLinks": [
+        {
+          "taskId": "research:humanoid-tactile-contact-experiments",
+          "reviewId": "unitree-h2-plus-sharpa-research",
+          "relationship": "task_candidate",
+          "rationale": "The official reference specifies dual tactile Sharpa Wave hands and supports dexterous-manipulation research.",
+          "sourceIds": [
+            "h2plus-product",
+            "reference-design"
+          ],
+          "limitations": [
+            "Requires the specified hands; the handless Smart package is not equivalent.",
+            "Sensor specifications are not a proven grasp-success rate or industrial workcell."
+          ]
+        }
+      ]
+    }
+  ]
+}

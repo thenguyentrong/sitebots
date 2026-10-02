@@ -1,0 +1,157 @@
+{
+ "schemaVersion": 1,
+ "id": "hello-robot-stretch-3",
+ "maker": "Hello Robot",
+ "makerCountry": "US",
+ "model": "Stretch 3",
+ "variant": null,
+ "name": "Hello Robot Stretch 3",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://hello-stretch3.com/",
+ "summary": "The previous Stretch model, a light one-arm research robot with a telescoping arm, now replaced by Stretch 4 on the maker's purchase page.",
+ "launched": null,
+ "lifecycle": "discontinued",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Hello Robot's current purchase page sells only Stretch 4 and links Stretch 3 under support; the older Stretch 3 site still shows a $24,950 quote form while it migrates. Treated as superseded; ask Hello Robot whether units remain.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 24950,
+   "currency": "USD",
+   "market": "Older Stretch 3 site (may be outdated)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Open source software stack, ROS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 24.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload",
+   "value": 2,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dimensions_cm",
+   "label": "Size",
+   "value": "33 x 34 x 141",
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "2-5",
+   "unit": "h",
+   "conditions": "5 h light CPU load, 2 h high CPU load",
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Manipulator DoF",
+   "value": 7,
+   "unit": null,
+   "conditions": "2 base, 1 lift, 1 telescoping arm, 3 wrist; plus 1 gripper and 2 head",
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 2,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "ROS 2, Python",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Superseded by Stretch 4; see that record.",
+   "Runtime 2-5 h depending on CPU load (lower value used here)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.squarespace-cdn.com/content/v1/65789f5bc31b3c64091939a3/31563aa0-c09d-46a1-a2d1-b0193528775e/STRETCH+3+KEYSHOT+2024+FULL+02+%281%29.png?format=750w",
+   "pageUrl": "https://hello-stretch3.com/",
+   "credit": "Hello Robot",
+   "alt": "Hello Robot Stretch 3 mobile manipulator, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://hello-robot.com/purchase/",
+   "title": "Buy Stretch 4 (FAQ: no upgrades from Stretch 3)",
+   "publisher": "Hello Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://hello-stretch3.com/",
+   "title": "Stretch 3 site",
+   "publisher": "Hello Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://hello-stretch3.com/stretch-3-product",
+   "title": "Stretch 3 product details",
+   "publisher": "Hello Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://hello-stretch3.com/purchase",
+   "title": "Stretch 3 purchase page (older site)",
+   "publisher": "Hello Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Whether Hello Robot still sells remaining Stretch 3 units on request."
+ ],
+ "checkedAt": "2026-10-02"
+}

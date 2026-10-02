@@ -13,12 +13,24 @@ export type AxisDef = { id: string; label: string; hint: string; derive: (c: Can
 
 const f1 = (n: number) => n.toLocaleString('en-GB', { maximumFractionDigits: 1 });
 
+export type TaskCoverage = { supported: number; reported: number; unknown: number; total: number };
+
+function handlingCoverage(c: Candidate): TaskCoverage {
+  const rows = taskRows(c).rows.filter((r) => ['teleoperated_manipulation', 'shelf_pick', 'tool_handoff', 'drilling', 'screwing', 'material_sorting'].includes(r.id));
+  return {
+    supported: rows.filter((r) => r.status === 'yes').length,
+    reported: rows.filter((r) => r.status === 'partial').length,
+    unknown: rows.filter((r) => r.status === 'unknown').length,
+    total: rows.length,
+  };
+}
+
 function manipulation(c: Candidate): Part[] {
-  const relevant = taskRows(c).rows.filter((r) => ['teleoperated_manipulation', 'shelf_pick', 'tool_handoff', 'drilling', 'screwing', 'material_sorting'].includes(r.id));
-  const known = relevant.filter((r) => r.status !== 'unknown');
-  if (!known.length) return [{ score: null, status: 'unknown', text: 'handling tasks not confirmed; hand type and joint count do not establish task success' }];
-  const score = known.reduce((sum, row) => sum + (row.status === 'yes' ? 1 : row.status === 'partial' ? 0.5 : 0), 0) / known.length;
-  return [{ score, status: 'known', text: String(known.length) + ' handling tasks assessed; ' + String(relevant.length - known.length) + ' unconfirmed' }, ...(known.length < relevant.length ? [{ score: null, status: 'unknown' as const, text: 'handling evidence incomplete' }] : [])];
+  const coverage = handlingCoverage(c);
+  const text = coverage.supported + ' supported; ' + coverage.reported + ' reported only; ' + coverage.unknown + ' unconfirmed. Counts describe evidence, not task success.';
+  // Averaging only known tasks made one supported task appear as 100/100.
+  if (coverage.unknown || coverage.reported) return [{ score: null, status: 'unknown', text }];
+  return [{ score: coverage.supported / coverage.total, status: 'known', text }];
 }
 function speed(c: Candidate): Part[] {
   const v = c.card.max_speed_ms ?? c.card.walk_speed_ms;
@@ -33,15 +45,15 @@ export const AXES: readonly AxisDef[] = [
   { id: 'stairs', label: 'Stairs & slope', hint: 'Stair capability, and slope against 10, 20, 30 and 45°.', derive: (c) => [single(c, stairs, { stairs: 'required' }), ladder(c, slope, 'slope_deg', [10, 20, 30, 45])] },
   { id: 'terrain', label: 'Terrain', hint: 'Configuration-specific evidence for gravel and rubble.', derive: (c) => [single(c, terrain, { terrain: 'gravel' }), single(c, terrain, { terrain: 'rubble' })] },
   { id: 'weather', label: 'Weather', hint: 'Heavy dust, damp and rain (IP code), outdoor rating, and −10…35 °C / −20…45 °C.', derive: (c) => [single(c, dust, { dust: 'high' }), ladder(c, wet, 'wet', ['damp', 'rain']), single(c, outdoor, { environment: 'outdoor' }), ladder(c, temperature, 'temp_min_c', [-10, -20], { temp_max_c: 35 })] },
-  { id: 'endurance', label: 'Endurance', hint: 'Nameplate runtime against 2, 4 and 8 h shifts, battery swaps allowed.', derive: (c) => [ladder(c, runtime, 'runtime_h_per_shift', [2, 4, 8], { hot_swap_acceptable: true })] },
+  { id: 'endurance', label: 'Endurance', hint: 'Published loaded runtime against 2, 4 and 8 h shifts; nominal/idle figures remain unconfirmed.', derive: (c) => [ladder(c, runtime, 'runtime_h_per_shift', [2, 4, 8], { hot_swap_acceptable: true })] },
   { id: 'autonomy', label: 'Autonomy', hint: 'Supervised, then fully autonomous operation.', derive: (c) => [ladder(c, autonomy, 'autonomy', ['supervised', 'autonomous'])] },
-  { id: 'manipulation', label: 'Manipulation', hint: 'Evidence for handling tasks; unconfirmed tasks remain gaps.', derive: manipulation },
+  { id: 'manipulation', label: 'Handling evidence', hint: 'Supported, reported and unconfirmed handling tasks. Incomplete evidence leaves a chart gap, not a success score.', derive: manipulation },
   { id: 'speed', label: 'Speed', hint: 'Max (or walking) speed against 0.5, 1, 1.5, 2 and 3 m/s.', derive: speed },
   { id: 'evidence', label: 'Evidence', hint: 'How much of the record is published and maker-verified.', derive: (c) => [single(c, () => evidence(c), {})] },
 ];
 
-export type Axis = { id: string; label: string; hint: string; score: number | null; status: 'known' | 'partial' | 'unknown'; basis: string };
+export type Axis = { id: string; label: string; hint: string; score: number | null; status: 'known' | 'partial' | 'unknown'; basis: string; coverage?: TaskCoverage };
 
 export function axesFor(c: Candidate): Axis[] {
-  return AXES.map((a) => ({ id: a.id, label: a.label, hint: a.hint, ...combine(a.derive(c)) }));
+  return AXES.map((a) => ({ id: a.id, label: a.label, hint: a.hint, ...combine(a.derive(c)), ...(a.id === 'manipulation' ? { coverage: handlingCoverage(c) } : {}) }));
 }

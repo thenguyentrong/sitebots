@@ -1,0 +1,252 @@
+{
+ "schemaVersion": 1,
+ "id": "oversonic-robee-f",
+ "maker": "Oversonic Robotics",
+ "makerCountry": "IT",
+ "model": "RoBee",
+ "variant": "Series F (intralogistics)",
+ "name": "Oversonic RoBee Series F",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.oversonicrobotics.com/robee-f/",
+ "summary": "An 850 kg intralogistics robot: a two-armed humanoid upper body on a lift and omnidirectional base with a rear pallet module carrying up to 500 kg.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Italy); CE marked. Direct sales on request (\"request extended specifications\"); no German distributor or customer found; no public price.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Oversonic Robotics Srl",
+    "country": "IT",
+    "role": "manufacturer",
+    "productUrl": "https://www.oversonicrobotics.com/robee-f/",
+    "contactUrl": "https://www.oversonicrobotics.com/contacts/",
+    "email": "info@oversonicrobotics.com",
+    "phone": "+39 0362 080120",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Sells directly from Carate Brianza, Italy; assessment and contact forms on the site."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 2,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 850,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 1.2,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "Max.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Both arms payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "Max.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Rear module payload",
+   "value": 500,
+   "unit": "kg",
+   "conditions": "Euro pallets and containers",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 0.6,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery autonomy",
+   "value": 8,
+   "unit": "h",
+   "conditions": "Typical usage; 6 batteries",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IPX4",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 45",
+   "unit": "C",
+   "conditions": "Indoor",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 10,
+  "carryPayloadKg": 500,
+  "runtimeH": 8,
+  "ipRating": "IPX4",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Pneumatic vertical lift with axial rotation for multi-level shelf access.",
+   "Rear module takes Euro pallets and containers up to 500 kg.",
+   "Indoor use; SIL 3 obstacle detection."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-f-003-b.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-f/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series F (maker rendering): humanoid upper body on a mobile base with lift and pallet module",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-f-012.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-f/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series F on its lift handling yarn bobbins in a plant",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-f-008.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-f/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series F render carrying a pallet of boxes.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-f-013.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-f/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series F on its lift column moving yarn spools in a textile plant.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-f-005.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-f/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series F render, side view with lift column and pallet module.",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-f-011.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-f/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series F gripping a yarn spool, close view.",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://www.oversonicrobotics.com/images/robee-f-007.jpg",
+   "pageUrl": "https://www.oversonicrobotics.com/robee-f/",
+   "credit": "Oversonic Robotics",
+   "alt": "Oversonic RoBee Series F render carrying a rack of yarn spools.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Moves containers and pallets between shelving and stations in warehouses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker description; no named customer."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.oversonicrobotics.com/robee-f/",
+   "title": "RoBee Series F product page and technical specs",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.oversonicrobotics.com/download/Oversonic_Robee-F-2025-eng.pdf",
+   "title": "RoBee Series F product sheet",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.oversonicrobotics.com/certifications/",
+   "title": "Certifications (CE, Machinery Directive 2006/42/EC, IPX4)",
+   "publisher": "Oversonic Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price?",
+  "Customers in Germany?"
+ ],
+ "checkedAt": "2026-10-02"
+}

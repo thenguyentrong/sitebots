@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "conjet-robot-101-nalta-evo",
+ "maker": "Conjet",
+ "makerCountry": "SE",
+ "model": "Robot 101 Nalta Evo",
+ "variant": null,
+ "name": "Conjet Robot 101 Nalta Evo",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_concrete_repair/hydrodemolition"
+ ],
+ "officialUrl": "https://www.conjet.com/product/hydrodemolition-robot-101-nalta-evo/",
+ "summary": "Hydrodemolition cutting head on a modular feed beam that clamps to standard scaffold tubes, for removing concrete in narrow spots such as between a building and its scaffold.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Conjet names Falch GmbH as its distributor for Germany; Falch does not list the Nalta in its catalogue, so ask Falch or Conjet. Price on request.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Falch GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": null,
+    "contactUrl": "https://www.falch.com/en/contact",
+    "email": "info@falch.com",
+    "phone": "+49 7344 9244-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Conjet distributor for Germany, Austria and Switzerland (Blaubeuren-Seissen). \"Ask for price\" on the catalogue page."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "section_length_mm",
+   "label": "Length per section",
+   "value": 990,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "section_weight_kg",
+   "label": "Weight per section",
+   "value": 8,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "lance_unit_kg",
+   "label": "Weight lance unit",
+   "value": 12,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "hydraulic_unit_kg",
+   "label": "Weight hydraulic unit",
+   "value": 90,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reaction_force_n",
+   "label": "Maximum reaction force",
+   "value": 600,
+   "unit": "N",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "water_pressure_bar",
+   "label": "Maximum water pressure",
+   "value": 3000,
+   "unit": "bar",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "1/3 phase, 50/60 Hz",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "remote_range_m",
+   "label": "Remote operation distance",
+   "value": 50,
+   "unit": "m",
+   "conditions": "handheld control unit",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Not a vehicle: the feed beam is mounted on scaffold tubes or custom pipe framing.",
+   "Works on horizontal, vertical and overhead surfaces and under water.",
+   "Needs a separate high-pressure pump."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.conjet.com/wp-content/uploads/2023/02/Nalta-Evo-white-1.png",
+   "pageUrl": "https://www.conjet.com/product/hydrodemolition-robot-101-nalta-evo/",
+   "credit": "Conjet AB",
+   "alt": "Conjet Robot 101 Nalta Evo hydrodemolition robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.conjet.com/wp-content/uploads/2023/02/Nalta-Evo-dark-2048x1365.png",
+   "pageUrl": "https://www.conjet.com/product/hydrodemolition-robot-101-nalta-evo/",
+   "credit": "Conjet",
+   "alt": "Conjet Robot 101 Nalta Evo control unit in front of its scaffold-tube feed frame, render on a dark background",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.conjet.com/wp-content/uploads/2023/02/Nalta-Evo-white-2-1-2048x1151.png",
+   "pageUrl": "https://www.conjet.com/product/hydrodemolition-robot-101-nalta-evo/",
+   "credit": "Conjet",
+   "alt": "Conjet Robot 101 Nalta Evo control unit connected by hoses to its scaffold-tube feed frame, render on white",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.conjet.com/wp-content/uploads/2023/02/DSC_0098-rotated.jpg",
+   "pageUrl": "https://www.conjet.com/product/hydrodemolition-robot-101-nalta-evo/",
+   "credit": "Conjet",
+   "alt": "Conjet Robot 101 Nalta Evo frame clamped to a concrete block, removing concrete with a water jet while an operator watches",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete_repair/hydrodemolition"
+   ],
+   "task": "Removed damaged concrete under a pier ceiling and on beam walls (together with a Robot 557)",
+   "stage": "deployment",
+   "where": "Kapellskär port, Sweden (Waterjet Entreprenad AB)",
+   "date": null,
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.conjet.com/product/hydrodemolition-robot-101-nalta-evo/",
+   "title": "Conjet Robot 101 Nalta Evo product page",
+   "publisher": "Conjet AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.conjet.com/conjetdistributors/",
+   "title": "Conjet distributors (Germany: Falch GmbH)",
+   "publisher": "Conjet AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.falch.com/en/products/robots/robots",
+   "title": "Falch jetting robots catalogue (no Nalta listed)",
+   "publisher": "Falch GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.conjet.com/port-kapellskar/",
+   "title": "Kapellskär port reference",
+   "publisher": "Conjet AB",
+   "kind": "customer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Euro price not public.",
+  "Price and supply of the matching high-pressure pump."
+ ],
+ "checkedAt": "2026-10-02"
+}

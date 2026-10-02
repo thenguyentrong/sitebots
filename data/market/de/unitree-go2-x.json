@@ -1,0 +1,289 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-go2-x",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "Go2",
+ "variant": "X",
+ "name": "Unitree Go2 X",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/go2",
+ "summary": "Go2 robot dog with up to 12 kg payload, charging-dock support and partial secondary development, meant for adding your own computer.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "QUADRUPED Robotics (Germany) shows the Go2X in stock at 6,000 EUR net; RobotShop EU sells it on demand; Generation Robots and Conrad list it with prices.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 6000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s3",
+   "note": "EUR 7,200 incl. VAT at Generation Robots."
+  },
+  "priceOther": {
+   "amount": 4500,
+   "currency": "USD",
+   "market": "Unitree list price (tax and freight excluded)",
+   "sourceId": "s1"
+  },
+  "leadTime": "QUADRUPED Robotics: in stock; RobotShop EU: on demand",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-go2-x-robotic-dog-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 8221.82,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "go2-x (RC) EU, with remote controller."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404402-unitree-go2x-quadruped-roboter.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 6000,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "EUR 7,200 incl. VAT; contact for delivery time."
+   },
+   {
+    "name": "Unitree Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://shop.unitree.com/products/unitree-go2",
+    "contactUrl": "https://www.unitree.com/booking",
+    "email": "sales_global@unitree.com",
+    "phone": "+86 17621781139",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Unitree store USD 4,500 with controller. Germany is listed in the store country selector."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-Go2",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 6000,
+    "priceBasis": "net",
+    "sourceId": "s7",
+    "note": "Variant \"Go2X\" 6,000 EUR net, \"sofort verfügbar\"."
+   },
+   {
+    "name": "Conrad Electronic (conrad.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.conrad.de/de/p/x-3804246.html",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 9639,
+    "priceBasis": "gross",
+    "sourceId": "s8",
+    "note": "9,639.00 EUR incl. VAT (8,100 net); business customers only."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 8,
+   "unit": "kg",
+   "conditions": "max about 12 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3.7,
+   "unit": "m/s",
+   "conditions": "0-3.7 m/s, up to about 5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max climb drop height",
+   "value": 16,
+   "unit": "cm",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max climb angle",
+   "value": 40,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 1,
+   "unit": "h",
+   "conditions": "about 1-2 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Unitree 4D LiDAR L2 (360x96 deg), HD wide-angle camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": "partial",
+   "unit": null,
+   "conditions": "Unitree marks X as partly supported",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 8,
+  "runtimeH": 1,
+  "ipRating": null,
+  "sdk": "Partial secondary development",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Consumer/education quadruped; no IP rating published.",
+   "Some functions need manual operation or secondary development (Unitree note)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/a0811393701b4b95ba66ab1663c96fa4_1830x1600.png",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 quadruped robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/7b830fccde8d41ac8e3fcec334e84735_3840x1988.jpg",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 robot dog standing in fog on a dark background, front three-quarter view",
+   "kind": "product"
+  },
+  {
+   "url": "https://oss-global-cdn.unitree.com/static/a35af0c7768b4840b3ae2ba4ee704561_3840x2160.jpg?x-oss-process=image/quality,q_60/format,webp",
+   "pageUrl": "https://www.unitree.com/go2",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2 robot dog on a zebra-print rug in a bedroom with a man kneeling beside it",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [
+  "Exact scope of secondary development on the X."
+ ],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/go2",
+   "title": "Unitree Go2 product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-go2-x-robotic-dog-eu",
+   "title": "Unitree Go2 X Robotic Dog (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404402-unitree-go2x-quadruped-roboter.html",
+   "title": "Unitree Go2 X at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://shop.unitree.com/products/unitree-go2",
+   "title": "Unitree Go2 in the Unitree online store",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.quadruped.de/QUADRUPED-Go2",
+   "title": "QUADRUPED Go2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.conrad.de/de/p/x-3804246.html",
+   "title": "Unitree Go2X (Bestell-Nr. 3804246) at Conrad",
+   "publisher": "Conrad Electronic",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

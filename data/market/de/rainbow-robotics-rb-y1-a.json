@@ -1,0 +1,203 @@
+{
+ "schemaVersion": 1,
+ "id": "rainbow-robotics-rb-y1-a",
+ "maker": "Rainbow Robotics",
+ "makerCountry": "KR",
+ "model": "RB-Y1",
+ "variant": "A (two drive wheels)",
+ "name": "Rainbow Robotics RB-Y1 A",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://rainbow-robotics.com/en/products/rb-y1/",
+ "summary": "A 1.4 m wheeled dual-arm research robot with a 6-joint torso and two 7-joint arms carrying 3 kg each, on a two-wheel base.",
+ "launched": "2024-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller lists the RB-Y1. Rainbow's dealer list shows European partners for its cobots only; the only route found is a direct enquiry to Rainbow Robotics in Korea (sales@rainbow-robotics.com).",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 80000,
+   "currency": "USD",
+   "market": "Pre-order price for the research platform, May 2024 press release (excl. VAT)",
+   "sourceId": "s4"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.4,
+   "unit": "m",
+   "conditions": "W 600 x D 690 x H 1,400 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 131,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.6,
+   "unit": "m",
+   "conditions": "to wrist, plus hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Driving speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1250,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "drive",
+   "label": "Wheel drive",
+   "value": "2 drive wheels (1 DOF each)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Dual PC: robot PC for real-time control, user PC with GPU for ROS 2 and the RB-Y1 SDK",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "RB-Y1 SDK, ROS 2; URDF/MJCF/USD models",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "RB-Y1 SDK, ROS 2",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Research platform; the maker does not position it for industrial or site use.",
+   "No IP rating, slope or outdoor data published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://rainbow-robotics.com/wp-content/uploads/2026/03/RB-Y1-main.png",
+   "pageUrl": "https://rainbow-robotics.com/en/products/rb-y1/",
+   "credit": "Rainbow Robotics",
+   "alt": "Rainbow Robotics RB-Y1 wheeled dual-arm robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations",
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Maker offers it as a research platform for teleoperation, learning from demonstration and whole-body control",
+   "stage": "claim",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://rainbow-robotics.com/en/products/rb-y1/",
+   "title": "RB-Y1 product page and specifications",
+   "publisher": "Rainbow Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rainbow-robotics.com/en/partners/",
+   "title": "Find a Dealer",
+   "publisher": "Rainbow Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://rainbow-robotics.com/en/company/contact-location/",
+   "title": "Contact & Location",
+   "publisher": "Rainbow Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://rainbow-robotics.com/en/press-release-rainbow-robotics-begins-pre-orders-of-bimanual-mobile-manipulator-rb-y1-the-worlds-first-research-platform-for-ai-experts-for-80000-usd",
+   "title": "Rainbow Robotics begins pre-orders of RB-Y1 (press release, 2024-05-08)",
+   "publisher": "Rainbow Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is a gripper or hand included as standard, or sold as an expansion option?",
+  "The spec table gives totals of 20 DOF (A) and 26 DOF (M) while the page text says 24 DOF.",
+  "Commercial-platform price ($120,000 in 2024) and current prices are not published.",
+  "Product image does not say which wheel variant it shows."
+ ],
+ "checkedAt": "2026-10-02"
+}

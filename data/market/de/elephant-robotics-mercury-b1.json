@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "elephant-robotics-mercury-b1",
+ "maker": "Elephant Robotics",
+ "makerCountry": "CN",
+ "model": "Mercury B1",
+ "variant": null,
+ "name": "Elephant Robotics Mercury B1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.elephantrobotics.com/en/mercury-b1-en/",
+ "summary": "A stationary dual-arm semi-humanoid torso with two 7-axis arms (1 kg payload) and a touchscreen head, for teaching and research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 11999,
+   "currency": "USD",
+   "market": "Elephant Robotics online shop (ships to DE)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Elephant Robotics online shop",
+    "country": "HK",
+    "role": "manufacturer",
+    "productUrl": "https://shop.elephantrobotics.com/products/mercury-humanoid-robot-series",
+    "contactUrl": "https://shop.elephantrobotics.com/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Variant \"Mercury B1 - Dual-arm 7-DOF Semi-humanoid Robot\"; price in USD."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Orderable in Elephant Robotics' online shop, which ships to Germany, at USD 11,999.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 8,
+   "unit": "kg",
+   "conditions": "net",
+   "sourceId": "s4"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size",
+   "value": "200 x 192.5 x 537",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 17,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Maximum load",
+   "value": 1,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Working duration",
+   "value": 8,
+   "unit": "h",
+   "conditions": "maximum",
+   "sourceId": "s4"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Orin Nano",
+   "unit": null,
+   "conditions": "shop text; older docs list Jetson Xavier NX",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 1,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "Python, C++, ROS",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "Stationary torso without legs or wheels; it is the upper body of the Mercury X1.",
+   "Grippers sold separately."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0055/1826/2358/files/1_aa9f84cf-d7ab-4624-b518-0317abfb7524.png?v=1788246645",
+   "pageUrl": "https://shop.elephantrobotics.com/products/mercury-humanoid-robot-series",
+   "credit": "Elephant Robotics",
+   "alt": "Elephant Robotics Mercury B1 dual-arm torso",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Teleoperated data collection with the myController S570 exoskeleton",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.elephantrobotics.com/en/mercury-b1-en/",
+   "title": "Mercury B1 product page",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://shop.elephantrobotics.com/products/mercury-humanoid-robot-series",
+   "title": "Mercury Wheeled Humanoid Robot Series (shop)",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://shop.elephantrobotics.com/meta.json",
+   "title": "Elephant Robotics shop metadata (currency USD, ships to DE)",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://docs.elephantrobotics.com/docs/Mercury_B1_en/2-ProductFeature/",
+   "title": "Mercury B1 product specifications (docs)",
+   "publisher": "Elephant Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

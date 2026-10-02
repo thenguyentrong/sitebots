@@ -11,7 +11,7 @@ describe('automation assessment', () => {
   });
   it('rejects invalid requirements without replacing them with friendly defaults', () => {
     const project = newProject(projectId);
-    project.needs.payload = '-3';
+    project.factOverrides.object_mass_kg = { min: 0, max: 2500 };
     expect(requirementsFor(project).success).toBe(false);
   });
   it('separates released capacity from realized cash savings', () => {

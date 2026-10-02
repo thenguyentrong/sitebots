@@ -1,0 +1,253 @@
+{
+ "schemaVersion": 1,
+ "id": "galileo-s1",
+ "maker": "Galileo (Tianjin) Technology",
+ "makerCountry": "CN",
+ "model": "S1",
+ "variant": null,
+ "name": "Galileo S1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galileotime.com/en/main/DogS1",
+ "summary": "A 118 kg IP67 heavy inspection robot dog that carries 100 kg while walking, climbs 30 cm steps and runs 3.5 to 5 h on two batteries.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer found: GalileoTime (Tianjin, China) takes enquiries and non-binding reservation orders by email and a Chinese sales hotline, and names no EU office, distributor or customer. The only German-language listing is Roboter Deutschland, a US-run web shop (Las Vegas) not named by GalileoTime, at EUR 45,487.99 converted from its base currency, marked \"subject to availability\". No CE marking information found.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Galileo (Tianjin) Technology Co., Ltd. (GalileoTime)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.galileotime.com/en/main/DogS1",
+    "contactUrl": "https://www.galileotime.com/en/aboutUs/ContactUs",
+    "email": "galileo@galileotime.com",
+    "phone": "+86 22 5989 3220",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Website orders are non-binding reservations; sales contact by email or the sales hotline. Industry versions on request."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "1200 x 550 x 650",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 118,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 3540,
+   "unit": "Wh",
+   "conditions": "60 Ah, 59 V, two batteries",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 3.5,
+   "unit": "m/s",
+   "conditions": "adjustable from 0",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. slope",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "at least",
+   "sourceId": "s2"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": "continuous 30 cm steps",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Climbable platform",
+   "value": 80,
+   "unit": "cm",
+   "conditions": "forward height difference",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "3.5-5",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking load",
+   "value": 100,
+   "unit": "kg",
+   "conditions": "maximum standing load 170 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "ARM 8-core CPU (8 GB RAM, 64 GB SSD) plus x86 4-core CPU (16 GB RAM, 256 GB drive)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-20 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "Ethernet, USB 3.0, RS485; 48 V and 24 V power out",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "autonomous_charging",
+   "label": "Autonomous charging",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "standby",
+   "label": "Low-power mode",
+   "value": "365 days or more, remote wake-up",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 100,
+  "runtimeH": 3.5,
+  "ipRating": "IP67",
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Runtime 3.5 to 5 h (S1) or 2.5 to 4 h (S1-W); lower value used here.",
+   "No sensor list or SDK is named on the spec sheet; app control is stated.",
+   "At 118 to 128 kg it needs lifting gear or two or more people to move when switched off."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.roboterdeutschland.de/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/g/a/galileo-s1-large-industrial-grade-quadruped-robot-dog.jpg",
+   "pageUrl": "https://www.roboterdeutschland.de/GALILEO-S1.htm",
+   "credit": "GalileoTime (image hosted by Roboter Deutschland)",
+   "alt": "Galileo S1 large robot dog with carry handles, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/substation-rounds"
+   ],
+   "task": "Industrial inspection for water management, power, security and rail transit",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker description for the S1 series; no customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.galileotime.com/en/main/DogS1",
+   "title": "Robot Dog S1 Series",
+   "publisher": "GalileoTime",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.galileotime.com/config/lang.json",
+   "title": "GalileoTime website content file (product specifications, purchase and contact text shown on the site)",
+   "publisher": "GalileoTime",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboterdeutschland.de/GALILEO-S1.htm",
+   "title": "Galileo S1",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboterdeutschland.de/about-us/",
+   "title": "About us",
+   "publisher": "Roboter Deutschland",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and delivery from GalileoTime for Germany.",
+  "CE marking and EU declaration of conformity.",
+  "Who operates Roboter Deutschland and whether it is authorised by GalileoTime.",
+  "Manufacturer images are on vx.galileotime.com:10901, which did not respond; the image used is the shop copy.",
+  "Sensors and SDK in the delivered configuration."
+ ],
+ "checkedAt": "2026-10-02"
+}

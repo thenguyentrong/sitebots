@@ -1,0 +1,240 @@
+{
+ "schemaVersion": 1,
+ "id": "1x-neo",
+ "maker": "1X Technologies",
+ "makerCountry": "US",
+ "model": "NEO",
+ "variant": null,
+ "name": "1X NEO",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.1x.tech/neo",
+ "summary": "A light (about 30 kg) home humanoid with two five-finger hands, sold for private households in the US; it is not offered in Germany.",
+ "launched": "2025-10",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Orders and deliveries are for US homes only. 1X says US deliveries begin in 2026 and international deliveries will follow later, with no date or country list. heise (Oct 2025) reports that further markets are to follow from 2027.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 20000,
+   "currency": "USD",
+   "market": "US early-access purchase with 3-year warranty (alternative: USD 499 per month subscription)",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.68,
+   "unit": "m",
+   "conditions": "stated as 5 ft 6 in",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "stated as 66 lb",
+   "sourceId": "s1"
+  },
+  {
+   "key": "lift_capacity_kg",
+   "label": "Lift capacity",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "stated as 154 lb, whole body",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Carry capacity",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "stated as 55 lb",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 8.2,
+   "unit": "kg",
+   "conditions": "stated as 18 lb; per arm or total not stated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DoF per hand",
+   "value": 22,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DoF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1.4,
+   "unit": "m/s",
+   "conditions": "walking; 6.2 m/s stated as max run speed",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery capacity",
+   "value": 842,
+   "unit": "Wh",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "quick_charge",
+   "label": "Quick charge",
+   "value": "6 minutes of charging per hour of runtime",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "noise_db",
+   "label": "Noise level",
+   "value": 22,
+   "unit": "dB",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "1X NEO Cortex (NVIDIA Jetson Thor), up to 2070 FP4 TFLOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "dual 8.85 MP 90 Hz stereo fisheye cameras, 4 beamforming microphones",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IP44",
+   "unit": null,
+   "conditions": "body splash-proof (IP44); hands IP68",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_breakdown",
+   "label": "DoF by body part",
+   "value": "hands 2 x 22, arms 2 x 7, neck 3, spine 2, legs 2 x 6",
+   "unit": null,
+   "conditions": "total not stated",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 8.2,
+  "carryPayloadKg": 25,
+  "runtimeH": 4,
+  "ipRating": "IP44",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Built for homes: 1X says NEO is to be operated in and around the home on firm ground; the hands are waterproof (IP68), the body only splash-proof (IP44).",
+   "Chores it does not know are done with a remote 1X Expert operator (1X staff in the USA) guiding the robot.",
+   "No industrial or construction use is offered."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.sanity.io/images/qka6yvsc/production/379c65ed7a4a564858a3d27a07db9497b26ca32d-2400x1260.jpg",
+   "pageUrl": "https://www.1x.tech/order",
+   "credit": "1X Technologies",
+   "alt": "Three 1X NEO home humanoids in grey, beige and dark brown knit suits, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Household chores such as tidying, laundry and fetching items in private homes",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Consumer use case; no construction or industrial task."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.1x.tech/neo",
+   "title": "NEO product page and specifications",
+   "publisher": "1X Technologies",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.1x.tech/order",
+   "title": "Order NEO: pricing, delivery and FAQ",
+   "publisher": "1X Technologies",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.heise.de/news/Humanoider-Roboter-Neo-soll-ab-2026-in-Haushalten-helfen-fuer-20-000-US-Dollar-10962478.html",
+   "title": "Humanoider Roboter Neo soll ab 2026 in Haushalten helfen – für 20.000 US-Dollar",
+   "publisher": "heise online",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "When and in which countries outside the US will 1X deliver NEO?",
+  "Is the 8.2 kg arm payload per arm or for both arms?"
+ ],
+ "checkedAt": "2026-10-02"
+}

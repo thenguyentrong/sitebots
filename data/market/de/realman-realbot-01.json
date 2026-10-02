@@ -1,0 +1,214 @@
+{
+ "schemaVersion": 1,
+ "id": "realman-realbot-01",
+ "maker": "RealMan Robotics",
+ "makerCountry": "CN",
+ "model": "RealBot-01",
+ "variant": null,
+ "name": "RealMan RealBot-01",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.realman-robotics.com/en/products/realbot-humanoid.html",
+ "summary": "A 1.68 m wheeled humanoid with two RX75 arms (5 kg each), 21 active joints and a 2.1 m vertical reach, for data collection, teleoperation and service tasks.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "MYBOTSHOP (Bergheim, Germany) lists the RealBot at €113,049.95 incl. 19% VAT with a cart button; delivery about 4 weeks after order.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 113049.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Incl. 19% VAT, plus shipping."
+  },
+  "priceOther": null,
+  "leadTime": "About 4 weeks (MYBOTSHOP)",
+  "sellers": [
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Realman-RealBot",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": 113049.95,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.68,
+   "unit": "m",
+   "conditions": "570 x 465 x 1,680 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 125,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Active DOF",
+   "value": 21,
+   "unit": null,
+   "conditions": "14 arm, 3 waist, 2 leg, 2 neck",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "vertical_reach_m",
+   "label": "Vertical reach",
+   "value": 2.1,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Horizontal reach",
+   "value": 1.818,
+   "unit": "m",
+   "conditions": "without end effector",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "range 0.1-1.5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "approx.; 40 Ah battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "5 depth cameras, 3 fisheye cameras, 1 lidar, 2 IMUs, optional tactile sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS (seller)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Grippers or dexterous hands are added to suit the task; what ships as standard is not stated.",
+   "Chassis and shoulder width under 465 mm for narrow corridors.",
+   "Runtime and IP rating not stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.realman-robotics.com/prop/products-images/%E8%BD%AE%E5%BC%8F%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA/RealBOT/2.145.png",
+   "pageUrl": "https://www.realman-robotics.com/en/products/realbot-humanoid.html",
+   "credit": "RealMan Robotics",
+   "alt": "Two RealMan RealBot-01 wheeled humanoid robots",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.realman-robotics.com/prop/products-images/%E8%BD%AE%E5%BC%8F%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA/RealBOT/%E8%BD%AE%E5%BC%8F%E4%BA%BA%E5%BD%A203-2.png",
+   "pageUrl": "https://www.realman-robotics.com/en/products/realbot-humanoid.html",
+   "credit": "RealMan Robotics",
+   "alt": "RealMan RealBot-01 front view on its wheeled base, arms at its sides",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.realman-robotics.com/prop/products-images/%E8%BD%AE%E5%BC%8F%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA/RealBOT/%E8%BD%AE%E5%BC%8F%E4%BA%BA%E5%BD%A203-4.png",
+   "pageUrl": "https://www.realman-robotics.com/en/products/realbot-humanoid.html",
+   "credit": "RealMan Robotics",
+   "alt": "RealMan RealBot-01 side view showing one arm with hand and the wheeled base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Seller offers it for AI training, teleoperation, research and service robotics",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.realman-robotics.com/en/products/realbot-humanoid.html",
+   "title": "RealBot-01 product page",
+   "publisher": "RealMan Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.mybotshop.de/Realman-RealBot",
+   "title": "Realman RealBot",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Which end effectors are included at the MYBOTSHOP price.",
+  "Runtime per charge."
+ ],
+ "checkedAt": "2026-10-02"
+}

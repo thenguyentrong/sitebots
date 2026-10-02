@@ -1,0 +1,254 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-go2-w",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "Go2-W",
+ "variant": null,
+ "name": "Unitree Go2-W",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/go2-w",
+ "summary": "Go2 robot dog with driven 7-inch pneumatic wheels on all four legs, 8 kg payload and 1.5-3 h runtime, programmable.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RobotShop EU sells several Go2-W packages with prices and cart (about 3-4 weeks); Generation Robots quotes four versions.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 9500,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s3",
+   "note": "Generation Robots page 'from' price; RobotShop EU Go2-W EUR 14,063.63 incl. tax."
+  },
+  "priceOther": null,
+  "leadTime": "about 3-4 weeks (RobotShop EU)",
+  "sellers": [
+   {
+    "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
+    "country": "CA",
+    "role": "distributor",
+    "productUrl": "https://eu.robotshop.com/products/unitree-go2-w-wheeled-robotic-dog-eu",
+    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
+    "email": null,
+    "phone": null,
+    "priceEur": 14063.63,
+    "priceBasis": "gross",
+    "sourceId": "s2",
+    "note": "Go2-W-U1-EU; Plus EUR 16,660, Ultimate EUR 22,610, Inspection package EUR 34,510."
+   },
+   {
+    "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/en/404401-go2-w-wheeled-quadruped-robot.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": "contact@generationrobots.com",
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 9500,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "Page 'from' price excl. VAT; Standard 40 TOPS, Smart 100 TOPS, Plus MID360, Ultimate XT16."
+   },
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-Go2W",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 18300,
+    "priceBasis": "net",
+    "sourceId": "s6",
+    "note": "Go2W-U2 18,300 EUR net, \"sofort verfügbar\"; U4 20,500 and U5 30,000 (21 days); new Go2W Standard 8,500 and Plus 13,500 \"currently not available\"."
+   },
+   {
+    "name": "Conrad Electronic (conrad.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.conrad.de/de/p/x-3804247.html",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 29185,
+    "priceBasis": "gross",
+    "sourceId": "s7",
+    "note": "Go2W-U2 29,185.00 EUR incl. VAT; business customers only."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 18,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 8,
+   "unit": "kg",
+   "conditions": "max about 12 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max climb drop height",
+   "value": 70,
+   "unit": "cm",
+   "conditions": "below 70 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max climb angle",
+   "value": 35,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "1.5-3 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Wide-angle 3D LiDAR, HD camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 8,
+  "runtimeH": 1.5,
+  "ipRating": null,
+  "sdk": "Unitree secondary development",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Wheel-legs: drives on wheels and steps over obstacles.",
+   "No IP rating published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.quadruped.de/media/image/product/1284/lg/quadruped-go2w.png",
+   "pageUrl": "https://www.quadruped.de/QUADRUPED-Go2W",
+   "credit": "Unitree Robotics (via quadruped.de)",
+   "alt": "Unitree Go2-W wheeled quadruped robot, full body",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.unitree.com/images/d9516b16e7314d369f62cb5353a91da8_3840x2160.jpg",
+   "pageUrl": "https://www.unitree.com/",
+   "credit": "Unitree Robotics",
+   "alt": "Unitree Go2-W wheeled quadruped driving over rough desert ground",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02",
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/go2-w",
+   "title": "Unitree Go2-W product page and parameters",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://eu.robotshop.com/products/unitree-go2-w-wheeled-robotic-dog-eu",
+   "title": "Unitree Go2-W Wheeled Robotic Dog (EU) at RobotShop EU",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404401-go2-w-wheeled-quadruped-robot.html",
+   "title": "Unitree Go2-W at Generation Robots",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.generationrobots.com/en/content/4-about-us",
+   "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://eu.robotshop.com/policies/terms-of-service",
+   "title": "RobotShop terms of service (operator RobotShop Inc.)",
+   "publisher": "RobotShop",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.quadruped.de/QUADRUPED-Go2W",
+   "title": "QUADRUPED Go2W at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.conrad.de/de/p/x-3804247.html",
+   "title": "Unitree Go2W-U2 (Bestell-Nr. 3804247) at Conrad",
+   "publisher": "Conrad Electronic",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ]
+}

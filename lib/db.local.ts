@@ -21,15 +21,20 @@ import type { Rows, SqlClient } from './db';
  * script at another one with LOCAL_DB_DIR.
  */
 
-let ready: Promise<SqlClient> | null = null;
-let instance: PGlite | null = null;
+type LocalState = { ready: Promise<SqlClient> | null; instance: PGlite | null };
+// Next dev reloads modules; a second PGlite owner leaks handles and contends for the same data directory.
+const processState = globalThis as typeof globalThis & { __sitebotsLocalDb?: Map<string, LocalState> };
+const stores = processState.__sitebotsLocalDb ??= new Map();
+const storeKey = process.env.LOCAL_DB_DIR ?? join(process.cwd(), process.env.NODE_ENV === 'production' ? 'data/snapshot/pglite.tar.gz' : '.pglite');
+const state = stores.get(storeKey) ?? { ready: null, instance: null };
+stores.set(storeKey, state);
 
 /** Scripts call this before exiting; the dev server never does. */
 export async function closeLocal(): Promise<void> {
-  if (instance) {
-    await instance.close();
-    instance = null;
-    ready = null;
+  if (state.instance) {
+    await state.instance.close();
+    state.instance = null;
+    state.ready = null;
   }
 }
 
@@ -63,7 +68,7 @@ async function boot(): Promise<SqlClient> {
   const pg = fromSnapshot
     ? new PGlite({ dataDir: 'memory://', loadDataDir: new Blob([readFileSync(SNAPSHOT)]) })
     : new PGlite(process.env.LOCAL_DB_DIR ?? '.pglite');
-  instance = pg;
+  state.instance = pg;
   await pg.waitReady;
   if (fromSnapshot) {
     // The snapshot already contains schema, projections and reviewed facts.
@@ -97,12 +102,12 @@ async function boot(): Promise<SqlClient> {
 }
 
 export function localSql(): Promise<SqlClient> {
-  if (!ready) ready = boot().catch(async error => {
-    const failed = instance;
-    instance = null;
+  if (!state.ready) state.ready = boot().catch(async error => {
+    const failed = state.instance;
+    state.instance = null;
     try { await failed?.close(); } catch { /* Preserve the original startup failure. */ }
-    ready = null;
+    state.ready = null;
     throw error;
   });
-  return ready;
+  return state.ready;
 }

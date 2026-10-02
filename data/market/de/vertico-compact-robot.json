@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "vertico-compact-robot",
+ "maker": "Vertico",
+ "makerCountry": "NL",
+ "model": "Compact Robot",
+ "variant": null,
+ "name": "Vertico Compact Robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.vertico.com/technology/compact-robot",
+ "summary": "A smaller 6-axis robot arm for concrete 3D printing in rooms from 2.7 m ceiling height, with 2.05 m reach, for labs, schools and design studios.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by the Dutch maker, which offers shipping with on-site installation support and lists 5 printers shipped to Germany and 19 to other European countries (all Vertico models together). No public price. The catalogue shows a Compact installed in Frankfurt (2022).",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Vertico B.V.",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://www.vertico.com/technology/compact-robot",
+    "contactUrl": "https://www.vertico.com/contact",
+    "email": "info@vertico3d.com",
+    "phone": "+31 85 004 35 54",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Eindhoven, Netherlands. Sells the printers directly; price on request. Offers worldwide shipping with on-site installation support."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "reach_m",
+   "label": "Reach",
+   "value": 2.05,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Robot payload",
+   "value": 60,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "height_m",
+   "label": "Height with pedestal",
+   "value": 2.1,
+   "unit": "m",
+   "conditions": "300 mm pedestal",
+   "sourceId": "s1"
+  },
+  {
+   "key": "min_ceiling_m",
+   "label": "Min. ceiling height",
+   "value": 2.7,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "layer_height_mm",
+   "label": "Layer height",
+   "value": "3-18",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "pump_output_lmin",
+   "label": "Pump output",
+   "value": "1.5-8",
+   "unit": "l/min",
+   "conditions": "variable speed; 1K or 2K printhead",
+   "sourceId": "s1"
+  },
+  {
+   "key": "power",
+   "label": "Power supply",
+   "value": "Robot 200-600 V, 0.58 kW; pump 400 V, 8.0 kW",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Vertico Slicer (Rhino + Grasshopper), licence-free",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": 60,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Vertico Slicer (Rhino + Grasshopper), licence-free",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "A complete cell needs a printhead (Accelerator 2K or Standard 1K), a concrete mixing pump (Mai Multimix named) and printable mortar; Vertico says any suitable material supplier can be used.",
+   "Stationary industrial robot cell for printing elements in a hall (prefab, design pieces, research); it does not move around a building site on its own.",
+   "Slicer software (Rhino + Grasshopper) is included without a yearly licence fee.",
+   "Built for low rooms (from 2.7 m ceiling) and floors with low load capacity; smaller print volume than the On Track and Solo."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/663de072aed25872de06c783/6826f299139d0ff6b727aa6b_enhance-compact-robot.webp",
+   "pageUrl": "https://www.vertico.com/technology/compact-robot",
+   "credit": "Vertico",
+   "alt": "Vertico Compact robot printing twisted concrete columns in a lab room",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Installed machine on a pedestal",
+   "stage": "claim",
+   "where": "Frankfurt, Germany (customer not named)",
+   "date": "2022",
+   "sourceId": "s3",
+   "note": "Catalogue photo caption only."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.vertico.com/technology/compact-robot",
+   "title": "Compact Robot",
+   "publisher": "Vertico",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.vertico.com/3d-concrete-printer-for-sale",
+   "title": "3D concrete printer for sale",
+   "publisher": "Vertico",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://cdn.prod.website-files.com/663b6a0ed48ad1f36b6a02db/692e9fb3dd9c2f6c8bd663d0_Vertico%20Catalogue%202025.pdf",
+   "title": "Vertico Catalogue 2025 (PDF)",
+   "publisher": "Vertico",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and delivery time for Germany.",
+  "Names of the German customers behind the 5 printers Vertico lists as shipped to Germany, and which models they are.",
+  "Which industrial robot arm brand is supplied (the catalogue says the Solo is offered in different brands)."
+ ],
+ "checkedAt": "2026-10-02"
+}

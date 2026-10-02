@@ -1,0 +1,189 @@
+{
+ "schemaVersion": 1,
+ "id": "robotera-q5",
+ "maker": "RobotEra",
+ "makerCountry": "CN",
+ "model": "Q5",
+ "variant": null,
+ "name": "RobotEra Q5",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.robotera.com/en/#/product/Q5",
+ "summary": "A 1.65 m, 70 kg wheeled service humanoid with 44 joints and two 11-DoF hands, reaching from the floor to over 2 m, for guiding, reception, education and care settings.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 68644.64,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "81,687.12 EUR incl. 19 % VAT."
+  },
+  "priceOther": null,
+  "leadTime": "3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/robotera-q5-humanoid-robot-44dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 68644.64,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "RBTX (igus, Cologne) lists Q5 with a net price and a usual delivery time of 3 weeks.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": "standing; 582 x 519 x 1650 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 44,
+   "unit": null,
+   "conditions": "2 neck, 7 per arm, 11 per hand, 1 waist, 3 legs, 2 chassis",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 11,
+   "unit": null,
+   "conditions": "XHAND1 Lite",
+   "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Max. dual-arm payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "maker figure as first recorded; RBTX text says \"10kg single-arm max payload\"",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Working range",
+   "value": 2,
+   "unit": "m",
+   "conditions": "0 to 2 m, floor to above 2 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime under load",
+   "value": 4,
+   "unit": "h",
+   "conditions": "more than",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3D LiDAR, stereo HD camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "EraAI platform; teleoperation with gloves or VR",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Wheeled base (2 drive wheels, 4 casters) for level indoor floors.",
+   "10 kg is the dual-arm payload."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/WecomSave_fb52090c50-Te21Arpl.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/robotera-q5-humanoid-robot-44dof",
+   "credit": "RobotEra (via RBTX)",
+   "alt": "RobotEra Q5 wheeled humanoid",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Mall, hospital and museum guidance, customer service and education",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotera.com/en/#/product/Q5",
+   "title": "ROBOTERA Q5 product page",
+   "publisher": "RobotEra",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/robotera-q5-humanoid-robot-44dof",
+   "title": "ROBOTERA Q5 humanoid robot, 44 DOF on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Image is the vendor photo on RBTX; maker site images could not be extracted.",
+  "Is 10 kg the payload of one arm (RBTX text) or of both arms together?",
+  "www.robotera.com currently serves a revoked TLS certificate, so maker figures could not be re-checked; RBTX gives 65 kg in its text and 70 kg in its spec table."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,220 @@
+{
+ "schemaVersion": 1,
+ "id": "dobot-lumo-l1",
+ "maker": "Dobot",
+ "makerCountry": "CN",
+ "model": "LUMO L1",
+ "variant": "Standard / Max",
+ "name": "DOBOT LUMO L1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dobot-robots.com/products/humanoid-robots/1284.html",
+ "summary": "A 1.24 m, 40 kg humanoid with 30 joints for research, teaching, companionship and commercial demos; arms carry 1.5 kg each.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://terra-robotics.de/products/dobot-lumo-l1-humanoider-roboter",
+    "contactUrl": "https://terra-robotics.de/pages/impressum",
+    "email": "mail@terra-robotics.de",
+    "phone": "+49 5732 8411620",
+    "priceEur": 19900,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Standard version; currently not orderable."
+   },
+   {
+    "name": "DOBOT Europe GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.dobot-robots.com/about/contact-us",
+    "email": "sales@dobot-robots.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Terra Robotics lists LUMO L1 (Standard 19,900 EUR net, Max 39,900 EUR net) but both are shown not available; ask Terra Robotics or DOBOT Europe GmbH.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.24,
+   "unit": "m",
+   "conditions": "1240 x 560 x 244 mm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 40.5,
+   "unit": "kg",
+   "conditions": "Standard; Max about 41 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 30,
+   "unit": null,
+   "conditions": "1 head, 3 waist, 7 per arm, 6 per leg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1.5,
+   "unit": "kg",
+   "conditions": "without gripper",
+   "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 130,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "typical",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": null,
+   "conditions": "degrees Celsius",
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Exchangeable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Rockchip RK3588 (6 TOPS); Max: NVIDIA Jetson Thor T4000",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head touch sensor; Max adds stereo RGB-D camera and 3D LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 1.5,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Small robot with 1.5 kg arm payload."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0842/7116/9893/files/dobot-lumo-l1-1png-2785314.png",
+   "pageUrl": "https://terra-robotics.de/products/dobot-lumo-l1-humanoider-roboter",
+   "credit": "Terra Robotics / Dobot",
+   "alt": "DOBOT LUMO L1 humanoid",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Home companionship, research and education, commercial applications",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dobot-robots.com/products/humanoid-robots/1284.html",
+   "title": "DOBOT LUMO humanoid robot",
+   "publisher": "Dobot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://terra-robotics.de/products/dobot-lumo-l1-humanoider-roboter",
+   "title": "DOBOT LUMO L1 Humanoider Roboter",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.dobot-robots.com/about/contact-us",
+   "title": "Dobot global branches (DOBOT Europe GmbH, Neu-Isenburg)",
+   "publisher": "Dobot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "When will LUMO L1 be orderable in Germany?",
+  "Image is from the reseller; no official product photo URL found."
+ ],
+ "checkedAt": "2026-10-02"
+}

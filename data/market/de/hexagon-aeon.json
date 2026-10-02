@@ -1,0 +1,275 @@
+{
+ "schemaVersion": 1,
+ "id": "hexagon-aeon",
+ "maker": "Hexagon Robotics",
+ "makerCountry": "CH",
+ "model": "AEON",
+ "variant": null,
+ "name": "Hexagon AEON",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://robotics.hexagon.com/product/",
+ "summary": "A 1.65 m, 60 kg industrial humanoid on wheeled legs with self-swapping battery, in pilots at BMW Leipzig and Schaeffler in Germany.",
+ "launched": "2025-06",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Hexagon Robotics (Zurich) sells to industrial companies on request via its contact form. Documented German users: BMW Plant Leipzig (production tasks since June 2026) and Schaeffler (pilot 2025, at least 1,000 units planned by 2032, rollout from end of 2026). No public price; so far units go to industrial partners.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Hexagon Robotics (Hexagon AB division)",
+    "country": "CH",
+    "role": "manufacturer",
+    "productUrl": "https://robotics.hexagon.com/product/",
+    "contactUrl": "https://robotics.hexagon.com/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Contact form with company and country fields; Germany listed."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.65,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 60,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 34,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Top speed",
+   "value": 2.4,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "Short-term; 8 kg constant carry",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Constant carry payload",
+   "value": 8,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime per charge",
+   "value": 4,
+   "unit": "h",
+   "conditions": "Up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "Robot swaps its own battery for continuous work",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Multimodal sensor suite with Hexagon measurement and 3D spatial intelligence",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 8,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s4",
+   "s5",
+   "s7"
+  ],
+  "notes": [
+   "Moves on wheels (Hexagon summary of a FAZ report from BMW Leipzig: the wheels are expected to make it faster and cut energy use for longer operating times); the product page only names a \"unique locomotion system\".",
+   "Auto battery swap allows continuous operation.",
+   "Payload 15 kg short-term, 8 kg constant carry; not stated per arm.",
+   "Built for factory floors; no stair, outdoor or IP data published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://robotics.hexagon.com/wp-content/uploads/2025/06/AEON_KeyVisual_12.png",
+   "pageUrl": "https://robotics.hexagon.com/product/",
+   "credit": "Hexagon Robotics",
+   "alt": "Hexagon AEON humanoid, key visual",
+   "kind": "product"
+  },
+  {
+   "url": "https://robotics.hexagon.com/wp-content/uploads/2025/05/250522_AEON_01-scaled.jpg",
+   "pageUrl": "https://robotics.hexagon.com/",
+   "credit": "Hexagon Robotics",
+   "alt": "Hexagon AEON holding a measuring device next to a car body in a factory",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Performs production tasks in the plant; battery assembly to move into the factory in later pilots",
+   "stage": "pilot",
+   "where": "BMW Group Plant Leipzig, Germany",
+   "date": "2026-06",
+   "sourceId": "s3",
+   "note": "Deployment in production planned by the end of 2026."
+  },
+  {
+   "taskIds": [],
+   "task": "Operated a multi-machine station: loading, unloading and inspecting parts",
+   "stage": "pilot",
+   "where": "Schaeffler, production environment",
+   "date": "2025",
+   "sourceId": "s4",
+   "note": "Pilot completed 2025; at least 1,000 units planned across Schaeffler plants by 2032."
+  },
+  {
+   "taskIds": [],
+   "task": "Training and validation of new factory tasks in the Schaeffler Humanoid Gym",
+   "stage": "pilot",
+   "where": "Schaeffler Humanoid Gym, Germany",
+   "date": "2026-08",
+   "sourceId": "s5",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Machine tending, inspection and operational support in a client use case",
+   "stage": "pilot",
+   "where": "Fill Maschinenbau, Gurten, Austria",
+   "date": "2026-04",
+   "sourceId": "s6",
+   "note": "Pilot announced; results not yet published."
+  },
+  {
+   "taskIds": [
+    "site_survey_documentation/as-built-laser-scanning"
+   ],
+   "task": "Reality capture and asset inspection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker claim on the product page; no site deployment found."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://robotics.hexagon.com/product/",
+   "title": "AEON product page and spec sheet",
+   "publisher": "Hexagon Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://robotics.hexagon.com/contact",
+   "title": "Contact form",
+   "publisher": "Hexagon Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://robotics.hexagon.com/new-milestone-with-bmw-group-industrial-humanoid-deployment/",
+   "title": "New milestone with BMW Group: industrial humanoid deployment",
+   "publisher": "Hexagon Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://robotics.hexagon.com/hexagon-robotics-and-schaeffler-deploy-a-fleet-of-aeon-humanoids/",
+   "title": "Hexagon Robotics and Schaeffler deploy a fleet of AEON humanoids",
+   "publisher": "Hexagon Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://robotics.hexagon.com/aeon-trains-at-schaeffler-humanoid-gym/",
+   "title": "Towards factory deployment: AEON at Schaeffler Humanoid Gym",
+   "publisher": "Hexagon Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://robotics.hexagon.com/hexagon-robotics-and-fill-advance-manufacturing-autonomy-humanoids/",
+   "title": "Hexagon Robotics and Fill partner on humanoids",
+   "publisher": "Hexagon Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://robotics.hexagon.com/aeon-humanoid-robot-bmw-leipzig/",
+   "title": "FAZ explores what is behind AEON humanoid robot at BMW Leipzig",
+   "publisher": "Hexagon Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price and lead time for a buyer outside the partner programmes?",
+  "Per-arm payload and hand DoF?",
+  "SDK or integration interfaces?"
+ ],
+ "checkedAt": "2026-10-02"
+}

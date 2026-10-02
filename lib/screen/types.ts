@@ -54,9 +54,9 @@ export const FACT_KEYS: FactKey[] = [
   'runtime_continuous_min',
 ];
 
-export type ResolvedFact<K extends FactKey = FactKey> = { value: TaskFacts[K]; origin: FactOrigin; confidence?: CuratedConfidence; note?: string };
+export type ResolvedFact<K extends FactKey = FactKey> = { value: TaskFacts[K]; origin: FactOrigin; confidence?: CuratedConfidence; note?: string; evidence_url?: string };
 export type ResolvedFacts = { [K in FactKey]: ResolvedFact<K> };
-export type FactMeta = Partial<Record<FactKey, { confidence: CuratedConfidence; note: string }>>;
+export type FactMeta = Partial<Record<FactKey, { confidence: CuratedConfidence; note: string; evidence_url?: string }>>;
 /** Where record facts come from: the record's setting decides whether its environment and process facts may travel to the visitor. */
 export type FactSource = { setting: string | null; facts: Partial<TaskFacts>; meta?: FactMeta };
 

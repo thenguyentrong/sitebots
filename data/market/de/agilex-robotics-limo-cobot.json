@@ -1,0 +1,201 @@
+{
+ "schemaVersion": 1,
+ "id": "agilex-robotics-limo-cobot",
+ "maker": "AgileX Robotics",
+ "makerCountry": "CN",
+ "model": "LIMO COBOT",
+ "variant": null,
+ "name": "AgileX LIMO COBOT",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://global.agilex.ai/products/limo-corot",
+ "summary": "A 5.6 kg classroom robot: the LIMO PRO rover with a small myCobot 280 arm that lifts 0.25 kg, for teaching ROS navigation and grasping.",
+ "launched": "2024-04",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots lists it in its German shop at €4,316 net with an order button; delivery 4-5 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 4316,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "€5,179.20 including 20% VAT as shown."
+  },
+  "priceOther": {
+   "amount": 4400,
+   "currency": "USD",
+   "market": "AgileX global online store",
+   "sourceId": "s1"
+  },
+  "leadTime": "4-5 weeks (Generation Robots)",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404175-robot-mobile-limo-cobot.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 4316,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 5.6,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Arm DOF",
+   "value": 6,
+   "unit": null,
+   "conditions": "myCobot 280 by Elephant Robotics",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 0.25,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm working radius",
+   "value": 0.28,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Orin Nano",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Orbbec DaBai 3D camera, EAI T-mini Pro lidar, IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS, Gazebo, Python, C++",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 0.25,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 1/2",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Education and competition kit; 0.25 kg payload is far below any site task."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0551/0630/6141/files/LIMOCobot_800x800_20240411.png?v=1720173762",
+   "pageUrl": "https://global.agilex.ai/products/limo-corot",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX LIMO COBOT rover with myCobot 280 arm",
+   "kind": "product"
+  },
+  {
+   "url": "https://global.agilex.ai/cdn/shop/files/LIMO_ROS2-_-_453.png?v=1719974118&width=1946",
+   "pageUrl": "https://global.agilex.ai/products/limo-corot",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX LIMO COBOT on off-road wheels with its arm extended, three-quarter view",
+   "kind": "product"
+  },
+  {
+   "url": "https://global.agilex.ai/cdn/shop/files/limocobot_3.png?v=1719974118&width=1946",
+   "pageUrl": "https://global.agilex.ai/products/limo-corot",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX LIMO COBOT side view with its arm reaching forward",
+   "kind": "product"
+  },
+  {
+   "url": "https://global.agilex.ai/cdn/shop/files/limocobot-_3.png?v=1719974118&width=1946",
+   "pageUrl": "https://global.agilex.ai/products/limo-corot",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX LIMO COBOT front view with its arm raised",
+   "kind": "product"
+  },
+  {
+   "url": "https://global.agilex.ai/cdn/shop/files/LIMO_ROS2-_-_3_31b86bfb-2dca-4a18-9f80-12e288102004.png?v=1719974119&width=1946",
+   "pageUrl": "https://global.agilex.ai/products/limo-corot",
+   "credit": "AgileX Robotics",
+   "alt": "AgileX LIMO COBOT with tracks fitted and arm folded, three-quarter view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Seller offers it for education, training and competitions",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://global.agilex.ai/products/limo-corot",
+   "title": "LIMO COBOT product page",
+   "publisher": "AgileX Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404175-robot-mobile-limo-cobot.html",
+   "title": "Mobiler Roboter LIMO COBOT",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,287 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-x2-ultra",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "X2",
+ "variant": "Ultra",
+ "name": "AGIBOT X2 Ultra",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agibot.com/products/X2",
+ "summary": "A 1.31 m, 39 kg walking humanoid with 7-DOF arms, LiDAR navigation and optional hands, for guiding, retail service and research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 45600,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s6",
+   "note": "Generation Robots \"from\" price excl. VAT; end effectors are extra."
+  },
+  "priceOther": null,
+  "leadTime": "Generation Robots: delivery within 4 weeks",
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "productUrl": "https://www.generationrobots.com/en/404436-agibot-x2-ultra-humanoid-robot.html",
+    "priceEur": 45600,
+    "priceBasis": "net",
+    "sourceId": "s6",
+    "note": "\"From\" price EUR 45,600 excl. VAT (EUR 54,720 incl. French VAT); add-to-cart and quote request; delivery within 4 weeks. Ships within the EU."
+   },
+   {
+    "name": "Tekpoint GmbH",
+    "country": "AT",
+    "role": "distributor",
+    "productUrl": "https://tekpoint.com/robotics",
+    "contactUrl": "https://tekpoint.com/robotics",
+    "email": "robotics@tekpoint.com",
+    "phone": "+43 1 3616670",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": null
+   },
+   {
+    "name": "AGIBOT Store",
+    "country": "SG",
+    "role": "manufacturer",
+    "productUrl": "https://store.agibot.com/products/x2-ultra",
+    "contactUrl": "https://www.agibot.com/Contact/Business",
+    "email": "sales@agibot.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Store listing \"X2 Ultra New Version\" with placeholder price (USD 999,999); contact sales."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "buy_now",
+  "statusNote": "Generation Robots (France) sells the X2 Ultra online from EUR 45,600 excl. VAT with delivery within 4 weeks and ships within the EU; Tekpoint (Vienna), AGIBOT's European distributor, quotes on request.",
+  "sourceIds": [
+   "s6",
+   "s7",
+   "s2",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.31,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 39,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 30,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.558,
+   "unit": "m",
+   "conditions": "without end effector",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "max in specific postures; at most 1 kg across the full range; without end effector",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": "up to; typical 0.8 m/s or less",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "approx., walking at 0.5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 500,
+   "unit": "Wh",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "at most",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-10 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "2 x RK3588 + NVIDIA Orin NX (157 TOPS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 1,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Secondary development supported",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "OmniHand and OmniPicker end effectors are sold separately and fit only the X2 Ultra.",
+   "Reliable payload over the full arm range is 1 kg or less."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0628/8175/9275/files/X2_-_-_20260831_bf8fba04-aa79-489c-8a26-90a2606afec9.jpg?v=1790158625",
+   "pageUrl": "https://store.agibot.com/products/x2-ultra",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT X2 Ultra walking",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Guided tours, retail service and research",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Runway walking show",
+   "stage": "demo",
+   "where": "IFA 2026, Berlin, Germany",
+   "date": "2026-09",
+   "sourceId": "s5",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agibot.com/products/X2",
+   "title": "AGIBOT X2 series product page and specification table",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://tekpoint.com/robotics",
+   "title": "Tekpoint: European regional distributor for AGIBOT robots",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://store.agibot.com/products/x2-ultra",
+   "title": "AGIBOT X2 Ultra New Version (store)",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://tekpoint.com/en/impressum/",
+   "title": "Tekpoint imprint",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.agibot.com/article/231/detail/96.html",
+   "title": "AGIBOT Showcases Embodied AI Robots in Action at IFA 2026",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.generationrobots.com/en/404436-agibot-x2-ultra-humanoid-robot.html",
+   "title": "Agibot X2 Ultra Humanoid Robot (Generation Robots)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.generationrobots.com/en/content/3-terms-and-conditions-of-use",
+   "title": "Generation Robots terms of sale (delivery within the EU)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [],
+ "checkedAt": "2026-10-02"
+}

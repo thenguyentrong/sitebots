@@ -1,0 +1,236 @@
+{
+ "schemaVersion": 1,
+ "id": "neura-4ne1",
+ "maker": "NEURA Robotics",
+ "makerCountry": "DE",
+ "model": "4NE1",
+ "variant": "Gen 3.5 (legged)",
+ "name": "NEURA 4NE1 Gen 3.5",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://neura-robotics.com/products/4ne1/",
+ "summary": "A 1.80 m, 80 kg German bipedal humanoid with two 12-DoF hands, offered for reservation with delivery expected at the end of 2026.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "Made in Germany. NEURA takes refundable 100 EUR reservations; the maker says 4NE1 Gen 3.5 is expected to be available at the end of 2026. Schaeffler signed a large humanoid order in November 2025, but no delivered units to customers were found.",
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "priceEur": {
+   "amount": 98000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "Estimated price per unit for 1-19 units, excluding taxes and shipping; 60,000 EUR per unit for 20 or more units."
+  },
+  "priceOther": null,
+  "leadTime": "Expected end of 2026 (maker reservation page).",
+  "sellers": [
+   {
+    "name": "NEURA Robotics GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://neura-robotics.com/product/4ne1-reservation/",
+    "contactUrl": "https://neura-robotics.com/contact-us/",
+    "email": null,
+    "phone": null,
+    "priceEur": 98000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Manufacturer in Metzingen, Germany. Online reservation for single units; commercial quantities through the contact form."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.8,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 55,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DoF per hand",
+   "value": 12,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "Datasheet says \"Arms payload 20 kg\"; not stated whether per arm or for both arms; application-dependent",
+   "sourceId": "s3"
+  },
+  {
+   "key": "leg_supported_payload_kg",
+   "label": "Leg-supported payload",
+   "value": 100,
+   "unit": "kg",
+   "conditions": "Leg-supported configurations, per datasheet footnote",
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Walking speed",
+   "value": 5,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "operating_time",
+   "label": "Operating time",
+   "value": "24/7",
+   "unit": null,
+   "conditions": "As stated on the datasheet; battery runtime per charge not given",
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "360-degree perception, touch-sensitive sensor skin; human-detection safety sensors optional at extra cost",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sdk",
+   "label": "Interfaces",
+   "value": "Wi-Fi 6, Ethernet, Python SDK, ROS 2, C++ SDK; digital twin, teleoperation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Python SDK, C++ SDK, ROS 2",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Delivered with integrated high-dexterity hands, battery and charging station; third-party end effectors not included.",
+   "Arm payload of 20 kg is not specified as per arm or both arms.",
+   "Human-detection safety sensors are optional at extra cost.",
+   "NEURA also offers 4NE1 versions on wheels and with a 7th axis on request; no separate specs or prices published.",
+   "No IP rating, stair or outdoor capability published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/01/NEURA_4NE1_Gen3.5-full.webp",
+   "pageUrl": "https://neura-robotics.com/product/4ne1-reservation/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA 4NE1 Gen 3.5 humanoid, full body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Humanoid robots for factory work at Schaeffler plants",
+   "stage": "claim",
+   "where": "Schaeffler, Germany",
+   "date": "2025-11",
+   "sourceId": "s4",
+   "note": "Order reported at about 300 million EUR; Schaeffler also works with other humanoid makers. No task or deployment date given."
+  },
+  {
+   "taskIds": [],
+   "task": "Live humanoid demonstration at Automate 2026",
+   "stage": "demo",
+   "where": "Automate 2026, USA",
+   "date": "2026",
+   "sourceId": "s5",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://neura-robotics.com/products/4ne1/",
+   "title": "4NE1 product page",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://neura-robotics.com/product/4ne1-reservation/",
+   "title": "Reserve 4NE1 (Gen 3.5 features, price, availability)",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://neurarobotics.px.media/plk/cE/NEURA_Robotics_4NE1_Datasheet_Web.pdf",
+   "title": "4NE1 datasheet V7 05.06.2026",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.swr.de/swraktuell/baden-wuerttemberg/tuebingen/roboterhersteller-aus-metzingen-sichert-sich-300-millionen-euro-auftrag-100.html",
+   "title": "Grossauftrag von Zulieferer Schaeffler",
+   "publisher": "SWR",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://neura-robotics.com/neura-robotics-showcases-full-stack-robotics-platform-at-automate-2026/",
+   "title": "NEURA Robotics at Automate 2026",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Battery runtime per charge and charging time?",
+  "Is the 20 kg arm payload per arm or for both arms?",
+  "Have any 4NE1 units been delivered to Schaeffler or other customers?",
+  "Specs and price of the wheeled 4NE1 version?"
+ ],
+ "checkedAt": "2026-10-02"
+}

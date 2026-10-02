@@ -1,0 +1,216 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-g1",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "G1",
+ "variant": null,
+ "name": "AGIBOT G1 (Genie G1)",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agibot.com/products/G1",
+ "summary": "A 150 kg wheeled dual-arm robot with a lifting waist, built mainly for teleoperated data collection and model testing.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "AGIBOT",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.agibot.com/products/G1",
+    "email": "sales@agibot.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "G1 is selectable in the enquiry form on AGIBOT's G1 product page; the main business contact form no longer lists it."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "Not listed by Tekpoint, Generation Robots or RobotShop; AGIBOT takes G1 enquiries through the form on its G1 page and sells other models in Europe. Price on request.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.30-1.80",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 150,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 20,
+   "unit": null,
+   "conditions": "excluding end effector; page also states 26 DOF overall",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "End-effector DOF",
+   "value": 6,
+   "unit": null,
+   "conditions": "replaceable with a two-finger gripper",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Continuous load, one arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "continuous operation holding 3 kg with one arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Working height",
+   "value": 2,
+   "unit": "m",
+   "conditions": "over 2 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Obstacle height",
+   "value": 2,
+   "unit": "cm",
+   "conditions": "chassis mounts obstacles up to 20 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "4 h+",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Orin 64 GB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3 RGB-D cameras, 5 fisheye cameras, 6-axis force sensors on both arms, chassis LiDAR",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Main purpose is teleoperated data collection (VR or motion capture) and inference.",
+   "Navigates about 95 % of factory pathways according to AGIBOT."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.agibot.com/public/static/index/en/images/pro-A2D/proA2DOne-img.png",
+   "pageUrl": "https://www.agibot.com/products/G1",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT G1 wheeled dual-arm robot",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.agibot.com/public/uploads/images/20241230/1968be56db5f4f93c2d514a82df24944.png",
+   "pageUrl": "https://www.agibot.com/products/G1",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT G1 wheeled dual-arm robot, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Teleoperated data collection for embodied AI training",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agibot.com/products/G1",
+   "title": "AGIBOT G1 product page",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agibot.com/Contact/Business",
+   "title": "AGIBOT business contact and product enquiry form",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.agibot.com/article/231/detail/43.html",
+   "title": "AGIBOT and Minth Group Launch Full Robot Portfolio in Germany",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://tekpoint.com/robotics",
+   "title": "Tekpoint: European regional distributor for AGIBOT robots",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the G1 still offered now that the G2 is the main Genie model? It is missing from AGIBOT's main business enquiry form."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "deep-robotics-lynx-m20s",
+ "maker": "DEEP Robotics",
+ "makerCountry": "CN",
+ "model": "LYNX M20S",
+ "variant": null,
+ "name": "DEEP Robotics LYNX M20S",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.deeprobotics.cn/en/index/lynx.html",
+ "summary": "The 2026 upgrade of the M20 wheel-legged robot: 36 kg, 36 kg payload on normal terrain, IP67, -30 to 55 °C, 30 cm stairs.",
+ "launched": "2026-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Launched May 2026; no German or EU seller lists the M20S yet. DEEP takes requests through its global purchase form; German dealers sell the M20 and M20 Pro.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 36,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Effective payload",
+   "value": 36,
+   "unit": "kg",
+   "conditions": "standard terrain; max 100 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max operating speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "tested max 9 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max stair height",
+   "value": 30,
+   "unit": "cm",
+   "conditions": "single obstacle up to 100 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "lab value",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": "submersible to 1 m for 30 min",
+   "sourceId": "s3"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-30 to 55",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time with payload",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "2.5 to 3.5 h with payload; 3.5 to 5 h without",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1.5,
+   "unit": "h",
+   "conditions": "per battery",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2x 128-channel lidar (360° x 95°), 2 wide-angle cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "3x octa-core 64-bit industrial processors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 36,
+  "runtimeH": 2.5,
+  "ipRating": "IP67",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Autonomous charging optional."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.deeprobotics.cn/public/static/robot/demo/lynx_s.jpg",
+   "pageUrl": "https://www.deeprobotics.cn/en/index/lynx.html",
+   "credit": "DEEP Robotics",
+   "alt": "DEEP Robotics LYNX M20S wheel-legged robot with orange wheel hub, product render",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/substation-rounds"
+   ],
+   "task": "Offered for substation inspection rounds",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deeprobotics.cn/en/index/lynx.html",
+   "title": "Lynx M20 product page (M20S tab)",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.deeprobotics.cn/en/index/buy.html",
+   "title": "Product Purchase Intention Form",
+   "publisher": "DEEP Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.accessnewswire.com/newsroom/en/industrial-and-manufacturing/deep-robotics-lynx-m20s-launched-breaking-the-performance-paradox-of-w-1167678",
+   "title": "DEEP Robotics Lynx M20S Launched",
+   "publisher": "DEEP Robotics",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "When German dealers (Funduino, Génération Robots, Sebotics) will list the M20S."
+ ],
+ "checkedAt": "2026-10-02"
+}

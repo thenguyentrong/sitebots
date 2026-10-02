@@ -1,0 +1,249 @@
+{
+ "schemaVersion": 1,
+ "id": "aimoga-argos",
+ "maker": "AiMOGA Robotics (Moga Technology, Chery group)",
+ "makerCountry": "CN",
+ "model": "Argos",
+ "variant": null,
+ "name": "AiMOGA Argos",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.aimoga-robot.com/global/en/argos/",
+ "summary": "A 13.6 kg consumer robot dog with a panoramic camera for companionship, remote video monitoring and carrying up to about 5 kg, with about 2 h of battery.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer: the only listing is Roboter Deutschland, a web shop run from Las Vegas without a named company, and AiMOGA names no EU distributor.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s4",
+   "s6"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "AiMOGA Robotics",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.aimoga-robot.com/global/en/argos/",
+    "contactUrl": "https://www.aimoga-robot.com/global/en/contactPurchase/",
+    "email": "sales@aimoga-robot.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Global purchase and distributor forms; showed products at IFA 2026 in Berlin and says it is looking for European partners."
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 13.6,
+   "unit": "kg",
+   "conditions": "maker page; the shop lists 13.8 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Joint motors",
+   "value": 12,
+   "unit": null,
+   "conditions": "maker page says 12 joint motors; the shop and press say 13 DOF",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 2.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "approximate, on the back",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 126,
+   "unit": "Wh",
+   "conditions": "4,400 mAh lithium",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step height",
+   "value": 15,
+   "unit": "cm",
+   "conditions": "the maker page prints 15 cm under the label 'Climbing angle' and 40° under 'Step height'; read by unit",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing angle",
+   "value": 40,
+   "unit": "deg",
+   "conditions": "see step height: labels swapped on the maker page",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_range_km",
+   "label": "Operating range",
+   "value": 6.48,
+   "unit": "km",
+   "conditions": "per charge, press report",
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "HD panoramic camera, 2 ultrasonic radars (±30°), six-microphone array, LED light",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "voice_control",
+   "label": "Voice commands",
+   "value": "Chinese and English",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 5,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Consumer companion robot (the shop lists its use as 'Verbraucher'); controlled by voice, touch and an app with remote video. No SDK, no LiDAR and no IP rating found.",
+   "Maker says gravel, grass, slopes and steps are no obstacle; stairs are not stated.",
+   "Short runtime (about 2 h) and small payload: not a site inspection robot."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.aimoga-robot.com/global/images/argo/banner4.webp",
+   "pageUrl": "https://www.aimoga-robot.com/global/en/argos/",
+   "credit": "AiMOGA Robotics",
+   "alt": "AiMOGA Argos robot dog, white, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "facility_operation/night-security-patrol"
+   ],
+   "task": "Walks night patrols with its LED light and sends live video with alerts to the owner's phone",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker product page claim for home use."
+  },
+  {
+   "taskIds": [],
+   "task": "1,000th Argos delivered; units used in homes, factories and communities for inspections and night patrols with live video",
+   "stage": "claim",
+   "where": "More than 30 countries and regions",
+   "date": "2025",
+   "sourceId": "s3",
+   "note": "Press report; no named customer or site."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.aimoga-robot.com/global/en/argos/",
+   "title": "Argos",
+   "publisher": "AiMOGA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.roboterdeutschland.de/AiMOGA-Argos-Quadruped-Robot-Dog.htm",
+   "title": "AiMOGA Argos vierbeiniger Roboterhund",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://techdriveplay.com/2026/01/18/cherys-robot-dog-push-shows-tech-beyond-cars/",
+   "title": "Chery's Robot Dog Push Shows Tech Beyond Cars",
+   "publisher": "TechDrivePlay",
+   "kind": "press",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.aimoga-robot.com/global/en/newsDetails/zrbgkp/",
+   "title": "AiMOGA Debuts Intelligent Security Robot and Robotics Nurse Overseas at IFA 2026",
+   "publisher": "AiMOGA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.aimoga-robot.com/global/en/contactUs/",
+   "title": "Contact AiMOGA",
+   "publisher": "AiMOGA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.roboterdeutschland.de/terms-conditions/",
+   "title": "Terms and conditions",
+   "publisher": "Roboter Deutschland (Robots International)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Is the shop price gross or net, and are shipping, import VAT and duties from outside the EU added?",
+  "CE marking, EU warranty and service for Argos in Germany.",
+  "Does the shop deliver the base Argos or the newer Argos X2 shown at IFA 2026?",
+  "Step height and slope labels are swapped on the maker page; stair climbing is not stated by the maker.",
+  "The Roboter Deutschland network also lists robots it cannot back up: its Galbot ET1 page gives specs that contradict Galbot. Treat this shop as an unverified grey-import route until an order is confirmed."
+ ],
+ "checkedAt": "2026-10-02"
+}

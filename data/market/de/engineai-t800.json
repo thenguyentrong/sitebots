@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "id": "engineai-t800",
+ "maker": "EngineAI",
+ "makerCountry": "CN",
+ "model": "T800",
+ "variant": "Basic / Open Source Edition (no hands)",
+ "name": "EngineAI T800",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://en.engineai.com.cn/product-t800.html",
+ "summary": "A 1.73 m, 75 to 85 kg full-size humanoid with 450 Nm joints and up to 4 hours runtime; the Basic and Open Source editions have 25 joints and no hands.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "EngineAI (Shenzhen EngineAI Robotics)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://en.engineai.com.cn/contact-us.html",
+    "email": "sales@engineai.com.cn",
+    "phone": "+86 755 26999080",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Purchase inquiry by email or form; no EU price found."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "No German or EU seller lists T800; EngineAI sells PM01 Basic in the EU through Research Robots (Portugal) and takes purchase inquiries by email, so ask EngineAI.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.73,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": "75 to 85 kg by configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 450,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Moving speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "at least 2 m/s, hardware supported",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "3 to 5 h by edition; up to 4 h stated in highlights",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 25,
+   "unit": null,
+   "conditions": "2 neck, 6 per leg, 1 waist, 5 per arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "8-core CPU; Orin NX 16 GB (Basic) or AGX Orin 64 GB (Open Source)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular head camera; 3D LiDAR on Open Source Edition",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Basic Edition does not allow secondary development; Open Source Edition does.",
+   "No hands on these editions; dexterous hands come with Pro and Max (see engineai-t800-pro)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en.engineai.com.cn/static/home/images/tuprimfw1.jpg",
+   "pageUrl": "https://en.engineai.com.cn/product-t800.html",
+   "credit": "EngineAI",
+   "alt": "EngineAI T800 humanoid walking",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered for logistics warehouses, hotel services and sales assistance",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Application scenarios listed by the maker."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.engineai.com.cn/product-t800.html",
+   "title": "T800 product page",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://researchrobots.eu/engineai-pm01-basic-humanoid-robot.html",
+   "title": "EngineAI - PM01 Basic Humanoid Robot",
+   "publisher": "Research Robots (RoboSavvy)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.engineai.com.cn/contact-us.html",
+   "title": "EngineAI contact and purchase inquiry",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "EU price, CE marking and delivery time unknown."
+ ],
+ "checkedAt": "2026-10-02"
+}

@@ -1,0 +1,157 @@
+{
+ "schemaVersion": 1,
+ "id": "noetix-e1",
+ "maker": "Noetix Robotics",
+ "makerCountry": "CN",
+ "model": "E1",
+ "variant": null,
+ "name": "Noetix E1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.noetixrobotics.com/en/detail/E1/",
+ "summary": "A Noetix humanoid with a lightweight composite body for guiding, exhibitions and companionship, with modelled hands as standard and dexterous hands as an option.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Noetix Robotics (Beijing)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.noetixrobotics.com/en/contact/",
+    "email": "sales@noetixrobotics.com",
+    "phone": "+86 400 096 9300",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Pre-sales inquiries by email or form."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "No German or EU seller found for E1; Noetix sells N2 and Bumi in Germany through RBTX, so ask Noetix directly.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "10.6 Ah, quick-release (about 5 s swap)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "67 TOPS board (EDU Edition)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "SDK",
+   "value": "SDK documentation provided (EDU Edition)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Standard hands are modelled (non-gripping); dexterous hands are an option.",
+   "Height, weight and payload are not published on the maker page."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://image.noetixrobotics.com/pc/msiajc4kjhil3s3kc.png",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/E1/",
+   "credit": "Noetix Robotics",
+   "alt": "Noetix E1 humanoid, full body, standing",
+   "kind": "product"
+  },
+  {
+   "url": "https://image.noetixrobotics.com/pc/e1_drldc_pc.png",
+   "pageUrl": "https://www.noetixrobotics.com/en/detail/E1/",
+   "credit": "Noetix Robotics",
+   "alt": "Noetix E1 upper body seen from behind, with the battery pack fitted in its back.",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Trade-show and shopping-mall guidance, reception and elderly companionship",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.noetixrobotics.com/en/detail/E1/",
+   "title": "E1 Bipedal Humanoid Robot",
+   "publisher": "Noetix Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/noetix-robotics-n2",
+   "title": "NOETIX N2 humanoid robot on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.noetixrobotics.com/en/contact/",
+   "title": "Contact Noetix Robotics",
+   "publisher": "Noetix Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight, payload and price not published."
+ ],
+ "checkedAt": "2026-10-02"
+}

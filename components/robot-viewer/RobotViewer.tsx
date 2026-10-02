@@ -11,7 +11,7 @@ import { useRobotPose } from './useRobotPose';
 import { CameraControls, type CameraCommand } from './CameraControls';
 import { JointControls } from './JointControls';
 
-const POSE_LABEL: Record<string, string> = { standing: 'Standing', reach_up: 'Reach up', carry: 'Carry', crouch: 'Crouch', sit: 'Sit' };
+const POSE_LABEL: Record<string, string> = { standing: 'Rest pose', reach_up: 'Reach up', carry: 'Carry', crouch: 'Crouch', sit: 'Sit' };
 type PoseApi = { animating: boolean; pose: string; heightM: number; values: Pose; missing: string[] };
 
 type SceneColors = { dark: boolean; cell: string; section: string; ink: string; line: string };
@@ -135,7 +135,7 @@ export function Studio() {
   );
 }
 
-export function RobotViewer({ entry, presets, name, compact = false }: { entry: ModelEntry; presets: Record<string, Pose>; name: string; compact?: boolean }) {
+export function RobotViewer({ entry, presets, name, compact = false, fill = false }: { entry: ModelEntry; presets: Record<string, Pose>; name: string; compact?: boolean; fill?: boolean }) {
   const content = useRef<Group>(null);
   const container = useRef<HTMLDivElement>(null);
   const colors = useSceneColors();
@@ -169,9 +169,9 @@ export function RobotViewer({ entry, presets, name, compact = false }: { entry: 
   const changeJoint = (joint: string, value: number) => setPose((p) => ({ name: 'custom', values: { ...(p?.values ?? initial), [joint]: value } }));
   const presetNames = Object.keys(presets).filter((p) => p === 'standing' || Object.keys(presets[p]).length > 0);
   const button = 'rounded-lg border border-edge bg-card/90 px-2.5 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition hover:bg-subtle aria-pressed:bg-foreground aria-pressed:text-background disabled:opacity-40';
-  return <div ref={container} className={expanded ? 'fixed inset-3 z-50 overflow-auto rounded-2xl border border-edge bg-card shadow-2xl sm:inset-6' : compact ? 'overflow-hidden' : 'card overflow-hidden'} data-robot-viewer data-ready={ready ? 'true' : 'false'} data-pose={api.pose} data-animating={api.animating} data-joint-values={JSON.stringify(api.values)} data-missing-joints={api.missing.join(',')}>
+  return <div ref={container} className={expanded ? 'fixed inset-3 z-50 overflow-auto rounded-2xl border border-edge bg-card shadow-2xl sm:inset-6' : compact ? (fill ? 'h-full overflow-hidden' : 'overflow-hidden') : 'card overflow-hidden'} data-robot-viewer data-ready={ready ? 'true' : 'false'} data-pose={api.pose} data-animating={api.animating} data-joint-values={JSON.stringify(api.values)} data-missing-joints={api.missing.join(',')}>
     <ModelBoundary key={entry.glbUrl} url={entry.glbUrl}>
-      <div className={(expanded ? 'relative h-[70vh] min-h-72' : 'relative aspect-[4/3]') + (compact ? '' : ' viewer-stage')}>
+      <div className={(expanded ? 'relative h-[70vh] min-h-72' : fill ? 'relative h-full' : 'relative aspect-[4/3]') + (compact ? '' : ' viewer-stage')}>
         <Canvas dpr={[1, 2]} frameloop="demand" shadows={false}
           fallback={<div role="alert" className="p-6 text-sm">3D needs WebGL. Photos and specifications are still available.</div>}
           gl={{ antialias: true, powerPreference: 'high-performance', alpha: true, preserveDrawingBuffer: compact }}

@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "robotnik-rb-kairos-plus",
+ "maker": "Robotnik",
+ "makerCountry": "ES",
+ "model": "RB-KAIROS+",
+ "variant": null,
+ "name": "Robotnik RB-KAIROS+",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://robotnik.eu/rb-kairos-2-2/",
+ "summary": "An omnidirectional indoor platform with a Universal Robots UR5e arm (5 kg), safety scanners and up to 6 h runtime, for pick-and-place, part feeding and machine work.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "Generation Robots lists it in its German shop from €35,950 net (non-safety version) with an order button; a safety version is also offered.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 35950,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Non-safety version; €43,140 incl. 20% VAT as shown."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404265-rb-kairos-mobiler-roboter-manipulator-2070.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800 982 602",
+    "priceEur": 35950,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Non-safety and safety versions."
+   },
+   {
+    "name": "Robotnik Automation S.L.",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://robotnik.eu/rb-kairos-2-2/",
+    "contactUrl": "https://robotnik.eu/contact/",
+    "email": null,
+    "phone": "+34 96 147 54 00",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": null
+   }
+  ],
+  "checkedAt": "2026-10-02"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "978 x 776 x 1,010",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 115,
+   "unit": "kg",
+   "conditions": "platform; arm 25 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 225,
+   "unit": "kg",
+   "conditions": "up to; standard Mecanum wheels rated 100 kg, high-payload wheels 250 kg",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "UR5e, reach 850 mm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP52",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_slope_pct",
+   "label": "Max. slope",
+   "value": 15,
+   "unit": "%",
+   "conditions": "grade in percent, as stated by the seller",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 50",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2 2D safety scanners, safety PLC, RGBD camera, IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 5,
+  "carryPayloadKg": 225,
+  "runtimeH": 6,
+  "ipRating": "IP52",
+  "sdk": "ROS",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Indoor only.",
+   "Grippers (OnRobot, Robotiq) are options.",
+   "UR+ certified for Universal Robots e-Series arms.",
+   "The maker page now offers UR7e, UR12e and UR16e arms (arm payloads up to 16 kg) and states IP42; the Generation Robots configuration ships with a UR5e and states IP52."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://robotnik.eu/wp-content/uploads/2021/10/Robotnik_RB-KAIROS-ur-211007-1.jpg",
+   "pageUrl": "https://robotnik.eu/rb-kairos-2-2/",
+   "credit": "Robotnik",
+   "alt": "Robotnik RB-KAIROS+ with Universal Robots arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Seller lists pick and place, part feeding, metrology, quality control, packaging, polishing, screwing and drilling",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://robotnik.eu/rb-kairos-2-2/",
+   "title": "RB-KAIROS+ page",
+   "publisher": "Robotnik",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/de/404265-rb-kairos-mobiler-roboter-manipulator-2070.html",
+   "title": "RB-KAIROS+ Mobiler Roboter-Manipulator",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "Price of the safety version."
+ ],
+ "checkedAt": "2026-10-02"
+}

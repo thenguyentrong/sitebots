@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { INDUSTRY_IDS } from './industries';
 import { CURATED_CONFIDENCE, FORM_FACTORS, TASK_CAPABILITIES } from '@/lib/spec/enums';
 import {
   COVERAGE,
@@ -147,6 +148,7 @@ export const TaskRecord = z
     setting: Slug,
     family: z.enum(FAMILY_IDS),
     trades: z.array(Slug).default([]),
+    industries: z.array(z.enum(INDUSTRY_IDS)).default([]),
     title: L10n,
     summary: L10n,
     description: L10n,
@@ -192,6 +194,7 @@ export const ProcessStep = z.object({ id: Slug, label: L10n });
 export const SettingRecord = z.object({
   id: Slug,
   group: z.enum(SETTING_GROUPS),
+  industries: z.array(z.enum(INDUSTRY_IDS)).default([]),
   section: z.enum(SITE_SECTIONS).optional(),
   lv: LvRef.optional(),
   title: L10n,

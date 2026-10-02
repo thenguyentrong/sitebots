@@ -1,0 +1,724 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-01",
+  "scope": "Loop 09: exact integrated waste-sorting systems, cautious generation evidence, operating constraints and published enquiry routes.",
+  "records": [
+    {
+      "id": "zenrobotics-heavy-picker-4-sorting",
+      "name": "ZenRobotics Heavy Picker 4.0",
+      "manufacturer": "ZenRobotics",
+      "robotClass": "integrated_cell",
+      "industries": [
+        "waste_recycling"
+      ],
+      "workflowId": "waste_sorting",
+      "exactConfiguration": "Heavy Picker 4.0 sorting cell with mechanical gripper, per-arm recognition and configured conveyors/chutes; figures below refer to one robot module.",
+      "description": "Recovers selected bulky material fractions from a prepared waste stream.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.terex.com/zenrobotics/robots/heavy-picker",
+          "title": "Current Heavy Picker product page",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "brochure",
+          "url": "https://www.terex.com/docs/zenroboticsnewlibraries/default-document-library/heavy-picker-brochure.pdf?sfvrsn=d26130d1_1",
+          "title": "Heavy Picker 4.0 technical brochure, December 2023; linked from current page",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "launch",
+          "url": "https://www.terex.com/zenrobotics/about-us/news/zenrobotics-launch-fourth-generation-of-waste-sorting-robots",
+          "title": "Fourth-generation model announcement and labeled images",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "earlier-case",
+          "url": "https://www.terex.com/zenrobotics/case-studies/remeo",
+          "title": "Earlier Heavy Picker installation; 30 kg configuration",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.terex.com/zenrobotics/contact-us",
+          "title": "Current manufacturer sales contact",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.terex.com/zenrobotics/robots/heavy-picker",
+        "https://www.terex.com/docs/zenroboticsnewlibraries/default-document-library/heavy-picker-brochure.pdf?sfvrsn=d26130d1_1",
+        "https://www.terex.com/zenrobotics/about-us/news/zenrobotics-launch-fourth-generation-of-waste-sorting-robots",
+        "https://www.terex.com/zenrobotics/case-studies/remeo",
+        "https://www.terex.com/zenrobotics/contact-us"
+      ],
+      "conflicts": [
+        "Earlier installation and standalone sources describe 30 kg machines; they do not override the exact 4.0 brochure's 40 kg object limit.",
+        "Current contact page uses +358 50 4863803; the dated brochure prints +358 50 4363 803."
+      ],
+      "unknowns": [
+        "German delivery, local service route, installed price, lead time and contractual throughput remain unknown.",
+        "Material-specific recovery and purity require a sample test and plant acceptance criteria."
+      ],
+      "operatingMode": {
+        "value": "Automatic recognition and mechanical picking inside a commissioned sorting line.",
+        "sourceIds": [
+          "brochure"
+        ],
+        "caveats": [
+          "Requires feed preparation, guarding, conveyors, collection bins and utilities.",
+          "People manage inbound waste, exceptions, clearing, maintenance and recovered fractions."
+        ]
+      },
+      "specs": [
+        {
+          "key": "max_object_mass",
+          "value": 40,
+          "unit": "kg",
+          "semanticLabel": "Maximum sortable object mass",
+          "conditions": [
+            "Object geometry and grip suitability apply."
+          ],
+          "sourceIds": [
+            "brochure",
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_object_dimensions",
+          "value": "1500 × 500 × 400",
+          "unit": "mm",
+          "semanticLabel": "Maximum sortable object envelope",
+          "conditions": [],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_picks",
+          "value": 2300,
+          "unit": "picks/h",
+          "semanticLabel": "Claimed maximum per-arm pick rate",
+          "conditions": [
+            "Ideal utilisation; actual material feed limits throughput."
+          ],
+          "sourceIds": [
+            "brochure",
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "installed_power",
+          "value": 8.3,
+          "unit": "kW",
+          "semanticLabel": "Installed power per robot module",
+          "conditions": [
+            "Not total plant demand."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "belt_speed",
+          "value": "0.1–0.6",
+          "unit": "m/s",
+          "semanticLabel": "Sorting conveyor speed",
+          "conditions": [
+            "Not robot travel speed."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "mass",
+          "value": 3000,
+          "unit": "kg",
+          "semanticLabel": "Robot module mass",
+          "conditions": [
+            "Excludes complete sorting-line equipment."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "air_flow",
+          "value": 60,
+          "unit": "L/min",
+          "semanticLabel": "Compressed-air consumption",
+          "conditions": [
+            "7 bar supply."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_chutes",
+          "value": 4,
+          "unit": null,
+          "semanticLabel": "Maximum discharge chutes per arm",
+          "conditions": [],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Recover wood, inert material, metals and selected plastics from bulky waste.",
+          "configuration": "Heavy Picker 4.0 with application-specific feed and chutes.",
+          "operatingMode": "Automatic sorting in a controlled line.",
+          "sourceIds": [
+            "product",
+            "brochure",
+            "launch"
+          ],
+          "limitations": [
+            "No exact 4.0 routine installation independently established in this pass.",
+            "Older 30 kg installation reports cannot verify the 4.0 40 kg configuration."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ZenRobotics / Terex",
+          "market": "Finland / international enquiry; German delivery and local service unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.terex.com/zenrobotics/contact-us",
+            "email": "sales@zenrobotics.com",
+            "phone": "+358 50 4863803"
+          },
+          "sourceIds": [
+            "contact",
+            "brochure"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Direct manufacturer sales route; no German reseller authorization established.",
+          "caveats": [
+            "Current contact page phone differs from the older brochure; current page used.",
+            "Ask sales to name the German installer, commissioning support and exact quoted configuration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zenrobotics-fast-picker-4-sorting",
+      "name": "ZenRobotics Fast Picker 4.0",
+      "manufacturer": "ZenRobotics",
+      "robotClass": "integrated_cell",
+      "industries": [
+        "waste_recycling"
+      ],
+      "workflowId": "waste_sorting",
+      "exactConfiguration": "Fast Picker 4.0 gantry sorting cell with configurable conveyor coverage; Standard geometry is labeled separately and Wide geometry is not merged.",
+      "description": "Recovers light recyclable objects from conveyor side streams or residue lines.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://www.terex.com/zenrobotics/robots/fast-picker",
+          "title": "Current Standard and Wide product specifications",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "brochure",
+          "url": "https://www.terex.com/docs/zenroboticslibraries/brochures/fast-picker.pdf?sfvrsn=bf332278_3/Fast-Picker.pdf",
+          "title": "Fast Picker 4.0 brochure, February 2024",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "launch",
+          "url": "https://www.terex.com/zenrobotics/about-us/news/zenrobotics-launch-fourth-generation-of-waste-sorting-robots",
+          "title": "Fourth-generation model announcement and labeled images",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "earlier-case",
+          "url": "https://www.terex.com/zenrobotics/case-studies/grundon",
+          "title": "Earlier Fast Picker operating report; generation unconfirmed",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://www.terex.com/zenrobotics/contact-us",
+          "title": "Current manufacturer sales contact",
+          "publisher": "ZenRobotics / Terex",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://www.terex.com/zenrobotics/robots/fast-picker",
+        "https://www.terex.com/docs/zenroboticslibraries/brochures/fast-picker.pdf?sfvrsn=bf332278_3/Fast-Picker.pdf",
+        "https://www.terex.com/zenrobotics/about-us/news/zenrobotics-launch-fourth-generation-of-waste-sorting-robots",
+        "https://www.terex.com/zenrobotics/case-studies/grundon",
+        "https://www.terex.com/zenrobotics/contact-us"
+      ],
+      "conflicts": [
+        "February 2024 brochure technical table gives height 2760 mm while its dimension graphic labels 2250 mm; height left unresolved.",
+        "Current sales phone differs from the brochure; current contact-page phone used."
+      ],
+      "unknowns": [
+        "Exact Standard conveyor-width limit, approved final dimensions, material-specific throughput and German support/delivery require confirmation.",
+        "No exact 4.0 routine-operation case reviewed."
+      ],
+      "operatingMode": {
+        "value": "Automatic light-item recognition and gantry picking on a prepared conveyor.",
+        "sourceIds": [
+          "product",
+          "brochure"
+        ],
+        "caveats": [
+          "Commissioned belt presentation, discharge lanes, guarding and air supply are required.",
+          "People clear interruptions, maintain the cell and manage the rest of the plant."
+        ]
+      },
+      "specs": [
+        {
+          "key": "max_object_mass",
+          "value": 1,
+          "unit": "kg",
+          "semanticLabel": "Maximum sortable object mass",
+          "conditions": [],
+          "sourceIds": [
+            "brochure",
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_object_dimensions",
+          "value": "400 × 400 × 400",
+          "unit": "mm",
+          "semanticLabel": "Maximum object envelope",
+          "conditions": [],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "max_picks",
+          "value": 80,
+          "unit": "picks/min",
+          "semanticLabel": "Claimed maximum per-arm rate",
+          "conditions": [
+            "Ideal utilisation; actual feed governs rate."
+          ],
+          "sourceIds": [
+            "brochure",
+            "product"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standard_length",
+          "value": 1950,
+          "unit": "mm",
+          "semanticLabel": "Standard module length",
+          "conditions": [
+            "Current product page and technical table; quotation must confirm final integration."
+          ],
+          "sourceIds": [
+            "product",
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "standard_width",
+          "value": 2670,
+          "unit": "mm",
+          "semanticLabel": "Standard module width",
+          "conditions": [
+            "Excludes cell access and surrounding conveyors."
+          ],
+          "sourceIds": [
+            "product",
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "installed_power",
+          "value": 9,
+          "unit": "kW",
+          "semanticLabel": "Installed robot power",
+          "conditions": [
+            "400 VAC three-phase."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "air_flow",
+          "value": 250,
+          "unit": "L/min",
+          "semanticLabel": "Compressed-air consumption",
+          "conditions": [
+            "8 bar supply."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "belt_speed",
+          "value": "0.1–1",
+          "unit": "m/s",
+          "semanticLabel": "Permitted sorting belt speed",
+          "conditions": [
+            "Not a robot travel speed."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "height",
+          "value": null,
+          "unit": "mm",
+          "semanticLabel": "Unresolved installed height",
+          "conditions": [
+            "Brochure table and dimension drawing differ; obtain approved installation drawing."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "manufacturer_claim",
+          "task": "Recover lightweight plastics and packaging from a residue or side stream.",
+          "configuration": "Fast Picker 4.0 cell; belt width, module size and lanes selected for installation.",
+          "operatingMode": "Automatic conveyor-based picking.",
+          "sourceIds": [
+            "product",
+            "brochure",
+            "launch"
+          ],
+          "limitations": [
+            "Earlier operating reports do not establish fourth-generation hardware.",
+            "Material mix and presentation must be tested before throughput or purity is promised."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "ZenRobotics / Terex",
+          "market": "Finland / international enquiry; German delivery and local service unconfirmed",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://www.terex.com/zenrobotics/contact-us",
+            "email": "sales@zenrobotics.com",
+            "phone": "+358 50 4863803"
+          },
+          "sourceIds": [
+            "contact",
+            "brochure"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Direct manufacturer sales route; no German reseller authorization established.",
+          "caveats": [
+            "Current contact page phone differs from the older brochure; current page used.",
+            "Ask sales to name the German installer, commissioning support and exact quoted configuration."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recycleye-qualibot-dmr-cell",
+      "name": "Recycleye QualiBot",
+      "manufacturer": "Recycleye",
+      "robotClass": "integrated_cell",
+      "industries": [
+        "waste_recycling"
+      ],
+      "workflowId": "waste_sorting",
+      "exactConfiguration": "QualiBot dry-mixed-recyclables cell with Recycleye Vision, six-axis FANUC-developed robot and pneumatic gripper; 2024 fact-sheet hardware configuration.",
+      "description": "Removes selected contaminants or recovers target packaging from an existing dry-recyclables belt.",
+      "checkedAt": "2026-10-01",
+      "reviewStatus": "reviewed_with_gaps",
+      "sources": [
+        {
+          "id": "product",
+          "url": "https://recycleye.com/de/loesungen-roboter/",
+          "title": "German QualiBot product and European support description",
+          "publisher": "Recycleye",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "brochure",
+          "url": "https://recycleye.com/wp-content/uploads/2024/10/Recycleye-QualiBot%C2%AE-Fact-Sheet.pdf",
+          "title": "QualiBot technical fact sheet in 2024 publication directory",
+          "publisher": "Recycleye",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "new-page",
+          "url": "https://recycleye.com/robotics-3/",
+          "title": "QualiBot page with higher peak picking claim",
+          "publisher": "Recycleye",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "operation",
+          "url": "https://recycleye.com/it/20845-2/",
+          "title": "QualiBot fibre-line beverage-carton operating case",
+          "publisher": "Recycleye",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        },
+        {
+          "id": "contact",
+          "url": "https://recycleye.com/de/kontakt/",
+          "title": "German-language manufacturer sales contact",
+          "publisher": "Recycleye",
+          "kind": "manufacturer",
+          "retrievalMode": "direct",
+          "checkedAt": "2026-10-01",
+          "tier": 1
+        }
+      ],
+      "sourceURLs": [
+        "https://recycleye.com/de/loesungen-roboter/",
+        "https://recycleye.com/wp-content/uploads/2024/10/Recycleye-QualiBot%C2%AE-Fact-Sheet.pdf",
+        "https://recycleye.com/robotics-3/",
+        "https://recycleye.com/it/20845-2/",
+        "https://recycleye.com/de/kontakt/"
+      ],
+      "conflicts": [
+        "2024 fact sheet states typical 30–50 picks/min; the newer product page advertises 60+. Different conditions or revisions may explain this; no guaranteed rate selected."
+      ],
+      "unknowns": [
+        "Current quoted revision, German delivery/service coverage, installed price and task-specific acceptance performance remain unknown.",
+        "Fact-sheet internet notation is ambiguous; no converted network requirement recorded."
+      ],
+      "operatingMode": {
+        "value": "Automatic vision-guided picking over an existing DMR conveyor.",
+        "sourceIds": [
+          "product",
+          "brochure",
+          "operation"
+        ],
+        "caveats": [
+          "Operators prepare the stream, check the equipment and clean suction cups.",
+          "Vision requires adequate material distribution; a plant audit determines integration and support."
+        ]
+      },
+      "specs": [
+        {
+          "key": "max_object_mass",
+          "value": 1,
+          "unit": "kg",
+          "semanticLabel": "Fact-sheet maximum picked object mass",
+          "conditions": [
+            "Current quotation must confirm the hardware revision."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "axes",
+          "value": 6,
+          "unit": null,
+          "semanticLabel": "Robot arm axes",
+          "conditions": [],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "coverage_width",
+          "value": "<1.2",
+          "unit": "m",
+          "semanticLabel": "Picking coverage excluding frame",
+          "conditions": [
+            "Multiple offset units can cover wider belts."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "supply_voltage",
+          "value": 230,
+          "unit": "V",
+          "semanticLabel": "Electrical supply",
+          "conditions": [
+            "Single phase; 1 kW fact-sheet power."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "system_mass",
+          "value": "<300",
+          "unit": "kg",
+          "semanticLabel": "Fact-sheet system mass",
+          "conditions": [],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "air_flow",
+          "value": 760,
+          "unit": "L/min",
+          "semanticLabel": "Compressed-air requirement",
+          "conditions": [
+            "7 bar supply."
+          ],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "frame_height_above_belt",
+          "value": 1.2,
+          "unit": "m",
+          "semanticLabel": "Frame height above conveyor belt",
+          "conditions": [],
+          "sourceIds": [
+            "brochure"
+          ],
+          "verification": "manufacturer_supported"
+        },
+        {
+          "key": "guaranteed_pick_rate",
+          "value": null,
+          "unit": "picks/min",
+          "semanticLabel": "Site-specific guaranteed pick rate",
+          "conditions": [
+            "Fact sheet typical 30–50; newer page advertises 60+; conditions/revision are not reconciled."
+          ],
+          "sourceIds": [
+            "brochure",
+            "new-page"
+          ],
+          "verification": "unknown"
+        }
+      ],
+      "taskEvidence": [
+        {
+          "stage": "routine_operation",
+          "task": "Recover beverage cartons from a paper/fibre line.",
+          "configuration": "QualiBot cells installed at an operating Italian sorting plant; exact hardware revision unspecified.",
+          "operatingMode": "Automatic picks supported by trained plant operators and ongoing model support.",
+          "sourceIds": [
+            "operation"
+          ],
+          "limitations": [
+            "Manufacturer case report, not an independent acceptance test.",
+            "Dust, stream distribution and daily suction-cup cleaning remain operating constraints.",
+            "Installation-level throughput is not assigned to a single robot."
+          ]
+        }
+      ],
+      "buyingRoutes": [
+        {
+          "organization": "Recycleye",
+          "market": "German-language manufacturer enquiry; European support described",
+          "routeType": "manufacturer",
+          "contact": {
+            "url": "https://recycleye.com/de/kontakt/",
+            "email": "hello@recycleye.com"
+          },
+          "sourceIds": [
+            "contact",
+            "product"
+          ],
+          "checkedAt": "2026-10-01",
+          "deliveryStatus": "Enquiry route published; exact configuration, stock, lead time and site service require confirmation.",
+          "authorizationStatus": "Direct manufacturer enquiry. FANUC support relationship does not establish an independently authorized German reseller.",
+          "caveats": [
+            "No named Germany-specific sales or installation team was confirmed.",
+            "Request a site audit and written German commissioning and service coverage."
+          ]
+        }
+      ]
+    }
+  ]
+}

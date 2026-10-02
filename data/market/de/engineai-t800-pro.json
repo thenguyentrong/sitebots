@@ -1,0 +1,214 @@
+{
+ "schemaVersion": 1,
+ "id": "engineai-t800-pro",
+ "maker": "EngineAI",
+ "makerCountry": "CN",
+ "model": "T800",
+ "variant": "Pro / Max Edition (dexterous hands)",
+ "name": "EngineAI T800 Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://en.engineai.com.cn/product-t800.html",
+ "summary": "The T800 full-size humanoid with 7-joint arms and two 7-joint dexterous hands rated for 5 kg each, with LiDAR and up to 4 hours runtime.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "EngineAI (Shenzhen EngineAI Robotics)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://en.engineai.com.cn/contact-us.html",
+    "email": "sales@engineai.com.cn",
+    "phone": "+86 755 26999080",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Purchase inquiry by email or form; no EU price found."
+   }
+  ],
+  "checkedAt": "2026-10-02",
+  "status": "quote",
+  "statusNote": "No German or EU seller lists T800 Pro or Max; EngineAI sells PM01 Basic in the EU through Research Robots (Portugal) and takes purchase inquiries by email, so ask EngineAI.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.73,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": "75 to 85 kg by configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Max. joint torque",
+   "value": 450,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Moving speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "at least 2 m/s, hardware supported",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "3 to 5 h by edition; up to 4 h stated in highlights",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Quick-release battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 43,
+   "unit": null,
+   "conditions": "Pro: 29 body + 14 hand; Max: 32 + 14 = 46",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Degrees of freedom per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "Degrees of freedom per hand",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Hand payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "per hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "8-core CPU; NVIDIA AGX Orin 64 GB (Thor on request)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Binocular camera, 360 degree 3D LiDAR, tactile sensing in hands",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "5 kg is the payload of each dexterous hand.",
+   "Max Edition adds 3 waist joints and 5G."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://en.engineai.com.cn/static/home/images/tuprimfw1.jpg",
+   "pageUrl": "https://en.engineai.com.cn/product-t800.html",
+   "credit": "EngineAI",
+   "alt": "EngineAI T800 humanoid walking",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered for logistics warehouses, hotel services and sales assistance",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.engineai.com.cn/product-t800.html",
+   "title": "T800 product page",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://researchrobots.eu/engineai-pm01-basic-humanoid-robot.html",
+   "title": "EngineAI - PM01 Basic Humanoid Robot",
+   "publisher": "Research Robots (RoboSavvy)",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.engineai.com.cn/contact-us.html",
+   "title": "EngineAI contact and purchase inquiry",
+   "publisher": "EngineAI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  }
+ ],
+ "openQuestions": [
+  "EU price, CE marking and delivery time unknown."
+ ],
+ "checkedAt": "2026-10-02"
+}
