@@ -26,3 +26,4 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - Buying information must retain its source and checked date, exact configuration, market and published buyer restrictions. A price alone does not establish commercial availability or German delivery.
 - Call a reseller authorized only with reviewed authorization evidence. Use published business contact details, and distinguish directly fetched listings from indexed pages whose live data could not be refreshed.
 - Preserve lifecycle corrections in data/robots/status-reviews.json and sales contacts in data/purchasing/contacts.json. See docs/official-sourcing.md.
+- Missing robot specs on the German market list (payload, runtime, IP rating, stairs, terrain, outdoor, hands): follow docs/research/missing-specs.md. Values enter data/market/de only through `npm run market:import-specs`, which checks every quote on its page.

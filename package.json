@@ -28,6 +28,8 @@
     "market:check": "node --import tsx scripts/check-market.ts",
     "market:pictures": "node --import tsx scripts/assets/market-pictures.ts",
     "market:links": "node --import tsx scripts/market-links.ts",
+    "market:gaps": "node --import tsx scripts/market-specs.ts gaps",
+    "market:import-specs": "node --import tsx scripts/market-specs.ts import",
     "workflows": "node --import tsx scripts/workflows/build.ts"
   },
   "dependencies": {

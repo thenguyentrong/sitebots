@@ -44,7 +44,7 @@ const host = (url: string | null) => {
   }
 };
 // Accents and the different hyphen characters do not make two names differ ("Mirokaï", "XMAN‑R1").
-const norm = (name: string) => name.normalize('NFKD').replace(/[̀-ͯ]/g, '').replace(/[‐-―]/g, '-').toLowerCase().split(' ').filter(Boolean).join(' ');
+const norm = (name: string) => name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2010-\u2015]/g, '-').toLowerCase().split(' ').filter(Boolean).join(' ');
 
 /** The catalogue configuration a market record is about: the longest catalogue name the record's
  * name starts with as whole words ("Unitree G1 EDU with Dex3-1 hands" is a G1 EDU; "Unitree B2-W"
