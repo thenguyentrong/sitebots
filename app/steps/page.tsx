@@ -25,7 +25,7 @@ export default function StepsPage() {
   return <main className="wf-page">
     <header className="wf-page-head">
       <h1>How the work is done</h1>
-      <p>Construction tasks step by step, each step shown at its moment in a public video of the work by a maker, trade body or training centre. Select a task for its step sheet, then a step to watch it. {shown.length} of {cards.length} tasks so far.</p>
+      <p>Construction tasks step by step, each step shown at its moment in a public video of the work by a maker, trade body or training centre. Where no video of a task was found, its steps are drawn as AI illustrations and labelled so. Select a task for its step sheet, then a step to watch it. {shown.length} of {cards.length} tasks so far.</p>
     </header>
     {GROUPS.map((group) => {
       const trades = settings.filter((setting) => setting.group === group)
@@ -42,7 +42,7 @@ export default function StepsPage() {
               <span className="wf-thumbs" aria-hidden>{flow.frames.slice(0, 4).map((frame, index) => frame ? <img key={index} src={frame.src} alt="" width={160} height={90} loading="lazy" decoding="async" /> : <span key={index} />)}</span>
               <strong>{card.title.en}</strong>
               <small lang="de">{card.title.de}</small>
-              <span className="wf-meta">{flow.steps.length} steps · video by {flow.video.channel}</span>
+              <span className="wf-meta">{flow.steps.length} steps · {flow.video ? 'video by ' + flow.video.channel : 'AI illustrations'}</span>
             </Link></li>;
           })}</ul>
         </div>)}

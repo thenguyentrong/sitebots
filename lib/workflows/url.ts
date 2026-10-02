@@ -5,6 +5,8 @@ export const watchUrl = (videoId: string, at: number) => 'https://www.youtube.co
 
 /** What the job map panel needs to show a task's steps. */
 export type StepStripData = {
-  video: { id: string; title: string; channel: string; channelUrl: string | null };
-  steps: { en: string; de: string; at: number; frame: string | null }[];
+  video: { id: string; title: string; channel: string; channelUrl: string | null } | null;
+  /** Set when the steps are AI illustrations because no public video shows the work. */
+  illustration: { generator: string; model: string } | null;
+  steps: { en: string; de: string; at: number | null; frame: string | null }[];
 };

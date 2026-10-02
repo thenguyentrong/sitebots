@@ -10,7 +10,7 @@ describe('task workflows', () => {
     expect(workflows.length).toBeGreaterThan(0);
     for (const workflow of workflows) {
       expect(existsSync(join(process.cwd(), 'data/tasks', workflow.task + '.yaml'))).toBe(true);
-      for (const step of workflow.steps) expect(step.at).toBeLessThanOrEqual(workflow.video.durationS);
+      for (const step of workflow.steps) if (workflow.video) expect(step.at).toBeLessThanOrEqual(workflow.video.durationS);
     }
   });
 

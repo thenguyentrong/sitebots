@@ -24,3 +24,13 @@ test('the steps page lists every step sheet by trade', async ({ page }) => {
   const sheet = page.getByRole('link', { name: /Set, tie and strike framed wall formwork/ });
   await expect(sheet).toHaveAttribute('href', '/use-cases/site_concrete/wall-formwork-panels#steps');
 });
+
+test('a task with no public video shows its steps as labelled AI illustrations, not video links', async ({ page }) => {
+  await page.goto('/use-cases/steel_fabrication/sort-cut-plate-parts');
+  const steps = page.locator('#steps .wf-step');
+  await expect(steps).toHaveCount(4);
+  await expect(steps.first().locator('img')).toBeVisible();
+  await expect(steps.first().getByText('AI illustration')).toBeVisible();
+  await expect(steps.locator('a')).toHaveCount(0);
+  await expect(page.locator('#steps').getByText(/Pictures: AI illustrations made with Higgsfield/)).toBeVisible();
+});

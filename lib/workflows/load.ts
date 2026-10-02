@@ -41,6 +41,7 @@ export { watchUrl } from './url';
 export function stepStrip(task: string): StepStripData | null {
   const workflow = loadWorkflow(task);
   if (!workflow) return null;
-  const { id, title, channel, channelUrl } = workflow.video;
-  return { video: { id, title, channel, channelUrl }, steps: workflow.steps.map((step, index) => ({ en: step.title.en, de: step.title.de, at: step.at, frame: workflow.frames[index]?.src ?? null })) };
+  const video = workflow.video ? { id: workflow.video.id, title: workflow.video.title, channel: workflow.video.channel, channelUrl: workflow.video.channelUrl } : null;
+  const illustration = workflow.illustration ? { generator: workflow.illustration.generator, model: workflow.illustration.model } : null;
+  return { video, illustration, steps: workflow.steps.map((step, index) => ({ en: step.title.en, de: step.title.de, at: step.at ?? null, frame: workflow.frames[index]?.src ?? null })) };
 }

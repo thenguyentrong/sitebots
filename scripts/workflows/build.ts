@@ -41,9 +41,13 @@ async function main() {
   if (check || problems.length) return;
   mkdirSync(cacheDir, { recursive: true });
   const cached = (id: string, at: number) => join(cacheDir, id + '-' + at + 's.webp');
+  // Illustrated steps (no public video) come from .cache/workflows/illustrations/<task>/<n>.png.
+  const drawn = (task: string, n: number) => ['png', 'webp', 'jpg'].map((ext) => join(root, '.cache/workflows/illustrations', task, n + '.' + ext)).find((file) => existsSync(file)) ?? join(root, '.cache/workflows/illustrations', task, n + '.png');
+  const source = (workflow: Workflow, index: number) => workflow.video ? cached(workflow.video.id, workflow.steps[index].at!) : drawn(workflow.task, index + 1);
+  const key = (workflow: Workflow, index: number) => workflow.video ? workflow.video.id + ':' + workflow.steps[index].at : 'illustration:' + workflow.task + ':' + (index + 1) + ':' + workflow.illustration!.generatedAt;
   // Capture what the agents did not leave in the cache, one video at a time.
   const missing = new Map<string, Set<number>>();
-  for (const workflow of workflows) for (const step of workflow.steps) if (!existsSync(cached(workflow.video.id, step.at))) missing.set(workflow.video.id, (missing.get(workflow.video.id) ?? new Set()).add(step.at));
+  for (const workflow of workflows) if (workflow.video) for (const step of workflow.steps) if (!existsSync(cached(workflow.video.id, step.at!))) missing.set(workflow.video.id, (missing.get(workflow.video.id) ?? new Set()).add(step.at!));
   for (const [id, seconds] of missing) {
     console.log('capture ' + id + ' ' + [...seconds].join(','));
     try {
@@ -58,15 +62,15 @@ async function main() {
     mkdirSync(dir, { recursive: true });
     const keep = new Set<string>();
     manifest[workflow.task] = [];
-    for (const [index, step] of workflow.steps.entries()) {
-      const source = cached(workflow.video.id, step.at);
-      if (!existsSync(source)) {
+    for (const index of workflow.steps.keys()) {
+      const file = source(workflow, index);
+      if (!existsSync(file)) {
         manifest[workflow.task].push(null);
         continue;
       }
-      const name = (index + 1) + '.' + createHash('sha1').update(workflow.video.id + ':' + step.at).digest('hex').slice(0, 8) + '.webp';
+      const name = (index + 1) + '.' + createHash('sha1').update(key(workflow, index)).digest('hex').slice(0, 8) + '.webp';
       keep.add(name);
-      if (!existsSync(join(dir, name))) await sharp(source).resize(640, 360, { fit: 'cover', position: 'centre' }).webp({ quality: 72 }).toFile(join(dir, name));
+      if (!existsSync(join(dir, name))) await sharp(file).resize(640, 360, { fit: 'cover', position: 'centre' }).webp({ quality: 72 }).toFile(join(dir, name));
       manifest[workflow.task].push({ src: '/steps/' + workflow.task + '/' + name, width: 640, height: 360 });
     }
     for (const file of readdirSync(dir)) if (!keep.has(file)) rmSync(join(dir, file));

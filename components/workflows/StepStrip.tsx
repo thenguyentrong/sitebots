@@ -2,6 +2,17 @@ import Link from 'next/link';
 import { watchUrl, type StepStripData } from '@/lib/workflows/url';
 import './workflows.css';
 
+function Card({ step, index, drawn }: { step: StepStripData['steps'][number]; index: number; drawn: boolean }) {
+  return <>
+    <span className="wf-strip-pic">
+      {step.frame ? <img src={step.frame} alt={step.en + (drawn ? ' (AI illustration)' : '')} width={640} height={360} loading="lazy" decoding="async" /> : null}
+      <span className="wf-num" aria-hidden>{index + 1}</span>
+      {drawn ? <span className="wf-ai">AI illustration</span> : null}
+    </span>
+    <span className="wf-strip-cap"><strong>{step.en}</strong><small lang="de">{step.de}</small></span>
+  </>;
+}
+
 /** A task's steps in one row, for the job map panel: numbered frames joined by a line, each opening
  * the video at that moment. The full sheet is on the task page. */
 export function StepStrip({ data, href }: { data: StepStripData; href: string }) {
@@ -11,14 +22,8 @@ export function StepStrip({ data, href }: { data: StepStripData; href: string })
       <Link href={href + '#steps'}>Open the step sheet →</Link>
     </div>
     <ol className="wf-strip-list">{data.steps.map((step, index) => <li key={index} data-last={index === data.steps.length - 1 ? '' : undefined}>
-      <a href={watchUrl(data.video.id, step.at)} target="_blank" rel="noopener noreferrer">
-        <span className="wf-strip-pic">
-          {step.frame ? <img src={step.frame} alt={step.en} width={640} height={360} loading="lazy" decoding="async" /> : null}
-          <span className="wf-num" aria-hidden>{index + 1}</span>
-        </span>
-        <span className="wf-strip-cap"><strong>{step.en}</strong><small lang="de">{step.de}</small></span>
-      </a>
+      {data.video && step.at !== null ? <a href={watchUrl(data.video.id, step.at)} target="_blank" rel="noopener noreferrer"><Card step={step} index={index} drawn={false} /></a> : <span><Card step={step} index={index} drawn /></span>}
     </li>)}</ol>
-    <p className="wf-strip-credit">Frames from “{data.video.title}” by {data.video.channel} on YouTube. Select a step to watch it.</p>
+    <p className="wf-strip-credit">{data.video ? <>Frames from “{data.video.title}” by {data.video.channel} on YouTube. Select a step to watch it.</> : <>AI illustrations made with {data.illustration?.generator}; no public video of this work was found.</>}</p>
   </section>;
 }
