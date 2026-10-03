@@ -36,6 +36,7 @@ export const SpecSchema = z.object({
   unit: z.string().nullable(),
   conditions: z.string().nullable(),
   sourceId: text,
+  quote: text.optional(),
 });
 
 export const SellerSchema = z.object({
@@ -112,6 +113,16 @@ export const EvidenceSchema = z.object({
   note: z.string().nullable(),
 });
 
+// Checked imports retain field-level quotations so a record source is never mistaken for proof of every capability.
+export const ResearchEvidenceSchema = z.object({
+  field: z.enum(['arm_payload_kg', 'both_arms_payload_kg', 'carry_payload_kg', 'runtime_h', 'ip_rating', 'stairs', 'rough_ground', 'outdoor', 'hands_included']),
+  value: z.union([z.number().finite(), text, z.boolean()]),
+  sourceId: text,
+  quote: text,
+  basis: z.string().nullable(),
+  checkedAt: day,
+});
+
 export const DossierSchema = z.object({
   schemaVersion: z.literal(1),
   id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
@@ -131,6 +142,7 @@ export const DossierSchema = z.object({
   capabilities: CapabilitySchema,
   images: z.array(ImageSchema),
   evidence: z.array(EvidenceSchema),
+  researchEvidence: z.array(ResearchEvidenceSchema).optional(),
   sources: z.array(SourceSchema).min(1),
   openQuestions: z.array(text),
   checkedAt: day,
@@ -149,6 +161,7 @@ export const DossierSchema = z.object({
     ...record.specs.map((spec) => spec.sourceId),
     ...record.capabilities.sourceIds,
     ...record.evidence.map((item) => item.sourceId),
+    ...(record.researchEvidence ?? []).map((item) => item.sourceId),
   ];
   for (const id of cited) if (!ids.has(id)) issue('Unknown source reference ' + id);
   const keys = record.specs.map((spec) => spec.key);

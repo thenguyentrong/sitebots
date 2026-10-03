@@ -30,7 +30,8 @@
     "market:links": "node --import tsx scripts/market-links.ts",
     "market:gaps": "node --import tsx scripts/market-specs.ts gaps",
     "market:import-specs": "node --import tsx scripts/market-specs.ts import",
-    "workflows": "node --import tsx scripts/workflows/build.ts"
+    "workflows": "node --import tsx scripts/workflows/build.ts",
+    "research:existing": "node --import tsx scripts/research-existing.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.5.4",

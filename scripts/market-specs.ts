@@ -14,6 +14,7 @@ import { load } from 'cheerio';
 import { loadMarket } from '@/lib/market/load';
 import { FIELDS, SOURCE_KINDS_IN, missingFields, normalizeText, pageHasQuote, parseCsv, parseValue, quoteHasValue, quoteOnPage, type Field, type Value } from '@/lib/market/research';
 import { DossierSchema, type Dossier } from '@/lib/market/schema';
+import { applyCheckedResearchRow } from '@/lib/market/research-apply';
 import { FetchRefused, politeFetch } from './scrape/_lib/fetch';
 
 const DIR = join(process.cwd(), 'data/market/de');
@@ -106,31 +107,9 @@ async function importRows(file: string, write: boolean) {
     const path = join(DIR, id + '.json');
     const text = readFileSync(path, 'utf8');
     const record = JSON.parse(text.replace(/^\ufeff/, '')) as Dossier;
-    const caps = record.capabilities as Record<string, unknown>;
     for (const row of list) {
-      const def = FIELDS[row.field];
-      const sameUrl = (a: string) => a.replace(/[/]$/, '') === row.url.replace(/[/]$/, '');
-      let source = record.sources.find((item) => sameUrl(item.url));
-      const add = () => {
-        if (source) return source.id;
-        const next = Math.max(0, ...record.sources.map((item) => Number(item.id.slice(1)))) + 1;
-        source = { id: 's' + next, url: row.url, title: row.title || row.publisher, publisher: row.publisher, kind: row.kind, checkedAt: row.checkedAt };
-        record.sources.push(source);
-        return source.id;
-      };
-      if (def.capability) {
-        const current = caps[def.capability];
-        if (current !== null && current !== row.value) { outcomes.push({ line: row.line, id, field: row.field, status: 'conflict', detail: 'record has ' + String(current) + ', row says ' + String(row.value) }); continue; }
-        caps[def.capability] = row.value;
-        const sourceId = add();
-        if (!record.capabilities.sourceIds.includes(sourceId)) record.capabilities.sourceIds.push(sourceId);
-      }
-      if (def.spec) {
-        const existing = record.specs.find((spec) => spec.key === def.spec);
-        if (existing && existing.value !== row.value) { outcomes.push({ line: row.line, id, field: row.field, status: 'conflict', detail: 'spec ' + def.spec + ' has ' + String(existing.value) }); continue; }
-        if (!existing) record.specs.push({ key: def.spec, label: def.label, value: row.value, unit: def.unit, conditions: row.basis && row.basis !== 'unstated' ? row.basis : null, sourceId: add() });
-      }
-      outcomes.push({ line: row.line, id, field: row.field, status: write ? 'written' : 'passes' });
+      const result = applyCheckedResearchRow(record, row);
+      outcomes.push({ line: row.line, id, field: row.field, status: result.status === 'conflict' ? 'conflict' : write ? 'written' : 'passes', ...(result.detail ? { detail: result.detail } : {}) });
     }
     const checked = DossierSchema.safeParse(record);
     if (!checked.success) {

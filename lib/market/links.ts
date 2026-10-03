@@ -5,11 +5,19 @@ import { loadMarket, type MarketRobot } from './load';
 // Server-side only. Connects market records with catalogue robot pages (scripts/market-links.ts).
 
 let cached: Record<string, string> | null = null;
+/** Records that are a different robot from the page the name rule found (data/market/catalogue-separate.json). */
+export function separateRecords(): Set<string> {
+  const file = join(process.cwd(), 'data', 'market', 'catalogue-separate.json');
+  return new Set(existsSync(file) ? Object.keys(JSON.parse(readFileSync(file, 'utf8')).separate ?? {}) : []);
+}
 function links(): Record<string, string> {
   if (cached) return cached;
   const file = join(process.cwd(), 'data', 'market', 'catalogue-links.json');
-  cached = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')).links : {};
-  return cached!;
+  const all: Record<string, string> = existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')).links : {};
+  // One page, one robot: a different body or size class keeps its own market page.
+  const separate = separateRecords();
+  cached = Object.fromEntries(Object.entries(all).filter(([id]) => !separate.has(id)));
+  return cached;
 }
 
 export const cataloguePathFor = (marketId: string): string | null => links()[marketId] ?? null;

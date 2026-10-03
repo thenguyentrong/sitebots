@@ -147,6 +147,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "horizontal per-arm load; seller listing for T2 Edu; rated/peak unstated",
+   "sourceId": "s4"
   }
  ],
  "capabilities": {
@@ -160,14 +168,15 @@
   "arms": 2,
   "hands": "optional",
   "handsIncluded": false,
-  "armPayloadKg": null,
+  "armPayloadKg": 5,
   "carryPayloadKg": null,
   "runtimeH": 2,
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ],
   "notes": [
    "Base Edu E1 has no hands; grippers (E2) or dexterous hands (E3-1) are separate configurations at a higher price.",
@@ -232,7 +241,17 @@
  "openQuestions": [
   "Launch date of T2 not stated on the maker page.",
   "Which SDK and ROS versions ship with T2?",
-  "Payload per single arm not stated."
+  "Can Booster confirm the per-arm load rating and test conditions? Bipedal lists 5 kg horizontal per arm for T2 Edu; rated versus peak is unstated."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 5,
+   "sourceId": "s4",
+   "quote": "Traglast (Payload): 5 kg horizontale Nutzlast pro einzelnem Arm",
+   "basis": "horizontal per-arm load; seller listing for T2 Edu; rated/peak unstated",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

@@ -89,6 +89,14 @@
    "unit": "cm",
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 12,
+   "unit": "kg",
+   "conditions": "both arms together; rated/peak and arm posture unstated",
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -153,5 +161,15 @@
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "both_arms_payload_kg",
+   "value": 12,
+   "sourceId": "s1",
+   "quote": "Dual-arm Load Capacity: 12kg",
+   "basis": "both arms together; rated/peak and arm posture unstated",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

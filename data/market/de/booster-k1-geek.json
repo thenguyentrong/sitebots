@@ -173,7 +173,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -185,7 +185,8 @@
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
-   "s1"
+   "s1",
+   "s6"
   ],
   "notes": [
    "Arms have 4 joints and no hands or grippers; no hand option is listed for K1, so it cannot grasp objects.",
@@ -252,8 +253,26 @@
    "publisher": "RobotShop",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://docs.booster.tech/docs/product-manual/k1/getting-started/overview/",
+   "title": "Overview | Booster Studio Docs",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s6",
+   "quote": "It can walk on uneven ground",
+   "basis": "K1 common manufacturer manual; linked Specifications explicitly lists Geek/Education/Professional; uneven-ground walking",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

@@ -71,3 +71,27 @@ has none; a page already among the record's sources is reused, a new one is adde
 id,field,pages_checked
 unitree-h1-2,ip_rating,https://www.unitree.com/h1 https://shop.unitree.com/products/unitree-h1-2
 ```
+
+## Existing-robot source refresh
+
+For a catalogue-wide pass without adding robots, run `npm run research:existing`. It freezes the
+existing robot IDs and source URLs, uses the polite fetcher, and saves page text, table rows,
+labelled facts, source outcomes and per-robot missing fields under `.cache/research/existing-refresh/`.
+The saved manifest defines the scope of that pass; it is not an open-ended search of the web.
+The current pass delegates Unitree manufacturer pages to the separate Unitree research reports.
+
+`robots.csv` includes every existing robot, `missing-fields.csv` lists individual gaps, and
+`manual-review-queue.csv` lists PDFs, unreadable pages and access refusals. Respect source refusals.
+Candidate extraction stages possible values only. Review the exact model, table column, units,
+measurement conditions and inclusion in the sold package before sending any row to the importer.
+A number appearing in a quote does not establish that it measures the intended field. Boolean
+claims require the same semantic review because they cannot be checked by matching a number.
+
+The importer preserves accepted exact quotes, conditions, source IDs and checked dates in
+`researchEvidence`, including when a matching value already exists. It never changes a conflicting
+value. A conflict in either the capability or its corresponding specification leaves the entire
+row unapplied. Supplementary specifications may retain an exact `quote` beside their source ID.
+
+Robot pages show configuration specifications separately from the catalogue model's scored
+profile. Seller claims remain reported, and claims, demonstrations, pilots and deployments retain
+their stage. Missing evidence is a follow-up question, not proof of inability.

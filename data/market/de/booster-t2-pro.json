@@ -160,6 +160,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "horizontal per-arm load; seller listing for T2 Pro; rated/peak unstated",
+   "sourceId": "s3"
   }
  ],
  "capabilities": {
@@ -173,7 +181,7 @@
   "arms": 2,
   "hands": "optional",
   "handsIncluded": false,
-  "armPayloadKg": null,
+  "armPayloadKg": 3,
   "carryPayloadKg": null,
   "runtimeH": 2,
   "ipRating": null,
@@ -248,5 +256,15 @@
   "Bipedal page description still says \"vorbestellen\" (pre-order) although it shows a delivery time; confirm stock when ordering.",
   "RBTX also lists a \"T2 Pro Taktile Sensorik, Jetson AGX Orin 200 TOPS\" for 99,999 EUR whose configuration is unclear."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 3,
+   "sourceId": "s3",
+   "quote": "Traglast (Payload): 3 kg horizontale Nutzlast pro einzelnem Arm (System-Payload)",
+   "basis": "horizontal per-arm load; seller listing for T2 Pro; rated/peak unstated",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

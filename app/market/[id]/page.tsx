@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { BuyBox, RobotEvidence, RobotJobs } from '@/components/market/GermanyBuy';
+import { MarketSpecifications } from '@/components/market/MarketSpecifications';
+import { ConfigurationEvidence } from '@/components/robot/ConfigurationEvidence';
 import { RobotGlyph } from '@/components/robot/RobotGlyph';
 import { RobotMedia } from '@/components/robot/RobotMedia';
 import { marketImage } from '@/lib/market/tiles';
@@ -18,7 +20,7 @@ export async function generateMetadata({ params }: { params: Params }) {
   return publicMetadata({ title: robot ? robot.name + ' in Germany' : 'Robot not found', description: robot ? robot.summary + ' ' + STATUS_LABELS[robot.germany.status] + '.' : '', path: `/market/${id}` });
 }
 
-const yesNo = (value: boolean | null) => value === null ? 'Not published' : value ? 'Yes' : 'No';
+const yesNo = (value: boolean | null) => value === null ? 'Unknown' : value ? 'Yes' : 'No';
 const HANDS: Record<string, string> = { none: 'No hands', gripper: 'Grippers', dexterous: 'Multi-finger hands', tool: 'Process tool', optional: 'Hands sold separately' };
 
 /** The robot page for market records the catalogue does not carry, mostly job-specific construction machines. */
@@ -31,7 +33,6 @@ export default async function MarketRobotPage({ params }: { params: Params }) {
   if (linked) permanentRedirect(linked + '#germany');
   const pictures = [robot.picture, ...robot.gallery].flatMap((picture) => picture ? [marketImage(picture)] : []);
   const form = robot.robotType === 'specialised' ? 'dedicated_robot' : robot.robotType;
-  const source = (sourceId: string) => robot.sources.find((item) => item.id === sourceId);
   const c = robot.capabilities;
   const facts: [string, string][] = [
     ['Moves on', bodyLabel(robot).replace(/^On /, '')],
@@ -40,10 +41,10 @@ export default async function MarketRobotPage({ params }: { params: Params }) {
     ['Outdoors', yesNo(c.outdoor)],
     ['Arms', c.arms ? String(c.arms) : 'None'],
     ['Hands', HANDS[c.hands] + (c.hands !== 'none' && c.handsIncluded === false ? ', not included' : '')],
-    ['Payload per arm', c.armPayloadKg === null ? 'Not published' : c.armPayloadKg + ' kg'],
-    ['Carries on body', c.carryPayloadKg === null ? 'Not published' : c.carryPayloadKg + ' kg'],
-    ['Runtime', c.runtimeH === null ? 'Not published' : c.runtimeH + ' h'],
-    ['Protection', c.ipRating ?? 'Not published'],
+    ['Payload per arm', c.armPayloadKg === null ? 'Unknown' : c.armPayloadKg + ' kg'],
+    ['Carries on body', c.carryPayloadKg === null ? 'Unknown' : c.carryPayloadKg + ' kg'],
+    ['Runtime', c.runtimeH === null ? 'Unknown' : c.runtimeH + ' h'],
+    ['Protection', c.ipRating ?? 'Unknown'],
   ];
   return <main className="mk-page mk-detail">
     <p className="mk-crumbs"><Link href="/robots">Robots</Link> / {robot.name}</p>
@@ -76,24 +77,21 @@ export default async function MarketRobotPage({ params }: { params: Params }) {
       <RobotEvidence robots={[robot]} />
     </section> : null}
 
-    {robot.specs.length ? <section className="mk-detail-section" aria-labelledby="specs">
-      <h2 id="specs">Published specifications</h2>
-      <div className="mk-table-scroll"><table className="mk-spec-table"><tbody>{robot.specs.map((spec) => <tr key={spec.key}>
-        <th scope="row">{spec.label}</th>
-        <td>{typeof spec.value === 'boolean' ? (spec.value ? 'Yes' : 'No') : String(spec.value)}{spec.unit ? ' ' + spec.unit : ''}{spec.conditions ? <small> · {spec.conditions}</small> : null}</td>
-        <td>{source(spec.sourceId) ? <a href={source(spec.sourceId)!.url} target="_blank" rel="noopener noreferrer">{source(spec.sourceId)!.publisher} ↗</a> : null}</td>
-      </tr>)}</tbody></table></div>
-    </section> : null}
+    <div id="specs" className="scroll-mt-6">
+      <MarketSpecifications robots={[robot]} />
+    </div>
 
-    {robot.openQuestions.length ? <section className="mk-detail-section" aria-labelledby="open">
-      <h2 id="open">Ask the seller</h2>
-      <ul className="mk-notes">{robot.openQuestions.map((question) => <li key={question}>{question}</li>)}</ul>
-    </section> : null}
-
+    <section id="profile" className="card mt-6 scroll-mt-6 overflow-hidden" aria-labelledby="profile-title">
+      <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
+        <h2 id="profile-title" className="text-sm font-semibold">Robot evidence profile</h2>
+        <span className="text-xs text-muted">Checked <time dateTime={robot.checkedAt}>{robot.checkedAt}</time></span>
+      </header>
+      <div className="px-5 py-5"><ConfigurationEvidence robots={[robot]} /></div>
+    </section>
     <section className="mk-detail-section" aria-labelledby="sources">
       <h2 id="sources">Sources</h2>
       <ol className="mk-sources">{robot.sources.map((item) => <li key={item.id}><a href={item.url} target="_blank" rel="noopener noreferrer">{item.title} ↗</a> <span>{item.publisher} · {item.kind} · checked {item.checkedAt}</span></li>)}</ol>
     </section>
-    <p className="mk-fine">Every value links to the page it was read from. What no source states stays unknown.</p>
+    <p className="mk-fine">Specifications cite their sources. Capabilities without a field-level citation are marked in the configuration details. Missing values stay unknown.</p>
   </main>;
 }

@@ -144,6 +144,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 2.5,
+   "unit": "kg",
+   "conditions": "per arm maximum (approximate); arm-extension posture dependent; seller manual explicitly labels Standard 23-DoF model with 4-DoF arms",
+   "sourceId": "s5"
   }
  ],
  "capabilities": {
@@ -151,23 +159,25 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
   "handsIncluded": false,
-  "armPayloadKg": null,
+  "armPayloadKg": 2.5,
   "carryPayloadKg": null,
   "runtimeH": 2,
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
-   "s1"
+   "s1",
+   "s5",
+   "s6"
   ],
   "notes": [
    "Basic and Standard arms end without hands and cannot grasp; grippers or dexterous hands only on the Customized versions (see booster-t1-gripper, booster-t1-dexterous).",
-   "No payload figure published."
+   "Bipedal’s Standard T1 manual reports approximately 2.5 kg maximum per arm, dependent on arm-extension posture; this remains a seller claim."
   ]
  },
  "images": [
@@ -224,12 +234,46 @@
    "publisher": "RobotShop Europe",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://docs.bipedal.de/projects/t1/html/index.html",
+   "title": "Robot Tutorial | T1",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://docs.booster.tech/docs/product-manual/t1/getting-started/overview/",
+   "title": "Overview | Booster Studio Docs",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
   }
  ],
  "openQuestions": [
   "Is T1 still in production now that Booster shows only K1 and T2 on its home page?",
-  "Payload per arm not published.",
+  "Can Booster confirm the sustained working payload and arm posture? The seller manual reports approximately 2.5 kg maximum per arm.",
   "When will new T1 units be available again in Europe, if at all?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 2.5,
+   "sourceId": "s5",
+   "quote": "Arm Maximum Load About 2.5Kg",
+   "basis": "per arm maximum (approximate); arm-extension posture dependent; seller manual explicitly labels Standard 23-DoF model with 4-DoF arms",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s6",
+   "quote": "supports walking on uneven surfaces",
+   "basis": "Standard/base 23-DoF T1 with 4-DoF arms; manufacturer manual",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

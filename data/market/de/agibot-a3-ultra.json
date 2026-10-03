@@ -164,9 +164,9 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
-  "outdoor": null,
+  "outdoor": true,
   "arms": 2,
   "hands": "dexterous",
   "handsIncluded": null,
@@ -265,5 +265,23 @@
  "openQuestions": [
   "Are the OmniHands included at the Generation Robots \"from\" price?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Centimeter-level UWB indoor and RTK outdoor positioning supports seamless indoor-outdoor switching.",
+   "basis": "Manufacturer explicitly supports seamless indoor-outdoor switching and lists park patrols; this does not establish weather protection. Application workflows may require development and validation.",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Perception and motion control support travel through complex terrain and human environments.",
+   "basis": "Manufacturer platform claim: complex-terrain travel; application scenes and demonstrations may require secondary development, environment configuration and validation.",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

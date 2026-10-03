@@ -54,13 +54,22 @@ test('a robot sold in Germany under another name shows its German pictures and s
   const media = page.locator('[data-robot-media]');
   await expect(media).toBeVisible();
   expect(Number(await media.getAttribute('data-photos'))).toBeGreaterThan(0);
-  // The wheeled All-Runner and the Basic keep their own pictures, in their own version cards.
+  // The Basic keeps its own picture in its own version card. The All-Runner is the K2 upper body on
+  // a wheel base, another robot, so it has its own page (data/market/catalogue-separate.json).
   const versions = page.getByRole('region', { name: 'Buy in Germany', exact: true }).locator('.mk-buybox');
-  await expect(versions).toHaveCount(3);
-  await expect(versions.locator('.mk-buybox-pic img')).toHaveCount(3);
+  await expect(versions).toHaveCount(2);
+  await expect(versions.locator('.mk-buybox-pic img')).toHaveCount(2);
   await page.goto('/robots?scope=world&q=forerunner');
   const card = page.locator('.mk-tile').filter({ has: page.getByRole('link', { name: 'Kepler Forerunner K2', exact: true }) });
   await expect(card.locator('.mk-status')).toHaveText('Buy in Germany');
+});
+
+test('a different body sold under a related name gets its own page, not a version card', async ({ page }) => {
+  await page.goto('/robots/magiclab/magicbot');
+  await expect(page.locator('[data-version="magiclab-magicbot-d1"]')).toHaveCount(0);
+  const response = await page.goto('/market/magiclab-magicbot-d1');
+  expect(response?.status()).toBe(200);
+  await expect(page.getByRole('heading', { level: 1 })).toContainText('MagicBot D1');
 });
 
 test('a robot page leads with the published numbers and folds the long parts', async ({ page }) => {
@@ -70,9 +79,12 @@ test('a robot page leads with the published numbers and folds the long parts', a
   await expect(facts).toContainText('Not published: Payload');
   await expect(page.getByTestId('spec-unpublished')).toContainText('IP rating');
   const profile = page.locator('[data-profile]');
+  await expect(profile.getByRole('heading', { name: 'Robot evidence profile' })).toBeVisible();
   await expect(profile).not.toHaveAttribute('open', /.*/);
-  await profile.locator('summary').click();
-  await expect(profile).toHaveAttribute('open', '');
+  await profile.locator('summary').first().click();
+  await expect(profile.locator('[data-profile-view="site"]')).toBeVisible();
+  // Each version's specifications stay folded until asked for.
+  await expect(page.locator('[data-configuration]').first()).not.toHaveAttribute('open', /.*/);
   await page.getByRole('navigation', { name: 'On this page' }).getByRole('link', { name: 'Specifications', exact: true }).click();
   await expect(page).toHaveURL(/#specs$/);
 });

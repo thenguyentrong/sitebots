@@ -46,6 +46,372 @@
    "unit": "m",
    "conditions": null,
    "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "maximum per arm; manufacturer prose; arm posture and test conditions unstated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "manufacturer specification table; operating mode and load unstated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IP42",
+   "unit": null,
+   "conditions": "overall robot protection; arm-only IP50 is a separate component rating",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dimensions",
+   "label": "Dimensions",
+   "value": "1190‑1800mm (H) × 620mm (W) × 670mm (L)",
+   "unit": null,
+   "conditions": "Manufacturer states height as a range; full original dimensions retained without conversion.",
+   "sourceId": "s1",
+   "quote": "Dimensions1190‑1800mm (H) × 620mm (W) × 670mm (L)"
+  },
+  {
+   "key": "weight",
+   "label": "Weight",
+   "value": "150kg",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight150kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total Active DoF",
+   "value": "25 DoF",
+   "unit": null,
+   "conditions": "Published total active DoF; not recomputed from the variable 4-6 DoF chassis line.",
+   "sourceId": "s1",
+   "quote": "Total Active DoF25 DoF"
+  },
+  {
+   "key": "dof_neck",
+   "label": "Neck DoF",
+   "value": "2 DoF",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Neck DoF2 DoF"
+  },
+  {
+   "key": "dof_arms",
+   "label": "Arm DoF",
+   "value": "7 DoF × 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Arm DoF7 DoF × 2"
+  },
+  {
+   "key": "dof_waist",
+   "label": "Waist DoF",
+   "value": "3 DoF",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Waist DoF3 DoF"
+  },
+  {
+   "key": "dof_leg_structure",
+   "label": "Leg DoF",
+   "value": "2 DoF",
+   "unit": null,
+   "conditions": "Manufacturer describes an articulated waist-leg structure on a wheeled chassis; this is not evidence of bipedal locomotion.",
+   "sourceId": "s1",
+   "quote": "Leg DoF2 DoF"
+  },
+  {
+   "key": "dof_chassis",
+   "label": "Chassis DoF",
+   "value": "4‑6 DoF",
+   "unit": null,
+   "conditions": "Published 4-6 DoF range; exact chassis configuration unspecified.",
+   "sourceId": "s1",
+   "quote": "Chassis DoF4‑6 DoF"
+  },
+  {
+   "key": "arm_max_reach",
+   "label": "Max Reach per Arm",
+   "value": "858mm (excluding end effector)",
+   "unit": null,
+   "conditions": "Maximum per-arm reach excluding the end effector.",
+   "sourceId": "s1",
+   "quote": "Max Reach per Arm858mm (excluding end effector)"
+  },
+  {
+   "key": "joint_torque_sensing",
+   "label": "Joint Torque Sensing",
+   "value": "Full‑joint enabled",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Joint Torque SensingFull‑joint enabled"
+  },
+  {
+   "key": "force_control_accuracy",
+   "label": "Force Control Accuracy",
+   "value": "0.5N",
+   "unit": null,
+   "conditions": "Table states 0.5N; accompanying prose describes force-control accuracy as ±0.5 N.",
+   "sourceId": "s1",
+   "quote": "Force Control Accuracy0.5N"
+  },
+  {
+   "key": "chassis_speed",
+   "label": "Chassis Speed",
+   "value": "1.5m/s",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Chassis Speed1.5m/s"
+  },
+  {
+   "key": "chassis_mobility",
+   "label": "Chassis Mobility",
+   "value": "Omni‑directional, zero‑radius turning",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Chassis MobilityOmni‑directional, zero‑radius turning"
+  },
+  {
+   "key": "compute_base_edition",
+   "label": "Base Compute Edition",
+   "value": "Huawei R1, 500 TOPS (INT8)",
+   "unit": null,
+   "conditions": "Base compute edition. The dossier has no selected compute edition; do not imply that both compute editions are simultaneously fitted.",
+   "sourceId": "s1",
+   "quote": "Base Compute EditionHuawei R1, 500 TOPS (INT8)"
+  },
+  {
+   "key": "compute_high_edition",
+   "label": "High Compute Edition",
+   "value": "NVIDIA‑Aurora 1500S, 2070 TOPS (FP4)",
+   "unit": null,
+   "conditions": "High compute edition; table states 2070 TOPS (FP4), while prose says 2070 TFLOPS. Units conflict and are not reconciled.",
+   "sourceId": "s1",
+   "quote": "High Compute EditionNVIDIA‑Aurora 1500S, 2070 TOPS (FP4)"
+  },
+  {
+   "key": "head_rgb_camera",
+   "label": "Head RGB Camera",
+   "value": "×1",
+   "unit": null,
+   "conditions": "Table labels the head sensor RGB; prose calls it RGB-D depth sensing. Sensor subtype needs confirmation.",
+   "sourceId": "s1",
+   "quote": "Head RGB Camera×1"
+  },
+  {
+   "key": "head_stereo_camera",
+   "label": "Head Stereo Camera",
+   "value": "×1",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Head Stereo Camera×1"
+  },
+  {
+   "key": "head_fisheye_cameras",
+   "label": "Head Fisheye Camera",
+   "value": "×3",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Head Fisheye Camera×3"
+  },
+  {
+   "key": "wrist_rgbd_cameras",
+   "label": "Wrist RGBD Camera",
+   "value": "×2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Wrist RGBD Camera×2"
+  },
+  {
+   "key": "chassis_lidar",
+   "label": "Chassis 3D LiDAR",
+   "value": "×2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Chassis 3D LiDAR×2"
+  },
+  {
+   "key": "chassis_ultrasonic_sensors",
+   "label": "Chassis Ultrasonic Sensor",
+   "value": "×3",
+   "unit": null,
+   "conditions": "Table says ×3; accompanying chassis prose says 8 ultrasonic radars. Count conflict needs manufacturer clarification.",
+   "sourceId": "s1",
+   "quote": "Chassis Ultrasonic Sensor×3"
+  },
+  {
+   "key": "battery_count",
+   "label": "Battery",
+   "value": "×2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery×2"
+  },
+  {
+   "key": "battery_total_capacity",
+   "label": "Total Capacity",
+   "value": "1652Wh",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Total Capacity1652Wh"
+  },
+  {
+   "key": "charging_methods",
+   "label": "Charging Methods",
+   "value": "Direct charge, hot‑swappable battery, auto‑dock charging (Dock‑optional)",
+   "unit": null,
+   "conditions": "Dock charging is explicitly optional; hot swapping does not establish unlimited runtime without battery logistics.",
+   "sourceId": "s1",
+   "quote": "Charging MethodsDirect charge, hot‑swappable battery, auto‑dock charging (Dock‑optional)"
+  },
+  {
+   "key": "charge_time",
+   "label": "Charge Time",
+   "value": "2h",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Charge Time2h"
+  },
+  {
+   "key": "input_voltage",
+   "label": "Input Voltage",
+   "value": "100‑240V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Input Voltage100‑240V"
+  },
+  {
+   "key": "charger_output",
+   "label": "Charger Output",
+   "value": "54.75V / 15A",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Charger Output54.75V / 15A"
+  },
+  {
+   "key": "wireless",
+   "label": "Wireless",
+   "value": "WiFi, Bluetooth, 4G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "WirelessWiFi, Bluetooth, 4G"
+  },
+  {
+   "key": "wired_network",
+   "label": "Wired",
+   "value": "10GE‑(10 Gigabit Ethernet)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Wired10GE‑(10 Gigabit Ethernet)"
+  },
+  {
+   "key": "microphone_array",
+   "label": "Microphone Array",
+   "value": "Yes, localization, noise reduction & echo cancellation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Microphone ArrayYes, localization, noise reduction & echo cancellation"
+  },
+  {
+   "key": "speakers",
+   "label": "Speakers",
+   "value": "Yes, Hi‑Fi driver ×2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "SpeakersYes, Hi‑Fi driver ×2"
+  },
+  {
+   "key": "led_interaction",
+   "label": "LED Strip Interaction System",
+   "value": "Yes, supports visual light‑language cues",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "LED Strip Interaction SystemYes, supports visual light‑language cues"
+  },
+  {
+   "key": "arm_ip_rating",
+   "label": "Arm Protection",
+   "value": "IP50",
+   "unit": null,
+   "conditions": "Arm component protection only; whole-robot protection is separately IP42.",
+   "sourceId": "s1",
+   "quote": "Arm ProtectionIP50"
+  },
+  {
+   "key": "secondary_development",
+   "label": "Secondary Development",
+   "value": "Yes",
+   "unit": null,
+   "conditions": "Secondary development support is stated, but no named SDK, API or ROS version is provided by this row.",
+   "sourceId": "s1",
+   "quote": "Secondary DevelopmentYes"
+  },
+  {
+   "key": "vr_teleoperation",
+   "label": "VR Teleoperation Device",
+   "value": "Yes",
+   "unit": null,
+   "conditions": "Support is stated; package inclusion is not explicitly established by this row.",
+   "sourceId": "s1",
+   "quote": "VR Teleoperation DeviceYes"
+  },
+  {
+   "key": "wireless_terminal",
+   "label": "Handheld Wireless Terminal",
+   "value": "Yes",
+   "unit": null,
+   "conditions": "Support is stated; package inclusion is not explicitly established by this row.",
+   "sourceId": "s1",
+   "quote": "Handheld Wireless TerminalYes"
+  },
+  {
+   "key": "dexterous_hand_compatibility",
+   "label": "Dexterous‑Hand Compatibility",
+   "value": "Yes",
+   "unit": null,
+   "conditions": "Compatibility only; included end effector is the separate two-finger gripper claim.",
+   "sourceId": "s1",
+   "quote": "Dexterous‑Hand CompatibilityYes"
+  },
+  {
+   "key": "charging_station_support",
+   "label": "Charging Station Deployment",
+   "value": "Yes",
+   "unit": null,
+   "conditions": "Charging-station capability only, not a customer deployment or proof that an optional docking station ships with the robot.",
+   "sourceId": "s1",
+   "quote": "Charging Station DeploymentYes"
   }
  ],
  "capabilities": {
@@ -57,20 +423,25 @@
   "stairs": null,
   "outdoor": null,
   "arms": 2,
-  "hands": "optional",
-  "handsIncluded": null,
-  "armPayloadKg": null,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 5,
   "carryPayloadKg": null,
-  "runtimeH": null,
-  "ipRating": null,
+  "runtimeH": 4,
+  "ipRating": "IP42",
   "sdk": null,
   "sourceIds": [
    "s1"
   ],
   "notes": [
-   "No specification table published on the product page.",
    "MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany.",
-   "Omnidirectional wheeled chassis with a waist-leg structure to handle material from 0.8 to 2.3 m height; hot-swap charging (IFA 2026 press release)."
+   "Omnidirectional wheeled chassis with a waist-leg structure to handle material from 0.8 to 2.3 m height; hot-swap charging (IFA 2026 press release).",
+   "The manufacturer now publishes a MagicBot D1 specification table. Per-arm payload is described as a maximum; runtime mode and load conditions are unstated.",
+   "A two-finger gripper is explicitly included. Dexterous-hand compatibility is listed separately and does not establish dexterous-hand inclusion.",
+   "Base and high compute editions are separate configurations. The dossier does not select one; the high-compute table and prose use inconsistent TOPS/TFLOPS units.",
+   "Manufacturer content conflicts on ultrasonic sensor count (table 3, prose 8) and calls the head camera RGB in the table but RGB-D in prose.",
+   "Overall protection is IP42; arm-only protection is IP50. Neither rating by itself establishes outdoor suitability.",
+   "The charging dock is optional. Hot-swappable batteries and docking support are manufacturer features, not proof of customer deployment."
   ]
  },
  "images": [
@@ -118,7 +489,7 @@
    "where": null,
    "date": null,
    "sourceId": "s1",
-   "note": null
+   "note": "Manufacturer product page states factory and assembly applications; current table adds force-controlled arms and omnidirectional mobility. No task success rate or named customer deployment is recorded."
   },
   {
    "taskIds": [],
@@ -149,7 +520,47 @@
   }
  ],
  "openQuestions": [
-  "Height, weight, payload, runtime, hands and price not published (only the 0.8 to 2.3 m working height)."
+  "Which runtime test, operating mode and load produced the stated 4 hours?",
+  "Which compute edition is supplied in the quoted German configuration, and are the high-compute units TOPS (FP4) or TFLOPS?",
+  "Does the delivered chassis have 3 or 8 ultrasonic sensors, and is the head camera RGB or RGB-D?",
+  "What does the published 1-1 cm-level navigation-mapping statement mean?",
+  "Which SDK, API and ROS versions are supported?",
+  "Are outdoor operation and rough terrain supported for the exact delivered configuration?",
+  "What is the price and confirmed lead time for the delivered configuration in Germany?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 5,
+   "sourceId": "s1",
+   "quote": "Each arm carries a maximum payload of 5 kg",
+   "basis": "maximum per arm; manufacturer prose; arm posture and test conditions unstated",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "field": "runtime_h",
+   "value": 4,
+   "sourceId": "s1",
+   "quote": "Runtime4h",
+   "basis": "manufacturer specification table; operating mode and load unstated",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "field": "ip_rating",
+   "value": "IP42",
+   "sourceId": "s1",
+   "quote": "Overall ProtectionIP42",
+   "basis": "overall robot protection; arm-only IP50 is a separate component rating",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "field": "hands_included",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Wrist End EffectorMulti‑tool ready; 2‑finger gripper included",
+   "basis": "two-finger gripper included; dexterous-hand compatibility does not mean dexterous hands included",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

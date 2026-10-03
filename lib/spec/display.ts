@@ -77,8 +77,8 @@ export const TRUST_LABEL: Record<string, string> = {
 export const TRUST_HINT: Record<string, string> = {
   verified: 'A manufacturer-domain source states this value.',
   assessed: 'Curated by us from evidence; the note says which.',
-  reported: 'Only third-party databases report this value.',
-  unknown: 'Not published anywhere we could find.',
+  reported: 'Reported by a third-party source; manufacturer confirmation is not established.',
+  unknown: 'No confirmed value is recorded for this field.',
 };
 
 export const PRICE_TIER_LABEL: Record<number, string> = {

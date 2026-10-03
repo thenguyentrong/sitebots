@@ -169,7 +169,7 @@
   "arms": 2,
   "hands": "optional",
   "handsIncluded": false,
-  "armPayloadKg": null,
+  "armPayloadKg": 3.5,
   "carryPayloadKg": null,
   "runtimeH": 2,
   "ipRating": null,
@@ -249,5 +249,15 @@
  "openQuestions": [
   "RBTX copies text from the hand version (41 DoF, 60 kg) but its spec table says 29 DoF and 65 kg."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 3.5,
+   "sourceId": "s2",
+   "quote": "Jeder Arm unterstützt eine Nutzlast von 3,5 kg",
+   "basis": "per arm; rated/peak and arm pose unstated; exact RBTX no-hands listing; existing spec is already 3.5 but capability is empty",
+   "checkedAt": "2026-10-02"
+  }
+ ]
 }

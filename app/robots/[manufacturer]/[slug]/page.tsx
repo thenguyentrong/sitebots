@@ -1,5 +1,6 @@
 import { BuyingPanel } from '@/components/robot/BuyingPanel';
 import { MarketBuyBox } from '@/components/market/MarketBuyBox';
+import { MarketSpecifications } from '@/components/market/MarketSpecifications';
 import { GermanySection, JobsSection, TrackRecordSection } from '@/components/market/GermanyBuy';
 import { marketForCatalogue } from '@/lib/market/links';
 import { marketImagesFor } from '@/lib/market/tiles';
@@ -167,7 +168,9 @@ export default async function RobotPage({ params, searchParams }: { params: Para
   sections.push(['prices', 'Price and delivery']);
   if (market.length) sections.push(['jobs', 'Jobs on the map']);
   if (evidence) sections.push(['track-record', 'Where it has worked']);
-  sections.push(['specs', 'Specifications'], ['parts', 'Parts'], ['profile', 'Evidence profile']);
+  sections.push(['specs', 'Specifications']);
+  if (market.length) sections.push(['configuration-specs', 'Configuration specs']);
+  sections.push(['parts', 'Parts'], ['profile', 'Evidence profile']);
   if (conflicts.length) sections.push(['conflicts', 'Sources disagree']);
   sections.push(['sources', 'Sources']);
 
@@ -277,12 +280,13 @@ export default async function RobotPage({ params, searchParams }: { params: Para
             <div className="mt-6 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)]">
               <section id="specs" className="card scroll-mt-6 overflow-hidden" aria-labelledby="specs-title">
                 <header className="flex items-center justify-between gap-3 border-b border-edge/70 px-4 py-3.5">
-                  <h2 id="specs-title" className="text-sm font-semibold">Specifications</h2>
+                  <h2 id="specs-title" className="text-sm font-semibold">{market.length ? 'Catalogue specifications' : 'Specifications'}</h2>
                   <span className="num text-xs text-faint">
                     {total} value{total === 1 ? '' : 's'} · {verified} verified
                   </span>
                 </header>
                 <div className="pb-3">
+                  {market.length ? <p className="border-b border-edge/70 px-4 py-3 text-xs text-muted">Catalogue values for {robot.variant === 'base' ? 'the base record' : robot.variant}. See <a href="#configuration-specs" className="underline underline-offset-2">configuration specifications</a> for further values and conditions.</p> : null}
                   <SpecTable specs={specs} formFactor={robot.form_factor} unpublishedAsList />
                 </div>
               </section>
@@ -292,8 +296,10 @@ export default async function RobotPage({ params, searchParams }: { params: Para
               </div>
             </div>
 
+            <MarketSpecifications robots={market} />
+
             <div id="profile" className="mt-6 scroll-mt-6">
-              <UseCaseProfile profile={profile} name={robot.name} collapsed />
+              <UseCaseProfile profile={profile} name={robot.name} marketRobots={market} configurationLabel={robot.variant === 'base' ? 'Catalogue model' : robot.variant} collapsed />
             </div>
 
             {conflicts.length ? (

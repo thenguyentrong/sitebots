@@ -2,6 +2,7 @@
 // Reads the catalogue paths from a sitemap dump: node --import tsx scripts/market-links.ts .cache/catalogue-paths.txt
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { separateRecords } from '@/lib/market/links';
 import { loadMarket } from '@/lib/market/load';
 
 const slug = (value: string) => value.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/\+/g, '-plus').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
@@ -14,8 +15,9 @@ for (const path of paths) {
 }
 const links: Record<string, string> = {};
 const missing: string[] = [];
+const separate = separateRecords();
 for (const robot of loadMarket({ strict: false })) {
-  if (robot.robotType === 'specialised') continue;
+  if (robot.robotType === 'specialised' || separate.has(robot.id)) continue;
   const makerSlug = slug(robot.maker);
   const makers = [makerSlug, makerSlug.replace(SUFFIX, ''), makerSlug.split('-')[0]].filter((value, index, all) => byMaker.has(value) && all.indexOf(value) === index);
   const model = slug(robot.model);
