@@ -21,7 +21,7 @@ const LINKS = [
 export function SiteFooter() {
   return (
     <footer className="mt-16 border-t border-edge bg-card">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)_minmax(0,1.4fr)]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)_minmax(0,1.6fr)]">
         <div className="space-y-4">
           <Logo />
           <p className="max-w-sm text-sm text-muted">
@@ -56,8 +56,9 @@ export function SiteFooter() {
           <p className="text-sm font-semibold">How to read a value</p>
           <ul className="mt-3 space-y-2.5 text-sm">
             {TRUSTS.map((t) => (
-              <li key={t} className="flex items-start gap-3">
-                <EvidenceBadge trust={t} className="mt-0.5 shrink-0" />
+              // One badge column, so every description starts at the same line whatever the badge width.
+              <li key={t} className="grid grid-cols-[5.25rem_minmax(0,1fr)] items-start gap-3">
+                <EvidenceBadge trust={t} className="mt-0.5 justify-self-start" />
                 <span className="text-muted">{TRUST_HINT[t]}</span>
               </li>
             ))}
