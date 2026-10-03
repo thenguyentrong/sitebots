@@ -1,40 +1,36 @@
-import Image from 'next/image';
+import { getImageProps } from 'next/image';
 import Link from 'next/link';
 import { MarketExplorer, type ExplorerInitial } from '@/components/market/MarketExplorer';
 import type { JobDetail, JobMapPoint } from '@/lib/market/jobs';
+import { LINEUP } from '@/lib/models/lineup';
 import { SITE } from '@/lib/site';
-import { ui } from '@/lib/ui';
+import { HomeHero } from './HomeHero';
 import { Icon } from './Icon';
 
-/** The robots in the landing image, left to right; all can be bought or ordered in Germany. */
-const LINEUP = [
-  { name: 'Unitree H1-2', href: '/robots/unitree/h1-2' },
-  { name: 'Unitree G1', href: '/robots/unitree/g1' },
-  { name: 'Unitree G1-D', href: '/robots/unitree/g1-d' },
-  { name: 'Boston Dynamics Spot', href: '/robots/boston-dynamics/spot' },
-  { name: 'Unitree B2', href: '/robots/unitree/b2' },
-];
+/** The hero's stills, rendered from the live job site by scripts/assets/render-lineup.mjs: the desktop
+ *  poster under the live scene, and the strip phones scroll sideways. */
+const POSTER = { src: '/branding/lineup-hero.8305070783.webp', width: 1920, height: 1015 };
+const STRIP = { src: '/branding/lineup-strip.3761f57775.webp', width: 2400, height: 640 };
+const ALT = 'A construction worker in a hard hat, 1.80 m tall, and five robots you can buy or order in Germany side by side at true scale on a construction yard, under a line at his height. The Unitree H1-2 reaches the line, the Unitree G1 comes to his shoulder, the Unitree G1-D stands on a wheeled base, and the two robot dogs, Boston Dynamics Spot and Unitree B2, reach his hip.';
 
-/** The landing: a lineup at true scale, then the job map with the robots you can buy in Germany. */
+/** The landing: the job site at true scale behind the headline, then the job map with the robots you can buy in Germany. */
 export function JourneyStart({ jobs, initialDetail, sold, initial }: { jobs: JobMapPoint[]; initialDetail: JobDetail | null; sold: { robots: number; machines: number }; initial: ExplorerInitial }) {
+  const { props: { srcSet: strip } } = getImageProps({ alt: '', ...STRIP, sizes: '1200px' });
+  const { props: poster } = getImageProps({ alt: ALT, ...POSTER, sizes: '100vw', loading: 'eager', fetchPriority: 'high' });
   return <>
-    <section className="home-hero" aria-labelledby="home-title">
+    <HomeHero
+      poster={<picture><source media="(max-width: 767px)" srcSet={strip} sizes="1200px" /><img {...poster} alt={ALT} className="home-stage-poster" /></picture>}
+      note={<>Sold in Germany, at true scale next to a 1.80&nbsp;m site worker<span className="home-note-robots">: {LINEUP.map((robot, i) => <span key={robot.href}>{i ? (i === LINEUP.length - 1 ? ' and ' : ', ') : ''}<Link href={robot.href}>{robot.name}</Link></span>)}</span>. Rendered from their published models; the jobs are illustrations from the job map, not footage.</>}>
+      <p className="home-eyebrow">{jobs.length} jobs on the map · {sold.robots} robots sold in Germany</p>
       <h1 id="home-title">Which jobs can robots do today? <span>And where do you buy them in Germany?</span></h1>
-      <p className="jp-lede">Every dot on the map below is a job, from drywall to plant-room rounds. Pick one to see the humanoids, robot dogs and other robots that fit it, compare them and find a seller.</p>
+      <p className="home-lede">Pick a job, from drywall to plant-room rounds. See the robots that fit it, compare them and find a seller.</p>
       <div className="home-actions">
-        <a className={ui.btn} href="#explore">Explore the job map <Icon name="arrow" size={16} /></a>
-        <Link className={ui.btnGhost} href="/robots">{sold.robots ? sold.robots + ' robots sold in Germany' : 'Robots sold in Germany'}</Link>
+        <a className="home-cta" href="#explore">Explore the job map <Icon name="arrow" size={16} /></a>
+        <Link className="home-cta-ghost" href="/robots">Robots sold in Germany</Link>
       </div>
-    </section>
-
-    <figure className="home-lineup">
-      <div className="home-lineup-stage">
-        <Image src="/branding/lineup-at-scale.76d724f288.png" width={2957} height={924} priority sizes="(min-width: 1152px) 1056px, calc(100vw - 64px)"
-          alt="A construction worker in a hard hat, 1.80 m tall, and five robots you can buy or order in Germany side by side at true scale under a line at his height. The Unitree H1-2 reaches the line, the Unitree G1 comes to his shoulder, the Unitree G1-D stands on a wheeled base, and the two robot dogs, Boston Dynamics Spot and Unitree B2, reach his hip." />
-      </div>
-      <figcaption>Sold in Germany, at true scale next to a 1.80 m site worker: {LINEUP.map((robot, i) => <span key={robot.href}>{i ? (i === LINEUP.length - 1 ? ' and ' : ', ') : ''}<Link href={robot.href}>{robot.name}</Link></span>)}. Rendered from their published models.</figcaption>
-    </figure>
-
-    <MarketExplorer jobs={jobs} initialDetail={initialDetail} initial={initial} contact={SITE.email || undefined} />
+    </HomeHero>
+    <div className="jp-page plan-page home-below">
+      <MarketExplorer jobs={jobs} initialDetail={initialDetail} initial={initial} contact={SITE.email || undefined} />
+    </div>
   </>;
 }

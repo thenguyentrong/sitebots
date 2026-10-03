@@ -1,30 +1,21 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { LineupRender, type LineupItem } from '@/components/robot-viewer/LineupScene';
+import { LineupLive, type LiveItem } from '@/components/robot-viewer/LineupLive';
 import { getRobotModel } from '@/lib/models/index';
 import { resolvePresets } from '@/lib/models/poses';
+import { LINEUP } from '@/lib/models/lineup';
 import { PRIVATE_METADATA } from '@/lib/seo';
+import '../../plan/journey.css';
 
 export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { ...PRIVATE_METADATA, title: 'Lineup render' };
 
-/** Humanoids, a wheeled humanoid and robot dogs that can be bought or ordered in Germany. */
-const LINEUP = [
-  { key: 'unitree/h1-2', form: 'humanoid', turn: -1.05 },
-  { key: 'unitree/g1', form: 'humanoid', turn: -1.1 },
-  { key: 'unitree/g1-d', form: 'mobile_manipulator', turn: -1.0 },
-  { key: 'boston-dynamics/spot', form: 'quadruped', turn: -0.5 },
-  { key: 'unitree/b2', form: 'quadruped', turn: -0.5 },
-] as const;
-
-/** Development only: the scene the landing's lineup image is rendered from (scripts/assets/render-lineup.mjs). */
-export default async function LineupPage({ searchParams }: { searchParams: Promise<Record<string, string | undefined>> }) {
-  const tall = (await searchParams).tall;
+/** Development only: the job site as the strip phones scroll sideways (scripts/assets/render-lineup.mjs makes the stills). */
+export default function LineupPage() {
   if (process.env.NODE_ENV === 'production') notFound();
-  const items: LineupItem[] = LINEUP.map((row, i) => (i === 0 && tall ? { ...row, key: tall } : row)).flatMap(({ key, form, turn }) => {
-    const entry = getRobotModel(key);
-    return entry ? [{ key, entry, pose: resolvePresets(key, form, entry.joints.joints).standing ?? {}, turn }] : [];
+  const items: LiveItem[] = LINEUP.flatMap((row) => {
+    const entry = getRobotModel(row.key);
+    return entry ? [{ key: row.key, name: row.name, href: row.href, turn: row.turn, entry, presets: resolvePresets(row.key, row.form, entry.joints.joints), heightM: entry.joints.modelHeightM || entry.heightM }] : [];
   });
-  // Transparent page, so the screenshot keeps only the robots and their shadows.
-  return <main className="mx-auto w-full max-w-[1600px] p-6"><style>{'html, body { background: transparent !important; }'}</style><LineupRender items={items} /></main>;
+  return <main data-lineup-strip style={{ width: 1200, height: 320 }}><LineupLive items={items} mode="strip" /></main>;
 }

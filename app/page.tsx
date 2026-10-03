@@ -28,8 +28,8 @@ export default async function Home({ searchParams }: { searchParams: Search }) {
   if (!active && sp.details !== '1') {
     const one = (value: string | string[] | undefined) => (Array.isArray(value) ? value[0] : value) ?? '';
     const initial = { layout: one(sp.layout), x: one(sp.x), y: one(sp.y), robot: one(sp.robot) as never, where: one(sp.where), condition: one(sp.conditions), cluster: one(sp.work), query: one(sp.search), withRobots: one(sp.robots) === '1', selected: one(sp.usecase), view: one(sp.view) };
-    return <main className="jp-page plan-page visual-home">
-      <noscript><p>The plan keeps your work in this browser and needs JavaScript. <Link className="underline" href="/use-cases">Browse the use cases</Link> or <Link className="underline" href="/?details=1#matcher">search by specifications</Link>.</p></noscript>
+    return <main className="visual-home">
+      <noscript><p className="jp-page">The plan keeps your work in this browser and needs JavaScript. <Link className="underline" href="/use-cases">Browse the use cases</Link> or <Link className="underline" href="/?details=1#matcher">search by specifications</Link>.</p></noscript>
       <JourneyStart {...explorerData(initial.selected)} initial={initial} />
     </main>;
   }

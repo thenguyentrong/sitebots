@@ -200,19 +200,80 @@
 .use-case-actions { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; margin-top: auto; padding-top: 24px; }
 .use-case-actions > .use-case-rule { flex: 0 0 100%; height: 1px; margin-bottom: 8px; background: var(--edge); }
 
-/* the landing: headline, the lineup at scale, four figures, the method, the library, the steps */
-.home-hero { padding-top: 64px; }
-.home-hero h1 { max-width: 1000px; font-size: 56px; line-height: 64px; font-weight: 600; letter-spacing: -.03em; text-wrap: balance; }
-.home-hero h1 span { color: var(--muted); }
-.home-hero .jp-lede { margin-top: 24px; max-width: 600px; font-size: 18px; line-height: 28px; text-wrap: pretty; }
+/* The landing opens on the job site (HomeHero): the live scene full bleed, the headline on the
+   concrete below the row, a mono readout beside it. The photo is dark under its scrims in both
+   themes, so the hero keeps its own dark palette. Then four figures, the method, the library, the steps. */
+.home-hero { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; min-height: clamp(640px, calc(100svh - 65px), 1080px); overflow: hidden; background: #0a0a0b; color: #fafafa; color-scheme: dark; }
+.home-stage { position: absolute; inset: 0; }
+.home-stage picture { position: absolute; inset: 0; }
+.home-stage-poster { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; transition: opacity 1s ease; }
+.home-stage-live { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; }
+.home-hero[data-live='ready'] .home-stage-poster { opacity: 0; }
+.home-hero[data-live='ready'] .home-stage-live { opacity: 1; }
+/* Scrims keep the copy, the readout and the header edge readable on the photo. */
+.home-stage::after { content: ''; position: absolute; inset: 0; pointer-events: none; background:
+  linear-gradient(to top, rgba(10, 10, 11, 0.94) 0%, rgba(10, 10, 11, 0.74) 24%, rgba(10, 10, 11, 0.18) 44%, rgba(10, 10, 11, 0) 54%),
+  linear-gradient(to bottom, rgba(10, 10, 11, 0.5) 0%, rgba(10, 10, 11, 0) 16%),
+  linear-gradient(to right, rgba(10, 10, 11, 0.45) 0%, rgba(10, 10, 11, 0) 30%, rgba(10, 10, 11, 0) 70%, rgba(10, 10, 11, 0.45) 100%); }
+.home-hero-copy { position: relative; width: 100%; max-width: 1152px; margin: 0 auto; padding: 0 24px 56px; pointer-events: none; }
+.home-hero-copy > :not(.home-actions), .home-actions > * { pointer-events: auto; }
+.home-eyebrow { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; line-height: 16px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(250, 250, 250, 0.7); text-wrap: balance; }
+.home-hero h1 { margin-top: 16px; font-size: 56px; line-height: 60px; font-weight: 600; letter-spacing: -0.035em; text-wrap: balance; }
+.home-hero h1 span { display: block; color: rgba(250, 250, 250, 0.58); }
+.home-lede { margin-top: 20px; max-width: 520px; font-size: 18px; line-height: 28px; color: rgba(250, 250, 250, 0.78); text-wrap: pretty; }
 .home-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-.home-lineup { margin-top: 48px; }
-/* Always dark: the models are white and grey, and read like a product shot on black in both themes. */
-.home-lineup-stage { padding: 24px 16px 0; border: 1px solid var(--edge); border-radius: 12px; background: radial-gradient(80% 110% at 50% 15%, #1d1d21 0%, #0c0c0e 72%); }
-.home-lineup-stage img { display: block; width: 100%; height: auto; }
-.home-lineup figcaption { margin-top: 12px; font-size: 12px; line-height: 16px; color: var(--muted); }
-.home-lineup figcaption a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 3px; }
-.home-lineup figcaption a:hover { text-decoration-color: var(--foreground); }
+.home-cta, .home-cta-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: 999px; font-size: 14px; line-height: 20px; white-space: nowrap; transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease; }
+.home-cta { background: #fafafa; color: #09090b; font-weight: 600; }
+.home-cta:hover { background: #e4e4e7; }
+.home-cta-ghost { border: 1px solid rgba(250, 250, 250, 0.3); color: #fafafa; font-weight: 500; }
+.home-cta-ghost:hover { border-color: rgba(250, 250, 250, 0.6); background: rgba(250, 250, 250, 0.08); }
+.home-cta:active, .home-cta-ghost:active { transform: scale(0.98); }
+.home-hero a:focus-visible { outline: 2px solid #fb923c; outline-offset: 3px; }
+.home-note { margin-top: 24px; max-width: 600px; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; line-height: 16px; color: rgba(250, 250, 250, 0.68); text-wrap: pretty; }
+.home-note a { color: rgba(250, 250, 250, 0.85); text-decoration: underline; text-decoration-color: rgba(250, 250, 250, 0.3); text-underline-offset: 3px; }
+.home-note a:hover { text-decoration-color: #fafafa; }
+.home-note-hint { color: rgba(250, 250, 250, 0.85); }
+/* Beside the copy on a wide screen, where the labels in the scene name the robots and link to them. */
+@media (min-width: 1024px) { .home-note { position: absolute; right: 24px; bottom: 56px; max-width: 380px; margin: 0; text-align: right; } .home-note-robots { display: none; } }
+.home-swipe { display: none; }
+.home-hud { position: absolute; z-index: 1; top: 24px; right: max(24px, calc((100% - 1104px) / 2)); display: flex; flex-direction: column; gap: 4px; text-align: right; pointer-events: none; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 10px; line-height: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(250, 250, 250, 0.55); }
+.home-hud b { font-weight: 600; color: rgba(250, 250, 250, 0.9); }
+.home-hud li[data-active], .home-hud li[data-active] b { color: #fb923c; }
+.home-below { padding-top: 64px; }
+/* Inside the live scene: the scale line's label, a label under every figure, the tag of the robot pointed at. */
+.lineup-live { position: relative; width: 100%; height: 100%; }
+.lineup-live canvas { cursor: grab; }
+.lineup-live canvas:active { cursor: grabbing; }
+.lineup-live[data-hovered]:not([data-hovered='']) canvas { cursor: pointer; }
+.lineup-scale { display: block; transform: translateY(calc(-100% - 6px)); white-space: nowrap; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; line-height: 14px; letter-spacing: 0.12em; color: #fb923c; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+.lineup-label { display: block; transform: translate(-50%, 8px); pointer-events: auto; text-decoration: none; white-space: nowrap; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 10px; line-height: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250, 250, 250, 0.88); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); }
+.lineup-label b { margin-left: 8px; font-weight: 500; color: rgba(250, 250, 250, 0.55); }
+a.lineup-label:hover { color: #fb923c; }
+.lineup-tag { display: inline-flex; flex-direction: column; gap: 2px; padding: 6px 10px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 10px; background: rgba(12, 12, 14, 0.88); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); color: #fafafa; font-size: 12px; line-height: 16px; white-space: nowrap; }
+.lineup-tag strong { font-size: 13px; font-weight: 600; }
+.lineup-tag span { color: #a1a1aa; }
+/* A short laptop screen gives the row the height the headline would take. */
+@media (min-width: 768px) and (max-height: 820px) { .home-hero h1 { font-size: 44px; line-height: 48px; } .home-actions { margin-top: 24px; } }
+@media (max-width: 1023px) {
+  .home-hero h1 { font-size: 44px; line-height: 48px; }
+  .home-hud { display: none; }
+}
+/* On a phone the row scrolls sideways at a readable size above the copy. */
+@media (max-width: 767px) {
+  .home-hero { min-height: 0; justify-content: flex-start; }
+  .home-hero::before { content: ''; position: absolute; z-index: 1; top: 0; left: 0; right: 0; height: 320px; pointer-events: none; background: linear-gradient(to top, #0a0a0b 0%, rgba(10, 10, 11, 0) 12%), linear-gradient(to bottom, rgba(10, 10, 11, 0.45) 0%, rgba(10, 10, 11, 0) 22%); }
+  .home-stage { position: relative; inset: auto; height: 320px; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-width: none; }
+  .home-stage::-webkit-scrollbar { display: none; }
+  .home-stage::after { display: none; }
+  .home-stage picture { position: static; display: block; width: max-content; height: 100%; }
+  .home-stage-poster { width: auto; max-width: none; height: 100%; object-fit: fill; }
+  .home-swipe { display: block; position: relative; z-index: 2; margin-top: -8px; padding: 0 16px; font-size: 12px; line-height: 16px; font-weight: 500; color: rgba(250, 250, 250, 0.85); }
+  .home-hero-copy { padding: 24px 16px 48px; pointer-events: auto; }
+  .home-eyebrow { font-size: 11px; letter-spacing: 0.12em; }
+  .home-hero h1 { font-size: 34px; line-height: 40px; }
+  .home-lede { font-size: 16px; line-height: 24px; }
+  .home-below { padding-top: 48px; }
+}
 .home-limits, .home-tests, .home-library, .home-steps { padding-top: 64px; }
 .home-limits h2, .home-tests h2, .home-library h2, .home-steps h2 { font-size: 24px; line-height: 32px; font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
 .home-limits dl { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 24px; }
@@ -284,11 +345,6 @@
   .jp-page { padding: 0 16px; }
   .jp-head { padding-top: 32px; }
   .jp-head h1 { font-size: 32px; line-height: 40px; }
-  .home-hero { padding-top: 40px; }
-  .home-hero h1 { font-size: 36px; line-height: 44px; }
-  /* On a phone the row scrolls sideways at a readable size instead of shrinking to a strip. */
-  .home-lineup-stage { padding: 16px 8px 0; overflow-x: auto; overscroll-behavior-x: contain; }
-  .home-lineup-stage img { width: 760px; max-width: none; }
   .home-limits dl, .home-bento, .home-steps ol { grid-template-columns: minmax(0, 1fr); }
   .home-limits dl > div { padding: 0; border-left: 0; }
   .home-bento-main { grid-row: auto; }
