@@ -42,6 +42,14 @@ export function loadPlaces(): Record<string, Place[]> {
   return places;
 }
 
+/** A short place for a caption: "Erlangen, Germany", or the country alone when no town is named. */
+export function placeLabel(where: string | null): string {
+  const first = where ? loadPlaces()[where]?.[0] : undefined;
+  if (!first) return '';
+  const country = COUNTRY_NAMES[first.country] ?? first.country;
+  return first.town ? first.town + ', ' + country : country;
+}
+
 /** Every pilot and daily use on a construction-site job, one entry per robot and project. */
 export function siteProjects(): MapProject[] {
   const { jobs } = loadJobs();

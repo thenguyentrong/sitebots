@@ -8,6 +8,7 @@ import { LINEUP } from '@/lib/models/lineup';
 import { SITE } from '@/lib/site';
 import { HomeHero } from './HomeHero';
 import { ProjectMap } from './ProjectMap';
+import { SiteRow } from './SiteRow';
 import { Icon } from './Icon';
 import { TodayAnswer } from './TodayAnswer';
 import { TradeChart } from './TradeChart';
@@ -57,6 +58,7 @@ export function JourneyStart({ jobs, initialDetail, sold, answer, projects }: { 
         <Link className="home-cta-ghost" href="/robots">Robots sold in Germany</Link>
       </div>
     </HomeHero>
+    <SiteRow answer={answer} />
     <div className="jp-page plan-page home-below">
       <TodayAnswer answer={answer} total={jobs.length} />
       <ProjectMap data={projects} />

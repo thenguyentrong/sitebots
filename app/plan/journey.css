@@ -240,6 +240,33 @@
 .home-hud b { font-weight: 600; color: rgba(250, 250, 250, 0.9); }
 .home-hud li[data-active], .home-hud li[data-active] b { color: #fb923c; }
 .home-below { padding-top: 64px; }
+/* Under the hero (SiteRow): the machines at work on sites today, cut out on the hero's dark ground,
+   standing on one ground line. Like the hero, it keeps its dark palette in both themes. */
+.home-strip { background: #0a0a0b; color: #fafafa; color-scheme: dark; border-top: 1px solid rgba(250, 250, 250, 0.08); }
+.home-strip-inner { max-width: 1152px; margin: 0 auto; padding: 32px 24px 40px; }
+.home-strip-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 32px; align-items: end; }
+.home-strip-head p { font-size: 14px; line-height: 20px; color: rgba(250, 250, 250, 0.72); text-wrap: pretty; }
+.home-strip-row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 16px; margin-top: 24px; }
+.home-strip-row li { display: flex; flex-direction: column; min-width: 0; }
+.home-strip-row a { display: flex; flex-direction: column; gap: 4px; color: inherit; text-decoration: none; }
+.home-strip-row a:focus-visible { outline: 2px solid #fb923c; outline-offset: 4px; border-radius: 4px; }
+.home-strip-pic { display: flex; align-items: flex-end; justify-content: center; height: 132px; padding: 0 4px 8px; border-bottom: 1px solid rgba(250, 250, 250, 0.2); }
+.home-strip-pic img { width: auto; height: auto; max-width: 100%; max-height: 100%; transition: transform 0.2s ease; }
+.home-strip-row a:hover img { transform: translateY(-2px) scale(1.03); }
+.home-strip-row strong { margin-top: 8px; font-size: 13px; line-height: 18px; font-weight: 600; text-wrap: balance; }
+.home-strip-row a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.home-strip-row a > span:not(.home-strip-pic) { font-size: 12px; line-height: 16px; color: rgba(250, 250, 250, 0.8); }
+.home-strip-row a > small { font-size: 11px; line-height: 14px; color: rgba(250, 250, 250, 0.66); }
+.home-strip-credit { margin-top: 4px; font-size: 10px; line-height: 14px; color: rgba(250, 250, 250, 0.56); }
+.home-strip-swipe { display: none; margin-top: 8px; font-size: 12px; line-height: 16px; font-weight: 500; color: rgba(250, 250, 250, 0.8); }
+@media (prefers-reduced-motion: reduce) { .home-strip-pic img { transition: none; } .home-strip-row a:hover img { transform: none; } }
+@media (max-width: 1023px) {
+  .home-strip-head { grid-template-columns: minmax(0, 1fr); }
+  .home-strip-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 164px; overflow-x: auto; overscroll-behavior-x: contain; padding-bottom: 8px; scroll-snap-type: x mandatory; }
+  .home-strip-row li { scroll-snap-align: start; }
+  .home-strip-swipe { display: block; }
+}
+@media (max-width: 767px) { .home-strip-inner { padding: 24px 16px 32px; } .home-strip-pic { height: 112px; } }
 /* The answer before the map (TodayAnswer): the site jobs by their best proof as one bar, then the
    proven jobs one per row. The proof colours are the map's (--proof-* in globals.css). */
 .home-today { scroll-margin-top: 80px; }

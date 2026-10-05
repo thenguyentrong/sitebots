@@ -223,3 +223,15 @@ test.describe('proof ladder and timeline', () => {
     await expect(page.locator('.mk-timeline figcaption')).toContainText('In daily use');
   });
 });
+
+test.describe('the row under the hero', () => {
+  test('shows the machines in daily use on sites, sold in Germany, each linking to its job', async ({ page }) => {
+    await page.goto('/');
+    const row = page.locator('.home-strip');
+    await expect(row.getByRole('heading', { level: 2 })).toContainText('Working on construction sites today');
+    const items = row.locator('.home-strip-row li');
+    expect(await items.count()).toBeGreaterThanOrEqual(3);
+    await expect(items.first().getByRole('link')).toHaveAttribute('href', /^\/use-cases\//);
+    await expect(items.first()).toContainText('Photo:');
+  });
+});
