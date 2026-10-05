@@ -1,0 +1,346 @@
+{
+ "schemaVersion": 1,
+ "id": "gravis-robotics-gravis-rack",
+ "maker": "Gravis Robotics",
+ "makerCountry": "CH",
+ "model": "Gravis Rack",
+ "variant": "retrofit kit with Slate tablet",
+ "name": "Gravis Robotics Gravis Rack",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation"
+ ],
+ "officialUrl": "https://www.gravisrobotics.com/rack",
+ "summary": "A roof-mounted sensor and computer kit with a tablet that lets excavators and wheel loaders of 10 to 100+ tons dig trenches, load trucks and grade on their own, or guide the operator in the cab.",
+ "launched": "2025-04",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "On request from Zürich: Gravis offers its kit and Gravis-equipped machines for rental or purchase through dealers and rental partners and works in Switzerland, the UK and the EU. No German customer, dealer or price named yet. The Develon-integrated version (Real X) reached its first European customer, KIBAG in Switzerland, through the Swiss Develon dealer.",
+  "sourceIds": [
+   "s1",
+   "s4",
+   "s11"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Gravis Robotics AG",
+    "country": "CH",
+    "role": "manufacturer",
+    "productUrl": "https://www.gravisrobotics.com/rack",
+    "contactUrl": "https://www.gravisrobotics.com/contact",
+    "email": "contact@gravisrobotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Headquarters Zürich, offices in Austin (USA) and Oxford (UK). Offers turnkey rental and purchase of Gravis-equipped machines through local dealers and rental providers; select machine models supported by dealer integration. Price on request."
+   }
+  ],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "host_machines",
+   "label": "Host machines",
+   "value": "excavators and wheel loaders",
+   "unit": null,
+   "conditions": "trucks, dozers, forklifts and graders not supported",
+   "sourceId": "s1"
+  },
+  {
+   "key": "machine_class",
+   "label": "Machine size",
+   "value": "10 to 100+ ton",
+   "unit": null,
+   "conditions": "rack sizes S, M, L, XL",
+   "sourceId": "s1"
+  },
+  {
+   "key": "brands",
+   "label": "Machine brands",
+   "value": "installed on a dozen brands, including Caterpillar, Case, Develon, John Deere, JCB, Hitachi, Sumitomo, Yanmar and Volvo",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s5"
+  },
+  {
+   "key": "hydraulic_interface",
+   "label": "Machine requirement",
+   "value": "electro-hydraulic (EH) pilot control; machines with mechanical pilot valves need a retrofit EH valve",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "front camera and LiDAR; rear masts with GNSS RTK, wide-angle HDR cameras, 3D LiDAR and long-range WiFi; surround-view cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computer",
+   "value": "automotive-grade edge computer; works offline",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "interface",
+   "label": "Operator interface",
+   "value": "Slate tablet with integrated wireless stop; in-cab copilot, field command or remote supervision of one or more machines",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "job_input",
+   "label": "Job input",
+   "value": "geometry from CAD/BIM models, or reference points set on site by touch, bucket or XYZ values",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "tasks",
+   "label": "Tasks",
+   "value": "trenching, earthworks, grading, material handling",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "dump_targets",
+   "label": "Dumping",
+   "value": "spoil pile, hopper or truck (truck position detected by the AI)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "productivity_gain_pct",
+   "label": "Throughput gain",
+   "value": "up to 30",
+   "unit": "%",
+   "conditions": "maker claim versus manual operation",
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s9",
+   "s10",
+   "s11"
+  ],
+  "notes": [
+   "Retrofit kit: the crawler excavator or wheel loader and its bucket come from the customer, a dealer or a rental firm.",
+   "Modes range from in-cab assistance to full autonomy supervised from outside the cab or remotely.",
+   "In the UK trial a trained machine controller is the only person allowed to start the work and can stop the machine at any time.",
+   "Rules for fully autonomous machines on public sites are still missing; KIBAG runs its machine on private land under technical supervision."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/69016a2658231cb1d2ca58c5/691b85ce3c78b9173fef0751_6.jpg",
+   "pageUrl": "https://www.gravisrobotics.com/rack",
+   "credit": "Gravis Robotics",
+   "alt": "Gravis Rack sensor and computer unit with GNSS masts on a machine cab roof",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Showed autonomous truck loading, tap-to-dig trenching and remote autonomy of an excavator 300 km away, with several machine makers",
+   "stage": "demo",
+   "where": "bauma 2025 trade fair",
+   "date": "2025-04",
+   "sourceId": "s7",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "A 23-tonne Develon crawler excavator with Gravis technology fed a screener hopper with sand and gravel for two days, averaging 133 cycles an hour and about 1,500 tonnes a day",
+   "stage": "pilot",
+   "where": "Holcim UK, Lee Moor sand and gravel quarry, Plymouth, UK",
+   "date": "2025-05",
+   "sourceId": "s8",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "A Yanmar SV100-7 excavator with the Gravis kit dug trenches to pipe-laying standard from a 3D model and skipped the section where the model showed existing pipes",
+   "stage": "pilot",
+   "where": "Taylor Woodrow, Clough Bank B car park, Manchester Airport, UK",
+   "date": "2025-10",
+   "sourceId": "s9",
+   "note": "Trial on 21 October 2025 ahead of use on the live site."
+  },
+  {
+   "taskIds": [],
+   "task": "A Develon crawler excavator with Gravis control digs a 150 m long, 17 m wide and 3 m deep trench without an operator",
+   "stage": "pilot",
+   "where": "KIBAG, gravel pit Tuggen, Switzerland",
+   "date": "2026-01",
+   "sourceId": "s10",
+   "note": "Pilot running since autumn 2025 and planned until at least summer 2026; KIBAG reports the programming took more effort than expected."
+  },
+  {
+   "taskIds": [],
+   "task": "KIBAG took over a Develon Real X DX225LC (developed with Gravis, Gravis Rack on the roof) to dig a 300 m long, 6 m wide, 3 m deep trench for slope stabilisation",
+   "stage": "deployment",
+   "where": "KIBAG, former quarry in Tuggen, Switzerland",
+   "date": "2026-04",
+   "sourceId": "s11",
+   "note": "First European customer of the Develon-integrated version, supplied through the Swiss Develon dealer AG für Baumaschinen Schmerikon."
+  },
+  {
+   "taskIds": [],
+   "task": "Autonomous excavator shown to about 900 dealers, customers and journalists",
+   "stage": "demo",
+   "where": "Develon Demo Days, Prague, Czech Republic",
+   "date": "2026-04",
+   "sourceId": "s11",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.gravisrobotics.com/rack",
+   "title": "The Gravis Rack",
+   "publisher": "Gravis Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.gravisrobotics.com/slate",
+   "title": "The Slate interface",
+   "publisher": "Gravis Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.gravisrobotics.com/",
+   "title": "Gravis Robotics: Autonomous Earthmoving Technology (home page)",
+   "publisher": "Gravis Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.gravisrobotics.com/press-release",
+   "title": "Gravis Robotics accelerates global growth (November 2025)",
+   "publisher": "Gravis Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.gravisrobotics.com/series-a",
+   "title": "Reshaping the Physical World: Gravis Robotics Raises $200M (17 August 2026)",
+   "publisher": "Gravis Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.gravisrobotics.com/contact",
+   "title": "Contact",
+   "publisher": "Gravis Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.youtube.com/watch?v=3YqNOTYHdWA",
+   "title": "Bauma 2025 | Gravis Robotics Launches 'Anywhere Autonomy'",
+   "publisher": "Gravis Robotics (YouTube)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s8",
+   "url": "https://constructionmanagement.co.uk/autonomous-quarry-plant-tested-in-plymouth/",
+   "title": "Autonomous quarry plant tested in Plymouth",
+   "publisher": "Construction Management",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.newcivilengineer.com/latest/watch-uk-first-trial-of-autonomous-excavator-helping-to-build-car-park-at-manchester-airport-24-10-2025/",
+   "title": "Watch: UK first trial of autonomous excavator helping to build car park at Manchester Airport",
+   "publisher": "New Civil Engineer",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s10",
+   "url": "https://kibag.ch/news/kibag-zeigt-pioniergeist-bei-den-autonomen-baumaschinen",
+   "title": "KIBAG zeigt Pioniergeist bei den autonomen Baumaschinen",
+   "publisher": "KIBAG",
+   "kind": "customer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s11",
+   "url": "https://www.bauforum24.biz/news/develon/develon-real-x-kettenbagger-r10595/",
+   "title": "DEVELON-Real-X-Kettenbagger: autonome Erdbewegung im Praxiseinsatz",
+   "publisher": "Bauforum24",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s12",
+   "url": "https://ethz.ch/de/news-und-veranstaltungen/eth-news/news/2026/08/200-millionen-fuer-autonome-bagger.html",
+   "title": "200 Millionen für autonome Bagger",
+   "publisher": "ETH Zürich",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s13",
+   "url": "https://develon-ce.de/develon-kuendigt-weltpremieren-auf-der-bauma-2025-an/",
+   "title": "Develon kündigt Weltpremieren auf der bauma 2025 an (Real X developed with Gravis Robotics)",
+   "publisher": "Develon Deutschland",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Purchase and rental prices and lead times are not public.",
+  "No German dealer, rental partner or customer named; whether Develon dealers in Germany offer the Real X version is not confirmed.",
+  "Which EU sites Gravis means when it says it is live in the EU.",
+  "Which brands and models are covered by dealer integration."
+ ],
+ "checkedAt": "2026-10-05"
+}

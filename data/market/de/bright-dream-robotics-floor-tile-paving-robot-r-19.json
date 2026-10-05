@@ -1,0 +1,199 @@
+{
+ "schemaVersion": 1,
+ "id": "bright-dream-robotics-floor-tile-paving-robot-r-19",
+ "maker": "Bright Dream Robotics",
+ "makerCountry": "CN",
+ "model": "Floor Tile Paving Robot R-19",
+ "variant": null,
+ "name": "Bright Dream Robotics Floor Tile Paving Robot R-19",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_tiling/large-format-floor-tiles"
+ ],
+ "officialUrl": "https://www.bzlrobot.com/channels/3.html",
+ "summary": "Wheeled robot that spreads tile adhesive and lays large-format floor tiles with a vacuum gripper, guided by laser navigation and four cameras.",
+ "launched": null,
+ "lifecycle": "discontinued",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer. Bright Dream lists the robot only on its Chinese website, and its product page there is empty. BrightMaster Robotics (BMR), Bright Dream's global exclusive sales agent since March 2025, offers no tile robot. No EU office, dealer, customer or CE marking found. Partner Robotics, founded in 2023 by Bright Dream's former CEO with Bright Dream as shareholder, sells its own, different floor tile robot (see partner-robotics-pavepal-p900).",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4",
+   "s5",
+   "s6",
+   "s7"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "omnidirectional chassis with all-wheel drive",
+   "unit": null,
+   "conditions": "described as a wireless system",
+   "sourceId": "s2"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "laser navigation, visual recognition and an elevation positioning system",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "four-camera vision system for measuring and aligning tiles",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "end_effector",
+   "label": "Tile gripper",
+   "value": "robot arm with vacuum grippers; picks up the tile and turns it 180 degrees",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "process",
+   "label": "Process",
+   "value": "spreads tile adhesive, carries tiles and lays them on the fresh adhesive bed",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "No tile sizes, output, weight or battery data published.",
+   "The Red Dot photo shows the label 'Floor Tile Paving Robot BDR100-70' on the body; the maker's own picture shows 'BZL_CS03_A'.",
+   "Bright Dream also lists a separate outdoor (landscape) floor tile robot and a wall tile robot; this record covers the indoor floor tile robot only."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.bzlrobot.com/upload/images/2022/8/90c93c5c4a802dd9.jpg",
+   "pageUrl": "https://www.bzlrobot.com/channels/3.html",
+   "credit": "Bright Dream Robotics",
+   "alt": "Bright Dream floor tile paving robot: pink wheeled base with a lifting column and a vacuum tile gripper (render)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Lays floor tiles in housing, high-speed rail stations, airports, office buildings and schools",
+   "stage": "claim",
+   "where": "China",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker says the robot is 'widely applied' in these settings; no named project."
+  },
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Floor tile laying named by China's Ministry of Industry and Information Technology (MIIT) as an excellent robot application scenario",
+   "stage": "claim",
+   "where": "China",
+   "date": "2022-06",
+   "sourceId": "s4",
+   "note": "From the timeline of BMR, Bright Dream's sales agent; model not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bzlrobot.com/channels/3.html",
+   "title": "Construction robots (Chinese product list incl. floor tile paving robot)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.red-dot.org/project/floor-tile-paving-robot-r-19-58278",
+   "title": "Red Dot Design Award 2022: Floor Tile Paving Robot R-19",
+   "publisher": "Red Dot",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bzlrobot.com/contents/3/234.html",
+   "title": "Floor tile paving robot detail page (blank when checked)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://en.bm-robot.com/about.html",
+   "title": "About BrightMaster Robotics (global exclusive general agent of Bright Dream since March 2025; timeline)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.partnerrobotics.com/pages/about-us",
+   "title": "Partner Robotics history (founder is former CEO of Bright Dream; Bright Dream as shareholder)",
+   "publisher": "Partner Robotics",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.bzlrobot.com/",
+   "title": "Bright Dream home page (links BMR as exclusive general agent)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://en.bm-robot.com/product.html",
+   "title": "BMR product list (no tile robot)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Lifecycle set to discontinued by inference: the product page is blank and Bright Dream's sales agent BMR offers no tile robot. Is it still made or used in China?",
+  "Is 'R-19' (Red Dot entry) the same machine as the 'BDR100-70' label on the award photo?",
+  "No specifications (tile sizes, output, weight, battery) published."
+ ],
+ "checkedAt": "2026-10-05"
+}

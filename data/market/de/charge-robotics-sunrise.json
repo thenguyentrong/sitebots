@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "charge-robotics-sunrise",
+ "maker": "Charge Robotics",
+ "makerCountry": "US",
+ "model": "Sunrise",
+ "variant": null,
+ "name": "Charge Robotics Sunrise",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "utility-scale solar construction: assembling tracker bays (torque tubes, brackets, modules) and installing them on the piles"
+ ],
+ "officialUrl": "https://www.chargerobotics.com/",
+ "summary": "A portable robotic factory set up on a utility-scale solar site that assembles torque tubes, brackets and PV modules into complete tracker bays and delivers them for installation on the piles, run by the maker's own crew.",
+ "launched": "2024-02",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not sold as a machine: Charge offers Sunrise as a turnkey service with its own trained crew on US utility-scale solar sites (HQ San Leandro, California; field jobs based in Phoenix, Arizona). No European offer, partner or project found.",
+  "sourceIds": [
+   "s1",
+   "s4",
+   "s6"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "throughput_mw_per_shift",
+   "label": "Throughput per shift",
+   "value": "0.5-1",
+   "unit": "MW",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "daily_throughput_modules",
+   "label": "Daily throughput",
+   "value": "850-1,000",
+   "unit": "PV modules",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "labour_hours_replaced_pct",
+   "label": "Mechanical install labour hours replaced",
+   "value": 75,
+   "unit": "%",
+   "conditions": "maker claim",
+   "sourceId": "s1"
+  },
+  {
+   "key": "crew",
+   "label": "System crew",
+   "value": 10,
+   "unit": "people",
+   "conditions": "crew provided by Charge",
+   "sourceId": "s1"
+  },
+  {
+   "key": "footprint_ft",
+   "label": "Footprint",
+   "value": "60 x 120",
+   "unit": "ft",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "setup_teardown_days",
+   "label": "Setup / teardown",
+   "value": 1,
+   "unit": "day",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_f",
+   "label": "Operating temperature",
+   "value": "-4 to 125",
+   "unit": "°F",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_wind_mph",
+   "label": "Wind limit",
+   "value": 25,
+   "unit": "mph",
+   "conditions": "operating conditions, winds up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "bay_size",
+   "label": "Bay delivered as one unit",
+   "value": "5-9 modules",
+   "unit": null,
+   "conditions": "MIT News (2025): each bay a 40-foot section weighing about 800 pounds",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A sheltered assembly line on the site, not a single mobile robot; robotic arms handle all component movement (number of arms not stated; set to 2 as the source speaks of arms in the plural).",
+   "Wheeled delivery vehicles take finished bays to the piles; MIT News (2025) describes an autonomous robotic vehicle, while a current maker photo shows the bay carrier pulled by a tractor with a driver.",
+   "Automates all mechanical installation except pile driving; civil works and electrical work stay with the EPC.",
+   "Machine vision checks part placement before fastening; every fastening is logged with torque, serial number, time and image.",
+   "Can run 24/7; operators run the robotic equipment remotely (CEO, MIT News 2025)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.chargerobotics.com/brand/4.1-rugged-site-v1-960.jpg",
+   "pageUrl": "https://www.chargerobotics.com/",
+   "credit": "Charge Robotics",
+   "alt": "Charge Robotics Sunrise assembly line set up on a desert solar construction site",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Prototype assembled solar bays with computer-vision quality control and installed them in the field",
+   "stage": "pilot",
+   "where": "SOLV Energy solar project, USA (site not named)",
+   "date": "2024-02",
+   "sourceId": "s3",
+   "note": "MIT News (2025) says the prototype built a solar farm with SOLV Energy in early 2024."
+  },
+  {
+   "taskIds": [],
+   "task": "First commercial system shipped; the maker is scaling up operations",
+   "stage": "claim",
+   "where": "USA (customers not named)",
+   "date": "2026",
+   "sourceId": "s6",
+   "note": "Maker statement in a job posting; another posting describes running the factory and a fleet of delivery vehicles on solar construction sites across the US."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.chargerobotics.com/",
+   "title": "The Sunrise factory: the assembly line for solar",
+   "publisher": "Charge Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://news.mit.edu/2025/charge-robotics-makes-solar-projects-cheaper-faster-portable-factories-0312",
+   "title": "Charge Robotics makes solar projects cheaper and faster with portable factories (March 2025)",
+   "publisher": "MIT News",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.newswire.com/news/charge-robotics-completes-first-deployment-of-sunrise-solar-22249671",
+   "title": "Charge Robotics completes first deployment of Sunrise (February 2024)",
+   "publisher": "Charge Robotics via Newswire",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://jobs.ashbyhq.com/charge-robotics/2c88036f-3124-416c-b58a-2ae28efefb22",
+   "title": "Job post: Robotic Factory Operator (field role, Phoenix, Arizona; sites across the US)",
+   "publisher": "Charge Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://jobs.ashbyhq.com/charge-robotics/d106977e-5fbf-4d12-bd39-e59f721bd65a",
+   "title": "Job post: Head of Manufacturing (San Leandro HQ; \"we've shipped our first commercial system\")",
+   "publisher": "Charge Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://pv-magazine-usa.com/2025/03/17/mit-based-startup-launches-solar-construction-robotics-system/",
+   "title": "MIT-based startup launches solar construction robotic system",
+   "publisher": "pv magazine USA",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Which commercial projects has Sunrise built, and how many MW?",
+  "Is Sunrise ever sold or leased as equipment, or only run as a service with Charge's crew; price per MW?",
+  "Any plan to work outside the US?"
+ ],
+ "checkedAt": "2026-10-05"
+}

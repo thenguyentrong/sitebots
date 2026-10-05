@@ -1,0 +1,293 @@
+{
+ "schemaVersion": 1,
+ "id": "dewalt-dale",
+ "maker": "DEWALT (Stanley Black & Decker)",
+ "makerCountry": "US",
+ "model": "DALE",
+ "variant": null,
+ "name": "DEWALT DALE downward drilling robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "downward drilling of anchor holes in concrete floor slabs"
+ ],
+ "officialUrl": "https://www.dewalt.com/en-us/dale-downward-drilling-robot-dewalt",
+ "summary": "A wheeled autonomous robot that drills holes down into concrete floor slabs at points taken from a CAD/CSV file, for example for server rack stops and MEP supports in data centres; several robots can work as a fleet.",
+ "launched": "2026-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "No DALE page found on dewalt.de; DEWALT's US page offers leasing through its representatives. Co-developer August Robotics has an office in Düsseldorf, a German DALE page with a contact form, and says the robots are deployed on hyperscale sites in the US and Europe. No public price; confirm that orders from German contractors are accepted.",
+  "sourceIds": [
+   "s1",
+   "s5",
+   "s6",
+   "s7"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "August Robotics",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://augustrobotics.com/de-de/construction/drilling",
+    "contactUrl": "https://augustrobotics.com/de-de/contact-form-page-drilling",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Co-developer of DALE. Office at Oberbilker Allee 270A, 40227 Düsseldorf (About page). Sells with training and support (in-person training, online videos, 24/5 technical support) and offers an August Robotics operator on site."
+   }
+  ],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "hole_diameter_in",
+   "label": "Hole diameter",
+   "value": "1/2 to 1-1/2",
+   "unit": "in",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "hole_depth_in",
+   "label": "Hole depth",
+   "value": 14,
+   "unit": "in",
+   "conditions": "maximum",
+   "sourceId": "s4"
+  },
+  {
+   "key": "location_accuracy_in",
+   "label": "Hole location accuracy",
+   "value": "1/8",
+   "unit": "in",
+   "conditions": "from true location",
+   "sourceId": "s4"
+  },
+  {
+   "key": "hole_drift_deg",
+   "label": "Hole drift",
+   "value": 1,
+   "unit": "deg",
+   "conditions": "maximum",
+   "sourceId": "s4"
+  },
+  {
+   "key": "drilling_rate_holes_h",
+   "label": "Drilling rate",
+   "value": "50+",
+   "unit": "holes/h",
+   "conditions": "3/4 in. x 2 in. holes",
+   "sourceId": "s4"
+  },
+  {
+   "key": "cycle_time_small_hole_s",
+   "label": "Time per small hole",
+   "value": 80,
+   "unit": "s",
+   "conditions": "3/4 in. x 2 in. hole; DEWALT says 10x faster than manual drilling for this hole size, without rebar",
+   "sourceId": "s1"
+  },
+  {
+   "key": "cycle_time_large_hole_min",
+   "label": "Time per large hole",
+   "value": "under 3",
+   "unit": "min",
+   "conditions": "1-1/8 in. x 8 in. hole",
+   "sourceId": "s1"
+  },
+  {
+   "key": "drill",
+   "label": "Drill",
+   "value": "DEWALT SDS Max rotary hammer; rebar mode with SDS Max carbide bits; detects certified DEWALT bits",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "obstacle_detection_in",
+   "label": "Obstacles it avoids",
+   "value": 3,
+   "unit": "in",
+   "conditions": "avoids objects taller than 3 in.; also detects cliffs and drops",
+   "sourceId": "s4"
+  },
+  {
+   "key": "scope_of_delivery",
+   "label": "Included",
+   "value": "1 robot, 1 guiding station, 1 tablet",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "software",
+   "label": "Software",
+   "value": "Windows tablet app; drilling points uploaded as CAD/CSV; layout points from CAD models including MSuite",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": "fast-swap batteries",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dust_extraction",
+   "label": "Dust extraction",
+   "value": true,
+   "unit": null,
+   "conditions": "integrated automatic dust monitoring and vacuum extraction",
+   "sourceId": "s4"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4",
+   "s8"
+  ],
+  "notes": [
+   "Drills downward only, into concrete floors; not for ceilings or walls.",
+   "A DEWALT drilling rig on the August Robotics mobile base (AMR); the product carries both logos (The Robot Report).",
+   "Works autonomously from a CAD/CSV list of drilling points; several robots share the work as a fleet; remote monitoring.",
+   "Avoids objects taller than 3 in. and detects drops; cameras check hole quality and dust around the holes.",
+   "No source gives weight, size, runtime per battery or stair/slope ability."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://bynder.sbdinc.com/asset/f4eee328-ec3c-497a-85b3-d569b91bb2ea/Drupal_Large/DW_Robotic-App-Image-Final-flat_E1.jpg",
+   "pageUrl": "https://www.dewalt.com/en-us/dale-downward-drilling-robot-dewalt",
+   "credit": "DEWALT",
+   "alt": "Three DEWALT DALE drilling robots on a concrete floor in a large hall (official image, appears to be a 3D render)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Shown drilling at the World of Concrete trade show",
+   "stage": "demo",
+   "where": "World of Concrete, Las Vegas, USA",
+   "date": "2026-01",
+   "sourceId": "s3",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Drilled floor holes for server rack stops and MEP supports in a year-long pilot: more than 230,000 holes at 99.97% accuracy over 26 data center construction phases",
+   "stage": "pilot",
+   "where": "Unnamed hyperscaler (large technology company), data center projects; countries not named",
+   "date": "2026-07",
+   "sourceId": "s2",
+   "note": "In January 2026 DEWALT reported 90,000+ holes over 10 phases; The Robot Report quoted 12 robots in the early access program."
+  },
+  {
+   "taskIds": [],
+   "task": "Deployed on hyperscale construction sites in the US and Europe",
+   "stage": "claim",
+   "where": "US and Europe (customers and sites not named)",
+   "date": "2026-05",
+   "sourceId": "s7",
+   "note": "Statement by August Robotics in its Series B announcement; no European customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dewalt.com/en-us/dale-downward-drilling-robot-dewalt",
+   "title": "DALE Downward Drilling Robot",
+   "publisher": "DEWALT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://dewalt.mediaroom.com/2026-07-09-Revolutionizing-Construction-Introducing-the-Worlds-First-Fleet-Capable-Downward-Drilling-Robot,-Now-Commercially-Available-to-Accelerate-Data-Center-Construction",
+   "title": "Commercial launch of the fleet-capable downward drilling robot DALE, July 2026",
+   "publisher": "DEWALT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://dewalt.mediaroom.com/2026-01-20-DEWALT-R-Unveils-the-Worlds-First-Downward-Drilling,-Fleet-Capable-Robot-to-Accelerate-Data-Center-Construction",
+   "title": "DEWALT unveils the world's first downward drilling, fleet-capable robot, January 2026",
+   "publisher": "DEWALT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://augustrobotics.com/construction/drilling",
+   "title": "DALE autonomous downward drilling",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://augustrobotics.com/de-de/construction/drilling",
+   "title": "DALE (German page with contact form)",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://augustrobotics.com/about-us",
+   "title": "About us (office addresses incl. Düsseldorf)",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://augustrobotics.com/news/august-robotics-raises-30m-series-b-to-accelerate-autonomous-construction-robotics",
+   "title": "August Robotics raises $30m Series B, May 2026",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.therobotreport.com/dewalt-drilling-robot/",
+   "title": "9 weeks to 9 days: How autonomous drilling is transforming data center construction",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Does DEWALT or August Robotics accept orders or leases from German contractors, and on what terms (purchase vs. lease, price)?",
+  "Which European sites or customers have used DALE?",
+  "Weight, dimensions, runtime per battery, slope and step limits.",
+  "Official image is a DEWALT visual that appears to be a 3D render (the January 2026 release says its image was created with 3D models); no official photo found."
+ ],
+ "checkedAt": "2026-10-05"
+}

@@ -1,0 +1,296 @@
+{
+ "schemaVersion": 1,
+ "id": "built-robotics-rpd-35",
+ "maker": "Built Robotics",
+ "makerCountry": "US",
+ "model": "RPD 35",
+ "variant": "with RPS 25 pile stabilizer",
+ "name": "Built Robotics RPD 35",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "solar farm pile driving"
+ ],
+ "officialUrl": "https://www.builtrobotics.com/solutions/solar-piling",
+ "summary": "A self-driving pile driver built on a Cat 335 excavator that carries up to 224 steel piles and drives them for solar trackers, paired with an RPS 25 robot that holds each pile in place.",
+ "launched": "2023-03",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not offered in Germany: Built rents the piling system only as a robot-as-a-service with per-pile pricing and says it currently supports deployments in the United States and Australia only.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "base_machine",
+   "label": "Base machine",
+   "value": "Caterpillar 335 excavator",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_weight_lb",
+   "label": "Operating weight",
+   "value": 144000,
+   "unit": "lb",
+   "conditions": "fully loaded",
+   "sourceId": "s2"
+  },
+  {
+   "key": "ground_pressure_psi",
+   "label": "Ground pressure",
+   "value": 11,
+   "unit": "psi",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "hammer",
+   "label": "Hammer",
+   "value": "Rammer Ho-Pac 4000, vibratory",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "hammer_impulse_force_lb",
+   "label": "Hammer impulse force",
+   "value": 40000,
+   "unit": "lb",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "hammer_frequency_rpm",
+   "label": "Hammer operating frequency",
+   "value": 2100,
+   "unit": "rpm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "pile_capacity",
+   "label": "Pile capacity",
+   "value": "up to 224",
+   "unit": "piles",
+   "conditions": "on the sleds per run",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_payload_lb",
+   "label": "Maximum payload",
+   "value": 40000,
+   "unit": "lb",
+   "conditions": "sleds; Built's home page says 34,000 lb and its technology page 22,000 lb",
+   "sourceId": "s2"
+  },
+  {
+   "key": "pile_length_ft",
+   "label": "Pile lengths",
+   "value": "9–20",
+   "unit": "ft",
+   "conditions": "2026 datasheet; the web page says 10–19 ft",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_pile_weight_lb",
+   "label": "Maximum pile weight",
+   "value": 1000,
+   "unit": "lb",
+   "conditions": "2026 datasheet; the web page says 600 lb",
+   "sourceId": "s2"
+  },
+  {
+   "key": "pile_sections",
+   "label": "Pile cross sections",
+   "value": "W6, W8 and W10",
+   "unit": null,
+   "conditions": "2026 datasheet; the web page says W6×7 to W8×28",
+   "sourceId": "s2"
+  },
+  {
+   "key": "pile_mix",
+   "label": "Pile types per load",
+   "value": "20+",
+   "unit": "pile types",
+   "conditions": "2026 datasheet; the web page says 10+",
+   "sourceId": "s2"
+  },
+  {
+   "key": "cycle_time_min",
+   "label": "Cycle time per pile",
+   "value": "1–3",
+   "unit": "min",
+   "conditions": "maker comparison; manual 2–5 min",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_grade_pct",
+   "label": "Maximum grade",
+   "value": 10,
+   "unit": "%",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "remote_operation",
+   "label": "Remote control",
+   "value": "included; over 4G/5G cellular and Starlink",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "companion_robot",
+   "label": "Companion robot RPS 25",
+   "value": "pile stabilizer on a Caterpillar 325 (65,000 lb, 8 psi); RTK GPS and LiDAR; pile twist and plumbness within ±1°; reveal window 0–10 ft",
+   "unit": null,
+   "conditions": "accuracy is typical performance (1 standard deviation); web page gives a 0–8 ft reveal window",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_hours",
+   "label": "Operating hours",
+   "value": "up to 24 hours a day in coordinated fleets",
+   "unit": null,
+   "conditions": "with refuelling and pile reloading",
+   "sourceId": "s3"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Offered only as a service together with the RPS 25 stabilizer robot; every RPD 35 works with one RPS 25.",
+   "Needs a mini excavator with a pile attachment and a telehandler on site to load the pile baskets onto the sleds.",
+   "Payload is given only in pounds (40,000 lb on the sleds); the maker states no kg figures.",
+   "Works in mud (11 psi ground pressure, 1.6 ft ground clearance); the robot stops when its cameras detect a person nearby."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://assets.builtrobotics.com/production/shared/rpd_35_rps_25_piling_dusk_built_robotics.jpg",
+   "pageUrl": "https://www.builtrobotics.com/solutions/solar-piling",
+   "credit": "Built Robotics",
+   "alt": "Built Robotics RPD 35 pile driver with loaded pile sleds next to an RPS 25 stabilizer on a solar site at dusk",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Announced as a fully autonomous solar pile driver; Built says a two-person crew can install over 300 piles per day",
+   "stage": "claim",
+   "where": null,
+   "date": "2023-03",
+   "sourceId": "s4",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Drives steel piles for solar-panel foundations; nationwide deal for dozens of pile-driving robots",
+   "stage": "deployment",
+   "where": "Blattner (Quanta Services), solar projects in the USA",
+   "date": "2025-09",
+   "sourceId": "s5",
+   "note": "Built was then deploying on its fourth project with Blattner; Blattner also plans to use the robots in Canada."
+  },
+  {
+   "taskIds": [],
+   "task": "About 10 robots drive nearly 1,000 steel piles a day, more than half of the pile-driving scope, in the swampiest parts of a solar site",
+   "stage": "deployment",
+   "where": "Solar project in northeastern Louisiana, USA, supplying Meta's Hyperion data center",
+   "date": "2026-07",
+   "sourceId": "s6",
+   "note": "Built is not a direct contractor for Meta."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.builtrobotics.com/solutions/solar-piling",
+   "title": "Solar Piling: RPD 35 and RPS 25 (incl. FAQ and specifications)",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://assets.builtrobotics.com/production/public/download/Technical-Specifications-Online.pdf",
+   "title": "RPD 35 & RPS 25 AI Piling Solution: Technical Specifications (2026)",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.builtrobotics.com/",
+   "title": "Robots that Build the World (home page)",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.therobotreport.com/built-robotics-develops-autonomous-solar-piling-robot/",
+   "title": "Built Robotics develops autonomous solar piling robot",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.enr.com/articles/61329-blattner-picks-autonomous-pile-drivers-from-built-robotics-for-solar-projects",
+   "title": "Blattner Picks Autonomous Pile Drivers From Built Robotics for Solar Projects",
+   "publisher": "Engineering News-Record",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.businessinsider.com/autonomous-robots-built-robotics-solar-power-meta-hyperion-data-center-2026-7",
+   "title": "Autonomous construction bots are building the solar infrastructure behind Meta's massive Hyperion data center",
+   "publisher": "Business Insider",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.builtrobotics.com/technology",
+   "title": "Technology (lists 22,000 lb maximum payload)",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Per-pile price and minimum deployment length are not public ('tailored for each project').",
+  "Which figures are current: the 2026 datasheet (9–20 ft piles, max 1,000 lb, W6–W10, 20+ pile types) or the web page (10–19 ft, 600 lb, W6×7–W8×28, 10+ types); payload appears as 40,000, 34,000 and 22,000 lb on different Built pages.",
+  "Any plan to offer the system in Europe."
+ ],
+ "checkedAt": "2026-10-05"
+}

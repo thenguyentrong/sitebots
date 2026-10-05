@@ -1,0 +1,159 @@
+{
+ "schemaVersion": 1,
+ "id": "true-autonomy-acp-100",
+ "maker": "True Autonomy",
+ "makerCountry": "US",
+ "model": "ACP-100",
+ "variant": null,
+ "name": "True Autonomy ACP-100",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:polish-concrete-terrazzo-floors"
+ ],
+ "officialUrl": null,
+ "summary": "Retrofit kit with a 360° lidar that lets an existing push-type concrete polishing machine drive and polish a floor by itself; shown only as a prototype.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer. The maker's website has been offline since mid-2022 (the domain now forwards to a host that does not exist). Its last archived pages show a prototype and a contact form, with no price, dealer or customer. No newer source found.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "360° scanning lidar (LightWare SF40/C)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "mounting",
+   "label": "Mounting",
+   "value": "retrofit box on an existing concrete polishing machine; the machine can still be pushed by hand",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "reporting",
+   "label": "Reports",
+   "value": "when, where and how much floor was polished",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "The polishing machine is not part of the kit; the kit drives the customer's own machine, so drive and running gear depend on that machine.",
+   "Meant for large open floors such as warehouses, polished before racks and equipment go in.",
+   "Crews do hand grinding, caulking and cleaning while the machine polishes."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:polish-concrete-terrazzo-floors"
+   ],
+   "task": "Test run of the autonomous concrete polishing prototype (second of three)",
+   "stage": "demo",
+   "where": null,
+   "date": "2017-02",
+   "sourceId": "s4",
+   "note": "Video on the maker's YouTube channel."
+  },
+  {
+   "taskIds": [
+    "research:polish-concrete-terrazzo-floors"
+   ],
+   "task": "Autonomous navigation and operation of concrete polishing machines, with polishing reports for project managers",
+   "stage": "claim",
+   "where": null,
+   "date": "2022-05",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://web.archive.org/web/20220526171645/http://www.trueautonomy.com/",
+   "title": "True Autonomy home page (archived May 2022)",
+   "publisher": "True Autonomy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://web.archive.org/web/20220526184150/http://www.trueautonomy.com/solutions",
+   "title": "Polishing page with ACP-001 prototype (archived May 2022)",
+   "publisher": "True Autonomy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://lightwarelidar.com/true-autonomy-introducing-autonomy-in-concrete-floor-polishing/",
+   "title": "True Autonomy: Introducing autonomy in concrete floor polishing",
+   "publisher": "LightWare LiDAR",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.youtube.com/watch?v=qUiY7Mlfnmk",
+   "title": "Autonomous Polishing Demonstration (video, February 2017)",
+   "publisher": "True Autonomy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://web.archive.org/cdx/search/cdx?url=trueautonomy.com/&output=txt&fl=timestamp,original,statuscode&from=2021",
+   "title": "Wayback Machine capture list for trueautonomy.com (live until May 2022, redirects since 2024)",
+   "publisher": "Internet Archive",
+   "kind": "database",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Maker country inferred from the US phone number (+1 832) on the archived site; no address was published.",
+  "No official product image available: the maker's site is offline; photos exist only on archived pages and in a supplier blog. Images left empty.",
+  "Is the company still active, and was the ACP-100 ever sold?",
+  "Which polishing machines does the kit fit?"
+ ],
+ "checkedAt": "2026-10-05"
+}

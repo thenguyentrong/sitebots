@@ -1,0 +1,295 @@
+{
+ "schemaVersion": 1,
+ "id": "km-robotics-wltr",
+ "maker": "KM Robotics",
+ "makerCountry": "CZ",
+ "model": "WLTR",
+ "variant": null,
+ "name": "KM Robotics WLTR",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_masonry/masonry-wall-laying"
+ ],
+ "officialUrl": "https://www.km-robotics.cz/en/",
+ "summary": "Industrial robot arm on a linear rail that lays large grooved clay or concrete blocks into walls from a digital plan; co-developed with Wienerberger and built in series by KM Robotics in Czechia.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by the Czech maker KM Robotics, which shows a net price list and a German-language page and says WLTR is in series production and available at once. No German customer, dealer or service partner is named, and Wienerberger's German website has no WLTR or robot-ready block page. Wienerberger offers WLTR as a bricklaying service through its subsidiary GreenBuild and the joint venture WLTR Masonry Robot, with projects in Czechia, Austria, Slovakia, Poland, Hungary and the UK. The robot needs blocks with licensed grooves.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s5",
+   "s7"
+  ],
+  "priceEur": {
+   "amount": 330000,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "Robot hardware only. Software costs €469,000 once or €6 per m² laid (pay-as-you-go). Accessories extra, e.g. transporter €10,900, 2 t pallet truck €2,100, Ford Ranger PHEV as generator €85,000."
+  },
+  "priceOther": null,
+  "leadTime": "Series production, 'sofort lieferbar' (maker); no delivery time stated",
+  "sellers": [
+   {
+    "name": "KM Robotics s.r.o.",
+    "country": "CZ",
+    "role": "manufacturer",
+    "productUrl": "https://www.km-robotics.cz/de/",
+    "contactUrl": "https://www.km-robotics.cz/de/#contact",
+    "email": "info@km-robotics.cz",
+    "phone": "+420 313 103 054",
+    "priceEur": 330000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Svojšovice 59, 251 63 Strančice, Czechia. Phone line for English; quote form on the page. Price is hardware only; software extra. Offers help with purchase subsidies in most European countries."
+   }
+  ],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "max_block_size_mm",
+   "label": "Largest block",
+   "value": "500 × 500 × 440",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_block_kg",
+   "label": "Heaviest block",
+   "value": 90,
+   "unit": "kg",
+   "conditions": "maker; PORR gives 52 kg for its unit",
+   "sourceId": "s1"
+  },
+  {
+   "key": "wall_height_m",
+   "label": "Wall height",
+   "value": 5,
+   "unit": "m",
+   "conditions": "up to 500 cm (maker); 3.25 m in a 2024 trade article",
+   "sourceId": "s1"
+  },
+  {
+   "key": "area_rate_m2_h",
+   "label": "Laying rate",
+   "value": 23,
+   "unit": "m²/h",
+   "conditions": "maker headline figure, block size not stated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "area_rate_site_m2_h",
+   "label": "Laying rate on site",
+   "value": 7.5,
+   "unit": "m²/h",
+   "conditions": "PORR, Kladno Living; max. 10 m²/h",
+   "sourceId": "s4"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 2500,
+   "unit": "kg",
+   "conditions": "PORR figure",
+   "sourceId": "s4"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach",
+   "value": 3.5,
+   "unit": "m",
+   "conditions": "PORR figure",
+   "sourceId": "s4"
+  },
+  {
+   "key": "crew",
+   "label": "Operating crew",
+   "value": 2,
+   "unit": "people",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "power_kw",
+   "label": "Power consumption",
+   "value": 1.5,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "bonding",
+   "label": "Bonding",
+   "value": "clay blocks with construction foam or adhesive; concrete blocks with thin-bed mortar",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "operation",
+   "label": "Operation",
+   "value": "24/7 continuous",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 90,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4",
+   "s6"
+  ],
+  "notes": [
+   "Needs blocks with licensed grooves ('Robot Ready' blocks); Wienerberger says 14 such blocks are made in seven European countries.",
+   "Builds corners and window and door openings; wall length unlimited (maker).",
+   "Runs under the supervision of trained staff and needs careful site preparation and enough room to move (PORR).",
+   "Can run without a grid connection from a plug-in hybrid pick-up sold as an accessory.",
+   "Figures differ by source: maker 23 m²/h, 90 kg blocks, 5 m walls; PORR 7.5 m²/h (max. 10), bricks up to 52 kg.",
+   "How the robot moves between wall positions is not described; armPayloadKg is the heaviest block the maker states."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.km-robotics.cz/images/wltr-serial-production.jpg",
+   "pageUrl": "https://www.km-robotics.cz/en/",
+   "credit": "KM Robotics",
+   "alt": "Four WLTR bricklaying robots, black industrial arms on green linear-rail bases, in a workshop",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Builds load-bearing and apartment-separating walls from ground acoustic bricks",
+   "stage": "pilot",
+   "where": "Kladno Living (5 buildings, 371 flats), Kladno, Czech Republic – PORR",
+   "date": "2026-08",
+   "sourceId": "s4",
+   "note": "PORR has tested the robot since 2025; productivity comparable to an experienced bricklayer."
+  },
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Robots in use on construction sites; more than 55,000 m² of masonry laid",
+   "stage": "deployment",
+   "where": "12 robots; projects in Czech Republic, Austria, Slovakia, Poland, Hungary and United Kingdom",
+   "date": "2026-04",
+   "sourceId": "s3",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Built outer and inner load-bearing walls of a motorway maintenance building",
+   "stage": "pilot",
+   "where": "D4 motorway maintenance building, Lety u Písku, Czech Republic",
+   "date": null,
+   "sourceId": "s5",
+   "note": "Reported in September 2024 as an earlier pilot."
+  },
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Two robots planned for the walls of a new train maintenance hall",
+   "stage": "claim",
+   "where": "České dráhy (Czech Railways) service hall, Cheb, Czech Republic",
+   "date": "2024-10",
+   "sourceId": "s5",
+   "note": "Announced in September 2024 for a start in October; completion planned for July 2026."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.km-robotics.cz/en/",
+   "title": "Bricklaying robot WLTR (specs, price list, contact)",
+   "publisher": "KM Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.km-robotics.cz/de/",
+   "title": "Mauerroboter WLTR (German page, net price list)",
+   "publisher": "KM Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.wienerberger.com/en/stories/2026/20260416-robots-revolutionizing-the-construction-industry.html",
+   "title": "Robots revolutionizing the construction industry (WLTR story)",
+   "publisher": "Wienerberger AG",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.porr-group.com/fileadmin/s_porr-group/Presse/2026/260806_Mauerroboter_Kladno_Living_DE.pdf",
+   "title": "Die PORR bringt Mauerroboter auf die Baustelle (press release, 6 August 2026)",
+   "publisher": "PORR AG",
+   "kind": "customer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://stavba.tzb-info.cz/cihly-bloky-tvarnice/27414-zdici-robot-wltr-stavi-verejne-infrastrukturni-projekty-zapoji-se-do-stavby-haly-pro-ceske-drahy",
+   "title": "Zdicí robot WLTR staví veřejné infrastrukturní projekty (Wienerberger s.r.o. company news)",
+   "publisher": "TZB-info",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.handwerkundbau.at/bauen/wienerberger-erster-ziegelroboter-oesterreichs-54665/",
+   "title": "Maschine statt Maurer (November 2024)",
+   "publisher": "Handwerk und Bau",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.wienerberger.de/sitemap.xml/sitemap1.xml",
+   "title": "Wienerberger Germany sitemap (no robot or WLTR page)",
+   "publisher": "Wienerberger",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Is WLTR CE-marked with an EU declaration of conformity? KM Robotics only says 'certified mobile robotics'.",
+  "Are grooved robot-ready blocks sold in Germany? Wienerberger names 14 such blocks in seven countries but not which.",
+  "Which figures fit the unit sold now: maker 23 m²/h, 90 kg blocks, 5 m walls, or PORR 7.5 m²/h, 52 kg bricks, 3.5 m reach (and 3.25 m walls, 5–7 m²/h in 2024)?",
+  "Does KM Robotics deliver, train and service in Germany? No German customer or partner is named.",
+  "How the robot moves between wall positions and its footprint; only PORR gives a weight (2,500 kg)."
+ ],
+ "checkedAt": "2026-10-05"
+}

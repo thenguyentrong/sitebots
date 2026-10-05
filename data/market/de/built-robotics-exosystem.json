@@ -1,0 +1,292 @@
+{
+ "schemaVersion": 1,
+ "id": "built-robotics-exosystem",
+ "maker": "Built Robotics",
+ "makerCountry": "US",
+ "model": "Exosystem",
+ "variant": null,
+ "name": "Built Robotics Exosystem",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation"
+ ],
+ "officialUrl": "https://www.builtrobotics.com/solutions/trenching",
+ "summary": "A bolt-on kit for 15–50 ton excavators that digs cable trenches on solar sites on its own from a GPS plan; the machine can still be driven by hand.",
+ "launched": "2020-02",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not offered in Germany: Built says it currently supports robot deployments only in the United States and Australia; no European office, dealer or customer found. The kit is rented, not sold: in 2022 Built charged a monthly fee per machine plus hourly usage fees.",
+  "sourceIds": [
+   "s3",
+   "s10",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 3000,
+   "currency": "USD",
+   "market": "US rental per machine and month, plus hourly usage fees that vary by location (TechCrunch, April 2022)",
+   "sourceId": "s5"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "host_machine_class",
+   "label": "Host excavators",
+   "value": "15–50 ton excavators from the leading makers",
+   "unit": null,
+   "conditions": "customer's own machine; Built calls them mid-size excavators",
+   "sourceId": "s1"
+  },
+  {
+   "key": "trenching_rate_ft_h",
+   "label": "Trenching speed",
+   "value": "130–180",
+   "unit": "ft/h",
+   "conditions": "autonomous trenching, maker figure; maximum 180 ft/h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "depth_accuracy_ft",
+   "label": "Depth accuracy",
+   "value": 0.1,
+   "unit": "ft",
+   "conditions": "trench depth, maker claim (RTK GPS and IMUs)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_grade_pct",
+   "label": "Maximum terrain grade",
+   "value": 10,
+   "unit": "%",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "installation",
+   "label": "Installation",
+   "value": "mounts on the excavator tail in less than a day; fully reversible, manual operation kept",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Computer",
+   "value": "64-core Intel Xeon, dual NVIDIA GPUs, liquid-cooled",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "360° smart cameras, sub-centimeter RTK GPS, IMUs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "safety",
+   "label": "Safety",
+   "value": "GPS geofence, AI smart cameras, wireless emergency stop, Guardian remote monitoring",
+   "unit": null,
+   "conditions": "part of Built's 8-layer safety system",
+   "sourceId": "s1"
+  },
+  {
+   "key": "bucket",
+   "label": "Bucket",
+   "value": "customer's own bucket, any width; bucket measurements stored in the Everest software",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "enclosure_weight_lb",
+   "label": "Enclosure weight",
+   "value": 765,
+   "unit": "lb",
+   "conditions": "total enclosure weight as listed on Built's technology page",
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Temperature range",
+   "value": "-40 to 55",
+   "unit": "°C",
+   "conditions": "enclosure, technology page",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s5"
+  ],
+  "notes": [
+   "Retrofit kit only: the customer supplies the crawler excavator and bucket; the kit mounts on the counterweight and can be removed.",
+   "Built's current offer is trenching for DC and AC cable runs on solar farms; earlier units dug wind-turbine foundations and pipeline trenches.",
+   "Works inside a GPS geofence with people kept out of the autonomous zone; Built monitors the robots remotely."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://assets.builtrobotics.com/production/shared/trenching_dessert_exosystem_built_robotics.jpg",
+   "pageUrl": "https://www.builtrobotics.com/solutions/trenching",
+   "credit": "Built Robotics",
+   "alt": "Cat excavator with the Built Robotics Exosystem box on its counterweight digging a trench in the desert",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Dug wind-turbine foundation pits autonomously on remote wind farms",
+   "stage": "pilot",
+   "where": "Mortenson, wind farms in Kansas, USA",
+   "date": "2018-08",
+   "sourceId": "s6",
+   "note": "First project with Built's autonomous excavator, before the Exosystem name; Built's company timeline calls it the first prototype."
+  },
+  {
+   "taskIds": [],
+   "task": "Digs trenches for upstream energy projects with autonomous excavators",
+   "stage": "deployment",
+   "where": "MPC Kinetic, Queensland, Australia",
+   "date": "2020-03",
+   "sourceId": "s7",
+   "note": "The 2020 release calls the kit Built's AI guidance system."
+  },
+  {
+   "taskIds": [],
+   "task": "Autonomous trenching for DC and AC cable runs on utility-scale solar farms",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Built's current trenching offer."
+  },
+  {
+   "taskIds": [],
+   "task": "Built's trenching robots have dug over 100 miles of trench on energy projects",
+   "stage": "claim",
+   "where": "USA and Australia",
+   "date": null,
+   "sourceId": "s4",
+   "note": "Cumulative maker figure; customers not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.builtrobotics.com/solutions/trenching",
+   "title": "The World's First Fully Autonomous Trenching Solution",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.builtrobotics.com/technology",
+   "title": "Technology: Exosystem and Everest",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.builtrobotics.com/solutions/solar-piling",
+   "title": "Solar Piling (FAQ: availability outside the United States, safety system)",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.builtrobotics.com/about/company",
+   "title": "About Built Robotics: Robots that Build the World",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://techcrunch.com/2022/04/07/built-robotics-raises-another-64m-to-make-construction-equipment-autonomous/",
+   "title": "Built Robotics raises another $64M to make construction equipment autonomous",
+   "publisher": "TechCrunch",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.enr.com/articles/46996-mortenson-reaches-agreement-to-deploy-fully-autonomous-equipment",
+   "title": "Mortenson Reaches Agreement To Deploy Fully Autonomous Equipment",
+   "publisher": "Engineering News-Record",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://roboticstomorrow.com/news/2020/03/12/built-robotics-announces-international-expansion-partnership-with-leading-australian-contractor-mpc-kinetic/15032",
+   "title": "Built Robotics Announces International Expansion, Partnership with Leading Australian Contractor MPC Kinetic",
+   "publisher": "RoboticsTomorrow",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.constructiondive.com/news/built-robotics-releases-1st-fully-autonomous-construction-machinery-in-us/573057/",
+   "title": "Built Robotics releases 1st fully autonomous construction machinery in US",
+   "publisher": "Construction Dive",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.wired.com/story/the-elusive-dream-of-fully-autonomous-construction-vehicles/",
+   "title": "The Elusive Dream of Fully Autonomous Construction Vehicles",
+   "publisher": "WIRED",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s10",
+   "url": "https://www.builtrobotics.com/",
+   "title": "Robots that Build the World (home page)",
+   "publisher": "Built Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Current rental price: the only figure found is USD 3,000 per machine per month plus hourly fees (TechCrunch, April 2022).",
+  "Launch shown as February 2020, when Built's excavator kit (then called an AI guidance system) became commercially available in the US (Construction Dive); when the Exosystem name was introduced is not confirmed.",
+  "Whether trenching is still actively marketed: since 2023 Built's R&D focus is the solar pile driver (WIRED, April 2023).",
+  "Which excavator makes and models are approved beyond '15–50 ton machines from leading manufacturers'."
+ ],
+ "checkedAt": "2026-10-05"
+}

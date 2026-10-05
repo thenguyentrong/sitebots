@@ -1,0 +1,395 @@
+{
+ "schemaVersion": 1,
+ "id": "partner-robotics-pavepal-p900",
+ "maker": "Partner Robotics",
+ "makerCountry": "CN",
+ "model": "PavePal P900",
+ "variant": null,
+ "name": "Partner Robotics PavePal P900",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_tiling/large-format-floor-tiles"
+ ],
+ "officialUrl": "https://www.partnerrobotics.com/pages/floor-tile-paving-robot",
+ "summary": "Battery-powered wheeled robot with one arm that spreads tile adhesive and lays floor tiles up to 600 × 1200 mm, one lane at a time, at up to 18 m² per hour.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold direct from Dongguan, China, on request (form or email; German-language website). The maker reports use in Berlin (APCOA project, April 2026) and a demonstration in France, says the robot meets CE requirements and quotes EU delivery of 1–3 units 2 weeks after order. No EU dealer or service centre yet: local support only in the UAE, Saudi Arabia, Singapore, Hong Kong and Taiwan, physical repairs need a technician flown in from China, and EU risk-assessment documents are not yet available. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "1–3 units: 2 weeks after order confirmation; 4 or more: 35–40 days (maker FAQ, for the EU)",
+  "sellers": [
+   {
+    "name": "Partner Robotics Co., Ltd.",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://www.partnerrobotics.com/pages/floor-tile-paving-robot",
+    "contactUrl": "https://www.partnerrobotics.com/pages/floor-tile-paving-robot",
+    "email": "info@partnerrobotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Dongguan, Guangdong, China. Contact form on the product page; on-site demo projects and operator training offered. German-language site: de.partnerrobotics.com."
+   }
+  ],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1300 × 800 × 1950",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 640,
+   "unit": "kg",
+   "conditions": "net; gross weight up to 880 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload (tile)",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "per tile; FAQ says up to 35 kg per tile, homogeneous tiles under 30 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "area_rate_m2_h",
+   "label": "Laying rate",
+   "value": 18,
+   "unit": "m²/h",
+   "conditions": "maximum; FAQ: about 14 m²/h with 600 × 600 mm and 18 m²/h with 800 × 800 mm tiles, site dependent",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "more than 6 h",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": "5–6",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_ah",
+   "label": "Battery",
+   "value": 180,
+   "unit": "Ah",
+   "conditions": "Li-ion, replaceable in a few minutes (FAQ); voltage not stated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_supply",
+   "label": "Charging supply",
+   "value": "AC 220 V",
+   "unit": null,
+   "conditions": "FAQ: charging works on 230 V EU site power",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 0.5,
+   "unit": "m/s",
+   "conditions": "unloaded, maximum; 25–100 mm/s while laying",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_obstacle_mm",
+   "label": "Obstacle height",
+   "value": 30,
+   "unit": "mm",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing",
+   "value": 10,
+   "unit": "°",
+   "conditions": "maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "tile_sizes_mm",
+   "label": "Tile sizes",
+   "value": "300×300, 400×400, 450×450, 600×600, 800×800, 300×600, 400×800, 600×1200",
+   "unit": "mm",
+   "conditions": "full tiles only",
+   "sourceId": "s2"
+  },
+  {
+   "key": "joint_width_mm",
+   "label": "Joint width",
+   "value": "1–4",
+   "unit": "mm",
+   "conditions": "set per project",
+   "sourceId": "s2"
+  },
+  {
+   "key": "adhesive_tank_kg",
+   "label": "Adhesive tank",
+   "value": 75,
+   "unit": "kg",
+   "conditions": "about 75 l",
+   "sourceId": "s2"
+  },
+  {
+   "key": "floor_flatness",
+   "label": "Floor flatness needed",
+   "value": "±5 mm",
+   "unit": null,
+   "conditions": "screed required, not a raw slab",
+   "sourceId": "s2"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": 3,
+   "unit": "people",
+   "conditions": "for full output: 1 operator, 1 worker for fine-tuning and clips, 1 for tile and mortar supply; 1–2 possible at lower output",
+   "sourceId": "s2"
+  },
+  {
+   "key": "mtbf_h",
+   "label": "Mean time between failures",
+   "value": 120,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "service_life_h",
+   "label": "Expected service life",
+   "value": 10000,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "warranty_months",
+   "label": "Warranty",
+   "value": 12,
+   "unit": "months",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "ce_marking",
+   "label": "CE conformity",
+   "value": true,
+   "unit": null,
+   "conditions": "FAQ answer 'Yes'; no declaration seen",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "cameras with AI for tile alignment, laser reference for the adhesive level, safety lidar",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 30,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s9"
+  ],
+  "notes": [
+   "Lays full tiles only: cut pieces at the edges and leveling clips are done by hand.",
+   "Needs screed with about ±5 mm flatness; cannot climb stairs; does not avoid obstacles by itself (operator steers it remotely).",
+   "Operator sets tile size and lanes on a tablet; the robot lays one lane, then switches lanes manually or automatically.",
+   "Cannot compensate warped tiles; keeps the adhesive surface level with a laser reference (adhesive up to about 1.5 cm thick).",
+   "Patterns: the FAQ says straight and offset (brick) bond; the demo page says staggered patterns are not supported in demos.",
+   "Standard bundle: control tablet, battery, tile loading trolley, mixer ('Stirring Pal') and bucket lift ('Bucket Lift Pal')."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://ueeshop.ly200-cdn.com/u_file/UPBI/UPBI082/2604/21/photo/2026-04-21110611.png",
+   "pageUrl": "https://www.partnerrobotics.com/pages/floor-tile-paving-robot",
+   "credit": "Partner Robotics",
+   "alt": "Partner Robotics PavePal floor tile robot, two views: blue wheeled base with a robot arm holding a large tile (render)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Laid 800 × 800 mm and 600 × 600 mm floor tiles at 14–15 m²/h on a commercial project",
+   "stage": "pilot",
+   "where": "APCOA project, Berlin, Germany",
+   "date": "2026-04",
+   "sourceId": "s3",
+   "note": "Maker case page; says the robot was deployed to demonstrate automated flooring, not whether it was a paid job."
+  },
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Laid 600 × 600 mm tiles at 12 m²/h in a supermarket floor renovation",
+   "stage": "pilot",
+   "where": "E.Leclerc supermarket, Le Mans, France",
+   "date": "2026-03",
+   "sourceId": "s4",
+   "note": "Maker calls it a demonstration project."
+  },
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Laid about 8,000 m² of 600 × 600 mm tiles, 80–100 m² per 8-hour shift, about 85 % of the work automated",
+   "stage": "deployment",
+   "where": "Guangzhou Baiyun International Airport Terminal 3, China",
+   "date": "2025-01",
+   "sourceId": "s5",
+   "note": "January to June 2025."
+  },
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Laid 600 × 600 mm tiles at about 19.51 m²/h, run by the client's own team",
+   "stage": "pilot",
+   "where": "Apartment project, Queens, New York, USA",
+   "date": "2025-11",
+   "sourceId": "s6",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Nearly 100,000 m² of tiling completed and over RMB 10 million in overseas orders since mid-2025",
+   "stage": "claim",
+   "where": null,
+   "date": "2025-11",
+   "sourceId": "s8",
+   "note": "Company figures reported by The Robot Report."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.partnerrobotics.com/pages/floor-tile-paving-robot",
+   "title": "Floor Tile Paving Robot product page (specifications, services)",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.partnerrobotics.com/pages/faqs",
+   "title": "FAQs (tiles, output, CE, EU delivery, service)",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.partnerrobotics.com/cases-detail/commercial-projects",
+   "title": "Case: APCOA-Berlin (Germany)",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.partnerrobotics.com/cases-detail/supermarket-floor-renovation-demo",
+   "title": "Case: E.Leclerc Le Mans supermarket floor renovation (France)",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.partnerrobotics.com/cases-detail/baiyun-airport-terminal-3",
+   "title": "Case: Guangzhou Baiyun International Airport Terminal 3",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.partnerrobotics.com/cases-detail/apartment-demo",
+   "title": "Case: Queens apartment, New York (USA)",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.partnerrobotics.com/pages/about-us",
+   "title": "About us (history; Bright Dream Robotics as strategic shareholder)",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.therobotreport.com/partner-robotics-picks-up-fresh-funding-deploy-more-building-tiling-robots/",
+   "title": "Partner Robotics picks up funding to deploy more construction robots",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.partnerrobotics.com/pages/demo",
+   "title": "Demo project (on-site trial, site requirements)",
+   "publisher": "Partner Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "The maker's site calls it only 'Floor Tile Paving Robot'; 'PavePal' is printed on the robot in the maker's image and 'P900' comes from The Robot Report (November 2025).",
+  "Price.",
+  "Is an EU declaration of conformity available? The FAQ only answers 'Yes' to CE compliance, and EU risk-assessment documents are not yet available.",
+  "Who services the robot in Germany? A European service hub is planned ('details to be discussed').",
+  "Was the APCOA Berlin project a paid job or a demonstration?",
+  "Battery voltage and energy in Wh (only 180 Ah stated)."
+ ],
+ "checkedAt": "2026-10-05"
+}

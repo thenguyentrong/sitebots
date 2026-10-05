@@ -1,0 +1,220 @@
+{
+ "schemaVersion": 1,
+ "id": "shimizu-robo-welder",
+ "maker": "Shimizu Corporation",
+ "makerCountry": "JP",
+ "model": "Robo-Welder",
+ "variant": null,
+ "name": "Shimizu Robo-Welder",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "welding",
+  "on-site welding of steel column joints"
+ ],
+ "officialUrl": "https://www.shimz.co.jp/en/topics/construction/item12/",
+ "summary": "A column welding robot on a wheeled carriage that scans the weld groove with a laser and fills it automatically with a six-axis arm and MAG welding torch; usually two work as a pair on one steel column, on Shimizu's own sites.",
+ "launched": "2017-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not sold: Shimizu developed Robo-Welder (with Osaka University) for its own steel-frame projects in Japan and plans to reuse each robot across its sites; no sale, rental or licence offer found.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Length x width x height",
+   "value": "2,048 x 640 x 1,875",
+   "unit": "mm",
+   "conditions": "2018 spec",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 400,
+   "unit": "kg",
+   "conditions": "2018 spec",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Arm axes",
+   "value": 6,
+   "unit": null,
+   "conditions": "one arm per robot",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "maximum transport capacity of the arm (2018 spec)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_mm",
+   "label": "Arm reach",
+   "value": 1101,
+   "unit": "mm",
+   "conditions": "maximum, 2018 spec table; a Shimizu diagram on the topic page shows 901 mm",
+   "sourceId": "s2"
+  },
+  {
+   "key": "repeatability_mm",
+   "label": "Repeat accuracy",
+   "value": "±0.03",
+   "unit": "mm",
+   "conditions": "2018 spec",
+   "sourceId": "s2"
+  },
+  {
+   "key": "welding_method",
+   "label": "Welding method",
+   "value": "MAG pulse arc welding",
+   "unit": null,
+   "conditions": "2018 spec",
+   "sourceId": "s2"
+  },
+  {
+   "key": "welding_wire_mm",
+   "label": "Welding wire diameter",
+   "value": 1.2,
+   "unit": "mm",
+   "conditions": "approximately (2021 release)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "groove_sensor",
+   "label": "Groove sensor",
+   "value": "blue semiconductor laser, 405 nm, measuring range 200 mm ±48 mm",
+   "unit": null,
+   "conditions": "2018 spec",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_plate_thickness_welded_mm",
+   "label": "Thickest plate welded on site",
+   "value": 100,
+   "unit": "mm",
+   "conditions": "steel column plates at Toranomon-Azabudai, 2021",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": 10,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5"
+  ],
+  "notes": [
+   "Sits on a dedicated wheeled carriage that is guided to the column; from there it welds automatically without a worker.",
+   "One six-axis arm per robot (the English 2021 release says \"six arms\", the Japanese original says a six-axis arm); two robots usually weld one column from opposite sides.",
+   "Plans each weld from the laser-measured groove shape with a simulator developed with Osaka University.",
+   "Specifications are from 2018; the robot shown on site in 2021 looks different (blue arm instead of the orange arm in the 2018 photos), so values may have changed."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2021/images/2020056_ph01.jpg",
+   "pageUrl": "https://www.shimz.co.jp/en/company/about/news-release/2021/2020056.html",
+   "credit": "Shimizu Corporation",
+   "alt": "Robo-Welder welding a steel column at the Toranomon-Azabudai site, shown with a weld layer drawing",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Welded steel column joints with grooves of varying shape during trials",
+   "stage": "demo",
+   "where": "Robot laboratory, Shimizu Institute of Technology, Etchujima, Tokyo, Japan",
+   "date": "2018-04",
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Welded the 100 mm thick plates of the steel columns on the underground floors in 5 man-days per column instead of 8 for master welders; 14 robots planned for the above-ground floors to weld about 15% of around 1,800 km of welds",
+   "stage": "deployment",
+   "where": "Toranomon-Azabudai Project, A district (64-storey tower), Minato-ku, Tokyo, Japan; Shimizu as contractor",
+   "date": "2021-02",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2021/2020056.html",
+   "title": "Shimizu begins collaborating people and autonomous robots at Toranomon-Azabudai Project (February 2021)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2018/2018006.html",
+   "title": "Robots under autonomous control at robot lab (April 2018, with specifications)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.shimz.co.jp/en/topics/construction/item12/",
+   "title": "The Shimizu Smart Site autonomous robots can transform a job site! (April 2018)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.shimz.co.jp/company/about/news-release/2017/2017011.html",
+   "title": "Shimz Smart Site next-generation production system (July 2017, Japanese)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.shimz.co.jp/company/about/news-release/2021/2020056.html",
+   "title": "Toranomon-Azabudai robot release (February 2021, Japanese original)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Is Robo-Welder still in use on Shimizu sites after Toranomon-Azabudai, and how many robots exist?",
+  "Current specifications: the 2018 table and a Shimizu diagram disagree on arm reach (1,101 vs 901 mm) and arm weight (54 vs 52 kg)."
+ ],
+ "checkedAt": "2026-10-05"
+}

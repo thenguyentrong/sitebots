@@ -1,0 +1,274 @@
+{
+ "schemaVersion": 1,
+ "id": "bedrock-robotics-bedrock-operator",
+ "maker": "Bedrock Robotics",
+ "makerCountry": "US",
+ "model": "Bedrock Operator",
+ "variant": null,
+ "name": "Bedrock Robotics Bedrock Operator",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation"
+ ],
+ "officialUrl": "https://bedrockrobotics.com/",
+ "summary": "A retrofit sensor and computer kit that lets 20–80 ton excavators dig and load trucks without an operator; so far used only with US partner contractors.",
+ "launched": "2025-07",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not offered in Germany: Bedrock works with US partner contractors through an early-access programme, and its first fully autonomous deployments ran on US projects from August 2026. No European office, partner or price found.",
+  "sourceIds": [
+   "s2",
+   "s3",
+   "s7"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "host_machines",
+   "label": "Host machines",
+   "value": "excavators of 20 to 80 tons",
+   "unit": null,
+   "conditions": "installed on several excavator models by November 2025; bulldozers, loaders and dump trucks planned",
+   "sourceId": "s5"
+  },
+  {
+   "key": "installation",
+   "label": "Installation",
+   "value": "same-day retrofit without permanent changes to the machine",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s8"
+  },
+  {
+   "key": "manual_operation",
+   "label": "Manual operation",
+   "value": true,
+   "unit": null,
+   "conditions": "equipment can still be operated manually when needed",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors and compute",
+   "value": "360° cameras, LiDAR, survey-grade IMUs, GPS, LTE antennas, in-cab compute unit",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "control",
+   "label": "How it works",
+   "value": "a site manager sets the initial plan; a machine-learning model perceives the site, plans the motion and digs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s8"
+  },
+  {
+   "key": "safety",
+   "label": "Safety",
+   "value": "stops automatically when a person or unauthorized object comes too close; no work-zone barriers needed",
+   "unit": null,
+   "conditions": "maker statement",
+   "sourceId": "s8"
+  },
+  {
+   "key": "productivity",
+   "label": "Productivity",
+   "value": "near human level",
+   "unit": null,
+   "conditions": "company spokesperson, August 2026 deployments; measured as cubic yards moved per shift",
+   "sourceId": "s10"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2",
+   "s4",
+   "s5",
+   "s8",
+   "s10"
+  ],
+  "notes": [
+   "Only excavators so far; dump trucks, dozers and loaders are planned.",
+   "The current operator-free sites use new excavators that Bedrock outfitted and tested itself; no date was given for retrofits on contractors' own machines (September 2026).",
+   "A remote team monitors the fleet and steps in briefly when a machine gets stuck."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.sanity.io/images/llk6fg5i/staging/dced4df93d03e9ffad0fa5b6c2da4e81c6851893-3840x2258.jpg",
+   "pageUrl": "https://bedrockrobotics.com/technology",
+   "credit": "Bedrock Robotics",
+   "alt": "Bedrock Operator sensor and computer rack on an excavator cab roof (maker rendering)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Supervised autonomous mass excavation, loading human-driven articulated dump trucks; over 65,000 cubic yards moved",
+   "stage": "pilot",
+   "where": "Sundt Construction, site preparation for a 130-acre manufacturing facility, USA",
+   "date": "2025-11",
+   "sourceId": "s5",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Autonomous excavation for a customer's prototyping facility",
+   "stage": "pilot",
+   "where": "Proto-Town, Central Texas, USA",
+   "date": "2025-11",
+   "sourceId": "s5",
+   "note": "Supervised autonomy."
+  },
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Operator-free autonomous excavation at a water treatment facility",
+   "stage": "pilot",
+   "where": "Sundt Construction, Nevada, USA",
+   "date": "2026-08",
+   "sourceId": "s8",
+   "note": "Bedrock calls its August 2026 sites its first fully autonomous commercial deployments; Business Insider calls them a limited test on three sites."
+  },
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Operator-free autonomous earthwork on a multi-million cubic yard site",
+   "stage": "pilot",
+   "where": "Champion Site Prep, Texas, USA",
+   "date": "2026-08",
+   "sourceId": "s8",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Operator-free autonomous excavation on a 1.2 million cubic yard civil sitework project",
+   "stage": "pilot",
+   "where": "Zachry Construction Corporation, USA",
+   "date": "2026-08",
+   "sourceId": "s8",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://bedrockrobotics.com/",
+   "title": "Advanced Autonomy for the Built World (home page)",
+   "publisher": "Bedrock Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://bedrockrobotics.com/llms.txt",
+   "title": "Bedrock Robotics company and product summary (as of August 2026)",
+   "publisher": "Bedrock Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://bedrockrobotics.com/partners",
+   "title": "Partner with Bedrock Robotics: get early access",
+   "publisher": "Bedrock Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://bedrockrobotics.com/technology",
+   "title": "Technology",
+   "publisher": "Bedrock Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.prnewswire.com/news-releases/bedrock-robotics-announces-supervised-autonomy-testing-on-active-construction-sites-in-move-towards-commercialization-302617799.html",
+   "title": "Bedrock Robotics Announces Supervised Autonomy Testing on Active Construction Sites in Move Towards Commercialization (18 Nov 2025)",
+   "publisher": "Bedrock Robotics via PR Newswire",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.prnewswire.com/news-releases/bedrock-robotics-raises-270-million-in-series-b-funding-to-accelerate-the-future-of-autonomous-construction-302679014.html",
+   "title": "Bedrock Robotics Raises $270 Million in Series B Funding (4 Feb 2026)",
+   "publisher": "Bedrock Robotics via PR Newswire",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://bedrockrobotics.com/news/we-shouldnt-have-to-choose-what-gets-built",
+   "title": "We Shouldn't Have to Choose What Gets Built (Series B letter)",
+   "publisher": "Bedrock Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.globenewswire.com/news-release/2026/08/17/3346247/0/en/bedrock-robotics-launches-first-fully-autonomous-excavator-deployments-on-critical-u-s-infrastructure-projects.html",
+   "title": "Bedrock Robotics Launches First Fully Autonomous Excavator Deployments on Critical U.S. Infrastructure Projects (17 Aug 2026)",
+   "publisher": "Bedrock Robotics via GlobeNewswire",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.businessinsider.com/bedrock-robotics-construction-ai-excavators-2026-8",
+   "title": "First came self-driving cars. Now, Waymo veterans are building autonomous construction equipment.",
+   "publisher": "Business Insider",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s10",
+   "url": "https://www.foxnews.com/tech/autonomous-excavators-digging-empty-cabs",
+   "title": "Autonomous excavators are digging with empty cabs",
+   "publisher": "Fox News (CyberGuy)",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Price and contract model (sale, lease or service) are not public.",
+  "Which excavator makes and models are supported.",
+  "When retrofits on contractors' existing machines start.",
+  "Any plan to work outside the United States."
+ ],
+ "checkedAt": "2026-10-05"
+}

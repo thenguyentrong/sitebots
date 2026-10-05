@@ -1,0 +1,212 @@
+{
+ "schemaVersion": 1,
+ "id": "terabase-terafab",
+ "maker": "Terabase Energy, Inc.",
+ "makerCountry": "US",
+ "model": "Terafab",
+ "variant": null,
+ "name": "Terabase Energy Terafab",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "utility-scale solar construction: pre-assembling PV modules onto tracker torque tubes and delivering them to the rows"
+ ],
+ "officialUrl": "https://www.terabase.energy/products-services/construction/terafab",
+ "summary": "An automated field factory set up on a utility-scale solar site: robots mount PV modules onto tracker torque tubes with in-line quality checks, and rovers carry the assemblies to the rows, where workers place them on the trackers.",
+ "launched": "2023-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Deployed only on US projects; the current version is built for First Solar Series 7 modules and Nextpower trackers. Terabase's 2026 move into Europe (Paris R&D office) covers its Construct software, not Terafab. No European offer, partner or project found.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s6"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "cycle_time_min",
+   "label": "Cycle time",
+   "value": 2,
+   "unit": "min",
+   "conditions": "one line, V2",
+   "sourceId": "s2"
+  },
+  {
+   "key": "output_mw_per_week",
+   "label": "Installed capacity per week",
+   "value": "20+",
+   "unit": "MW/week",
+   "conditions": "one line running 24/7 (V2); maker gives roughly 1 GW per factory per year",
+   "sourceId": "s2"
+  },
+  {
+   "key": "relocation_time_h",
+   "label": "Time to move the factory",
+   "value": 4,
+   "unit": "h",
+   "conditions": "V2, CEO statement in trade press",
+   "sourceId": "s3"
+  },
+  {
+   "key": "compatible_components",
+   "label": "Modules and trackers",
+   "value": "First Solar Series 7 modules, Nextpower trackers",
+   "unit": null,
+   "conditions": "current version; versions for silicon modules and other trackers announced",
+   "sourceId": "s3"
+  },
+  {
+   "key": "productivity_vs_stick_build",
+   "label": "Productivity",
+   "value": "2x",
+   "unit": null,
+   "conditions": "maker claim for V2 versus traditional stick-build",
+   "sourceId": "s1"
+  },
+  {
+   "key": "labour_productivity_gain_pct",
+   "label": "Measured labour productivity gain",
+   "value": 25,
+   "unit": "%",
+   "conditions": "first-generation system on its first commercial project, versus manual installation",
+   "sourceId": "s4"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "A relocatable assembly line set up on the solar site, not a mobile robot; industrial robot arms unpack and handle modules and torque tubes (number of arms not stated; set to 2 as the trade press speaks of arms in the plural).",
+   "Purpose-built rovers carry the finished assemblies to the rows; their drive type is not stated, so wheels and tracks are left false.",
+   "In the current version workers unload the assemblies from the rovers and fit them onto pre-placed tracker mounts; the maker plans to automate this step in 2027.",
+   "Built for outdoor work in heat, dust, wind, rain and mud.",
+   "Availability (April 2026): two deployable factories, a third expected by the end of 2026, ten in Q2 2027 (CEO in trade press)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.terabase.energy/wp-content/uploads/terafab-v2-field-testing-1024x576.jpg",
+   "pageUrl": "https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment",
+   "credit": "Terabase Energy",
+   "alt": "Terafab V2 robot arm handling a solar module on the outdoor assembly line during field testing",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Field test: built 10 MW of a 400 MW solar site",
+   "stage": "pilot",
+   "where": "400 MW solar project, Texas, USA",
+   "date": "2022",
+   "sourceId": "s5",
+   "note": "First-generation system."
+  },
+  {
+   "taskIds": [],
+   "task": "First commercial project: installed 17 MW of the 225 MW White Wing Ranch solar plant; no manual lifting of steel tubes or panels; 25% higher labour productivity than manual installation",
+   "stage": "deployment",
+   "where": "White Wing Ranch, Arizona, USA (developer Leeward Renewable Energy, EPC RES)",
+   "date": "2023-11",
+   "sourceId": "s4",
+   "note": "First-generation system."
+  },
+  {
+   "taskIds": [],
+   "task": "First-generation system used on five solar power plant projects",
+   "stage": "deployment",
+   "where": "Commercial projects in the USA",
+   "date": "2026-03",
+   "sourceId": "s2",
+   "note": "The maker's product page gives over 100 MW installed on US projects; a pv magazine interview in April 2026 gives 40 MW for the first version."
+  },
+  {
+   "taskIds": [],
+   "task": "Second-generation system completed field testing and was declared ready for commercial shipment",
+   "stage": "demo",
+   "where": "Field test site, USA (not named)",
+   "date": "2026-03",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.terabase.energy/products-services/construction/terafab",
+   "title": "Terafab product page",
+   "publisher": "Terabase Energy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment",
+   "title": "Next-generation Terafab completes field testing, ready for deployment (March 2026)",
+   "publisher": "Terabase Energy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.pv-magazine.com/2026/04/03/terabase-energy-advances-automated-pv-construction-with-robotics-ai-tools/",
+   "title": "Terabase Energy advances automated PV construction with robotics, AI tools",
+   "publisher": "pv magazine",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.terabase.energy/resources/terabase-energy-completes-first-commercial-deployment-of-terafab-solar-construction-automation-system",
+   "title": "Terabase completes first commercial deployment of Terafab (November 2023)",
+   "publisher": "Terabase Energy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.terabase.energy/resources/terabase-energy-launches-terafab-automated-field-factory-to-accelerate-the-deployment-of-solar-power-plants",
+   "title": "Terabase launches Terafab automated field factory (May 2023)",
+   "publisher": "Terabase Energy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.terabase.energy/resources/terabase-energy-accelerates-international-expansion-as-construct-platform-surpasses-2-gw-with-edp-renewables",
+   "title": "Terabase accelerates international expansion; Paris R&D office for Construct (April 2026)",
+   "publisher": "Terabase Energy",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Is Terafab sold or leased to EPCs, or only run by Terabase as a service, and at what price?",
+  "Any plan to offer Terafab in Europe or for European module and tracker types?",
+  "Number of robot arms per line and the drive type and payload of the delivery rovers."
+ ],
+ "checkedAt": "2026-10-05"
+}

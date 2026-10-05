@@ -1,0 +1,217 @@
+{
+ "schemaVersion": 1,
+ "id": "kajima-a4csel",
+ "maker": "Kajima Corporation",
+ "makerCountry": "JP",
+ "model": "A4CSEL",
+ "variant": "dam construction fleet (dump trucks, bulldozers, vibratory rollers)",
+ "name": "Kajima A4CSEL",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "dam embankment construction: hauling, spreading and compaction"
+ ],
+ "officialUrl": "https://www.kajima.co.jp/english/tech/c_a4csel/index.html",
+ "summary": "Kajima's in-house system that runs fleets of self-driving dump trucks, bulldozers and vibratory rollers to build dam embankments, supervised from a distant control room.",
+ "launched": "2015",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not a product for sale: A4CSEL is Kajima's in-house construction system, run by Kajima on its own projects in Japan. No sale, licence or use outside Japan found.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "machine_types",
+   "label": "Automated machines",
+   "value": "vibratory rollers, bulldozers and rigid dump trucks",
+   "unit": null,
+   "conditions": "dam sites",
+   "sourceId": "s1"
+  },
+  {
+   "key": "machine_types_earthworks",
+   "label": "Added for land development",
+   "value": "automated backhoe and articulated dump truck",
+   "unit": null,
+   "conditions": "land-development sites, with the bulldozer and roller",
+   "sourceId": "s4"
+  },
+  {
+   "key": "base_machines",
+   "label": "Base machines",
+   "value": "general-purpose construction machines modified for automation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "fleet_size",
+   "label": "Fleet size",
+   "value": "more than ten automated machines of three types",
+   "unit": null,
+   "conditions": "Naruse Dam at peak",
+   "sourceId": "s2"
+  },
+  {
+   "key": "remote_supervision",
+   "label": "Supervision",
+   "value": "three IT pilots in a control room 400 km away",
+   "unit": null,
+   "conditions": "Naruse Dam fleet, run from Kajima's Seisho Experimental Field",
+   "sourceId": "s1"
+  },
+  {
+   "key": "continuous_operation_h",
+   "label": "Continuous operation",
+   "value": 70,
+   "unit": "h",
+   "conditions": "at peak, over three days and nights, stopping only to refuel",
+   "sourceId": "s1"
+  },
+  {
+   "key": "fuel_saving_pct",
+   "label": "Fuel saving",
+   "value": "about 40–50",
+   "unit": "%",
+   "conditions": "fuel per m³ of spreading by an autonomous bulldozer versus a manned one, maker measurement",
+   "sourceId": "s1"
+  },
+  {
+   "key": "people_in_work_area",
+   "label": "People in work area",
+   "value": "nobody may enter the automated construction area",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "A fleet system, not a single machine: Kajima converts standard machines and plans their work centrally with AI and simulation.",
+   "People are kept out of the automated area; IT pilots supervise from a remote control room.",
+   "Kajima writes the name A⁴CSEL ('quad-accel')."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.kajima.co.jp/english/tech/c_a4csel/dam/images/img_dam_02.jpg",
+   "pageUrl": "https://www.kajima.co.jp/english/tech/c_a4csel/dam/index.html",
+   "credit": "Kajima Corporation",
+   "alt": "Automated dump truck unloading CSG while an automated bulldozer waits at Naruse Dam",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "First automatic vibratory rollers on a dam site",
+   "stage": "pilot",
+   "where": "Gokayama Dam, Japan",
+   "date": "2015",
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "More than ten automated dump trucks, bulldozers and vibratory rollers place the CSG embankment day and night",
+   "stage": "deployment",
+   "where": "Naruse Dam, Higashinaruse village, Akita Prefecture, Japan",
+   "date": "2020-05",
+   "sourceId": "s1",
+   "note": "Embankment of 4.85 million m³; in May 2022 about twice the previous record monthly volume in Japan was placed."
+  },
+  {
+   "taskIds": [],
+   "task": "Automated bulldozers build an erosion-control weir in a disaster area where people may not enter during the rainy season",
+   "stage": "deployment",
+   "where": "No. 3 Erosion Control Weir, Akadani district, Kii Peninsula, Japan",
+   "date": "2021-10",
+   "sourceId": "s1",
+   "note": "Same or higher efficiency than manned work according to Kajima; date is when the site was part of Kajima's central-control test."
+  },
+  {
+   "taskIds": [],
+   "task": "Twenty automated machines at three sites controlled centrally by four IT pilots from Kajima's Tokyo head office",
+   "stage": "demo",
+   "where": "Kajima head office, Tokyo, Japan",
+   "date": "2021-10",
+   "sourceId": "s3",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Two automated vibrating rollers compact fill on a land-development site with a complex shape",
+   "stage": "pilot",
+   "where": "Achiwa District Industrial Park Development Project, Okazaki City, Japan",
+   "date": "2024",
+   "sourceId": "s4",
+   "note": "First use of A4CSEL on land development (fiscal 2024)."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.kajima.co.jp/english/tech/c_a4csel/dam/index.html",
+   "title": "A⁴CSEL for Dam",
+   "publisher": "Kajima Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.kajima.co.jp/english/tech/c_a4csel/index.html",
+   "title": "A⁴CSEL: Transforming the construction site into a factory",
+   "publisher": "Kajima Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.kajima.co.jp/english/tech/c_a4csel/engineering/index.html",
+   "title": "What is A⁴CSEL?",
+   "publisher": "Kajima Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.kajima.co.jp/english/tech/c_a4csel/earthworks/index.html",
+   "title": "A⁴CSEL for Earthworks",
+   "publisher": "Kajima Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Which base machine makes and models Kajima converts.",
+  "Whether Kajima would use A4CSEL on projects outside Japan."
+ ],
+ "checkedAt": "2026-10-05"
+}

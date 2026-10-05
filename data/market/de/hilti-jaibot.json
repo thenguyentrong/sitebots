@@ -17,7 +17,12 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 2800000,
+   "currency": "HKD",
+   "market": "Hong Kong CITF pre-approved list (subsidy price ceiling): Jaibot system with PLC 400 tablet, PLT 300 total station, TE 6-A22 rotary hammer, VC 5 vacuum, PM 30-MG laser, PS 50 detector, PD-E range meter, batteries, remote control, marker system and 2-year warranty",
+   "sourceId": "s8"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -177,6 +182,17 @@
    "date": "2023",
    "sourceId": "s6",
    "note": null
+  },
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Drilling test against two crews on a live site: the laser-plus-hand team finished after 54 minutes, the conventional team after 63 and the robot team after 81",
+   "stage": "pilot",
+   "where": "Burkhalter group (Alpha Plan AG, Marcel Hufschmid AG), Mobility Hub Zug Nord, Switzerland",
+   "date": "2021",
+   "sourceId": "s9",
+   "note": "A Hilti (Schweiz) sales engineer quoted in the post: the robot pays off from about four days of continuous use, about 2,000 holes."
   }
  ],
  "sources": [
@@ -235,11 +251,27 @@
    "publisher": "Hilti Corporation",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://citf.cic.hk/product_Photo/files/PA_Technologies/PA22-018%20upload.pdf",
+   "title": "PA22-018 Hilti Jaibot: approved product price",
+   "publisher": "Construction Industry Council (Hong Kong), Construction Innovation and Technology Fund",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.burkhalter.ch/de/blog/gebaeudetechnik/bohrende-neugier-und-ein-ueberraschender-gewinner",
+   "title": "Bohrende Neugier und ein überraschender Gewinner",
+   "publisher": "Burkhalter Gruppe",
+   "kind": "customer",
+   "checkedAt": "2026-10-05"
   }
  ],
  "openQuestions": [
   "Weight, dimensions and maximum drill diameter and depth.",
-  "Purchase and rental prices."
+  "Purchase and rental prices in Germany."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-05"
 }

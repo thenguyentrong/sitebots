@@ -1,0 +1,245 @@
+{
+ "schemaVersion": 1,
+ "id": "q-bot-underfloor-insulation-robot",
+ "maker": "Q-Bot Limited",
+ "makerCountry": "GB",
+ "model": "Underfloor insulation robot",
+ "variant": null,
+ "name": "Q-Bot underfloor insulation robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "underfloor insulation: spraying foam under suspended timber and concrete floors"
+ ],
+ "officialUrl": "https://q-bot.co/",
+ "summary": "A small remote-controlled wheeled robot that goes through a small opening into the void under a suspended timber or concrete floor and sprays polyurethane foam insulation onto the underside of the floor.",
+ "launched": "2012",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not sold as a machine. Q-Bot installs underfloor insulation itself in the UK and rents its robots for a monthly fee per robot to trained installation partners; partners are in the UK and France, and the partner page also invites partners in the Netherlands. No German partner, customer or office found.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "min_void_clearance_mm",
+   "label": "Minimum void height",
+   "value": 200,
+   "unit": "mm",
+   "conditions": "clearance below the bottom of the joists; UK Building Regulations also require 150 mm to remain under the insulation",
+   "sourceId": "s3"
+  },
+  {
+   "key": "void_height_range_cm",
+   "label": "Void height (high-void robot)",
+   "value": "30-100",
+   "unit": "cm",
+   "conditions": "2022 interview: a high-void robot for 30-100 cm and a smaller robot for voids down to 20 cm",
+   "sourceId": "s6"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "four independently controlled drive wheels with suspension",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "remote, by gamepad, with video feed and sensors",
+   "unit": null,
+   "conditions": "the robot builds a 3D map of the void for the operator",
+   "sourceId": "s5"
+  },
+  {
+   "key": "spray_material",
+   "label": "Insulation sprayed",
+   "value": "closed-cell polyurethane spray foam (KIWA BDA Agrément-certified, HFO-blown)",
+   "unit": null,
+   "conditions": "the 2022 interview also mentions open-cell foam",
+   "sourceId": "s9"
+  },
+  {
+   "key": "install_time_days",
+   "label": "Installation time per home",
+   "value": "1-2",
+   "unit": "days",
+   "conditions": "typical",
+   "sourceId": "s8"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s3",
+   "s5",
+   "s6"
+  ],
+  "notes": [
+   "Remote-controlled, not autonomous: an operator outside the void drives the robot and sprays with a gamepad, using the camera image and a 3D map; preset spray patterns can be chosen (2022 interview).",
+   "Pulls a supply hose from a rig or van into position; drives over rubble, and according to the 2022 interview through sand and mud.",
+   "Needs at least 200 mm clearance below the joists.",
+   "Goes in through a small hatch in the floor or an opening in an outside wall."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://q-bot.co/wp-content/uploads/2024/03/21-04-Q-bot-AA-4010-s-min-scaled.jpg",
+   "pageUrl": "https://q-bot.co/partners/",
+   "credit": "Q-Bot",
+   "alt": "Three Q-Bot underfloor insulation robots with large off-road wheels on a wooden floor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sprayed underfloor insulation in more than 5,500 homes, over 100,000 m² of suspended floors",
+   "stage": "deployment",
+   "where": "Homes in the UK, Q-Bot's own installation service",
+   "date": "2026",
+   "sourceId": "s8",
+   "note": "Cumulative since 2012, as stated on the maker's site; installs are done by robot or by hand."
+  },
+  {
+   "taskIds": [],
+   "task": "Insulated suspended floors as underfloor insulation subcontractor",
+   "stage": "deployment",
+   "where": "Lovell-led housing project, UK",
+   "date": null,
+   "sourceId": "s7",
+   "note": "Filmed by CITB."
+  },
+  {
+   "taskIds": [],
+   "task": "Demonstrator robot from an EU-funded project insulated floors in 120 homes",
+   "stage": "pilot",
+   "where": "Homes in the UK and France",
+   "date": "2018-03",
+   "sourceId": "s5",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Top Isol to rent Q-Bot robots for underfloor insulation projects across southern France",
+   "stage": "claim",
+   "where": "Top Isol, France",
+   "date": "2026-06",
+   "sourceId": "s4",
+   "note": "Partnership announcement; adds to an existing partner (Polaire Isolation) in northern France."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://q-bot.co/",
+   "title": "Accredited underfloor insulation for suspended floors",
+   "publisher": "Q-Bot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://q-bot.co/partners/",
+   "title": "Accredited installation partners",
+   "publisher": "Q-Bot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://q-bot.co/faqs/",
+   "title": "Underfloor insulation FAQs",
+   "publisher": "Q-Bot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://q-bot.co/q-bot-and-top-isol-announce-strategic-partnership-to-expand-innovative-robotic-insulation-technology-in-france/",
+   "title": "Q-Bot and Top Isol announce strategic partnership in France, June 2026",
+   "publisher": "Q-Bot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://cordis.europa.eu/article/id/220354-underfloor-insulationlaying-robots-increase-energy-efficiency",
+   "title": "Underfloor insulation-laying robots increase energy efficiency (Q-Bot project, H2020)",
+   "publisher": "European Commission, CORDIS",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.sprayfoammagazine.com/foam-news/the-little-bot-that-can/3889",
+   "title": "The Little Bot That Can (interview with Q-Bot, 2022)",
+   "publisher": "Spray Foam Magazine",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://q-bot.co/contractors/",
+   "title": "Underfloor insulation for retrofit contractors",
+   "publisher": "Q-Bot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s8",
+   "url": "https://q-bot.co/floor-insulation/",
+   "title": "Why underfloor insulation matters for UK homes",
+   "publisher": "Q-Bot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s9",
+   "url": "https://q-bot.tech/robotic-underfloor-insulation-for-suspended-concrete-floors/",
+   "title": "Q-Bot underfloor insulation for suspended concrete floors",
+   "publisher": "Q-Bot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s10",
+   "url": "https://q-bot.tech/",
+   "title": "Q-Bot technical blog (company address, London)",
+   "publisher": "Q-Bot Limited",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Would Q-Bot take a German installation partner, and is its foam system approved for use in Germany?",
+  "Robot size, weight, spray output and power supply.",
+  "Are the two robot sizes from the 2022 interview (30-100 cm voids and down to 20 cm) still current?",
+  "Rental fee per robot."
+ ],
+ "checkedAt": "2026-10-05"
+}

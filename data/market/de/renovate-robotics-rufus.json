@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "renovate-robotics-rufus",
+ "maker": "Renovate Robotics",
+ "makerCountry": "US",
+ "model": "Rufus",
+ "variant": null,
+ "name": "Renovate Robotics Rufus",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "asphalt shingle installation on pitched roofs"
+ ],
+ "officialUrl": "https://renovaterobotics.com/",
+ "summary": "Cable-driven robot that hangs from anchors on a pitched roof and nails asphalt shingles; its US maker uses it only on its own roofing jobs.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer. Renovate Robotics does not sell or lease Rufus: it uses the robot itself as a roofing subcontractor on homes in New Jersey and Pennsylvania, and leasing to US roofers is only a plan. Its website now promotes an invite-only robot for commercial roofers. Rufus is built for North American asphalt shingle roofs.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "roof_type",
+   "label": "Roof type",
+   "value": "steep-slope roofs with asphalt shingles",
+   "unit": null,
+   "conditions": "flat, tile and metal roofs are out of scope",
+   "sourceId": "s2"
+  },
+  {
+   "key": "install_rate_vs_human",
+   "label": "Installation speed",
+   "value": "3x a human roofer",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s3"
+  },
+  {
+   "key": "drive",
+   "label": "Movement",
+   "value": "winch and cables on roof anchors, moves in X and Y like a gantry",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "fastening",
+   "label": "Fastening",
+   "value": "nails the shingles",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "computer vision guides shingle placement",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "Works only on steep-slope roofs with asphalt shingles.",
+   "Anchors go on the roof after underlayment and ice-and-water shield; setting anchor points at the ridge adds time at the start of each job.",
+   "Goes on and off the roof with a ladder lift and photographs the finished roof.",
+   "Needs a ground team; flashing and finishing stay manual. Maker says it is designed to halve the labour needed."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Presented Rufus; voted favourite product by the show audience",
+   "stage": "demo",
+   "where": "NAHB International Builders' Show, USA",
+   "date": "2024",
+   "sourceId": "s5",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Installs asphalt shingles on home re-roofing jobs, with Renovate working as subcontractor for partner roofers",
+   "stage": "pilot",
+   "where": "Homes in New Jersey and Pennsylvania, USA",
+   "date": "2026-06",
+   "sourceId": "s2",
+   "note": "Customers not named. Renovate's own site advertised robotic roof installation in PA and NJ in January 2026 (s6)."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://renovaterobotics.com/",
+   "title": "Home page (Rufus, invite-only preview of a commercial roofing robot)",
+   "publisher": "Renovate Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.startupselfie.net/2026/06/10/rufus-roofing-robot-shingle-installation/",
+   "title": "Rufus roofing robot installs shingles three times faster than a human",
+   "publisher": "StartupSelfie",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://web.archive.org/web/20240229153727/https://www.renovaterobotics.com/blog-posts/renovate-closes-3m-pre-seed-to-automate-roofing",
+   "title": "Renovate closes $3M pre-seed to automate roofing (archived)",
+   "publisher": "Renovate Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://web.archive.org/web/20240617124250/https://www.renovaterobotics.com/?ref=hackernoon.com",
+   "title": "Meet Rufus, the Auto Roof Robot (archived home page, June 2024)",
+   "publisher": "Renovate Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://web.archive.org/web/20240420132753/https://www.renovaterobotics.com/blog-posts/renovate-wins-audience-choice-award-at-international-builders-show",
+   "title": "Renovate wins Audience Choice Award at International Builders' Show (archived)",
+   "publisher": "Renovate Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://web.archive.org/web/20260124232356/https://www.renovaterobotics.com/home",
+   "title": "Robotic roofing installation, now in PA and NJ (archived home page, January 2026)",
+   "publisher": "Renovate Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s7",
+   "url": "https://renovaterobotics.com/privacy",
+   "title": "Privacy policy (Renovate Robotics, Inc., a Delaware corporation)",
+   "publisher": "Renovate Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "No official product photo of Rufus found: the maker's current site shows Rufus only in embedded TikTok videos, and its 2024 site used drawings. Images left empty.",
+  "Is Rufus still in use? The maker's site now leads with a new invite-only robot for commercial roofers.",
+  "Size, weight and output in m² per hour are not published."
+ ],
+ "checkedAt": "2026-10-05"
+}

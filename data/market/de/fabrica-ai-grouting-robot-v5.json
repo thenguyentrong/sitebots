@@ -1,0 +1,233 @@
+{
+ "schemaVersion": 1,
+ "id": "fabrica-ai-grouting-robot-v5",
+ "maker": "Fabrica AI",
+ "makerCountry": "SG",
+ "model": "Grouting Robot V5",
+ "variant": null,
+ "name": "Fabrica AI Grouting Robot V5",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_tiling/tile-grouting"
+ ],
+ "officialUrl": "https://www.fabrica.ai/",
+ "summary": "Small 70 kg robot that maps a tiled room by itself, fills the tile joints with grout and washes off the excess, about 30 m² per hour.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Available on request in the EU but not yet sold there. Fabrica (Singapore) keeps a demo unit and an address in Brno, Czechia, and offers EU customers a free trial on a small area before commercial terms are agreed. Sales so far only in Singapore and Australia, pilots in the US; no EU customer, price or CE marking published. Shown at bauma 2025 in Munich.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Fabrica Robotics Pte. Ltd.",
+    "country": "SG",
+    "role": "manufacturer",
+    "productUrl": "https://www.fabrica.ai/",
+    "contactUrl": "https://www.fabrica.ai/",
+    "email": "contact@fabrica.ai",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Demo request form on the home page. Demo unit and address in Brno, Czechia (Bašty 8, 602 00 Brno). Free trial first, commercial terms after; in Singapore it sells or rents robots with site support and maintenance."
+   }
+  ],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "about, unladen",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_side_cm",
+   "label": "Footprint",
+   "value": 70,
+   "unit": "cm",
+   "conditions": "less than 70 cm on each side",
+   "sourceId": "s1"
+  },
+  {
+   "key": "area_rate_m2_h",
+   "label": "Grouting rate",
+   "value": 30,
+   "unit": "m²/h",
+   "conditions": "per robot; the same page also says 'up to 100 m²' per hour without conditions",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Unsupervised run",
+   "value": 2,
+   "unit": "h",
+   "conditions": "2+ hours before reloading grout and water, enough for a standard living room",
+   "sourceId": "s1"
+  },
+  {
+   "key": "setup_time_min",
+   "label": "Setup and reload",
+   "value": 15,
+   "unit": "min",
+   "conditions": "under 15 min every 2 hours",
+   "sourceId": "s1"
+  },
+  {
+   "key": "robots_per_operator",
+   "label": "Robots per operator",
+   "value": 5,
+   "unit": null,
+   "conditions": "up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "productivity_vs_manual",
+   "label": "Speed vs. manual work",
+   "value": "up to 5x",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "computer vision; a camera checks for uncleaned grout and tile defects",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "software",
+   "label": "Software",
+   "value": "Robot Operating System (ROS)",
+   "unit": null,
+   "conditions": "no user SDK mentioned",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Maps rooms in real time; no floor plan or BIM data needed; started with one button.",
+   "Staff load grout and water and carry the robot between rooms separated by steps.",
+   "Drives around pipes and drain holes; red tape marks keep-out lines that are not walls.",
+   "Wheels seen on the maker's photo."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://static.wixstatic.com/media/59bf6d_c38f3065f4254877966a2d268a91e2fd~mv2.jpg",
+   "pageUrl": "https://www.fabrica.ai/",
+   "credit": "Fabrica AI",
+   "alt": "Fabrica AI tile grouting robot with its orange sponge cleaning belt, standing on a tiled floor in an apartment",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_tiling/tile-grouting"
+   ],
+   "task": "Grouting tiles on client projects; about 180,000 sq ft grouted by the end of 2025",
+   "stage": "deployment",
+   "where": "Singapore (clients include Woh Hup and BHCC) and Australia",
+   "date": "2025",
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_tiling/tile-grouting"
+   ],
+   "task": "Pilot grouting with contractors",
+   "stage": "pilot",
+   "where": "Gin Chia, Soilbuild, Chan Ren Fong and Dragages",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker also reports pilots in the US (not named)."
+  },
+  {
+   "taskIds": [
+    "site_tiling/tile-grouting"
+   ],
+   "task": "Exhibited the grouting robot in the start-up area (stand B0.533)",
+   "stage": "demo",
+   "where": "bauma 2025, Munich, Germany",
+   "date": "2025-04",
+   "sourceId": "s3",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_tiling/tile-grouting"
+   ],
+   "task": "Showcased the V5 grouting robot",
+   "stage": "demo",
+   "where": "BCA Tech Exchange, Singapore",
+   "date": "2024",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.fabrica.ai/",
+   "title": "Autonomous tile grouting robot (home page: specs, markets, trial offer, Brno demo unit)",
+   "publisher": "Fabrica AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.fabrica.ai/post/fabrica-ai-s-v5-grouting-robot-makes-waves-at-bca-tech-exchange-featured-in-straits-times-and-8world",
+   "title": "Fabrica AI's V5 Grouting Robot Makes Waves at BCA Tech Exchange",
+   "publisher": "Fabrica AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://exhibitors.bauma.de/en/exhibitors-and-products/exhibitors-brand-names/exhibitors-brand-names-details/exhibitorDetail/ID/1407174/?cHash=4c1c7c51b1ee153b456c0efa3e840ac7",
+   "title": "bauma 2025 exhibitor entry: Fabrica AI (Start-Ups, B0.533)",
+   "publisher": "Messe München",
+   "kind": "trade_fair",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Is the robot CE-marked for sale in the EU? Not stated.",
+  "Has any EU customer bought or rented it? The maker names sales only in Singapore and Australia.",
+  "Price and rental terms.",
+  "Is the robot sold today still the V5 named in December 2024? The home page names no version.",
+  "Does it grout wall tiles too, or only floors?"
+ ],
+ "checkedAt": "2026-10-05"
+}

@@ -1,0 +1,253 @@
+{
+ "schemaVersion": 1,
+ "id": "shimizu-robo-buddy-ceiling",
+ "maker": "Shimizu Corporation",
+ "makerCountry": "JP",
+ "model": "Robo-Buddy",
+ "variant": "Ceiling (ceiling board installation)",
+ "name": "Shimizu Robo-Buddy Ceiling",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_drywall/plasterboard-installation"
+ ],
+ "officialUrl": "https://www.shimz.co.jp/en/topics/construction/item12/",
+ "summary": "A two-armed autonomous robot that drives to its work position using the BIM model, lifts a plasterboard to the ceiling frame with one arm and screws it on with the other; built by Shimizu for its own sites.",
+ "launched": "2017-07",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not sold: Shimizu developed Robo-Buddy for its own building sites in Japan and plans to reuse each robot across two to three of its sites; no sale, rental or licence offer found.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Length x width x height",
+   "value": "2,261 x 800 x 2,075",
+   "unit": "mm",
+   "conditions": "width 2,510 mm with outriggers extended (2018 spec)",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 1600,
+   "unit": "kg",
+   "conditions": "2018 spec",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Axes per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": "two arms",
+   "sourceId": "s1"
+  },
+  {
+   "key": "prehensile_capacity_kg",
+   "label": "Gripping capacity",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "robot section (2018 spec); whether per arm or for both arms is not stated",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_work_height_mm",
+   "label": "Maximum work height",
+   "value": 4470,
+   "unit": "mm",
+   "conditions": "2018 spec",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_operating_radius_mm",
+   "label": "Maximum operating radius",
+   "value": 1610,
+   "unit": "mm",
+   "conditions": "2018 spec",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Step it can cross",
+   "value": 20,
+   "unit": "cm",
+   "conditions": "maker statement in 2017 (special step-climbing function)",
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "camera, 2D laser displacement gauge, force sensor",
+   "unit": null,
+   "conditions": "2018 spec",
+   "sourceId": "s1"
+  },
+  {
+   "key": "localisation",
+   "label": "Self-localisation",
+   "value": "2D-LiDAR",
+   "unit": null,
+   "conditions": "Robo-Buddy Ceiling, 2023",
+   "sourceId": "s4"
+  },
+  {
+   "key": "end_effectors",
+   "label": "End effectors",
+   "value": "vacuum pads to hold the plasterboard; laser sensor and screwdriver on the other arm",
+   "unit": null,
+   "conditions": "Robo-Buddy Ceiling, 2023",
+   "sourceId": "s4"
+  },
+  {
+   "key": "power",
+   "label": "Power",
+   "value": "Li-ion battery",
+   "unit": null,
+   "conditions": "2018 spec",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s6"
+  ],
+  "notes": [
+   "An operator sends the task from a tablet; the robot finds its position by matching laser data with the BIM model and drives to the work place on its own.",
+   "Works from an autonomous wheeled base with outriggers and a lifting platform; the raised-floor version is described as two arms on a four-wheel vehicle.",
+   "A second robot, Robo-Assist Ceiling, brings the boards; the 2017 release also lists inserting ceiling hanger bolts and assembling the ceiling substructure.",
+   "End effectors can be swapped; a raised-floor configuration (Robo-Buddy Floor) was trialled on two floors of SHIN-OSAKA DOI BLDG. No5 in September 2021 (not covered by this record).",
+   "Gripping capacity of 30 kg is not stated per arm, so armPayloadKg is left empty."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.shimz.co.jp/en/topics/construction/item12/images/img_index_01.jpg",
+   "pageUrl": "https://www.shimz.co.jp/en/topics/construction/item12/",
+   "credit": "Shimizu Corporation",
+   "alt": "Shimizu Robo-Buddy with two orange robot arms installing a ceiling board in the robot laboratory",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_drywall/ceiling-substructure",
+    "site_drywall/plasterboard-installation"
+   ],
+   "task": "Inserts ceiling hanger bolts, assembles the ceiling substructure, fixes ceiling boards with screws and lays raised floor pedestals and panels",
+   "stage": "claim",
+   "where": null,
+   "date": "2017-07",
+   "sourceId": "s3",
+   "note": "Maker statement at the launch of the Shimz Smart Site system."
+  },
+  {
+   "taskIds": [
+    "site_drywall/plasterboard-installation"
+   ],
+   "task": "Lifted ceiling boards to the ceiling frame and screwed them on during trials",
+   "stage": "demo",
+   "where": "Robot laboratory, Shimizu Institute of Technology, Etchujima, Tokyo, Japan",
+   "date": "2018-04",
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_drywall/plasterboard-installation"
+   ],
+   "task": "Fixed about 100 ceiling boards on a real building site with a 100% success rate",
+   "stage": "pilot",
+   "where": "Shimizu building site in Japan (not named)",
+   "date": "2023-03",
+   "sourceId": "s5",
+   "note": "Nikkei Robotics (November 2023): development is complete; the robot is kept at a research site in Tokyo and can be sent to other sites."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2018/2018006.html",
+   "title": "Robots under autonomous control at robot lab (April 2018, with specifications)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.shimz.co.jp/en/topics/construction/item12/",
+   "title": "The Shimizu Smart Site autonomous robots can transform a job site! (April 2018)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.shimz.co.jp/company/about/news-release/2017/2017011.html",
+   "title": "Shimz Smart Site next-generation production system (July 2017, Japanese)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://ieeexplore.ieee.org/document/10260608",
+   "title": "Autonomous robot for ceiling board construction work \"Robo-Buddy Ceiling\" (IEEE CASE 2023, Shimizu authors)",
+   "publisher": "IEEE",
+   "kind": "other",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://xtech.nikkei.com/atcl/nxt/mag/rob/18/00003/00112/",
+   "title": "Shimizu puts ceiling installation robot into practical use (November 2023, Japanese)",
+   "publisher": "Nikkei Robotics",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2021/2021040.html",
+   "title": "Shimizu deploys raised-floor robot Robo-Buddy Floor (September 2021)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "Has Robo-Buddy Ceiling been used on sites after the March 2023 application, and which ones?",
+  "Specifications of the 2023 Ceiling version (the published table is from 2018); runtime per battery.",
+  "Is the 30 kg gripping capacity per arm?"
+ ],
+ "checkedAt": "2026-10-05"
+}

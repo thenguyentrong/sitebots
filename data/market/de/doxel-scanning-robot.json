@@ -1,0 +1,156 @@
+{
+ "schemaVersion": 1,
+ "id": "doxel-scanning-robot",
+ "maker": "Doxel, Inc.",
+ "makerCountry": "US",
+ "model": "Lidar scanning robot",
+ "variant": null,
+ "name": "Doxel lidar scanning robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "scanning_documentation",
+  "site_survey_documentation/progress-capture-walks",
+  "site_survey_documentation/as-built-laser-scanning"
+ ],
+ "officialUrl": null,
+ "summary": "A tracked robot with a laser scanner that Doxel used from 2018 to scan building sites after hours and compare installed work with the model; Doxel now captures sites with hard-hat 360° cameras instead.",
+ "launched": "2018-01",
+ "lifecycle": "discontinued",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No longer offered: Doxel's current site describes capture only with 360° cameras worn on a hard hat (Insta360 models) or drone footage and has no robot page. The robot was never sold; Doxel used it itself to scan customer sites (2018).",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-10-05"
+ },
+ "specs": [
+  {
+   "key": "scan_area_m2_per_week",
+   "label": "Area scanned per week",
+   "value": 30000,
+   "unit": "m²",
+   "conditions": "about, one robot (2018 report)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "scan_time_building_h",
+   "label": "Time to scan a building",
+   "value": 4.5,
+   "unit": "h",
+   "conditions": "entire multi-floor medical office building in San Diego, scanned daily (2018 report)",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "lidar and HD camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "stairs",
+   "label": "Stairs",
+   "value": true,
+   "unit": null,
+   "conditions": "prescheduled scan paths can include stairs",
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "Discontinued: Doxel now offers only its software service with hard-hat 360° cameras or drone footage.",
+   "Drove autonomously along prescheduled paths after the site closed; the data went to Doxel's cloud for deep-learning object recognition.",
+   "Tracked base with flippers carrying a laser scanner (maker photo); the 2018 report says Doxel's work was mostly indoors."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/progress-capture-walks",
+    "site_survey_documentation/as-built-laser-scanning"
+   ],
+   "task": "Scanned a multi-floor medical office building every day (4.5 h per scan) to track installed work against the plan; Doxel reports 38% higher labour productivity and the project 11% under budget",
+   "stage": "pilot",
+   "where": "Medical office building, San Diego, USA",
+   "date": "2018-01",
+   "sourceId": "s2",
+   "note": "Doxel case study as reported by IEEE Spectrum; customer not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://doxel.ai/faqs",
+   "title": "Doxel FAQs (supported cameras: Insta360 models; drone footage)",
+   "publisher": "Doxel",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s2",
+   "url": "https://spectrum.ieee.org/doxel-ai-startup-using-lidar-equipped-robots-on-construction-sites",
+   "title": "Doxel's lidar-equipped robots help track construction projects and catch mistakes as they happen (January 2018)",
+   "publisher": "IEEE Spectrum",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s3",
+   "url": "https://doxel.ai/",
+   "title": "Doxel: automated progress tracking (how it works: 360 camera on a hard hat)",
+   "publisher": "Doxel",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s4",
+   "url": "https://aecmag.com/news/news-doxel-uses-reality-capture-and-ai-to-boost-construction-productivity/",
+   "title": "Doxel uses reality capture and AI to boost construction productivity (January 2018)",
+   "publisher": "AEC Magazine",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  },
+  {
+   "id": "s5",
+   "url": "https://techcrunch.com/2021/08/11/doxel-raises-40m-from-insight-a16z-to-become-the-waze-for-construction/",
+   "title": "Doxel raises $40M from Insight, a16z (August 2021; Redwood City, California; 360-degree images)",
+   "publisher": "TechCrunch",
+   "kind": "press",
+   "checkedAt": "2026-10-05"
+  }
+ ],
+ "openQuestions": [
+  "No formal end-of-life notice found; the discontinuation is inferred from Doxel's current site, FAQ and sitemap, which describe only hard-hat 360° cameras and drones.",
+  "When did Doxel stop using the robot, and how many were built?",
+  "Image is Doxel's photo as published by IEEE Spectrum; the maker's own site no longer shows the robot.",
+  "No official product image: Doxel's own site no longer shows the robot, and the only photo found is hosted by IEEE Spectrum."
+ ],
+ "checkedAt": "2026-10-05"
+}
