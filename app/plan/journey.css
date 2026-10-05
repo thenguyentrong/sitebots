@@ -240,6 +240,58 @@
 .home-hud b { font-weight: 600; color: rgba(250, 250, 250, 0.9); }
 .home-hud li[data-active], .home-hud li[data-active] b { color: #fb923c; }
 .home-below { padding-top: 64px; }
+/* The answer before the map (TodayAnswer): the site jobs by their best proof as one bar, then the
+   proven jobs one per row. The proof colours are the map's (--proof-* in globals.css). */
+.home-today { scroll-margin-top: 80px; }
+.home-today [data-level='claim'] { --dot: var(--proof-claim); }
+.home-today [data-level='demo'] { --dot: var(--proof-demo); }
+.home-today [data-level='pilot'] { --dot: var(--proof-pilot); }
+.home-today [data-level='deployment'] { --dot: var(--proof-deployment); }
+.home-today h2 { margin-top: 8px; max-width: 880px; font-size: 40px; line-height: 48px; font-weight: 600; letter-spacing: -.02em; text-wrap: balance; }
+.today-bar { display: flex; gap: 2px; height: 16px; margin-top: 32px; }
+.today-bar span { min-width: 6px; border-radius: 4px; background: var(--dot); }
+.today-bar span[data-level='none'] { background: var(--subtle); box-shadow: inset 0 0 0 1px var(--edge-strong); }
+.today-key { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.today-key li { display: grid; grid-template-columns: 12px minmax(0, 1fr); align-content: start; column-gap: 8px; row-gap: 4px; align-items: center; font-size: 14px; line-height: 20px; }
+.today-key strong { font-weight: 600; font-variant-numeric: tabular-nums; }
+.today-key small { grid-column: 2; font-size: 12px; line-height: 16px; color: var(--muted); }
+.today-dot { --dot: var(--edge-strong); display: inline-block; flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--dot); }
+.today-dot[data-level='claim'] { box-shadow: 0 0 0 1px var(--proof-claim-edge); }
+.today-dot[data-level='none'] { width: 10px; height: 10px; margin: 1px; background: var(--card); border: 1.5px solid var(--faint); }
+.today-dot[data-abroad] { background: var(--card); border: 2.5px solid var(--dot); box-shadow: none; }
+.today-group { margin-top: 48px; }
+.today-group h3 { font-size: 18px; line-height: 26px; font-weight: 600; }
+.today-group h3 span { margin-left: 8px; font-size: 14px; font-weight: 400; color: var(--muted); }
+.today-rows { margin-top: 12px; border-top: 1px solid var(--edge); }
+.today-row { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 16px; align-items: start; padding: 16px 0; border-bottom: 1px solid var(--edge); }
+.today-row > .today-dot { margin-top: 6px; }
+.today-row-main { min-width: 0; }
+.today-row-title { font-size: 16px; line-height: 24px; font-weight: 600; }
+.today-row-title small { font-size: 12px; font-weight: 400; color: var(--muted); }
+.today-row-proof, .today-row-here { margin-top: 4px; font-size: 14px; line-height: 20px; color: var(--muted); overflow-wrap: anywhere; }
+.today-row a, .today-general a, .today-next a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 4px; }
+.today-row a:hover, .today-general a:hover, .today-next a:hover { text-decoration-color: var(--foreground); }
+.today-row-buy { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
+.today-row-buy small { font-size: 12px; line-height: 16px; color: var(--muted); white-space: nowrap; }
+.today-abroad { margin-top: 24px; }
+.today-abroad > p { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 16px; max-width: 880px; font-size: 14px; line-height: 20px; color: var(--muted); }
+.today-abroad > p > .today-dot { margin-top: 4px; }
+.today-abroad > p strong { color: var(--foreground); font-weight: 600; }
+.today-abroad a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 4px; }
+.today-abroad .today-more { margin-top: 12px; margin-left: 28px; }
+.today-more { margin-top: 32px; }
+.today-more summary { cursor: pointer; font-size: 14px; line-height: 20px; font-weight: 600; }
+.today-more summary:hover { text-decoration: underline; text-underline-offset: 4px; }
+.today-general { margin-top: 32px; max-width: 880px; padding: 16px; border: 1px solid var(--edge); border-radius: 12px; background: var(--card); font-size: 14px; line-height: 20px; color: var(--muted); }
+.today-general strong { color: var(--foreground); font-weight: 600; }
+.today-next { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 24px; font-size: 14px; line-height: 20px; font-weight: 500; }
+@media (max-width: 1023px) { .today-key { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 767px) {
+  .home-today h2 { font-size: 28px; line-height: 34px; }
+  .today-key { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .today-row { grid-template-columns: 12px minmax(0, 1fr); gap: 8px 12px; }
+  .today-row-buy { grid-column: 2; flex-direction: row; flex-wrap: wrap; align-items: center; text-align: left; }
+}
 /* Inside the live scene: the scale line's label, a label under every figure, the tag of the robot pointed at. */
 .lineup-live { position: relative; width: 100%; height: 100%; }
 .lineup-live canvas { cursor: grab; }

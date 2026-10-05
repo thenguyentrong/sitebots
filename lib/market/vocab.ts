@@ -29,6 +29,18 @@ export const JOB_LABELS: Record<string, string> = {
   excavation: 'Excavation', tunnelling: 'Tunnelling', other: 'Other jobs',
 };
 export const STAGE_LABELS = { claim: 'Maker says it can', demo: 'Shown in a demo', pilot: 'Tested in a pilot', deployment: 'In daily use' } as const;
+/** How far a job is proven, weakest first: the index is the rank in STAGE_RANK, 0 for no proof. */
+export const PROOF = ['none', 'claim', 'demo', 'pilot', 'deployment'] as const;
+export type ProofLevel = (typeof PROOF)[number];
+export const PROOF_LABELS: Record<ProofLevel, string> = { none: 'No proof yet', ...STAGE_LABELS };
+/** What each level means, for legends and the answer on the landing. */
+export const PROOF_HELP: Record<ProofLevel, string> = {
+  deployment: 'used on real projects, named in a source',
+  pilot: 'tried on a real site, named in a source',
+  demo: 'shown working at a fair or in a test',
+  claim: 'only the maker or a seller says so',
+  none: 'no source shows a robot doing it yet',
+};
 
 export const AXES = {
   movement: { label: 'Movement needed', levels: Object.entries(MOVEMENT_LABELS).map(([id, label]) => ({ id, label })) },

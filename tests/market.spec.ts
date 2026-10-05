@@ -158,3 +158,25 @@ test.describe('catalogue robot pages', () => {
     await expect(germany.locator('.mk-buybox-title').first()).toBeVisible();
   });
 });
+
+test.describe('the answer on the landing', () => {
+  test('says which site jobs robots do today, with the proof and where to buy the robot', async ({ page }) => {
+    await page.goto('/');
+    const today = page.locator('#today');
+    await expect(today.getByRole('heading', { level: 2 })).toHaveText(/Robots are in daily use on \d+ of \d+ construction-site jobs/);
+    const rows = today.getByTestId('today-in-use').locator('li');
+    expect(await rows.count()).toBeGreaterThan(0);
+    await expect(rows.first().locator('.mk-status')).toHaveText(/Buy in Germany|Order on request/);
+    await expect(rows.first().getByRole('link', { name: 'source ↗' })).toHaveAttribute('href', /^https:/);
+    await page.getByRole('link', { name: /See what robots do today/ }).click();
+    await expect(page).toHaveURL(/#today$/);
+  });
+
+  test('colours the map by proof and shows the proof for the chosen job', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.getByRole('list', { name: 'Colour key' })).toContainText('In daily use');
+    expect(await page.locator('[data-job][data-proof="deployment"]').count()).toBeGreaterThan(0);
+    await expect(page.getByTestId('job-proof')).toBeVisible();
+    await expect(page.getByTestId('job-proofs')).toContainText('Where robots have done it');
+  });
+});

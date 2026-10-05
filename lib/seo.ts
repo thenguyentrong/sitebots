@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { SITE } from '@/lib/site';
 
 export const HOME_DESCRIPTION =
-  'Explore humanoids, robot dogs and mobile platforms in map and list views. Compare sourced specifications, task evidence and supplier contacts.';
+  'Which construction jobs robots do today, with the named projects that prove it, and which of those robots you can buy in Germany: prices, sellers and sources.';
 
 type PublicMetadataOptions = {
   title: string;

@@ -4,9 +4,12 @@ import { STATUS_LABELS, TYPE_LABELS, priceText } from '@/lib/market/cards';
 import { loadJobs } from '@/lib/market/jobs';
 import { isStrong } from '@/lib/market/match';
 import { STAGE_LABELS } from '@/lib/market/vocab';
+import { JobProofs } from './JobProofs';
+import { choicesHeading } from '@/lib/market/proof';
 import './market.css';
 
-/** On a task page: the robots you can buy in Germany for this job, best first, with a way to the full comparison. */
+/** On a task page: where robots have done this job, then the robots you can buy in Germany for it, best
+ *  first, with a way to the full comparison. */
 export function JobRobotsStrip({ jobId }: { jobId: string }) {
   const { jobs, robots } = loadJobs();
   const job = jobs.find((item) => item.id === jobId);
@@ -16,8 +19,9 @@ export function JobRobotsStrip({ jobId }: { jobId: string }) {
   const shown = (strong.length ? strong : job.fits.options).slice(0, 4);
   const href = '/?usecase=' + encodeURIComponent(job.id) + '#explore';
   return <section className="mk-strip" aria-labelledby="robots-here">
+    <JobProofs proofs={job.proofs} />
     <div className="mk-strip-head">
-      <h2 id="robots-here">{strong.length ? strong.length + ' robot' + (strong.length > 1 ? 's' : '') + ' you can buy in Germany fit this job' : job.fits.options.length ? 'Robots that could do this with add-ons or a trial' : 'No robot you can buy in Germany fits this job yet'}</h2>
+      <h2 id="robots-here">{choicesHeading(strong, job.fits.options.length)}</h2>
       <Link href={href}>Compare them and see sellers →</Link>
     </div>
     {shown.length ? <ul className="mk-strip-list">{shown.map((fit) => {

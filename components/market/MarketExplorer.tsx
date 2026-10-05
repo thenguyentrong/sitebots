@@ -1,13 +1,14 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useId, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
+import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
 import { Icon } from '@/components/journey/Icon';
 import { OPPORTUNITY_CLUSTERS } from '@/lib/discovery/model';
 import { TYPE_PLURAL } from '@/lib/market/cards';
 import type { CountKey, JobDetail, JobMapPoint } from '@/lib/market/jobs';
+import { jobRank, proofOf } from '@/lib/market/proof';
 import type { RobotType } from '@/lib/market/schema';
-import { AXES, AXIS_IDS, CONDITIONS, HAND_LABELS, MOVEMENT_LABELS, WHERE, cellLayout, isAxis, robotBin, type AxisId, type ConditionId } from '@/lib/market/vocab';
+import { AXES, AXIS_IDS, CONDITIONS, HAND_LABELS, MOVEMENT_LABELS, PROOF, PROOF_LABELS, WHERE, cellLayout, isAxis, robotBin, type AxisId, type ConditionId, type ProofLevel } from '@/lib/market/vocab';
 import { MarketChoices } from './MarketChoices';
 import { StepStrip } from '@/components/workflows/StepStrip';
 import './market.css';
@@ -22,9 +23,10 @@ const EMPTY: Filters = { robot: '', where: '', condition: '', cluster: '', query
 const L = 168, R = 984, T = 44, B = 448;
 // The similarity view has no axis labels and uses the whole drawing.
 const SL = 40, SR = 960, ST = 40, SB = 500;
-const PROOF = ['none', 'claim', 'demo', 'pilot', 'deployment'] as const;
+// Colour carries one thing on the map: how far robots have got with the job, strongest first in the key.
+const KEY_LEVELS: ProofLevel[] = ['deployment', 'pilot', 'demo', 'claim', 'none'];
 
-const colorOf = (point: JobMapPoint) => OPPORTUNITY_CLUSTERS.find((cluster) => cluster.id === point.clusterId)?.color ?? '#71717a';
+const clusterLabel = (point: JobMapPoint) => OPPORTUNITY_CLUSTERS.find((cluster) => cluster.id === point.clusterId)?.label ?? '';
 const fold = (value: string) => value.normalize('NFKD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
 export function MarketExplorer({ jobs, initialDetail = null, initial = {}, contact }: { jobs: JobMapPoint[]; initialDetail?: JobDetail | null; initial?: ExplorerInitial; contact?: string }) {
@@ -47,21 +49,20 @@ export function MarketExplorer({ jobs, initialDetail = null, initial = {}, conta
   const strongOf = (point: JobMapPoint) => point.counts[key].strong;
   const anyOf = (point: JobMapPoint) => point.counts[key].any;
   const axisValue = (point: JobMapPoint, axis: AxisId): string => axis === 'movement' ? point.needs?.movement ?? 'stationary'
-    : axis === 'handWork' ? point.needs?.handWork ?? 'none' : axis === 'robots' ? robotBin(strongOf(point)) : PROOF[point.counts[key].proof];
+    : axis === 'handWork' ? point.needs?.handWork ?? 'none' : axis === 'robots' ? robotBin(strongOf(point)) : PROOF[point.counts[key].world];
 
   const query = fold(filters.query).split(/\s+/).filter(Boolean);
   const filtered = jobs.filter((point) => (!filters.where || point.where === filters.where) && (!filters.condition || point.conditions.includes(filters.condition as ConditionId)) && (!filters.cluster || point.clusterId === filters.cluster)
     && (!filters.withRobots || strongOf(point) > 0)
     && query.every((term) => fold([point.title, point.summary, point.setting].join(' ')).includes(term)));
   const withRobots = filtered.filter((point) => strongOf(point) > 0).length;
+  const inUse = filtered.filter((point) => proofOf(point, key).world === 'deployment').length;
   const placed = cellLayout(filtered, xAxis, yAxis, axisValue);
   const sx = (point: JobMapPoint) => layout === 'needs' ? L + (placed.get(point.id)?.x ?? 50) / 100 * (R - L) : SL + point.x / 100 * (SR - SL);
   const sy = (point: JobMapPoint) => layout === 'needs' ? B - (placed.get(point.id)?.y ?? 50) / 100 * (B - T) : SB - point.y / 100 * (SB - ST);
-  // Without a choice, open on the broadest real choice: general robots weigh more than sizes of one machine.
-  const breadth = (point: JobMapPoint) => filters.robot ? strongOf(point) * 3 + (point.counts[key].proof ? 2 : 0)
-    : (point.counts.humanoid.strong + point.counts.quadruped.strong + point.counts.mobile_manipulator.strong) * 3 + point.counts.specialised.makers + (point.counts.all.proof ? 2 : 0) + (point.where === 'site' && point.counts.all.strong ? 5 : 0);
+  // Without a choice, open on proven construction work with robots you can buy here (see jobRank).
   const onSite = filtered.filter((point) => point.where === 'site' && strongOf(point) > 0);
-  const selected = filtered.find((point) => point.id === selectedId) ?? [...(onSite.length ? onSite : filtered)].sort((a, b) => breadth(b) - breadth(a) || a.id.localeCompare(b.id))[0];
+  const selected = filtered.find((point) => point.id === selectedId) ?? [...(onSite.length ? onSite : filtered)].sort((a, b) => jobRank(b, key) - jobRank(a, key) || a.id.localeCompare(b.id))[0];
   const detail = selected ? details[selected.id] : undefined;
   const hovered = filtered.find((point) => point.id === hoveredId);
   const hasFilters = Boolean(filters.robot || filters.where || filters.condition || filters.cluster || filters.query || filters.withRobots);
@@ -114,11 +115,20 @@ export function MarketExplorer({ jobs, initialDetail = null, initial = {}, conta
     return [{ cluster, cx, cy, rx: Math.max(46, Math.min(190, (Math.max(...xs) - Math.min(...xs)) / 2 + 24)), ry: Math.max(30, Math.min(120, (Math.max(...ys) - Math.min(...ys)) / 2 + 22)) }];
   }) : [];
 
+  const level = (point: JobMapPoint) => proofOf(point, key);
+  // An open ring: robots have done more of this job elsewhere than any robot sold here.
+  const dotClass = (point: JobMapPoint) => { const { world, abroad } = level(point); return 'is-' + world + (abroad ? ' is-abroad' : ''); };
+  const proofText = (point: JobMapPoint) => {
+    const { world, here, abroad } = level(point);
+    if (world === 'none') return PROOF_LABELS.none;
+    return PROOF_LABELS[world] + (abroad ? (here === 'none' ? ', with robots not sold in Germany' : ', best proof from robots not sold here') : '');
+  };
+
   return <section id="explore" className="mk-explorer" aria-label="Explore use cases">
     <header className="mk-head">
       <div>
-        <h2>What could these robots do?</h2>
-        <p>Every dot is a job. Pick one to see the robots you can buy in Germany for it, compare them and find a seller.</p>
+        <h2>Find your job on the map</h2>
+        <p>Every dot is a job. Its colour shows how far robots have got with it. Pick one to see the proof, the robots you can buy in Germany for it and who sells them.</p>
       </div>
       <div className="mk-segment" role="group" aria-label="Use-case view">
         <button type="button" aria-pressed={view === 'map'} onClick={() => { setView('map'); writeURL(filters, selected?.id, { view: 'map' }); }}>Map</button>
@@ -128,7 +138,7 @@ export function MarketExplorer({ jobs, initialDetail = null, initial = {}, conta
 
     <div className="mk-card-shell">
       <div className="mk-map-top">
-        <p><strong data-testid="job-count">{filtered.length}</strong> jobs · <strong>{withRobots}</strong> with robots you can buy in Germany</p>
+        <p><strong data-testid="job-count">{filtered.length}</strong> jobs · <strong>{inUse}</strong> in daily use · <strong>{withRobots}</strong> with a robot you can buy here that fits</p>
         {view === 'map' ? <div className="mk-layout" role="group" aria-label="Map layout">
           <button type="button" aria-pressed={layout === 'needs'} onClick={() => { setLayout('needs'); writeURL(filters, selected?.id, { layout: '' }); }}>By what the job needs</button>
           <button type="button" aria-pressed={layout === 'similar'} onClick={() => { setLayout('similar'); writeURL(filters, selected?.id, { layout: 'similar' }); }}>Similar jobs together</button>
@@ -137,8 +147,11 @@ export function MarketExplorer({ jobs, initialDetail = null, initial = {}, conta
       {view === 'map' && layout === 'needs' ? <div className="mk-axes" role="group" aria-label="Map axes">
         <label><span>Across</span><select aria-label="Horizontal axis" value={xAxis} onChange={(event) => { const x = event.target.value as AxisId; setAxes(x, x === yAxis ? xAxis : yAxis); }}>{AXIS_IDS.map((axis) => <option key={axis} value={axis}>{AXES[axis].label}</option>)}</select></label>
         <label><span>Up</span><select aria-label="Vertical axis" value={yAxis} onChange={(event) => { const y = event.target.value as AxisId; setAxes(y === xAxis ? yAxis : xAxis, y); }}>{AXIS_IDS.map((axis) => <option key={axis} value={axis}>{AXES[axis].label}</option>)}</select></label>
-        <p className="mk-key"><span className="mk-key-dot is-full" /> Robots fit <span className="mk-key-dot is-half" /> Only with add-ons <span className="mk-key-dot" /> None yet</p>
       </div> : null}
+      {view === 'map' ? <ul className="mk-proof-key" aria-label="Colour key">
+        {KEY_LEVELS.map((item) => <li key={item}><span className={'mk-key-dot is-' + item} aria-hidden="true" />{PROOF_LABELS[item]}</li>)}
+        <li><span className="mk-key-dot is-deployment is-abroad" aria-hidden="true" />Only with robots not sold here</li>
+      </ul> : null}
 
       {view === 'map' ? <p className="mk-swipe">Swipe the chart sideways to see all of it.</p> : null}
       {view === 'map' ? <div className="mk-chart" data-testid="job-map">
@@ -162,35 +175,37 @@ export function MarketExplorer({ jobs, initialDetail = null, initial = {}, conta
             <text className="mk-axis-title" x={(L + R) / 2} y={B + 60} textAnchor="middle">{AXES[xAxis].label} →</text>
             <text className="mk-axis-title" x={L} y={T - 16} textAnchor="start">↑ {AXES[yAxis].label}</text>
           </g> : <g className="mk-clouds" aria-hidden="true">
-            {clouds.map(({ cluster, cx, cy, rx, ry }) => <ellipse key={cluster.id} cx={cx} cy={cy} rx={rx} ry={ry} fill={cluster.color} fillOpacity=".06" stroke={cluster.color} strokeOpacity=".18" strokeDasharray="3 5" />)}
+            {clouds.map(({ cluster, cx, cy, rx, ry }) => <ellipse key={cluster.id} cx={cx} cy={cy} rx={rx} ry={ry} className="mk-cloud" strokeDasharray="3 5" />)}
           </g>}
           {filtered.map((point) => {
             const count = strongOf(point);
             const isSelected = selected?.id === point.id;
-            return <g key={point.id} role="button" tabIndex={isSelected ? 0 : -1} aria-pressed={isSelected} aria-label={point.title + ', ' + count + ' robots you can buy'} data-job={point.id} data-robots={count}
-              className={'mk-dot' + (isSelected ? ' is-selected' : '') + (count ? ' has-robots' : anyOf(point) ? ' has-maybe' : '')} transform={'translate(' + sx(point).toFixed(1) + ',' + sy(point).toFixed(1) + ')'} style={{ '--dot': colorOf(point) } as CSSProperties}
+            const proven = level(point).world !== 'none';
+            return <g key={point.id} role="button" tabIndex={isSelected ? 0 : -1} aria-pressed={isSelected} aria-label={point.title + ', ' + proofText(point) + ', ' + count + ' robots you can buy fit'} data-job={point.id} data-robots={count} data-proof={level(point).world}
+              className={'mk-dot ' + dotClass(point) + (isSelected ? ' is-selected' : '')} transform={'translate(' + sx(point).toFixed(1) + ',' + sy(point).toFixed(1) + ')'}
               onClick={() => choose(point, true)} onMouseEnter={() => setHoveredId(point.id)} onMouseLeave={() => setHoveredId('')} onFocus={() => setHoveredId(point.id)} onBlur={() => setHoveredId('')} onKeyDown={(event) => keyPoint(event, point)}>
               <circle className="mk-hit" r="9" />
-              {isSelected ? <circle className="mk-ring" r={10 + Math.min(5, count / 3)} /> : null}
-              <circle className="mk-fill" r={count ? 4 + Math.min(4.5, count / 3) : 3.6} />
+              {isSelected ? <circle className="mk-ring" r="11" /> : null}
+              <circle className="mk-fill" r={proven ? 5.5 : 3.6} />
             </g>;
           })}
           {/* Cluster names go on top of the dots so they stay readable where clouds meet. */}
-          {clouds.length ? <g className="mk-clouds" aria-hidden="true">{clouds.map(({ cluster, cx, cy, ry }) => <text key={cluster.id} x={cx} y={Math.max(16, cy - ry - 8)} textAnchor="middle" fill={cluster.color}>{cluster.label}</text>)}</g> : null}
+          {clouds.length ? <g className="mk-clouds" aria-hidden="true">{clouds.map(({ cluster, cx, cy, ry }) => <text key={cluster.id} x={cx} y={Math.max(16, cy - ry - 8)} textAnchor="middle">{cluster.label}</text>)}</g> : null}
           {!filtered.length ? <text x="500" y="250" textAnchor="middle" className="mk-empty-text">No jobs match these filters</text> : null}
         </svg>
         {hovered ? <div role="tooltip" className="mk-tooltip" style={{ left: Math.min(78, Math.max(14, sx(hovered) / 10)) + '%', top: Math.max(2, sy(hovered) / 5.4 - 16) + '%' }}>
-          <span style={{ color: colorOf(hovered) }}>{OPPORTUNITY_CLUSTERS.find((cluster) => cluster.id === hovered.clusterId)?.label}</span>
+          <span className="mk-tooltip-proof"><i className={'mk-key-dot ' + dotClass(hovered)} aria-hidden="true" />{proofText(hovered)}</span>
           <strong>{hovered.title}</strong>
           <small>{strongOf(hovered) ? strongOf(hovered) + ' robots you can buy in Germany fit' : anyOf(hovered) ? anyOf(hovered) + ' robots could, with add-ons or a trial' : 'No robot you can buy yet'}</small>
         </div> : null}
         <p id={id + '-help'} className="mk-help">{layout === 'needs' ? 'Positions show what the job needs, as we read the task. Confirm them for your site.' : 'Close dots describe similar work. Distances have no unit.'}</p>
       </div> : <ol className="mk-list" data-testid="job-list">
-        {[...filtered].sort((a, b) => strongOf(b) - strongOf(a) || a.title.localeCompare(b.title)).slice(0, listLimit).map((point) => <li key={point.id}>
+        {/* Proven work first, as on the landing's answer; the number of robots that fit on paper breaks ties. */}
+        {[...filtered].sort((a, b) => jobRank(b, key) - jobRank(a, key) || a.title.localeCompare(b.title)).slice(0, listLimit).map((point) => <li key={point.id}>
           <button type="button" aria-pressed={selected?.id === point.id} onClick={() => choose(point, true)}>
-            <span className="mk-list-dot" style={{ background: strongOf(point) ? colorOf(point) : 'transparent', borderColor: colorOf(point) }} />
+            <span className={'mk-key-dot ' + dotClass(point)} aria-hidden="true" />
             <span className="mk-list-title"><strong>{point.title}</strong><small>{point.setting}</small></span>
-            <span className="mk-list-count">{strongOf(point) ? strongOf(point) + ' robots' : anyOf(point) ? anyOf(point) + ' with add-ons' : 'None yet'}</span>
+            <span className="mk-list-count"><b>{proofText(point)}</b>{strongOf(point) ? strongOf(point) + ' robots fit' : anyOf(point) ? anyOf(point) + ' with add-ons' : 'No robot fits yet'}</span>
           </button>
         </li>)}
         {filtered.length > listLimit ? <li><button type="button" className="mk-more" onClick={() => setListLimit(listLimit + 32)}>Show {Math.min(32, filtered.length - listLimit)} more of {filtered.length - listLimit}</button></li> : null}
@@ -210,7 +225,7 @@ export function MarketExplorer({ jobs, initialDetail = null, initial = {}, conta
         </div>
         <div className="mk-legend" role="group" aria-label="Kinds of work">
           {OPPORTUNITY_CLUSTERS.filter((cluster) => jobs.some((point) => point.clusterId === cluster.id)).map((cluster) => <button type="button" key={cluster.id} aria-pressed={filters.cluster === cluster.id} onClick={() => change({ cluster: filters.cluster === cluster.id ? '' : cluster.id })}>
-            <span style={{ background: cluster.color }} />{cluster.label}
+            {cluster.label}
           </button>)}
           {hasFilters ? <button type="button" className="mk-reset" onClick={() => change(EMPTY)}>Reset filters</button> : null}
         </div>
@@ -219,10 +234,11 @@ export function MarketExplorer({ jobs, initialDetail = null, initial = {}, conta
 
     {selected ? <div ref={panel} className="mk-job" data-testid="selected-job" tabIndex={-1} aria-label="Selected job">
       <div className="mk-job-head">
-        <span className="mk-job-icon" style={{ color: colorOf(selected) }}><Icon name={selected.family} size={22} /></span>
+        <span className="mk-job-icon"><Icon name={selected.family} size={22} /></span>
         <div>
-          <p className="mk-kicker">{WHERE.find((place) => place.id === selected.where)?.label} · {selected.setting}</p>
+          <p className="mk-kicker">{WHERE.find((place) => place.id === selected.where)?.label} · {selected.setting} · {clusterLabel(selected)}</p>
           <h2>{selected.title}</h2>
+          <p className="mk-job-proof" data-testid="job-proof"><span className={'mk-key-dot ' + dotClass(selected)} aria-hidden="true" />{proofText(selected)}</p>
           <p>{selected.summary}</p>
           {selected.needs ? <ul className="mk-needs" aria-label="What this job needs">
             <li>{MOVEMENT_LABELS[selected.needs.movement]}</li>

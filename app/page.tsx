@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { JourneyStart } from '@/components/journey/JourneyStart';
+import { loadAnswer } from '@/lib/market/answer';
 import { explorerData } from '@/lib/market/landing';
+import { LINEUP } from '@/lib/models/lineup';
 import { HOME_DESCRIPTION, publicMetadata } from '@/lib/seo';
 import { SITE } from '@/lib/site';
 import './plan/plan.css';
@@ -18,6 +20,6 @@ export const metadata = publicMetadata({ title: SITE.tagline, description: HOME_
 export default function Home() {
   return <main className="visual-home">
     <noscript><p className="jp-page">The plan keeps your work in this browser and needs JavaScript. <Link className="underline" href="/use-cases">Browse the use cases</Link> or <Link className="underline" href="/search#matcher">search by specifications</Link>.</p></noscript>
-    <JourneyStart {...explorerData('')} />
+    <JourneyStart {...explorerData('')} answer={loadAnswer(LINEUP.map((robot) => robot.href))} />
   </main>;
 }

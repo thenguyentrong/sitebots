@@ -66,6 +66,13 @@
   --reported-soft: #fef3c7;
   --stage-center: #ffffff;
   --stage-edge: #efeff1;
+  /* How far a job is proven (lib/market/vocab.ts PROOF): one orange ramp, light to dark, so the order reads in
+     the colour. Dark mode runs the same steps the other way, brightest for the strongest proof. */
+  --proof-claim: #fdba74;
+  --proof-claim-edge: #fb923c;
+  --proof-demo: #f97316;
+  --proof-pilot: #c2410c;
+  --proof-deployment: #7c2d12;
   color-scheme: light;
 }
 
@@ -91,6 +98,11 @@
     --reported-soft: #3a2a0a;
     --stage-center: #1b1b1f;
     --stage-edge: #0d0d0f;
+    --proof-claim: #7c2d12;
+    --proof-claim-edge: #c2410c;
+    --proof-demo: #c2410c;
+    --proof-pilot: #f97316;
+    --proof-deployment: #fdba74;
     color-scheme: dark;
   }
 }
@@ -116,6 +128,11 @@
   --reported-soft: #3a2a0a;
   --stage-center: #1b1b1f;
   --stage-edge: #0d0d0f;
+  --proof-claim: #7c2d12;
+  --proof-claim-edge: #c2410c;
+  --proof-demo: #c2410c;
+  --proof-pilot: #f97316;
+  --proof-deployment: #fdba74;
   color-scheme: dark;
 }
 

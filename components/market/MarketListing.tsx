@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { STATUS_LABELS, TYPE_PLURAL, priceText, type RobotCardData } from '@/lib/market/cards';
-import { loadJobs } from '@/lib/market/jobs';
+import { loadJobs, robotJobStats } from '@/lib/market/jobs';
+import { STAGE_RANK } from '@/lib/market/match';
 import { ROBOT_TYPES, type GermanyStatus, type RobotType } from '@/lib/market/schema';
 import { JOB_LABELS } from '@/lib/market/vocab';
 import { ui } from '@/lib/ui';
@@ -50,8 +51,11 @@ const matches = (robot: RobotCardData, words: string[]) => words.every((word) =>
 
 export async function MarketListing({ type, q }: { type: RobotType | ''; q?: string }) {
   const { robots, jobs, marketRobots } = loadJobs();
-  const fits: Record<string, number> = {};
-  for (const job of jobs) for (const fit of job.fits.options) fits[fit.robotId] = (fits[fit.robotId] ?? 0) + 1;
+  const fits = robotJobStats(jobs);
+  // Robots in real use first within each status (a pilot or daily use on a job, then how many jobs),
+  // then the jobs they fit on paper. A maker's claim alone does not lift a robot up the list.
+  const used = (id: string) => (fits[id]?.best ?? 0) >= STAGE_RANK.pilot ? fits[id].best * 100 + fits[id].atBest : 0;
+  const byProof = (a: RobotCardData, b: RobotCardData) => used(b.id) - used(a.id) || (fits[b.id]?.strong ?? 0) - (fits[a.id]?.strong ?? 0);
   const words = (q ?? '').toLowerCase().split(/\s+/).filter(Boolean);
   const shown = robots.filter((robot) => (!type || robot.robotType === type) && matches(robot, words));
   const sold = shown.filter((robot) => robot.germany.status !== 'not_sold');
@@ -61,7 +65,7 @@ export async function MarketListing({ type, q }: { type: RobotType | ''; q?: str
   // Counted like the landing page: general robots and job-specific machines apart.
   const orderable = (machines: boolean) => robots.filter((robot) => (robot.robotType === 'specialised') === machines && (robot.germany.status === 'buy_now' || robot.germany.status === 'quote')).length;
   const groups = ROBOT_TYPES.filter((robotType) => !type || robotType === type).map((robotType) => {
-    const items = sold.filter((robot) => robot.robotType === robotType).sort((a, b) => ORDER.indexOf(a.germany.status) - ORDER.indexOf(b.germany.status) || (fits[b.id] ?? 0) - (fits[a.id] ?? 0) || a.name.localeCompare(b.name));
+    const items = sold.filter((robot) => robot.robotType === robotType).sort((a, b) => ORDER.indexOf(a.germany.status) - ORDER.indexOf(b.germany.status) || byProof(a, b) || a.name.localeCompare(b.name));
     return { robotType, items, visible: robotType === 'specialised' ? [] : preview ? items.slice(0, PREVIEW) : items };
   }).filter((group) => group.items.length);
   const tiles = new Map((await germanTiles(groups.flatMap((group) => group.visible), new Map(marketRobots.map((robot) => [robot.id, robot])), fits)).map((tile) => [tile.id, tile]));

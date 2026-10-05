@@ -15,10 +15,18 @@
 .mk-axes { display: flex; align-items: center; gap: 16px; padding: 4px 24px 0; flex-wrap: wrap; }
 .mk-axes label { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
 .mk-axes select, .mk-selects select, .mk-selects input[type=search] { height: 32px; border: 1px solid var(--edge-strong); border-radius: 8px; background: var(--card); color: var(--foreground); padding: 0 8px; font-size: 14px; }
-.mk-key { margin-left: auto; display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--faint); }
-.mk-key-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--muted); margin-left: 8px; }
-.mk-key-dot.is-full { background: var(--muted); }
-.mk-key-dot.is-half { background: color-mix(in srgb, var(--muted) 35%, var(--card)); }
+/* The proof scale (tokens --proof-* in globals.css): a filled dot per level, a hollow grey dot for no proof,
+   an open ring when the best proof comes from robots not sold in Germany. Text always names the level. */
+.mk-proof-key { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; padding: 8px 24px 0; font-size: 12px; line-height: 16px; color: var(--muted); }
+.mk-proof-key li { display: inline-flex; align-items: center; gap: 8px; }
+.mk-key-dot { --dot: var(--edge-strong); display: inline-block; flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--dot); border: 1px solid var(--card); box-shadow: 0 0 0 1px var(--dot); }
+.mk-key-dot.is-none { width: 8px; height: 8px; margin: 0 2px; background: var(--card); border: 1.5px solid var(--faint); box-shadow: none; }
+.is-claim { --dot: var(--proof-claim); --dot-edge: var(--proof-claim-edge); }
+.is-demo { --dot: var(--proof-demo); }
+.is-pilot { --dot: var(--proof-pilot); }
+.is-deployment { --dot: var(--proof-deployment); }
+.mk-key-dot.is-claim { box-shadow: 0 0 0 1px var(--dot-edge); }
+.mk-key-dot.is-abroad { background: var(--card); border: 2.5px solid var(--dot); box-shadow: none; }
 
 .mk-chart { position: relative; padding: 0 16px; }
 .mk-chart svg { display: block; width: 100%; height: auto; }
@@ -26,18 +34,22 @@
 .mk-frame { stroke: var(--edge-strong); stroke-width: 1; }
 .mk-tick { font-size: 13px; fill: var(--muted); }
 .mk-axis-title { font-size: 13px; font-weight: 600; fill: var(--foreground); }
-.mk-clouds text { font-size: 14px; font-weight: 600; paint-order: stroke; stroke: var(--card); stroke-width: 5px; stroke-linejoin: round; pointer-events: none; }
+.mk-clouds text { font-size: 14px; font-weight: 600; fill: var(--muted); paint-order: stroke; stroke: var(--card); stroke-width: 5px; stroke-linejoin: round; pointer-events: none; }
+.mk-cloud { fill: var(--subtle); fill-opacity: 0.6; stroke: var(--edge-strong); }
 .mk-dot { cursor: pointer; outline: none; }
 .mk-hit { fill: transparent; }
-.mk-fill { fill: var(--card); stroke: var(--dot); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; transition: transform 0.12s ease; }
-.mk-dot.has-robots .mk-fill { fill: var(--dot); stroke: var(--card); stroke-width: 1; }
-.mk-dot.has-maybe .mk-fill { fill: color-mix(in srgb, var(--dot) 35%, var(--card)); stroke: var(--dot); stroke-width: 1.2; }
+/* Proven dots sit on a 1 px ring of the surface so neighbours stay apart; no proof is a small hollow dot. */
+.mk-fill { fill: var(--dot); stroke: var(--card); stroke-width: 1; transform-box: fill-box; transform-origin: center; transition: transform 0.12s ease; }
+.mk-dot.is-none .mk-fill { fill: var(--card); stroke: var(--faint); stroke-width: 1.2; }
+.mk-dot.is-claim .mk-fill { stroke: var(--dot-edge); }
+.mk-dot.is-abroad .mk-fill { fill: var(--card); stroke: var(--dot); stroke-width: 2.4; }
 .mk-dot:hover .mk-fill, .mk-dot:focus-visible .mk-fill { transform: scale(1.4); }
-.mk-ring { fill: none; stroke: var(--dot); stroke-width: 2; }
+.mk-ring { fill: none; stroke: var(--foreground); stroke-width: 1.5; }
+@media (prefers-reduced-motion: reduce) { .mk-fill { transition: none; } }
 .mk-dot:focus-visible .mk-hit { stroke: var(--foreground); stroke-dasharray: 2 2; }
 .mk-empty-text { font-size: 16px; fill: var(--muted); }
 .mk-tooltip { position: absolute; z-index: 5; display: flex; flex-direction: column; gap: 4px; width: 240px; padding: 12px 16px; transform: translateX(-50%); background: var(--card); border: 1px solid var(--edge); border-radius: 12px; box-shadow: var(--shadow-float); pointer-events: none; }
-.mk-tooltip span { font-size: 12px; font-weight: 600; }
+.mk-tooltip-proof { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 600; color: var(--muted); }
 .mk-tooltip strong { font-size: 14px; line-height: 1.35; font-weight: 600; }
 .mk-tooltip small { font-size: 12px; color: var(--muted); }
 .mk-help { padding: 0 8px 12px; font-size: 12px; color: var(--faint); text-align: right; }
@@ -46,11 +58,11 @@
 .mk-list { padding: 8px 16px 16px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 16px; }
 .mk-list button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 12px; border-radius: 12px; text-align: left; cursor: pointer; }
 .mk-list button:hover, .mk-list button[aria-pressed=true] { background: var(--subtle); }
-.mk-list-dot { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid; flex-shrink: 0; }
 .mk-list-title { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .mk-list-title strong { font-size: 14px; font-weight: 500; }
 .mk-list-title small { font-size: 12px; color: var(--muted); }
-.mk-list-count { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mk-list-count { margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; max-width: 45%; font-size: 12px; line-height: 16px; color: var(--muted); text-align: right; font-variant-numeric: tabular-nums; }
+.mk-list-count b { font-weight: 600; color: var(--foreground); }
 .mk-more { justify-content: center; color: var(--muted); }
 
 .mk-filters { display: flex; flex-direction: column; gap: 16px; padding: 16px 24px; border-top: 1px solid var(--edge); background: var(--subtle); }
@@ -65,8 +77,8 @@
 .mk-toggle input { width: 16px; height: 16px; accent-color: var(--accent); }
 .mk-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; }
 .mk-legend button { display: inline-flex; align-items: center; gap: 8px; padding: 4px 0; font-size: 12px; color: var(--muted); cursor: pointer; }
-.mk-legend button > span { width: 8px; height: 8px; border-radius: 50%; }
-.mk-legend button[aria-pressed=true] { color: var(--foreground); font-weight: 600; }
+.mk-legend button:hover { color: var(--foreground); }
+.mk-legend button[aria-pressed=true] { color: var(--foreground); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
 .mk-reset { margin-left: auto; text-decoration: underline; text-underline-offset: 4px; }
 
 .mk-job { margin-top: 48px; scroll-margin-top: 80px; outline: none; }
@@ -76,6 +88,7 @@
 .mk-kicker { font-size: 12px; color: var(--muted); }
 .mk-job h2 { margin-top: 4px; font-size: 24px; line-height: 1.25; font-weight: 600; letter-spacing: -0.02em; }
 .mk-job-head p:not(.mk-kicker) { margin-top: 8px; max-width: 720px; font-size: 14px; line-height: 1.6; color: var(--muted); }
+.mk-job-head p.mk-job-proof { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; font-size: 14px; font-weight: 600; color: var(--foreground); }
 .mk-needs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .mk-needs li { padding: 4px 12px; border: 1px solid var(--edge); border-radius: 999px; font-size: 12px; color: var(--foreground); background: var(--card); }
 .mk-job-link { display: inline-flex; align-items: center; gap: 8px; flex-shrink: 0; height: 40px; padding: 0 16px; border: 1px solid var(--edge-strong); border-radius: 999px; font-size: 14px; }
@@ -117,6 +130,22 @@
 .mk-price { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-top: auto; }
 .mk-price strong { font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .mk-status { font-size: 12px; padding: 4px 8px; border-radius: 999px; white-space: nowrap; }
+/* Where robots have done a job (JobProofs), above the robots that fit it. */
+.mk-proofs { margin-bottom: 24px; padding: 16px; border: 1px solid var(--edge); border-radius: 12px; background: var(--card); }
+.mk-proofs h3 { font-size: 14px; line-height: 20px; font-weight: 600; }
+.mk-proofs ul { margin-top: 8px; }
+.mk-proofs li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 12px 0; border-top: 1px solid var(--edge); }
+.mk-proofs li:first-child { border-top: 0; padding-top: 4px; }
+.mk-proofs li > .mk-key-dot { margin-top: 4px; }
+.mk-proofs li > div { min-width: 0; }
+.mk-proofs li p { font-size: 14px; line-height: 20px; overflow-wrap: anywhere; }
+.mk-proofs li p.mk-fine { margin-top: 4px; }
+.mk-proofs a { text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 4px; }
+.mk-proofs a:hover { text-decoration-color: var(--foreground); }
+.mk-proofs > p.mk-fine { margin-top: 8px; }
+.mk-proofs-none { margin-bottom: 24px; padding: 16px; border: 1px dashed var(--edge-strong); border-radius: 12px; font-size: 14px; line-height: 20px; color: var(--muted); }
+.mk-choices-head h3 small { font-size: 14px; font-weight: 400; color: var(--muted); }
+@media (max-width: 767px) { .mk-proofs li { grid-template-columns: 12px minmax(0, 1fr); } .mk-proofs li > .mk-status { grid-column: 2; justify-self: start; } }
 .mk-status[data-s=buy_now] { background: var(--verified-soft); color: var(--verified); }
 .mk-status[data-s=quote] { background: var(--assessed-soft); color: var(--assessed); }
 .mk-status[data-s=preorder] { background: var(--reported-soft); color: var(--reported); }

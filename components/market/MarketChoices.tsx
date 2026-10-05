@@ -9,6 +9,8 @@ import { isStrong, type Check, type RobotFit } from '@/lib/market/match';
 import type { RobotType } from '@/lib/market/schema';
 import { STAGE_LABELS } from '@/lib/market/vocab';
 import type { FormFactor } from '@/lib/spec/enums';
+import { JobProofs } from './JobProofs';
+import { choicesHeading } from '@/lib/market/proof';
 
 const GLYPH: Record<RobotType, FormFactor> = { humanoid: 'humanoid', quadruped: 'quadruped', mobile_manipulator: 'mobile_manipulator', specialised: 'dedicated_robot' };
 const CHECK_MARK: Record<Check, string> = { yes: '✓', add: '+', unknown: '?', no: '×' };
@@ -74,7 +76,7 @@ function Card({ robot, fit, siblings, robots, job, first, compared, full, onComp
   const specs = robot.specs.filter((spec) => spec.key !== 'ip_rating').slice(0, 3);
   return <article className="mk-robot" data-robot={robot.id} data-verdict={fit.verdict} data-type={robot.robotType}>
     <div className="mk-robot-pic">
-      {first && (fit.verdict === 'done' || fit.verdict === 'similar' || fit.verdict === 'fits') ? <span className="mk-best">Best match</span> : null}
+      {first && (fit.verdict === 'done' || fit.verdict === 'similar' || fit.verdict === 'fits') ? <span className="mk-best">{fit.evidence && (fit.evidence.stage === 'deployment' || fit.evidence.stage === 'pilot') ? 'Proven on this job' : 'Best match'}</span> : null}
       <Picture robot={robot} className="mk-robot-img" />
       <label className="mk-compare" title={full && !compared ? 'Compare up to four robots' : 'Add to comparison'}>
         <input type="checkbox" checked={compared} disabled={full && !compared} onChange={onCompare} aria-label={'Compare ' + robot.name} /><span>Compare</span>
@@ -149,15 +151,16 @@ export function MarketChoices({ job, type: initialType, contact }: { job: JobDet
   const makers = new Set(fitting.map((fit) => robots[fit.robotId].maker)).size;
 
   return <section className="mk-choices" aria-label="Robots for this job" data-testid="robot-choices">
+    <JobProofs proofs={job.proofs} />
     <div className="mk-choices-head">
-      <h3>{fitting.length ? fitting.length + ' robot' + (fitting.length > 1 ? 's' : '') + (makers > 1 && makers < fitting.length ? ' from ' + makers + ' makers' : '') + ' you can buy in Germany fit this job' : all.length ? 'No robot fits outright; ' + all.length + ' could with add-ons or a trial' : 'No robot you can buy in Germany yet'}</h3>
+      <h3>{choicesHeading(fitting, all.length)}{makers > 1 && makers < fitting.length ? <small> · from {makers} makers</small> : null}</h3>
       {all.length ? <div className="mk-chips" role="group" aria-label="Robot type">
         <button type="button" aria-pressed={!type} onClick={() => setType('')}>All {pool.length}</button>
         {TYPES.filter((robotType) => counts[robotType]).map((robotType) => <button type="button" key={robotType} aria-pressed={type === robotType} onClick={() => setType(robotType)}>{TYPE_PLURAL[robotType]} {counts[robotType]}</button>)}
       </div> : null}
     </div>
     {all.length ? <>
-      <p className="mk-muted">Best match first: robots that have done this job, then robots that did similar work, then robots that fit on paper, then robots that need add-ons. {compare.length ? compare.length + ' selected to compare.' : 'Tick up to four to compare.'}</p>
+      <p className="mk-muted">Best match first: robots with proof for this job, strongest proof first, then robots that did similar work, then robots that fit on paper, then robots that need add-ons. {compare.length ? compare.length + ' selected to compare.' : 'Tick up to four to compare.'}</p>
       <div className="mk-grid" data-testid="robot-grid">{entries.slice(0, limit).map(({ fit, siblings }, index, visible) => <Card key={fit.robotId} robot={robots[fit.robotId]} fit={fit} siblings={siblings} robots={robots} job={job} first={index === 0 && !type && (visible.length === 1 || visible[1].fit.score < fit.score)} compared={compare.includes(fit.robotId)} full={compare.length >= 4} onCompare={() => toggle(fit.robotId)} />)}</div>
       {entries.length > limit ? <button type="button" className="mk-more-options" onClick={() => setLimit(limit + 12)}>Show {Math.min(12, entries.length - limit)} more of {entries.length - limit}</button> : null}
       {strong.length && weak.length ? <button type="button" className="mk-more-options" aria-expanded={more} onClick={() => setMore(!more)}>{more ? 'Show only robots that fit' : weak.length + ' more robot' + (weak.length > 1 ? 's' : '') + ' could work with add-ons or a trial'}</button> : null}

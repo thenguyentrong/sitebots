@@ -7,7 +7,9 @@ import type { RobotImage } from '@/lib/queries/robots';
 import type { RobotCard } from '@/lib/spec/types';
 import { STATUS_LABELS, TYPE_LABELS, priceText, toCard, type RobotCardData } from './cards';
 import { cataloguePathFor, marketByPath } from './links';
+import type { RobotJobStats } from './jobs';
 import type { MarketRobot, Picture } from './load';
+import { jobsLine } from './proof';
 
 // Server side. Market records and catalogue rows become the same robot card, so both views of the
 // robots page look alike: pictures to page through, the 3D model where one exists, price and the
@@ -165,7 +167,7 @@ function modelFor(row: Row): TileModel | null {
 const plural = (n: number, word: string) => n + ' ' + word + (n === 1 ? '' : 's');
 
 /** Cards for the German view, in the order given. */
-export async function germanTiles(robots: RobotCardData[], market: Map<string, MarketRobot>, fits: Record<string, number>): Promise<TileData[]> {
+export async function germanTiles(robots: RobotCardData[], market: Map<string, MarketRobot>, fits: Record<string, RobotJobStats>): Promise<TileData[]> {
   const pathOf = (id: string) => cataloguePathFor(id)?.replace(/^[/]robots[/]/, '') ?? null;
   const paths = [...new Set(robots.map((robot) => pathOf(robot.id)).filter((path): path is string => Boolean(path)))];
   const rows = await catalogueRows(paths);
@@ -184,7 +186,7 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
     const record = market.get(card.id);
     const own = row ? shots.get(row.id) ?? [] : [];
     const sellers = card.germany.sellers.length;
-    const jobs = fits[card.id] ?? 0;
+    const jobs = jobsLine(fits[card.id]);
     return {
       id: card.id,
       href: card.href,
@@ -195,7 +197,7 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
       model,
       price: priceText(card),
       status: { label: STATUS_LABELS[card.germany.status], tone: card.germany.status },
-      fine: (sellers ? plural(sellers, 'seller') + ' · ' : '') + (jobs ? 'fits ' + plural(jobs, 'job') + ' on the map' : 'no job on the map yet'),
+      fine: (sellers ? plural(sellers, 'seller') + ' · ' : '') + jobs,
       compare: row ? { id: row.id, name: row.name } : null,
     };
   });

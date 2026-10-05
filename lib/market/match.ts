@@ -30,7 +30,9 @@ type Robot = Pick<Dossier, 'id' | 'name' | 'robotType' | 'specialisedFor' | 'cap
 export function bestEvidence(robot: Pick<Dossier, 'evidence' | 'sources'>, useCaseId: string, related?: (taskId: string) => boolean): BestEvidence | null {
   const entries = robot.evidence.filter((item) => related ? !item.taskIds.includes(useCaseId) && item.taskIds.some(related) : item.taskIds.includes(useCaseId));
   if (!entries.length) return null;
-  const best = entries.reduce((a, b) => (STAGE_RANK[b.stage] > STAGE_RANK[a.stage] ? b : a));
+  // Strongest proof first; at the same stage, work in Germany, then the newer, is what a buyer here asks about.
+  const german = (item: { where: string | null }) => (/germany|deutschland/i.test(item.where ?? '') ? 1 : 0);
+  const best = entries.reduce((a, b) => (STAGE_RANK[b.stage] - STAGE_RANK[a.stage] || german(b) - german(a) || (b.date ?? '').localeCompare(a.date ?? '')) > 0 ? b : a);
   return { stage: best.stage, task: best.task, where: best.where, date: best.date, url: robot.sources.find((source) => source.id === best.sourceId)?.url ?? null };
 }
 

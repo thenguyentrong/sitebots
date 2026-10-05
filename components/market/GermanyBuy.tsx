@@ -41,8 +41,9 @@ function JobLinks({ jobs }: { jobs: RobotJob[] }) {
 
 export function RobotJobs({ robotId }: { robotId: string }) {
   const jobs = jobsForRobot(robotId);
+  // "Has done" used to hold a maker's claim and a year in daily use alike; each proof level is its own group.
   const groups: [string, RobotJob[]][] = [
-    ['Has done', jobs.filter((job) => job.fit.verdict === 'done')],
+    ...(['deployment', 'pilot', 'demo', 'claim'] as const).map((stage): [string, RobotJob[]] => [STAGE_LABELS[stage], jobs.filter((job) => job.fit.verdict === 'done' && job.fit.evidence?.stage === stage)]),
     ['Did similar work', jobs.filter((job) => job.fit.verdict === 'similar')],
     ['Fits on paper', jobs.filter((job) => job.fit.verdict === 'fits')],
     ['Needs add-ons or a trial', jobs.filter((job) => job.fit.verdict === 'stretch')],
