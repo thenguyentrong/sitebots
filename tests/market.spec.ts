@@ -208,3 +208,18 @@ test.describe('the project map', () => {
     await expect(where.locator('.map-detail .map-project').first()).toContainText('Break out concrete');
   });
 });
+
+test.describe('proof ladder and timeline', () => {
+  test('a job page shows how far robots have got with the job', async ({ page }) => {
+    await page.goto('/use-cases/site_demolition/concrete-breaking');
+    await expect(page.locator('.mk-ladder [aria-current="step"]')).toContainText('In daily use');
+    await page.goto('/use-cases/site_plumbing/press-fitting-pipes');
+    await expect(page.locator('.mk-ladder [aria-current="step"]')).toContainText('No proof yet');
+  });
+
+  test('a robot page shows its proof over time', async ({ page }) => {
+    await page.goto('/market/km-robotics-wltr');
+    await expect(page.locator('.mk-timeline svg circle')).not.toHaveCount(0);
+    await expect(page.locator('.mk-timeline figcaption')).toContainText('In daily use');
+  });
+});

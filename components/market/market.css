@@ -130,25 +130,46 @@
 .mk-price { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-top: auto; }
 .mk-price strong { font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
 .mk-status { font-size: 12px; padding: 4px 8px; border-radius: 999px; white-space: nowrap; }
+/* A robot's proof over time (ProofTimeline), above its list of evidence. */
+.mk-timeline { margin-bottom: 16px; }
+.mk-timeline svg { display: block; width: 100%; height: auto; }
+.mk-timeline-axis, .mk-timeline-tick { stroke: var(--edge-strong); stroke-width: 1; }
+.mk-timeline-year { font-size: 12px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.mk-timeline-dot { fill: var(--dot); stroke: var(--card); stroke-width: 1.5; }
+.mk-timeline-dot.is-claim { stroke: var(--proof-claim-edge); stroke-width: 1; }
+.mk-timeline figcaption { display: flex; flex-wrap: wrap; gap: 4px 16px; margin-top: 4px; font-size: 12px; line-height: 16px; color: var(--muted); }
+.mk-timeline figcaption span { display: inline-flex; align-items: center; gap: 8px; }
+/* The proof ladder (JobProofs): five steps from no proof to daily use, each step in its own proof
+   colour, filled up to the job's best proof; the step the job stands on is bold. */
+.mk-ladder { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; margin-bottom: 16px; }
+.mk-ladder li { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.mk-ladder li.is-none { --dot: var(--faint); }
+.mk-ladder-bar { height: 8px; border-radius: 4px; background: var(--subtle); box-shadow: inset 0 0 0 1px var(--edge-strong); }
+.mk-ladder li[data-reached] .mk-ladder-bar { background: var(--dot); box-shadow: none; }
+.mk-ladder li.is-claim[data-reached] .mk-ladder-bar { box-shadow: inset 0 0 0 1px var(--proof-claim-edge); }
+.mk-ladder strong { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--muted); }
+.mk-ladder li[aria-current] strong { font-weight: 700; color: var(--foreground); }
+.mk-ladder small { font-size: 11px; line-height: 14px; color: var(--faint); font-variant-numeric: tabular-nums; }
+.mk-proofs.is-empty .mk-proofs-none { margin: 0; padding: 0; border: 0; }
 /* Where robots have done a job (JobProofs), above the robots that fit it. */
 .mk-proofs { margin-bottom: 24px; padding: 16px; border: 1px solid var(--edge); border-radius: 12px; background: var(--card); }
 .mk-proofs h3 { font-size: 14px; line-height: 20px; font-weight: 600; }
 .mk-proofs ul { margin-top: 8px; }
-.mk-proofs li { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 12px 0; border-top: 1px solid var(--edge); }
-.mk-proofs li:first-child { border-top: 0; padding-top: 4px; }
+.mk-proofs > ul > li { display: grid; grid-template-columns: 72px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 12px 0; border-top: 1px solid var(--edge); }
+.mk-proofs > ul > li:first-child { border-top: 0; padding-top: 4px; }
 .mk-proof-thumb { display: block; width: 72px; height: 54px; overflow: hidden; border-radius: 8px; background: var(--subtle); }
 .mk-proof-thumb img { width: 100%; height: 100%; padding: 4px; object-fit: contain; }
 .mk-proof-thumb[data-in-use] img { padding: 0; object-fit: cover; }
-.mk-proofs li p .mk-key-dot { display: inline-block; margin-right: 8px; vertical-align: -1px; }
-.mk-proofs li > div { min-width: 0; }
-.mk-proofs li p { font-size: 14px; line-height: 20px; overflow-wrap: anywhere; }
-.mk-proofs li p.mk-fine { margin-top: 4px; }
+.mk-proofs > ul > li p .mk-key-dot { display: inline-block; margin-right: 8px; vertical-align: -1px; }
+.mk-proofs > ul > li > div { min-width: 0; }
+.mk-proofs > ul > li p { font-size: 14px; line-height: 20px; overflow-wrap: anywhere; }
+.mk-proofs > ul > li p.mk-fine { margin-top: 4px; }
 .mk-proofs a { text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 4px; }
 .mk-proofs a:hover { text-decoration-color: var(--foreground); }
 .mk-proofs > p.mk-fine { margin-top: 8px; }
 .mk-proofs-none { margin-bottom: 24px; padding: 16px; border: 1px dashed var(--edge-strong); border-radius: 12px; font-size: 14px; line-height: 20px; color: var(--muted); }
 .mk-choices-head h3 small { font-size: 14px; font-weight: 400; color: var(--muted); }
-@media (max-width: 767px) { .mk-proofs li { grid-template-columns: 56px minmax(0, 1fr); } .mk-proof-thumb { width: 56px; height: 42px; } .mk-proofs li > .mk-status { grid-column: 2; justify-self: start; } }
+@media (max-width: 767px) { .mk-proofs > ul > li { grid-template-columns: 56px minmax(0, 1fr); } .mk-proof-thumb { width: 56px; height: 42px; } .mk-proofs > ul > li > .mk-status { grid-column: 2; justify-self: start; } }
 .mk-status[data-s=buy_now] { background: var(--verified-soft); color: var(--verified); }
 .mk-status[data-s=quote] { background: var(--assessed-soft); color: var(--assessed); }
 .mk-status[data-s=preorder] { background: var(--reported-soft); color: var(--reported); }

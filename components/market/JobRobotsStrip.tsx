@@ -19,7 +19,7 @@ export function JobRobotsStrip({ jobId }: { jobId: string }) {
   const shown = (strong.length ? strong : job.fits.options).slice(0, 4);
   const href = '/?usecase=' + encodeURIComponent(job.id) + '#explore';
   return <section className="mk-strip" aria-labelledby="robots-here">
-    <JobProofs proofs={job.proofs} />
+    <JobProofs proofs={job.proofs} fits={strong.length} />
     <div className="mk-strip-head">
       <h2 id="robots-here">{choicesHeading(strong, job.fits.options.length)}</h2>
       <Link href={href}>Compare them and see sellers →</Link>

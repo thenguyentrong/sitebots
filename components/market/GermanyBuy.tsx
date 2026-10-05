@@ -3,6 +3,7 @@ import { STATUS_LABELS, priceText, toCard } from '@/lib/market/cards';
 import { jobsForRobot, type RobotJob } from '@/lib/market/jobs';
 import type { MarketRobot } from '@/lib/market/load';
 import { STAGE_LABELS } from '@/lib/market/vocab';
+import { ProofTimeline } from './ProofTimeline';
 import './market.css';
 
 // Shared pieces of a robot page: how to buy it in Germany, the jobs it fits and where it has worked.
@@ -62,12 +63,12 @@ export function RobotEvidence({ robots }: { robots: MarketRobot[] }) {
   const items = robots.flatMap((robot) => robot.evidence.map((item) => ({ item, source: robot.sources.find((source) => source.id === item.sourceId) })))
     .filter(({ item }) => { const key = item.task + '|' + (item.where ?? ''); if (seen.has(key)) return false; seen.add(key); return true; });
   if (!items.length) return null;
-  return <ul className="mk-evidence">{items.map(({ item, source }, index) => <li key={index}>
+  return <><ProofTimeline items={items.map(({ item }) => item)} /><ul className="mk-evidence">{items.map(({ item, source }, index) => <li key={index}>
     <span className="mk-verdict" data-v={item.stage === 'claim' ? 'stretch' : item.stage === 'demo' ? 'fits' : 'done'}>{STAGE_LABELS[item.stage]}</span>
     <p><strong>{item.task}</strong>{item.where ? ' · ' + item.where : ''}{item.date ? ' · ' + item.date : ''}</p>
     {item.note ? <p className="mk-muted">{item.note}</p> : null}
     {source ? <a className="mk-fine" href={source.url} target="_blank" rel="noopener noreferrer">{source.publisher} ↗</a> : null}
-  </li>)}</ul>;
+  </li>)}</ul></>;
 }
 
 const RANK = { buy_now: 0, quote: 1, preorder: 2, not_sold: 3 } as const;

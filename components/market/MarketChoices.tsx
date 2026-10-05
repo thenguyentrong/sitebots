@@ -151,7 +151,7 @@ export function MarketChoices({ job, type: initialType, contact }: { job: JobDet
   const makers = new Set(fitting.map((fit) => robots[fit.robotId].maker)).size;
 
   return <section className="mk-choices" aria-label="Robots for this job" data-testid="robot-choices">
-    <JobProofs proofs={job.proofs} />
+    <JobProofs proofs={job.proofs} fits={fitting.length} />
     <div className="mk-choices-head">
       <h3>{choicesHeading(fitting, all.length)}{makers > 1 && makers < fitting.length ? <small> · from {makers} makers</small> : null}</h3>
       {all.length ? <div className="mk-chips" role="group" aria-label="Robot type">
