@@ -184,3 +184,14 @@ test.describe('the answer on the landing', () => {
     await expect(page.getByTestId('job-proofs')).toContainText('Where robots have done it');
   });
 });
+
+test.describe('the answer by trade', () => {
+  test('shows every site job as a square in its trade, and the spider of paper against proof', async ({ page }) => {
+    await page.goto('/');
+    const trades = page.locator('#trades');
+    await expect(trades.getByRole('heading', { level: 2 })).toHaveText('Which trades robots reach today');
+    expect(await trades.locator('.trade-sq').count()).toBeGreaterThan(100);
+    await expect(trades.getByRole('img', { name: /by kind of work/ })).toBeVisible();
+    await expect(trades.locator('.spider-table tbody tr')).not.toHaveCount(0);
+  });
+});

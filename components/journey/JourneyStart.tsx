@@ -8,6 +8,7 @@ import { SITE } from '@/lib/site';
 import { HomeHero } from './HomeHero';
 import { Icon } from './Icon';
 import { TodayAnswer } from './TodayAnswer';
+import { TradeChart } from './TradeChart';
 
 /** The hero's stills, rendered from the live job site by scripts/assets/render-lineup.mjs: the desktop
  *  poster under the live scene, and the strip phones scroll sideways. */
@@ -56,6 +57,7 @@ export function JourneyStart({ jobs, initialDetail, sold, answer }: { jobs: JobM
     </HomeHero>
     <div className="jp-page plan-page home-below">
       <TodayAnswer answer={answer} total={jobs.length} />
+      <TradeChart answer={answer} />
       <ExplorerFromUrl jobs={jobs} initialDetail={initialDetail} contact={SITE.email || undefined} />
     </div>
   </>;

@@ -1,5 +1,6 @@
+import { OPPORTUNITY_CLUSTERS } from '@/lib/discovery/model';
 import { loadJobs, type JobPoint, type JobProof } from './jobs';
-import { ORDERABLE, STAGE_RANK } from './match';
+import { ORDERABLE, STAGE_RANK, isStrong } from './match';
 import { PROOF, type ProofLevel } from './vocab';
 
 // Server-side only. The landing's answer to "which jobs can robots do today, and where do you buy
@@ -25,7 +26,13 @@ export type Answer = {
   general: { sold: number; levels: Record<ProofLevel, number>; robots: string[] };
   /** The robots in the landing's 3D row, by catalogue page, with their best proof on a site job. */
   lineup: Record<string, ProofLevel>;
+  /** Every site job under its trade, proven trades first: one square per job in the trade chart. */
+  trades: { name: string; jobs: TradeJob[] }[];
+  /** Per kind of work: site jobs, those a robot sold here fits on paper, those done on real sites. */
+  kinds: { id: string; label: string; jobs: number; paper: number; proven: number }[];
 };
+/** `abroad`: the best proof comes from robots not sold in Germany. */
+export type TradeJob = { id: string; title: string; href: string; level: ProofLevel; abroad: boolean };
 
 const PROVEN = STAGE_RANK.pilot;
 const orderable = (proof: JobProof) => ORDERABLE.includes(proof.status);
@@ -70,6 +77,35 @@ export function loadAnswer(lineupHrefs: readonly string[] = []): Answer {
     checked: site.length, levels, proven, shown,
     inUseHere: proven.filter((job) => job.buy?.stage === 'deployment').length,
     general: { sold, levels: general, robots: [...robots].sort() },
-    lineup,
+    lineup, trades: tradesOf(site), kinds: kindsOf(site),
   };
+}
+
+function tradeJob(job: JobPoint): TradeJob {
+  const world = rankOf(job.proofs), here = rankOf(job.proofs.filter(orderable));
+  return { id: job.id, title: job.title, href: job.href, level: PROOF[world], abroad: world > here };
+}
+
+/** Trades with proof first (most proven jobs, then the stronger proof), then the rest by size; inside a
+ *  trade the stronger proof comes first, so each row reads from left to right. */
+function tradesOf(site: JobPoint[]): Answer['trades'] {
+  const byTrade = new Map<string, TradeJob[]>();
+  for (const job of site) byTrade.set(job.setting, [...(byTrade.get(job.setting) ?? []), tradeJob(job)]);
+  const rank = (job: TradeJob) => PROOF.indexOf(job.level);
+  const proven = (jobs: TradeJob[]) => jobs.filter((job) => rank(job) >= PROVEN).length;
+  return [...byTrade].map(([name, jobs]) => ({ name, jobs: [...jobs].sort((a, b) => rank(b) - rank(a) || a.title.localeCompare(b.title)) }))
+    .sort((a, b) => proven(b.jobs) - proven(a.jobs) || rank(b.jobs[0]) - rank(a.jobs[0]) || b.jobs.length - a.jobs.length || a.name.localeCompare(b.name));
+}
+
+/** The spider chart's numbers: per kind of work, fits on paper (a robot you can buy here fits what the
+ *  job needs) against done on real sites (daily use or a pilot, by any robot). */
+function kindsOf(site: JobPoint[]): Answer['kinds'] {
+  return OPPORTUNITY_CLUSTERS.flatMap((cluster) => {
+    const jobs = site.filter((job) => job.clusterId === cluster.id);
+    return jobs.length ? [{
+      id: cluster.id, label: cluster.label, jobs: jobs.length,
+      paper: jobs.filter((job) => job.fits.options.some(isStrong)).length,
+      proven: jobs.filter((job) => rankOf(job.proofs) >= PROVEN).length,
+    }] : [];
+  });
 }

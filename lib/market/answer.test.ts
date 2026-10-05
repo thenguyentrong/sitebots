@@ -38,6 +38,18 @@ describe('the landing answer', () => {
     }
   });
 
+  it('puts every site job under one trade and one kind of work, with paper and proof inside the total', () => {
+    const squares = answer.trades.flatMap((trade) => trade.jobs.map((job) => job.id));
+    expect(squares.length).toBe(answer.checked);
+    expect(new Set(squares).size).toBe(answer.checked);
+    expect(answer.kinds.reduce((sum, kind) => sum + kind.jobs, 0)).toBe(answer.checked);
+    for (const kind of answer.kinds) {
+      expect(kind.paper, kind.id).toBeLessThanOrEqual(kind.jobs);
+      expect(kind.proven, kind.id).toBeLessThanOrEqual(kind.jobs);
+    }
+    expect(answer.kinds.reduce((sum, kind) => sum + kind.proven, 0)).toBe(answer.levels.deployment + answer.levels.pilot);
+  });
+
   it('knows how far each robot in the landing row got on site jobs', () => {
     expect(Object.keys(answer.lineup).sort()).toEqual(LINEUP.map((robot) => robot.href).sort());
   });

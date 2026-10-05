@@ -273,6 +273,51 @@
 .today-row a:hover, .today-general a:hover, .today-next a:hover { text-decoration-color: var(--foreground); }
 .today-row-buy { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
 .today-row-buy small { font-size: 12px; line-height: 16px; color: var(--muted); white-space: nowrap; }
+/* The answer by trade (TradeChart): one square per site job, then the spider of paper against proof. */
+.home-trades { padding-top: 64px; scroll-margin-top: 80px; }
+.home-trades h2 { margin-top: 8px; font-size: 40px; line-height: 48px; font-weight: 600; letter-spacing: -.02em; text-wrap: balance; }
+.home-trades [data-level='claim'] { --dot: var(--proof-claim); }
+.home-trades [data-level='demo'] { --dot: var(--proof-demo); }
+.home-trades [data-level='pilot'] { --dot: var(--proof-pilot); }
+.home-trades [data-level='deployment'] { --dot: var(--proof-deployment); }
+.trade-rows { columns: 2; column-gap: 48px; margin-top: 32px; }
+.trade-rows li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--edge); break-inside: avoid; }
+.trade-name { font-size: 14px; line-height: 20px; }
+.trade-squares { display: inline-flex; flex-wrap: wrap; gap: 3px; vertical-align: middle; }
+.trade-sq { --dot: var(--card); display: block; width: 14px; height: 14px; border-radius: 3px; background: var(--dot); box-shadow: inset 0 0 0 1px var(--edge-strong); }
+.trade-sq[data-level='claim'], .trade-sq[data-level='demo'], .trade-sq[data-level='pilot'], .trade-sq[data-level='deployment'] { box-shadow: none; }
+.trade-sq[data-level='claim'] { box-shadow: inset 0 0 0 1px var(--proof-claim-edge); }
+.trade-sq[data-abroad] { background: var(--card); box-shadow: inset 0 0 0 2.5px var(--dot); }
+.trade-sq:hover, .trade-sq:focus-visible { outline: 2px solid var(--foreground); outline-offset: 1px; }
+.trade-empty { margin-top: 16px; font-size: 12px; line-height: 24px; color: var(--muted); }
+.trade-empty strong { color: var(--foreground); font-weight: 600; }
+.trade-empty .trade-squares { gap: 2px; }
+.trade-empty .trade-sq { width: 10px; height: 10px; border-radius: 2px; }
+/* The spider beside what it says: the finding, the key and the numbers as a table. */
+.spider-layout { display: grid; grid-template-columns: minmax(0, 720px) minmax(0, 1fr); gap: 32px; align-items: center; margin-top: 48px; }
+.trades-spider { min-width: 0; }
+.spider { display: block; width: 100%; height: auto; overflow: visible; }
+.spider-grid polygon, .spider-grid line { fill: none; stroke: var(--edge); stroke-width: 1; }
+.spider-grid text { font-size: 11px; fill: var(--faint); }
+.spider-paper { fill: none; stroke: var(--faint); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.spider-proven { fill: var(--proof-deployment); fill-opacity: 0.22; stroke: var(--proof-deployment); stroke-width: 2; stroke-linejoin: round; }
+.spider-dot { fill: var(--proof-deployment); stroke: var(--card); stroke-width: 1.5; }
+.spider-name { font-size: 14px; font-weight: 600; fill: var(--foreground); }
+.spider-values { font-size: 13px; fill: var(--muted); }
+.spider-side h3 { font-size: 18px; line-height: 26px; font-weight: 600; }
+.spider-side > p:not(.spider-key) { margin-top: 8px; font-size: 14px; line-height: 20px; color: var(--muted); }
+.spider-key { display: flex; align-items: center; gap: 8px; margin-top: 12px; font-size: 12px; line-height: 16px; color: var(--muted); }
+.spider-key + .spider-key { margin-top: 4px; }
+.spider-key i { display: inline-block; flex-shrink: 0; width: 20px; height: 10px; }
+.spider-key i.is-proven { background: color-mix(in srgb, var(--proof-deployment) 22%, transparent); border: 2px solid var(--proof-deployment); }
+.spider-key i.is-paper { border: 1.5px dashed var(--faint); }
+.spider-table { width: 100%; margin-top: 16px; border-collapse: collapse; font-size: 12px; line-height: 16px; }
+.spider-table th, .spider-table td { padding: 4px 8px 4px 0; border-bottom: 1px solid var(--edge); text-align: left; font-variant-numeric: tabular-nums; }
+.spider-table thead th { color: var(--muted); font-weight: 500; }
+.spider-table tbody th { font-weight: 500; }
+@media (max-width: 1023px) { .spider-layout { grid-template-columns: minmax(0, 1fr); } .trades-spider { max-width: 720px; } }
+/* On a phone the spider keeps a readable size and scrolls sideways; the table holds the same numbers. */
+@media (max-width: 767px) { .home-trades h2 { font-size: 28px; line-height: 34px; } .home-trades { padding-top: 48px; } .trade-rows { columns: 1; } .trades-spider { overflow-x: auto; overscroll-behavior-x: contain; } .spider { min-width: 560px; } }
 /* Proven jobs as photo cards: the maker's photo (at work first), then job, robot, project and price. */
 .today-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
 .today-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--edge); border-radius: 12px; background: var(--card); }
