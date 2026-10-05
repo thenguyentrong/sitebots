@@ -36,6 +36,29 @@ function Row({ job }: { job: AnswerJob }) {
   </li>;
 }
 
+/** A proven job as a picture: the robot that did it (at work, where a photo shows it), the project and
+ *  what it costs here. The photo is the maker's, credited on it. */
+function Card({ job }: { job: AnswerJob }) {
+  const { best } = job;
+  const photo = best.photo;
+  const sold = ORDERABLE.includes(best.status);
+  return <li className="today-card" data-level={job.level}>
+    <Link href={job.href} className="today-card-photo" data-in-use={photo?.inUse ? '' : undefined} tabIndex={-1} aria-hidden="true">
+      {photo ? <img src={photo.src} alt="" width={photo.width} height={photo.height} loading="lazy" decoding="async" /> : null}
+      {photo?.inUse ? <span className="today-card-tag">At work</span> : null}
+      {photo ? <span className="today-card-credit">{photo.credit}</span> : null}
+    </Link>
+    <div className="today-card-body">
+      <p className="today-card-kicker"><span className="today-dot" data-level={job.level} data-abroad={sold ? undefined : ''} aria-hidden="true" />{PROOF_LABELS[job.level]} · {job.setting}</p>
+      <h4><Link href={job.href}>{job.title}</Link></h4>
+      <p className="today-card-robot"><Link href={best.href}>{best.name}</Link></p>
+      <p className="today-card-where">{best.where}{year(best.date) ? ', ' + year(best.date) : ''}{best.url ? <> · <a href={best.url} target="_blank" rel="noopener noreferrer">source ↗</a></> : null}</p>
+      <p className="today-card-buy"><span className="mk-status" data-s={best.status}>{STATUS_LABELS[best.status]}</span>{sold ? <strong>{best.price}</strong> : null}</p>
+      {photo ? <p className="today-card-credit-text" aria-hidden="true">Photo: {photo.credit}</p> : null}
+    </div>
+  </li>;
+}
+
 function General({ general }: { general: Answer['general'] }) {
   const { deployment, pilot } = general.levels;
   const who = names(general.robots);
@@ -73,7 +96,7 @@ export function TodayAnswer({ answer, total }: { answer: Answer; total: number }
 
     {here.length ? <div className="today-group" data-testid="today-in-use">
       <h3>{PROOF_LABELS.deployment}, with a robot you can buy in Germany <span>{plural(here.length, 'job')}</span></h3>
-      <ol className="today-rows">{here.map((job) => <Row key={job.id} job={job} />)}</ol>
+      <ol className="today-cards">{here.map((job) => <Card key={job.id} job={job} />)}</ol>
     </div> : null}
     {abroad.length ? <div className="today-abroad">
       <p><span className="today-dot" data-level="deployment" data-abroad="" aria-hidden="true" /><span><strong>Also {PROOF_LABELS.deployment.toLowerCase()}, with robots not sold in Germany:</strong> {abroad.map((job, index) => <span key={job.id}>{index ? '; ' : ''}<Link href={job.href}>{inSentence(job.title)}</Link></span>)}.</span></p>
@@ -81,7 +104,7 @@ export function TodayAnswer({ answer, total }: { answer: Answer; total: number }
     </div> : null}
     {piloted.length ? <div className="today-group">
       <h3>{PROOF_LABELS.pilot} <span>{plural(piloted.length, 'job')}</span></h3>
-      <ol className="today-rows">{piloted.map((job) => <Row key={job.id} job={job} />)}</ol>
+      <ol className="today-cards">{piloted.map((job) => <Card key={job.id} job={job} />)}</ol>
     </div> : null}
 
     {shown.length ? <details className="today-more">

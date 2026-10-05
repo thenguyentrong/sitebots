@@ -46,6 +46,10 @@ test.describe('job map', () => {
     await page.goto('/?usecase=facility_operation%2Fplant-room-rounds');
     const grid = page.getByTestId('robot-grid');
     const boxes = grid.getByRole('checkbox');
+    // The prebuilt page opens on the default job and switches to the one in the address after load;
+    // count the robots only once this job's own robots are in.
+    await expect(page.getByTestId('selected-job')).toContainText('plant rooms');
+    await expect(boxes.first()).toBeVisible();
     test.skip((await boxes.count()) < 2, 'fewer than two robots for this job');
     await boxes.nth(0).check();
     await boxes.nth(1).check();

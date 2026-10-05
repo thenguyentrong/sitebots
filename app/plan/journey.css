@@ -273,6 +273,40 @@
 .today-row a:hover, .today-general a:hover, .today-next a:hover { text-decoration-color: var(--foreground); }
 .today-row-buy { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
 .today-row-buy small { font-size: 12px; line-height: 16px; color: var(--muted); white-space: nowrap; }
+/* Proven jobs as photo cards: the maker's photo (at work first), then job, robot, project and price. */
+.today-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.today-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--edge); border-radius: 12px; background: var(--card); }
+/* The picture sits absolutely, so a tall photo cannot stretch the 16:10 box. */
+.today-card-photo { position: relative; display: block; aspect-ratio: 16 / 10; min-height: 0; overflow: hidden; background: var(--subtle); }
+.today-card-photo img { position: absolute; inset: 0; width: 100%; height: 100%; padding: 12px; object-fit: contain; }
+.today-card-photo[data-in-use] img { padding: 0; object-fit: cover; }
+.today-card-tag { position: absolute; top: 8px; left: 8px; padding: 2px 8px; border-radius: 999px; background: rgba(9, 9, 11, 0.78); color: #fafafa; font-size: 11px; line-height: 16px; font-weight: 600; }
+.today-card-credit { position: absolute; right: 8px; bottom: 8px; max-width: calc(100% - 16px); overflow: hidden; padding: 2px 6px; border-radius: 6px; background: rgba(255, 255, 255, 0.86); color: #52525b; font-size: 11px; line-height: 14px; white-space: nowrap; text-overflow: ellipsis; }
+.today-card-body { display: flex; flex: 1; flex-direction: column; gap: 4px; padding: 16px; }
+.today-card-credit-text { display: none; font-size: 11px; line-height: 14px; color: var(--faint); }
+.today-card-kicker { display: flex; align-items: center; gap: 8px; font-size: 12px; line-height: 16px; color: var(--muted); }
+.today-card h4 { margin-top: 4px; font-size: 16px; line-height: 22px; font-weight: 600; text-wrap: balance; }
+.today-card-robot { font-size: 14px; line-height: 20px; font-weight: 500; }
+.today-card-where { font-size: 12px; line-height: 16px; color: var(--muted); overflow-wrap: anywhere; }
+.today-card-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: auto; padding-top: 12px; font-size: 14px; line-height: 20px; }
+.today-card a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 4px; }
+.today-card a:hover { text-decoration-color: var(--foreground); }
+.today-card h4 a { text-decoration: none; }
+.today-card h4 a:hover { text-decoration: underline; }
+.today-card-photo:hover img { transform: scale(1.02); }
+.today-card-photo img { transition: transform 0.2s ease; }
+@media (prefers-reduced-motion: reduce) { .today-card-photo img { transition: none; } .today-card-photo:hover img { transform: none; } }
+@media (max-width: 1023px) { .today-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 639px) {
+  .today-cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .today-card { flex-direction: row; }
+  .today-card-photo { flex: 0 0 112px; aspect-ratio: auto; min-height: 112px; }
+  .today-card-photo img { padding: 8px; }
+  .today-card-credit { display: none; }
+  .today-card-credit-text { display: block; }
+  .today-card-body { padding: 12px; }
+  .today-card h4 { font-size: 15px; line-height: 20px; }
+}
 .today-abroad { margin-top: 24px; }
 .today-abroad > p { display: grid; grid-template-columns: 12px minmax(0, 1fr); gap: 16px; max-width: 880px; font-size: 14px; line-height: 20px; color: var(--muted); }
 .today-abroad > p > .today-dot { margin-top: 4px; }

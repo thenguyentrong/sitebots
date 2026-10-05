@@ -26,8 +26,10 @@ export type JobFits = { options: RobotFit[]; preorder: RobotFit[] };
  *  puts a buyer here first: stronger proof, then a robot you can order here, then work done in Germany. */
 export type JobProof = {
   robotId: string; name: string; maker: string; href: string; robotType: RobotType; status: GermanyStatus; price: string;
-  stage: EvidenceStage; task: string; where: string | null; date: string | null; url: string | null;
+  stage: EvidenceStage; task: string; where: string | null; date: string | null; url: string | null; photo: ProofPhoto | null;
 };
+/** `inUse`: the record marks the photo as the robot at work, not a product shot. */
+export type ProofPhoto = { src: string; width: number; height: number; alt: string; credit: string; inUse: boolean };
 export type JobPoint = {
   id: string; title: string; summary: string; setting: string; where: WhereId; family: FamilyId; clusterId: string;
   industries: IndustryId[]; href: string; needs: UseCaseNeeds | null; outdoor: boolean | null; conditions: ConditionId[]; x: number; y: number; fits: JobFits;
@@ -37,12 +39,20 @@ export type JobPoint = {
 
 const IN_GERMANY = /germany|deutschland/i;
 const orderable = (status: GermanyStatus) => ORDERABLE.includes(status);
+/** A photo of the robot at work where its record has one, else its product photo. */
+function proofPhoto(robot: MarketRobot): ProofPhoto | null {
+  const atWork = new Set(robot.images.filter((image) => image.kind === 'in_use').map((image) => image.url));
+  const pictures = [robot.picture, ...robot.gallery].filter((picture) => picture !== null);
+  const inUse = pictures.find((picture) => picture.sourceUrl && atWork.has(picture.sourceUrl));
+  const pick = inUse ?? pictures[0];
+  return pick ? { src: pick.src, width: pick.width, height: pick.height, alt: pick.alt, credit: pick.credit, inUse: Boolean(inUse) } : null;
+}
 function proofsFor(jobId: string, robots: readonly MarketRobot[]): JobProof[] {
   return robots.flatMap((robot) => {
     const best = bestEvidence(robot, jobId);
     return best ? [{
       robotId: robot.id, name: robot.name, maker: robot.maker, href: robotHref(robot.id), robotType: robot.robotType, status: robot.germany.status,
-      price: priceText(toCard(robot)), stage: best.stage, task: best.task, where: best.where, date: best.date, url: best.url,
+      price: priceText(toCard(robot)), stage: best.stage, task: best.task, where: best.where, date: best.date, url: best.url, photo: proofPhoto(robot),
     }] : [];
   }).sort((a, b) => STAGE_RANK[b.stage] - STAGE_RANK[a.stage] || Number(orderable(b.status)) - Number(orderable(a.status))
     || Number(IN_GERMANY.test(b.where ?? '')) - Number(IN_GERMANY.test(a.where ?? '')) || (b.date ?? '').localeCompare(a.date ?? '') || a.name.localeCompare(b.name));
