@@ -195,3 +195,16 @@ test.describe('the answer by trade', () => {
     await expect(trades.locator('.spider-table tbody tr')).not.toHaveCount(0);
   });
 });
+
+test.describe('the project map', () => {
+  test('pins the towns where robots worked and lists a town’s projects when picked', async ({ page }) => {
+    await page.goto('/');
+    const where = page.locator('#where');
+    await expect(where.getByRole('heading', { level: 2 })).toHaveText('Where robots work on sites today');
+    await expect(where.locator('.map-detail h3')).toContainText('In Germany');
+    const germany = where.getByRole('group', { name: 'Germany and its neighbours' });
+    await germany.getByRole('button', { name: /^Erlangen/ }).click();
+    await expect(where.locator('.map-detail h3')).toContainText('Erlangen');
+    await expect(where.locator('.map-detail .map-project').first()).toContainText('Break out concrete');
+  });
+});

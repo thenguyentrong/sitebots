@@ -2,10 +2,12 @@ import { getImageProps } from 'next/image';
 import Link from 'next/link';
 import { ExplorerFromUrl } from '@/components/market/ExplorerFromUrl';
 import type { Answer } from '@/lib/market/answer';
+import type { ProjectMapData } from '@/lib/market/places';
 import type { JobDetail, JobMapPoint } from '@/lib/market/jobs';
 import { LINEUP } from '@/lib/models/lineup';
 import { SITE } from '@/lib/site';
 import { HomeHero } from './HomeHero';
+import { ProjectMap } from './ProjectMap';
 import { Icon } from './Icon';
 import { TodayAnswer } from './TodayAnswer';
 import { TradeChart } from './TradeChart';
@@ -40,7 +42,7 @@ function shortAnswer(answer: Answer): string {
 }
 
 /** The landing: the job site at true scale behind the headline, the answer, then the job map with the robots you can buy in Germany. */
-export function JourneyStart({ jobs, initialDetail, sold, answer }: { jobs: JobMapPoint[]; initialDetail: JobDetail | null; sold: { robots: number; machines: number }; answer: Answer }) {
+export function JourneyStart({ jobs, initialDetail, sold, answer, projects }: { jobs: JobMapPoint[]; initialDetail: JobDetail | null; sold: { robots: number; machines: number }; answer: Answer; projects: ProjectMapData }) {
   const { props: { srcSet: strip } } = getImageProps({ alt: '', ...STRIP, sizes: '1200px' });
   const { props: poster } = getImageProps({ alt: ALT, ...POSTER, sizes: '100vw', loading: 'eager', fetchPriority: 'high' });
   return <>
@@ -57,6 +59,7 @@ export function JourneyStart({ jobs, initialDetail, sold, answer }: { jobs: JobM
     </HomeHero>
     <div className="jp-page plan-page home-below">
       <TodayAnswer answer={answer} total={jobs.length} />
+      <ProjectMap data={projects} />
       <TradeChart answer={answer} />
       <ExplorerFromUrl jobs={jobs} initialDetail={initialDetail} contact={SITE.email || undefined} />
     </div>

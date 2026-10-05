@@ -273,6 +273,57 @@
 .today-row a:hover, .today-general a:hover, .today-next a:hover { text-decoration-color: var(--foreground); }
 .today-row-buy { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; text-align: right; }
 .today-row-buy small { font-size: 12px; line-height: 16px; color: var(--muted); white-space: nowrap; }
+/* Where robots work (ProjectMap): Europe and a closer Germany side by side, pins in the proof colours.
+   Border lines keep one pixel at any size (non-scaling stroke); pins and labels scale with their map. */
+.home-where { padding-top: 64px; scroll-margin-top: 80px; }
+.home-where h2 { margin-top: 8px; font-size: 40px; line-height: 48px; font-weight: 600; letter-spacing: -.02em; text-wrap: balance; }
+.map-pair { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 24px; align-items: stretch; margin-top: 32px; }
+.map-box { display: flex; flex-direction: column; justify-content: center; min-width: 0; overflow: hidden; border: 1px solid var(--edge); border-radius: 12px; background: var(--card); }
+.map-svg { display: block; width: 100%; height: auto; }
+.map-box figcaption { padding: 8px 12px; border-top: 1px solid var(--edge); font-size: 12px; line-height: 16px; color: var(--muted); }
+.map-land path { fill: var(--subtle); stroke: var(--edge-strong); stroke-width: 1; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.map-land path[data-de] { fill: color-mix(in srgb, var(--edge) 70%, var(--subtle)); }
+.map-frame { fill: none; stroke: var(--foreground); stroke-width: 1; stroke-dasharray: 4 3; vector-effect: non-scaling-stroke; }
+.map-pin { --dot: var(--edge-strong); cursor: pointer; outline: none; }
+.map-pin.is-pilot, .map-dot.is-pilot { --dot: var(--proof-pilot); }
+.map-pin.is-deployment, .map-dot.is-deployment { --dot: var(--proof-deployment); }
+.map-hit { fill: transparent; }
+.map-mark { fill: var(--dot); stroke: var(--card); }
+.map-pin.is-abroad .map-mark { fill: var(--card); stroke: var(--dot); }
+.map-pin:hover .map-mark, .map-pin:focus-visible .map-mark, .map-pin.is-active .map-mark { stroke: var(--foreground); }
+.map-count { fill: var(--card); font-weight: 700; text-anchor: middle; pointer-events: none; }
+.map-pin.is-abroad .map-count { fill: var(--foreground); }
+.map-labels text { fill: var(--foreground); font-weight: 500; paint-order: stroke; stroke: var(--card); stroke-width: 0.9; stroke-linejoin: round; pointer-events: none; }
+.map-key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 12px; font-size: 12px; line-height: 16px; color: var(--muted); }
+.map-key li { display: inline-flex; align-items: center; gap: 8px; }
+.map-dot { --dot: var(--edge-strong); display: inline-block; flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--dot); }
+.map-dot.is-abroad { background: var(--card); border: 2.5px solid var(--dot); }
+.map-key-count { display: inline-grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; background: var(--proof-deployment); color: var(--card); font-size: 10px; font-weight: 700; }
+.map-detail { margin-top: 24px; padding: 16px; border: 1px solid var(--edge); border-radius: 12px; background: var(--card); }
+.map-detail h3, .map-elsewhere h3 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; font-size: 18px; line-height: 26px; font-weight: 600; }
+.map-detail h3 span, .map-countries summary span { font-size: 14px; font-weight: 400; color: var(--muted); }
+.map-clear { margin-left: auto; font-size: 12px; font-weight: 500; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; }
+.map-detail ul, .map-countries ul { margin-top: 8px; }
+.map-project { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; gap: 12px; align-items: start; padding: 10px 0; border-top: 1px solid var(--edge); }
+.map-project > .map-dot { margin-top: 4px; }
+.map-project > div { min-width: 0; }
+.map-project p { font-size: 14px; line-height: 20px; font-weight: 500; overflow-wrap: anywhere; }
+.map-project p.map-project-by { margin-top: 2px; font-size: 12px; line-height: 16px; font-weight: 400; color: var(--muted); }
+.map-project a { color: var(--foreground); text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 4px; }
+.map-project a:hover { text-decoration-color: var(--foreground); }
+.map-elsewhere { margin-top: 24px; }
+.map-elsewhere h3 { font-size: 14px; line-height: 20px; }
+.map-countries { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; margin-top: 8px; }
+.map-countries details { padding: 8px 12px; border: 1px solid var(--edge); border-radius: 8px; background: var(--card); }
+.map-countries details[open] { grid-column: 1 / -1; }
+.map-countries summary { cursor: pointer; font-size: 14px; line-height: 20px; font-weight: 500; }
+@media (max-width: 767px) {
+  .home-where { padding-top: 48px; }
+  .home-where h2 { font-size: 28px; line-height: 34px; }
+  .map-pair { grid-template-columns: minmax(0, 1fr); }
+  .map-project { grid-template-columns: 12px minmax(0, 1fr); }
+  .map-project > .mk-status { grid-column: 2; justify-self: start; }
+}
 /* The answer by trade (TradeChart): one square per site job, then the spider of paper against proof. */
 .home-trades { padding-top: 64px; scroll-margin-top: 80px; }
 .home-trades h2 { margin-top: 8px; font-size: 40px; line-height: 48px; font-weight: 600; letter-spacing: -.02em; text-wrap: balance; }
