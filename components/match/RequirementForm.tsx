@@ -85,7 +85,7 @@ function Options({ list, labels }: { list: readonly string[]; labels: Record<str
 export function RequirementForm({ req }: { req: Requirements }) {
   const input = `${ui.input} pr-12`;
   return (
-    <form action="/#matcher" method="get" className="card" aria-label="Robot requirements">
+    <form action="/search#matcher" method="get" className="card" aria-label="Robot requirements">
       <input type="hidden" name="details" value="1" />
       <div className="divide-y divide-edge/70">
         <Section n={1} title="The job" hint="Tick what the robot has to do">
@@ -223,7 +223,7 @@ export function RequirementForm({ req }: { req: Requirements }) {
       </div>
 
       <div className="sticky bottom-0 flex items-center justify-between gap-3 rounded-b-2xl border-t border-edge/70 bg-card/95 px-5 py-3 backdrop-blur">
-        <Link href="/#matcher" className="text-sm text-muted underline-offset-4 hover:underline">
+        <Link href="/search#matcher" className="text-sm text-muted underline-offset-4 hover:underline">
           Reset
         </Link>
         <button type="submit" className={`${ui.btn} px-6`}>

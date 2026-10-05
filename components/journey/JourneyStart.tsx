@@ -1,6 +1,6 @@
 import { getImageProps } from 'next/image';
 import Link from 'next/link';
-import { MarketExplorer, type ExplorerInitial } from '@/components/market/MarketExplorer';
+import { ExplorerFromUrl } from '@/components/market/ExplorerFromUrl';
 import type { JobDetail, JobMapPoint } from '@/lib/market/jobs';
 import { LINEUP } from '@/lib/models/lineup';
 import { SITE } from '@/lib/site';
@@ -14,7 +14,7 @@ const STRIP = { src: '/branding/lineup-strip.3761f57775.webp', width: 2400, heig
 const ALT = 'A construction worker in a hard hat, 1.80 m tall, and five robots you can buy or order in Germany side by side at true scale on a construction yard, under a line at his height. The Unitree H1-2 reaches the line, the Unitree G1 comes to his shoulder, the Unitree G1-D stands on a wheeled base, and the two robot dogs, Boston Dynamics Spot and Unitree B2, reach his hip.';
 
 /** The landing: the job site at true scale behind the headline, then the job map with the robots you can buy in Germany. */
-export function JourneyStart({ jobs, initialDetail, sold, initial }: { jobs: JobMapPoint[]; initialDetail: JobDetail | null; sold: { robots: number; machines: number }; initial: ExplorerInitial }) {
+export function JourneyStart({ jobs, initialDetail, sold }: { jobs: JobMapPoint[]; initialDetail: JobDetail | null; sold: { robots: number; machines: number } }) {
   const { props: { srcSet: strip } } = getImageProps({ alt: '', ...STRIP, sizes: '1200px' });
   const { props: poster } = getImageProps({ alt: ALT, ...POSTER, sizes: '100vw', loading: 'eager', fetchPriority: 'high' });
   return <>
@@ -30,7 +30,7 @@ export function JourneyStart({ jobs, initialDetail, sold, initial }: { jobs: Job
       </div>
     </HomeHero>
     <div className="jp-page plan-page home-below">
-      <MarketExplorer jobs={jobs} initialDetail={initialDetail} initial={initial} contact={SITE.email || undefined} />
+      <ExplorerFromUrl jobs={jobs} initialDetail={initialDetail} contact={SITE.email || undefined} />
     </div>
   </>;
 }
