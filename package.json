@@ -17,6 +17,7 @@
     "content": "node --import tsx scripts/content-check.ts",
     "report": "node --env-file-if-exists=.env.local --import tsx scripts/report-coverage.ts",
     "shot": "node --import tsx tests/shot.ts",
+    "models:lineup-lite": "node --import tsx scripts/models/lineup-lite.ts",
     "audit:review-queue": "node --import tsx scripts/review-queue.ts",
     "audit:catalogue": "node --env-file-if-exists=.env.local --import tsx scripts/audit-catalogue.ts",
     "audit:media": "node --import tsx scripts/audit-media.ts",

@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic';
 import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { LINEUP } from '@/lib/models/lineup';
+import LITE from '@/lib/models/lineup-lite.json';
 import type { LiveItem } from '@/components/robot-viewer/LineupLive';
 
 const LineupLive = dynamic(() => import('@/components/robot-viewer/LineupLive').then((m) => m.LineupLive), { ssr: false });
@@ -11,7 +12,7 @@ const short = (name: string) => name.replace(/^(Unitree|Boston Dynamics)\s+/, ''
 /** The readout's five lines under its top margin, and a gap: the scale line stays below it where it shows. */
 const READOUT_CLEARANCE = 136;
 
-/** WebGL is checked before nine megabytes of models are requested. */
+/** WebGL is checked before about two megabytes of models are requested. */
 function webgl(): boolean {
   try {
     const canvas = document.createElement('canvas');
@@ -47,7 +48,11 @@ export function HomeHero({ poster, note, children }: { poster: ReactNode; note: 
         const response = await fetch('/api/models?key=' + encodeURIComponent(row.key) + '&form=' + row.form);
         if (!response.ok) return null;
         const { entry, presets } = await response.json();
-        return { key: row.key, name: row.name, href: row.href, turn: row.turn, entry, presets, heightM: entry.joints?.modelHeightM || entry.heightM } as LiveItem;
+        // The row is a few hundred pixels tall: the light copies (scripts/models/lineup-lite.ts) look the
+        // same there at about a fifth of the download. Robot pages keep the full models.
+        const lite = (LITE as Record<string, { glbUrl: string }>)[row.key];
+        const model = lite ? { ...entry, glbUrl: lite.glbUrl } : entry;
+        return { key: row.key, name: row.name, href: row.href, turn: row.turn, entry: model, presets, heightM: entry.joints?.modelHeightM || entry.heightM } as LiveItem;
       }));
       // All five or none: a row with a gap would misstate the scale.
       if (!cancelled && loaded.every(Boolean)) setItems(loaded as LiveItem[]);
