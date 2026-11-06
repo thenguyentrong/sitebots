@@ -18,8 +18,8 @@ export const SITE = {
 
   // ── FILL THESE IN ────────────────────────────────────────────────────────
   operator: 'The Vinh Nguyen Trong',
-  street: '',
-  city: '',
+  street: 'Passstraße 113',
+  city: '52070 Aachen',
   country: 'Deutschland',
   phone: '',
   vatId: '',
