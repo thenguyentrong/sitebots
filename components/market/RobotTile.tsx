@@ -83,7 +83,7 @@ export function RobotTile({ tile }: { tile: TileData }) {
       </div>
       <div className="mk-tile-foot">
         {tile.fine ? <p className="mk-fine">{tile.fine}</p> : <span />}
-        {tile.compare ? <div className="mk-tile-action"><CompareToggle id={tile.compare.id} name={tile.compare.name} /></div> : null}
+        <div className="mk-tile-action"><CompareToggle id={tile.compare.id} name={tile.compare.name} /></div>
       </div>
     </div>
   </article>;

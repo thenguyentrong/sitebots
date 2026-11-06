@@ -14,7 +14,7 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "RobotShop EU sells the TRON1 EDU for 21,636.37 € incl. VAT (on demand) with an add-to-cart button; Bipedal (Leverkusen) offers new units on request and one demo unit for 12,999 € incl. VAT. Muzix (Hungary) also lists it.",
+  "statusNote": "RobotShop EU sells the TRON1 EDU for 21,636.37 € incl. VAT (on demand) with an add-to-cart button; Bipedal (Leverkusen) offers new units on request and one demo unit for 12,999 € incl. VAT. Muzix (Hungary) also lists it. MegaRobotics (Kaarst) offers the Standard and EDU editions on request.",
   "sourceIds": [
    "s5",
    "s6",
@@ -28,7 +28,7 @@
    "note": "TRON1 EDU at RobotShop EU, tax included; Bipedal demo unit 12,999 € incl. VAT."
   },
   "priceOther": null,
-  "leadTime": "On demand at RobotShop EU (no date shown); about 4 weeks for the Bipedal demo unit",
+  "leadTime": "On demand at RobotShop EU (no date shown); about 4 weeks for the Bipedal demo unit; 10–16 days (Muzix)",
   "sellers": [
    {
     "name": "Muzix Group Co. Ltd.",
@@ -41,7 +41,7 @@
     "priceEur": null,
     "priceBasis": null,
     "sourceId": "s3",
-    "note": "TRON1 EDU listed without a price."
+    "note": "EDU and a separate Standard listing, price on request, \"innerhalb von 10-16 Tagen an Sie geliefert\"."
    },
    {
     "name": "LimX Dynamics",
@@ -94,9 +94,22 @@
     "priceBasis": "gross",
     "sourceId": "s7",
     "note": "DEMO UNIT, 12,999 € incl. 19% VAT (was 23,798.81 €), delivery about 4 weeks."
+   },
+   {
+    "name": "MegaRobotics (Megaforce GmbH, Kaarst)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.megarobotics.de/de/products/limx-tron1",
+    "contactUrl": "https://www.megarobotics.de/de/contact",
+    "email": "info@megarobotics.de",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s9",
+    "note": "Standard and EDU editions, \"Beschaffung auf Anfrage\" (price and delivery on request). Calls itself an official distributor; not verified with LimX."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-10-20"
  },
  "specs": [
   {
@@ -201,8 +214,8 @@
   "wheels": true,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
-  "stairs": null,
+  "roughGround": true,
+  "stairs": true,
   "outdoor": null,
   "arms": 0,
   "hands": "optional",
@@ -214,7 +227,8 @@
   "sdk": "LimX SDK (Python, C++)",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s8"
   ],
   "notes": [
    "Two-legged platform without arms or head; no category fits exactly. Arm, sensor and voice kits are optional add-ons.",
@@ -329,10 +343,45 @@
    "publisher": "Bipedal GmbH",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s8",
+   "url": "https://newatlas.com/robotics/limx-tron-1-biped-robot/",
+   "title": "Watch: \"World's first multi-modal biped robot\" could soon be yours",
+   "publisher": "New Atlas",
+   "kind": "press",
+   "checkedAt": "2026-10-20"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.megarobotics.de/de/products/limx-tron1",
+   "title": "LimX Dynamics TRON 1 at MegaRobotics",
+   "publisher": "Megaforce GmbH (MegaRobotics)",
+   "kind": "seller",
+   "checkedAt": "2026-10-20"
   }
  ],
  "openQuestions": [
-  "robotType: TRON 1 is a biped without arms; \"mobile_manipulator\" chosen only because an arm kit is sold."
+  "robotType: TRON 1 is a biped without arms; \"mobile_manipulator\" chosen only because an arm kit is sold.",
+  "Outdoor use: LimX states only \"Operates in favorable weather conditions\" (-5 to 40 °C) and publishes no IP rating."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-20",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "With exceptional extensibility and locomotion capabilities, it stands as one of the most versatile all-terrain general-purpose bipedal platforms.",
+   "basis": "manufacturer marketing claim ('all-terrain'); no TRON 1 manual reviewed",
+   "checkedAt": "2026-10-20"
+  },
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s8",
+   "quote": "Even with its fast-rolling wheeled foot-end installed, the TRON 1 can still climb stairs then jump to the ground",
+   "basis": "with the wheeled foot-end; press caption of LimX launch material (Oct 2024)",
+   "checkedAt": "2026-10-20"
+  }
+ ]
 }

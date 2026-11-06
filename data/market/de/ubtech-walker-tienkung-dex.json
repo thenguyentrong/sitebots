@@ -9,7 +9,7 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": null,
- "summary": "A walking humanoid with dexterous hands listed by Terra Robotics; UBTECH publishes no page for this model, so the data is thin.",
+ "summary": "A full-size walking research humanoid with dexterous hands and ROS 2, listed by Terra Robotics; UBTECH publishes no page for this model, so the data comes from the seller.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
@@ -31,7 +31,7 @@
     "note": "Metadata price EUR 73,014, basis not stated, not displayed. Technical text is generic. Shop data marks the item out of stock."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "Listed by Terra Robotics (UBTECH's exclusive DACH distributor) including a lifting frame; price on request. No UBTECH product page found.",
   "sourceIds": [
@@ -55,6 +55,46 @@
    "unit": "kg",
    "conditions": "approx., seller listing",
    "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "Dof total",
+   "value": 31,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak torque nm",
+   "value": 400,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson AGX Thor, up to 2070 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "3D LiDAR, stereo cameras, IMU, tactile and force sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Sdk",
+   "value": "ROS 2, open motor and sensor interfaces, SDK, URDF",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -62,7 +102,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -72,7 +112,7 @@
   "carryPayloadKg": null,
   "runtimeH": null,
   "ipRating": null,
-  "sdk": null,
+  "sdk": "ROS 2, SDK, URDF",
   "sourceIds": [
    "s1"
   ],
@@ -97,7 +137,7 @@
    "title": "UBtech Walker Tienkung DEX Humanoider Roboter (Inklusive Hebegestell)",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -105,12 +145,22 @@
    "title": "UBTECH partners with collaborators to accelerate global expansion (Terra Robotics, ROSSMANN)",
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "UBTECH does not list a \"Tienkung DEX\"; DOF, payload and runtime unknown.",
   "How it differs from the Walker Tienkung Embodied Intelligence variant."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "stabilen, dynamischen Lauf auf unebenen Böden sowie das Bewältigen von Stufen und Hindernissen",
+   "basis": null,
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

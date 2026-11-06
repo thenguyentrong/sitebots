@@ -11,14 +11,13 @@ function ContactLinks({ contact }: { contact: SalesContact }) {
   </div>;
 }
 
+/** What is known about buying a robot without a German market record, inside the page's Buy in Germany section. */
 export function BuyingPanel({ manufacturer, model, variant, prices }: { manufacturer: string; model: string; variant: string; prices: PriceCurrent[] }) {
   const routes = germanyBuyingRoutes(manufacturer, model, variant, prices);
   const maker = manufacturerReview(manufacturer);
   const contact = manufacturerSalesContact(canonicalManufacturerSlug(manufacturer));
-  if (!routes.length && !maker?.website && !contact) return null;
-  return <section className="card overflow-hidden" aria-labelledby="buying-germany-title">
-    <header className="border-b border-edge/70 px-5 py-3.5"><h2 id="buying-germany-title" className="text-sm font-semibold">Buying in Germany</h2></header>
-    <div className="divide-y divide-edge/70">
+  if (!routes.length && !maker?.website && !contact) return <p className="px-5 py-4 text-sm text-muted">No German seller recorded yet.</p>;
+  return <div className="divide-y divide-edge/70">
       {routes.map(route => <div key={route.url} className="px-5 py-4" data-buying-route>
         <div className="flex flex-wrap items-baseline justify-between gap-2"><a href={route.url} target="_blank" rel="nofollow noopener noreferrer" className="text-sm font-semibold underline underline-offset-4">{route.name} ↗</a><span className="text-xs text-muted">{route.region === 'DE' ? 'German seller' : 'EU seller'}</span></div>
         <p className="mt-1 text-xs text-muted">{route.configurations.join(' · ')}</p>
@@ -34,6 +33,5 @@ export function BuyingPanel({ manufacturer, model, variant, prices }: { manufact
         {contact ? <><ContactLinks contact={contact} /><p className="mt-2 text-[11px] text-muted">Contact from the <a href={contact.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline">official website</a> · {formatDate(contact.reviewedAt)}</p></> : null}
         <p className="mt-2 text-xs text-muted">Ask for the exact configuration, a German delivery quote and the local service partner.</p>
       </div> : null}
-    </div>
-  </section>;
+  </div>;
 }

@@ -8,7 +8,7 @@
  "name": "MagicLab MagicBot Z1",
  "robotType": "humanoid",
  "specialisedFor": [],
- "officialUrl": "https://www.magiclab.top/en/z1",
+ "officialUrl": "https://www.magiclabglobal.com/products/magicbot-z1/",
  "summary": "A 1.37 m, 40 kg agile humanoid with 24 joints for research and teaching; the Development Version adds programming access and optional 11-DoF tactile hands.",
  "launched": null,
  "lifecycle": "shipping",
@@ -31,7 +31,7 @@
     "note": "Contact form, email or phone."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "No German seller lists Z1 with a price; MagicLab says it has sales and support teams in Germany, Italy and Spain, so ask MagicLab. MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany.",
   "sourceIds": [
@@ -125,8 +125,8 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
-  "stairs": null,
+  "roughGround": true,
+  "stairs": true,
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
@@ -137,7 +137,8 @@
   "ipRating": null,
   "sdk": "MagicBot-Z1 SDK (Development Version only)",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s3"
   ],
   "notes": [
    "Standard version has no secondary development and no dexterous hands.",
@@ -202,7 +203,7 @@
    "title": "MagicBot Z1",
    "publisher": "MagicLab",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -210,12 +211,38 @@
    "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
    "publisher": "MagicLab",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.magiclabglobal.com/news/magiclab-launches-high-dynamics-bipedal-humanoid-robot-magicbot-z1.html",
+   "title": "Magiclab Launches High-Dynamics Bipedal Humanoid Robot MagicBot Z1 - Magiclab Robotics Technology (Wuxi) Co., Ltd.",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "EU price unknown.",
   "Has CE marking been completed?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s3",
+   "quote": "enabling Z1 to navigate diverse terrains—including flat ground, grass, gravel, and stairs",
+   "basis": "manufacturer launch release; with MagicLab's standard motion controllers; no step height given",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s3",
+   "quote": "enabling Z1 to navigate diverse terrains—including flat ground, grass, gravel, and stairs",
+   "basis": "manufacturer launch release: grass and gravel; with MagicLab's standard motion controllers",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

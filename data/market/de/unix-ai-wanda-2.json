@@ -13,16 +13,37 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "note": "Plus VAT and shipping (RBTX).",
+   "amount": 68644.64,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s3"
+  },
   "priceOther": null,
-  "leadTime": null,
-  "sellers": [],
-  "checkedAt": "2026-10-02",
-  "status": "not_sold",
-  "statusNote": "UniX AI sells from Suzhou via global@unix-group.ai; no European office, distributor or EU customer found.",
+  "leadTime": "3 weeks (RBTX)",
+  "sellers": [
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/unix-ai-wanda-20-humanoid-robot-18-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 68644.64,
+    "priceBasis": "net",
+    "note": null,
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s3"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "buy_now",
+  "statusNote": "RBTX (igus, Germany) lists Wanda 2.0 with a net price and a usual delivery time of 3 weeks.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s3"
   ]
  },
  "specs": [
@@ -149,7 +170,7 @@
    "title": "Wanda 2.0 product page",
    "publisher": "UniX AI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -157,7 +178,15 @@
    "title": "UniX AI contact",
    "publisher": "UniX AI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://rbtx.de/de-DE/components/humanoid/unix-ai-wanda-20-humanoid-robot-18-dof",
+   "title": "RBTX (igus)",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],

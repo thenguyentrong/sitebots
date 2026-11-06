@@ -8,7 +8,7 @@
  "name": "MagicLab MagicBot X1",
  "robotType": "humanoid",
  "specialisedFor": [],
- "officialUrl": "https://www.magiclab.top/en/x1",
+ "officialUrl": "https://www.magiclabglobal.com/products/magicbot-x1/",
  "summary": "A 1.80 m, 70 kg full-size humanoid with 31 joints and hot-swappable dual batteries, offered for material transfer in factories and warehouses, guided tours and research.",
  "launched": null,
  "lifecycle": "shipping",
@@ -31,7 +31,7 @@
     "note": "Contact form, email or phone; X1 was shown at IFA 2026 in Berlin."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "No German seller lists X1 with a price; MagicLab says it has sales and support teams in Germany, Italy and Spain, so ask MagicLab. MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany.",
   "sourceIds": [
@@ -127,7 +127,7 @@
   "levelFloors": true,
   "roughGround": null,
   "stairs": null,
-  "outdoor": null,
+  "outdoor": true,
   "arms": 2,
   "hands": "optional",
   "handsIncluded": null,
@@ -210,7 +210,7 @@
    "title": "MagicBot X1",
    "publisher": "MagicLab",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -218,12 +218,22 @@
    "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
    "publisher": "MagicLab",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Hands, payload and runtime not published.",
   "EU price unknown."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "The MagicBot X1 support all-weather autonomous patrol, intelligent monitoring and emergency response for park security, scenic area inspection, equipment maintenance and material delivery.",
+   "basis": "manufacturer application-scenario claim (all-weather patrol in parks and scenic areas); no IP rating published",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

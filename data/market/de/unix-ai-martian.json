@@ -15,14 +15,30 @@
  "germany": {
   "priceEur": null,
   "priceOther": null,
-  "leadTime": null,
-  "sellers": [],
-  "checkedAt": "2026-10-02",
-  "status": "not_sold",
-  "statusNote": "No European office, distributor or EU customer found for UniX AI.",
+  "leadTime": "Usual delivery 3 weeks (RBTX), price on request",
+  "sellers": [
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/unix-ai-martian-humanoid-robot-29-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": null,
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s4"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "RBTX (igus, Germany) lists the Martian with price on request and a contact button. Its spec table does not match the maker's Martian, so confirm the exact robot before ordering.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s3",
+   "s4"
   ]
  },
  "specs": [
@@ -131,7 +147,7 @@
    "title": "Martian product page",
    "publisher": "UniX AI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -139,7 +155,23 @@
    "title": "UniX AI contact",
    "publisher": "UniX AI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://rbtx.de/en-GB/partners/unix-ai",
+   "title": "RBTX (igus)",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://rbtx.de/de-DE/components/humanoid/unix-ai-martian-humanoid-robot-29-dof",
+   "title": "RBTX (igus)",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],

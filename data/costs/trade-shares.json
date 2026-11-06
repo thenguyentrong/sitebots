@@ -1,5 +1,5 @@
 {
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-21",
  "sources": {
   "weights": {
    "title": "Preisindizes für die Bauwirtschaft – Wägungsschemata 2021",
@@ -9,11 +9,11 @@
    "basis": "Share of each construction trade in the cost of the work on the structure (Bauleistungen am Bauwerk, DIN 276 cost groups 300 and 400), from settled accounts of real projects; base year 2021."
   },
   "labour": {
-   "title": "Kostenstruktur im Baugewerbe nach Rechtlichen Einheiten – Sonderauswertung 2021, Tabelle 10",
+   "title": "Statistischer Bericht – Kostenstrukturerhebung im Baugewerbe – 2024, Tabelle 44253-01",
    "publisher": "Statistisches Bundesamt (Destatis)",
-   "published": "2023-12-13",
-   "url": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Bauen/Tabellen/sonderauswertung-kse-bau.xlsx?__blob=publicationFile&v=6",
-   "basis": "Personnel costs (wages plus statutory and other social costs) as a share of gross output, firms with 20 or more employees, 2021."
+   "published": "2026-07-01",
+   "url": "https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Bauen/Publikationen/Downloads-Baugewerbe-Struktur/statistischer-bericht-kostenstruktur-baugewerbe-2040530247005.xlsx?__blob=publicationFile&v=3",
+   "basis": "Personnel expenses (Personalaufwendungen: gross wages and salaries plus statutory and other social security costs) as a share of production value (Produktionswert, EBS definition), legal units with 20 or more employees, 2024. Destatis publishes both in euro; the share is computed by sitebots. This is the last edition by legal units: Destatis discontinued the report and publishes future results only for enterprises (EU definition) in GENESIS-Online 48112. The 2021 special evaluation also reported five-digit subclasses that this report no longer has, for example carpentry and engineered timber construction (WZ 43.91.2, Zimmerei und Ingenieurholzbau) at 29.2 % of gross output in 2021."
   }
  },
  "buildings": {
@@ -162,7 +162,7 @@
     "en": "Sheet-metal roofing and roof drainage works",
     "section": "rohbau",
     "values": {
-     "wohn": 2.11,
+     "wohn": 2.12,
      "buero": 1.23,
      "gewerbe": 1.63
     },
@@ -342,7 +342,7 @@
     "en": "Glazing works",
     "section": "ausbau",
     "values": {
-     "wohn": 0.53,
+     "wohn": 0.54,
      "buero": 3.63,
      "gewerbe": 0.91
     },
@@ -717,242 +717,321 @@
  },
  "labour": [
   {
-   "wz": "41.1",
+   "wz": "41.10",
    "de": "Erschließung von Grundstücken; Bauträger",
    "en": "WZ 41.10 Development of building projects (land development; property developers)",
-   "value": 9.8,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.1 Erschließung von Grundstücken; Bauträger', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G35; the group has a single class, WZ 41.10"
+   "value": 11.3,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 22 'F411' / 'Insgesamt': Personalaufwendungen (cell T22) 699.772.845 EUR ÷ Produktionswert (cell H22) 6.198.794.952 EUR = 11.289 %, rounded to 11.3. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 19. The group has a single class, WZ 41.10 (row F4110 identical)."
   },
   {
-   "wz": "41.10.3",
-   "de": "Bauträger für Wohngebäude",
-   "en": "Developers of residential buildings",
-   "value": 8.9,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.10.3 Bauträger für Wohngebäude', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G39"
-  },
-  {
-   "wz": "41.2",
+   "wz": "41.20",
    "de": "Bau von Gebäuden",
    "en": "WZ 41.20 Construction of residential and non-residential buildings",
-   "value": 20.7,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.2 Bau von Gebäuden', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G47; the group has a single class, WZ 41.20"
-  },
-  {
-   "wz": "41.20.1",
-   "de": "Bau von Gebäuden (ohne Fertigteilbau)",
-   "en": "Construction of buildings (excluding prefabricated construction)",
-   "value": 20.6,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.20.1 Bau von Gebäuden (ohne Fertigteilbau)', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G55"
-  },
-  {
-   "wz": "41.20.2",
-   "de": "Errichtung von Fertigteilbauten",
-   "en": "Erection of prefabricated buildings",
-   "value": 23.1,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '41.20.2 Errichtung von Fertigteilbauten', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G60"
+   "value": 21.2,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 34 'F412' / 'Insgesamt': Personalaufwendungen (cell T34) 9.906.960.385 EUR ÷ Produktionswert (cell H34) 46.785.351.464 EUR = 21.175 %, rounded to 21.2. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 31. The group has a single class, WZ 41.20 (row F4120 identical)."
   },
   {
    "wz": "42.11",
    "de": "Bau von Straßen",
    "en": "Construction of roads",
-   "value": 30.3,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.11 Bau von Straßen', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G82"
+   "value": 29.1,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 58 'F4211' / 'Insgesamt': Personalaufwendungen (cell T58) 5.574.924.534 EUR ÷ Produktionswert (cell H58) 19.189.854.098 EUR = 29.051 %, rounded to 29.1. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 55."
   },
   {
    "wz": "42.12",
    "de": "Bau von Bahnverkehrsstrecken",
    "en": "Construction of railways",
-   "value": 32.6,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.12 Bau von Bahnverkehrsstrecken', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G87"
+   "value": 26.7,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 64 'F4212' / 'Insgesamt': Personalaufwendungen (cell T64) 1.229.859.353 EUR ÷ Produktionswert (cell H64) 4.611.657.378 EUR = 26.668 %, rounded to 26.7. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 61."
   },
   {
    "wz": "42.13",
    "de": "Brücken- und Tunnelbau",
    "en": "Construction of bridges and tunnels",
-   "value": 23.4,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.13 Brücken- und Tunnelbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G92"
+   "value": 22.5,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 70 'F4213' / 'Insgesamt': Personalaufwendungen (cell T70) 577.355.565 EUR ÷ Produktionswert (cell H70) 2.561.195.566 EUR = 22.542 %, rounded to 22.5. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 67."
   },
   {
    "wz": "42.21",
    "de": "Rohrleitungstiefbau, Brunnenbau und Kläranlagenbau",
    "en": "Pipeline construction, well construction and sewage-plant construction",
-   "value": 30.7,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.21 Rohrleitungstiefbau, Brunnenbau und Kläranlagenbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G104"
+   "value": 33.7,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 82 'F4221' / 'Insgesamt': Personalaufwendungen (cell T82) 2.819.811.579 EUR ÷ Produktionswert (cell H82) 8.378.834.329 EUR = 33.654 %, rounded to 33.7. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 79."
   },
   {
    "wz": "42.22",
    "de": "Kabelnetzleitungstiefbau",
    "en": "Construction of cable networks (electricity and telecommunications)",
-   "value": 28.2,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.22 Kabelnetzleitungstiefbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G109"
+   "value": 23.2,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 88 'F4222' / 'Insgesamt': Personalaufwendungen (cell T88) 1.757.256.601 EUR ÷ Produktionswert (cell H88) 7.589.776.305 EUR = 23.153 %, rounded to 23.2. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 85."
   },
   {
    "wz": "42.91",
    "de": "Wasserbau",
    "en": "Hydraulic engineering (water projects)",
-   "value": 25.5,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.91 Wasserbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G119"
+   "value": 26.2,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 100 'F4291' / 'Insgesamt': Personalaufwendungen (cell T100) 132.484.457 EUR ÷ Produktionswert (cell H100) 506.401.976 EUR = 26.162 %, rounded to 26.2. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 97."
   },
   {
    "wz": "42.99",
    "de": "Sonstiger Tiefbau a. n. g.",
    "en": "Other civil engineering n.e.c.",
-   "value": 30,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '42.99 Sonstiger Tiefbau a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G124 (printed 30.0)"
+   "value": 28.4,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 106 'F4299' / 'Insgesamt': Personalaufwendungen (cell T106) 2.749.863.135 EUR ÷ Produktionswert (cell H106) 9.669.992.038 EUR = 28.437 %, rounded to 28.4. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 103."
   },
   {
    "wz": "43.11",
    "de": "Abbrucharbeiten",
    "en": "Demolition",
-   "value": 23.7,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.11 Abbrucharbeiten', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G142"
+   "value": 26,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 124 'F4311' / 'Insgesamt': Personalaufwendungen (cell T124) 600.936.950 EUR ÷ Produktionswert (cell H124) 2.315.396.940 EUR = 25.954 %, rounded to 26.0. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 121."
   },
   {
    "wz": "43.12",
    "de": "Vorbereitende Baustellenarbeiten",
    "en": "Site preparation",
-   "value": 27,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.12 Vorbereitende Baustellenarbeiten', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G147 (printed 27.0)"
+   "value": 25.3,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 130 'F4312' / 'Insgesamt': Personalaufwendungen (cell T130) 487.883.002 EUR ÷ Produktionswert (cell H130) 1.927.749.460 EUR = 25.308 %, rounded to 25.3. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 127."
   },
   {
    "wz": "43.13",
    "de": "Test- und Suchbohrung",
    "en": "Test drilling and boring",
-   "value": 31.7,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.13 Test- und Suchbohrung', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G151"
+   "value": 31.8,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 136 'F4313' / 'Insgesamt': Personalaufwendungen (cell T136) 76.105.612 EUR ÷ Produktionswert (cell H136) 239.097.579 EUR = 31.830 %, rounded to 31.8. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 133."
   },
   {
    "wz": "43.21",
    "de": "Elektroinstallation",
    "en": "Electrical installation",
-   "value": 32.4,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.21 Elektroinstallation', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G166"
+   "value": 31.3,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 148 'F4321' / 'Insgesamt': Personalaufwendungen (cell T148) 8.524.639.283 EUR ÷ Produktionswert (cell H148) 27.234.980.019 EUR = 31.300 %, rounded to 31.3. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 145."
   },
   {
    "wz": "43.22",
    "de": "Gas-, Wasser-, Heizungs- sowie Lüftungs- und Klimainstallation",
    "en": "Plumbing, heating, ventilation and air-conditioning installation",
-   "value": 31.7,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.22 Gas-, Wasser-, Heizungs- sowie Lüftungs- und Klimainstallation', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G173"
+   "value": 32.8,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 154 'F4322' / 'Insgesamt': Personalaufwendungen (cell T154) 9.231.392.704 EUR ÷ Produktionswert (cell H154) 28.180.003.224 EUR = 32.759 %, rounded to 32.8. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 151."
   },
   {
    "wz": "43.29",
    "de": "Sonstige Bauinstallation",
    "en": "Other construction installation",
    "value": 31.8,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.29 Sonstige Bauinstallation', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G181"
-  },
-  {
-   "wz": "43.29.1",
-   "de": "Dämmung gegen Kälte, Wärme, Schall und Erschütterung",
-   "en": "Insulation against cold, heat, sound and vibration",
-   "value": 29.8,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.29.1 Dämmung gegen Kälte, Wärme, Schall und Erschütterung', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G187"
-  },
-  {
-   "wz": "43.29.9",
-   "de": "Sonstige Bauinstallation a. n. g.",
-   "en": "Other construction installation n.e.c.",
-   "value": 32.8,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.29.9 Sonstige Bauinstallation a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G193"
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 160 'F4329' / 'Insgesamt': Personalaufwendungen (cell T160) 2.966.924.096 EUR ÷ Produktionswert (cell H160) 9.334.241.090 EUR = 31.785 %, rounded to 31.8. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 157."
   },
   {
    "wz": "43.31",
    "de": "Anbringen von Stuckaturen, Gipserei und Verputzerei",
    "en": "Plastering (stucco, plaster and render work)",
-   "value": 31.2,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.31 Anbringen von Stuckaturen, Gipserei und Verputzerei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G204"
+   "value": 33.3,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 172 'F4331' / 'Insgesamt': Personalaufwendungen (cell T172) 618.358.347 EUR ÷ Produktionswert (cell H172) 1.859.258.424 EUR = 33.258 %, rounded to 33.3. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 169."
   },
   {
    "wz": "43.32",
    "de": "Bautischlerei und -schlosserei",
    "en": "Joinery installation (building joinery and metalwork)",
-   "value": 30.4,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.32 Bautischlerei und -schlosserei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G209"
+   "value": 33.4,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 178 'F4332' / 'Insgesamt': Personalaufwendungen (cell T178) 1.225.332.928 EUR ÷ Produktionswert (cell H178) 3.667.244.122 EUR = 33.413 %, rounded to 33.4. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 175."
   },
   {
    "wz": "43.33",
    "de": "Fußboden-, Fliesen- und Plattenlegerei, Tapeziererei",
    "en": "Floor and wall covering (flooring, tiling, wallpapering)",
-   "value": 31.7,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.33 Fußboden-, Fliesen- und Plattenlegerei, Tapeziererei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G213"
+   "value": 32.8,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 184 'F4333' / 'Insgesamt': Personalaufwendungen (cell T184) 935.321.881 EUR ÷ Produktionswert (cell H184) 2.855.839.084 EUR = 32.751 %, rounded to 32.8. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 181."
   },
   {
    "wz": "43.34",
    "de": "Malerei und Glaserei",
    "en": "Painting and glazing",
-   "value": 38.5,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.34 Malerei und Glaserei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G218"
-  },
-  {
-   "wz": "43.34.1",
-   "de": "Maler- und Lackierergewerbe",
-   "en": "Painting and varnishing trade",
-   "value": 38.7,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.34.1 Maler- und Lackierergewerbe', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G223"
-  },
-  {
-   "wz": "43.34.2",
-   "de": "Glasergewerbe",
-   "en": "Glazing trade",
-   "value": 35,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.34.2 Glasergewerbe', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G227 (printed 35.0)"
+   "value": 38,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 190 'F4334' / 'Insgesamt': Personalaufwendungen (cell T190) 2.333.097.231 EUR ÷ Produktionswert (cell H190) 6.132.002.486 EUR = 38.048 %, rounded to 38.0. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 187."
   },
   {
    "wz": "43.39",
    "de": "Sonstiger Ausbau a. n. g.",
    "en": "Other building completion and finishing n.e.c.",
-   "value": 26.6,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.39 Sonstiger Ausbau a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G232"
+   "value": 27.2,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 196 'F4339' / 'Insgesamt': Personalaufwendungen (cell T196) 249.318.166 EUR ÷ Produktionswert (cell H196) 917.365.466 EUR = 27.178 %, rounded to 27.2. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 193."
   },
   {
    "wz": "43.91",
    "de": "Dachdeckerei und Zimmerei",
    "en": "Roofing and carpentry",
-   "value": 31.3,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.91 Dachdeckerei und Zimmerei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G244"
-  },
-  {
-   "wz": "43.91.1",
-   "de": "Dachdeckerei und Bauspenglerei",
-   "en": "Roofing and roof sheet-metal work",
-   "value": 32.9,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.91.1 Dachdeckerei und Bauspenglerei', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G249"
-  },
-  {
-   "wz": "43.91.2",
-   "de": "Zimmerei und Ingenieurholzbau",
-   "en": "Carpentry and engineered timber construction",
-   "value": 29.2,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.91.2 Zimmerei und Ingenieurholzbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G254"
+   "value": 30.9,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 208 'F4391' / 'Insgesamt': Personalaufwendungen (cell T208) 2.658.079.815 EUR ÷ Produktionswert (cell H208) 8.591.608.956 EUR = 30.938 %, rounded to 30.9. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 205."
   },
   {
    "wz": "43.99",
    "de": "Sonstige spezialisierte Bautätigkeiten a. n. g.",
    "en": "Other specialised construction activities n.e.c.",
-   "value": 31.4,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99 Sonstige spezialisierte Bautätigkeiten a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G261"
-  },
-  {
-   "wz": "43.99.1",
-   "de": "Gerüstbau",
-   "en": "Scaffolding",
-   "value": 39.2,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99.1 Gerüstbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G266"
-  },
-  {
-   "wz": "43.99.2",
-   "de": "Schornstein-, Feuerungs- und Industrieofenbau",
-   "en": "Chimney, furnace and industrial-kiln construction",
-   "value": 38.4,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99.2 Schornstein-, Feuerungs- und Industrieofenbau', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G271"
-  },
-  {
-   "wz": "43.99.9",
-   "de": "Baugewerbe a. n. g.",
-   "en": "Construction n.e.c. (WZ 2008 puts masonry and paving, concrete and reinforced-concrete work, foundations and waterproofing in this subclass)",
-   "value": 29.6,
-   "where": "Sonderauswertung KSE Bau 2021 (Destatis xlsx, 13.12.2023), sheet '10 Ausgewählte Kosten' (Tabelle 10), block '43.99.9 Baugewerbe a. n. g.', row 'Insgesamt', column 'Personalkosten – insgesamt', cell G277. Subclass content per Destatis 'Klassifikation der Wirtschaftszweige 2008 mit Erläuterungen', p. 358"
+   "value": 30.1,
+   "where": "Statistischer Bericht Kostenstrukturerhebung im Baugewerbe 2024 (Destatis xlsx, 01.07.2026), sheet '44253-01', row 214 'F4399' / 'Insgesamt': Personalaufwendungen (cell T214) 4.988.418.345 EUR ÷ Produktionswert (cell H214) 16.594.331.336 EUR = 30.061 %, rounded to 30.1. Share computed by sitebots; Destatis prints only the euro values. Same values in sheet 'csv-44253-01' row 211."
   }
- ]
+ ],
+ "hourly": {
+  "sources": {
+   "jahresschaetzung": {
+    "title": "Arbeitskosten je geleistete Stunde (Jahresschätzung): Deutschland, Jahre, Wirtschaftsbereiche – GENESIS-Online Tabelle 62431-0001",
+    "publisher": "Statistisches Bundesamt (Destatis)",
+    "published": "2026-04-29",
+    "url": "https://genesis.destatis.de/datenbank/online?language=de&sequenz=tabelleErgebnis&selectionname=62431-0001",
+    "basis": "Labour cost per hour worked, national concept (apprentices included in costs and hours). Annual estimate: the level of the Arbeitskostenerhebung (latest results used: 2020) carried forward with the labour cost index; results for 2025 were released with press release Nr. 148 of 29.04.2026 (https://www.destatis.de/DE/Presse/Pressemitteilungen/2026/04/PD26_148_624.html). Published by economic section only; no figures for WZ 41, 42, 43. Table read on 21.10.2026 (GENESIS 'Stand: 21.10.2026')."
+   },
+   "ake2024": {
+    "title": "Labour cost, wages and salaries (including apprentices) by NACE Rev. 2 activity (lc_ncostot_r2) – Germany, Labour Cost Survey 2024",
+    "publisher": "Eurostat (statistical office of the EU); German data from the Destatis Arbeitskostenerhebung 2024",
+    "published": "2026-09-15",
+    "url": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lc_ncostot_r2?format=JSON&lang=EN&geo=DE&currency=EUR&unit=P_SAL_H&sizeclas=GE10&lcstruct=D&lcstruct=D11&nace_r2=F&nace_r2=F41&nace_r2=F42&nace_r2=F43&nace_r2=B-S_X_O&time=2020&time=2024",
+    "basis": "Total labour costs (lcstruct D) and wages and salaries (D11) per hour, enterprises with 10 or more employees (sizeclas GE10), apprentices included, euro, survey year 2024. Dataset last updated 15.09.2026; no status flags on these cells. Destatis has not yet loaded the 2024 survey into GENESIS (table 62411-0002 still ends with 2020 on 21.10.2026). The 2020 cells of this dataset equal GENESIS 62411-0002 'Nettoarbeitskosten je geleistete Stunde', Insgesamt, to the cent (F 31.16, 41: 34.26, 42: 33.80, 43: 29.65), so it is the same survey and concept."
+   },
+   "tariff": {
+    "title": "Tarifvertrag zur Regelung der Löhne und Ausbildungsvergütungen im Baugewerbe (TV Lohn/West) and (TV Lohn/Ost), both vom 14. Juni 2024, § 2 Abs. 9 (Löhne ab 1. April 2026)",
+    "publisher": "Zentralverband des Deutschen Baugewerbes, Hauptverband der Deutschen Bauindustrie, IG BAU (parties to the agreement); text as printed in the IG BAU brochure 'Bauhauptgewerbe – Tarifverträge 2024'",
+    "published": "2024-06-14",
+    "url": "https://igbau.de/Binaries/Binary20981/BAU-BHG-Tarifvertragsbroschu-re-07-2024-WEB.pdf",
+    "basis": "Hourly wages per wage group (Lohngruppe) for wage earners in construction firms covered by the BRTV (Bauhauptgewerbe: shell trades such as masonry, concrete, carpentry, road building, tiling, plastering). TL = Tarifstundenlohn, BZ = Bauzuschlag 5.9 % of TL (compensates site changes and weather), GTL = TL + BZ, the wage per paid site hour. From 1 April 2026 the Ost table equals the West table. Binding only where both sides are bound by the agreement (it is not declared generally binding; IG BAU: 'Den Anspruch ... haben nur Mitglieder der IG BAU'). Regional Bezirkslohntarifverträge may differ (§ 2 Abs. 6 ff., § 8; e.g. Hamburg Fertigbau +0.04 EUR, § 3 Abs. 2), and § 9 Abs. 3 allows company agreements up to 4 % below. In force since 1 April 2024, first terminable to 31 March 2027 (§ 10 Abs. 1). The Land Berlin has its own agreement, not checked here; IG BAU states the wages apply 'bundesweit einheitlich' from 1 April 2026 (flyer March 2026, https://igbau.de/Binaries/Binary22699/BHG-April2026-Ost-West-Angleichung.pdf)."
+   },
+   "minimumWage": {
+    "title": "SOKA-BAU A–Z: Mindestlohn",
+    "publisher": "SOKA-BAU (Sozialkassen der Bauwirtschaft)",
+    "published": "2026-10-21 (read)",
+    "url": "https://www.soka-bau.de/soka-bau-a-z/mindestlohn",
+    "basis": "No construction-specific minimum wage since 31.12.2021; the statutory minimum wage applies, 13.90 EUR gross per hour since 01.01.2026. SOKA-BAU: wage tables are available only from the parties to the agreement."
+   }
+  },
+  "labourCost": [
+   {
+    "wz": "F",
+    "de": "Baugewerbe",
+    "en": "Construction (all of WZ 2008 section F)",
+    "year": 2025,
+    "value": 39.6,
+    "wages": null,
+    "source": "jahresschaetzung",
+    "where": "GENESIS 62431-0001, row 'WZ08-F Baugewerbe', column 2025, printed 39,60 (2024: 38,10; 2023: 36,20). Same in Eurostat lc_lci_lev (EU concept, apprentices excluded), DE, NACE F, D1_D4_MD5, 2025 = 39.6, 2024 = 38.1, and in the Destatis press release table 'Baugewerbe/Bau 2025: 39,6'. Estimate carried forward from the 2020 survey; Destatis will revise it once the 2024 survey is built in (the 2024 survey gives 37.45 for 2024, see next rows)."
+   },
+   {
+    "wz": "F",
+    "de": "Baugewerbe",
+    "en": "Construction (all of WZ 2008 section F)",
+    "year": 2024,
+    "value": 37.45,
+    "wages": 28.97,
+    "source": "ake2024",
+    "where": "Eurostat lc_ncostot_r2, DE, currency EUR, unit P_SAL_H, sizeclas GE10, nace_r2 F, lcstruct D, time 2024 = 37.45; lcstruct D11 (wages and salaries) = 28.97. 2020: 31.16 (D), 24.23 (D11)."
+   },
+   {
+    "wz": "41",
+    "de": "Hochbau",
+    "en": "Construction of buildings",
+    "year": 2024,
+    "value": 40.52,
+    "wages": 31.13,
+    "source": "ake2024",
+    "where": "Eurostat lc_ncostot_r2, DE, EUR, P_SAL_H, GE10, nace_r2 F41, lcstruct D, 2024 = 40.52; D11 = 31.13. 2020: 34.26 (D) = GENESIS 62411-0002 'WZ08-41 Hochbau', Insgesamt, Nettoarbeitskosten je geleistete Stunde 34,26."
+   },
+   {
+    "wz": "42",
+    "de": "Tiefbau",
+    "en": "Civil engineering",
+    "year": 2024,
+    "value": 41.44,
+    "wages": 32.03,
+    "source": "ake2024",
+    "where": "Eurostat lc_ncostot_r2, DE, EUR, P_SAL_H, GE10, nace_r2 F42, lcstruct D, 2024 = 41.44; D11 = 32.03. 2020: 33.80 (D) = GENESIS 62411-0002 'WZ08-42 Tiefbau', Insgesamt, 33,80."
+   },
+   {
+    "wz": "43",
+    "de": "Vorbereitende Baustellenarbeiten, Bauinstallation und sonstiges Ausbaugewerbe",
+    "en": "Specialised construction activities (site preparation, installation, finishing)",
+    "year": 2024,
+    "value": 35.61,
+    "wages": 27.6,
+    "source": "ake2024",
+    "where": "Eurostat lc_ncostot_r2, DE, EUR, P_SAL_H, GE10, nace_r2 F43, lcstruct D, 2024 = 35.61; D11 = 27.60. 2020: 29.65 (D) = GENESIS 62411-0002 'WZ08-43 Vorb.Baustellenarbeiten, Bauinstall., sonst.Ausbau', Insgesamt, 29,65."
+   }
+  ],
+  "tariff": {
+   "agreement": "TV Lohn/West and TV Lohn/Ost vom 14. Juni 2024 (Bauhauptgewerbe)",
+   "validFrom": "2026-04-01",
+   "firstTerminableTo": "2027-03-31",
+   "unit": "EUR per paid hour, gross",
+   "groups": [
+    {
+     "group": "Lohngruppe 6",
+     "tl": 28.06,
+     "bz": 1.66,
+     "gtl": 29.72
+    },
+    {
+     "group": "Lohngruppe 5",
+     "tl": 25.77,
+     "bz": 1.52,
+     "gtl": 27.29
+    },
+    {
+     "group": "Lohngruppe 4",
+     "tl": 24.6,
+     "bz": 1.45,
+     "gtl": 26.05,
+     "note": "Ecklohn (TV § 2 Abs. 1: Tarifstundenlohn der Lohngruppe 4 gemäß § 5 Nr. 1 BRTV)"
+    },
+    {
+     "group": "Lohngruppe 3",
+     "tl": 22.64,
+     "bz": 1.33,
+     "gtl": 23.97
+    },
+    {
+     "group": "Lohngruppe 2 a",
+     "tl": 22.1,
+     "bz": 1.3,
+     "gtl": 23.4
+    },
+    {
+     "group": "Lohngruppe 2 b",
+     "note": "West table only",
+     "tl": 20.02,
+     "bz": 1.18,
+     "gtl": 21.2
+    },
+    {
+     "group": "Lohngruppe 2",
+     "tl": 17.69,
+     "bz": 1.04,
+     "gtl": 18.73
+    },
+    {
+     "group": "Lohngruppe 1",
+     "tl": 14.98,
+     "bz": 0.88,
+     "gtl": 15.86
+    },
+    {
+     "group": "Fliesen-, Platten- und Mosaikleger der Lohngruppe 4",
+     "tl": 25.34,
+     "bz": 1.5,
+     "gtl": 26.84
+    },
+    {
+     "group": "Baumaschinenführer der Lohngruppe 4",
+     "tl": 24.98,
+     "bz": 1.47,
+     "gtl": 26.45
+    }
+   ],
+   "where": "IG BAU brochure 'Bauhauptgewerbe – Tarifverträge 2024' (PDF, Last-Modified 19.08.2024): TV Lohn/West § 2 Abs. 9, printed pages 15–16 (PDF pages 17–18); TV Lohn/Ost § 2 Abs. 9, printed pages 7–8 (PDF pages 9–10), identical values except that Ost has no Lohngruppe 2 b. § 2 Abs. 1 West: 'Ecklohn ... ab dem 1. April 2026 24,60 Euro' (= TL of Lohngruppe 4). IG BAU flyer March 2026: 'Der Ecklohn erhöht sich in der Lohngruppe 3 von 22,82 auf 23,97 Euro, in der Lohngruppe 4 von 24,74 auf 26,05 Euro' (these are GTL; 22,82 / 24,74 are the Ost GTL from 1 April 2025). Job titles per wage group are defined in BRTV § 5 and are not restated here.",
+   "notCovered": "Finishing and building-services trades with their own agreements (electrical, plumbing/HVAC, painting, roofing, scaffolding) are not covered by this table; several have official branch minimum wages under the Arbeitnehmer-Entsendegesetz (published by BMAS/Zoll), not checked in this pass."
+  },
+  "minimumWage": {
+   "value": 13.9,
+   "validFrom": "2026-01-01",
+   "unit": "EUR gross per hour",
+   "source": "minimumWage",
+   "where": "SOKA-BAU A–Z 'Mindestlohn', table 'Entwicklung des Mindestlohnes': 01.01.2026 13,90 EUR (01.01.2025 12,82; 01.01.2024 12,41)."
+  }
+ }
 }

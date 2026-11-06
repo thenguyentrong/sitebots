@@ -22,17 +22,17 @@
   "leadTime": null,
   "sellers": [
    {
+    "name": "KEWAZO GmbH",
+    "country": "DE",
+    "role": "manufacturer",
     "productUrl": "https://www.kewazo.com/product",
     "contactUrl": "https://www.kewazo.com/contact",
     "email": "info@kewazo.com",
     "phone": null,
     "priceEur": null,
     "priceBasis": null,
-    "note": "Lichtenbergstraße 8, 85748 Garching bei München. Service package KEWAZO CARE: training, hotline, emergency support, annual maintenance.",
-    "name": "KEWAZO GmbH",
-    "country": "DE",
-    "role": "manufacturer",
-    "sourceId": "s3"
+    "sourceId": "s3",
+    "note": "Lichtenbergstraße 8, 85748 Garching bei München. Service package KEWAZO CARE: training, hotline, emergency support, annual maintenance."
    }
   ],
   "checkedAt": "2026-10-02",
@@ -133,6 +133,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 100,
+   "unit": "kg",
+   "conditions": "per lift, maximum ('up to'); stated 01.11.2022 by customer Techint E&C, which adds that KEWAZO was working to raise it; KEWAZO's own pages give no per-lift load, so check the current datasheet",
+   "sourceId": "s5"
   }
  ],
  "capabilities": {
@@ -147,7 +155,7 @@
   "hands": "none",
   "handsIncluded": null,
   "armPayloadKg": null,
-  "carryPayloadKg": null,
+  "carryPayloadKg": 100,
   "runtimeH": 10,
   "ipRating": null,
   "sdk": null,
@@ -160,7 +168,8 @@
   ],
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s5"
   ]
  },
  "images": [
@@ -231,6 +240,14 @@
    "publisher": "KEWAZO GmbH",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.techint.com/en/news/2022/liftbot-help-at-height",
+   "title": "Liftbot, help at height",
+   "publisher": "Techint E&C",
+   "kind": "press",
+   "checkedAt": "2026-10-20"
   }
  ],
  "openQuestions": [
@@ -238,5 +255,15 @@
   "Purchase or rental price.",
   "Robot and rail weights."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "carry_payload_kg",
+   "value": 100,
+   "sourceId": "s5",
+   "quote": "Liftbot currently has a load capacity of up to 100 kg, but the supplier is working to increase this to meet specific client demands.",
+   "basis": "per lift, maximum ('up to'); stated 01.11.2022 by customer Techint E&C, which adds that KEWAZO was working to raise it; KEWAZO's own pages give no per-lift load, so check the current datasheet",
+   "checkedAt": "2026-10-20"
+  }
+ ]
 }

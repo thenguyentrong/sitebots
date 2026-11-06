@@ -1,0 +1,252 @@
+{
+ "schemaVersion": 1,
+ "id": "dexforce-w1-pro",
+ "maker": "DexForce Technology",
+ "makerCountry": "CN",
+ "model": "W1",
+ "variant": "Pro (mobile)",
+ "name": "DexForce W1 Pro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dexforce.com/en/products/W1",
+ "summary": "A 1.64 m wheeled humanoid with two 7-DOF arms rated at 7.5 kg each, for manufacturing, service and robot training data work on flat floors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/dexforce-w1-pro-humanoid-robot-34-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Price on request. RBTX prints \"Übliche Lieferzeit: 3 Wochen\" on price-on-request items too, so it does not prove stock.",
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s2"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists the W1 Pro with price on request. No other German seller was found.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.636,
+   "unit": "m",
+   "conditions": "standing, 682 x 550 x 1636 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 120,
+   "unit": "kg",
+   "conditions": "maker; RBTX lists 110 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 34,
+   "unit": null,
+   "conditions": "including dexterous hands, differential chassis",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": "active DOF, optional five-finger hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 7.5,
+   "unit": "kg",
+   "conditions": "rated; 10 kg maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Maximum reach",
+   "value": 1.6628,
+   "unit": "m",
+   "conditions": "without hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "repeatability_mm",
+   "label": "Arm repeatability",
+   "value": 0.03,
+   "unit": "mm",
+   "conditions": "± value, maker; RBTX says sub-millimetre",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 0.75,
+   "unit": "m/s",
+   "conditions": "recommended working speed; RBTX lists 1.5 m/s",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 8,
+   "unit": "h",
+   "conditions": "at least 8 h in stationary operation",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 37 Ah LiFePO4",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 1,
+   "unit": "h",
+   "conditions": "at most, 30 to 100 percent",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Dual NVIDIA NX Orin, at least 300 TOPS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head binocular vision, two navigation LiDARs, two chassis cameras; wrist RGB-D camera optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Obstacle height",
+   "value": 1,
+   "unit": "cm",
+   "conditions": "10 mm; gap crossing 30 mm",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 7.5,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "ROS-compatible interfaces (RBTX)",
+  "notes": [
+   "End effector is an option: five-finger hand, two-finger gripper or suction cup. The 34 DOF count assumes hands.",
+   "The 8 h runtime is for stationary operation; the maker gives no figure while driving.",
+   "Crosses only 10 mm obstacles and 30 mm gaps, so it needs flat floors.",
+   "Differential chassis as standard, omnidirectional optional."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/W1%20Pro%2001-MtYx5wUL.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/dexforce-w1-pro-humanoid-robot-34-dof",
+   "credit": "DexForce (via RBTX)",
+   "alt": "DexForce W1 Pro wheeled humanoid in yellow, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Maker lists commercial services, intelligent manufacturing, research and education, data collection and training",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Partnership to bring W1 Pro services to cultural tourism venues",
+   "stage": "claim",
+   "where": "Chimelong, China",
+   "date": "2026-05",
+   "sourceId": "s3",
+   "note": "Announced by DexForce; no results published."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dexforce.com/en/products/W1",
+   "title": "DexForce W1 product page and specifications",
+   "publisher": "DexForce Technology",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/dexforce-w1-pro-humanoid-robot-34-dof",
+   "title": "DexForce W1 Pro on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.dexforce.com/en",
+   "title": "DexForce home page news list",
+   "publisher": "DexForce Technology",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Are hands included in the RBTX configuration?",
+  "Weight: 120 kg (maker) or 110 kg (RBTX)?"
+ ],
+ "checkedAt": "2026-11-06"
+}

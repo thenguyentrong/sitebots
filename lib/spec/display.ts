@@ -28,6 +28,11 @@ function num(n: number, decimals: number): string {
   return n.toLocaleString('en-GB', { maximumFractionDigits: decimals, minimumFractionDigits: 0 });
 }
 
+/** Source text keeps its dashes in the data; the site shows none, so a range reads "20 to 80" and a pause a comma. */
+export function plainDashes(text: string): string {
+  return text.replace(/(\d)\s*[–—]\s*(?=[-+]?\d)/g, '$1 to ').replace(/\s+[–—]\s+/g, ', ').replace(/[–—]/g, '-');
+}
+
 /** Human-readable value for a spec cell, in the field's canonical unit. */
 export function formatSpec(key: string, spec: SpecValue): string {
   const { field } = splitSpecKey(key);
@@ -37,20 +42,20 @@ export function formatSpec(key: string, spec: SpecValue): string {
   const sep = unit === '°' || unit === '°C' || unit === '%' ? '' : ' ';
 
   if (def?.kind === 'bool' || typeof spec.value === 'boolean') {
-    return spec.value === true ? 'Yes' : spec.value === false ? 'No' : '—';
+    return spec.value === true ? 'Yes' : spec.value === false ? 'No' : 'Not published';
   }
   if (spec.min != null || spec.max != null) {
     if (spec.min != null && spec.max != null) {
-      return spec.min === spec.max ? `${num(spec.min, decimals)}${sep}${unit}` : `${num(spec.min, decimals)}–${num(spec.max, decimals)}${sep}${unit}`.trim();
+      return spec.min === spec.max ? `${num(spec.min, decimals)}${sep}${unit}` : `${num(spec.min, decimals)} to ${num(spec.max, decimals)}${sep}${unit}`.trim();
     }
     if (spec.min != null) return `≥ ${num(spec.min, decimals)}${sep}${unit}`.trim();
     return `≤ ${num(spec.max as number, decimals)}${sep}${unit}`.trim();
   }
   if (typeof spec.value === 'number') return `${num(spec.value, decimals)}${sep}${unit}`.trim();
   if (def?.kind === 'json') return field === 'deployment_evidence' && Array.isArray(spec.value) ? spec.value.map((d) => { const x = d as { site?: string; year?: number }; return `${x.site ?? ''}${x.year ? ` (${x.year})` : ''}`; }).join(', ') : summarizeJson(field, spec.value);
-  if (Array.isArray(spec.value)) return spec.value.length ? spec.value.map((v) => String(v).replace(/_/g, ' ')).join(', ') : '—';
+  if (Array.isArray(spec.value)) return spec.value.length ? spec.value.map((v) => String(v).replace(/_/g, ' ')).join(', ') : 'Not published';
   if (spec.value && typeof spec.value === 'object') return JSON.stringify(spec.value);
-  if (spec.value == null || spec.value === '') return '—';
+  if (spec.value == null || spec.value === '') return 'Not published';
   return String(spec.value);
 }
 

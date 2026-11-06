@@ -14,23 +14,24 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "Generation Robots (France) sells the A3 online at EUR 88,600 excl. VAT with add-to-cart and 4-5 weeks delivery within the EU. Bipedal GmbH (Leverkusen) lists the A3 and an A3 Developer version as 'sofort verfügbar', price on request. The AGIBOT store lists it contact-only.",
+  "statusNote": "RBTX (igus, Germany) sells the A3 at EUR 66,000 excl. VAT with a usual delivery of 3 weeks. Generation Robots (France) sells it at EUR 88,600 excl. VAT with 4-5 weeks delivery within the EU. Bipedal GmbH (Leverkusen) lists the A3 and an A3 Developer version as 'sofort verfügbar', price on request. The AGIBOT store lists it contact-only.",
   "sourceIds": [
    "s2",
    "s3",
    "s4",
    "s5",
-   "s1"
+   "s1",
+   "s6"
   ],
   "priceEur": {
-   "amount": 88600,
+   "note": "RBTX, plus VAT and shipping. A3 Developer EUR 69,000 net at RBTX. Generation Robots still shows EUR 88,600 net.",
+   "amount": 66000,
    "basis": "net",
    "kind": "list",
-   "sourceId": "s2",
-   "note": "Generation Robots, excl. VAT (EUR 106,320 incl. French VAT). A3 Ultra costs EUR 113,000 net at the same seller."
+   "sourceId": "s6"
   },
   "priceOther": null,
-  "leadTime": "Generation Robots: delivery within 4 to 5 weeks; Bipedal: 'sofort verfügbar'",
+  "leadTime": "RBTX: 3 weeks; Bipedal: 'sofort verfügbar'; Generation Robots: delivery within 4 to 5 weeks",
   "sellers": [
    {
     "name": "Generation Robots",
@@ -70,9 +71,22 @@
     "priceBasis": null,
     "sourceId": "s1",
     "note": "Placeholder price only (USD 999,999); contact sales for delivery details."
+   },
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/agibot-a3-humanoid-robot-31dof/A3",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 66000,
+    "priceBasis": "net",
+    "note": null,
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s6"
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -269,7 +283,7 @@
    "title": "AGIBOT A3 (store, specifications and FAQ)",
    "publisher": "AGIBOT",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -277,7 +291,7 @@
    "title": "AGIBOT A3 Humanoid Robot (Generation Robots)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -293,7 +307,7 @@
    "title": "AgiBot A3 (Bipedal)",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -301,7 +315,15 @@
    "title": "AgiBot A3 Developer (Bipedal)",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s6",
+   "url": "https://rbtx.de/de-DE/components/humanoid/agibot-a3-humanoid-robot-31dof/A3",
+   "title": "RBTX (igus)",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

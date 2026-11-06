@@ -1,0 +1,243 @@
+{
+ "schemaVersion": 1,
+ "id": "igus-iggyrob-home",
+ "maker": "igus",
+ "makerCountry": "DE",
+ "model": "iggyRob",
+ "variant": "Home",
+ "name": "igus iggyRob Home",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.igus.de/product/RBTX-IGUS-0353",
+ "summary": "A German wheeled service humanoid with two ReBeL arms on a ReBeLMove Pro base, a face display and a linear axis, for reception, teaching and light transport indoors.",
+ "launched": "2026-06",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 57090,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "\"zzgl. MwSt. und Versand\". The press release says from 55,000 EUR; the shop price is used."
+  },
+  "priceOther": null,
+  "leadTime": "2 to 3 weeks (igus.de shop)",
+  "sellers": [
+   {
+    "productUrl": "https://www.igus.de/product/RBTX-IGUS-0353",
+    "contactUrl": "https://www.igus.de/",
+    "email": null,
+    "phone": "+49 2203 9649-0",
+    "priceEur": 57090,
+    "priceBasis": "net",
+    "note": "Ready to ship in 2 to 3 weeks, igus.de shop.",
+    "name": "igus SE & Co. KG",
+    "country": "DE",
+    "role": "manufacturer",
+    "sourceId": "s1"
+   },
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/iggyrob-home",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": 57090,
+    "priceBasis": "net",
+    "note": "Art.-Nr. RBTX-IGUS-0353, \"In den Warenkorb\".",
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s2"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "buy_now",
+  "statusNote": "Listed in the igus.de shop and on RBTX at 57,090 EUR excl. VAT and shipping with a cart button. igus.de says ready to ship in 2 to 3 weeks. Made in Germany; igus states it is CE compliant.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.30 to 1.70",
+   "unit": "m",
+   "conditions": "depends on configuration",
+   "sourceId": "s3"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 120,
+   "unit": "kg",
+   "conditions": "RBTX listing",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 16,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 2.5,
+   "unit": "kg",
+   "conditions": "igus shop; RBTX lists 2 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Back basket payload",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "optional basket",
+   "sourceId": "s1"
+  },
+  {
+   "key": "base_payload_kg",
+   "label": "Base payload",
+   "value": 250,
+   "unit": "kg",
+   "conditions": "ReBeLMove Pro chassis, up to",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "RBTX listing",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 8,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s3"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR, 3D camera, display for simple facial expressions",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 interface, web app with graphical programming; Dynamic Mission Data Interface as add-on",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 2.5,
+  "carryPayloadKg": 50,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "ROS 2, igus web app",
+  "notes": [
+   "End effector depends on the application: suction gripper, two- or three-finger gripper or bionic hand. The listing does not say which one the price includes.",
+   "The back basket is optional.",
+   "Wireless charging. A linear axis extends the working range of the arms.",
+   "igus offers a test in your own environment before purchase."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://igus.widen.net/content/weqkflfr3h/webp/LCA_PROD_iggy_Rob_Home_DE_1.webp?quality=65",
+   "pageUrl": "https://www.igus.de/product/RBTX-IGUS-0353",
+   "credit": "igus",
+   "alt": "igus iggyRob Home in black and orange with a face display and two arms",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered for reception and information desks, catering, education and service work in buildings",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations"
+   ],
+   "task": "Offered as a platform for AI training and data capture",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Offered for pick and place, part transport and work at changing stations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.igus.de/product/RBTX-IGUS-0353",
+   "title": "iggyRob Home in the igus shop",
+   "publisher": "igus SE & Co. KG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/iggyrob-home",
+   "title": "iggyRob Home on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://press.igus.eu/humanoid-robotics-from-germany-igus-launches-new-service-robot/",
+   "title": "Humanoid robotics from Germany: igus launches new service robot",
+   "publisher": "igus SE & Co. KG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Which end effector is included at 57,090 EUR?",
+  "Payload per arm: 2.5 kg (igus) or 2 kg (RBTX)?"
+ ],
+ "checkedAt": "2026-11-06"
+}

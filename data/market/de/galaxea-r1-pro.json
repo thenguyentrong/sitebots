@@ -13,20 +13,23 @@
  "launched": "2025-09",
  "lifecycle": "shipping",
  "germany": {
-  "status": "buy_now",
-  "statusNote": "Sold in Galaxea's own online store in USD with Germany among the shipping countries; no German or EU reseller found. Import VAT and duty are not stated.",
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists R1 Pro with price on request. Galaxea's store says \"This product is not currently available for direct purchase from Galaxea Dynamics\" and sends business and education buyers to sales. CE status not confirmed.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4",
+   "s5"
   ],
   "priceEur": null,
   "priceOther": {
+   "note": null,
    "amount": 69999,
    "currency": "USD",
-   "market": "Galaxea online store (ships to Germany)",
+   "market": "Galaxea online store list price; not available for direct purchase",
    "sourceId": "s2"
   },
-  "leadTime": null,
+  "leadTime": "Usual delivery time: 8 weeks (RBTX English page; the German page says 3 Wochen)",
   "sellers": [
    {
     "name": "Galaxea Dynamics",
@@ -39,10 +42,23 @@
     "priceEur": null,
     "priceBasis": null,
     "sourceId": "s2",
-    "note": "Online store operated from Hong Kong; prices in USD."
+    "note": "Online store operated from Hong Kong; the R1 Pro page has no cart, business purchases through Galaxea sales."
+   },
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/galaxea-r1-pro-humanoid-robot-26-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": null,
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s4"
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -116,6 +132,22 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s3"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight kg",
+   "value": 126,
+   "unit": "kg",
+   "conditions": "Including battery",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 7,
+   "unit": "h",
+   "conditions": "Seller figure; operating mode and load not stated",
+   "sourceId": "s5"
   }
  ],
  "capabilities": {
@@ -131,11 +163,12 @@
   "handsIncluded": true,
   "armPayloadKg": 3.5,
   "carryPayloadKg": null,
-  "runtimeH": null,
+  "runtimeH": 7,
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
-   "s3"
+   "s3",
+   "s5"
   ],
   "notes": [
    "Dexterous hands can be fitted instead of grippers.",
@@ -171,7 +204,7 @@
    "title": "Galaxea online store settings (ships to DE, USD prices)",
    "publisher": "Galaxea Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -179,7 +212,7 @@
    "title": "Galaxea R1 Pro store page",
    "publisher": "Galaxea Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -187,12 +220,38 @@
    "title": "R1 Pro product page and parameters (Chinese)",
    "publisher": "Galaxea AI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://rbtx.de/de-DE/components/humanoid/galaxea-r1-pro-humanoid-robot-26-dof",
+   "title": "RBTX (igus SE & Co. KG)",
+   "publisher": "RBTX (igus SE & Co. KG)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://rbtx.de/en-GB/components/humanoid/galaxea-r1-pro-humanoid-robot-26-dof",
+   "title": "RBTX (igus SE & Co. KG)",
+   "publisher": "RBTX (igus SE & Co. KG)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "CE marking, import costs and warranty handling for Germany.",
   "Weight, runtime and battery data."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-21",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 7,
+   "sourceId": "s5",
+   "quote": "Operating time 7 h",
+   "basis": "Seller figure; operating mode and load not stated",
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

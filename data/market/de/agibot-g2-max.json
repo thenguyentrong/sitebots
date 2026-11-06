@@ -16,16 +16,56 @@
   "priceEur": null,
   "priceOther": null,
   "leadTime": null,
-  "sellers": [],
-  "checkedAt": "2026-10-02",
-  "status": "not_sold",
-  "statusNote": "Announced at WAIC 2026 in Shanghai; not on AGIBOT's global site, store or Tekpoint's European list.",
+  "sellers": [
+   {
+    "productUrl": "https://tekpoint.com/en/robotics/agibot/g2-max/",
+    "contactUrl": "https://tekpoint.com/en/contact/",
+    "email": "robotics@tekpoint.com",
+    "phone": "+49 211 36183789-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "AGIBOT's regional distributor for Europe; headquarters Vienna, German office Düsseldorf. Non-binding enquiry list, individual quotation, availability subject to project-specific confirmation.",
+    "name": "Tekpoint GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "sourceId": "s2"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "preorder",
+  "statusNote": "Not orderable yet: Tekpoint (Vienna, with an office in Düsseldorf), AGIBOT's European distributor, lists the G2 Max with an individual quotation on request, but states that EU conformity and European availability still need project-specific confirmation. No European delivery documented.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s3"
   ]
  },
- "specs": [],
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Dof total",
+   "value": 21,
+   "unit": null,
+   "conditions": "Manufacturer reference quoted by Tekpoint, not independently verified",
+   "sourceId": "s3"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "Up to 40 kg using both arms; manufacturer reference quoted by Tekpoint, not independently verified",
+   "sourceId": "s3"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working height m",
+   "value": "0.1–2.5",
+   "unit": "m",
+   "conditions": "Adjustable; manufacturer reference quoted by Tekpoint, not independently verified",
+   "sourceId": "s3"
+  }
+ ],
  "capabilities": {
   "legs": false,
   "wheels": true,
@@ -77,12 +117,30 @@
    "title": "Tekpoint: European regional distributor for AGIBOT robots",
    "publisher": "Tekpoint GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://tekpoint.com/en/robotics/agibot/g2-max/",
+   "title": "Tekpoint",
+   "publisher": "Tekpoint",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Payload, dimensions, delivery start and whether it will be sold in Europe.",
   "No official product image found on AGIBOT's English site."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "both_arms_payload_kg",
+   "value": 40,
+   "sourceId": "s3",
+   "quote": "Manufacturer reference: up to 40 kg handling capacity using both arms.",
+   "basis": "Up to 40 kg using both arms; manufacturer reference quoted by Tekpoint, not independently verified",
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

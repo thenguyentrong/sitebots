@@ -8,22 +8,23 @@
  "name": "Devanthro Robody",
  "robotType": "humanoid",
  "specialisedFor": [],
- "officialUrl": "https://www.devanthro.com/",
- "summary": "A 1.65 m wheeled home-care humanoid from Munich with two light arms (1.5 kg each), run by AI plus remote human operators; offered only inside a care service.",
+ "officialUrl": "https://plim.com/",
+ "summary": "A 1.65 m wheeled home humanoid from Munich (formerly Robody, now Plim) with two arms carrying 3 kg each, run by AI plus remote human operators; not on open sale.",
  "launched": null,
  "lifecycle": "pilot_only",
  "germany": {
   "status": "not_sold",
-  "statusNote": "Made in Munich and in private homes since early 2024, but not sold as a robot: Devanthro places Robodies itself as part of its \"Robody Cares\" service with care organisations and families (contact care@devanthro.com). No purchase offer or price.",
+  "statusNote": "Made in Munich and in private homes since 2024. Devanthro became Plim Robotics in October 2026 and Robody is now called Plim. No purchase offer, price or delivery date: plim.com only has a \"Register interest\" form for care organisations and families (contact hello@plim.com).",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s7"
   ],
   "priceEur": null,
   "priceOther": null,
   "leadTime": null,
   "sellers": [],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -37,42 +38,42 @@
   {
    "key": "weight_kg",
    "label": "Weight",
-   "value": 60,
+   "value": 80,
    "unit": "kg",
    "conditions": null,
-   "sourceId": "s3"
+   "sourceId": "s8"
   },
   {
    "key": "dof_per_arm",
    "label": "DoF per arm",
-   "value": 6,
+   "value": 7,
    "unit": null,
    "conditions": null,
-   "sourceId": "s3"
+   "sourceId": "s8"
   },
   {
    "key": "arm_payload_kg",
    "label": "Payload per arm",
-   "value": 1.5,
+   "value": 3,
    "unit": "kg",
    "conditions": null,
-   "sourceId": "s3"
+   "sourceId": "s8"
   },
   {
    "key": "runtime_h",
    "label": "Runtime",
-   "value": 6,
+   "value": 2,
    "unit": "h",
    "conditions": "Self-docking",
-   "sourceId": "s3"
+   "sourceId": "s8"
   },
   {
    "key": "compute",
    "label": "Compute",
-   "value": "NVIDIA Jetson Orin + Orin Nano",
+   "value": "NVIDIA Jetson Thor",
    "unit": null,
    "conditions": null,
-   "sourceId": "s3"
+   "sourceId": "s8"
   },
   {
    "key": "sensors",
@@ -89,6 +90,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s3"
+  },
+  {
+   "key": "mobility",
+   "label": "Mobility",
+   "value": "3-wheel omnidirectional drive",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s8"
   }
  ],
  "capabilities": {
@@ -141,6 +150,15 @@
    "date": "2024",
    "sourceId": "s1",
    "note": "Maker says Robodies have lived in private homes since early 2024."
+  },
+  {
+   "taskIds": [],
+   "task": "Home-care tests with elderly users, including users with dementia, in more than 50 use cases",
+   "stage": "pilot",
+   "where": "12+ care locations (country not stated on the page)",
+   "date": "2025",
+   "sourceId": "s4",
+   "note": "Care work, not construction. Maker's own statement."
   }
  ],
  "sources": [
@@ -150,7 +168,7 @@
    "title": "Devanthro home page",
    "publisher": "Devanthro GmbH",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -158,7 +176,7 @@
    "title": "Robody Cares",
    "publisher": "Devanthro GmbH",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -166,7 +184,7 @@
    "title": "Robody technology and hardware specs",
    "publisher": "Devanthro GmbH",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -174,7 +192,39 @@
    "title": "About us",
    "publisher": "Devanthro",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.devanthro.com/news/devanthro-is-now-plim-robotics/",
+   "title": "Devanthro / Plim Robotics",
+   "publisher": "Devanthro / Plim Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s6",
+   "url": "https://plim.com/news",
+   "title": "Plim Robotics",
+   "publisher": "Plim Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s7",
+   "url": "https://plim.com/",
+   "title": "Plim Robotics",
+   "publisher": "Plim Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://plim.com/meet-plim",
+   "title": "Plim Robotics",
+   "publisher": "Plim Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

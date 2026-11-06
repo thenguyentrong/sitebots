@@ -9,33 +9,14 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.ubtrobot.com/en/ai-education/products/walker-tienkung",
- "summary": "A 1.72 m open research humanoid with two 6-DOF hands and full motor and sensor APIs, orderable in Germany from RobotShop Europe (as Walker E Pro) or through Terra Robotics.",
+ "summary": "A 1.72 m open research humanoid with two 6-DOF hands and full motor and sensor APIs, available in Germany on request through Terra Robotics.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": {
-   "amount": 124409.1,
-   "basis": "gross",
-   "kind": "list",
-   "sourceId": "s4",
-   "note": "RobotShop Europe price shown with VAT for Germany; includes two 6-DOF dexterous hands, wireless controller and 200 W power adapter."
-  },
+  "priceEur": null,
   "priceOther": null,
-  "leadTime": "RobotShop: on-demand item, ordered from the supplier; due date shown at checkout",
+  "leadTime": null,
   "sellers": [
-   {
-    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
-    "country": "CA",
-    "role": "reseller",
-    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
-    "email": null,
-    "phone": "+33 8 01 90 23 42",
-    "productUrl": "https://eu.robotshop.com/products/ubtech-humanoid-robot-walker-e-embodied-intelligence",
-    "priceEur": 124409.1,
-    "priceBasis": "gross",
-    "sourceId": "s4",
-    "note": "Listed as Walker E Embodied Intelligence, manufacturer no. Walker E Pro; on-demand item with add-to-cart and quote request."
-   },
    {
     "name": "Terra Robotics (Terra Connect GmbH)",
     "country": "DE",
@@ -50,9 +31,9 @@
     "note": "Variant \"Embodied intelligence\"; metadata price EUR 178,000, basis not stated, not displayed."
    }
   ],
-  "checkedAt": "2026-10-02",
-  "status": "buy_now",
-  "statusNote": "RobotShop Europe sells this robot as \"Walker E Embodied Intelligence\" (Walker E Pro, also known as Tienkung) at EUR 124,409.10 incl. VAT, on demand, with delivery to Germany; Terra Robotics quotes on request.",
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "Terra Robotics lists the Walker Tienkung in its Embodied Intelligence version, price on request.",
   "sourceIds": [
    "s4",
    "s2",
@@ -146,7 +127,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -197,7 +178,7 @@
    "title": "Walker Tienkung product page",
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -205,7 +186,7 @@
    "title": "UBtech Walker Tienkung",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -227,5 +208,15 @@
  "openQuestions": [
   "How the Walker Tienkung relates to the Tien Kung robots of the Beijing Humanoid Robot Innovation Center is not stated by UBTECH."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Navigate Any Terrain, Effortlessly",
+   "basis": "maker claim for the Walker Tienkung series (both versions share the same 6-DOF legs); the maker's user manual (PDF p.17) advises against uneven ground",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

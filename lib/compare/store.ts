@@ -62,7 +62,12 @@ export function comparisonHref(items: CompareItem[]) {
   return '/compare?' + new URLSearchParams({ ids: items.map(x => x.id).join(',') });
 }
 
+/** The compare page acts on what it shows, which a shared link can make different from the saved list. */
+function replace(items: CompareItem[]) {
+  write(items.slice(0, MAX));
+}
+
 export function useCompare() {
   const state = useSyncExternalStore(subscribe, getSnapshot, () => EMPTY);
-  return { ...state, toggle, clear: () => write([]), full: state.items.length >= MAX };
+  return { ...state, toggle, replace, clear: () => write([]), full: state.items.length >= MAX };
 }

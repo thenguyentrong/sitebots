@@ -60,7 +60,7 @@ export function UseCaseProfile({ profile, name, collapsed = false, marketRobots 
     </div>
     <div className="px-5 py-4"><ProfileToggle site={site} tasks={tasks} /></div>
     {marketRobots.length ? <div className="border-t border-edge/70 px-5 py-5"><ConfigurationEvidence robots={marketRobots} /></div> : null}
-    <p className="border-t border-edge/70 bg-subtle/40 px-5 py-2.5 text-xs leading-relaxed text-muted">Unweighted thresholds use the matcher&apos;s rules. Handling shows evidence coverage. Source labels describe provenance and do not certify performance. <Link href="/methodology#profile" className="underline underline-offset-2 hover:text-foreground">How the axes are built</Link></p>
+    <p className="border-t border-edge/70 bg-subtle/40 px-5 py-2.5 text-xs leading-relaxed text-muted">Unweighted thresholds use the matcher&apos;s rules. Handling shows evidence coverage. Source labels describe provenance and do not certify performance.</p>
   </>;
   if (collapsed) return <details className="card group overflow-hidden" data-profile><summary className="flex cursor-pointer list-none flex-wrap items-center justify-between gap-3 px-5 py-3.5 [&::-webkit-details-marker]:hidden">{title}<span className="flex flex-wrap items-center gap-3">{meta}<span className="text-xs underline group-open:hidden">Show</span><span className="hidden text-xs underline group-open:inline">Hide</span></span></summary><div className="border-t border-edge/70">{body}</div></details>;
   return <section className="card overflow-hidden" data-profile><header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">{title}{meta}</header>{body}</section>;

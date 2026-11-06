@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "id": "astribot-t1",
+ "maker": "Astribot",
+ "makerCountry": "CN",
+ "model": "T1",
+ "variant": null,
+ "name": "Astribot T1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.astribot.com/en",
+ "summary": "A 1.55 m wheeled developer robot with cable-driven arms carrying up to 5 kg each, sold in China and the US.",
+ "launched": "2026-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 89900,
+   "currency": "CNY",
+   "market": "China, from-price on the Astribot home page",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-06",
+  "status": "not_sold",
+  "statusNote": "Astribot shows a China price, and US orders opened in autumn 2026 from USD 18,000. No European price, seller or office was found. RBTX lists the Astribot S1 only.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s5"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.55,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 66,
+   "unit": "kg",
+   "conditions": "about",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 23,
+   "unit": null,
+   "conditions": "excluding end effectors",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "SDK and API for joint control, Cartesian motion, whole-body coordination and sensor data; Astribot OS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "SDK and API, Astribot OS",
+  "notes": [
+   "Modular end effectors, compute modules and sensors. The press does not say what the from-price includes.",
+   "Automatic charging and quick battery replacement supported."
+  ],
+  "sourceIds": [
+   "s2",
+   "s3"
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sold as a development platform for researchers and developers",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.astribot.com/en",
+   "title": "Astribot home page",
+   "publisher": "Astribot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.humanoidsdaily.com/news/astribot-t1-north-america-iros-18000",
+   "title": "Astribot brings its $18,000 T1 robot to North America at IROS",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://interestingengineering.com/videos/chinas-new-14000-robot-can-handle-delicate-tasks-and-its-on-wheels",
+   "title": "China's new robot on wheels",
+   "publisher": "Interesting Engineering",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.astribot.com/en/news",
+   "title": "Astribot news list",
+   "publisher": "Astribot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://rbtx.de/de-DE/components/humanoid",
+   "title": "RBTX humanoid category",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Will Astribot sell T1 in Europe?",
+  "No official T1 product image could be read, so images is empty.",
+  "Specs come from press based on Astribot releases; no maker spec page was found."
+ ],
+ "checkedAt": "2026-11-06"
+}

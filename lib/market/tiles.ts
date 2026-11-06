@@ -28,14 +28,15 @@ export type TileData = {
   price: string | null;
   status: { label: string; tone: string };
   fine: string | null;
-  compare: { id: string; name: string } | null;
+  compare: { id: string; name: string };
 };
 
 const MAX_PICTURES = 8;
 const RANK = { buy_now: 0, quote: 1, preorder: 2, not_sold: 3 } as const;
 const PREVIEW_LICENCES = ['maker-preview', 'BSD-3-Clause', 'BSD-2-Clause', 'MIT', 'Apache-2.0'];
 
-type Row = { id: string; manufacturer_slug: string; model_slug: string; variant: string; name: string; form_factor: string };
+export type CatalogueRow = { id: string; manufacturer_slug: string; model_slug: string; variant: string; name: string; form_factor: string };
+type Row = CatalogueRow;
 type Shot = TilePicture & { url: string; render: boolean };
 
 const host = (url: string | null) => {
@@ -46,7 +47,7 @@ const host = (url: string | null) => {
   }
 };
 // Accents and the different hyphen characters do not make two names differ ("Mirokaï", "XMAN‑R1").
-const norm = (name: string) => name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2010-\u2015]/g, '-').toLowerCase().split(' ').filter(Boolean).join(' ');
+export const norm = (name: string) => name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2010-\u2015]/g, '-').toLowerCase().split(' ').filter(Boolean).join(' ');
 
 /** The catalogue configuration a market record is about: the longest catalogue name the record's
  * name starts with as whole words ("Unitree G1 EDU with Dex3-1 hands" is a G1 EDU; "Unitree B2-W"
@@ -82,7 +83,33 @@ function configurationFor<T extends { name: string }>(record: { id: string; name
   return (alias ? rows.find((row) => norm(row.name) === norm(alias)) : undefined) ?? rowFor(record.name, rows, record.maker);
 }
 
-async function catalogueRows(paths: string[]): Promise<Row[]> {
+/** The records about one configuration: the one named exactly like it first, then the easiest to buy, then the cheapest. */
+function recordsOf<T extends MarketRobot>(row: { id: string; name: string }, rows: { id: string; name: string }[], records: T[]): T[] {
+  const named = (record: T) => Number(rowFor(record.name, [row], record.maker) !== null && norm(record.name).endsWith(norm(row.name)));
+  return records.filter((record) => configurationFor(record, rows)?.id === row.id)
+    .sort((a, b) => named(b) - named(a) || RANK[a.germany.status] - RANK[b.germany.status] || (a.germany.priceEur?.amount ?? Infinity) - (b.germany.priceEur?.amount ?? Infinity));
+}
+
+/** Who is who on one catalogue page. `recordFor`: the market record that speaks for each configuration.
+ * `rowOf`: the configuration each record belongs to. A second record of one configuration is a different
+ * build (G1 EDU with other hands), so only the first counts as the same robot as the catalogue row. */
+export function pageIdentity<T extends MarketRobot>(rows: { id: string; name: string }[], records: T[]) {
+  const recordFor = new Map<string, T>();
+  const rowOf = new Map<string, string>();
+  for (const row of rows) {
+    const own = recordsOf(row, rows, records);
+    if (own[0]) recordFor.set(row.id, own[0]);
+    for (const record of own) rowOf.set(record.id, row.id);
+  }
+  /** One robot, one compare id: the catalogue id where the two are the same robot, else the record's own. */
+  const compareId = (record: T) => {
+    const row = rowOf.get(record.id);
+    return row && recordFor.get(row)?.id === record.id ? row : record.id;
+  };
+  return { recordFor, rowOf, compareId };
+}
+
+export async function catalogueRows(paths: string[]): Promise<Row[]> {
   if (!paths.length) return [];
   const sql = await getSql();
   return (await sql.query(
@@ -177,10 +204,13 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
     rowsByPath.set(key, [...(rowsByPath.get(key) ?? []), row]);
   }
   const shots = await cataloguePictures(rows.map((row) => row.id));
+  const byPath = marketByPath();
+  const identities = new Map([...rowsByPath].map(([path, list]) => [path, pageIdentity(list, byPath.get(path) ?? [])]));
   return robots.map((card) => {
     const path = pathOf(card.id);
     const pageRows = path ? rowsByPath.get(path) ?? [] : [];
     const row = configurationFor(card, pageRows);
+    const identity = path ? identities.get(path) : undefined;
     const base = pageRows.find((item) => item.variant === 'base');
     const model = row ? modelFor(row) : null;
     const record = market.get(card.id);
@@ -198,7 +228,7 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
       price: priceText(card),
       status: { label: STATUS_LABELS[card.germany.status], tone: card.germany.status },
       fine: (sellers ? plural(sellers, 'seller') + ' · ' : '') + jobs,
-      compare: row ? { id: row.id, name: row.name } : null,
+      compare: { id: record && identity ? identity.compareId(record) : card.id, name: card.name },
     };
   });
 }
@@ -227,10 +257,7 @@ export async function worldTiles(rows: RobotCard[]): Promise<TileData[]> {
   for (const row of await catalogueRows([...new Set(rows.map(pathOf))])) pages.set(pathOf(row), [...(pages.get(pathOf(row)) ?? []), row]);
   const bases = new Map([...pages].flatMap(([path, list]) => list.filter((row) => row.variant === 'base').map((row) => [path, row.id] as const)));
   const shots = await cataloguePictures([...rows.map((row) => row.id), ...bases.values()]);
-  const recordsFor = (row: RobotCard) => (byPath.get(pathOf(row)) ?? [])
-    .filter((record) => configurationFor(record, pages.get(pathOf(row)) ?? [])?.id === row.id)
-    // The record named exactly like the configuration first, then the easiest to buy, then the cheapest.
-    .sort((a, b) => Number(rowFor(b.name, [row], b.maker) !== null && norm(b.name).endsWith(norm(row.name))) - Number(rowFor(a.name, [row], a.maker) !== null && norm(a.name).endsWith(norm(row.name))) || RANK[a.germany.status] - RANK[b.germany.status] || (a.germany.priceEur?.amount ?? Infinity) - (b.germany.priceEur?.amount ?? Infinity));
+  const recordsFor = (row: RobotCard) => recordsOf(row, pages.get(pathOf(row)) ?? [], byPath.get(pathOf(row)) ?? []);
   return rows.map((row) => {
     const records = recordsFor(row);
     const best = records[0];

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { comparisonHref, useCompare } from '@/lib/compare/store';
 export { useCompare } from '@/lib/compare/store';
 export type { CompareItem } from '@/lib/compare/store';
@@ -46,10 +47,12 @@ export function CompareToggle({ id, name, size = 'sm' }: { id: string; name: str
 
 export function CompareBar() {
   const { items, toggle, clear } = useCompare();
-  if (!items.length) return null;
+  // On the chat it would sit on top of the input, and the option cards link to the comparison anyway.
+  const onChat = usePathname() === '/';
+  if (!items.length || onChat) return null;
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-4 z-30 flex justify-center px-4">
-      <div className="pointer-events-auto flex max-w-full flex-wrap items-center gap-2 rounded-2xl border border-edge bg-card/95 p-2 pl-3 shadow-float backdrop-blur">
+      <div className="pointer-events-auto flex max-w-full flex-wrap items-center gap-2 rounded-2xl border border-edge bg-card p-2 pl-3 shadow-float">
         <span className="eyebrow mr-1">Compare</span>
         {items.map((it) => (
           <button

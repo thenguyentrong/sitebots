@@ -1,0 +1,280 @@
+{
+ "schemaVersion": 1,
+ "id": "booster-t2-pro-high-dof-tactile",
+ "maker": "Booster Robotics",
+ "makerCountry": "CN",
+ "model": "T2",
+ "variant": "Pro High-DoF Tactile (2000 TOPS)",
+ "name": "Booster T2 Pro High-DoF Tactile",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.booster.tech/booster-t2/",
+ "summary": "A 1.4 m two-legged research humanoid with two 21-DOF tactile hands and NVIDIA Thor compute, for fine manipulation research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 126677,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "Incl. 19% VAT, plus shipping, Bipedal."
+  },
+  "priceOther": null,
+  "leadTime": "About 4 weeks (Bipedal, Germany)",
+  "sellers": [
+   {
+    "productUrl": "https://www.bipedal.de/Booster-Robotics-T2-Pro-High-DoF-Tactile",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": 126677,
+    "priceBasis": "gross",
+    "note": "\"Sofort verfügbar\", delivery about 4 weeks in Germany. Article 101004.",
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "sourceId": "s1"
+   },
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/booster-t2-pro-high-tactile-jetson-agx-orin-32gb-200-tops",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "RBTX shows 99,999 EUR excl. VAT, but its title says Jetson AGX Orin 32GB, 200 TOPS while its text says NVIDIA Thor, 2000 TOPS. Confirm the compute before comparing prices.",
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s2"
+   },
+   {
+    "productUrl": "https://www.generationrobots.com/de/404468-humanoider-roboter-booster-t2.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 800982602",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Lists it as Pro P3-3 with BrainCo Revo3 U21T hands; price only after choosing the version.",
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "sourceId": "s3"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "buy_now",
+  "statusNote": "Bipedal (Leverkusen) sells this configuration at 126,677 EUR incl. VAT with a cart button, shown as immediately available with about 4 weeks delivery. Generation Robots lists it as Pro P3-3. The RBTX listing has a different price and a conflicting compute title, so its price is not used.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.4,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 43,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 73,
+   "unit": null,
+   "conditions": "including hands",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 21,
+   "unit": null,
+   "conditions": "fully backdrivable, tactile sensing across the whole hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "RBTX listing, same as the plain T2 Pro; Bipedal states 5 kg horizontal for this version",
+   "sourceId": "s2"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload both arms",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "maximum dual-arm payload, T2 maker page, depends on posture",
+   "sourceId": "s4"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "RBTX and Generation Robots; maker states 3 m/s walking for T2",
+   "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 140,
+   "unit": "N·m",
+   "conditions": null,
+   "sourceId": "s4"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "up to, one battery pack",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 10 Ah",
+   "unit": null,
+   "conditions": "T2 maker page",
+   "sourceId": "s4"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Thor T5000, 2070 TFLOPS",
+   "unit": null,
+   "conditions": "maker page; sellers write 2000 TOPS",
+   "sourceId": "s4"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head and waist depth cameras, wrist cameras, microphone array, 9-axis IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 and SDK, Python or C++",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "ROS 2, SDK in Python or C++",
+  "notes": [
+   "Hands are BrainCo Revo3 U21T according to Generation Robots.",
+   "Payload per arm is 3 kg on RBTX and 5 kg on Bipedal; the lower value is used.",
+   "Generation Robots states movement on steps and slopes for T2; the maker makes no stair claim.",
+   "Delivered with one battery pack, charger, remote and transport case."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.bipedal.de/media/image/product/117/lg/booster-robotics-t2-pro-high-dof-tactile~2.png",
+   "pageUrl": "https://www.bipedal.de/Booster-Robotics-T2-Pro-High-DoF-Tactile",
+   "credit": "Bipedal GmbH",
+   "alt": "Booster T2 Pro High-DoF Tactile with five-finger hands, running pose",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-tactile-contact-experiments"
+   ],
+   "task": "Sold as a platform for dexterous manipulation and tactile research",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bipedal.de/Booster-Robotics-T2-Pro-High-DoF-Tactile",
+   "title": "Booster Robotics T2 Pro High-DoF Tactile (2000 TOPS)",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/booster-t2-pro-high-tactile-jetson-agx-orin-32gb-200-tops",
+   "title": "Booster T2 Pro tactile version on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/de/404468-humanoider-roboter-booster-t2.html",
+   "title": "Booster T2 at Generation Robots (DE shop)",
+   "publisher": "Generation Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.booster.tech/booster-t2/",
+   "title": "Booster T2 product page",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Is the RBTX listing at 99,999 EUR the same configuration? Its title says 200 TOPS, its text says 2000 TOPS.",
+  "Payload per arm: 3 kg or 5 kg?",
+  "The maker page does not list this hand option by name; the 73 DOF value comes from sellers."
+ ],
+ "checkedAt": "2026-11-06"
+}

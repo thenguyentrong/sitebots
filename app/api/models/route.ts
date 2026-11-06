@@ -15,5 +15,5 @@ export function GET(request: Request) {
   if (!entry) return NextResponse.json({ error: 'No model for this robot' }, { status: 404 });
   const formFactor: FormFactor = (FORM_FACTORS as readonly string[]).includes(form) ? form as FormFactor : 'humanoid';
   const presets = resolvePresets(key, formFactor, entry.joints.joints);
-  return NextResponse.json({ entry, presets }, { headers: { 'cache-control': 'public, max-age=3600' } });
+  return NextResponse.json({ entry, presets }, { headers: { 'cache-control': 'public, max-age=3600', 'vercel-cdn-cache-control': 'public, max-age=604800' } });
 }

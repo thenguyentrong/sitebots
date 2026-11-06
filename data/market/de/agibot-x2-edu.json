@@ -31,7 +31,7 @@
     "note": "X2 EDU is selectable in AGIBOT's product enquiry form."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "Selectable as \"AGIBOT X2 EDU\" in AGIBOT's business enquiry form; AGIBOT sells into Europe, but no European seller, listing or price for the EDU was found.",
   "sourceIds": [
@@ -69,8 +69,16 @@
    "label": "End-effector payload",
    "value": 3,
    "unit": "kg",
-   "conditions": "up to",
-   "sourceId": "s1"
+   "conditions": "max in a specific posture, without end effector; at most 1 kg across the full workspace",
+   "sourceId": "s4"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "walking, continuous at 0.5 m/s; third column of the table is X2 EDU (same value for X2 Ultra and X2 Ultra new version)",
+   "sourceId": "s4"
   }
  ],
  "capabilities": {
@@ -82,18 +90,21 @@
   "stairs": null,
   "outdoor": null,
   "arms": 2,
-  "hands": "optional",
+  "hands": "gripper",
   "handsIncluded": null,
-  "armPayloadKg": 3,
+  "armPayloadKg": 1,
   "carryPayloadKg": null,
-  "runtimeH": null,
+  "runtimeH": 2,
   "ipRating": null,
   "sdk": "Open motion-control and hardware interfaces",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s4",
+   "s5"
   ],
   "notes": [
-   "End effectors, sensors and compute modules are added by the user."
+   "Only a clamp end effector is supported on the EDU; dexterous hands, interaction and perception modules are not (AGIBOT developer docs).",
+   "Payload 3 kg only in a specific posture; at most 1 kg across the full workspace."
   ]
  },
  "images": [],
@@ -134,11 +145,37 @@
    "publisher": "AGIBOT",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://x2-aimdk.agibot.com/en/dev/about_agibot_X2/robot_specifications.html",
+   "title": "1.2 Robot Specifications — AimDK_X2 1.1.0 documentation",
+   "publisher": "AGIBOT (AimDK X2 developer documentation)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://x2-aimdk.agibot.com/en/dev/about_agibot_X2/part_name.html",
+   "title": "AGIBOT X2 part names and EDU scope",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-21"
   }
  ],
  "openQuestions": [
   "Price, delivery start and whether the EDU is offered in Europe.",
   "No product image on AGIBOT's English site."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-21",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 2,
+   "sourceId": "s4",
+   "quote": "Battery life Continuous walking at 0.5 m/s for about 2 hours Continuous walking at 0.5 m/s for about 2 hours Continuous walking at 0.5 m/s for about 2 hours",
+   "basis": "walking, continuous at 0.5 m/s; third column of the table is X2 EDU (same value for X2 Ultra and X2 Ultra new version)",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import { PGlite } from '@electric-sql/pglite';
-import { getCompareRows } from './compare';
+import { getCompareColumns, getCompareRows } from './compare';
 import { getManufacturer, listManufacturers } from './manufacturers';
 import { getRobotDetail, listRobotPaths } from './robots';
 
@@ -36,7 +36,7 @@ beforeAll(async () => {
       ('${mobileArm}',array['payload'],'2026-10-01'),
       ('${mobilePlatform}',array['payload'],'2026-10-01'),
       ('${excluded}',array['a','b','c'],'2026-10-01');
-    create table robot_cards (id uuid, name text, manufacturer_slug text, model_slug text, form_factor text, variant text);
+    create table robot_cards (id uuid, name text, manufacturer_slug text, model_slug text, form_factor text, variant text, manufacturer_name text default 'Unitree Robotics');
     insert into robot_cards values
       ('${humanoid}','H1','unitree','h1','humanoid','base'),
       ('${dog}','Go2','unitree','go2','quadruped','base'),
@@ -62,6 +62,24 @@ describe('public catalogue surfaces preserve mobile robots in the focused scope'
     const result = await getCompareRows([excluded, mobilePlatform, mobileArm, dog]);
     expect(result.map(row => row.card.id)).toEqual([mobileArm, dog]);
     expect((await getCompareRows([humanoid, dog])).map(row => row.card.id)).toEqual([humanoid, dog]);
+  });
+  it('compares market and catalogue ids together, one robot once, and the market record speaks first', async () => {
+    const { columns, robots, unknown } = await getCompareColumns([humanoid, 'unitree-h1', 'acr-ironbot', dog, 'no-such-robot']);
+    expect(columns.map((column) => column.id)).toEqual([humanoid, 'acr-ironbot', dog]);
+    expect(robots).toBe(3);
+    expect(unknown).toBe(1);
+    // The UUID and the market id are the same H1: its column is the market record, under the catalogue page.
+    expect(columns[0]).toMatchObject({ name: 'Unitree H1', href: '/robots/unitree/h1' });
+    expect(columns[1].href).toBe('/market/acr-ironbot');
+    expect(columns[1].facts.job[0].text).not.toBe('Not applicable');
+    // A catalogue id still works when no market record speaks for that exact configuration.
+    expect((await getCompareColumns([mobileArm])).columns.map((column) => column.id)).toEqual([mobileArm]);
+  });
+  it('keeps the first four robots and counts the rest, and drops ids outside the focused scope', async () => {
+    const { columns, robots } = await getCompareColumns([humanoid, dog, mobileArm, 'acr-ironbot', 'unitree-go2-w']);
+    expect(columns).toHaveLength(4);
+    expect(robots).toBe(5);
+    expect((await getCompareColumns([excluded])).columns).toEqual([]);
   });
   it('includes mobile manipulator paths and excludes AMR and factory classes in the sitemap', async () => {
     expect((await listRobotPaths()).map(row => row.slug)).toEqual(['go2', 'h1', 'mobile-arm']);

@@ -17,7 +17,7 @@
   "priceOther": null,
   "leadTime": null,
   "sellers": [],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "not_sold",
   "statusNote": "PUDU shows the D9 with a demo-request form and says it is \"aiming towards commercially viable\" embodied intelligence; no price, seller or delivery in Europe found.",
   "sourceIds": [
@@ -97,6 +97,22 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 20,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak torque nm",
+   "value": 352,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -140,7 +156,7 @@
    "title": "PUDU D9 product page",
    "publisher": "Pudu Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -148,9 +164,19 @@
    "title": "Pudu Robotics Kontakt (German site)",
    "publisher": "Pudu Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "both_arms_payload_kg",
+   "value": 20,
+   "sourceId": "s1",
+   "quote": "Maximum Payload20 kg (44.09 pounds)Single-arm 10 kg (22.05 pounds)(Testing Environment)",
+   "basis": null,
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

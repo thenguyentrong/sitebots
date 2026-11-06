@@ -16,7 +16,8 @@
   "status": "buy_now",
   "statusNote": "Listed in the igus.de online shop with price and cart button (\"zzgl. MwSt. und Versand\"); delivery time shown as \"Lieferzeit auf Anfrage\" (on request). CE certified. Made by igus in Cologne.",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s2"
   ],
   "priceEur": {
    "amount": 51691.37,
@@ -26,7 +27,7 @@
    "note": "51,691.37 EUR per piece, \"zzgl. MwSt. und Versand\" on the rendered shop page."
   },
   "priceOther": null,
-  "leadTime": "Lieferzeit auf Anfrage (on request)",
+  "leadTime": "Übliche Lieferzeit: 2-3 Monate (RBTX); igus shop: Lieferzeit auf Anfrage",
   "sellers": [
    {
     "name": "igus SE & Co. KG",
@@ -40,9 +41,22 @@
     "priceBasis": "net",
     "sourceId": "s1",
     "note": "Online shop, article no. 0-LCA-IROB; also chat and WhatsApp advice."
+   },
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/iggyrob-humanoid-robot",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 51691.37,
+    "priceBasis": "net",
+    "note": null,
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s2"
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -186,7 +200,15 @@
    "title": "iggyRob: Humanoider Roboter (igus shop)",
    "publisher": "igus SE & Co. KG",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/iggyrob-humanoid-robot",
+   "title": "RBTX (igus SE & Co. KG)",
+   "publisher": "RBTX (igus SE & Co. KG)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

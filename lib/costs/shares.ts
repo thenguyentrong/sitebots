@@ -1,8 +1,9 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-// Server side. Cost shares per trade from the weights of the official construction price indices
-// and personnel cost shares per branch, both from Destatis (data/costs/trade-shares.json).
+// Server side. Cost shares per trade from the weights of the official construction price indices,
+// personnel cost shares per branch and the cost of an hour of work, from Destatis, Eurostat and the
+// collective agreement (data/costs/trade-shares.json).
 
 export type Source = { title: string; publisher: string; published: string; url: string; basis: string };
 export type BuildingType = 'wohn' | 'buero' | 'gewerbe';
@@ -10,12 +11,24 @@ export type CivilType = 'strasse' | 'kanal' | 'bruecke';
 export type Trade = { de: string; en: string; section: 'rohbau' | 'ausbau' | 'tga'; values: Record<BuildingType, number | null>; setting: string | null; where: string };
 export type CivilWork = { de: string; en: string; values: Record<CivilType, number | null>; setting: string | null; where: string };
 export type Branch = { wz: string; de: string; en: string; value: number; where: string };
+export type HourlySource = 'jahresschaetzung' | 'ake2024' | 'tariff' | 'minimumWage';
+/** What an hour costs the employer: wages plus social and other labour costs, per hour worked. */
+export type HourlyCost = { wz: string; de: string; en: string; year: number; value: number; wages: number | null; source: HourlySource; where: string };
+/** The collectively agreed wage per paid hour: what the worker is paid, not what the hour costs. */
+export type TariffGroup = { group: string; tl: number; bz: number; gtl: number; note?: string };
+export type Hourly = {
+  sources: Record<HourlySource, Source>;
+  labourCost: HourlyCost[];
+  tariff: { agreement: string; validFrom: string; firstTerminableTo: string; unit: string; groups: TariffGroup[]; where: string };
+  minimumWage: { value: number; validFrom: string; unit: string; source: HourlySource; where: string };
+};
 export type TradeShares = {
   checkedAt: string;
   sources: { weights: Source; labour: Source };
   buildings: { types: { id: BuildingType; de: string; en: string }[]; totals: Record<BuildingType, { rohbau: number; ausbau: number }>; trades: Trade[] };
   civil: { types: { id: CivilType; de: string; en: string }[]; works: CivilWork[] };
   labour: Branch[];
+  hourly: Hourly;
 };
 
 let cache: TradeShares | null = null;

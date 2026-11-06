@@ -14,11 +14,12 @@
  "lifecycle": "pilot_only",
  "germany": {
   "status": "preorder",
-  "statusNote": "Offered through an \"Early Access\" request; deployments run as robot-as-a-service. Pilots done in Germany (Siemens Erlangen, Schaeffler Herzogenaurach); first live production deployments at two Schaeffler sites in Germany run from December 2026 to June 2027. No public price and no general delivery date for other buyers.",
+  "statusNote": "Offered through an \"Early Access\" request. Trade press citing Forbes reports direct purchase as well as robot-as-a-service, and more than 34,000 nonbinding preorders. Pilots done in Germany (Siemens Erlangen, Bosch Bühl, Schaeffler Herzogenaurach); first live production deployments at two Schaeffler sites in Germany run from December 2026 to June 2027. Bosch is the contract manufacturer for Europe, with several hundred robots expected in 2027. No public price and no general delivery date for other buyers.",
   "sourceIds": [
    "s1",
    "s2",
-   "s3"
+   "s3",
+   "s5"
   ],
   "priceEur": null,
   "priceOther": null,
@@ -38,7 +39,7 @@
     "note": "Early Access request form on the website; robot-as-a-service model."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -132,7 +133,7 @@
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
-  "handsIncluded": null,
+  "handsIncluded": true,
   "armPayloadKg": null,
   "carryPayloadKg": null,
   "runtimeH": 4,
@@ -197,6 +198,15 @@
    "date": "2026-02",
    "sourceId": "s4",
    "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "HMND 01 robots autonomously transferred boxes of 5 sizes from a conveyor to a trolley in an intralogistics proof of concept",
+   "stage": "pilot",
+   "where": "Bosch, Bühl, Germany",
+   "date": "2026-03",
+   "sourceId": "s6",
+   "note": "Factory logistics, not construction. The post dates the POC to March 2026 and does not give throughput."
   }
  ],
  "sources": [
@@ -206,7 +216,7 @@
    "title": "HMND 01 Alpha Wheeled product page",
    "publisher": "Humanoid",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -214,7 +224,7 @@
    "title": "Humanoid secures landmark deal with Schaeffler",
    "publisher": "Humanoid",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -222,7 +232,7 @@
    "title": "Siemens and Humanoid bring Physical AI to the factory floor",
    "publisher": "Humanoid",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -230,7 +240,23 @@
    "title": "HMND 01 Alpha completes logistics POC with SAP and Martur Fompak",
    "publisher": "Humanoid",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://humanoid.guide/humanoid-claims-34000-preorders-for-wheeled-hmnd-01/",
+   "title": "Humanoid.guide (summarising Forbes)",
+   "publisher": "Humanoid.guide (summarising Forbes)",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s6",
+   "url": "https://thehumanoid.ai/humanoid-secures-partnership-with-bosch-following-a-successful-poc/",
+   "title": "Humanoid",
+   "publisher": "Humanoid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
@@ -238,5 +264,15 @@
   "When can buyers outside the partner programmes get units?",
   "CE marking status?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "hands_included",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "End-effectors Modular design featuring 12-DOF 5-finger hand or 1-DOF parallel gripper.",
+   "basis": "ships with one end effector chosen per deployment: 12-DOF five-finger hand or 1-DOF parallel gripper",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

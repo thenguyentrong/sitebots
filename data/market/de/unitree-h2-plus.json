@@ -10,15 +10,17 @@
  "specialisedFor": [],
  "officialUrl": "https://www.unitree.com/H2plus",
  "summary": "H2 humanoid with an on-board NVIDIA Jetson Thor computer and optional 22-DOF tactile hands, built as a reference robot for academic AI research.",
- "launched": null,
- "lifecycle": "shipping",
+ "launched": "2026-06",
+ "lifecycle": "preorder",
  "germany": {
   "status": "preorder",
-  "statusNote": "Not yet delivered in Germany: QUADRUPED Robotics lists it from 28.01.2027, Unitree's store shows it unavailable, Generation Robots quotes on request without stock.",
+  "statusNote": "Not yet delivered in Germany: QUADRUPED Robotics lists it from 28.01.2027, Unitree's store shows it unavailable, Generation Robots quotes on request without stock. reichelt lists H2 PLUS Smart at 69,140 € and Ultimate N at 211,579.99 € incl. VAT, \"Verfügbar in Q1 2027\", business buyers only. NVIDIA says the reference robot \"will be available from Unitree in late 2026\".",
   "sourceIds": [
    "s2",
    "s3",
-   "s6"
+   "s6",
+   "s8",
+   "s7"
   ],
   "priceEur": {
    "amount": 55000,
@@ -55,9 +57,22 @@
     "priceBasis": "net",
     "sourceId": "s6",
     "note": "\"H2 Plus Smart\" 58,400 EUR net; Ultimate A-N 59,300-178,400 net; parent page says price on request; all \"available from 28.01.2027\"."
+   },
+   {
+    "name": "reichelt elektronik GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.reichelt.de/de/de/shop/produkt/h2_plus_smart_-_humanoider_forschungsroboter-440930",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 69140,
+    "priceBasis": "gross",
+    "sourceId": "s8",
+    "note": "H2 PLUS Smart without dexterous hands 69,140 €; Ultimate A–N 70,170 € to 211,579.99 € incl. VAT; \"Sonderartikel\", \"Verfügbar in Q1 2027\"; delivered only to businesses, institutions and authorities."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -167,7 +182,7 @@
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
-  "handsIncluded": null,
+  "handsIncluded": false,
   "armPayloadKg": 7,
   "carryPayloadKg": null,
   "runtimeH": 3,
@@ -175,7 +190,8 @@
   "sdk": "NVIDIA Isaac stack (GR00T, Sim, Lab, ROS, TeleOp)",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s6"
   ],
   "notes": [
    "SharpaWave hands optional: 1.3 kg each, 30 kg hand payload, 150 N grip.",
@@ -214,10 +230,9 @@
   }
  ],
  "openQuestions": [
-  "Unitree's own store shows no orderable price for H2 Plus.",
-  "Launch date: the cited Unitree news page did not show an H2 Plus launch item when re-checked."
+  "Orderable price: Unitree's store now shows USD 100,000 but the product is not orderable (\"contact our sales team\"); no seller takes a binding order before Q1 2027."
  ],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-20",
  "sources": [
   {
    "id": "s1",
@@ -225,7 +240,7 @@
    "title": "Unitree H2 Plus product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -233,7 +248,7 @@
    "title": "Unitree H2 Plus humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -241,7 +256,7 @@
    "title": "Unitree news center",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -249,7 +264,7 @@
    "title": "Unitree H2 Plus in the Unitree online store",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -257,7 +272,7 @@
    "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -265,7 +280,33 @@
    "title": "Unitree H2 Plus at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s7",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design",
+   "title": "NVIDIA Isaac GR00T reference humanoid robot announcement",
+   "publisher": "NVIDIA",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.reichelt.de/de/de/shop/produkt/h2_plus_smart_-_humanoider_forschungsroboter-440930",
+   "title": "H2 PLUS Smart - Humanoider Forschungsroboter at reichelt",
+   "publisher": "reichelt elektronik GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-10-20"
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "hands_included",
+   "value": false,
+   "sourceId": "s6",
+   "quote": "Geschicklichkeitshände optional (kostenpflichtig) [dexterous hands optional (at extra cost)]",
+   "basis": "base package H2 PLUS Smart (the record's from-price); hands are a paid option (Ultimate A-N); Unitree labels the Sharpa Wave hand \"(Optional)\"",
+   "checkedAt": "2026-10-20"
   }
  ]
 }

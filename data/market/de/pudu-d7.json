@@ -8,8 +8,8 @@
  "name": "PUDU D7",
  "robotType": "humanoid",
  "specialisedFor": [],
- "officialUrl": null,
- "summary": "A wheeled industrial semi-humanoid announced in June 2026 that handles up to 14 kg up to 2 m height and swaps its own batteries.",
+ "officialUrl": "https://www.pudurobotics.com/en/products/d7",
+ "summary": "A wheeled 1.75 m, 140 kg industrial semi-humanoid announced in June 2026, with up to 20 kg total payload, 2 m working height and self-swapping batteries.",
  "launched": "2026-06",
  "lifecycle": "prototype",
  "germany": {
@@ -17,30 +17,31 @@
   "priceOther": null,
   "leadTime": null,
   "sellers": [],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "not_sold",
-  "statusNote": "Announced in Shenzhen in June 2026; not on PUDU's product pages (English or German) and no European seller or price found.",
+  "statusNote": "PUDU now shows the D7 on its product pages (English and German) with a demo request, and showed it in Europe for the first time at IFA Berlin in September 2026. PUDU has an office in Germany and says all four of its product lines are available in Europe, but no price, named European seller or delivery of the D7 was found, and PUDU says some features are not yet available to customers, so it stays not_sold.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ]
  },
  "specs": [
   {
    "key": "carry_payload_kg",
    "label": "Payload",
-   "value": 14,
+   "value": 20,
    "unit": "kg",
    "conditions": "up to; not split per arm",
-   "sourceId": "s1"
+   "sourceId": "s3"
   },
   {
    "key": "reach_m",
    "label": "Working height",
-   "value": 2,
+   "value": 0.8,
    "unit": "m",
    "conditions": "up to",
-   "sourceId": "s1"
+   "sourceId": "s3"
   },
   {
    "key": "swappable_battery",
@@ -57,6 +58,70 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "height_m",
+   "label": "Height m",
+   "value": 1.75,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight kg",
+   "value": 140,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 7,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Dof total",
+   "value": 23,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed ms",
+   "value": 2,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max slope deg",
+   "value": 8,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "275 TOPS (NVIDIA Jetson Orin + RK3588)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3"
   }
  ],
  "capabilities": {
@@ -68,15 +133,16 @@
   "stairs": null,
   "outdoor": null,
   "arms": 2,
-  "hands": "dexterous",
+  "hands": "optional",
   "handsIncluded": null,
-  "armPayloadKg": null,
+  "armPayloadKg": 7,
   "carryPayloadKg": 14,
-  "runtimeH": null,
+  "runtimeH": 4,
   "ipRating": null,
-  "sdk": null,
+  "sdk": "SDKs and APIs",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s3"
   ],
   "notes": [
    "Wheeled base shown in PUDU's launch photo; hand type not stated in text.",
@@ -110,7 +176,7 @@
    "title": "PUDU D7 launch announcement",
    "publisher": "Pudu Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -118,11 +184,45 @@
    "title": "Pudu Robotics Kontakt (German site)",
    "publisher": "Pudu Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.pudurobotics.com/en/products/d7",
+   "title": "Pudu Robotics",
+   "publisher": "Pudu Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.roboticstomorrow.com/content.php?post=27087",
+   "title": "Robotics Tomorrow (Pudu Robotics release)",
+   "publisher": "Robotics Tomorrow (Pudu Robotics release)",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Hand type, size, runtime and delivery start."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 7,
+   "sourceId": "s3",
+   "quote": "Single-Arm PayloadRated: 15.43 lbs (7 kg); Peak: 22.05 lbs (10 kg)",
+   "basis": null,
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "field": "runtime_h",
+   "value": 4,
+   "sourceId": "s3",
+   "quote": "Operationg Time≥4 h (Supports in-operation charging)",
+   "basis": null,
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

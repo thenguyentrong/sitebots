@@ -19,9 +19,16 @@
    "s1",
    "s2",
    "s3",
-   "s4"
+   "s4",
+   "s5"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "note": "QUADRUPED Robotics, H2-D Flagship A (Dex1-1 grippers), excl. 19% VAT, available from 31.03.2027. Lowest of Flagship A-M.",
+   "amount": 47300,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s5"
+  },
   "priceOther": null,
   "leadTime": "available from 31.03.2027 (QUADRUPED Robotics)",
   "sellers": [
@@ -46,13 +53,13 @@
     "contactUrl": "https://www.quadruped.de/Kontakt",
     "email": "info@quadruped.de",
     "phone": "+49 2271 588 930",
-    "priceEur": null,
-    "priceBasis": null,
-    "sourceId": "s4",
-    "note": "Page covers H2-A (upper body, from 24,100 EUR net) and H2-D stationary (Standard) or mobile (Flagship) with 13 hand options; Flagship price not shown clearly; \"available from 31.03.2027\". For the selected A–M H2-D Flagship bundle, QUADRUPED lists an included end-effector pair with wrist cameras; the end-effector type depends on the chosen hand configuration. This inclusion applies to that dealer bundle, not every manufacturer or seller configuration. Checked 2026-10-02."
+    "priceEur": 47300,
+    "priceBasis": "net",
+    "sourceId": "s5",
+    "note": "H2-D Flagship A-M: 47,300 EUR net (A, Dex1-1) up to 116,400 net (L, BrainCo Revo 3 U21VT); B 56,400, F 53,700. The page's 24,100 is H2-A Standard A, not the H2-D. All \"available from 31.03.2027\". End effector pair with wrist cameras included per chosen hand version."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -162,14 +169,15 @@
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
-  "handsIncluded": null,
+  "handsIncluded": true,
   "armPayloadKg": 7,
   "carryPayloadKg": null,
   "runtimeH": 5,
   "ipRating": null,
   "sdk": "Unitree SDKs, APIs and navigation stack",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s4"
   ],
   "notes": [
    "End effector chosen at purchase: gripper, 3-finger or 5-finger hand.",
@@ -221,7 +229,7 @@
    "title": "Unitree H2 series dual-arm humanoid (H2-D / H2-A) product page",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -229,7 +237,7 @@
    "title": "Unitree order form and global sales contact",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -237,7 +245,7 @@
    "title": "Unitree online store shipping policy",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -245,7 +253,25 @@
    "title": "Unitree H2-A / H2-D at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.quadruped.de/index.php?a=2093",
+   "title": "QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "hands_included",
+   "value": true,
+   "sourceId": "s4",
+   "quote": "1× H2-D Flagship in der gewählten Handvariante, inkl. Endeffektorpaar mit Handgelenkkameras [1x H2-D Flagship in the chosen hand variant, incl. end-effector pair with wrist cameras]",
+   "basis": "QUADRUPED Robotics package (only German seller): every hand variant A-M ships with an end-effector pair; Unitree lists the end effector as a choice at purchase",
+   "checkedAt": "2026-10-20"
   }
  ]
 }

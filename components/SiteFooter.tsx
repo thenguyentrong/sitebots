@@ -1,77 +1,19 @@
+'use client';
+
 import Link from 'next/link';
-import Image from 'next/image';
-import styles from './SiteFooter.module.css';
-import { Logo } from '@/components/Logo';
-import { EvidenceBadge } from '@/components/robot/EvidenceBadge';
-import { SITE } from '@/lib/site';
-import { TRUST_HINT } from '@/lib/spec/display';
-import type { Trust } from '@/lib/spec/enums';
+import { usePathname } from 'next/navigation';
 
-const TRUSTS: Trust[] = ['verified', 'assessed', 'reported', 'unknown'];
-const LINKS = [
-  { href: '/#explore', label: 'Job map' },
-  { href: '/steps', label: 'How the work is done' },
-  { href: '/robots', label: 'Robots' },
-  { href: '/brands', label: 'Makers' },
-  { href: '/costs', label: 'Where the money goes' },
-  { href: '/compare', label: 'Compare' },
-  { href: '/use-cases/criteria', label: 'How tasks are screened' },
-];
-
+/** Hidden on the chat, which fills the screen and carries the same links itself. */
 export function SiteFooter() {
+  if (usePathname() === '/') return null;
   return (
-    <footer className="mt-16 border-t border-edge bg-card">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)_minmax(0,1.6fr)]">
-        <div className="space-y-4">
-          <Logo />
-          <p className="max-w-sm text-sm text-muted">
-            Every figure links to the page it was read from. A value is marked verified only when the manufacturer
-            states it. Unknown stays unknown.
-          </p>
-          <a
-            href="https://www.ctrl-rwth.de"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Made by CTRL, Construction Technology and Robotics Laboratory (opens in a new tab)"
-            className={styles.credit}
-          >
-            <span className={styles.caption}>Made by</span>
-            <Image src="/branding/ctrl.png" alt="" aria-hidden="true" width={800} height={137} className={styles.logoLight} />
-            <Image src="/branding/ctrl-white.png" alt="" aria-hidden="true" width={800} height={137} className={styles.logoDark} />
-          </a>
-        </div>
-        <div>
-          <p className="text-sm font-semibold">Explore</p>
-          <ul className="mt-3 space-y-2 text-sm">
-            {LINKS.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className="text-muted transition hover:text-foreground">
-                  {l.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <p className="text-sm font-semibold">How to read a value</p>
-          <ul className="mt-3 space-y-2.5 text-sm">
-            {TRUSTS.map((t) => (
-              // One badge column, so every description starts at the same line whatever the badge width.
-              <li key={t} className="grid grid-cols-[5.25rem_minmax(0,1fr)] items-start gap-3">
-                <EvidenceBadge trust={t} className="mt-0.5 justify-self-start" />
-                <span className="text-muted">{TRUST_HINT[t]}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-edge/70">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-4 text-xs text-faint sm:px-6">
-          <span>
-            © {new Date().getFullYear()} {SITE.name}
-          </span>
-          <span>Data from manufacturer pages, EU distributors and public databases, attributed on every page.</span>
-        </div>
+    <footer className="mt-16 border-t border-edge">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm text-muted sm:px-6">
+        <p>Unknown stays unknown. Every value links to its source.</p>
+        <nav className="flex gap-5" aria-label="Legal">
+          <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
+          <Link href="/impressum" className="hover:text-foreground">Impressum</Link>
+        </nav>
       </div>
     </footer>
   );

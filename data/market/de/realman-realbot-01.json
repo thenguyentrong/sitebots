@@ -42,7 +42,7 @@
     "note": null
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -124,6 +124,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "40 Ah (BMS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -136,7 +144,7 @@
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
-  "handsIncluded": null,
+  "handsIncluded": false,
   "armPayloadKg": 5,
   "carryPayloadKg": null,
   "runtimeH": null,
@@ -195,7 +203,7 @@
    "title": "RealBot-01 product page",
    "publisher": "RealMan Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -203,12 +211,22 @@
    "title": "Realman RealBot",
    "publisher": "MYBOTSHOP.DE",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Which end effectors are included at the MYBOTSHOP price.",
   "Runtime per charge."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "hands_included",
+   "value": false,
+   "sourceId": "s2",
+   "quote": "Lieferumfang RealBot humanoide Roboterplattform integriertes Batteriesystem Ladestation und Netzkabel integriertes Sensor- und Kamerasystem vorinstallierte Steuerungs- und Navigationssoftware Entwicklerdokumentation und SDK-Zugang Benutzerhandbuch",
+   "basis": "configuration as sold by MYBOTSHOP: scope of delivery lists no gripper or hand; maker says hands or grippers are added to suit the task",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

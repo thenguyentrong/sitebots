@@ -140,7 +140,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": true,
   "outdoor": null,
   "arms": 0,
@@ -152,7 +152,8 @@
   "ipRating": null,
   "sdk": "SDK, URDF (Isaac Sim, MuJoCo)",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s2"
   ],
   "notes": [
    "A teaching and research platform; no IP rating stated and operating range 0 to 40 °C.",
@@ -216,5 +217,15 @@
   "Launch date not found on an opened source.",
   "Whether the AGIBOT store actually delivers the D1 Edu to Germany, with CE marking and EU warranty."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s2",
+   "quote": "Powered by RL-based reinforcement learning gait control, it autonomously adapts to diverse and challenging terrains.",
+   "basis": null,
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

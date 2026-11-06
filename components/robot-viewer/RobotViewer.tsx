@@ -168,7 +168,7 @@ export function RobotViewer({ entry, presets, name, compact = false, fill = fals
   const resetJoints = useCallback(() => setPose({ name: 'standing', values: initial }), [initial]);
   const changeJoint = (joint: string, value: number) => setPose((p) => ({ name: 'custom', values: { ...(p?.values ?? initial), [joint]: value } }));
   const presetNames = Object.keys(presets).filter((p) => p === 'standing' || Object.keys(presets[p]).length > 0);
-  const button = 'rounded-lg border border-edge bg-card/90 px-2.5 py-2 text-xs font-medium text-foreground shadow-sm backdrop-blur-sm transition hover:bg-subtle aria-pressed:bg-foreground aria-pressed:text-background disabled:opacity-40';
+  const button = 'rounded-lg border border-edge bg-card/90 px-2.5 py-2 text-xs font-medium text-foreground shadow-sm  transition hover:bg-subtle aria-pressed:bg-foreground aria-pressed:text-background disabled:opacity-40';
   return <div ref={container} className={expanded ? 'fixed inset-3 z-50 overflow-auto rounded-2xl border border-edge bg-card shadow-2xl sm:inset-6' : compact ? (fill ? 'h-full overflow-hidden' : 'overflow-hidden') : 'card overflow-hidden'} data-robot-viewer data-ready={ready ? 'true' : 'false'} data-pose={api.pose} data-animating={api.animating} data-joint-values={JSON.stringify(api.values)} data-missing-joints={api.missing.join(',')}>
     <ModelBoundary key={entry.glbUrl} url={entry.glbUrl}>
       <div className={(expanded ? 'relative h-[70vh] min-h-72' : fill ? 'relative h-full' : 'relative aspect-[4/3]') + (compact ? '' : ' viewer-stage')}>

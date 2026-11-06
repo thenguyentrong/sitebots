@@ -113,6 +113,14 @@
    "unit": null,
    "conditions": "removed by hand",
    "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 5,
+   "unit": "h",
+   "conditions": "unstated; approx., seller spec table for Rivet (60 Ah swappable battery), arm configuration not stated",
+   "sourceId": "s4"
   }
  ],
  "capabilities": {
@@ -128,12 +136,13 @@
   "handsIncluded": true,
   "armPayloadKg": 4,
   "carryPayloadKg": null,
-  "runtimeH": null,
+  "runtimeH": 5,
   "ipRating": null,
   "sdk": "Trossen SDK, ROS 2, LeRobot",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ],
   "notes": [
    "Indoor research and supervised deployment; Trossen says its systems are not safety-rated cobots.",
@@ -198,5 +207,15 @@
   "Has Rivet started shipping, and to Europe?",
   "Weight, runtime, speed and CE status."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 5,
+   "sourceId": "s4",
+   "quote": "Laufzeit ca. 5 Stunden [Runtime approx. 5 hours]",
+   "basis": "unstated; approx., seller spec table for Rivet (60 Ah swappable battery), arm configuration not stated",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

@@ -36,7 +36,7 @@ test('a robot page shows every value with its trust badge and source', async ({ 
 test('variants are tabs on one URL', async ({ page }) => {
   await page.goto('/robots/unitree/g1?variant=edu');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Unitree G1 EDU');
-  await expect(page.getByRole('link', { name: 'Base' })).toHaveAttribute('href', '/robots/unitree/g1');
+  await expect(page.getByRole('link', { name: 'Base', exact: true })).toHaveAttribute('href', '/robots/unitree/g1');
 });
 
 test('a quote-only robot never shows the placeholder price', async ({ page }) => {
@@ -76,12 +76,16 @@ test('a robot page leads with the published numbers and folds the long parts', a
   await page.goto('/robots/kepler/forerunner-k2');
   const facts = page.getByRole('region', { name: 'Key facts', exact: true });
   await expect(facts).toContainText('1.75 m');
-  await expect(facts).toContainText('Not published: Payload');
+  // The same rows on every page: a gap says so in its own row.
+  await expect(facts.locator('[data-fact]')).toHaveCount(12);
+  await expect(facts).toContainText('Not published');
   await expect(page.getByTestId('spec-unpublished')).toContainText('IP rating');
+  // Parts and the evidence profile wait behind one closed area.
+  const more = page.locator('#more-detail');
+  await expect(more).not.toHaveAttribute('open', /.*/);
+  await more.locator('summary').first().click();
   const profile = page.locator('[data-profile]');
   await expect(profile.getByRole('heading', { name: 'Robot evidence profile' })).toBeVisible();
-  await expect(profile).not.toHaveAttribute('open', /.*/);
-  await profile.locator('summary').first().click();
   await expect(profile.locator('[data-profile-view="site"]')).toBeVisible();
   // Each version's specifications stay folded until asked for.
   await expect(page.locator('[data-configuration]').first()).not.toHaveAttribute('open', /.*/);
@@ -132,10 +136,6 @@ test('TRON 2 has reviewed commercial status and Germany buying contacts', async 
   await expect(availability).toContainText('Available to order through LimX sales');
   await expect(availability.getByRole('link', { name: 'limxdynamics.com', exact: true })).toHaveAttribute('href', 'https://www.limxdynamics.com/en/products/tron2');
   // The Germany market record replaces the older seller notes on this page.
-  const germany = page.getByRole('region', { name: 'In Germany', exact: true });
-  await expect(germany).toContainText('Buy in Germany');
-  await germany.getByRole('link').first().click();
-  await expect(page).toHaveURL(/[/]robots[/]limx-dynamics[/]tron-2#germany$/);
   const sellers = page.getByRole('region', { name: 'Buy in Germany', exact: true }).locator('.mk-detail-sellers');
   await expect(sellers).toContainText('reichelt elektronik');
   await expect(sellers.getByRole('link', { name: 'Product page ↗' }).first()).toBeVisible();
@@ -161,4 +161,14 @@ test('NEO distinguishes preorders and refundable deposits from the robot price',
   await expect(panel).toContainText('US deliveries start 2026');
   await expect(panel.getByRole('row').filter({ hasText: 'early-access-ownership' })).toContainText('US$20,000');
   await expect(panel).toContainText('$200 refundable reservation deposit');
+});
+
+test('catalogue and market pages have the same sections in the same order', async ({ page }) => {
+  const order = () => page.locator('main section[id], main details[id]').evaluateAll((items) => items.map((item) => item.id).filter((id) => ['germany', 'key-facts', 'jobs', 'track-record', 'specs', 'more-detail', 'sources'].includes(id)));
+  await page.goto('/robots/unitree/g1');
+  const catalogue = await order();
+  await page.goto('/market/acr-ironbot');
+  expect(await order()).toEqual(catalogue);
+  expect(catalogue).toEqual(['germany', 'key-facts', 'jobs', 'track-record', 'specs', 'more-detail', 'sources']);
+  await expect(page.locator('#configuration-specs')).toHaveCount(1);
 });

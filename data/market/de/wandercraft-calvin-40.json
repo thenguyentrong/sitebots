@@ -14,10 +14,11 @@
  "lifecycle": "pilot_only",
  "germany": {
   "status": "not_sold",
-  "statusNote": "No purchase, reservation or price offered: Wandercraft (Paris) runs demos and proof-of-concept tests on request; first series delivery expected in H1 2027. Developed first for Renault Group plants; no German customer found.",
+  "statusNote": "No purchase, reservation or price offered: Wandercraft (Paris) runs demos and proof-of-concept tests on request; first series delivery expected in H1 2027. Wandercraft reports 12 customers but names only Renault Group; no German customer found.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s3"
   ],
   "priceEur": null,
   "priceOther": null,
@@ -37,9 +38,18 @@
     "note": "Demo request form on the Calvin page."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
- "specs": [],
+ "specs": [
+  {
+   "key": "lift_payload_kg",
+   "label": "Lift payload kg",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "maker statement reported by trade press; a future version is expected to reach 50 kg",
+   "sourceId": "s4"
+  }
+ ],
  "capabilities": {
   "legs": true,
   "wheels": false,
@@ -92,6 +102,33 @@
    "date": "2025-06",
    "sourceId": "s2",
    "note": "Minority investment and commercial partnership agreement (June 2025); no task, site or trial results named."
+  },
+  {
+   "taskIds": [],
+   "task": "Work on the line at Renault's Douai plant; task not stated on this page",
+   "stage": "pilot",
+   "where": "Renault Group, Douai plant, France",
+   "date": null,
+   "sourceId": "s5",
+   "note": "Maker statement in a timeline entry for 2026; no month, task or unit count given. Recorded as pilot, not deployment, because the maker's product page still expects first series delivery in H1 2027."
+  },
+  {
+   "taskIds": [],
+   "task": "Planned deployment of 350 humanoid robots at Renault Group",
+   "stage": "claim",
+   "where": "Renault Group",
+   "date": "2026-09",
+   "sourceId": "s3",
+   "note": "A plan, not delivered work. The wording does not state that all 350 robots are Calvin-40."
+  },
+  {
+   "taskIds": [],
+   "task": "Material handling named as a future use in construction",
+   "stage": "claim",
+   "where": null,
+   "date": "2026-09",
+   "sourceId": "s3",
+   "note": "Stated intention only. No construction task, customer or site is named."
   }
  ],
  "sources": [
@@ -101,7 +138,7 @@
    "title": "Calvin-40 industrial robot",
    "publisher": "Wandercraft",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -109,7 +146,31 @@
    "title": "Introducing Calvin-40: Renault Group partnership",
    "publisher": "Wandercraft",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.wandercraft.eu/articles/wandercraft-secures-12-calvin-40-customers-as-it-accelerates-commercial-dominance-in-industrial-humanoids",
+   "title": "Wandercraft",
+   "publisher": "Wandercraft",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://logistik-heute.de/en/news/humanoid-robotics-wandercraft-aims-scale-calvin-288980.html",
+   "title": "LOGISTIK HEUTE",
+   "publisher": "LOGISTIK HEUTE",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://en.wandercraft.eu/about-us",
+   "title": "Wandercraft",
+   "publisher": "Wandercraft",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

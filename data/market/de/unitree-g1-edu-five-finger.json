@@ -19,7 +19,9 @@
    "s2",
    "s3",
    "s4",
-   "s5"
+   "s5",
+   "s9",
+   "s11"
   ],
   "priceEur": {
    "amount": 63070,
@@ -29,7 +31,7 @@
    "note": "Ultimate C (U5) at RobotShop EU, tax included; U6 EUR 68,901."
   },
   "priceOther": null,
-  "leadTime": "about 3-4 weeks (RobotShop EU)",
+  "leadTime": "U5 immediately available, U6 expected from 15.01.2027 (QUADRUPED Robotics); EDU-5 and EDU-6 30 working days (Funduino); about 3-4 weeks at RobotShop EU when last checked on 2026-10-02",
   "sellers": [
    {
     "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
@@ -108,9 +110,22 @@
     "priceBasis": "gross",
     "sourceId": "s8",
     "note": "Hst.-Teile-Nr. G1edu-U5; 84,695.00 EUR incl. VAT; business customers only. EDU-U6 (Bestell-Nr. 3804263) 92,515.00 EUR incl. VAT."
+   },
+   {
+    "productUrl": "https://funduino.com/en/products/unitree-g1-humanoider-roboter?variant=66108098675037",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 63070,
+    "priceBasis": "gross",
+    "note": "Version EDU-5: 29-DOF base with two RH56DFQ five-finger hands, incl. VAT, cart enabled, 30 working days.",
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s9"
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -216,7 +231,8 @@
   ],
   "notes": [
    "Hands are third-party (Inspire or BrainCo); hand payload and grip force not published by Unitree.",
-   "Arm load about 3 kg and highly posture dependent; no IP rating published."
+   "Arm load about 3 kg and highly posture dependent; no IP rating published.",
+   "Generation Robots calls the G1 \"a prototype for research and development, not compatible or certified for current or industrial tasks\"."
   ]
  },
  "images": [
@@ -254,7 +270,7 @@
    "title": "Unitree G1 product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -278,7 +294,7 @@
    "title": "Unitree G1 at MYBOTSHOP",
    "publisher": "MYBOTSHOP GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -286,7 +302,7 @@
    "title": "Unitree G1 humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -302,7 +318,7 @@
    "title": "Unitree G1 at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s8",
@@ -311,6 +327,30 @@
    "publisher": "Conrad Electronic",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://funduino.com/en/products/unitree-g1-humanoider-roboter?variant=66108098675037",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s10",
+   "url": "https://funduino.com/en/products/unitree-g1-humanoider-roboter?variant=66108098052445",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s11",
+   "url": "https://www.quadruped.de/index.php?a=1316",
+   "title": "QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ]
 }

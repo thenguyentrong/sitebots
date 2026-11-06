@@ -38,7 +38,7 @@
     "note": "Contact form with company and country fields; Germany listed."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -92,9 +92,9 @@
   {
    "key": "runtime_h",
    "label": "Runtime per charge",
-   "value": 4,
+   "value": 5,
    "unit": "h",
-   "conditions": "Up to",
+   "conditions": "Autonomous work on a single charge",
    "sourceId": "s1"
   },
   {
@@ -120,7 +120,7 @@
   "tracks": false,
   "levelFloors": true,
   "roughGround": null,
-  "stairs": null,
+  "stairs": true,
   "outdoor": null,
   "arms": 2,
   "hands": "dexterous",
@@ -140,7 +140,8 @@
    "Moves on wheels (Hexagon summary of a FAZ report from BMW Leipzig: the wheels are expected to make it faster and cut energy use for longer operating times); the product page only names a \"unique locomotion system\".",
    "Auto battery swap allows continuous operation.",
    "Payload 15 kg short-term, 8 kg constant carry; not stated per arm.",
-   "Built for factory floors; no stair, outdoor or IP data published."
+   "Built for factory floors; no stair, outdoor or IP data published.",
+   "Built for factory floors; the maker says it can go up stairs; no outdoor or IP data published."
   ]
  },
  "images": [
@@ -215,7 +216,7 @@
    "title": "AEON product page and spec sheet",
    "publisher": "Hexagon Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -223,7 +224,7 @@
    "title": "Contact form",
    "publisher": "Hexagon Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -231,7 +232,7 @@
    "title": "New milestone with BMW Group: industrial humanoid deployment",
    "publisher": "Hexagon Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -239,7 +240,7 @@
    "title": "Hexagon Robotics and Schaeffler deploy a fleet of AEON humanoids",
    "publisher": "Hexagon Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -247,7 +248,7 @@
    "title": "Towards factory deployment: AEON at Schaeffler Humanoid Gym",
    "publisher": "Hexagon Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -255,7 +256,7 @@
    "title": "Hexagon Robotics and Fill partner on humanoids",
    "publisher": "Hexagon Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s7",
@@ -263,7 +264,7 @@
    "title": "FAZ explores what is behind AEON humanoid robot at BMW Leipzig",
    "publisher": "Hexagon Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
@@ -271,5 +272,15 @@
   "Per-arm payload and hand DoF?",
   "SDK or integration interfaces?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "It can also go up the stairs and perform highly accurate tasks while maintaining balance.",
+   "basis": "manufacturer claim on product page; no step height given",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

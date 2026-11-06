@@ -105,6 +105,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s2"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload",
+   "value": 4,
+   "unit": "kg",
+   "conditions": "load on the LIMO base; the arm carries 0.25 kg (maker datasheet: Working Load LIMO - 4 kg, Arm - 250g)",
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -112,19 +120,20 @@
   "wheels": true,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 1,
   "hands": "gripper",
   "handsIncluded": true,
   "armPayloadKg": 0.25,
-  "carryPayloadKg": null,
+  "carryPayloadKg": 4,
   "runtimeH": null,
   "ipRating": null,
   "sdk": "ROS 1/2",
   "sourceIds": [
-   "s2"
+   "s2",
+   "s1"
   ],
   "notes": [
    "Education and competition kit; 0.25 kg payload is far below any site task."
@@ -197,5 +206,23 @@
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "carry_payload_kg",
+   "value": 4,
+   "sourceId": "s1",
+   "quote": "4.0 KG Payload",
+   "basis": "load on the LIMO base; the arm carries 0.25 kg (maker datasheet: Working Load LIMO - 4 kg, Arm - 250g)",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "LIMO's Four-Wheel Differential Steering Mode makes driving on any surface easy. Whether it's smooth concrete or sandy roads, it performs well.",
+   "basis": "maker: four-wheel differential steering mode, smooth concrete or sandy roads",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

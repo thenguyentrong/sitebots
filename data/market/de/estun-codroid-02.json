@@ -1,0 +1,207 @@
+{
+ "schemaVersion": 1,
+ "id": "estun-codroid-02",
+ "maker": "Estun Codroid",
+ "makerCountry": "CN",
+ "model": "CODROID 02",
+ "variant": null,
+ "name": "ESTUN CODROID 02",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.codroid.ai/robot-humanoid",
+ "summary": "A 1.7 m two-legged humanoid from Estun Codroid with 5 kg per arm, built for factory handling, inspection and assembly work.",
+ "launched": "2025-06",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "2 weeks to 3 months (RBTX, price-on-request item)",
+  "sellers": [
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/estun-codroid-02-humanoid-robot-31-dof-32kg",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Price on request; RBTX states 2 weeks to 3 months.",
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s2"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists it with price on request. RBTX describes a height-adjustable wheeled chassis while the maker shows a two-legged robot, so confirm the base before ordering.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": "maker; RBTX lists 1.68 m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": "without battery, maker; RBTX lists 75 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": "29 or 31",
+   "unit": null,
+   "conditions": "without hands, waist has 1 or 3 DOF; RBTX lists 31",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_leg",
+   "label": "DOF per leg",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": "optional dexterous hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "without dexterous hand; RBTX header shows max. 10 kg without saying per arm or both",
+   "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.602,
+   "unit": "m",
+   "conditions": "single arm, without dexterous hand",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_ah",
+   "label": "Battery",
+   "value": 15,
+   "unit": "Ah",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Head and chest cameras; tactile sensors optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Secondary development supported; humanoid brain and motion controllers",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Secondary development supported",
+  "notes": [
+   "Maker lists 6 DOF per leg and shows a two-legged robot. RBTX text describes a wheeled chassis with laser SLAM, up to 1.5 m/s and manual height adjustment of 1.38 to 1.68 m, which matches the Estun C05-L series. Ask which base is delivered.",
+   "Dexterous hands are an extension, not part of the listed DOF."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.codroid.ai/uploads/c02.png",
+   "pageUrl": "https://www.codroid.ai/robot-humanoid",
+   "credit": "Estun Codroid",
+   "alt": "ESTUN CODROID 02 two-legged humanoid walking",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for part picking, material transport, precision assembly and production line inspection",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.codroid.ai/robot-humanoid",
+   "title": "CODROID 02 product page",
+   "publisher": "Estun Codroid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/estun-codroid-02-humanoid-robot-31-dof-32kg",
+   "title": "ESTUN CODROID 02 on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ithome.com/0/860/098.htm",
+   "title": "Estun Codroid releases CODROID 02",
+   "publisher": "IT Home",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Does RBTX deliver the two-legged robot or a wheeled version? Its text and its specs do not agree.",
+  "Payload: 5 kg per arm (maker) or 10 kg (RBTX header)?"
+ ],
+ "checkedAt": "2026-11-06"
+}

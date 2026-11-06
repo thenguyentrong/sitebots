@@ -14,17 +14,20 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "RobotShop EU sells R1 EDU U1-U6 with prices and cart; Generation Robots lists EDU versions from EUR 15,000 excl. VAT.",
+  "statusNote": "Funduino (Germany) sells R1 EDU versions with prices and cart from 15,708 € incl. VAT; QUADRUPED Robotics lists it from 12,200 EUR net; Generation Robots lists EDU versions from EUR 15,000 excl. VAT. Terra Robotics lists it but shows every version as not available.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s8",
+   "s9",
+   "s7"
   ],
   "priceEur": {
+   "note": "Funduino, R1 Edu Standard incl. VAT; versions with hands 28,024.50-33,320.",
    "amount": 15708,
    "basis": "gross",
    "kind": "from",
-   "sourceId": "s2",
-   "note": "RobotShop EU R1 EDU U1, tax included; versions with hands 28,024.50-33,320."
+   "sourceId": "s8"
   },
   "priceOther": {
    "amount": 10500,
@@ -32,7 +35,7 @@
    "market": "Unitree online store (tax and shipping excluded)",
    "sourceId": "s4"
   },
-  "leadTime": "3-4 weeks (RobotShop EU)",
+  "leadTime": "QUADRUPED Robotics page shows both \"Sofort verfügbar\" and \"Verfügbar ab: 28.12.2026\"; unclear per version",
   "sellers": [
    {
     "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
@@ -85,9 +88,35 @@
     "priceBasis": "net",
     "sourceId": "s7",
     "note": "R1 Edu U1 12,200 EUR net; U2-U6 15,000-27,400 net; all \"available from 28.12.2026\"."
+   },
+   {
+    "productUrl": "https://funduino.com/en/products/unitree-r1",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 15708,
+    "priceBasis": "gross",
+    "note": "Edu Standard 15,708 €, Edu Smart 17,850 €, U3 to U6 28,024.50 to 33,320 €, all incl. VAT and marked available.",
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s8"
+   },
+   {
+    "productUrl": "https://terra-robotics.de/products/unitree-r1-edu-humanoider-roboter",
+    "contactUrl": "https://terra-robotics.de/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 13200,
+    "priceBasis": "net",
+    "note": "Listed, but every version is shown 'nicht verfügbar'; not orderable today. The page's cheapest version is Standard; prices are shown zzgl. MwSt.",
+    "name": "Terra Robotics (Terra Connect GmbH)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s9"
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -169,6 +198,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "warranty_months",
+   "label": "Warranty months",
+   "value": 12,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -181,7 +218,7 @@
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
-  "handsIncluded": null,
+  "handsIncluded": false,
   "armPayloadKg": 2,
   "carryPayloadKg": null,
   "runtimeH": 1,
@@ -189,7 +226,8 @@
   "sdk": "Unitree SDK2 / ROS 2 (EDU)",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s3"
   ],
   "notes": [
    "Hands depend on version: dummy hands in U1/U2, Dex3 or BrainCo Revo 2 in Pro versions.",
@@ -234,7 +272,7 @@
    "title": "Unitree R1 product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -250,7 +288,7 @@
    "title": "Unitree R1 humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -258,7 +296,7 @@
    "title": "Unitree R1 in the Unitree online store",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -266,7 +304,7 @@
    "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -282,7 +320,33 @@
    "title": "Unitree R1 at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://funduino.com/en/products/unitree-r1.js",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s9",
+   "url": "https://terra-robotics.de/products/unitree-r1-edu-humanoider-roboter",
+   "title": "Terra Robotics",
+   "publisher": "Terra Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "hands_included",
+   "value": false,
+   "sourceId": "s3",
+   "quote": "R1 EDU Standard Without robotic hands",
+   "basis": "base R1 EDU (EDU Standard / U1, the version priced in the record) ships without hands; Unitree lists the dexterous hand as optional; only EDU Pro versions include hands",
+   "checkedAt": "2026-10-21"
   }
  ]
 }

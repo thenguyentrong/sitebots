@@ -17,7 +17,7 @@ export const SITE = {
   email: process.env.SCRAPER_CONTACT_EMAIL || '',
 
   // ── FILL THESE IN ────────────────────────────────────────────────────────
-  operator: '',
+  operator: 'The Vinh Nguyen Trong',
   street: '',
   city: '',
   country: 'Deutschland',

@@ -9,33 +9,14 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.ubtrobot.com/en/ai-education/products/walker-tienkung",
- "summary": "The 21-DOF entry version of the Walker Tienkung research humanoid for walking, speech and vision work; its hands do not grip. Orderable from RobotShop Europe as Walker E Lite.",
+ "summary": "The 21-DOF entry version of the Walker Tienkung research humanoid for walking, speech and vision work; its hands do not grip. Available in Germany on request through Terra Robotics.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": {
-   "amount": 70318.18,
-   "basis": "gross",
-   "kind": "list",
-   "sourceId": "s4",
-   "note": "RobotShop Europe price shown with VAT for Germany; includes wireless controller and 200 W power adapter."
-  },
+  "priceEur": null,
   "priceOther": null,
-  "leadTime": "RobotShop: on-demand item, ordered from the supplier; due date shown at checkout",
+  "leadTime": null,
   "sellers": [
-   {
-    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
-    "country": "CA",
-    "role": "reseller",
-    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
-    "email": null,
-    "phone": "+33 8 01 90 23 42",
-    "productUrl": "https://eu.robotshop.com/products/ubtech-humanoid-robot-walker-e-voice-vision",
-    "priceEur": 70318.18,
-    "priceBasis": "gross",
-    "sourceId": "s4",
-    "note": "Listed as Walker E Voice & Vision, manufacturer no. Walker E Lite; on-demand item with add-to-cart and quote request."
-   },
    {
     "name": "Terra Robotics (Terra Connect GmbH)",
     "country": "DE",
@@ -50,9 +31,9 @@
     "note": "Variant \"Voice & Vision\"; metadata price EUR 104,000, basis not stated, not displayed."
    }
   ],
-  "checkedAt": "2026-10-02",
-  "status": "buy_now",
-  "statusNote": "RobotShop Europe sells this robot as \"Walker E Voice & Vision\" (Walker E Lite, also known as Tienkung) at EUR 70,318.18 incl. VAT, on demand, with delivery to Germany; Terra Robotics quotes on request.",
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "Terra Robotics lists the Walker Tienkung in its Voice & Vision version, price on request.",
   "sourceIds": [
    "s4",
    "s2",
@@ -130,7 +111,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 0,
@@ -143,7 +124,8 @@
   "sdk": "ROS 2, open motor/sensor API",
   "sourceIds": [
    "s2",
-   "s4"
+   "s4",
+   "s1"
   ],
   "notes": [
    "4-DOF arms without wrists; RobotShop calls the hands non-functional, so it cannot pick objects and is recorded with 0 working arms.",
@@ -179,7 +161,7 @@
    "title": "Walker Tienkung product page",
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -187,7 +169,7 @@
    "title": "UBtech Walker Tienkung",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -207,5 +189,15 @@
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Navigate Any Terrain, Effortlessly",
+   "basis": "maker claim for the Walker Tienkung series (both versions share the same 6-DOF legs); the maker's user manual (PDF p.17) advises against uneven ground",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

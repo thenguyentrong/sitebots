@@ -1,0 +1,169 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-x1",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "X1",
+ "variant": null,
+ "name": "AGIBOT X1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://github.com/AgibotTech/agibot_x1_infer",
+ "summary": "A 1.3 m open-source two-legged humanoid for research and teaching, with arms that carry only 0.5 kg each.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/agibot-x1-humanoid-robot-humanoid",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Price on request. RBTX prints \"Übliche Lieferzeit: 3 Wochen\" on price-on-request items too, so it does not prove stock.",
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists the AGIBOT X1 with price on request. No other German seller was found.",
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.3,
+   "unit": "m",
+   "conditions": "RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 33,
+   "unit": "kg",
+   "conditions": "RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 34,
+   "unit": null,
+   "conditions": "RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 0.5,
+   "unit": "kg",
+   "conditions": "per arm, RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": "up to, RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Open-source software on the AimRT middleware, with ROS 2 simulation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 0.5,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Open source, AimRT middleware, ROS 2 simulation",
+  "notes": [
+   "Specs come from the RBTX listing; the AGIBOT product page could not be read.",
+   "RBTX does not state which end effector is supplied.",
+   "At 0.5 kg per arm it is a research platform, not a handling robot."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/agibot-x1-Photoroom-pmEA_bFA.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/agibot-x1-humanoid-robot-humanoid",
+   "credit": "AGIBOT (via RBTX)",
+   "alt": "AGIBOT X1 two-legged humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered as an open-source platform for research, education and industrial applications",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://rbtx.de/de-DE/components/humanoid/agibot-x1-humanoid-robot-humanoid",
+   "title": "AGIBOT X1 on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://github.com/AgibotTech/agibot_x1_infer",
+   "title": "AgiBot X1 software repository",
+   "publisher": "AGIBOT",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "agibot.com could not be read (robots.txt error), so no value is confirmed on the maker product page.",
+  "Which end effector ships with the robot?",
+  "Real delivery time from RBTX."
+ ],
+ "checkedAt": "2026-11-06"
+}

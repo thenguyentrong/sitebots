@@ -38,7 +38,7 @@
     "note": "Contact page routes \"pricing, quotations and orders\" to sales."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -88,6 +88,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "unstated; given as the battery life of the mobile base",
+   "sourceId": "s4"
   }
  ],
  "capabilities": {
@@ -103,11 +111,12 @@
   "handsIncluded": true,
   "armPayloadKg": 3,
   "carryPayloadKg": null,
-  "runtimeH": null,
+  "runtimeH": 8,
   "ipRating": null,
   "sdk": "ROS 2 Humble, Python SDK",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s4"
   ],
   "notes": [
    "Omnidirectional base with three omniwheels for indoor labs, offices and shops.",
@@ -152,7 +161,7 @@
    "title": "Reachy 2 product page",
    "publisher": "Pollen Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -160,7 +169,7 @@
    "title": "Contact us",
    "publisher": "Pollen Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -168,7 +177,15 @@
    "title": "Pollen Robotics Store (Germany, EUR)",
    "publisher": "Pollen Robotics SAS",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://docs.pollen-robotics.com/hardware-guide/specifications/mobile-base/",
+   "title": "Mobile base specifications | Reachy 2",
+   "publisher": "Pollen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
@@ -176,5 +193,15 @@
   "Runtime and battery?",
   "Is a version without mobile base sold?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 8,
+   "sourceId": "s4",
+   "quote": "Equipped with sensors and a LiDAR 8 hours battery life",
+   "basis": "unstated; given as the battery life of the mobile base",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

@@ -1,0 +1,181 @@
+/* The opening screen: the job site full bleed, the chat in front of it. */
+.adv-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 100dvh;
+  overflow: hidden;
+  background: #09090b;
+}
+.adv-stage { position: absolute; inset: 0; z-index: -1; }
+.adv-stage-still {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  transition: opacity 1.2s ease;
+  animation: adv-settle 2.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.adv-stage-live { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease; }
+.lineup-live { position: relative; width: 100%; height: 100%; }
+.lineup-live canvas { cursor: grab; }
+.lineup-live canvas:active { cursor: grabbing; }
+.lineup-live[data-hovered]:not([data-hovered='']) canvas { cursor: pointer; }
+.lineup-scale { display: block; transform: translateY(calc(-100% - 6px)); white-space: nowrap; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; line-height: 14px; letter-spacing: 0.12em; color: #fb923c; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); }
+.lineup-label { display: block; transform: translate(-50%, 8px); pointer-events: auto; text-decoration: none; white-space: nowrap; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 10px; line-height: 14px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250, 250, 250, 0.88); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.75); }
+.lineup-label b { margin-left: 8px; font-weight: 500; color: rgba(250, 250, 250, 0.55); }
+a.lineup-label:hover { color: #fb923c; }
+.lineup-tag { display: inline-flex; flex-direction: column; gap: 2px; padding: 6px 10px; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 10px; background: rgba(12, 12, 14, 0.88); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35); color: #fafafa; font-size: 12px; line-height: 16px; white-space: nowrap; }
+.lineup-tag strong { font-size: 13px; font-weight: 600; }
+.lineup-tag span { color: #a1a1aa; }
+.adv-stage[data-live='true'] .adv-stage-still { opacity: 0; }
+.adv-stage[data-live='true'] .adv-stage-live { opacity: 1; }
+/* Keeps the type readable on the photo and melts the scene into the page. */
+.adv-stage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to top, #09090b 0%, rgba(9, 9, 11, 0.96) 26%, rgba(9, 9, 11, 0.55) 46%, rgba(9, 9, 11, 0) 66%),
+    linear-gradient(to bottom, rgba(9, 9, 11, 0.6) 0%, rgba(9, 9, 11, 0) 16%);
+}
+@keyframes adv-settle {
+  from { transform: scale(1.06); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+.adv-rise { animation: adv-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: var(--delay, 0s); }
+
+/* The input is the page's one bright object: a thin orange line runs around it, faster while it works. */
+@property --adv-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+.adv-box {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 24px;
+  background: #131316;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  view-transition-name: adv-composer;
+}
+.adv-box::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: 25px;
+  background: conic-gradient(from var(--adv-angle), rgba(255, 255, 255, 0.14) 0 62%, #fdba74 76%, #ea580c 84%, rgba(255, 255, 255, 0.14) 96%);
+  animation: adv-spin 7s linear infinite;
+}
+.adv-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 24px;
+  background: #131316;
+}
+.adv-box[data-busy='true']::before { animation-duration: 1.5s; }
+@keyframes adv-spin { to { --adv-angle: 360deg; } }
+
+.adv-send {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #fafafa;
+  color: #09090b;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+.adv-send:hover:not(:disabled) { transform: scale(1.06); }
+.adv-send:active:not(:disabled) { transform: scale(0.96); }
+.adv-send:disabled { opacity: 0.35; }
+
+.adv-mic {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  color: #a1a1aa;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.adv-mic:hover:not(:disabled) { color: #fafafa; background: rgba(255, 255, 255, 0.08); }
+.adv-mic:disabled { opacity: 0.35; }
+.adv-mic[data-on='true'] { color: #09090b; background: #fb923c; animation: adv-listen 1.4s ease-in-out infinite; }
+@keyframes adv-listen { 50% { box-shadow: 0 0 0 7px rgba(251, 146, 60, 0.22); } }
+
+.adv-lang { flex: none; display: flex; align-items: center; gap: 2px; }
+.adv-lang button {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #71717a;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.adv-lang button:hover:not(:disabled) { color: #fafafa; }
+.adv-lang button[aria-pressed='true'] { color: #fafafa; background: rgba(255, 255, 255, 0.1); }
+.adv-lang button:disabled { opacity: 0.5; }
+
+.adv-chip {
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(24, 24, 27, 0.85);
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #d4d4d8;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.adv-chip:hover { border-color: #fb923c; color: #fafafa; transform: translateY(-1px); }
+
+/* New thread items rise in, so the eye goes to what just arrived. */
+.adv-item { animation: adv-rise 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: var(--delay, 0s); }
+@keyframes adv-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* The step being worked on now. */
+.adv-working {
+  background: linear-gradient(90deg, #71717a 0%, #fafafa 50%, #71717a 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: adv-sheen 1.8s linear infinite;
+}
+@keyframes adv-sheen {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+/* A fact just added to the brief flashes once, so the person sees it was understood. */
+.adv-fact { animation: adv-fact 1.2s ease-out; }
+@keyframes adv-fact {
+  from { background: rgba(234, 88, 12, 0.22); }
+  to { background: transparent; }
+}
+
+.adv-robot-frame { background: radial-gradient(circle at 50% 42%, #2a2a2f 0%, #141417 72%); }
+
+/* The input travels from the opening screen to the foot of the conversation. */
+::view-transition-group(adv-composer) { animation-duration: 0.5s; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.35s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .adv-stage-still, .adv-rise, .adv-box::before, .adv-item, .adv-working, .adv-fact, .adv-mic[data-on='true'] { animation: none; }
+  .adv-working { color: #a1a1aa; background: none; }
+}

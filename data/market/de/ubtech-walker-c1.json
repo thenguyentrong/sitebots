@@ -31,7 +31,7 @@
     "note": "Page shows \"Preis anfragen\"; metadata carries EUR 67,682 without VAT basis, not displayed. Terra's technical text is generic and does not match UBTECH's data. Shop data marks the item out of stock."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "Listed by Terra Robotics, UBTECH's exclusive DACH distributor, including a lifting frame; price on request.",
   "sourceIds": [
@@ -55,6 +55,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed ms",
+   "value": 3,
+   "unit": "m/s",
+   "conditions": "Terra states at least 3 m/s",
+   "sourceId": "s2"
   }
  ],
  "capabilities": {
@@ -62,7 +70,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -74,7 +82,8 @@
   "ipRating": null,
   "sdk": "UBTECH SDK",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s4"
   ],
   "notes": [
    "UBTECH marks the two dexterous hands as optional.",
@@ -109,7 +118,7 @@
    "title": "Walker C1 product page",
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -117,7 +126,7 @@
    "title": "UBtech Walker C1 Humanoider Roboter (Inklusive Hebegestell)",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -126,11 +135,29 @@
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.ubtrobot.com/cn/humanoid/products/walker-c1",
+   "title": "Walker C1 商用服务人形机器人|优必选官网",
+   "publisher": "UBTECH Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Height, weight, runtime and hand payload of the Walker C1.",
   "Does Terra's offer include the optional hands?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s4",
+   "quote": "支持多地形自适应行走、奔跑、舞蹈等复杂动作 [supports adaptive walking, running, dancing and other complex movements on multiple terrains]",
+   "basis": "maker (Chinese product page): all-terrain, multi-terrain adaptive walking",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

@@ -3,6 +3,7 @@ import { MarketListing } from '@/components/market/MarketListing';
 import { RobotSearch, ScopeSwitch } from '@/components/market/RobotsToolbar';
 import { TileSection } from '@/components/market/TileSection';
 import { FOCUSED_FORM_FACTORS, isFocusedForm } from '@/lib/browse-scope';
+import { readFilters, type FilterParams } from '@/lib/market/filters';
 import { ROBOT_TYPES, type RobotType } from '@/lib/market/schema';
 import { catalogueIdsWithMarketPictures, worldTiles } from '@/lib/market/tiles';
 import { listRobotCards } from '@/lib/queries/robots';
@@ -20,7 +21,7 @@ const INTRO = {
   quadruped: 'Four legs, some with wheels or an arm.',
   mobile_manipulator: 'One or two arms on a wheeled base.',
 };
-type Params = { scope?: string; type?: string; form?: string; q?: string; all?: string; pictures?: string; view?: string };
+type Params = { scope?: string; type?: string; form?: string; q?: string; all?: string; pictures?: string; view?: string } & FilterParams;
 type Search = Promise<Params>;
 
 // One robots page with two views. Old catalogue links (view, form, all, pictures) still open the worldwide view.
@@ -35,7 +36,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Search 
 export default async function RobotsPage({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
   const q = sp.q?.trim() || undefined;
-  if (!isWorld(sp)) return <MarketListing type={(ROBOT_TYPES as readonly string[]).includes(String(sp.type)) ? sp.type as RobotType : ''} q={q} />;
+  if (!isWorld(sp)) return <MarketListing type={(ROBOT_TYPES as readonly string[]).includes(String(sp.type)) ? sp.type as RobotType : ''} q={q} filters={readFilters(sp)} />;
 
   const showAllPictures = sp.pictures === 'all';
   const formFactor = isFocusedForm(sp.form) ? sp.form as (typeof FOCUSED_FORM_FACTORS)[number] : undefined;

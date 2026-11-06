@@ -14,14 +14,14 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": {
-   "amount": 89950,
+   "amount": 96720,
    "basis": "gross",
    "kind": "list",
    "sourceId": "s2",
    "note": null
   },
   "priceOther": null,
-  "leadTime": "Kepler states 90 days delivery lead time for its versions",
+  "leadTime": "Bipedal: ca. 4 Wochen within Germany. Kepler's own configuration sheet: 90 days.",
   "sellers": [
    {
     "name": "Bipedal GmbH",
@@ -31,10 +31,10 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 89950,
+    "priceEur": 96720,
     "priceBasis": "gross",
     "sourceId": "s2",
-    "note": null
+    "note": "96,720 € incl. 19% VAT (was 89,950 € on 02.10.2026)."
    },
    {
     "name": "RBTX marketplace (igus SE & Co. KG)",
@@ -50,9 +50,9 @@
     "note": "Price on request."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Bipedal (Leverkusen) lists K2 Advanced in stock at 89,950 EUR incl. VAT; RBTX lists K2 (52 DoF) with price on request.",
+  "statusNote": "Bipedal (Leverkusen) lists K2 Advanced in stock at 96,720 EUR incl. VAT; RBTX lists K2 (52 DoF) with price on request.",
   "sourceIds": [
    "s2",
    "s3"
@@ -162,6 +162,22 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak torque nm",
+   "value": 220,
+   "unit": "Nm",
+   "conditions": "peak torque of Kepler's rotary actuator",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed ms",
+   "value": 1.1,
+   "unit": "m/s",
+   "conditions": "stated as over 1.1 m/s on the RBTX listing for the 52 DoF K2",
+   "sourceId": "s3"
   }
  ],
  "capabilities": {
@@ -169,7 +185,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -182,7 +198,8 @@
   "sdk": "Linux-based OS with API access",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ],
   "notes": [
    "15 kg per arm is a maximum that depends on arm position; maker states 25 to 30 kg for dual-arm handling.",
@@ -214,6 +231,15 @@
    "date": null,
    "sourceId": "s1",
    "note": "Maker positions K2 for the factory sector; image shows K2 at a production line."
+  },
+  {
+   "taskIds": [],
+   "task": "Quality checks and assembly handling in a car plant",
+   "stage": "pilot",
+   "where": "SAIC-GM automotive plant, Shanghai, China",
+   "date": "2025-04",
+   "sourceId": "s5",
+   "note": "Rests on a Kepler video. The Robot Report says K2 units are 'being trialed', so pilot, not routine deployment. Month from VnExpress: 'First deployed in April at the SAIC-GM automotive plant in Shanghai'."
   }
  ],
  "sources": [
@@ -223,7 +249,7 @@
    "title": "KEPLERBOT Forerunner K2 product page",
    "publisher": "Kepler",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -231,7 +257,7 @@
    "title": "Kepler K2 Advanced",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -239,11 +265,37 @@
    "title": "KEPLER K2 humanoid robot, 52 DOF on RBTX",
    "publisher": "igus SE & Co. KG (RBTX)",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://e.vnexpress.net/news/tech/tech-news/china-s-humanoid-robot-achieves-human-like-straight-knee-walk-4939063.html",
+   "title": "China’s humanoid robot achieves human-like straight-knee walk - VnExpress International",
+   "publisher": "VnExpress International",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.foxnews.com/tech/humanoid-robots-handle-quality-checks-assembly-auto-plant",
+   "title": "Fox News",
+   "publisher": "Fox News",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Is the 275 TOPS compute mentioned elsewhere on the maker site an option for the European units?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-21",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s4",
+   "quote": "Kepler Robotics said its humanoid robot K2 \"Bumblebee\" can now walk with a straight-knee human-like gait while maintaining balance on uneven terrain and under external force",
+   "basis": "company claim reported by press (Sep 2025 gait update, bipedal K2)",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

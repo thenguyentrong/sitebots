@@ -13,14 +13,20 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "note": "Bipedal list price incl. 19% VAT; the item is shown as currently not available, so this is not a price you can order at today.",
+   "amount": 45099,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s5"
+  },
   "priceOther": {
    "amount": 44560,
    "currency": "USD",
    "market": "AGIBOT online store (global, ships to DE)",
    "sourceId": "s2"
   },
-  "leadTime": "Ships within 30 business days; delivery 20-45 business days",
+  "leadTime": "AGIBOT Store: most orders ship within 5 business days, estimated global delivery 5-30 business days, not guaranteed; delivery details via customer service. Bipedal: currently not available.",
   "sellers": [
    {
     "name": "AGIBOT Store",
@@ -34,14 +40,29 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "Price in USD; duties and tariffs extra."
+   },
+   {
+    "productUrl": "https://tekpoint.com/en/robotics/agibot/a2-lite/",
+    "contactUrl": "https://tekpoint.com/robotics",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": null,
+    "name": "Tekpoint GmbH",
+    "country": "AT",
+    "role": "distributor",
+    "sourceId": "s4"
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Orderable in the AGIBOT online store, which ships from China to Germany, at USD 44,560; customs duties are paid by the buyer.",
+  "statusNote": "Orderable in the AGIBOT online store, which ships from China and lists Germany as a shipping country, at USD 44,560 plus shipping of USD 500-3,000; customs duties are paid by the buyer. Bipedal (Leverkusen) lists it at EUR 45,099 incl. VAT but it is currently not available; Tekpoint (Vienna) quotes on request.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s4",
+   "s5"
   ]
  },
  "specs": [
@@ -56,10 +77,10 @@
   {
    "key": "weight_kg",
    "label": "Weight",
-   "value": 64,
+   "value": 63,
    "unit": "kg",
    "conditions": "approx.",
-   "sourceId": "s1"
+   "sourceId": "s2"
   },
   {
    "key": "dof_total",
@@ -100,6 +121,22 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time h",
+   "value": 2,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temp c",
+   "value": "0-40",
+   "unit": null,
+   "conditions": "relative humidity 10-90%, no condensation",
+   "sourceId": "s2"
   }
  ],
  "capabilities": {
@@ -107,7 +144,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": false,
   "stairs": null,
   "outdoor": null,
   "arms": 0,
@@ -119,7 +156,8 @@
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
-   "s1"
+   "s1",
+   "s2"
   ],
   "notes": [
    "5-DOF arms for dance moves, no hands; recorded with 0 working arms.",
@@ -161,7 +199,7 @@
    "title": "AGIBOT A2 Lite (store)",
    "publisher": "AGIBOT",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -169,9 +207,35 @@
    "title": "AGIBOT Store shipping policy",
    "publisher": "AGIBOT",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://tekpoint.com/en/robotics/agibot/a2-lite/",
+   "title": "Tekpoint GmbH",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.bipedal.de/AgiBot-A2-Lite",
+   "title": "Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": false,
+   "sourceId": "s2",
+   "quote": "Ensure the robot is used in a flat environment, avoiding excessively high or low temperatures, humid conditions, steep slopes, surfaces with significant elevation changes, fragile surfaces, and areas prone to vibration.",
+   "basis": "maker store FAQ for A2 Lite: flat environment only, no steep slopes or elevation changes; spec: max obstacle 20 mm, max gradient 8%",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

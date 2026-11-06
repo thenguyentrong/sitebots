@@ -9,33 +9,14 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.ubtrobot.com/en/humanoid/products/walker-s2",
- "summary": "A 1.76 m walking industrial humanoid with two dexterous hands that swaps its own battery and lifts up to 15 kg, orderable in Germany from RobotShop Europe or through Terra Robotics.",
+ "summary": "A 1.76 m walking industrial humanoid with two dexterous hands that swaps its own battery and lifts up to 15 kg, available in Germany on request through Terra Robotics.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": {
-   "amount": 238000,
-   "basis": "gross",
-   "kind": "list",
-   "sourceId": "s6",
-   "note": "RobotShop Europe price shown with VAT for Germany; kit includes two Gen-4 dexterous hands, charging station and two batteries."
-  },
+  "priceEur": null,
   "priceOther": null,
-  "leadTime": "RobotShop: on-demand item, ordered from the supplier; due date shown at checkout",
+  "leadTime": null,
   "sellers": [
-   {
-    "name": "RobotShop Europe (RobotShop inc., eu.robotshop.com)",
-    "country": "CA",
-    "role": "reseller",
-    "contactUrl": "https://eu.robotshop.com/pages/contact-us",
-    "email": null,
-    "phone": "+33 8 01 90 23 42",
-    "productUrl": "https://eu.robotshop.com/products/ubtech-walker-s2-industrial-humanoid-robot",
-    "priceEur": 238000,
-    "priceBasis": "gross",
-    "sourceId": "s6",
-    "note": "On-demand item (not stocked) with add-to-cart and quote request; manufacturer no. Walker-S2-Kit."
-   },
    {
     "name": "Terra Robotics (Terra Connect GmbH)",
     "country": "DE",
@@ -50,9 +31,9 @@
     "note": "Product page shows \"Preis anfragen\"; the page metadata carries EUR 192,437 without stating VAT, not displayed to buyers. Two Gen-4 dexterous hands are a separate listing (EUR 25,126 in metadata)."
    }
   ],
-  "checkedAt": "2026-10-02",
-  "status": "buy_now",
-  "statusNote": "RobotShop Europe lists the Walker S2 with two Gen-4 dexterous hands at EUR 238,000 incl. VAT as an on-demand item with delivery to Germany; Terra Robotics, UBTECH's exclusive DACH distributor, quotes on request.",
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "Terra Robotics, UBTECH's exclusive DACH distributor, sells, leases or quotes the Walker S2 on request, with no public robot price. Rossmann has tested one at Burgwedel since March 2026.",
   "sourceIds": [
    "s6",
    "s2",
@@ -229,6 +210,33 @@
    "date": null,
    "sourceId": "s1",
    "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Pick-and-place trials in a logistics test area, kept apart from daily operations",
+   "stage": "pilot",
+   "where": "Rossmann logistics, Burgwedel, Germany",
+   "date": "2026-03",
+   "sourceId": "s7",
+   "note": "Same pilot as the existing Rossmann row, which says country not stated; this gives the site and country. Better merged into that row. The interview of May 2026 says the robot was still starting with basic scenarios."
+  },
+  {
+   "taskIds": [],
+   "task": "Trial of Walker S2 in aircraft manufacturing under a supply contract",
+   "stage": "claim",
+   "where": "Airbus",
+   "date": "2026-01",
+   "sourceId": "s8",
+   "note": "A contract to test, not reported work; site not named."
+  },
+  {
+   "taskIds": [],
+   "task": "Guiding passenger queues and relaying cargo status at a border crossing",
+   "stage": "claim",
+   "where": "Fangchenggang border area, China",
+   "date": "2026-04",
+   "sourceId": "s9",
+   "note": "Planned use under a contract, not a report of work done."
   }
  ],
  "sources": [
@@ -238,7 +246,7 @@
    "title": "Walker S2 product page",
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -246,7 +254,7 @@
    "title": "UBtech Walker S2",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -254,7 +262,7 @@
    "title": "UBTECH partners with collaborators to accelerate global expansion (Terra Robotics, ROSSMANN)",
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -270,7 +278,7 @@
    "title": "UBtech Walker S2 geschickte Roboter Hand (2 Stück)",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -279,6 +287,30 @@
    "publisher": "RobotShop",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://logistik-heute.de/news/nachgefragt-bei-hendrik-van-duuren-rossmann-humanoide-roboter-sind-heute-keine-plug-and-play-systeme-261747.html",
+   "title": "LOGISTIK HEUTE",
+   "publisher": "LOGISTIK HEUTE",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.boerse-express.com/news/articles/ubtech-humanoiden-umsatz-22-fach-gestiegen-913323",
+   "title": "boerse-express.com",
+   "publisher": "boerse-express.com",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s9",
+   "url": "https://humanoid.guide/?p=10598",
+   "title": "humanoid.guide",
+   "publisher": "humanoid.guide",
+   "kind": "database",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

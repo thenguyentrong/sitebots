@@ -160,7 +160,7 @@
   "tracks": false,
   "levelFloors": true,
   "roughGround": true,
-  "stairs": null,
+  "stairs": true,
   "outdoor": true,
   "arms": 0,
   "hands": "none",
@@ -171,7 +171,8 @@
   "ipRating": null,
   "sdk": "MagicDog SDK, ROS 2",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s5"
   ],
   "notes": [
    "No IP rating published; operating range -5 to 40 °C.",
@@ -247,6 +248,14 @@
    "publisher": "Roboter Deutschland",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://news.ifeng.com/c/8lCZK26myIY",
+   "title": "魔法原子发布MagicDog-W轮式四足机器人_凤凰网",
+   "publisher": "ifeng.com (Guancha report)",
+   "kind": "press",
+   "checkedAt": "2026-10-21"
   }
  ],
  "openQuestions": [
@@ -256,5 +265,15 @@
   "IP rating.",
   "Who operates Roboter Deutschland and whether it is authorised by MagicLab."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s5",
+   "quote": "测试显示,MagicDog-W可跨越≥60cm垂直障碍、攀爬≥40°斜坡,并在碎石、草地、楼梯等非结构化地形保持稳定运动姿态 [Tests show MagicDog-W can cross vertical obstacles of 60 cm or more, climb slopes of 40° or more and keep a stable posture on unstructured terrain such as gravel, grass and stairs]",
+   "basis": null,
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

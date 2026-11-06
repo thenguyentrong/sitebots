@@ -21,7 +21,7 @@
    "note": "Generation Robots \"from\" price excl. VAT; RobotShop Europe shows EUR 149,291.45 incl. VAT."
   },
   "priceOther": null,
-  "leadTime": "Generation Robots: delivery within 4 to 6 weeks; RobotShop: on demand",
+  "leadTime": "Generation Robots: delivery within 4 to 6 weeks; Bipedal: shown as available, no delivery time stated",
   "sellers": [
    {
     "name": "Generation Robots",
@@ -53,13 +53,13 @@
     "name": "Tekpoint GmbH",
     "country": "AT",
     "role": "distributor",
-    "productUrl": "https://tekpoint.com/robotics",
+    "productUrl": "https://tekpoint.com/en/robotics/agibot/g2/",
     "contactUrl": "https://tekpoint.com/robotics",
     "email": "robotics@tekpoint.com",
     "phone": "+43 1 3616670",
     "priceEur": null,
     "priceBasis": null,
-    "sourceId": "s2",
+    "sourceId": "s11",
     "note": "Lists AGIBOT A2 Ultra, X2 Ultra and G2."
    },
    {
@@ -74,17 +74,31 @@
     "priceBasis": null,
     "sourceId": "s5",
     "note": "Direct enquiries through AGIBOT's business form."
+   },
+   {
+    "productUrl": "https://www.bipedal.de/AgiBot-G2",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": null,
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s10"
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Orderable online with delivery to Germany: Generation Robots (France) from EUR 140,300 excl. VAT, delivery 4-6 weeks; RobotShop Europe EUR 149,291.45 incl. VAT, on demand. Tekpoint (Vienna), AGIBOT's European distributor, quotes on request.",
+  "statusNote": "Orderable online with delivery to Germany: Generation Robots (France) from EUR 140,300 excl. VAT, delivery 4-6 weeks. Bipedal (Leverkusen) lists it as available, price on request, without hands or grippers. Tekpoint (Vienna), AGIBOT's European distributor, quotes on request and reports first units in its own warehouse.",
   "sourceIds": [
    "s7",
    "s9",
    "s8",
    "s2",
-   "s3"
+   "s3",
+   "s10"
   ]
  },
  "specs": [
@@ -155,10 +169,10 @@
   {
    "key": "charging_time_h",
    "label": "Charging time",
-   "value": 2.5,
+   "value": 2,
    "unit": "h",
-   "conditions": "at most; direct charging, swapping or auto-recharge with optional dock",
-   "sourceId": "s1"
+   "conditions": "at most; direct, battery swap or optional autonomous dock",
+   "sourceId": "s11"
   },
   {
    "key": "swappable_battery",
@@ -179,10 +193,10 @@
   {
    "key": "compute",
    "label": "Compute",
-   "value": "NVIDIA Jetson T5000 (2070 TFLOPS FP4)",
+   "value": "Standard: 500 TOPS INT8, 24-core, 64 GB; High: NVIDIA Jetson T5000, 2070 TFLOPS FP4, 128 GB",
    "unit": null,
    "conditions": null,
-   "sourceId": "s1"
+   "sourceId": "s11"
   },
   {
    "key": "sensors",
@@ -191,6 +205,46 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "dual-arm rated; 15 kg dual-arm peak",
+   "sourceId": "s11"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max step cm",
+   "value": 1.5,
+   "unit": null,
+   "conditions": "chassis obstacle",
+   "sourceId": "s11"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max slope deg",
+   "value": 5,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s11"
+  },
+  {
+   "key": "passage_width_cm",
+   "label": "Passage width cm",
+   "value": 85,
+   "unit": null,
+   "conditions": "minimum passage",
+   "sourceId": "s11"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temp c",
+   "value": "0-45",
+   "unit": null,
+   "conditions": "up to 90% RH",
+   "sourceId": "s11"
   }
  ],
  "capabilities": {
@@ -279,7 +333,7 @@
    "title": "Tekpoint: European regional distributor for AGIBOT robots",
    "publisher": "Tekpoint GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -319,7 +373,7 @@
    "title": "AGIBOT G2 Wheeled Humanoid Robot (Generation Robots)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s8",
@@ -336,10 +390,36 @@
    "publisher": "RobotShop",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s10",
+   "url": "https://www.bipedal.de/AgiBot-G2",
+   "title": "Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s11",
+   "url": "https://tekpoint.com/en/robotics/agibot/g2/",
+   "title": "Tekpoint GmbH",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Which end effector, if any, is included at each seller's price."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "both_arms_payload_kg",
+   "value": 10,
+   "sourceId": "s11",
+   "quote": "Arm payload5 kg rated per arm; 10 kg dual-arm rated; 15 kg dual-arm peak",
+   "basis": "dual-arm rated; 15 kg dual-arm peak",
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

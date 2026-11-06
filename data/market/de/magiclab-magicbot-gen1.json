@@ -8,8 +8,8 @@
  "name": "MagicLab MagicBot Gen1",
  "robotType": "humanoid",
  "specialisedFor": [],
- "officialUrl": "https://www.magiclab.top/en/human",
- "summary": "A 1.74 m, 70 kg general-purpose humanoid with 42 joints, two 11-DoF hands, up to 7.5 kg per arm and 3 to 5 hours runtime, offered for guided tours, service and factory tasks.",
+ "officialUrl": "https://www.magiclabglobal.com/products/magicbot-gen1/",
+ "summary": "A 1.74 m, 70 kg general-purpose humanoid with 42 joints, optional 11-DoF hands, up to 7.5 kg per arm and 3 to 5 hours runtime, offered for guided tours, service and factory tasks.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
@@ -37,7 +37,7 @@
     "note": "RBTX lists it as \"Magiclab G1\" (URL slug says magicbot-z1): 174 cm, 42 DoF, 11-DoF Magic-Hand, dual-arm load 20 kg; usual delivery 6 to 8 months."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
   "statusNote": "RBTX (igus, Cologne) lists it as \"Magiclab G1\" with a net price, but with a usual delivery time of 6 to 8 months. MagicLab states CE-RED certification is targeted for Q4 2026; check CE status before use in Germany.",
   "sourceIds": [
@@ -165,6 +165,22 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "both arms together, maximum (maker: lab conditions)",
+   "sourceId": "s4"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max slope deg",
+   "value": 20,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4"
   }
  ],
  "capabilities": {
@@ -172,7 +188,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -241,7 +257,7 @@
    "title": "General-Purpose Humanoid Robot MagicBot Gen1",
    "publisher": "MagicLab",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -249,7 +265,7 @@
    "title": "Humanoid Robot Magiclab G1 on RBTX",
    "publisher": "igus SE & Co. KG (RBTX)",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -257,12 +273,38 @@
    "title": "MagicLab Brings Physical AI to Europe's Factory Floors at IFA 2026",
    "publisher": "MagicLab",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.magiclabglobal.com/products/magicbot-gen1/",
+   "title": "MagicBot Gen1 - General-Purpose Humanoid AI Robot | MagicLabMagicLab - China Supplier",
+   "publisher": "MagicLab",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Has CE marking been completed?",
   "Is the RBTX 6 to 8 month lead time still current?"
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "both_arms_payload_kg",
+   "value": 15,
+   "sourceId": "s4",
+   "quote": "Max Load (Both Arms) 15kg",
+   "basis": "both arms together, maximum (maker: lab conditions)",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "robust resistance to disturbances and impacts enables smooth traversal of complex terrains as if walking on flat ground",
+   "basis": "maker claim; spec table also lists supported terrains: all terrains",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

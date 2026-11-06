@@ -15,23 +15,24 @@
  "germany": {
   "priceEur": null,
   "priceOther": null,
-  "leadTime": null,
+  "leadTime": "European rollout targeted for H2 2027 (maker timetable, October 2026); a target, not an order date.",
   "sellers": [],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "not_sold",
-  "statusNote": "XPENG presents IRON as a technology demonstration; no order, price or sales route in Germany or elsewhere.",
+  "statusNote": "Not on sale yet: XPENG targets mass production by the end of 2026, market launch and deliveries in 2027 and a European rollout in H2 2027, but names no price, countries or sales route, and no order is open.",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s2"
   ]
  },
  "specs": [
   {
    "key": "dof_per_hand",
    "label": "DOF per hand",
-   "value": 22,
+   "value": 21,
    "unit": null,
-   "conditions": null,
-   "sourceId": "s1"
+   "conditions": "XPENG releases of August and September 2026; the product page still says 22",
+   "sourceId": "s3"
   },
   {
    "key": "shoulder_dof",
@@ -52,10 +53,18 @@
   {
    "key": "compute",
    "label": "Compute",
-   "value": "3 XPENG Turing chips",
+   "value": "3 XPENG Turing AI chips, up to 2,250 TOPS",
    "unit": null,
-   "conditions": null,
-   "sourceId": "s1"
+   "conditions": "effective computing power, maker figure",
+   "sourceId": "s3"
+  },
+  {
+   "key": "dof_total",
+   "label": "Dof total",
+   "value": 76,
+   "unit": null,
+   "conditions": "whole body, as stated by XPENG in September 2026",
+   "sourceId": "s3"
   }
  ],
  "capabilities": {
@@ -108,7 +117,23 @@
    "title": "XPENG Next-Gen IRON",
    "publisher": "XPENG",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.humanoidsdaily.com/news/xpeng-iron-europe-rollout-h2-2027",
+   "title": "Humanoids Daily",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.xpeng.com/pressroom/news/01a080371029a057bc8e8a02a2c6012b",
+   "title": "XPENG",
+   "publisher": "XPENG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],

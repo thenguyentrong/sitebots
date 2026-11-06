@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { SavedComparison } from '@/components/compare/SavedComparison';
 import { Fragment } from 'react';
-import { CompareRadar } from '@/components/compare/CompareRadar';
+import { CompareSearch } from '@/components/compare/CompareControls';
 import { CompareTable } from '@/components/compare/CompareTable';
-import { COMPARE_MAX, getCompareRows } from '@/lib/queries/compare';
+import { SavedComparison } from '@/components/compare/SavedComparison';
+import { COMPARE_MAX, getCompareColumns } from '@/lib/queries/compare';
 import { PRIVATE_METADATA } from '@/lib/seo';
 import { ui } from '@/lib/ui';
 
@@ -18,34 +18,26 @@ type Search = Promise<{ ids?: string }>;
 export default async function ComparePage({ searchParams }: { searchParams: Search }) {
   const { ids } = await searchParams;
   const requested = (ids ?? '').split(',').map((s) => s.trim()).filter(Boolean);
-  const rows = await getCompareRows(requested);
-  const dropped = requested.length - rows.length;
+  const { columns, robots, unknown } = await getCompareColumns(requested);
   const EmptyState = ids === undefined ? SavedComparison : Fragment;
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 pb-28 sm:px-6">
-      <header className="flex flex-wrap items-end justify-between gap-4 py-10">
-        <div>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Compare</h1>
-          <p className="mt-3 max-w-2xl text-muted">
-            Up to {COMPARE_MAX} robots, every value with its trust badge. The highlighted cell is the best published
-            figure in its row; unpublished stays unpublished.
-          </p>
-          {requested.length > COMPARE_MAX ? (
-            <p className="mt-3 text-sm font-medium text-safety">Only the first {COMPARE_MAX} of {requested.length} ids are shown.</p>
-          ) : null}
-          {dropped > 0 && requested.length <= COMPARE_MAX ? (
-            <p className="mt-3 text-sm font-medium text-safety">
-              {dropped} id{dropped === 1 ? '' : 's'} not found.
-            </p>
-          ) : null}
+      <header className="py-10">
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Compare</h1>
+        <p className="mt-3 max-w-2xl text-muted">
+          Up to {COMPARE_MAX} robots side by side, any type. Each row shows what was published, with its conditions and
+          source. We do not score or rank them: what fits your job is your call. If a value is missing, it says Not published.
+        </p>
+        {robots > COMPARE_MAX ? <p className="mt-3 text-sm font-medium text-safety">Only the first {COMPARE_MAX} of {robots} robots are shown.</p> : null}
+        {unknown > 0 ? <p className="mt-3 text-sm font-medium text-safety">{unknown} robot{unknown === 1 ? '' : 's'} not found.</p> : null}
+        <div className="mt-6 flex flex-wrap items-end gap-3">
+          <CompareSearch selected={columns.map(({ id, name }) => ({ id, name }))} max={COMPARE_MAX} />
+          <Link href="/robots" className={ui.btnSecondary}>Browse robots</Link>
         </div>
-        <Link href="/robots" className={ui.btnSecondary}>
-          Add robots
-        </Link>
       </header>
 
-      {rows.length === 0 ? (
+      {columns.length === 0 ? (
         <EmptyState><div className="card flex flex-col items-center gap-3 px-6 py-16 text-center">
           <span className="grid h-12 w-12 place-items-center rounded-2xl bg-subtle text-muted">
             <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -54,19 +46,14 @@ export default async function ComparePage({ searchParams }: { searchParams: Sear
             </svg>
           </span>
           <p className="text-muted">
-            Nothing to compare yet. Pick robots with the Compare button on{' '}
+            Nothing to compare yet. Search for a robot above, or use the Compare button on{' '}
             <Link href="/robots" className={ui.link}>
-              the catalogue
+              the robots page
             </Link>{' '}
-            or on a robot page.
+            or on any robot page.
           </p>
         </div></EmptyState>
-      ) : (
-        <>
-          <CompareRadar rows={rows} />
-          <CompareTable rows={rows} />
-        </>
-      )}
+      ) : <CompareTable columns={columns} />}
     </main>
   );
 }

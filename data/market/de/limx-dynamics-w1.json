@@ -36,7 +36,7 @@
     "note": "Listed as \"Sofort verfügbar\", price on request."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-10-20"
  },
  "specs": [
   {
@@ -102,6 +102,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "unstated ('stable operating time'); same 4 h on the archived LimX W1 page of 2025-01-08 (live LimX page now 404)",
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -117,7 +125,7 @@
   "handsIncluded": null,
   "armPayloadKg": null,
   "carryPayloadKg": 15,
-  "runtimeH": null,
+  "runtimeH": 4,
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
@@ -187,8 +195,18 @@
   }
  ],
  "openQuestions": [
-  "Whether LimX still produces and supports the W1.",
-  "IP rating and runtime."
+  "Whether LimX still produces and supports the W1: its LimX product page now returns 404 and the W1 is missing from LimX's product list, order form and downloads; only Bipedal still lists it.",
+  "IP rating."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-20",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 4,
+   "sourceId": "s1",
+   "quote": "Er erreicht auf Rädern eine Geschwindigkeit von bis zu 10 m/s, bietet eine stabile Betriebsdauer von 4 Stunden [It reaches up to 10 m/s on wheels and offers a stable operating time of 4 hours]",
+   "basis": "unstated ('stable operating time'); same 4 h on the archived LimX W1 page of 2025-01-08 (live LimX page now 404)",
+   "checkedAt": "2026-10-20"
+  }
+ ]
 }

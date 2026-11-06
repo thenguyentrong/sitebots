@@ -18,43 +18,34 @@ const CONTENT = [
   './data/partners.yaml',
 ];
 
-/** The specification search's own parameters (lib/match/requirements.ts) plus `details`. */
-const SEARCH_PARAMS = ['details', 'tasks', 'payload_kg', 'reach_height_m', 'terrain', 'stairs', 'slope_deg', 'environment', 'dust', 'wet', 'temp_min_c', 'temp_max_c', 'runtime_h_per_shift', 'hot_swap_acceptable', 'budget_eur', 'region', 'needed_by', 'form_factor', 'autonomy', 'certifications_required', 'noise_limit_db', 'strict_unknowns'];
-
 const nextConfig: NextConfig = {
   devIndicators: false,
   // The in-app preview connects through the loopback IP.
   allowedDevOrigins: ['127.0.0.1'],
   async redirects() {
     const models = ['02', 'w1'].map(model => ({ source: `/robots/zerith/${model}`, destination: `/robots/casbot/${model}`, permanent: true }));
-    // The specification search moved from the landing to /search so the landing can be built ahead
-    // of time. Old links carry one of its parameters; the query string is passed on unchanged.
-    const search = SEARCH_PARAMS.map(key => ({ source: '/', has: [{ type: 'query' as const, key }], destination: '/search', permanent: false }));
-    return [...models, ...search];
+    // The site became one chat. Old pages go to it instead of ending in a 404.
+    const gone = ['/chat', '/graph', '/steps', '/costs', '/search', '/methodology', '/plan/:path*', '/use-cases/:path*', '/workflows/:path*', '/solutions/:path*']
+      .map(source => ({ source, destination: '/', permanent: false }));
+    return [...models, ...gone];
   },
   // PGlite loads its WASM and data files with `new URL(...)` checks that fail
   // once Turbopack has bundled it (the bundler's URL is not Node's URL). Keep
   // it external so the local database works under `next dev`.
-  serverExternalPackages: ['@electric-sql/pglite'],
+  serverExternalPackages: ['@electric-sql/pglite', '@react-pdf/renderer'],
   // Only database-backed routes need the prepared catalogue. Runtime scraper
   // caches must never be copied into deployment functions.
   outputFileTracingIncludes: {
-    '/': CONTENT,
-    '/plan{,/**}': CONTENT,
     '/market{,/**}': CONTENT,
     '/api/market{,/**}': CONTENT,
-    '/solutions{,/**}': ['./data/solutions/*.json'],
-    '/workflows{,/**}': ['./data/solutions/*.json'],
-    '/use-cases{,/**}': CONTENT,
     '/robots{,/**}': ['./data/snapshot/pglite.tar.gz', ...CONTENT],
     '/brands{,/**}': ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
-    '/steps': CONTENT,
-    '/costs': ['./data/costs/*.json'],
-    '/compare': ['./data/snapshot/pglite.tar.gz'],
-    '/search': ['./data/snapshot/pglite.tar.gz', ...CONTENT],
-    '/api/match': ['./data/snapshot/pglite.tar.gz'],
-    '/api/plan': ['./data/snapshot/pglite.tar.gz'],
+    '/compare': ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
+    '/api/compare{,/**}': ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
     '/api/models': ['./data/models/index.json', './data/models/poses.json'],
+    '/api/chat': ['./data/graph/*.json', './data/costs/*.json', ...CONTENT],
+    '/api/report': ['./data/fonts/*.ttf'],
+    '/admin/graph': ['./data/graph/*.json'],
     '/sitemap.xml': ['./data/snapshot/pglite.tar.gz', ...CONTENT],
     '/api/admin/refresh': ['./data/aliases*.yaml', './data/specifications/pages.json', './data/sources.json'],
   },
@@ -63,6 +54,18 @@ const nextConfig: NextConfig = {
   },
   images: {
     remotePatterns: [{ protocol: 'https', hostname: '*.public.blob.vercel-storage.com' }],
+    // Each size of each picture is one paid transformation, so fewer sizes and a long life keep them few.
+    minimumCacheTTL: 2678400,
+    deviceSizes: [640, 828, 1200, 1920],
+    imageSizes: [128, 256, 384],
+  },
+  // Every catalogue page boots the database in a function. The catalogue only changes with a deploy, and a
+  // deploy empties this cache, so one visitor's page can serve everyone for a week.
+  async headers() {
+    return ['/robots/:path*', '/brands/:path*', '/market/:path*', '/compare', '/sitemap.xml'].map(source => ({
+      source,
+      headers: [{ key: 'Vercel-CDN-Cache-Control', value: 'public, max-age=604800' }],
+    }));
   },
 };
 

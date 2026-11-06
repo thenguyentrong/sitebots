@@ -96,6 +96,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1.5,
+   "unit": "kg",
+   "conditions": "per arm; payload capacity of the WidowX AI arm (the kit carries 2 WidowX AI follower arms), from the maker's arm spec page",
+   "sourceId": "s6"
   }
  ],
  "capabilities": {
@@ -109,14 +117,15 @@
   "arms": 2,
   "hands": "gripper",
   "handsIncluded": true,
-  "armPayloadKg": null,
+  "armPayloadKg": 1.5,
   "carryPayloadKg": null,
   "runtimeH": null,
   "ipRating": null,
   "sdk": "ROS 2, LeRobot",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s6"
   ],
   "notes": [
    "The arms sit on a wheeled frame that is moved between sites; Trossen points to its SLATE base for autonomous navigation, while Generation Robots calls the platform motorised. Whether this kit drives itself is not clear.",
@@ -184,11 +193,29 @@
    "publisher": "MYBOTSHOP.DE",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s6",
+   "url": "https://docs.trossenrobotics.com/trossen_arm/main/specifications/wxai.html",
+   "title": "WidowX AI — Trossen Robotics Trossen Arm Documentation",
+   "publisher": "Trossen Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-21"
   }
  ],
  "openQuestions": [
   "Trossen's site files Mobile AI under legacy AI hardware; how long it stays on sale next to Rivet.",
   "Arm payload per WidowX AI arm on this kit."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 1.5,
+   "sourceId": "s6",
+   "quote": "WidowX AI Degrees of Freedom 6 + Gripper Payload Capacity 1.5 kg",
+   "basis": "per arm; payload capacity of the WidowX AI arm (the kit carries 2 WidowX AI follower arms), from the maker's arm spec page",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

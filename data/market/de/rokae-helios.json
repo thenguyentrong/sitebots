@@ -1,0 +1,219 @@
+{
+ "schemaVersion": 1,
+ "id": "rokae-helios",
+ "maker": "ROKAE",
+ "makerCountry": "CN",
+ "model": "Helios",
+ "variant": "II-5",
+ "name": "ROKAE Helios",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.rokae.com/en/product/show/596/Wheeled-Dual-Arm-Robot-Helios.html",
+ "summary": "A wheeled dual-arm humanoid from ROKAE with force control and 5 kg per arm, working on a component assembly line at a Schaeffler plant in China.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-06",
+  "status": "not_sold",
+  "statusNote": "ROKAE offers demos through sales@rokae.com and lists no office in Europe. Its European site rokae.eu, run with JAEGER Engineering, covers arms and cobots and does not list Helios. No German seller or customer for Helios was found; Schaeffler uses it in China.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.49 to 2.00",
+   "unit": "m",
+   "conditions": "750 x 650 x 1493 to 2000 mm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 160,
+   "unit": "kg",
+   "conditions": "total, Helios II-5",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 23,
+   "unit": null,
+   "conditions": "spec table; the page intro says 42",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "maximum, omnidirectional chassis",
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_ah",
+   "label": "Battery",
+   "value": 36,
+   "unit": "Ah",
+   "conditions": "two 18 Ah packs, swappable",
+   "sourceId": "s1"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2,
+   "unit": "h",
+   "conditions": "10 to 90 percent",
+   "sourceId": "s1"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 45",
+   "unit": "°C",
+   "conditions": "0 to 90 percent humidity, non-condensing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "One of NVIDIA Orin NX 8GB, AGX Orin 64GB or Thor T5000",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Two 3D navigation LiDARs, head stereo camera, IMU; fisheye, chest and wrist cameras optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 and Python SDK",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "ROS 2, Python SDK",
+  "notes": [
+   "End effectors are optional: electric gripper, dexterous hand or electric vacuum gripper.",
+   "Whole-body force control for arms, waist and neck.",
+   "Specs are for the Helios II-5 table on the maker page."
+  ],
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.rokae.com/public/uploads/20260918/8a8703726fe574560c384cefa63bbcb8.png",
+   "pageUrl": "https://www.rokae.com/en/product/show/596/Wheeled-Dual-Arm-Robot-Helios.html",
+   "credit": "ROKAE",
+   "alt": "ROKAE Helios wheeled humanoid with a white torso on an omnidirectional base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Parts handling, assembly and inspection on a component assembly line",
+   "stage": "deployment",
+   "where": "Schaeffler plant, Taicang, China",
+   "date": "2026-10",
+   "sourceId": "s2",
+   "note": "ROKAE says five Helios robots; Schaeffler spoke of six humanoids on the line. No output figures published."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.rokae.com/en/product/show/596/Wheeled-Dual-Arm-Robot-Helios.html",
+   "title": "Wheeled Dual-Arm Robot Helios product page",
+   "publisher": "ROKAE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.humanoidsdaily.com/news/rokae-10000-humanoid-arms-schaeffler-taicang",
+   "title": "ROKAE reports 10,000 humanoid arms, identifies Schaeffler deployment",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.rokae.com/en/about/215/Contact-Us.html",
+   "title": "ROKAE contact page",
+   "publisher": "ROKAE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://rokae.eu/",
+   "title": "ROKAE Europe site",
+   "publisher": "ROKAE, JAEGER Engineering",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Germany availability was not confirmed either way: ask ROKAE or JAEGER Engineering whether Helios is offered in the EU.",
+  "DOF: the spec table says 23, the page intro says 42, which may count hands."
+ ],
+ "checkedAt": "2026-11-06"
+}

@@ -14,11 +14,18 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Generation Robots lists the H1-2 as a version on its H1 page; price and delivery time on request.",
+  "statusNote": "Generation Robots lists the H1-2 as a version on its H1 page, price and delivery on request; OpenELAB lists it at 138,283.95 € incl. VAT but sold out, shipping from China.",
   "sourceIds": [
-   "s2"
+   "s2",
+   "s4"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 138283.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "OpenELAB, incl. VAT; sold out at the check."
+  },
   "priceOther": null,
   "leadTime": "on request",
   "sellers": [
@@ -33,10 +40,23 @@
     "priceEur": null,
     "priceBasis": null,
     "sourceId": "s2",
-    "note": "H1-2 selectable on the H1 / H1-2 page; page 'from' price EUR 93,496 excl. VAT likely refers to the cheaper version; cart disabled."
+    "note": "H1-2 selectable on the H1 / H1-2 page; the shop returns the same from-price for the H1-2 as for the H1 (EUR 93,496 excl. VAT), so it shows no separate H1-2 price; cart disabled, delivery on request."
+   },
+   {
+    "name": "OpenELAB (OpenELAB Technology Ltd., Shenzhen; office in Garching bei München)",
+    "country": "CN",
+    "role": "reseller",
+    "productUrl": "https://openelab.io/de/products/unitree-h1-2-humanoid-robot",
+    "contactUrl": "https://openelab.io/policies/legal-notice",
+    "email": null,
+    "phone": null,
+    "priceEur": 138283.95,
+    "priceBasis": "gross",
+    "sourceId": "s4",
+    "note": "\"Ausverkauft\" (sold out); ships from China or via its EU office; returns may go to the US, Germany or China; 12-month limited warranty."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -147,10 +167,10 @@
  ],
  "evidence": [],
  "openQuestions": [
-  "Runtime per battery not stated.",
-  "Separate euro price for H1-2 not public."
+  "Runtime: Unitree's H1-2 manual (page images only) says about 2 h; no HTML page states it.",
+  "Unitree states \"Arm normal load … Rated: about 7 kg\" without saying per arm or both arms; the record reads it as per arm."
  ],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-20",
  "sources": [
   {
    "id": "s1",
@@ -158,7 +178,7 @@
    "title": "Unitree H1 / H1-2 product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -166,7 +186,7 @@
    "title": "Unitree H1 / H1-2 humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -174,7 +194,15 @@
    "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://openelab.io/de/products/unitree-h1-2-humanoid-robot",
+   "title": "Unitree H1-2 humanoider Roboter at OpenELAB",
+   "publisher": "OpenELAB",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ]
 }

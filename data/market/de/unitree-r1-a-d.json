@@ -14,13 +14,14 @@
  "lifecycle": "preorder",
  "germany": {
   "status": "preorder",
-  "statusNote": "Not orderable yet. Terra Robotics (DE) lists all R1-A-D versions with net EUR prices, but every version is marked 'Auf Anfrage' (on request) and none can be put in the cart. quadruped.de shows 'price on request, available from 15.02.2027', and Unitree's own store marks all R1-A versions unavailable.",
+  "statusNote": "Not orderable yet. Terra Robotics (DE) lists all R1-A-D versions with net EUR prices, but every version is marked 'Auf Anfrage' (on request) and 'nicht verfügbar', and none can be put in the cart. quadruped.de shows 'available from 15.02.2027' with one from-price for the whole R1-A and R1-A-D family (no D version named), and Unitree's own store marks all R1-A versions unavailable.",
   "sourceIds": [
    "s2",
    "s3",
    "s4",
    "s5",
-   "s6"
+   "s6",
+   "s7"
   ],
   "priceEur": {
    "amount": 12061.28,
@@ -29,7 +30,13 @@
    "sourceId": "s3",
    "note": "Terra Robotics, R1-A5-D Smart A (Dex1-1 gripper), excl. VAT. R1-A7-D Smart: EUR 12,738.25 to 25,262.12 net; R1-A5-D Smart: 12,061.28 to 24,585.16; R1-A5-D Flagship: 13,753.70 to 26,277.57. Price depends on the hand option. All versions shown as on request."
   },
-  "priceOther": null,
+  "priceOther": {
+   "note": null,
+   "amount": 6490,
+   "currency": "USD",
+   "market": "Unitree online store, R1-A5-D Standard with L2 LiDAR (listed as unavailable); price is given in cents on this page",
+   "sourceId": "s7"
+  },
   "leadTime": "quadruped.de: available from 15.02.2027",
   "sellers": [
    {
@@ -59,7 +66,7 @@
     "note": "One page for R1-A5, R1-A7, R1-A5-D and R1-A7-D in Smart and Flagship versions; 'Preis auf Anfrage', 'Verfügbar ab: 15.02.2027'. Also lists R1-A-D spare parts such as the chassis battery (EUR 1,050 net)."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -248,7 +255,7 @@
    "title": "Unitree Dual-Arm Humanoid Robot (R1-A / R1-A-D)",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -256,7 +263,7 @@
    "title": "Unitree R1-A7-D Smart Serie",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -264,7 +271,7 @@
    "title": "Unitree R1-A5-D Smart Serie",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -272,7 +279,7 @@
    "title": "Unitree R1-A5-D Flagship Serie",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -280,7 +287,7 @@
    "title": "Unitree R1-A",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -288,7 +295,15 @@
    "title": "Unitree R1-D (store listing)",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s7",
+   "url": "https://shop.unitree.com/products/unitree-r1-d.js",
+   "title": "Unitree Robotics",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

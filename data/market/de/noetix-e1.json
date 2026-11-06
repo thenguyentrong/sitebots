@@ -16,27 +16,14 @@
   "priceEur": null,
   "priceOther": null,
   "leadTime": null,
-  "sellers": [
-   {
-    "name": "Noetix Robotics (Beijing)",
-    "country": "CN",
-    "role": "manufacturer",
-    "productUrl": null,
-    "contactUrl": "https://www.noetixrobotics.com/en/contact/",
-    "email": "sales@noetixrobotics.com",
-    "phone": "+86 400 096 9300",
-    "priceEur": null,
-    "priceBasis": null,
-    "sourceId": "s3",
-    "note": "Pre-sales inquiries by email or form."
-   }
-  ],
-  "checkedAt": "2026-10-02",
-  "status": "quote",
-  "statusNote": "No German or EU seller found for E1; Noetix sells N2 and Bumi in Germany through RBTX, so ask Noetix directly.",
+  "sellers": [],
+  "checkedAt": "2026-11-06",
+  "status": "not_sold",
+  "statusNote": "No German or EU route for the E1: RBTX lists only the Noetix Bumi and N2, and Noetix shows only a Beijing contact form. A buyer could still ask Noetix directly.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s4"
   ]
  },
  "specs": [
@@ -131,7 +118,7 @@
    "title": "E1 Bipedal Humanoid Robot",
    "publisher": "Noetix Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -147,7 +134,15 @@
    "title": "Contact Noetix Robotics",
    "publisher": "Noetix Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://rbtx.de/de-DE/partners/noetix-robotics",
+   "title": "igus SE & Co. KG (RBTX)",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

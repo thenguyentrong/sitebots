@@ -1,0 +1,124 @@
+{
+ "schemaVersion": 1,
+ "id": "neura-4ne1-gen4",
+ "maker": "NEURA Robotics",
+ "makerCountry": "DE",
+ "model": "4NE1",
+ "variant": "Gen 4",
+ "name": "NEURA 4NE1 Gen 4",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://neura-robotics.com/products/4ne1/",
+ "summary": "The new German 4NE1 generation with a black textile skin, 20 percent lighter than the one before, in use at NEURA training centres and being prepared for series production.",
+ "launched": "2026-10",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-06",
+  "status": "not_sold",
+  "statusNote": "Built in Germany, but no Gen 4 price, order or delivery date exists. NEURA says it is being prepared for series production, and companies can only train tasks with it at NEURA Gyms. The 100 EUR reservation page still names Gen 3.5.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_change",
+   "label": "Weight",
+   "value": "20 percent lighter than the previous generation",
+   "unit": null,
+   "conditions": "no absolute weight published",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Neuron AI foundation model, runs locally on the robot",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Vision, touch, force and sound inputs; sensor skin",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "NEURA publishes no Gen 4 height, weight, payload or runtime. The spec table on the 4NE1 page matches Gen 3.5, so it is not used here.",
+   "Limbs have built-in reflexes that react on their own."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Companies train concrete tasks with the robot at the NEURA Gyms",
+   "stage": "demo",
+   "where": "TUM RoboGym, Munich, Germany",
+   "date": "2026-10",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://neura-robotics.com/products/4ne1/",
+   "title": "4NE1 product page",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://neura-robotics.com/tum-robogym-munich-4ne1-gen4-launch/",
+   "title": "NEURA and TUM open RoboGym; 4NE1 Gen 4 launch",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://neura-robotics.com/product/4ne1-reservation/",
+   "title": "4NE1 reservation page",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "When will NEURA take Gen 4 orders, and at what price?",
+  "Does a Gen 3.5 reservation convert to Gen 4?",
+  "No official product photo of Gen 4 alone was found; the launch photo shows people, so images is left empty."
+ ],
+ "checkedAt": "2026-11-06"
+}

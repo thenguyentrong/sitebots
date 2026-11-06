@@ -14,12 +14,13 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "preorder",
-  "statusNote": "Not yet delivered in Germany: RobotShop EU takes pre-orders (phased deliveries announced from Q3 2026) and QUADRUPED Robotics lists it from 28.12.2026; Generation Robots says \"delivery within 8 weeks\" but shows no stock.",
+  "statusNote": "Not yet delivered in Germany: RobotShop EU takes pre-orders (phased deliveries announced from Q3 2026) and QUADRUPED Robotics lists it from 28.12.2026; Generation Robots says \"delivery within 8 weeks\" but shows no stock. Funduino lists the H2 EDU at 73,637.20 € incl. VAT as \"Available to order – with you in 3–7 working days\", which conflicts with every other seller; treat that lead time as unconfirmed.",
   "sourceIds": [
    "s2",
    "s3",
    "s4",
-   "s7"
+   "s7",
+   "s8"
   ],
   "priceEur": {
    "amount": 61880,
@@ -29,7 +30,7 @@
    "note": "RobotShop EU pre-order price, tax included."
   },
   "priceOther": null,
-  "leadTime": "QUADRUPED Robotics: available from 28.12.2026; Generation Robots: \"delivery within 8 weeks\"",
+  "leadTime": "QUADRUPED Robotics: available from 28.12.2026; Generation Robots: \"delivery within 8 weeks\"; Funduino: \"3–7 working days\" (unconfirmed)",
   "sellers": [
    {
     "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
@@ -68,7 +69,7 @@
     "priceEur": null,
     "priceBasis": null,
     "sourceId": "s4",
-    "note": "Mentions H2 EDU with up to 2070 TOPS compute; price on request. MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
+    "note": "Price on request; \"Das Lieferdatum ist zurzeit noch ungewiss.\" (delivery date still uncertain). MYBOTSHOP states that sales run through its partner shop QUADRUPED Robotics (quadruped.de)."
    },
    {
     "name": "QUADRUPED Robotics (quadruped.de)",
@@ -81,10 +82,23 @@
     "priceEur": 50000,
     "priceBasis": "net",
     "sourceId": "s7",
-    "note": "Variant \"H2 Edu\" 50,000 EUR net; \"H2 Edu Smart\" A-M with hands 47,300-116,400 net; all \"available from 28.12.2026\" except Smart M (not available)."
+    "note": "Variant \"H2 Edu\" 50,000 EUR net, \"available from 28.12.2026\"; of the hand versions only Smart A and Smart B are still orderable, Smart C to Smart M are marked \"Momentan nicht verfügbar\"."
+   },
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduino.com/en/products/master-unitree-h2-humanoid-robot",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 73637.2,
+    "priceBasis": "gross",
+    "sourceId": "s8",
+    "note": "H2 EDU 73,637.20 € incl. VAT, cart enabled, \"Available to order – with you in 3–7 working days\" (not \"in stock\"); listing published 25.09.2026."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -194,7 +208,8 @@
   "sdk": "Unitree secondary development (EDU)",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s3"
   ],
   "notes": [
    "RobotShop H2 EDU ships with non-functional hands; working hands only in the EDU Smart versions (Dex1-1, Dex3-1, Dex5-1, BrainCo, Inspire or Wuji).",
@@ -231,7 +246,7 @@
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-20",
  "sources": [
   {
    "id": "s1",
@@ -239,7 +254,7 @@
    "title": "Unitree H2 product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -247,7 +262,7 @@
    "title": "Unitree H2 humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -263,7 +278,7 @@
    "title": "Unitree H2 at MYBOTSHOP",
    "publisher": "MYBOTSHOP GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -271,7 +286,7 @@
    "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -287,7 +302,15 @@
    "title": "Unitree H2 at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://funduino.com/en/products/master-unitree-h2-humanoid-robot",
+   "title": "Unitree H2 humanoid robot - Basic and EDU at Funduino",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ]
 }

@@ -14,7 +14,7 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "Funduino (92,900 €, 21 working days), Bipedal (92,900 €, about 4 weeks) and Reichelt (92,939 €, about 5 weeks, business customers only) sell Luna, all incl. VAT.",
+  "statusNote": "Funduino (92,900 €, 21 working days), reichelt (92,939 €, about 5 weeks, business customers only) and Bipedal (99,892 €, about 4 weeks) sell Luna, all incl. VAT; MegaRobotics quotes on request.",
   "sourceIds": [
    "s3",
    "s5",
@@ -34,8 +34,8 @@
     "name": "Funduino GmbH",
     "country": "DE",
     "role": "reseller",
-    "productUrl": "https://funduinoshop.com/robotik/limx-dynamics/luna/limx-dynamics-luna",
-    "contactUrl": "https://funduinoshop.com/impressum",
+    "productUrl": "https://funduino.com/products/limx-dynamics-luna",
+    "contactUrl": "https://funduino.com/en/pages/contact",
     "email": "info@funduino.de",
     "phone": "+49 5921 9704030",
     "priceEur": 92900,
@@ -64,13 +64,26 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 92900,
+    "priceEur": 99892,
     "priceBasis": "gross",
     "sourceId": "s5",
-    "note": "92,900 € incl. 19% VAT, shown as \"Sofort verfügbar\", delivery about 4 weeks."
+    "note": "99,892 € incl. 19% VAT (was 92,900 € on 02.10.2026), \"Sofort verfügbar\", delivery about 4 weeks."
+   },
+   {
+    "name": "MegaRobotics (Megaforce GmbH, Kaarst)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.megarobotics.de/de/products/limx-luna",
+    "contactUrl": "https://www.megarobotics.de/de/contact",
+    "email": "info@megarobotics.de",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s7",
+    "note": "\"Beschaffung auf Anfrage\" (price and delivery on request); 12-month warranty. Calls itself an official distributor; not verified with LimX."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -144,6 +157,22 @@
    "unit": null,
    "conditions": "2 slide-out modules",
    "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak torque nm",
+   "value": 200,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "10,000 mAh slide-out module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
   }
  ],
  "capabilities": {
@@ -151,7 +180,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": false,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -163,7 +192,8 @@
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
-   "s2"
+   "s2",
+   "s6"
   ],
   "notes": [
    "Standard hands are fist-shaped and cannot grasp; a 5-finger hand is optional.",
@@ -201,7 +231,7 @@
    "title": "LimX Luna product page",
    "publisher": "LimX Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -209,15 +239,15 @@
    "title": "LimX Luna specifications",
    "publisher": "LimX Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
-   "url": "https://funduinoshop.com/robotik/limx-dynamics/luna/limx-dynamics-luna",
+   "url": "https://funduino.com/products/limx-dynamics-luna",
    "title": "LimX Dynamics Luna",
    "publisher": "Funduino GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -233,11 +263,39 @@
    "title": "LimX Dynamics Luna",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.limxdynamics.com/en/documents/863059858822402048",
+   "title": "LimX Luna User Manual | LimX Dynamics Official Website",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.megarobotics.de/de/products/limx-luna",
+   "title": "LimX Dynamics Luna at MegaRobotics",
+   "publisher": "Megaforce GmbH (MegaRobotics)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
-  "Launch date: product images on the LimX site are dated May 2026; exact launch not confirmed."
+  "Launch date: product images on the LimX site are dated May 2026; exact launch not confirmed.",
+  "LimX's Luna FAQ gives 54 kg, its spec page 56 kg.",
+  "The FAQ says the Standard Edition has no secondary development, yet LimX published a Luna SDK development guide on 18.09.2026."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-20",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": false,
+   "sourceId": "s6",
+   "quote": "Please operate the robot on a flat, level surface when performing forward/backward movement, lateral movement, or in-place turning to prevent potential damage.",
+   "basis": "user manual: walking only on a flat, level surface",
+   "checkedAt": "2026-10-20"
+  }
+ ]
 }

@@ -48,13 +48,27 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": null
+   },
+   {
+    "productUrl": "https://openelab.io/de/products/dobot-atom-w-wheeled-humanoid",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 93712.45,
+    "priceBasis": "gross",
+    "note": null,
+    "name": "OpenELAB Technology Ltd.",
+    "country": "CN",
+    "role": "reseller",
+    "sourceId": "s3"
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Terra Robotics (Löhne) lists Atom-W EDU at 75,000 EUR net as orderable; the Standard version (59,000 EUR net) is shown not available.",
+  "statusNote": "Terra Robotics (Löhne) lists Atom-W EDU at 75,000 EUR net as orderable; its Standard version (59,000 EUR net) is shown not available. OpenELAB, a Shenzhen seller with an EU returns address, lists Standard at 71,671.90 EUR (60,228.49 EUR excl. VAT) and Education at 93,712.45 EUR incl. VAT, shipping from China.",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s3"
   ]
  },
  "specs": [
@@ -137,6 +151,14 @@
    "unit": null,
    "conditions": "per hand, optional",
    "sourceId": "s1"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach m",
+   "value": 0.6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -160,7 +182,8 @@
   ],
   "notes": [
    "Passes gaps from 500 mm width.",
-   "Hands are an optional module."
+   "Hands are an optional module.",
+   "The Standard version has no hands. At OpenELAB the Education Version adds two 6-DoF hands, two hand depth cameras, VR Quest and the data collection toolchain; Terra says hands depend on the configuration and does not list what its EDU includes."
   ]
  },
  "images": [
@@ -199,7 +222,7 @@
    "title": "Dobot ATOM-W Serie",
    "publisher": "Terra Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -207,7 +230,15 @@
    "title": "Dobot global branches (DOBOT Europe GmbH, Neu-Isenburg)",
    "publisher": "Dobot",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://openelab.io/de/products/dobot-atom-w-wheeled-humanoid",
+   "title": "OpenELAB Technology Ltd.",
+   "publisher": "OpenELAB Technology Ltd.",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

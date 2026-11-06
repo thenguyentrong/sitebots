@@ -1,151 +1,54 @@
 import Link from 'next/link';
-import { EvidenceBadge } from '@/components/robot/EvidenceBadge';
-import type { CompareRow } from '@/lib/queries/compare';
-import { FORM_FACTOR_LABEL, formatMoney, formatSpec, pickPayloadKey, PRICE_TIER_LABEL, qualifierLabel } from '@/lib/spec/display';
-import { GROUPS, splitSpecKey, visibleFieldsFor } from '@/lib/spec/fields';
-import type { SpecValue } from '@/lib/spec/types';
-import { cn } from '@/lib/utils';
+import { CompareRemove } from '@/components/compare/CompareControls';
+import { FactValues } from '@/components/compare/FactValues';
+import { visibleRows } from '@/lib/compare/facts';
+import type { CompareColumn } from '@/lib/queries/compare';
 
 /**
- * Robots as columns, fields as rows, registry order. A row is shown when any
- * column has a value or the field is one a site buyer needs to see missing.
- * Numeric rows mark the best value; "best" means more for runtime,
- * speed, slope and step height, and less for weight — nothing else is judged.
+ * Robots as columns, facts as rows, one fixed order for every robot type. The table states what was
+ * published and with which conditions. It marks no best value and draws no conclusion: the reader
+ * decides. The label column stays put while the robots scroll sideways inside their own box.
  */
-const MORE_IS_BETTER = new Set(['runtime_h', 'max_speed_ms', 'walk_speed_ms', 'max_slope_deg', 'step_height_m', 'battery_wh', 'reach_m', 'dof_total']);
-const LESS_IS_BETTER = new Set(['weight_kg', 'charge_time_h', 'noise_db']);
-
-function numeric(s: SpecValue | undefined): number | null {
-  if (!s) return null;
-  if (typeof s.value === 'number') return s.value;
-  if (s.min != null) return s.min;
-  return null;
-}
-
-type Cell = { s: SpecValue | undefined; best: boolean };
-type TableRow = { key: string; label: string; cells: Cell[] };
-
-export function CompareTable({ rows }: { rows: CompareRow[] }) {
-  const allKeys = new Set(rows.flatMap((r) => Object.keys(r.card.specs ?? {})));
-  const present = new Set([...allKeys].map((k) => splitSpecKey(k).field));
-  const fields = visibleFieldsFor(rows.map((r) => r.card.form_factor), present);
-
+export function CompareTable({ columns }: { columns: CompareColumn[] }) {
+  const rows = visibleRows(columns);
+  const items = columns.map(({ id, name }) => ({ id, name }));
   return (
     <div className="card overflow-x-auto" data-compare-table>
-      <table className="w-full min-w-[760px] table-fixed border-collapse text-sm">
+      <table className="w-full table-fixed border-collapse text-sm" style={{ minWidth: 112 + columns.length * 168 }}>
         <thead>
           <tr className="border-b border-edge align-top">
-            <th className="w-48 px-5 py-4 text-left font-normal" />
-            {rows.map((r) => (
-              <th key={r.card.id} className="px-4 py-4 text-left">
-                <div className="flex items-start gap-3">
-                  {r.card.image_url ? (
-                    // eslint-disable-next-line @next/next/no-img-element -- card picture, remote or /renders
-                    <img src={r.card.image_url} alt="" referrerPolicy="no-referrer" className={`h-10 w-10 shrink-0 rounded-xl bg-subtle object-contain`} />
-                  ) : null}
-                  <div className="min-w-0">
-                    <p className="truncate text-xs font-normal text-muted">{r.card.manufacturer_name}</p>
-                    <Link
-                      href={`/robots/${r.card.manufacturer_slug}/${r.card.model_slug}${r.card.variant === 'base' ? '' : `?variant=${r.card.variant}`}`}
-                      className="block text-base font-semibold leading-tight tracking-tight underline-offset-4 hover:underline"
-                    >
-                      {r.card.name}
-                    </Link>
-                    <p className="mt-0.5 text-xs font-normal text-faint">{FORM_FACTOR_LABEL[r.card.form_factor]}</p>
-                  </div>
-                </div>
+            <th scope="col" className="sticky left-0 z-10 w-28 bg-card px-3 py-3 text-left font-normal sm:w-44 sm:px-5 sm:py-4"><span className="sr-only">Fact</span></th>
+            {columns.map((column) => (
+              <th key={column.id} scope="col" className="px-3 py-3 text-left font-normal sm:px-4 sm:py-4">
+                <Link href={column.href} className="group block">
+                  {/* The picture box stays light in both themes, like the product photos on the robot cards. */}
+                  <span className="block h-24 overflow-hidden rounded-xl bg-[#f4f4f5] p-2">
+                    {column.picture ? (
+                      // eslint-disable-next-line @next/next/no-img-element -- a local market picture or a remote catalogue picture
+                      <img src={column.picture.src} alt={column.picture.alt} referrerPolicy="no-referrer" loading="lazy" decoding="async" className="h-full w-full object-contain" />
+                    ) : <span className="grid h-full place-items-center text-xs text-[#52525b]">No picture published</span>}
+                  </span>
+                  <span className="mt-2 block text-xs text-muted">{column.maker}</span>
+                  <span className="block text-base font-semibold leading-tight tracking-tight underline-offset-4 group-hover:underline">{column.name}</span>
+                </Link>
+                <CompareRemove id={column.id} name={column.name} items={items} />
               </th>
             ))}
           </tr>
-          <tr className="border-b border-edge/60 bg-subtle/40">
-            <th className="px-5 py-2.5 text-left text-xs font-medium text-muted">Price</th>
-            {rows.map((r) => {
-              const p = r.prices.find((x) => x.tier <= 2) ?? r.prices[0];
-              return (
-                <td key={r.card.id} className="px-4 py-2.5 align-top">
-                  {p ? (
-                    <>
-                      <span className="num font-semibold">{formatMoney(p.amount, p.currency)}</span>
-                      <span className="block text-xs text-faint">
-                        {p.region} · {PRICE_TIER_LABEL[p.tier]}
-                      </span>
-                    </>
-                  ) : (
-                    <span className="text-xs text-faint">Quote only</span>
-                  )}
-                </td>
-              );
-            })}
-          </tr>
-          <tr className="border-b border-edge/60 bg-subtle/40">
-            <th className="px-5 py-2.5 text-left text-xs font-medium text-muted">Published payload</th>
-            {rows.map((r) => {
-              const key = pickPayloadKey(r.card.specs ?? {});
-              const spec = key ? r.card.specs[key] : null;
-              return <td key={r.card.id} className="px-4 py-2.5 align-top">{key && spec ? <><span className="num font-semibold">{formatSpec(key, spec)}</span><span className="block text-xs text-faint">{qualifierLabel(key.split(':')[1]) ?? 'basis unstated'}</span><EvidenceBadge trust={spec.trust} /></> : <span className="text-xs text-faint">not published</span>}</td>;
-            })}
-          </tr>
         </thead>
         <tbody>
-          {GROUPS.filter((g) => !g.panel || g.id === 'parts').map((group) => {
-            const defs = fields.filter((f) => f.group === group.id);
-            const keys = defs.flatMap((def) => {
-              const matching = [...allKeys].filter((k) => splitSpecKey(k).field === def.id).sort();
-              return matching.length ? matching.map((k) => ({ key: k, def })) : [{ key: def.id, def }];
-            });
-            if (!keys.length) return null;
-            const tableRows: TableRow[] = keys.map(({ key, def }) => {
-              const values = rows.map((r) => r.card.specs?.[key]);
-              const nums = values.map(numeric);
-              let bestIdx = -1;
-              if (MORE_IS_BETTER.has(def.id) || LESS_IS_BETTER.has(def.id)) {
-                const known = nums.map((n, i) => [n, i] as const).filter(([n]) => n !== null) as [number, number][];
-                if (known.length > 1) {
-                  known.sort((a, b) => (MORE_IS_BETTER.has(def.id) ? b[0] - a[0] : a[0] - b[0]));
-                  if (known[0][0] !== known[1][0]) bestIdx = known[0][1];
-                }
-              }
-              const q = qualifierLabel(splitSpecKey(key).qualifier);
-              return { key, label: def.label + (q ? ` · ${q}` : ''), cells: values.map((s, i) => ({ s, best: i === bestIdx })) };
-            });
-            return <GroupRows key={group.id} label={group.label} rows={tableRows} />;
-          })}
+          {rows.map((row) => (
+            <tr key={row.key} className="border-t border-edge/60 align-top" data-fact={row.key}>
+              <th scope="row" className="sticky left-0 z-10 bg-card px-3 py-2.5 text-left text-xs font-normal leading-snug text-muted sm:px-5 sm:text-sm">{row.label}</th>
+              {columns.map((column) => <td key={column.id} className="px-3 py-2.5 sm:px-4"><FactValues values={column.facts[row.key]} /></td>)}
+            </tr>
+          ))}
+          <tr className="border-t border-edge/60 align-top">
+            <th scope="row" className="sticky left-0 z-10 bg-card px-3 py-2.5 text-left text-xs font-normal leading-snug text-muted sm:px-5 sm:text-sm">Sources</th>
+            {columns.map((column) => <td key={column.id} className="px-3 py-2.5 text-xs sm:px-4"><Link href={column.href + '#sources'} className="text-muted underline underline-offset-2 hover:text-foreground">All sources on the robot page</Link></td>)}
+          </tr>
         </tbody>
       </table>
     </div>
-  );
-}
-
-function GroupRows({ label, rows }: { label: string; rows: TableRow[] }) {
-  return (
-    <>
-      <tr>
-        <th colSpan={rows[0] ? rows[0].cells.length + 1 : 1} className="eyebrow px-5 pt-6 pb-2 text-left">
-          {label}
-        </th>
-      </tr>
-      {rows.map((row) => (
-        <tr key={row.key} className="border-t border-edge/60 align-top transition hover:bg-subtle/50">
-          <th className="px-5 py-2.5 text-left font-normal text-muted">{row.label}</th>
-          {row.cells.map(({ s, best }, i) => (
-            <td key={i} className={cn('num px-4 py-2.5', best && 'bg-safety-soft font-semibold text-foreground')}>
-              {s ? (
-                <>
-                  <span className="flex items-baseline gap-2">
-                    {formatSpec(row.key, s)}
-                    {best ? <span className="text-[10px] font-semibold uppercase tracking-wider text-safety">best</span> : null}
-                  </span>
-                  <span className="mt-1 block">
-                    <EvidenceBadge trust={s.trust} />
-                  </span>
-                </>
-              ) : (
-                <span className="text-faint">not published</span>
-              )}
-            </td>
-          ))}
-        </tr>
-      ))}
-    </>
   );
 }

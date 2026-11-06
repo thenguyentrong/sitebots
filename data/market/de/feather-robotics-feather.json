@@ -1,0 +1,232 @@
+{
+ "schemaVersion": 1,
+ "id": "feather-robotics-feather",
+ "maker": "Feather Robotics",
+ "makerCountry": "US",
+ "model": "Feather",
+ "variant": null,
+ "name": "Feather",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://feather.dev/",
+ "summary": "A US wheeled dual-arm developer robot with 1 m arm reach, 600 mm vertical travel and 10-hour hot-swap batteries, rated at 1.8 kg per arm at full extension.",
+ "launched": "2026-09",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": {
+   "amount": 29990,
+   "currency": "USD",
+   "market": "US, promotional price while supplies last (list 32,990); exact configuration not stated",
+   "sourceId": "s2"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-06",
+  "status": "not_sold",
+  "statusNote": "Orderable in the US at a USD price with US-based support. No German or EU seller, CE statement or export statement was found. The order form itself was not read.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 105,
+   "unit": "kg",
+   "conditions": "fully configured",
+   "sourceId": "s2"
+  },
+  {
+   "key": "base_footprint_mm",
+   "label": "Base footprint",
+   "value": "500 x 510",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "vertical_travel_mm",
+   "label": "Vertical travel",
+   "value": 600,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 23,
+   "unit": null,
+   "conditions": "7 per arm, 2 neck, 1 torso, 6 base",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm length",
+   "value": 1,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1.8,
+   "unit": "kg",
+   "conditions": "rated, fully extended sustained load; 6.8 kg peak hold",
+   "sourceId": "s2"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 1.3,
+   "unit": "m/s",
+   "conditions": "maximum, omnidirectional",
+   "sourceId": "s2"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 10,
+   "unit": "h",
+   "conditions": "at 240 W load",
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 50 Ah, dual hot-swappable packs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Jetson Nano, Jetson Orin AGX or Jetson Thor, customer swappable",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "ZED stereo head camera, optional wrist cameras, microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Open SDK, Python 3.9+ under Apache 2.0, ROS 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "warranty",
+   "label": "Warranty",
+   "value": "1 year",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 1.8,
+  "carryPayloadKg": null,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": "Python SDK, ROS 2",
+  "notes": [
+   "Standard end effector is a 6-DoF hand or a parallel-jaw gripper, swappable in the field. The page does not say which one the price includes.",
+   "The 10 h runtime is at a 240 W load.",
+   "Overall height is not stated."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://feather.dev/hero/frames/0007.webp",
+   "pageUrl": "https://feather.dev/",
+   "credit": "Feather Robotics",
+   "alt": "Feather wheeled dual-arm robot in white on a blue base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker says it has been working in the field across manufacturing and food service for the last year",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "No customers named and no figures published."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://feather.dev/",
+   "title": "Feather home page",
+   "publisher": "Feather Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://feather.dev/technology",
+   "title": "How Feather works, full specifications",
+   "publisher": "Feather Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.humanoidsdaily.com/news/feather-launches-30000-wheeled-humanoid-developers-7-6m-funding",
+   "title": "Feather launches a $30,000 wheeled humanoid for developers",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Does Feather ship to Germany, and with a CE mark?",
+  "Which end effector and compute does USD 29,990 include?"
+ ],
+ "checkedAt": "2026-11-06"
+}

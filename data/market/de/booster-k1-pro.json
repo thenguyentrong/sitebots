@@ -9,7 +9,7 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.booster.tech/booster-k1/",
- "summary": "A 0.95 m, 19.5 kg kid-size humanoid for development, with a 200 TOPS Jetson AGX Orin computer and about 80 minutes walking time.",
+ "summary": "A 0.95 m, 19.5 kg kid-size humanoid for development, with a 200 TOPS Jetson AGX Orin computer and about 70 minutes walking time.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
@@ -31,10 +31,10 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 17899.99,
+    "priceEur": 19247,
     "priceBasis": "gross",
     "sourceId": "s3",
-    "note": null
+    "note": "19,247 € incl. 19% VAT (was 17,899.99 € on 02.10.2026), \"Sofort verfügbar\"."
    },
    {
     "name": "RBTX marketplace (igus SE & Co. KG)",
@@ -76,7 +76,7 @@
     "note": "Tax included; \"On Demand\" item, ordered from the supplier after purchase."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
   "statusNote": "Orderable with prices at Bipedal (Leverkusen, about 4 weeks), RBTX (igus, Cologne, 3 weeks), Generation Robots (3 to 4 weeks) and RobotShop EU (on demand).",
   "sourceIds": [
@@ -130,10 +130,10 @@
   {
    "key": "compute",
    "label": "Compute",
-   "value": "200 TOPS AI module",
+   "value": "NVIDIA Jetson AGX Orin 32GB, 200 TOPS",
    "unit": null,
-   "conditions": "maker states 200 TOPS; RBTX names it NVIDIA Jetson AGX Orin 32GB",
-   "sourceId": "s1"
+   "conditions": "Professional edition",
+   "sourceId": "s7"
   },
   {
    "key": "battery",
@@ -146,9 +146,9 @@
   {
    "key": "runtime_h",
    "label": "Runtime",
-   "value": 1.33,
+   "value": 1.17,
    "unit": "h",
-   "conditions": "walking at 0.4 m/s",
+   "conditions": "1 h 10 min walking at 1.1 m/s (maker); sellers still repeat up to 80 min",
    "sourceId": "s1"
   },
   {
@@ -166,6 +166,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed ms",
+   "value": 1.1,
+   "unit": "m/s",
+   "conditions": "product manual; the maker's product page says 2 m/s, RBTX lists 0.4 m/s",
+   "sourceId": "s7"
   }
  ],
  "capabilities": {
@@ -183,7 +191,7 @@
   "carryPayloadKg": null,
   "runtimeH": 1.33,
   "ipRating": null,
-  "sdk": null,
+  "sdk": "Python, C++",
   "sourceIds": [
    "s1",
    "s6"
@@ -220,7 +228,7 @@
    "title": "Booster K1 product page",
    "publisher": "Booster Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -228,7 +236,7 @@
    "title": "Humanoider Roboter Booster K1",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -236,7 +244,7 @@
    "title": "Booster K1 at Bipedal",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -244,7 +252,7 @@
    "title": "Booster K1 on RBTX",
    "publisher": "igus SE & Co. KG (RBTX)",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -261,10 +269,18 @@
    "publisher": "Booster Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://docs.booster.tech/docs/product-manual/k1/getting-started/specifications/",
+   "title": "Booster Robotics",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-21",
  "researchEvidence": [
   {
    "field": "rough_ground",

@@ -13,16 +13,23 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "status": "quote",
-  "statusNote": "Generation Robots and MYBOTSHOP list the H1 for German buyers; price and delivery time on request.",
+  "status": "buy_now",
+  "statusNote": "Funduino sells the H1-S from its cart (105,910 € incl. VAT, \"with you in 14 working days\"); Generation Robots, MYBOTSHOP and QUADRUPED Robotics quote on request; OpenELAB lists the H1 at 109,198.95 € but sold out, shipping from China.",
   "sourceIds": [
    "s2",
    "s3",
-   "s4"
+   "s4",
+   "s8"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 105910,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s8",
+   "note": "Funduino, H1-S (5 DoF per leg, 4 per arm: the H1), incl. VAT; 89,000 € net."
+  },
   "priceOther": null,
-  "leadTime": "on request",
+  "leadTime": "14 working days (Funduino H1-S); 5 days after order (MYBOTSHOP); 21 days after order (QUADRUPED H1-S); on request (Generation Robots)",
   "sellers": [
    {
     "name": "Generation Robots (Génération Robots, with Generation Robots GmbH in Berlin)",
@@ -35,7 +42,7 @@
     "priceEur": null,
     "priceBasis": null,
     "sourceId": "s2",
-    "note": "H1 / H1-2 page with a 'from' price of EUR 93,496 excl. VAT for the page; cart disabled, 'delivery times on request'."
+    "note": "H1 / H1-2 page with a 'from' price of EUR 93,496 excl. VAT for the page; cart disabled, 'delivery times on request'. The shop calls it \"a prototype for research and development, not compatible or certified for current or industrial tasks\"."
    },
    {
     "name": "MYBOTSHOP GmbH",
@@ -74,10 +81,36 @@
     "priceEur": null,
     "priceBasis": null,
     "sourceId": "s6",
-    "note": "Listed as \"Unitree H1-S\"; price on request; \"must be ordered, deliverable 21 days after order\". A separate \"H1-M\" page shows availability from 28.12.2026. The shop does not say how H1-S/H1-M differ from Unitree's H1."
+    "note": "Listed as \"Unitree H1-S\"; price on request; \"must be ordered, deliverable 21 days after order\". The separate H1-M page (from 28.12.2026) says the H1-M has 6 DoF per leg and 7 per arm against 5 and 4 for the H1-S, but keeps the H1 weight (47 kg) in its table."
+   },
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduino.com/en/products/unitree-h1-humanoid-robot-h1-s-h1-m",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 105910,
+    "priceBasis": "gross",
+    "sourceId": "s8",
+    "note": "H1-S 105,910 € and H1-M 142,800 € incl. VAT, cart enabled, \"Available to order – with you in 14 working days.\"; one year warranty for business buyers."
+   },
+   {
+    "name": "OpenELAB (OpenELAB Technology Ltd., Shenzhen; office in Garching bei München)",
+    "country": "CN",
+    "role": "reseller",
+    "productUrl": "https://openelab.io/de/products/unitree-h1-humanoid-robot-with",
+    "contactUrl": "https://openelab.io/policies/legal-notice",
+    "email": null,
+    "phone": null,
+    "priceEur": 109198.95,
+    "priceBasis": "gross",
+    "sourceId": "s9",
+    "note": "\"Ausverkauft\" (sold out); ships from China; 12-month limited warranty; the page does not say whether OpenELAB is an authorised Unitree dealer."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -151,7 +184,7 @@
   "tracks": false,
   "levelFloors": true,
   "roughGround": true,
-  "stairs": null,
+  "stairs": true,
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
@@ -162,7 +195,8 @@
   "ipRating": null,
   "sdk": "Intel Core i7 user development computer",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s7"
   ],
   "notes": [
    "Arm payload not published for the H1.",
@@ -200,11 +234,11 @@
   }
  ],
  "openQuestions": [
-  "Runtime per battery not stated.",
-  "Separate euro price for H1 vs H1-2 not public.",
-  "What the QUADRUPED Robotics suffixes H1-S and H1-M mean."
+  "Runtime: Unitree's H1 manual (page images only) says about 2 h; sellers say 2–4 h; no HTML page states it.",
+  "Whether the H1-M sold by QUADRUPED Robotics and Funduino is the H1-2: its joint counts match the H1-2, its listed weight is the H1's.",
+  "Unitree's H1 manual (page images only) says to use it in an open, flat, unobstructed environment, not on gravel, in rain or dust; that limits the rough-ground claim."
  ],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-20",
  "sources": [
   {
    "id": "s1",
@@ -212,7 +246,7 @@
    "title": "Unitree H1 / H1-2 product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -220,7 +254,7 @@
    "title": "Unitree H1 / H1-2 humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -228,7 +262,7 @@
    "title": "Unitree H1 at MYBOTSHOP",
    "publisher": "MYBOTSHOP GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -236,7 +270,7 @@
    "title": "Unitree H1 in the Unitree online store",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -244,7 +278,7 @@
    "title": "About Generation Robots (HQ France, GmbH subsidiary in Berlin)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -252,7 +286,41 @@
    "title": "Unitree H1-S at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.prnewswire.com/de/pressemitteilungen/nvidia-gtc-konferenzunitree-h1-humanoider-roboter-umarmt-die-welt-mit-ki-302097511.html",
+   "title": "NVIDIA GTC Konferenz丨Unitree H1 humanoider Roboter umarmt die Welt mit KI",
+   "publisher": "Unitree Robotics (press release via PR Newswire)",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://funduino.com/en/products/unitree-h1-humanoid-robot-h1-s-h1-m",
+   "title": "Unitree H1 humanoid robot (H1-S, H1-M) at Funduino",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s9",
+   "url": "https://openelab.io/de/products/unitree-h1-humanoid-robot-with",
+   "title": "Unitree H1 humanoider Roboter at OpenELAB",
+   "publisher": "OpenELAB",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s7",
+   "quote": "ermöglicht es dem H1, selbständig Hochgeschwindigkeitsläufe, das Tragen von 30 kg Gewicht, das Hinauf- und Hinuntergehen von Treppen sowie eine Vielzahl von hochdynamischen Tanzbewegungen zu erlernen [lets the H1 learn by itself high-speed running, carrying 30 kg, walking up and down stairs and many highly dynamic dance moves]",
+   "basis": "learned skill: Unitree's own AI algorithm, trained on NVIDIA's simulation platform, lets the H1 learn to walk up and down stairs; Unitree press release of 22.03.2024 (claim, no test conditions)",
+   "checkedAt": "2026-10-20"
   }
  ]
 }

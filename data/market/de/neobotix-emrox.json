@@ -102,9 +102,9 @@
   "wheels": true,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": false,
   "stairs": null,
-  "outdoor": null,
+  "outdoor": false,
   "arms": 1,
   "hands": "optional",
   "handsIncluded": null,
@@ -114,7 +114,8 @@
   "ipRating": null,
   "sdk": "ROS 2, PlatformPilot",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s3"
   ],
   "notes": [
    "Runtime depends on the battery chosen.",
@@ -171,10 +172,36 @@
    "publisher": "Neobotix",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.neobotix-docs.de/hardware/en/platforms/rox/product.html",
+   "title": "Product Information — Neobotix Hardware  documentation",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-21"
   }
  ],
  "openQuestions": [
   "Prices are not published."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": false,
+   "sourceId": "s3",
+   "quote": "The working area of the mobile robot must be protected against rain and have a sufficiently firm and clean floor. The floor must be even and horizontal.",
+   "basis": "working-area rule of the ROX base; the EMROX docs state: The same conditions as for the ROX apply",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "outdoor",
+   "value": false,
+   "sourceId": "s3",
+   "quote": "The mobile robot has been designed with focus on indoor operation. It is not recommended to operate the mobile robot outdoors",
+   "basis": "intended use of the ROX base platform; the EMROX docs refer to the ROX product information for its working area",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

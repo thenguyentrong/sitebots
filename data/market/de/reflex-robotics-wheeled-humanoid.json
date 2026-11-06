@@ -9,12 +9,12 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.reflexrobotics.com/",
- "summary": "A general-purpose wheeled humanoid from a US start-up for repetitive factory and warehouse jobs, run with remote supervision; no public specs or sales.",
+ "summary": "A general-purpose wheeled humanoid from a US start-up for repetitive factory and warehouse jobs, run with remote supervision; the maker gives 23 kg payload and 2 m reach, but there are no public sales.",
  "launched": null,
  "lifecycle": "pilot_only",
  "germany": {
   "status": "not_sold",
-  "statusNote": "No product page, specifications, price or sales channel; only a contact form (\"tell us about your workflow\").",
+  "statusNote": "No product page, price or sales channel; only headline figures on the home page and a contact form (\"tell us about your workflow\"). No European seller or customer confirmed.",
   "sourceIds": [
    "s1"
   ],
@@ -22,9 +22,26 @@
   "priceOther": null,
   "leadTime": null,
   "sellers": [],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
- "specs": [],
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Payload kg",
+   "value": 23,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 16,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
  "capabilities": {
   "legs": false,
   "wheels": true,
@@ -38,7 +55,7 @@
   "handsIncluded": true,
   "armPayloadKg": null,
   "carryPayloadKg": null,
-  "runtimeH": null,
+  "runtimeH": 16,
   "ipRating": null,
   "sdk": null,
   "sourceIds": [
@@ -76,11 +93,21 @@
    "title": "Reflex Robotics home page",
    "publisher": "Reflex Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Model name, specifications and customers."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 16,
+   "sourceId": "s1",
+   "quote": "16-hour battery",
+   "basis": null,
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

@@ -14,17 +14,20 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "RobotShop EU sells the R1 (R1-Basic) with price and cart (3-4 weeks, 1 unit left); QUADRUPED Robotics (Germany) shows the R1 Base in stock at 8,400 EUR net.",
+  "statusNote": "Funduino (Germany) sells the R1 Base with price and cart at 9,996 € incl. VAT, 14 working days on order; QUADRUPED Robotics (Germany) lists it at 8,400 EUR net, its page showing both \"Sofort verfügbar\" and \"Verfügbar ab: 28.12.2026\" depending on variation.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s7",
+   "s8",
+   "s6"
   ],
   "priceEur": {
+   "note": "Funduino, R1 Base, incl. VAT.",
    "amount": 9996,
    "basis": "gross",
    "kind": "list",
-   "sourceId": "s2",
-   "note": "RobotShop EU, tax included."
+   "sourceId": "s7"
   },
   "priceOther": {
    "amount": 5900,
@@ -32,7 +35,7 @@
    "market": "Unitree online store (tax and shipping excluded)",
    "sourceId": "s4"
   },
-  "leadTime": "3-4 weeks (RobotShop EU)",
+  "leadTime": "Funduino: 14 working days on order; QUADRUPED Robotics page shows both \"Sofort verfügbar\" and \"Verfügbar ab: 28.12.2026\"",
   "sellers": [
    {
     "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
@@ -85,9 +88,22 @@
     "priceBasis": "net",
     "sourceId": "s6",
     "note": "R1 Base 8,400 EUR net; white \"sofort verfügbar\", blue \"knapper Lagerbestand\"."
+   },
+   {
+    "productUrl": "https://funduino.com/en/products/unitree-r1",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 9996,
+    "priceBasis": "gross",
+    "note": "R1 Base incl. VAT, cart, \"Auf Bestellung lieferbar – in 14 Werktagen\".",
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s8"
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -169,6 +185,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "warranty_months",
+   "label": "Warranty months",
+   "value": 8,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -233,7 +257,7 @@
    "title": "Unitree R1 product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -249,7 +273,7 @@
    "title": "Unitree R1 humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -257,7 +281,7 @@
    "title": "Unitree R1 in the Unitree online store",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -273,7 +297,23 @@
    "title": "Unitree R1 Base at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s7",
+   "url": "https://funduino.com/en/products/unitree-r1.js",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://funduino.com/en/products/unitree-r1",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ]
 }

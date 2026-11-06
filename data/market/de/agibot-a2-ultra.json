@@ -21,7 +21,7 @@
    "note": "Generation Robots \"from\" price excl. VAT; RobotShop Europe shows EUR 120,124.55 incl. VAT. The AGIBOT store shows only a placeholder price."
   },
   "priceOther": null,
-  "leadTime": "Generation Robots: delivery within 4 weeks; RobotShop: on demand",
+  "leadTime": "Bipedal: about 4 weeks (Germany); Generation Robots: delivery within 4 weeks",
   "sellers": [
    {
     "name": "Generation Robots",
@@ -53,13 +53,13 @@
     "name": "Tekpoint GmbH",
     "country": "AT",
     "role": "distributor",
-    "productUrl": "https://tekpoint.com/robotics",
+    "productUrl": "https://tekpoint.com/en/robotics/agibot/a2-ultra/",
     "contactUrl": "https://tekpoint.com/robotics",
     "email": "robotics@tekpoint.com",
     "phone": "+43 1 3616670",
     "priceEur": null,
     "priceBasis": null,
-    "sourceId": "s2",
+    "sourceId": "s9",
     "note": null
    },
    {
@@ -76,15 +76,16 @@
     "note": "Store listing has no real price (placeholder USD 999,999); contact sales."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Orderable online with delivery to Germany: Generation Robots (France) from EUR 110,000 excl. VAT, delivery within 4 weeks; RobotShop Europe EUR 120,124.55 incl. VAT, on demand. Tekpoint (Vienna) also quotes on request.",
+  "statusNote": "Orderable online with delivery in Germany: Bipedal (Leverkusen) EUR 108,763.62 incl. VAT, about 4 weeks; Generation Robots (France) from EUR 110,000 excl. VAT, delivery within 4 weeks. Tekpoint (Vienna) quotes on request.",
   "sourceIds": [
    "s6",
    "s8",
    "s7",
    "s2",
-   "s4"
+   "s4",
+   "s10"
   ]
  },
  "specs": [
@@ -191,6 +192,30 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s5"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Max step cm",
+   "value": 2,
+   "unit": null,
+   "conditions": "maximum obstacle, supplier reference data",
+   "sourceId": "s9"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temp c",
+   "value": "0-40",
+   "unit": null,
+   "conditions": "relative humidity 10-90%, no condensation",
+   "sourceId": "s3"
+  },
+  {
+   "key": "hand_grip_kg",
+   "label": "Hand grip kg",
+   "value": "under 3 kg palm down; under 8 kg hook grip palm up",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s9"
   }
  ],
  "capabilities": {
@@ -198,7 +223,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": false,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -212,7 +237,8 @@
   "sourceIds": [
    "s1",
    "s5",
-   "s6"
+   "s6",
+   "s3"
   ],
   "notes": [
    "Built for reception, guiding and performances; about 2 kg arm load limits handling work.",
@@ -263,7 +289,7 @@
    "title": "Tekpoint: European regional distributor for AGIBOT robots",
    "publisher": "Tekpoint GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -271,7 +297,7 @@
    "title": "AGIBOT A2 Ultra (store)",
    "publisher": "AGIBOT",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -295,7 +321,7 @@
    "title": "Agibot A2 Ultra Humanoid Robot (Generation Robots)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s7",
@@ -303,7 +329,7 @@
    "title": "Generation Robots terms of sale (delivery within the EU)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s8",
@@ -312,8 +338,34 @@
    "publisher": "RobotShop",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://tekpoint.com/en/robotics/agibot/a2-ultra/",
+   "title": "Tekpoint GmbH",
+   "publisher": "Tekpoint GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s10",
+   "url": "https://www.bipedal.de/AgiBot-A2-Ultra",
+   "title": "Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": false,
+   "sourceId": "s3",
+   "quote": "Ensure the robot is used in a flat environment, avoiding excessively high or low temperatures, humid environments, steep slopes, ground with large elevation differences, fragile surfaces, and areas prone to vibration.",
+   "basis": "maker store FAQ for A2 Ultra: flat environment only, no steep slopes or large elevation differences; spec: max obstacle 20 mm, max gradient 8%",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

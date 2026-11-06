@@ -31,7 +31,7 @@
     "note": "Adam Standard and Standard Plus on one page; price on request."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "Bipedal (Leverkusen) is the official PNDbotics distributor and lists this model with price on request.",
   "sourceIds": [
@@ -110,6 +110,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "approx. (ca.), unstated; the seller page covers Standard and Standard Plus together",
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -125,7 +133,7 @@
   "handsIncluded": false,
   "armPayloadKg": null,
   "carryPayloadKg": null,
-  "runtimeH": null,
+  "runtimeH": 4,
   "ipRating": null,
   "sdk": "Open-source SDK, Isaac Gym",
   "sourceIds": [
@@ -166,7 +174,7 @@
    "title": "PNDbotics Adam Standard & Standard Plus",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -174,11 +182,21 @@
    "title": "Humanoid robot Adam",
    "publisher": "PNDbotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Price, runtime and payload not published."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 4,
+   "sourceId": "s1",
+   "quote": "Ausgestattet mit einem 1188 Wh Akku für ca. 4 Stunden Betrieb. [Equipped with a 1188 Wh battery for approx. 4 hours of operation.]",
+   "basis": "approx. (ca.), unstated; the seller page covers Standard and Standard Plus together",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

@@ -30,9 +30,9 @@ describe('words for proof', () => {
   });
 
   it('says on a robot card how far it got before what it fits on paper', () => {
-    expect(jobsLine({ strong: 54, best: 0, atBest: 0 })).toBe('no proof on a job yet · fits 54 jobs on paper');
+    expect(jobsLine({ strong: 54, best: 0, atBest: 0 })).toBe('fits 54 jobs');
     expect(jobsLine({ strong: 4, best: 4, atBest: 1 })).toBe('in daily use on 1 job · 3 more fit');
-    expect(jobsLine({ strong: 2, best: 1, atBest: 2 })).toBe('maker claim for 2 jobs');
+    expect(jobsLine({ strong: 2, best: 1, atBest: 2 })).toBe('made for 2 jobs');
     expect(jobsLine(undefined)).toBe('no job on the map yet');
   });
 });

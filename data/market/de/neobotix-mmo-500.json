@@ -102,9 +102,9 @@
   "wheels": true,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": false,
   "stairs": null,
-  "outdoor": null,
+  "outdoor": false,
   "arms": 1,
   "hands": "optional",
   "handsIncluded": null,
@@ -114,7 +114,9 @@
   "ipRating": null,
   "sdk": "ROS, PlatformPilot",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s3",
+   "s4"
   ],
   "notes": [
    "Arm and gripper are chosen per order.",
@@ -165,10 +167,44 @@
    "publisher": "Neobotix",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.neobotix-docs.de/hardware/en/manipulators/mmo-500/product.html",
+   "title": "Product Information — Neobotix Hardware  documentation",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.neobotix-docs.de/hardware/en/platforms/mpo-500/product.html",
+   "title": "Product Information — Neobotix Hardware  documentation",
+   "publisher": "Neobotix",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-21"
   }
  ],
  "openQuestions": [
   "Prices are not published."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": false,
+   "sourceId": "s3",
+   "quote": "The MMO-500 may only be used in laboratories, test halls or similar environments. It is not recommended to use the MMO-500 in any other surrounding, especially not outdoors",
+   "basis": "maker intended use (operating docs)",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "rough_ground",
+   "value": false,
+   "sourceId": "s4",
+   "quote": "The working area of the mobile robot must be protected against rain and have a sufficiently firm and clean floor. The floor must be even and horizontal.",
+   "basis": "working-area rule of the MPO-500 base; the MMO-500 docs state: The same conditions as for the MPO-500 apply",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

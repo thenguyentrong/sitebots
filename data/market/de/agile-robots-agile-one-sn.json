@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "agile-robots-agile-one-sn",
+ "maker": "Agile Robots",
+ "makerCountry": "DE",
+ "model": "Agile ONE",
+ "variant": "SN",
+ "name": "Agile Robots Agile ONE SN",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agile-robots.com/en/products/humanoid-robots/agile-one-sn/",
+ "summary": "A compact 1.4 m research humanoid from Munich with tactile five-finger hands and preconfigured NVIDIA Isaac GR00T software, for developing robot skills in the lab.",
+ "launched": "2026-10",
+ "lifecycle": "prototype",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-06",
+  "status": "not_sold",
+  "statusNote": "Munich maker, but not available yet: scheduled for the beginning of 2027. No price or order route is published. Ask Agile Robots directly.",
+  "sourceIds": [
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.4,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 43,
+   "unit": "kg",
+   "conditions": "excluding hands",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 71,
+   "unit": null,
+   "conditions": "body and hands; 31 in the body",
+   "sourceId": "s2"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 20,
+   "unit": null,
+   "conditions": "Wuji tactile five-finger hand",
+   "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Joint torque",
+   "value": 140,
+   "unit": "N·m",
+   "conditions": "up to",
+   "sourceId": "s2"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Jetson Thor plus Intel i3 N305 base module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RGB-D cameras on head, waist and back, wrist cameras, 3D LiDAR at the waist",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "NVIDIA Isaac GR00T 1.7 and whole-body control preconfigured; URDF and USD assets",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "NVIDIA Isaac GR00T, URDF and USD assets",
+  "notes": [
+   "A lab platform, not a site or factory robot. Skills can later move to the full-size Agile ONE.",
+   "The text does not state the drive; the product picture shows a two-legged robot."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.agile-robots.com/media/_processed_/9/0/csm_AgileRobots_Agile-ONE-SN_Frontpose-Freisteller_Web_a162bbd075.png",
+   "pageUrl": "https://www.agile-robots.com/en/products/humanoid-robots/agile-one-sn/",
+   "credit": "Agile Robots",
+   "alt": "Agile ONE SN compact humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:humanoid-record-manipulation-demonstrations",
+    "research:humanoid-test-learned-manipulation"
+   ],
+   "task": "Built for recording demonstrations, training skills and testing them on the robot in research labs",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.agile-robots.com/en/products/humanoid-robots/agile-one-sn/",
+   "title": "Agile ONE SN product page",
+   "publisher": "Agile Robots SE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agile-robots.com/en/news/detail/agile-robots-launches-agile-one-sn/",
+   "title": "Agile Robots launches Agile ONE SN",
+   "publisher": "Agile Robots SE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Price and order route from the beginning of 2027.",
+  "The product page shows its spec numbers only as graphics; the values here come from the launch release."
+ ],
+ "checkedAt": "2026-11-06"
+}

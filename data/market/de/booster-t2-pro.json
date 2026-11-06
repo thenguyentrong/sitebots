@@ -31,10 +31,10 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 35581,
+    "priceEur": 38259,
     "priceBasis": "gross",
     "sourceId": "s3",
-    "note": "T2 Pro (2000 TOPS); also T2 Pro Gripper 47,481 EUR, Dex-Hand 53,431 EUR, High-DoF Tactile 117,810 EUR (incl. VAT)."
+    "note": "38,259 € incl. 19% VAT (was 35,581 € on 02.10.2026), \"Sofort verfügbar\"."
    },
    {
     "name": "RBTX marketplace (igus SE & Co. KG)",
@@ -63,7 +63,7 @@
     "note": "Lists Pro P1, P2 (gripper) and P3-1/P3-2/P3-3 (dexterous hands); the Pro price appears only after choosing the version and could not be re-checked. The range starts at 22,500 EUR net (Edu E1). Delivery 4 to 6 weeks."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
   "statusNote": "Orderable from Bipedal (Leverkusen, about 4 weeks), RBTX (igus, Cologne, 6 to 8 weeks) and Generation Robots (4 to 6 weeks).",
   "sourceIds": [
@@ -148,9 +148,9 @@
   {
    "key": "compute",
    "label": "Compute",
-   "value": "NVIDIA Jetson Thor T5000",
+   "value": "NVIDIA Jetson Thor T5000, 2070 TFLOPS",
    "unit": null,
-   "conditions": "Professional version",
+   "conditions": "Professional version, maker figure; Bipedal and RBTX list 2000 TOPS",
    "sourceId": "s1"
   },
   {
@@ -168,6 +168,14 @@
    "unit": "kg",
    "conditions": "horizontal per-arm load; seller listing for T2 Pro; rated/peak unstated",
    "sourceId": "s3"
+  },
+  {
+   "key": "warranty",
+   "label": "Warranty",
+   "value": "1 year",
+   "unit": null,
+   "conditions": "extended warranty available",
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -176,7 +184,7 @@
   "tracks": false,
   "levelFloors": true,
   "roughGround": null,
-  "stairs": null,
+  "stairs": true,
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
@@ -185,7 +193,7 @@
   "carryPayloadKg": null,
   "runtimeH": 2,
   "ipRating": null,
-  "sdk": null,
+  "sdk": "High-level and low-level SDK, ROS 2",
   "sourceIds": [
    "s1",
    "s2",
@@ -194,7 +202,8 @@
   "notes": [
    "Base Pro P1 has no hands; grippers and several dexterous-hand options are separate configurations.",
    "The 10 kg payload is for both arms together and depends on arm posture.",
-   "No rough-ground, stair or outdoor claims found for T2."
+   "No rough-ground, stair or outdoor claims found for T2.",
+   "Generation Robots states movement on steps and slopes; the maker makes no stair claim. No rough-ground or outdoor claims found for T2."
   ]
  },
  "images": [
@@ -224,7 +233,7 @@
    "title": "Booster T2 product page",
    "publisher": "Booster Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -232,7 +241,7 @@
    "title": "Booster T2 at Generation Robots (DE shop)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -240,7 +249,7 @@
    "title": "Booster Robotics T2 Pro (2000 TOPS)",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -248,7 +257,7 @@
    "title": "Booster T2 Pro on RBTX",
    "publisher": "igus SE & Co. KG (RBTX)",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
@@ -256,7 +265,7 @@
   "Bipedal page description still says \"vorbestellen\" (pre-order) although it shows a delivery time; confirm stock when ordering.",
   "RBTX also lists a \"T2 Pro Taktile Sensorik, Jetson AGX Orin 200 TOPS\" for 99,999 EUR whose configuration is unclear."
  ],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-21",
  "researchEvidence": [
   {
    "field": "arm_payload_kg",
@@ -265,6 +274,14 @@
    "quote": "Traglast (Payload): 3 kg horizontale Nutzlast pro einzelnem Arm (System-Payload)",
    "basis": "horizontal per-arm load; seller listing for T2 Pro; rated/peak unstated",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s2",
+   "quote": "Dynamische Fortbewegung: Geschwindigkeit bis zu 2 m/s, maximales Gelenkdrehmoment von 140 Nm sowie Bewegung auf Stufen und Steigungen. [Dynamic locomotion: speed up to 2 m/s, max joint torque 140 Nm and movement on steps and slopes.]",
+   "basis": "seller claim on the one Generation Robots T2 listing that covers all Edu and Pro versions (Edu E1 to Pro P3-3); maker pages give no stair claim",
+   "checkedAt": "2026-10-21"
   }
  ]
 }

@@ -1,6 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { configurationSpecifications, marketSourceLabel, marketValue, type MarketValueRow } from '@/lib/market/display';
 import type { Dossier } from '@/lib/market/schema';
+import { plainDashes } from '@/lib/spec/display';
 
 function ValueRows({ rows }: { rows: MarketValueRow[] }) {
   return <dl className="divide-y divide-edge/60">
@@ -9,14 +10,14 @@ function ValueRows({ rows }: { rows: MarketValueRow[] }) {
       <dd className="min-w-0 space-y-1.5">
         {/* Value, who states it, the page and the date on one line; conditions and the quote below. */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-          <span className="num break-words font-medium">{marketValue(row)}</span>
+          <span className="num break-words font-medium">{plainDashes(marketValue(row))}</span>
           {row.source ? <Badge variant={row.source.kind === 'manufacturer' ? 'info' : 'warn'}>{marketSourceLabel(row.source)}</Badge> : null}
           {row.source ? <span className="text-xs text-muted">
             <a href={row.source.url} title={row.source.title} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">{row.source.publisher} ↗</a>
             {row.checkedAt ? <> · checked <time dateTime={row.checkedAt}>{row.checkedAt}</time></> : null}
           </span> : row.value !== null ? <span className="text-xs text-muted">Field-level source not recorded</span> : null}
         </div>
-        {row.conditions ? <p className="text-xs leading-relaxed text-muted">{row.conditions}</p> : null}
+        {row.conditions ? <p className="text-xs leading-relaxed text-muted">{plainDashes(row.conditions)}</p> : null}
         {row.quote ? <details className="text-xs text-muted">
           <summary className="cursor-pointer underline underline-offset-2">Exact source text</summary>
           {row.quoteBasis ? <p className="mt-2 leading-relaxed">Quote context: {row.quoteBasis}</p> : null}
@@ -37,11 +38,11 @@ function ValueRows({ rows }: { rows: MarketValueRow[] }) {
 
 export function MarketSpecifications({ robots }: { robots: Dossier[] }) {
   if (!robots.length) return null;
-  return <section id="configuration-specs" className="card mt-6 scroll-mt-6 overflow-hidden" aria-labelledby="configuration-specs-title">
-    <header className="flex flex-wrap items-center justify-between gap-3 border-b border-edge/70 px-5 py-3.5">
-      <h2 id="configuration-specs-title" className="text-sm font-semibold">Specifications by configuration</h2>
+  return <div id="configuration-specs" className="scroll-mt-6">
+    <div className="flex flex-wrap items-center justify-between gap-3 px-5 pt-4">
+      <h3 className="text-sm font-medium">Specifications by configuration</h3>
       <span className="num text-xs text-muted">{robots.length} configuration{robots.length === 1 ? '' : 's'}</span>
-    </header>
+    </div>
     <p className="px-5 py-3 text-sm leading-relaxed text-muted">What each version&apos;s maker or seller states, with the exact source text. A source label says who makes the claim, not that it is proven; unknown means not published.</p>
     <div className="divide-y divide-edge/70 border-t border-edge/70">
       {robots.map((robot) => {
@@ -55,7 +56,7 @@ export function MarketSpecifications({ robots }: { robots: Dossier[] }) {
             <span className="mt-1 block text-xs text-muted">{specs.length} specifications · {missing.length} research gap{missing.length === 1 ? '' : 's'} · reviewed <time dateTime={robot.checkedAt}>{robot.checkedAt}</time></span>
             {summary.length ? <span className="mt-2 flex flex-wrap gap-1.5">
               {summary.map((row) => <span key={row.key} className="rounded-full border border-edge bg-subtle px-2.5 py-1 text-xs" title={[row.source ? marketSourceLabel(row.source) : 'Field source not recorded', row.conditions].filter(Boolean).join(' · ')}>
-                <span className="text-muted">{row.label} </span><strong className="num">{marketValue(row)}</strong>
+                <span className="text-muted">{row.label} </span><strong className="num">{plainDashes(marketValue(row))}</strong>
               </span>)}
             </span> : null}
             <span className="mt-2 block text-xs font-medium underline underline-offset-2 group-open:hidden">Show all {specs.length} specifications and capabilities</span>
@@ -85,5 +86,5 @@ export function MarketSpecifications({ robots }: { robots: Dossier[] }) {
         </details>;
       })}
     </div>
-  </section>;
+  </div>;
 }

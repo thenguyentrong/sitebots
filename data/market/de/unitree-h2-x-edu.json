@@ -1,0 +1,216 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-h2-x-edu",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "H2-X",
+ "variant": "EDU",
+ "name": "Unitree H2-X EDU",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/H2-X",
+ "summary": "The development version of the 1.73 m Unitree H2-X, with secondary development, a user compute module and a choice of dexterous hands.",
+ "launched": "2026-10",
+ "lifecycle": "preorder",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-06",
+  "status": "not_sold",
+  "statusNote": "Unitree shows \"Contact Sales\" with no price, and no German or EU seller was found. The shop.unitree.com front page, the RBTX humanoid category, the QUADRUPED Robotics H2 page, Generation Robots, MYBOTSHOP, Bipedal, Funduino and the Terra Robotics home page do not show it.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.725,
+   "unit": "m",
+   "conditions": "1725 x 455 x 245 mm, standing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": "65+ kg with battery, varies by configuration",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 31,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "rated, about; peak about 15 kg; varies with scenario",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 300,
+   "unit": "N·m",
+   "conditions": "leg joints; arm joints 150 N·m",
+   "sourceId": "s1"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1152,
+   "unit": "Wh",
+   "conditions": "dual 20 Ah packs, 67.2 V maximum",
+   "sourceId": "s1"
+  },
+  {
+   "key": "swappable_battery",
+   "label": "Hot-swappable battery",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 8,
+   "unit": "h",
+   "conditions": "approx.; maker lists 8 h both static and walking, press reads the figure as standing endurance",
+   "sourceId": "s1"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "PC1 8-core CPU, PC2 Intel Core i7 or Orin NX for user development; PC3 Thor T5000 or Orin AGX optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Wide-angle binocular head camera, wide-angle monocular chest camera, optional RGB-D chest camera, microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Secondary development",
+   "value": true,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "warranty_months",
+   "label": "Warranty",
+   "value": 12,
+   "unit": "months",
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": "Unitree secondary development (EDU)",
+  "notes": [
+   "Dexterous hands: several models optional; the page does not say which, if any, comes as standard.",
+   "Maker says it is engineered for all-weather security work, but publishes no IP rating."
+  ],
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.unitree.com/images/b7d78affa59a4ef49d8b2e56ca48a46b_1921x2380.png",
+   "pageUrl": "https://www.unitree.com/H2-X",
+   "credit": "Unitree Robotics",
+   "kind": "product",
+   "alt": "Unitree H2-X humanoid, full body with labelled features including optional dexterous hands"
+  },
+  {
+   "url": "https://www.unitree.com/images/be647ef6670a4b3f861bd848eb04d9f5_1234x822.png",
+   "pageUrl": "https://www.unitree.com/H2-X",
+   "credit": "Unitree Robotics",
+   "kind": "product",
+   "alt": "Unitree H2-X humanoid, upper body with LED face display"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker lists security services, industrial manufacturing, commercial services and home services",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/H2-X",
+   "title": "Unitree H2-X product page",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.humanoidsdaily.com/news/unitree-h2-x-kung-fu-guardian-video",
+   "title": "Unitree H2-X Kung Fu Guardian video",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.quadruped.de/Unitree-H2-Humanoid-Robot",
+   "title": "Unitree H2 at QUADRUPED Robotics",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Price and which hands are included.",
+  "Will Unitree or an EU seller offer it in Germany?"
+ ],
+ "checkedAt": "2026-11-06"
+}

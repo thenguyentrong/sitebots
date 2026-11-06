@@ -28,7 +28,7 @@ export const JOB_LABELS: Record<string, string> = {
   facade_cleaning: 'Facade cleaning', glazing_installation: 'Glazing installation', scanning_documentation: 'Scanning and documentation',
   excavation: 'Excavation', tunnelling: 'Tunnelling', other: 'Other jobs',
 };
-export const STAGE_LABELS = { claim: 'Maker says it can', demo: 'Shown in a demo', pilot: 'Tested in a pilot', deployment: 'In daily use' } as const;
+export const STAGE_LABELS = { claim: 'Made for this work', demo: 'Shown in a demo', pilot: 'Tested in a pilot', deployment: 'In daily use' } as const;
 /** How far a job is proven, weakest first: the index is the rank in STAGE_RANK, 0 for no proof. */
 export const PROOF = ['none', 'claim', 'demo', 'pilot', 'deployment'] as const;
 export type ProofLevel = (typeof PROOF)[number];
@@ -38,7 +38,7 @@ export const PROOF_HELP: Record<ProofLevel, string> = {
   deployment: 'used on real projects, named in a source',
   pilot: 'tried on a real site, named in a source',
   demo: 'shown working at a fair or in a test',
-  claim: 'only the maker or a seller says so',
+  claim: 'the maker offers it for this work',
   none: 'no source shows a robot doing it yet',
 };
 
@@ -46,7 +46,7 @@ export const AXES = {
   movement: { label: 'Movement needed', levels: Object.entries(MOVEMENT_LABELS).map(([id, label]) => ({ id, label })) },
   handWork: { label: 'Hand work needed', levels: Object.entries(HAND_LABELS).map(([id, label]) => ({ id, label })) },
   robots: { label: 'Robots you can buy', levels: [{ id: '0', label: 'None yet' }, { id: '1', label: '1–2' }, { id: '3', label: '3–5' }, { id: '6', label: '6–10' }, { id: '11', label: '11 or more' }] },
-  proof: { label: 'Best proof', levels: [{ id: 'none', label: 'No proof yet' }, { id: 'claim', label: 'Maker says' }, { id: 'demo', label: 'Demo' }, { id: 'pilot', label: 'Pilot' }, { id: 'deployment', label: 'In daily use' }] },
+  proof: { label: 'Best proof', levels: [{ id: 'none', label: 'No proof yet' }, { id: 'claim', label: 'Made for it' }, { id: 'demo', label: 'Demo' }, { id: 'pilot', label: 'Pilot' }, { id: 'deployment', label: 'In daily use' }] },
 } as const;
 export type AxisId = keyof typeof AXES;
 export const AXIS_IDS = Object.keys(AXES) as AxisId[];

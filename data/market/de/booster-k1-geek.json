@@ -9,7 +9,7 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.booster.tech/booster-k1/",
- "summary": "A 0.95 m, 19.5 kg kid-size humanoid for teaching and robot soccer; the Geek version has the smallest computer and battery (about 30 minutes walking).",
+ "summary": "A 0.95 m, 19.5 kg kid-size humanoid for teaching and robot soccer; the Geek version has the smallest computer and battery (about 20 minutes walking at 1.1 m/s).",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
@@ -27,14 +27,14 @@
     "name": "Bipedal GmbH",
     "country": "DE",
     "role": "distributor",
-    "productUrl": "https://www.bipedal.de/Booster-Robotics-K1-Geek-50-TOPS_1",
+    "productUrl": "https://www.bipedal.de/Booster-Robotics-K1-Geek-50-TOPS",
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 11999,
+    "priceEur": 11397,
     "priceBasis": "gross",
-    "sourceId": "s3",
-    "note": null
+    "sourceId": "s7",
+    "note": "12,902 € incl. 19% VAT (was 11,999 € on 02.10.2026), \"Sofort verfügbar\"."
    },
    {
     "name": "RBTX marketplace (igus SE & Co. KG)",
@@ -76,7 +76,7 @@
     "note": "Tax included; \"On Demand\" item, ordered from the supplier after purchase."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
   "statusNote": "Orderable with prices at Bipedal (Leverkusen, about 4 weeks), RBTX (igus, Cologne, 3 weeks), Generation Robots (3 to 4 weeks) and RobotShop EU (on demand).",
   "sourceIds": [
@@ -146,9 +146,9 @@
   {
    "key": "runtime_h",
    "label": "Runtime",
-   "value": 0.5,
+   "value": 0.33,
    "unit": "h",
-   "conditions": "walking at 0.4 m/s",
+   "conditions": "20 min walking at 1.1 m/s, 2 Ah battery (maker); sellers still repeat up to 30 min",
    "sourceId": "s1"
   },
   {
@@ -166,6 +166,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed ms",
+   "value": 1.1,
+   "unit": "m/s",
+   "conditions": "product manual; the maker's product page says 2 m/s, RBTX lists 0.4 m/s",
+   "sourceId": "s8"
   }
  ],
  "capabilities": {
@@ -183,7 +191,7 @@
   "carryPayloadKg": null,
   "runtimeH": 0.5,
   "ipRating": null,
-  "sdk": null,
+  "sdk": "Python, C++",
   "sourceIds": [
    "s1",
    "s6"
@@ -220,7 +228,7 @@
    "title": "Booster K1 product page",
    "publisher": "Booster Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -228,7 +236,7 @@
    "title": "Humanoider Roboter Booster K1",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -236,7 +244,7 @@
    "title": "Booster K1 at Bipedal",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -244,7 +252,7 @@
    "title": "Booster K1 on RBTX",
    "publisher": "igus SE & Co. KG (RBTX)",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -261,10 +269,26 @@
    "publisher": "Booster Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.bipedal.de/Booster-Robotics-K1-Geek-50-TOPS",
+   "title": "Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://docs.booster.tech/docs/product-manual/k1/getting-started/specifications/",
+   "title": "Booster Robotics",
+   "publisher": "Booster Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-21",
  "researchEvidence": [
   {
    "field": "rough_ground",

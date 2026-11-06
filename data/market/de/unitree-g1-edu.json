@@ -14,12 +14,13 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "RobotShop EU sells G1 EDU Standard (U1) and Plus (U2) with price and cart (about 3-4 weeks); QUADRUPED Robotics (Germany) lists U1/U2 from 31,500 EUR net; Conrad sells them to business customers.",
+  "statusNote": "Funduino (Germany) sells EDU-1 and EDU-2 from its cart (37,485 and 46,410 EUR incl. VAT, 30 working days); QUADRUPED Robotics (Germany) lists U1/U2 from 31,500 EUR net with single units expected in December; RobotShop EU and Conrad were not rechecked.",
   "sourceIds": [
    "s2",
    "s3",
    "s4",
-   "s5"
+   "s5",
+   "s9"
   ],
   "priceEur": {
    "amount": 37485,
@@ -29,7 +30,7 @@
    "note": "EDU Standard U1 at RobotShop EU, tax included; EDU Plus U2 EUR 42,840."
   },
   "priceOther": null,
-  "leadTime": "about 3-4 weeks (RobotShop EU)",
+  "leadTime": "30 working days (Funduino); one U2 expected from 04.12.2026 and one U1 from 30.12.2026 (QUADRUPED Robotics); about 3-4 weeks at RobotShop EU when last checked on 2026-10-02",
   "sellers": [
    {
     "name": "RobotShop (eu.robotshop.com, RobotShop Inc.)",
@@ -121,9 +122,22 @@
     "priceBasis": "gross",
     "sourceId": "s8",
     "note": "Hst.-Teile-Nr. G1edu-U1; 50,295.00 EUR incl. VAT; business customers only. EDU-U2 (Bestell-Nr. 3804260) 62,285.00 EUR incl. VAT."
+   },
+   {
+    "productUrl": "https://funduino.com/en/products/unitree-g1-humanoider-roboter?variant=66108098085213",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 37485,
+    "priceBasis": "gross",
+    "note": "Version EDU-1 Standard: 23 DOF, Orin NX 16 GB, incl. VAT, cart enabled, 30 working days.",
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s9"
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -229,7 +243,8 @@
   ],
   "notes": [
    "Sold without working hands in U1/U2; Dex3-1 or five-finger hands come in other EDU versions.",
-   "Arm load about 3 kg and highly posture dependent; no IP rating published."
+   "Arm load about 3 kg and highly posture dependent; no IP rating published.",
+   "Generation Robots calls the G1 \"a prototype for research and development, not compatible or certified for current or industrial tasks\"."
   ]
  },
  "images": [
@@ -293,7 +308,7 @@
    "title": "Unitree G1 product page and parameters",
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -317,7 +332,7 @@
    "title": "Unitree G1 humanoid robot at Generation Robots",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -325,7 +340,7 @@
    "title": "Unitree G1 at MYBOTSHOP",
    "publisher": "MYBOTSHOP GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -341,7 +356,7 @@
    "title": "Unitree G1 at QUADRUPED Robotics",
    "publisher": "QUADRUPED Robotics",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s8",
@@ -350,6 +365,22 @@
    "publisher": "Conrad Electronic",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s9",
+   "url": "https://funduino.com/en/products/unitree-g1-humanoider-roboter?variant=66108098085213",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s10",
+   "url": "https://funduino.com/en/products/unitree-g1-humanoider-roboter?variant=66108099330397",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ]
 }

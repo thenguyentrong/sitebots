@@ -62,6 +62,23 @@ describe('fitRobot', () => {
     expect(fitRobot(printer, job({ specialisedJob: 'layout_marking', generalPurpose: 'no' }))?.kind).toBe('specialised');
     expect(fitRobot(printer, job({ specialisedJob: 'demolition' }))).toBeNull();
   });
+  it('checks a lifting machine matched by its category against the heaviest part', () => {
+    const hoist = (carryPayloadKg: number | null) => robot('hoist', { robotType: 'specialised', specialisedFor: ['material_lifting'] }, { legs: false, arms: 0, hands: 'none', armPayloadKg: null, carryPayloadKg });
+    const wall = job({ specialisedJob: 'material_lifting', handWork: 'none', maxObjectKg: 6000, generalPurpose: 'no' });
+    expect(fitRobot(hoist(200), wall)).toBeNull();
+    expect(fitRobot(hoist(8000), wall)?.verdict).toBe('fits');
+    const open = fitRobot(hoist(null), wall);
+    expect(open?.verdict).toBe('stretch');
+    expect(open?.checks.load).toBe('unknown');
+  });
+  it('keeps a lifting machine listed for the exact job whatever the part weighs', () => {
+    const hoist = robot('hoist', { robotType: 'specialised', specialisedFor: ['site/job'] }, { arms: 0, hands: 'none', armPayloadKg: null, carryPayloadKg: 200 });
+    expect(fitRobot(hoist, job({ specialisedJob: 'material_lifting', maxObjectKg: 6000, generalPurpose: 'no' }))?.verdict).toBe('fits');
+  });
+  it('ignores the part weight where the machine does not carry the part', () => {
+    const drill = robot('drill', { robotType: 'specialised', specialisedFor: ['drilling_anchoring'] }, { arms: 1, hands: 'tool', armPayloadKg: 10 });
+    expect(fitRobot(drill, job({ specialisedJob: 'drilling_anchoring', handWork: 'two_arm', maxObjectKg: 35.3, generalPurpose: 'no' }))?.verdict).toBe('fits');
+  });
   it('needs a stated outdoor capability for outdoor jobs', () => {
     expect(fitRobot(robot('indoor', {}, { outdoor: false }), job({}, true))).toBeNull();
     expect(fitRobot(robot('maybe', {}, { outdoor: null }), job({}, true))).toBeNull();

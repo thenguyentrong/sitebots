@@ -14,14 +14,14 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": {
-   "amount": 113000,
+   "note": "RBTX, plus VAT and shipping. A3 Ultra Developer EUR 89,000 net at RBTX. Generation Robots still shows EUR 113,000 net.",
+   "amount": 79000,
    "basis": "net",
-   "kind": "from",
-   "sourceId": "s5",
-   "note": "Generation Robots \"from\" price excl. VAT. The AGIBOT store shows only a placeholder price."
+   "kind": "list",
+   "sourceId": "s7"
   },
   "priceOther": null,
-  "leadTime": "Generation Robots: delivery within 4 to 5 weeks",
+  "leadTime": "RBTX: 3 weeks; Bipedal: 'sofort verfügbar'; Generation Robots: delivery within 4 to 5 weeks",
   "sellers": [
    {
     "name": "Generation Robots",
@@ -48,17 +48,45 @@
     "priceBasis": null,
     "sourceId": "s1",
     "note": "No real price shown (placeholder USD 999,999); contact sales."
+   },
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/agibot-a3-ultra-humanoid-robot-51dof/a3-ultra",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 79000,
+    "priceBasis": "net",
+    "note": null,
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s7"
+   },
+   {
+    "productUrl": "https://www.bipedal.de/AgiBot-A3-Ultra",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": null,
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "sourceId": "s8"
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Generation Robots (France) sells the A3 Ultra online from EUR 113,000 excl. VAT with delivery in 4-5 weeks and ships within the EU; the AGIBOT store lists it contact-only. TÜV Rheinland RED and safety certifications were announced at IFA 2026 in Berlin.",
+  "statusNote": "RBTX (igus, Germany) sells the A3 Ultra at EUR 79,000 excl. VAT with a usual delivery of 3 weeks. Bipedal GmbH (Leverkusen) lists it as 'sofort verfügbar', price on request. Generation Robots (France) sells it from EUR 113,000 excl. VAT with delivery in 4-5 weeks. The AGIBOT store lists it contact-only. TÜV Rheinland RED and safety certifications were announced at IFA 2026 in Berlin.",
   "sourceIds": [
    "s5",
    "s6",
    "s1",
    "s3",
-   "s4"
+   "s4",
+   "s7",
+   "s8"
   ]
  },
  "specs": [
@@ -219,7 +247,7 @@
    "title": "AGIBOT A3 Ultra (store, specifications and FAQ)",
    "publisher": "AGIBOT",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -243,7 +271,7 @@
    "title": "AGIBOT Store shipping policy",
    "publisher": "AGIBOT",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -251,7 +279,7 @@
    "title": "AGIBOT A3 Ultra Humanoid Robot (Generation Robots)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -260,6 +288,22 @@
    "publisher": "Generation Robots",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://rbtx.de/de-DE/components/humanoid/agibot-a3-ultra-humanoid-robot-51dof/a3-ultra",
+   "title": "RBTX (igus)",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.bipedal.de/AgiBot-A3-Ultra",
+   "title": "Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [

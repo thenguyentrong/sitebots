@@ -14,7 +14,7 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "RobotShop EU (34,942.40 €, on demand), Reichelt (38,675 €, about 2 weeks, business customers only), Funduino (38,999 €, 21 working days) and Bipedal (38,999 €, about 4 weeks) sell the 3-in-1 package, all incl. VAT. Cheaper packages: 2-in-1 legs only, or dual arms only.",
+  "statusNote": "reichelt (38,675 €, about 2 weeks, business customers only), Funduino (38,999 €, 21 working days) and Bipedal (41,934 €, about 4 weeks) sell the 3-in-1 package, all incl. VAT; MegaRobotics quotes on request. Cheaper packages: 2-in-1 legs only, or dual arms only.",
   "sourceIds": [
    "s6",
    "s3",
@@ -22,14 +22,14 @@
    "s7"
   ],
   "priceEur": {
-   "amount": 34942.4,
+   "note": "3-in-1 EDU at Funduino, incl. VAT, read 2026-11-06. Bipedal 41,934 € incl. VAT; Reichelt 38,675 € last read 2026-10-20.",
+   "amount": 38999,
    "basis": "gross",
    "kind": "list",
-   "sourceId": "s6",
-   "note": "3-in-1 EDU at RobotShop EU, tax included; Reichelt 38,675 €, Funduino and Bipedal 38,999 €."
+   "sourceId": "s4"
   },
   "priceOther": null,
-  "leadTime": "about 2 weeks (Reichelt); 21 working days (Funduino); about 4 weeks (Bipedal); on demand (RobotShop EU)",
+  "leadTime": "about 2 weeks (Reichelt); 21 working days (Funduino); about 4 weeks (Bipedal)",
   "sellers": [
    {
     "name": "reichelt elektronik GmbH",
@@ -48,8 +48,8 @@
     "name": "Funduino GmbH",
     "country": "DE",
     "role": "reseller",
-    "productUrl": "https://funduinoshop.com/robotik/limx-dynamics/tron-2/limx-dynamics-tron2-three-in-one",
-    "contactUrl": "https://funduinoshop.com/impressum",
+    "productUrl": "https://funduino.com/products/limx-dynamics-tron2-three-in-one",
+    "contactUrl": "https://funduino.com/en/pages/contact",
     "email": "info@funduino.de",
     "phone": "+49 5921 9704030",
     "priceEur": 38999,
@@ -91,13 +91,26 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 38999,
+    "priceEur": 41934,
     "priceBasis": "gross",
     "sourceId": "s7",
-    "note": "38,999 € incl. 19% VAT, shown as \"Sofort verfügbar\", delivery about 4 weeks."
+    "note": "41,934 € incl. 19% VAT (was 38,999 € on 02.10.2026), \"Sofort verfügbar\", delivery about 4 weeks."
+   },
+   {
+    "name": "MegaRobotics (Megaforce GmbH, Kaarst)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.megarobotics.de/de/products/limx-tron2",
+    "contactUrl": "https://www.megarobotics.de/de/contact",
+    "email": "info@megarobotics.de",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s9",
+    "note": "Price and availability on request (\"Verfügbarkeit anfragen\"). Calls itself an official distributor; not verified with LimX."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -211,6 +224,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "9 Ah, 46.8 V ternary lithium, replaceable",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
   }
  ],
  "capabilities": {
@@ -218,12 +239,12 @@
   "wheels": true,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": true,
   "outdoor": null,
   "arms": 2,
   "hands": "gripper",
-  "handsIncluded": null,
+  "handsIncluded": true,
   "armPayloadKg": 5,
   "carryPayloadKg": 30,
   "runtimeH": null,
@@ -231,12 +252,14 @@
   "sdk": "LimX SDK, ROS1/ROS2",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s8"
   ],
   "notes": [
    "Research and education platform; arms, soles and wheeled legs are swappable modules.",
    "Which end effector (gripper or dexterous hand) the shop packages include is not stated.",
-   "No IP rating published."
+   "No IP rating published.",
+   "The 3-in-1 package ships with two-finger grippers (LimX packing list); it does not include the Mobile Manipulation Expansion Kit."
   ]
  },
  "images": [
@@ -290,6 +313,17 @@
    "date": null,
    "sourceId": "s1",
    "note": null
+  },
+  {
+   "taskIds": [
+    "site_concrete/rebar-tying-slabs"
+   ],
+   "task": "Scaled-down tilt-up construction workflow by ZINOVA with RIC Robotics: formwork assembly with a nail gun, multi-layer rebar placement and rebar tying",
+   "stage": "demo",
+   "where": null,
+   "date": "2026-09",
+   "sourceId": "s10",
+   "note": "Proof of concept at reduced scale, reported by LimX; two TRON 2 worked together. Not a site deployment."
   }
  ],
  "sources": [
@@ -299,7 +333,7 @@
    "title": "TRON 2 product page",
    "publisher": "LimX Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -307,7 +341,7 @@
    "title": "TRON 2 specifications",
    "publisher": "LimX Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -319,11 +353,11 @@
   },
   {
    "id": "s4",
-   "url": "https://funduinoshop.com/robotik/limx-dynamics/tron-2/limx-dynamics-tron2-three-in-one",
+   "url": "https://funduino.com/products/limx-dynamics-tron2-three-in-one",
    "title": "LimX Dynamics TRON2 Three-in-one",
    "publisher": "Funduino GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -331,7 +365,7 @@
    "title": "Contact Sales / order consultation",
    "publisher": "LimX Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s6",
@@ -347,12 +381,54 @@
    "title": "LimX Dynamics TRON2 3-in-1 EDU package",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.limxdynamics.com/en/documents/888811977667907584",
+   "title": "TRON 2 Packing List Summary | LimX Dynamics Official Website",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s9",
+   "url": "https://www.megarobotics.de/de/products/limx-tron2",
+   "title": "LimX Dynamics TRON 2 (3-in-1) at MegaRobotics",
+   "publisher": "Megaforce GmbH (MegaRobotics)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s10",
+   "url": "https://www.limxdynamics.com/en/news/BK000126",
+   "title": "ZINOVA Partners with LimX Dynamics to Explore Robotics Applications in Construction",
+   "publisher": "LimX Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
-  "Whether the 3-in-1 package includes the Autonomous Mobile Manipulation Expansion Kit needed to run arms on the legs.",
-  "Weight and runtime not published."
+  "Weight and runtime not published.",
+  "LimX's TRON 2 manual says: flat ground with high friction, not waterproof or dustproof; for stairs the wheeled legs are recommended, the soles carry \"a high risk of tipping over\"."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-20",
+ "researchEvidence": [
+  {
+   "field": "hands_included",
+   "value": true,
+   "sourceId": "s8",
+   "quote": "1. TRON 2 Tri-Form Set (EDU Version) No. Item Name Qty Unit Image Flight Case (robot body and accessories) 1 Robot Body (Dual-Arm with Gripper)",
+   "basis": "Tri-Form Set (EDU) = the 3-in-1 package; dual-arm body ships with two-finger grippers (RobotShop box list also says 'includes two grippers')",
+   "checkedAt": "2026-10-20"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "integrating high-performance dual manipulator arms and all-terrain bipedal mobility",
+   "basis": "manufacturer marketing claim ('all-terrain'); TRON 2 User Manual 3.1 says 'Use on flat ground with high friction'",
+   "checkedAt": "2026-10-20"
+  }
+ ]
 }

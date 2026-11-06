@@ -9,34 +9,35 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.limxdynamics.com/en/products/oli",
- "summary": "A 1.65 m, 55 kg research humanoid with 7-axis arms carrying 3 kg each and about 1.5 h runtime; hands are optional extras.",
+ "summary": "A 1.65 m, 55 kg research humanoid with 7-axis arms carrying 3 kg each and about 1.5 h runtime; it ships with two-finger grippers, dexterous hands are optional.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "RobotShop EU (77,890.91 €, on demand), Funduino (84,999 €, 21 working days), Bipedal (84,999 €, about 4 weeks) and Reichelt (85,680 €, about 5 weeks, business customers only) sell the Oli EDU, all incl. VAT.",
+  "statusNote": "Funduino (84,999 €, 21 working days), reichelt (85,680 €, about 5 weeks, business customers only) and Bipedal (91,397 €, about 4 weeks) sell the Oli EDU, all incl. VAT; MegaRobotics quotes on request; Muzix shows no public price and states delivery in 10-16 days.",
   "sourceIds": [
    "s5",
    "s4",
    "s6",
-   "s3"
+   "s3",
+   "s8"
   ],
   "priceEur": {
-   "amount": 77890.91,
+   "note": "Funduino, incl. VAT, read 2026-11-06. Bipedal 91,397 € incl. VAT; Reichelt 85,680 € last read 2026-10-20.",
+   "amount": 84999,
    "basis": "gross",
    "kind": "list",
-   "sourceId": "s5",
-   "note": "RobotShop EU, tax included; Funduino and Bipedal 84,999 €, Reichelt 85,680 €."
+   "sourceId": "s4"
   },
   "priceOther": null,
-  "leadTime": "21 working days (Funduino); about 4 weeks (Bipedal); about 5 weeks (Reichelt); on demand (RobotShop EU)",
+  "leadTime": "10-16 days (Muzix, no public price); 21 working days (Funduino); about 4 weeks (Bipedal); about 5 weeks (Reichelt)",
   "sellers": [
    {
     "name": "Funduino GmbH",
     "country": "DE",
     "role": "reseller",
-    "productUrl": "https://funduinoshop.com/robotik/limx-dynamics/oli-edu/limx-dynamics-oli-edu",
-    "contactUrl": "https://funduinoshop.com/impressum",
+    "productUrl": "https://funduino.com/products/limx-dynamics-oli-edu",
+    "contactUrl": "https://funduino.com/en/pages/contact",
     "email": "info@funduino.de",
     "phone": "+49 5921 9704030",
     "priceEur": 84999,
@@ -78,13 +79,39 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 84999,
+    "priceEur": 91397,
     "priceBasis": "gross",
     "sourceId": "s6",
-    "note": "84,999 € incl. 19% VAT, shown as \"Sofort verfügbar\", delivery about 4 weeks."
+    "note": "91,397 € incl. 19% VAT (was 84,999 € on 02.10.2026), \"Sofort verfügbar\", delivery about 4 weeks."
+   },
+   {
+    "name": "MegaRobotics (Megaforce GmbH, Kaarst)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.megarobotics.de/de/products/limx-oli",
+    "contactUrl": "https://www.megarobotics.de/de/contact",
+    "email": "info@megarobotics.de",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s7",
+    "note": "Offers the Lite, EDU and Super editions on request (\"Erhältlich in drei Versionen\"); no price or lead time. Calls itself an official distributor; not verified with LimX."
+   },
+   {
+    "name": "Muzix Group Co. Ltd.",
+    "country": "HU",
+    "role": "reseller",
+    "productUrl": "https://www.muzix.eu/de/LimX-Dynamics/Robotic/LIMX-OLI-EDU/LIMX-DYNAMICS-OLI-Full-Size-General-Purpose-Humanoid-Robot",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s8",
+    "note": "Package \"Educational\" (SKU LIMX-OLI-EDU), price on request, \"innerhalb von 10-16 Tagen an Sie geliefert\"."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-06"
  },
  "specs": [
   {
@@ -106,9 +133,9 @@
   {
    "key": "dof_total",
    "label": "Active DoF",
-   "value": 33,
+   "value": 31,
    "unit": null,
-   "conditions": "spec page; product page states 31",
+   "conditions": "31 body joints plus the two 1-DoF grippers; the product page counts the 31",
    "sourceId": "s2"
   },
   {
@@ -153,10 +180,10 @@
   },
   {
    "key": "dof_per_hand",
-   "label": "Hand options",
-   "value": "2-finger gripper (1 DoF), 3-finger gripper (4 DoF) or 5-finger hand (6 DoF)",
+   "label": "End effectors",
+   "value": "2-finger gripper (1 DoF) standard; 3-finger gripper (4 DoF) or 5-finger hand (6 DoF) optional",
    "unit": null,
-   "conditions": "all optional",
+   "conditions": null,
    "sourceId": "s2"
   },
   {
@@ -174,6 +201,22 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s2"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak torque nm",
+   "value": 150,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "9,500 mAh slide-out module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2"
   }
  ],
  "capabilities": {
@@ -185,8 +228,8 @@
   "stairs": null,
   "outdoor": null,
   "arms": 2,
-  "hands": "optional",
-  "handsIncluded": false,
+  "hands": "gripper",
+  "handsIncluded": true,
   "armPayloadKg": 3,
   "carryPayloadKg": null,
   "runtimeH": 1.5,
@@ -194,10 +237,11 @@
   "sdk": "High- and low-level APIs, Python",
   "sourceIds": [
    "s2",
-   "s4"
+   "s4",
+   "s5"
   ],
   "notes": [
-   "End effectors are optional on the spec sheet.",
+   "Two-finger grippers (1 DoF each) and a humanoid hand shell are standard; the 5-finger hand (6 DoF) and LimX's own 2- and 3-finger grippers are optional.",
    "Research and education robot; no IP rating."
   ]
  },
@@ -239,7 +283,7 @@
    "title": "LimX Oli product page",
    "publisher": "LimX Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -247,7 +291,7 @@
    "title": "LimX Oli specifications",
    "publisher": "LimX Dynamics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -259,11 +303,11 @@
   },
   {
    "id": "s4",
-   "url": "https://funduinoshop.com/robotik/limx-dynamics/oli-edu/limx-dynamics-oli-edu",
+   "url": "https://funduino.com/products/limx-dynamics-oli-edu",
    "title": "LimX Dynamics Oli EDU",
    "publisher": "Funduino GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s5",
@@ -279,11 +323,28 @@
    "title": "LimX Dynamics Oli EDU",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.megarobotics.de/de/products/limx-oli",
+   "title": "LimX Dynamics Oli EDU at MegaRobotics",
+   "publisher": "Megaforce GmbH (MegaRobotics)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.muzix.eu/de/LimX-Dynamics/Robotic/LIMX-OLI-EDU/LIMX-DYNAMICS-OLI-Full-Size-General-Purpose-Humanoid-Robot",
+   "title": "LimX Oli EDU at Muzix",
+   "publisher": "Muzix Group Co. Ltd.",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
-  "Price of hands/grippers in Germany."
+  "Price of the optional 5-finger hand in Germany.",
+  "LimX launched Oli in Lite, EDU and Super editions (Super: 1.75 m, 5 kg per arm, 5-finger hand, LiDAR). Since October 2026 its spec page lists only the EDU; MegaRobotics still offers all three on request."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-20"
 }

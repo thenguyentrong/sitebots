@@ -131,9 +131,9 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
-  "outdoor": null,
+  "outdoor": true,
   "arms": 0,
   "hands": "none",
   "handsIncluded": null,
@@ -207,5 +207,23 @@
   "CE marking.",
   "Stair climbing not stated."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "vereint diese Plattform die Schnelligkeit von Radantrieben mit der extremen Geländegängigkeit von Laufrobotern [combines the speed of wheel drives with the extreme off-road capability of legged robots]",
+   "basis": null,
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Der DOBOT Rover X1 kann in geeigneten Outdoor- und Semi-Outdoor-Umgebungen eingesetzt werden, etwa auf Campusflächen, Gehwegen oder leicht unebenem Gelände. [The DOBOT Rover X1 can be used in suitable outdoor and semi-outdoor environments, for example on campus areas, footpaths or slightly uneven ground.]",
+   "basis": null,
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

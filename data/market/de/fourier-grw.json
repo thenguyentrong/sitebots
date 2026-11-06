@@ -9,7 +9,7 @@
  "robotType": "humanoid",
  "specialisedFor": [],
  "officialUrl": "https://www.fftai.com/grw",
- "summary": "A 160 kg wheeled dual-arm humanoid with a height-adjustable body (1.16 to 1.65 m) and up to 16 kg payload with both arms, for lifting, transport and sorting.",
+ "summary": "A 240 kg wheeled dual-arm humanoid with a height-adjustable body (1.23 to 1.70 m) and 8 kg payload per arm, for lifting, transport and sorting.",
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
@@ -31,7 +31,7 @@
     "note": "Contact form only; no price published."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "No German or EU seller lists GRW yet; Fourier shows a contact form and sells other models in Germany through RBTX.",
   "sourceIds": [
@@ -43,18 +43,18 @@
   {
    "key": "height_m",
    "label": "Height",
-   "value": 1.65,
+   "value": 1.695,
    "unit": "m",
-   "conditions": "adjustable 1.16 to 1.65 m",
-   "sourceId": "s2"
+   "conditions": "adjustable 1.231 to 1.695 m",
+   "sourceId": "s1"
   },
   {
    "key": "weight_kg",
    "label": "Weight",
-   "value": 160,
+   "value": 240,
    "unit": "kg",
    "conditions": "approx.",
-   "sourceId": "s2"
+   "sourceId": "s1"
   },
   {
    "key": "footprint",
@@ -175,6 +175,22 @@
    "unit": "Nm",
    "conditions": "approx.",
    "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 8,
+   "unit": "kg",
+   "conditions": "single arm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "turning_diameter_mm",
+   "label": "Turning diameter mm",
+   "value": 880,
+   "unit": "mm",
+   "conditions": "approx.",
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -188,7 +204,7 @@
   "arms": 2,
   "hands": "optional",
   "handsIncluded": null,
-  "armPayloadKg": null,
+  "armPayloadKg": 8,
   "carryPayloadKg": null,
   "runtimeH": 4,
   "ipRating": null,
@@ -230,7 +246,7 @@
    "title": "GRW Wheeled Humanoid Robot product page",
    "publisher": "Fourier",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -253,5 +269,15 @@
   "Launch date and first deliveries outside China unknown.",
   "Price unknown."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 8,
+   "sourceId": "s1",
+   "quote": "Single-Arm Payload\n8kg",
+   "basis": "single arm",
+   "checkedAt": "2026-11-06"
+  }
+ ]
 }

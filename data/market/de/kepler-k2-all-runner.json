@@ -14,14 +14,14 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": {
-   "amount": 94900,
+   "amount": 102043,
    "basis": "gross",
    "kind": "list",
    "sourceId": "s2",
    "note": null
   },
   "priceOther": null,
-  "leadTime": "Kepler states 90 days delivery lead time for its versions",
+  "leadTime": "Bipedal: ca. 4 Wochen within Germany. Kepler's own configuration sheet: 90 days.",
   "sellers": [
    {
     "name": "Bipedal GmbH",
@@ -31,17 +31,18 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 94900,
+    "priceEur": 102043,
     "priceBasis": "gross",
     "sourceId": "s2",
-    "note": null
+    "note": "102,043 € incl. 19% VAT (was 94,900 € on 02.10.2026), \"Sofort verfügbar\"."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Bipedal (Leverkusen) lists K2 All-Runner Wheel at 94,900 EUR incl. VAT with \"Sofort verfügbar\" and about 4 weeks on the product page, but its category page shows it as \"Ausverkauft\"; confirm stock before ordering.",
+  "statusNote": "Bipedal (Leverkusen) lists K2 All-Runner Wheel at 102,043 EUR incl. VAT with \"Sofort verfügbar\" and about 4 weeks delivery on the product page. Its category page now shows the same price and no longer says \"Ausverkauft\".",
   "sourceIds": [
-   "s2"
+   "s2",
+   "s3"
   ]
  },
  "specs": [
@@ -116,6 +117,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "per arm, max., approx., depends on arm position",
+   "sourceId": "s2"
   }
  ],
  "capabilities": {
@@ -129,7 +138,7 @@
   "arms": 2,
   "hands": "dexterous",
   "handsIncluded": true,
-  "armPayloadKg": null,
+  "armPayloadKg": 15,
   "carryPayloadKg": null,
   "runtimeH": 8,
   "ipRating": null,
@@ -170,7 +179,7 @@
    "title": "KEPLERBOT Forerunner K2 product page",
    "publisher": "Kepler",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -178,11 +187,29 @@
    "title": "Kepler K2 All-Runner Wheel",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bipedal.de/Kepler",
+   "title": "Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "Bipedal product page and category page disagree on stock (available vs. sold out)."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-21",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 15,
+   "sourceId": "s2",
+   "quote": "Traglast von ca. 15 kg pro Arm (gesamt ca. 30 kg), abhängig von der Armposition",
+   "basis": "per arm, max., approx., depends on arm position",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

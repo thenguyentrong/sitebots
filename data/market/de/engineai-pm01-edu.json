@@ -34,14 +34,28 @@
     "priceBasis": null,
     "sourceId": "s3",
     "note": "Purchase inquiry by email or form; no EU price found."
+   },
+   {
+    "productUrl": null,
+    "contactUrl": "https://rbtx.de/en-GB/partners/engineai",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": null,
+    "name": "RBTX (igus)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s5"
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
-  "statusNote": "No German or EU seller lists the PM01 Education or Navigation Edition; EngineAI sells PM01 Basic in the EU through Research Robots (Portugal) and takes purchase inquiries by email, so ask EngineAI.",
+  "statusNote": "No German or EU seller lists the PM01 Education or Navigation Edition; EngineAI sells PM01 Basic in the EU through Research Robots (Portugal) and takes purchase inquiries by email, so ask EngineAI. RBTX (igus, Germany) has an ENGINEAI partner page with a demo booking and names PM01 without an edition; it has no listing or price.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s5"
   ]
  },
  "specs": [
@@ -147,7 +161,7 @@
   "wheels": false,
   "tracks": false,
   "levelFloors": true,
-  "roughGround": null,
+  "roughGround": true,
   "stairs": null,
   "outdoor": null,
   "arms": 2,
@@ -195,7 +209,7 @@
    "title": "PM01 product page",
    "publisher": "EngineAI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -211,7 +225,7 @@
    "title": "EngineAI contact and purchase inquiry",
    "publisher": "EngineAI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -219,12 +233,30 @@
    "title": "Product Purchase",
    "publisher": "EngineAI",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://rbtx.de/en-GB/partners/engineai",
+   "title": "RBTX (igus)",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
   "EU price and delivery time unknown.",
   "EngineAI's purchase page lists \"PM01\" at 188,000 CNY without naming the edition; confirm it is the Education Edition."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Robot foot movement All-Terrain Adaptation",
+   "basis": "manufacturer claim; label on the PM01 foot in the core-parameter graphic, not edition-specific; no terrain test stated",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

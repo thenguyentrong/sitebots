@@ -1,0 +1,204 @@
+{
+ "schemaVersion": 1,
+ "id": "ubtech-yanshee",
+ "maker": "UBTECH Robotics",
+ "makerCountry": "CN",
+ "model": "Yanshee",
+ "variant": null,
+ "name": "UBTECH Yanshee",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A 40 cm teaching humanoid with 17 servos and a Raspberry Pi for schools and university labs. It is a classroom robot, not a work robot.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": {
+   "amount": 2590.9,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "Incl. VAT, plus shipping, Funduino."
+  },
+  "priceOther": null,
+  "leadTime": "28 working days (Funduino, made to order)",
+  "sellers": [
+   {
+    "productUrl": "https://funduino.com/products/ubtech-yanshee",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 2590.9,
+    "priceBasis": "gross",
+    "note": "Made to order, 28 working days. Authorisation by UBTECH not confirmed.",
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s1"
+   },
+   {
+    "productUrl": "https://robot-distribution.com/en/robots/ubtech-yanshee",
+    "contactUrl": "https://robot-distribution.com/en/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 1590,
+    "priceBasis": "net",
+    "note": "Indicative from-price for the base version; final price in a written quote. Germany is among its delivery countries.",
+    "name": "Robot Distribution (Lammar Innovative SAS)",
+    "country": "FR",
+    "role": "reseller",
+    "sourceId": "s2"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "buy_now",
+  "statusNote": "Funduino (Nordhorn) sells it at 2,590.90 EUR incl. VAT, made to order with delivery in 28 working days. Robot Distribution (France) delivers to Germany on written quote.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 0.4,
+   "unit": "m",
+   "conditions": "about 40 cm",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 17,
+   "unit": null,
+   "conditions": "servo-driven",
+   "sourceId": "s1"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 0.1,
+   "unit": "m/s",
+   "conditions": "10 cm/s, Yanshee 1.1, seller text",
+   "sourceId": "s3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 3,
+   "unit": "h",
+   "conditions": "Yanshee 1.1, seller text",
+   "sourceId": "s3"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s3"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Raspberry Pi with Linux and ROS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "8 MP camera, microphone, speaker, IMU, gyroscope, ultrasonic and infrared sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Blockly, Python, C/C++, Java, ROS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": "Blockly, Python, C/C++, Java, ROS",
+  "notes": [
+   "Has two small servo arms for gestures and simple grasp demonstrations; no payload is published, so it is recorded with 0 working arms.",
+   "For classrooms and labs only. It has no use on a site or in production."
+  ],
+  "sourceIds": [
+   "s1",
+   "s3"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://funduino.com/cdn/shop/files/ubtech-yanshee-funduino-7974020.png?v=1793805788",
+   "pageUrl": "https://funduino.com/products/ubtech-yanshee",
+   "credit": "UBTECH (via Funduino)",
+   "alt": "UBTECH Yanshee teaching humanoid with its carry case",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sold for STEM teaching, university robotics labs and programming courses",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://funduino.com/products/ubtech-yanshee",
+   "title": "UBTECH Yanshee at Funduino",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://robot-distribution.com/en/robots/ubtech-yanshee",
+   "title": "UBTECH Yanshee at Robot Distribution",
+   "publisher": "Robot Distribution (Lammar Innovative SAS)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.muzix.eu/us/UBTech/Robotic/UBT-YANSHEE/UBTECH-YANSHEE-Programmable-high-level-humanoid-robot-for-educational-purposes",
+   "title": "UBTECH Yanshee at Muzix",
+   "publisher": "Muzix",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Terra Robotics is recorded as UBTECH's exclusive DACH distributor, so Funduino's route is unexplained.",
+  "No UBTECH product page could be read; every value here comes from sellers.",
+  "Weight is not stated clearly; sellers give package figures."
+ ],
+ "checkedAt": "2026-11-06"
+}

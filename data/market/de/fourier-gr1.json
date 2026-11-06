@@ -15,7 +15,7 @@
  "germany": {
   "priceEur": null,
   "priceOther": null,
-  "leadTime": null,
+  "leadTime": "Übliche Lieferzeit: 3 Wochen (RBTX)",
   "sellers": [
    {
     "name": "RBTX marketplace (igus SE & Co. KG)",
@@ -31,7 +31,7 @@
     "note": "Price on request; usual delivery time shown as 3 weeks."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "quote",
   "statusNote": "RBTX (igus, Cologne) lists GR-1 with price on request and Fourier as vendor; Fourier itself no longer shows GR-1 on its website.",
   "sourceIds": [
@@ -118,6 +118,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "per hand (single-hand payload), approx.; maker GR-1 documentation; pose not stated",
+   "sourceId": "s2"
   }
  ],
  "capabilities": {
@@ -130,14 +138,15 @@
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
-  "handsIncluded": null,
-  "armPayloadKg": null,
+  "handsIncluded": true,
+  "armPayloadKg": 3,
   "carryPayloadKg": null,
   "runtimeH": 1,
   "ipRating": null,
   "sdk": "ROS 2",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s2"
   ],
   "notes": [
    "Short runtime: about 45 minutes of walking per charge.",
@@ -162,12 +171,38 @@
    "title": "Fourier GR1 humanoid robot, 44 DOF on RBTX",
    "publisher": "igus SE & Co. KG (RBTX)",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://support-old.fftai.com/en/docs/GR-X-Humanoid-Robot/GR1/GR-1_Introduction/",
+   "title": "About GR-1 | Fourier 文档中心",
+   "publisher": "Fourier",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-21"
   }
  ],
  "openQuestions": [
   "Is GR-1 still produced, or is RBTX selling remaining stock?",
   "Hand type and payload not published by the seller."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 3,
+   "sourceId": "s2",
+   "quote": "Single-Hand Payload≈3kg",
+   "basis": "per hand (single-hand payload), approx.; maker GR-1 documentation; pose not stated",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "hands_included",
+   "value": true,
+   "sourceId": "s2",
+   "quote": "GR-1 mainly consists of five major components: head, torso, arms, dexterous hands, and lower limbs.",
+   "basis": "maker documentation lists two 6-DoF dexterous hands as a main component of GR-1; RBTX sells the 44-DoF configuration (32 FSA actuators plus hands)",
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

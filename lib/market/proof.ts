@@ -32,12 +32,12 @@ export function choicesHeading(fits: readonly { evidence: { stage: EvidenceStage
   return 'No robot you can buy in Germany yet';
 }
 // A card's proof line, by the robot's best proof on any job (STAGE_RANK).
-const PROVEN_ON = ['', 'maker claim for', 'shown in a demo for', 'piloted on', 'in daily use on'];
+const PROVEN_ON = ['', 'made for', 'shown in a demo for', 'piloted on', 'in daily use on'];
 
 /** What a robot's card says about its jobs: its best proof first, then what only fits on paper. */
 export function jobsLine(stats: RobotJobStats | undefined): string {
   if (!stats || (!stats.best && !stats.strong)) return 'no job on the map yet';
-  if (!stats.best) return 'no proof on a job yet · fits ' + plural(stats.strong, 'job') + ' on paper';
+  if (!stats.best) return 'fits ' + plural(stats.strong, 'job');
   const more = stats.strong - stats.atBest;
   return PROVEN_ON[stats.best] + ' ' + plural(stats.atBest, 'job') + (more > 0 ? ' · ' + more + ' more fit' : '');
 }

@@ -100,18 +100,17 @@ test.describe('robots page', () => {
     await expect(page).toHaveURL(/[/]robots[/]boston-dynamics[/]spot#germany$/);
     const germany = page.getByRole('region', { name: 'Buy in Germany', exact: true });
     await expect(germany.locator('.mk-buybox .mk-status').first()).toBeVisible();
-    const jobs = page.getByRole('region', { name: /Jobs on the map/ });
+    const jobs = page.getByRole('region', { name: 'Jobs', exact: true });
     await expect(jobs).toBeVisible();
-    await jobs.locator('.mk-job-columns a').first().click();
-    await expect(page).toHaveURL(/usecase=/);
-    await expect(page.getByTestId('selected-job')).toBeVisible();
+    await expect(jobs.locator('.mk-job-columns a').first()).toBeVisible();
   });
 
   test('a job-specific machine the catalogue does not carry keeps its own page', async ({ page }) => {
     await page.goto('/robots?type=specialised');
     await page.locator('.mk-maker-row').first().click();
     await expect(page).toHaveURL(/[/]market[/][a-z0-9-]+$/);
-    await expect(page.locator('.mk-crumbs').getByRole('link', { name: 'Robots' })).toHaveAttribute('href', '/robots');
+    await expect(page.getByRole('navigation', { name: 'Breadcrumb' }).getByRole('link', { name: 'Robots' })).toHaveAttribute('href', '/robots');
+    await expect(page.locator('button[data-robot-id]').first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Sources' })).toBeVisible();
   });
 });
@@ -153,10 +152,6 @@ test.describe('robot cards', () => {
 test.describe('catalogue robot pages', () => {
   test('a catalogue robot page shows how each version is sold in Germany', async ({ page }) => {
     await page.goto('/robots/unitree/g1');
-    const box = page.getByRole('region', { name: 'In Germany', exact: true });
-    await expect(box).toBeVisible();
-    await box.getByRole('link').first().click();
-    await expect(page).toHaveURL(/[/]robots[/]unitree[/]g1#germany$/);
     const germany = page.getByRole('region', { name: 'Buy in Germany', exact: true });
     await expect(germany.locator('.mk-buybox')).not.toHaveCount(0);
     await expect(germany.locator('.mk-buybox-title').first()).toBeVisible();

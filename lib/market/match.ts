@@ -90,6 +90,20 @@ function outdoorCheck(robot: Robot, job: JobContext): Check {
 }
 
 const SPECIALISED_CHECKS = { move: 'yes', hands: 'yes', load: 'yes', outdoor: 'yes' } as const;
+/** Categories where the machine itself carries the part. A drilling robot on a duct job sets the
+ *  anchors and never holds the duct, so for other categories the part's weight says nothing. */
+const CARRIES_PART: ReadonlySet<string> = new Set(['material_lifting', 'glazing_installation']);
+
+/** A category says what kind of machine does the work, not how heavy the part is: a scaffold hoist is
+ *  material lifting, a 6 t wall element is not its load. */
+function specialisedLoad(robot: Robot, needs: UseCaseNeeds | null): Check {
+  const mass = needs?.maxObjectKg ?? null;
+  if (!needs?.specialisedJob || !CARRIES_PART.has(needs.specialisedJob) || mass === null || mass <= LIGHT_KG) return 'yes';
+  const { carryPayloadKg, armPayloadKg } = robot.capabilities;
+  const stated = [carryPayloadKg, armPayloadKg].filter((kg): kg is number => kg !== null);
+  if (!stated.length) return 'unknown';
+  return Math.max(...stated) >= mass ? 'yes' : 'no';
+}
 
 /** Null when the robot is no option for this job. Evidence for the exact job always keeps a robot in. */
 export function fitRobot(robot: Robot, job: JobContext): RobotFit | null {
@@ -99,9 +113,15 @@ export function fitRobot(robot: Robot, job: JobContext): RobotFit | null {
   // Exact proof first, then proof on related work, then a fit on paper.
   const proof = evidence ? 20 + STAGE_RANK[evidence.stage] * 15 : related ? STAGE_RANK[related.stage] * 10 : 0;
   if (robot.robotType === 'specialised') {
-    const forJob = robot.specialisedFor.includes(job.id) || (job.needs?.specialisedJob ? robot.specialisedFor.includes(job.needs.specialisedJob) : false);
+    const listed = robot.specialisedFor.includes(job.id);
+    const forJob = listed || (job.needs?.specialisedJob ? robot.specialisedFor.includes(job.needs.specialisedJob) : false);
     if (!forJob && !evidence) return null;
-    return { robotId: robot.id, kind: 'specialised', verdict: evidence ? 'done' : related ? 'similar' : 'fits', evidence, related, checks: { ...SPECIALISED_CHECKS }, score: proof + 20 + status * 2 };
+    // Listed for this exact job or shown on it, the load is settled; matched by its category only, the
+    // part must be within the capacity its maker states, and an unstated capacity stays an open question.
+    const load = listed || evidence ? 'yes' : specialisedLoad(robot, job.needs);
+    if (load === 'no') return null;
+    const verdict: Verdict = evidence ? 'done' : related ? 'similar' : load === 'yes' ? 'fits' : 'stretch';
+    return { robotId: robot.id, kind: 'specialised', verdict, evidence, related, checks: { ...SPECIALISED_CHECKS, load }, score: proof + (load === 'yes' ? 20 : 0) + status * 2 };
   }
   const needs = job.needs;
   if (!needs) return evidence ? { robotId: robot.id, kind: 'general', verdict: 'done', evidence, related: null, checks: { move: 'unknown', hands: 'unknown', load: 'unknown', outdoor: 'unknown' }, score: proof + status * 2 } : null;

@@ -151,6 +151,14 @@
    "unit": null,
    "conditions": null,
    "sourceId": "s1"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 1,
+   "unit": "h",
+   "conditions": "unstated; maker gives 1-2 h, lower end used",
+   "sourceId": "s3"
   }
  ],
  "capabilities": {
@@ -160,17 +168,19 @@
   "levelFloors": true,
   "roughGround": true,
   "stairs": true,
-  "outdoor": null,
+  "outdoor": true,
   "arms": 0,
   "hands": "none",
   "handsIncluded": null,
   "armPayloadKg": null,
   "carryPayloadKg": 5,
-  "runtimeH": null,
+  "runtimeH": 1,
   "ipRating": "IP54",
   "sdk": "Open SDK, URDF (Isaac Sim, MuJoCo)",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s3",
+   "s2"
   ],
   "notes": [
    "Sensors for autonomous rounds (lidar, depth camera, RTK) are add-ons; out of the box it is remote-controlled.",
@@ -231,5 +241,23 @@
   "Slope: 40° on the product page, 30° on the AGIBOT store page.",
   "Launch date not found on an opened source."
  ],
- "checkedAt": "2026-10-02"
+ "checkedAt": "2026-10-02",
+ "researchEvidence": [
+  {
+   "field": "runtime_h",
+   "value": 1,
+   "sourceId": "s3",
+   "quote": "Battery Life (Operating Time) 1–2 hours",
+   "basis": "unstated; maker gives 1-2 h, lower end used",
+   "checkedAt": "2026-10-21"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s2",
+   "quote": "Ist der Roboter für Tests im Innen- und Außenbereich geeignet?Ja, da seine Produktpositionierung geländegängige Mobilität und IP54-Schutz hervorhebt. [Is the robot suitable for indoor and outdoor tests? Yes, because its product positioning highlights all-terrain mobility and IP54 protection.]",
+   "basis": null,
+   "checkedAt": "2026-10-21"
+  }
+ ]
 }

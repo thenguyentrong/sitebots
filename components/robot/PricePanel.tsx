@@ -95,7 +95,7 @@ export function PricePanel({ prices, availability }: { prices: PriceCurrent[]; a
               {a.in_stock === true && a.source_tier != null && a.source_tier <= 2 ? <span className="text-xs text-trust-verified">in stock</span> : null}
               {a.lead_time_days_min != null || a.lead_time_days_max != null ? (
                 <span className="num text-xs text-muted">
-                  {a.lead_time_days_min ?? '?'}–{a.lead_time_days_max ?? '?'} days
+                  {a.lead_time_days_min ?? '?'} to {a.lead_time_days_max ?? '?'} days
                 </span>
               ) : null}
               {a.lead_time_text ? <span className="text-xs text-faint">{a.lead_time_text}</span> : null}

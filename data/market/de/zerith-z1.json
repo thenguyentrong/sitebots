@@ -1,0 +1,170 @@
+{
+ "schemaVersion": 1,
+ "id": "zerith-z1",
+ "maker": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "Z1",
+ "variant": null,
+ "name": "Zerith Z1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A light 1.45 m two-legged service humanoid with soft outer surfaces, carrying up to 1.5 kg per arm, for hotels, reception and education.",
+ "launched": "2024-10",
+ "lifecycle": "shipping",
+ "germany": {
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/zerith-z1-humanoid-robot-21-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": "+49 2203 9649-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Price on request. RBTX prints \"Übliche Lieferzeit: 3 Wochen\" on price-on-request items too, so it does not prove stock.",
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-11-06",
+  "status": "quote",
+  "statusNote": "RBTX (igus, Cologne) lists the Zerith Z1 with price on request. Zerith no longer shows the Z1 on its own product menu, so ask whether it is still built.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ]
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.45,
+   "unit": "m",
+   "conditions": "145 x 50 x 22 cm, RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 33,
+   "unit": "kg",
+   "conditions": "RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "dof_total",
+   "label": "DOF",
+   "value": 21,
+   "unit": null,
+   "conditions": "RBTX listing; launch press says 27",
+   "sourceId": "s1"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1.5,
+   "unit": "kg",
+   "conditions": "per arm, RBTX text; RBTX header shows max. 3 kg",
+   "sourceId": "s1"
+  },
+  {
+   "key": "peak_torque_nm",
+   "label": "Peak joint torque",
+   "value": 150,
+   "unit": "N·m",
+   "conditions": "RBTX listing",
+   "sourceId": "s1"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "RGB camera, depth camera, LiDAR, IMU",
+   "unit": null,
+   "conditions": "RBTX listing",
+   "sourceId": "s1"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 1.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Specs and the uneven-ground claim come from RBTX and launch press, not from a maker page.",
+   "RBTX does not state which end effector is supplied.",
+   "More than 75 percent of the outer surface is soft material, according to RBTX."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/Z1_Bild%2001-UJu9drCa.png",
+   "pageUrl": "https://rbtx.de/de-DE/components/humanoid/zerith-z1-humanoid-robot-21-dof",
+   "credit": "Zerith (via RBTX)",
+   "alt": "Zerith Z1 humanoid, upper body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Offered for hotels, customer service, education and public service",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://rbtx.de/de-DE/components/humanoid/zerith-z1-humanoid-robot-21-dof",
+   "title": "Zerith Z1 on RBTX",
+   "publisher": "igus SE & Co. KG (RBTX)",
+   "kind": "seller",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s2",
+   "url": "https://cnmra.com/tsinghuas-post-2000-team-launches-start-up-developing-two-humanoid-robots-in-four-months/",
+   "title": "Zerith launches the bipedal Z1",
+   "publisher": "CMRA",
+   "kind": "press",
+   "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://zerith.com/",
+   "title": "Zerith home page",
+   "publisher": "Zerith (Hefei Zerith Robot Co., Ltd.)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-06"
+  }
+ ],
+ "openQuestions": [
+  "Is the Z1 still in production? The maker site now shows only the H1 series and Zerith Data.",
+  "DOF: 21 (RBTX) or 27 (launch press)?",
+  "Which end effector ships with it?"
+ ],
+ "checkedAt": "2026-11-06"
+}

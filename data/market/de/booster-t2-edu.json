@@ -44,15 +44,15 @@
     "contactUrl": "https://www.bipedal.de/Kontakt",
     "email": "info@bipedal.de",
     "phone": "+49 2171 4013600",
-    "priceEur": 30821,
+    "priceEur": 33141,
     "priceBasis": "gross",
     "sourceId": "s4",
-    "note": "T2 Edu (350 TOPS) 30,821 EUR incl. VAT, \"Sofort verfügbar\", delivery about 4 weeks. Edu Gripper 41,531 EUR (https://www.bipedal.de/https/wwwbipedalde/Booster-Robotics-T2-Edu-Gripper) and Edu Dex Hand 47,481 EUR (https://www.bipedal.de/https/wwwbipedalde/Booster-Robotics-T2-Edu-Dex-Hand), both incl. VAT."
+    "note": "33,141 € incl. 19% VAT (was 30,821 € on 02.10.2026), \"Sofort verfügbar\"."
    }
   ],
-  "checkedAt": "2026-10-02",
+  "checkedAt": "2026-11-06",
   "status": "buy_now",
-  "statusNote": "Orderable from Bipedal (Leverkusen, 30,821 EUR incl. VAT, about 4 weeks) and Generation Robots (from 22,500 EUR net, 4 to 6 weeks).",
+  "statusNote": "Orderable from Bipedal (Leverkusen, 33,141 EUR incl. VAT, about 4 weeks) and Generation Robots (from 22,500 EUR net, 4 to 6 weeks).",
   "sourceIds": [
    "s2",
    "s3",
@@ -135,9 +135,9 @@
   {
    "key": "compute",
    "label": "Compute",
-   "value": "High-performance ARM processor",
+   "value": "High-performance ARM processor, 375 TOPS",
    "unit": null,
-   "conditions": "Education version; Generation Robots lists 350 TOPS",
+   "conditions": "Education version, maker figure; Generation Robots and Bipedal list 350 TOPS",
    "sourceId": "s1"
   },
   {
@@ -155,6 +155,14 @@
    "unit": "kg",
    "conditions": "horizontal per-arm load; seller listing for T2 Edu; rated/peak unstated",
    "sourceId": "s4"
+  },
+  {
+   "key": "warranty",
+   "label": "Warranty",
+   "value": "1 year",
+   "unit": null,
+   "conditions": "extended warranty available",
+   "sourceId": "s1"
   }
  ],
  "capabilities": {
@@ -163,7 +171,7 @@
   "tracks": false,
   "levelFloors": true,
   "roughGround": null,
-  "stairs": null,
+  "stairs": true,
   "outdoor": null,
   "arms": 2,
   "hands": "optional",
@@ -172,7 +180,7 @@
   "carryPayloadKg": null,
   "runtimeH": 2,
   "ipRating": null,
-  "sdk": null,
+  "sdk": "High-level and low-level SDK, ROS 2",
   "sourceIds": [
    "s1",
    "s2",
@@ -181,7 +189,8 @@
   "notes": [
    "Base Edu E1 has no hands; grippers (E2) or dexterous hands (E3-1) are separate configurations at a higher price.",
    "The 10 kg payload is for both arms together and depends on arm posture.",
-   "No rough-ground, stair or outdoor claims found for T2."
+   "No rough-ground, stair or outdoor claims found for T2.",
+   "Generation Robots states movement on steps and slopes; the maker makes no stair claim. No rough-ground or outdoor claims found for T2."
   ]
  },
  "images": [
@@ -211,7 +220,7 @@
    "title": "Booster T2 product page",
    "publisher": "Booster Robotics",
    "kind": "manufacturer",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s2",
@@ -219,7 +228,7 @@
    "title": "Booster T2 at Generation Robots (DE shop)",
    "publisher": "Generation Robots",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s3",
@@ -227,7 +236,7 @@
    "title": "Humanoid robots at Bipedal GmbH",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   },
   {
    "id": "s4",
@@ -235,7 +244,7 @@
    "title": "Booster Robotics T2 Edu (350 Tops)",
    "publisher": "Bipedal GmbH",
    "kind": "seller",
-   "checkedAt": "2026-10-02"
+   "checkedAt": "2026-11-06"
   }
  ],
  "openQuestions": [
@@ -243,7 +252,7 @@
   "Which SDK and ROS versions ship with T2?",
   "Can Booster confirm the per-arm load rating and test conditions? Bipedal lists 5 kg horizontal per arm for T2 Edu; rated versus peak is unstated."
  ],
- "checkedAt": "2026-10-02",
+ "checkedAt": "2026-10-21",
  "researchEvidence": [
   {
    "field": "arm_payload_kg",
@@ -252,6 +261,14 @@
    "quote": "Traglast (Payload): 5 kg horizontale Nutzlast pro einzelnem Arm",
    "basis": "horizontal per-arm load; seller listing for T2 Edu; rated/peak unstated",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s2",
+   "quote": "Dynamische Fortbewegung: Geschwindigkeit bis zu 2 m/s, maximales Gelenkdrehmoment von 140 Nm sowie Bewegung auf Stufen und Steigungen. [Dynamic locomotion: speed up to 2 m/s, max joint torque 140 Nm and movement on steps and slopes.]",
+   "basis": "seller claim on the one Generation Robots T2 listing that covers all Edu and Pro versions (Edu E1 to Pro P3-3); maker pages give no stair claim",
+   "checkedAt": "2026-10-21"
   }
  ]
 }
