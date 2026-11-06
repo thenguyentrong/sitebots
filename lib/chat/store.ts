@@ -87,8 +87,12 @@ const allKey = (now: Date) => 'chat-everyone-' + now.toISOString().slice(0, 10);
 
 /** Counted in the runtime cache and gone after two days, so counting never touches stored chats. A
  *  cache that fails must not close the chat: the monthly limit in the Claude Console is the real stop. */
-async function counted(key: string): Promise<number> {
+export async function counted(key: string): Promise<number> {
   return Number(await getCache().get(key).catch(() => 0)) || 0;
+}
+
+export async function setCount(key: string, value: number, ttl: number): Promise<void> {
+  await getCache().set(key, value, { ttl }).catch((error) => console.warn('count not saved', error));
 }
 
 export async function messagesToday(visitor: string, now = new Date()): Promise<{ visitor: number; everyone: number }> {
@@ -97,11 +101,8 @@ export async function messagesToday(visitor: string, now = new Date()): Promise<
 }
 
 export async function countMessage(visitor: string, today: { visitor: number; everyone: number }, now = new Date()): Promise<void> {
-  const ttl = 2 * 24 * 3600;
-  await Promise.all([
-    getCache().set(visitor, today.visitor + 1, { ttl }),
-    getCache().set(allKey(now), today.everyone + 1, { ttl }),
-  ]).catch((error) => console.warn('chat count not saved', error));
+  const twoDays = 2 * 24 * 3600;
+  await Promise.all([setCount(visitor, today.visitor + 1, twoDays), setCount(allKey(now), today.everyone + 1, twoDays)]);
 }
 
 export function newChat(id: string, firstMessage: string, now = new Date()): Chat {

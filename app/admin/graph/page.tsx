@@ -11,9 +11,9 @@ export const dynamic = 'force-dynamic';
 export const metadata: Metadata = { title: 'Knowledge graph', ...PRIVATE_METADATA };
 
 /** The owner's map of what the adviser knows. Visitors never see it: on the live site it sits behind the
- *  chat password, and on the owner's own machine it just opens. */
+ *  admin password, and on the owner's own machine it just opens. */
 export default async function GraphPage() {
   const store = await cookies();
-  if (process.env.NODE_ENV === 'production' && !isAdmin(store.get(ADMIN_COOKIE)?.value)) redirect('/admin/chats');
+  if (process.env.NODE_ENV === 'production' && !isAdmin(store.get(ADMIN_COOKIE)?.value)) redirect('/admin');
   return <GraphExplorer view={graphView(loadGraph())} />;
 }
