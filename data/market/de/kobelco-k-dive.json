@@ -1,0 +1,142 @@
+{
+ "schemaVersion": 1,
+ "id": "kobelco-k-dive",
+ "maker": "Kobelco Construction Machinery",
+ "makerCountry": "JP",
+ "model": "K-DIVE",
+ "variant": "remote operation cockpit for Kobelco excavators",
+ "name": "Kobelco K-DIVE remote operation system",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation"
+ ],
+ "officialUrl": null,
+ "summary": "Remote operation system from Kobelco: an operator in a dedicated cockpit far from the site runs hydraulic excavators, with machine operating data used to improve the site. Offered as a service in Japan; Kobelco Europe is bringing it to Europe with Leica Geosystems and Xwatch and will test it at debris removal sites in Ukraine.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No offer for German or EU customers found. Kobelco Construction Machinery Europe B.V. announced a K-DIVE partnership with Leica Geosystems and Xwatch for Europe in March 2025 with live demonstrations planned at bauma 2025, and plans to install machines and K-DIVE cockpits in Ukraine from October 2026 under an MoU with UNDP. In Japan the system is offered as a service.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "excavators operated from a distant location via a dedicated cockpit",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "It enables excavators to be controlled from a distant location via a specialised cockpit."
+  },
+  {
+   "key": "europe_add_ons",
+   "label": "European version add-ons",
+   "value": "Leica 3D machine control with semi-automatic functions; Xwatch 3D avoidance zones that limit height, depth and slew",
+   "unit": null,
+   "conditions": "partnership announced March 2025",
+   "sourceId": "s2",
+   "quote": "The system automatically controls height, depth, and slew movements, preventing collisions and ensuring safer remote operations."
+  },
+  {
+   "key": "service_japan",
+   "label": "Offer in Japan",
+   "value": "remote operation and operating-data site improvement solution, currently offered as a service; switching between remote and autonomous operation not yet included",
+   "unit": null,
+   "conditions": "Ando Hazama / Kobelco release, December 2023",
+   "sourceId": "s3",
+   "quote": "重機の遠隔操作と自動運転の切替機能、自動運転の内容設定を遠隔操作で行える機能は、現在サービス提供中の「K-DIVE(R)」では提供していません。"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Remote operation system; the host machines are Kobelco hydraulic excavators (crawler tracks assumed; the sources do not state the undercarriage).",
+   "An autonomous loading mode was tested in 2023 but is not part of the service offered then.",
+   "The cockpit has an emergency stop used when people approach the machine in mixed areas (Ando Hazama test rules)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "From one cockpit, two excavators loaded soil into dump trucks, switching between remote operation and autonomous loading",
+   "stage": "pilot",
+   "where": "Japan – Ando Hazama site in the MLIT field verification of automated and remote construction machinery",
+   "date": "2023-12",
+   "sourceId": "s3",
+   "note": "Autonomous mode was a development feature; travel and preparation were remote, repetitive loading was autonomous."
+  },
+  {
+   "taskIds": [],
+   "task": "Remote-operated excavators for debris removal, with K-DIVE cockpits installed locally and local operators trained",
+   "stage": "claim",
+   "where": "Ukraine – with UNDP",
+   "date": "2026-10",
+   "sourceId": "s1",
+   "note": "Field testing planned from October 2026 under an MoU with UNDP; not yet confirmed as started."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.heavyquipmag.com/2026/06/18/kobelco-takes-remote-controlled-excavation-to-ukraine-as-debris-removal-safety-comes-into-focus/",
+   "title": "Kobelco Takes Remote-Controlled Excavation to Ukraine as Debris Removal Safety Comes Into Focus (18 June 2026)",
+   "publisher": "HeavyQuipMag",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.earthmoversmagazine.co.uk/news/view,kobelco-leica-geosystems-and-xwatch-collaborate-to-shape-the-future-of-remote-excavation-with-kdive-in-europe_7283.htm",
+   "title": "Kobelco, Leica Geosystems and Xwatch collaborate to shape the future of remote excavation with K-DIVE in Europe (31 March 2025)",
+   "publisher": "Earthmovers Magazine",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://pc.watch.impress.co.jp/docs/release/atpress/1554123.html",
+   "title": "重機の遠隔操作システムと自動運転技術の複合による作業現場の安全運用を検証 (Ando Hazama and Kobelco press release, 13 December 2023)",
+   "publisher": "PC Watch (@Press release)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Can European customers order K-DIVE yet, through Kobelco Construction Machinery Europe or its dealers, and at what price?",
+  "Which Kobelco excavator models support K-DIVE, and what latency and range does it achieve?",
+  "Has the Ukraine field test started as planned in October 2026?"
+ ],
+ "checkedAt": "2026-11-18"
+}

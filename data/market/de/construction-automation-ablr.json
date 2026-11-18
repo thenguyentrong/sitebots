@@ -1,0 +1,120 @@
+{
+ "schemaVersion": 1,
+ "id": "construction-automation-ablr",
+ "maker": "Construction Automation Ltd",
+ "makerCountry": "GB",
+ "model": "ABLR",
+ "variant": "Automated Bricklaying Robot",
+ "name": "Construction Automation ABLR",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "bricklaying",
+  "site_masonry/masonry-wall-laying"
+ ],
+ "officialUrl": "https://www.constructionautomation.co.uk/",
+ "summary": "UK on-site bricklaying robot that lays standard bricks, blocks and mortar for volume housebuilders; NHBC-approved and patented, shown laying bricks on site, not yet on general sale.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not on sale: the UK maker says it is partnering with volume housebuilders, research institutions and supply-chain firms 'to bring the ABLR to market' and offers demonstrations. No German or EU route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "materials",
+   "label": "Materials",
+   "value": "standard bricks, blocks and mortar; no specialist materials",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The Automated Bricklaying Robot integrates standard bricks, blocks and mortar — the same materials used on every UK site today."
+  },
+  {
+   "key": "approval",
+   "label": "Approval",
+   "value": "NHBC approved; UK patented, patents filed in 4 territories",
+   "unit": null,
+   "conditions": "NHBC = UK National House Building Council",
+   "sourceId": "s1",
+   "quote": "NHBC Approved · UK Patented"
+  },
+  {
+   "key": "team",
+   "label": "Team",
+   "value": "seven full-time staff",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "A seven-strong team working full-time on the ABLR"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Works on the building site; running gear, reach and laying rate are not published.",
+   "Offers real-time diagnostics, remote support and BIM integration (maker)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_masonry/masonry-wall-laying"
+   ],
+   "task": "Lays standard bricks and mortar on a construction site (maker video 'The ABLR in action')",
+   "stage": "demo",
+   "where": "United Kingdom",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Site and date not stated."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.constructionautomation.co.uk/",
+   "title": "Construction Automation Ltd: the Automated Bricklaying Robot (ABLR)",
+   "publisher": "Construction Automation Ltd",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.constructionautomation.co.uk/about",
+   "title": "About us",
+   "publisher": "Construction Automation Ltd",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Laying rate, reach, weight and how the robot moves along the wall.",
+  "When will the ABLR be sold or offered as a service, and outside the UK?"
+ ],
+ "checkedAt": "2026-11-18"
+}

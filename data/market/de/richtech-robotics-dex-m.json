@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "richtech-robotics-dex-m",
+ "maker": "Richtech Robotics",
+ "makerCountry": "US",
+ "model": "Dex",
+ "variant": "DEX-M (mobile, wheeled chassis)",
+ "name": "Richtech Robotics Dex (DEX-M)",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.richtechrobotics.com/solutions/dex",
+ "summary": "A wheeled two-arm humanoid for repetitive workstation tasks in manufacturing, logistics and warehousing, with 6-DOF arms carrying 11 lb each, swappable hands or grippers and a lifting torso on a 1.2 m/s chassis.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Pre-launch: Richtech (Las Vegas, Nasdaq: RR) offers detailed specs, roadmap updates and demo opportunities 'as we get closer to launch' via a contact form. No German or EU seller or price found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "size_in",
+   "label": "Size (L x W x H)",
+   "value": "30.1 x 28.1 x 54.3",
+   "unit": "in",
+   "conditions": "DEX-M",
+   "sourceId": "s1",
+   "quote": "30.1 × 28.1 × 54.3 in"
+  },
+  {
+   "key": "weight_lb",
+   "label": "Net weight",
+   "value": 198,
+   "unit": "lb",
+   "conditions": "DEX-M",
+   "sourceId": "s1",
+   "quote": "Net weight 88.1 lb 198 lb"
+  },
+  {
+   "key": "arm_payload_lb",
+   "label": "Payload per arm",
+   "value": 11,
+   "unit": "lb",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Payload per arm 11 lb 11 lb"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Degrees of freedom per arm 6 6"
+  },
+  {
+   "key": "wingspan_in",
+   "label": "Wingspan",
+   "value": 56,
+   "unit": "in",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Wingspan 56 in"
+  },
+  {
+   "key": "lift_travel_in",
+   "label": "Lifting distance",
+   "value": 35.4,
+   "unit": "in",
+   "conditions": "DEX-M",
+   "sourceId": "s1",
+   "quote": "Lifting distance — 35.4 in"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": 1.2,
+   "unit": "m/s",
+   "conditions": "adjustable, two-wheel differential drive",
+   "sourceId": "s1",
+   "quote": "Travel speed — 1.2 m/s (2.7 mph), adjustable"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "24 V 30 Ah",
+   "unit": null,
+   "conditions": "full charge 3 h",
+   "sourceId": "s1",
+   "quote": "24 V 30 Ah battery Full charge time — 3 hrs"
+  },
+  {
+   "key": "end_effectors",
+   "label": "End effectors",
+   "value": "grippers, dexterous hands, vacuum grippers",
+   "unit": null,
+   "conditions": "modular",
+   "sourceId": "s1",
+   "quote": "End effectors Grippers, dexterous hands, vacuum grippers"
+  },
+  {
+   "key": "operating_temp_f",
+   "label": "Operating temperature",
+   "value": "32-113",
+   "unit": "°F",
+   "conditions": "25-85% RH",
+   "sourceId": "s1",
+   "quote": "Operating temperature / humidity 32–113 °F / 25–85% RH"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "4 depth cameras; chassis LiDAR, depth camera, RGB camera, IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "4 depth cameras (head, front, 2 on the arms)"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 4.99,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arm payload 11 lb per arm, converted to 4.99 kg.",
+   "The page gives a 3 h full-charge time, not a runtime.",
+   "A fixed desktop version, DEX-F, has the same arms but no chassis and is not covered by this record."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Repetitive workstation tasks, parts handling in manufacturing, logistics and warehousing",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker describes Dex as 'a first look at our humanoid robot for industrial work'; no deployment named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.richtechrobotics.com/solutions/dex",
+   "title": "Dex",
+   "publisher": "Richtech Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Launch date, price and runtime are not published.",
+  "No European distributor known."
+ ],
+ "checkedAt": "2026-11-18"
+}

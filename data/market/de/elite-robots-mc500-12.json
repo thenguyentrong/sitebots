@@ -1,0 +1,193 @@
+{
+ "schemaVersion": 1,
+ "id": "elite-robots-mc500-12",
+ "maker": "Elite Robots",
+ "makerCountry": "CN",
+ "model": "MC500-12",
+ "variant": null,
+ "name": "Elite Robots MC500-12 (M-Bot series)",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.eliterobots.com/mission-products/mc500-12",
+ "summary": "An omnidirectional mobile manipulator from Elite Robots' M-Bot series: a Mecanum-wheel AMR with 300 kg platform payload carrying a 12 kg collaborative arm (1304 mm working radius) with 2.5D vision for ±0.2 mm positioning at the workstation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Elite Robots runs its EMEA Operations Center in Geisenfeld (Bavaria) and lists authorised partners in Germany; the MC500-12 page has a \"Get quote\" form. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Elite Robots EMEA Operations Center",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.eliterobots.com/mission-products/mc500-12",
+    "contactUrl": "https://www.eliterobots.com/worldwide",
+    "email": null,
+    "phone": "+49 8452 7330091",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Address on the maker's page: \"EMEA Operations Center Geisenfeld BY, Germany Münchener Str. 53 85290\"; quotes through the product page form or a local partner."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 300,
+   "unit": "kg",
+   "conditions": "net weight 400 kg",
+   "sourceId": "s1",
+   "quote": "Net Weight/Payload400 KG | 300 KG"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 12,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Arm Payload12 KG"
+  },
+  {
+   "key": "reach_mm",
+   "label": "Working radius",
+   "value": 1304,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Working Radius1304 mm"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1080 x 660 x 850",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dimensions1080×660×850 mm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximum Speed1.5 m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 8,
+   "unit": "h",
+   "conditions": "2 h charging time; battery swap possible",
+   "sourceId": "s1",
+   "quote": "8 hUltra-long endurance2 hCharging time"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V / 60 Ah; rapid battery swap, manual or automatic charging",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery Capacity48V/60AhCharging MethodRapid Battery Swap, Manual/Automatic Charging"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Integrated positioning accuracy (2.5D vision)",
+   "value": 0.2,
+   "unit": "mm",
+   "conditions": "±; navigation alone ±10 mm without reflectors, ±5 mm with reflectors",
+   "sourceId": "s1",
+   "quote": "Integrated Positioning Accuracy (2.5D)±0.2 mm"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "Four-wheel Mecanum, omnidirectional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Its four-wheel Mecanum drive enables flexible omnidirectional movement"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 12,
+  "carryPayloadKg": 300,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Gripper or tool not named on the page; chosen per application.",
+   "Fleet control through Elite's transport control system (M-ATCS) with automatic charging station and battery swap cart as options."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/6606a41edd35aa51454cc91c/6ab69cec126e7cb91d5d6d7f_MC500-12.avif",
+   "pageUrl": "https://www.eliterobots.com/mission-products/mc500-12",
+   "credit": "Elite Robots",
+   "alt": "Elite Robots MC500-12 mobile manipulator with cobot arm on a Mecanum AMR",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for moving between workstations and doing manipulation tasks there (machine tending, pick and place)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.eliterobots.com/mission-products/mc500-12",
+   "title": "MC500-12",
+   "publisher": "Elite Robots",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.eliterobots.com/worldwide",
+   "title": "Worldwide",
+   "publisher": "Elite Robots",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price not published.",
+  "Which German partner sells and installs the M-Bot series.",
+  "IP rating and floor requirements not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

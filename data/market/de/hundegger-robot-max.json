@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "hundegger-robot-max",
+ "maker": "Hans Hundegger AG",
+ "makerCountry": "DE",
+ "model": "ROBOT-Max",
+ "variant": "ROBOT-Max 1300",
+ "name": "Hundegger ROBOT-Max",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "prefab_timber/cnc-joinery-cutting"
+ ],
+ "officialUrl": "https://www.hundegger.com/en/machines/joinery-machines/robot-max",
+ "summary": "Large mass-timber joinery machine: a 6-axis robot unit with a 32-tool changer and an overhead 5-axis saw machine glulam beams and columns up to 610 × 1,300 mm on all six sides in one pass. Built by Hundegger in Germany as the big brother of the ROBOT-Drive.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker; sold on request from Hawangen (Allgäu). No price published. Hundegger USA says the machine was developed for the North American mass-timber market, but the German product page offers it as a regular machine.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Hans Hundegger AG",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.hundegger.com/en/machines/joinery-machines/robot-max",
+    "contactUrl": "https://www.hundegger.com/en/contact",
+    "email": "info.de@hundegger.com",
+    "phone": "+49 8332 9233 0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Kemptener Straße 1, 87749 Hawangen, Germany. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "cross_section_mm",
+   "label": "Timber cross-section",
+   "value": "20 × 60 to 610 × 1,300",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Cross sections from 20 x 60 mm up to 610 x 1,300 mm"
+  },
+  {
+   "key": "max_member_north_america",
+   "label": "Largest member (Hundegger USA)",
+   "value": "24 × 48 in, up to 40 ft long",
+   "unit": null,
+   "conditions": "Hundegger USA figure for SmartLam",
+   "sourceId": "s3",
+   "quote": "The ROBOT-Max can process beams and columns as large as 24\" x 48\" and up to 40' long."
+  },
+  {
+   "key": "spindle_kw",
+   "label": "Robot spindle",
+   "value": 29,
+   "unit": "kW",
+   "conditions": "liquid-cooled, 0 to 15,000 rpm, standard",
+   "sourceId": "s1",
+   "quote": "The Hundegger ROBOT MAX comes with a standard 29 kW - liquid cooled - variable speed from 0 to 15000 rpm"
+  },
+  {
+   "key": "saw_unit_kw",
+   "label": "5-axis saw/slot/marking unit",
+   "value": 13,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The overhead 5-axis saw/slot/marking unit with a drive rating of 13 kW further increases the throughput of the ROBOT-Max"
+  },
+  {
+   "key": "tool_slots",
+   "label": "Tools in the changer",
+   "value": 32,
+   "unit": "tools",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "6-axis technology = utilization of 32 different tools"
+  },
+  {
+   "key": "sides_per_pass",
+   "label": "Sides machined per pass",
+   "value": 6,
+   "unit": "sides",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "6-axis technology = processing on 6 sides in a single pass"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Stationary machine; can stand on a base on the concrete floor with the chip disposal in a pit below the processing zone.",
+   "Automatic infeed separates and feeds members of mixed cross-sections; hydraulic lift table upstream.",
+   "Runs on Hundegger's CAMBIUM software."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.hundegger.com/fileadmin/_processed_/4/6/csm_Gesamtansicht_Max_8104384_BLAU_169fab479b.jpg",
+   "pageUrl": "https://www.hundegger.com/en/machines/joinery-machines/robot-max",
+   "credit": "Hans Hundegger AG",
+   "alt": "Hundegger ROBOT-Max joinery machine in a timber hall with a large glulam beam on the outfeed conveyor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "prefab_timber/cnc-joinery-cutting"
+   ],
+   "task": "Ordered for glulam beam and column production at two new mass-timber plants",
+   "stage": "claim",
+   "where": "SmartLam North America, Dothan (Alabama) and Columbia Falls (Montana), USA",
+   "date": "2023-02",
+   "sourceId": "s3",
+   "note": "Delivery schedule announcement by Hundegger USA; the Dothan glulam plant was expected to be fully operational by October 2024."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.hundegger.com/en/machines/joinery-machines/robot-max",
+   "title": "Joinery machine ROBOT-Max",
+   "publisher": "Hans Hundegger AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.hundegger.com/en/contact",
+   "title": "Contact (headquarters Hawangen and branch offices)",
+   "publisher": "Hans Hundegger AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://informedinfrastructure.com/post/hundegger-usa-announces-equipment-delivery-schedule-for-smartlam-north-america-facilities",
+   "title": "Hundegger USA Announces Equipment Delivery Schedule for SmartLam North America Facilities (9 February 2023)",
+   "publisher": "Informed Infrastructure",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price found.",
+  "Are the SmartLam ROBOT-Max machines running? Only the 2023 delivery plan was read.",
+  "Any ROBOT-Max installed in Germany or the EU? None was found."
+ ],
+ "checkedAt": "2026-11-18"
+}

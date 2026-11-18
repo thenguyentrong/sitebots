@@ -1,0 +1,263 @@
+{
+ "schemaVersion": 1,
+ "id": "randek-zerolabor-sheathing",
+ "maker": "Randek AB",
+ "makerCountry": "SE",
+ "model": "ZeroLabor Robotic System",
+ "variant": "sheathing cell R2 to R5 (2 to 5 robots)",
+ "name": "Randek ZeroLabor sheathing cell",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "prefab_timber/board-handling-osb-gypsum",
+  "prefab_timber/nailing-sheathing",
+  "prefab_timber/panel-sawing-routing",
+  "prefab_timber/multilayer-sheathing-gluing"
+ ],
+ "officialUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+ "summary": "Robot cell with two to five six-axis industrial robots on rails that lay OSB, gypsum and other boards on timber or light-gauge-steel wall frames, staple, screw or nail them and mill the openings, in one or several layers, straight from CAD data. Randek's most proven ZeroLabor cell, sold since 2017.",
+ "launched": "2017",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by Randek (Falkenberg, Sweden) after a pre-study; Randek lists a German branch and names Wolfgang Horn of Horn Hausbau Technologie as its representative for Germany, Austria and Switzerland. No price published.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Set per project in a pre-study (maker)",
+  "sellers": [
+   {
+    "name": "Randek AB",
+    "country": "SE",
+    "role": "manufacturer",
+    "productUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+    "contactUrl": "https://www.randek.com/contact",
+    "email": "sales@randek.com",
+    "phone": "+46 346 55 700",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Vagnsvägen 1, SE-311 32 Falkenberg, Sweden. Every cell starts with a pre-study; Factory Acceptance Test before shipping, installation and operator training by Randek staff."
+   },
+   {
+    "name": "Horn Hausbau Technologie (Wolfgang Horn)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": null,
+    "contactUrl": "https://www.randek.com/de/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Named by Randek as its representative for Germany, Austria and Switzerland; no address or phone given on the page."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "robots",
+   "label": "Robots per cell",
+   "value": "2 to 5",
+   "unit": "robots",
+   "conditions": "R2 to R5; industrial 6-axis robots on rails",
+   "sourceId": "s1",
+   "quote": "RobotsIndustrial 6-axis robots on rails (2–5 depending on configuration)"
+  },
+  {
+   "key": "fastening",
+   "label": "Fastening",
+   "value": "staples, screws or nails",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Fastening toolsStaples, screws or nails."
+  },
+  {
+   "key": "milling",
+   "label": "Milling",
+   "value": "formats sheets and mills openings for doors, windows, electrical boxes and ventilation",
+   "unit": null,
+   "conditions": "one milling tool per robot, optional four-position cutter changer; saw tool available",
+   "sourceId": "s1",
+   "quote": "to format the sheets and mill openings for doors, windows, electrical boxes and ventilation"
+  },
+  {
+   "key": "sheet_layers",
+   "label": "Sheet layers",
+   "value": "1, 2 or 3",
+   "unit": "layers",
+   "conditions": "LIGNA product description; Kodumaja runs walls with 4 layers on one side",
+   "sourceId": "s2",
+   "quote": "The system can handle 1, 2 or 3 layers of sheets"
+  },
+  {
+   "key": "board_types",
+   "label": "Board types",
+   "value": "OSB, gypsum, gypsum fibre and more",
+   "unit": null,
+   "conditions": "tools and grippers set up per material",
+   "sourceId": "s1",
+   "quote": "OSB, gypsum, gypsum fibre and more"
+  },
+  {
+   "key": "other_functions",
+   "label": "Other functions",
+   "value": "inkjet marking, gluing, waste sorting, stud straightening",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Marking of component using inkjetGluing"
+  },
+  {
+   "key": "frame_material",
+   "label": "Frame material",
+   "value": "timber or light gauge steel",
+   "unit": null,
+   "conditions": "one AutoWall line per material",
+   "sourceId": "s1",
+   "quote": "ZeroLabor is integrated into an AutoWall for timber or an AutoWall for light gauge steel"
+  },
+  {
+   "key": "installed_systems",
+   "label": "ZeroLabor systems installed",
+   "value": "50+",
+   "unit": "systems",
+   "conditions": "all ZeroLabor cell types, worldwide",
+   "sourceId": "s1",
+   "quote": "50+ZeroLabor systems installed worldwide"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 4,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "arms is capped at 4 by the schema; the cell has 2 (R2) to 5 (R5) robots.",
+   "Robots change between vacuum sheet grippers, milling, fastening and recycling tools on their own via a tool changer.",
+   "Can run inside a Randek AutoWall line, inside an existing line of another make, or stand-alone (maker).",
+   "Robot payload and reach are set per project and not published."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "prefab_timber/board-handling-osb-gypsum",
+    "prefab_timber/nailing-sheathing"
+   ],
+   "task": "Produces wall panels for apartment blocks and care homes, some with four layers of sheets on one side",
+   "stage": "deployment",
+   "where": "Kodumaja Element OÜ factory, Estonia",
+   "date": "2023-03",
+   "sourceId": "s5",
+   "note": "KUKA case study; Randek built the line with KUKA robots."
+  },
+  {
+   "taskIds": [
+    "prefab_timber/nailing-sheathing"
+   ],
+   "task": "ZeroLabor robotic wall line on an AutoWall at a component supplier",
+   "stage": "deployment",
+   "where": "Riverbend Building Supply, Manitoba, Canada",
+   "date": "2019",
+   "sourceId": "s6",
+   "note": "Customer since 2019; the reference does not say which ZeroLabor cell types are installed."
+  },
+  {
+   "taskIds": [
+    "prefab_timber/nailing-sheathing"
+   ],
+   "task": "Wall, floor and roof cassettes for volumetric modules on an AutoWall line with a ZeroLabor robotic cell",
+   "stage": "deployment",
+   "where": "Modscape + Modbotics, Essendon Fields, Victoria, Australia",
+   "date": null,
+   "sourceId": "s7",
+   "note": "Reference does not say which ZeroLabor cell; an additional Randek robot cell is part of an expansion."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+   "title": "ZeroLabor: the robots that build the building",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.ligna.de/product/zerolabor-roboter-system/441515/Z393864",
+   "title": "ZeroLabor Robotic System (exhibitor product page)",
+   "publisher": "LIGNA (Deutsche Messe)",
+   "kind": "trade_fair",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.randek.com/contact",
+   "title": "Contact Randek",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.randek.com/de/contact",
+   "title": "Kontakt (Randek in Deutschland, Österreich und der Schweiz)",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.kuka.com/en-se/industries/solutions-database/2023/03/kuka-nordic-sp-randek_kodumaja",
+   "title": "Customized buildings produced by an automated robotic production line (Randek and Kodumaja)",
+   "publisher": "KUKA",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.randek.com/references/riverbend",
+   "title": "Reference: Riverbend Building Supply",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.randek.com/references/modscape-modbotics",
+   "title": "Reference: Modscape + Modbotics",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price for any R2 to R5 configuration.",
+  "Address and phone of the German representative (Horn Hausbau Technologie) are not on Randek's page.",
+  "Any ZeroLabor cell running in Germany? No German reference was found."
+ ],
+ "checkedAt": "2026-11-18"
+}

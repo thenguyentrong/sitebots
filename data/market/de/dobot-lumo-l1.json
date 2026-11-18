@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 19900,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s4",
+   "note": "Terra Robotics list price (UVP) for the Standard version, excl. VAT; shown as not available."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -44,12 +50,13 @@
     "note": null
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-18",
   "status": "quote",
   "statusNote": "Terra Robotics lists LUMO L1 (Standard 19,900 EUR net, Max 39,900 EUR net) but both are shown not available; ask Terra Robotics or DOBOT Europe GmbH.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s4"
   ]
  },
  "specs": [
@@ -210,6 +217,14 @@
    "publisher": "Dobot",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://terra-robotics.de/products/dobot-lumo-l1-humanoider-roboter?variant=50353060807013",
+   "title": "Terra Robotics (Terra Connect GmbH)",
+   "publisher": "Terra Robotics (Terra Connect GmbH)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

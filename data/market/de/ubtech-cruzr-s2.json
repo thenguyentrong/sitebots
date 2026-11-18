@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 105680.32,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "Terra Robotics (Terra Connect GmbH): price in the shop's product data; the product page itself says \"Preis anfragen\". VAT not stated."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -31,12 +37,13 @@
     "note": "Listing text describes 3-DOF gesture arms and an 11.6\" display, unlike UBTECH's Cruzr S2; metadata price EUR 103,200, basis not stated, not displayed. Shop data marks the item out of stock."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-18",
   "status": "quote",
-  "statusNote": "Terra Robotics lists a \"Cruzr S2\" with charging station, price on request. Its use-case text matches the 15 kg industrial Cruzr S2, but its spec table still describes a 1.3 m, 45 kg reception robot, so confirm the exact model with Terra.",
+  "statusNote": "Terra Robotics lists a \"Cruzr S2\" with charging station; the page asks for a price request, but Terra's shop data holds 105,680.32 €. Its use-case text matches the 15 kg industrial Cruzr S2, but its spec table still describes a 1.3 m, 45 kg reception robot, so confirm the exact model with Terra.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s4"
   ]
  },
  "specs": [
@@ -172,6 +179,14 @@
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://terra-robotics.de/products/ubtech-cruzr-s2.js",
+   "title": "Terra Robotics (Terra Connect GmbH)",
+   "publisher": "Terra Robotics (Terra Connect GmbH)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

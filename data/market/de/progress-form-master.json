@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "progress-form-master",
+ "maker": "Progress Maschinen & Automation AG (Progress Group)",
+ "makerCountry": "IT",
+ "model": "Form Master",
+ "variant": null,
+ "name": "Progress Form Master shuttering and deshuttering robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "precast_concrete/shuttering-placement",
+  "precast_concrete/embedded-parts-placement"
+ ],
+ "officialUrl": "https://www.progress-m.com/en/products/shuttering-robot",
+ "summary": "Robot system for precast pallet plants: a storage robot picks shutters from the shutter store by CAD data, the shuttering robot sets them on the pallet and activates their magnets, and the deshuttering robot scans, lifts and returns them for cleaning after curing. Made by Progress Maschinen & Automation in Brixen, South Tyrol (Italy), with one to three robots.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by the Progress Group from Brixen (Italy, EU); a customised Progress shuttering and deshuttering robot runs at Schwörer Bausysteme in Haigerloch-Stetten, Germany. No price published.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Progress Maschinen & Automation AG",
+    "country": "IT",
+    "role": "manufacturer",
+    "productUrl": "https://www.progress-m.com/en/products/shuttering-robot",
+    "contactUrl": "https://www.progress-m.com/en/contact/contact",
+    "email": "info@progress-m.com",
+    "phone": "+39 0472 979 100",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Julius-Durst-Straße 100, I-39042 Brixen, Italy. Enquiry form on the website. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "robots",
+   "label": "Robots per system",
+   "value": "1 to 3",
+   "unit": "robots",
+   "conditions": "scaled to production output",
+   "sourceId": "s1",
+   "quote": "To increase production output, the entire system can be equipped with one, two or three robots."
+  },
+  {
+   "key": "storage_robot",
+   "label": "Shutter supply",
+   "value": "storage robot picks shutters by CAD data from the ebos control system",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "A storage robot selects the required shutters from the shuttering storage as directed by the CAD data transmitted by the ebos® control system."
+  },
+  {
+   "key": "deshuttering",
+   "label": "Deshuttering",
+   "value": "scans, identifies and picks up the shutters automatically",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "On removal of the elements the deshuttering robot scans the shutters, identifies them and picks them up fully automatically."
+  },
+  {
+   "key": "element_types",
+   "label": "Element types",
+   "value": "slab elements and double walls; solid slabs, solid walls and sandwich elements; combined plants",
+   "unit": null,
+   "conditions": "three delivery versions",
+   "sourceId": "s1",
+   "quote": "for the production of solid slabs, solid walls and sandwich elements"
+  },
+  {
+   "key": "centimetre_shuttering",
+   "label": "Centimetre shuttering",
+   "value": "patented system for shuttering in 1 cm steps without filler pieces",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Accurate shuttering to the centimetre without using filling elements such as polystyrene becomes reality with this patented shuttering system."
+  },
+  {
+   "key": "magnets",
+   "label": "Magnets",
+   "value": "activates the integral magnets in the shutters",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "then activates the integral magnets in the shutters"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 3,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Gantry (portal) robots over the pallet line; arms counts the largest configuration of three robots.",
+   "Can be fitted into existing plants; pallet cleaning device fixed or mobile.",
+   "Progress also offers a Mesh Spacer robot that places concrete-cover spacers on the pallet (not included here)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.progress-m.com/fileadmin/_processed_/e/7/csm_Schalungsroboter_new_3322f3e650.jpg",
+   "pageUrl": "https://www.progress-m.com/en/products/shuttering-robot",
+   "credit": "Progress Group",
+   "alt": "Yellow Progress Group shuttering robot gantry with a vertical gripper axis over a steel pallet with placed shutters",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "precast_concrete/shuttering-placement",
+    "precast_concrete/embedded-parts-placement"
+   ],
+   "task": "Customised shuttering robot positions shuttering elements, magnets and mounting sleeves on the pallet; a deshuttering robot removes the shutters before pallet cleaning",
+   "stage": "deployment",
+   "where": "Schwörer Bausysteme GmbH, Haigerloch-Stetten, Germany",
+   "date": "2021-05",
+   "sourceId": "s3",
+   "note": "BFT International 05/2021; the article does not use the name Form Master. The article says the pallet cleaning device of Ebawe is part of the system."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.progress-m.com/en/products/shuttering-robot",
+   "title": "Shuttering & deshuttering robot (Form Master)",
+   "publisher": "Progress Maschinen & Automation AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.progress-m.com/en/contact/contact",
+   "title": "Contact",
+   "publisher": "Progress Maschinen & Automation AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bft-international.com/en/artikel/bft_Schwoerer_Bausysteme_relies_on_modernization_in_the_precast_plant-3641665.html",
+   "title": "Schwörer Bausysteme relies on modernization in the precast plant (BFT 05/2021)",
+   "publisher": "BFT International",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price, speed or positioning accuracy found.",
+  "Which Progress Group company quotes German customers (the Ebawe brand also appears in the Schwörer system)?"
+ ],
+ "checkedAt": "2026-11-18"
+}

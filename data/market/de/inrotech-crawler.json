@@ -1,0 +1,140 @@
+{
+ "schemaVersion": 1,
+ "id": "inrotech-crawler",
+ "maker": "Inrotech A/S",
+ "makerCountry": "DK",
+ "model": "Inrotech-Crawler",
+ "variant": null,
+ "name": "Inrotech-Crawler",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "welding"
+ ],
+ "officialUrl": "https://www.inrotech.com/inrotech-crawler/",
+ "summary": "Mobile welding robot that runs on flexible titanium rails magnetically attached to large steel structures and does adaptive multipass welds in any position; for pipes, tanks, ship hulls, bridges and other big structures in workshops or on construction sites.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Danish (EU) maker, now with Lincoln Electric branding on its site, sells on request (brochure and robot demo requests). No German dealer or public price found; a German customer case (Liebherr-Rostock) is listed.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Inrotech A/S",
+    "country": "DK",
+    "role": "manufacturer",
+    "productUrl": "https://www.inrotech.com/inrotech-crawler/",
+    "contactUrl": "https://www.inrotech.com/contact/",
+    "email": "info@inrotech.com",
+    "phone": "+45 66 16 41 00",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "C. F. Tietgens Boulevard 26, 5220 Odense SØ, Denmark. Brochure and demo requests on the product page."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "rails",
+   "label": "Track",
+   "value": "flexible titanium rails attached by magnets",
+   "unit": null,
+   "conditions": "flat, curved, vertical or overhead surfaces",
+   "sourceId": "s1",
+   "quote": "The Inrotech-Crawler® travels on flexible titanium rails, magnetically attaching to large steel structures—flat, curved, vertical, overhead"
+  },
+  {
+   "key": "min_radius_m",
+   "label": "Smallest surface radius",
+   "value": 1,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The Inrotech-Crawler can be positioned on flat or curved surfaces (down to 1 m. radius)."
+  },
+  {
+   "key": "positions",
+   "label": "Welding positions",
+   "value": "PA (1G), PC (2G), PE overhead (4G), PF vertical up (3G, 3F, 5G)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "PF - VERTICAL UP POSITION AWS: 3G, 3F, 5G"
+  },
+  {
+   "key": "weld_planning",
+   "label": "Weld planning",
+   "value": "line scanner finds the groove and calculates passes, positions, speed and weaving",
+   "unit": null,
+   "conditions": "Inrotech-WeldLogic software",
+   "sourceId": "s1",
+   "quote": "The robot now automatically identifies the welding groove by means of a line scanner and automatically calculates the number of passes, location of each pass, welding speed and weaving pattern"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Rail-mounted carriage with a welding torch, moved to the workpiece; the operator sets start and stop points and presses start.",
+   "No programming and no CAD transfer needed (maker)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.inrotech.com/wp-content/uploads/CR001.jpg",
+   "pageUrl": "https://www.inrotech.com/inrotech-crawler/",
+   "credit": "Inrotech A/S",
+   "alt": "Inrotech-Crawler welding robot on its rail",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Adaptive multipass butt welds on large pipes, ship blocks, storage tanks and construction steelwork, in workshops or on construction sites (maker)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Customer case named on the page: Liebherr-Rostock GmbH (details not read)."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.inrotech.com/inrotech-crawler/",
+   "title": "Inrotech-Crawler | Adaptive Multipass Welding Technology",
+   "publisher": "Inrotech A/S",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Weight of robot and rail, welding process (MIG/MAG?) and power source are not stated on the page.",
+  "Price and German sales or service partner (Lincoln Electric Germany?)."
+ ],
+ "checkedAt": "2026-11-18"
+}

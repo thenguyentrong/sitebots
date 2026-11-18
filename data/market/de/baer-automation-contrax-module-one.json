@@ -1,0 +1,196 @@
+{
+ "schemaVersion": 1,
+ "id": "baer-automation-contrax-module-one",
+ "maker": "BÄR Automation GmbH",
+ "makerCountry": "DE",
+ "model": "ConTrax Module One",
+ "variant": null,
+ "name": "BÄR Automation ConTrax Module One",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.baer-automation.de/de/produkte/fahrerlose-transportsysteme/contrax/contrax-module-one",
+ "summary": "A German modular mobile manipulator: an omnidirectional, SLAM-navigated AGV platform (up to 500 kg load) carrying a supply station with battery and controller on which a lightweight cobot arm of the customer's choice is mounted, for indoor transport and picking tasks.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Built and sold by BÄR Automation GmbH in Gemmingen (Baden-Württemberg); the product page has a \"Jetzt anfragen\" / \"Angebot anfordern\" enquiry form, no public price. Agile Robots (Munich) names it as a mobile manipulator it develops with BÄR Automation and idealworks.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "BÄR Automation GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.baer-automation.de/de/produkte/fahrerlose-transportsysteme/contrax/contrax-module-one",
+    "contactUrl": "https://www.baer-automation.de/de/produkte/fahrerlose-transportsysteme/contrax/contrax-module-one",
+    "email": "info@baer-automation.de",
+    "phone": "+49 7267 9127-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Enquiry form on the product page (subject \"Angebot anfordern\"); address Gottlieb-Daimler-Str. 6, 75050 Gemmingen."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Max. load (platform)",
+   "value": 500,
+   "unit": "kg",
+   "conditions": "higher load capacity optional",
+   "sourceId": "s1",
+   "quote": "Max. Zuladung: 500 kg (Tragkraft Erweiterung optional möglich)"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "Omnidirectional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Antrieb: Omnidirektional (Flächenbeweglichkeit)"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "SLAM (free navigation), optional optical fine positioning",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Navigation: SLAM (freie Navigation)"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1.2,
+   "unit": "m/s",
+   "conditions": "main direction; up to 0.6 m/s omnidirectional, up to 0.3 m/s when picking up a load",
+   "sourceId": "s1",
+   "quote": "bis 1,2 m/s Hauptfahrtrichtung"
+  },
+  {
+   "key": "lift_stroke_mm",
+   "label": "Lift function",
+   "value": 200,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Hubfunktion: 200 mm"
+  },
+  {
+   "key": "battery",
+   "label": "Energy",
+   "value": "LiFePO4 battery 48 V, 42 Ah; stationary inductive charging",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Energiemanagement: LiFePO Batterie (48 V, 42 Ah), Induktives Ladesystem (stationär)"
+  },
+  {
+   "key": "safety",
+   "label": "Safety",
+   "value": "2 SICK safety laser scanners, emergency stop, safety controller",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Safety: 2 SICK Personenschutz Laserscanner, Not Halt Taster, Sicherheitssteuerung"
+  },
+  {
+   "key": "arm",
+   "label": "Robot arm",
+   "value": "Lightweight robot arms of various makers can be fitted to the robot module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Das Robotermodul lässt sich mit Leichtbaurobotersystemen verschiedener Hersteller kombinieren"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 500,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "The cobot arm and gripper are chosen per project; arm payload depends on the arm fitted.",
+   "The battery, charger and robot controller sit in a supply station under the arm, so the arm module can also be moved on a passive platform without drive.",
+   "Maker states indoor industrial use only."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.baer-automation.de/assets/images/z/fahrerlose-transportsysteme-moduleone-mcskn9h1brh6gtc.jpg",
+   "pageUrl": "https://www.baer-automation.de/de/produkte/fahrerlose-transportsysteme/contrax/contrax-module-one",
+   "credit": "BÄR Automation",
+   "alt": "BÄR ConTrax Module One mobile robot system with cobot arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for autonomous transport and picking (Kommissionierung) in industrial halls",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": false,
+   "sourceId": "s1",
+   "quote": "Einsatzbereich: Industrielle Umgebung im Innenbereich",
+   "basis": "maker intended use",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.baer-automation.de/de/produkte/fahrerlose-transportsysteme/contrax/contrax-module-one",
+   "title": "ConTrax® Module One",
+   "publisher": "BÄR Automation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agile-robots.com/en/products/amr/agv/",
+   "title": "Shared Expertise: Mobile robotics",
+   "publisher": "Agile Robots SE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price not published.",
+  "Which cobot arms are offered as standard, and the arm payload; the factsheet is a PDF the reader cannot open.",
+  "Runtime per battery charge not stated on the page."
+ ],
+ "checkedAt": "2026-11-18"
+}

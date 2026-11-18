@@ -1,0 +1,138 @@
+{
+ "schemaVersion": 1,
+ "id": "paintjet-bravo",
+ "maker": "PaintJet",
+ "makerCountry": "US",
+ "model": "Bravo",
+ "variant": null,
+ "name": "PaintJet Bravo robotic painter",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying"
+ ],
+ "officialUrl": null,
+ "summary": "Robotic spray painter that mounts on a standard mobile elevated work platform, scans each block of facade with cameras and sprays the amount of paint it calculates, for repainting warehouses and other commercial buildings. Launched in October 2023 by the US start-up PaintJet together with its own insulating paint, Alpha Shield.",
+ "launched": "2023-10",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Offered in the USA as a painting service with PaintJet's own paint; no sale of the robot and no German or EU route found. PaintJet's website could not be read (server error).",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "block_size_ft2",
+   "label": "Work block",
+   "value": 50,
+   "unit": "sq ft",
+   "conditions": "scans, calculates and sprays one block at a time",
+   "sourceId": "s3",
+   "quote": "Working in 50-square-foot blocks, cameras on Bravo scan the surface to be painted."
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": "2-3",
+   "unit": "people",
+   "conditions": "maker claim: replaces a 6-person job, in half the time",
+   "sourceId": "s2",
+   "quote": "allowing a 2-3 person team to fulfill what was previously a 6-person painting job in half the time"
+  },
+  {
+   "key": "paint_savings",
+   "label": "Paint use",
+   "value": "25 % less",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s2",
+   "quote": "the Bravo uses “25 percent less paint overall”"
+  },
+  {
+   "key": "carrier",
+   "label": "Carrier",
+   "value": "standard mobile elevated work platform; PaintJet controls both lift and robot",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "We connect non-invasively to the platform and are able to control both the lift and our robotic system."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "PaintJet built the robotic system itself; paint hoses, nozzles and pumps come from industry suppliers (CEO).",
+   "Rides on a wheeled boom lift ('cherry picker'); the robot is the spray unit at the end of the lift. Its internal axes are not described, so no arm is counted.",
+   "Can work with any paint, but is sold together with PaintJet's Alpha Shield paint and a 5-10 year warranty."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Exterior repainting of commercial buildings and warehouses; the maker names Prologis, Clayco, Layton Construction and Brinkmann Constructors as customers of its technology",
+   "stage": "claim",
+   "where": "USA",
+   "date": "2023-10",
+   "sourceId": "s2",
+   "note": "Customer names are the maker's; no job is described in detail."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://techcrunch.com/2023/12/20/paintjet-is-building-big-industrial-robots-for-big-industrial-paint-jobs/",
+   "title": "PaintJet is building big industrial robots for big industrial paint jobs (20 December 2023)",
+   "publisher": "TechCrunch",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://roboticsandautomationnews.com/2023/10/21/paintjet-launches-new-robotic-painting-solution-for-commercial-buildings/73213/",
+   "title": "PaintJet launches new robotic painting solution for commercial buildings (21 October 2023)",
+   "publisher": "Robotics & Automation News",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.freethink.com/robots-ai/robot-painter",
+   "title": "Robot painter lets smaller crews do jobs twice as fast",
+   "publisher": "Freethink",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is Bravo still in service in 2026? In December 2023 PaintJet said it was moving to Virginia to enter the marine business; its website returned a server error.",
+  "Output in m²/h, weight and lift compatibility are not published.",
+  "No use-case id fits exterior facade repainting of warehouses; evidence has no taskIds."
+ ],
+ "checkedAt": "2026-11-18"
+}

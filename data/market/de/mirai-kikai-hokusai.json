@@ -1,0 +1,188 @@
+{
+ "schemaVersion": 1,
+ "id": "mirai-kikai-hokusai",
+ "maker": "Mirai Kikai Inc. (未来機械株式会社)",
+ "makerCountry": "JP",
+ "model": "HOKUSAI",
+ "variant": null,
+ "name": "Mirai Kikai HOKUSAI marking robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": "https://miraikikai.jp/products/marking-robot/",
+ "summary": "Small self-driving layout robot from Kagawa, Japan, that draws reference lines, shapes and text from the drawing onto the floor, guided in real time by a Leica 3D Disto laser measuring device. Works for 6 hours per charge and can finish the marking overnight for the next day's trades.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Offered in Japan only, by the maker (contact form) and, under the name SUMIDAS, as a rental robot from the Japanese rental firm Rental no Nikken with near-identical figures. No German or EU seller or CE information found.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions L × W × H",
+   "value": "670 × 530 × 385",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "L:670 x W:530 x H:385mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 23,
+   "unit": "kg",
+   "conditions": "Nikken lists 22 kg or less for its SUMIDAS rental robot",
+   "sourceId": "s1",
+   "quote": "23Kg"
+  },
+  {
+   "key": "measuring_device",
+   "label": "Measuring device",
+   "value": "Leica Geosystems 3D Disto",
+   "unit": null,
+   "conditions": "robot stays in constant radio contact with the device",
+   "sourceId": "s1",
+   "quote": "ライカジオシステムズ製3次元レーザ測量機（3D Disto）"
+  },
+  {
+   "key": "working_radius_m",
+   "label": "Working radius",
+   "value": 20,
+   "unit": "m",
+   "conditions": "around the measuring device, approx.",
+   "sourceId": "s1",
+   "quote": "測量機を中心として半径約20m"
+  },
+  {
+   "key": "print_area_mm",
+   "label": "Drawing area per position",
+   "value": "200 × 200",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "200 x 200mm"
+  },
+  {
+   "key": "accuracy_mm",
+   "label": "Marking accuracy",
+   "value": "±3 or better, no cumulative error",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "±3mm以下（積算誤差なし）"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "continuous; rechargeable Li-ion battery, 3 h charging",
+   "sourceId": "s1",
+   "quote": "6時間（連続稼働）"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "The maker calls it a 'running 2D plotter'; the running gear is not described, so wheels is an assumption.",
+   "Set up from the top touchscreen or from a PC, tablet or smartphone over a wireless link.",
+   "Can do the marking at night with nobody on site (maker; Nikken says the same for SUMIDAS).",
+   "Tool = plotter drawing unit inside the body."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://miraikikai.jp/wp/wp-content/uploads/2024/01/Picture-product.png",
+   "pageUrl": "https://miraikikai.jp/products/marking-robot/",
+   "credit": "Mirai Kikai Inc.",
+   "alt": "Red box-shaped MIRAI marking robot with a touchscreen on top and a plotter window at the front, on a concrete floor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Draws reference lines and marks from the drawing onto building floors for the next trades",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker description; no named site in the pages read."
+  },
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Offered for rent to construction sites, plants, warehouses and shops as SUMIDAS",
+   "stage": "claim",
+   "where": "Japan – Rental no Nikken",
+   "date": null,
+   "sourceId": "s3",
+   "note": "Nikken figures: 22 kg or less, 6 h continuous use, ±3 mm; whether SUMIDAS is the same robot is not stated on the pages read."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://miraikikai.jp/products/marking-robot/",
+   "title": "墨出しロボット (marking robot, product page with specifications)",
+   "publisher": "Mirai Kikai Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.miraikikai.jp/",
+   "title": "Mirai Kikai home page (news: marking robot 'HOKUSAI')",
+   "publisher": "Mirai Kikai Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ipros.com/product/detail/2001541319/",
+   "title": "『SUMIDAS』墨出しロボット【建設現場向け】",
+   "publisher": "Rental no Nikken (via Ipros)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is Nikken's SUMIDAS the same robot as HOKUSAI (figures nearly match: 22 vs 23 kg)?",
+  "Sale and rental prices (none published).",
+  "Which projects and contractors use it; no named site found."
+ ],
+ "checkedAt": "2026-11-18"
+}

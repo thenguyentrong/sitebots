@@ -16,13 +16,18 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "EU maker (Denmark) sells directly on quote; PERI 3D Construction in Germany lists only the BOD2, so ask COBOD.",
+  "statusNote": "EU maker (Denmark) sells directly on quote; PERI 3D Construction in Germany lists only the BOD2, so ask COBOD. COBOD's own pages say pricing starts from USD 400,000.",
   "sourceIds": [
    "s1",
    "s2"
   ],
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 400000,
+   "currency": "USD",
+   "market": "COBOD International (DK maker) product page, starting price; final cost depends on configuration and accessories",
+   "sourceId": "s1"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -39,7 +44,7 @@
     "note": "Quote via the COBOD configurator and contact form."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {

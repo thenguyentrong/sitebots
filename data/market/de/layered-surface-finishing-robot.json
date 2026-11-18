@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "id": "layered-surface-finishing-robot",
+ "maker": "LAYERED GmbH",
+ "makerCountry": "CH",
+ "model": "Surface finishing robot",
+ "variant": null,
+ "name": "LAYERED autonomous plastering robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_plaster/machine-plaster-application"
+ ],
+ "officialUrl": "https://layered.ch/",
+ "summary": "Light mobile robot that scans a wall and sprays plaster or coatings while it moves, with the work areas chosen in an XR app on an iPhone. Made by LAYERED, an ETH Zurich spin-off in Lupfig, Switzerland; used on Swiss and French sites since 2025.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found. LAYERED says a first series is in production and a commercial deployment phase starts in Switzerland in September 2026; it has run paid proofs of concept with a French general contractor and a first French site deployment (June 2026). Contact via the Swiss maker only.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 120,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight120kg"
+  },
+  {
+   "key": "speed_vs_manual",
+   "label": "Speed",
+   "value": "2× faster",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "Speed2x faster"
+  },
+  {
+   "key": "material_savings",
+   "label": "Material savings",
+   "value": "20 %",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "Material savings20%"
+  },
+  {
+   "key": "process",
+   "label": "Process",
+   "value": "spray-based printing-in-motion of plaster or coatings, planned autonomously",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Our robot autonomously plans and executes spray-based printing-in-motion—the first of its kind in the industry."
+  },
+  {
+   "key": "interface",
+   "label": "Operation",
+   "value": "XR interface on a standard iPhone",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "controlled through an intuitive XR interface on a standard iPhone"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "The robot scans the wall; the worker picks the surfaces to treat in a simple interface; the robot then applies plaster or coating (CEO profile).",
+   "Mobile base with one spray arm assumed from the description of a light mobile robot; drive type not stated.",
+   "Also tested for facade upgrading in a proof of concept for the European Commission JRC in Ispra, Italy (funder page)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_plaster/machine-plaster-application"
+   ],
+   "task": "Plaster application on two live construction sites",
+   "stage": "pilot",
+   "where": "Groupe Egli, Wangen bei Olten, and Tip Top Gipsergeschäft AG, Egnach, Switzerland",
+   "date": "2025-10",
+   "sourceId": "s2",
+   "note": "Funder places the system at TRL 7."
+  },
+  {
+   "taskIds": [],
+   "task": "First site deployment in France after paid proofs of concept with construction product makers and a French general contractor",
+   "stage": "pilot",
+   "where": "France",
+   "date": "2026-06",
+   "sourceId": "s2",
+   "note": "Site and trade not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://layered.ch/",
+   "title": "LAYERED: Smart surface coating for the future of construction",
+   "publisher": "LAYERED GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.grstiftung.ch/en/funding/portfolio~grs-009-24~.html",
+   "title": "LAYERED – Advanced construction robots for autonomous surface finishing (project page)",
+   "publisher": "Gebert Rüf Stiftung",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://devigier.ch/avada_portfolio/eliott-sounigo-layered-gmbh/",
+   "title": "Eliott Sounigo, CEO of LAYERED GmbH, Lupfig (AG): Mobile robots for automated surface finishing on construction sites",
+   "publisher": "W.A. de Vigier Stiftung",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, rental model and whether LAYERED serves Germany are not stated.",
+  "Spray height, output in m²/h, tank or pump set-up and battery runtime are not published.",
+  "Which plaster and coating materials are approved?"
+ ],
+ "checkedAt": "2026-11-18"
+}

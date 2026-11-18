@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "hyundai-engineering-exterior-wall-painting-robot",
+ "maker": "Hyundai Engineering Co., Ltd. with J2 E&C",
+ "makerCountry": "KR",
+ "model": "Exterior wall painting robot",
+ "variant": null,
+ "name": "Hyundai Engineering exterior wall painting robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying"
+ ],
+ "officialUrl": "https://www.hyundaimotorgroup.com/ko/news/hyundai-engineering-exterior-painting-robot-construction-new-technology",
+ "summary": "Remote-controlled, wire-suspended spray unit that paints building facades in place of painters on a suspended platform, with attitude control, two stabilising fans and a dust-collecting spray hood. Developed by the Korean contractor Hyundai Engineering with the painting firm J2 E&C and designated Korean Construction New Technology No. 1042 in February 2026.",
+ "launched": "2026-02",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No sale, rental or licence offer found. Hyundai Engineering plans to use the robot on more facade types and high-rise buildings in Korea; no German or EU route exists.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "speed_vs_manual",
+   "label": "Speed compared with manual painting",
+   "value": "about 2× faster",
+   "unit": null,
+   "conditions": "field demonstrations, maker figure",
+   "sourceId": "s1",
+   "quote": "현장 실증 결과 기존 인력 작업 대비 약 2배 빠른 시공 속도를 구현했다"
+  },
+  {
+   "key": "overspray_reduction",
+   "label": "Overspray reduction",
+   "value": "more than 90 %",
+   "unit": null,
+   "conditions": "with the dedicated undiluted low-overspray paint, compared with water-based paint",
+   "sourceId": "s1",
+   "quote": "기존 수성 도료 대비 비산량을 90% 이상 줄이는 성과를 거뒀다"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "unmanned, remote control from the ground or the roof",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "작업자는 지상이나 옥상에서 장비를 원격으로 조작할 수 있어"
+  },
+  {
+   "key": "spray_method",
+   "label": "Spray method",
+   "value": "continuous up-and-down spraying with multiple nozzles",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "상하 연속 스프레이 방식과 다중 노즐 분사를 적용해"
+  },
+  {
+   "key": "stabilisation",
+   "label": "Stabilisation",
+   "value": "attitude control with horizontal sensors and two sub-fans against wind",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2개의 서브펜(sub-fan) 구조를 적용해 바람 등 외부 환경 변화에도 장비의 안정성을 유지하도록 했으며"
+  },
+  {
+   "key": "dust_collection",
+   "label": "Overspray capture",
+   "value": "anti-scatter case, dust filter and double dust-collection fan, triple filter",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "비산 방지 케이스와 집진필터, 이중 집진 팬을 기본 적용해"
+  },
+  {
+   "key": "certification",
+   "label": "Certification",
+   "value": "Korean Construction New Technology No. 1042 (Ministry of Land, Infrastructure and Transport)",
+   "unit": null,
+   "conditions": "designated February 2026",
+   "sourceId": "s1",
+   "quote": "국토교통부 건설신기술 1042호로 지정됐다"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Hangs from a dedicated roof support on high-durability wires and replaces the suspended painter's platform; altitude sensors stop it automatically.",
+   "Works outdoors on building facades; no drive of its own on floors.",
+   "Developed and field-tested since 2020; shown at an LH construction-automation robot demonstration in 2023 and given an innovation award at the 2024 Smart Construction Challenge."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Field demonstrations painting exterior walls of buildings by remote control instead of painters on a suspended platform",
+   "stage": "pilot",
+   "where": "South Korea",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Sites not named. Construction New Technology status requires proven site applicability."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.hyundaimotorgroup.com/ko/news/hyundai-engineering-exterior-painting-robot-construction-new-technology",
+   "title": "현대엔지니어링, 외벽도장로봇 국토부 건설신기술 지정 (20 February 2026)",
+   "publisher": "Hyundai Motor Group",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Output in m²/h, maximum building height, weight and paint capacity are not published.",
+  "Which buildings were painted in the field demonstrations?",
+  "Does J2 E&C offer the robot as a painting service to other contractors?"
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "caterpillar-cat-command-remote-control",
+ "maker": "Caterpillar",
+ "makerCountry": "US",
+ "model": "Cat Command",
+ "variant": "remote control for Cat crawler dozers and excavators",
+ "name": "Cat Command remote control for dozers and excavators",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation"
+ ],
+ "officialUrl": null,
+ "summary": "Caterpillar's remote control system for its crawler dozers and excavators: control commands go over the internet or a VPN straight to the machine electronics, so an operator can drive and dig from a station far away or without line of sight. Sold in Germany by the Cat dealer Zeppelin and used there for explosive ordnance clearance.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Offered by Zeppelin, the Cat dealer in Germany; the German ordnance clearance firm Eggers Kampfmittelbergung bought its Cat Command system through Zeppelin and runs a Cat D5 dozer with it. No price published; ask the dealer. Caterpillar's own Cat Command pages could not be read (robots.txt unavailable).",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Zeppelin Baumaschinen (Cat dealer Germany)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": null,
+    "contactUrl": "https://www.zeppelin-cat.de/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Named by the German customer Eggers as the local Cat dealer 'who offers Cat Command'; showed Cat Command at bauma. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "control_link",
+   "label": "Control link",
+   "value": "operator station like a machine cab; commands sent over the internet and VPN to the machine electronics in real time",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The preliminary stage to the autonomous construction machine described is based on remote control based on a machine-like operator station by transmission of the control commands via the Internet and VPN."
+  },
+  {
+   "key": "demo_distance_km",
+   "label": "Longest demo distance",
+   "value": 9419,
+   "unit": "km",
+   "conditions": "Cat 320 excavator and D5 dozer at Tucson, Arizona, controlled from bauma in Munich",
+   "sourceId": "s2",
+   "quote": "The distance is even greater at 9,419 kilometers when a Cat crawler excavator 320 and Cat crawler dozer D5 are moved in the Caterpillar Mining Center in Tucson, Arizona."
+  },
+  {
+   "key": "demo_machines",
+   "label": "Machines shown",
+   "value": "Cat 340 and 320 crawler excavators, D7 and D5 crawler dozers",
+   "unit": null,
+   "conditions": "bauma demos",
+   "sourceId": "s2",
+   "quote": "direct control of a Cat crawler excavator 340 or crawler dozer D7 some 2,368 kilometers away at the Caterpillar Demonstration and Learning Center in Málaga, Spain – and that without direct line of sight using only monitors"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Remote control, not autonomy: a human operator drives the machine from a console or remote station.",
+   "Capabilities describe tracked host machines (Cat crawler excavators and dozers); dozers have a blade, not an arm.",
+   "Named use cases: remote work in dangerous places such as explosive ordnance clearance or nuclear power plant dismantling (HeavyQuipMag on Zeppelin's bauma show)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Clears unexploded ordnance from sites being redeveloped with a remote-controlled Cat D5 dozer, including a large renewable energy project",
+   "stage": "deployment",
+   "where": "Germany – Eggers Kampfmittelbergung",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Customer story published by Caterpillar as sponsored content; Eggers began looking for a remote system in 2017."
+  },
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Remote control of Cat excavators and dozers from the bauma stand, showing excavation and subgrade work",
+   "stage": "demo",
+   "where": "bauma 2022, Munich, Germany – Zeppelin stand",
+   "date": "2022-10",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.constructionbriefing.com/sponsored-content/safety-first-with-cat-command-for-eggers/8036424.article",
+   "title": "Safety first with Cat Command for Eggers (sponsored content)",
+   "publisher": "Construction Briefing (KHL)",
+   "kind": "customer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.heavyquipmag.com/2023/04/04/zeppelin-introduces-ready-to-use-tech-for-autonomous-assistance-systems/",
+   "title": "Zeppelin Introduces Ready-to-Use Tech for Autonomous Assistance Systems",
+   "publisher": "HeavyQuipMag",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which current Cat dozer and excavator models can be ordered with Cat Command in Germany, and what does it cost? Caterpillar's pages could not be read.",
+  "Line-of-sight console versus remote station: which versions does Zeppelin offer?",
+  "Date of the Eggers story is not stated on the page."
+ ],
+ "checkedAt": "2026-11-18"
+}

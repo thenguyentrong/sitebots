@@ -1,0 +1,203 @@
+{
+ "schemaVersion": 1,
+ "id": "innok-robotics-induros-700",
+ "maker": "Innok Robotics GmbH",
+ "makerCountry": "DE",
+ "model": "INDUROS",
+ "variant": "700",
+ "name": "Innok Robotics INDUROS 700",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "construction_logistics_hub/delivery-slot-staging"
+ ],
+ "officialUrl": "https://www.innok-robotics.de/en/products/induros",
+ "summary": "Autonomous outdoor-capable tugger robot from Regenstauf, Germany, that tows pallet trolleys, mesh boxes or trailers of up to 700 kg between halls and yard over gravel, thresholds and 10 % slopes. The construction company Markgraf uses an INDUROS in its logistics and mobility centre in Kemnath.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Made and sold in Germany by Innok Robotics, directly and through sales and integration partners, for purchase or as Robot-as-a-Service; prices and terms on request.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Innok Robotics GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.innok-robotics.de/en/products/induros",
+    "contactUrl": "https://www.innok-robotics.de/en/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Regenstauf near Regensburg. Purchase or Robot-as-a-Service (RaaS); price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "towing_kg",
+   "label": "Trailer load",
+   "value": 700,
+   "unit": "kg",
+   "conditions": "depending on ground, route and speed; other models 350 kg (350s) and 1,300 kg (1300)",
+   "sourceId": "s1",
+   "quote": "up to 700 kg"
+  },
+  {
+   "key": "speed_km_h",
+   "label": "Speed",
+   "value": 3.2,
+   "unit": "km/h",
+   "conditions": "700s: 6.5 km/h",
+   "sourceId": "s1",
+   "quote": "3.2 km/h (0.9 m/s)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Own weight",
+   "value": 175,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "175"
+  },
+  {
+   "key": "size_cm",
+   "label": "Size (L × W × H)",
+   "value": "115 × 80 × 100",
+   "unit": "cm",
+   "conditions": "ground clearance 7 cm",
+   "sourceId": "s1",
+   "quote": "Dimensions: 115 x 80 x 100 cm (L x W x H)"
+  },
+  {
+   "key": "gradient_percent",
+   "label": "Max. gradient",
+   "value": 10,
+   "unit": "%",
+   "conditions": "asphalt and gravel",
+   "sourceId": "s1",
+   "quote": "IP65, –10 °C to +45 °C, gradients up to 10%, asphalt and gravel"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 2808,
+   "unit": "Wh",
+   "conditions": "48 V Li-ion; charging 20–80 % in about 2 h, autonomous inductive charging",
+   "sourceId": "s1",
+   "quote": "Capacity: 2808 Wh"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 16,
+   "unit": "h",
+   "conditions": "up to, depending on payload and route",
+   "sourceId": "s1",
+   "quote": "Runtime: up to 16 hours, depending on payload and route"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "lidar, optional RTK GNSS; Innok COCKPIT browser software; VDA 5050 interface",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Localisation:LidarOptional: RTK GNSS (GPS/Galileo/Glonass/Baidu)"
+  },
+  {
+   "key": "temperature_c",
+   "label": "Ambient temperature",
+   "value": "-10 to +45",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Ambient temperature: –10 °C to +45 °C"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 16,
+  "ipRating": "IP65",
+  "sdk": "VDA 5050 interface; Innok COCKPIT",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "A tugger: it tows trolleys and trailers (automatic coupling) rather than carrying loads on its own deck, so carryPayloadKg is left empty.",
+   "Drives over thresholds, potholes, gravel and asphalt in rain and snow (maker); rough ground means yard surfaces, not open terrain.",
+   "Safety laser scanner, beacon, warning tone and emergency stop."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.innok-robotics.de/hs-fs/hubfs/INDUROS%20700%20frei%204.png?width=800&name=INDUROS%20700%20frei%204.png",
+   "pageUrl": "https://www.innok-robotics.de/en/products/induros",
+   "credit": "Innok Robotics",
+   "alt": "Blue and grey INDUROS 700 tugger robot with a lidar on top",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Autonomous transport system linking the hall and outdoor areas of a construction company's new logistics and mobility centre, incl. reversing with a trailer",
+   "stage": "deployment",
+   "where": "W. Markgraf GmbH & Co. KG logistics and mobility centre, Kemnath, Germany",
+   "date": "2024-08",
+   "sourceId": "s2",
+   "note": "Innok calls Markgraf the first construction company in Europe to use the INDUROS; the INDUROS model used is not named. A later customer video article (s3) confirms operation between warehouse and yard."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.innok-robotics.de/en/products/induros",
+   "title": "INDUROS – The autonomous transport robot (models, technical data, FAQ)",
+   "publisher": "Innok Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.innok-robotics.de/en/news/markgraf_cooperation?hsLang=en",
+   "title": "Markgraf is the first construction company to use the INDUROS transport robot from Innok Robotics (12 August 2024)",
+   "publisher": "Innok Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.innok-robotics.de/en/news/kundenvideo-warum-die-w.-markgraf-gmbh-co-kg-auf-die-brownfield-automatisierung-von-innok-robotics-setzt",
+   "title": "Customer Video: Why W. Markgraf GmbH & Co. KG Relies on Brownfield Automation from Innok Robotics",
+   "publisher": "Innok Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which INDUROS model (350s, 700, 700s or 1300) runs at Markgraf? Not stated.",
+  "Is it used on construction sites themselves, or only in contractors' depots? Only the Markgraf depot use was found.",
+  "Price (purchase or RaaS): on request only."
+ ],
+ "checkedAt": "2026-11-18"
+}

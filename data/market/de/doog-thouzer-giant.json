@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "doog-thouzer-giant",
+ "maker": "Doog Inc.",
+ "makerCountry": "JP",
+ "model": "THOUZER GIANT",
+ "variant": null,
+ "name": "Doog THOUZER GIANT",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_setup_logistics/material-runs-to-installers",
+  "site_setup_logistics/bagged-material-distribution"
+ ],
+ "officialUrl": "https://doog-inc.com/en/type-transport/",
+ "summary": "Largest model of Doog's THOUZER robotic carts: it follows a walking worker at the press of a button, repeats a walked route or follows floor tape, and carries 300 kg on its platform while towing up to 600 kg, indoors and outdoors. The maker shows THOUZER carts on construction sites carrying cement bags and enclosed carts.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Doog sells THOUZER worldwide through its Singapore arm and about 50 regional partners; enquiries go through the contact form, after which a Doog engineer or a regional partner visits for a demo. Doog exhibited in Germany at HANNOVER MESSE 2025 and electronica 2026 (Munich), but no German partner or price is named.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Doog International Pte. Ltd.",
+    "country": "SG",
+    "role": "manufacturer",
+    "productUrl": "https://doog-inc.com/en/type-transport/",
+    "contactUrl": "https://doog-inc.com/en/contact/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "140 Paya Lebar Road #05-07, AZ @ Paya Lebar, Singapore 409015. International sales arm of Doog Inc. (Tsukuba, Japan); price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Max. platform payload",
+   "value": 300,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "300 kg"
+  },
+  {
+   "key": "towing_kg",
+   "label": "Max. towing",
+   "value": 600,
+   "unit": "kg",
+   "conditions": "GIANT 4-Motor option: 1,000 kg (A) or 2,000 kg (B)",
+   "sourceId": "s1",
+   "quote": "600 kg"
+  },
+  {
+   "key": "size_mm",
+   "label": "Robot size (W × L)",
+   "value": "700 × 1180",
+   "unit": "mm",
+   "conditions": "platform 700 × 1,000 mm, platform height 455 mm",
+   "sourceId": "s1",
+   "quote": "700 × 1,180 mm"
+  },
+  {
+   "key": "speed_follow_km_h",
+   "label": "Max. speed in follow-me",
+   "value": 7.5,
+   "unit": "km/h",
+   "conditions": "3.6 km/h in Memory Trace and Line Trace",
+   "sourceId": "s1",
+   "quote": "7.5 km/h"
+  },
+  {
+   "key": "range_km",
+   "label": "Battery range",
+   "value": 20,
+   "unit": "km",
+   "conditions": "up to 20 km without towing",
+   "sourceId": "s1",
+   "quote": "Up to 20 km"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation modes",
+   "value": "Follow-Me (no tracker), Memory Trace (walk the route once), Line Trace (reflective floor tape)",
+   "unit": null,
+   "conditions": "Memory Trace limited and Line Trace not available on the BASIC configuration; full on E-SERIES",
+   "sourceId": "s3",
+   "quote": "Follow-Me: One button press, no map, no setup. The worker walks ahead and THOUZER follows"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 300,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s5"
+  ],
+  "notes": [
+   "Maker photos show THOUZER carts on a construction site carrying an enclosed cart, following a worker on rough ground and carrying cement bags on wet ground; the photos do not say which model.",
+   "Sold as BASIC or E-SERIES configuration; the E-SERIES adds full Memory Trace, optional Line Trace and system integration.",
+   "A pre-shipment 4-motor option for the GIANT E-SERIES (RMS-15E2A/B) raises towing to 1,000 or 2,000 kg and is rated IPX2."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://doog-inc.com/en/type-transport/",
+   "title": "THOUZER Robotic Cart (models, specifications, indoor and outdoor use)",
+   "publisher": "Doog Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://doog-inc.com/en/about/",
+   "title": "About us (Doog Inc. and Doog International Pte. Ltd.)",
+   "publisher": "Doog Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://doog-inc.com/en/information/exhibition/10-13-november-2026-electronica-2026/",
+   "title": "[10-13 November 2026] electronica 2026, Munich",
+   "publisher": "Doog Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://doog-inc.com/en/information/exhibition/31-march-4-april-2025-hannover-messe-2025/",
+   "title": "[31 March-4 April 2025] HANNOVER MESSE 2025",
+   "publisher": "Doog Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://doog-inc.com/en/information/news/thouzer-giant-e-series-4-motor/",
+   "title": "THOUZER GIANT E-SERIES 4-MOTOR (15 January 2025)",
+   "publisher": "Doog Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which contractor or site uses THOUZER, and which model is in the construction photos? Not named.",
+  "Is there a German or EU partner? Doog's contact page only says a regional partner may follow up.",
+  "IP rating of the standard GIANT and price: not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

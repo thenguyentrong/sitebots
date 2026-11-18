@@ -1,0 +1,149 @@
+{
+ "schemaVersion": 1,
+ "id": "daedong-robotics-rt100-ts",
+ "maker": "Daedong Robotics (Daedong Group)",
+ "makerCountry": "KR",
+ "model": "RT100",
+ "variant": "RT100 TS (series model)",
+ "name": "Daedong Robotics RT100 TS transport robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_setup_logistics/material-runs-to-installers",
+  "site_setup_logistics/bagged-material-distribution"
+ ],
+ "officialUrl": null,
+ "summary": "Electric four-wheel-drive transport robot from Korea with a 300 kg lifting and tipping bed that follows a worker (by wire or on its own), drives by remote control or repeats a taught route. Built for orchards, it carried masonry, plastering and fit-out materials on a GS E&C apartment construction site in a 2026 trial.",
+ "launched": "2025-02",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold in Korea through Daedong's farm machinery dealers since February 2025 (230 units by April 2026); no European sale, dealer or price found.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Bed load",
+   "value": 300,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "4륜구동으로 다양한 험로를 쉽게 오르내리며 최대 300kg 적재함과 리프트, 덤프 기능 등을 갖췄다"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "electric, four-wheel drive, turns 360° on the spot",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "제자리 360도 회전 기능은 과수농가의 좁은 농로에서 실효성을 발휘한다"
+  },
+  {
+   "key": "tip_angle_deg",
+   "label": "Tipping angle",
+   "value": 40,
+   "unit": "°",
+   "conditions": "bed height also adjustable",
+   "sourceId": "s4",
+   "quote": "덤프트럭처럼 최고 40도로 기울일 수도 있었다"
+  },
+  {
+   "key": "modes",
+   "label": "Operating modes",
+   "value": "wire follow, autonomous person following, wireless remote control, taught-route autonomy",
+   "unit": null,
+   "conditions": "wire-follow model from February 2025, autonomous-follow model from April 2025",
+   "sourceId": "s2",
+   "quote": "유선(와이어) 추종과 자율주행 두 모델로 개발했다"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 300,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Rough ground: built for bumpy, sloping orchard tracks; on the GS E&C site it drove loaded over slopes and uneven ground (trial report).",
+   "Battery-electric and quiet, so it can also work indoors (maker statement in the launch report).",
+   "Stops for people or obstacles in its path."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Carried materials for masonry, plastering, building services and finishing between work areas, over slopes and uneven ground, following workers or by remote control",
+   "stage": "pilot",
+   "where": "Large apartment construction site in the western Seoul metropolitan area, South Korea (GS E&C)",
+   "date": "2026-10",
+   "sourceId": "s1",
+   "note": "Proof of concept 7–30 October 2026 with the series model RT100 TS after tests at GS E&C's research site; further validation planned and a robot-as-a-service model is being prepared."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://dealsite.co.kr/articles/172628",
+   "title": "대동로보틱스, GS건설과 운반로봇 실증…\"건설 사업성 확인\" (12 November 2026)",
+   "publisher": "Dealsite",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://byline.network/2025/02/17-401/",
+   "title": "대동 RT100 자율주행 추종 운반로봇 4월 출시 (17 February 2025)",
+   "publisher": "Byline Network",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://dealsite.co.kr/articles/161044",
+   "title": "Daedong Robotics 2026 Tech Day: RT100 sales and B2B plans",
+   "publisher": "Dealsite",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.mt.co.kr/future/2024/11/17/2024111511212572004",
+   "title": "과수원 주인 졸졸 따르다 300kg 번쩍 (orchard demo report, November 2024)",
+   "publisher": "Money Today",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Speed, runtime, size and weight: not stated in the pages read (press elsewhere gives 3.6 km/h, not checked).",
+  "Is a construction version or rental offer planned after the GS E&C trial? Only the plan for further validation and RaaS was read.",
+  "Price: not published."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,173 @@
+{
+ "schemaVersion": 1,
+ "id": "ti5robot-t170c-v2",
+ "maker": "Ti5robot (Ti5 Robot (Shanghai) Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "T170C",
+ "variant": "V2.0",
+ "name": "Ti5robot T170C V2.0",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.ti5robot.com/index/index/detail?id=3",
+ "summary": "A wheeled humanoid with two 7-DOF industrial force-controlled arms, a 3-DOF waist and folding 2-DOF legs on a differential-drive base, aimed at factory material handling, assembly and inspection.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor found; Ti5robot lists only Shanghai sales contacts (sales@ti5robot.com).",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Active DOF",
+   "value": 22,
+   "unit": null,
+   "conditions": "excluding chassis and dexterous-hand DOF",
+   "sourceId": "s1",
+   "quote": "T170C-V2.0 系列产品具备 22 个主动自由度（不包含底盘与灵巧手自由度）"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "industrial force-controlled arms",
+   "sourceId": "s1",
+   "quote": "机器人搭载了两条工业级双臂，每条手臂具备 7 个自由度。"
+  },
+  {
+   "key": "dof_waist_legs",
+   "label": "Waist / leg DOF",
+   "value": "3 waist, 2 folding legs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "机器人腰部为 3 自由度设计，腿部为 2 自由度折叠设计。"
+  },
+  {
+   "key": "battery_ah",
+   "label": "Battery",
+   "value": 50,
+   "unit": "Ah",
+   "conditions": "auto-docking supported for 24/7 work with charging breaks",
+   "sourceId": "s1",
+   "quote": "内置 50Ah 超大电池"
+  },
+  {
+   "key": "charge_time_h",
+   "label": "Charge time",
+   "value": "≤2 (0-90 %)",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "充电时间 ≤2h（0～90%）"
+  },
+  {
+   "key": "max_step_mm",
+   "label": "Max obstacle height",
+   "value": 5,
+   "unit": "mm",
+   "conditions": "differential-drive chassis",
+   "sourceId": "s1",
+   "quote": "机器人底盘最大越障高度 5mm"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "360° camera ring, front and rear lidar, ultrasonic ring, six-axis force sensors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "机器人搭载了多目相机组成 360° 全景视频，搭配底盘前后的激光雷达，及围绕底盘一圈的超声波雷达"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "SDK and API for secondary development",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Differential-drive chassis clears only 5 mm steps, so it is for flat indoor floors.",
+   "Low-latency full-DOF teleoperation and data-collection kits are optional extras.",
+   "Ti5robot's dual-arm module sold for its humanoids is rated 6 kg per arm at the flange ('单臂额定负载（末端法兰）6kg'), but the T170C page does not state its own arm payload.",
+   "Ti5robot's factory-handling solution claims dual-arm transfer of loads up to 40 kg; the page does not tie this figure to the T170C."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Factory and warehouse material handling, precision assembly and inspection rounds",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Application list on the maker page; no named customer or site use found."
+  },
+  {
+   "taskIds": [],
+   "task": "Workshop bin transfer, machine loading and fixture handling with dual arms",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": "Ti5robot factory-handling solution page; robot model not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.ti5robot.com/index/index/detail?id=3",
+   "title": "T170C-V2.0 product page",
+   "publisher": "Ti5robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.ti5robot.com/index/index/detail?id=27",
+   "title": "Humanoid dual-arm module specifications",
+   "publisher": "Ti5robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.ti5robot.com/index/index/detail?id=12",
+   "title": "Factory handling solution",
+   "publisher": "Ti5robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight, arm payload and runtime of the T170C V2.0 are not on the product page.",
+  "Price and any export or EU sales route.",
+  "Lifecycle set to shipping because the page is a delivery manual with optional kits; no customer deliveries were found."
+ ],
+ "checkedAt": "2026-11-18"
+}

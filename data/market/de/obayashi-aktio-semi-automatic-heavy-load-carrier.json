@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "obayashi-aktio-semi-automatic-heavy-load-carrier",
+ "maker": "Obayashi Corporation, Aktio and Sakai Denki",
+ "makerCountry": "JP",
+ "model": "ストローダー® (semi-automatic low-floor heavy-load carrier)",
+ "variant": null,
+ "name": "Obayashi / Aktio ストローダー heavy-load carrier",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_setup_logistics/material-runs-to-installers",
+  "site_setup_logistics/bagged-material-distribution"
+ ],
+ "officialUrl": null,
+ "summary": "Flat, 270 kg 'semi-automatic robot' carrier on mecanum wheels that drives under a loaded trolley, jacks it up and moves up to 1 t in any direction, steered by one worker with a gamepad remote. Developed by the Japanese contractor Obayashi and rented by Aktio for construction sites, factories and warehouses since July 2025.",
+ "launched": "2025-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Rented in Japan by the construction equipment rental firm Aktio from 1 July 2025; no sale, rental or partner outside Japan found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Max. load",
+   "value": 1000,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "最大積載荷重 (kg) 1,000"
+  },
+  {
+   "key": "speed_m_min",
+   "label": "Max. speed",
+   "value": 38,
+   "unit": "m/min",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "最大速度 (m/min) 38"
+  },
+  {
+   "key": "jack_stroke_mm",
+   "label": "Jack stroke",
+   "value": 60,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ジャッキストローク (mm) 60"
+  },
+  {
+   "key": "slope_deg",
+   "label": "Max. slope",
+   "value": 6,
+   "unit": "°",
+   "conditions": "driving forwards or backwards",
+   "sourceId": "s1",
+   "quote": "登坂角度 (度) 6(前進後進の場合)"
+  },
+  {
+   "key": "step_mm",
+   "label": "Max. step",
+   "value": 20,
+   "unit": "mm",
+   "conditions": "driving forwards or backwards",
+   "sourceId": "s1",
+   "quote": "走行可能段差 (mm) 20(前進後進の場合)"
+  },
+  {
+   "key": "size_mm",
+   "label": "Size (L × W × H)",
+   "value": "1090 × 760 × 170–230",
+   "unit": "mm",
+   "conditions": "height with jack down / up",
+   "sourceId": "s1",
+   "quote": "寸法（L×W×H） (mm) 1,090×760×170～230"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 270,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "質量 (kg) 270"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 4,
+   "unit": "h",
+   "conditions": "about 4 h continuous; charging about 3 h at AC 100 V",
+   "sourceId": "s1",
+   "quote": "稼働時間 （ｈ） 約 4(連続稼働時)"
+  },
+  {
+   "key": "radio_range_m",
+   "label": "Remote range",
+   "value": 30,
+   "unit": "m",
+   "conditions": "about 30 m, measured; depends on environment",
+   "sourceId": "s1",
+   "quote": "無線到達距離 （m） 約 30"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "20 ± 15",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "動作温度 (℃) 20±15"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "wireless gamepad remote; no forklift licence needed",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ゲームパッドを採用した無線コントローラーを使用するため、フォークリフト等の運転資格がなくても簡単に操作が行えます"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 1000,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote-controlled by a worker, not autonomous; the makers call it a semi-automatic robot.",
+   "Mecanum wheels let it drive sideways, diagonally and turn on the spot in narrow aisles; steps up to 20 mm and slopes up to 6°, so it needs fairly level floors.",
+   "Drives under a loaded trolley and jacks it up, so loads need not be transferred."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.aktio.co.jp/news/2025/file/NewsRelease_20250701_02.pdf",
+   "title": "半自動ロボット低床式重量物搬送台車「ストローダー®」レンタル開始 (news release, 1 July 2025, with specifications)",
+   "publisher": "Aktio Corporation",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.logi-today.com/804741",
+   "title": "アクティオ、半自動低床重量物搬送車をレンタル",
+   "publisher": "LOGISTICS TODAY",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which construction sites use it? None named in the sources read.",
+  "Rental price: not published.",
+  "Obayashi Singapore describes a gamepad-controlled transport dolly called Movilo tested on a data-centre project; whether it is the same product is not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

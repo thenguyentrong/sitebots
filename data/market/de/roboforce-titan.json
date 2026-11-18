@@ -1,0 +1,215 @@
+{
+ "schemaVersion": 1,
+ "id": "roboforce-titan",
+ "maker": "RoboForce",
+ "makerCountry": "US",
+ "model": "TITAN",
+ "variant": null,
+ "name": "RoboForce TITAN",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.roboforce.ai/technology",
+ "summary": "A two-armed industrial robot with a liftable waist on a wheeled or tracked all-terrain base, built for outdoor work such as utility-scale solar construction, with a 40 kg peak dual-arm payload and 8 h per battery pack.",
+ "launched": "2025-05",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller, distributor or price found. RoboForce (Milpitas, California) takes enquiries through its contact form; its March 2026 funding news speaks of moving active pilot programmes toward production deployments, with no European sales route named.",
+  "sourceIds": [
+   "s1",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": "1.50-2.10",
+   "unit": "m",
+   "conditions": "600 mm lifting range",
+   "sourceId": "s1",
+   "quote": "Height2.10m1.50m-2.10m 600mm Lifting Range"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "peak, dual arm",
+   "sourceId": "s1",
+   "quote": "Payload40kgPeak for Dual Arm"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 1.1,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1100mm Arm Reachability"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "per battery pack",
+   "sourceId": "s1",
+   "quote": "Runtime8hPer Battery Pack"
+  },
+  {
+   "key": "precision_mm",
+   "label": "Manipulation precision",
+   "value": 1,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "It can achieve 1 mm (0.03 in.) precision for fine-grained manipulation"
+  },
+  {
+   "key": "base_options",
+   "label": "Base options",
+   "value": "wheeled or tracked",
+   "unit": null,
+   "conditions": "more variants announced",
+   "sourceId": "s3",
+   "quote": "The mobile manipulator comes in wheeled and tracked base variations, with more on the way."
+  },
+  {
+   "key": "skills",
+   "label": "Primitive skills",
+   "value": "pick, place, press, twist, connect",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "Titan delivers five key primitive capabilities—pick, place, press, twist, and connect—essential for most industrial tasks"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Wheels and tracks are alternative base options, not both on one unit.",
+   "The 40 kg figure is a peak value for both arms together; no per-arm payload is published, so armPayloadKg stays empty.",
+   "RoboForce describes 'expert robotic hands built for industrial applications'; the hand type (gripper or multi-finger) is not specified.",
+   "The Robot Report calls TITAN a mobile manipulator; it is listed here as a wheeled humanoid because it has a waist with two arms and a lifting torso."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Construction, inspection and maintenance work on utility-scale solar farms",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Target market on the maker's solutions page; no named solar customer or published pilot result found."
+  },
+  {
+   "taskIds": [],
+   "task": "Material handling, installation support and site inspection on construction sites",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker's list of target markets."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s3",
+   "quote": "an AI robot for industrial deployments in demanding outdoor environments",
+   "basis": "design intent stated by press from the launch; no IP rating published",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "All-terrain platforms supporting tracked, wheeled, and other mobility configurations.",
+   "basis": "maker claim for the base options",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "both_arms_payload_kg",
+   "value": 40,
+   "sourceId": "s1",
+   "quote": "Payload40kgPeak for Dual Arm",
+   "basis": "peak value, both arms together",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "runtime_h",
+   "value": 8,
+   "sourceId": "s1",
+   "quote": "Runtime8hPer Battery Pack",
+   "basis": "per battery pack",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.roboforce.ai/technology",
+   "title": "TITAN technology page",
+   "publisher": "RoboForce",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.roboforce.ai/solutions",
+   "title": "Solutions",
+   "publisher": "RoboForce",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.therobotreport.com/roboforce-introduces-titan-mobile-manipulator-raises-5m-more-funding/",
+   "title": "RoboForce introduces Titan mobile manipulator, brings in $5M more in funding",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.robotics247.com/article/roboforce-raises-52m-to-scale-physical-ai-robo-labor",
+   "title": "RoboForce raises $52M to scale physical AI robo-labor",
+   "publisher": "Robotics 24/7",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price or purchase/RaaS terms published.",
+  "No named solar or construction customer with published pilot results was found.",
+  "Hand type and per-arm payload are not published."
+ ],
+ "checkedAt": "2026-11-18"
+}

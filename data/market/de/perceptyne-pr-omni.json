@@ -1,0 +1,208 @@
+{
+ "schemaVersion": 1,
+ "id": "perceptyne-pr-omni",
+ "maker": "Perceptyne",
+ "makerCountry": "IN",
+ "model": "PR-OMNI",
+ "variant": null,
+ "name": "Perceptyne PR-OMNI",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://perceptyne.com/product/omni",
+ "summary": "A wheeled semi-humanoid from Hyderabad with two 7-DOF torque-sensing arms on an 800 mm vertical gantry and a four-wheel holonomic base, for industrial pick, place, bolting, assembly and inspection work.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Perceptyne (Hyderabad, India) shows a pre-order button and a spec-sheet request form; no German or EU seller, distributor or price found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height",
+   "label": "Height",
+   "value": "5'2\"",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Height5’2”"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 120,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight120 kg"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "dual arms",
+   "sourceId": "s1",
+   "quote": "ArmsDual arms, 7 DOF each"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "product page; home page gives 10 kg combined for both arms",
+   "sourceId": "s1",
+   "quote": "Payload - 5kg"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both arms",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "combined",
+   "sourceId": "s2",
+   "quote": "Payload10 kg combined"
+  },
+  {
+   "key": "reach_mm",
+   "label": "Arm reach",
+   "value": 800,
+   "unit": "mm",
+   "conditions": "max working reach 2000 mm",
+   "sourceId": "s1",
+   "quote": "Max working Reach - 2000mmPayload - 5kgBattery - Swappable (1.5 Kwh x2)Arm length - 800mm"
+  },
+  {
+   "key": "gantry_range_mm",
+   "label": "Vertical gantry range",
+   "value": 800,
+   "unit": "mm",
+   "conditions": "max vertical approach speed 1 m/s",
+   "sourceId": "s1",
+   "quote": "Vertical Gantry Range800 mmMax Vertical Approach Speed 1 m/s"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": "4-wheel holonomic drive",
+   "sourceId": "s1",
+   "quote": "Drive Type4 Wheel holonomic driveMax Speed2 m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "3 kWh, two swappable 1.5 kWh packs",
+   "sourceId": "s1",
+   "quote": "Runtime6 hoursBattery Capacity3 kWh (2 × 1.5 kWh, swappable)"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Nvidia Jetson Orin + Intel NUC",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ComputeNvidia Jetson Orin + Intel NUC 5th Gen"
+  },
+  {
+   "key": "sensing",
+   "label": "Sensing",
+   "value": "force-torque sensing at every joint, tactile end effectors, 3 RGBD cameras, dual LiDAR SLAM",
+   "unit": null,
+   "conditions": "indoor navigation",
+   "sourceId": "s1",
+   "quote": "Joint SensorsForce-torque sensing at every jointEnd-Effector SensorsTactile sensingVision3 RGBD cameras (2 wrists + 1 head)"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Navigation is described as indoor SLAM with dual LiDARs.",
+   "End-effector type is not named; the end effectors have tactile sensing.",
+   "VR teleoperation is built in for data collection.",
+   "A stationary sister model, PR-DUO, has the same arms without the mobile base and is not covered here."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/68c3c8db9f41332d34b592dd/69059bd239155f1967156417_Omni.webp",
+   "pageUrl": "https://perceptyne.com/product/omni",
+   "credit": "Perceptyne",
+   "alt": "Perceptyne PR-OMNI wheeled semi-humanoid robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Pick, place, bolt, inspect, test, assemble and insert in factory workflows",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker's application list; press says its solutions serve EMS and automotive clients, without naming a PR-OMNI deployment."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://perceptyne.com/product/omni",
+   "title": "PR-OMNI",
+   "publisher": "Perceptyne",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://perceptyne.com/",
+   "title": "Perceptyne home page",
+   "publisher": "Perceptyne",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.newindianexpress.com/cities/hyderabad/2025/Dec/11/perceptyne-robots-engineering-indias-robotic-future",
+   "title": "Perceptyne Robots: Engineering India's robotic future",
+   "publisher": "The New Indian Express",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Whether the 5 kg payload is per arm (the home page gives 10 kg combined).",
+  "Price, delivery date and any export or EU distribution are not published.",
+  "Relation to the older PR-34D model named in press is not explained on the maker site."
+ ],
+ "checkedAt": "2026-11-18"
+}

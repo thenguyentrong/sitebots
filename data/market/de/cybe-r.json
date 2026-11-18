@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "cybe-r",
+ "maker": "CyBe Construction",
+ "makerCountry": "NL",
+ "model": "CyBe R",
+ "variant": "Robot (stationary)",
+ "name": "CyBe R (Robot)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot/",
+ "summary": "Entry-level stationary 3D concrete printer: an ABB industrial robot arm on a floor-fixed frame that prints concrete elements in a ring around itself, for precast production, prototyping and research.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Netherlands) sells directly through its sales team and contact form, with a published 'price from' figure ex works; no German distributor found. CyBe says it distributes worldwide and the printers are modular for transport. The 'from €49,000' price is marked 'only while supply lasts'.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 49000,
+   "basis": "unknown",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "'Price from €49,000*' with '*Price ex works, based on standard dimensions, only while supply lasts!'; tax basis not stated. The FAQ on the same page gives older figures: 'CyBe R (Robot) €150,000 Ex Works, CyBe RC (Robot Crawler) €195,000 Ex Works, and CyBe G (Gantry) €285,000 Ex Works'."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "CyBe Construction B.V.",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot/",
+    "contactUrl": "https://cybe.eu/contact/",
+    "email": null,
+    "phone": "+31 412 676 030",
+    "priceEur": 49000,
+    "priceBasis": "unknown",
+    "sourceId": "s2",
+    "note": "Oss, Netherlands; the contact form has the option 'I want to buy a printer'. Price is ex works, standard dimensions; transport and import taxes are paid by the buyer."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "print_area_m",
+   "label": "Print range (standard)",
+   "value": "2.65 × 3.2",
+   "unit": "m",
+   "conditions": "donut-shaped area around the printer; the page lists it as length × width × height but gives two figures",
+   "sourceId": "s1",
+   "quote": "2.65 m x 3.2 m (standard)"
+  },
+  {
+   "key": "max_speed_mms",
+   "label": "Print speed",
+   "value": 500,
+   "unit": "mm/s",
+   "conditions": "maker claim for CyBe printers",
+   "sourceId": "s1",
+   "quote": "At 500 millimeters per second, CyBe printers have the fastest print speed in the market."
+  },
+  {
+   "key": "robot",
+   "label": "Robot",
+   "value": "ABB robot arm on a floor-fixed metal frame",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The ABB robotic arm is attached on a metal frame which is secured to the floor."
+  },
+  {
+   "key": "training",
+   "label": "Training included",
+   "value": "10-day training at any location",
+   "unit": null,
+   "conditions": "CyBe supplies hardware, software, materials, service and designs",
+   "sourceId": "s1",
+   "quote": "CyBe supplies the full package: hardware, software, materials, service, designs, and 10-day training at any location."
+  },
+  {
+   "key": "crew",
+   "label": "Operating crew",
+   "value": 2,
+   "unit": "people",
+   "conditions": "one at the control unit, one at the mortar mixer (stated for CyBe printers in general)",
+   "sourceId": "s4",
+   "quote": "The printer is operated by just two persons"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Stationary: the arm stands on a frame bolted to the floor; it does not move between prints.",
+   "Needs a mortar mixing and pumping unit; CyBe sells its own CyBe Mortar.",
+   "Meant for off-site, facility-based printing (precast, prototypes, research)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://x8k3m3a8.rocketcdn.me/wp-content/uploads/2019/10/CyBe-R-2.jpg-555x660.png",
+   "pageUrl": "https://cybe.eu/3d-concrete-printing/printers/",
+   "credit": "CyBe Construction",
+   "alt": "CyBe R stationary 3D concrete printer with its robot arm on a fixed frame",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printed five concrete city benches for Dura Vermeer for the city of Haarlem, off-site in CyBe's facility (35 minutes per bench)",
+   "stage": "deployment",
+   "where": "Haarlem, Netherlands",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Shown as the application spotlight on the CyBe R page; the text says the benches were printed off-site, and a caption adds that the in-situ bench print 'was possible with CyBe R'."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot/",
+   "title": "The CyBe R 3D Concrete Printer",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/",
+   "title": "3D concrete printers (models and prices)",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://cybe.eu/contact/",
+   "title": "Contact",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-track/",
+   "title": "The CyBe RT 3D Concrete Printer (FAQ on delivery and operation)",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Weight, arm model and reach of the standard CyBe R (full specifications only on request).",
+  "Which price applies now: 'from €49,000' (product list, 'only while supply lasts') or '€150,000 Ex Works' (FAQ on the same page)?",
+  "Is the printer CE-marked, and does CyBe have a service partner in Germany?"
+ ],
+ "checkedAt": "2026-11-18"
+}

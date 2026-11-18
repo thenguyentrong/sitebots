@@ -14,12 +14,19 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "buy_now",
-  "statusNote": "Only through Unitree's online store (USD, ships from China, customs paid by the buyer; Germany is in its country selector); no EU seller lists the R1 Air.",
+  "statusNote": "Only through Unitree's online store (USD, ships from China, customs paid by the buyer; Germany is in its country selector); Joybuy.de (JD.com's German shop) lists the R1 Air at 5,799 € with a cart.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s4"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 5799,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "Joybuy (JD.com online shop Germany), VAT not stated."
+  },
   "priceOther": {
    "amount": 4900,
    "currency": "USD",
@@ -40,9 +47,22 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "USD 4,900; orders normally ship within 30 business days, 20-45 business days transit. Germany is listed in the store country selector."
+   },
+   {
+    "name": "Joybuy (JD.com)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.joybuy.de/dp/101924369",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 5799,
+    "priceBasis": "unknown",
+    "sourceId": "s4",
+    "note": "Joybuy.de page for \"Serie: R1 Air\" (20 DOF, mono camera) with \"In den Warenkorb\" and \"Lieferung morgen\"; Black Friday banner, coupon price 5.559,00 €; no VAT wording on the page (B2C shop). Same page family: R1 6.799,00 €."
    }
   ],
-  "checkedAt": "2026-11-06"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -204,6 +224,14 @@
    "publisher": "Unitree Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.joybuy.de/dp/101924369",
+   "title": "Joybuy (JD.com online shop Germany)",
+   "publisher": "Joybuy (JD.com online shop Germany)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ]
 }

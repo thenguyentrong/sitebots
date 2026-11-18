@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 23499,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "Funduino, incl. VAT."
+  },
   "priceOther": {
    "amount": 25600,
    "currency": "USD",
@@ -34,14 +40,28 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "Price in USD; duties and tariffs extra."
+   },
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduino.com/products/agibot-x2",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s5",
+    "note": "Base X2 with 25 DOF; \"In den Warenkorb\", \"Auf Bestellung lieferbar – in 21 Werktagen\". Also: Bipedal \"AgiBot X2\" (25 DOF, 5-DOF arms) 25.239,90 € inkl. 19% USt., \"Sofort verfügbar, Lieferzeit ca. 4 Wochen\" (https://www.bipedal.de/AgiBot-X2); OpenELAB \"AGIBOT X2 25-DOF\" 31.498,95 € incl. VAT. Bipedal's separate \"AgiBot X2 Neo-Robot\" (30 DoF, 34.510,00 €) uses the Neo name for a 30-DoF unit, so the Neo naming is inconsistent across shops."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-18",
   "status": "buy_now",
-  "statusNote": "Orderable in the AGIBOT online store, which ships from China to Germany, at USD 25,600; customs duties are paid by the buyer.",
+  "statusNote": "Funduino (Germany) sells the 25-DOF X2 at 23,499 € incl. VAT from its cart. Also orderable in the AGIBOT online store, which ships from China to Germany, at USD 25,600; customs duties are paid by the buyer.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s4"
   ]
  },
  "specs": [
@@ -162,6 +182,22 @@
    "publisher": "AGIBOT",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s4",
+   "url": "https://funduinoshop.com/en/robotics/agibot/x2/agibot-x2",
+   "title": "Funduino",
+   "publisher": "Funduino",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://funduino.com/products/agibot-x2",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

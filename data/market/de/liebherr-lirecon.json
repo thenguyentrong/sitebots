@@ -1,0 +1,196 @@
+{
+ "schemaVersion": 1,
+ "id": "liebherr-lirecon",
+ "maker": "Liebherr",
+ "makerCountry": "DE",
+ "model": "LiReCon",
+ "variant": "Liebherr Remote Control System for crawler dozers, crawler excavators and tower cranes",
+ "name": "Liebherr LiReCon remote control system",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation",
+  "material_lifting"
+ ],
+ "officialUrl": "https://www.liebherr.com/en-ca/n/liebherr-presents-lirecon-remote-control-system-at-bauma-2025-152962-3721326",
+ "summary": "Teleoperation system from Liebherr: an operator stand with cameras and microphones lets a driver run Liebherr crawler dozers, crawler excavators and tower cranes from a safe distance, without seeing the machine. First delivered on two PR 726 G8 dozers to the Austrian Armed Forces in 2024 and shown live at bauma 2025.",
+ "launched": "2024",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Liebherr builds and sells LiReCon itself: the Telfs (Austria) dozer plant's sales manager presents it as a solution for all crawler dozer operations and Liebherr calls it a universal cross-sector product for different Liebherr machines. No price list or German product page was found; ask Liebherr sales. Deliveries so far: two PR 726 G8 dozers for the Austrian Armed Forces (2024); bauma 2025 demo with an excavator, a dozer and a tower crane near Biberach.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Liebherr-Werk Telfs GmbH",
+    "country": "AT",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.liebherr.com/en-za/n/liebherr-crawler-dozers-with-lirecon-system-deliver-increased-safety-for-austrian-armed-forces-128705-6278302",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Crawler dozer plant; its sales manager is quoted on LiReCon. Contact request form on the press page. Price on request."
+   },
+   {
+    "name": "Liebherr-Werk Biberach GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.liebherr.com/en-ca/n/liebherr-presents-lirecon-remote-control-system-at-bauma-2025-152962-3721326",
+    "email": null,
+    "phone": "+49 7351 41-2436",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Memminger Straße 120, 88400 Biberach an der Riß. Tower crane plant that ran the bauma 2025 tower crane demo; phone is the marketing contact on the press release."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "machines",
+   "label": "Machines",
+   "value": "Liebherr crawler excavators, crawler dozers and tower cranes",
+   "unit": null,
+   "conditions": "machines named in the bauma 2025 demo",
+   "sourceId": "s1",
+   "quote": "The earthmoving and tower crane product segments will be demonstrating the practical application of this technology using a crawler excavator, a crawler dozer and a tower crane."
+  },
+  {
+   "key": "operator_station",
+   "label": "Operator station",
+   "value": "teleoperation stand with several real-time cameras and microphones",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The LiReCon system consists of a state-of-the-art teleoperation stand equipped with the latest control technology. Several cameras provide real-time images from different perspectives, while microphones transmit the machine sounds."
+  },
+  {
+   "key": "link",
+   "label": "Link to the machine",
+   "value": "radio; works without visual contact; relay stations optional for longer range",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The on-site solution enables remote control of machines without visual contact, while relay stations are available as an option for extended operational range."
+  },
+  {
+   "key": "demo_distance_km",
+   "label": "Longest demo distance",
+   "value": 200,
+   "unit": "km",
+   "conditions": "240 EC-B Fibre tower crane near Biberach controlled from the bauma stand in Munich",
+   "sourceId": "s1",
+   "quote": "The crane, a 240 EC-B Fibre with an innovative fibre rope, is just under 200 kilometres away from the Messe München site"
+  },
+  {
+   "key": "safety",
+   "label": "Safety functions",
+   "value": "integrated emergency stop; encrypted data transmission; operator certification with authorisation levels",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "the system has an integrated emergency stop control to stop the machine dead in dangerous situations"
+  },
+  {
+   "key": "demo_excavator",
+   "label": "Demo excavator",
+   "value": "R 926 G8, 150 kW, 28 t, with Leica machine control",
+   "unit": null,
+   "conditions": "bauma 2025 demo machine",
+   "sourceId": "s1",
+   "quote": "The R 926 G8, which is manufactured at the Colmar plant in France, impresses with an output of 150 kW / 204 hp and an operating weight of 28 tonnes."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Remote control system, not autonomy: a human drives the machine from the stand or a container.",
+   "Capabilities describe the tracked host machines (crawler excavator or dozer); a tower crane can also be fitted.",
+   "Liebherr calls LiReCon a foundation for future machine automation."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www-assets.liebherr.com/media/bu-media/lhbu-corp/news/corp_news_2025/04/bauma/lirecon/liebherr-lirecon-pr-726-g8_96dpi_w800.jpg",
+   "pageUrl": "https://www.liebherr.com/en-ca/n/liebherr-presents-lirecon-remote-control-system-at-bauma-2025-152962-3721326",
+   "credit": "Liebherr",
+   "alt": "Liebherr PR 726 G8 crawler dozer with the LiReCon remote control system",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Two remote-controlled PR 726 G8 crawler dozers do earthmoving on a training ground with unexploded munitions, run from a container",
+   "stage": "deployment",
+   "where": "Allentsteig military training ground, Lower Austria, Austria",
+   "date": "2024",
+   "sourceId": "s2",
+   "note": "Austrian Armed Forces, contract from the Federal Ministry of Defence; handed over in summer 2024."
+  },
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Live remote control of an R 926 G8 crawler excavator and a PR 726 G8 dozer from the stand, and of a tower crane about 200 km away",
+   "stage": "demo",
+   "where": "bauma 2025, Munich, Germany",
+   "date": "2025-04",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.liebherr.com/en-ca/n/liebherr-presents-lirecon-remote-control-system-at-bauma-2025-152962-3721326",
+   "title": "Liebherr presents LiReCon remote control system at Bauma 2025 (press release, 7 April 2025)",
+   "publisher": "Liebherr",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.liebherr.com/en-za/n/liebherr-crawler-dozers-with-lirecon-system-deliver-increased-safety-for-austrian-armed-forces-128705-6278302",
+   "title": "Liebherr Crawler Dozers with LiReCon system deliver increased safety for Austrian Armed Forces (press release, 14 January 2025)",
+   "publisher": "Liebherr",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which Liebherr machine models can be ordered with LiReCon in Germany, and at what price?",
+  "Is there a German LiReCon product page or a named German customer? None was found.",
+  "Range of the standard radio link without relay stations is not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

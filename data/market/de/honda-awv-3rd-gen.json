@@ -1,0 +1,193 @@
+{
+ "schemaVersion": 1,
+ "id": "honda-awv-3rd-gen",
+ "maker": "Honda Motor Co. (American Honda Motor Co., Inc.)",
+ "makerCountry": "JP",
+ "model": "Autonomous Work Vehicle (AWV)",
+ "variant": "third-generation prototype (2023)",
+ "name": "Honda Autonomous Work Vehicle, 3rd generation",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_setup_logistics/material-runs-to-installers"
+ ],
+ "officialUrl": "https://global.honda/newsroom/news/2023/c230307eng.html",
+ "summary": "All-electric off-road flatbed robot vehicle from Honda that drives pre-set routes on large construction sites on its own (GPS, lidar, radar) or by remote control, carrying two pallets or up to 2,000 lb. An earlier generation hauled materials, water and supplies on a Black & Veatch solar construction site.",
+ "launched": "2023-03",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Prototype in the USA. Honda said in March 2023 it aims to commercialise the AWV and was looking for field-test, distribution and support partners; no sale, price or European route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_lb",
+   "label": "Max. loading capacity",
+   "value": 2000,
+   "unit": "lb",
+   "conditions": "about 907 kg; bed holds 2 pallets",
+   "sourceId": "s1",
+   "quote": "Increased bed size to 2 pallets and greater loading capacity of 2000 pounds"
+  },
+  {
+   "key": "size_mm",
+   "label": "Size (W × L × H)",
+   "value": "1300 × 3025 × 2052",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "W: 51in (1300mm) x L: 119in(3025mm) x H: 81in (2052mm)"
+  },
+  {
+   "key": "bed_mm",
+   "label": "Bed size",
+   "value": "2560 × 1300",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "101in (2560mm) x 51in (1300mm)"
+  },
+  {
+   "key": "weight_lb",
+   "label": "Unladen weight",
+   "value": 1765,
+   "unit": "lb",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1765 lbs."
+  },
+  {
+   "key": "speed_mph",
+   "label": "Max. speed, autonomous",
+   "value": 10,
+   "unit": "mph",
+   "conditions": "2.5 mph by default under remote control",
+   "sourceId": "s1",
+   "quote": "Autonomous driving: Max 10mph"
+  },
+  {
+   "key": "battery_kwh",
+   "label": "Battery",
+   "value": 18.6,
+   "unit": "kWh",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "18.6kWh"
+  },
+  {
+   "key": "range_miles",
+   "label": "Range at max. load",
+   "value": 28,
+   "unit": "miles",
+   "conditions": "depending on the use case",
+   "sourceId": "s1",
+   "quote": "Up to 28 miles depending on the use case"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 10,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s1",
+   "quote": "Increased battery size and longer operating time of up to 10 hours"
+  },
+  {
+   "key": "turning_radius_ft",
+   "label": "Min. turning radius",
+   "value": 11.4,
+   "unit": "ft",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "11.4ft"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "GPS/GNSS, radar and lidar for obstacles, cameras for remote monitoring; lidar navigation where GNSS is weak",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "using GPS for location, radar and lidar for obstacle detection and cameras for remote monitoring"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 907,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Built on Honda's off-road side-by-side platform and described as a rugged off-road work vehicle; rough ground is the maker's claim.",
+   "Routes and stop points are set on a tablet; several vehicles can work together.",
+   "carryPayloadKg converts the stated 2,000 lb; the second generation carried nearly 900 lb and towed over 1,600 lb in the field test.",
+   "Honda says the specifications may still change as development continues."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Several AWVs towed trailers and carried construction materials, water and supplies to pre-set points across a 1,000-acre solar construction site for a month",
+   "stage": "pilot",
+   "where": "Black & Veatch solar construction site, New Mexico, USA",
+   "date": "2021-11",
+   "sourceId": "s2",
+   "note": "Second-generation prototype, the predecessor of this vehicle; operated by trained Black & Veatch staff for up to eight hours in high heat."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://global.honda/newsroom/news/2023/c230307eng.html",
+   "title": "Honda Reveals New Prototype Autonomous Work Vehicle at CONEXPO 2023 (with specifications)",
+   "publisher": "Honda Motor Co.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bv.com/news/honda-tests-prototype-autonomous-work-vehicle-at-solar-construction-site",
+   "title": "Honda tests prototype autonomous work vehicle at solar construction site with Black & Veatch (15 November 2021)",
+   "publisher": "Black & Veatch",
+   "kind": "customer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.solarpowerworldonline.com/2021/11/honda-tests-autonomous-work-vehicle-black-veatch-solar-project/",
+   "title": "Honda tests autonomous work vehicle at Black & Veatch solar project",
+   "publisher": "Solar Power World",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is the AWV still in development or offered commercially after 2023? No newer source was read.",
+  "Has the third generation been field tested on a construction site? Only the second generation's test was read."
+ ],
+ "checkedAt": "2026-11-18"
+}

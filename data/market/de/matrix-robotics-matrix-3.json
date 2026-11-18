@@ -1,0 +1,118 @@
+{
+ "schemaVersion": 1,
+ "id": "matrix-robotics-matrix-3",
+ "maker": "Matrix Robotics",
+ "makerCountry": "CN",
+ "model": "MATRIX-3",
+ "variant": null,
+ "name": "Matrix Robotics MATRIX-3",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.matrixrobotics.ai/matrix-3",
+ "summary": "A third-generation bipedal humanoid launched in January 2026 with 27-DOF cable-driven hands, tactile fingertips and a fabric skin, offered through an early-access programme ahead of pilot deployments.",
+ "launched": "2026-01",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found; Matrix Robotics offers only an Early Access Program for select industry partners and an email contact.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 27,
+   "unit": null,
+   "conditions": "cable-driven",
+   "sourceId": "s1",
+   "quote": "27-DoF Dexterous Hand: Equipped with a newly designed 27-degree-of-freedom (DoF) hand"
+  },
+  {
+   "key": "tactile_threshold_n",
+   "label": "Fingertip tactile threshold",
+   "value": 0.1,
+   "unit": "N",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The fingertips integrate a high-sensitivity tactile sensor array capable of detecting pressure as low as 0.1N."
+  },
+  {
+   "key": "actuators",
+   "label": "Actuators",
+   "value": "integrated linear actuators",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Its power core consists of integrated linear actuators that combine high power density with low-noise operation"
+  },
+  {
+   "key": "availability",
+   "label": "Availability",
+   "value": "early access; pilots expected from mid-2026",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Matrix Robotics has opened an Early Access Program for MATRIX-3 to select industry partners, with initial pilot deployments expected to begin in mid-2026."
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Walking is driven by a general motion-control model trained on human motion-capture data ('Natural Humanoid Gait').",
+   "Body is covered in a 3D-woven fabric skin with distributed impact sensing.",
+   "No height, weight, payload or runtime figures are published."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "General tasks across commercial services, manufacturing, logistics, medical assistance and homes",
+   "stage": "claim",
+   "where": null,
+   "date": "2026-01",
+   "sourceId": "s1",
+   "note": "Launch announcement; no pilot site named. No construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.matrixrobotics.ai/",
+   "title": "Introducing MATRIX-3",
+   "publisher": "Matrix Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight, payload, runtime and price are not published.",
+  "Whether the mid-2026 pilot deployments have started.",
+  "Maker headquarters country is not stated on the pages read; CN is assumed from the Chinese-language site and should be checked."
+ ],
+ "checkedAt": "2026-11-18"
+}

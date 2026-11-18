@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "rokae-cmr-s",
+ "maker": "ROKAE (Beijing) Robotics",
+ "makerCountry": "CN",
+ "model": "CMR-S",
+ "variant": "Lightweight Series (CMR-S-V4SD1 / CMR-S-V4SD3)",
+ "name": "ROKAE CMR-S Lightweight Mobile Manipulator",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.rokae.com/en/product/show/599/Mobile-Manipulator-CMR.html",
+ "summary": "ROKAE's light CMR mobile manipulator: a narrow laser-SLAM chassis (passes 800 mm aisles, 12 h operating time) carrying a ROKAE SR, CR7 or CR12 cobot with 7 or 12 kg payload.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "ROKAE (Beijing) takes enquiries through sales@rokae.com and a web form; its readable pages name no German or EU distributor for the CMR series.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 12,
+   "unit": "kg",
+   "conditions": "V4SD3 with 1434 mm working range; V4SD1 7 kg with 988 mm",
+   "sourceId": "s1",
+   "quote": "Payload* 7kg12kgkgWorking Range988mm1434mm"
+  },
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "ROKAE SR series, CR7 or CR12 cobot",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Supports SR Series, CR7 and CR12 Cobots"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 100,
+   "unit": "kg",
+   "conditions": "larger model; smaller model 20 kg",
+   "sourceId": "s1",
+   "quote": "Supports payloads of 20 kg / 100 kg"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "850 x 560 x 950",
+   "unit": "mm",
+   "conditions": "V4SD1; V4SD3 1000 x 700 x 950 mm",
+   "sourceId": "s1",
+   "quote": "Dimensions850×560×950mm1000×700×950mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Chassis weight",
+   "value": 150,
+   "unit": "kg",
+   "conditions": "V4SD1; V4SD3 300 kg",
+   "sourceId": "s1",
+   "quote": "Chassis Weight150kg300kg"
+  },
+  {
+   "key": "min_aisle_mm",
+   "label": "Narrowest aisle",
+   "value": 800,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Capable of passing through aisles as narrow as 800 mm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. moving speed",
+   "value": 1.4,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Max. Moving Speed1.4m/s1.4m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 12,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Operating Time12h12h"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 100 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery Capacity48V，100AH48V，100AH"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Positioning accuracy",
+   "value": 5,
+   "unit": "mm",
+   "conditions": "±, and ±0.5°",
+   "sourceId": "s1",
+   "quote": "Positioning Accuracy±5mm，±0.5°"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 12,
+  "carryPayloadKg": 100,
+  "runtimeH": 12,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Two chassis sizes: V4SD1 (7 kg arm, 20 kg platform load) and V4SD3 (12 kg arm, 100 kg, can also traverse sideways).",
+   "Gripper per application."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers the CMR series for material flow, CNC loading and unloading, visual inspection and equipment operation between workstations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.rokae.com/en/product/show/599/Mobile-Manipulator-CMR.html",
+   "title": "Mobile Manipulator CMR Series",
+   "publisher": "ROKAE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.rokae.com/en/about/215/Contact-Us.html",
+   "title": "Contact Us",
+   "publisher": "ROKAE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Whether a European ROKAE partner sells the CMR series.",
+  "Price not published.",
+  "IP rating not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

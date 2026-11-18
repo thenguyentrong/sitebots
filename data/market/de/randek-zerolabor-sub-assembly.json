@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "randek-zerolabor-sub-assembly",
+ "maker": "Randek AB",
+ "makerCountry": "SE",
+ "model": "ZeroLabor Robotic Sub-assembly",
+ "variant": null,
+ "name": "Randek ZeroLabor robotic sub-assembly cell",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "prefab_timber/stud-insertion-framing"
+ ],
+ "officialUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+ "summary": "Robot cell that builds the slow hand-made parts of timber wall frames, such as U-studs, L-studs, double and triple studs, noggings and window and door rough openings, and buffers them on pallets for the main wall line. Launched by Randek at LIGNA 2025; runs stand-alone or feeding a line.",
+ "launched": "2025-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by Randek (Sweden) after a pre-study; Randek names Horn Hausbau Technologie as its representative for Germany, Austria and Switzerland. No price published.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Set per project in a pre-study (maker)",
+  "sellers": [
+   {
+    "name": "Randek AB",
+    "country": "SE",
+    "role": "manufacturer",
+    "productUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+    "contactUrl": "https://www.randek.com/contact",
+    "email": "sales@randek.com",
+    "phone": "+46 346 55 700",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Vagnsvägen 1, SE-311 32 Falkenberg, Sweden."
+   },
+   {
+    "name": "Horn Hausbau Technologie (Wolfgang Horn)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": null,
+    "contactUrl": "https://www.randek.com/de/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Randek's representative for Germany, Austria and Switzerland; no address or phone on the page."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "components",
+   "label": "Components built",
+   "value": "U-studs, L-studs, doubles, triples, noggings, window and door rough openings",
+   "unit": null,
+   "conditions": "adapts to different construction standards",
+   "sourceId": "s1",
+   "quote": "U-studs, L-studs, doubles, triples, noggings, and window and door rough openings, built the same way every time."
+  },
+  {
+   "key": "operation_mode",
+   "label": "Operation",
+   "value": "stand-alone or feeding the wall line",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Robots build the rough openings and multi-studs that are slow to make by hand, on their own or feeding a line."
+  },
+  {
+   "key": "buffering",
+   "label": "Output buffer",
+   "value": "pallet buffering of finished components",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Pallet bufferingBuffers finished components for the line downstream."
+  },
+  {
+   "key": "robot_type",
+   "label": "Robots",
+   "value": "industrial six-axis robots with tool changer",
+   "unit": null,
+   "conditions": "common ZeroLabor platform; robot count per project",
+   "sourceId": "s1",
+   "quote": "Every ZeroLabor cell is built the same way: industrial robots, a tool changer and the tools the process needs."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Robot count not published; at least one six-axis robot is shown, so arms is set to 1.",
+   "Includes a sub-assembly worktable and a reload station that feeds material into the cell.",
+   "Builds framing sub-components that go into the frame, not the whole wall frame."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://webassets.randek.com/assets/webp/zl%20rsa%20robotic%20sub%20assembly%20real%20image.webp",
+   "pageUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+   "credit": "Randek AB",
+   "alt": "Yellow six-axis robot with a black gripper head placing a stud of a rough opening on a steel worktable",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "prefab_timber/stud-insertion-framing"
+   ],
+   "task": "Launch of the sub-assembly cell building rough openings and studs for wall panels",
+   "stage": "demo",
+   "where": "LIGNA 2025, Hanover, Germany",
+   "date": "2025-05",
+   "sourceId": "s2",
+   "note": "Trade fair launch; Randek's own photo shows the cell assembling a rough opening on a fair stand."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+   "title": "ZeroLabor: the robots that build the building (sub-assembly section)",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.ligna.de/en/news/news-articles/automated-mise-en-place-in-timber-construction",
+   "title": "Automated 'mise en place' in timber construction (12 May 2025)",
+   "publisher": "LIGNA (Deutsche Messe)",
+   "kind": "trade_fair",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.randek.com/contact",
+   "title": "Contact Randek",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.randek.com/de/contact",
+   "title": "Kontakt (Randek in Deutschland, Österreich und der Schweiz)",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price, cycle time or robot count published.",
+  "No named customer plant found; is the cell delivered to customers yet beyond the LIGNA launch?"
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,148 @@
+{
+ "schemaVersion": 1,
+ "id": "luminous-robotics-lumi",
+ "maker": "Luminous Robotics Inc.",
+ "makerCountry": "US",
+ "model": "LUMI",
+ "variant": "S4 (version 4, tracked)",
+ "name": "Luminous LUMI solar module installation robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "utility-scale solar construction: lifting PV modules and placing them on tracker racking"
+ ],
+ "officialUrl": null,
+ "summary": "Tracked mobile manipulator from Boston that picks up solar modules, front or back, and places them on the racking so the crew only has to fasten them. A fleet trialled on the Goorambat East solar farm in Australia in 2025 with ARENA funding.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or European route found. Luminous works in the US and Australia, where it set up a local entity and warehouse for assembly and testing.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "module_weight_kg",
+   "label": "Module weight handled",
+   "value": 36.2,
+   "unit": "kg",
+   "conditions": "80 lb panels named by the maker",
+   "sourceId": "s1",
+   "quote": "can help existing workforces to install 80 lb. (36.2 kg) solar panels up to 3.5 times faster"
+  },
+  {
+   "key": "speedup",
+   "label": "Claimed speed-up",
+   "value": "up to 3.5 times faster than manual installation",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "install 80 lb. (36.2 kg) solar panels up to 3.5 times faster, without any heavy lifting or workflow changes"
+  },
+  {
+   "key": "chassis",
+   "label": "Chassis",
+   "value": "tracked, with a larger battery than the first wheeled version",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The startup soon moved from wheels to a tracked iteration with a larger battery."
+  },
+  {
+   "key": "pick_sides",
+   "label": "Pick-up",
+   "value": "picks modules from front or back",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "No other robot can pick up solar panels from front or back"
+  },
+  {
+   "key": "cost_saving_pct",
+   "label": "Claimed lifetime cost reduction",
+   "value": 6.2,
+   "unit": "%",
+   "conditions": "maker estimate for solar farm costs over their lifetime",
+   "sourceId": "s1",
+   "quote": "could reduce solar farm costs by up to 6.2% over their lifetime"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Arm and chassis are bought from partners; Luminous assembles and tests in Boston.",
+   "Workers still secure the modules on the racking after LUMI places them.",
+   "Version 4 is in limited production (CEO, July 2025)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Fleet of LUMI S4 robots placed solar modules on the racking during construction of a solar farm with almost 500,000 panels",
+   "stage": "pilot",
+   "where": "Goorambat East Solar Farm (ENGIE), near Benalla, Victoria, Australia",
+   "date": "2025-10",
+   "sourceId": "s2",
+   "note": "With Bouygues Construction Australia and Equans; ARENA-funded. Luminous says the robots exceeded the target production rate."
+  },
+  {
+   "taskIds": [],
+   "task": "First field test of the PV panel installer",
+   "stage": "pilot",
+   "where": "Solar site in Virginia, USA",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.therobotreport.com/luminous-gets-funding-to-bring-lumi-solar-construction-robot-to-australia/",
+   "title": "Luminous gets funding to bring LUMI solar construction robot to Australia (2 July 2025)",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pv-magazine-india.com/2025/10/03/autonomous-robot-module-installation-trial-fast-tracks-victorian-solar-farm",
+   "title": "Autonomous robot module installation trial fast tracks Victorian solar farm (3 October 2025)",
+   "publisher": "pv magazine India",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Maker's own product page and specs (reach, runtime, speed per module) were not read.",
+  "Is LUMI sold, rented or offered as an installation service?",
+  "Any plans for Europe?"
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,135 @@
+{
+ "schemaVersion": 1,
+ "id": "apis-cor-frank",
+ "maker": "Apis Cor Inc.",
+ "makerCountry": "US",
+ "model": "Frank",
+ "variant": null,
+ "name": "Apis Cor Frank",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://apis-cor.com/technology",
+ "summary": "Mobile 3D concrete printer from Florida that stands inside the building footprint, prints walls of houses up to two storeys and is moved around the site without cranes; works with the Gary material unit.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Apis Cor offers its systems to US homebuilders ('Bring automated construction to your job sites') and builds homes itself; no price, German or EU route or CE information found.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_storeys",
+   "label": "Building height",
+   "value": "up to two storeys",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "capable of printing buildings up to two stories tall with no on-site assembly"
+  },
+  {
+   "key": "relocation_min",
+   "label": "Relocation on site",
+   "value": "under 25",
+   "unit": "min",
+   "conditions": "no cranes, pallet jacks or large crews",
+   "sourceId": "s1",
+   "quote": "Relocating Frank around the job site takes less than 25 minutes"
+  },
+  {
+   "key": "setup_min",
+   "label": "Setup before printing",
+   "value": "under 30",
+   "unit": "min",
+   "conditions": "position, power up and calibrate",
+   "sourceId": "s1",
+   "quote": "Ready to print in under 30 minutes."
+  },
+  {
+   "key": "transport",
+   "label": "Transport",
+   "value": "pickup truck and trailer (Frank and Gary)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Frank and Gary can be transported with a pickup truck and trailer"
+  },
+  {
+   "key": "companions",
+   "label": "System units",
+   "value": "Gary (mobile mixing with self-learning material control), Mary (material delivery)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Compact and mobile, Gary moves easily with Frank across job sites"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Stands on the slab inside the building and leaves through the door opening when the walls are done.",
+   "Reinforcement is placed and grouted in the printed walls as in CMU block construction."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Prints the walls of permitted residential homes on site",
+   "stage": "deployment",
+   "where": "USA",
+   "date": null,
+   "sourceId": "s2",
+   "note": "Company-level statement ('fully permitted residential homes in the U.S.'); the page does not say which printer generation was used."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://apis-cor.com/technology",
+   "title": "Technology: the fleet (Frank, Gary, Mary)",
+   "publisher": "Apis Cor Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://apis-cor.com/",
+   "title": "Apis Cor: robotic construction systems",
+   "publisher": "Apis Cor Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is Frank sold or leased to builders, and at what price?",
+  "Print area, weight and print speed."
+ ],
+ "checkedAt": "2026-11-18"
+}

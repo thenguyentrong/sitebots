@@ -1,0 +1,192 @@
+{
+ "schemaVersion": 1,
+ "id": "cybe-rt",
+ "maker": "CyBe Construction",
+ "makerCountry": "NL",
+ "model": "CyBe RT",
+ "variant": "Robot Track (5 m track, extendable)",
+ "name": "CyBe RT (Robot Track)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-track/",
+ "summary": "3D concrete printer with an ABB robot arm that travels on a stationary floor track (from 5 m, extendable in 1 m steps), for printing large precast elements and prefab house parts in series.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Netherlands) sells directly through its sales team and contact form, with a published 'price from' figure ex works; no German distributor found. CyBe says it distributes worldwide and the printers are modular for transport.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 240000,
+   "basis": "unknown",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "'Price from €240,000*' with '*Price ex works, based on standard dimensions'; tax basis not stated."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "CyBe Construction B.V.",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-track/",
+    "contactUrl": "https://cybe.eu/contact/",
+    "email": null,
+    "phone": "+31 412 676 030",
+    "priceEur": 240000,
+    "priceBasis": "unknown",
+    "sourceId": "s2",
+    "note": "Oss, Netherlands; the contact form has the option 'I want to buy a printer'. Price is ex works, standard dimensions; transport and import taxes are paid by the buyer."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "print_area_m",
+   "label": "Print range L × W × H (standard)",
+   "value": "5 × 2.5 × 4",
+   "unit": "m",
+   "conditions": "standard 5 m track",
+   "sourceId": "s1",
+   "quote": "Length x Width x Height: 5 m x 2.5 m 4 m (standard)"
+  },
+  {
+   "key": "track_length_m",
+   "label": "Track length",
+   "value": "from 5, extendable in 1 m plates",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The CyBe RT’s track length can be extended in increments of 1 meter by attaching additional 1-meter plates."
+  },
+  {
+   "key": "max_speed_mms",
+   "label": "Print speed",
+   "value": 500,
+   "unit": "mm/s",
+   "conditions": "maker claim for CyBe printers",
+   "sourceId": "s1",
+   "quote": "At 500 millimeters per second, CyBe printers have the fastest print speed in the market."
+  },
+  {
+   "key": "robot",
+   "label": "Robot",
+   "value": "ABB robot arm on a linear track",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Our CyBe RT (Robot Track) is a 3D printer with an ABB robotic arm that moves across a stationary track setup."
+  },
+  {
+   "key": "crew",
+   "label": "Operating crew",
+   "value": 2,
+   "unit": "people",
+   "conditions": "one at the control unit, one at the mortar mixer",
+   "sourceId": "s1",
+   "quote": "The printer is operated by just two persons"
+  },
+  {
+   "key": "lift_after_h",
+   "label": "Elements can be lifted after",
+   "value": 24,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Elements can be hoisted after 24 hours and transported to the project site for installation."
+  },
+  {
+   "key": "training",
+   "label": "Training included",
+   "value": "10-day training at any location",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "CyBe supplies the full package: hardware, software, materials, service, designs, and 10-day training at any location."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "The arm rides on a fixed floor track; concrete parts are printed beside the track.",
+   "Needs a mortar mixing and pumping unit; CyBe sells its own CyBe Mortar.",
+   "Built for factory (precast) use rather than for moving around a site."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://x8k3m3a8.rocketcdn.me/wp-content/uploads/2022/11/CyBe-RT-555x420.jpg",
+   "pageUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-track/",
+   "credit": "CyBe Construction",
+   "alt": "CyBe RT 3D concrete printer, robot arm on a floor track",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printed 14 different building facade elements in one serial print job",
+   "stage": "deployment",
+   "where": "Japan (CyBe partner Aizawa)",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-track/",
+   "title": "The CyBe RT 3D Concrete Printer",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/",
+   "title": "3D concrete printers (models and prices)",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://cybe.eu/contact/",
+   "title": "Contact",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Weight, arm model and reach (full specifications only on request).",
+  "Is the printer CE-marked, and does CyBe have a service partner in Germany?"
+ ],
+ "checkedAt": "2026-11-18"
+}

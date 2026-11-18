@@ -15,12 +15,19 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "status": "quote",
-  "statusNote": "Sold in Germany by PROMOTECH Deutschland GmbH; no public price found.",
+  "status": "buy_now",
+  "statusNote": "Sold in Germany by PROMOTECH Deutschland GmbH; schweiss-shop.de sells the LIZARD 230V at 4,140 € net (4,926.60 € incl. VAT) with a cart.",
   "sourceIds": [
-   "s2"
+   "s2",
+   "s3"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 4140,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s3",
+   "note": "schweiss-shop.de, excl. VAT."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -36,9 +43,22 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "German subsidiary of the Polish maker; price on request."
+   },
+   {
+    "name": "schweiss-shop.de",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.schweiss-shop.de/en/promotech/promotech-lizard-is-a-mobile-programmable-230v-welding-tractor-for-high-quality-weld-seams/2031SST0008",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 4140,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "German welding shop lists LIZARD 230V at €4,926.60 gross / €4,140.00 net with a shopping-cart button; \"Not in stock (8-14 days after order)\". LIZARD 42V version listed separately at €4,190.00 net; oscillator option €1,230.00 net."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -171,6 +191,14 @@
    "publisher": "Promotech",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.schweiss-shop.de/en/promotech/promotech-lizard-is-a-mobile-programmable-230v-welding-tractor-for-high-quality-weld-seams/2031SST0008",
+   "title": "schweiss-shop.de",
+   "publisher": "schweiss-shop.de",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

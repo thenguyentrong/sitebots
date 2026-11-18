@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "rokae-cmr-cr",
+ "maker": "ROKAE (Beijing) Robotics",
+ "makerCountry": "CN",
+ "model": "CMR-CR",
+ "variant": "Omnidirectional Battery-Swapping Series (CMR-CR-V3SO6 / V3RO6)",
+ "name": "ROKAE CMR-CR Battery-Swapping Mobile Manipulator",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.rokae.com/en/product/show/599/Mobile-Manipulator-CMR.html",
+ "summary": "ROKAE's factory-floor CMR version: a four-directional laser-SLAM chassis with swappable 100 Ah battery and up to 150 kg platform load carrying a 12 or 20 kg ROKAE CR cobot, built for CNC tending on oily shop floors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "ROKAE (Beijing) takes enquiries through sales@rokae.com and a web form; its readable pages name no German or EU distributor for the CMR series.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "12 kg or 20 kg cobot; working range 1413 mm",
+   "sourceId": "s1",
+   "quote": "Payload* 12kg/20kg12kg/20kgWorking Range1413mm1413mm"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 150,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s1",
+   "quote": "Supports payloads up to 150 kg"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1200 x 700 x 800",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dimensions1200×700×800mm1200×700×800mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Chassis weight",
+   "value": 600,
+   "unit": "kg",
+   "conditions": "V3SO6; V3RO6 500 kg",
+   "sourceId": "s1",
+   "quote": "Chassis Weight600kg500kg"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. moving speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "V3SO6; V3RO6 1.4 m/s",
+   "sourceId": "s1",
+   "quote": "Max. Moving Speed1.5m/s1.4m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 7,
+   "unit": "h",
+   "conditions": "battery can be swapped for uninterrupted operation",
+   "sourceId": "s1",
+   "quote": "Operating Time7h7h"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V 100 Ah main plus 48 V 20 Ah sub battery; charging and swapping",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery Capacity48V，100AH(Main)+48v20AH(Sub)"
+  },
+  {
+   "key": "min_aisle_mm",
+   "label": "Narrowest aisle",
+   "value": 1000,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "capable of passing through aisles as narrow as 1m"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Positioning accuracy on oily floors",
+   "value": 10,
+   "unit": "mm",
+   "conditions": "±; anti-slip tyres and reinforced suspension",
+   "sourceId": "s2",
+   "quote": "±10mm positioning accuracy on oily floors"
+  },
+  {
+   "key": "ip_rating_end_effector",
+   "label": "End-effector protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": "end effector only, for oil splash",
+   "sourceId": "s2",
+   "quote": "End-effector IP67 rating, suitable for environments with oil splashing"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 20,
+  "carryPayloadKg": 150,
+  "runtimeH": 7,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A differential-drive CMR-CR version (V1SD5, 100 kg platform load, 48 V 60 Ah, no battery swap) is listed on the same page.",
+   "IP67 applies to the end effector, not the whole robot.",
+   "Gripper per application."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for material handling, CNC loading and unloading, visual inspection and equipment operation in oily machining environments",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.rokae.com/en/product/show/599/Mobile-Manipulator-CMR.html",
+   "title": "Mobile Manipulator CMR Series",
+   "publisher": "ROKAE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.rokae.com/en/case/624/CMR-Series-Composite-Robot.html",
+   "title": "CMR Series Composite Robot",
+   "publisher": "ROKAE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.rokae.com/en/about/215/Contact-Us.html",
+   "title": "Contact Us",
+   "publisher": "ROKAE Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Whether a European ROKAE partner sells the CMR series.",
+  "Price not published.",
+  "IP rating of the whole robot not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

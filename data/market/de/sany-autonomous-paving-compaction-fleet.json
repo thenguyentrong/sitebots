@@ -1,0 +1,142 @@
+{
+ "schemaVersion": 1,
+ "id": "sany-autonomous-paving-compaction-fleet",
+ "maker": "SANY",
+ "makerCountry": "CN",
+ "model": "Autonomous paving & compaction fleet",
+ "variant": "third generation: driverless asphalt paver with double-drum and pneumatic rollers",
+ "name": "SANY autonomous paving & compaction fleet",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_roads_paving/asphalt-paving"
+ ],
+ "officialUrl": null,
+ "summary": "Fleet of driverless SANY road machines in which an autonomous asphalt paver is followed by double-drum and pneumatic rollers that adjust their compaction on their own. SANY says the third generation detects kerbs, avoids obstacles with LiDAR and cameras and has been used on more than 50 projects in China.",
+ "launched": "2019",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU offer for the driverless fleet found; all projects named are in China. SANY's single driverless roller (SSR200C-10S kit) is a separate record and is also not offered in Germany.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "generation",
+   "label": "Generation",
+   "value": "third generation since the first fleet in 2019",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Since launching its first-generation unmanned road machine fleet in 2019, SANY has developed it to the third generation"
+  },
+  {
+   "key": "surface_flatness_mm",
+   "label": "Surface flatness",
+   "value": "σ < 0.75",
+   "unit": "mm",
+   "conditions": "surface layer, maker claim",
+   "sourceId": "s1",
+   "quote": "Automatically adjust compaction methods based on site conditions while ensuring surface layer flatness (σ < 0.75 mm)."
+  },
+  {
+   "key": "workforce_reduction_pct",
+   "label": "On-site workforce saved",
+   "value": "over 60",
+   "unit": "%",
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "Unmanned driving system, LiDAR & vision fusion for obstacle avoidance, reducing over 60% on-site workforce."
+  },
+  {
+   "key": "edge_control",
+   "label": "Kerb detection",
+   "value": "perception and positioning for kerb detection, 'zero-edge deviation'",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "Self-developed technology integrating perception and positioning for precise curb detection, enabling zero-edge deviation."
+  },
+  {
+   "key": "projects",
+   "label": "Projects",
+   "value": "over 50",
+   "unit": "projects",
+   "conditions": "in China, as of August 2025",
+   "sourceId": "s1",
+   "quote": "The autonomous fleet has now been deployed in over 50 projects in China."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "A fleet of conventional SANY road machines made driverless; rollers roll on steel drums and tyres (counted as wheels here); paver undercarriage not stated.",
+   "Machine models in the fleet are not named in the source read.",
+   "Tool = paver screed and roller drums."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/asphalt-paving"
+   ],
+   "task": "An autonomous paver laid a 100 m asphalt road, followed by two double-drum and two pneumatic rollers, in front of customers",
+   "stage": "demo",
+   "where": "SANY Global Road Machinery Premium Customer Summit, Changsha, China",
+   "date": "2025-07",
+   "sourceId": "s1",
+   "note": "Over 600 customers from nearly 40 countries watched (maker)."
+  },
+  {
+   "taskIds": [
+    "site_roads_paving/asphalt-paving"
+   ],
+   "task": "Autonomous paving and compaction fleet used on road projects",
+   "stage": "deployment",
+   "where": "China (over 50 projects)",
+   "date": "2025-08",
+   "sourceId": "s1",
+   "note": "Maker figure; projects not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.sanyglobal.com/press_releases/4741/",
+   "title": "Building Smarter Equipment: SANY Is Accelerating Intelligent Transformation (7 August 2025)",
+   "publisher": "SANY Group",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which paver and roller models make up the fleet, and can customers buy them as driverless versions?",
+  "Is the fleet offered outside China, e.g. through SANY Europe?",
+  "Price of the unmanned option."
+ ],
+ "checkedAt": "2026-11-18"
+}

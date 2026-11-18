@@ -1,0 +1,136 @@
+{
+ "schemaVersion": 1,
+ "id": "progress-tube-master",
+ "maker": "Progress Maschinen & Automation AG (Progress Group)",
+ "makerCountry": "IT",
+ "model": "Tube Master",
+ "variant": null,
+ "name": "Progress Tube Master pipe-laying robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "precast_concrete/embedded-parts-placement"
+ ],
+ "officialUrl": null,
+ "summary": "Robot for precast plants that bends heating and cooling pipes and lays them on the pallet on top of the reinforcement for slabs with activated concrete cores, replacing manual pipe laying. Developed by Progress Maschinen & Automation and first installed at Mischek Systembau near Vienna.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by the Progress Group from Brixen (Italy, EU). No price published and no German installation found; the first unit runs in Austria. The maker's product pages beyond the shuttering robot returned 403 to the polite reader.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Progress Maschinen & Automation AG",
+    "country": "IT",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.progress-m.com/en/contact/contact",
+    "email": "info@progress-m.com",
+    "phone": "+39 0472 979 100",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Julius-Durst-Straße 100, I-39042 Brixen, Italy. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "task",
+   "label": "Task",
+   "value": "bending and laying heating and cooling pipes for activated concrete cores",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "bending and laying pipes for precast concrete elements with activated concrete core"
+  },
+  {
+   "key": "laying_position",
+   "label": "Laying position",
+   "value": "directly on top of the inserted reinforcement",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The system is capable of laying pipes directly on top of the previously inserted reinforcement and replaces tedious manual work"
+  },
+  {
+   "key": "daily_output_m2",
+   "label": "Daily output",
+   "value": 300,
+   "unit": "m²/day",
+   "conditions": "up to; 3-shift operation at Mischek Systembau",
+   "sourceId": "s1",
+   "quote": "The Tube Master is currently running a 3-shift operation from Sunday, 10 pm, to Friday, 10 pm, with a daily output of up to 300 m²."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Works in a pallet circulation plant; it was fitted into an existing line for semi-finished precast components while production continued.",
+   "Pipes still need fastening on the pallet after laying (minimum rework, per the article).",
+   "Robot type (gantry or arm), pipe diameters and speed are not given in the text read."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "precast_concrete/embedded-parts-placement"
+   ],
+   "task": "Bends and lays heating and cooling hoses for activated-core floor slabs in three shifts, up to 300 m² a day",
+   "stage": "deployment",
+   "where": "Mischek Systembau GmbH, Gerasdorf near Vienna, Austria",
+   "date": "2023-08",
+   "sourceId": "s1",
+   "note": "First installation; the article says output goals were far exceeded in the first full year."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bft-international.com/en/artikel/automated-bending-and-laying-of-cooling-and-heating-pipes-3983153.html",
+   "title": "Automated bending and laying of cooling and heating pipes (BFT 08/2023)",
+   "publisher": "BFT International",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.progress-m.com/en/contact/contact",
+   "title": "Contact",
+   "publisher": "Progress Maschinen & Automation AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No maker product page could be read (403); pipe sizes, laying speed and robot layout unknown.",
+  "No price found.",
+  "Installed anywhere besides Mischek Systembau?"
+ ],
+ "checkedAt": "2026-11-18"
+}

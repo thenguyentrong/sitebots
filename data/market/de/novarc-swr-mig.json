@@ -1,0 +1,232 @@
+{
+ "schemaVersion": 1,
+ "id": "novarc-swr-mig",
+ "maker": "Novarc Technologies Inc.",
+ "makerCountry": "CA",
+ "model": "Spool Welding Robot SWR",
+ "variant": "MIG/MAG version (sold in Germany by ABICOR BINZEL)",
+ "name": "Novarc Spool Welding Robot SWR (MIG/MAG)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "welding"
+ ],
+ "officialUrl": "https://www.novarctech.com/",
+ "summary": "Collaborative pipe spool welding robot for fabrication shops of piping and mechanical contractors: a 3-axis arm on a pedestal with seam tracking and a weld camera welds rotating pipes from root to cap; sold in Germany as a turnkey system by ABICOR BINZEL.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German welding-equipment maker ABICOR BINZEL (Buseck) sells the SWR as a turnkey system with its torches and offers price requests and financing on its German product page. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Alexander Binzel Schweisstechnik GmbH & Co. KG (ABICOR BINZEL)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.binzel-abicor.com/DE/deu/produkte/robotic-systems/schweissroboter-fuer-rohre/mig-mag-schweissroboter-swr/",
+    "contactUrl": "https://www.binzel-abicor.com/DE/deu/unternehmen/kontakt/kontaktformular/",
+    "email": "info@binzel-abicor.com",
+    "phone": "+49 6408 59-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Kiesacker 7-9, 35418 Buseck (imprint). Global partner of Novarc; product page invites price requests (\"Preisanfragen\") and offers financing."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "pipe_diameter_cm",
+   "label": "Pipe diameter",
+   "value": "5–152",
+   "unit": "cm",
+   "conditions": "2–60 in",
+   "sourceId": "s1",
+   "quote": "5 – 152 cm"
+  },
+  {
+   "key": "working_radius_m",
+   "label": "Working radius",
+   "value": 4.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "4,5 m"
+  },
+  {
+   "key": "footprint_m",
+   "label": "Footprint",
+   "value": "1.2 × 1.2",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1,2 x 1,2 m"
+  },
+  {
+   "key": "robot_height_m",
+   "label": "Robot height",
+   "value": 4.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "4,5 m"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": "0.3–2.7",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "0,3 – 2,7 m"
+  },
+  {
+   "key": "seam_tracking_mm",
+   "label": "Horizontal seam tracking accuracy",
+   "value": "±0.1",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "+/- 0,1 mm"
+  },
+  {
+   "key": "wire_diameter_mm",
+   "label": "Wire diameter",
+   "value": "0.9–1.6",
+   "unit": "mm",
+   "conditions": "solid, metal-cored and flux-cored wire",
+   "sourceId": "s1",
+   "quote": "0,9 – 1,6 mm Volldraht, Metallpulverdraht & Fülldraht"
+  },
+  {
+   "key": "wall_thickness_mm",
+   "label": "Wall thickness",
+   "value": "steel up to 50 mm; stainless from 2.5 mm",
+   "unit": null,
+   "conditions": "depends on the welding job",
+   "sourceId": "s1",
+   "quote": "Stahlrohre mit bis zu 50 mm Wanddicke genauso gut und präzise wie Edelstahlrohre ab 2,5 mm Wandung"
+  },
+  {
+   "key": "spool_length_m",
+   "label": "Spool length",
+   "value": 12,
+   "unit": "m",
+   "conditions": "with optional longer boom",
+   "sourceId": "s1",
+   "quote": "Ein optionaler längerer Auslegerarm ermöglicht das Schweißen von Rohrspulen mit einer Länge von bis zu 12 Metern."
+  },
+  {
+   "key": "positioners",
+   "label": "Weld positioners",
+   "value": "up to 5",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "bis zu 5 Schweißpositionierer verschiedenster Aufnahmegrößen können im Arbeitsraum angeschlossen werden"
+  },
+  {
+   "key": "safety",
+   "label": "Collaborative safety",
+   "value": "ISO 15066; no enclosure or light curtain needed",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Der Rohrschweiß-Roboter SWR erfüllt alle Sicherheitsanforderungen von ISO 15066."
+  },
+  {
+   "key": "productivity",
+   "label": "Productivity vs manual",
+   "value": "carbon steel 3–5×, stainless up to 12× faster",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "Erhöht die Produktivität beim Edelstahlrohrschweißen um das 12-Fache, beim Schweißen von unlegierten Stahlrohren um das 3–5-Fache"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Pedestal-mounted 3-axis welding arm; the pipe turns on a positioner while the arm weaves the torch. Not mobile.",
+   "NovEye camera records every weld; laser height and seam tracking; wireless teach pendant for live corrections; up to 60 preset welding programs, no programming needed.",
+   "Optional 4th axis (SWR-F) for flange fillet welds and an optional second torch."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "ColonialWebb doubled its welding output with the SWR (maker case)",
+   "stage": "deployment",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": "Harder Mechanical Contractors is also quoted as a user."
+  },
+  {
+   "taskIds": [],
+   "task": "Welds pipe-to-pipe, pipe-to-flange, elbows, reducers and tees from root to cap (distributor description)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.binzel-abicor.com/DE/deu/produkte/robotic-systems/schweissroboter-fuer-rohre/mig-mag-schweissroboter-swr/",
+   "title": "Rohrschweiß-Roboter SWR (MIG/MAG-Schweißroboter SWR)",
+   "publisher": "ABICOR BINZEL",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.binzel-abicor.com/DE/deu/impressum/",
+   "title": "Impressum (Alexander Binzel Schweisstechnik GmbH & Co. KG)",
+   "publisher": "ABICOR BINZEL",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.novarctech.com/",
+   "title": "Novarc Technologies (SWR products and customer cases)",
+   "publisher": "Novarc Technologies Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price: on request from ABICOR BINZEL.",
+  "Novarc also sells TIG, TIPTIG and HyperFill versions; whether they are offered in Germany is not stated on the page read.",
+  "German reference users are not named."
+ ],
+ "checkedAt": "2026-11-18"
+}

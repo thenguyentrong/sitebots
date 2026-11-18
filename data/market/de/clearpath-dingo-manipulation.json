@@ -1,0 +1,217 @@
+{
+ "schemaVersion": 1,
+ "id": "clearpath-dingo-manipulation",
+ "maker": "Clearpath Robotics (Rockwell Automation)",
+ "makerCountry": "CA",
+ "model": "Dingo",
+ "variant": "Manipulation Package (Kinova Gen3 lite)",
+ "name": "Clearpath Dingo with Manipulation Package",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://clearpathrobotics.com/dingo-indoor-mobile-robot/",
+ "summary": "A 13 kg low indoor research robot with omnidirectional drive carrying a Kinova Gen3 lite arm and an Intel D435 camera, offered by Clearpath as a package for mobile manipulation up to 0.5 kg.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Génération Robots sells the bare Dingo from 13,000 € net (15,600 € incl. VAT, delivery within 4 weeks) with a quote button; the Kinova manipulation package is not listed there and is on quote. Clearpath names Generation Robots (Berlin) and MYBOTSHOP as German distributors.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/en/403731-dingo-indoor-robotic-platform-673.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 255 555 730",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Bare \"Dingo Indoor Robotic Platform\" \"From €15,600.00 VAT incl. €13,000.00 VAT excl.\", \"Delivery within 4 weeks\"; no arm package on that page. Berlin office listed by Clearpath as a German distributor."
+   },
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": null,
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Listed by Clearpath as a German distributor; its Dingo product page returned 404 on this check."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "Kinova Gen3 lite",
+   "unit": null,
+   "conditions": "package also includes a performance Mini-ITX computer and an Intel D435 depth camera",
+   "sourceId": "s1",
+   "quote": "+ Kinova Gen3-Lite Manipulator"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Manipulation payload",
+   "value": 0.5,
+   "unit": "kg",
+   "conditions": "up to",
+   "sourceId": "s1",
+   "quote": "+ Mobile manipulation (up to 0.5kg)"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Max payload (base)",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "base",
+   "sourceId": "s1",
+   "quote": "20 kg (44 lbs)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Base weight",
+   "value": 13,
+   "unit": "kg",
+   "conditions": "without arm",
+   "sourceId": "s1",
+   "quote": "13.0 kg (28 lbs))"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "External dimensions",
+   "value": "686 x 517 x 114",
+   "unit": "mm",
+   "conditions": "base, without arm",
+   "sourceId": "s1",
+   "quote": "686 x 517 x 114 mm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.3,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1.3 m/s"
+  },
+  {
+   "key": "obstacle_clearance_mm",
+   "label": "Obstacle clearance",
+   "value": 16,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "16 mm (0.63 in)"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 Jazzy",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ROS 2 Jazzy"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 0.5,
+  "carryPayloadKg": 20,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 2 Jazzy",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Indoor platform only (maker: \"indoor mobile robot designed for robotics research and education\"); 16 mm obstacle clearance.",
+   "Runtime and IP rating not stated on the page read.",
+   "Teaching and research platform for very light objects, not a site work machine."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://s3.amazonaws.com/assets.clearpathrobotics.com/wp-content/uploads/2024/02/02170028/Dingo-O-Gen3-Lite.49-e1706911315510-1280x849.png",
+   "pageUrl": "https://clearpathrobotics.com/dingo-indoor-mobile-robot/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Dingo-O indoor robot with a Kinova Gen3 lite arm",
+   "kind": "product"
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": false,
+   "sourceId": "s3",
+   "quote": "Operating environment: indoor",
+   "basis": "seller technical specification (Dingo-D and Dingo-O)",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers the package for mobile manipulation up to 0.5 kg, graduate courses and remote tele-operated manipulation",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clearpathrobotics.com/dingo-indoor-mobile-robot/",
+   "title": "Dingo - Indoor Mobile Robot (Manipulation Package)",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://clearpathrobotics.com/contact-a-global-distributor/",
+   "title": "Contact a global distributor",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/403731-dingo-indoor-robotic-platform-673.html",
+   "title": "Dingo Indoor Robotic Platform",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the Dingo Manipulation Package in Germany.",
+  "Runtime of the Dingo with the arm.",
+  "Whether the package uses the omnidirectional Dingo-O or the differential Dingo-D (the package photo shows a Dingo-O)."
+ ],
+ "checkedAt": "2026-11-18"
+}

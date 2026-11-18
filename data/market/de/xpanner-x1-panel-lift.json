@@ -1,0 +1,138 @@
+{
+ "schemaVersion": 1,
+ "id": "xpanner-x1-panel-lift",
+ "maker": "Xpanner Inc.",
+ "makerCountry": "US",
+ "model": "X1 Panel Lift",
+ "variant": "automation kit and vacuum attachment on a standard excavator",
+ "name": "Xpanner X1 Panel Lift",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "utility-scale solar construction: lifting PV modules and placing them on tracker racking"
+ ],
+ "officialUrl": "https://xpanner.com/solution/x1-panel-lift/",
+ "summary": "Automation kit for a standard excavator that carries the PV panel box, picks modules straight from it with vacuum and places them, so a three-person crew only aligns and fastens. Released in July 2026 and offered on subscription; it joins Xpanner's X1 piling kits.",
+ "launched": "2026-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or European seller or project found. Xpanner sells from Santa Fe Springs, California, on an all-inclusive subscription (hardware, kit and licence, Xpanner Connect software, on-site support); no price published.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "workflow",
+   "label": "Workflow",
+   "value": "transports the PV panel box, picks panels from it and installs them with one excavator; no separate loader or forklift",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "X1 transports the PV panel box, picks panels directly from the box, and installs them using a single excavator."
+  },
+  {
+   "key": "crew_size",
+   "label": "Crew",
+   "value": 3,
+   "unit": "people",
+   "conditions": "crew handles machine operation and panel installation",
+   "sourceId": "s1",
+   "quote": "3-person crew handlesequipment operationand panel installation."
+  },
+  {
+   "key": "rows_covered",
+   "label": "Rows worked",
+   "value": 2,
+   "unit": "rows",
+   "conditions": "left and right of the machine at once",
+   "sourceId": "s1",
+   "quote": "Machine workstwo rows simultaneously,left and right."
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR, vision and GNSS fused into a live 3D model of the site",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The system fuses data from LIDAR, vision, and GNSS sensors to build a live 3D model of the jobsite"
+  },
+  {
+   "key": "operation",
+   "label": "Operation",
+   "value": "one-button assisted automation with automated vacuum handling and simple remote operation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Automated vacuum handlingAssisted panel positioningSimple remote operation with easy interface"
+  },
+  {
+   "key": "controller",
+   "label": "Controller",
+   "value": "Mango automation controller (RTOS)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Mango is Xpanner’s core technology—designed for real-time decision-making and precision control across hydraulic, electric, and mechanical systems, all within a robust RTOS environment."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Kit on a standard excavator (crawler tracks assumed); the vacuum lifting attachment is the gripper.",
+   "Assisted automation: the operator stays in control and the crew aligns, fastens and checks the modules.",
+   "Remote operation keeps people out of the load path during lifts."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://xpanner.com/solution/x1-panel-lift/",
+   "title": "X1 Panel Lift: solar panel installation automation",
+   "publisher": "Xpanner",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pv-magazine.com/2026/07/16/xpanner-introduces-excavator-mounted-automation-tool-to-ease-utility-scale-installation-bottlenecks/",
+   "title": "Xpanner introduces excavator-mounted automation tool to ease utility-scale installation bottlenecks (16 July 2026)",
+   "publisher": "pv magazine",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No customer project or field result has been published yet.",
+  "Which excavator sizes and makes carry the kit, and what panel sizes and weights it handles?",
+  "Subscription price not published."
+ ],
+ "checkedAt": "2026-11-18"
+}

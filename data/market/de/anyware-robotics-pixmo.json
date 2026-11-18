@@ -1,0 +1,166 @@
+{
+ "schemaVersion": 1,
+ "id": "anyware-robotics-pixmo",
+ "maker": "Anyware Robotics",
+ "makerCountry": "US",
+ "model": "Pixmo",
+ "variant": null,
+ "name": "Anyware Robotics Pixmo",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.anyware-robotics.com/",
+ "summary": "A mobile box-handling robot that pairs an autonomous mobile base with a FANUC CRX collaborative arm and a conveyor add-on to unload floor-loaded containers and trailers; it also palletizes and tends machines.",
+ "launched": "2024-02",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found; Anyware Robotics deploys Pixmo at US logistics sites and takes enquiries through its own contact form.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "case_weight_lb",
+   "label": "Case weight handled",
+   "value": 50,
+   "unit": "lb",
+   "conditions": "up to; about 22.7 kg",
+   "sourceId": "s1",
+   "quote": "Up to 50 lb."
+  },
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "FANUC CRX collaborative robot on an AMR base",
+   "unit": null,
+   "conditions": "with a patent-pending conveyor add-on for transfer to outbound conveyors or pallets",
+   "sourceId": "s2",
+   "quote": "A FANUC CRX collaborative robot and autonomous mobile robot (AMR) base for precision and safety"
+  },
+  {
+   "key": "container_unload_time_h",
+   "label": "Container unload time",
+   "value": "2-3",
+   "unit": "h",
+   "conditions": "per container at Saddle Creek Logistics, Modesto",
+   "sourceId": "s2",
+   "quote": "unloads containers in 2-3 hours."
+  },
+  {
+   "key": "staffing",
+   "label": "Staffing effect",
+   "value": "4-5 operators reduced to 1-2 operators",
+   "unit": null,
+   "conditions": "customer case study",
+   "sourceId": "s2",
+   "quote": "reduced staffing from 4-5 operators to 1-2 operators."
+  },
+  {
+   "key": "infrastructure",
+   "label": "Site infrastructure",
+   "value": "No permanent conveyors or infrastructure changes needed",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Pixmo is mobile, requiring no permanent conveyors or infrastructure changes"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": 22.7,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Arm payload is the maker's 50 lb case weight converted to kg.",
+   "End effector type is not described on the pages read; it is part of the delivered system.",
+   "Works on dock floors and container/trailer floors; ramps mentioned by the maker."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "construction_logistics_hub/container-unloading"
+   ],
+   "task": "Unloads floor-loaded containers at Saddle Creek Logistics; over 2 million lbs handled",
+   "stage": "deployment",
+   "where": "Modesto, California, USA",
+   "date": "2025-08",
+   "sourceId": "s2",
+   "note": "Date from the press release listed on the maker's news page (s4)."
+  },
+  {
+   "taskIds": [
+    "construction_logistics_hub/container-unloading"
+   ],
+   "task": "Unloads containers at Western Post warehouses in receiving",
+   "stage": "deployment",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": "Customer quote: \"We are excited to have Pixmo deployed at our warehouses to unload containers\"."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.anyware-robotics.com/",
+   "title": "Anyware Robotics - general-purpose robots for physically demanding work",
+   "publisher": "Anyware Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://anyware-robotics.com/case-studies/saddlecreek-modesto/",
+   "title": "Saddle Creek Logistics Deploys Anyware Robotics' Pixmo for Case Handling",
+   "publisher": "Anyware Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://anyware-robotics.com/case-studies/westernpost-ontario/",
+   "title": "Transforming Receiving with Pixmo at Western Post",
+   "publisher": "Anyware Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://anyware-robotics.com/news/",
+   "title": "News",
+   "publisher": "Anyware Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price and whether Anyware sells or rents Pixmo (robots-as-a-service) outside the US.",
+  "Size, weight, runtime and arm model variant (CRX-10iA, -20iA, -25iA ...) not stated on the pages read."
+ ],
+ "checkedAt": "2026-11-18"
+}

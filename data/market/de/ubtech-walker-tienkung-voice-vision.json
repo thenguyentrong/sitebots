@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 104000,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s5",
+   "note": "Terra Robotics (Terra Connect GmbH): price in the shop's product data; the product page itself says \"Preis anfragen\". VAT not stated."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -31,13 +37,14 @@
     "note": "Variant \"Voice & Vision\"; metadata price EUR 104,000, basis not stated, not displayed."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-18",
   "status": "quote",
-  "statusNote": "Terra Robotics lists the Walker Tienkung in its Voice & Vision version, price on request.",
+  "statusNote": "Terra Robotics lists the Walker Tienkung in its Voice & Vision version; the page asks for a price request, but Terra's shop data holds 104,000 €.",
   "sourceIds": [
    "s4",
    "s2",
-   "s3"
+   "s3",
+   "s5"
   ]
  },
  "specs": [
@@ -186,6 +193,14 @@
    "publisher": "RobotShop",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://terra-robotics.de/products/ubtech-walker-tienkung.js",
+   "title": "Terra Robotics (Terra Connect GmbH)",
+   "publisher": "Terra Robotics (Terra Connect GmbH)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [],

@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "weibuild-pnp-3000ic",
+ "maker": "Shanghai WEIBUILD Technology Co., Ltd. (Weijian)",
+ "makerCountry": "CN",
+ "model": "PNP-3000iC",
+ "variant": "putty and paint spraying robot, 3.2 m",
+ "name": "WEIBUILD PNP-3000iC putty and paint spraying robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://we-i-build.com/propainter-en.html",
+ "summary": "Indoor robot with a lift axis, a traverse axis and a compact four-axis arm that sprays putty and latex paint on walls and ceilings up to 3.2 m in flats. Made by WEIBUILD in Shanghai for residential storey heights.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. WEIBUILD says its plastering and spraying robot series passed EU CE certification in August 2026 and that it is expanding into Europe; enquiries go to the maker in Shanghai (overseas phone and WhatsApp on the site).",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "working_height_mm",
+   "label": "Working height",
+   "value": 3200,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Working Altitude 3200mm"
+  },
+  {
+   "key": "area_rate_m2_h",
+   "label": "Output per coat",
+   "value": "200 putty, 300 paint",
+   "unit": "m²/h",
+   "conditions": "spec table; the feature text gives 120 m²/h putty and 200 m²/h paint",
+   "sourceId": "s1",
+   "quote": "Capacity per coat 200㎡/h 300㎡/h"
+  },
+  {
+   "key": "working_width_m",
+   "label": "Working width",
+   "value": 1.8,
+   "unit": "m",
+   "conditions": "per station",
+   "sourceId": "s1",
+   "quote": "Working width 1.8m"
+  },
+  {
+   "key": "length_mm",
+   "label": "Length",
+   "value": 850,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Length 850mm"
+  },
+  {
+   "key": "width_mm",
+   "label": "Width",
+   "value": 760,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Width 760mm"
+  },
+  {
+   "key": "height_mm",
+   "label": "Height",
+   "value": 1780,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Height 1780mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 600,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight 600kg"
+  },
+  {
+   "key": "speed",
+   "label": "Moving speed",
+   "value": "> 0.5 m/s",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Move Speed >0.5m/s"
+  },
+  {
+   "key": "battery_h",
+   "label": "Battery life",
+   "value": 4,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery Life 4h"
+  },
+  {
+   "key": "coverage",
+   "label": "Coverage",
+   "value": "≥ 95 %",
+   "unit": null,
+   "conditions": "maker: porch and corridor 95-100 %",
+   "sourceId": "s1",
+   "quote": "High Coverage Rate (≥95%)"
+  },
+  {
+   "key": "film_uniformity",
+   "label": "Coating thickness uniformity",
+   "value": "< 0.1 mm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Coating Thickness Uniformity <0.1mm"
+  },
+  {
+   "key": "training",
+   "label": "Operator training",
+   "value": "3 days",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "operators can master the system after 3 days of training"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Lift axis + traverse axis + front-mounted 4-axis arm; \"three-spray in one station\" covers left, centre and right columns from one position (maker).",
+   "Drive not described; wheels assumed. Works with WEIBUILD's modeling robot, putty mixer and grinder in one workflow."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://we-i-build.com/propainter-en.html",
+   "title": "Spraying Robot (Putty & Painting Spraying Robot, PNP-3000iC and PNP-6000iC specifications)",
+   "publisher": "Shanghai WEIBUILD Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://we-i-build.com/en/news/308.html",
+   "title": "Weijian Robotics has obtained EU CE certification and is accelerating its expansion into European and global markets",
+   "publisher": "Shanghai WEIBUILD Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Output figures differ on the page: 200/300 m²/h (table) or 120/200 m²/h (feature text) for putty/paint?",
+  "Price and any European dealer."
+ ],
+ "checkedAt": "2026-11-18"
+}

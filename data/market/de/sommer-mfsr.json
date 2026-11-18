@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "sommer-mfsr",
+ "maker": "SOMMER Anlagentechnik GmbH (Sommer Precast Technology)",
+ "makerCountry": "DE",
+ "model": "MFSR",
+ "variant": null,
+ "name": "Sommer MFSR multifunction shuttering robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "precast_concrete/shuttering-placement",
+  "precast_concrete/embedded-parts-placement"
+ ],
+ "officialUrl": "https://www.sommer-precast.de/produkte/multifunktions-schalungs-roboter",
+ "summary": "Gantry robot for precast pallet circulation plants that scans the pallet, demoulds and returns shutters, oils and plots the pallet, then sets and aligns shutters with integrated magnets and places extra magnets for embedded parts. Made by Sommer in Altheim, Germany, for plants of up to 100 m² per hour.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker; sold on request from Altheim. No price published. Sommer says the compact design also fits existing plants as a replacement for plotter, cleaning and oiling machines.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "SOMMER Anlagentechnik GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.sommer-precast.de/produkte/multifunktions-schalungs-roboter",
+    "contactUrl": null,
+    "email": "info@sommer-precast.de",
+    "phone": "+49 8703 9891-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Benzstraße 1, 84051 Altheim, Germany. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "plant_output_m2_h",
+   "label": "Plant output",
+   "value": 100,
+   "unit": "m²/h",
+   "conditions": "up to; design figure",
+   "sourceId": "s1",
+   "quote": "Diese Lösung ist für Anlagen mit einer Leistung von bis 100 m2/Stunde konzipiert."
+  },
+  {
+   "key": "shutters_moved_per_shift_kg",
+   "label": "Shutters moved per shift",
+   "value": 10000,
+   "unit": "kg",
+   "conditions": "about, at 800 m² per shift",
+   "sourceId": "s1",
+   "quote": "Bei einer Schichtproduktion von 800 m2 werden ca. 10.000 kg Schalungen transportiert."
+  },
+  {
+   "key": "element_types",
+   "label": "Element types",
+   "value": "element slabs, double walls, solid and sandwich elements",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Der MFSR kann für Elementdecken-, Doppelwand-, Massiv- und Sandwichanlagen eingesetzt werden."
+  },
+  {
+   "key": "embedded_part_magnets",
+   "label": "Embedded parts",
+   "value": "places extra magnets for embedded parts or frames",
+   "unit": null,
+   "conditions": "bar magnets, embedded-part magnets, magnet boxes",
+   "sourceId": "s1",
+   "quote": "Platzierung von Zusatzmagneten für Einbauteile oder Rahmen (Standartstabmagnete, Einbauteilmagnete und Magnetboxen)"
+  },
+  {
+   "key": "plotting",
+   "label": "Plotting",
+   "value": "plots outlines, recesses and symbols that cannot be shuttered",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Plotten von nicht schalbaren Umrissen und Aussparungen und Symbolen"
+  },
+  {
+   "key": "pallet_scan",
+   "label": "Demoulding",
+   "value": "scans the pallet and computes the position of each shutter",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "MFSR scannt die Palette."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Gantry robot with a gripper unit; also oils the pallet and applies labels from a magazine (maker).",
+   "Manages shutters in active and passive magazines while the pallet is cleaned.",
+   "Cycle times are simulated per project from sample pallets (maker)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.sommer-precast.de/fileadmin/_processed_/2/d/csm_og-schalungsroboter-betonfertigteilwerk_0a99bac0b8.jpg",
+   "pageUrl": "https://www.sommer-precast.de/produkte/multifunktions-schalungs-roboter",
+   "credit": "Sommer Precast Technology",
+   "alt": "Precast concrete plant with a red robot gantry over the pallet line and finished wall elements behind (image of the Sommer MFSR page)",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.sommer-precast.de/produkte/multifunktions-schalungs-roboter",
+   "title": "Multi-Funktions-Schalungs-Roboter MFSR",
+   "publisher": "SOMMER Anlagentechnik GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price, speed or payload found.",
+  "No named customer plant read; which plants run an MFSR?",
+  "The page footer says © 2016; is the MFSR page current?"
+ ],
+ "checkedAt": "2026-11-18"
+}

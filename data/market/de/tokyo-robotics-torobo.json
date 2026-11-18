@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "tokyo-robotics-torobo",
+ "maker": "Tokyo Robotics",
+ "makerCountry": "JP",
+ "model": "Torobo",
+ "variant": null,
+ "name": "Tokyo Robotics Torobo",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://robotics.tokyo/technologies/torobo",
+ "summary": "A wheeled, force-controlled research humanoid with 7-axis dual arms, a 3-axis waist and an omnidirectional base, torque sensors in every arm and waist joint and 7 kg per arm in the worst posture, built for manufacturing, logistics and service tasks.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Tokyo Robotics lists the current Torobo as 'Under Development' and takes enquiries by e-mail (info@robotics.tokyo). No German or EU seller or price found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_mm",
+   "label": "Height",
+   "value": 1615,
+   "unit": "mm",
+   "conditions": "cart width 590 mm",
+   "sourceId": "s1",
+   "quote": "With a height of 1615 mm and a cart width of 590 mm, the size of the robot is close to that of a human."
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": "approx. 120",
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight approx. 120 kg"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "worst-case holding posture",
+   "sourceId": "s1",
+   "quote": "The payload of one arm is 7 kg at the worst-case holding posture"
+  },
+  {
+   "key": "joints",
+   "label": "Joint configuration",
+   "value": "7-axis dual arms, 3-axis waist, 3-axis neck, 4-axis omnidirectional base",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The joint configuration of 7-axis dual arms, 3-axis waist (pitch, pitch, yaw), 3-axis neck (yaw, pitch, roll), and 4-axis undercarriage (omni-directional mobile base)"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery operation time",
+   "value": "up to approx. 3",
+   "unit": "h",
+   "conditions": "built-in battery; can run while charging",
+   "sourceId": "s1",
+   "quote": "Up to approx. 3 hours"
+  },
+  {
+   "key": "software",
+   "label": "Software",
+   "value": "ROS, MoveIt!, Gazebo; MuJoCo and Isaac Sim models",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Since it is ROS-compatible, the robot in Gazebo (a simulator for ROS) and the actual robot can be operated using the same program."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": null,
+  "sdk": "ROS (MoveIt!, Gazebo); simulation models for MuJoCo and Isaac Sim",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Head, end effector (hand or in-house gripper) and second PC are options.",
+   "Torque sensors in all arm and waist joints allow impedance control and safe contact stops.",
+   "Tokyo Robotics also shows a bipedal Torobo humanoid prototype in its videos; this record covers the wheeled Torobo."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://robotics.tokyo/_astro/torobo2.z_s_-U0O_1AQ63.webp",
+   "pageUrl": "https://robotics.tokyo/technologies/torobo",
+   "credit": "Tokyo Robotics",
+   "alt": "Tokyo Robotics Torobo wheeled humanoid robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Lab demos with impedance control: hammering a nail, sawing wood, box transport by teleoperation",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Demo videos listed on the maker site; the maker says some videos show the older Torobo."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://robotics.tokyo/technologies/torobo",
+   "title": "Torobo",
+   "publisher": "Tokyo Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://robotics.tokyo/",
+   "title": "Tokyo Robotics home page",
+   "publisher": "Tokyo Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, release date of the current version and export terms are not published.",
+  "Earlier Torobo versions were supplied to research labs; whether the current one is sold outside Japan is unknown."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,154 @@
+{
+ "schemaVersion": 1,
+ "id": "komatsu-smart-construction-teleoperation",
+ "maker": "Komatsu with EARTHBRAIN",
+ "makerCountry": "JP",
+ "model": "Smart Construction Teleoperation",
+ "variant": "remote operation cockpit (Intelligent Circle or Spaceship type) for hydraulic excavators",
+ "name": "Komatsu Smart Construction Teleoperation",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation"
+ ],
+ "officialUrl": "https://jp.smartconstruction.com/en/news/news-teleoperation-release",
+ "summary": "Remote operation system from Komatsu and EARTHBRAIN that lets operators run hydraulic excavators from an office cockpit and switch between several machines, while watching dump trucks through Smart Construction. On sale in Japan since May 2024; a van-based Mobility Office version followed in 2025.",
+ "launched": "2024-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold in Japan only, through Komatsu Customer Support. In Europe Komatsu offers SMART CONSTRUCTION Remote, which sends design data to machines and lets staff support operators remotely; it is not remote operation of the machine. No European offer of Teleoperation was found.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "machines",
+   "label": "Machines",
+   "value": "hydraulic excavators; several machines can be switched from one cockpit",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "This system allows operators to remotely control hydraulic excavators from a safe and comfortable environment, such as an office."
+  },
+  {
+   "key": "cockpits",
+   "label": "Cockpit types",
+   "value": "Intelligent Circle type and Spaceship type",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Two types of remote operation cockpits are available: the “Intelligent Circle” type and the “Spaceship” type"
+  },
+  {
+   "key": "configuration",
+   "label": "Configuration",
+   "value": "specifications tailored to each customer's site",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "As operating conditions and environments vary across customers, specifications will be tailored individually based on specific inquiries and requirements."
+  },
+  {
+   "key": "mobile_office",
+   "label": "Mobile version",
+   "value": "Mobility Office: cockpit built into a van",
+   "unit": null,
+   "conditions": "launched April 2025",
+   "sourceId": "s2",
+   "quote": "Launch of the Mobile DX Office for Construction Machinery with Remote Operation System: \"Smart Construction Teleoperation – Mobility Office\""
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote operation, not autonomy; a human drives the excavator from the cockpit.",
+   "Capabilities describe the host hydraulic excavator; crawler tracks assumed, the release does not state the undercarriage.",
+   "Cockpit specifications are given only as an image table in the release and were not read."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/65a5fbf6cf8108f568697e0f/66e3e31e5192a233b78bc2ce_20240521_1-1024x363.png",
+   "pageUrl": "https://jp.smartconstruction.com/en/news/news-teleoperation-release",
+   "credit": "Komatsu / EARTHBRAIN",
+   "alt": "Smart Construction Teleoperation cockpits: Intelligent Circle type and Spaceship type",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "General contractor adopted the system with an Intelligent Circle cockpit and a compatible hydraulic excavator",
+   "stage": "deployment",
+   "where": "Hirose Co., Ltd., Niigata, Japan",
+   "date": "2024-05",
+   "sourceId": "s1",
+   "note": "The job done with the excavator is not stated."
+  },
+  {
+   "taskIds": [],
+   "task": "On-site testing before mass production; the contractor reported minimal latency, nearly like operating on the machine",
+   "stage": "pilot",
+   "where": "Oono Kaihatsu Co., Ltd., Matsuyama, Ehime, Japan",
+   "date": "2023",
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://jp.smartconstruction.com/en/news/news-teleoperation-release",
+   "title": "Launch of “Smart Construction Teleoperation,” a Remote Operation System for Construction Machinery (21 May 2024)",
+   "publisher": "EARTHBRAIN / Komatsu",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://jp.smartconstruction.com/en/news/mobility-office-release",
+   "title": "Launch of the Mobile DX Office for Construction Machinery with Remote Operation System (18 April 2025)",
+   "publisher": "EARTHBRAIN / Komatsu",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://komatsu.eu/en/news/the-european-launch-of-smart-construction",
+   "title": "The European Launch of SMART CONSTRUCTION",
+   "publisher": "Komatsu Europe",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Will Komatsu Europe offer Teleoperation (machine remote operation) and at what price? No European offer found.",
+  "Which Komatsu excavator models are compatible, and does it work with non-Komatsu machines?"
+ ],
+ "checkedAt": "2026-11-18"
+}

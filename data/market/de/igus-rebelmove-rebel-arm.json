@@ -1,0 +1,157 @@
+{
+ "schemaVersion": 1,
+ "id": "igus-rebelmove-rebel-arm",
+ "maker": "igus",
+ "makerCountry": "DE",
+ "model": "ReBeLMove",
+ "variant": "with collaborative ReBeL robot arm (RBTX-IGUS-0259)",
+ "name": "igus ReBeLMove with ReBeL cobot arm",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://rbtx.de/components/mobile-robots/rebel-move/with-collaborative-robotarm",
+ "summary": "igus' low-cost person-safe AMR (PLd safety laser scanner, 50 kg load, 1.5 m/s) sold on the RBTX marketplace in a version with igus' own six-axis ReBeL plastic cobot arm mounted on it.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RBTX (igus, Cologne) lists the ReBeLMove with collaborative robot arm at 35,673.30 € plus VAT and shipping with a cart button and a usual delivery time of 3 weeks; the AMR alone (RBTX-IGUS-0258) is 29,838 €.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 35673.3,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "\"35.673,30 €\" with \"zzgl. MwSt. und Versand\"."
+  },
+  "priceOther": null,
+  "leadTime": "Usual delivery time 3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://rbtx.de/components/mobile-robots/rebel-move/with-collaborative-robotarm",
+    "contactUrl": null,
+    "email": "info@rbtx.com",
+    "phone": null,
+    "priceEur": 35673.3,
+    "priceBasis": "net",
+    "sourceId": "s1",
+    "note": "Art.-Nr. RBTX-IGUS-0259; page shows \"35.673,30 €\", \"zzgl. MwSt. und Versand\", \"In den Warenkorb\" and \"Übliche Lieferzeit: 3 Wochen\". Scope listed: ReBeLMove, charger, charging dock with frame, rugged tablet, Bluetooth controller, first year of support and updates."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Max. load capacity",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "AMR",
+   "sourceId": "s1",
+   "quote": "Max. Ladekapazität 50 kg"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Max. Geschwindigkeit 1,5 m⁄s"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 35,
+   "unit": "kg",
+   "conditions": "as listed on the page; whether it includes the arm is not stated",
+   "sourceId": "s1",
+   "quote": "Weight 35 kg"
+  },
+  {
+   "key": "safety",
+   "label": "Safety",
+   "value": "Safety laser scanner, dual-channel emergency stop, motor encoders and brakes; Performance Level d; safety cannot be switched off",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Diese umfassen: Sicherheitslaserscanner, Zweikanaliger Not-Halt, Encoder an den Motoren und Bremsen an beiden Motoren. Mit einem Performance Level D (PLd)"
+  },
+  {
+   "key": "fleet",
+   "label": "Fleet management",
+   "value": "Distributed over Wi-Fi; external VDA 5050 fleet managers can be used",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Alternativ können externe VDA5050-Flottenmanager wie idealworks, Naise, MHP oder Kinexon genutzt werden."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 50,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "The arm is igus' six-axis ReBeL (the page offers the CAD file ReBeL-6DOF); arm payload and reach were not shown on the page as read.",
+   "No gripper is listed in the scope of delivery.",
+   "igus' wheeled humanoid iggyRob (separate record) uses the larger ReBeLMove Pro with two ReBeL arms."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Seller offers it as an autonomous mobile robot for internal transport with a cobot arm on board",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://rbtx.de/components/mobile-robots/rebel-move/with-collaborative-robotarm",
+   "title": "ReBeLMove (mit kollaborativem Roboterarm)",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/components/mobile-robots/rebel-move",
+   "title": "ReBeLMove",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Payload and reach of the fitted ReBeL arm, and whether a gripper is included (RBTX page text did not show them).",
+  "Runtime per charge and IP rating not shown.",
+  "Page read with a rendered browser; the price is net (\"zzgl. MwSt. und Versand\")."
+ ],
+ "checkedAt": "2026-11-18"
+}

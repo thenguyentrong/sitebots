@@ -1,0 +1,166 @@
+{
+ "schemaVersion": 1,
+ "id": "bmr-concrete-placing-pump-hg15",
+ "maker": "BrightMaster Robotics (BMR)",
+ "makerCountry": "CN",
+ "model": "Intelligent Follow-up Concrete Placing Pump HG15",
+ "variant": "15 m placing radius",
+ "name": "BMR Intelligent Follow-up Concrete Placing Pump HG15",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_concrete/slab-concrete-pour"
+ ],
+ "officialUrl": "https://en.bm-robot.com/detail/191.html",
+ "summary": "Floor-mounted concrete placing boom with 15 m reach that places slab concrete along a preset path on its own, follows one worker's joystick, or runs by remote or by hand. BMR says it cuts placing crews and gives more even pours that need less levelling.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "BMR sells direct from Shenzhen and names no EU distributor; no CE statement on the product page read (the BMR measuring robot page does state CE, this one does not). No German offer found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "placing_radius_m",
+   "label": "Max. placing radius",
+   "value": 15,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "HG151.71.7(2.2)15Outrigger span4.2×4.2"
+  },
+  {
+   "key": "weight_t",
+   "label": "Total weight (excl. counterweight)",
+   "value": 1.7,
+   "unit": "t",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "HG151.71.7(2.2)15Outrigger span4.2×4.2"
+  },
+  {
+   "key": "transfer_weight_t",
+   "label": "Minimum weight for transfer between floors",
+   "value": "1.7 (2.2)",
+   "unit": "t",
+   "conditions": "value in brackets as printed by BMR",
+   "sourceId": "s1",
+   "quote": "HG151.71.7(2.2)15Outrigger span4.2×4.2"
+  },
+  {
+   "key": "installation",
+   "label": "Installation",
+   "value": "outrigger span 4.2×4.2 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "HG151.71.7(2.2)15Outrigger span4.2×4.2"
+  },
+  {
+   "key": "voltage",
+   "label": "Operating voltage",
+   "value": "AC 380 V (±40 V), three-phase five-wire",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "AC380V(±40V)Three-phasefive-wire"
+  },
+  {
+   "key": "modes",
+   "label": "Operating modes",
+   "value": "automatic (preset path), follow-up (one-person joystick), remote, manual",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Automatic mode (automatic placing according to preset path)Follow-up mode (single-person joystick operation)Remote mode (remote operation of boom and arm)Manual mode (traditional manual pulling)"
+  },
+  {
+   "key": "max_wind_ms",
+   "label": "Max. wind for operation",
+   "value": 13.8,
+   "unit": "m/s",
+   "conditions": "force 6 wind",
+   "sourceId": "s1",
+   "quote": "13.8m/s(force 6wind)"
+  },
+  {
+   "key": "manpower_pct",
+   "label": "Placing manpower needed",
+   "value": 30,
+   "unit": "%",
+   "conditions": "follow-up mode vs. manual placing, maker claim; levelling workload 13 % lower in automatic mode",
+   "sourceId": "s1",
+   "quote": "only 30% of the manpower is needed to complete the placing work"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Stationary placing boom: set on the slab or in the lift shaft and moved up floor by floor with the crane; it does not drive.",
+   "The boom is the single 'arm'; tool = concrete delivery hose at the boom tip.",
+   "BMR's figures are marked as coming from the Bright Dream laboratory."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete/slab-concrete-pour"
+   ],
+   "task": "Places concrete on floors and basements automatically along a preset path or following one operator",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker description; no named project for this machine in the pages read."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://en.bm-robot.com/detail/191.html",
+   "title": "Intelligent Follow-up Concrete Placing Pump",
+   "publisher": "Shenzhen BrightMaster Robotics Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://en.bm-robot.com/",
+   "title": "BMR Construction Robot (home page and product list)",
+   "publisher": "Shenzhen BrightMaster Robotics Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, CE marking and any EU distributor.",
+  "Which projects use it, and pump capacity / pipe diameter (not stated)."
+ ],
+ "checkedAt": "2026-11-18"
+}

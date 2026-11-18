@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "paxini-tora-double-one-model-x",
+ "maker": "PaXini Tech",
+ "makerCountry": "CN",
+ "model": "TORA DOUBLE ONE",
+ "variant": "Model X (foldable four-wheel obstacle-crossing chassis)",
+ "name": "PaXini TORA DOUBLE ONE Model X",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://paxini.com/en/robot/doubleOne",
+ "summary": "A wheeled humanoid with tactile 18-DOF hands on a foldable four-wheel-drive chassis that can lift its legs over obstacles, rated 6.5 kg per arm, for logistics, inspection and mobile manipulation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "RBTX (igus, Germany) lists the Model X as its own article with a contact button instead of a price and a usual delivery time of 3 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Usual delivery time 3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/paxini-tora-double-one-model-x-humanoid-robot-56-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Article RBTX-PAXI-0005; no price shown, \"Kontaktieren Sie uns\" and \"Übliche Lieferzeit: 3 Wochen\"."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom, whole robot",
+   "value": 58,
+   "unit": null,
+   "conditions": "including two 18-DOF hands (seller figure; the listing title says 56 DOF, the maker page says up to 52 DoF)",
+   "sourceId": "s2",
+   "quote": "Mit 58 DOF und 18 DOF Händen ermöglicht es Präzisionsarbeit"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 18,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Mit 58 DOF und 18 DOF Händen"
+  },
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.687,
+   "unit": "m",
+   "conditions": "seller table; folded height under 60 cm per maker",
+   "sourceId": "s2",
+   "quote": "Höhe 1.687 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 73,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Gewicht 73 kg"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 6.5,
+   "unit": "kg",
+   "conditions": "seller figure; rated/peak and posture unstated",
+   "sourceId": "s2",
+   "quote": "Hublasten bis 6.5 kg pro Arm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": "6.5 km/h in the text",
+   "sourceId": "s2",
+   "quote": "Geschwindigkeit 1,8 m⁄s"
+  },
+  {
+   "key": "chassis",
+   "label": "Chassis",
+   "value": "Foldable four-wheel-drive obstacle-crossing chassis with leg-lifting",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Obstacle-crossing Chassis: Four-wheel-drive deformable design with leg-lifting capability to adapt to complex terrain"
+  },
+  {
+   "key": "sensors",
+   "label": "Perception",
+   "value": "RGB, RGB-D and LiDAR SLAM",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Die Wahrnehmung kombiniert RGB RGB‑D und LiDAR‑SLAM für Kartierung Hinderniserkennung und Umfeldbewertung."
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Jetson Orin plus x86 control",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Jetson Orin und x86 Kontrolle verarbeiten taktile visuelle Tiefen‑ und Navigationsdaten mit niedriger Latenz."
+  },
+  {
+   "key": "connectivity",
+   "label": "Connectivity",
+   "value": "Wi-Fi, Bluetooth, 5G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Konnektivität über Wi‑Fi Bluetooth und 5G"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 6.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "The maker describes the obstacle-crossing chassis as built to adapt to complex terrain; no slope, step height or outdoor rating is published, so rough ground is left open.",
+   "Tactile dexterous hands (18 DOF each) are part of the listed DOF."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Logistics automation, warehouse processes, industrial inspection and mobile manipulation",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Seller description; no construction or plant use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://paxini.com/en/robot/doubleOne",
+   "title": "TORA DOUBLE ONE product page",
+   "publisher": "PaXini Tech",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/paxini-tora-double-one-model-x-humanoid-robot-56-dof",
+   "title": "PaXini Tora Double One Modell X | Humanoider Roboter | 56 DOF",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "DOF count differs: listing title 56, RBTX text and table 58, PaXini page up to 52 DoF.",
+  "Step height, slope and outdoor use of the obstacle-crossing chassis are not published.",
+  "Runtime and price are not stated (price on request)."
+ ],
+ "checkedAt": "2026-11-18"
+}

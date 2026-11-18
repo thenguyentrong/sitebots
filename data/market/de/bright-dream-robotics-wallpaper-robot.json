@@ -1,0 +1,136 @@
+{
+ "schemaVersion": 1,
+ "id": "bright-dream-robotics-wallpaper-robot",
+ "maker": "Guangdong Bright Dream Robotics Co., Ltd. (Country Garden)",
+ "makerCountry": "CN",
+ "model": "Wallpaper Hanging Robot (墙纸铺贴机器人)",
+ "variant": null,
+ "name": "Bright Dream wallpaper hanging robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_painting/wallpaper-hanging"
+ ],
+ "officialUrl": "https://www.bzlrobot.com/channels/3.html",
+ "summary": "Indoor robot that feeds, pastes, cuts and hangs wallpaper along a planned path, correcting its posture to keep strips plumb and joints tight. Made by Bright Dream in Foshan.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer. Bright Dream lists the robot only on its Chinese website, whose product detail pages are blank, and its global exclusive agent BrightMaster Robotics (BMR) does not offer it. No EU dealer, customer or CE marking found.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "functions",
+   "label": "Functions",
+   "value": "feeding, pasting, cutting and hanging wallpaper",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "机器人集墙纸输送、上胶、裁剪、铺贴等功能于一体"
+  },
+  {
+   "key": "accuracy",
+   "label": "Quality control",
+   "value": "multi-sensor posture control for plumb strips and joint accuracy",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "保证墙纸铺贴的垂直度和拼接精度"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Moves along a planned path on its own (maker). Drive not described; wheels assumed.",
+   "Bright Dream says 28 of its robot types are in commercial use; this one is listed as a product, but it is not offered by BMR."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.bzlrobot.com/upload/images/2022/6/aaac1a933e37f64e.jpg",
+   "pageUrl": "https://www.bzlrobot.com/channels/3.html",
+   "credit": "Bright Dream Robotics",
+   "alt": "Bright Dream wallpaper hanging robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wallpaper-hanging"
+   ],
+   "task": "Hung wallpaper automatically along its planned path after a worker loaded the material",
+   "stage": "pilot",
+   "where": "Country Garden Jinping project, Shantou, China",
+   "date": "2021-12",
+   "sourceId": "s4",
+   "note": "Part of the multi-robot fit-out system accepted on 30 December 2021."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bzlrobot.com/channels/3.html",
+   "title": "建筑机器人 (construction robots product list)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bzlrobot.com/en",
+   "title": "Bright Dream home page (28 robot types in commercial use)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/product.html",
+   "title": "BMR product list (Bright Dream's global exclusive agent; this robot not listed)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.bzlrobot.com/contents/11/198.html",
+   "title": "重大突破！博智林首次完成建筑机器人多机施工系统验收 (31 December 2021)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is it still made and offered? The product detail page is blank and BMR, the global exclusive agent, does not list it.",
+  "No dimensions, weight, output or battery figures are published."
+ ],
+ "checkedAt": "2026-11-18"
+}

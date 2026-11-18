@@ -1,0 +1,196 @@
+{
+ "schemaVersion": 1,
+ "id": "noble-machines-moby",
+ "maker": "Noble Machines (formerly Under Control Robotics, UCR)",
+ "makerCountry": "US",
+ "model": "Moby",
+ "variant": null,
+ "name": "Noble Machines Moby",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.noblemachines.ai/",
+ "summary": "A rugged legged humanoid for heavy industry that lifts up to 23 kg and is designed for stairs, scaffolding and cluttered spaces, aimed at material transport and inspection on construction sites, in plants and mines; offered through limited operated pilots.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Noble Machines (Sunnyvale, California) offers limited RaaS pilots operated by its own team and select platform access via a contact form. Schaeffler (Germany) works with it on actuators, which is not a sales route. No German or EU seller or price found.",
+  "sourceIds": [
+   "s1",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 23,
+   "unit": "kg",
+   "conditions": "50 lb",
+   "sourceId": "s1",
+   "quote": "Payload23KG/50LB"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 5,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery life5 hours"
+  },
+  {
+   "key": "walking_speed_ms",
+   "label": "Walking speed",
+   "value": 0.8,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Walking speed0.8 m/s"
+  },
+  {
+   "key": "end_effectors",
+   "label": "Hands",
+   "value": "modular end-effectors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "HandsModularend-effectors"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 2,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 23,
+  "runtimeH": 5,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Two arms inferred from the maker's 'humanoid' description and its pick-and-place demos; no arm specs published.",
+   "Stairs, scaffolding and unstable terrain are design claims; the outdoor claim comes from the 2025 legged Moby version, before arms were added.",
+   "The 23 kg payload is stated as lifting/carrying capacity, not split per arm."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Material transfer: moving pipes and wood from a shelf onto a cart; picking payloads from shelves into a tray",
+   "stage": "demo",
+   "where": null,
+   "date": "2026",
+   "sourceId": "s2",
+   "note": "Autonomous demos on several Moby robots at the NVIDIA and Noble Machines booths during GTC 2026 (four days)."
+  },
+  {
+   "taskIds": [],
+   "task": "Material transport and routine inspections on construction sites",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker's construction use-case statement; no site pilot named."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "carry_payload_kg",
+   "value": 23,
+   "sourceId": "s1",
+   "quote": "Carries heavier loadsOffers unmatched strength, lifting up to 50lb/23kg.",
+   "basis": "maker claim, not split per arm",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Designed to handle stairs, scaffolding, unstable terrain, and cluttered spaces.",
+   "basis": "design claim",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Designed to handle stairs, scaffolding, unstable terrain, and cluttered spaces.",
+   "basis": "design claim",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s3",
+   "quote": "a robust robotic platform capable of carrying a 60-pound (27 kg) payload and navigating steep inclines and outdoor environments",
+   "basis": "2025 legged Moby version, before manipulation was added",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "runtime_h",
+   "value": 5,
+   "sourceId": "s1",
+   "quote": "Battery life5 hours",
+   "basis": "maker figure",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.noblemachines.ai/",
+   "title": "General-purpose robots built for industry",
+   "publisher": "Noble Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.noblemachines.ai/blog/beyond-the-demo-building-a-learning-stack-for-industrial-autonomy",
+   "title": "Beyond the Demo - Building a Learning Stack for Industrial Autonomy",
+   "publisher": "Noble Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.noblemachines.ai/blog/real-world-world-building-ucr-develops-versatile-ai-driven-robots-for-heavy-industries-built-on",
+   "title": "Real-World World-building: UCR Develops Versatile AI-Driven Robots for Heavy Industries Built on the NVIDIA Isaac Platform",
+   "publisher": "Noble Machines (UCR)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.noblemachines.ai/blog/noble-machines-and-schaeffler-collaborate-to-advance-general-purpose-robots-realism-with-newton",
+   "title": "Noble Machines and Schaeffler collaborate to advance general-purpose robots' realism with Newton",
+   "publisher": "Noble Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight, arm DOF and arm payload are not published.",
+  "No price or RaaS rate published; no named construction pilot customer found.",
+  "The older 2025 Moby (legs only) carried 27 kg per the maker blog; the current site says 23 kg."
+ ],
+ "checkedAt": "2026-11-18"
+}

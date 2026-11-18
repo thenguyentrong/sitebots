@@ -1,0 +1,236 @@
+{
+ "schemaVersion": 1,
+ "id": "twente-am-tilikum-3",
+ "maker": "Twente Additive Manufacturing Inc.",
+ "makerCountry": "CA",
+ "model": "Tilikum-3",
+ "variant": null,
+ "name": "TAM Tilikum-3",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.twente-am.com/midsize-and-mobile-printers/",
+ "summary": "Mobile 3D concrete printer: a 7-axis ABB robot arm on a linear track mounted on a 6 m flatbed trailer, towed to the site to print homes, landscape features and small and medium parts in place.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold directly by the Canadian maker (Nelson, BC) through an online purchase inquiry that accepts any country and shows starting price ranges in euro. No EU distributor, EU office or CE statement found.",
+  "sourceIds": [
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 245000,
+   "basis": "unknown",
+   "kind": "from",
+   "sourceId": "s3",
+   "note": "Purchase form: 'Mobile / Mid Scale (€245,000 to €345,000)' and 'Starting pricing is a loose approximation. An accurate quote will be delivered upon further discussion.' Covers the mobile and midsize range, not Tilikum alone."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Twente Additive Manufacturing Inc.",
+    "country": "CA",
+    "role": "manufacturer",
+    "productUrl": "https://www.twente-am.com/midsize-and-mobile-printers/",
+    "contactUrl": "https://www.twente-am.com/contact-us/inquiries/",
+    "email": "info@twente-am.com",
+    "phone": null,
+    "priceEur": 245000,
+    "priceBasis": "unknown",
+    "sourceId": "s3",
+    "note": "3-505 Kootenay Street, Nelson, Canada. The spec sheet says the price includes robot arm, trailer, mixing pump, control panel, hoses, nozzles, software, axis extensions, wagon cover and scaffolding, a 1-week course, commissioning, on-site training and after-sale support."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "print_reach_m",
+   "label": "Printer reach",
+   "value": "14 × 8.5",
+   "unit": "m",
+   "conditions": "typical specification",
+   "sourceId": "s2",
+   "quote": "Printer reach 14m X 8.5m"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Printer weight",
+   "value": 6350,
+   "unit": "kg",
+   "conditions": "typical specification",
+   "sourceId": "s2",
+   "quote": "Printer weight 6,350kg"
+  },
+  {
+   "key": "max_speed_mms",
+   "label": "Print speed (max)",
+   "value": 300,
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Print speed (max) 300mm/s"
+  },
+  {
+   "key": "nozzle_mm",
+   "label": "Nozzle diameters",
+   "value": "12–80",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Nozzle sizes (diameter) 12-80mm"
+  },
+  {
+   "key": "bead_width_mm",
+   "label": "Bead width",
+   "value": "20–100",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Bead width 20-100mm"
+  },
+  {
+   "key": "layer_height_mm",
+   "label": "Layer height",
+   "value": "5–30",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Layer height 5-30mm"
+  },
+  {
+   "key": "setup_h",
+   "label": "Setup time",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Only 2 hour setup time."
+  },
+  {
+   "key": "robot_reach_m",
+   "label": "Robot reach",
+   "value": 3.2,
+   "unit": "m",
+   "conditions": "7-axis robot",
+   "sourceId": "s1",
+   "quote": "7-AXIS ROBOT WITH 3.2m REACH"
+  },
+  {
+   "key": "track_travel_m",
+   "label": "Linear track travel",
+   "value": "4.7–14.7",
+   "unit": "m",
+   "conditions": "configurable",
+   "sourceId": "s1",
+   "quote": "CONFIGURABLE LINEAR TRACK WITH 4.7m – 14.7m TRAVEL"
+  },
+  {
+   "key": "controller",
+   "label": "Motion control",
+   "value": "ABB IRC5",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Motion control system ABB IRC5"
+  },
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "3-phase 400/480 V, 50–60 Hz",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Input type 3-400/480V"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Robot arm on a linear track on a 6 m flatbed trailer; travels to the site by road and prints in place.",
+   "Mixing pump, control panel, wagon cover and scaffolding are part of the package (spec sheet).",
+   "Light barriers and safety switches only on request."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.twente-am.com/app/uploads/2022/11/Tilikum-3.5-New.jpg",
+   "pageUrl": "https://www.twente-am.com/midsize-and-mobile-printers/",
+   "credit": "Twente Additive Manufacturing",
+   "alt": "TAM Tilikum mobile 3D concrete printer, robot arm on a flatbed trailer",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Architect Ronald Rael prints architectural structures with a Tilikum",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": "Maker news item with a video; place and date not stated."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.twente-am.com/midsize-and-mobile-printers/",
+   "title": "Midsize and Mobile Printers (Tilikum-3)",
+   "publisher": "Twente Additive Manufacturing",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.twente-am.com/app/uploads/2024/02/240202-Tilikum-Spec-sheet-1.pdf",
+   "title": "Tilikum turnkey mobile 3D printer system (spec sheet, February 2024)",
+   "publisher": "Twente Additive Manufacturing",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.twente-am.com/contact-us/inquiries/",
+   "title": "Inquiries (purchase form with starting price ranges)",
+   "publisher": "Twente Additive Manufacturing",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.twente-am.com/ronald-raels-groundbreaking-work-with-tams-tilikum-3d-printer/",
+   "title": "Ronald Rael's groundbreaking work with TAM's Tilikum 3D printer",
+   "publisher": "Twente Additive Manufacturing",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Exact price of the Tilikum-3 (only a 'loose' range for mobile and midsize printers is given).",
+  "CE marking, EU delivery and service for buyers in Germany.",
+  "The website names the Tilikum-3 while the spec sheet just says Tilikum; is the sheet for the current version?"
+ ],
+ "checkedAt": "2026-11-18"
+}

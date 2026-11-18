@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 82000,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s5",
+   "note": "Terra Robotics (Terra Connect GmbH): price in the shop's product data; the product page itself says \"Preis anfragen\". VAT not stated."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -31,12 +37,13 @@
     "note": "Page shows \"Preis anfragen\"; metadata carries EUR 67,682 without VAT basis, not displayed. Terra's technical text is generic and does not match UBTECH's data. Shop data marks the item out of stock."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-18",
   "status": "quote",
-  "statusNote": "Listed by Terra Robotics, UBTECH's exclusive DACH distributor, including a lifting frame; price on request.",
+  "statusNote": "Listed by Terra Robotics, UBTECH's exclusive DACH distributor, including a lifting frame; the page asks for a price request, but Terra's shop data holds 82,000 €.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s5"
   ]
  },
  "specs": [
@@ -143,6 +150,14 @@
    "publisher": "UBTECH Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://terra-robotics.de/products/ubtech-walker-c1-humanoider-roboter.js",
+   "title": "Terra Robotics (Terra Connect GmbH)",
+   "publisher": "Terra Robotics (Terra Connect GmbH)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

@@ -1,0 +1,190 @@
+{
+ "schemaVersion": 1,
+ "id": "weinmann-feedbot-f-500",
+ "maker": "WEINMANN (HOMAG Group)",
+ "makerCountry": "DE",
+ "model": "FEEDBOT F-500",
+ "variant": null,
+ "name": "WEINMANN FEEDBOT F-500 stud-feeding robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "prefab_timber/stud-insertion-framing"
+ ],
+ "officialUrl": "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-handling-and-storage-systems-timber-construction/robot-feedbot-f-500",
+ "summary": "Six-axis industrial robot with servo grippers that takes standard studs, special studs and top and bottom plates from storage and sets them into a WEINMANN FRAMETEQ frame work station, so timber-frame walls, gables and window and door frames are framed automatically. Part of HOMAG's smartPrefab robot line.",
+ "launched": "2017",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by WEINMANN, HOMAG's timber-construction brand. The first robot framing line went to a German prefab maker in early 2017, and WeberHaus runs the robot-based smartPrefab framing station at Rheinau-Linx. HOMAG's own pages could not be read by the polite reader, so no German contact details or price are given here; the US dealer Stiles Machinery also sells it.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "WEINMANN (HOMAG Group)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.homag.com/en/product-detail/machines/house-construction/weinmann-handling-and-storage-systems-timber-construction/robot-feedbot-f-500",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Maker of the line; contact through HOMAG/WEINMANN sales. Product page on homag.com not readable by the polite reader (network error on robots.txt)."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "parts_handled",
+   "label": "Parts handled",
+   "value": "top and bottom plates, standard and special studs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The FEEDBOT F-500 streamlines the automated insertion of top and bottom plates, along with both standard and specialized studs, for efficient assembly."
+  },
+  {
+   "key": "gripper",
+   "label": "Gripper",
+   "value": "servo-motor-driven robot grippers",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The FEEDBOT F-500 delivers top-tier precision in stud placement with servo motor-driven robot grippers"
+  },
+  {
+   "key": "host_station",
+   "label": "Works with",
+   "value": "WEINMANN FRAMETEQ frame work station",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The FEEDBOT F-500, seamlessly incorporated into the FRAMETEQ series"
+  },
+  {
+   "key": "stud_cycle_s",
+   "label": "Stud placing cycle",
+   "value": 7,
+   "unit": "s",
+   "conditions": "planned for a Swedish line in 2017 (one wall element in 7 minutes)",
+   "sourceId": "s2",
+   "quote": "the robot places a stud into the framework every 7 seconds"
+  },
+  {
+   "key": "element_types",
+   "label": "Element types",
+   "value": "inner and outer walls, gable and mitre walls, window and door structures",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "not only inner and outer walls but also gable walls and miter walls, as well as window and door structures, are manufactured fully automatically"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Stationary 6-axis robot (KUKA arm in HOMAG livery in the maker photos) beside the frame work station.",
+   "Studs come from a random 'stud tower' fed by a WBZ 160 carpentry machine and from a standard-stud store; plates are fed on driven rollers.",
+   "The 6-axis motion lets it change the insertion method per stud, which helps with crooked timber (HOMAG via Wood & Panel).",
+   "Maximum stud weight and workpiece size range are on HOMAG pages that the polite reader could not open, so they are not given here."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://stilesmachinery.com/wp-content/uploads/2025/01/robotics-FEEDBOT-timber-framing-01-1.jpg",
+   "pageUrl": "https://stilesmachinery.com/osc/feedbot/",
+   "credit": "WEINMANN / HOMAG via Stiles Machinery",
+   "alt": "Black HOMAG-branded six-axis robot gripping timber studs above a framing station",
+   "kind": "product"
+  },
+  {
+   "url": "https://stilesmachinery.com/wp-content/uploads/2025/01/robotics-FEEDBOT-timber-framing-03.jpg",
+   "pageUrl": "https://stilesmachinery.com/osc/feedbot/",
+   "credit": "WEINMANN / HOMAG via Stiles Machinery",
+   "alt": "FEEDBOT robot lifting a single stud with its servo gripper next to the stud feed conveyor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "prefab_timber/stud-insertion-framing"
+   ],
+   "task": "Robot in the smartPrefab framework station adds studs from three stores to the wall framework fully automatically, watched by two employees",
+   "stage": "deployment",
+   "where": "WeberHaus, Rheinau-Linx, Germany",
+   "date": "2025",
+   "sourceId": "s3",
+   "note": "The article names WEINMANN's smartPrefab system, not the product name FEEDBOT F-500."
+  },
+  {
+   "taskIds": [
+    "prefab_timber/stud-insertion-framing"
+   ],
+   "task": "First WEINMANN production cell with an integrated robot that sets studs and plates into the frame work station",
+   "stage": "deployment",
+   "where": "German prefab manufacturer (not named in the article)",
+   "date": "2017",
+   "sourceId": "s2",
+   "note": "Installed since early 2017; a second line was planned for Sweden at the end of 2017."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://stilesmachinery.com/osc/feedbot/",
+   "title": "WEINMANN FEEDBOT robotic solutions (F-500 and W-500)",
+   "publisher": "Stiles Machinery",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.woodandpanel.com/woodnews/article/homag-integrates-a-robot-in-weinmanns-production-line/",
+   "title": "HOMAG integrates a robot in Weinmann's production line",
+   "publisher": "Wood & Panel",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://newsroom.porsche.com/en/2025/company/porsche-consulting-building-should-be-fun-39221.html",
+   "title": "Building should be fun (WeberHaus feature, 2025)",
+   "publisher": "Porsche Newsroom (Porsche Consulting)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "German sales contact, price and lead time: HOMAG/WEINMANN pages (homag.com) could not be read by the polite reader.",
+  "Maximum stud weight, stud length and cross-section range of the F-500 (not on a readable page).",
+  "The 7-second cycle and 7-minute wall element were plans for a 2017 Swedish line; current cycle times are not confirmed."
+ ],
+ "checkedAt": "2026-11-18"
+}

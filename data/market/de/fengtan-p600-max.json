@@ -1,0 +1,165 @@
+{
+ "schemaVersion": 1,
+ "id": "fengtan-p600-max",
+ "maker": "Hangzhou Fengtan Robot Co., Ltd. (Fulltime Robotics)",
+ "makerCountry": "CN",
+ "model": "P600 Max",
+ "variant": null,
+ "name": "Fengtan P600 Max multi-function coating robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "drywall_finishing",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": null,
+ "summary": "Fourth-generation interior coating robot for rooms up to about 6 m that sprays putty, scrapes and sands it, removes dust and sprays paint with quick-change tool heads. Launched by Fengtan (Fulltime Robotics) of Hangzhou in April 2026.",
+ "launched": "2026-04",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or partner found. The maker in Hangzhou names overseas projects only in Singapore and Hong Kong; no English product page was found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "working_height",
+   "label": "Working height",
+   "value": "under 6 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "专为6米以下建筑涂料施工场景量身打造"
+  },
+  {
+   "key": "processes",
+   "label": "Processes",
+   "value": "putty spraying, scraping, sanding, dust removal, paint spraying",
+   "unit": null,
+   "conditions": "one machine, swapped tool heads",
+   "sourceId": "s1",
+   "quote": "首次以单机实现腻子喷涂、收刮、打磨、吸尘、喷漆五大工序全覆盖"
+  },
+  {
+   "key": "tool_change_min",
+   "label": "Tool head change",
+   "value": 5,
+   "unit": "min",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "5min完成快换执行末端"
+  },
+  {
+   "key": "control_accuracy",
+   "label": "Tool control accuracy",
+   "value": "force ±1 N, position 0.1 mm, speed error 0.5 %",
+   "unit": null,
+   "conditions": "six-axis force sensor and vision",
+   "sourceId": "s1",
+   "quote": "执行器控制力度精度±1N、位置精度0.1mm、速度精度误差率0.5%"
+  },
+  {
+   "key": "putty_flatness_mm",
+   "label": "Putty scraping flatness",
+   "value": "≤ 0.5",
+   "unit": "mm",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "腻子收刮平整度稳定在0.5mm以内"
+  },
+  {
+   "key": "obstacle_mm",
+   "label": "Obstacle height",
+   "value": 50,
+   "unit": "mm",
+   "conditions": "slope 10°, gap 100 mm",
+   "sourceId": "s1",
+   "quote": "越障高度50mm、爬坡能力10°、越沟宽度100mm"
+  },
+  {
+   "key": "tank_l",
+   "label": "Material tank",
+   "value": 70,
+   "unit": "L",
+   "conditions": "automatic return-flow cleaning",
+   "sourceId": "s1",
+   "quote": "料箱升级至70L超大容量"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "360° lidar, scan-based path planning without drawings",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "360°高精度激光雷达"
+  },
+  {
+   "key": "deliveries",
+   "label": "Deliveries",
+   "value": "project deliveries since February 2026",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2026年2月开始工程交付使用"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP54",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Four-wheel-drive omnidirectional steering-wheel chassis (maker).",
+   "Recognises beams, columns, ceilings, walls and openings from its own 3D scan and plans the work path (\"space brain\").",
+   "The tool mechanism is called a multi-modal actuator; the press text does not say whether it is a robot arm, so arms = 0.",
+   "Preorders opened at launch (April 2026); the maker says deliveries for project use started in February 2026."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://m.tech.china.com/hea/articles/20260415/202604151847473.html",
+   "title": "五合一执行平台×空间大脑丨丰坦四代机P600 Max多功能涂料施工机器人全球发布 (15 April 2026)",
+   "publisher": "China.com (中华网)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://news.pedaily.cn/20240710/89658.shtml",
+   "title": "丰坦4款产品全新上市！打造室内涂料工程施工机器人No.1 (10 July 2024)",
+   "publisher": "PEdaily (投资界)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Official website, weight, dimensions, output per hour and price are not published in the sources read.",
+  "Which earlier Fengtan robot did the Singapore HDB projects (Keat Hong Grange, Bishan)?"
+ ],
+ "checkedAt": "2026-11-18"
+}

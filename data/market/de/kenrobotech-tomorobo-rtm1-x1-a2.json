@@ -1,0 +1,167 @@
+{
+ "schemaVersion": 1,
+ "id": "kenrobotech-tomorobo-rtm1-x1-a2",
+ "maker": "Kenrobotech Co., Ltd. (建ロボテック株式会社)",
+ "makerCountry": "JP",
+ "model": "Rebar-tying Tomorobo RTM1-X1-A2",
+ "variant": "heavy-bar version, for D16–D32 bars",
+ "name": "Kenrobotech Rebar-tying Tomorobo RTM1-X1-A2 (heavy bar)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "rebar_tying",
+  "site_concrete/rebar-tying-slabs"
+ ],
+ "officialUrl": "https://kenrobo-tech.com/tomorobo/rebartying/product/",
+ "summary": "Heavy-bar version of the Tomorobo collaborative rebar-tying robot: it travels along slab and deck rebar mats and ties the crossings of 16–32 mm bars with two MAX RB610T tying tools, for civil and infrastructure work.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold only in Japan: open price on request, with lease and a rental scheme for rental and leasing firms, all through the Japanese maker. No German or EU distributor or CE information found.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "bar_diameter",
+   "label": "Bar diameters",
+   "value": "φ16, φ19, φ22, φ25, φ29, φ32",
+   "unit": "mm",
+   "conditions": "standard version RTM1-X1-A1 covers φ10–φ16",
+   "sourceId": "s1",
+   "quote": "対象鉄筋径はφ16、φ19、φ22、φ25、φ29、φ32に対応。"
+  },
+  {
+   "key": "bar_spacing_mm",
+   "label": "Bar spacing",
+   "value": "100–300 in 25 mm steps",
+   "unit": "mm",
+   "conditions": "common to A1 and A2",
+   "sourceId": "s1",
+   "quote": "100～300㎜内で25㎜ずつに対応"
+  },
+  {
+   "key": "tie_cycle_s",
+   "label": "Tying cycle",
+   "value": 2.7,
+   "unit": "s",
+   "conditions": "per crossing, 200 mm spacing, two tying tools; specification common to A1 and A2",
+   "sourceId": "s1",
+   "quote": "2.7ｓ（200ｍｍピッチ、結束機2台使用時1カ所当り）"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime per charge",
+   "value": 12,
+   "unit": "h",
+   "conditions": "200 mm spacing, two tying tools, full battery, 25 °C; common to A1 and A2",
+   "sourceId": "s1",
+   "quote": "12時間（200ｍｍピッチ、結束機2台使用、バッテリーフル充電時 環境温度25度の場合）"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 38.5,
+   "unit": "kg",
+   "conditions": "without tying tools; listed in the common A1/A2 specification",
+   "sourceId": "s1",
+   "quote": "38.5kg（結束機は含みません）"
+  },
+  {
+   "key": "dimensions_cm",
+   "label": "Dimensions L × W × H",
+   "value": "69 × 63–93 × 60",
+   "unit": "cm",
+   "conditions": "width adjustable; detachable sensor not included",
+   "sourceId": "s1",
+   "quote": "L69 W63～93(可変式） H60"
+  },
+  {
+   "key": "tying_tool",
+   "label": "Tying tool",
+   "value": "MAX RB610T",
+   "unit": null,
+   "conditions": "tie wire refill about every 40 min",
+   "sourceId": "s2",
+   "quote": "太径鉄筋結束トモロボ(RTM1-X1-A2)はRB610Tに対応しています。"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 12,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Travels on its own along the rebar mesh and senses bar crossings with width and rebar sensors; the maker does not describe the running gear, so wheels is an assumption from the travel wording.",
+   "Uses commercial MAX RB610T handheld tying tools; the base unit can be bought without them, so handsIncluded is false.",
+   "Shares the base specification (cycle, runtime, weight, size) with the standard RTM1-X1-A1, which is already a separate record."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete/rebar-tying-slabs"
+   ],
+   "task": "Tomorobo series ties rebar crossings for Japanese contractors and rebar firms",
+   "stage": "deployment",
+   "where": "Japan: maker list of user companies (Tomorobo series, model not split)",
+   "date": null,
+   "sourceId": "s3",
+   "note": "The user list does not say which companies use the heavy-bar version."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://kenrobo-tech.com/tomorobo/rebartying/product/",
+   "title": "鉄筋結束トモロボ 製品詳細・仕様 (product details and specifications, A1 and A2)",
+   "publisher": "Kenrobotech Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://kenrobo-tech.com/tomorobo/faq/",
+   "title": "トモロボ FAQ (bar sizes, tools, price, lease, rental)",
+   "publisher": "Kenrobotech Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://kenrobo-tech.com/tomorobo/case/",
+   "title": "トモロボ導入企業 (companies using Tomorobo)",
+   "publisher": "Kenrobotech Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price: open price on request (FAQ); no figure on the pages read.",
+  "Is there any export, CE marking or European partner?",
+  "Which users run the heavy-bar version, and on which projects?"
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,243 @@
+{
+ "schemaVersion": 1,
+ "id": "befard-xc600-2",
+ "maker": "Befard",
+ "makerCountry": "PL",
+ "model": "XC600",
+ "variant": "XC600.2 (2.5 m horizontal, 4.8 m vertical reach)",
+ "name": "Befard XC600.2 glazing robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "glazing_installation",
+  "material_lifting",
+  "site_windows_doors/large-pane-glazing",
+  "site_windows_doors/window-unit-setting"
+ ],
+ "officialUrl": "https://befard.com/de/produkte/montageroboter/montageroboter-auf-raedern/montageroboter-auf-raedern-befard-xc600",
+ "summary": "Battery electro-hydraulic wheeled glazing robot with six vacuum cups that lifts glass, windows and panels of up to 600 kg to about 4.8 m and sets them into openings by radio remote control. Made by Befard in Poland as the mid-size model between the XC400 and XC820.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Befard sells the XC600.2 on request; its Maschinensucher.de listing for the XC600.1 (€20,900 plus VAT) says the 4.8 m model XC600.2 is also available, without a price. Befard names GreenLifter in Fürth as its German sales partner.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "sellers": [
+   {
+    "name": "Befard",
+    "country": "PL",
+    "role": "manufacturer",
+    "productUrl": "https://befard.com/de/produkte/montageroboter/montageroboter-auf-raedern/montageroboter-auf-raedern-befard-xc600",
+    "contactUrl": "https://befard.com/de/produkte/montageroboter/montageroboter-auf-raedern/montageroboter-auf-raedern-befard-xc600",
+    "email": "contact@befard.com",
+    "phone": "+48 33 821 96 92",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Ul. Pod Grapą 4, 43-340 Kozy, Poland. Contact form, phone and WhatsApp on the product page; the Maschinensucher.de listing says \"AUCH VERFÜGBAR: MODELL XC600.2 – REICHWEITE 4,8 M\"."
+   },
+   {
+    "name": "GreenLifter",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": null,
+    "contactUrl": null,
+    "email": "info@greenlifter.de",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Boxdorfer Str. 35, 90765 Fürth. Named by Befard as its German sales partner (\"Niemcy - GreenLifter\"); this model is not shown on a GreenLifter page."
+   }
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Max. load",
+   "value": 600,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "600 kg"
+  },
+  {
+   "key": "reach_horizontal_mm",
+   "label": "Max. horizontal reach",
+   "value": 2500,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2500 mm"
+  },
+  {
+   "key": "reach_vertical_mm",
+   "label": "Max. vertical reach",
+   "value": 4800,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "4800 mm"
+  },
+  {
+   "key": "machine_height_mm",
+   "label": "Machine height",
+   "value": 1770,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1770 mm"
+  },
+  {
+   "key": "transport_width_mm",
+   "label": "Transport width",
+   "value": 880,
+   "unit": "mm",
+   "conditions": "optional narrowing to 78 cm",
+   "sourceId": "s1",
+   "quote": "880 mm"
+  },
+  {
+   "key": "length_mm",
+   "label": "Machine length",
+   "value": 3300,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "3300 mm"
+  },
+  {
+   "key": "suction_cups",
+   "label": "Vacuum cups",
+   "value": "6 × Ø 310 mm",
+   "unit": null,
+   "conditions": "100 mm side shift of the cup beam, variable cup spacing",
+   "sourceId": "s1",
+   "quote": "100 mm Seitenverschub der Saugtraverse, variabler Sauger Abstand für mehr Flexibilität."
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 844,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "844 kg"
+  },
+  {
+   "key": "power",
+   "label": "Power",
+   "value": "battery, electro-hydraulic",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Akku-/elektrohydraulischer Montageroboter für Glas, Fenster und Flächen (Innen/Außen)."
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "Befard radio remote control",
+   "unit": null,
+   "conditions": "standard (XC600.1 listing)",
+   "sourceId": "s2",
+   "quote": "BEFARD-Funksteuerung des Roboterbetriebs"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 600,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Arm = hydraulic telescopic boom with a vacuum cup beam; options include hydraulic side shift and beam rotation (each reduces the load by 100 kg), hook and forks.",
+   "Battery electro-hydraulic machine, steered by an operator with the Befard radio remote control; not autonomous.",
+   "Indoor and outdoor use per maker (\"Innen/Außen\"); two side outriggers (\"Zwei Stützen\").",
+   "Drive type, speed and runtime are not stated on the pages read."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://srv125919.seohost.com.pl/backend-befard/wp-content/uploads/2025/03/438822014_1059358705755515_7289268801220271053_n_Easy-Resize.com_.jpg",
+   "pageUrl": "https://befard.com/de/produkte/montageroboter/montageroboter-auf-raedern/montageroboter-auf-raedern-befard-xc600",
+   "credit": "Befard",
+   "alt": "Green Befard XC600 wheeled glazing robot setting a large window into a house wall",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_windows_doors/large-pane-glazing",
+    "site_windows_doors/window-unit-setting"
+   ],
+   "task": "Lifts glass panes and windows and sets them into openings by radio remote control",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": "Maker description of its wheeled glazing robots; no named site found for the XC600."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://befard.com/de/produkte/montageroboter/montageroboter-auf-raedern/montageroboter-auf-raedern-befard-xc600",
+   "title": "BEFARD XC600 Montageroboter (specifications 600.1 / 600.2)",
+   "publisher": "Befard",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.maschinensucher.de/befard-xc600/i-18709891",
+   "title": "Befard XC600.1 Glasroboter (new unit, fixed price listing)",
+   "publisher": "Maschinensucher.de",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://befard.com/de/vertriebspartner",
+   "title": "Vertriebspartner (sales partners incl. Germany)",
+   "publisher": "Befard",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://befard.com/de/produkte/montageroboter/montageroboter-auf-raedern",
+   "title": "Montageroboter auf Rädern (wheeled glazing robots overview)",
+   "publisher": "Befard",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the XC600.2: only the XC600.1 is listed with a price (€20,900 plus VAT).",
+  "Does GreenLifter in Fürth stock or sell the XC600, and at what price?",
+  "Runtime per battery charge and driving speed are not given on the pages read."
+ ],
+ "checkedAt": "2026-11-18"
+}

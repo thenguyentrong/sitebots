@@ -1,0 +1,198 @@
+{
+ "schemaVersion": 1,
+ "id": "ai2-robotics-alphabot-2",
+ "maker": "AI² Robotics (Zhipingfang (Shenzhen) Technology Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "AlphaBot 2",
+ "variant": null,
+ "name": "AI² Robotics AlphaBot 2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://docs.ai2robotics.com/start/product-introduction/",
+ "summary": "A 1.8 m, 135 kg wheeled dual-arm humanoid with 7-DOF arms rated 4 kg each, a folding three-joint leg column, 0-2.3 m working range and 4-6 h runtime, built for car, electronics and semiconductor factory tasks.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor found; AI² Robotics lists only Chinese business and after-sales contacts.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.8,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "身高1800mm重量135kg（标品）"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 135,
+   "unit": "kg",
+   "conditions": "standard version",
+   "sourceId": "s2",
+   "quote": "身高1800mm重量135kg（标品）"
+  },
+  {
+   "key": "dof_total",
+   "label": "Whole-body DOF",
+   "value": 22,
+   "unit": null,
+   "conditions": "excluding end effectors",
+   "sourceId": "s2",
+   "quote": "全身自由度22（不含末端执行器）"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Rated payload per arm",
+   "value": 4,
+   "unit": "kg",
+   "conditions": "rated, single arm",
+   "sourceId": "s2",
+   "quote": "额定负载能力4kg（单臂）"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.723,
+   "unit": "m",
+   "conditions": "excluding end effector",
+   "sourceId": "s2",
+   "quote": "单臂展723mm（不含末端执行器）"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working space height",
+   "value": "0-2.3",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "操作空间0~2.3m"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Travel speed",
+   "value": "0.1-1.5",
+   "unit": "m/s",
+   "conditions": "two-wheel differential drive",
+   "sourceId": "s2",
+   "quote": "移动速度0.1m/s~1.5m/s"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": "0-5",
+   "unit": "°",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "坡度0°~5°"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "4-6",
+   "unit": "h",
+   "conditions": "48 V 30 Ah battery",
+   "sourceId": "s2",
+   "quote": "续航4~6h电池48V 30Ah"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "NVIDIA Orin AGX 64G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "算力模组NVIDIA Orin AGX 64G"
+  },
+  {
+   "key": "repeatability_mm",
+   "label": "Arm repeatability",
+   "value": "±0.1",
+   "unit": "mm",
+   "conditions": "six-axis force sensing 200 N / 7 Nm",
+   "sourceId": "s2",
+   "quote": "重复定位精度±0.1mm六维力量程200N/7Nm"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5-40",
+   "unit": "°C",
+   "conditions": "10-80 % RH",
+   "sourceId": "s2",
+   "quote": "运行环境温度5℃~40℃湿度10~80%RH"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 4,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": "AlphaBotCore SDK (C++ and Python)",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "End effectors are interchangeable: dexterous hand, gripper or other tools ('末端执行器灵巧手/夹爪/其他工具').",
+   "Two-wheel differential base rated for slopes up to 5°, so flat indoor floors only.",
+   "VR and exoskeleton teleoperation rigs are sold for data collection."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Loading and unloading, material handling, assembly and machine operation in car and electronics manufacturing; cleanroom handling in semiconductor fabs",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Application list in the maker's documentation; no named customer read. No construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://docs.ai2robotics.com/start/product-introduction/",
+   "title": "Product introduction",
+   "publisher": "AI² Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://docs.ai2robotics.com/alphabot2/hardware/architecture",
+   "title": "AlphaBot 2 hardware introduction",
+   "publisher": "AI² Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price and any export route outside China.",
+  "Named factory deployments (not found on the pages read); lifecycle set to shipping because a full hardware manual, warranty chapter and SDK are published."
+ ],
+ "checkedAt": "2026-11-18"
+}

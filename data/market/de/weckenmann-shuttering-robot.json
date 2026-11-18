@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "id": "weckenmann-shuttering-robot",
+ "maker": "Weckenmann Anlagentechnik (Construx Group)",
+ "makerCountry": "DE",
+ "model": "Shuttering robot",
+ "variant": "third generation",
+ "name": "Weckenmann shuttering robot (3rd generation)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "precast_concrete/shuttering-placement"
+ ],
+ "officialUrl": "https://weckenmann.construx.eu/en/automated-plants/machinery/234~shuttering-robots-and-plotting-devices",
+ "summary": "Multifunctional gantry robot for precast pallet circulation plants that sets formwork profiles and magnets on the pallet, demoulds them after curing and handles their storage, optionally with an integrated plotter. Weckenmann in Dormettingen, Germany, says it built the world's first shuttering robot in 1992.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker (now part of the Belgian Construx Group); sold on request through Weckenmann sales in Dormettingen. No price published.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Weckenmann Anlagentechnik (Construx Group)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://weckenmann.construx.eu/en/automated-plants/machinery/234~shuttering-robots-and-plotting-devices",
+    "contactUrl": "https://weckenmann.construx.eu/en/contact/",
+    "email": "info@construx.eu",
+    "phone": "+49 7427 9493 0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Sales Weckenmann, 72358 Dormettingen, Germany; contact form on the product page. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "functions",
+   "label": "Functions",
+   "value": "handling of formwork profiles, demoulding and storage of shuttering profiles",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Multifunctional shuttering robots provide automated handling of formwork profiles. In addition, high-performance robots also handle storage and demoulding of the shuttering profiles"
+  },
+  {
+   "key": "generation",
+   "label": "Generation",
+   "value": "third",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "offers sophisticated technology in their third generation of robots"
+  },
+  {
+   "key": "plotter",
+   "label": "Plotter",
+   "value": "can be integrated in the shuttering robot",
+   "unit": null,
+   "conditions": "transfers CAD data 1:1 to the pallet",
+   "sourceId": "s1",
+   "quote": "Plotters can be integrated in a shuttering robot"
+  },
+  {
+   "key": "handles_magnets",
+   "label": "Handles",
+   "value": "shuttering profiles and magnets",
+   "unit": null,
+   "conditions": "first generation 1992",
+   "sourceId": "s3",
+   "quote": "had developed the worldwide first shuttering robot for handling shuttering profiles and magnets already in 1992"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Gantry (portal) robot over the pallet line with a gripper head for shutter profiles.",
+   "An older Weckenmann design, the Twin-Z, adds a second vertical axis (BFT International).",
+   "Speed, accuracy and payload are not given on the pages read."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://weckenmann.construx.eu/sites/WECK/uploads/prijzen/234/big/4574.jpg?version=uapu4p",
+   "pageUrl": "https://weckenmann.construx.eu/en/automated-plants/machinery/234~shuttering-robots-and-plotting-devices",
+   "credit": "Construx-Weckenmann",
+   "alt": "Weckenmann shuttering robot gantry with gripper head lifting a steel shutter profile over a roller conveyor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "precast_concrete/shuttering-placement"
+   ],
+   "task": "Third-generation shuttering robot installed in a new pallet circulation plant",
+   "stage": "deployment",
+   "where": "Keegan Precast Ltd., Ireland",
+   "date": "2018-05",
+   "sourceId": "s3",
+   "note": "BFT International 05/2018; full text behind a paywall, only the introduction was read."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://weckenmann.construx.eu/en/automated-plants/machinery/234~shuttering-robots-and-plotting-devices",
+   "title": "Shuttering robots and plotting devices",
+   "publisher": "Construx-Weckenmann",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://weckenmann.construx.eu/en/contact/",
+   "title": "Contact (Sales Weckenmann)",
+   "publisher": "Construx-Weckenmann",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://bft-international.com/en/artikel/bft_Highly_dynamic_shuttering_robot_of_the_third_generation-3164278.html",
+   "title": "Highly dynamic shuttering robot of the third generation (BFT 05/2018)",
+   "publisher": "BFT International",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price, speed, accuracy or payload found.",
+  "Does Weckenmann still sell the robot under its own model name? The current page has no model name."
+ ],
+ "checkedAt": "2026-11-18"
+}

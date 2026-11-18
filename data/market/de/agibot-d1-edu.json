@@ -13,14 +13,21 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "status": "quote",
-  "statusNote": "Only the AGIBOT online store in China offers the Edu (ships from China in 20 to 45 business days, buyer pays duties); its shipping policy does not confirm delivery to Germany and no EU shop lists this version. AGIBOT sells other D1 versions in Europe through Génération Robots.",
+  "status": "buy_now",
+  "statusNote": "OpenELAB (German storefront, ships from China) sells the Edu at 8,398.95 € incl. VAT with a cart. The AGIBOT online store in China also offers it (20 to 45 business days, buyer pays duties). AGIBOT sells other D1 versions in Europe through Génération Robots.",
   "sourceIds": [
    "s2",
    "s3",
-   "s4"
+   "s4",
+   "s5"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 8398.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s5",
+   "note": "OpenELAB, incl. VAT."
+  },
   "priceOther": {
    "amount": 6080,
    "currency": "USD",
@@ -41,9 +48,22 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "Add to cart in USD; import into the EU is the buyer's job."
+   },
+   {
+    "name": "OpenELAB (OpenELAB Technology Ltd.)",
+    "country": "CN",
+    "role": "reseller",
+    "productUrl": "https://openelab.io/de/products/agibot-d1-edu-robot-dog",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 8398.95,
+    "priceBasis": "gross",
+    "sourceId": "s5",
+    "note": "German-language EUR shop page, SKU AgiBot-D1-EDU, button 'In den Warenkorb legen - 8.398,95 €'; 'Shipping from China within 5-10 working days', OpenELAB says it handles import customs and VAT (option to import via its EU office). Seller is a Shenzhen company."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -210,6 +230,14 @@
    "publisher": "Génération Robots",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://openelab.io/de/products/agibot-d1-edu-robot-dog",
+   "title": "OpenELAB",
+   "publisher": "OpenELAB",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

@@ -1,0 +1,131 @@
+{
+ "schemaVersion": 1,
+ "id": "oh-channel-innovations-sumirobo",
+ "maker": "OH Channel Innovations Co., Ltd. (formerly Hitachi Channel Solutions)",
+ "makerCountry": "JP",
+ "model": "SumiROBO",
+ "variant": null,
+ "name": "SumiROBO automatic layout marking robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": null,
+ "summary": "Automatic layout marking robot system that drives to marking positions from CAD data in contact with a surveying instrument and draws lines and text on the floor. Sold in Japan since November 2021 by Hitachi Channel Solutions, which became OH Channel Innovations in October 2026.",
+ "launched": "2021-11",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold in Japan only; no German or EU seller found. Hitachi Channel Solutions merged into OH Channel Innovations on 1 October 2026 and its product pages moved; no SumiROBO page was found on the new site.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "min_distance_obstacle_mm",
+   "label": "Closest marking distance to columns and walls",
+   "value": 350,
+   "unit": "mm",
+   "conditions": "after the 2023 upgrade; before about 800 mm",
+   "sourceId": "s1",
+   "quote": "機能拡張によって３５０ミリメートル離れた場所にも墨出しができるようになり"
+  },
+  {
+   "key": "data_conversion",
+   "label": "Drawing data",
+   "value": "cloud service extracts marking data from CAD drawings, with a check function",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ＣＡＤデータから墨出し作業情報を抽出して、データを変換するためのクラウドサービスを用意した"
+  },
+  {
+   "key": "marking",
+   "label": "What it draws",
+   "value": "straight lines, text and image symbols such as equipment categories",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "直線や文字情報を自動で描く"
+  },
+  {
+   "key": "netis",
+   "label": "Registration",
+   "value": "listed in the MLIT new technology information system NETIS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "国土交通省の新技術情報提供システム（ＮＥＴＩＳ）に、建設現場の生産性向上が期待できる技術として新たに登録された"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Works with a surveying instrument that guides the robot to each marking position.",
+   "Self-driving on floors; wheels assumed, not stated. Size, weight and battery life not found on a readable page."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Automatic layout marking on more than 100 construction sites since launch",
+   "stage": "deployment",
+   "where": "Construction sites in Japan",
+   "date": "2023-01",
+   "sourceId": "s1",
+   "note": "Maker target: 100-200 units sold per year."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://newswitch.jp/p/35254",
+   "title": "自動墨出しロボットが進化した！日立チャネルが機能向上 (Nikkan Kogyo Shimbun, 4 January 2023)",
+   "publisher": "Newswitch (Nikkan Kogyo Shimbun)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.hitachi-ch.co.jp/products/sumirobo/",
+   "title": "Hitachi Channel Solutions site notice: integration into OH Channel Innovations from 1 October 2026",
+   "publisher": "Hitachi Channel Solutions",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is SumiROBO still sold after the merger into OH Channel Innovations (October 2026)?",
+  "Weight, size, accuracy, runtime and price were not found on a readable page.",
+  "Which surveying instrument is required?"
+ ],
+ "checkedAt": "2026-11-18"
+}

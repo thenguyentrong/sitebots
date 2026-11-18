@@ -1,0 +1,133 @@
+{
+ "schemaVersion": 1,
+ "id": "civ-robotics-civnav-pile-driving",
+ "maker": "Civ Robotics",
+ "makerCountry": "US",
+ "model": "CivNav Pile Driving",
+ "variant": null,
+ "name": "Civ Robotics CivNav Pile Driving",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "utility-scale solar construction: driving tracker foundation piles"
+ ],
+ "officialUrl": "https://www.civrobotics.com/robots/machine-control/civnav-pile-driving",
+ "summary": "GPS machine-control and automation kit for solar pile drivers: after one button press the machine navigates to the next pile, positions and plumbs the hammer and drives the pile to the target elevation, with a machine-mounted tablet for guidance.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold or rented direct by the US maker on request (pricing page: 'Rental and purchase options for CivNav', formal quote). No German or EU distributor, office or CE information found, as for Civ's CivDot robots.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Civ Robotics Inc.",
+    "country": "US",
+    "role": "manufacturer",
+    "productUrl": "https://www.civrobotics.com/robots/machine-control/civnav-pile-driving",
+    "contactUrl": "https://www.civrobotics.com/pricing",
+    "email": "info@civrobotics.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "638 4th Street, San Francisco; buy or rent with a formal quote. No German or EU office, distributor or reseller found."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "automated_steps",
+   "label": "Automated steps",
+   "value": "pile-to-pile navigation, positioning, plumbing, driving to target elevation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "positioning, plumbing, and driving each pile to target elevation, with real-time guidance on a rugged, machine-mounted tablet"
+  },
+  {
+   "key": "cycle_time_reduction_pct",
+   "label": "Piling cycle time reduction",
+   "value": 50,
+   "unit": "%",
+   "conditions": "maker claim, 'up to'",
+   "sourceId": "s1",
+   "quote": "reduce the piling cycle time by up to 50%, with a single operator managing the entire process"
+  },
+  {
+   "key": "crew",
+   "label": "Operating crew",
+   "value": 1,
+   "unit": "operator",
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "2X faster with a single operator"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": false,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Kit only: GPS machine control mounted on a pile driver; the pile driver (carrier, mast and hammer) is not part of the product, so handsIncluded is false. Which pile driver models it fits is not stated.",
+   "tracks, roughGround and outdoor describe the typical solar pile driver it is fitted to, not a sourced spec.",
+   "The page also calls it 'Solar pile driving and drilling automation'; live map shows machine position, plumbness and pile height."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Automates navigation, plumbing and driving of solar foundation piles on utility-scale solar sites",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "No use-case id covers solar pile driving."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.civrobotics.com/robots/machine-control/civnav-pile-driving",
+   "title": "CivNav Pile Driving",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.civrobotics.com/pricing",
+   "title": "Pricing",
+   "publisher": "Civ Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which pile driver makes and models the kit fits, and GNSS accuracy.",
+  "Price (buy or rent) and whether Civ supports installations in Germany or the EU; CE conformity.",
+  "Any named customer project; the page shows only an illustration."
+ ],
+ "checkedAt": "2026-11-18"
+}

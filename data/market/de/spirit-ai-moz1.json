@@ -1,0 +1,164 @@
+{
+ "schemaVersion": 1,
+ "id": "spirit-ai-moz1",
+ "maker": "Spirit AI (Wanjing Qianxun (Beijing) Technology Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "Moz1",
+ "variant": null,
+ "name": "Spirit AI Moz1",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.spirit-ai.com/en/product",
+ "summary": "A wheeled humanoid with two 7-DOF force-controlled arms, two-finger grippers and an omnidirectional base, sold with an SDK and teleoperation kit for embodied-AI data collection and indoor service tasks.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor found; Spirit AI's website and manuals name only Chinese contacts.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Total DOF",
+   "value": 26,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Equipped with the world's highest power-density integrated force/torque-controlled joints, with 26 degrees of freedom"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "force/torque-position hybrid control",
+   "sourceId": "s1",
+   "quote": "Fitted with high - performance force/torque - position hybrid controlled 7-Dof bionic arms"
+  },
+  {
+   "key": "end_effectors",
+   "label": "End effectors",
+   "value": "two two-finger grippers",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "二指夹爪2末端执行器"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IP40",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "IP防护等级：IP40"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "-10 to 50",
+   "unit": "°C",
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "工作温度：-10℃ ~ 50℃"
+  },
+  {
+   "key": "charging",
+   "label": "Charging",
+   "value": "54.8 V / 10 A, manual connection",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "充电参数54.8V / 10A（恒流恒压）2充电形式手动连接（需人工操作）"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Intel D455 head camera, two D405 wrist cameras, MID-360S lidar",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "1头部相机（Intel D455）1用于头部感知2腕部相机（Intel D405）2用于腕部感知3激光雷达（MID-360S）1SLAM"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP40",
+  "sdk": "MozRobot SDK; VR teleoperation; Pi0.5 model adaptation (docs)",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "The manual says the robot must not run in rain, snow or in the open air ('机器人不应在雨天、雪天或露天环境下运行').",
+   "The manual forbids hazardous work such as work at height and heavy carrying ('禁止将机器人用于危险作业，如高空作业、重型搬运').",
+   "Omnidirectional wheeled base; the legs are replaced by the mobile platform ('双足被轮式移动平台代替')."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Household service, office assistance, education and care tasks (manual scope)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "No construction or site use reported; the manual rules out heavy carrying."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.spirit-ai.com/en/product",
+   "title": "Spirit AI product page",
+   "publisher": "Spirit AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://docs.spirit-ai.com/zh/moz1/product-intro.html",
+   "title": "Moz1 product introduction (user manual)",
+   "publisher": "Spirit AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://docs.spirit-ai.com/zh/moz1/mechanics.html",
+   "title": "Moz1 mechanical structure (user manual)",
+   "publisher": "Spirit AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Height, weight, arm payload and runtime are not given on the pages read.",
+  "Price and whether Spirit AI sells outside China.",
+  "Lifecycle set to shipping because a full user manual (v2.7) with transport and maintenance chapters is published; no customer list was found."
+ ],
+ "checkedAt": "2026-11-18"
+}

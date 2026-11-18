@@ -13,7 +13,13 @@
  "launched": "2026-07",
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 41650,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s6",
+   "note": "Bipedal GmbH, incl. VAT."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -29,14 +35,28 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "X2 EDU is selectable in AGIBOT's product enquiry form."
+   },
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.bipedal.de/AgiBot-X2-EDU-Complete-Machine-Component-Package",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "0 21 71 / 40 13 600",
+    "priceEur": 41650,
+    "priceBasis": "gross",
+    "sourceId": "s6",
+    "note": "X2 EDU (29 DOF, 7-DOF arms, no head camera, RK3588); \"In den Warenkorb\", header says \"Sofort verfügbar, Lieferzeit: 2 - 3 Werktage\" while the description says \"Lieferzeit ca. 7 Wochen (DE)\"; 6 months warranty."
    }
   ],
-  "checkedAt": "2026-11-06",
-  "status": "quote",
-  "statusNote": "Selectable as \"AGIBOT X2 EDU\" in AGIBOT's business enquiry form; AGIBOT sells into Europe, but no European seller, listing or price for the EDU was found.",
+  "checkedAt": "2026-11-18",
+  "status": "buy_now",
+  "statusNote": "Bipedal (Germany) sells the AGIBOT X2 EDU at 41,650 € incl. 19% VAT with a cart. It is also selectable in AGIBOT's business enquiry form.",
   "sourceIds": [
    "s2",
-   "s3"
+   "s3",
+   "s6"
   ]
  },
  "specs": [
@@ -161,6 +181,14 @@
    "publisher": "AGIBOT",
    "kind": "manufacturer",
    "checkedAt": "2026-10-21"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.bipedal.de/AgiBot-X2-EDU-Complete-Machine-Component-Package",
+   "title": "Bipedal GmbH",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

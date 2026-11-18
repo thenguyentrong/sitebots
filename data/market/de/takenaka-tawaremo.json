@@ -1,0 +1,119 @@
+{
+ "schemaVersion": 1,
+ "id": "takenaka-tawaremo",
+ "maker": "Takenaka Corporation, Kajima Corporation and AKTIO Corporation",
+ "makerCountry": "JP",
+ "model": "TawaRemo",
+ "variant": "tower crane remote operation system with ground cockpits",
+ "name": "TawaRemo tower crane remote operation",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "material_lifting"
+ ],
+ "officialUrl": "https://www.takenaka.co.jp/takenaka_e/people/11/",
+ "summary": "Remote operation system for tower cranes developed in 2020 by Takenaka, Kajima and the rental company AKTIO: the operator works from a cockpit on the ground instead of climbing to the crane cab, and several cockpits can sit side by side for training. Used on Japanese building sites and shared with members of the Construction RX Consortium.",
+ "launched": "2020",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Available in Japan to Takenaka and the member companies of the Construction RX Consortium (291 companies in May 2025). Use abroad is only being considered, in Asian countries such as South Korea. No European route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "machine",
+   "label": "Machine",
+   "value": "tower cranes, operated from the ground",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "we began developing a system that allows tower cranes to be operated remotely from the ground"
+  },
+  {
+   "key": "operation_feel",
+   "label": "Operation",
+   "value": "same feel as the crane cab; delay between controls and crane movement kept low",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "We ensured that the operation would feel the same as conventional tower cranes and implemented measures to minimize the delay between the control interface and the actual movement of the tower crane."
+  },
+  {
+   "key": "multi_cockpit",
+   "label": "Cockpits",
+   "value": "several cockpits can be placed in the same location so one experienced operator can instruct several young operators",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "TawaRemo allows multiple cockpits to be placed in the same location"
+  },
+  {
+   "key": "availability",
+   "label": "Who can use it",
+   "value": "Takenaka and member companies of the Construction RX Consortium",
+   "unit": null,
+   "conditions": "291 member companies as of May 2025",
+   "sourceId": "s1",
+   "quote": "TawaRemo is currently available not only to our company but also to member companies of the Construction RX Consortium"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote operation of a stationary tower crane; the crane hook is the tool. Load capacity depends on the crane.",
+   "Removes the climb of up to 50 m to the crane cab; operators can work from the ground all day."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Tower cranes on building sites operated remotely from ground cockpits; operators report it feels almost the same as the cab",
+   "stage": "deployment",
+   "where": "Japan – Takenaka and Construction RX Consortium members",
+   "date": "2025-06",
+   "sourceId": "s1",
+   "note": "Sites and number of cranes not named on the page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.takenaka.co.jp/takenaka_e/people/11/",
+   "title": "People of Takenaka: Kohei Nagata – remote control system for tower cranes (as of June 2025)",
+   "publisher": "Takenaka Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which tower crane makes and models can be fitted, and is it rented through AKTIO?",
+  "How many sites use TawaRemo? Press reports mention seven sites, but no readable source confirmed it.",
+  "Latency and radio range are not stated on the page read."
+ ],
+ "checkedAt": "2026-11-18"
+}

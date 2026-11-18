@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "vollert-smart-set",
+ "maker": "Vollert Precast Solutions GmbH",
+ "makerCountry": "DE",
+ "model": "SMART SET",
+ "variant": null,
+ "name": "Vollert SMART SET shuttering robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "precast_concrete/shuttering-placement",
+  "precast_concrete/embedded-parts-placement"
+ ],
+ "officialUrl": "https://vollertprecastsolutions.com/en/machines-and-components/machines-and-robots/plotter-shuttering-robot/",
+ "summary": "Gantry shuttering robot for pallet circulation plants that takes shutters from a magazine and sets them on the pallet from CAD data, and scans the pallet to pick the shutters off again after curing. Made by Vollert Precast Solutions in Weinsberg, Germany.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker; sold on request as part of precast plant projects through Vollert's sales team in Weinsberg. No price published. Running at the Oschatz concrete plant in Saxony.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Vollert Precast Solutions GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://vollertprecastsolutions.com/en/machines-and-components/machines-and-robots/plotter-shuttering-robot/",
+    "contactUrl": "https://vollertprecastsolutions.com/#contact",
+    "email": "contact@vollertprecastsolutions.com",
+    "phone": "+49 7134 5279200",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Heidenbaumstraße 4, 74189 Weinsberg, Germany. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "placing",
+   "label": "Shuttering",
+   "value": "places shutters on the pallet from CAD data",
+   "unit": null,
+   "conditions": "fully automatic",
+   "sourceId": "s1",
+   "quote": "Shuttering robots that work fully automatically place the shutters onto the pallet with a high degree of precision according to the CAD data provided."
+  },
+  {
+   "key": "magazine",
+   "label": "Shutter supply",
+   "value": "magazine with the shutter types and lengths set for the plant",
+   "unit": null,
+   "conditions": "other shutters are set by hand at other workstations",
+   "sourceId": "s1",
+   "quote": "The types and lengths of shutters that have been specified for the special circuit are kept in a magazine."
+  },
+  {
+   "key": "demoulding",
+   "label": "Demoulding",
+   "value": "removes shutters it finds by scanning the pallet",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The robot is also able to remove shutters, which it detects by scanning the pallets."
+  },
+  {
+   "key": "product_name",
+   "label": "Product name",
+   "value": "SMART SET",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "SMART SET Schalungsroboter"
+  },
+  {
+   "key": "embedded_parts",
+   "label": "Embedded parts",
+   "value": "sets magnets for electric outlets (Oschatz line)",
+   "unit": null,
+   "conditions": "as installed at Betonwerk Oschatz",
+   "sourceId": "s4",
+   "quote": "The shuttering profiles are positioned at high traversing speed, and embedded parts such as magnets for electric outlets are set in place"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s4"
+  ],
+  "notes": [
+   "Gantry (portal) robot over the pallet line, not an arm on a mobile base; arms = 1 gripper head.",
+   "Vollert also sells a large plotter that marks shutter layout and inbuilt parts on the pallet, and a SMART STORE magazine robot that stores the shutters.",
+   "Speed, accuracy and shutter weight are not given on the pages read."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://vollertprecastsolutions.com/wp-content/uploads/2026/01/Vollert-shuttering-robot_Produktbild_SMART_SET.jpg",
+   "pageUrl": "https://vollertprecastsolutions.com/maschinen-und-komponenten/maschinen-und-roboter/plotter-und-schalungsroboter/",
+   "credit": "Vollert Precast Solutions",
+   "alt": "Vollert SMART SET shuttering robot, blue gantry with gripper head over a steel pallet and a magazine of blue shutters",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "precast_concrete/shuttering-placement",
+    "precast_concrete/embedded-parts-placement"
+   ],
+   "task": "Smart Set robot line shutters and demoulds pallets with CAD-CAM control and sets magnets for electric outlets; a Smart Store robot stores the profiles",
+   "stage": "deployment",
+   "where": "Betonwerk Oschatz, Oschatz, Germany",
+   "date": null,
+   "sourceId": "s4",
+   "note": "BFT International article; the full text is behind a paywall, the date was not read."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://vollertprecastsolutions.com/en/machines-and-components/machines-and-robots/plotter-shuttering-robot/",
+   "title": "Plotter and shuttering robot",
+   "publisher": "Vollert Precast Solutions GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://vollertprecastsolutions.com/maschinen-und-komponenten/maschinen-und-roboter/plotter-und-schalungsroboter/",
+   "title": "Plotter und Schalungsroboter (German page)",
+   "publisher": "Vollert Precast Solutions GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://vollertprecastsolutions.com/impressum/",
+   "title": "Impressum",
+   "publisher": "Vollert Precast Solutions GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.bft-international.com/en/artikel/bft_The_Oschatz_concrete_plant_banks_on_robot_technology-3287521.html",
+   "title": "The Oschatz concrete plant banks on robot technology",
+   "publisher": "BFT International",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price, speed, positioning accuracy or maximum shutter weight found.",
+  "Date of the Oschatz installation (BFT article date not read)."
+ ],
+ "checkedAt": "2026-11-18"
+}

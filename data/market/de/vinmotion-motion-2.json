@@ -1,0 +1,205 @@
+{
+ "schemaVersion": 1,
+ "id": "vinmotion-motion-2",
+ "maker": "VinMotion (Vingroup)",
+ "makerCountry": "VN",
+ "model": "Motion 2",
+ "variant": "M2 Basic / Advanced / Ultra",
+ "name": "VinMotion Motion 2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://vinmotion.net/en/products/motion-2/",
+ "summary": "A full-size bipedal humanoid (1.63 m, 63 kg, 29 DOF) from Vingroup's robotics unit, launched at CES 2026 in three models that differ in AI compute and SDK access. The maker names manufacturing, logistics, hospitality and security among its uses.",
+ "launched": "2026-01",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "VinMotion (Hanoi, with a US office in Cypress, California) publishes a spec sheet and a contact form but no price or ordering route. No German or EU seller was found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height (standing)",
+   "value": 1.632,
+   "unit": "m",
+   "conditions": "standing 1,632 x 489 x 253 mm; folded 848 x 489 x 468 mm",
+   "sourceId": "s1",
+   "quote": "Height (standing): 1,632 × 489 × 253 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 63,
+   "unit": "kg",
+   "conditions": "± 1 kg, including two batteries",
+   "sourceId": "s1",
+   "quote": "63 ± 1 kg (incl. 02 battery)"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 29,
+   "unit": null,
+   "conditions": "all three models",
+   "sourceId": "s1",
+   "quote": "Total degrees of freedom (DOF)292929"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload, one hand",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "6 kg with two hands; up to 10 min; varies with posture",
+   "sourceId": "s1",
+   "quote": "Payload3 kg one-hand / 6 kg two-hand, ≤ 10 min"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, both hands",
+   "value": 6,
+   "unit": "kg",
+   "conditions": "up to 10 min; varies with posture",
+   "sourceId": "s1",
+   "quote": "3 kg one-hand / 6 kg two-hand, ≤ 10 min"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Speed",
+   "value": 7.2,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "330 N·m peak; 7.2 km/h"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 2,
+   "unit": "h",
+   "conditions": "about 2 h walking / 3 h standing; two hot-swappable 9.6 Ah packs, 1.5 h charging per pack",
+   "sourceId": "s1",
+   "quote": "~2h walking / 3h standing"
+  },
+  {
+   "key": "compute",
+   "label": "AI module",
+   "value": "100-300 TOPS (Basic, Advanced); > 500 TOPS (Ultra)",
+   "unit": null,
+   "conditions": "plus a 16-core CPU",
+   "sourceId": "s1",
+   "quote": "AI module100-300 TOPs GPU/NPU100-300 TOPs GPU/NPU> 500 TOPs GPU/NPU"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "LiDAR, 3 depth cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "LiDAR standard; 3 depth cameras"
+  },
+  {
+   "key": "hands",
+   "label": "Hands",
+   "value": "rubber hand; other hand types optional on Ultra",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Rubber handRubber handRubber hand + optional hand types available"
+  },
+  {
+   "key": "warranty",
+   "label": "Hardware warranty",
+   "value": 12,
+   "unit": "months",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Hardware warranty12 months12 months12 months"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": true,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Basic: locomotion and predefined actions only; Advanced and Ultra: full ROS2 / Python / C++ access with motor control (Ultra adds hand/tactile API)",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "All models ship with a rubber hand; the Ultra model offers optional hand types.",
+   "Payload is rated for at most 10 minutes and varies with posture.",
+   "The maker says specifications may change with production versions."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://vinmotion.net/images/products/motion2-main.webp",
+   "pageUrl": "https://vinmotion.net/en/products/motion-2/",
+   "credit": "VinMotion",
+   "alt": "VinMotion Motion 2 humanoid at a desk, upper body with five-finger hands",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Heavy-load handling in manufacturing and logistics, plus hospitality, patrol and retail roles",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker solution list; no named customer site or construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://vinmotion.net/en/products/motion-2/",
+   "title": "Motion 2 Tech Specification",
+   "publisher": "VinMotion",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://vinmotion.net/",
+   "title": "VinMotion home page",
+   "publisher": "VinMotion",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://vinmotion.net/en/about/",
+   "title": "About VinMotion (milestones)",
+   "publisher": "VinMotion",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Prices of the Basic, Advanced and Ultra models and whether VinMotion sells outside Vietnam and the US.",
+  "Whether Motion 2 is delivered to customers yet or only shown at events (launch at CES 2026 per maker milestones)."
+ ],
+ "checkedAt": "2026-11-18"
+}

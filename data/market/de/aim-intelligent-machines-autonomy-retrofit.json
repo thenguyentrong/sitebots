@@ -1,0 +1,131 @@
+{
+ "schemaVersion": 1,
+ "id": "aim-intelligent-machines-autonomy-retrofit",
+ "maker": "AIM Intelligent Machines",
+ "makerCountry": "US",
+ "model": "AIM autonomy platform",
+ "variant": "retrofit for existing bulldozers and hydraulic excavators",
+ "name": "AIM Intelligent Machines autonomous earthmoving retrofit",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation"
+ ],
+ "officialUrl": "https://www.aimintelligentmachines.com/",
+ "summary": "Retrofit autonomy platform that turns customers' existing bulldozers and hydraulic excavators into autonomous earthmoving machines, used at mine sites and construction sites. A partnership with Komatsu and EARTHBRAIN (July 2026) links it to Smart Construction and has reached commercial deployment in the US, where Komatsu autonomous machines already work at customer jobsites; Japan is planned from 2027.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or European route found. The Komatsu partnership covers the US market now and Japan from 2027; AIM's site takes requests through a form and names no European office or dealer.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "host_machines",
+   "label": "Host machines",
+   "value": "existing bulldozers and hydraulic excavators",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "AIM’s technology can be retrofitted to existing bulldozers and hydraulic excavators, allowing customers to gradually introduce autonomous construction using their current fleets"
+  },
+  {
+   "key": "autonomy_level",
+   "label": "What it does",
+   "value": "machines read the project goals, plan methods and travel routes and carry out the earthmoving on their own",
+   "unit": null,
+   "conditions": "with Komatsu Smart Construction plans and terrain data",
+   "sourceId": "s1",
+   "quote": "Bulldozers and hydraulic excavators can understand project objectives, autonomously determine construction methods and travel routes, and execute construction tasks independently."
+  },
+  {
+   "key": "markets",
+   "label": "Markets",
+   "value": "US now; Japan from 2027 (Komatsu partnership)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The companies also plan to introduce the solution to the Japanese market beginning in 2027."
+  },
+  {
+   "key": "fleet_savings_usd",
+   "label": "Claimed savings",
+   "value": "USD 6.1 million annual opex savings from one six-machine autonomous fleet",
+   "unit": null,
+   "conditions": "maker claim, site type not stated",
+   "sourceId": "s2",
+   "quote": "$6.1M ANNUAL OPEX SAVINGS FROM A SINGLE SIX-MACHINE AUTONOMOUS FLEET"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Retrofit: the customer's dozer or excavator carries the AIM hardware; capabilities describe those tracked host machines.",
+   "AIM's site says it is commercially deployed at mine sites and construction sites worldwide; most named results are from mining.",
+   "Sensor set, supported brands and price were not found on readable pages."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Komatsu autonomous bulldozers and excavators with AIM technology operating at customer jobsites",
+   "stage": "deployment",
+   "where": "United States",
+   "date": "2026-07",
+   "sourceId": "s1",
+   "note": "Customers and jobs not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.komatsu.com/en-us/newsroom/2026/komatsu-aim-enter-strategic-partnership",
+   "title": "Komatsu and AIM Intelligent Machines enter strategic partnership for autonomous operation of bulldozers and hydraulic excavators (31 July 2026)",
+   "publisher": "Komatsu",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.aimintelligentmachines.com/",
+   "title": "AIM Intelligent Machines: platform for autonomous earthmoving",
+   "publisher": "AIM Intelligent Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which dozer and excavator makes and sizes can be retrofitted, and what sensors does the kit use?",
+  "Which construction customers use it, and on what jobs? Only unnamed US jobsites are cited.",
+  "Price or rental model not published."
+ ],
+ "checkedAt": "2026-11-18"
+}

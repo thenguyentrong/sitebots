@@ -1,0 +1,136 @@
+{
+ "schemaVersion": 1,
+ "id": "woma-jetty",
+ "maker": "WOMA GmbH (Kärcher Group)",
+ "makerCountry": "DE",
+ "model": "JETTY",
+ "variant": null,
+ "name": "WOMA JETTY",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_concrete_repair/hydrodemolition"
+ ],
+ "officialUrl": "https://www.woma-group.com/en/industry-solutions-applications/ultra-high-pressure-applications/concrete-refurbishment.html",
+ "summary": "Compact ultra-high-pressure water-jetting robot from the German maker WOMA for hydrodemolition and surface removal on concrete; under 600 kg, it fits through a normal door and can work on scaffolding.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker (Duisburg) with sales, rental units and a dealer search; the JETTY appears only in a case story, with no product page, data sheet or price.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "WOMA GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.woma-group.com/en/industry-solutions-applications/ultra-high-pressure-applications/concrete-refurbishment.html",
+    "email": "info@woma.kaercher.com",
+    "phone": "+49 2065 304 0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Werthauser Straße 77–79, 47226 Duisburg. Service hotline +49 2065 304 222."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": "under 600",
+   "unit": "kg",
+   "conditions": "maker case story",
+   "sourceId": "s1",
+   "quote": "due to the light weight of less than 600kg it is also suitable to jobs on scaffoldings"
+  },
+  {
+   "key": "access",
+   "label": "Access",
+   "value": "fits through a normal door",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Thanks to the compact design, the robot fits through a normal door"
+  },
+  {
+   "key": "paired_pump",
+   "label": "Pump used in the case story",
+   "value": "WOMA EcoMaster MK3, 2500 bar, 26 l/min",
+   "unit": null,
+   "conditions": "pump sold separately; one job example",
+   "sourceId": "s1",
+   "quote": "the ultra-high pressure unit EcoMaster MK3 was used. At 2500 bar working pressure and 26 l/min volume flow"
+  },
+  {
+   "key": "jetting_tool",
+   "label": "Jetting tool in the case story",
+   "value": "WOMA TD3000 SCS turbo nozzle",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The WOMA TD3000 SCS turbo nozzle is used as a water jetting tool"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The page shows the robot with a vertical mast carrying the jetting lance; its running gear is not described, so wheels and tracks are set false.",
+   "Needs a separate ultra-high-pressure pump unit (EcoMaster MK3 in the case story).",
+   "Positioned for dangerous areas and tasks to keep the operator away from the jet (maker)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete_repair/hydrodemolition"
+   ],
+   "task": "Removed several thousand square metres of concrete from a ceiling while working on a scaffold",
+   "stage": "deployment",
+   "where": "Finland",
+   "date": null,
+   "sourceId": "s1",
+   "note": "WOMA case story; job date not given."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.woma-group.com/en/industry-solutions-applications/ultra-high-pressure-applications/concrete-refurbishment.html",
+   "title": "Concrete refurbishment, hydrodemolition (case story: JETTY)",
+   "publisher": "WOMA GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No product page or data sheet: reach, working pressure range, drive (wheels or tracks), controls and price unknown.",
+  "Whether the JETTY is sold or only rented, and whether it is still in the current range."
+ ],
+ "checkedAt": "2026-11-18"
+}

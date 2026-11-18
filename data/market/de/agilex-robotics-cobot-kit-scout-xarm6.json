@@ -1,0 +1,253 @@
+{
+ "schemaVersion": 1,
+ "id": "agilex-robotics-cobot-kit-scout-xarm6",
+ "maker": "AgileX Robotics",
+ "makerCountry": "CN",
+ "model": "Cobot Kit",
+ "variant": "SCOUT 2.0 base + UFactory xArm6 (sold by MYBOTSHOP as \"AgileX Cobot Kit Stand\")",
+ "name": "AgileX Cobot Kit (SCOUT 2.0 + xArm6)",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://global.agilex.ai/blogs/news/agilex-robotics-unveils-mobile-manipulator-development-platform-a-high-precision",
+ "summary": "A research mobile manipulator built from AgileX's four-wheel off-road SCOUT 2.0 base (50 kg payload) with a 6-axis UFactory xArm6 arm, DH gripper, 16-beam lidar, Intel D435 camera and an industrial PC, sold as a complete kit.",
+ "launched": "2021-08",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "MYBOTSHOP (Bergheim) lists the kit with SCOUT 2.0, xArm6, RS-LiDAR-16, DH gripper, D435 and APQ computer at 61,880.95 € incl. 19% VAT with a cart button; delivery 3-4 weeks.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 61880.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "\"€ 61.880,95\" \"inkl. 19% USt.\" plus shipping, article MBS-AGX-16."
+  },
+  "priceOther": null,
+  "leadTime": "3-4 weeks (MYBOTSHOP; \"Ab Bestellung lieferbar in 21 Tagen\")",
+  "sellers": [
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/AgileX-Cobot-Kit-Stand",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": 61880.95,
+    "priceBasis": "gross",
+    "sourceId": "s1",
+    "note": "\"€ 61.880,95 inkl. 19% USt.\", \"Lieferzeit: 3 - 4 Wochen\". The same price is shown for MYBOTSHOP's AgileX COBOT S (Bunker + RM75) and its generic \"AgileX Mobile Manipulator\" listing; this record is the defined SCOUT 2.0 + xArm6 kit."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "base",
+   "label": "Mobile base",
+   "value": "AgileX SCOUT 2.0 (four-wheel differential drive)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Plattform: SCOUT2.0"
+  },
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "UFactory xArm6 with DH gripper",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "xArm6 Manipulator für präzise Bewegungssteuerung"
+  },
+  {
+   "key": "arm_reach_mm",
+   "label": "Arm working radius",
+   "value": "819-886",
+   "unit": "mm",
+   "conditions": "range given by AgileX for its AUBO-i5 / xArm6 mobile manipulator",
+   "sourceId": "s2",
+   "quote": "working radius (819-886mm)"
+  },
+  {
+   "key": "grip_force_n",
+   "label": "Max grasping force",
+   "value": 160,
+   "unit": "N",
+   "conditions": "AgileX mobile manipulator figure",
+   "sourceId": "s2",
+   "quote": "a maximum grasping force of 160N"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Article weight",
+   "value": 75,
+   "unit": "kg",
+   "conditions": "seller figure for the kit; shipping weight 100 kg",
+   "sourceId": "s1",
+   "quote": "75,00 kg"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Base payload",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "SCOUT 2.0 base; the arm counts towards it",
+   "sourceId": "s3",
+   "quote": "50kg"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed (base)",
+   "value": 1.67,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "1.67m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime (full load, base)",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "SCOUT 2.0 base",
+   "sourceId": "s3",
+   "quote": "2.5hour"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climb (base)",
+   "value": 30,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "30° climbing capability"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating (base)",
+   "value": "IP22",
+   "unit": null,
+   "conditions": "customizable per AgileX",
+   "sourceId": "s3",
+   "quote": "IP22"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "Robosense RS-LiDAR-16, Intel D435 depth camera",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "LiDAR: Robosense RS-LiDAR-16"
+  },
+  {
+   "key": "compute",
+   "label": "Computer",
+   "value": "APQ industrial computer",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Computer: APQ Industrial Computer"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 50,
+  "runtimeH": 2.5,
+  "ipRating": "IP22",
+  "sdk": "ROS (AgileX open-source ROS package)",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Base figures (payload, speed, runtime, IP22) are for the SCOUT 2.0 without arm.",
+   "xArm6 payload not stated on the pages read.",
+   "IP22 base: light rain protection only; research platform rather than a site machine."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.mybotshop.de/media/image/product/8249/lg/agilex-cobot-kit-stand.jpg",
+   "pageUrl": "https://www.mybotshop.de/AgileX-Cobot-Kit-Stand",
+   "credit": "MYBOTSHOP.DE",
+   "alt": "AgileX Cobot Kit with SCOUT 2.0 base and xArm6 arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker presents it as a research platform for grasping, autonomous positioning, navigation and obstacle avoidance",
+   "stage": "claim",
+   "where": null,
+   "date": "2021-08",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s3",
+   "quote": "Front and rear double-wishbone independent suspension, 115 mm ground clearance, 30° climbing capability, and 200 mm gap-crossing performance help SCOUT 2.0 move through challenging terrain.",
+   "basis": "maker description of the base",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "hands_included",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "DH Greifer für vielseitige Handhabungsaufgaben",
+   "basis": "seller scope of delivery",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.mybotshop.de/AgileX-Cobot-Kit-Stand",
+   "title": "AgileX Cobot Kit Stand",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://global.agilex.ai/blogs/news/agilex-robotics-unveils-mobile-manipulator-development-platform-a-high-precision",
+   "title": "AgileX Robotics Unveils Mobile Manipulator Development Platform",
+   "publisher": "AgileX Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://global.agilex.ai/products/scout-2-0-off-road-ugv",
+   "title": "SCOUT 2.0 off-road UGV",
+   "publisher": "AgileX Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "AgileX no longer shows a product page for this kit; confirm the current build with the seller.",
+  "Payload of the xArm6 on this kit."
+ ],
+ "checkedAt": "2026-11-18"
+}

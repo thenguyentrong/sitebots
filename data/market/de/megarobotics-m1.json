@@ -1,0 +1,286 @@
+{
+ "schemaVersion": 1,
+ "id": "megarobotics-m1",
+ "maker": "MegaRobotics (MegaForce GmbH)",
+ "makerCountry": "DE",
+ "model": "M1",
+ "variant": null,
+ "name": "MegaRobotics M1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://megarobotics.de/products/m1",
+ "summary": "A 41 kg wheel-legged quadruped from the German MegaRobotics brand, built by an OEM partner, with two 3D lidars, depth camera, RTK, 30 kg walking payload and IP67. Meant for inspection of plants and substations and patrols on industrial sites outside Ex zones.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold by MegaRobotics (MegaForce GmbH, Kaarst) as its own brand, built by an OEM manufacturing partner; \"Sourcing on request\", \"Inquiry only\", price on request. The page says CE conformity is in preparation.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "MegaRobotics (MegaForce GmbH)",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://megarobotics.de/products/m1",
+    "contactUrl": "https://megarobotics.de/contact?inquiry=availability&product=M1",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "\"Contact for pricing\"; own brand for the DACH region: \"MegaRobotics supplies, integrates and services the M1 in the DACH region, built by an OEM manufacturing partner.\" CE conformity is in preparation."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. batteries",
+   "value": 41,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight incl. batteries41 kg"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload while walking",
+   "value": 30,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Payload while walking30 kg"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance unloaded",
+   "value": 5,
+   "unit": "h",
+   "conditions": "29 km unloaded; 18 km / 3.5 h at full load; measured at 1 m/s",
+   "sourceId": "s1",
+   "quote": "Range and endurance29 km / 5 h unloaded, 18 km / 3.5 h at full load (measured at 1 m/s)"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 6,
+   "unit": "m/s",
+   "conditions": "peaks of 8 m/s",
+   "sourceId": "s1",
+   "quote": "Speed6 m/s, peaks of 8 m/s"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stairs",
+   "value": 25,
+   "unit": "cm",
+   "conditions": "continuous; max. obstacle height 80 cm",
+   "sourceId": "s1",
+   "quote": "StairsSteps up to 25 cm, continuous"
+  },
+  {
+   "key": "max_obstacle_cm",
+   "label": "Max. obstacle height",
+   "value": 80,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Max. obstacle height80 cm"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max. slope",
+   "value": 45,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Max. slope45°"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 1010,
+   "unit": "Wh",
+   "conditions": "2 x 54 V / 9.35 Ah, hot-swap; charging under 2 h",
+   "sourceId": "s1",
+   "quote": "Battery2 × 54 V / 9.35 Ah (1,010 Wh in total), hot-swap"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Ingress protectionIP67"
+  },
+  {
+   "key": "operating_temp",
+   "label": "Operating temperature",
+   "value": "-20 to +55 °C",
+   "unit": null,
+   "conditions": "-40 to +80 °C with optional wide-temperature battery",
+   "sourceId": "s1",
+   "quote": "Operating temperature−20 to +55 °C (−40 to +80 °C with optional wide-temperature battery)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "930 x 480 x 585",
+   "unit": "mm",
+   "conditions": "lying down 930 x 630 x 200 mm",
+   "sourceId": "s1",
+   "quote": "Dimensions standing (L × W × H)930 × 480 × 585 mm"
+  },
+  {
+   "key": "sensors",
+   "label": "Standard sensors",
+   "value": "2 x 3D lidar (front and rear), depth camera, IMU, RTK, 2 x 8 MP wide-angle camera, 4 fill lights",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Standard sensors2 × 3D LiDAR (front and rear), depth camera, IMU, RTK, 2 × 8 MP wide-angle camera, 4 fill lights"
+  },
+  {
+   "key": "compute",
+   "label": "Main computer",
+   "value": "8-core CPU, 100 TOPS, 256 GB storage",
+   "unit": null,
+   "conditions": "Jetson Orin NX 16 GB module optional",
+   "sourceId": "s1",
+   "quote": "Main computer8-core CPU, 100 TOPS"
+  },
+  {
+   "key": "scope_of_supply",
+   "label": "Scope of supply",
+   "value": "Charger, charging dock, remote control, transport case",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Scope of supplyCharger, charging dock, remote control, transport case"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 30,
+  "runtimeH": 5,
+  "ipRating": "IP67",
+  "sdk": "Open SDK (C++, Ubuntu 22.04), ROS 2 Humble with Nav2, URDF models, simulator",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "MegaRobotics own brand, built by an OEM manufacturing partner that the page does not name.",
+   "No explosion protection: for areas outside classified Ex zones.",
+   "Product images on the maker page are renderings, not photos of a delivered unit.",
+   "Wheel-legged: 12 joint motors plus 4 wheel hub motors.",
+   "Navigation and mapping are an optional package; obstacle avoidance is supported.",
+   "M1 Pro and M1 Ultra packages on the same site are not separate records here."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "asset_inspection_infrastructure/substation-rounds"
+   ],
+   "task": "Inspection of plants and substations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Listed under the maker's applications."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "sourceId": "s1",
+   "checkedAt": "2026-11-18",
+   "field": "ip_rating",
+   "value": "IP67",
+   "quote": "Ingress protectionIP67",
+   "basis": "maker spec table"
+  },
+  {
+   "sourceId": "s1",
+   "checkedAt": "2026-11-18",
+   "field": "stairs",
+   "value": true,
+   "quote": "StairsSteps up to 25 cm, continuous",
+   "basis": "maker spec table"
+  },
+  {
+   "sourceId": "s1",
+   "checkedAt": "2026-11-18",
+   "field": "rough_ground",
+   "value": true,
+   "quote": "it rolls quickly across flat ground and switches to walking for steps, kerbs and rough terrain",
+   "basis": "maker description"
+  },
+  {
+   "sourceId": "s1",
+   "checkedAt": "2026-11-18",
+   "field": "outdoor",
+   "value": true,
+   "quote": "Security patrols on industrial sites",
+   "basis": "maker applications list; IP67 and RTK"
+  },
+  {
+   "sourceId": "s1",
+   "checkedAt": "2026-11-18",
+   "field": "carry_payload_kg",
+   "value": 30,
+   "quote": "Payload while walking30 kg",
+   "basis": "maker spec table"
+  },
+  {
+   "sourceId": "s1",
+   "checkedAt": "2026-11-18",
+   "field": "runtime_h",
+   "value": 5,
+   "quote": "Range and endurance29 km / 5 h unloaded",
+   "basis": "maker spec table, unloaded at 1 m/s"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://megarobotics.de/products/m1",
+   "title": "MegaRobotics M1 product page",
+   "publisher": "MegaRobotics (MegaForce GmbH)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://megarobotics.de/manufacturers/megarobotics",
+   "title": "MegaRobotics own brand (manufacturer page)",
+   "publisher": "MegaRobotics (MegaForce GmbH)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "The OEM manufacturer behind this rebranded robot is not named; it may be a version of a robot already in the database.",
+  "Product images on the page are AI renderings, so no photo was added; no video or field use of a delivered unit was found.",
+  "Price and delivery date; CE conformity is still in preparation."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "shimizu-robo-carrier",
+ "maker": "Shimizu Corporation",
+ "makerCountry": "JP",
+ "model": "Robo-Carrier",
+ "variant": null,
+ "name": "Shimizu Robo-Carrier",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_setup_logistics/material-runs-to-installers",
+  "site_setup_logistics/bagged-material-distribution"
+ ],
+ "officialUrl": "https://www.shimz.co.jp/en/topics/construction/item12/",
+ "summary": "Autonomous pallet-carrying robot of the Japanese contractor Shimizu that picks up palletised materials, rides the site's temporary elevator and drops them at the work spot on each floor, navigating with laser scanners and BIM data. Part of Shimizu's in-house Shimz Smart Site system.",
+ "launched": "2018-04",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Developed by Shimizu for its own construction sites in Japan; no sale, rental or German route found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Max. load",
+   "value": 990,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "990 kg"
+  },
+  {
+   "key": "size_mm",
+   "label": "Size (L × W × H)",
+   "value": "2000 × 1400 × 1930",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2,000 mm"
+  },
+  {
+   "key": "speed_km_h",
+   "label": "Speed",
+   "value": 2.4,
+   "unit": "km/h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2.4 km/h"
+  },
+  {
+   "key": "step_mm",
+   "label": "Surmountable height",
+   "value": 15,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "15 mm"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "laser scanners compared with BIM spatial data; reroutes around obstacles; links with the temporary elevator",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "the Robo-Carrier uses lasers to obtain real-time spatial data which it compares with other spatial data acquired from BIM"
+  },
+  {
+   "key": "operation",
+   "label": "Operation",
+   "value": "operator picks the materials and the destination on a tablet",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "when the operator selects materials to convey and enters their destination in a tablet"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 990,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Lifts pallets with a scissor fork; the lab test carried a pallet of plasterboard weighing about one tonne into a temporary elevator.",
+   "Steps of only 15 mm can be crossed, so it needs finished, level slabs; it moves between floors by riding the elevator, not stairs.",
+   "A collision-prevention feature stops it when a person comes near.",
+   "The spec table gives the weight as '1,160 mm', an obvious unit error, so no weight is recorded."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2018/images/2018006_ph03.jpg",
+   "pageUrl": "https://www.shimz.co.jp/en/company/about/news-release/2018/2018006.html",
+   "credit": "Shimizu Corporation",
+   "alt": "Blue Shimizu Robo-Carrier pallet robot with scissor forks in a test hall",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Lifted a pallet of plasterboard (about 1 t), carried it into a temporary elevator and on to a set location",
+   "stage": "demo",
+   "where": "Shimizu Institute of Technology robot laboratory, Etchujima, Tokyo, Japan",
+   "date": "2018-04",
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Planned to carry palletised materials from the ground floor via the freight elevator to the work spots on each floor",
+   "stage": "claim",
+   "where": "Toranomon-Azabudai Project (A district, 64 floors), Minato-ku, Tokyo, Japan",
+   "date": "2021-02",
+   "sourceId": "s2",
+   "note": "Shimizu said in February 2021 that Robo-Carrier was scheduled to begin operation there that summer; no later confirmation read."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2018/2018006.html",
+   "title": "Robots under Autonomous Control at Robot Lab (April 2018, with specifications)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.shimz.co.jp/en/company/about/news-release/2021/2020056.html",
+   "title": "Shimizu Begins Collaborating People and Autonomous Robots at Construction Site, Toranomon-Azabudai Project (February 2021)",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.shimz.co.jp/en/topics/construction/item12/",
+   "title": "The Shimizu Smart Site autonomous robots can transform a job site!",
+   "publisher": "Shimizu Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Did Robo-Carrier go into regular use at Toranomon-Azabudai or other sites after 2021? Only the plan was read.",
+  "A forklift version (Robo-Carrier Fork) was reported in 2022 with rental or sale in view; no source for it was read.",
+  "Weight and runtime: not stated (the weight cell on the spec table is a unit error)."
+ ],
+ "checkedAt": "2026-11-18"
+}

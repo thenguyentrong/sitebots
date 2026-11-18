@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "be-more-3d-bem-pro-9500",
+ "maker": "Be More 3D",
+ "makerCountry": "ES",
+ "model": "BEM PRO",
+ "variant": "9500 (9.5 m wide, 3.5 m high)",
+ "name": "Be More 3D BEM PRO 9500",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.bemore3d.com/productos/",
+ "summary": "CE-marked gantry 3D concrete printer that is assembled on the building site and runs on levelling rails (22 m included) to print single-storey houses and walls in line without a crane.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Valencia, Spain) sells and rents its printers directly on request; the product page says the machines are CE-marked. No price, German reseller or German-language page found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Be More 3D",
+    "country": "ES",
+    "role": "manufacturer",
+    "productUrl": "https://www.bemore3d.com/productos/",
+    "contactUrl": "https://bemore3d.com/contacto/",
+    "email": "info@bemore3d.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Av. dels Tarongers s/n, 46022 Valencia, Spain. Sells and rents its printers ('Venta y Alquiler'); machines built to order, all dimensions customisable."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "print_volume_m",
+   "label": "Print volume W × H × L",
+   "value": "9.5 × 3.5 × unlimited",
+   "unit": "m",
+   "conditions": "22 m of levelling rails included; rails can be moved on",
+   "sourceId": "s1",
+   "quote": "Volumen de impresión: 9.5m ancho x 3.5m alto x ∞ largo."
+  },
+  {
+   "key": "width_range_m",
+   "label": "Width (X axis), customisable",
+   "value": "6.5–12",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Eje horizontal X: Desde 6.5m hasta 12m de ancho."
+  },
+  {
+   "key": "height_options_m",
+   "label": "Height (Z axis)",
+   "value": "3 or 3.5",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Eje vertical Z: 3m ó 3.5m de alto."
+  },
+  {
+   "key": "speed_mms",
+   "label": "Print speed",
+   "value": "20–200",
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Trabaja con un rango de velocidades de 20mm/s hasta los 200mm/s."
+  },
+  {
+   "key": "wall_thickness_cm",
+   "label": "Wall thickness",
+   "value": "4–18",
+   "unit": "cm",
+   "conditions": "nozzles 40, 60, 80, 100, 120 or 150 mm",
+   "sourceId": "s1",
+   "quote": "Desde 4cm hasta 18cm."
+  },
+  {
+   "key": "hopper_l",
+   "label": "Material hopper",
+   "value": 45,
+   "unit": "l",
+   "conditions": "usable volume, with pumping system, comb and vibrator",
+   "sourceId": "s1",
+   "quote": "una gran tolva de almacenaje de material de 45l de volumen útil"
+  },
+  {
+   "key": "assembly",
+   "label": "Assembly / dismantling",
+   "value": "5 h with 3 workers each",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Montaje: 5h + 3 operarios"
+  },
+  {
+   "key": "transport",
+   "label": "Transport",
+   "value": "one 40-ft sea container",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Transporte: 1 contenedor marítimo (40 pies)"
+  },
+  {
+   "key": "ce_marking",
+   "label": "CE marking",
+   "value": true,
+   "unit": null,
+   "conditions": "double emergency stop, perimeter safety fence, limit switches",
+   "sourceId": "s1",
+   "quote": "Cuenta con marcado CE, doble seta de emergencia, vallado perimetral de seguridad"
+  },
+  {
+   "key": "house_print_h",
+   "label": "Print time, 55 m² house",
+   "value": 6,
+   "unit": "h",
+   "conditions": "maker estimate; about 1 h to move between houses",
+   "sourceId": "s3",
+   "quote": "Una vivienda de 55 m2 de puede imprimir en unas 6 horas aproximadamente."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Gantry assembled on site; travels on levelling rails laid on the slab, a screed or well-compacted ground.",
+   "No crane needed for assembly (maker).",
+   "Printing can be paused and resumed at the same point for multi-day builds."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bemore3d.com/productos/",
+   "title": "Nuestros productos (BEM PRO, BEM PRO BIGGER, SMART)",
+   "publisher": "Be More 3D",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://bemore3d.com/venta-y-alquiler-impresoras-3d-construccion-de-casas/",
+   "title": "Venta y alquiler de impresoras 3D construcción de casas",
+   "publisher": "Be More 3D",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://bemore3d.com/faqs/",
+   "title": "FAQs",
+   "publisher": "Be More 3D",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Sale and rental prices.",
+  "Named house projects printed with the BEM PRO and any customers in Germany."
+ ],
+ "checkedAt": "2026-11-18"
+}

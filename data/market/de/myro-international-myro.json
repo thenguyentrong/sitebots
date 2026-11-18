@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "myro-international-myro",
+ "maker": "MYRO International Pte. Ltd. (Mojay Global Holding)",
+ "makerCountry": "SG",
+ "model": "MYRO",
+ "variant": null,
+ "name": "MYRO interior wall painting robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://myro.bot/",
+ "summary": "Mobile robot that spray-paints flat interior walls up to 3.1 m high from a floor plan drawn in its app, avoiding zones marked as not to be painted. Made by MYRO International (Singapore, branch in Dubai) and demonstrated on residential projects in the UAE, India, Brazil and Japan.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. MYRO International sells from Singapore and Dubai and offers distribution licences to regional partners; enquiries through its contact form.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "rate_m2_h",
+   "label": "Painting rate",
+   "value": 100,
+   "unit": "m²/h",
+   "conditions": "maker benchmark from earlier projects; may vary",
+   "sourceId": "s1",
+   "quote": "Efficiency is calculated at 100 m²/hour, MYRO's standard productivity benchmark"
+  },
+  {
+   "key": "max_wall_height_m",
+   "label": "Maximum wall height",
+   "value": 3.1,
+   "unit": "m",
+   "conditions": "flat interior surfaces",
+   "sourceId": "s1",
+   "quote": "MYRO is designed to paint walls up to 3.1 meters in height"
+  },
+  {
+   "key": "setup_min",
+   "label": "Set-up time",
+   "value": "15-20",
+   "unit": "min",
+   "conditions": "cleaning afterwards 20-30 min",
+   "sourceId": "s1",
+   "quote": "Connect MYRO and set up paint in 15-20 min"
+  },
+  {
+   "key": "material_savings",
+   "label": "Material savings",
+   "value": "30 %",
+   "unit": null,
+   "conditions": "maker figure from earlier projects",
+   "sourceId": "s1",
+   "quote": "30%Material Savings¹"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "MYRO app on iOS or Android: floor plan, non-paintable zones, automatic painting",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "MYRO can be controlled through any IOS and Android device"
+  },
+  {
+   "key": "spray_setup",
+   "label": "Spray set-up on a demo job",
+   "value": "airless, LP521 tips at 1,800 psi",
+   "unit": null,
+   "conditions": "Sky City Borivali demonstration, Mumbai",
+   "sourceId": "s2",
+   "quote": "The use of LP521 spray tips at 1800 psi ensured optimal distribution"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "notes": [
+   "Flat indoor walls up to 3.1 m; the maker says to leave taller areas out of its calculator. On the Mumbai demo the ceiling was sprayed by hand with an airless gun.",
+   "Navigates with sensors and avoids collisions; works best on large regular surfaces (press).",
+   "Mobile base with a spray mast assumed; wheels and arm layout not described on readable pages."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Two-coat wall painting on the 12th floor of a residential tower during a two-day on-site demonstration (20 m × 2.75 m wall)",
+   "stage": "demo",
+   "where": "Sky City Borivali (Oberoi Construction), Mumbai, India",
+   "date": "2023-05",
+   "sourceId": "s2",
+   "note": "The page gives both 115 m² and 55 m² for the area painted in two days."
+  },
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Live interior wall painting demonstrations at launch",
+   "stage": "demo",
+   "where": "GITEX Technology Week, Dubai World Trade Centre, United Arab Emirates",
+   "date": null,
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://myro.bot/",
+   "title": "MYRO robotic painting system",
+   "publisher": "MYRO International Pte. Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://myro.bot/projects/MYRO-Deployed-at-Sky-City-Borivali-for-Oberoi-Construction",
+   "title": "MYRO Deployed at Sky City Borivali for Oberoi Construction (Mumbai, May 2023)",
+   "publisher": "MYRO International Pte. Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://meconstructionnews.com/49804/construction-robot-for-interior-painting-jobs-launched-at-gitex",
+   "title": "World's first robot for interior painting jobs launched at Gitex",
+   "publisher": "Middle East Construction News",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://myro.bot/product",
+   "title": "MYRO product page (Singapore headquarters, Dubai branch)",
+   "publisher": "MYRO International Pte. Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, weight, size, paint tank and battery runtime are not on readable pages (a brochure PDF exists but could not be read).",
+  "Is there any distribution partner in Europe?",
+  "Can it paint ceilings? The maker pages limit it to walls up to 3.1 m."
+ ],
+ "checkedAt": "2026-11-18"
+}

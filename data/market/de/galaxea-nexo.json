@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "galaxea-nexo",
+ "maker": "Galaxea Dynamics (GALAXEA (Beijing) Artificial Intelligence Technology Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "NEXO",
+ "variant": null,
+ "name": "Galaxea NEXO",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galaxea-ai.com/en/product1.html",
+ "summary": "Galaxea's flagship wheeled dual-arm humanoid (1.7 m, 30 force-controlled DOF) with 20 kg peak dual-arm payload, 2.5 m/s travel speed and 24/7 operation, aimed at manufacturing, logistics and retail work.",
+ "launched": "2026-08",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. NEXO is not in Galaxea's international store (which ships to Germany) or on RBTX; the maker page only offers 'Get a Quote' with a Chinese phone number.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Height 1700 mm"
+  },
+  {
+   "key": "dof_total",
+   "label": "Whole-body DOF",
+   "value": 30,
+   "unit": null,
+   "conditions": "including end effectors, force-controlled",
+   "sourceId": "s1",
+   "quote": "Whole-Body DoF (Including End Effectors) 30 DOF"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Peak dual-arm payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "peak, both arms together",
+   "sourceId": "s1",
+   "quote": "Peak Dual-Arm Payload 20 kg"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum travel speed",
+   "value": 2.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximum Travel Speed 2.5 m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "the maker page says standby runtime; the launch news says battery life",
+   "sourceId": "s2",
+   "quote": "NEXO offers eight hours of battery life and supports continuous 24/7 operations"
+  },
+  {
+   "key": "compute",
+   "label": "AI computing power",
+   "value": "2000 / 700 TOPS",
+   "unit": null,
+   "conditions": "two compute configurations",
+   "sourceId": "s1",
+   "quote": "AI Computing Power 2000 / 700 TOPS"
+  },
+  {
+   "key": "sensors",
+   "label": "Perception",
+   "value": "8 MP 4K monocular RGB, fisheye and depth cameras, dual lidar",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Industry-first 8MP 4K vision for powerful environmental perception"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Galaxea calls NEXO a 'Next-Generation Flagship Wheeled Dual-Arm Humanoid Robot'.",
+   "The 20 kg is a peak figure for both arms together; no per-arm or rated payload is given.",
+   "The DOF count includes end effectors, but their type (gripper or hand) is not stated."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "E-commerce and retail, industrial manufacturing, express delivery and logistics, commercial services",
+   "stage": "claim",
+   "where": "Beijing, China",
+   "date": "2026-08",
+   "sourceId": "s2",
+   "note": "Shown at Galaxea's forum during the 2026 World Robot Conference; no construction use reported."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "both_arms_payload_kg",
+   "value": 20,
+   "sourceId": "s1",
+   "quote": "Peak Dual-Arm Payload 20 kg",
+   "basis": "peak, both arms together",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.galaxea-ai.com/en/product1.html",
+   "title": "NEXO product page",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.galaxea-ai.com/en/news/galaxea-lanches-wrc.html",
+   "title": "Galaxea at the 2026 World Robot Conference",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://galaxea-dynamics.com/products.json?limit=250",
+   "title": "Galaxea international store product list",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Weight, per-arm payload, end-effector type, price and delivery date.",
+  "Lifecycle set to prototype: NEXO was launched in August 2026 and has a quote button, but no deliveries were found."
+ ],
+ "checkedAt": "2026-11-18"
+}

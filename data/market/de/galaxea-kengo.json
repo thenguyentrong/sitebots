@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "galaxea-kengo",
+ "maker": "Galaxea Dynamics (GALAXEA (Beijing) Artificial Intelligence Technology Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "KENGO",
+ "variant": null,
+ "name": "Galaxea KENGO",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.galaxea-ai.com/en/product3.html",
+ "summary": "A 1.4 m, 40 kg bipedal humanoid from Galaxea with 23+ DOF and 2 kg arm payload, pitched for terrain wheeled robots cannot handle, such as energy and power sites and equipment inspection.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Galaxea's international store, which lists Germany as a shipping destination, carries KENGO with a placeholder price of $999,999.00, i.e. price on request; no EU distributor found.",
+  "sourceIds": [
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Galaxea Dynamics (international store)",
+    "country": "CN",
+    "role": "manufacturer",
+    "productUrl": "https://galaxea-dynamics.com/products/galaxea-kengo-proprietary-embodied-ai-bipedal-robot",
+    "contactUrl": null,
+    "email": "product@galaxea-ai.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Store price shown as $999,999.00, a placeholder rather than a real price. Shipping policy lists Germany, Italy, France, United Kingdom and Spain."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions (H × W × D)",
+   "value": "1396 × 440 × 225",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dimensions (H × W × D) 1396 × 440 × 225 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "approx., including battery",
+   "sourceId": "s1",
+   "quote": "Weight (Including Battery) Approx. 40 kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": "23+",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Degrees of Freedom 23+ DOF"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Maximum arm payload",
+   "value": 2,
+   "unit": "kg",
+   "conditions": "maximum",
+   "sourceId": "s1",
+   "quote": "Maximum Arm Payload 2 kg"
+  },
+  {
+   "key": "knee_torque_nm",
+   "label": "Maximum knee joint torque",
+   "value": "130+",
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximum Knee Joint Torque 130 N·m+"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery Life 2 h"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 2,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Galaxea says KENGO 'is designed for unstructured environments that are difficult for wheeled robots to navigate'; no terrain, stair or IP figures are published.",
+   "Hand or end-effector type is not stated.",
+   "Supports a handheld controller and OTA updates."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.shopify.com/s/files/1/0750/7437/1840/files/Kengo-Main-Gray.jpg?v=1789892474",
+   "pageUrl": "https://galaxea-dynamics.com/products/galaxea-kengo-proprietary-embodied-ai-bipedal-robot",
+   "credit": "Galaxea Dynamics",
+   "alt": "Galaxea KENGO bipedal humanoid robot, grey finish",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Energy and power infrastructure, wide-area exploration and equipment inspection",
+   "stage": "claim",
+   "where": null,
+   "date": "2026-08",
+   "sourceId": "s2",
+   "note": "Target uses named at the 2026 World Robot Conference; no deployment reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.galaxea-ai.com/en/product3.html",
+   "title": "KENGO product page",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.galaxea-ai.com/en/news/galaxea-lanches-wrc.html",
+   "title": "Galaxea at the 2026 World Robot Conference",
+   "publisher": "Galaxea Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://galaxea-dynamics.com/products/galaxea-kengo-proprietary-embodied-ai-bipedal-robot",
+   "title": "Galaxea Kengo Proprietary Embodied AI Bipedal Robot",
+   "publisher": "Galaxea Dynamics store",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://galaxea-dynamics.com/policies/shipping-policy",
+   "title": "Shipping policy",
+   "publisher": "Galaxea Dynamics store",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Real price (store shows a $999,999.00 placeholder) and lead time.",
+  "Hand type and whether KENGO is delivered to customers yet; lifecycle set to shipping because it is listed in the maker's store."
+ ],
+ "checkedAt": "2026-11-18"
+}

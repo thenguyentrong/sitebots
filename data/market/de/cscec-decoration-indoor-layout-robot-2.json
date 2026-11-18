@@ -1,0 +1,133 @@
+{
+ "schemaVersion": 1,
+ "id": "cscec-decoration-indoor-layout-robot-2",
+ "maker": "China Construction Decoration Group (CSCEC Decoration), Overseas Decoration unit",
+ "makerCountry": "CN",
+ "model": "Indoor mobile layout robot",
+ "variant": "2.0",
+ "name": "CSCEC Decoration indoor mobile layout robot 2.0",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": null,
+ "summary": "Small cake-shaped layout robot from a CSCEC fit-out company that drives on castor wheels and marks layout points on interior floors from a tablet task list, positioned by a robotic total station. Shown in its second version at the 2025 Wuhan intelligent construction fair.",
+ "launched": "2025-10",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Developed by a unit of the Chinese state contractor CSCEC as a 'hardware + software + service' package for its own interior works; no sale outside China and no European route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "body_size_cm",
+   "label": "Body size",
+   "value": 22,
+   "unit": "cm",
+   "conditions": "lightweight 3D-printed body",
+   "sourceId": "s1",
+   "quote": "通体只有22cm却能够实现2mm精度的放线打点工作"
+  },
+  {
+   "key": "accuracy_mm",
+   "label": "Point marking accuracy",
+   "value": 2,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "通体只有22cm却能够实现2mm精度的放线打点工作"
+  },
+  {
+   "key": "area_rate_m2_day",
+   "label": "Layout per day",
+   "value": 400,
+   "unit": "m²/day",
+   "conditions": "team of 2 people (developer)",
+   "sourceId": "s1",
+   "quote": "2人一组，每天可完成400㎡放线工作"
+  },
+  {
+   "key": "system",
+   "label": "System parts",
+   "value": "high-frequency robotic total station, control tablet, robot, layout workflow software",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "由高频测量全站仪、测量放线控制平板、放线机器人本体三部分组成"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "high-frequency measuring module, obstacle-avoidance radar",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "搭载高频测量模块、避障传感雷达、全自动化处理"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Universal castor wheels under the body ('底部配备万向轮').",
+   "Made for interior (indoor) layout of fit-out work, including irregular shapes.",
+   "Version 2.0 is said to be improved over 1.0 in functions, cost and site fit; marking method (ink, pen) not stated.",
+   "Tool = point-marking unit."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Shown marking layout points automatically at the stand",
+   "stage": "demo",
+   "where": "2025 International (Wuhan) Intelligent Construction Industry Expo, Wuhan, China",
+   "date": "2025-10",
+   "sourceId": "s1",
+   "note": "Trade fair debut of version 2.0 (31 Oct – 2 Nov 2025)."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.stdaily.com/web/gdxw/2025-11/01/content_424952.html",
+   "title": "建筑工程室内移动放线机器人2.0助力“好房子”建设 (1 November 2025)",
+   "publisher": "Science and Technology Daily (科技日报)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is the robot used on CSCEC projects already, or sold to other firms?",
+  "Weight, runtime and marking method (ink or pen) not stated.",
+  "Which total station it works with."
+ ],
+ "checkedAt": "2026-11-18"
+}

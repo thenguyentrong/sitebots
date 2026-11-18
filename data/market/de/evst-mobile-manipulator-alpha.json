@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "evst-mobile-manipulator-alpha",
+ "maker": "EVS TECH CO., LTD (EVST, formerly EVS Robotics)",
+ "makerCountry": "CN",
+ "model": "EVST mobile manipulator",
+ "variant": "EVST-Alpha series (standard CNC tending)",
+ "name": "EVST Mobile Manipulator EVST-Alpha",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.evsint.com/de/product-item/mobile-manipulator-cnc-machine-tending/",
+ "summary": "A six-axis collaborative arm (20 kg, 1700 mm) on a laser-SLAM differential-drive base with 400 kg chassis payload, sold by EVST of Chengdu for loading and unloading several CNC machines in turn; vision brings the arm to about ±0.1 mm at each stop.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "EVST (Chengdu, China) has German-language product pages and quotes per project after a feasibility check (sales@evsrobot.com), but names no EU office, distributor or reseller.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "standard six-axis collaborative arm, 1700 mm reach",
+   "sourceId": "s1",
+   "quote": "einen 20 kg / 1700 mm langen sechsachsigen kollaborativen Arm"
+  },
+  {
+   "key": "reach_mm",
+   "label": "Arm reach",
+   "value": 1700,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "6-achsiger kollaborativer Arm, 20 kg / 1700 mm (Standard)"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Chassis payload",
+   "value": 400,
+   "unit": "kg",
+   "conditions": "standard chassis, includes arm, fixture, grippers and parts; EVST-Gamma up to 1000 kg",
+   "sourceId": "s1",
+   "quote": "400 kg Standard; bis zu 1000 kg (EVST-Gamma)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Base dimensions (L x W x H)",
+   "value": "1150 x 800 x 760",
+   "unit": "mm",
+   "conditions": "standard base",
+   "sourceId": "s1",
+   "quote": "eine 1150 × 800 × 760 mm große Differentialantriebsbasis mit Laser-SLAM-Navigation"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Rated runtime",
+   "value": 6,
+   "unit": "h",
+   "conditions": "48 V LiFePO4; full charge 5-100 % up to 2 h at the automatic charging station",
+   "sourceId": "s1",
+   "quote": "48 V LiFePO4, 6 h Nennlaufzeit"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Arm positioning after vision correction",
+   "value": 0.1,
+   "unit": "mm",
+   "conditions": "±; the base itself parks to ±10 mm and ±1°",
+   "sourceId": "s1",
+   "quote": "die Basis parkt auf ±10 mm und ±1° genau, eine zweistufige Bildverarbeitung bringt den Arm dann an jeder Maschine auf ±0.1 mm genau"
+  },
+  {
+   "key": "floor",
+   "label": "Floor requirement",
+   "value": "Unevenness below 3 mm per m², slope below 0.05 (below 0.01 at docking points), steps below 5 mm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Boden: Unebenheiten unter 3 mm pro m²"
+  },
+  {
+   "key": "operating_environment",
+   "label": "Environment",
+   "value": "Indoors, 0-40 °C",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Luft: Innenbereich, 0–40 °C"
+  },
+  {
+   "key": "scope_of_delivery",
+   "label": "Scope of delivery",
+   "value": "Mobile platform, arm and grippers, vision, control and electrical systems, dispatch software and project-specific stations",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "EVST liefert den mobilen Manipulator als definierten Leistungsumfang: mobile Plattform, Arm und Greifer"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 20,
+  "carryPayloadKg": 400,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Pneumatic contoured grippers or vacuum cups with a tool changer are part of the standard scope.",
+   "Sister series on the same platform: EVST-Beta (precision parts, force-controlled placing) and EVST-Gamma (bin transfer, chassis up to 1000 kg).",
+   "Needs flat, dry, clean indoor floors and Wi-Fi along the route."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Footage on the maker page shows an EVST mobile manipulator docked at vertical machining centres, loading parts from its on-board fixture into the machine while operators work nearby",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Customer and site not named; machine tending in metalworking, not a construction job."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": false,
+   "sourceId": "s1",
+   "quote": "Luft: Innenbereich, 0–40 °C",
+   "basis": "maker site requirements",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "rough_ground",
+   "value": false,
+   "sourceId": "s1",
+   "quote": "Boden: Unebenheiten unter 3 mm pro m²",
+   "basis": "maker floor requirement",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.evsint.com/de/product-item/mobile-manipulator-cnc-machine-tending/",
+   "title": "Mobiler Manipulator für die CNC-Maschinenbedienung",
+   "publisher": "EVS TECH CO., LTD (EVST)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No EU sales or service partner found; CE marking of the complete mobile manipulator not stated (the maker says selected products are CE certified).",
+  "Price: the maker quotes per project, no price list.",
+  "Make of the collaborative arm not named."
+ ],
+ "checkedAt": "2026-11-18"
+}

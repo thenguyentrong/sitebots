@@ -1,0 +1,241 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-b2-ex",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "B2-Ex",
+ "variant": null,
+ "name": "Unitree B2-Ex",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/B2-Ex",
+ "summary": "An explosion-proof industrial quadruped of about 130 kg based on Unitree's B2, rated IP66, for route patrols in gas stations, oil and gas plants, chemical tank farms and hazardous stores. Also offered as an inspection set with explosion-proof lidar, PTZ camera and gas sensor.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found that lists the B2-Ex; QUADRUPED Robotics' quadruped range shows the B2, B2-W and a B2 Fire Rescue, but no explosion-proof model. Unitree's page gives the marking Ex db mb IIB T4 Gb and does not mention ATEX.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "explosion_protection",
+   "label": "Explosion protection class",
+   "value": "Ex db mb IIB T4 Gb",
+   "unit": null,
+   "conditions": "chassis; inspection solution Ex db eb ib mb IIB T4 Gb",
+   "sourceId": "s1",
+   "quote": "Explosion Protection ClassEx db mb IIB T4 GbEx db eb ib mb IIB T4 Gb"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight with battery",
+   "value": 130,
+   "unit": "kg",
+   "conditions": "approx., chassis; inspection solution approx. 170 kg",
+   "sourceId": "s1",
+   "quote": "Weight (with Battery)Approx. 130 kgApprox. 170 kg"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking payload",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "maximum payload 70 kg",
+   "sourceId": "s1",
+   "quote": "Payload Capacity (kg)Continuous walking payload: 40 kg, Maximum payload: 70 kg"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 7,
+   "unit": "h",
+   "conditions": "at least, chassis; inspection solution at least 4 h with 40 kg payload",
+   "sourceId": "s1",
+   "quote": "Endurance Time (h)≥7h≥4 h (40 kg payload, average external load power ~80 W, stable condition)"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery",
+   "value": 3072,
+   "unit": "Wh",
+   "conditions": "60 Ah lithium; manual or wireless charging",
+   "sourceId": "s1",
+   "quote": "Battery Capacity60Ah（3072Wh）"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Ingress protection",
+   "value": "IP66",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "IP66Ingress Protection Rating"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope walking",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "chassis; inspection solution 30 deg",
+   "sourceId": "s1",
+   "quote": "Slope Walking Capability(°)Standard: 45°Standard: 30°"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair climbing",
+   "value": 20,
+   "unit": "cm",
+   "conditions": "20 to 25 cm",
+   "sourceId": "s1",
+   "quote": "Stair Climbing Capability (cm)20 ~ 2520 ~ 25"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 1,
+   "unit": "m/s",
+   "conditions": "0 to 1 m/s under safe conditions",
+   "sourceId": "s1",
+   "quote": "Speed(m/s)0–1 m/s (under safe conditions)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "1085 x 685 x 710",
+   "unit": "mm",
+   "conditions": "chassis; inspection solution 1320 x 685 x 965 mm",
+   "sourceId": "s1",
+   "quote": "Size (Standing) L × W × H (mm)1085x685x710mm1320x685x965mm"
+  },
+  {
+   "key": "operating_temp",
+   "label": "Operating temperature",
+   "value": "-20 to 55 °C",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Operating Temperature (℃)-20 ~ 55-20 ~ 55"
+  },
+  {
+   "key": "inspection_set",
+   "label": "Inspection solution superstructure",
+   "value": "Front and rear explosion-proof lidar, bi-spectrum PTZ, gas detection sensor, autonomous navigation",
+   "unit": null,
+   "conditions": "only on the B2-Ex Inspection Solution, not on the bare chassis",
+   "sourceId": "s1",
+   "quote": "LiDAR/Front & Rear Explosion-proof LiDARBi-spectrum PTZ/StandardGas Detection Sensor/StandardAutonomous Navigation/Supported"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 40,
+  "runtimeH": 7,
+  "ipRating": "IP66",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Two configurations on one page: the bare B2-Ex chassis and the B2-Ex Inspection Solution with lidar, PTZ camera and gas sensor (heavier, shorter endurance).",
+   "Maker says payloads such as thermal imagers, gas cloud imaging, acoustic imaging and robotic arms can be integrated; no arm is included.",
+   "Unitree also mentions explosion-proof, mining and coal mine safety applications."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Route-based inspection patrols with gas detection in natural gas stations, oil and gas facilities, chemical tank farms and hazardous materials stores",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "ip_rating",
+   "value": "IP66",
+   "sourceId": "s1",
+   "quote": "IP66Ingress Protection Rating",
+   "basis": "maker core parameters",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "25cmStair-climbing Capability",
+   "basis": "maker core parameters",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Designed for high-risk industrial environments, including natural gas gathering stations, oil and gas production facilities, chemical tank farms, and hazardous materials storage areas.",
+   "basis": "maker's named outdoor plant areas together with IP66",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "carry_payload_kg",
+   "value": 40,
+   "sourceId": "s1",
+   "quote": "Continuous walking payload: 40 kg, Maximum payload: 70 kg",
+   "basis": "maker basic parameters",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "runtime_h",
+   "value": 7,
+   "sourceId": "s1",
+   "quote": "Endurance Time (h)≥7h",
+   "basis": "maker figure for the chassis",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/B2-Ex",
+   "title": "Unitree B2-Ex explosion-proof quadruped",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.quadruped.de/QUADRUPEDs",
+   "title": "QUADRUPED's (quadruped range)",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "ATEX or IECEx certification for use in the EU is not stated.",
+  "Price and any EU distributor for the B2-Ex.",
+  "Product photo not added: the page images could not be checked by eye."
+ ],
+ "checkedAt": "2026-11-18"
+}

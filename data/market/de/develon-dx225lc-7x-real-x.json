@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "id": "develon-dx225lc-7x-real-x",
+ "maker": "Develon (HD XiteSolution) with Gravis Robotics",
+ "makerCountry": "KR",
+ "model": "DX225LC-7X Real-X",
+ "variant": "factory crawler excavator with the Real-X autonomy system and Gravis rack",
+ "name": "Develon Real-X autonomous crawler excavator (DX225LC-7X)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation",
+  "site_earthworks/excavation"
+ ],
+ "officialUrl": "https://eu.develon-ce.com/en/concept-x2",
+ "summary": "A Develon DX225LC-7X crawler excavator sold with the Real-X system, developed with Gravis Robotics, that digs trenches, does earthworks and loads trucks on its own under a technical supervisor. The first unit went into use at KIBAG in Switzerland in June 2026.",
+ "launched": "2025-04",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The only documented sale is in Switzerland: the Swiss Develon dealer AG für Baumaschinen Schmerikon handed the first Real-X DX225LC-7X to KIBAG in June 2026, with Develon's key account manager for German-speaking countries present. No offer, price or customer in Germany or the EU was found. The Gravis Rack retrofit kit used in Real-X has its own record (gravis-robotics-gravis-rack, on quote).",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "base_machine",
+   "label": "Base machine",
+   "value": "Develon DX225LC-7X crawler excavator",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The key players here are the AI-powered Real-X system on a Develon DX225LC-7X excavator"
+  },
+  {
+   "key": "tasks",
+   "label": "Autonomous tasks",
+   "value": "trench excavation, earthworks and truck loading",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "At bauma 2025, Develon introduced Real-X, an intelligent crawler excavator designed to carry out trench excavation, earthworks and truck loading autonomously."
+  },
+  {
+   "key": "performance_gain_pct",
+   "label": "Claimed performance gain",
+   "value": 30,
+   "unit": "%",
+   "conditions": "maker claim for trench excavation, earthworks and truck loading",
+   "sourceId": "s2",
+   "quote": "Develon said the technology could help address skills shortages in construction, while offering a 30% performance improvement in trench excavation, earthworks and truck loading."
+  },
+  {
+   "key": "supervision",
+   "label": "Supervision",
+   "value": "autonomous on private land under a technical supervisor; no operator in the cab and no remote control",
+   "unit": null,
+   "conditions": "KIBAG site, Switzerland",
+   "sourceId": "s1",
+   "quote": "the machine can be operated autonomously on KIBAG’s private land, supervised by a technical supervisor"
+  },
+  {
+   "key": "autonomy_partner",
+   "label": "Autonomy partner",
+   "value": "Gravis Robotics (Gravis rack)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Real-X is the result of an agreement between HD XiteSolution, the holding company of Develon, and Gravis Robotics."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A complete excavator with bucket, not a retrofit kit; the autonomy hardware is the Gravis rack.",
+   "Rules for autonomous machines in public spaces are not yet clear; KIBAG runs it on its own land.",
+   "Shown to about 900 dealers, customers and journalists at the Develon Demo Days in the Czech Republic in April 2026."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Digs a trench 300 m long, 6 m wide and 3 m deep without an operator in the cab, on a former quarry being restored",
+   "stage": "deployment",
+   "where": "Tuggen, canton of Schwyz, Switzerland – KIBAG",
+   "date": "2026-06",
+   "sourceId": "s1",
+   "note": "First Real-X sold; delivered by the Swiss Develon dealer AGFBS. The trench is filled with rock to stop the foot of the hill slipping."
+  },
+  {
+   "taskIds": [
+    "site_earthworks/excavation"
+   ],
+   "task": "Autonomous excavator demonstrated to dealers, customers and trade journalists",
+   "stage": "demo",
+   "where": "Develon Demo Days, Czech Republic",
+   "date": "2026-04",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.earthmoversmagazine.co.uk/news/view,develon-reaches-new-milestone-in-autonomous-earthmoving_8140.htm",
+   "title": "Develon reaches new milestone in autonomous earthmoving (18 June 2026)",
+   "publisher": "Earthmovers Magazine",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.mhwmagazine.co.uk/news/real-x-excavator-marks-major-step-towards-autonomous-construction_102230.html",
+   "title": "Real-X excavator marks major step towards autonomous construction",
+   "publisher": "MHW Magazine",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://eu.develon-ce.com/en/concept-x2",
+   "title": "Concept-X2 (Develon Europe)",
+   "publisher": "Develon",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is Real-X offered by Develon dealers in Germany or the EU, and at what price? Only a Swiss sale is documented.",
+  "No Develon product page for Real-X was found; the European Develon site shows Concept-X2 only.",
+  "DX225LC-7X base machine specs were not read from a Develon page."
+ ],
+ "checkedAt": "2026-11-18"
+}

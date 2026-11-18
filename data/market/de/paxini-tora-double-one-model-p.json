@@ -1,0 +1,194 @@
+{
+ "schemaVersion": 1,
+ "id": "paxini-tora-double-one-model-p",
+ "maker": "PaXini Tech",
+ "makerCountry": "CN",
+ "model": "TORA DOUBLE ONE",
+ "variant": "Model P (omnidirectional dual-steering chassis)",
+ "name": "PaXini TORA DOUBLE ONE Model P",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://paxini.com/en/robot/doubleOne",
+ "summary": "A wheeled humanoid with tactile 18-DOF hands on an omnidirectional dual-steering chassis, rated 6.5 kg per arm, for logistics, industrial assistance and mobile manipulation indoors.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "RBTX (igus, Germany) lists the Model P as its own article with price on request and a usual delivery time of 3 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Usual delivery time 3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/paxini-tora-double-one-model-p-humanoid-robot-56-dof",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Article RBTX-PAXI-0001; the page shows \"Auf Anfrage\" (price on request), \"zzgl. MwSt. und Versand\" and \"Übliche Lieferzeit: 3 Wochen\"."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom, whole robot",
+   "value": 56,
+   "unit": null,
+   "conditions": "including two 18-DOF hands (seller figure); maker page says up to 52 DoF for the full machine",
+   "sourceId": "s2",
+   "quote": "Mit 56 DOF und 18 DOF Händen bietet es präzise Manipulation"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 18,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Mit 56 DOF und 18 DOF Händen"
+  },
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.671,
+   "unit": "m",
+   "conditions": "seller table; text says 168 cm frame; folded height under 60 cm per maker",
+   "sourceId": "s2",
+   "quote": "Höhe 1.671 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 70,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Gewicht 70 kg"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 6.5,
+   "unit": "kg",
+   "conditions": "seller figure; rated/peak and posture unstated",
+   "sourceId": "s2",
+   "quote": "Der 168 cm Rahmen 6.5 kg Armkraft und 6.5 kmh Geschwindigkeit"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": "6.5 km/h in the text",
+   "sourceId": "s2",
+   "quote": "Geschwindigkeit 1,8 m⁄s"
+  },
+  {
+   "key": "chassis",
+   "label": "Chassis",
+   "value": "Dual-steering-wheel omnidirectional AGV chassis",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Omnidirectional Chassis: Dual-steering wheel design for flexible turning and lateral movement"
+  },
+  {
+   "key": "sensors",
+   "label": "Perception",
+   "value": "RGB, RGB-D and LiDAR navigation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Die Perzeption nutzt RGB RGB‑D und LiDAR Navigation für Raumerkennung."
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Jetson Orin plus x86 real-time system",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Jetson Orin und x86 Realtime Systeme verarbeiten taktile visuelle Tiefen‑ und Navigationsdaten"
+  },
+  {
+   "key": "connectivity",
+   "label": "Connectivity",
+   "value": "Wi-Fi, Bluetooth, 5G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "WiFi, Bluetooth und 5G unterstützen Automation Fernaufsicht und Cloud Nutzung."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 6.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Tactile dexterous hands (18 DOF each) are part of the listed 56 DOF.",
+   "The maker says the two chassis (omnidirectional Model P, obstacle-crossing Model X) are swappable through a unified interface."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Logistics automation, industrial assistance, commercial services and mobile manipulation",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Seller description; no construction or plant use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://paxini.com/en/robot/doubleOne",
+   "title": "TORA DOUBLE ONE product page",
+   "publisher": "PaXini Tech",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/paxini-tora-double-one-model-p-humanoid-robot-56-dof",
+   "title": "PaXini Tora Double One Modell P | Humanoider Roboter | 56 DOF",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "DOF count differs: RBTX says 56 DOF, the PaXini page says up to 52 DoF for the full machine.",
+  "Runtime, battery and SDK details for the Model P are not on either page.",
+  "Price is on request only."
+ ],
+ "checkedAt": "2026-11-18"
+}

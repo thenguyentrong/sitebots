@@ -32,7 +32,7 @@ export type ProjectMapData = {
 export const COUNTRY_NAMES: Record<string, string> = {
   DE: 'Germany', AT: 'Austria', CH: 'Switzerland', CZ: 'Czech Republic', DK: 'Denmark', SE: 'Sweden', NO: 'Norway', GB: 'United Kingdom', FR: 'France',
   ES: 'Spain', NL: 'Netherlands', PL: 'Poland', SK: 'Slovakia', HU: 'Hungary', BG: 'Bulgaria', US: 'USA', CN: 'China', HK: 'Hong Kong', SG: 'Singapore',
-  AE: 'United Arab Emirates', KR: 'South Korea', JP: 'Japan', MY: 'Malaysia', AU: 'Australia',
+  AE: 'United Arab Emirates', KR: 'South Korea', JP: 'Japan', MY: 'Malaysia', AU: 'Australia', SA: 'Saudi Arabia', FI: 'Finland',
 };
 const EUROPE = new Set(['DE', 'AT', 'CH', 'CZ', 'DK', 'SE', 'NO', 'GB', 'FR', 'ES', 'NL', 'PL', 'SK', 'HU', 'BG']);
 

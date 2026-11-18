@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 192437,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s10",
+   "note": "Terra Robotics (Terra Connect GmbH): price in the shop's product data; the product page itself says \"Preis anfragen\". VAT not stated."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -31,14 +37,15 @@
     "note": "Product page shows \"Preis anfragen\"; the page metadata carries EUR 192,437 without stating VAT, not displayed to buyers. Two Gen-4 dexterous hands are a separate listing (EUR 25,126 in metadata)."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-18",
   "status": "quote",
-  "statusNote": "Terra Robotics, UBTECH's exclusive DACH distributor, sells, leases or quotes the Walker S2 on request, with no public robot price. Rossmann has tested one at Burgwedel since March 2026.",
+  "statusNote": "Terra Robotics, UBTECH's exclusive DACH distributor, sells, leases or quotes the Walker S2; the page asks for a price request, but Terra's shop data holds 192,437 €. Rossmann has tested one at Burgwedel since March 2026.",
   "sourceIds": [
    "s6",
    "s2",
    "s3",
-   "s4"
+   "s4",
+   "s10"
   ]
  },
  "specs": [
@@ -311,6 +318,14 @@
    "publisher": "humanoid.guide",
    "kind": "database",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s10",
+   "url": "https://terra-robotics.de/products/ubtech-walker-s2.js",
+   "title": "Terra Robotics (Terra Connect GmbH)",
+   "publisher": "Terra Robotics (Terra Connect GmbH)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

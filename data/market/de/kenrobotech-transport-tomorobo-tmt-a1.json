@@ -1,0 +1,174 @@
+{
+ "schemaVersion": 1,
+ "id": "kenrobotech-transport-tomorobo-tmt-a1",
+ "maker": "Kenrobotech Co., Ltd. (建ロボテック株式会社)",
+ "makerCountry": "JP",
+ "model": "Transport Tomorobo (運搬トモロボ) TMT-A1",
+ "variant": null,
+ "name": "Kenrobotech Transport Tomorobo TMT-A1",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_setup_logistics/bagged-material-distribution",
+  "site_setup_logistics/material-runs-to-installers"
+ ],
+ "officialUrl": "https://kenrobo-tech.com/tomorobo/transporting/",
+ "summary": "Small rail-guided towing robot for construction sites: two 28 kg units pull a cart with up to 500 kg of rebar, blocks, cement bags, timber or steel along light temporary truss rails laid across rough ground or decks. Made by the Japanese maker of the Tomorobo rebar-tying robot.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Offered in Japan by the maker on request (enquiry, web meeting, choice of units, period and carts, then a quote and on-site introduction). No sale, rental or partner outside Japan found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Transport load",
+   "value": 500,
+   "unit": "kg",
+   "conditions": "with two Transport Tomorobo units",
+   "sourceId": "s1",
+   "quote": "500kg（運搬トモロボ2台使用時）"
+  },
+  {
+   "key": "speed_mm_s",
+   "label": "Speed",
+   "value": 350,
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "350mm/s"
+  },
+  {
+   "key": "gradeability_percent",
+   "label": "Max. gradient",
+   "value": 5,
+   "unit": "%",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "登坂能力 5％"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight per unit",
+   "value": 28,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "重量28kg（1台）"
+  },
+  {
+   "key": "size_cm",
+   "label": "Size (L × W × H)",
+   "value": "76 × 61 × 38",
+   "unit": "cm",
+   "conditions": "length without detachable contact sensor; height incl. signal light",
+   "sourceId": "s1",
+   "quote": "L76（脱着式接触センサー除く）W61　H38（パトライト含む）"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Working time",
+   "value": 8,
+   "unit": "h",
+   "conditions": "about 8 h incl. loading stops; 5 h / about 6 km continuous; charging about 6 h",
+   "sourceId": "s1",
+   "quote": "実働約8時間以上を実現(連続5時間・約6㎞の稼働)"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "lithium iron phosphate",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "リン酸鉄リチウムバッテリー"
+  },
+  {
+   "key": "guidance",
+   "label": "Guidance",
+   "value": "runs on temporary truss rails laid in units of about 4 m",
+   "unit": null,
+   "conditions": "rails bridge steps and openings",
+   "sourceId": "s1",
+   "quote": "軽量で強固なトラス形状仮設レール※は約4mのユニットを、並べてジョイントするだけで簡単に設置できます"
+  },
+  {
+   "key": "loads",
+   "label": "Loads",
+   "value": "rebar, blocks, cement bags, mixers, timber, steel (cart chosen per load)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "鉄筋、ブロック、セメント袋、ミキサー機、木材、鉄骨など"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "0 to 40",
+   "unit": "°C",
+   "conditions": "humidity 80 % or less, no condensation",
+   "sourceId": "s1",
+   "quote": "気温：0～40℃"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 500,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Rough ground is handled only on its own temporary rails, which also bridge steps and openings (maker).",
+   "Splash-proof for use in light rain (maker); no IP rating given.",
+   "Stops at the rail ends and when bumper or contact sensors touch a person or obstacle; stops if it tips over.",
+   "carryPayloadKg is the towed load of two units; one unit is light enough for one person to carry and fits in a small car's boot."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://kenrobo-tech.com/wp-content/themes/kenrobo/assets/img/img_transporting02.jpg",
+   "pageUrl": "https://kenrobo-tech.com/tomorobo/transporting/",
+   "credit": "Kenrobotech",
+   "alt": "Two red and white Transport Tomorobo units towing a mesh cart along a truss rail on gravel",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://kenrobo-tech.com/tomorobo/transporting/",
+   "title": "運搬トモロボ (Transport Tomorobo product page with basic specifications)",
+   "publisher": "Kenrobotech",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which sites use it? The maker's customer page read covers the rebar-tying Tomorobo only.",
+  "Is it sold or only rented? A Kagawa start-up sheet (PDF, not read) is said to list rental only.",
+  "Price: none published."
+ ],
+ "checkedAt": "2026-11-18"
+}

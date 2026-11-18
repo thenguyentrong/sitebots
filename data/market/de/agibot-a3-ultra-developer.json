@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "agibot-a3-ultra-developer",
+ "maker": "AGIBOT",
+ "makerCountry": "CN",
+ "model": "A3",
+ "variant": "Ultra Developer (open secondary development, Thor-U compute)",
+ "name": "AGIBOT A3 Ultra Developer",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "The open developer version of AGIBOT's A3 Ultra bipedal humanoid (173 cm, 56 kg, 51 DOF) with 10-DOF OmniHand dexterous hands, Thor-U compute, lidar, RTK-GPS and self-charging, sold in Germany on request by Bipedal.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Bipedal GmbH (Leverkusen) lists the A3 Ultra Developer as 'Preis auf Anfrage' and 'Sofort verfügbar'; no public price.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Sofort verfügbar (Bipedal)",
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/AgiBot-A3-Ultra-Developer",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": "info@bipedal.de",
+    "phone": "+49 2171 4013600",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Price on request ('Preis auf Anfrage'), listed as 'Sofort verfügbar'. Bipedal also lists the non-developer A3 Ultra."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.73,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Höhe: 173 cm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 56,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Gewicht: 56 kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total DOF",
+   "value": 51,
+   "unit": null,
+   "conditions": "active DOF",
+   "sourceId": "s1",
+   "quote": "Freiheitsgrade (Total DoF): 51 aktive Freiheitsgrade für maximale Feinmotorik und Ganzkörpersteuerung"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 10,
+   "unit": null,
+   "conditions": "OmniHand 10 included",
+   "sourceId": "s1",
+   "quote": "Hand-Ausstattung: Geschickte Hand (Dexterous Hand – Omnihand 10 mit 10 Freiheitsgraden pro Hand im Lieferumfang)"
+  },
+  {
+   "key": "peak_joint_torque_nm",
+   "label": "Peak joint torque",
+   "value": 320,
+   "unit": "Nm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Gelenk-Spitzendrehmoment: 320 Nm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking / running speed",
+   "value": "1.8 walking, 5 running",
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Geschwindigkeit: Gehen bis zu 1,8 m/s, Laufen bis zu 5 m/s"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Thor-U",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Prozessor / Chipset: Thor-U High-Power-Computing-Chip"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors and positioning",
+   "value": "Livox Mid-360 lidar, RealSense D457 and D415, GPS, GPS-RTK, UWB",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Ausgestattet mit Mid360 LiDAR, Intel RealSense D457 (Brust) & D415 (Leiste) RGB-D-Kameras, GPS, GPS-RTK und UWB-Positionierung"
+  },
+  {
+   "key": "power",
+   "label": "Power",
+   "value": "dual battery packs with autonomous charging",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Duale Akkupacks mit autonomer Ladefunktion"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open developer platform for secondary development (per Bipedal)",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Rough ground: Bipedal lists 'All-Terrain Perceptual Walking'; outdoor: GPS-RTK 'für Zentimetergenauigkeit im Freien'. No IP rating is given.",
+   "Beyond-line-of-sight teleoperation is listed.",
+   "Arm payload and runtime are not on the Bipedal page; the standard A3 Ultra record quotes 5 kg hand payload and about 8 h."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "AI research, autonomous navigation and grasping development, pilot projects and custom system integration",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Seller's application list; no construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bipedal.de/AgiBot-A3-Ultra-Developer",
+   "title": "AgiBot A3 Ultra Developer",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the developer version and how it differs from the standard A3 Ultra (record agibot-a3-ultra).",
+  "Arm payload and runtime for this configuration."
+ ],
+ "checkedAt": "2026-11-18"
+}

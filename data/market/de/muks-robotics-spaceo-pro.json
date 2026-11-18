@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "muks-robotics-spaceo-pro",
+ "maker": "Muks Robotics",
+ "makerCountry": "IN",
+ "model": "Spaceo PRO",
+ "variant": null,
+ "name": "Muks Robotics Spaceo PRO",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://muksrobotics.com/spaceo-pro",
+ "summary": "An Indian wheeled enterprise humanoid with two 6-DOF arms (5 kg each), a height-adjustable chassis and waist, and an integrated base trolley for up to 200 kg, aimed at material handling, sorting and inspection in plants and warehouses. It is offered for pilots.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Muks Robotics (Pune, India) offers Spaceo PRO for pilots through its own sales contact. No German or EU route was found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_mm",
+   "label": "Height x width x length",
+   "value": "(1625-2100) x 450 x 450",
+   "unit": "mm",
+   "conditions": "adjustable chassis height",
+   "sourceId": "s1",
+   "quote": "Height, Width and Length(1625-2100)x450x450 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight (with battery)",
+   "value": 60,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight (With Battery)60 kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 20,
+   "unit": null,
+   "conditions": "waist and gripper optional; 6 per arm, 2 base, 1 waist, 2 head",
+   "sourceId": "s1",
+   "quote": "Degree of Freedom (Total Joints)20 (Waist and Gripper (optional))"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Each arm supports up to 5 kg for precise pick-and-place tasks"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Base trolley payload",
+   "value": 200,
+   "unit": "kg",
+   "conditions": "integrated base trolley",
+   "sourceId": "s1",
+   "quote": "the integrated base trolley carries up to 200 kg"
+  },
+  {
+   "key": "workspace_height",
+   "label": "Operational workspace height",
+   "value": "0-145 cm",
+   "unit": null,
+   "conditions": "adjustable chassis height and waist rotation",
+   "sourceId": "s1",
+   "quote": "Adjustable chassis height and dynamic waist rotation allows the robot to have an operational workspace from 0 to 145 cm."
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximum Speed1.5 m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 4,
+   "unit": "h",
+   "conditions": "about 4 h; standby 72 h; 25.6 V 45 Ah LiFePO4",
+   "sourceId": "s1",
+   "quote": "Battery Life~4Hr, Standby 72Hr"
+  },
+  {
+   "key": "compute",
+   "label": "AI computing module",
+   "value": "Jetson Orin AGX (~275 TOPS)",
+   "unit": null,
+   "conditions": "plus Ryzen 7 standard computing module",
+   "sourceId": "s1",
+   "quote": "AI Computing ModuleJetson Orin AGX (~275 TOPS)"
+  },
+  {
+   "key": "hand_dof",
+   "label": "Hand degrees of freedom",
+   "value": "1 to 16 (as per gripper)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Single Hand Degrees of Freedom1 to 16 (As per gripper)"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": 200,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "End effector is chosen per order: grippers from 1 to 16 DOF.",
+   "The maker lists secondary development as 'Ongoing'."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Material transport between zones, pick-and-place, sorting, packaging and quality inspection in manufacturing and logistics",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker claims; the page also lists hospitality, airport and defence uses. No construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://muksrobotics.com/spaceo-pro",
+   "title": "SPACEO Pro - The Enterprise Humanoid",
+   "publisher": "Muks Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://muksrobotics.com/",
+   "title": "Muks Robotics home page",
+   "publisher": "Muks Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price and pilot terms.",
+  "Named pilot customers.",
+  "Product photos could not be checked: the image host (framerusercontent.com) refuses the reader."
+ ],
+ "checkedAt": "2026-11-18"
+}

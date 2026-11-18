@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "randek-zerolabor-insulation",
+ "maker": "Randek AB",
+ "makerCountry": "SE",
+ "model": "ZeroLabor Robotic Insulation",
+ "variant": "two-robot blow-in cell",
+ "name": "Randek ZeroLabor robotic insulation cell",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "prefab_timber/insulation-batt-insertion"
+ ],
+ "officialUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+ "summary": "Robot cell in which two industrial robots move a blow-in plate over each cavity of a closed timber or steel-frame wall element and fill it with wood fibre, glass wool or cellulose to the design density, logging the material used per element. Part of Randek's ZeroLabor family of prefab robot cells.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold on request by Randek (Sweden) after a pre-study; Randek names Horn Hausbau Technologie as its representative for Germany, Austria and Switzerland. No price published.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Set per project in a pre-study (maker)",
+  "sellers": [
+   {
+    "name": "Randek AB",
+    "country": "SE",
+    "role": "manufacturer",
+    "productUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+    "contactUrl": "https://www.randek.com/contact",
+    "email": "sales@randek.com",
+    "phone": "+46 346 55 700",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Vagnsvägen 1, SE-311 32 Falkenberg, Sweden."
+   },
+   {
+    "name": "Horn Hausbau Technologie (Wolfgang Horn)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": null,
+    "contactUrl": "https://www.randek.com/de/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Randek's representative for Germany, Austria and Switzerland; no address or phone on the page."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "robots",
+   "label": "Robots",
+   "value": 2,
+   "unit": "robots",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Two robots fill closed elements with blown-in insulation, to the volume and density the design data sets."
+  },
+  {
+   "key": "blow_in_plate",
+   "label": "Blow-in plate",
+   "value": "one per robot, five nozzles each fed from its own supply",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Blow-in platesOne per robot, with five nozzles, each fed from its own supply."
+  },
+  {
+   "key": "insulation_materials",
+   "label": "Insulation materials",
+   "value": "wood fibre, glass wool or cellulose",
+   "unit": null,
+   "conditions": "via the ISOFLOC easyfloc blow-in system",
+   "sourceId": "s1",
+   "quote": "Insulation materialsWood fibre, glass wool or cellulose, through the ISOFLOC easyfloc blow-in system."
+  },
+  {
+   "key": "bunker_m3",
+   "label": "Material bunker",
+   "value": 20,
+   "unit": "m³",
+   "conditions": "about",
+   "sourceId": "s1",
+   "quote": "Material handlingA bunker system of about 20 m³ feeds the cell."
+  },
+  {
+   "key": "max_element_kg",
+   "label": "Heaviest element",
+   "value": 3000,
+   "unit": "kg",
+   "conditions": "about; cell table sets its width to each element",
+   "sourceId": "s1",
+   "quote": "Cell tableSets its width to each element automatically, for elements up to about 3,000 kg."
+  },
+  {
+   "key": "quality_record",
+   "label": "Quality record",
+   "value": "weighing protocol per element",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Traceable qualityA weighing protocol logs the material used in every element."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Blows loose-fill insulation into closed cavities rather than inserting batts; it does the same job of insulating the frame bays.",
+   "Cavities too small to fill are flagged for manual finishing downstream (maker).",
+   "Fills timber and light-gauge-steel elements alike."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://webassets.randek.com/assets/webp/robotic%20insulation%20real%20photo.webp",
+   "pageUrl": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+   "credit": "Randek AB",
+   "alt": "Yellow industrial robots with isofloc blow-in plates and hoses over a wall element inside a fenced robot cell",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.randek.com/en/wall-floor-and-roof-production-lines/zerolabor",
+   "title": "ZeroLabor: the robots that build the building (insulation cell section)",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.randek.com/contact",
+   "title": "Contact Randek",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.randek.com/de/contact",
+   "title": "Kontakt (Randek in Deutschland, Österreich und der Schweiz)",
+   "publisher": "Randek AB",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No price and no fill rate (m² or elements per hour) published.",
+  "Which plants run the insulation cell? Randek's page lists it as in production but names no customer."
+ ],
+ "checkedAt": "2026-11-18"
+}

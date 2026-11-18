@@ -1,0 +1,171 @@
+{
+ "schemaVersion": 1,
+ "id": "ti5robot-t170a-v2",
+ "maker": "Ti5robot (Ti5 Robot (Shanghai) Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "T170A",
+ "variant": "V2",
+ "name": "Ti5robot T170A V2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.ti5robot.com/index/index/detail?id=4",
+ "summary": "A 1.75 m, 58 kg bipedal research humanoid with 42-44 DOF, 7-DOF arms (1.5 kg each) and 6-DOF OYMotion dexterous hands, sold in standard batches for research, teaching and showrooms.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor found; Ti5robot lists only Shanghai sales contacts (sales@ti5robot.com).",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.75,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "总高度 1.75m"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 58,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "总重量 58kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Total DOF",
+   "value": "42 or 44",
+   "unit": null,
+   "conditions": "depends on head version (1 or 3 DOF)",
+   "sourceId": "s1",
+   "quote": "自由度总数 42或44"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "单臂自由度 7"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 1.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "单臂负载 1.5公斤"
+  },
+  {
+   "key": "hand",
+   "label": "Dexterous hand",
+   "value": "OYMotion, 6 DOF, 3 kg hand load",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "灵巧手型号 傲意灵巧手 灵巧手自由度 6 手部负载 3KG"
+  },
+  {
+   "key": "dof_per_leg",
+   "label": "DOF per leg",
+   "value": 6,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "腿部自由度 6"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V 10 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "电池容量电压 48V 10Ah"
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "Jetson AGX Orin 64G developer kit",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "控制和算力 Jeston AGX Orin 64G 开发者套件"
+  },
+  {
+   "key": "arm_span_m",
+   "label": "Arm span",
+   "value": 1.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "臂展长度 1.5m"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": 1.5,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Web control system; secondary development documentation",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Unboxing checklist names dexterous hands, camera, six-axis force sensors, chassis and IMU as the robot's peripherals ('170A 的外设包括：灵巧手、相机、六维力、底盘、IMU').",
+   "Six-axis wrist force sensors and SR360 obstacle sensing are optional extras.",
+   "Maker lists research, teaching and showroom guiding as uses; the 1.5 kg arm payload limits physical work."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Robotics research (dual-arm control, gait, perception), university teaching and showroom guiding",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "No industrial or construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.ti5robot.com/index/index/detail?id=4",
+   "title": "T170A series product overview and quick start",
+   "publisher": "Ti5robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Runtime and price are not published.",
+  "Whether the dexterous hands are standard on every T170A or an option."
+ ],
+ "checkedAt": "2026-11-18"
+}

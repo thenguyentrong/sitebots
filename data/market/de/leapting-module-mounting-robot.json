@@ -1,0 +1,174 @@
+{
+ "schemaVersion": 1,
+ "id": "leapting-module-mounting-robot",
+ "maker": "Leapting (Huzhou Leapting / 丽天智能)",
+ "makerCountry": "CN",
+ "model": "Automatic Navigation PV Module Mounting Robot (MMR)",
+ "variant": null,
+ "name": "Leapting PV module mounting robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "utility-scale solar construction: lifting PV modules and placing them on tracker racking"
+ ],
+ "officialUrl": "https://www.leapting.com/",
+ "summary": "Tracked, self-navigating robot that carries a tray of solar modules, finds the racking with AI vision and places each module with an arm, about one module per minute. Used on the Culcairn solar farm in Australia and contracted for fully robotic module installation in Saudi Arabia.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or European seller, project or price found. Leapting sells from Shanghai (sales@leapting.com on its site); the projects read are in Australia and Saudi Arabia.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "install_rate_modules_h",
+   "label": "Installation rate",
+   "value": 60,
+   "unit": "modules/h",
+   "conditions": "maker figure, one module per minute",
+   "sourceId": "s2",
+   "quote": "the robot is capable of installing 60 modules an hour or one per minute"
+  },
+  {
+   "key": "max_module_kg",
+   "label": "Heaviest module",
+   "value": 30,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "It can lift modules weighing up to 30 kilograms"
+  },
+  {
+   "key": "dimensions_m",
+   "label": "Size (L × W × H)",
+   "value": "4.5 × 2.8 × 2.5",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "is a 4.5 metre-long, 2.8-metre-wide, and 2.5-metre-high machine"
+  },
+  {
+   "key": "chassis",
+   "label": "Chassis",
+   "value": "caterpillar tracks with automatic navigation and obstacle avoidance, module tray and robot arm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The machine features a caterpillar-track chassis, fully automated navigation and obstacle avoidance systems, and is equipped with a solar panel tray. It uses a robotic arm to pick up and place solar panels onto solar brackets."
+  },
+  {
+   "key": "speedup_vs_manual",
+   "label": "Speed vs. manual",
+   "value": "3-5 times a worker's 90-120 modules per 8-hour day",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s2",
+   "quote": "within an 8-hour workday, LEAPTING says a single worker can install approximately 90-120 modules daily, while the robot’s installation efficiency increases by 3-5 times"
+  },
+  {
+   "key": "cost_saving_pct",
+   "label": "Claimed installation cost saving",
+   "value": 30,
+   "unit": "%",
+   "conditions": "maker estimate for utility-scale projects",
+   "sourceId": "s1",
+   "quote": "delivering an estimated 30% reduction in installation costs on utility-scale solar projects"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": false,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 30,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "High-passability tracked chassis for complex outdoor terrain (maker).",
+   "AI vision finds the brackets and their position relative to the torque tube; the robot detects module placement and rotation angles and aligns to the rack tilt.",
+   "Number of modules on the tray not stated; armPayloadKg is the heaviest module named."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Installs PV modules on the trackers of a utility-scale solar farm under construction",
+   "stage": "deployment",
+   "where": "Culcairn Solar Farm (Neoen), near Albury, New South Wales, Australia",
+   "date": "2025-02",
+   "sourceId": "s2",
+   "note": "Leapting's first commercial project in Australia; operations were due to start in mid-February 2025."
+  },
+  {
+   "taskIds": [],
+   "task": "Ten robots to install all of the more than 149,000 modules of a 105 MWp fixed-tilt project",
+   "stage": "claim",
+   "where": "Aloy Charge PPA project, Saudi Arabia",
+   "date": "2025-09",
+   "sourceId": "s3",
+   "note": "Contract signed; robot deployment scheduled for Q1 2026."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.pv-magazine.com/2025/02/03/leapting-rolls-out-pv-module-mounting-robot/",
+   "title": "Leapting rolls out PV module-mounting robot (3 February 2025)",
+   "publisher": "pv magazine",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.pv-magazine-australia.com/?p=10669",
+   "title": "Mounting install at Culcairn solar farm picks up pace using Leapting robots",
+   "publisher": "pv magazine Australia",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://solarquarter.com/2025/09/16/leapting-signs-105-mwp-aloy-charge-ppa-in-saudi-arabia-as-the-first-fixed-tilt-table-project-to-be-fully-installed-by-module-mounting-robots-mmr/",
+   "title": "Leapting Signs 105 MWp Aloy Charge PPA in Saudi Arabia as the First Fixed Tilt Table Project to be Fully Installed by Module Mounting Robots (16 September 2025)",
+   "publisher": "SolarQuarter",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.leapting.com/product?value=0",
+   "title": "丽天智能 products: 自动导航组件铺设机器人 (automatic navigation module laying robot) and AFR handling robot",
+   "publisher": "Leapting",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Has the robot been offered or used in Europe? No European project or seller found.",
+  "Price, tray capacity, battery runtime and the module sizes it handles are not published on readable pages.",
+  "Did the Saudi Aloy Charge deployment start in Q1 2026 as planned?"
+ ],
+ "checkedAt": "2026-11-18"
+}

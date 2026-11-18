@@ -1,0 +1,117 @@
+{
+ "schemaVersion": 1,
+ "id": "fengtan-putty-latex-spraying-robot-3-2m",
+ "maker": "Hangzhou Fengtan Robot Co., Ltd. (Fulltime Robotics)",
+ "makerCountry": "CN",
+ "model": "Putty & latex paint spraying robot",
+ "variant": "3.2 m model",
+ "name": "Fengtan 3.2 m putty and latex paint spraying robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": null,
+ "summary": "Indoor robot with a multi-joint arm that sprays putty, latex paint, filler or primer on walls in flats, dormitories and social housing up to 3.2 m. Launched by Fengtan of Hangzhou in July 2024.",
+ "launched": "2024-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or partner found. The maker in Hangzhou names overseas projects only in Singapore and Hong Kong; no English product page was found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": 3.2,
+   "unit": "m",
+   "conditions": "model name",
+   "sourceId": "s1",
+   "quote": "腻子乳胶漆二合一喷涂机器人（3.2米机型）"
+  },
+  {
+   "key": "putty_daily_m2",
+   "label": "Putty spraying output",
+   "value": 600,
+   "unit": "m²/day",
+   "conditions": "maker: 5-6 times manual",
+   "sourceId": "s1",
+   "quote": "腻子喷涂的施工工效可达600㎡/天"
+  },
+  {
+   "key": "latex_daily_m2",
+   "label": "Latex paint spraying output",
+   "value": 1500,
+   "unit": "m²/day",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "乳胶漆喷涂的施工工效为1500㎡/天"
+  },
+  {
+   "key": "materials",
+   "label": "Materials",
+   "value": "putty, latex paint, filler, primer (by changing the nozzle)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "实现腻子、乳胶漆、油灰、界面剂等多种建筑材料的喷涂作业"
+  },
+  {
+   "key": "modelling",
+   "label": "Path planning",
+   "value": "BIM import, manual model or on-site scan by the robot",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "兼容BIM模型导入、人工建模导入、也可在现场由机器人自动建模"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Multi-degree-of-freedom arm reaches into corridors and entrance areas (maker). Drive not described; wheels assumed."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://news.pedaily.cn/20240710/89658.shtml",
+   "title": "丰坦4款产品全新上市！打造室内涂料工程施工机器人No.1 (10 July 2024)",
+   "publisher": "PEdaily (投资界)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Model code, weight, dimensions, battery and price are not published in the source read.",
+  "Is it still sold next to the P600 Max launched in 2026?"
+ ],
+ "checkedAt": "2026-11-18"
+}

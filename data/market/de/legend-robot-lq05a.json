@@ -1,0 +1,256 @@
+{
+ "schemaVersion": 1,
+ "id": "legend-robot-lq05a",
+ "maker": "Shenzhen Legend Robot Technology Co., Ltd.",
+ "makerCountry": "CN",
+ "model": "LQ05A",
+ "variant": "Latex Paint Spraying Robot, 3.3 m",
+ "name": "Legend Robot LQ05A latex paint spraying robot (3.3 m)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://www.legendrobot.com/products/latex-paint-spraying-robot-3m3/",
+ "summary": "Wheeled interior robot with a lifting mast and a six-axis arm that sprays latex paint airless onto walls and ceilings up to 3.3 m, spraying while it moves. Paint-only sister of the LQ00C putty and paint robot; one operator runs up to three units.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found; enquiries go to the maker in Shenzhen (quote form, e-mail, WhatsApp). Legend Robot says it previewed its latex paint and putty spraying robot at BATIMAT 2026 in Paris with its \"European partner ROBOSWISS AG\" and that the system is engineered to EU CE standards, but the article does not name the model and no European sales page or price was found.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_spray_height_m",
+   "label": "Maximum spraying height",
+   "value": 3.3,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Max Allowed Spraying Height3.3m"
+  },
+  {
+   "key": "latex_rate_m2_h",
+   "label": "Latex paint spraying rate",
+   "value": 230,
+   "unit": "m²/h",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "Latex Paint Spraying Efficiency230m²/h"
+  },
+  {
+   "key": "daily_output_m2",
+   "label": "Daily output",
+   "value": "1,200-1,500",
+   "unit": "m²/day",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "1200–1500㎡/day"
+  },
+  {
+   "key": "coverage_pct",
+   "label": "Coverage",
+   "value": 95,
+   "unit": "%",
+   "conditions": "share of the surface the robot sprays itself",
+   "sourceId": "s1",
+   "quote": "Coverage Rate95%"
+  },
+  {
+   "key": "coat_thickness_um",
+   "label": "Single-pass coat thickness",
+   "value": "70 ± 5",
+   "unit": "μm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "single-pass coat thickness of 70μm ± 5μm"
+  },
+  {
+   "key": "spray_pressure_mpa",
+   "label": "Spraying pressure",
+   "value": "15 recommended, 25 max",
+   "unit": "MPa",
+   "conditions": "airless",
+   "sourceId": "s1",
+   "quote": "Recommended: 15MPa / Max: 25MPa"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 590,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight590kg"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "780 × 780 × 1750",
+   "unit": "mm",
+   "conditions": "the page prints the three figures run together",
+   "sourceId": "s1",
+   "quote": "Dimensions7807801750mm"
+  },
+  {
+   "key": "tank_l",
+   "label": "Material tank",
+   "value": 56,
+   "unit": "L",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Material Tank Capacity56L"
+  },
+  {
+   "key": "min_passage_mm",
+   "label": "Minimum passage width",
+   "value": 840,
+   "unit": "mm",
+   "conditions": "automatic spraying mode",
+   "sourceId": "s1",
+   "quote": "Minimum Passage Width840mm (Automatic Spraying Mode)"
+  },
+  {
+   "key": "speed_m_s",
+   "label": "Operating speed",
+   "value": "0-0.5",
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Operating Speed0‑0.5m/s"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Maximum climbing angle",
+   "value": 10,
+   "unit": "deg",
+   "conditions": "obstacle crossing 30 mm",
+   "sourceId": "s1",
+   "quote": "Maximum Climbing Angle10°"
+  },
+  {
+   "key": "power_w",
+   "label": "Operating power",
+   "value": 580,
+   "unit": "W",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Operating Power580W"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 105 Ah; 8 h + 8 h with 2 batteries",
+   "unit": null,
+   "conditions": "charging ≤ 3 h; manual battery swap",
+   "sourceId": "s1",
+   "quote": "Battery Life8h+8h (Including 2 Batteries)"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": "1 operator for 3 robots",
+   "unit": null,
+   "conditions": "maker: equals the output of 6 painters",
+   "sourceId": "s1",
+   "quote": "1 operator + 3 robots = 6 traditional workers' output."
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5-40",
+   "unit": "°C",
+   "conditions": "humidity ≤ 85 % RH",
+   "sourceId": "s1",
+   "quote": "Operating Temperature5℃ to 40℃"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Omnidirectional chassis with zero turning radius, lifting mechanism and 6-DOF arm; sprays walls, ceilings and corners (maker). Drive described as a chassis; wheels assumed.",
+   "Sprays while moving (mobile spraying) or from fixed points; airless; LiDAR obstacle avoidance and rubber crash strips.",
+   "Latex paint only; for putty Legend offers the LQ00C (3.3 m) and LQ06A (6.2 m).",
+   "runtimeH is one battery; two batteries are supplied."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.legendrobot.com/uploads/images/latex-paint-spraying-robots-3.3.jpg",
+   "pageUrl": "https://www.legendrobot.com/products/",
+   "credit": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "alt": "Legend Robot LQ05A latex paint spraying robot (3.3 m)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Automated interior wall painting with a fleet of 3.3 m latex paint spraying robots, working with Furnishing House",
+   "stage": "deployment",
+   "where": "Qiddiya, Riyadh, Saudi Arabia",
+   "date": null,
+   "sourceId": "s4",
+   "note": "Maker case page; it says the 3.3 m spraying robot fleet was tested with regional paints and putties (Jotun, Jazeera, Caparol, ChemiPaint)."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.legendrobot.com/products/latex-paint-spraying-robot-3m3/",
+   "title": "Latex Paint Spraying Robot (3.3m), LQ05A",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.legendrobot.com/legend-robot-showcases-ce-compliant-autonomous-solution-for-european-smart-construction-at-batimat-2026.html",
+   "title": "Legend Robot Showcases CE-Compliant Autonomous Solution for European Smart Construction at BATIMAT 2026 (21 September 2026)",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.legendrobot.com/qiddiya-riyadh-saudi-arabia/",
+   "title": "Qiddiya, Riyadh, Saudi Arabia (project case)",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is there a sales or service partner in Germany or the EU (the maker names ROBOSWISS AG as European partner)? Price?",
+  "CE declaration of conformity for this model (maker only says its solution meets EU CE standards)."
+ ],
+ "checkedAt": "2026-11-18"
+}

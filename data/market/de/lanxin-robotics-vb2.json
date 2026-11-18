@@ -1,0 +1,197 @@
+{
+ "schemaVersion": 1,
+ "id": "lanxin-robotics-vb2",
+ "maker": "Lanxin Robotics (Lanxin Technology, Hangzhou)",
+ "makerCountry": "CN",
+ "model": "VB2",
+ "variant": null,
+ "name": "Lanxin Robotics VB2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.lanxinrobotics.com/humanoid-robots/vb2-2/",
+ "summary": "A wheeled humanoid from a Chinese 3D-vision AMR maker with 7-joint arms, 5 kg gripping load, 0.4-2 m working height and an omnidirectional four-wheel base for factory logistics in electronics, automotive and battery plants.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor found. Lanxin has a German-language website and a 'Get a quote' form, but lists only offices in China and Japan.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "working_height_m",
+   "label": "Operating height",
+   "value": "0.4-2",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "0.4~2m Operating Height"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": "4-6",
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "4~6 h Battery life"
+  },
+  {
+   "key": "arm_joints",
+   "label": "Arm joints",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "7 Arm joints"
+  },
+  {
+   "key": "gripping_load_kg",
+   "label": "Gripping load",
+   "value": 5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "5kg Gripping load"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "580 × 480 × 1700",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dimensions 580×480×1700 mm"
+  },
+  {
+   "key": "turning_diameter_mm",
+   "label": "Rotation diameter",
+   "value": 760,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "760 mm Rotation Diameter"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": "0-1.2",
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Speed 0~1.2 m/s"
+  },
+  {
+   "key": "ground_clearance_mm",
+   "label": "Ground clearance",
+   "value": 35,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Ground clearance 35mm"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Working temperature",
+   "value": "0-40",
+   "unit": "°C",
+   "conditions": "10-90 % RH, no condensation",
+   "sourceId": "s1",
+   "quote": "Working Temperature 0~40℃"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "3D laser SLAM",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "3D Laser SLAM Navigation Method"
+  },
+  {
+   "key": "drive",
+   "label": "Driving mode",
+   "value": "four-wheel omnidirectional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Driving mode Four-wheel omnidirectional wheel"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": 5,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The page lists '7 Arm joints' and a 5 kg 'Gripping load' but does not state the number of arms or whether the load is per arm; two arms are assumed from the humanoid form and should be checked against the product photo.",
+   "Runtime uses the lower end of the 4-6 h range.",
+   "Lanxin also sells VB1 (2 kg gripping load, 2-3 h, omnidirectional) and VB1-I (differential drive, up to 1.5 m/s)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.lanxinrobotics.com/wp-content/uploads/2025/08/VB2.webp",
+   "pageUrl": "https://www.lanxinrobotics.com/humanoid-robots/vb2-2/",
+   "credit": "Lanxin Robotics",
+   "alt": "Lanxin Robotics VB2 wheeled humanoid robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "In-plant logistics in 3C electronics, automotive, battery/photovoltaic and packaging factories",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Lanxin's solution areas in the site menu (3C Electronics, Automotive, New Energy, Packaging & Printing); no VB2 customer named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.lanxinrobotics.com/humanoid-robots/vb2-2/",
+   "title": "VB2 humanoid robot",
+   "publisher": "Lanxin Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.lanxinrobotics.com/contact-lanxin-robotics/",
+   "title": "Contact Lanxin Robotics",
+   "publisher": "Lanxin Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Number of arms, whether the 5 kg gripping load is per arm, weight and price.",
+  "Lifecycle set to shipping because Lanxin lists VB2 in its product range with a quote form; no delivery evidence was found."
+ ],
+ "checkedAt": "2026-11-18"
+}

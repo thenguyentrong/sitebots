@@ -1,0 +1,172 @@
+{
+ "schemaVersion": 1,
+ "id": "neura-quadruped",
+ "maker": "NEURA Robotics",
+ "makerCountry": "DE",
+ "model": "NEURA Quadruped",
+ "variant": null,
+ "name": "NEURA Quadruped",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://neura-robotics.com/product/quadruped-reservation/",
+ "summary": "A four-legged robot from the German maker NEURA Robotics for inspection, surveillance and payload transport on rough ground and stairs, with autonomous navigation and ROS 2. Open for reservation at an estimated 50,000 € per unit, with availability expected in 2026.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "preorder",
+  "statusNote": "NEURA Robotics (Metzingen, Germany) takes refundable 100 € reservations for single units on its site; estimated price 50,000 € excluding taxes and shipping; expected to be available in 2026. Commercial quantities through the contact form. No deliveries confirmed.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 50000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "\"Estimated price/unit 50,000 € (excluding taxes and shipping)\"; reservation fee \"100€ per unit\", credited to the purchase price."
+  },
+  "priceOther": null,
+  "leadTime": "\"expected to be available in 2026\" (maker reservation page)",
+  "sellers": [
+   {
+    "name": "NEURA Robotics GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://neura-robotics.com/product/quadruped-reservation/",
+    "contactUrl": "https://neura-robotics.com/contact-us/",
+    "email": null,
+    "phone": null,
+    "priceEur": 50000,
+    "priceBasis": "net",
+    "sourceId": "s1",
+    "note": "Online reservation for individual orders (\"These reservations are intended for individual orders; for industrial or commercial quantities, please use our contact form.\"). The German page shows \"Preis/Einheit 50.000 €\"."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "use_cases",
+   "label": "Use cases",
+   "value": "Inspection, surveillance, transport, research in complex environments",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Inspection, surveillance,  transport, research in complex environments"
+  },
+  {
+   "key": "autonomy",
+   "label": "Autonomy",
+   "value": "Autonomous navigation, obstacle avoidance and path planning",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Autonomous navigation, obstacle avoidance, and path planning"
+  },
+  {
+   "key": "sdk",
+   "label": "Interfaces",
+   "value": "Wi-Fi 6, Gigabit Ethernet, ROS 2, C++, Python SDK, NEURA Sync",
+   "unit": null,
+   "conditions": "plus digital twin access, teleoperation, NEURA Gym training",
+   "sourceId": "s1",
+   "quote": "Wi-Fi 6, Gigabit Ethernet, ROS 2, C++, Python SDK, NEURA Sync"
+  },
+  {
+   "key": "availability",
+   "label": "Availability",
+   "value": "Expected in 2026",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "NEURA Quadruped is expected to be available in 2026."
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "ROS 2, C++, Python SDK, NEURA Sync",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The reservation pages give no payload, weight, runtime or IP rating; a datasheet PDF is linked but could not be read with our reader.",
+   "Maker says the design may still be refined before the 2026 release."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://neura-robotics.com/wp-content/uploads/2026/01/NEURA_Quadruped_2.webp",
+   "pageUrl": "https://neura-robotics.com/product/quadruped-reservation/",
+   "credit": "NEURA Robotics",
+   "alt": "NEURA Quadruped four-legged robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Inspection, surveillance and payload transport on rough terrain and stairs",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "NEURA Quadruped  navigates rough terrain, stairs, and obstacles that wheeled systems cannot handle.",
+   "basis": "maker description",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "NEURA Quadruped  navigates rough terrain, stairs, and obstacles that wheeled systems cannot handle.",
+   "basis": "maker description",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://neura-robotics.com/product/quadruped-reservation/",
+   "title": "Reserve NEURA Quadruped",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://neura-robotics.com/de/produkt/neura-quadruped/",
+   "title": "NEURA Quadruped (German product page)",
+   "publisher": "NEURA Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Payload, weight, runtime, IP rating and stair height: the datasheet (https://neurarobotics.px.media/plk/NP/QuadrupedDatasheet.pdf) could not be read with our reader.",
+  "Whether working units have been shown or delivered; the CES 2026 report could not be read (site refused our reader).",
+  "Image is the maker's product picture from the reservation page; not checked by eye."
+ ],
+ "checkedAt": "2026-11-18"
+}

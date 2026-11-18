@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 25198.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s8",
+   "note": "OpenELAB, incl. VAT."
+  },
   "priceOther": {
    "amount": 15999,
    "currency": "USD",
@@ -34,16 +40,30 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "Variant \"Mercury X1 - Universal Wheeled Humanoid Robot\"; price in USD."
+   },
+   {
+    "name": "OpenELAB",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://openelab.io/de/products/elephant-robotics-mercury-x1-universal",
+    "contactUrl": null,
+    "email": "info@openelab.io",
+    "phone": null,
+    "priceEur": 25198.95,
+    "priceBasis": "gross",
+    "sourceId": "s8",
+    "note": "Mercury X1 universal wheeled humanoid (SKU ER-4011300003), single variant, \"In den Warenkorb legen\" button, Shopify data available=true; \"Shipping from China within 5–10 working days\". Grippers sold separately."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-18",
   "status": "buy_now",
   "statusNote": "Orderable from OpenELAB (Garching bei München) at EUR 25,198.95 incl. VAT, and in Elephant Robotics' online shop, which ships to Germany, at USD 15,999 from a China warehouse; grippers are separate products. RBTX lists the X1 but marks it not available on its German page.",
   "sourceIds": [
    "s2",
    "s3",
    "s6",
-   "s7"
+   "s7",
+   "s8"
   ]
  },
  "specs": [
@@ -224,6 +244,14 @@
    "publisher": "RBTX (igus)",
    "kind": "seller",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s8",
+   "url": "https://openelab.io/de/products/elephant-robotics-mercury-x1-universal",
+   "title": "OpenELAB",
+   "publisher": "OpenELAB",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

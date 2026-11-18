@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "hans-robot-star",
+ "maker": "Han's Robot (Guangdong Huayan Robotics Co., Ltd.)",
+ "makerCountry": "CN",
+ "model": "STAR",
+ "variant": "STAR-S / STAR-L / STAR-M / STAR-H",
+ "name": "Han's Robot STAR Mobile Manipulator",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.hansrobot.net/star-mobile-manipulator",
+ "summary": "A series of mobile manipulators that put a Han's Elfin cobot (E03 to E15) on a laser-SLAM AMR (HR150 to HR1200) with vision, gripper and automatic charging, for handling, CNC loading and assembly; running time with load from more than 6 h to more than 12 h depending on size.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Han's Robot (Shenzhen) takes purchase enquiries by web form and marketing.oversea@huayan-robotics.com; its contact and distributor pages list only Chinese offices and no EU distributor.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "configurations",
+   "label": "Arm and vehicle per model",
+   "value": "STAR-S: E03/E05 on HR150; STAR-L: E03/E05/E05-L/E10 on HR300; STAR-M: E05-L/E10/E10-L/E15 on HR600; STAR-H: E05-L/E10/E10-L/E15 on HR1200",
+   "unit": null,
+   "conditions": "order of models in the maker's table",
+   "sourceId": "s1",
+   "quote": "STAR-SSTAR-LSTAR-MSTAR-HMain bodyRobotE03 / E05E03 / E05 /E05-L / E10E05-L / E10 /E10-L / E15E05-L / E10 /E10-L / E15VehicleHR150HR300HR600HR1200"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Vehicle dimensions without arm",
+   "value": "700 x 500 x 630 (STAR-S) to 1530 x 965 x 1300 (STAR-H)",
+   "unit": "mm",
+   "conditions": "STAR-L 950 x 650 x 900, STAR-M 1200 x 700 x 900",
+   "sourceId": "s1",
+   "quote": "700*500*630(mm)950*650*900(mm)1200*700*900(mm)1530*965*1300(mm)"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max. velocity",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "STAR-M 1.1 m/s",
+   "sourceId": "s1",
+   "quote": "MAX Velocity1.5m/s1.5m/s1.1m/s1.5m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Running time with load",
+   "value": 6,
+   "unit": "h",
+   "conditions": "more than 6 h (STAR-S), more than 10 h (STAR-L), more than 12 h (STAR-M, STAR-H); charging 2 h or less",
+   "sourceId": "s1",
+   "quote": "Running Time（with load）＞6h＞10h＞12h＞12h"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Positioning accuracy (with vision)",
+   "value": 0.5,
+   "unit": "mm",
+   "conditions": "±",
+   "sourceId": "s1",
+   "quote": "Positioning Accuracy±0.5mm"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "Laser SLAM; optional hybrid navigation with vision fusion",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Navigation ModeLaser SLAM, Hybrid Navigation (Fusion Vision) (Optional)"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "DC 48 V, 125 Ah",
+   "unit": null,
+   "conditions": "capacity from the page header",
+   "sourceId": "s1",
+   "quote": "125AhBattery Capacity"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "TCP/IP, HTTP, SDK; Windows/Linux development platform",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Standard Communication InterfaceTCP/IP, HTTP, SDK"
+  },
+  {
+   "key": "warranty_months",
+   "label": "Warranty",
+   "value": 12,
+   "unit": "months",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Warranty12 Months"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": "TCP/IP, HTTP, SDK",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The maker describes the system as arm, mobile robot, vision system and gripper combined; arm payload depends on the Elfin model (E03 to E15) and is not stated on this page.",
+   "Platform payload not stated; tray lifting unit customisable.",
+   "Runtime is the smallest model's figure; larger models run more than 10 to 12 h."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker video shows CNC loading and unloading with the STAR; offered for grasping, handling, assembly and inspection of materials",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Metalworking machine tending; customer and site not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.hansrobot.net/star-mobile-manipulator",
+   "title": "STAR Mobile Manipulator",
+   "publisher": "Han's Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.hansrobot.net/contact",
+   "title": "Contact Us",
+   "publisher": "Han's Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.hansrobot.net/partner/distributor",
+   "title": "Become our Distributor",
+   "publisher": "Han's Robot",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No EU seller found; whether Han's Robot's European cobot partners also sell the STAR.",
+  "Arm and platform payloads per model.",
+  "Price not published."
+ ],
+ "checkedAt": "2026-11-18"
+}

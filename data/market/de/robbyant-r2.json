@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "robbyant-r2",
+ "maker": "Robbyant (Shanghai Ant Robbyant Technology Co., Ltd., Ant Group)",
+ "makerCountry": "CN",
+ "model": "R2",
+ "variant": null,
+ "name": "Robbyant R2",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.robbyant.com/product/R2",
+ "summary": "A wheeled dual-arm humanoid from Ant Group's robotics unit for indoor retail, home and light industrial tasks, rated 6 kg per arm with about 4 h runtime on swappable batteries.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller or distributor for R2 found. Robbyant showed the earlier R1 at IFA 2025 in Berlin and said it works with partners in the DACH region and Europe, but no R2 sales route is named; the maker lists only Chinese sales contacts.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": "under 120",
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "A lightweight body under 120 kg and 6 kg rated payload per arm balance agility and strength."
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Rated payload per arm",
+   "value": 6,
+   "unit": "kg",
+   "conditions": "rated; Yanko Design quotes up to 5 kg per arm",
+   "sourceId": "s1",
+   "quote": "A lightweight body under 120 kg and 6 kg rated payload per arm balance agility and strength."
+  },
+  {
+   "key": "reach_height_m",
+   "label": "Reach height",
+   "value": "0-2",
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "From the floor to two meters high, shelves are within reach."
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "about 4 h, swappable dual batteries, optional dock charging",
+   "sourceId": "s1",
+   "quote": "Swappable dual batteries deliver around 4 hours of runtime, with optional dock charging for automatic recharge during idle time."
+  },
+  {
+   "key": "base_width_mm",
+   "label": "Base width",
+   "value": 455,
+   "unit": "mm",
+   "conditions": "passes 650 mm aisles (press)",
+   "sourceId": "s2",
+   "quote": "Built on a 455 mm rectangular base with a body width equal to human shoulder span, it can navigate 650mm aisles smoothly"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Dual arms with seven degrees of freedom, each capable of lifting up to 5kg"
+  },
+  {
+   "key": "safety",
+   "label": "Safety features",
+   "value": "joint torque feedback, six-axis force sensing at the end effector, joint brakes on e-stop",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Joint torque feedback, six‑axis force sensing at the end effector, compliant grasping, and precise placement. Core joint brakes lock on emergency stop for immediate safety."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 6,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Omnidirectional steering-wheel chassis built for indoor aisles; the maker calls it a platform for real indoor scenarios.",
+   "Robbyant lists dexterous hands, grippers, suction cups and custom end tools for its robot platforms; which tool ships with R2 is not stated.",
+   "Lifecycle set to pilot_only because the maker says R2 'works with robot foundation models and scenario solutions for validation in real indoor tasks'; no delivery or order figures were found."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Indoor retail and home service: sorting stock and moving items between shelves",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "No construction or site use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robbyant.com/product/R2",
+   "title": "ROBBYANT R2 product page",
+   "publisher": "Robbyant",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.yankodesign.com/2026/08/08/humanoid-robots-dont-fit-in-store-aisles-so-robbyant-fixed-that/",
+   "title": "Humanoid Robots Don't Fit in Store Aisles, So Robbyant Fixed That",
+   "publisher": "Yanko Design",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.notebookcheck.net/Robots-for-everyday-life-Robbyant-presents-humanoid-robot-R1-with-embodied-AI.1102821.0.html",
+   "title": "Robots for everyday life: Robbyant presents humanoid robot R1 with embodied AI",
+   "publisher": "Notebookcheck",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Launch date, price and delivery status of R2 (the maker page only offers 'Contact Us').",
+  "Per-arm payload differs: maker says 6 kg rated, Yanko Design says up to 5 kg.",
+  "Whether the earlier R1 (shown at IFA 2025) is still sold alongside R2."
+ ],
+ "checkedAt": "2026-11-18"
+}

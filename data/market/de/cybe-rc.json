@@ -16,11 +16,18 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "EU maker (Netherlands) sells directly via its sales team; no German distributor found; price on request.",
+  "statusNote": "EU maker (Netherlands) sells directly via its sales team; its FAQ gives 195,000 € Ex Works (VAT not stated). No German distributor found.",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s2"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 195000,
+   "basis": "unknown",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "CyBe Construction, VAT not stated."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -38,7 +45,7 @@
     "note": "CyBe Construction B.V., Oss, Netherlands; contact the sales team via the website."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -110,6 +117,14 @@
    "publisher": "CyBe Construction",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s2",
+   "url": "https://cybe.eu/faq/faq-i-want-to-buy-a-printer/",
+   "title": "CyBe Construction",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

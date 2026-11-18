@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "heijmans-avular-autonomous-asphalt-roller",
+ "maker": "Heijmans with Avular",
+ "makerCountry": "NL",
+ "model": "Autonomous asphalt roller",
+ "variant": "battery-electric prototype",
+ "name": "Heijmans / Avular autonomous electric asphalt roller",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_roads_paving/asphalt-paving"
+ ],
+ "officialUrl": "https://www.avular.com/news/autonomous-asphalt-roller-debuts-at-schiphol",
+ "summary": "Battery-electric asphalt roller made driverless by the Dutch robotics firm Avular for the contractor Heijmans. It follows pre-programmed instructions, watches asphalt temperature and compaction and adjusts itself, while an operator supervises remotely.",
+ "launched": "2025-10",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Prototype used by the Dutch contractor Heijmans, not offered for sale. Avular (Eindhoven) offers to add autonomy to customers' construction machines on request, but this roller is not a catalogue product.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "battery-electric",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The roller runs on batteries, producing no exhaust fumes and less noise than diesel-powered equipment."
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "pre-programmed autonomous operation with real-time adjustment, remote operator supervision",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The roller continuously monitors asphalt temperature and compaction levels, making adjustments as needed under remote operator supervision."
+  },
+  {
+   "key": "safety",
+   "label": "Safety",
+   "value": "emergency braking system",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The machine is also fitted with an emergency braking system to bolster safety claims."
+  },
+  {
+   "key": "autonomy_partner",
+   "label": "Autonomy partner",
+   "value": "Avular adds autonomy to an existing machine",
+   "unit": null,
+   "conditions": "base roller make and model not named",
+   "sourceId": "s2",
+   "quote": "By integrating autonomous capabilities into existing vehicles, Avular transforms traditional construction equipment into intelligent, automated solutions"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Roller drums counted as wheels; size, weight and base machine not stated.",
+   "Long-term aim: one operator coordinating several machines; Heijmans is also looking at automating pavers (press).",
+   "Tool = roller drums."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/asphalt-paving"
+   ],
+   "task": "First public live demonstration of the driverless roller compacting asphalt",
+   "stage": "demo",
+   "where": "Schiphol Airport, Netherlands",
+   "date": "2025-10",
+   "sourceId": "s2",
+   "note": "Attended by Schiphol, Heijmans, Avular and Dutch media (NOS, BNR)."
+  },
+  {
+   "taskIds": [
+    "site_roads_paving/asphalt-paving"
+   ],
+   "task": "Production model planned to join Heijmans asphalt crews",
+   "stage": "claim",
+   "where": "Netherlands – Heijmans",
+   "date": "2026",
+   "sourceId": "s1",
+   "note": "Plan stated in October 2025, if trials succeed; current status not checked."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://newmobility.news/en/2025/10/03/heijmans-unveils-europes-first-self-driving-electric-road-roller/",
+   "title": "Heijmans unveils Europe's first self-driving electric road roller (3 October 2025)",
+   "publisher": "Newmobility.news",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.avular.com/news/autonomous-asphalt-roller-debuts-at-schiphol",
+   "title": "Autonomous asphalt roller debuts at Schiphol",
+   "publisher": "Avular",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.avular.com/applications/building-construction",
+   "title": "Robotics for Construction",
+   "publisher": "Avular",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which roller make and model is the base machine, and its weight and drum width?",
+  "Did the production model join Heijmans crews in 2026 as planned?",
+  "Would Avular retrofit the same autonomy kit on rollers of other contractors, and at what price?"
+ ],
+ "checkedAt": "2026-11-18"
+}

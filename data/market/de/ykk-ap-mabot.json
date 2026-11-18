@@ -1,0 +1,129 @@
+{
+ "schemaVersion": 1,
+ "id": "ykk-ap-mabot",
+ "maker": "YKK AP Inc.",
+ "makerCountry": "JP",
+ "model": "MABOT",
+ "variant": "Alignmenter (window frame setting) and WeldFixer (bracket welding)",
+ "name": "YKK AP MABOT window installation robots",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "glazing_installation",
+  "site_windows_doors/window-unit-setting"
+ ],
+ "officialUrl": null,
+ "summary": "Pair of self-driving robots that set aluminium window frames into building openings (Alignmenter) and weld steel brackets around the set frames to fix them (WeldFixer), taking over from window installers on non-timber buildings. Developed by the Japanese window maker YKK AP, with site trials planned by spring 2025 and practical use targeted for FY2028.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Prototype for building sites in Japan; YKK AP aims for practical use on sites in fiscal 2028. No sale, rental or European route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weld_height_m",
+   "label": "WeldFixer working height",
+   "value": "up to 3.2 m above floor",
+   "unit": null,
+   "conditions": "places and welds steel brackets on all four sides of the frame",
+   "sourceId": "s1",
+   "quote": "地上から高さ３・２メートルの範囲で、窓枠の四周に鉄製ブラケットを自動配置し溶接する"
+  },
+  {
+   "key": "step_mm",
+   "label": "Step it can cross",
+   "value": "about 20",
+   "unit": "mm",
+   "conditions": "WeldFixer",
+   "sourceId": "s1",
+   "quote": "２０ミリメートル程度の段差は乗り越える"
+  },
+  {
+   "key": "power",
+   "label": "Power",
+   "value": "cordless battery drive",
+   "unit": null,
+   "conditions": "WeldFixer",
+   "sourceId": "s1",
+   "quote": "コードレスのバッテリー駆動で自在に移動し"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "moves to each set frame using map data made from the BIM model; avoids people and obstacles and stops on contact",
+   "unit": null,
+   "conditions": "WeldFixer",
+   "sourceId": "s1",
+   "quote": "人や障害物を回避して接触時には自動停止する"
+  },
+  {
+   "key": "alignment",
+   "label": "Frame positioning",
+   "value": "reads the black ink reference line marked at the opening and corrects for its own position error and opening inaccuracy",
+   "unit": null,
+   "conditions": "Alignmenter; detachable end effector for different window types",
+   "sourceId": "s1",
+   "quote": "アライメンターは開口部に書かれた黒色墨の基準線を認識し、窓枠の位置決めを高精度で実施する"
+  },
+  {
+   "key": "crew_time_reduction",
+   "label": "Crew and time",
+   "value": "about half",
+   "unit": null,
+   "conditions": "remote operation of the robots compared with installers doing setting and welding",
+   "sourceId": "s1",
+   "quote": "ロボットの遠隔操作により人員数と作業時間を半分程度に削減"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Two machines: the Alignmenter sets the frame with an arm-mounted, detachable end effector; the WeldFixer then welds the fixing brackets. Each has one arm as pictured; wheels assumed.",
+   "Welding under inert gas to suppress sparks (press).",
+   "Office-building windows are mostly semi-custom, so the maker says the sites where the robots can be used are limited for now."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://newswitch.jp/p/44181",
+   "title": "ロボットでビル窓施工、YKK APが実用化へ (Nikkan Kogyo Shimbun, 27 December 2024)",
+   "publisher": "Newswitch (Nikkan Kogyo Shimbun)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Did the planned site trials (by spring 2025) take place, and where? No readable report found.",
+  "No YKK AP press release could be read (its newsroom loads by script); sizes, weights and payloads are not published.",
+  "Which window sizes and weights can the Alignmenter handle?"
+ ],
+ "checkedAt": "2026-11-18"
+}

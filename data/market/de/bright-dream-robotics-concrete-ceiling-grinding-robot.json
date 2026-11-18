@@ -1,0 +1,135 @@
+{
+ "schemaVersion": 1,
+ "id": "bright-dream-robotics-concrete-ceiling-grinding-robot",
+ "maker": "Guangdong Bright Dream Robotics Co., Ltd. (Country Garden)",
+ "makerCountry": "CN",
+ "model": "Concrete Ceiling Grinding Robot (混凝土天花打磨机器人)",
+ "variant": null,
+ "name": "Bright Dream concrete ceiling grinding robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "concrete_finishing"
+ ],
+ "officialUrl": "https://www.bzlrobot.com/channels/3.html",
+ "summary": "Robot that finds bumps, steps and formwork joints over 2 mm on concrete ceilings by camera and grinds them off automatically before finishing. Made by Bright Dream in Foshan.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer. Bright Dream lists the robot only on its Chinese website, whose product detail pages are blank, and its global exclusive agent BrightMaster Robotics (BMR) does not offer it. No EU dealer, customer or CE marking found.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "detection",
+   "label": "Defect detection",
+   "value": "bumps, steps and formwork joints over 2 mm, by vision",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "能够通过视觉识别2mm以上爆点、错台、模板拼缝等缺陷"
+  },
+  {
+   "key": "flatness",
+   "label": "Ceiling flatness after grinding",
+   "value": "range within 2 mm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "打磨后显著提高天花平整度，极差在2mm以内"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Works with the tie-hole plugging and wall grinding robots for concrete repair before finishing (maker).",
+   "Mechanism and drive not described; wheels assumed.",
+   "Bright Dream says 28 of its robot types are in commercial use; this one is listed as a product, but it is not offered by BMR."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.bzlrobot.com/upload/images/2021/11/9a159b467ebcb728.png",
+   "pageUrl": "https://www.bzlrobot.com/channels/3.html",
+   "credit": "Bright Dream Robotics",
+   "alt": "Bright Dream concrete ceiling grinding robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Ceiling grinding robot among more than ten robot types used on a national smart-construction pilot project",
+   "stage": "pilot",
+   "where": "Country Garden Fengtong Garden project, China",
+   "date": null,
+   "sourceId": "s4",
+   "note": "Media report on the maker site; the project was one of seven national smart-construction pilots named by the housing ministry in February 2021."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bzlrobot.com/channels/3.html",
+   "title": "建筑机器人 (construction robots product list)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bzlrobot.com/en",
+   "title": "Bright Dream home page (28 robot types in commercial use)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/product.html",
+   "title": "BMR product list (Bright Dream's global exclusive agent; this robot not listed)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.bzlrobot.com/contents/11/197.html",
+   "title": "中国\"智造\"进行时：建筑业从过去融入未来 (media report)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is it still made and offered? The product detail page is blank and BMR, the global exclusive agent, does not list it.",
+  "No dimensions, weight, output or battery figures are published."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,138 @@
+{
+ "schemaVersion": 1,
+ "id": "kobelco-robotix-ishimatsu",
+ "maker": "Kobelco ROBOTiX Co., Ltd. (Kobe Steel group)",
+ "makerCountry": "JP",
+ "model": "Ishimatsu (石松™)",
+ "variant": null,
+ "name": "Kobelco ROBOTiX Ishimatsu portable welding robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "welding"
+ ],
+ "officialUrl": "https://www.kobelco.co.jp/products/welding/kobelco-robotix/",
+ "summary": "Small portable rail-guided welding robot from Kobe Steel's welding robot company, used for building steel (columns and joints), shipbuilding, construction machinery and bridges; it holds the Japanese type certification for building steel welding.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold in Japan by Kobelco ROBOTiX; no German or EU sales page, distributor or CE information found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "fields",
+   "label": "Fields of use",
+   "value": "building steel, shipbuilding, construction machinery, bridges",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "建築・造船・建機・橋梁などの分野で"
+  },
+  {
+   "key": "certification",
+   "label": "Certification",
+   "value": "Japanese type certification for building steel welding (建築鉄骨溶接型式認証)",
+   "unit": null,
+   "conditions": "stated for the cableless version, which applies the Ishimatsu certification",
+   "sourceId": "s2",
+   "quote": "石松™　が取得している建築鉄骨溶接型式認証を適用"
+  },
+  {
+   "key": "shield_gas",
+   "label": "Shield gas",
+   "value": "100% CO2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "● シールドガス　 100%CO2"
+  },
+  {
+   "key": "cableless_range_m",
+   "label": "Wireless teaching box range",
+   "value": 30,
+   "unit": "m",
+   "conditions": "cableless version; line of sight",
+   "sourceId": "s2",
+   "quote": "通信距離３０ｍと広い範囲をカバー"
+  },
+  {
+   "key": "cableless_runtime_h",
+   "label": "Wireless teaching box runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "cableless version, full charge; 4 h charging",
+   "sourceId": "s2",
+   "quote": "最大８時間の連続使用が可能（フル充電時）"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Portable welding robot on a guide rail that is set on the workpiece; one operator can run several units (maker PDF).",
+   "Series can be extended with rotating positioners into welding systems (maker page).",
+   "Robot weight and stroke could not be read from the maker PDF (text not extractable)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Welding in building steel, shipbuilding, construction machinery and bridge fabrication (maker statement)",
+   "stage": "claim",
+   "where": "Japan",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.kobelco.co.jp/products/welding/kobelco-robotix/",
+   "title": "小型可搬型溶接ロボット 石松™シリーズ (Kobelco ROBOTiX welding robots)",
+   "publisher": "Kobe Steel, Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.kobelco.co.jp/products/welding/kobelco-robotix/pdf/ishimatsu_cableless.pdf",
+   "title": "小型可搬型溶接ロボット ケーブルレス 石松TM (cableless Ishimatsu, PDF)",
+   "publisher": "Kobelco ROBOTiX Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Robot weight, size and welding range: the main Ishimatsu PDF could not be converted to text.",
+  "Any export, CE marking or European partner (e.g. Kobelco Welding of Europe)?",
+  "Price: none found."
+ ],
+ "checkedAt": "2026-11-18"
+}

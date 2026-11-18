@@ -1,0 +1,182 @@
+{
+ "schemaVersion": 1,
+ "id": "vanku-tiger-stone",
+ "maker": "Vanku B.V.",
+ "makerCountry": "NL",
+ "model": "Tiger-Stone",
+ "variant": "Tigerstone 6000 (up to 6 m road width)",
+ "name": "Vanku Tiger-Stone",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_roads_paving/paving-block-laying"
+ ],
+ "officialUrl": "https://www.tiger-stone.nl/",
+ "summary": "Electric paving machine, up to 6 m wide, that lays a whole street of concrete or clay pavers in one pass, edge stones included. Pavers on the machine place the stones in the pattern on a sliding board; the machine drives itself along the kerb with a road-tracking system and is moved into position by remote control.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Dutch maker Vanku B.V. takes enquiries by e-mail and contact form; no German dealer or price found. The website and the machine itself also invite enquiries for licensing and production, so supply may run through licensees. A copy of the maker brochure is hosted by the Danish builders' merchant Bygma, but no Bygma sales page was read.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Vanku B.V.",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://www.tiger-stone.nl/",
+    "contactUrl": "https://www.tiger-stone.nl/",
+    "email": "info@vanku.nl",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Peelbaan 7, 5121 DB Rijen (brochure) / Gilze (website), Netherlands. Contact form on the website; 'Contact us for licensing / production'."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_road_width_cm",
+   "label": "Maximum road width",
+   "value": 600,
+   "unit": "cm",
+   "conditions": "Tigerstone 6000; side guides adjust to the road width",
+   "sourceId": "s2",
+   "quote": "Tigerstone 6000 600 cm"
+  },
+  {
+   "key": "daily_output_m2",
+   "label": "Output per day",
+   "value": "300 normal, up to 500",
+   "unit": "m²/day",
+   "conditions": "maker claim; website says 300 m² possible",
+   "sourceId": "s2",
+   "quote": "normal: 300 m2 ; up to: 500m2"
+  },
+  {
+   "key": "power_kw",
+   "label": "Power",
+   "value": 1.5,
+   "unit": "kW",
+   "conditions": "electric drive",
+   "sourceId": "s2",
+   "quote": "1,5 kW"
+  },
+  {
+   "key": "electrical_connection",
+   "label": "Electrical connection",
+   "value": "16 A, 230 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "16 A, 230V"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Width × length × height",
+   "value": "2100 × 6270 × 1620",
+   "unit": "mm",
+   "conditions": "brochure table; values listed in the order width, length, height",
+   "sourceId": "s2",
+   "quote": "2100 mm 6270 mm 1620 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 2500,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "2500 kg"
+  },
+  {
+   "key": "steering",
+   "label": "Steering",
+   "value": "road-tracking system follows the kerb automatically, also in curves",
+   "unit": null,
+   "conditions": "positioned by remote control",
+   "sourceId": "s2",
+   "quote": "The road tracking system follows the curbstone automaticaly so steering is not required."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Not fully unmanned: workers standing on the machine take stones from the hopper and set the pattern on the sliding board; the machine then lays the whole width and drives on at the push of a button.",
+   "Hopper is filled by a loader; suits new and reused stones and lays the edge finishing directly, so no cutting is needed (maker).",
+   "Wheels assumed from the photo of the machine on a path; the running gear is not described in text.",
+   "Tool = sliding board and road-width hopper."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://tiger-stone.nl/onewebstatic/20995a3429.jpg",
+   "pageUrl": "https://www.tiger-stone.nl/",
+   "credit": "Vanku B.V. (Tiger-Stone)",
+   "alt": "Yellow Tiger-Stone paving machine across a new herringbone block-paved path, pallet of pavers in front",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/paving-block-laying"
+   ],
+   "task": "Lays and re-lays block-paved streets in one pass including edge finishing",
+   "stage": "claim",
+   "where": "Netherlands",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker lists projects and awards (NOVA Award 2011, US Construction Innovation Forum) but names no project sites in the text read."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.tiger-stone.nl/",
+   "title": "Tiger-Stone – machinaal (her)bestraten",
+   "publisher": "Vanku B.V.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bygma.dk/globalassets/proff/inspirationssider/brolaeggermaskine_tigerstone_vanku/tigerstone-brochure-en.pdf",
+   "title": "Tiger-stone brochure (English, hosted by Bygma)",
+   "publisher": "Vanku B.V.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price and whether Vanku sells machines directly or only licenses production.",
+  "Is there a German dealer, rental partner or CE declaration?",
+  "Does the current ZERO-Emission version differ in specs from the Tigerstone 6000 in the brochure?"
+ ],
+ "checkedAt": "2026-11-18"
+}

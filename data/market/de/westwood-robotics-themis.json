@@ -1,0 +1,197 @@
+{
+ "schemaVersion": 1,
+ "id": "westwood-robotics-themis",
+ "maker": "Westwood Robotics",
+ "makerCountry": "US",
+ "model": "THEMIS",
+ "variant": "TH02 Gen2.5",
+ "name": "Westwood Robotics THEMIS TH02 Gen2.5",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.westwoodrobotics.io/themis/",
+ "summary": "A full-size (1.6 m, 36.5 kg) bipedal general-purpose humanoid with 42 DoF, 7-DoF three-finger hands, force-controlled BEAR actuators and hot-swap batteries. It is sold to order as a research and development platform.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Westwood Robotics (Los Angeles) takes orders through its own contact form and online store. No German or EU distributor was found; the maker's FAQ says customers outside the US ship units to its location in China for repairs.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.6,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Height 1.6m"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 36.5,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Weight 36.5kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 42,
+   "unit": null,
+   "conditions": "6 per leg, 7 per arm, 7 per hand, 2 head",
+   "sourceId": "s2",
+   "quote": "42 Total DoF 6 DoF Leg x2 7 DoF Arm x2 7 DoF Hand x2 2 DoF Head"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Payload capacity",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "maximum payload the robot can carry; dynamic model may need adjusting",
+   "sourceId": "s2",
+   "quote": "Payload Capacity is the maximum payload the robot can carry; appropriate adjustments to the robot's dynamic model may be required to achieve stable performance."
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Max walking speed",
+   "value": 5,
+   "unit": "km/h",
+   "conditions": "free-load, flat non-slippery ground",
+   "sourceId": "s2",
+   "quote": "Max. Speed * 5km/h (Walking)"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Max endurance",
+   "value": 2,
+   "unit": "h",
+   "conditions": "120 min walking on flat ground without payload; up to 180 min with the extended-range battery",
+   "sourceId": "s2",
+   "quote": "Endurance: Up to 120 minutes of continuous operation."
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "2 x 259.2 Wh, hot-swap",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Battery System: Dual 259.2 Wh Li-Ion packs supporting hot-swapping for non-stop operation."
+  },
+  {
+   "key": "compute",
+   "label": "Compute",
+   "value": "up to 314 TOPS combined",
+   "unit": null,
+   "conditions": "AMD Ryzen 7840HS main control; Jetson Orin NX 16GB vision computers",
+   "sourceId": "s2",
+   "quote": "Dual Computing Units: Up to 314 TOPS (Combined) for vision, manipulation planning, ground depth mapping, and foot placement."
+  },
+  {
+   "key": "hands",
+   "label": "Hands",
+   "value": "7-DoF three-finger adaptive hands",
+   "unit": null,
+   "conditions": "two hands in the standard configuration",
+   "sourceId": "s2",
+   "quote": "7-DoF Adaptive Hands: Three-finger hands with force control and configurable grasping."
+  },
+  {
+   "key": "support",
+   "label": "Tech support",
+   "value": "6 months included",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "6 months standard support included."
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 15,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Maker OS controlled through LLMs, pseudo-code and AI-assisted teleoperation (brochure)",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Optional liquid cooling for hip and knee actuators for continuous high-load operation.",
+   "Endurance and speed are measured on flat ground without payload."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.westwoodrobotics.io/wp-content/uploads/2025/04/2-1536x2048.png",
+   "pageUrl": "https://www.westwoodrobotics.io/themis/",
+   "credit": "Westwood Robotics",
+   "alt": "Westwood Robotics THEMIS humanoid robot, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Hazardous waste handling and disposal, shown in a maker video",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker video titled 'THEMIS at Work: Hazardous Waste Handling & Disposal'; no construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.westwoodrobotics.io/themis/",
+   "title": "THEMIS - Full-size General Purpose Humanoid Robot",
+   "publisher": "Westwood Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.westwoodrobotics.io/wp-content/uploads/2026/05/THEMIS-2.5-Brochure.pdf",
+   "title": "THEMIS TH02 Gen2.5 brochure",
+   "publisher": "Westwood Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.westwoodrobotics.io/faq/",
+   "title": "FAQ (shipping and repairs)",
+   "publisher": "Westwood Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price: not published on the readable pages; the online store (store.westwoodrobotics.io) could not be read.",
+  "Whether Westwood ships THEMIS to the EU with CE marking.",
+  "Per-arm payload (only a 15 kg carried payload is stated)."
+ ],
+ "checkedAt": "2026-11-18"
+}

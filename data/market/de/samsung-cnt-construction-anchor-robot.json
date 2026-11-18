@@ -1,0 +1,152 @@
+{
+ "schemaVersion": 1,
+ "id": "samsung-cnt-construction-anchor-robot",
+ "maker": "Samsung C&T Corporation (Engineering & Construction Group)",
+ "makerCountry": "KR",
+ "model": "Construction Anchor Robot",
+ "variant": "4th generation",
+ "name": "Samsung C&T Construction Anchor Robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_electrical/overhead-drilling-anchors"
+ ],
+ "officialUrl": "https://secc.co.kr/en/library/tech/smart",
+ "summary": "Mobile robot that drills holes in concrete ceilings and sets anchors (drilling, punching and nailing) for hanging sprinkler pipes and lights, with autonomous and manual driving and a dust collector. Developed by the Korean contractor Samsung C&T for its own sites; the fourth generation has been used on Korean projects since 2023.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not sold: Samsung C&T develops the anchor robot for its own construction sites in Korea; no sale, rental or licence offer was found, in Germany or elsewhere.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "cycle_time_s",
+   "label": "Cycle time per anchor",
+   "value": 115,
+   "unit": "s",
+   "conditions": "4th generation; 3rd generation 140 s",
+   "sourceId": "s1",
+   "quote": "18% reduction in construction cycle time (compared to 3rd generation, from 140 seconds to 115 seconds)"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": 1,
+   "unit": "people",
+   "conditions": "manual anchoring: two people per team",
+   "sourceId": "s1",
+   "quote": "50% reduction in workforce required on site (from two people on one team to one person working)"
+  },
+  {
+   "key": "tasks",
+   "label": "Automated steps",
+   "value": "drilling, punching and nailing of anchors",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Automation of all anchor installation tasks, including drilling, punching, and nailing"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "vision, lidar and laser sensors; automatic dust collection",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Application of vision, lidar, and laser sensors and automatic dust collection device"
+  },
+  {
+   "key": "safety_certificate",
+   "label": "Safety certification",
+   "value": "KCs autonomous safety confirmation report (Korea)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Safety certification through KCs autonomous safety confirmation report"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Driving part combines autonomous and manual driving (maker); wheels and a single drilling unit assumed, the pages do not describe the chassis.",
+   "Built for anchors in concrete ceilings of underground car parks, for hanging sprinkler pipes and lights.",
+   "First generation 2019, third generation 2021, fourth generation in use from March 2023."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Fourth-generation robot drilled and set ceiling anchors on housing projects",
+   "stage": "deployment",
+   "where": "Busan Oncheon 4 (Mar 2023), Hyundai Engineering's Jangan site (Sep 2023), Imun 1 (Oct 2023), South Korea",
+   "date": "2023-10",
+   "sourceId": "s1",
+   "note": "Jamsil Jinju was listed as planned for October 2024. Earlier generations: Pyeongtaek P3 and Asan 7-2L (Aug 2021), Sinbanpo 3 (2021), Busan Geoje 2 (May 2022)."
+  },
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Installs anchors in concrete ceilings to hang sprinkler pipes and lights in underground parking lots; used in the field with a KCs safety certification",
+   "stage": "deployment",
+   "where": "Samsung C&T sites, South Korea",
+   "date": "2022-11",
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://secc.co.kr/en/library/tech/smart",
+   "title": "Smart construction technology library: Construction Robotics (Construction Anchor Robot)",
+   "publisher": "Samsung C&T Engineering & Construction Group",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://news.samsungcnt.com/en/?p=30730",
+   "title": "The rise of the robots in the world of construction (November 2022)",
+   "publisher": "Samsung C&T Newsroom",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Size, weight, drilling height, hole diameter and battery runtime are not published.",
+  "Is the anchor robot offered to other contractors (it was used on a Hyundai Engineering site in 2023)?"
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,271 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-aliengo",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "Aliengo",
+ "variant": null,
+ "name": "Unitree Aliengo",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.unitree.com/aliengo",
+ "summary": "An older mid-size Unitree research quadruped of about 21 kg with depth cameras, open C/C++ and ROS interfaces and room for own payloads such as a lidar or a small arm. Unitree still lists it among its industry robots.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "QUADRUPED Robotics (Bergheim, Germany) lists the QUADRUPED Aliengo at 40,235 € excl. VAT with an add-to-cart button; made to order, about 21 days after the order. MYBOTSHOP lists it with price on request.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 40235,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "\"40.235,00 € exkl. 19% USt.\" plus shipping."
+  },
+  "priceOther": null,
+  "leadTime": "Made to order: \"Ab Bestellung lieferbar in 21 Tagen\"; shown delivery time 23 - 27 working days (quadruped.de)",
+  "sellers": [
+   {
+    "name": "QUADRUPED Robotics (quadruped.de)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.quadruped.de/QUADRUPED-Aliengo",
+    "contactUrl": "https://www.quadruped.de/Kontakt",
+    "email": "info@quadruped.de",
+    "phone": "+49 2271 588 930",
+    "priceEur": 40235,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "\"40.235,00 € exkl. 19% USt.\", \"Muss bestellt werden. Ab Bestellung lieferbar in 21 Tagen.\" Scope of delivery: \"Quadruped Aliengo\"."
+   },
+   {
+    "name": "MYBOTSHOP GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Unitree-Aliengo",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "\"Preis auf Anfrage\", \"Muss bestellt werden. Ab Bestellung lieferbar in 21 Tagen.\" Article MBS-ROB-19; the page points to www.Quadruped.de for more information."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight without battery",
+   "value": 21.5,
+   "unit": "kg",
+   "conditions": "plus or minus 1 kg",
+   "sourceId": "s1",
+   "quote": "Weight (without battery)21.5kg ±1kg"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Load",
+   "value": 13,
+   "unit": "kg",
+   "conditions": "maker figure; the German seller states 10 kg load capacity",
+   "sourceId": "s1",
+   "quote": "Load13kg"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "2.5 to 4.6 h",
+   "sourceId": "s1",
+   "quote": "Endurance2.5-4.6h"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum walking speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": "more than 1.5 m/s",
+   "sourceId": "s1",
+   "quote": "Maximum Walking Speed>1.5m/s"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing angle",
+   "value": 25,
+   "unit": "deg",
+   "conditions": "up to; the seller states 25 to 30 deg",
+   "sourceId": "s1",
+   "quote": "Climbing Angle≤25°"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "650 x 310 x 600",
+   "unit": "mm",
+   "conditions": "folded 600 x 310 x 150 mm",
+   "sourceId": "s1",
+   "quote": "Length*Width*Height（stand）0.65*0.31*0.6m"
+  },
+  {
+   "key": "battery_mah",
+   "label": "Battery capacity",
+   "value": 12600,
+   "unit": "mAh",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery Capacity12600mAh"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection class",
+   "value": "IP54",
+   "unit": null,
+   "conditions": "seller figure",
+   "sourceId": "s2",
+   "quote": "IP class: IP54"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensing",
+   "value": "2 depth cameras and 1 visual odometry camera; single or multi-line lidar optional",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Sensing FunctionDepth Camera (2), Visual Odometer Camera (1)Lidar: Single or Multi-line (optional)"
+  },
+  {
+   "key": "interfaces",
+   "label": "External interfaces",
+   "value": "Ethernet x2, USB 3.0 x2, USB 2.0 x1, RS485 x1; power out 5 V, 12 V, 19 V and battery voltage",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "External interfaces include: Ethernet port x2, USB 3.0x2, USB 2.0x1, 485 port x1."
+  },
+  {
+   "key": "sdk",
+   "label": "Software interface",
+   "value": "High-level and low-level control interfaces, C/C++ and ROS",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The software control interface is divided into high-level interface and the underlying interface control interface supports C/C++, ROS, etc."
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 13,
+  "runtimeH": 2.5,
+  "ipRating": "IP54",
+  "sdk": "C/C++ and ROS (high-level and low-level interfaces)",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A research platform from Unitree's older generation; the newer B2 and A2 are separate records.",
+   "Maker says users can mount their own modules such as cameras, lidar, robotic arms or GPS; none is included.",
+   "Load is 13 kg in Unitree's table and 10 kg in the German seller's table."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.quadruped.de/media/image/product/34/lg/quadruped-aliengo.jpg",
+   "pageUrl": "https://www.quadruped.de/QUADRUPED-Aliengo",
+   "credit": "QUADRUPED Robotics",
+   "alt": "Unitree Aliengo quadruped robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "it has strong multi-terrain adaptability and can operate stably on rugged gravel roads and grassland roads.",
+   "basis": "maker description",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "it has strong multi-terrain adaptability and can operate stably on rugged gravel roads and grassland roads.",
+   "basis": "maker description of outdoor terrain; IP54 per the German seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Up and down steps, slopes, stairs",
+   "basis": "maker sports-function list",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "carry_payload_kg",
+   "value": 13,
+   "sourceId": "s1",
+   "quote": "Load13kg",
+   "basis": "maker spec table",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "ip_rating",
+   "value": "IP54",
+   "sourceId": "s2",
+   "quote": "IP class: IP54",
+   "basis": "German seller spec table",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.unitree.com/aliengo",
+   "title": "Unitree Aliengo",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.quadruped.de/QUADRUPED-Aliengo",
+   "title": "QUADRUPED Aliengo",
+   "publisher": "QUADRUPED Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.mybotshop.de/Unitree-Aliengo",
+   "title": "Unitree Aliengo",
+   "publisher": "MYBOTSHOP GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Launch year not stated on the pages read.",
+  "Whether the seller's price includes the developer version with onboard PC and lidar."
+ ],
+ "checkedAt": "2026-11-18"
+}

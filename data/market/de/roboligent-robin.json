@@ -1,0 +1,192 @@
+{
+ "schemaVersion": 1,
+ "id": "roboligent-robin",
+ "maker": "Roboligent",
+ "makerCountry": "US",
+ "model": "Robin",
+ "variant": null,
+ "name": "Roboligent Robin",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.roboligent.com/robin/",
+ "summary": "A wheeled two-armed robot with a head camera, compliant force-controlled 7-DOF arms (7 kg single arm, 14 kg dual arm) and a lifting column reaching from floor to 2 m, aimed at tote handling, kitting and line-side work. It is offered only as a subscription with pilot, deploy and expand stages.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Roboligent (Round Rock, Texas) provides Robin under a subscription service agreement, not as a sale. Safety certification is still under way per target market. No German or EU route was found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload, single arm",
+   "value": 7,
+   "unit": "kg",
+   "conditions": "14 kg dual arm",
+   "sourceId": "s1",
+   "quote": "7 / 14 kg Payload, single arm / dual arm"
+  },
+  {
+   "key": "both_arms_payload_kg",
+   "label": "Payload, dual arm",
+   "value": 14,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "7 / 14 kg Payload, single arm / dual arm"
+  },
+  {
+   "key": "reach_m",
+   "label": "Maximum reach per arm",
+   "value": 1,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1,000 mm Maximum reach per arm"
+  },
+  {
+   "key": "pick_height_range",
+   "label": "Pick-and-place height range",
+   "value": "floor to 2 m",
+   "unit": null,
+   "conditions": "on the motorized lifting column",
+   "sourceId": "s1",
+   "quote": "Floor to 2 m Pick-and-place height range, on the motorized lifting column"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 0.6,
+   "unit": "m/s",
+   "conditions": "software-limited from 1.2 m/s for operation around people",
+   "sourceId": "s1",
+   "quote": "0.6 m/s Software-limited from 1.2 m/s for operation around people"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Typical runtime",
+   "value": "6-12",
+   "unit": "h",
+   "conditions": "depending on battery option",
+   "sourceId": "s1",
+   "quote": "6–12 hr Typical runtime, depending on battery option"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Total weight",
+   "value": 105,
+   "unit": "kg",
+   "conditions": "680 x 600 mm footprint",
+   "sourceId": "s1",
+   "quote": "105 kg Total weight, 680 × 600 mm footprint"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Environment",
+   "value": "IP20, indoor dry use, 10-32 °C",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Indoor, dry use. 10–32 °C, IP20"
+  },
+  {
+   "key": "end_effector",
+   "label": "End effector",
+   "value": "parallel gripper, 120 mm stroke; five-finger hand available",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Parallel gripper, 120 mm stroke, swappable contact surfaces"
+  },
+  {
+   "key": "two_arm_lift_kg",
+   "label": "Two-arm hug lift",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "items hugged between both arms",
+   "sourceId": "s2",
+   "quote": "Hugging items between both arms up to 20 kg."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 7,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": "IP20",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Factory default is a parallel gripper; a five-finger hand is available for dexterous work.",
+   "Indoor, dry use only (IP20, 10-32 °C).",
+   "New tasks are taught in VR with about a hundred demonstrations (maker claim)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Tote and container handling between conveyors, racks and carts at live pick stations alongside human workers",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker calls logistics and fulfillment its main application; no named customer site is given."
+  },
+  {
+   "taskIds": [],
+   "task": "Part sequencing, kitting and line-side delivery in automotive and manufacturing",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.roboligent.com/robin/",
+   "title": "Robin specs",
+   "publisher": "Roboligent",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.roboligent.com/",
+   "title": "Roboligent home page (applications, subscription)",
+   "publisher": "Roboligent",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Subscription price and whether Roboligent will offer Robin in Europe.",
+  "Named pilot customers and sites."
+ ],
+ "checkedAt": "2026-11-18"
+}

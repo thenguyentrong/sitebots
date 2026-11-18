@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "cybe-gr",
+ "maker": "CyBe Construction",
+ "makerCountry": "NL",
+ "model": "CyBe GR",
+ "variant": "Gantry Robot",
+ "name": "CyBe GR (Gantry Robot)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-gantry-robot/",
+ "summary": "Large stationary gantry 3D concrete printer (six columns, three beams, about 13 t) for printing modular room units and large elements in a factory, which are finished off-site and set on site.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (Netherlands) sells directly through its sales team and contact form, with a published 'price from' figure ex works; no German distributor found. CyBe says it distributes worldwide and the printers are modular for transport.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": {
+   "amount": 485000,
+   "basis": "unknown",
+   "kind": "from",
+   "sourceId": "s2",
+   "note": "'Price from €485,000*' with '*Price ex works, based on standard dimensions'; tax basis not stated. The FAQ on the same page gives 'CyBe G (Gantry) €285,000 Ex Works'."
+  },
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "CyBe Construction B.V.",
+    "country": "NL",
+    "role": "manufacturer",
+    "productUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-gantry-robot/",
+    "contactUrl": "https://cybe.eu/contact/",
+    "email": null,
+    "phone": "+31 412 676 030",
+    "priceEur": 485000,
+    "priceBasis": "unknown",
+    "sourceId": "s2",
+    "note": "Oss, Netherlands; the contact form has the option 'I want to buy a printer'. Price is ex works, standard dimensions; transport and import taxes are paid by the buyer."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "print_area_m",
+   "label": "Print range L × W × H (standard)",
+   "value": "7 × 10 × 4",
+   "unit": "m",
+   "conditions": "dimensions customizable",
+   "sourceId": "s1",
+   "quote": "7 m x 10 m x 4 m (standard)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 13000,
+   "unit": "kg",
+   "conditions": "'close to 13 tons'",
+   "sourceId": "s1",
+   "quote": "Consisting of 6 columns and 3 beams, the CyBe GR weighs close to 13 tons."
+  },
+  {
+   "key": "speed_horizontal_mms",
+   "label": "Speed, horizontal",
+   "value": 500,
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "At 500 mm/s for horizontal movement and 40 mm/s for vertical movement"
+  },
+  {
+   "key": "speed_vertical_mms",
+   "label": "Speed, vertical",
+   "value": 40,
+   "unit": "mm/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "At 500 mm/s for horizontal movement and 40 mm/s for vertical movement"
+  },
+  {
+   "key": "frame",
+   "label": "Frame",
+   "value": "6 columns and 3 beams",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Consisting of 6 columns and 3 beams"
+  },
+  {
+   "key": "crew",
+   "label": "Operating crew",
+   "value": 2,
+   "unit": "people",
+   "conditions": "stated for CyBe printers in general",
+   "sourceId": "s4",
+   "quote": "The printer is operated by just two persons"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Fixed gantry; prints anywhere inside its frame, in a factory hall.",
+   "CyBe uses it for its PPVC method: room modules printed and fitted out off-site, then set on site.",
+   "Needs a mortar mixing and pumping unit (CyBe Mortar Gantry)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://x8k3m3a8.rocketcdn.me/wp-content/uploads/2019/10/CyBe-GR.jpeg",
+   "pageUrl": "https://cybe.eu/3d-concrete-printing/printers/cybe-gantry-robot/",
+   "credit": "CyBe Construction",
+   "alt": "CyBe GR gantry 3D concrete printer",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Prints modular, finished housing units in series for off-site PPVC construction",
+   "stage": "claim",
+   "where": "CyBe Construction Centers",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker statement; no customer or site named on the page."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/cybe-gantry-robot/",
+   "title": "The CyBe GR 3D Concrete Printer",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/",
+   "title": "3D concrete printers (models and prices)",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://cybe.eu/contact/",
+   "title": "Contact",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://cybe.eu/3d-concrete-printing/printers/cybe-robot-track/",
+   "title": "The CyBe RT 3D Concrete Printer (FAQ on delivery and operation)",
+   "publisher": "CyBe Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which price applies: 'from €485,000' (product list) or '€285,000 Ex Works' (FAQ)?",
+  "Named customer installations of the CyBe GR.",
+  "CE marking and German service partner."
+ ],
+ "checkedAt": "2026-11-18"
+}

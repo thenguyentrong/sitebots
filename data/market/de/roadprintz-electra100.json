@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "roadprintz-electra100",
+ "maker": "RoadPrintz Inc.",
+ "makerCountry": "US",
+ "model": "Electra100",
+ "variant": null,
+ "name": "RoadPrintz Electra100",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking"
+ ],
+ "officialUrl": "https://roadprintz.com/electra100/",
+ "summary": "Truck-mounted robotic system that lays out and paints detail road markings such as turn arrows, stop bars, crosswalks and words without stencils. A Yaskawa industrial robot arm on a Ford F-550 paints while the single operator stays in the cab and controls it from a touchscreen.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold and rented from the USA; customers in Canada and Mexico are served from the US. The maker says it is looking for partners in the EU but names none, so there is no German or EU sales route yet.",
+  "sourceIds": [
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "generation",
+   "label": "Generation",
+   "value": "fourth-generation system",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Our current model, Electra100, is a fourth generation system designed to robotically put down detail pavement markings."
+  },
+  {
+   "key": "carrier",
+   "label": "Carrier vehicle",
+   "value": "Ford F-550 truck",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Our robotic painting system is built on the proven Ford F550 commercial truck platform"
+  },
+  {
+   "key": "robot_arm",
+   "label": "Robot arm",
+   "value": "Yaskawa industrial robot arm, paints across an entire lane",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The most unique feature of the system is a Yaskawa industrial robotic arm.  The robot easily paints across an entire lane."
+  },
+  {
+   "key": "symbol_library",
+   "label": "Symbol library",
+   "value": "over 45 MUTCD symbols",
+   "unit": null,
+   "conditions": "turn arrows, stop bars, ONLY, BUS and more; up to 5 custom symbols in the first year",
+   "sourceId": "s3",
+   "quote": "Our System comes with a library of over 45 MUTCD symbols including turn arrows, stop bars, ONLY, BUS, and many more"
+  },
+  {
+   "key": "turn_arrow_time_min",
+   "label": "Time to paint a turn arrow",
+   "value": 3,
+   "unit": "min",
+   "conditions": "less than 3 minutes (maker)",
+   "sourceId": "s1",
+   "quote": "A turn arrow takes less than 3 minutes to paint."
+  },
+  {
+   "key": "paint_capacity",
+   "label": "Paint capacity",
+   "value": "five 5-gallon buckets, two paint sources",
+   "unit": null,
+   "conditions": "plus glass bead tank and water flushing tank",
+   "sourceId": "s2",
+   "quote": "The RoadPrintz system holds up to five 5-gallon paint buckets.  The robot is able to switch between two paint sources."
+  },
+  {
+   "key": "paints",
+   "label": "Marking materials",
+   "value": "waterborne latex, solvent-based acrylic and chalk-based temporary paints",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The robotic detail pavement marking system uses waterborne latex traffic paints, solvent-based acrylic traffic paints and chalk based temporary marking paints."
+  },
+  {
+   "key": "crew",
+   "label": "Operators",
+   "value": 1,
+   "unit": "people",
+   "conditions": "a following support vehicle is recommended",
+   "sourceId": "s3",
+   "quote": "A single operator can drive to the location, paint the symbol and place traffic cones on the pavement without exiting the truck cab."
+  },
+  {
+   "key": "safety",
+   "label": "Safety",
+   "value": "four hard-wired e-stops, one portable remote e-stop, LiDAR work-zone monitoring",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s5",
+   "quote": "Besides being equipped with four hard-wired Emergency Stops and one portable remote E-Stop, the system includes a LiDAR-based workzone safety system which automatically halts the robot when any intrusion into the workzone is detected."
+  },
+  {
+   "key": "purchase_terms",
+   "label": "Purchase terms",
+   "value": "50 % deposit, balance on delivery; delivery and taxes extra",
+   "unit": null,
+   "conditions": "price on request; rental also offered",
+   "sourceId": "s3",
+   "quote": "50% deposit, balance due upon delivery"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s5"
+  ],
+  "notes": [
+   "Paints transverse and detail markings (symbols, legends, crosswalks, bike lanes), not long lines along the kerb (maker FAQ).",
+   "Also helps with layout, logs the position and heading of each symbol and the paint and bead use, and can set out traffic cones; it does not pick them up.",
+   "Layout and painting can be done at night (maker).",
+   "specialisedFor uses layout_marking because the system lays out and paints road markings; there is no road-marking job id."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://roadprintz.com/wp-content/uploads/2026/02/rp_payne_ave_1.8.26.jpeg",
+   "pageUrl": "https://roadprintz.com/electra100/",
+   "credit": "RoadPrintz Inc.",
+   "alt": "White RoadPrintz Ford truck with a blue robot arm at the rear painting a green bike-lane marking on a street",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Paints crosswalks in live traffic from the truck, no crew on the road",
+   "stage": "deployment",
+   "where": "Downtown Cleveland, Ohio, USA",
+   "date": null,
+   "sourceId": "s6",
+   "note": "Maker video and customer quotes from road crews in Cleveland, Houston and St. Louis on the maker homepage."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://roadprintz.com/electra100/",
+   "title": "Electra100 – Robotic Detail Pavement Marking System",
+   "publisher": "RoadPrintz Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://roadprintz.com/technology/",
+   "title": "Our Technology",
+   "publisher": "RoadPrintz Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://roadprintz.com/purchase/",
+   "title": "Purchase A Robotic Detail Pavement Marking System",
+   "publisher": "RoadPrintz Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://roadprintz.com/international/",
+   "title": "Serving International Customers",
+   "publisher": "RoadPrintz Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://roadprintz.com/faq/",
+   "title": "FAQ",
+   "publisher": "RoadPrintz Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s6",
+   "url": "https://roadprintz.com/",
+   "title": "RoadPrintz – Robotic Detail Road Painting",
+   "publisher": "RoadPrintz Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Purchase and rental price (both on request).",
+  "Is the symbol library adaptable to German road markings (RMS) instead of US MUTCD symbols?",
+  "Which EU partner, if any, will sell it; no CE information found."
+ ],
+ "checkedAt": "2026-11-18"
+}

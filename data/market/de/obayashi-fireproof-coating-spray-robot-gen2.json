@@ -1,0 +1,166 @@
+{
+ "schemaVersion": 1,
+ "id": "obayashi-fireproof-coating-spray-robot-gen2",
+ "maker": "Obayashi Corporation",
+ "makerCountry": "JP",
+ "model": "Fireproof coating spray robot",
+ "variant": "second generation",
+ "name": "Obayashi fireproof coating spray robot (2nd generation)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying"
+ ],
+ "officialUrl": "https://www.obayashi.co.jp/en/news/detail/news20240129_2_en.html",
+ "summary": "Self-moving robot with a six-axis arm on a lifting and sideways carriage that sprays semi-dry rockwool fireproof coating onto steel beams on building sites. Developed by the Japanese contractor Obayashi for its own projects; the second generation went into use in Tokyo in November 2023.",
+ "launched": "2023-11",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not sold: Obayashi developed the robot for its own construction sites in Japan. It says it hopes other companies will use such spray robots in future, but no sale, rental or licence offer was found, in Germany or elsewhere.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "size_mm",
+   "label": "Size (width × depth × height)",
+   "value": "2,800 × 1,200 × 1,500",
+   "unit": "mm",
+   "conditions": "first generation 3,300 × 1,300 × 1,500 mm",
+   "sourceId": "s1",
+   "quote": "2,800×1,200×1,500mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 1850,
+   "unit": "kg",
+   "conditions": "first generation 2,350 kg",
+   "sourceId": "s1",
+   "quote": "1,850kg"
+  },
+  {
+   "key": "floor_height_mm",
+   "label": "Supported floor height",
+   "value": "5,500 or less",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "5,500 mm or less"
+  },
+  {
+   "key": "beam_height_mm",
+   "label": "Supported beam height",
+   "value": "1,500 or less",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1,500 mm or less"
+  },
+  {
+   "key": "spray_width_mm",
+   "label": "Maximum spraying width",
+   "value": 3400,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "3,400mm"
+  },
+  {
+   "key": "coating_thickness_mm",
+   "label": "Coating thickness",
+   "value": "25 (1 h), 45 (2 h), 60 (3 h)",
+   "unit": "mm",
+   "conditions": "fire protection rating in brackets",
+   "sourceId": "s1",
+   "quote": "The robot can spray fireproof coatings for one-hour protection (25 mm thick), two-hour protection (45 mm thick), and three-hour protection (60 mm thick)"
+  },
+  {
+   "key": "method",
+   "label": "Spraying method",
+   "value": "semi-dry rockwool (rockwool and cement slurry mixed at the nozzle)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Semi-dry rockwool spraying methodA method for applying fireproof coating in which rockwool and cement slurry are mixed together at the tip of a spray nozzle and sprayed onto a steel surface."
+  },
+  {
+   "key": "components",
+   "label": "Components",
+   "value": "travel device, lifting device, transverse device, six-axis industrial robot arm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Travel device, lifting device, transverse deviceSix-axis industrial robot arm"
+  },
+  {
+   "key": "output",
+   "label": "Output",
+   "value": "about the same area per day as a skilled sprayer",
+   "unit": null,
+   "conditions": "maker statement for the robot family",
+   "sourceId": "s1",
+   "quote": "The fireproof coating spray robots can spray roughly the same area per day as a skilled sprayer"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Moves autonomously along pre-registered task data to each spraying position and starts spraying; the second generation fixes its position with the resection method used in surveying.",
+   "From April 2024 a measuring function senses the steel beams and corrects the relative error between robot and beam before spraying (maker plan).",
+   "500 mm narrower and 500 kg lighter than the 2019 first generation, so it fits temporary site lifts more easily.",
+   "Travel device named by the maker; wheels assumed, not stated."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Sprays rockwool fireproof coating onto the steel beams of office buildings; expected to coat over 9,000 m² by the end of FY2023",
+   "stage": "deployment",
+   "where": "Construction sites in Tokyo, Japan",
+   "date": "2023-11",
+   "sourceId": "s1",
+   "note": "First-generation robots (2019) were already in use on several medium- to high-rise office projects."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.obayashi.co.jp/en/news/detail/news20240129_2_en.html",
+   "title": "Obayashi Develops a New Fireproof Coating Spray Robot for Wider Use on Construction Sites (29 January 2024)",
+   "publisher": "Obayashi Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Has Obayashi offered the robot to other contractors, as it says it hopes to? No offer or price found.",
+  "Spraying rate per hour and crew size are not stated, only 'roughly the same area per day as a skilled sprayer'.",
+  "No use-case id fits fireproof coating of steel beams; evidence has no taskIds."
+ ],
+ "checkedAt": "2026-11-18"
+}

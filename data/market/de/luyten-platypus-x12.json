@@ -1,0 +1,145 @@
+{
+ "schemaVersion": 1,
+ "id": "luyten-platypus-x12",
+ "maker": "LUYTEN 3D",
+ "makerCountry": "AU",
+ "model": "PLATYPUS X12",
+ "variant": null,
+ "name": "LUYTEN PLATYPUS X12",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.luyten3d.com/platypus-x12",
+ "summary": "Flagship mobile crane-type 3D concrete printer from Melbourne, Australia: unfolds in about 20 minutes to a 12 m wide, 6 m high printing frame of customisable length and prints whole houses or structural shells on site.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold by enquiry from the Australian maker; it lists sales countries such as the UK, Japan, Turkey, the UAE and the USA but no Germany or EU country, and no EU distributor or CE statement was found. No price on the page.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "print_width_m",
+   "label": "Print width",
+   "value": 12,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "With a 12 m width, 6 m height, and customisable length"
+  },
+  {
+   "key": "print_height_m",
+   "label": "Print height",
+   "value": 6,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "With a 12 m width, 6 m height, and customisable length"
+  },
+  {
+   "key": "unfold_min",
+   "label": "Unfolding time",
+   "value": 20,
+   "unit": "min",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Robotic transformer, only takes 20 minutes to unfold to complete size"
+  },
+  {
+   "key": "extruder",
+   "label": "Extruder",
+   "value": "TURISOPS (Tursiops) extruding mechanism",
+   "unit": null,
+   "conditions": "optional Tursiops extruder and extended rail length in the enquiry form",
+   "sourceId": "s1",
+   "quote": "proprietary TURISOPS extruding mechanism"
+  },
+  {
+   "key": "pump_options",
+   "label": "Mixing and pump options",
+   "value": "medium pump, medium pump and mixer, medium mixer, 2.5 t or 3.5 t silo",
+   "unit": null,
+   "conditions": "enquiry-form options",
+   "sourceId": "s1",
+   "quote": "Medium PumpMedium Pump & MixerMedium Mixer2.5 Ton Silo3.5 Ton Silo"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Crane-type frame that folds for transport and unfolds on site; length set by the rail length.",
+   "Control software uses reinforcement learning to check layer quality (maker).",
+   "Running gear and weight are not stated."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printing a 350 m² multi-storey house, including a lift core, in summer heat of 35–42 °C",
+   "stage": "pilot",
+   "where": "Melbourne outer suburbs, Victoria, Australia",
+   "date": "2025-02",
+   "sourceId": "s2",
+   "note": "Maker press text; the house is for LUYTEN's CEO and was expected to be finished in 5 weeks."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.luyten3d.com/platypus-x12",
+   "title": "PLATYPUS X12",
+   "publisher": "LUYTEN 3D",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.luyten3d.com/multi-storey-3d-printed-home",
+   "title": "Australia's first multi-storey 3D printed home built with AI technology",
+   "publisher": "LUYTEN 3D",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.luyten3d.com/3d-concrete-printing-united-kingdom",
+   "title": "3D construction printing UK",
+   "publisher": "LUYTEN 3D",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, weight and transport size of the X12.",
+  "Does LUYTEN sell to Germany or the EU, and is the machine CE-marked?"
+ ],
+ "checkedAt": "2026-11-18"
+}

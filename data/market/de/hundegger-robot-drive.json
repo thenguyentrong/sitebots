@@ -1,0 +1,209 @@
+{
+ "schemaVersion": 1,
+ "id": "hundegger-robot-drive",
+ "maker": "Hans Hundegger AG",
+ "makerCountry": "DE",
+ "model": "ROBOT-Drive",
+ "variant": null,
+ "name": "Hundegger ROBOT-Drive",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "prefab_timber/cnc-joinery-cutting"
+ ],
+ "officialUrl": "https://www.hundegger.com/en/machines/joinery-machines/robot-drive",
+ "summary": "Timber joinery machine whose patented 6-axis robot unit with tool changer saws, mills, drills and slots beams, glulam and CLT on all six sides in one pass, helped by an overhead 5-axis saw unit. Built by Hundegger in Hawangen, Germany, in 450, 650 and 1300 mm processing widths.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker; sold on request from its headquarters in Hawangen (Allgäu), with configuration agreed with Hundegger engineers before purchase. No price is published. A German contract-joinery firm near Munich runs one.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Hans Hundegger AG",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.hundegger.com/en/machines/joinery-machines/robot-drive",
+    "contactUrl": "https://www.hundegger.com/en/contact",
+    "email": "info.de@hundegger.com",
+    "phone": "+49 8332 9233 0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Kemptener Straße 1, 87749 Hawangen, Germany. Service hotline +49 8332 9233 8000. Price on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "cross_section_mm",
+   "label": "Timber cross-section",
+   "value": "20 × 60 to 300 × 1,300",
+   "unit": "mm",
+   "conditions": "ROBOT-Drive 1300; the 450 and 650 versions go up to 300 × 450 and 300 × 650 mm",
+   "sourceId": "s1",
+   "quote": "Cross sections from 20 x 60 mm up to 300 x 1,300 mm"
+  },
+  {
+   "key": "versions",
+   "label": "Versions",
+   "value": "ROBOT-Drive 450, 650 and 1300",
+   "unit": null,
+   "conditions": "differ in processing width",
+   "sourceId": "s1",
+   "quote": "The three basic versions of the ROBOT-Drive with different processing widths:"
+  },
+  {
+   "key": "robot_unit_power_kw",
+   "label": "Robot unit power",
+   "value": 12,
+   "unit": "kW",
+   "conditions": "standard spindle, 0 to 12,000 rpm",
+   "sourceId": "s1",
+   "quote": "The ROBOT unit with a standard power rating of 12 kW and infinitely variable speed from 0 to 12,000 rpm caters for every need."
+  },
+  {
+   "key": "high_performance_spindle_kw",
+   "label": "Optional spindle",
+   "value": 29,
+   "unit": "kW",
+   "conditions": "water-cooled, up to 15,000 rpm",
+   "sourceId": "s1",
+   "quote": "the robot unit can alternatively be equipped with a water-cooled 29 kW high-performance spindle with up to 15,000 rpm"
+  },
+  {
+   "key": "saw_unit_kw",
+   "label": "5-axis saw/slot/marking unit",
+   "value": 13,
+   "unit": "kW",
+   "conditions": "overhead unit working in parallel with the robot",
+   "sourceId": "s1",
+   "quote": "The overhead 5-axis saw/slot/marking unit with a drive rating of 13 kW further increases the throughput of the ROBOT-Drive."
+  },
+  {
+   "key": "tool_slots",
+   "label": "Tools in the changer",
+   "value": 24,
+   "unit": "tools",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "6-axis technology = utilization of 24 different tools"
+  },
+  {
+   "key": "sides_per_pass",
+   "label": "Sides machined per pass",
+   "value": 6,
+   "unit": "sides",
+   "conditions": "no turning of the part",
+   "sourceId": "s1",
+   "quote": "6-axis technology = processing on 6 sides in a single pass"
+  },
+  {
+   "key": "max_timber_length_m",
+   "label": "Timber length with automatic infeed",
+   "value": 10,
+   "unit": "m",
+   "conditions": "at infeed and outfeed end; can be extended",
+   "sourceId": "s1",
+   "quote": "with max. timber length of 10.00 m (at infeed and outfeed end)*"
+  },
+  {
+   "key": "operations",
+   "label": "Operations",
+   "value": "trimming, grooving, drilling, milling, slotting, marking",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Trimming, grooving, drilling, milling, slotting or marking"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Stationary machine in the joinery hall; the 6-axis robot unit carries the machining spindle, so 'arm' here is the robot unit, not a gripper.",
+   "Options include drilling units, slot cutter, labelling system, short-part conveyor and automatic infeed with lift table.",
+   "Runs on Hundegger's CAMBIUM software, which links it with storage and feeding systems.",
+   "Uses: carpentry joinery, timber frame, log house, glulam and CLT joinery (maker)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.hundegger.com/fileadmin/_processed_/f/2/csm_ROBOT-Drive_2023_c18523dbbf.png",
+   "pageUrl": "https://www.hundegger.com/en/machines/joinery-machines/robot-drive",
+   "credit": "Hans Hundegger AG",
+   "alt": "Hundegger ROBOT-Drive joinery machine, yellow enclosed cell with control desk and blue timber infeed and outfeed conveyors",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "prefab_timber/cnc-joinery-cutting"
+   ],
+   "task": "Contract joinery for regional carpentry firms with a Robot-Drive and a K2-Industry",
+   "stage": "deployment",
+   "where": "Zech Holzbau, Sauerlach (south of Munich), Germany",
+   "date": "2023-08",
+   "sourceId": "s3",
+   "note": "Article says the Robot-Drive was bought about four years earlier; that machine has an 18-tool magazine and the extra 13 kW saw unit."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.hundegger.com/en/machines/joinery-machines/robot-drive",
+   "title": "Joinery machine ROBOT-Drive",
+   "publisher": "Hans Hundegger AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.hundegger.com/en/contact",
+   "title": "Contact (headquarters Hawangen and branch offices)",
+   "publisher": "Hans Hundegger AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.timber-online.net/timber_construction/2023/08/contract-joining-as-recipe-for-success.html",
+   "title": "Contract joining as recipe for success (Zech Holzbau)",
+   "publisher": "Timber-Online (Holzkurier)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No list price or new-unit price found; what does a ROBOT-Drive 450, 650 or 1300 cost?",
+  "Delivery time for a new machine is not stated.",
+  "Tool count differs: 24 on the product page, 18 on the unit described at Zech Holzbau (older or different configuration?)."
+ ],
+ "checkedAt": "2026-11-18"
+}

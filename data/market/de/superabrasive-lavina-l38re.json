@@ -1,0 +1,220 @@
+{
+ "schemaVersion": 1,
+ "id": "superabrasive-lavina-l38re",
+ "maker": "Superabrasive",
+ "makerCountry": "US",
+ "model": "Lavina L38RE",
+ "variant": "EU model L38REUB (3 phase, 380-400 V)",
+ "name": "Lavina L38RE remote-controlled grinder",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors"
+ ],
+ "officialUrl": "https://superabrasive.com/product/l38reb-grinder/",
+ "summary": "Large electric planetary concrete grinder (923 mm working width, 18.5 kW) that the operator drives from a two-joystick remote control or walks behind; launched by Superabrasive in 2026 and sold in Germany by F&V Flooring Solutions.",
+ "launched": "2026",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German Lavina distributor F&V Flooring Solutions (Altendiez) lists the EU model L38REUB with a data sheet but no price; Superabrasive sells only through distributors. The only list price is the US MSRP of the US high-voltage model.",
+  "sourceIds": [
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 43990,
+   "currency": "USD",
+   "market": "US MSRP of the US high-voltage model L38REHVB",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "F&V Flooring Solutions GmbH & Co. KG",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://fav-huv.de/produkte/lavina-s7-serie.html",
+    "contactUrl": "https://fav-huv.de/impressum.html",
+    "email": "info@fav-huv.de",
+    "phone": "+49 6432 952 9640",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Named by Superabrasive as its distributor for Germany and Austria; lists \"L38REUB Arbeitsbreite 923mm\" with a German data sheet. No price on the page."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "motor_power_kw",
+   "label": "Motor",
+   "value": 18.5,
+   "unit": "kW",
+   "conditions": "25 HP",
+   "sourceId": "s1",
+   "quote": "Horsepower: 25 HP / 18.5 KW"
+  },
+  {
+   "key": "eu_supply",
+   "label": "EU model and supply",
+   "value": "L38REUB, 3 phase, 380-400 V, 35 A",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "EU Model: L38REUB – 3 phase, 380-400V, 35A"
+  },
+  {
+   "key": "working_width_mm",
+   "label": "Working width",
+   "value": 923,
+   "unit": "mm",
+   "conditions": "German distributor figure; maker gives 36.5 in",
+   "sourceId": "s3",
+   "quote": "L38REUB Arbeitsbreite 923mm"
+  },
+  {
+   "key": "tool_speed_rpm",
+   "label": "Tool holder speed",
+   "value": "400-1100",
+   "unit": "rpm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Tool Holder RPM: 400-1100 rpm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 728,
+   "unit": "kg",
+   "conditions": "1,605 lb",
+   "sourceId": "s1",
+   "quote": "1605 lbs / 728 kg"
+  },
+  {
+   "key": "grinding_pressure_kg",
+   "label": "Grinding pressure",
+   "value": "245-392",
+   "unit": "kg",
+   "conditions": "with 3rd wheel",
+   "sourceId": "s1",
+   "quote": "Grinding pressure (w/ 3rd wheel): 540-864 lbs / 245-392 kg"
+  },
+  {
+   "key": "heads",
+   "label": "Tool holder heads",
+   "value": "3 × 335 mm",
+   "unit": null,
+   "conditions": "left rotation",
+   "sourceId": "s1",
+   "quote": "Tool Holder Heads: 3 x 13.2-inch / 335-mm"
+  },
+  {
+   "key": "water_tank_l",
+   "label": "Water tank",
+   "value": 46,
+   "unit": "l",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Water Tank: 12 gal / 46 L"
+  },
+  {
+   "key": "drive_battery",
+   "label": "Drive power",
+   "value": "dual AGM battery for the machine drive",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Powered by a robust dual AGM battery setup for the machine drive"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Remote-controlled, not autonomous: remote with emergency stop, two joysticks and switches for engine rpm, tool direction, speed and swing correction; shows voltage, battery, load, rpm and maintenance alerts.",
+   "Can be switched to manual walk-behind mode at any time; removable magnetic key switch.",
+   "Battery-driven wheels and an integrated transport wheel; mains-powered grinding head."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://superabrasive.com/wp-content/uploads/2026/06/L38RE-side-web.jpg",
+   "pageUrl": "https://superabrasive.com/product/l38reb-grinder/",
+   "credit": "Superabrasive",
+   "alt": "Lavina L38RE remote-controlled floor grinder, side view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors"
+   ],
+   "task": "Grinding hard concrete surfaces in large commercial jobs (maker statement)",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://superabrasive.com/product/l38reb-grinder/",
+   "title": "L38REHVB Floor Grinder",
+   "publisher": "Superabrasive Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://superabrasive.com/new-38-remote-grinder/",
+   "title": "New Lavina 38 Remote Control Grinder",
+   "publisher": "Superabrasive Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://fav-huv.de/produkte/lavina-s7-serie.html",
+   "title": "Lavina S7 Serie Bodenschleifmaschinen (L38REUB, L31RS7, L25RS7)",
+   "publisher": "F&V Flooring Solutions GmbH & Co. KG",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://superabrasive.com/distributors/",
+   "title": "Superabrasive Distributors (Germany: F&V Flooring Solutions)",
+   "publisher": "Superabrasive Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "EU price of the L38REUB: ask F&V Flooring Solutions.",
+  "Superabrasive also has a factory office in Krun, Bulgaria; whether EU units ship from there is not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

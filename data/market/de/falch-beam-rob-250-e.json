@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "falch-beam-rob-250-e",
+ "maker": "Falch GmbH",
+ "makerCountry": "DE",
+ "model": "beam rob 250 e",
+ "variant": null,
+ "name": "Falch beam rob 250 e",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_concrete_repair/hydrodemolition"
+ ],
+ "officialUrl": "https://www.falch.com/en/product/beam-rob-250-e-z0000757",
+ "summary": "Fully automatic electric water-jetting robot from Falch that moves the jet along a beam axis at up to 3,000 bar; Falch lists it among its robots for concrete renovation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "German maker near Ulm; the product page shows 'ask for price' and a product hotline. Falch says it has rental, sales and service points across Europe; the beam rob is for rent only as a trailer version.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Falch GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.falch.com/en/product/beam-rob-250-e-z0000757",
+    "contactUrl": "https://www.falch.com/en/product/beam-rob-250-e-z0000757",
+    "email": null,
+    "phone": "+49 7344 9244-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Street of water jetting 1, 89143 Blaubeuren-Seissen. Price on request ('ask for price'); product hotline +49 7344 9244-4148. Rental only as trailer version."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "working_pressure_bar",
+   "label": "Working pressure",
+   "value": 3000,
+   "unit": "bar",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "working pressure 3000 bar (43511 psi)"
+  },
+  {
+   "key": "jetting_area_x_m",
+   "label": "Jetting area (x)",
+   "value": "from 1.7",
+   "unit": "m",
+   "conditions": "maker shows '1,7 – …' for x and '-' for y",
+   "sourceId": "s1",
+   "quote": "jetting area (x / y) 1,7 – … / - m"
+  },
+  {
+   "key": "max_recoil_force_n",
+   "label": "Max. recoil force",
+   "value": 600,
+   "unit": "N",
+   "conditions": "at maximum working pressure and flow rate",
+   "sourceId": "s1",
+   "quote": "maximum recoil force at maximum working pressure and maximum flow rate 600 N"
+  },
+  {
+   "key": "electric_drives",
+   "label": "Electric drives",
+   "value": "X: 1; Z: option; jetting unit power drive: (1)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "number of electric drives (x/y/z-axis / jetting unit) X: 1 / Y: - / Z: option / power drive: (1)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Length × width × height",
+   "value": "2427 × 1327 × 1558",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "length × width × height 2427 × 1327 × 1558 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Empty weight",
+   "value": 155,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "empty weight 155 kg"
+  },
+  {
+   "key": "duty_cycle",
+   "label": "Power-on time",
+   "value": "24 h/day",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "power-on time (h/d) 24/1"
+  },
+  {
+   "key": "item_number",
+   "label": "Item number",
+   "value": "Z0000757",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "item number Z0000757"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": "IP65",
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Beam-type robot: the jetting unit travels along one electric x-axis; z-axis optional. It does not drive itself between work areas (no drive listed).",
+   "Protection rating given as 'IP65 / IP54' (likely different components); ipRating uses the first value.",
+   "Needs a separate 3,000 bar high-pressure pump unit."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete_repair/hydrodemolition"
+   ],
+   "task": "Listed by the maker among its robots for concrete renovation by water jetting",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.falch.com/en/product/beam-rob-250-e-z0000757",
+   "title": "beam rob 250 e",
+   "publisher": "Falch GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.falch.com/en/products/robots/1-robotics-by-application",
+   "title": "Robotics by application",
+   "publisher": "Falch GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.falch.com/",
+   "title": "Falch home page (rental, sales and service points)",
+   "publisher": "Falch GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price; maximum jetting length along the beam (page shows '1,7 – …').",
+  "Power supply data (the page shows unfilled placeholders).",
+  "Product photo could not be checked by eye (image host refuses our crawler).",
+  "Product photo: the listing image host refuses the polite reader, so no picture could be checked."
+ ],
+ "checkedAt": "2026-11-18"
+}

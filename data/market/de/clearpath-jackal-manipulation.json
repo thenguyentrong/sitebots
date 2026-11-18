@@ -1,0 +1,225 @@
+{
+ "schemaVersion": 1,
+ "id": "clearpath-jackal-manipulation",
+ "maker": "Clearpath Robotics (Rockwell Automation)",
+ "makerCountry": "CA",
+ "model": "Jackal",
+ "variant": "Manipulation Package (Kinova Gen3 lite)",
+ "name": "Clearpath Jackal with Manipulation Package",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://clearpathrobotics.com/jackal-small-unmanned-ground-vehicle/",
+ "summary": "A small 17 kg four-wheel outdoor research UGV (IP62) with a Kinova Gen3 lite arm and an Intel D435 camera, sold by Clearpath as a preconfigured package for mobile manipulation of small payloads.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Génération Robots lists the Jackal from 14,560 € net (17,472 € incl. VAT, delivery within 4 weeks for the standard package) and shows the Manipulation Package among the Jackal packages, priced on request; Clearpath names Generation Robots (Berlin) and MYBOTSHOP as German distributors.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/en/402144-jackal-unmanned-ground-vehicle-1469.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": null,
+    "phone": "+49 30 255 555 730",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Base Jackal \"From €17,472.00 VAT incl. €14,560.00 VAT excl.\", \"Deliveries within 4 weeks\" (Standard package); the Manipulation Package with \"Kinova Gen3-Lite Manipulator\" is listed under Packages without a price. Berlin office per Clearpath's distributor list."
+   },
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": null,
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Listed by Clearpath as a German distributor; no Jackal manipulation listing read."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "Kinova Gen3 lite",
+   "unit": null,
+   "conditions": "package also includes performance Mini-ITX computer with GPU and an Intel D435 camera",
+   "sourceId": "s1",
+   "quote": "+ Kinova Gen3-Lite Manipulator"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Maximum payload (base)",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "base; the seller gives 10 kg on all terrain",
+   "sourceId": "s2",
+   "quote": "Maximum payload: 20 kg (44 lbs)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Base weight",
+   "value": 17,
+   "unit": "kg",
+   "conditions": "without arm",
+   "sourceId": "s2",
+   "quote": "Weight: 17 kg (37 lbs)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "External dimensions",
+   "value": "508 x 430 x 250",
+   "unit": "mm",
+   "conditions": "base, without arm",
+   "sourceId": "s1",
+   "quote": "508 x 430 x 250 mm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Maximum speed: 2.0 m/s (6.6 ft/s)"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Run time",
+   "value": 4,
+   "unit": "h",
+   "conditions": "basic usage, maker figure; the seller gives 2 h heavy usage",
+   "sourceId": "s1",
+   "quote": "4 hours"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Water protection",
+   "value": "IP62",
+   "unit": null,
+   "conditions": "seller: IP65 available on select configurations",
+   "sourceId": "s1",
+   "quote": "It has an IP62 weatherproof casing and is rated to operate from -20 Celsius or +45 Celsius."
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 Jazzy",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ROS 2 Jazzy"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": 4,
+  "ipRating": "IP62",
+  "sdk": "ROS 2 Jazzy",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Payload, speed, runtime and IP are base figures.",
+   "Arm payload of the Gen3 lite was not stated on the pages read.",
+   "Research and teaching platform for small payloads, not a site work machine."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://clearpathrobotics.com/wp-content/uploads/2024/02/Jackal-Manipulation.74-291x300.png",
+   "pageUrl": "https://clearpathrobotics.com/jackal-small-unmanned-ground-vehicle/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Jackal UGV with a Kinova Gen3 lite arm (manipulation package)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers the package for mobile manipulation of small payloads, graduate courses and remote tele-operated manipulation on small UGVs",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Jackal is built from a sturdy aluminum chassis made with a high torque 4×4 drivetrain for rugged all-terrain operation.",
+   "basis": "maker description of the base",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "ip_rating",
+   "value": "IP62",
+   "sourceId": "s1",
+   "quote": "It has an IP62 weatherproof casing and is rated to operate from -20 Celsius or +45 Celsius.",
+   "basis": "maker description of the base",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clearpathrobotics.com/jackal-small-unmanned-ground-vehicle/",
+   "title": "Jackal UGV - Small Weatherproof Robot (Manipulation Package)",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/402144-jackal-unmanned-ground-vehicle-1469.html",
+   "title": "Jackal unmanned ground vehicle",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://clearpathrobotics.com/contact-a-global-distributor/",
+   "title": "Contact a global distributor",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the Jackal Manipulation Package.",
+  "Payload and reach of the Kinova Gen3 lite arm (not on the pages read).",
+  "Whether the gripper is included with the arm."
+ ],
+ "checkedAt": "2026-11-18"
+}

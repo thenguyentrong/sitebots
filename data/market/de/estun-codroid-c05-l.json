@@ -1,0 +1,175 @@
+{
+ "schemaVersion": 1,
+ "id": "estun-codroid-c05-l",
+ "maker": "Estun Codroid",
+ "makerCountry": "CN",
+ "model": "C05-L",
+ "variant": null,
+ "name": "Estun Codroid C05-L",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.codroid.ai/robot-c05l",
+ "summary": "A light wheeled humanoid (32 kg, 16 DOF) with two arms, optional dexterous hands and a head camera module, for material handling, line inspection and service tasks in factories.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "RBTX (igus, Germany) lists the ESTUN C05-L with a contact button instead of a price and a usual delivery time of 3 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Usual delivery time 3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/estun-co5-l-humanoid-robot-16-dof-32kg",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Article RBTX-ESTU-0003; no price shown, \"Kontaktieren Sie uns\" and \"Übliche Lieferzeit: 3 Wochen\". The category list shows it as \"Auf Anfrage\"."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 16,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "DOF 16"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 32,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Gewicht 32 kg"
+  },
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.68,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Höhe 1.680 mm"
+  },
+  {
+   "key": "max_payload_kg",
+   "label": "Max payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "not split per arm on the page",
+   "sourceId": "s2",
+   "quote": "max. Traglast 10 kg"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Geschwindigkeit 2 m⁄s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": 6,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Betriebsdauer 6 h"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "15 Ah",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Powered by a 15Ah battery with harmonic reducers"
+  },
+  {
+   "key": "interfaces",
+   "label": "Interfaces",
+   "value": "1x HDMI, 2x USB 3.0, 3x Ethernet, emergency stop; open EtherCAT slave configuration",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The back shell has 1×HDMI, 2×USB 3.0, 3×Ethernet ports, a 30mm through hole and 1×emergency stop interface."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": "Secondary development supported (modular architecture, EtherCAT)",
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Dexterous hands are an option: \"optional arm-mounted dexterous hand (mounting flange, DC 24V/2.5A, RS-485)\".",
+   "The 10 kg payload is not split per arm, so no per-arm figure is set."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Material handling, production line inspection, material distribution and commercial guidance",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Seller description names auto-parts workshops and electronics assembly; no construction or prefab use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.codroid.ai/robot-c05l",
+   "title": "磐石C05-L 柔性全场景机器人",
+   "publisher": "Estun Codroid",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/estun-co5-l-humanoid-robot-16-dof-32kg",
+   "title": "ESTUN CO5-L | Humanoid Robot | 16 DOF 32kg",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "The maker page (codroid.ai) carries its specs only in images; all figures here come from RBTX.",
+  "Per-arm payload, arm DOF split and price are not stated.",
+  "RBTX spells the model CO5-L in the URL and title and C05-L in the text; the maker writes C05-L."
+ ],
+ "checkedAt": "2026-11-18"
+}

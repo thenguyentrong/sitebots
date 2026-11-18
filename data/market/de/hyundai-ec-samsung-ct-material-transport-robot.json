@@ -1,0 +1,128 @@
+{
+ "schemaVersion": 1,
+ "id": "hyundai-ec-samsung-ct-material-transport-robot",
+ "maker": "Hyundai Engineering & Construction and Samsung C&T",
+ "makerCountry": "KR",
+ "model": "Smart material transport robot (스마트 자재 운반 로봇)",
+ "variant": null,
+ "name": "Hyundai E&C / Samsung C&T smart material transport robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_setup_logistics/material-runs-to-installers"
+ ],
+ "officialUrl": "https://www.hyundaimotorgroup.com/ko/news/CONT0000000000180084",
+ "summary": "Autonomous pallet-forking transport robot developed jointly by the Korean contractors Hyundai E&C and Samsung C&T: it finds pallets and their fork holes with 3D vision, picks them up, drives by SLAM around workers and obstacles and docks itself to charge. Shown carrying a pallet of blocks on a live site in Incheon in July 2025.",
+ "launched": "2025-07",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "In-house development of two Korean contractors, demonstrated on their own site; no sale, rental or route outside Korea.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "pallet_recognition",
+   "label": "Pallet handling",
+   "value": "3D-vision recognition of pallet shape and fork (picking) holes, automatic pick-up",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "3D 영상을 통한 팔레트 형상 및 피킹(Picking) 홀 인식 기술"
+  },
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "SLAM-based autonomous driving with worker and obstacle recognition",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "SLAM[1] 기반의 자율주행 기술"
+  },
+  {
+   "key": "fleet_control",
+   "label": "Fleet control",
+   "value": "transport job management and remote monitoring of several robots",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "운반 작업 관리 및 로봇 관제 기술"
+  },
+  {
+   "key": "charging",
+   "label": "Charging",
+   "value": "automatic docking to the charger",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "충전기 자동 도킹 기술"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Horizontal transport only so far; the developers plan vertical transport and more complex routes next.",
+   "No payload, speed, size or battery figures were published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.hyundaimotorgroup.com/image/upload/asset_library/MDA00000000000064349/5448637a230148f5b8ed813cb710c9df.jpg",
+   "pageUrl": "https://www.hyundaimotorgroup.com/ko/news/CONT0000000000180084",
+   "credit": "Hyundai Engineering & Construction",
+   "alt": "White Samsung C&T / Hyundai E&C transport robot carrying a pallet of concrete blocks in a basement car park under construction, watched by staff",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Picked up and carried palletised materials autonomously on a live construction site, avoiding workers and obstacles",
+   "stage": "demo",
+   "where": "Hana Dream Town site, Cheongna, Incheon, South Korea (Hyundai E&C)",
+   "date": "2025-07",
+   "sourceId": "s1",
+   "note": "Technology demonstration on 3 July 2025; first result of the contractors' April 2023 joint robotics agreement."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.hyundaimotorgroup.com/ko/news/CONT0000000000180084",
+   "title": "현대건설, 삼성물산과 ‘스마트 자재 운반 로봇’ 기술 시연회 개최 (7 July 2025)",
+   "publisher": "Hyundai Motor Group Newsroom (Hyundai E&C)",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Payload, size, speed and runtime: not published.",
+  "Has it moved beyond the July 2025 demonstration to regular site use?"
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,138 @@
+{
+ "schemaVersion": 1,
+ "id": "xcmg-pcr300",
+ "maker": "XCMG (Xuzhou Construction Machinery Group)",
+ "makerCountry": "CN",
+ "model": "PCR300",
+ "variant": null,
+ "name": "XCMG PCR300 demolition robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "demolition",
+  "site_demolition/concrete-breaking"
+ ],
+ "officialUrl": null,
+ "summary": "Two-tonne demolition robot that XCMG launched at bauma China 2024; the maker claims the demolition power of a six-tonne excavator, with breaker, shovel, grab and shear attachments.",
+ "launched": "2024",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Only trade-fair coverage from bauma China 2024 found; no XCMG product page, European dealer or price for the PCR300.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weight_t",
+   "label": "Weight",
+   "value": 2,
+   "unit": "t",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The PCR300 is a 2-tonne unit with 400 J of impact power"
+  },
+  {
+   "key": "impact_energy_j",
+   "label": "Impact power",
+   "value": 400,
+   "unit": "J",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The PCR300 is a 2-tonne unit with 400 J of impact power"
+  },
+  {
+   "key": "max_operating_radius_mm",
+   "label": "Max. operating radius",
+   "value": 4810,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "the maximum operating radius is 4810 mm"
+  },
+  {
+   "key": "max_drill_rod_mm",
+   "label": "Max. drill rod diameter",
+   "value": 65,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximum drill rod diameter is 65 mm"
+  },
+  {
+   "key": "attachments",
+   "label": "Attachments",
+   "value": "shovels, breaker hammers, stone grabbers, hydraulic shears",
+   "unit": null,
+   "conditions": "optional thermal protection package for hot environments",
+   "sourceId": "s1",
+   "quote": "The unit will operate with shovels, breaker hammers, stone grabbers and hydraulic shears, and is available with an optional thermal protection package for use in high temperature environments."
+  },
+  {
+   "key": "claimed_power_equivalent",
+   "label": "Claimed demolition power",
+   "value": "same as a 6 t excavator",
+   "unit": null,
+   "conditions": "maker claim",
+   "sourceId": "s1",
+   "quote": "claimed the OEM, will have the same demolition power as a 6t excavator"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Sources call it a demolition robot but do not describe its remote control, power supply or running gear; tracks set false because no picture or text was checked.",
+   "One hydraulic arm carrying interchangeable demolition attachments."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.powerprogress.com/news/xcmg-enters-demolition-robot-market/8042718.article",
+   "title": "XCMG enters demolition robot market (4 December 2024)",
+   "publisher": "KHL Group (Power Progress)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://rockingrobots.com/?p=71166",
+   "title": "XCMG Launches Demolition Robot",
+   "publisher": "Rocking Robots",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is the PCR300 in series production and sold outside China? No XCMG product page found.",
+  "Remote control type, power (electric or diesel), running gear and price.",
+  "Does XCMG Europe offer it?"
+ ],
+ "checkedAt": "2026-11-18"
+}

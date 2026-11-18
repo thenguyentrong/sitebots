@@ -14,14 +14,19 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Sold on request through Pudu, which has a German subsidiary and a German D5 page; Pudu says the D5 entered volume delivery in Europe in 2026 and showed it at IFA Berlin. No public price.",
+  "statusNote": "Sold on request through Pudu, which has a German subsidiary and a German D5 page; Pudu says the D5 entered volume delivery in Europe in 2026 and showed it at IFA Berlin. No public euro price; PUDU's US store lists the D5-W at USD 85,000 (US and Canada only).",
   "sourceIds": [
    "s2",
    "s3",
    "s4"
   ],
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 85000,
+   "currency": "USD",
+   "market": "PUDU Official Store (store.pudurobotics.com), ships to the US and Canada only; import duties and taxes extra",
+   "sourceId": "s5"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -38,7 +43,7 @@
     "note": "Pudu lists a subsidiary in Germany and a German D5 page with a contact form; no dealer price list found."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -252,6 +257,14 @@
    "publisher": "Pudu Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://store.pudurobotics.com/products/pudu-d5.js",
+   "title": "store.pudurobotics.com",
+   "publisher": "store.pudurobotics.com",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

@@ -1,0 +1,136 @@
+{
+ "schemaVersion": 1,
+ "id": "aist-hrp-5p",
+ "maker": "National Institute of Advanced Industrial Science and Technology (AIST)",
+ "makerCountry": "JP",
+ "model": "HRP-5P",
+ "variant": null,
+ "name": "AIST HRP-5P",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.aist.go.jp/aist_e/list/latest_research/2018/20181116/en20181116.html",
+ "summary": "A 182 cm, 101 kg bipedal research humanoid built for heavy labour on construction sites, in aircraft plants and shipyards; it has autonomously installed gypsum boards at a simulated residential building site.",
+ "launched": "2018-11",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Research prototype of Japan's national institute AIST, offered for collaborative R&D use with industry and academia, not for sale. No German or EU sales route.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.82,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "As a 182 cm, 101 kg humanoid robot, HRP-5P was built on HRP series technologies"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 101,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "As a 182 cm, 101 kg humanoid robot, HRP-5P was built on HRP series technologies"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 37,
+   "unit": null,
+   "conditions": "neck 2, waist 3, arms 8 each, legs 6 each, hands 2",
+   "sourceId": "s1",
+   "quote": "HRP-5P has a body with a total of 37 degrees of freedom: two in its neck, three in its waist, eight in its arms, six in its legs, and two in its hands."
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm load, arm extended horizontally",
+   "value": 2.9,
+   "unit": "kg",
+   "conditions": "each arm, extended horizontally (worst case)",
+   "sourceId": "s1",
+   "quote": "Each arm of HRP-5P, extended horizontally, can bear a weight of 2.9 kg"
+  },
+  {
+   "key": "demo_board_kg",
+   "label": "Board carried in demo",
+   "value": 13,
+   "unit": "kg",
+   "conditions": "approx., gypsum board carried with both arms",
+   "sourceId": "s1",
+   "quote": "HRP-5P carrying an approx. 13 kg board"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 2.9,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Simple hands with one degree of freedom each (two in total).",
+   "2.9 kg is the load per arm held horizontally at full extension; in the demo the robot lifted and carried an approx. 13 kg gypsum board with both arms.",
+   "Head sensors re-measure the surroundings in 3D while walking, also when the carried board blocks the view."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.aist.go.jp/Portals/0/resource_images/aist_e/latest_research/2018/20181116/photo.jpg",
+   "pageUrl": "https://www.aist.go.jp/aist_e/list/latest_research/2018/20181116/en20181116.html",
+   "credit": "AIST",
+   "alt": "AIST HRP-5P humanoid robot, standing and carrying a gypsum board",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_drywall/plasterboard-installation"
+   ],
+   "task": "Autonomous gypsum board installation: separate a board from a stack, lift it, carry it to the wall, stand it against the wall and screw it to the wall",
+   "stage": "demo",
+   "where": null,
+   "date": "2018-11",
+   "sourceId": "s1",
+   "note": "Done at a simulated residential construction site set up by AIST, not on a real site."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.aist.go.jp/aist_e/list/latest_research/2018/20181116/en20181116.html",
+   "title": "Development of a Humanoid Robot Prototype, HRP-5P, Capable of Heavy Labor",
+   "publisher": "AIST",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No newer status report on HRP-5P (later versions, site trials) was read.",
+  "Runtime and power supply are not stated in the press release."
+ ],
+ "checkedAt": "2026-11-18"
+}

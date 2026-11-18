@@ -18,13 +18,18 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Listed by Husqvarna Construction Germany (art. 970 74 84-01) with \"Angebot anfordern\" and dealer finder; no public price found.",
+  "statusNote": "Listed by Husqvarna Construction Germany (art. 970 74 84-01) with \"Angebot anfordern\" and dealer finder; no public euro price (Red Band in the UK lists it in GBP).",
   "sourceIds": [
    "s1",
    "s2"
   ],
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 62441.2,
+   "currency": "GBP",
+   "market": "Red Band UK (UK dealer), excl. VAT (incl. VAT £74,929.44; RRP £99,905.00), 380-415 V version",
+   "sourceId": "s3"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -41,7 +46,7 @@
     "note": "Bahnhofstr. 50, 89168 Niederstotzingen; dealers via the dealer finder."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -156,6 +161,14 @@
    "publisher": "Husqvarna Deutschland GmbH",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.redbanduk.co.uk/husqvarna-autogrinder-8-d-415v",
+   "title": "redbanduk.co.uk",
+   "publisher": "redbanduk.co.uk",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

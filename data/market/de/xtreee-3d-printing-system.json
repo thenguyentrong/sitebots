@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "xtreee-3d-printing-system",
+ "maker": "XtreeE",
+ "makerCountry": "FR",
+ "model": "3D concrete printing system",
+ "variant": null,
+ "name": "XtreeE 3D concrete printing system",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://www.xtreee.com/",
+ "summary": "French robotic 3D concrete printing cell: an ABB 6-axis robot (new or refurbished, on track or pedestal) with XtreeE's xHEAD print head, xFEED pump, mixer and software, sold in four packages from research setups to certified prefab production lines.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "EU maker (France) sells directly: an online configurator builds the system and sends a quote request, and Germany is in the country list. No public price and no German reseller found.",
+  "sourceIds": [
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "XtreeE",
+    "country": "FR",
+    "role": "manufacturer",
+    "productUrl": "https://www.xtreee.com/configure/",
+    "contactUrl": "https://www.xtreee.com/contact/",
+    "email": null,
+    "phone": "+33 6 64 16 48 46",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "5 Rue Noël Pons, 92000 Nanterre, and 25 Rue des Chardons, 72460 Savigné-l'Évêque, France. Packages: Try, Start, Industrial and Research."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "robot",
+   "label": "Manipulator",
+   "value": "ABB 6-axis robot, new or refurbished, with track, pedestal and arm-extension options",
+   "unit": null,
+   "conditions": "own robot or gantry can be connected",
+   "sourceId": "s2",
+   "quote": "ABB 6-axis robots recommended by XtreeE for full ecosystem integration. Available new or refurbished, with track, pedestal, and arm extension options."
+  },
+  {
+   "key": "print_head",
+   "label": "Print head",
+   "value": "xHEAD 1K or 2K (accelerator dosed at the nozzle); Sprint and Adapt upgrades",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The xHEAD 2K also runs in 1K mode"
+  },
+  {
+   "key": "pump",
+   "label": "Pump",
+   "value": "xFEED 3.0",
+   "unit": null,
+   "conditions": "or the buyer's own concrete pump",
+   "sourceId": "s2",
+   "quote": "The xFEED 3.0 delivers material from the mixer to the print head reliably and consistently."
+  },
+  {
+   "key": "packages",
+   "label": "Pre-configured packages",
+   "value": "Try, Start, Industrial, Research",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Four pre-configured systems designed for different stages of your 3D printing journey."
+  },
+  {
+   "key": "ce_cell",
+   "label": "Certified cell option",
+   "value": "fully CE-certified production cell (robot, fences, training, project management)",
+   "unit": null,
+   "conditions": "Pack Certification",
+   "sourceId": "s2",
+   "quote": "Robot + fences + training + project management. Fully CE-certified production cell."
+  },
+  {
+   "key": "installations",
+   "label": "Installations",
+   "value": "25+ in 10+ countries",
+   "unit": null,
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "25+ installations worldwide · 10+ countries · 11 patents"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Robot cell for factory (prefab) production; the robot can sit on a track or pedestal.",
+   "Safety levels from basic guards to a full fenced enclosure; a CE-certified cell is offered as a package.",
+   "KUKA robots can be connected at a lower integration level; ABB is recommended."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printed parts for five social-housing homes, the first 3D-printed social housing project in France (Viliaprint)",
+   "stage": "deployment",
+   "where": "Reims, France",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.xtreee.com/",
+   "title": "XtreeE: large-scale 3D concrete printing solutions",
+   "publisher": "XtreeE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.xtreee.com/technology/",
+   "title": "Technology: print head, pump, mixer, manipulator, software, installation",
+   "publisher": "XtreeE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.xtreee.com/configure/",
+   "title": "Configure and request a quote",
+   "publisher": "XtreeE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.xtreee.com/contact/",
+   "title": "Contact",
+   "publisher": "XtreeE",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Prices of the four packages.",
+  "Print volume and robot reach of each package.",
+  "Named German customers or service partners."
+ ],
+ "checkedAt": "2026-11-18"
+}

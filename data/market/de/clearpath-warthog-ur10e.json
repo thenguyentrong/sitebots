@@ -1,0 +1,279 @@
+{
+ "schemaVersion": 1,
+ "id": "clearpath-warthog-ur10e",
+ "maker": "Clearpath Robotics (Rockwell Automation)",
+ "makerCountry": "CA",
+ "model": "Warthog",
+ "variant": "UR10e Manipulation Package",
+ "name": "Clearpath Warthog with UR10e Manipulation Package",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://clearpathrobotics.com/warthog-unmanned-ground-vehicle-robot/",
+ "summary": "Clearpath's large all-terrain research UGV (280 kg, up to 272 kg payload) fitted with a Universal Robots UR10e arm as a preconfigured package that the maker offers for proof-of-concept robotics in agriculture and construction.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Clearpath names Generation Robots (Berlin) and MYBOTSHOP (Bergheim) as German distributors. MYBOTSHOP lists the Warthog base at 92,901 € incl. VAT and lists UR10/UR10e arms on the same page; Génération Robots lists the base from 94,640 € net. The UR10e package itself is priced on request.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "About 5 months for the base (MYBOTSHOP)",
+  "sellers": [
+   {
+    "name": "MYBOTSHOP.DE",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.mybotshop.de/Clearpath-Warthog",
+    "contactUrl": "https://www.mybotshop.de/Kontakt",
+    "email": "info@mybotshop.de",
+    "phone": "+49 2271 588930",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Base Warthog (no arm) \"€ 92.901,00 inkl. 19% USt.\", \"Lieferzeit: ca. 5 Monate\"; on the same page \"Universal Robots UR10/UR10e\" is offered as an add-on at \"€ 36.473,50 - € 47.975,00\" incl. VAT. No price for the assembled package."
+   },
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/en/403286-drone-terrestre-warthog-ugv.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+49 30 255 555 730",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "Base \"Warthog Land Drone\" \"From €113,568.00 VAT incl. €94,640.00 VAT excl.\", \"Delivery within 11 to 12 weeks\", with \"Add to cart\" and \"Ask for a quote\"; robotic arms listed as mountable accessories, no price for the UR10e package. Berlin office (+49 30 255 555 730) is listed by Clearpath as a German distributor."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "Universal Robots UR10e",
+   "unit": null,
+   "conditions": "included in the package with a bulkhead and lighting structure",
+   "sourceId": "s1",
+   "quote": "+ Universal Robots UR10e mobile manipulator"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 10,
+   "unit": "kg",
+   "conditions": "UR10 series as listed by the seller",
+   "sourceId": "s3",
+   "quote": "10kg Traglast"
+  },
+  {
+   "key": "arm_reach_mm",
+   "label": "Arm reach",
+   "value": 1300,
+   "unit": "mm",
+   "conditions": "UR10 series as listed by the seller",
+   "sourceId": "s3",
+   "quote": "1300mm Arbeitsradius"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Max payload (base)",
+   "value": 272,
+   "unit": "kg",
+   "conditions": "base platform; the arm counts towards it",
+   "sourceId": "s1",
+   "quote": "Warthog’s powerful drivetrain is capable of moving 272 kg of payload"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Base weight incl. battery",
+   "value": 280,
+   "unit": "kg",
+   "conditions": "without arm",
+   "sourceId": "s1",
+   "quote": "280 kg (620 lbs)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1520 x 1380 x 830",
+   "unit": "mm",
+   "conditions": "base",
+   "sourceId": "s1",
+   "quote": "1.52 x 1.38 x 0.83 m"
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Max speed",
+   "value": 18,
+   "unit": "km/h",
+   "conditions": "on land",
+   "sourceId": "s1",
+   "quote": "can reach speeds up to 18 km/hr on land"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Nominal runtime",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": "lead acid; Li-ion option 3 h nominal, maker also says up to 8 h with a Li-ion upgrade",
+   "sourceId": "s1",
+   "quote": "Lead acid option: 2.5 hrs"
+  },
+  {
+   "key": "ground_clearance_mm",
+   "label": "Ground clearance",
+   "value": 254,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "254 mm (10 in)"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Water protection",
+   "value": "IP65",
+   "unit": null,
+   "conditions": "seller figure for the base",
+   "sourceId": "s3",
+   "quote": "ist nach IP65 geschützt"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 Jazzy",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ROS 2 Jazzy"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 10,
+  "carryPayloadKg": 272,
+  "runtimeH": 2.5,
+  "ipRating": "IP65",
+  "sdk": "ROS 2 Jazzy",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Payload, speed, runtime and IP are base figures; the free payload is lower with the arm mounted.",
+   "The package lists the UR10e arm but no gripper.",
+   "Clearpath also shows a video of a Warthog with a UR20 arm; this record is the UR10e package."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://s3.amazonaws.com/assets.clearpathrobotics.com/wp-content/uploads/2024/02/10160009/Warthog-Manipulation.68-1280x720.png",
+   "pageUrl": "https://clearpathrobotics.com/warthog-unmanned-ground-vehicle-robot/",
+   "credit": "Clearpath Robotics",
+   "alt": "Clearpath Warthog UGV with a UR10e arm (manipulation package)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers the package for proof-of-concept robotics in agriculture and construction and for mobile manipulation in remote settings",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Warthog robots with UR10-class arms pick up garbage bags and carry them from a collection point to a deposit (Autotrans project)",
+   "stage": "pilot",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": "Seller text: \"The Autotrans project has deployed Warthog robots for autonomous waste management: picking up and transporting garbage bags\"; arm model in that project not stated exactly."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "effortless mobility through soft soils, vegetation, thick muds, and steep grades",
+   "basis": "maker description of the base",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Warthog is a large all-terrain unmanned ground vehicle capable of brief periods of locomotion in water.",
+   "basis": "maker description of the base",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "ip_rating",
+   "value": "IP65",
+   "sourceId": "s3",
+   "quote": "Der 1,5m lange Roboter ist nach IP65 geschützt",
+   "basis": "seller description of the base",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clearpathrobotics.com/warthog-unmanned-ground-vehicle-robot/",
+   "title": "Warthog UGV - Unmanned Ground Vehicle (UR10e Manipulation Package)",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://clearpathrobotics.com/contact-a-global-distributor/",
+   "title": "Contact a global distributor",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.mybotshop.de/Clearpath-Warthog",
+   "title": "Clearpath Warthog",
+   "publisher": "MYBOTSHOP.DE",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.generationrobots.com/en/403286-drone-terrestre-warthog-ugv.html",
+   "title": "Warthog Land Drone",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the Warthog + UR10e package.",
+  "Whether a gripper is part of the package.",
+  "Free payload and runtime with the arm mounted."
+ ],
+ "checkedAt": "2026-11-18"
+}

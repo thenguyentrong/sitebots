@@ -1,0 +1,209 @@
+{
+ "schemaVersion": 1,
+ "id": "schwamborn-dsm-650rc",
+ "maker": "Schwamborn",
+ "makerCountry": "DE",
+ "model": "DSM 650RC",
+ "variant": "400 V",
+ "name": "Schwamborn DSM 650RC",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors",
+  "research:polish-concrete-terrazzo-floors"
+ ],
+ "officialUrl": "https://www.schwamborn.com/dsm-650rc-ferngesteuerte-bodenschleifmaschine",
+ "summary": "Radio-controlled 650 mm floor grinder with three tool discs and adjustable grinding pressure, for grinding, bush-hammering and polishing concrete, screed, asphalt, natural stone and terrazzo. Made by Schwamborn in Wangen, Germany.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Listed on the German maker's website; contact via Schwamborn in Wangen. No public price.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Schwamborn Gerätebau GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.schwamborn.com/dsm-650rc-ferngesteuerte-bodenschleifmaschine",
+    "contactUrl": "https://www.schwamborn.com/dsm-650rc-ferngesteuerte-bodenschleifmaschine",
+    "email": null,
+    "phone": "+49 7161 2005-0",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Robert-Bosch-Straße 8, 73117 Wangen (product page footer). Article no. 729000 appears in the product image names."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "power_kw",
+   "label": "Output power",
+   "value": 11,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "11 kW"
+  },
+  {
+   "key": "grinding_width_mm",
+   "label": "Working width",
+   "value": 650,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "650 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Working weight",
+   "value": 450,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "450 kg"
+  },
+  {
+   "key": "size_cm",
+   "label": "Size (L × W × H)",
+   "value": "130 × 65 × 140",
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "130 x 65 x 140 cm"
+  },
+  {
+   "key": "ground_pressure_kg",
+   "label": "Pressure on the floor",
+   "value": "165 / 230 / 120",
+   "unit": "kg",
+   "conditions": "adjustable with extra weights",
+   "sourceId": "s1",
+   "quote": "165/230/120 kg"
+  },
+  {
+   "key": "tool_speed_rpm",
+   "label": "Tool speed",
+   "value": "400-1200",
+   "unit": "rpm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "400 - 1200 min-1"
+  },
+  {
+   "key": "tool_discs",
+   "label": "Tool discs",
+   "value": "3 × 230 mm",
+   "unit": null,
+   "conditions": "tool holders ETX-1, ETX-2, Velcro",
+   "sourceId": "s1",
+   "quote": "3 x 230 mm"
+  },
+  {
+   "key": "edge_distance_mm",
+   "label": "Distance to edge",
+   "value": 10,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "10 mm"
+  },
+  {
+   "key": "supply",
+   "label": "Power supply",
+   "value": "400 V, 50/60 Hz",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "400 V"
+  },
+  {
+   "key": "tank_l",
+   "label": "Water tank",
+   "value": 15,
+   "unit": "L",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "15 l"
+  },
+  {
+   "key": "remote_control",
+   "label": "Remote control",
+   "value": "remote with display for tool speed and travel speed",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Fernbedienung mit Displayanzeige für Werkzeugdrehzahl und Fahrgeschwindigkeit"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote-controlled, not autonomous: the operator drives the machine with a remote control (like the DSM 800RC).",
+   "180° turning manoeuvre with grinding overlap for an even grinding pattern (maker).",
+   "Needs an industrial vacuum: 70 mm extraction port; Schwamborn lists matching STS vacuums and STA pre-separators."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.schwamborn.com/thumbnail/ea/62/5d/1794821214/729000_DSM650RC_2700x3862_web_1200x1716.webp?ts=1794821214",
+   "pageUrl": "https://www.schwamborn.com/dsm-650rc-ferngesteuerte-bodenschleifmaschine",
+   "credit": "Schwamborn",
+   "alt": "Schwamborn DSM 650RC remote-controlled floor grinder",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors",
+    "research:polish-concrete-terrazzo-floors"
+   ],
+   "task": "Grinds, bush-hammers and polishes concrete, screed, natural stone and terrazzo floors under remote control",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.schwamborn.com/dsm-650rc-ferngesteuerte-bodenschleifmaschine",
+   "title": "DSM 650RC: Besonders leistungsstarke Bodenschleifmaschine mit Fernsteuerung und einstellbarem Schleifdruck",
+   "publisher": "Schwamborn Gerätebau GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price in Germany.",
+  "Remote-control range and battery or cable for travel moves."
+ ],
+ "checkedAt": "2026-11-18"
+}

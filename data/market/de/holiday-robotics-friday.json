@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "holiday-robotics-friday",
+ "maker": "Holiday Robotics",
+ "makerCountry": "KR",
+ "model": "FRIDAY",
+ "variant": null,
+ "name": "Holiday Robotics FRIDAY",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.holiday-robotics.com/product",
+ "summary": "A Korean wheeled industrial humanoid (176 cm, 125 kg, 64 DoF) with two 20-DoF tactile hands, built for repetitive, physically demanding work in manufacturing. Pre-order inquiries are open for research institutions, with shipping planned for the first half of 2027.",
+ "launched": null,
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The maker takes pre-order inquiries for a research version, with priority supply in Korea and shipping from the first half of 2027. No German or EU sales route was found.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Shipping begins in the first half of 2027 (maker)",
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.76,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "HEIGHT 176 cm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Total weight",
+   "value": 125,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "TOTAL WEIGHT 125 kg"
+  },
+  {
+   "key": "arm_weight_kg",
+   "label": "Arm weight",
+   "value": 5.5,
+   "unit": "kg",
+   "conditions": "hand under 600 g",
+   "sourceId": "s1",
+   "quote": "ARM 5.5 kg Hand under 600g"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 64,
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "DEGREES OF FREEDOM 64 DoF"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "maximum; not split into arm payload or carried load",
+   "sourceId": "s1",
+   "quote": "PAYLOAD Max. 20 kg"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Average run time",
+   "value": 4,
+   "unit": "h",
+   "conditions": "hot-swap batteries",
+   "sourceId": "s1",
+   "quote": "AVERAGE RUN TIME 4 h"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 1.9,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "MAX SPEED 1.9 m/s"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 20,
+   "unit": null,
+   "conditions": "integrated tactile sensors, 250 Hz, 0.05 N sensitivity",
+   "sourceId": "s1",
+   "quote": "An ultra-lightweight robotic hand with 20 degrees of freedom and fully integrated tactile sensors"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The maker photo shows a wheeled base under a folding leg-like column, two arms and five-finger hands.",
+   "The 20 kg payload is not split into arm payload or carried load, so it is not used as a payload figure here.",
+   "Maker newsroom (15 Oct 2026) reports a humanoid factory in Seongsu, Seoul, planned for 100 units a year."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://public.hday.io/site/robots/friday.webp",
+   "pageUrl": "https://www.holiday-robotics.com/product",
+   "credit": "Holiday Robotics",
+   "alt": "Holiday Robotics FRIDAY wheeled humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Repetitive, physically demanding work and reusable manipulation skills in manufacturing environments",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s3",
+   "note": "Maker statement; a FRIDAY demonstration at a KDB NextRound event (Aug 2026) is listed in the maker newsroom. No construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.holiday-robotics.com/product",
+   "title": "FRIDAY product page",
+   "publisher": "Holiday Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.holiday-robotics.com/",
+   "title": "Holiday Robotics home page (FRIDAY for Research pre-order notice)",
+   "publisher": "Holiday Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.holiday-robotics.com/about",
+   "title": "About Holiday Robotics",
+   "publisher": "Holiday Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.holiday-robotics.com/newsroom",
+   "title": "Holiday Robotics newsroom",
+   "publisher": "Holiday Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the FRIDAY research version and whether it will be offered in the EU.",
+  "Per-arm payload and how the 20 kg maximum payload is defined.",
+  "Whether the wheeled base can handle ramps or uneven floors."
+ ],
+ "checkedAt": "2026-11-18"
+}

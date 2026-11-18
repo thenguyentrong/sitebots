@@ -145,9 +145,10 @@ describe('real market records', () => {
   it('keeps the key fact rows even for the two-column grid and worth showing on real data', () => {
     expect(KEY_FACT_KEYS.length % 2).toBe(0);
     const covered = (key: (typeof KEY_FACT_KEYS)[number]) => market.filter((record) => marketFacts(record)[key].some((value) => !value.muted)).length / market.length;
-    // The floor is low on purpose: IP rating is published for about one robot in six, and on a
-    // construction site that gap is itself what a buyer needs to see.
-    for (const key of KEY_FACT_KEYS) expect(covered(key), key).toBeGreaterThan(0.15);
+    // The floor is low on purpose: IP rating is published for about one robot in seven (fewer since
+    // many site machines joined in Nov 2026), and on a construction site that gap is itself what a
+    // buyer needs to see.
+    for (const key of KEY_FACT_KEYS) expect(covered(key), key).toBeGreaterThan(0.12);
   });
 });
 

@@ -1,0 +1,193 @@
+{
+ "schemaVersion": 1,
+ "id": "elite-robots-dc300-06",
+ "maker": "Elite Robots",
+ "makerCountry": "CN",
+ "model": "DC300-06",
+ "variant": null,
+ "name": "Elite Robots DC300-06 (M-Bot series)",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.eliterobots.com/mission-products/dc300-06",
+ "summary": "The compact member of Elite Robots' M-Bot mobile manipulator series: a differential-drive AMR with 150 kg platform payload carrying a 6 kg collaborative arm (1304 mm working radius) with 2.5D vision positioning.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Elite Robots runs its EMEA Operations Center in Geisenfeld (Bavaria) and lists authorised partners in Germany; the DC300-06 page has a \"Get quote\" form. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Elite Robots EMEA Operations Center",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.eliterobots.com/mission-products/dc300-06",
+    "contactUrl": "https://www.eliterobots.com/worldwide",
+    "email": null,
+    "phone": "+49 8452 7330091",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Address on the maker's page: \"EMEA Operations Center Geisenfeld BY, Germany Münchener Str. 53 85290\"; quotes through the product page form or a local partner."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Platform payload",
+   "value": 150,
+   "unit": "kg",
+   "conditions": "net weight 250 kg",
+   "sourceId": "s1",
+   "quote": "Net Weight/Payload250 KG | 150 KG"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload",
+   "value": 6,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Arm Payload6 KG"
+  },
+  {
+   "key": "reach_mm",
+   "label": "Working radius",
+   "value": 1304,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Working Radius1304 mm"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "750 x 550 x 650",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dimensions750×550×650 mm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Maximum speed",
+   "value": 1.5,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximum Speed1.5 m/s"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Endurance",
+   "value": 6,
+   "unit": "h",
+   "conditions": "2 h charging time",
+   "sourceId": "s1",
+   "quote": "6 hUltra-long endurance2 hCharging time"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V / 30 Ah or 51.2 V / 60 Ah; manual or automatic charging, optional rapid battery swap",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Battery Capacity48V/30Ah | 51.2V/60AhCharging MethodManual/Automatic Charging | Optional Rapid Battery Swap System"
+  },
+  {
+   "key": "positioning_accuracy_mm",
+   "label": "Integrated positioning accuracy (2.5D vision)",
+   "value": 0.2,
+   "unit": "mm",
+   "conditions": "±",
+   "sourceId": "s1",
+   "quote": "Integrated Positioning Accuracy (2.5D)±0.2 mm"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "Differential",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "DC300-06 is a compact differential mobile manipulator combining a 150 kg-payload mobile platform with a 6 kg-payload collaborative robotic arm."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 6,
+  "carryPayloadKg": 150,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Gripper or tool not named on the page; chosen per application.",
+   "Smaller sister of the MC500-12 (separate record)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.prod.website-files.com/6606a41edd35aa51454cc91c/6ab69cea29c77c26441f92fd_DC300-06.avif",
+   "pageUrl": "https://www.eliterobots.com/mission-products/dc300-06",
+   "credit": "Elite Robots",
+   "alt": "Elite Robots DC300-06 compact mobile manipulator with cobot arm",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker offers it for flexible mobile manipulation between workstations",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.eliterobots.com/mission-products/dc300-06",
+   "title": "DC300-06",
+   "publisher": "Elite Robots",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.eliterobots.com/worldwide",
+   "title": "Worldwide",
+   "publisher": "Elite Robots",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price not published.",
+  "Which German partner sells and installs the M-Bot series.",
+  "IP rating and floor requirements not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

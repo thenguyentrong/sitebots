@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "gmv-winlet-400",
+ "maker": "GMV A/S",
+ "makerCountry": "DK",
+ "model": "Winlet 400",
+ "variant": "Winlet 400 series: 400CL / 400TL with SHB or DHB boom and HV or HS head (10 configurations)",
+ "name": "GMV Winlet 400",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "glazing_installation",
+  "site_windows_doors/large-pane-glazing",
+  "site_windows_doors/window-unit-setting"
+ ],
+ "officialUrl": "https://gmvas.dk/de/winlet-400-de/",
+ "summary": "Modular series of self-propelled glazing robots lifting 315–500 kg, configured from narrow (CL) or wide terrain (TL) tyres, single or double hydraulic telescopic boom and a hydraulic-lift or side-shift head. Made by GMV A/S in Denmark.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "GMV A/S (Bredsten, Denmark) sells Winlet glazing robots direct, with German-language product pages and a quote form. The Winlet range starts at EUR 24,600 (\"Wir bieten Winlet ab: EUR 24.600 an-\"); which model this applies to and whether it is net is not stated. No German dealer is named.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "sellers": [
+   {
+    "name": "GMV A/S",
+    "country": "DK",
+    "role": "manufacturer",
+    "productUrl": "https://gmvas.dk/de/winlet-400-de/",
+    "contactUrl": "https://gmvas.dk/de/kontakt-de/",
+    "email": "post@gmvas.dk",
+    "phone": "+45 75 73 82 47",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Office and production: Industriparken 1, DK-7182 Bredsten (sales: Sales@gmvas.dk). German quote form on the product page; the Winlet overview page says \"Wir bieten Winlet ab: EUR 24.600 an-\" without naming the model."
+   }
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_load_kg",
+   "label": "Maximum load",
+   "value": "315–500",
+   "unit": "kg",
+   "conditions": "depends on configuration",
+   "sourceId": "s2",
+   "quote": "Maximale Tragfähigkeit: Von 315 kg bis 500 kg."
+  },
+  {
+   "key": "max_lift_height_mm",
+   "label": "Maximum lifting height",
+   "value": "2,573–3,190",
+   "unit": "mm",
+   "conditions": "depends on configuration",
+   "sourceId": "s2",
+   "quote": "Maximale Hubhöhe: Von 2.573 mm bis 3.190 mm."
+  },
+  {
+   "key": "configurations",
+   "label": "Configurations",
+   "value": 10,
+   "unit": null,
+   "conditions": "wheels, boom, head and controls",
+   "sourceId": "s2",
+   "quote": "4 Konfigurationspakete:Räder, Hebearm, Front und Bedienelemente = 10 Modelle."
+  },
+  {
+   "key": "boom",
+   "label": "Telescopic boom",
+   "value": "single (1 × 500 mm) or double (2 × 500 mm), hydraulic under load",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Wählen Sie einen einfachen Teleskopausschub (1 x 500 mm) für eine größere Hubkapazität oder einen doppeltem Ausschub (2 x 500 mm) für eine größere Reichweite."
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "MAC multi-axis panel or PSAC panel; radio remote with proportional control optional for MAC",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Option für MAC : Funkfernbedienung mit proportionaler Steuerung."
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "terrain tyres, front-axle drive",
+   "unit": null,
+   "conditions": "applies to the Winlet range",
+   "sourceId": "s2",
+   "quote": "Winlet Verglasungsroboter haben Geländefähige Bereifung mit Vorderachsantrieb"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "CL = narrow tyres for indoor work; TL = wide tyres for stable outdoor use on varied ground (maker).",
+   "Winlet glazing robots have terrain tyres with front-axle drive and hydraulic load movements (range statement).",
+   "Operator-controlled; not autonomous.",
+   "One record for the whole series; load and height depend on the chosen configuration."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://gmvas.dk/wp-content/uploads/Winlet-400-serien_400x300.png",
+   "pageUrl": "https://gmvas.dk/de/winlet-400-de/",
+   "credit": "GMV A/S",
+   "alt": "Four views of the blue and green Winlet 400 glazing robot series",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_windows_doors/large-pane-glazing",
+    "site_windows_doors/window-unit-setting"
+   ],
+   "task": "Installs windows and glass elements of all kinds up to 500 kg",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker description; no named site found for this model."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://gmvas.dk/de/winlet-400-de/",
+   "title": "Winlet 400 (German product page)",
+   "publisher": "GMV A/S",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://gmvas.dk/de/winlet-de/",
+   "title": "Winlet Verglasungsroboter (range overview with key figures and starting price)",
+   "publisher": "GMV A/S",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://gmvas.dk/de/kontakt-de/",
+   "title": "Kontakt (address, phone, e-mail)",
+   "publisher": "GMV A/S",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of this model (only a range price \"ab EUR 24.600\" is published).",
+  "Load and lifting height of each of the ten configurations.",
+  "Weight, battery and runtime are in the maker's catalogue PDF, which could not be read."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "legend-robot-lq02b",
+ "maker": "Shenzhen Legend Robot Technology Co., Ltd.",
+ "makerCountry": "CN",
+ "model": "LQ02B",
+ "variant": "Floor Grinding Robot",
+ "name": "Legend Robot LQ02B floor grinding robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors",
+  "research:polish-concrete-terrazzo-floors"
+ ],
+ "officialUrl": "https://www.legendrobot.com/products/floor-grinding-robot/",
+ "summary": "Autonomous mains-powered floor grinder with a 780 mm grinding width and built-in dust collection for hardened concrete and epoxy floors in garages, factories and halls. One operator supervises one robot.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found; enquiries go to the maker in Shenzhen. Legend Robot names ROBOSWISS AG as its European partner for its spraying robot, not for this grinder.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "floor_types",
+   "label": "Floors",
+   "value": "concrete hardener, dry-shake hardener, epoxy",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Concrete Hardener, Dry Shake Hardener, Epoxy Floors"
+  },
+  {
+   "key": "grinding_width_mm",
+   "label": "Grinding width",
+   "value": 780,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Grinding Width780mm"
+  },
+  {
+   "key": "daily_output_m2",
+   "label": "Daily output",
+   "value": "800-1,000 rough grinding; 3,000-4,000 polishing",
+   "unit": "m²/day",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "800–1,000 m²/day for rough grinding, and 3,000–4,000 m²/day for polishing"
+  },
+  {
+   "key": "coverage_pct",
+   "label": "Coverage",
+   "value": "≥ 95",
+   "unit": "%",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Coverage Rate≥ 95%"
+  },
+  {
+   "key": "dust_bin_l",
+   "label": "Dust collection bin",
+   "value": 100,
+   "unit": "L",
+   "conditions": "quick-release bin",
+   "sourceId": "s1",
+   "quote": "Dust Collection Capacity100L (Quick‑Release Bin)"
+  },
+  {
+   "key": "discs",
+   "label": "Grinding discs",
+   "value": "square and round discs, quick-swap interface",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Square & Round Discs(Quick‑Swap Interface)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 1250,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight1250kg"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "2450 × 930 × 1690",
+   "unit": "mm",
+   "conditions": "the page prints the three figures run together",
+   "sourceId": "s1",
+   "quote": "Dimensions24509301690mm"
+  },
+  {
+   "key": "min_clearance_mm",
+   "label": "Minimum clearance width",
+   "value": 1100,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Minimum Clearance Width1100mm"
+  },
+  {
+   "key": "speed_m_s",
+   "label": "Operating speed",
+   "value": "0-0.47",
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Operating Speed0‑0.47m/s"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Maximum climbing angle",
+   "value": 15,
+   "unit": "deg",
+   "conditions": "obstacle crossing 30 mm",
+   "sourceId": "s1",
+   "quote": "Maximum Climbing Angle15°"
+  },
+  {
+   "key": "power_kw",
+   "label": "Operating power",
+   "value": 25,
+   "unit": "kW",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Operating Power25kW"
+  },
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "AC 380 V, 50 Hz, plug-in",
+   "unit": null,
+   "conditions": "no battery",
+   "sourceId": "s1",
+   "quote": "Operating VoltageAC 380V, 50Hz"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": "1 robot, 1 operator",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1 Robot, 1 Operator"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5-40",
+   "unit": "°C",
+   "conditions": "humidity ≤ 85 % RH",
+   "sourceId": "s1",
+   "quote": "Operating Temperature5℃ to 40℃"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Plans its own grinding path and collects the dust automatically; LiDAR obstacle avoidance and rubber crash strips (maker).",
+   "Runs on a 380 V mains cable, so no battery runtime applies. Drive type not described; wheels assumed."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.legendrobot.com/uploads/images/floor-grinding-robot-legend.webp",
+   "pageUrl": "https://www.legendrobot.com/products/",
+   "credit": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "alt": "Legend Robot LQ02B floor grinding robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.legendrobot.com/products/floor-grinding-robot/",
+   "title": "Floor Grinding Robot, LQ02B",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.legendrobot.com/legend-robot-showcases-ce-compliant-autonomous-solution-for-european-smart-construction-at-batimat-2026.html",
+   "title": "Legend Robot Showcases CE-Compliant Autonomous Solution for European Smart Construction at BATIMAT 2026 (21 September 2026)",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Any European dealer, CE declaration or price?",
+  "Number and size of grinding heads, and the drive (wheels assumed)."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,147 @@
+{
+ "schemaVersion": 1,
+ "id": "teleo-supervised-autonomy",
+ "maker": "Teleo (part of Havoc since 2026)",
+ "makerCountry": "US",
+ "model": "Teleo Supervised Autonomy",
+ "variant": "retrofit kit, mesh network and remote command center for existing heavy equipment",
+ "name": "Teleo Supervised Autonomy retrofit",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "excavation"
+ ],
+ "officialUrl": "https://teleo.ai/",
+ "summary": "Retrofit system that turns existing dozers, wheel loaders, compact track loaders and articulated dump trucks into remote-operated and semi-autonomous machines, so one operator in a command center can supervise several machines. Used by US contractors such as Teichert and Tomahawk Construction; Teleo was bought by the autonomy company Havoc in March 2026.",
+ "launched": "2023-03",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. Teleo's 2023 release says its dealer network spans the US, Europe and Canada, but none of the four named dealers is identified as European on the page. Since March 2026 Teleo belongs to Havoc, which stresses defence and commercial autonomy; current availability for construction customers was not confirmed.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "host_machines",
+   "label": "Host machines",
+   "value": "any make and model of heavy construction equipment; deals for wheel loaders, bulldozers and dump trucks",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Teleo Supervised Autonomy, which enables remote and semi-autonomous operations of any make and model of heavy construction equipment"
+  },
+  {
+   "key": "operators_per_machine",
+   "label": "Supervision",
+   "value": "one operator controls several machines from a command center",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "A key benefit is that one operator can control multiple machines from the comfort of a command center."
+  },
+  {
+   "key": "night_operation",
+   "label": "Night work",
+   "value": "designed for day and night operation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The Teleo system is designed to operate day and night"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2"
+  ],
+  "notes": [
+   "Retrofit: host machines are the customer's dozers (tracks), wheel loaders and dump trucks (wheels); their blade or bucket is the tool.",
+   "Operators stay in the loop and take over complex tasks the autonomy cannot yet handle.",
+   "Photos in the 2023 release show the kit on top of Caterpillar D10T dozers and an operator controlling two John Deere 333G compact track loaders."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://mma.prnewswire.com/media/2018024/Teleo_2012_Caterpillar_D10T_Dozer_retrofitted_with_the_Teleo_kit__Photo_1.jpg",
+   "pageUrl": "https://prnewswire.com/news-releases/autonomous-construction-equipment-company-teleo-announces-customer-deals-and-global-expansion-with-new-dealer-partner-network-301765472.html",
+   "credit": "Teleo",
+   "alt": "2012 Caterpillar D10T dozer retrofitted with the Teleo kit on top at Teichert's site in Tracy, California",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Retrofitted Caterpillar D10T dozer delivered; a second D10T2 planned for the company's sand and gravel mine, including night operations",
+   "stage": "deployment",
+   "where": "Tracy, California, USA – Teichert",
+   "date": "2022",
+   "sourceId": "s2",
+   "note": "First machine delivered in summer 2022; the second was due in Q2 2023."
+  },
+  {
+   "taskIds": [],
+   "task": "Remote-operated articulated dump trucks to haul dirt for residential and commercial land development, moving to semi-autonomous operation",
+   "stage": "claim",
+   "where": "Naples, Florida, USA – Tomahawk Construction",
+   "date": "2023-03",
+   "sourceId": "s2",
+   "note": "Plan for 12 trucks, remote operation to start in summer 2023 with two machines."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://teleo.ai/",
+   "title": "Teleo: supervised autonomy for heavy equipment",
+   "publisher": "Teleo",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://prnewswire.com/news-releases/autonomous-construction-equipment-company-teleo-announces-customer-deals-and-global-expansion-with-new-dealer-partner-network-301765472.html",
+   "title": "Autonomous Construction Equipment Company Teleo Announces Customer Deals and Global Expansion with New Dealer Partner Network (8 March 2023)",
+   "publisher": "Teleo via PR Newswire",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.prnewswire.com/news-releases/havoc-advances-all-domain-collaborative-autonomy-through-acquisitions-of-mavrik-and-teleo-302711100.html",
+   "title": "Havoc Advances All-Domain Collaborative Autonomy Through Acquisitions of Mavrik and Teleo (11 March 2026)",
+   "publisher": "Havoc via PR Newswire",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Does Havoc still sell Teleo retrofits to construction contractors, and in Europe?",
+  "Which of the dealers (Dobbs Positioning Solutions, RDO Equipment, SMS Equipment, SR-O Technology) covers Europe?",
+  "Did the Tomahawk dump truck fleet go into remote and semi-autonomous operation as planned?",
+  "Price and sensor set of the kit not published."
+ ],
+ "checkedAt": "2026-11-18"
+}

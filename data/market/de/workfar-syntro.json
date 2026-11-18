@@ -1,0 +1,183 @@
+{
+ "schemaVersion": 1,
+ "id": "workfar-syntro",
+ "maker": "WorkFar Technologies",
+ "makerCountry": "US",
+ "model": "Syntro",
+ "variant": null,
+ "name": "WorkFar Syntro",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://workfar.com/product/syntro",
+ "summary": "A wheeled humanoid made in the USA with two arms, 12-DOF hands and a three-wheel omni base, run by teleoperation (VR, gloves) or onboard AI for logistics and manufacturing work. The maker states a 20 kg payload and 6-10 h runtime.",
+ "launched": "2024-08",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold only through the maker's US online store, with a stated lead time of about 6 months for the base robot. No German or EU distributor was found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 29999.99,
+   "currency": "USD",
+   "market": "US maker store, package 1 (Syntro Base humanoid robot only, with SDK); marked as a sale price against a regular price of USD 59,990. Packages with telepresence and AI add-ons go up to USD 59,999.99.",
+   "sourceId": "s1"
+  },
+  "leadTime": "ETA 6 months for the Base robot, 12 months for the Telepresence/Intelligent packages (maker store)",
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.7,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Height: 5′ 8″ (1.7m)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 108,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight: 240 lbs (108kg)"
+  },
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "maker figure; not split into arm payload or carried load",
+   "sourceId": "s1",
+   "quote": "Payload: 44 lbs (20kg)"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 45,
+   "unit": null,
+   "conditions": "Head 2, arms 4 x2, wrists 3 x2, hands 12 x2, waist 2, wheels 3",
+   "sourceId": "s1",
+   "quote": "Degrees of Freedom: Head: 2 / Arms: 4 (x2) / Wrist: 3 (x2) / Hands: 12 (x2) / Waist: 2 / Wheels: 3"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": "6-10",
+   "unit": "h",
+   "conditions": "swappable 1.2 kWh batteries",
+   "sourceId": "s1",
+   "quote": "Power: Swappable Batteries 1.2 kWh / Run Time: 6-10 Hours / Charge Time: 6-10 Hours"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "3 omni wheels",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Motion: 3 All-directional Omni Wheels / Anthropomorphic Arms / Dexterous Hands"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2D LiDAR, cameras, microphones",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Sensors/Input: 2D LiDAR / Camera(s) / Computer Vision / Microphone(s)"
+  },
+  {
+   "key": "compute",
+   "label": "Compute and software",
+   "value": "Intel Core i5, Linux with ROS2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Software: Intel Multi Core I5 / Custom Linux running ROS2"
+  },
+  {
+   "key": "warranty",
+   "label": "Warranty",
+   "value": "30 days (Base)",
+   "unit": null,
+   "conditions": "6 months for the Intelligent package",
+   "sourceId": "s1",
+   "quote": "Warranty: 30 day warranty for Syntro “Base” and “Telepresence”; 6 month warranty for Syntro “Intelligent”."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": "SDK included; ROS2 on custom Linux (maker)",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The 20 kg payload is not split into arm payload or carried load, so it is not used as a payload figure here.",
+   "Telepresence package adds a VR headset, gloves, suit and pedals for remote operation."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.workfar.com/wp-content/uploads/2026/01/new_store_first.png",
+   "pageUrl": "https://workfar.com/product/syntro",
+   "credit": "WorkFar Technologies",
+   "alt": "WorkFar Syntro wheeled humanoid holding a carton, maker render",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Teleoperated and AI-assisted handling of boxes, raw materials and totes in logistics and manufacturing, offered on a monthly lease",
+   "stage": "claim",
+   "where": null,
+   "date": "2024-08",
+   "sourceId": "s2",
+   "note": "No named customer site or construction use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://workfar.com/product/syntro",
+   "title": "WorkFar \"Syntro\" Humanoid Robot (store page)",
+   "publisher": "WorkFar Technologies",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.roboticstomorrow.com/news/2024/08/09/workfar-robotics-unleashes-sentient-humanoid-robots-syntro-into-the-workforce/22949/",
+   "title": "WorkFar Robotics Unleashes Sentient Humanoid Robots \"Syntro\" into the WorkForce",
+   "publisher": "Robotics Tomorrow",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Whether WorkFar ships to Europe and whether the robot carries CE marking.",
+  "Named customer deployments and delivered unit numbers.",
+  "Arm payload per arm (only a total 20 kg payload is stated)."
+ ],
+ "checkedAt": "2026-11-18"
+}

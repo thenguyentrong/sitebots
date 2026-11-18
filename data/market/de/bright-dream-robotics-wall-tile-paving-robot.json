@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "bright-dream-robotics-wall-tile-paving-robot",
+ "maker": "Guangdong Bright Dream Robotics Co., Ltd. (Country Garden)",
+ "makerCountry": "CN",
+ "model": "Wall Tile Paving Robot (墙砖铺贴机器人)",
+ "variant": null,
+ "name": "Bright Dream wall tile paving robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_tiling/bathroom-wall-tiling"
+ ],
+ "officialUrl": "https://www.bzlrobot.com/channels/3.html",
+ "summary": "Autonomous indoor robot that applies thin-bed tile adhesive and sets 300 × 450-600 mm wall tiles in flats, offices, hotels and malls. Made by Country Garden's robotics arm Bright Dream in Foshan.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No route for a German buyer. Bright Dream lists the robot only on its Chinese website, whose product detail pages are blank, and its global exclusive agent BrightMaster Robotics (BMR) does not offer it. No EU dealer, customer or CE marking found.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "tile_size_mm",
+   "label": "Tile size",
+   "value": "300 × 450-600",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "铺贴瓷砖规格为300*（450~600）mm"
+  },
+  {
+   "key": "method",
+   "label": "Method",
+   "value": "thin-bed tile adhesive",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "采用瓷砖胶薄贴工艺"
+  },
+  {
+   "key": "functions",
+   "label": "Functions",
+   "value": "navigation, positioning, path planning, adhesive application and tile setting",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "通过自主导航、定位、路径规划、自动涂胶和铺贴墙砖的功能"
+  },
+  {
+   "key": "cycle_time",
+   "label": "Time per tile",
+   "value": "under 1 minute",
+   "unit": null,
+   "conditions": "press report from the Shantou pilot",
+   "sourceId": "s5",
+   "quote": "不到一分钟就贴好了一块瓷砖"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A separate tile-loading robot refills tiles; a worker refills the adhesive (Shantou pilot).",
+   "Mechanism and drive not described; wheels assumed.",
+   "Bright Dream says 28 of its robot types are in commercial use; this one is listed as a product, but it is not offered by BMR."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.bzlrobot.com/upload/images/2022/11/6259ff923d10aeb0.png",
+   "pageUrl": "https://www.bzlrobot.com/channels/3.html",
+   "credit": "Bright Dream Robotics",
+   "alt": "Bright Dream wall tile paving robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_tiling/bathroom-wall-tiling"
+   ],
+   "task": "Set wall tiles on its own in a multi-robot fit-out system run from BIM and fleet software",
+   "stage": "pilot",
+   "where": "Country Garden Jinping project, Shantou, China",
+   "date": "2021-12",
+   "sourceId": "s4",
+   "note": "Acceptance of the multi-robot system on 30 December 2021; a worker fills the adhesive and a loading robot adds tiles."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.bzlrobot.com/channels/3.html",
+   "title": "建筑机器人 (construction robots product list)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bzlrobot.com/en",
+   "title": "Bright Dream home page (28 robot types in commercial use)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://en.bm-robot.com/product.html",
+   "title": "BMR product list (Bright Dream's global exclusive agent; this robot not listed)",
+   "publisher": "BrightMaster Robotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.bzlrobot.com/contents/11/198.html",
+   "title": "重大突破！博智林首次完成建筑机器人多机施工系统验收 (31 December 2021)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.bzlrobot.com/contents/11/197.html",
+   "title": "中国\"智造\"进行时：建筑业从过去融入未来 (media report)",
+   "publisher": "Bright Dream Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is it still made and offered? The product detail page is blank and BMR, the global exclusive agent, does not list it.",
+  "No dimensions, weight, output or battery figures are published."
+ ],
+ "checkedAt": "2026-11-18"
+}
