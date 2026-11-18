@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "origin-og-1",
+ "maker": "Origin",
+ "makerCountry": "US",
+ "model": "OG-1",
+ "variant": null,
+ "name": "Origin OG-1",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drywall_finishing",
+  "surface_spraying",
+  "site_drywall/drywall-joint-finishing",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": null,
+ "summary": "Three-wheeled interior construction robot that autonomously applies joint compound, sands and primes walls up to 14 ft (about 4.3 m), using force control for sanding. Built by the San Francisco start-up Origin, which came out of stealth in October 2026 with US$20 million in funding.",
+ "launched": "2026-10",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not offered in Germany. Origin says it works with two large US drywall finishing contractors and plans further pilots in Germany, Sweden, France and Saudi Arabia; no sales or rental route is published.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_work_height_ft",
+   "label": "Working height",
+   "value": 14,
+   "unit": "ft",
+   "conditions": "about 4.3 m; source gives feet",
+   "sourceId": "s1",
+   "quote": "It can work at heights of up to 14 feet"
+  },
+  {
+   "key": "wall_finishing_steps",
+   "label": "Work steps",
+   "value": "applies compound, sands, primes",
+   "unit": null,
+   "conditions": "autonomous wall-finishing workflow",
+   "sourceId": "s1",
+   "quote": "It applies compound, sands and primes walls to a professional finish."
+  },
+  {
+   "key": "platform",
+   "label": "Platform",
+   "value": "three-wheeled base with 360-degree view",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "OG-1 moves on a three-wheeled platform and has a 360-degree view of its surroundings."
+  },
+  {
+   "key": "force_control",
+   "label": "Force control",
+   "value": true,
+   "unit": null,
+   "conditions": "real-time force control for sanding",
+   "sourceId": "s1",
+   "quote": "using real-time force control to keep consistent pressure against the wall"
+  },
+  {
+   "key": "speed_claim",
+   "label": "Speed",
+   "value": "3× human speed",
+   "unit": null,
+   "conditions": "company claim, not independently confirmed",
+   "sourceId": "s2",
+   "quote": "The company said its robots are performing work at three times human speed while maintaining human-level quality across different site conditions."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Maker says it is built for rough, chaotic sites and uneven surfaces and works alongside crews without a cordoned-off area.",
+   "Modular hardware with interchangeable tools; taping, drywall installation, drilling and conduit installation are planned on the same platform.",
+   "The tool carrier (arm or mast) is not described in the sources read; arms set to 0.",
+   "Driven by Origin's 'Construction Action Model' foundation model (planning, action policy, controller)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_drywall/drywall-joint-finishing"
+   ],
+   "task": "Wall finishing on New York construction sites, now in commercial spaces, multifamily housing, data centres, hotels and warehouses",
+   "stage": "deployment",
+   "where": "New York, USA",
+   "date": "2026-10",
+   "sourceId": "s2",
+   "note": "Company statement: first robots deployed within 10 months of founding (early 2025)."
+  },
+  {
+   "taskIds": [
+    "site_drywall/drywall-joint-finishing"
+   ],
+   "task": "Working with two of the largest drywall finishing contractors in the US",
+   "stage": "pilot",
+   "where": "USA",
+   "date": "2026-10",
+   "sourceId": "s1",
+   "note": "Contractors not named; pilots planned in Germany, Sweden, France and Saudi Arabia."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://roboticsandautomationnews.com/2026/10/19/origin-raises-20-million-to-scale-general-purpose-construction-robots/106024/",
+   "title": "Origin raises $20 million to scale general-purpose construction robots (19 October 2026)",
+   "publisher": "Robotics & Automation News",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://pulse2.com/origin-20-million-funding/",
+   "title": "Origin Emerges From Stealth With $20 Million In Funding Co-Led By Accel And Zacua Ventures",
+   "publisher": "Pulse 2.0",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://evertiq.com/news/2026-10-30-us-startup-origin-raises-20m-to-build-robots-for-construction",
+   "title": "US startup Origin raises $20M to build robots for construction (30 October 2026)",
+   "publisher": "Evertiq",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Official product page, dimensions, weight and runtime.",
+  "Business model: sale, rental or service per square foot?",
+  "Where and when the German pilot will run, and with which contractor."
+ ],
+ "checkedAt": "2026-11-18"
+}

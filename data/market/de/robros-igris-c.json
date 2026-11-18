@@ -1,0 +1,226 @@
+{
+ "schemaVersion": 1,
+ "id": "robros-igris-c",
+ "maker": "ROBROS",
+ "makerCountry": "KR",
+ "model": "IGRIS-C",
+ "variant": null,
+ "name": "ROBROS IGRIS-C",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.robros.co.kr/en/igrisc",
+ "summary": "A 154 cm, 56 kg bipedal humanoid from Seoul with 7-DOF arms and 6-DOF hands, sold with a teleoperation master arm for data collection; it is in paid industrial trials in South Korea.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "ROBROS lists availability as South Korea and says global inquiries are welcome. No German or EU distributor or price was found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.54,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "At 154 cm and 56 kg"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 56,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "At 154 cm and 56 kg"
+  },
+  {
+   "key": "battery",
+   "label": "Battery capacity",
+   "value": "17,000 mAh, 48 V",
+   "unit": null,
+   "conditions": "direct charge",
+   "sourceId": "s1",
+   "quote": "17,000mAh 48V"
+  },
+  {
+   "key": "charging_time_h",
+   "label": "Charging time",
+   "value": 2.5,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2.5 h"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "DOF per arm",
+   "value": 7,
+   "unit": null,
+   "conditions": "two arms",
+   "sourceId": "s1",
+   "quote": "7 DoF x 2 Arms"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 6,
+   "unit": null,
+   "conditions": "two hands; H5_C five-finger hand, other end effectors offered",
+   "sourceId": "s1",
+   "quote": "6 DoF x 2 Hands"
+  },
+  {
+   "key": "dof_per_leg",
+   "label": "DOF per leg",
+   "value": 6,
+   "unit": null,
+   "conditions": "plus 3 DOF waist and 2 DOF neck",
+   "sourceId": "s1",
+   "quote": "6 DoF x2 Legs"
+  },
+  {
+   "key": "software",
+   "label": "OS / middleware / API",
+   "value": "Linux, Cyclone DDS, C++ and Python APIs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Linux / Cyclone DDS / C++ & Python APIs"
+  },
+  {
+   "key": "perception",
+   "label": "Perception",
+   "value": "RGB stereo and depth camera, 6-axis IMU",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "RGB Stereo, Depth Camera"
+  },
+  {
+   "key": "units_sold",
+   "label": "Robots sold (cumulative, company figure)",
+   "value": 18,
+   "unit": null,
+   "conditions": "36 units produced; as reported in September 2026",
+   "sourceId": "s2",
+   "quote": "The Seoul startup reports 18 cumulative robot sales and 36 units produced"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": true,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Linux / Cyclone DDS / C++ & Python APIs",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Stairs and slopes are a maker claim; the robot is marketed for indoor collaboration.",
+   "Ships with a master arm for teleoperation and imitation-learning data, a remote control app and a data platform.",
+   "ROBROS offers several end effectors (H5_C five-finger hand and two grippers); which one ships as standard is not stated.",
+   "Full-body teleoperation was demonstrated in September 2026; autonomous performance is not published."
+  ]
+ },
+ "researchEvidence": [
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Navigates complex terrains like slopes and stairs with ease.",
+   "basis": "maker claim",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "images": [
+  {
+   "url": "https://www.robros.co.kr/images/igrisc/igrisc-front.png",
+   "pageUrl": "https://www.robros.co.kr/en/igrisc",
+   "credit": "ROBROS",
+   "alt": "ROBROS IGRIS-C bipedal humanoid, front view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Paid industrial trials in semiconductor, automotive manufacturing and logistics work",
+   "stage": "pilot",
+   "where": "South Korea",
+   "date": "2026-09",
+   "sourceId": "s2",
+   "note": "Company-reported; no results published."
+  },
+  {
+   "taskIds": [],
+   "task": "Approved regulatory-sandbox trial of 20 robots, including stacking shipbuilding materials at HD Hyundai Samho",
+   "stage": "claim",
+   "where": "South Korea",
+   "date": "2026-10",
+   "sourceId": "s3",
+   "note": "The trial was approved, not yet reported as carried out."
+  },
+  {
+   "taskIds": [],
+   "task": "Walking through finished apartments to check the state of each unit and the public areas",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Listed by the maker as a construction use case; no project named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robros.co.kr/en/igrisc",
+   "title": "IGRIS-C",
+   "publisher": "ROBROS",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.humanoidsdaily.com/news/robros-igris-c-full-body-teleoperation",
+   "title": "Robros Adds Full-Body Teleoperation to Its Korean Humanoid",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.humanoidsdaily.com/news/robros-20-humanoid-industrial-trial-korea",
+   "title": "South Korea Approves 20-Robot Robros Trial Across Industrial Sites",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, payload per arm and runtime per charge are not published.",
+  "Whether ROBROS ships to Germany or the EU and under which certification (the page names 'Industrial Standard Class A').",
+  "Launch date of IGRIS-C."
+ ],
+ "checkedAt": "2026-11-18"
+}

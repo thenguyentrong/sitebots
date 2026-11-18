@@ -1,0 +1,181 @@
+{
+ "schemaVersion": 1,
+ "id": "mirrorme-bolt",
+ "maker": "MirrorMe Technology",
+ "makerCountry": "CN",
+ "model": "Bolt",
+ "variant": null,
+ "name": "MirrorMe Bolt",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": null,
+ "summary": "A full-size bipedal humanoid (175 cm, 75 kg) built for high-speed running, with two 21-DOF dexterous hands, sold as a research platform for locomotion and manipulation work.",
+ "launched": "2026-02",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "OpenELAB's German storefront lists Bolt with a gross price and an add-to-cart button. It is a pre-order item produced to order, with an estimated dispatch of 10-20 days after ordering; the production window is confirmed in writing per order.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": {
+   "amount": 209998.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s1",
+   "note": "incl. VAT; includes two dexterous hands, charging unit, transport case and calibration accessories (box contents on the page)."
+  },
+  "priceOther": null,
+  "leadTime": "Estimated dispatch 10-20 days after ordering; produced to order (OpenELAB)",
+  "sellers": [
+   {
+    "name": "OpenELAB Technology Ltd.",
+    "country": "CN",
+    "role": "reseller",
+    "productUrl": "https://openelab.io/de/products/mirrorme-bolt-full-size-humanoid-robot",
+    "contactUrl": null,
+    "email": "info@openelab.io",
+    "phone": "+49 155 61896199",
+    "priceEur": 209998.95,
+    "priceBasis": "gross",
+    "sourceId": "s1",
+    "note": "Shenzhen-based reseller with a German storefront; returns address Parkring 31, 85748 Garching bei München. Listed as a pre-order item; a request-for-quote form is offered for institutions."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.75,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "At 175 cm tall and 75 kg in mass"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 75,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "At 175 cm tall and 75 kg in mass"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Peak running speed",
+   "value": "above 11",
+   "unit": "m/s",
+   "conditions": "peak speed, maker claim relayed by the seller",
+   "sourceId": "s1",
+   "quote": "Peak speed is above 11 m/s"
+  },
+  {
+   "key": "load_capacity_kg",
+   "label": "Load capacity",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "type of load (arms or carried) not stated",
+   "sourceId": "s1",
+   "quote": "Load capacity is 50 kg"
+  },
+  {
+   "key": "dof_per_hand",
+   "label": "DOF per hand",
+   "value": 21,
+   "unit": null,
+   "conditions": "two hands included",
+   "sourceId": "s1",
+   "quote": "Two 21-DOF bionic dexterous hands"
+  },
+  {
+   "key": "software_files",
+   "label": "Software delivered",
+   "value": "open SDK, URDF and CAD files",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "together with the manufacturer documentation, wiring diagrams and the open SDK, URDF and CAD files"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open SDK, URDF and CAD files (per OpenELAB)",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Two 21-DOF bionic dexterous hands are in the box contents.",
+   "The 50 kg load capacity is not split into arm payload or carried load, so it is not used as a payload figure here.",
+   "Bolt's speed record runs were reported from outdoor testing; no weather or IP rating is published."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://openelab.io/cdn/shop/files/01_bolt_main_white.jpg?v=1794278504&width=1920",
+   "pageUrl": "https://openelab.io/de/products/mirrorme-bolt-full-size-humanoid-robot",
+   "credit": "OpenELAB Technology Ltd.",
+   "alt": "MirrorMe Bolt humanoid robot, full body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Research platform for humanoid locomotion, dexterous manipulation and embodied-AI training; the seller also names factory automation pilots",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "No construction or site use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://openelab.io/de/products/mirrorme-bolt-full-size-humanoid-robot",
+   "title": "MirrorMe Robot Bolt Humanoid Robot",
+   "publisher": "OpenELAB",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.foxnews.com/tech/worlds-fastest-humanoid-robot-runs-22-mph",
+   "title": "World's fastest humanoid robot runs 22 mph",
+   "publisher": "Fox News",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://mugglehead.com/humanoid-robot-bolt-hits-10-metres-per-second-in-real-world-test/",
+   "title": "Humanoid robot Bolt hits 10 metres per second in real-world test",
+   "publisher": "Mugglehead",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Maker website and an official MirrorMe spec sheet (runtime, compute, arm payload) were not found.",
+  "Whether the 50 kg load capacity means arm payload or carried load.",
+  "Whether OpenELAB is an authorised MirrorMe distributor and what warranty applies."
+ ],
+ "checkedAt": "2026-11-18"
+}

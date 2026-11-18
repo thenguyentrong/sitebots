@@ -1,0 +1,176 @@
+{
+ "schemaVersion": 1,
+ "id": "legend-robot-lq04b",
+ "maker": "Shenzhen Legend Robot Technology Co., Ltd.",
+ "makerCountry": "CN",
+ "model": "LQ04B",
+ "variant": "Tile Laying Robot",
+ "name": "Legend Robot LQ04B Tile Laying Robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_tiling/large-format-floor-tiles"
+ ],
+ "officialUrl": "https://www.legendrobot.com/products/tile-laying-robot/",
+ "summary": "Mobile floor-tiling robot that applies adhesive and lays 600 × 600 or 800 × 800 mm floor tiles in batches of five, aligning each tile by camera. Workers refill material and do edges, corners and cuts.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found; enquiries go to the maker in Shenzhen. Legend Robot exhibited at BATIMAT 2026 in Paris and names a European partner (ROBOSWISS AG) for its spraying robots, but nothing for the tile robot.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "tile_sizes_mm",
+   "label": "Tile sizes",
+   "value": "600 × 600, 800 × 800",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Tile Size Compatibility600×600mm / 800×800mm"
+  },
+  {
+   "key": "tiles_per_cycle",
+   "label": "Tiles per cycle",
+   "value": 5,
+   "unit": "tiles",
+   "conditions": "5 tiles per 10-minute cycle, 120 s per tile",
+   "sourceId": "s1",
+   "quote": "Batch Laying Capacity5 tiles / cycle"
+  },
+  {
+   "key": "tiles_per_day",
+   "label": "Output per day",
+   "value": "80-120",
+   "unit": "tiles/day",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "the robot can lay 80–120 standard tiles per day"
+  },
+  {
+   "key": "tiling_precision_mm",
+   "label": "Tiling precision",
+   "value": "joint gap ≤ 1.0, lippage ≤ 1.0",
+   "unit": "mm",
+   "conditions": "spec table; marketing text elsewhere claims ±0.1 mm joint error",
+   "sourceId": "s1",
+   "quote": "Joint Gap ≤ 1.0mm Lippage Flatness ≤ 1.0mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 660,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight660kg"
+  },
+  {
+   "key": "footprint",
+   "label": "Footprint",
+   "value": "under 1,000 mm wide and 800 mm deep",
+   "unit": null,
+   "conditions": "minimum clearance width 840 mm",
+   "sourceId": "s1",
+   "quote": "Designed with a footprint of less than 1000 mm in width and 800 mm in depth"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 105 Ah; 4 h + 4 h with 2 batteries",
+   "unit": null,
+   "conditions": "manual battery swap",
+   "sourceId": "s1",
+   "quote": "Battery Life4h+4h (Including 2 Batteries)"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": "1 robot + 2 workers (operation and material refilling)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "One automatic tile laying robot works with two workers: one for operation, one for material refilling"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Same-direction pick-and-place arm (no rotation) so it can work in narrow rooms, corridors and lifts; deep-learning vision measures tile-to-tile position.",
+   "Controls adhesive distribution to avoid hollow tiles (maker).",
+   "Robot lays full tiles; workers do edges, corners and finishing.",
+   "Drive type is not stated (mobile chassis, ±30 mm navigation accuracy, 10° climbing angle, 30 mm obstacles); wheels assumed."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.legendrobot.com/uploads/images/tile-laying-robot-legend.webp",
+   "pageUrl": "https://www.legendrobot.com/products/tile-laying-robot/",
+   "credit": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "alt": "Legend Robot LQ04B tile laying robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Lays large-format floor tiles in residential, hotel, office and public buildings",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "No named project for the tile robot found on the maker's site."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.legendrobot.com/products/tile-laying-robot/",
+   "title": "Tile Laying Robot, LQ04B",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.legendrobot.com/legend-robot-showcases-ce-compliant-autonomous-solution-for-european-smart-construction-at-batimat-2026.html",
+   "title": "Legend Robot Showcases CE-Compliant Autonomous Solution for European Smart Construction at BATIMAT 2026",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Any named site use of the tile robot?",
+  "Which adhesive and bed method (thin-bed or mortar) the robot uses.",
+  "Price and any sales route in Europe."
+ ],
+ "checkedAt": "2026-11-18"
+}

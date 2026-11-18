@@ -1,0 +1,225 @@
+{
+ "schemaVersion": 1,
+ "id": "duatic-dxtr",
+ "maker": "Duatic AG",
+ "makerCountry": "CH",
+ "model": "DXTR",
+ "variant": null,
+ "name": "Duatic DXTR",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.duatic.com/dxtr",
+ "summary": "A Swiss wheeled dual-arm mobile manipulator for intralogistics: two torque-controlled DynaArms lift up to 30 kg together for 10 s (12 kg continuous) and the base carries up to 200 kg.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Duatic AG in Glattbrugg (Switzerland) takes enquiries through the contact button on its product page; no price, delivery time or German partner is published.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Duatic AG",
+    "country": "CH",
+    "role": "manufacturer",
+    "productUrl": "https://www.duatic.com/dxtr",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Thurgauerstrasse 119, 8152 Glattbrugg, Switzerland. Product page offers \"Contact us\"; every module (DynaArm, DuaTorso, DuaRover) is also sold on its own."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Continuous payload",
+   "value": 12,
+   "unit": "kg",
+   "conditions": "system value, not split per arm",
+   "sourceId": "s1",
+   "quote": "Continuous Payload 12 kg"
+  },
+  {
+   "key": "max_lift_kg",
+   "label": "Maximum payload (10 s)",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "two arms together, for 10 s",
+   "sourceId": "s2",
+   "quote": "Two coordinated arms lift up to 30 kg together, and the mobile base carries up to 200 kg on top."
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Base carrying load",
+   "value": 200,
+   "unit": "kg",
+   "conditions": "on top of the mobile base",
+   "sourceId": "s2",
+   "quote": "the mobile base carries up to 200 kg on top"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach per arm",
+   "value": 0.99,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Reach (per arm) 0.990 m"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Platform speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Platform speed 2 m/s"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Protection rating",
+   "value": "IP66",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Protection Rating IP66"
+  },
+  {
+   "key": "power",
+   "label": "Input voltage",
+   "value": "48 V DC, hot-swappable batteries",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Hot swappable batteries for 24/7 autonomy"
+  },
+  {
+   "key": "sdk",
+   "label": "Communication interface",
+   "value": "ROS 2",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "seamless ROS 2 integration"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 12,
+  "carryPayloadKg": 200,
+  "runtimeH": null,
+  "ipRating": "IP66",
+  "sdk": "ROS 2",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Duatic calls it both a \"dual-arm mobile manipulator\" and a \"half-humanoid\"; it has a wheeled base, two DynaArms and a vision head.",
+   "Built for intralogistics on existing floor layouts (totes, cartons, sacks); the end effectors are not named.",
+   "The arm payload figure (12 kg continuous) is a system value; a single DynaArm is rated 6 kg continuous and 15 kg for 10 s."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.duatic.com/web/image/7946-ba79d6a1/duatic_alpha_2.webp",
+   "pageUrl": "https://www.duatic.com/dxtr",
+   "credit": "Duatic AG",
+   "alt": "Duatic DXTR two-arm robot on a wheeled base",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Maker says it lifts totes, places cartons and carries sacks on existing warehouse floor layouts",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Video of the Duatic Alpha detecting, approaching and grasping a 20 kg bag with two DynaArms",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Shown on the maker's home page as \"Duatic Alpha\"; the link between the Alpha prototype and the DXTR name is not stated."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "ip_rating",
+   "value": "IP66",
+   "sourceId": "s1",
+   "quote": "Protection Rating IP66",
+   "basis": "maker spec table",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "carry_payload_kg",
+   "value": 200,
+   "sourceId": "s2",
+   "quote": "the mobile base carries up to 200 kg on top",
+   "basis": "maker home page",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.duatic.com/dxtr",
+   "title": "DXTR",
+   "publisher": "Duatic AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://duatic.com/",
+   "title": "DXTR - Dual-arm mobile manipulator",
+   "publisher": "Duatic AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.duatic.com/dynaarm",
+   "title": "DynaArm",
+   "publisher": "Duatic AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, delivery time and whether DXTR is in series production or still a prototype.",
+  "Runtime per battery pack and the end effectors supplied.",
+  "Whether DXTR is the renamed \"Duatic Alpha\" shown in the maker's videos.",
+  "Any German reseller or integrator."
+ ],
+ "checkedAt": "2026-11-18"
+}

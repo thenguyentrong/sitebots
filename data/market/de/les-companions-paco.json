@@ -1,0 +1,330 @@
+{
+ "schemaVersion": 1,
+ "id": "les-companions-paco",
+ "maker": "Les Companions",
+ "makerCountry": "FR",
+ "model": "PACO",
+ "variant": null,
+ "name": "Les Companions PACO",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://lescompanions.com/",
+ "summary": "Wheeled interior painting robot with a lifting mast and a six-axis arm that sprays water-based paint airless onto walls and ceilings up to 3.5 m high, programmed from a 3D scan of the room. Developed by the French start-up Les Companions in partnership with AkzoNobel.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold, leased or rented on request by the French maker Les Companions (Marcq-en-Baroeul), whose website has a German language version. Rental as a 'performance partnership' starts at €1.20 per m² and includes the robot, 3D scanner, training, support and maintenance; purchase and lease prices are on request. AkzoNobel's brand Sikkens Germany presents PACO on its German website. No German dealer or service partner is named.",
+  "sourceIds": [
+   "s1",
+   "s4",
+   "s5",
+   "s6",
+   "s8"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Les Companions",
+    "country": "FR",
+    "role": "manufacturer",
+    "productUrl": "https://lescompanions.com/price/",
+    "contactUrl": "https://lescompanions.com/contact-us-les-companions/",
+    "email": "hello@lescompanions.com",
+    "phone": "+33 (0)3 74 47 22 99",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s4",
+    "note": "14 rue des Châteaux, La Pilaterie, 59700 Marcq-en-Baroeul, France (contact page). Offers: rental 'performance partnership' from €1.20 per m² (net or gross not stated) and plain sale or lease (contact for prices); both include PACO, the 3D scanner, training with a certified expert, support and maintenance."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "width_mm",
+   "label": "Width",
+   "value": 768,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "768 mm"
+  },
+  {
+   "key": "length_mm",
+   "label": "Length",
+   "value": 1350,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "1 350 mm"
+  },
+  {
+   "key": "height_folded_m",
+   "label": "Height, mast folded",
+   "value": 0.71,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "0.71 m (folded elevator)"
+  },
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": 3.5,
+   "unit": "m",
+   "conditions": "mast extended",
+   "sourceId": "s2",
+   "quote": "3.5 m (extended elevator)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 305,
+   "unit": "kg",
+   "conditions": "fully loaded; 275 kg without paint and battery",
+   "sourceId": "s2",
+   "quote": "305 kg (fully loaded)"
+  },
+  {
+   "key": "painting_rate_m2_h",
+   "label": "Painting rate",
+   "value": 180,
+   "unit": "m²/h",
+   "conditions": "painting without any human handling (maker FAQ)",
+   "sourceId": "s3",
+   "quote": "The current painting speed (painting without any human handling) is 180 m²/h"
+  },
+  {
+   "key": "paint_cartridge_l",
+   "label": "Paint cartridge",
+   "value": 18,
+   "unit": "L",
+   "conditions": "about 180 m² per cartridge depending on the paint",
+   "sourceId": "s3",
+   "quote": "The PACO is fed by paint cartridges with a capacity of 18L"
+  },
+  {
+   "key": "battery_runtime_h",
+   "label": "Runtime per battery",
+   "value": 3,
+   "unit": "h",
+   "conditions": "two batteries supplied; about 2 h to charge, swap for continuous work",
+   "sourceId": "s3",
+   "quote": "Each battery can operate for 3 hours and takes about 2 hours to charge"
+  },
+  {
+   "key": "ground_speed_m_s",
+   "label": "Ground speed",
+   "value": "< 0.3",
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "< 0.3 m / s"
+  },
+  {
+   "key": "power_supply",
+   "label": "Power supply",
+   "value": "24 V battery, max. 1,600 W",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "24V battery, maximum power of 1 600W"
+  },
+  {
+   "key": "degrees_of_freedom",
+   "label": "Kinematics",
+   "value": "mobile ground platform + elevation + 6-axis arm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Evolution of a mobile platform on the ground + elevation + 6 axes arm"
+  },
+  {
+   "key": "spray_method",
+   "label": "Spray method",
+   "value": "airless, water-based paints only",
+   "unit": null,
+   "conditions": "maker says the equivalent of 1 to 3 coats in a single pass",
+   "sourceId": "s3",
+   "quote": "PACO only uses water-based paints (i.e. paint with no solvent)."
+  },
+  {
+   "key": "obstacle_mm",
+   "label": "Obstacle it can pass",
+   "value": 20,
+   "unit": "mm",
+   "conditions": "bumps or holes; floor clearance 40 mm",
+   "sourceId": "s3",
+   "quote": "it can pass over obstacles up to 20mm (bumps or holes) and has a floor clearance of 40mm"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5-35",
+   "unit": "°C",
+   "conditions": "the paint may have narrower limits",
+   "sourceId": "s2",
+   "quote": "5°C - 35°C"
+  },
+  {
+   "key": "training_h",
+   "label": "Operator training",
+   "value": 2,
+   "unit": "h",
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "PACO can be easily manipulated after a 2-hour training"
+  },
+  {
+   "key": "ce_marking",
+   "label": "CE marking",
+   "value": true,
+   "unit": null,
+   "conditions": "maker statement",
+   "sourceId": "s3",
+   "quote": "PACO is CE certified."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": false,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 3,
+  "ipRating": "IP22",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Dense foam wheels with sprung suspension; passes bumps and holes up to 20 mm and drives over cables and dirt on site floors (maker).",
+   "Maker says PACO can be carried up stairs and moved across muddy sites; it does not climb stairs itself. Minimum setback 1.5 m.",
+   "Designed for interior painting of large surfaces (schools, offices, hospitals, stores, industrial and premium housing); areas not to be painted must be masked as for manual work.",
+   "Guidance manual or automatic (lidar data compared with the scan); remote monitoring over 4G; automatic 12-minute cleaning cycle.",
+   "IP 22 except under the robot. Two batteries of 3 h each, swappable.",
+   "Sikkens Germany says putty spraying and sanding functions are still in development; the maker's FAQ says PACO can currently paint."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://lescompanions.com/wp-content/uploads/2024/12/Portsmouth-1024x436.jpg",
+   "pageUrl": "https://lescompanions.com/price/",
+   "credit": "Les Companions",
+   "alt": "Les Companions PACO painting robot shown to visitors",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "First test in real site conditions: painting at the École supérieure d'art et de design (ESAD) by the finishing contractor Lagarde Meregnani",
+   "stage": "pilot",
+   "where": "ESAD, Reims, France",
+   "date": "2026-06",
+   "sourceId": "s7",
+   "note": "Reported 5 June 2026 as the contractor's first trial of the robot."
+  },
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Sprays paint, lacquers and glazes airless onto walls and ceilings up to 3.5 m",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s6",
+   "note": "AkzoNobel/Sikkens Germany description."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://lescompanions.com/",
+   "title": "PACO, the painting robot",
+   "publisher": "Les Companions",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://lescompanions.com/specifications/",
+   "title": "PACO specifications",
+   "publisher": "Les Companions",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://lescompanions.com/faq/",
+   "title": "PACO FAQ",
+   "publisher": "Les Companions",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://lescompanions.com/price/",
+   "title": "PACO price and offers",
+   "publisher": "Les Companions",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://lescompanions.com/contact-us-les-companions/",
+   "title": "Contact us",
+   "publisher": "Les Companions",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s6",
+   "url": "https://www.sikkens.de/de/kollege-paco-kommt",
+   "title": "Kollege PACO kommt - der Gefährte des Malers",
+   "publisher": "Akzo Nobel (Sikkens Deutschland)",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.lejournaldesentreprises.com/breve/lagarde-meregnani-teste-un-robot-peintre-sur-un-chantier-reims-2144204",
+   "title": "Lagarde Meregnani teste un \"robot peintre\" sur un chantier à Reims (5 June 2026)",
+   "publisher": "Le Journal des Entreprises",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s8",
+   "url": "https://lescompanions.com/de/",
+   "title": "PACO, the painting robot (German language version of the site)",
+   "publisher": "Les Companions",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Purchase and lease prices; whether the €1.20 per m² rental rate is net and what minimum area or term applies.",
+  "Does Les Companions deliver, train and service in Germany? The German page of the site carries the English text; no German partner is named.",
+  "Sikkens Germany (undated page) says PACO is 'kurz vor der Markteinführung' while the maker says it can be bought or rented now; are putty spraying or sanding available yet?",
+  "Arm payload and the highest ceiling it can paint are not stated beyond the 3.5 m working height."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,108 @@
+{
+ "schemaVersion": 1,
+ "id": "genki-robotics-humanoid",
+ "maker": "Genki Robotics",
+ "makerCountry": "JP",
+ "model": "Humanoid (product prototype, unnamed)",
+ "variant": null,
+ "name": "Genki Robotics humanoid",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://genki.com/",
+ "summary": "A full-size bipedal humanoid with five-fingered hands from Andy Rubin's Tokyo startup, first shown in November 2026; the first product model is being built and no specifications or price are published.",
+ "launched": "2026-11",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Shown publicly for the first time on 12 November 2026 in Tokyo; the company says it is now turning the robot into a product. No price, delivery date or European sales route.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "form",
+   "label": "Form",
+   "value": "full-size biped with five-fingered hands",
+   "unit": null,
+   "conditions": "product prototype shown in November 2026",
+   "sourceId": "s1",
+   "quote": "The robot shown at the Kantei is a full-size biped with a grey and white shell, a dark faceplate for a head, green accents on its forearms and black five-fingered hands with green fingertips."
+  },
+  {
+   "key": "in_house_hardware",
+   "label": "In-house hardware",
+   "value": "own joint actuators and cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Genki designs its own actuators and cameras"
+  },
+  {
+   "key": "target_abilities",
+   "label": "Target abilities",
+   "value": "walking on flat ground and stairs, patrolling, carrying objects",
+   "unit": null,
+   "conditions": "company goals, not demonstrated specifications",
+   "sourceId": "s1",
+   "quote": "walking on flat ground and stairs, patrolling and carrying objects"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "dexterous",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Footage shown with the robot had it walking in an empty room, in an office and on grass, and doing tabletop work.",
+   "Stairs and carrying are stated goals, so they are left unconfirmed.",
+   "Genki plans an open software platform with a marketplace for robot behaviours."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Walking indoors and on grass and doing tabletop work (company footage)",
+   "stage": "demo",
+   "where": "Tokyo, Japan",
+   "date": "2026-11",
+   "sourceId": "s1",
+   "note": "Shown on a screen at the Prime Minister's Office; the robot itself stood on a support stand."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.humanoidsdaily.com/news/genki-robotics-humanoid-debut-takaichi-kantei",
+   "title": "Andy Rubin's Genki Robotics Shows Its Humanoid to Japan's Prime Minister",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Product name, specifications, price and launch markets are not published; the company website has no images or specs yet.",
+  "When the first product model will ship."
+ ],
+ "checkedAt": "2026-11-18"
+}

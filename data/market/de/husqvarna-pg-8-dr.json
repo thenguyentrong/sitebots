@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "husqvarna-pg-8-dr",
+ "maker": "Husqvarna Construction",
+ "makerCountry": "SE",
+ "model": "PG 8 DR",
+ "variant": "EU, 3x380-415 V",
+ "name": "Husqvarna PG 8 DR",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "floor_grinding",
+  "research:prepare-hardened-concrete-floors"
+ ],
+ "officialUrl": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/pg8dr/",
+ "summary": "Remote-controlled planetary floor grinder with an 800 mm grinding width and Dual Drive Technology, for grinding concrete floors; the operator drives and sets it from a joystick remote control with a live display.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Husqvarna Deutschland GmbH, Construction",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/pg8dr/",
+    "contactUrl": "https://www.husqvarnaconstruction.com/de/kontaktieren-sie-uns/",
+    "email": "verkauf.construction@husqvarnagroup.com",
+    "phone": "+49 731 490 2540",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Bahnhofstr. 50, 89168 Niederstotzingen (contact page). Article no. 970 60 53-03 (3x380-415 V, 15+1.5 kW, EU); quote request, dealer search and demo booking on the product page."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "power_kw",
+   "label": "Max output power",
+   "value": 16.5,
+   "unit": "kW",
+   "conditions": "as stated by the motor maker; article listing says 15+1.5 kW",
+   "sourceId": "s1",
+   "quote": "16.5kW"
+  },
+  {
+   "key": "grinding_width_mm",
+   "label": "Grinding width",
+   "value": 800,
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "800 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 661,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "661 kg"
+  },
+  {
+   "key": "supply",
+   "label": "Power supply",
+   "value": "3x380-415 V, 3 phases",
+   "unit": null,
+   "conditions": "EU version, art. no. 970 60 53-03",
+   "sourceId": "s1",
+   "quote": "SCHLEIFMASCHINE PG 8 DR | 3x380-415 V | 15+1.5 kW | EU"
+  },
+  {
+   "key": "remote_control",
+   "label": "Remote control",
+   "value": "joystick remote with anti-glare screen showing power use, input current and motor speed",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Der große entspiegelte Bildschirm liefert Echtzeitinformationen wie Stromverbrauch, Eingangsstrom und Motordrehzahl."
+  },
+  {
+   "key": "service_interval_h",
+   "label": "Grinding head service interval",
+   "value": 1000,
+   "unit": "h",
+   "conditions": "sealed grinding head",
+   "sourceId": "s1",
+   "quote": "Abgeschotteter Schleifkopf mit einem Wartungsintervall von 1000 h."
+  },
+  {
+   "key": "oscillation",
+   "label": "Oscillation function",
+   "value": true,
+   "unit": null,
+   "conditions": "mimics manual grinding movement for flatter floors in a single pass",
+   "sourceId": "s1",
+   "quote": "Oszillationsfunktion für ebene Flächen"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote-controlled, not autonomous: the operator drives the machine with a joystick remote control (like the Scanmaskin and Schwamborn RC grinders).",
+   "Mains-powered for grinding (3-phase); built-in batteries and charger power transport moves on and to the site; fold-out transport wheel.",
+   "Mist Cooler water-mist system, adjustable built-in weights for grinding pressure, floating steel shroud for dust pick-up; Husqvarna Fleet Services ready."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.husqvarnaconstruction.com/-/images/aprimo/husqvarna-construction/floor-grinders/photos/studio/tb-441088.png?v=be0822e55296a5c3&format=TIFF_LANDSCAPE_CONTAIN_LG",
+   "pageUrl": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/pg8dr/",
+   "credit": "Husqvarna Construction",
+   "alt": "Husqvarna PG 8 DR remote-controlled floor grinder, studio view",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "research:prepare-hardened-concrete-floors"
+   ],
+   "task": "Grinds concrete floors with remote control, high grinding pressure and water-mist cooling",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.husqvarnaconstruction.com/de/bodenschleifmaschinen/pg8dr/",
+   "title": "Husqvarna PG 8 DR",
+   "publisher": "Husqvarna Construction",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.husqvarnaconstruction.com/de/kontaktieren-sie-uns/",
+   "title": "Wenden Sie sich an Husqvarna",
+   "publisher": "Husqvarna Deutschland GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price in Germany.",
+  "Remote-control range and dust extractor requirements."
+ ],
+ "checkedAt": "2026-11-18"
+}

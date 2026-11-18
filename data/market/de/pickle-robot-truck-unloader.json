@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "pickle-robot-truck-unloader",
+ "maker": "Pickle Robot Company",
+ "makerCountry": "US",
+ "model": "Truck unloading robot",
+ "variant": null,
+ "name": "Pickle Robot truck unloader",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://picklerobot.com/products/truck-unloading",
+ "summary": "A mobile unloading robot for trailers and ocean containers: an industrial arm with suction gripping on a base that moves deeper into the trailer by itself and puts floor-loaded boxes of up to 50 lb onto an onboard conveyor. UPS uses it in the US.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found; Pickle Robot (Charlestown, Massachusetts) sells and installs in the US via \"Schedule a call\" on its website.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "box_weight_lb",
+   "label": "Max box weight",
+   "value": 50,
+   "unit": "lb",
+   "conditions": "loose-packed, floor-loaded freight (about 22.7 kg)",
+   "sourceId": "s1",
+   "quote": "weighs up to 50lbs for loose packed, floor loaded freight"
+  },
+  {
+   "key": "box_size",
+   "label": "Box sizes",
+   "value": "6 x 6 x 6 in up to 24 x 24 x 32 in",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Handles packages from 6\" x 6\" x 6\" cubes up to 24\" x 24\" x 32\""
+  },
+  {
+   "key": "throughput_pph",
+   "label": "Unloading rate",
+   "value": "400-1,500 packages per hour",
+   "unit": null,
+   "conditions": "dependent on freight, in production deployments",
+   "sourceId": "s1",
+   "quote": "Systems reliably achieve 400-1,500 PPH (dependent on freight) in production deployments"
+  },
+  {
+   "key": "containers",
+   "label": "Trailers and containers",
+   "value": "Any length standard-height road trailers; standard and high-cube ocean containers",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Works in any length, standard height, over the road trailers and both standard height and high cube ocean containers."
+  },
+  {
+   "key": "setup",
+   "label": "Set-up",
+   "value": "Moves dock to dock, sets up in under 5 minutes; in production in under 5 days",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Moves dock to dock. Sets up in under 5 minutes."
+  },
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "One KUKA industrial arm with suction gripper, onboard conveyor",
+   "unit": null,
+   "conditions": "press report",
+   "sourceId": "s3",
+   "quote": "The system uses KUKA robot arms and works with commercially available conveyors."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 22.7,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Arm payload is the stated maximum box weight (50 lb = about 22.7 kg).",
+   "Works at the dock door: the base drives into the trailer as it empties; no WMS integration needed according to the maker.",
+   "The mobile base is taken as wheeled; its drive type is not described in the pages read."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "construction_logistics_hub/container-unloading"
+   ],
+   "task": "Unloads floor-loaded parcels from trailers at UPS facilities",
+   "stage": "deployment",
+   "where": "United States",
+   "date": null,
+   "sourceId": "s2",
+   "note": "UPS statement on the maker's home page: \"UPS is using Pickle Robot’s unloading technologies to ease the challenging job of unloading trailers\"."
+  },
+  {
+   "taskIds": [
+    "construction_logistics_hub/container-unloading"
+   ],
+   "task": "UPS plans to buy about 400 truck-unloading robots for about 120 million USD",
+   "stage": "deployment",
+   "where": "United States",
+   "date": null,
+   "sourceId": "s3",
+   "note": "Based on Bloomberg reporting; a purchase plan, roll-out dates not in the article."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "arm_payload_kg",
+   "value": 22.7,
+   "sourceId": "s1",
+   "quote": "weighs up to 50lbs for loose packed, floor loaded freight",
+   "basis": "maker figure in lb, converted (press: 22.5 kg)",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://picklerobot.com/products/truck-unloading",
+   "title": "Truck Unloading",
+   "publisher": "Pickle Robot Company",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://picklerobot.com/",
+   "title": "Pickle Robot home page",
+   "publisher": "Pickle Robot Company",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.automatedwarehouseonline.com/ups-to-spend-120m-on-400-pickle-truck-unloading-robots/",
+   "title": "UPS to spend $120M on 400 Pickle truck unloading robots",
+   "publisher": "Automated Warehouse",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Any European customer or sales partner.",
+  "Price per robot is not published by Pickle.",
+  "Footprint, weight and power supply of the unit."
+ ],
+ "checkedAt": "2026-11-18"
+}

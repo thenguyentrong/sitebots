@@ -27,7 +27,11 @@ const nextConfig: NextConfig = {
     // The site became one chat. Old pages go to it instead of ending in a 404.
     const gone = ['/chat', '/graph', '/steps', '/costs', '/search', '/methodology', '/plan/:path*', '/use-cases/:path*', '/workflows/:path*', '/solutions/:path*']
       .map(source => ({ source, destination: '/', permanent: false }));
-    return [...models, ...gone];
+    // The site lives on sitebots.org since 18 Nov 2026. Old links on the Vercel address follow it, so a
+    // sign-in always starts on the one host the Google and Microsoft apps accept. API routes stay
+    // reachable on both, for the cron job and anything else that calls the old address.
+    const home = { source: '/:path((?!api/).*)', has: [{ type: 'host' as const, value: 'sitebots.vercel.app' }], destination: 'https://sitebots.org/:path', permanent: true };
+    return [home, ...models, ...gone];
   },
   // PGlite loads its WASM and data files with `new URL(...)` checks that fail
   // once Turbopack has bundled it (the bundler's URL is not Node's URL). Keep

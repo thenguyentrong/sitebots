@@ -92,13 +92,14 @@ a.lineup-label:hover { color: #fb923c; }
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  background: #fafafa;
+  background: #fb923c;
   color: #09090b;
-  transition: transform 0.15s ease, opacity 0.15s ease;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
 }
-.adv-send:hover:not(:disabled) { transform: scale(1.06); }
+.adv-send:hover:not(:disabled) { transform: scale(1.06); background: #fdba74; }
 .adv-send:active:not(:disabled) { transform: scale(0.96); }
-.adv-send:disabled { opacity: 0.35; }
+/* Empty box: still plainly the send button, just not lit yet. */
+.adv-send:disabled { background: rgba(251, 146, 60, 0.16); color: #fb923c; box-shadow: inset 0 0 0 1px rgba(251, 146, 60, 0.4); }
 
 .adv-mic {
   flex: none;

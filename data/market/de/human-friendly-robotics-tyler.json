@@ -1,0 +1,200 @@
+{
+ "schemaVersion": 1,
+ "id": "human-friendly-robotics-tyler",
+ "maker": "Human Friendly Robotics",
+ "makerCountry": "US",
+ "model": "Tyler",
+ "variant": null,
+ "name": "Human Friendly Robotics Tyler",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_tiling/large-format-floor-tiles",
+  "site_flooring/carpet-tile-laying"
+ ],
+ "officialUrl": "https://www.humanfriendly.bot/tyler",
+ "summary": "Small mobile floor-tiling robot that scans the floor, plans the layout and places full tiles (ceramic, LVT, VCT or carpet tiles) while the crew does preparation, cuts, edges and finishing. Offered by the New Jersey start-up Human Friendly Robotics as a service priced per square foot installed.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not offered in Germany or the EU. In the US the maker does not sell the robot but prices Tyler's work per installed square foot; job sites named are in the New York City area and Puerto Rico.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 0.5,
+   "currency": "USD",
+   "market": "US, robotic placement service per square foot placed (planning assumption in the maker's savings calculator; final pricing quoted per project, mobilisation and travel extra)",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "ceramic_rate_sqft_h",
+   "label": "Ceramic placement rate",
+   "value": 100,
+   "unit": "sq ft/h",
+   "conditions": "about 9.3 m²/h; one operator",
+   "sourceId": "s1",
+   "quote": "About 100 sq ft an hour in ceramic placement, with ±1 mm precision and one operator alongside Tyler."
+  },
+  {
+   "key": "ceramic_daily_sqft",
+   "label": "Ceramic output per day",
+   "value": 800,
+   "unit": "sq ft/day",
+   "conditions": "mortar-set ceramic, one operator with Tyler; about 100 sq ft by hand (maker comparison)",
+   "sourceId": "s1",
+   "quote": "~800"
+  },
+  {
+   "key": "lvt_daily_sqft",
+   "label": "Glue-down LVT output per day",
+   "value": 1500,
+   "unit": "sq ft/day",
+   "conditions": "one operator with Tyler; about 750 sq ft by hand (maker comparison)",
+   "sourceId": "s1",
+   "quote": "~1,500"
+  },
+  {
+   "key": "precision_mm",
+   "label": "Placement precision",
+   "value": "±1",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Places at ±1 mm"
+  },
+  {
+   "key": "weight_lb",
+   "label": "Weight",
+   "value": 50,
+   "unit": "lb",
+   "conditions": "about 23 kg; source gives pounds",
+   "sourceId": "s1",
+   "quote": "A 50-lb chassis drives in, plugs in, and goes to work."
+  },
+  {
+   "key": "materials",
+   "label": "Materials",
+   "value": "tile, LVT, carpet tile, VCT",
+   "unit": null,
+   "conditions": "porcelain, ceramic and stone set in thinset or mortar; LVT, VCT and carpet tile glue-down",
+   "sourceId": "s1",
+   "quote": "Tile · LVT · carpet · VCT"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": "1 operator on site",
+   "unit": null,
+   "conditions": "crew handles preparation, materials, first row, cuts, edges and grout",
+   "sourceId": "s1",
+   "quote": "1 operator on site"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Rolls onto the site and plugs in; no rails or set-up crew. Onboard sensors map the floor and compute the layout without chalk lines (maker).",
+   "The placing mechanism is not described; arms set to 0 and drive assumed wheeled ('rolls onto any jobsite').",
+   "Three-year contract (Oct 2026) worth up to US$4 million with Flooring Concepts of NJ to place 15-40 % of its luxury vinyl tile work, paid per square foot."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://humanfriendly.bot/tyler-jobsite.webp",
+   "pageUrl": "https://www.humanfriendly.bot/tyler",
+   "credit": "Human Friendly Robotics",
+   "alt": "Human Friendly Robotics Tyler tiling robot on a floor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Floor tiling on dozens of job sites including schools, malls and government buildings",
+   "stage": "deployment",
+   "where": "New York City metropolitan area, USA, and Puerto Rico",
+   "date": "2026-10",
+   "sourceId": "s3",
+   "note": "Company statement reported in October 2026; floor materials per site not stated."
+  },
+  {
+   "taskIds": [
+    "site_tiling/large-format-floor-tiles"
+   ],
+   "task": "Places ceramic and porcelain floor tiles set in thinset or mortar",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Tile sizes not stated."
+  },
+  {
+   "taskIds": [
+    "site_flooring/carpet-tile-laying"
+   ],
+   "task": "Places glue-down carpet tiles, LVT and VCT",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.humanfriendly.bot/tyler",
+   "title": "Tyler flooring robot (spec sheet and savings calculator)",
+   "publisher": "Human Friendly Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.humanfriendly.bot/",
+   "title": "Human Friendly Robotics: construction robotics from New Jersey, USA",
+   "publisher": "Human Friendly Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://pulse2.com/human-friendly-robotics-signs-up-to-4-million-tiling-contract-with-flooring-concepts-of-nj/",
+   "title": "Human Friendly Robotics Signs Up To $4 Million Tiling Contract With Flooring Concepts Of NJ (7 October 2026)",
+   "publisher": "Pulse 2.0",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "How Tyler picks and places tiles (arm or gantry), its dimensions, battery and runtime.",
+  "Largest tile size it can handle.",
+  "Any plans to offer Tyler outside the US."
+ ],
+ "checkedAt": "2026-11-18"
+}

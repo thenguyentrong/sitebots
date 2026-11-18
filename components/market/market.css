@@ -183,10 +183,14 @@
 .mk-seller p { font-size: 14px; }
 .mk-seller p span { font-size: 12px; color: var(--muted); }
 .mk-seller-price { margin-top: 4px; font-weight: 600; font-variant-numeric: tabular-nums; }
-.mk-seller-links { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 4px; }
-.mk-seller-links a { font-size: 12px; text-decoration: underline; text-underline-offset: 3px; color: var(--muted); }
-.mk-seller-links a:hover { color: var(--foreground); }
+/* A seller's links are what the page is for, so they are buttons, not footnotes. */
+.mk-seller-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.mk-seller-links a { display: inline-flex; align-items: center; height: 32px; padding: 0 12px; border: 1px solid var(--edge-strong); border-radius: 999px; background: var(--subtle); font-size: 13px; font-weight: 500; color: var(--foreground); text-decoration: none; transition: border-color 0.15s ease, color 0.15s ease; }
+.mk-seller-links a:first-child { border-color: color-mix(in srgb, var(--accent) 55%, transparent); }
+.mk-seller-links a:hover { border-color: var(--accent); color: var(--accent); }
 .mk-fine { font-size: 12px; color: var(--faint); }
+.mk-fine a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--edge-strong); text-underline-offset: 3px; }
+.mk-fine a:hover { color: var(--foreground); text-decoration-color: var(--accent); }
 .mk-more-options { margin-top: 16px; height: 40px; padding: 0 16px; border: 1px solid var(--edge-strong); border-radius: 999px; font-size: 14px; color: var(--muted); cursor: pointer; }
 .mk-more-options:hover { color: var(--foreground); background: var(--subtle); }
 .mk-siblings { font-size: 12px; color: var(--muted); }
@@ -305,7 +309,12 @@
 .mk-versions[data-count="1"] .mk-buybox-pic { max-width: 320px; height: 200px; }
 .mk-buybox > p.mk-buybox-title { font-size: 16px; font-weight: 600; color: var(--foreground); }
 .mk-buybox-sellers { padding-top: 12px; border-top: 1px solid var(--edge); }
-.mk-buybox-sellers summary { cursor: pointer; font-size: 14px; font-weight: 500; }
+/* "Where to buy" opens the sellers: a real button with a caret, not a small triangle. */
+.mk-buybox-sellers summary { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent); border-radius: 999px; background: var(--subtle); cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; color: var(--foreground); transition: border-color 0.15s ease, background 0.15s ease; }
+.mk-buybox-sellers summary::-webkit-details-marker { display: none; }
+.mk-buybox-sellers summary::after { content: ''; width: 7px; height: 7px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform 0.15s ease; }
+.mk-buybox-sellers[open] summary::after { transform: translateY(2px) rotate(225deg); }
+.mk-buybox-sellers summary:hover { border-color: var(--accent); background: var(--edge); }
 .mk-buybox-sellers .mk-detail-sellers { margin-top: 12px; padding-top: 0; border-top: 0; }
 .mk-germany-body .mk-job-columns h3 { font-size: 14px; }
 .mk-strip { margin-top: 32px; }

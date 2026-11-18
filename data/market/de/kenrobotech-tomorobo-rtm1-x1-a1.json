@@ -1,0 +1,187 @@
+{
+ "schemaVersion": 1,
+ "id": "kenrobotech-tomorobo-rtm1-x1-a1",
+ "maker": "Kenrobotech Co., Ltd. (建ロボテック株式会社)",
+ "makerCountry": "JP",
+ "model": "Rebar-tying Tomorobo RTM1-X1-A1",
+ "variant": "standard, for D10–D16 bars",
+ "name": "Kenrobotech Rebar-tying Tomorobo RTM1-X1-A1",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "rebar_tying",
+  "site_concrete/rebar-tying-slabs"
+ ],
+ "officialUrl": "https://kenrobo-tech.com/tomorobo/rebartying/product/",
+ "summary": "Small collaborative robot that travels along the rebar mesh of slabs and ground slabs and ties the crossings with two commercial MAX handheld rebar tiers, while workers do the skilled work. Made by Kenrobotech in Kagawa, Japan, and used by Japanese contractors and rebar firms.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Sold only in Japan: open price on request, with lease, rental, test use on site and a dealer scheme for rental and leasing firms, all through the Japanese maker. No German or EU distributor or CE information found.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "bar_diameter",
+   "label": "Bar diameters",
+   "value": "φ10, φ13, φ16",
+   "unit": "mm",
+   "conditions": "may not tie where three φ16 bars cross; heavy-bar version RTM1-X1-A2 covers φ16–φ32",
+   "sourceId": "s1",
+   "quote": "対象鉄筋径はφ10、φ13、φ16※1に対応"
+  },
+  {
+   "key": "bar_spacing_mm",
+   "label": "Bar spacing",
+   "value": "100–300 in 25 mm steps",
+   "unit": "mm",
+   "conditions": "spacing tolerance ±20 mm",
+   "sourceId": "s1",
+   "quote": "配筋ピッチは100～300ｍｍ内で25ｍｍごとに対応。"
+  },
+  {
+   "key": "tie_cycle_s",
+   "label": "Tying cycle",
+   "value": 2.7,
+   "unit": "s",
+   "conditions": "per crossing, 200 mm spacing, two tying tools",
+   "sourceId": "s1",
+   "quote": "2.7ｓ（200ｍｍピッチ、結束機2台使用時1カ所当り）"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime per charge",
+   "value": 12,
+   "unit": "h",
+   "conditions": "200 mm spacing, two tying tools, full battery, 25 °C; charging takes 6 h",
+   "sourceId": "s1",
+   "quote": "12時間（200ｍｍピッチ、結束機2台使用、バッテリーフル充電時 環境温度25度の場合）"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 38.5,
+   "unit": "kg",
+   "conditions": "without tying tools",
+   "sourceId": "s1",
+   "quote": "38.5kg（結束機は含みません）"
+  },
+  {
+   "key": "dimensions_cm",
+   "label": "Dimensions L × W × H",
+   "value": "69 × 63–93 × 60",
+   "unit": "cm",
+   "conditions": "width adjustable; detachable sensor not included",
+   "sourceId": "s1",
+   "quote": "L69 W63～93(可変式） H60"
+  },
+  {
+   "key": "tying_patterns",
+   "label": "Tying patterns",
+   "value": "every crossing, staggered, every third crossing",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "全結束、チドリ結束、2つ飛び結束"
+  },
+  {
+   "key": "operating_conditions",
+   "label": "Operating conditions",
+   "value": "0–40 °C, 0–80 % humidity, not in rain or snow",
+   "unit": null,
+   "conditions": "rain cover sold as accessory",
+   "sourceId": "s1",
+   "quote": "温度／0℃～40℃、湿度／0％～80％　※雨天、降雪時は使用できません。"
+  },
+  {
+   "key": "tying_tool",
+   "label": "Tying tool",
+   "value": "MAX RB440T (two units)",
+   "unit": null,
+   "conditions": "sold with or without the tools; tie wire refill about every 40 min",
+   "sourceId": "s2",
+   "quote": "鉄筋結束トモロボ(RTM1-X1-A1)はRB440Tに対応しており"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 12,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Travels on its own along the rebar mesh (one way or back and forth); the maker speaks of a vehicle body but does not describe the running gear, so wheels is an assumption from 'travel' wording.",
+   "Senses bar crossings with width and rebar sensors and adapts to spacing changes, height offsets and tilt.",
+   "Three safety sensors: low body sensor, high sensor for people, bar-end sensor.",
+   "The base unit is sold without the MAX tying tools unless the set with two tools is bought, so handsIncluded is false.",
+   "Registered in Japan's NETIS technology database (SK-200003-A); a slider set for automatic sideways moves has been available since February 2022."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_concrete/rebar-tying-slabs"
+   ],
+   "task": "Ties rebar crossings of slabs and ground slabs instead of rebar workers",
+   "stage": "deployment",
+   "where": "Japan: user list names Kajima, Takenaka, Shimizu, Nishimatsu, Tokyu Construction, Sumitomo Mitsui Construction, Daiwa House and regional rebar firms",
+   "date": null,
+   "sourceId": "s3",
+   "note": "Maker's list of companies using the Tomorobo series; projects are not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://kenrobo-tech.com/tomorobo/rebartying/product/",
+   "title": "鉄筋結束トモロボ 製品詳細・仕様 (product details and specifications)",
+   "publisher": "Kenrobotech Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://kenrobo-tech.com/tomorobo/faq/",
+   "title": "トモロボ FAQ (price, lease, rental, tools)",
+   "publisher": "Kenrobotech Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://kenrobo-tech.com/tomorobo/case/",
+   "title": "トモロボ導入企業 (companies using Tomorobo)",
+   "publisher": "Kenrobotech Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price: the maker lists an open price on request; no figure on the pages read.",
+  "Is there any export, CE marking or European partner?",
+  "Running gear on the rebar mesh is not described in text."
+ ],
+ "checkedAt": "2026-11-18"
+}

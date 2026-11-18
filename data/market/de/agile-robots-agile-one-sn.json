@@ -16,11 +16,26 @@
   "priceEur": null,
   "priceOther": null,
   "leadTime": null,
-  "sellers": [],
-  "checkedAt": "2026-11-06",
-  "status": "not_sold",
-  "statusNote": "Munich maker, but not available yet: scheduled for the beginning of 2027. No price or order route is published. Ask Agile Robots directly.",
+  "sellers": [
+   {
+    "name": "MegaRobotics (MEGAFORCE GmbH, Kaarst)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.megarobotics.de/de/products/agile-one-sn",
+    "contactUrl": "https://www.megarobotics.de/de/contact",
+    "email": "info@megarobotics.de",
+    "phone": "+49 172 2008875",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "\"Preis & Verfügbarkeit anfragen\"; calls itself an official Agile Robots distributor (not verified with the maker).",
+    "sourceId": "s3"
+   }
+  ],
+  "checkedAt": "2026-11-18",
+  "status": "quote",
+  "statusNote": "MegaRobotics (Kaarst) takes enquiries (\"Preis & Verfügbarkeit anfragen\"); no price is published. Agile Robots plans deliveries for the beginning of 2027.",
   "sourceIds": [
+   "s3",
    "s2"
   ]
  },
@@ -162,6 +177,14 @@
    "publisher": "Agile Robots SE",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.megarobotics.de/de/products/agile-one-sn",
+   "title": "Agile ONE SN",
+   "publisher": "MegaRobotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

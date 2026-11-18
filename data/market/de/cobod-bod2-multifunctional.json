@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "cobod-bod2-multifunctional",
+ "maker": "COBOD International",
+ "makerCountry": "DK",
+ "model": "BOD2 Multifunctional Construction Robot",
+ "variant": "BOD2 gantry with vertical telescopic unit and COBOD robotic arm",
+ "name": "COBOD Multifunctional Construction Robot (BOD2 with telescopic robotic arm)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://cobod.com/cobod-multifunctional-construction-robot/",
+ "summary": "COBOD BOD2 gantry printer with a vertical telescopic unit and a robotic arm between the X-axes, so the machine can spray concrete (Shotcrete 3D Printing) as well as print it; other tools such as a paint gun, sanding head or block gripper can be mounted. First system delivered to TU Braunschweig's Digital Construction Site in Germany in July 2025.",
+ "launched": "2025-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "COBOD (Denmark) calls the system commercially available and takes enquiries through its contact form; the first unit was delivered to TU Braunschweig in Germany. No price is published. The BOD2 base printer is sold in Germany exclusively through PERI 3D Construction (see the cobod-bod2 record); whether PERI also offers the telescopic robot unit is not stated.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "COBOD International A/S",
+    "country": "DK",
+    "role": "manufacturer",
+    "productUrl": "https://cobod.com/cobod-multifunctional-construction-robot/",
+    "contactUrl": "https://cobod.com/contact/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Enquiry form only; no price list. For the BOD2 base printer in Germany, PERI 3D Construction is the named sales route."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "telescope_range_m",
+   "label": "Vertical range of telescopic unit",
+   "value": 3,
+   "unit": "m",
+   "conditions": "dynamic range below the X-axis",
+   "sourceId": "s1",
+   "quote": "With a dynamic vertical range of 3 meters of the telescopic unit, the robotic arm can fully reach and manipulate an already printed wall 3 meters below the X-axis"
+  },
+  {
+   "key": "base_machine",
+   "label": "Base machine",
+   "value": "COBOD BOD2 3D construction printer",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The vertical telescopic unit is mounted between two X-axes on a COBOD BOD2 3D construction printer"
+  },
+  {
+   "key": "process",
+   "label": "Process",
+   "value": "Shotcrete 3D Printing (SC3DP) plus concrete extrusion printing",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "integrates a telescopic vertical extension unit with a robotic arm that enables the Shotcrete 3D Printing Process (SC3DP)"
+  },
+  {
+   "key": "tools",
+   "label": "Other tools for the arm",
+   "value": "paint spray gun, insulation tool, sanding equipment, gripper for aerated concrete blocks or bricks",
+   "unit": null,
+   "conditions": "maker statement; painting and block-laying shown only as illustrations",
+   "sourceId": "s1",
+   "quote": "a variety of tools can be mounted on the new COBOD robotic arm, such as a paint spray gun, insulation tool, sanding equipment etc"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Not mobile: like the BOD2, the gantry is set up around the building; the arm hangs from a telescopic unit between the X-axes.",
+   "Delivered unit is fitted for shotcrete spraying; paint, insulation, sanding and gripper tools are maker claims shown as illustrations.",
+   "Arm payload and arm maker are not stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cobod.com/wp-content/uploads/2025/07/dsf8487.jpg",
+   "pageUrl": "https://cobod.com/cobod-multifunctional-construction-robot/",
+   "credit": "COBOD International",
+   "alt": "COBOD BOD2 printer gantry at a demonstration event",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Shotcrete 3D printing system demonstrated at the opening of the Digital Construction Site; to be used for reinforced double-curved walls",
+   "stage": "demo",
+   "where": "TU Braunschweig Digital Construction Site, Braunschweig, Germany",
+   "date": "2025-07",
+   "sourceId": "s1",
+   "note": "COBOD says the system will next be tested in real building projects with TU Braunschweig."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://cobod.com/cobod-multifunctional-construction-robot/",
+   "title": "World premiere for COBOD's Multifunctional Construction Robot made with TU Braunschweig (3 July 2025)",
+   "publisher": "COBOD International",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://cobod.com/contact/",
+   "title": "Contact (enquiry form)",
+   "publisher": "COBOD International",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is the telescopic robot unit sold in Germany through PERI 3D Construction like the BOD2, and at what price?",
+  "Has the system been used on a real building project after the July 2025 demonstration?",
+  "Arm make, payload and the shotcrete output are not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,231 @@
+{
+ "schemaVersion": 1,
+ "id": "legend-robot-lq00c",
+ "maker": "Shenzhen Legend Robot Technology Co., Ltd.",
+ "makerCountry": "CN",
+ "model": "LQ00C",
+ "variant": "Putty & Latex Paint Spraying Robot, 3.3 m",
+ "name": "Legend Robot LQ00C",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://www.legendrobot.com/products/putty-latex-paint-spraying-robot-3m3/",
+ "summary": "Wheeled interior finishing robot with a lifting mast and a six-axis arm that sprays putty and latex paint airless onto walls and ceilings up to 3.3 m, spraying while it moves. Made by Legend Robot in Shenzhen; used on public-housing refurbishment in Singapore.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found; enquiries go to the maker in Shenzhen. Legend Robot says its robots meet EU CE standards and that it previewed its latex paint and putty spraying robot at BATIMAT 2026 in Paris with a 'European partner ROBOSWISS AG' after a hotel renovation in Athens, but no European sales page was found and the partner's website could not be read.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_spray_height_m",
+   "label": "Maximum spraying height",
+   "value": 3.3,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Max Allowed Spraying Height3.3m"
+  },
+  {
+   "key": "latex_rate_m2_h",
+   "label": "Latex paint spraying rate",
+   "value": 230,
+   "unit": "m²/h",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "Latex Paint Spraying Efficiency230m²/h"
+  },
+  {
+   "key": "putty_rate_m2_h",
+   "label": "Putty spraying rate",
+   "value": 130,
+   "unit": "m²/h",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "Putty Spraying Efficiency130m²/h"
+  },
+  {
+   "key": "putty_daily_m2",
+   "label": "Putty output per day",
+   "value": "500-600 (1st coat), 800-1,000 (2nd coat)",
+   "unit": "m²/day",
+   "conditions": "maker figure",
+   "sourceId": "s1",
+   "quote": "Daily productivity reaches 500–600 m² for the first coat and 800–1,000 m² for the second coat"
+  },
+  {
+   "key": "putty_thickness_mm",
+   "label": "Putty coat thickness",
+   "value": "1.2-1.5 (1st coat), 0.6-0.9 (2nd coat)",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The first coat of putty is sprayed at a thickness of 1.2–1.5 mm, and the second coat at 0.6–0.9 mm."
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 570,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight570kg"
+  },
+  {
+   "key": "footprint",
+   "label": "Footprint",
+   "value": "under 800 mm long and wide",
+   "unit": null,
+   "conditions": "minimum passage width 840 mm in automatic spraying mode",
+   "sourceId": "s1",
+   "quote": "measuring under 800mm in both length and width"
+  },
+  {
+   "key": "tank_l",
+   "label": "Material tank",
+   "value": 60,
+   "unit": "L",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Material Tank Capacity60L"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "48 V, 105 Ah; 4 h + 4 h with 2 batteries",
+   "unit": null,
+   "conditions": "charging ≤ 3 h; manual battery swap",
+   "sourceId": "s1",
+   "quote": "Battery Life4h+4h (Including 2 Batteries)"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Maximum climbing angle",
+   "value": 10,
+   "unit": "deg",
+   "conditions": "obstacle crossing 30 mm",
+   "sourceId": "s1",
+   "quote": "Maximum Climbing Angle10°"
+  },
+  {
+   "key": "nav_accuracy_mm",
+   "label": "Navigation positioning accuracy",
+   "value": "±30",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Navigation Positioning Accuracy±30mm"
+  },
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": "1 robot + 2 operators for putty; 1 operator for 3 robots for latex paint",
+   "unit": null,
+   "conditions": "one operator runs the robot, one scrapes and finishes the putty",
+   "sourceId": "s1",
+   "quote": "One robot works with two operators"
+  },
+  {
+   "key": "operating_temp_c",
+   "label": "Operating temperature",
+   "value": "5-40",
+   "unit": "°C",
+   "conditions": "humidity ≤ 85 % RH",
+   "sourceId": "s1",
+   "quote": "Operating Temperature5℃ to 40℃"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Omnidirectional chassis with zero turning radius, lifting mechanism and 6-DOF arm; fits through apartment doors, corridors and lifts (maker). Drive described as a chassis; wheels assumed.",
+   "Sprays while moving ('mobile spraying') or from fixed points; airless; LiDAR obstacle avoidance and rubber crash strips.",
+   "Comes with a dedicated putty mixer (60 L in 5 minutes, enough for two robots) and three-stage filtration.",
+   "Putty here is wall skim coating on concrete, drywall or plaster walls, not drywall joint finishing."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.legendrobot.com/uploads/image/20260721/Putty_Spraying_Robot_%283.3m%29.jpg",
+   "pageUrl": "https://www.legendrobot.com/products/putty-latex-paint-spraying-robot-3m3/",
+   "credit": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "alt": "Legend Robot putty spraying robot (3.3 m)",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Wall finishing (putty and latex paint) for nearly 1,000 flats in four high-rise blocks of an HDB public-housing retrofit",
+   "stage": "deployment",
+   "where": "Toa Payoh N4C30, Singapore",
+   "date": null,
+   "sourceId": "s2",
+   "note": "Maker case page names its 'Putty & Latex Paint Spraying Robot' without saying the 3.3 m or 6.2 m version."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.legendrobot.com/products/putty-latex-paint-spraying-robot-3m3/",
+   "title": "Putty Spraying Robot (3.3m), LQ00C",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.legendrobot.com/toa-payoh-n4c30/",
+   "title": "Toa Payoh N4C30, Singapore (project case)",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.legendrobot.com/legend-robot-showcases-ce-compliant-autonomous-solution-for-european-smart-construction-at-batimat-2026.html",
+   "title": "Legend Robot Showcases CE-Compliant Autonomous Solution for European Smart Construction at BATIMAT 2026 (21 September 2026)",
+   "publisher": "Shenzhen Legend Robot Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is there a sales or service partner in Germany or the EU (the maker names ROBOSWISS AG as European partner)? Price?",
+  "CE declaration of conformity for this model (maker only says its solution meets EU CE standards).",
+  "Which robot did the Athens hotel renovation (maker: 2- and 3-coat latex finishing in 19 room layouts, peak 237 m²/h)?",
+  "Overall dimensions: the spec table text reads '7807801750mm' (likely 780 × 780 × 1750 mm)."
+ ],
+ "checkedAt": "2026-11-18"
+}

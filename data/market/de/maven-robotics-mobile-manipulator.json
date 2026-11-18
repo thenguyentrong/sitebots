@@ -1,0 +1,138 @@
+{
+ "schemaVersion": 1,
+ "id": "maven-robotics-mobile-manipulator",
+ "maker": "Maven Robotics",
+ "makerCountry": "US",
+ "model": "Maven mobile manipulator",
+ "variant": null,
+ "name": "Maven Robotics mobile manipulator",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.mavenrobotics.com/",
+ "summary": "A wheeled dual-arm mobile manipulator with two 7-degree-of-freedom arms and a small footprint, which reaches to the back of a 48-inch pallet or shelves up to 3 m high with 30 kg; it runs mixed-case palletizing and tote handling for a first production customer in the US.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found; Maven (Santa Clara, California) offers its robots as a service and works with large manufacturing and logistics firms via a contact form.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload while reaching",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "reach to the back of a 48-in pallet or a shelf up to 3 m high",
+   "sourceId": "s1",
+   "quote": "We can reach to the back of a 48-in. [121.9 cm] pallet or deep into a storage shelf up to 3 m [9.8 ft.] high while carrying 30 kg [66.1 lb.] payloads."
+  },
+  {
+   "key": "reach_height_m",
+   "label": "Reach height",
+   "value": 3,
+   "unit": "m",
+   "conditions": "storage shelf",
+   "sourceId": "s1",
+   "quote": "deep into a storage shelf up to 3 m [9.8 ft.] high"
+  },
+  {
+   "key": "arms",
+   "label": "Arms",
+   "value": "Two 7-degree-of-freedom arms",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "we have two seven degree-of-freedom arms"
+  },
+  {
+   "key": "grippers",
+   "label": "End effectors",
+   "value": "Modular end-of-arm interface: vacuum suction gripper and two-finger parallel gripper",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "a vacuum suction gripper, and a parallel gripper with two fingers"
+  },
+  {
+   "key": "duty",
+   "label": "Operating pattern",
+   "value": "16 h a day, 5 days a week, up to 99% uptime",
+   "unit": null,
+   "conditions": "company figure, October 2026",
+   "sourceId": "s1",
+   "quote": "It currently has robots running 16 hours a day, five days a week, with up to 99% uptime"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 30,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Model name not published; Maven calls it its first robot and has built four iterations since 2024; it left stealth with a Series A in September 2026.",
+   "Offered as robots-as-a-service (RaaS).",
+   "Figures come from an interview with the CEO in The Robot Report; Maven's own site gives no specs."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/tote-handling"
+   ],
+   "task": "Mixed-case palletizing and tote handling under a production contract with its first customer",
+   "stage": "deployment",
+   "where": null,
+   "date": "2026-10",
+   "sourceId": "s1",
+   "note": "Customer not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.therobotreport.com/how-maven-robotics-plans-automate-industrial-work-one-task-at-a-time/",
+   "title": "How Maven Robotics plans to automate industrial work, one task at a time",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.mavenrobotics.com/",
+   "title": "Maven - A new kind of working robot",
+   "publisher": "Maven Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Model name, base dimensions, weight and runtime.",
+  "Price of the robots-as-a-service offer.",
+  "Any plans for Europe."
+ ],
+ "checkedAt": "2026-11-18"
+}

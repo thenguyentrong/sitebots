@@ -33,7 +33,7 @@ export function BuyBox({ robot, title, collapsed = false, picture = false }: { r
     <div className="mk-price"><strong>{priceText(toCard(robot))}</strong><span className="mk-status" data-s={g.status}>{STATUS_LABELS[g.status]}</span></div>
     {/* Side by side, a version shows its price and status; how they were read sits with its sellers. */}
     {collapsed
-      ? <details className="mk-buybox-sellers"><summary>{g.sellers.length ? 'Where to buy · ' + g.sellers.length + ' seller' + (g.sellers.length > 1 ? 's' : '') : 'How to buy'}</summary>{note ? <p className="mk-buybox-note">{note}</p> : null}{sellers}</details>
+      ? <details className="mk-buybox-sellers"><summary>{g.sellers.length ? 'Where to buy (' + g.sellers.length + ' seller' + (g.sellers.length > 1 ? 's' : '') + ')' : 'How to buy'}</summary>{note ? <p className="mk-buybox-note">{note}</p> : null}{sellers}</details>
       : <>{note ? <p>{note}</p> : null}{sellers}</>}
     <p className="mk-fine">Checked {g.checkedAt}. {robot.officialUrl ? <a href={robot.officialUrl} target="_blank" rel="noopener noreferrer">Maker’s page ↗</a> : null}</p>
   </div>;

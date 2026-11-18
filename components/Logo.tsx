@@ -15,11 +15,12 @@ export function LogoMark({ className }: { className?: string }) {
   );
 }
 
-export function Logo({ className }: { className?: string }) {
+/** `compact` drops the name on phones, where the menu needs the room. */
+export function Logo({ className, compact = false }: { className?: string; compact?: boolean }) {
   return (
-    <Link href="/" className={cn('flex items-center gap-2.5', className)}>
+    <Link href="/" aria-label={SITE.name} className={cn('flex shrink-0 items-center gap-2.5', className)}>
       <LogoMark />
-      <span className="text-[15px] font-semibold tracking-tight">{SITE.name}</span>
+      <span className={cn('text-[15px] font-semibold tracking-tight', compact && 'max-sm:sr-only')}>{SITE.name}</span>
     </Link>
   );
 }

@@ -1,0 +1,260 @@
+{
+ "schemaVersion": 1,
+ "id": "instatiq-p1",
+ "maker": "INSTATIQ GmbH",
+ "makerCountry": "DE",
+ "model": "INSTATIQ P1",
+ "variant": "Progress One",
+ "name": "INSTATIQ P1 (Progress One)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "printing_3d"
+ ],
+ "officialUrl": "https://instatiq.com/bauen-mit-3d-druck-effizient-bauen/",
+ "summary": "Mobile 3D concrete printer with a 26 m automatically controlled boom that prints load-bearing walls on site from standard ready-mix concrete. Made by INSTATIQ, a Putzmeister spin-off near Stuttgart, and used on German and Austrian building sites.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Offered in Germany by the Stuttgart maker as a printing service: INSTATIQ works as technology partner for the printing, helps integrate it into existing building processes or delivers the complete automated shell; first consultation on request. Printing services are also sold through NELCON, a joint venture of STRABAG and INSTATIQ. No machine sale or price is shown on the pages read.",
+  "sourceIds": [
+   "s1",
+   "s3",
+   "s5"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "INSTATIQ GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://instatiq.com/bauen-mit-3d-druck-effizient-bauen/",
+    "contactUrl": "https://instatiq.com/kontakt/",
+    "email": "info@instatiq.com",
+    "phone": "+49 711 93313030",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Schelmenwasenstraße 37, 70567 Stuttgart. Sells printing work as a service (technology partner, process integration or full automated shell), not a listed machine sale. Phone number as printed on the maker's news pages (0711 93313030)."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "reach_m",
+   "label": "Boom reach",
+   "value": 26,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "der Reichweite unseres Roboters von bis zu 26 Metern"
+  },
+  {
+   "key": "print_speed_cm_s",
+   "label": "Printing speed",
+   "value": 10,
+   "unit": "cm/s",
+   "conditions": "up to",
+   "sourceId": "s1",
+   "quote": "DRUCKGESCHWINDIGKEIT – bis zu 10 cm/s"
+  },
+  {
+   "key": "wall_thickness_cm",
+   "label": "Wall thickness",
+   "value": "8–40",
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "DRUCKBREITE – Wandstärken von 8 bis 40 cm, echte Massivbauweise"
+  },
+  {
+   "key": "output_m3_h",
+   "label": "Concrete output",
+   "value": 2.5,
+   "unit": "m³/h",
+   "conditions": "maximum, Metzingen project",
+   "sourceId": "s5",
+   "quote": "a maximum output of 2.5 cubic meters per hour"
+  },
+  {
+   "key": "max_aggregate_mm",
+   "label": "Largest aggregate in the concrete",
+   "value": 10,
+   "unit": "mm",
+   "conditions": "standard ready-mix concrete",
+   "sourceId": "s2",
+   "quote": "aus Standard-Transportbeton mit 10 mm Korngröße"
+  },
+  {
+   "key": "setup_time_min",
+   "label": "Setup time",
+   "value": 60,
+   "unit": "min",
+   "conditions": "maker facts box labelled SETUP-TIME",
+   "sourceId": "s1",
+   "quote": "60 min"
+  },
+  {
+   "key": "wall_height_m",
+   "label": "Printed wall height",
+   "value": 7,
+   "unit": "m",
+   "conditions": "up to 7 m at the Neubulach supermarket; up to 3 m per storey at Metzingen",
+   "sourceId": "s4",
+   "quote": "Wandhöhen bis sieben Meter"
+  },
+  {
+   "key": "material",
+   "label": "Material",
+   "value": "standard ready-mix concrete, no special mortar",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "TRANSPORTBETON – Drucken mit klassischem Beton, kein Spezialmörtel"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "fully electric operation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Durch den vollelektrischen Betrieb"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s5"
+  ],
+  "notes": [
+   "The arm is a 26 m automatically controlled boom with a print head; the maker compares it with a mobile concrete pump.",
+   "How the machine is carried and moved between sites (truck or other carrier) is not described on the pages read; wheels and tracks are left false.",
+   "Prints solid load-bearing walls, not formwork, from concrete delivered by a normal mixer truck.",
+   "The printer is repositioned between storeys on multi-storey jobs (Weerberg)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://instatiq.com/wp-content/uploads/2026/05/ViewCapture20250225_131111-1komp-1-1536x864-1-e1778918100899.png",
+   "pageUrl": "https://instatiq.com/bauen-mit-3d-druck-effizient-bauen/",
+   "credit": "INSTATIQ GmbH",
+   "alt": "Rendering of the INSTATIQ P1 printing walls with its boom",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Printed the load-bearing walls of the top floor of a four-storey apartment building directly on site in four days",
+   "stage": "deployment",
+   "where": "GWG Reutlingen housing, Metzingen-Neugreuth, Germany – ZÜBLIN",
+   "date": "2025-07",
+   "sourceId": "s5",
+   "note": "The projects page later says the walls of the top two storeys were printed."
+  },
+  {
+   "taskIds": [],
+   "task": "Printed more than 1,300 m² of wall with walls up to 7 m high for a supermarket; two P1 printers worked in parallel in some phases",
+   "stage": "deployment",
+   "where": "Neubulach, Germany – NELCON, Heidelberg Materials, Köhler Bauunternehmung Wildberg",
+   "date": "2026-06",
+   "sourceId": "s4",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Printing about 890 m² of walls in two thicknesses (17.5 and 24 cm) for an office and warehouse building",
+   "stage": "deployment",
+   "where": "Detmold, Germany – AS-Bau, NELCON",
+   "date": "2026-07",
+   "sourceId": "s4",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Printing about 682 m² of load-bearing walls from about 179 m³ of concrete for a four-storey headquarters building",
+   "stage": "deployment",
+   "where": "Weerberg, Tyrol, Austria – NELCON and STRABAG",
+   "date": "2026-11",
+   "sourceId": "s6",
+   "note": "Printing planned to finish in January 2027, building in March 2027."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://instatiq.com/bauen-mit-3d-druck-effizient-bauen/",
+   "title": "Bauen mit 3D-Druck (INSTATIQ P1 solution page, facts and figures)",
+   "publisher": "INSTATIQ GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://instatiq.com/bautechnologie-der-zukunft-robotik/",
+   "title": "Bautechnologie der Zukunft (robotics page)",
+   "publisher": "INSTATIQ GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://instatiq.com/kontakt/",
+   "title": "Kontakt (address and e-mail)",
+   "publisher": "INSTATIQ GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://instatiq.com/3d-betondruck-in-der-praxis-unsere-projekte/",
+   "title": "3D-Betondruck in der Praxis: unsere Projekte",
+   "publisher": "INSTATIQ GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://newsroom.strabag.com/en/press-releases/zueblin-de-en/2025-07/zueblin-and-instatiq-use-new-3d-concrete-printing-process",
+   "title": "Revolution in residential construction: ZÜBLIN and INSTATIQ use new 3D concrete printing process (31 July 2025)",
+   "publisher": "STRABAG SE",
+   "kind": "customer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s6",
+   "url": "https://instatiq.com/oesterreichs-hoechstes-gebaeude-aus-dem-3d-drucker/",
+   "title": "Gemeinsam mit STRABAG und NELCON baut INSTATIQ Österreichs höchstes Gebäude aus dem 3D-Drucker (12 November 2026)",
+   "publisher": "INSTATIQ GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Can the P1 machine itself be bought or rented, or only printing as a service from INSTATIQ or NELCON? No machine price is published.",
+  "What carrier does the P1 use (truck chassis or other) and what does it weigh?",
+  "Crew size needed to run the printer is not stated on the pages read.",
+  "Launch date: the P1 name and first public showing are not dated on the pages read."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,186 @@
+{
+ "schemaVersion": 1,
+ "id": "weibuild-pmc-6000ic",
+ "maker": "Shanghai WEIBUILD Technology Co., Ltd. (Weijian)",
+ "makerCountry": "CN",
+ "model": "PMC-6000iC",
+ "variant": "high-wall plastering robot, 5.4 m",
+ "name": "WEIBUILD PMC-6000iC Plastering Robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_plaster/machine-plaster-application"
+ ],
+ "officialUrl": "https://we-i-build.com/plastering-robot-en.html",
+ "summary": "Wheeled plastering robot that pumps cement plaster onto interior walls up to 5.4 m and presses and levels it with a trowel head in one pass, guided by a 3D camera and self-levelling system. Made by WEIBUILD (Weijian) in Shanghai for public-building wall heights.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. WEIBUILD says its plastering and spraying robot series passed EU CE certification in August 2026 and that it is expanding into Europe; enquiries go to the maker in Shanghai (overseas phone and WhatsApp on the site).",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "plaster_height_m",
+   "label": "Plastering height",
+   "value": 5.4,
+   "unit": "m",
+   "conditions": "PMC-3000iE version: 3.3 m",
+   "sourceId": "s1",
+   "quote": "5.4m"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Length × width × height",
+   "value": "900 × 1100 × 1800",
+   "unit": "mm",
+   "conditions": "spec table lists Length 900mm, Width 1100mm, Height 1800mm",
+   "sourceId": "s1",
+   "quote": "1100mm"
+  },
+  {
+   "key": "rate_m2_h",
+   "label": "Plastering rate",
+   "value": 50,
+   "unit": "m²/h",
+   "conditions": "maker figure for the series; 3 minutes per plastering cycle",
+   "sourceId": "s1",
+   "quote": "High Operational Efficiency, 3-Minute Per Plastering, 50㎡/hour, Daily output of 300-350㎡."
+  },
+  {
+   "key": "site_rate_m2_h",
+   "label": "Plastering rate on site",
+   "value": 40.77,
+   "unit": "m²/h",
+   "conditions": "5.5 m high interior walls, Hetao Hong Kong Park project",
+   "sourceId": "s2",
+   "quote": "the normalized plastering operation is 40.77m ² per hour"
+  },
+  {
+   "key": "flatness",
+   "label": "Flatness and verticality",
+   "value": "±3 mm / 2 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "±3mm/2m"
+  },
+  {
+   "key": "material",
+   "label": "Plaster",
+   "value": "cement plaster",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "cement plaster"
+  },
+  {
+   "key": "move_speed_m_s",
+   "label": "Travel speed",
+   "value": 0.3,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "0.3m/s"
+  },
+  {
+   "key": "press_force_kg",
+   "label": "Pressing force",
+   "value": 30,
+   "unit": "kg",
+   "conditions": "maker headline; against hollow spots",
+   "sourceId": "s1",
+   "quote": "30KG Pressure, No Hollowing"
+  },
+  {
+   "key": "training_days",
+   "label": "Operator training",
+   "value": "3-7",
+   "unit": "days",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "operators can master the system after 3–7 days of training"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "AGV chassis with four waterproof, mortar-resistant omnidirectional steering wheels; maker says it is unaffected by mortar on the floor, standing water or uneven ground. Motors are IP66 (whole robot not rated).",
+   "Pumps, applies, presses and closes the plaster in one step with a double-scraper trowel head; 3D camera visual servoing and auto-levelling (verticality ±0.015°, joint accuracy ±1 mm).",
+   "Autonomous travel between positions with obstacle recognition; workers finish corners and irregular areas.",
+   "The product text calls the high-wall model PMC-6000iE, the spec table PMC-6000iC."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_plaster/machine-plaster-application"
+   ],
+   "task": "Plastered 5.5 m high interior walls of a lab and apartment complex (construction area 30,000 m²) at 40.77 m²/h",
+   "stage": "deployment",
+   "where": "Hong Kong Park, Hetao Shenzhen-Hong Kong Science and Technology Innovation Cooperation Zone",
+   "date": "2026-11",
+   "sourceId": "s2",
+   "note": "Maker case report names its 'high wall plastering robot'. Cement plaster, not gypsum."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://we-i-build.com/plastering-robot-en.html",
+   "title": "Plastering Robot (PMC-3000iE, PMC-6000iC)",
+   "publisher": "Shanghai WEIBUILD Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://we-i-build.com/en/news/322.html",
+   "title": "Project Case: Weijian High Wall Plastering Robot - Hong Kong Park, Hetao (16 November 2026)",
+   "publisher": "Shanghai WEIBUILD Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://we-i-build.com/en/news/308.html",
+   "title": "Weijian Robotics has obtained EU CE certification (13 October 2026)",
+   "publisher": "Shanghai WEIBUILD Technology Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Can it apply gypsum plaster, the usual German interior machine plaster? The maker lists cement plaster only.",
+  "Weight, power supply and runtime are not stated.",
+  "CE declaration and notified body; any European dealer (maker says it is expanding into Europe).",
+  "Price."
+ ],
+ "checkedAt": "2026-11-18"
+}

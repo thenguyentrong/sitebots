@@ -1,0 +1,192 @@
+{
+ "schemaVersion": 1,
+ "id": "aes-maximo",
+ "maker": "Maximo (incubated by The AES Corporation)",
+ "makerCountry": "US",
+ "model": "Maximo",
+ "variant": null,
+ "name": "AES Maximo solar installation robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "other",
+  "utility-scale solar construction: lifting PV modules onto tracker torque tubes and tightening the clamps"
+ ],
+ "officialUrl": "https://www.aes.com/maximo",
+ "summary": "Tracked robot that lifts solar modules onto single-axis trackers with one robotic arm and tightens the clamps with a second, lower arm, guided by lidar and cameras. Developed by the power company AES and its incubated company Maximo and used on AES solar projects in the United States.",
+ "launched": "2024-07",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Not offered in Germany or the EU: Maximo is used on AES's own US solar projects (Oak Ridge in Louisiana, Cavalier, Bellefield in California). AES calls it construction equipment for EPC companies and developers, but no sale, rental or service offer outside the US was found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "crew",
+   "label": "Crew",
+   "value": 2,
+   "unit": "people",
+   "conditions": "one drives the system, one runs the machine",
+   "sourceId": "s1",
+   "quote": "Maximo can be run by installation crews of two people."
+  },
+  {
+   "key": "install_rate",
+   "label": "Installation rate",
+   "value": "more than one module per minute",
+   "unit": null,
+   "conditions": "version 3.0 units at Bellefield",
+   "sourceId": "s2",
+   "quote": "Maximo’s version 3.0 units’ technical performance rate consistently surpassed one module per minute"
+  },
+  {
+   "key": "modules_per_person_hour",
+   "label": "Modules per shift hour per person",
+   "value": 24,
+   "unit": "modules",
+   "conditions": "up to; Bellefield crews, about double traditional methods in the region",
+   "sourceId": "s2",
+   "quote": "crews installing as many as 24 modules per shift hour per person"
+  },
+  {
+   "key": "power_source",
+   "label": "Power source",
+   "value": "mobile microgrid with lithium iron phosphate batteries",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximo runs on a mobile microgrid, using lithium-ion iron phosphate batteries as a power source."
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "lidar and cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Computer vision: Lidar and cameras provide spatial awareness for precise placement."
+  },
+  {
+   "key": "arms_function",
+   "label": "Arms",
+   "value": "upper arm places panels, lower arm tightens clamps",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "A high-speed robotic arm performs the precise panel installation. The lower robotic arm tightens the clamps for fully automated installation."
+  },
+  {
+   "key": "fleet_bellefield",
+   "label": "Units working in parallel at Bellefield",
+   "value": 4,
+   "unit": "robots",
+   "conditions": "2026",
+   "sourceId": "s2",
+   "quote": "a coordinated fleet of four Maximo robot units operating in parallel"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": false,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Tracks for sandy, muddy and bumpy ground (maker).",
+   "Moved between rows with a human operator; a skid steer driver tows the robot (maker).",
+   "Stops when it detects people in the working area (maker).",
+   "Works with any solar module and a growing range of clamps, rails and trackers, at different torque-tube heights (maker)."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.aes.com/sites/global/files/styles/original/public/2025-04/tracked-robotic-vehicle-maximo.png.webp?itok=yxw1SWO8",
+   "pageUrl": "https://www.aes.com/maximo",
+   "credit": "The AES Corporation",
+   "alt": "Side view of the Maximo robot: tracked base, articulated arm with tool and a tall rear unit",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Installed 100 MW of solar modules on a 1 GW project with a fleet of four robots working in parallel",
+   "stage": "deployment",
+   "where": "AES Bellefield project, Kern County, California, USA",
+   "date": "2026-03",
+   "sourceId": "s2",
+   "note": "Figures are from Maximo's own announcement."
+  },
+  {
+   "taskIds": [],
+   "task": "First utility-scale deployment, installing modules on a 260 MW solar project",
+   "stage": "deployment",
+   "where": "Oak Ridge Solar, Louisiana, USA",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Nearly 10 MW of modules installed in field use at launch",
+   "stage": "pilot",
+   "where": "United States (sites not named in this source)",
+   "date": "2024-07",
+   "sourceId": "s3",
+   "note": "The AES page (s1) calls the Cavalier solar project Maximo's first MW-scale deployment."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.aes.com/maximo",
+   "title": "Meet Maximo. The world's first AI-enabled solar robot",
+   "publisher": "The AES Corporation",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.solarpowerworldonline.com/2026/03/robots-install-100-mw-of-solar-panels-on-1-gw-aes-project/",
+   "title": "Robots install 100 MW of solar panels on 1-GW AES project (25 March 2026)",
+   "publisher": "Solar Power World",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.therobotreport.com/aes-maximo-designed-to-save-time-and-money-for-solar-panel-installation/",
+   "title": "AES Maximo robot designed to save time and money for solar panel installation (30 July 2024)",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is Maximo sold, rented or offered as a service to other EPCs, and is any use outside the US planned?",
+  "Weight, dimensions, module weight limit and runtime per battery charge are not stated on the pages read.",
+  "What changes in the announced version 4.0?"
+ ],
+ "checkedAt": "2026-11-18"
+}

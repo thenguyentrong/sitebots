@@ -1,0 +1,231 @@
+{
+ "schemaVersion": 1,
+ "id": "august-robotics-lionel",
+ "maker": "August Robotics",
+ "makerCountry": "HK",
+ "model": "Lionel",
+ "variant": null,
+ "name": "August Robotics Lionel",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": "https://augustrobotics.com/construction/industrial-layout",
+ "summary": "Autonomous floor-marking robot that paints layout points and marks from a DWG or DXF plan onto large hall floors. Built first for exhibition halls, it is now offered for commercial construction, data-centre, warehouse and industrial fit-out layout.",
+ "launched": "2019",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "August Robotics has an office in Düsseldorf and a German-language Lionel page for industrial fit-out marking with three options on request: marking as a service, leasing (training and support included) or purchase of a Lionel fleet. No public price.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "August Robotics",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://augustrobotics.com/de-de/construction/industrial-layout",
+    "contactUrl": "https://augustrobotics.com/de-de/construction/industrial-layout",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Office at Oberbilker Allee 270A, 40227 Düsseldorf (About page). Price options on the page: 'Bedienung' (send CAD plans for a quote; August team marks on site), 'Leasing' and 'Kauf'; contact form on the page."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "marking_rate_marks_h",
+   "label": "Marking rate",
+   "value": 80,
+   "unit": "marks/h",
+   "conditions": "per robot, FAQ; the page headline says up to 90 marks per hour",
+   "sourceId": "s2",
+   "quote": "Each robot can make 80 marks per hour."
+  },
+  {
+   "key": "fleet_example",
+   "label": "Fleet example",
+   "value": "3 robots mark a 10,000 m² hall in 2 hours",
+   "unit": null,
+   "conditions": "maker example; depends on hall size and mark density",
+   "sourceId": "s2",
+   "quote": "This means that 3 robots can mark a 10,000 sq m hall in 2 hours."
+  },
+  {
+   "key": "accuracy",
+   "label": "Accuracy",
+   "value": "±1/8 in (about ±3 mm)",
+   "unit": null,
+   "conditions": "each mark measured independently, errors do not accumulate (maker)",
+   "sourceId": "s2",
+   "quote": "Lionel makes every mark to at least +/-1/8\" accuracy."
+  },
+  {
+   "key": "battery_runtime_h",
+   "label": "Battery life",
+   "value": 10,
+   "unit": "h",
+   "conditions": "swappable batteries for round-the-clock work",
+   "sourceId": "s2",
+   "quote": "Lionel has a battery life of 10 hours."
+  },
+  {
+   "key": "plan_formats",
+   "label": "Plan formats",
+   "value": "DXF, DWG",
+   "unit": null,
+   "conditions": "uploaded to the August portal",
+   "sourceId": "s2",
+   "quote": "Lionel can use CAD plans in DXF or DWG format."
+  },
+  {
+   "key": "min_work_area_m",
+   "label": "Minimum work area",
+   "value": "7 × 7",
+   "unit": "m",
+   "conditions": "works best in large, dry, uncluttered indoor areas",
+   "sourceId": "s4",
+   "quote": "Lionel’s minimum work area is 7m x 7m"
+  },
+  {
+   "key": "setup_min",
+   "label": "Set-up per job",
+   "value": "< 30",
+   "unit": "min",
+   "conditions": "maker; operators learn in a few hours",
+   "sourceId": "s2",
+   "quote": "<30min set-up on"
+  },
+  {
+   "key": "paint",
+   "label": "Marking medium",
+   "value": "proprietary washable paint",
+   "unit": null,
+   "conditions": "developed for exhibition floors; removed with water",
+   "sourceId": "s2",
+   "quote": "Lionel uses a proprietary washable paint that August Robotics developed especially for exhibition floor marking."
+  },
+  {
+   "key": "site_wifi_needed",
+   "label": "Needs site Wi-Fi",
+   "value": false,
+   "unit": null,
+   "conditions": "uses its own local network",
+   "sourceId": "s1",
+   "quote": "Lionel verwendet sein eigenes lokales Netzwerk"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 10,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "Marks points (rack corners, hanger points, MEP and equipment positions, labels) rather than continuous wall lines; several paint colours.",
+   "Works best in large indoor areas with limited clutter and dirt and in dry conditions; navigates around people and obstacles (maker).",
+   "Fleet operation: the system splits the job between several robots.",
+   "Since March 2025 new robots get the 'Lionel PX' dot-matrix paint mechanism; existing robots can be converted by a parts swap.",
+   "Drive type is not described in the text read; wheels assumed from a floor-driving robot of this kind."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Marked ceiling hanger points on the floor for a lighting fit-out",
+   "stage": "deployment",
+   "where": "Australia (Elecorp Solutions)",
+   "date": null,
+   "sourceId": "s2",
+   "note": "Case study listed by the maker; marks are points for overhead hangers, not wall lines."
+  },
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Offered for commercial construction projects, data-centre layout, industrial fit-out and warehouse layout",
+   "stage": "claim",
+   "where": null,
+   "date": "2024-06",
+   "sourceId": "s4",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://augustrobotics.com/de-de/construction/industrial-layout",
+   "title": "Markierung für industrielle Ausstattungen von Lionel",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://augustrobotics.com/construction/industrial-layout",
+   "title": "Lionel industrial fit-out marking (FAQ, pricing options, case studies)",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://augustrobotics.com/about-us",
+   "title": "The mission and journey of August Robotics (offices)",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://augustrobotics.com/news/built-ready",
+   "title": "Built Ready (20 June 2024): construction layout and industrial fit-out marking",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.augustrobotics.com/news/official-launch-lionel-px",
+   "title": "Official Launch - Lionel PX (28 March 2025, Hong Kong)",
+   "publisher": "August Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Purchase, lease and service prices in Germany.",
+  "Head office: the About page says the HQ is 'at the center of the global robotics supply chain' and lists Hong Kong Science Park and Shenzhen addresses; HK is used as maker country (press release dateline Hong Kong).",
+  "Can Lionel mark continuous wall lines on rough concrete slabs on a live site, or only points on clean, dry floors? The paint is described as washable exhibition paint.",
+  "Any named construction customer in Germany or the EU (exhibition customers include ExCeL London and Messukeskus Helsinki)."
+ ],
+ "checkedAt": "2026-11-18"
+}

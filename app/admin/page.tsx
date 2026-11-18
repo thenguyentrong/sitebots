@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { cookies } from 'next/headers';
 import Link from 'next/link';
+import { FREE_CHATS_PER_MONTH, countAccounts } from '@/lib/chat/accounts';
 import { ADMIN_COOKIE, isAdmin } from '@/lib/chat/admin';
 import { PRIVATE_METADATA } from '@/lib/seo';
 import { ui } from '@/lib/ui';
@@ -32,12 +33,14 @@ export default async function AdminPage({ searchParams }: { searchParams: Search
   const { failed } = await searchParams;
   const store = await cookies();
   if (!isAdmin(store.get(ADMIN_COOKIE)?.value)) return <Login failed={failed === '1'} />;
+  const accounts = await countAccounts();
 
   return <main className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6">
     <div className="flex items-baseline justify-between gap-4">
       <h1 className="text-3xl font-semibold tracking-tight">Admin</h1>
       <form method="post" action="/api/admin/logout"><button type="submit" className="text-sm underline underline-offset-4">Log out</button></form>
     </div>
+    <p className="mt-3 text-muted">{accounts} {accounts === 1 ? 'account' : 'accounts'} with at least one consultation. Each gets {FREE_CHATS_PER_MONTH} free consultations a month.</p>
     <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
       {SECTIONS.map((section) => <Link key={section.href} href={section.href} className="card block p-6 transition hover:bg-subtle">
         <h2 className="font-semibold">{section.title}</h2>

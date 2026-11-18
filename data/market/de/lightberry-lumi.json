@@ -1,0 +1,167 @@
+{
+ "schemaVersion": 1,
+ "id": "lightberry-lumi",
+ "maker": "Lightberry",
+ "makerCountry": "US",
+ "model": "Lumi",
+ "variant": null,
+ "name": "Lightberry Lumi",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://lightberry.com/lumi",
+ "summary": "A 1.3 m bipedal interactive robot built on a Unitree G1 body with Lightberry's own sensors, Jetson Thor compute and software, aimed at events, marketing and guest interaction.",
+ "launched": "2026-08",
+ "lifecycle": "preorder",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Reservations are open in the US at USD 39,990 for the first 100 Founder Edition units; shipping is announced for 2026 but needs FCC certification first. No European sales route found.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 39990,
+   "currency": "USD",
+   "market": "US reservation price (Founder Edition, software platform billed separately)",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.3,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "4 ft 2 in / 1.3 m"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "approx.",
+   "sourceId": "s1",
+   "quote": "Approx. 40 kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom",
+   "value": 34,
+   "unit": null,
+   "conditions": "29-DOF G1 body plus 3-DOF neck and 1-DOF grippers",
+   "sourceId": "s2",
+   "quote": "34 total degrees of freedom"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": "2.5-3.5",
+   "unit": "h",
+   "conditions": "421 Wh battery",
+   "sourceId": "s1",
+   "quote": "2.5–3.5 hours of operation (421 Wh)"
+  },
+  {
+   "key": "compute",
+   "label": "Onboard compute",
+   "value": "NVIDIA Jetson Thor, 64 GiB memory",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Jetson Thor with 64 GiB of memory"
+  },
+  {
+   "key": "software_fee_usd",
+   "label": "Software platform fee",
+   "value": 20000,
+   "unit": "USD per year",
+   "conditions": "baseline for the first 100 Founder Edition units, then usage tiers",
+   "sourceId": "s2",
+   "quote": "$20,000 annual baseline cost"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 2.5,
+  "ipRating": null,
+  "sdk": "Lightberry SDK",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Body is a 29-DOF Unitree G1; Lightberry replaces the computer, sensors and software.",
+   "Hands are 1-DOF parallel grippers.",
+   "Language and planning run on cloud models; perception and motor control run on board."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://lightberry.com/_ploy_static/_astro/lumi-founder-edition.23msbltX.jpg",
+   "pageUrl": "https://lightberry.com/lumi",
+   "credit": "Lightberry",
+   "alt": "Lightberry Lumi robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Event photographer and guest interaction at the ElevenLabs Summit (earlier prototype, 10.5 hours of operation)",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "Not construction work."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://lightberry.com/lumi",
+   "title": "Meet Lumi",
+   "publisher": "Lightberry",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.humanoidsdaily.com/news/lightberry-unveils-lumi-a-40k-interactive-humanoid-built-on-a-unitree-core",
+   "title": "Lightberry Unveils Lumi: A $40k Interactive Humanoid Built on a Unitree Core",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.humanoidsdaily.com/news/lightberry-lumi-fcc-covered-list-conditional-exemption",
+   "title": "Lightberry's Lumi Gains Conditional FCC Covered List Exemption",
+   "publisher": "Humanoids Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Delivery date (independent FCC certification still pending in November 2026).",
+  "Whether Lightberry will sell outside the US."
+ ],
+ "checkedAt": "2026-11-18"
+}

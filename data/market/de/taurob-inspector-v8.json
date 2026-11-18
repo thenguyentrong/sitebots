@@ -1,0 +1,241 @@
+{
+ "schemaVersion": 1,
+ "id": "taurob-inspector-v8",
+ "maker": "Taurob GmbH",
+ "makerCountry": "AT",
+ "model": "Inspector",
+ "variant": "V8",
+ "name": "Taurob Inspector V8",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "facility_operation/plant-room-rounds",
+  "asset_inspection_infrastructure/substation-rounds"
+ ],
+ "officialUrl": "https://taurob.com/inspector/",
+ "summary": "An Austrian ATEX Zone 1 tracked inspection robot (92 kg, IP67, -20 to +60 °C) with a four-joint arm that lifts a 4K camera up to 1.64 m, climbs stairs up to 45° and runs 4 h missions; ADNOC uses it for autonomous inspections at a gas plant in Abu Dhabi.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold directly by Taurob GmbH in Vienna on request (\"I'm interested\" / contact page); the maker states \"Available within 1 month\". No price published.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "Available within 1 month (maker)",
+  "sellers": [
+   {
+    "name": "Taurob GmbH",
+    "country": "AT",
+    "role": "manufacturer",
+    "productUrl": "https://taurob.com/inspector/",
+    "contactUrl": "https://taurob.com/contact/",
+    "email": "office@taurob.com",
+    "phone": "+43 1 698 25 19",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Perfektastraße, 1230 Vienna, Austria."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "1070 x 600 x 725",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "107 x 60 x 72,5 cm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 92,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Weight 92 kg"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Speed",
+   "value": 0.45,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "0,45 m/sec"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Mission runtime",
+   "value": 4,
+   "unit": "h",
+   "conditions": "full charge in 90 min, 20-80% in 45 min; stand-by about 6.5 h",
+   "sourceId": "s1",
+   "quote": "The Inspector performs missions of up to 4 uninterrupted hours and recharges in only 90 minutes to its full capacity."
+  },
+  {
+   "key": "atex",
+   "label": "Explosion protection",
+   "value": "ATEX Zone 1, intrinsically safe; ATEX Zone 1 docking",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "ATEX zone 1 docking"
+  },
+  {
+   "key": "ip_rating",
+   "label": "IP rating",
+   "value": "IP67",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "IP67"
+  },
+  {
+   "key": "operating_temp",
+   "label": "Operating temperature",
+   "value": "-20 to +60 °C",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "from -20°C to +60°C"
+  },
+  {
+   "key": "max_stair_deg",
+   "label": "Stairs",
+   "value": 45,
+   "unit": "deg",
+   "conditions": "up and down",
+   "sourceId": "s1",
+   "quote": "The Inspector climbs and descends stairs of up to 45° inclination"
+  },
+  {
+   "key": "arm_reach_height_mm",
+   "label": "Arm max extension",
+   "value": 1640,
+   "unit": "mm",
+   "conditions": "height; 4 joints; carries a 4K camera",
+   "sourceId": "s1",
+   "quote": "Max.extension1640 mm height"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "4 x 2K cameras (360°), 4K camera in the arm, thermal camera, 3D LIDAR, microphone; gas-finding camera and multi-gas sensor as payload",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "It captures ultra-high-definition photos and videos, records sounds, identifies gas leaks through thermography, and surveys its surroundings with a 3D LIDAR scanner."
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Flexible API; EasyDriveWeb, EasyMission and Admiralty fleet software; integrations with Energy Robotics, Yokogawa, DroneDeploy and others",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Taurob’s flexible API connects directly to a client’s digital twin or seamlessly integrates 3rd party software."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 4,
+  "ipRating": "IP67",
+  "sdk": "Taurob API, EasyMission",
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "The arm is a four-joint sensor arm with a camera head for a human-height viewpoint; it does not grip. A gripping \"operator\" robot is being co-developed separately (ARGOS project).",
+   "Surfaces named by the maker: grated floors, concrete, grass, gravel, sand, ramps and stairs up to 45°.",
+   "Built for oil and gas, power, chemical and mining sites; needs nitrogen purging gas and 100-240 VAC at the site."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Autonomous routine inspections in hazardous areas of a gas compression plant (gas leaks, hotspots)",
+   "stage": "deployment",
+   "where": "Taweelah Gas Compression Plant, Abu Dhabi, UAE",
+   "date": "2026-05",
+   "sourceId": "s3",
+   "note": "ADNOC: \"autonomous advanced robots are already deployed in live operations\"."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "stairs",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "The Inspector climbs and descends stairs of up to 45° inclination",
+   "basis": "maker claim",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Gaps, steps and uneven surfaces overcoming",
+   "basis": "maker claim",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Built for the extreme, the Inspector serves dutifully in harsh industrial environments, explosive atmospheres, adverse weather conditions and all sorts of terrain.",
+   "basis": "maker claim",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://taurob.com/inspector/",
+   "title": "The Inspector Robot",
+   "publisher": "Taurob GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://taurob.com/contact/",
+   "title": "Contact",
+   "publisher": "Taurob GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.hydrocarbonengineering.com/gas-processing/22052026/adnoc-deploys-heavy-duty-robot-at-taweelah-gas-compression-plant/",
+   "title": "ADNOC deploys heavy-duty robot at Taweelah Gas Compression Plant",
+   "publisher": "Hydrocarbon Engineering",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price.",
+  "Any German customer or reseller (the maker sells directly from Vienna).",
+  "Arm payload: the arm carries the camera head only; no figure published."
+ ],
+ "checkedAt": "2026-11-18"
+}

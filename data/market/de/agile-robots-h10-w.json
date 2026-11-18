@@ -1,0 +1,195 @@
+{
+ "schemaVersion": 1,
+ "id": "agile-robots-h10-w",
+ "maker": "Agile Robots",
+ "makerCountry": "DE",
+ "model": "H10-W",
+ "variant": null,
+ "name": "Agile Robots H10-W",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agile-robots.cn/en/product/29",
+ "summary": "A 230 kg wheeled assistant robot with a height-adjustable humanoid torso and two torque-sensing 7-DOF Diana 3 arms that picks, carries and places objects on voice command.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "MegaRobotics (Kaarst), which calls itself an official Agile Robots distributor, lists the H10-W with price and availability on request. The product page sits on Agile Robots' Chinese website.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "MegaRobotics (MEGAFORCE GmbH, Kaarst)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.megarobotics.de/de/products/h10-w",
+    "contactUrl": "https://www.megarobotics.de/de/contact",
+    "email": "info@megarobotics.de",
+    "phone": "+49 172 2008875",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "\"Beschaffung auf Anfrage\" / \"Preis & Verfügbarkeit anfragen\"; calls itself an official Agile Robots distributor (not verified with the maker)."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "dimensions_mm",
+   "label": "Dimensions",
+   "value": "934 x 929 x 1820",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "934×929×1820 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 230,
+   "unit": "kg",
+   "conditions": "with battery",
+   "sourceId": "s2",
+   "quote": "230 kg"
+  },
+  {
+   "key": "dof_total",
+   "label": "Degrees of freedom (without hands)",
+   "value": "21+",
+   "unit": null,
+   "conditions": "two 7-DOF arms plus torso lift and head",
+   "sourceId": "s2",
+   "quote": "DoF: 21+ in total (optional 2-finger gripper or dexterous hand)"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "rated; 7 kg maximum",
+   "sourceId": "s1",
+   "quote": "3 kg rated, 7 kg max."
+  },
+  {
+   "key": "max_speed_kmh",
+   "label": "Max. driving speed",
+   "value": 6,
+   "unit": "km/h",
+   "conditions": "differential drive",
+   "sourceId": "s2",
+   "quote": "6 km/h"
+  },
+  {
+   "key": "torso_lift_speed_mms",
+   "label": "Torso lift speed",
+   "value": 300,
+   "unit": "mm/s",
+   "conditions": "maximum",
+   "sourceId": "s2",
+   "quote": "300 mm/s"
+  },
+  {
+   "key": "sensors",
+   "label": "Sensors",
+   "value": "2D and 3D LiDAR, 4 depth cameras (head, wrists, base), 6-axis IMU, microphone array",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "2D LiDAR 3D LiDAR 4 depth cameras (head/wrists/base-mounted) 6-axis IMU microphone array and speaker"
+  },
+  {
+   "key": "interfaces",
+   "label": "Communication interface",
+   "value": "Fast DDS, gRPC, up to 1 kHz",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Fast DDS, gRPC, up to 1 kHz"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Fast DDS / gRPC interfaces",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Dual-wheel differential-drive base with a torso that moves up and down; arms are Agile Robots Diana 3 torque-sensing arms.",
+   "End effector is an option: two-finger gripper or dexterous hand.",
+   "Takes voice commands for pick, carry and place tasks."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.sanity.io/images/wudur8e8/production/93dc81d28831b9c8d849bebac19194dccbb751e6-1120x1160.jpg?bg=ffffff&w=1200&h=630&fit=fill",
+   "pageUrl": "https://www.megarobotics.de/de/products/h10-w",
+   "credit": "MegaRobotics",
+   "alt": "Agile Robots H10-W wheeled robot with two arms",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Fetch-and-carry, research and teaching, clinic ward assistance, service and retail",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Distributor's application list; no deployment reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.megarobotics.de/de/products/h10-w",
+   "title": "H10-W",
+   "publisher": "MegaRobotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agile-robots.cn/en/product/29",
+   "title": "H10-W",
+   "publisher": "Agile Robots",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.megarobotics.de/de/contact",
+   "title": "Kontakt",
+   "publisher": "MegaRobotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price, runtime and battery capacity are not published.",
+  "Whether the H10-W is sold by Agile Robots SE in Europe or only via its Chinese business; CE status not stated.",
+  "Could also be classed as a mobile manipulator (wheeled base with a humanoid torso)."
+ ],
+ "checkedAt": "2026-11-18"
+}

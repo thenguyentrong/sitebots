@@ -5,16 +5,17 @@ import { siteOrigin } from './site-origin';
  * from. One object, rendered everywhere, so nothing drifts.
  *
  * The site is public and German-operated, so §5 DDG applies: a reachable
- * Impressum naming the operator with a postal address. The operator fields
- * are empty until a c/o or Impressumsservice address exists — a home address
- * was not going to be published. `LEGAL_READY` gates the Impressum so it says
- * the details are missing rather than inventing a placeholder.
+ * Impressum naming the operator with a postal address and a fast way to make
+ * contact (email). The operator asked for the address below to be published.
+ * `LEGAL_READY` gates the Impressum so it says the details are missing rather
+ * than inventing a placeholder.
  */
 export const SITE = {
   name: 'sitebots',
   tagline: 'Which jobs can robots do today, and where to buy them in Germany',
   url: siteOrigin(process.env.SITE_URL, process.env.VERCEL_PROJECT_PRODUCTION_URL, process.env.NODE_ENV === 'production'),
-  email: process.env.SCRAPER_CONTACT_EMAIL || '',
+  // Forwards to the operator's inbox (ImprovMX, MX records on Vercel DNS).
+  email: process.env.SCRAPER_CONTACT_EMAIL || 'kontakt@sitebots.org',
 
   // ── FILL THESE IN ────────────────────────────────────────────────────────
   operator: 'The Vinh Nguyen Trong',

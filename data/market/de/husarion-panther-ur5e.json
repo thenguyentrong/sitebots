@@ -1,0 +1,218 @@
+{
+ "schemaVersion": 1,
+ "id": "husarion-panther-ur5e",
+ "maker": "Husarion",
+ "makerCountry": "PL",
+ "model": "Panther",
+ "variant": "with Universal Robots UR5e arm (module MAN01-02)",
+ "name": "Husarion Panther with UR5e",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://husarion.com/manuals/panther/manipulators/",
+ "summary": "Husarion's rugged four-wheel outdoor UGV Panther (IP54, IP66 option, up to 120 kg payload) with a Universal Robots UR5e arm mounted on its rails and the arm controller built into the chassis.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Husarion (Poland) offers the UR5e manipulator module for the Panther and quotes through a request form; Génération Robots sells the Panther base from 20,000 € net (10 to 12 weeks) and says it can be fitted with a robotic arm.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Husarion S.A.",
+    "country": "PL",
+    "role": "manufacturer",
+    "productUrl": "https://husarion.com/manuals/panther/manipulators/",
+    "contactUrl": "https://husarion.com/manuals/panther/overview/",
+    "email": "contact@husarion.com",
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "\"Request a quote\" form on the Panther overview page; the Panther + UR5e set ships in two boxes and is assembled by the customer following Husarion's guide."
+   },
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/en/404141-panther-mobile-robot-ugv.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s3",
+    "note": "Panther base (no arm) from 20,000 € excl. VAT / 24,000 € incl. VAT, \"Delivery within 10 to 12 weeks\"; arm on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Max carrying capacity (base)",
+   "value": 120,
+   "unit": "kg",
+   "conditions": "base platform; the arm counts towards it; Génération Robots states 100 kg",
+   "sourceId": "s2",
+   "quote": "max carrying capacity120 kg"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Base weight",
+   "value": 55,
+   "unit": "kg",
+   "conditions": "including single battery, without arm",
+   "sourceId": "s2",
+   "quote": "weight55 kg (including single battery)"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 3.5,
+   "unit": "h",
+   "conditions": "3.5 to 16 h depending on battery and load; base figure",
+   "sourceId": "s2",
+   "quote": "3.5-16 hruntime"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "max speed2 m/s"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Water protection",
+   "value": "IP54 / IP66",
+   "unit": null,
+   "conditions": "IP66 is an option (Génération Robots: \"IP54 (optional IP66)\")",
+   "sourceId": "s2",
+   "quote": "protection indexIP54 / IP66"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Hill climb",
+   "value": 28,
+   "unit": "deg",
+   "conditions": "with 100 kg cargo; 44 deg with 52 kg",
+   "sourceId": "s2",
+   "quote": "hill climb grade (with 52 / 100 kg cargo)96% (44°) / 54% (28°)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Base size (L x W x H)",
+   "value": "810 x 850 x 370",
+   "unit": "mm",
+   "conditions": "without arm",
+   "sourceId": "s2",
+   "quote": "dimensions (L x W x H)0.81 x 0.85 x 0.37 m"
+  },
+  {
+   "key": "operating_temp",
+   "label": "Operating temperature",
+   "value": "-20 to 50 °C",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "operating temperature-20°C to 50°C"
+  },
+  {
+   "key": "arm",
+   "label": "Arm",
+   "value": "Universal Robots UR5e, mounted on reinforced rails, controller inside the Panther",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The arm controller has been integrated into the interior of the Panther."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 120,
+  "runtimeH": 3.5,
+  "ipRating": "IP54",
+  "sdk": "ROS 2 (software for the UR5e on Husarion's GitHub)",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "Payload, runtime, IP and slope are base figures; with the UR5e mounted the free payload is lower.",
+   "Husarion also documents a Franka Research 3 on the Panther; this record is the UR5e module.",
+   "Customer assembles the arm onto the base (two-person job per Husarion)."
+  ]
+ },
+ "images": [],
+ "evidence": [],
+ "researchEvidence": [
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s2",
+   "quote": "Panther is a rugged Unmanned Ground Vehicle (UGV) platform, engineered for demanding outdoor environments.",
+   "basis": "maker description of the base",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s3",
+   "quote": "The Panther is an industrial-grade all-terrain UGV designed for outdoor applications.",
+   "basis": "seller description of the base",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://husarion.com/manuals/panther/manipulators/",
+   "title": "Panther Manipulators",
+   "publisher": "Husarion",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://husarion.com/manuals/panther/overview/",
+   "title": "Panther - Mobile Robot Platform for Outdoor Applications",
+   "publisher": "Husarion",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/404141-panther-mobile-robot-ugv.html",
+   "title": "Panther Mobile Robot (UGV)",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the Panther + UR5e set.",
+  "UR5e payload and reach not re-read on this check (Universal Robots page gave no figures to our reader).",
+  "Whether a gripper is part of the module."
+ ],
+ "checkedAt": "2026-11-18"
+}

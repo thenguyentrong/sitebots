@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { AccessDialog } from '@/components/account/AccessDialog';
 import { CompareBar } from '@/components/compare/CompareBar';
 import { SiteFooter } from '@/components/SiteFooter';
 import { SiteHeader } from '@/components/SiteHeader';
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <div className="flex flex-1 flex-col">{children}</div>
         <SiteFooter />
         <CompareBar />
+        <AccessDialog />
       </body>
     </html>
   );

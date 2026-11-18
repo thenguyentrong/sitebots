@@ -1,0 +1,177 @@
+{
+ "schemaVersion": 1,
+ "id": "anybotics-anymal-research-manipulation",
+ "maker": "ANYbotics",
+ "makerCountry": "CH",
+ "model": "ANYmal Research",
+ "variant": "with Manipulation Payload (Duatic DynaArm)",
+ "name": "ANYbotics ANYmal Research with Manipulation Payload",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://www.anybotics.com/news/anybotics-anymal-research-mobile-manipulation/",
+ "summary": "The research edition of the ANYmal quadruped with a torque-controlled arm developed with the ETH Zurich spin-off Duatic, an onboard NVIDIA Jetson GPU and open low-level joint control, launched at ICRA 2025 for mobile-manipulation research.",
+ "launched": "2025-05",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Offered by ANYbotics (Zurich) to research labs on request: interested researchers are asked to reach out via the ANYbotics website. No price or German partner is published; anybotics.com refused our reader (403) on 18 Nov 2026.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "ANYbotics AG",
+    "country": "CH",
+    "role": "manufacturer",
+    "productUrl": null,
+    "contactUrl": "https://www.anybotics.com/contact-sales/",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Contact page as used in the ANYmal D record; the launch article asks researchers to reach out via the ANYbotics website."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm continuous payload (DynaArm)",
+   "value": 6,
+   "unit": "kg",
+   "conditions": "DynaArm data; 15 kg for 10 s",
+   "sourceId": "s2",
+   "quote": "Continuous Payload 6 kg"
+  },
+  {
+   "key": "arm_peak_payload_kg",
+   "label": "Arm maximum payload (10 s)",
+   "value": 15,
+   "unit": "kg",
+   "conditions": "DynaArm data",
+   "sourceId": "s2",
+   "quote": "Maximum Payload (10s) 15 kg"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm reach",
+   "value": 0.99,
+   "unit": "m",
+   "conditions": "DynaArm data",
+   "sourceId": "s2",
+   "quote": "Reach 0.990 m"
+  },
+  {
+   "key": "arm_weight_kg",
+   "label": "Arm weight",
+   "value": 9.2,
+   "unit": "kg",
+   "conditions": "DynaArm data",
+   "sourceId": "s2",
+   "quote": "Total Weight 9.2 kg"
+  },
+  {
+   "key": "arm_ip_rating",
+   "label": "Arm protection rating",
+   "value": "IP66",
+   "unit": null,
+   "conditions": "arm only; base rating not read",
+   "sourceId": "s2",
+   "quote": "With a weatherproof IP66-rated build, it operates flawlessly in harsh conditions."
+  },
+  {
+   "key": "compute",
+   "label": "Onboard computing",
+   "value": "NVIDIA Jetson GPU in the payload",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The system is equipped with an NVIDIA Jetson GPU"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "Open software architecture with full access to low-level joint control",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "an open software architecture that gives researchers full access to low-level joint control"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 6,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": "Open low-level joint control (research edition)",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3"
+  ],
+  "notes": [
+   "A research package, not the industrial inspection ANYmal D / ANYmal X (separate records).",
+   "Arm figures are Duatic's DynaArm data; Duatic shows the DynaArm on ANYmal as \"optimized for outdoor legged robots\". The combined system figures were not readable.",
+   "The gripper or end effector supplied with the payload is not named in the sources read."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Research in dynamic mobile manipulation (tool use, object handling) at ETH Zurich, per the launch statement",
+   "stage": "claim",
+   "where": "Zurich, Switzerland",
+   "date": "2025-05",
+   "sourceId": "s1",
+   "note": "Quoted statement by Prof. Marco Hutter (ETH Zurich); no test results given."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://humanoidroboticstechnology.com/industry-news/anybotics-launches-anymal-research-manipulation-payload-at-icra-2025/",
+   "title": "ANYbotics Launches ANYmal Research Manipulation Payload at ICRA 2025",
+   "publisher": "Humanoid Robotics Technology (source: ANYbotics)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.duatic.com/dynaarm",
+   "title": "DynaArm",
+   "publisher": "Duatic AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://duatic.com/",
+   "title": "Duatic home page (DynaArm on ANYmal)",
+   "publisher": "Duatic AG",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Base specs of ANYmal Research (payload, runtime, IP, stairs) - anybotics.com refused our reader (403).",
+  "Price and delivery time; whether the payload is sold for existing ANYmal units.",
+  "Which gripper is included."
+ ],
+ "checkedAt": "2026-11-18"
+}

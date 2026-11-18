@@ -17,5 +17,5 @@ export const ui = {
   segment: 'inline-flex flex-wrap items-center gap-1 rounded-full border border-edge bg-subtle p-1',
   segmentItem: 'rounded-full px-3 py-1 text-sm text-muted transition hover:text-foreground',
   segmentActive: 'bg-card text-foreground shadow-sm font-medium',
-  link: 'underline decoration-edge-strong underline-offset-4 transition hover:decoration-foreground',
+  link: 'underline decoration-muted/60 underline-offset-4 transition hover:text-safety hover:decoration-safety',
 } as const;

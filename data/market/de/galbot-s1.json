@@ -16,11 +16,26 @@
   "priceEur": null,
   "priceOther": null,
   "leadTime": null,
-  "sellers": [],
-  "checkedAt": "2026-11-06",
-  "status": "not_sold",
-  "statusNote": "Sold through JD.com in China; no European sales office, distributor or EU customer found.",
+  "sellers": [
+   {
+    "name": "Bipedal GmbH",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.bipedal.de/Galbot",
+    "contactUrl": "https://www.bipedal.de/Kontakt",
+    "email": null,
+    "phone": null,
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Galbot category page: \"Preis auf Anfrage\".",
+    "sourceId": "s3"
+   }
+  ],
+  "checkedAt": "2026-11-18",
+  "status": "quote",
+  "statusNote": "Bipedal GmbH (Germany) lists the Galbot S1 with \"Preis auf Anfrage\". Galbot itself sells through JD.com in China and a contact form (business@galbot.com).",
   "sourceIds": [
+   "s3",
    "s1",
    "s2"
   ]
@@ -175,6 +190,14 @@
    "publisher": "Galbot",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.bipedal.de/Galbot",
+   "title": "Galbot",
+   "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [],

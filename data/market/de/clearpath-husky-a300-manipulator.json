@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "id": "clearpath-husky-a300-manipulator",
+ "maker": "Clearpath Robotics (Rockwell Automation)",
+ "makerCountry": "CA",
+ "model": "Husky A300",
+ "variant": "Manipulator Package (Franka Research 3)",
+ "name": "Clearpath Husky A300 Manipulator Package",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://clearpathrobotics.com/husky-a300-unmanned-ground-vehicle-robot/",
+ "summary": "Clearpath's rugged four-wheel outdoor base Husky A300 (100 kg payload, IP54) in its preconfigured manipulator package with a Franka Research 3 arm and a ROS 2 / MoveIt 2 interface, aimed at research and tele-operated mobile manipulation.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Génération Robots lists a \"Husky AMP Manipulator\" configuration on its Husky A300 page and the Husky manipulation package among its mobile manipulators, but prices only the base (from 22,500 € net, 11 weeks); the arm version is on quote.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "distributor",
+    "productUrl": "https://www.generationrobots.com/en/404267-husky-a300-ugv-mobile-base-1809.html",
+    "contactUrl": "https://www.generationrobots.com/en/contact-us",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "Base Husky A300 from 22,500 € excl. VAT (27,000 € incl. VAT), \"Delivery within 11 weeks\"; the AMP Manipulator configuration is described but not priced (\"Ask for a quote\")."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "carry_payload_kg",
+   "label": "Base max payload",
+   "value": 100,
+   "unit": "kg",
+   "conditions": "base platform; the arm counts towards it",
+   "sourceId": "s1",
+   "quote": "100 kg (220 lb)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Base weight",
+   "value": 80,
+   "unit": "kg",
+   "conditions": "base without arm",
+   "sourceId": "s1",
+   "quote": "80 kg (176 lbs)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Base size",
+   "value": "990 x 698 x 381",
+   "unit": "mm",
+   "conditions": "base without arm",
+   "sourceId": "s1",
+   "quote": "990 x 698 x 381 mm"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Max speed",
+   "value": 2,
+   "unit": "m/s",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2.0 m/s (4.4 mph)"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Runtime",
+   "value": 8,
+   "unit": "h",
+   "conditions": "standard battery; upgraded 16 h, extended 24 h; base figure",
+   "sourceId": "s1",
+   "quote": "Standard: 8 Hours"
+  },
+  {
+   "key": "ip_rating",
+   "label": "Base IP rating",
+   "value": "IP54",
+   "unit": null,
+   "conditions": "base platform",
+   "sourceId": "s1",
+   "quote": "a weather resistant IP54 rating"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Max incline",
+   "value": 30,
+   "unit": "deg",
+   "conditions": "seller figure for the base",
+   "sourceId": "s2",
+   "quote": "Capable of climbing inclines of up to 30°"
+  },
+  {
+   "key": "arm",
+   "label": "Arm in the package",
+   "value": "Franka Research 3 manipulator with control box",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "+ Franka Research 3 Manipulator & Control Box"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm payload (Franka Research 3)",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "reach 855 mm",
+   "sourceId": "s4",
+   "quote": "Payload 3 kg"
+  },
+  {
+   "key": "sdk",
+   "label": "Software",
+   "value": "ROS 2 / MoveIt 2 interface",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "+ ROS2 / MoveIt 2 Interface"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "optional",
+  "handsIncluded": null,
+  "armPayloadKg": 3,
+  "carryPayloadKg": 100,
+  "runtimeH": 8,
+  "ipRating": "IP54",
+  "sdk": "ROS 2, MoveIt 2",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "IP54, runtime and payload are base figures; no rating is given for the arm on the base.",
+   "Drive options: rugged four-wheel drive, casters or Mecanum wheels.",
+   "Clearpath also builds custom Husky A300 arms set-ups, for example with a Universal Robots UR5e (blog, April 2026)."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker lists autonomous inspection and remote tele-operated mobile manipulation as example applications of the package",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  },
+  {
+   "taskIds": [],
+   "task": "Custom Husky A300 with a UR5e arm built for advanced mobile manipulation research",
+   "stage": "demo",
+   "where": null,
+   "date": "2026-04",
+   "sourceId": "s5",
+   "note": "A UR5e build, not the Franka package; shows Clearpath integrating arms on the A300."
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "Whether it’s rocky terrain, hills, mud, sand or inclement weather, Husky is up for the challenge.",
+   "basis": "maker claim for the base",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "a weather resistant IP54 rating",
+   "basis": "maker spec for the base",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clearpathrobotics.com/husky-a300-unmanned-ground-vehicle-robot/",
+   "title": "Husky A300 UGV",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.generationrobots.com/en/404267-husky-a300-ugv-mobile-base-1809.html",
+   "title": "Husky A300 UGV mobile base",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.generationrobots.com/en/548-mobile-manipulator-robots",
+   "title": "Mobile manipulator robots",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://franka.de/products/franka-research-3",
+   "title": "Franka Research 3",
+   "publisher": "Franka Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://clearpathrobotics.com/blog/2026/04/husky-a300-rugged-mobile-manipulator/",
+   "title": "Husky A300 Rugged Mobile Manipulator Integration",
+   "publisher": "Clearpath Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the manipulator package in Europe.",
+  "Whether a gripper (Franka Hand) is included in the package.",
+  "Whether the package can be ordered with other arms (UR5e, Kinova) as a standard option."
+ ],
+ "checkedAt": "2026-11-18"
+}

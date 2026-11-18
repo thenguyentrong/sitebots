@@ -1,0 +1,159 @@
+{
+ "schemaVersion": 1,
+ "id": "xpanner-x1-piling-r6",
+ "maker": "Xpanner Inc.",
+ "makerCountry": "US",
+ "model": "X1 Piling R6",
+ "variant": null,
+ "name": "Xpanner X1 Piling R6",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "other",
+  "utility-scale solar and battery storage construction: driving foundation piles for trackers and BESS"
+ ],
+ "officialUrl": "https://xpanner.com/solution/x1-piling/x1-piling-r6/",
+ "summary": "Tracked solar pile driver that combines Everstar's R6 base machine with Xpanner's X1 automation, so one operator with a remote control can let it travel to each GNSS-surveyed point, align, hammer and plumb the pile. Launched in October 2026 for US solar and battery storage sites.",
+ "launched": "2026-10",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found. Xpanner (Santa Fe Springs, California) sells or rents the machine with a monthly X1 software subscription and its own field support team; all deployments it names are in the US and Australia.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "pile_length_ft",
+   "label": "Max. pile length",
+   "value": 23,
+   "unit": "ft",
+   "conditions": "7.0 m",
+   "sourceId": "s1",
+   "quote": "Handle piles up to 23 ft long, with a maximum driving depth of 15.7 ft."
+  },
+  {
+   "key": "driving_depth_ft",
+   "label": "Max. driving depth",
+   "value": 15.7,
+   "unit": "ft",
+   "conditions": "4.8 m; actual embedment depends on reveal and site",
+   "sourceId": "s1",
+   "quote": "Handle piles up to 23 ft long, with a maximum driving depth of 15.7 ft."
+  },
+  {
+   "key": "engine_kw",
+   "label": "Engine power",
+   "value": 97,
+   "unit": "kW",
+   "conditions": "130 hp",
+   "sourceId": "s2",
+   "quote": "The system includes a 97 kW (130 hp) engine"
+  },
+  {
+   "key": "impact_energy_j",
+   "label": "Hammer impact energy",
+   "value": 1260,
+   "unit": "J",
+   "conditions": "up to; three energy settings",
+   "sourceId": "s2",
+   "quote": "a high-frequency hydraulic hammer with up to 1,260 J (929 ft.-lb.) of impact energy and three energy settings"
+  },
+  {
+   "key": "fine_positioning_mm",
+   "label": "Guide-rail fine positioning",
+   "value": "300 forward/back, 500 left/right",
+   "unit": "mm",
+   "conditions": "upper body rotates 180°",
+   "sourceId": "s2",
+   "quote": "The guide rail slides 11.8 in. (300 mm) forward and back and 19.7 in. (500 mm) left and right, and the upper body rotates 180 degrees"
+  },
+  {
+   "key": "crew",
+   "label": "Operators",
+   "value": 1,
+   "unit": "people",
+   "conditions": "supervises via remote control",
+   "sourceId": "s2",
+   "quote": "Supervised by a single operator, the system uses high-precision GNSS and onboard sensors to place each pile accurately"
+  },
+  {
+   "key": "business_model",
+   "label": "Business model",
+   "value": "machine purchase or rental plus monthly X1 software subscription",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Customers purchase (or rent) the X1 Piling robot and then license the automation software on a monthly subscription basis for each active technology."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": false,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Arm = pile-driving mast with hydraulic hammer; Everstar R6 crawler base machine.",
+   "roughGround set true for open solar-field ground, not a sourced spec.",
+   "Records each pile's position, depth and plumb to the Xpanner Connect web dashboard.",
+   "Designed to work with Xpanner's X1 Panel Lift for module installation."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Launched for autonomous pile driving on utility-scale solar and BESS sites",
+   "stage": "claim",
+   "where": null,
+   "date": "2026-10",
+   "sourceId": "s2",
+   "note": "Xpanner says its X1 Piling automation (on other pile drivers) has been deployed at more than 60 US sites; no named R6 site yet."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://xpanner.com/solution/x1-piling/x1-piling-r6/",
+   "title": "X1 Piling R6: the all-new solar piling machine powered by Xpanner automation",
+   "publisher": "Xpanner Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.therobotreport.com/xpanner-launches-new-autonomous-pile-driver-solar-farm-contruction/",
+   "title": "Xpanner launches autonomous pile driver for solar farm construction (27 October 2026)",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Purchase, rental and subscription prices are not published.",
+  "Machine weight and fuel tank size are not stated on the pages read.",
+  "Is there any plan to sell or support the R6 in Europe?"
+ ],
+ "checkedAt": "2026-11-18"
+}

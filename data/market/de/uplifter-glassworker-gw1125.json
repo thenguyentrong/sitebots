@@ -1,0 +1,185 @@
+{
+ "schemaVersion": 1,
+ "id": "uplifter-glassworker-gw1125",
+ "maker": "Uplifter Service GmbH",
+ "makerCountry": "DE",
+ "model": "Glassworker GW1125",
+ "variant": null,
+ "name": "Uplifter Glassworker GW1125 glazing robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "glazing_installation",
+  "material_lifting",
+  "site_windows_doors/large-pane-glazing",
+  "site_windows_doors/window-unit-setting"
+ ],
+ "officialUrl": "https://uplifter.com/products/glassworker/4/glassworker-gw1125",
+ "summary": "Uplifter's largest radio-controlled glazing robot: a hydraulic lifter on solid rubber tyres with outriggers and a removable vacuum cross that lifts glass elements of up to 1,125 kg to 4.55 m. Made, sold and rented by Uplifter in Guteneck, Bavaria.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Sold and rented by the German maker Uplifter (Guteneck, Bavaria) through purchase and rental request forms; no price shown. The maker states 24 h delivery time and worldwide delivery.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": "24 h delivery time (maker)",
+  "sellers": [
+   {
+    "name": "Uplifter Service GmbH",
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://uplifter.com/products/glassworker/4/glassworker-gw1125",
+    "contactUrl": "https://uplifter.com/company/contact/",
+    "email": null,
+    "phone": "+49 9433 204990",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s2",
+    "note": "92543 Guteneck, Germany. Purchase or rental request on the product page; used machines on request."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Max. load",
+   "value": 1125,
+   "unit": "kg",
+   "conditions": "maker says hydraulic supports double the load capacity in use",
+   "sourceId": "s1",
+   "quote": "Max. load 1,125 kg"
+  },
+  {
+   "key": "lifting_height_m",
+   "label": "Max. lifting height",
+   "value": 4.55,
+   "unit": "m",
+   "conditions": "working height at centre of vacuum cross given as 4.255 m",
+   "sourceId": "s1",
+   "quote": "Max. Lifting height 4.55 m"
+  },
+  {
+   "key": "front_reach_m",
+   "label": "Max. lifting width to the front",
+   "value": 2.32,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Max. Lifting width to the front 2.32 m"
+  },
+  {
+   "key": "length_m",
+   "label": "Length",
+   "value": 2.674,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2,674 m"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Dead weight",
+   "value": "approx. 1,400 (1,250–1,500 by configuration)",
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dead weight approx. 1,400 kg"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "radio remote control with LCD panel",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Radio remote control with LCD panel"
+  },
+  {
+   "key": "tyres",
+   "label": "Tyres",
+   "value": "black solid rubber (standard) or white non-marking solid rubber",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "black solid rubber tyres standard"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": false,
+  "stairs": false,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 1125,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Maker recommends use only on stable and non-slip surfaces, so roughGround is false.",
+   "Optical sensors prevent the machine from falling over floor edges, landings and steps (stairs false).",
+   "Quick-change system swaps the vacuum cross for a forklift fork or cable winch without tools; the vacuum cross can also be used separately.",
+   "Battery-powered per the product configurator (standard battery or battery extension); runtime not stated.",
+   "Remote-controlled by an operator; not autonomous."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://uplifter.com/media/image/8e/b3/d3/GW-1125_vorne_2022_wAxCe0i7M0wGCE.png",
+   "pageUrl": "https://uplifter.com/products/glassworker/4/glassworker-gw1125",
+   "credit": "Uplifter Service GmbH",
+   "alt": "Uplifter Glassworker GW1125 glazing robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_windows_doors/large-pane-glazing"
+   ],
+   "task": "Lifts and sets very large glass elements of up to 1,125 kg",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker product description; no named project found."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://uplifter.com/products/glassworker/4/glassworker-gw1125",
+   "title": "GLASSWORKER GW1125 (product information, technical data)",
+   "publisher": "Uplifter Service GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://uplifter.com/company/contact/",
+   "title": "Contact",
+   "publisher": "Uplifter Service GmbH",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Purchase and rental prices are not published.",
+  "Battery capacity, runtime and driving speed are not stated.",
+  "Width and outrigger footprint not captured from the technical data."
+ ],
+ "checkedAt": "2026-11-18"
+}

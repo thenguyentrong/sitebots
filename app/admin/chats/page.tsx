@@ -29,7 +29,7 @@ export default async function ChatsPage({ searchParams }: { searchParams: Search
   return <main className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
     <div className="flex items-baseline justify-between gap-4"><h1 className="text-3xl font-semibold tracking-tight">Chats</h1><Link href="/admin" className="text-sm underline underline-offset-4">Admin</Link></div>
     <p className="mt-3 text-muted">
-      {overview.questions} questions in {shown}. This month: {money(overview.monthCostUsd)} of the $50 limit, as counted here. The Claude Console shows the exact figure.
+      {overview.questions} questions in {shown}. This month: {money(overview.monthCostUsd)} of the $50 limit, as counted here, without chats paid with a visitor&apos;s own key. The Claude Console shows the exact figure.
     </p>
 
     <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
@@ -38,7 +38,7 @@ export default async function ChatsPage({ searchParams }: { searchParams: Search
           {conversations.map((row) => <li key={row.id} className="border-b border-edge/60 last:border-b-0">
             <Link href={'/admin/chats?id=' + row.id} aria-current={row.id === id ? 'true' : undefined} className={'block px-4 py-3 transition hover:bg-subtle' + (row.id === id ? ' bg-subtle' : '')}>
               <span className="block truncate text-sm font-medium">{row.title || 'Untitled'}</span>
-              <span className="num mt-1 block text-xs text-muted">{when(row.lastAt)}, {row.messages} messages, {money(row.costUsd)}</span>
+              <span className="num mt-1 block text-xs text-muted">{when(row.lastAt)}, {row.messages} messages, {money(row.costUsd)}{row.paidBy === 'own_key' ? ', own key' : row.paidBy === 'free' ? ', free' : ''}</span>
             </Link>
           </li>)}
         </ul> : <p className="p-6 text-sm text-muted">No chats yet. They appear here as soon as someone asks a question.</p>}

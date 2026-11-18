@@ -1,0 +1,191 @@
+{
+ "schemaVersion": 1,
+ "id": "cosmic-robotics-cosmic-1a",
+ "maker": "Cosmic Robotics, Inc.",
+ "makerCountry": "US",
+ "model": "Cosmic-1A",
+ "variant": null,
+ "name": "Cosmic Robotics Cosmic-1A",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "other",
+  "utility-scale solar construction: lifting PV modules and placing them on tracker racking"
+ ],
+ "officialUrl": "https://www.cosmicrobotics.com/",
+ "summary": "Fully electric eight-wheeled field robot with a KUKA six-axis arm and vision system that picks solar modules and places them on the racking, while workers fasten them. Built by US start-up Cosmic Robotics and used by the contractor Sunstall on US solar projects.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found. Cosmic Robotics (US) has a quote request on its website and works through certified US operators such as SunRobi, the robotics division of Sunstall; all deployments named are in the United States.",
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "placement_accuracy_mm",
+   "label": "Placement accuracy",
+   "value": "±1",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The robot places the solar panels onto the racking with ±1mm precision."
+  },
+  {
+   "key": "module_payload_lb",
+   "label": "Module weight handled",
+   "value": 80,
+   "unit": "lb",
+   "conditions": "with the arm fully extended; about 36 kg",
+   "sourceId": "s2",
+   "quote": "the robot had to be able to handle the 80-pound payload, even with the arm fully extended"
+  },
+  {
+   "key": "arm",
+   "label": "Robot arm",
+   "value": "KUKA KR IONTEC, Foundry version",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The company landed on the KR IONTEC robot arm"
+  },
+  {
+   "key": "base",
+   "label": "Base",
+   "value": "eight-wheeled autonomous platform",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s4",
+   "quote": "The Cosmic 1A robot is an eight wheeled autonomous platform with a 6-axis industrial robot on the top for panel handling."
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "fully electric",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The fully electric robot incorporates a rugged all-terrain vehicle platform and a large KUKA robot arm"
+  },
+  {
+   "key": "productivity",
+   "label": "Labour productivity",
+   "value": "2x manual methods",
+   "unit": null,
+   "conditions": "maker claim, solar farm construction",
+   "sourceId": "s5",
+   "quote": "Cosmic-1 has now achieved 2x labor productivity compared to manual methods for terrestrial solar farm construction."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 36,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s2",
+   "s4"
+  ],
+  "notes": [
+   "armPayloadKg is the 80 lb module weight from the KUKA case study converted to kg, not a rated arm payload.",
+   "Works in heat, rain and dust; the Foundry arm version has an extended temperature range and pressurised joints (KUKA).",
+   "Workers still set up the racking and fasten the modules; a fastening tool is planned.",
+   "The maker now calls the system Cosmic-1."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.cosmicrobotics.com/assets/img/og.jpg",
+   "pageUrl": "https://www.cosmicrobotics.com/",
+   "credit": "Cosmic Robotics, Inc.",
+   "alt": "Cosmic-1A robot carrying a solar module in a solar field",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Lifts and places PV modules on racking on utility-scale solar projects, replacing the lifting work of a five-person crew",
+   "stage": "deployment",
+   "where": "Sunstall projects, United States; further installations planned in Colorado and California",
+   "date": "2025-12",
+   "sourceId": "s2",
+   "note": "Customer case study published by KUKA."
+  },
+  {
+   "taskIds": [],
+   "task": "SunRobi certified as first Cosmic operator after multiple deployments on live solar projects",
+   "stage": "deployment",
+   "where": "United States",
+   "date": "2026-02",
+   "sourceId": "s3",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.cosmicrobotics.com/",
+   "title": "Cosmic Robotics homepage (request a quote)",
+   "publisher": "Cosmic Robotics, Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.kuka.com/en-us/industries/solutions-database/2025/12/automating-solar-panel-installation",
+   "title": "Robotic Automation for Utility-Scale Solar Installation (Sunstall and Cosmic Robotics case study)",
+   "publisher": "KUKA",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.solarpowerworldonline.com/2026/02/sunrobi-is-first-certified-operator-of-cosmic-robotics-autonomous-solar-installation-systems/",
+   "title": "SunRobi is first certified operator of Cosmic Robotics autonomous solar installation systems (3 February 2026)",
+   "publisher": "Solar Power World",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.therobotreport.com/cosmic-industries-gets-funding-to-automate-accelerate-solar-installation/",
+   "title": "Cosmic Robotics unveils Cosmic-1A (funding article)",
+   "publisher": "The Robot Report",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s5",
+   "url": "https://www.cosmicrobotics.com/roadmap",
+   "title": "Technology Roadmap (19 August 2026)",
+   "publisher": "Cosmic Robotics, Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Is the robot sold, rented or only offered with certified operators? No price or terms found.",
+  "Install rate per module, runtime per charge and machine weight are not stated on the pages read.",
+  "Any plan for Europe? No EU partner or project found."
+ ],
+ "checkedAt": "2026-11-18"
+}

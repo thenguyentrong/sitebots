@@ -16,7 +16,13 @@ export type SavedMessage = {
 export type Chat = {
   id: string; title: string; startedAt: string; lastAt: string;
   brief: BriefFact[]; options: ChatOption[] | null; leftOut: LeftOut[]; messages: SavedMessage[];
+  /** The account code of whoever started it, so nobody else can carry on a free chat. */
+  owner?: string;
+  /** Who pays for the answers: the site's free allowance or the visitor's own API key. */
+  paidBy?: PaidBy;
 };
+
+export type PaidBy = 'free' | 'own_key';
 
 /** Where chat files live. `fresh` skips the CDN, which can lag a minute behind an overwrite. */
 export type Shelf = {
@@ -116,7 +122,10 @@ export function writeChat(chat: Chat, now = new Date()): Promise<void> {
   return shelf().write({ ...chat, lastAt: now.toISOString() });
 }
 
-export type ConversationRow = { id: string; title: string; startedAt: string; lastAt: string; messages: number; costUsd: number };
+/** Deleting an account takes its chats along. */
+export const deleteChats = (ids: string[]): Promise<void> => shelf().remove(ids);
+
+export type ConversationRow = { id: string; title: string; startedAt: string; lastAt: string; messages: number; costUsd: number; paidBy: PaidBy | null };
 
 const spent = (chat: Chat) => chat.messages.reduce((sum, message) => sum + (message.costUsd ?? 0), 0);
 
@@ -126,12 +135,13 @@ export async function chatOverview(limit: number, source = shelf(), now = new Da
   const entries = (await source.entries()).sort((a, b) => b.savedAt.getTime() - a.savedAt.getTime());
   const chats = (await Promise.all(entries.slice(0, limit).map((entry) => source.read(entry.id, false)))).filter((chat): chat is Chat => chat !== null);
   const month = now.toISOString().slice(0, 7);
-  const rows: ConversationRow[] = chats.map((chat) => ({ id: chat.id, title: chat.title, startedAt: chat.startedAt, lastAt: chat.lastAt, messages: chat.messages.length, costUsd: spent(chat) }));
+  const rows: ConversationRow[] = chats.map((chat) => ({ id: chat.id, title: chat.title, startedAt: chat.startedAt, lastAt: chat.lastAt, messages: chat.messages.length, costUsd: spent(chat), paidBy: chat.paidBy ?? null }));
   return {
     rows,
     total: entries.length,
     questions: chats.reduce((sum, chat) => sum + chat.messages.filter((message) => message.role === 'user').length, 0),
-    monthCostUsd: chats.filter((chat) => chat.lastAt.startsWith(month)).reduce((sum, chat) => sum + spent(chat), 0),
+    // What visitors' own keys paid is theirs, so it does not count against the site's limit.
+    monthCostUsd: chats.filter((chat) => chat.lastAt.startsWith(month) && chat.paidBy !== 'own_key').reduce((sum, chat) => sum + spent(chat), 0),
   };
 }
 

@@ -1,4 +1,4 @@
-const PUBLIC_ORIGIN = 'https://sitebots.vercel.app';
+const PUBLIC_ORIGIN = 'https://sitebots.org';
 
 /** Deployment metadata must never tell crawlers that localhost is the public site. */
 export function siteOrigin(siteUrl?: string, vercelProductionUrl?: string, production = false): string {

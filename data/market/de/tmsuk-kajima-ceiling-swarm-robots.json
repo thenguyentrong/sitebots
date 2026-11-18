@@ -1,0 +1,140 @@
+{
+ "schemaVersion": 1,
+ "id": "tmsuk-kajima-ceiling-swarm-robots",
+ "maker": "tmsuk Co., Ltd. with Kajima Corporation",
+ "makerCountry": "JP",
+ "model": "Suspended ceiling swarm robot system",
+ "variant": "6 robots: hanging bolt, 3 × T-bar assembly, secondary T-bar, ceiling board",
+ "name": "tmsuk / Kajima suspended ceiling swarm robots",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_drywall/ceiling-substructure"
+ ],
+ "officialUrl": "https://www.tmsuk.co.jp/en/news/724/",
+ "summary": "Team of six small mobile robots that build suspended office ceilings together: one installs the hanging bolts, three assemble the long T-bars, one adds the short T-bars and one lays the ceiling boards into the grid. Developed by the Kyoto robot maker tmsuk with the contractor Kajima and tested on Kajima office sites.",
+ "launched": "2024-07",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Prototype system for Kajima's own sites in Japan; no sale or rental route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "robots_in_system",
+   "label": "Robots in the system",
+   "value": 6,
+   "unit": "robots",
+   "conditions": "1 hanging bolt robot, 3 T-bar assembly robots, 1 secondary T-bar robot, 1 ceiling board robot",
+   "sourceId": "s1",
+   "quote": "T-Bar Assembly Robots (3 units)"
+  },
+  {
+   "key": "coordination",
+   "label": "Coordination",
+   "value": "edge AI on each robot, swarm task sharing",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Each robot is equipped with edge-based artificial intelligence, allowing for real-time task coordination and environmental awareness."
+  },
+  {
+   "key": "transport",
+   "label": "Transport",
+   "value": "fits standard elevators",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Robots can be transported via standard elevators and deployed selectively based on construction needs."
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "motorised platform with millimetre-level adjustment",
+   "unit": null,
+   "conditions": "all robots",
+   "sourceId": "s1",
+   "quote": "Each unit moves on a motorized platform capable of millimeter-level adjustments"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Drive type is not stated ('motorized platform'); wheels assumed. Lifting and fixing mechanisms are not described.",
+   "The hanging bolt robot detects obstructions such as beams or ducts and adjusts bolt positions; the board robot uses sensors to detect obstacles and fine-tune board placement.",
+   "Humans still do edge work and some steps of the process (maker footnote). Reduces scaffolding in the work zone.",
+   "Grid is a T-bar system ceiling with ceiling boards, not a screwed plasterboard ceiling. In June 2026 Kajima reported a separate automatic ceiling finishing robot run from a tablet; whether it belongs to this system is not stated."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://www.tmsuk.co.jp/en/wp-content/uploads/2025/06/6a006438d423b3bf9b842001dbcfcd38-1024x512.jpg",
+   "pageUrl": "https://www.tmsuk.co.jp/en/news/724/",
+   "credit": "tmsuk Co., Ltd. with Kajima Corporation",
+   "alt": "tmsuk and Kajima ceiling robots lined up in an office floor",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_drywall/ceiling-substructure"
+   ],
+   "task": "Installed hanging bolts, T-bar grid and ceiling boards of suspended office ceilings",
+   "stage": "pilot",
+   "where": "Several active office construction sites managed by Kajima Corporation, Japan",
+   "date": "2024-07",
+   "sourceId": "s1",
+   "note": "Prototype; sites not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.tmsuk.co.jp/en/news/724/",
+   "title": "World's First AI-Powered Swarm Robots for Suspended Ceiling Construction (17 July 2024)",
+   "publisher": "tmsuk Co., Ltd.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://view.asiae.co.kr/en/article/2026062615040366040",
+   "title": "Ceiling Work That Once Required Two Workers Now Handled by Robots (26 June 2026)",
+   "publisher": "The Asia Business Daily",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Has the system moved beyond the prototype stage, and is it used on Kajima sites routinely?",
+  "Is the 'automatic ceiling finishing robot' Kajima reported in June 2026 part of this system or a new robot?",
+  "Robot sizes, payloads, ceiling heights and output per day.",
+  "Will tmsuk or Kajima sell or rent the robots to other contractors?"
+ ],
+ "checkedAt": "2026-11-18"
+}

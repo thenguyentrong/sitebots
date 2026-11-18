@@ -38,14 +38,16 @@ export const LIMITS = {
   chatsOnAdminPage: 50,
 };
 
-export type ChatStatus = { ready: true } | { ready: false; reason: 'no_key' | 'no_storage' | 'no_legal' };
+export type ChatStatus = { ready: true } | { ready: false; reason: 'no_storage' | 'no_legal' };
 
-/** The chat stays closed until it can keep its promises: a key to answer with, a store for the chats,
- *  and an Impressum and privacy page that name who runs it. */
+/** The chat stays closed until it can keep its promises: a store for the chats, and an Impressum and
+ *  privacy page that name who runs it. Who pays for an answer is decided per message (see freeReady). */
 export function chatStatus(): ChatStatus {
-  if (!process.env.ANTHROPIC_API_KEY) return { ready: false, reason: 'no_key' };
   if (process.env.NODE_ENV !== 'production') return { ready: true };
   if (!process.env.BLOB_READ_WRITE_TOKEN) return { ready: false, reason: 'no_storage' };
   if (!LEGAL_READY) return { ready: false, reason: 'no_legal' };
   return { ready: true };
 }
+
+/** The free allowance needs the site's own key. Without it only visitors with their own key can chat. */
+export const freeReady = () => Boolean(process.env.ANTHROPIC_API_KEY);

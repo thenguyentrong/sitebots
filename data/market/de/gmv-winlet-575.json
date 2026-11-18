@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "gmv-winlet-575",
+ "maker": "GMV A/S",
+ "makerCountry": "DK",
+ "model": "Winlet 575",
+ "variant": null,
+ "name": "GMV Winlet 575",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "glazing_installation",
+  "site_windows_doors/large-pane-glazing",
+  "site_windows_doors/window-unit-setting"
+ ],
+ "officialUrl": "https://gmvas.dk/de/winlet-575-de/",
+ "summary": "Compact, fully hydraulic, self-propelled glazing robot that lifts and places windows and glass panes of up to 575 kg with a vacuum lifting frame, steered from a cable control unit. Made by GMV A/S in Denmark.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "GMV A/S (Bredsten, Denmark) sells Winlet glazing robots direct and has German-language product pages with a quote form and phone line. The Winlet range starts at EUR 24,600 ('Wir bieten Winlet ab: EUR 24.600'); which model this applies to and whether it is net is not stated. No German dealer is named.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "GMV A/S",
+    "country": "DK",
+    "role": "manufacturer",
+    "productUrl": "https://gmvas.dk/de/winlet-575-de/",
+    "contactUrl": "https://gmvas.dk/de/kontakt-de/",
+    "email": "post@gmvas.dk",
+    "phone": "+45 75 73 82 47",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "Office and production: Industriparken 1, DK-7182 Bredsten. German quote form on the product page; demonstrations on request. Range price 'ab EUR 24.600' on the Winlet overview page, model not stated."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_load_kg",
+   "label": "Maximum load",
+   "value": 575,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Winlet 575 Fensterroboter ist der kleinste der voll hydraulischen Fensterroboter mit Traglast bis 575 kg."
+  },
+  {
+   "key": "max_lift_height_mm",
+   "label": "Maximum lifting height",
+   "value": 3900,
+   "unit": "mm",
+   "conditions": "horizontal suction cups",
+   "sourceId": "s2",
+   "quote": "Maximale Hubhöhe: 3.900 mm (horizontale Saugnäpfe)."
+  },
+  {
+   "key": "hydraulic_functions",
+   "label": "Hydraulic functions",
+   "value": 6,
+   "unit": null,
+   "conditions": "load side-shift and load rotation are standard",
+   "sourceId": "s1",
+   "quote": "hat der Winlet 575 sechs hydraulische Funktionen"
+  },
+  {
+   "key": "gyro_function",
+   "label": "Gyro function",
+   "value": true,
+   "unit": null,
+   "conditions": "keeps the glass in the same position while the crane arm lifts",
+   "sourceId": "s1",
+   "quote": "einzigartige „Gyro-Funktion“"
+  },
+  {
+   "key": "drive",
+   "label": "Drive",
+   "value": "terrain tyres, front-axle drive, fully hydraulic movements",
+   "unit": null,
+   "conditions": "applies to the Winlet range",
+   "sourceId": "s2",
+   "quote": "Winlet Verglasungsroboter haben Geländefähige Bereifung mit Vorderachsantrieb"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "cable control unit with vacuum on/off at the frame; one-person operation",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "So können Sie Vakuum vorne an der Traverse ein- und ausschalten, was eine 1-Mann Handhabung und Glass Installation mit einem Winlet ermöglicht."
+  },
+  {
+   "key": "other_materials",
+   "label": "Other materials",
+   "value": "granite, tiles, gypsum and gypsum-fibre boards, concrete elements, aerated concrete, wood panels, steel sheets, fire doors",
+   "unit": null,
+   "conditions": "with suitable suction cups",
+   "sourceId": "s1",
+   "quote": "Der Winlet 575 ist so für Handhabung von Granit, Fliesen, Gipsplatten & Fasergips, Betonelemente, Porenbeton, Holzplatten, Stahlbleche und Brandschutztüren einsetzbar."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 575,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Remote-operated lifting machine, not autonomous: the operator steers and places the load with a cable control unit.",
+   "Vacuum lifting frame on a hydraulic crane arm with fully linear frame movement, used e.g. to fit panes into pre-installed frames (maker).",
+   "GMV says Winlet tyres are terrain-capable with front-axle drive; slope and ground limits are not stated for this model.",
+   "Battery capacity, runtime, weight and dimensions are in the maker's catalogue PDF, which could not be read."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://gmvas.dk/wp-content/uploads/IMG_0141.jpeg",
+   "pageUrl": "https://gmvas.dk/de/winlet-575-de/",
+   "credit": "GMV A/S",
+   "alt": "Winlet 575 glazing robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_windows_doors/large-pane-glazing"
+   ],
+   "task": "Lifts and places glass panes and windows, e.g. into pre-installed frames",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker says it has been the preferred window robot of professional glaziers and rental companies for years."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://gmvas.dk/de/winlet-575-de/",
+   "title": "Winlet 575 – Fensterheber mit einzigartiger Gyro-Funktion",
+   "publisher": "GMV A/S",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://gmvas.dk/de/winlet-de/",
+   "title": "Winlet – Verglasungsroboter (range overview and starting price)",
+   "publisher": "GMV A/S",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price of the Winlet 575 itself; the range starts at EUR 24,600 but the model and net or gross basis are not stated.",
+  "Weight, width, battery and runtime of the Winlet 575 (in the catalogue PDF, not readable here).",
+  "Does GMV have a German dealer, rental partner or service network?"
+ ],
+ "checkedAt": "2026-11-18"
+}

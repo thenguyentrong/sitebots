@@ -1,0 +1,33 @@
+'use client';
+
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import type { ReactNode } from 'react';
+import { AccountButton } from '@/components/account/AccountButton';
+import { Logo } from '@/components/Logo';
+import { ACCESS_TEXT, type Lang } from '@/lib/chat/i18n';
+import { cn } from '@/lib/utils';
+
+/** One header for every page: the three places, the current one marked, and the account on the right.
+ *  `overlay` lays it over the job-site scene on the opening screen. */
+export function TopBar({ lang = 'en', overlay = false, extra }: { lang?: Lang; overlay?: boolean; extra?: ReactNode }) {
+  const path = usePathname() ?? '/';
+  const t = ACCESS_TEXT[lang].nav;
+  const links = [
+    { href: '/', label: t.adviser, short: t.adviserShort, active: path === '/' },
+    { href: '/robots', label: t.robots, short: t.robots, active: path.startsWith('/robots') || path.startsWith('/market') || path.startsWith('/brands') },
+    { href: '/compare', label: t.compare, short: t.compare, active: path.startsWith('/compare') },
+  ];
+  return <header className={overlay ? 'absolute inset-x-0 top-0 z-10 top-overlay' : 'sticky top-0 z-20 border-b border-edge bg-background'}>
+    <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:gap-4 sm:px-6">
+      <Logo compact className={overlay ? 'text-white' : undefined} />
+      <nav className="ml-auto flex min-w-0 items-center gap-0.5 sm:gap-1" aria-label="Main">
+        {links.map((link) => <Link key={link.href} href={link.href} aria-current={link.active ? 'page' : undefined} className="top-link">
+          <span className="max-sm:hidden">{link.label}</span><span className="sm:hidden">{link.short}</span>
+        </Link>)}
+      </nav>
+      {extra}
+      <AccountButton lang={lang} overlay={overlay} />
+    </div>
+  </header>;
+}

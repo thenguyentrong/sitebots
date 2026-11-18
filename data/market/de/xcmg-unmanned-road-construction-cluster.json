@@ -1,0 +1,162 @@
+{
+ "schemaVersion": 1,
+ "id": "xcmg-unmanned-road-construction-cluster",
+ "maker": "XCMG (Xuzhou Construction Machinery Group)",
+ "makerCountry": "CN",
+ "model": "Unmanned road construction cluster",
+ "variant": "second generation: autonomous tandem rollers and large-width pavers",
+ "name": "XCMG unmanned road construction cluster (autonomous rollers and pavers)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "other",
+  "site_roads_paving/asphalt-paving",
+  "asphalt and subgrade compaction with driverless rollers"
+ ],
+ "officialUrl": null,
+ "summary": "Fleet of driverless XCMG tandem rollers and asphalt pavers guided by BeiDou satellite positioning, inertial navigation and obstacle radar that pave and compact road layers without operators in the cabs. XCMG says the second generation has worked on 15 highway projects in 12 Chinese provinces.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU offer for the unmanned versions found; the projects named are all in China. XCMG sells conventional road machines in Europe, but no source read offers the driverless cluster outside China.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "projects",
+   "label": "Highway projects with second-generation cluster",
+   "value": 15,
+   "unit": "projects",
+   "conditions": "12 provinces, about 500 km in total (maker, May 2022)",
+   "sourceId": "s1",
+   "quote": "the company's second-generation unmanned cluster construction equipment has participated in 15 highway construction projects that cover 12 provinces across China"
+  },
+  {
+   "key": "control_accuracy_cm",
+   "label": "Roller control accuracy",
+   "value": 5,
+   "unit": "cm",
+   "conditions": "improved from 20 cm with new inertial navigation alignment",
+   "sourceId": "s1",
+   "quote": "improving control accuracy from 20cm to 5cm"
+  },
+  {
+   "key": "efficiency_gain_pct",
+   "label": "Efficiency gain vs. manned rollers",
+   "value": 20,
+   "unit": "%",
+   "conditions": "maker data; fuel use 15 % lower",
+   "sourceId": "s1",
+   "quote": "The unmanned construction rollers reduced fuel consumption by 15%, improving efficiency by 20%."
+  },
+  {
+   "key": "fleet_example",
+   "label": "Fleet on Nanjing–Shanghai expressway",
+   "value": "10 autonomous tandem rollers and 2 unmanned large-width pavers",
+   "unit": null,
+   "conditions": "2021 resurfacing project",
+   "sourceId": "s2",
+   "quote": "XCMG put ten autonomous tandem rollers and two unmanned large-width pavers to work on the resurfacing project"
+  },
+  {
+   "key": "thickness_radar",
+   "label": "Asphalt thickness radar",
+   "value": "measures to 120 mm depth, ±1 mm",
+   "unit": null,
+   "conditions": "on the rollers",
+   "sourceId": "s2",
+   "quote": "enabling measurement of surface thickness to a depth of 120mm and with an accuracy of plus or minus 1mm"
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "BeiDou satellite reference station, inertial navigation, obstacle recognition",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "with the fleet controlled by the BeiDou satellite positioning reference station"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": false,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "A fleet of conventional road machines made driverless: tandem rollers roll on steel drums (counted as wheels here); paver undercarriage not stated.",
+   "Machine models in the fleet are not named in the sources read.",
+   "Tool = roller drums and paver screed."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/asphalt-paving"
+   ],
+   "task": "Ten driverless tandem rollers and two unmanned pavers resurfaced a section of a busy expressway",
+   "stage": "deployment",
+   "where": "Nanjing-Shanghai expressway maintenance, Jiangsu, China (Jiangsu Xiandai Road & Bridge Company)",
+   "date": "2021-10",
+   "sourceId": "s2",
+   "note": "Called the largest unmanned road construction fleet so far."
+  },
+  {
+   "taskIds": [
+    "site_roads_paving/asphalt-paving"
+   ],
+   "task": "Second-generation cluster used on 15 highway projects, including subgrade compaction on Jingxiong, Panda and Xinliunan expressways",
+   "stage": "deployment",
+   "where": "12 provinces in China, incl. Xinjiang S21 desert expressway",
+   "date": "2022-05",
+   "sourceId": "s1",
+   "note": "Maker figures."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.prnewswire.co.uk/news-releases/xcmg-pushes-boundaries-of-autonomous-road-construction-technology-transforms-future-of-infrastructure-development-895772965.html",
+   "title": "XCMG Pushes Boundaries of Autonomous Road Construction Technology (1 May 2022)",
+   "publisher": "XCMG via PR Newswire",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.constructionbriefing.com/news/xcmg-robots-complete-highway-project/8015601.article",
+   "title": "XCMG robots complete highway project (18 October 2021)",
+   "publisher": "Construction Briefing (KHL Group)",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which roller and paver models make up the cluster, and can customers buy them as driverless versions?",
+  "Is the unmanned cluster offered outside China, e.g. through XCMG Europe?",
+  "Sources are from 2021–2022; current status and fleet size not checked."
+ ],
+ "checkedAt": "2026-11-18"
+}

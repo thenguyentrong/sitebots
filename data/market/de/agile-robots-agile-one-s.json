@@ -1,0 +1,231 @@
+{
+ "schemaVersion": 1,
+ "id": "agile-robots-agile-one-s",
+ "maker": "Agile Robots",
+ "makerCountry": "DE",
+ "model": "Agile ONE",
+ "variant": "S",
+ "name": "Agile Robots Agile ONE S",
+ "robotType": "humanoid",
+ "specialisedFor": [],
+ "officialUrl": "https://www.agile-robots.com/en/products/humanoid-robots/agile-one-s/",
+ "summary": "A compact 1.4 m bipedal research humanoid from Munich with an open software stack, Jetson Thor compute and a swappable battery; hands or grippers are optional extras.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "quote",
+  "statusNote": "MegaRobotics (Kaarst), which calls itself an official Agile Robots distributor, lists Agile ONE S as a new product with price and availability on request. Agile Robots (Munich) plans to start production of ONE S and ONE SN by the end of 2026.",
+  "sourceIds": [
+   "s1",
+   "s2",
+   "s3",
+   "s4"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "name": "MegaRobotics (MEGAFORCE GmbH, Kaarst)",
+    "country": "DE",
+    "role": "distributor",
+    "productUrl": "https://www.megarobotics.de/de/products/agile-one-s",
+    "contactUrl": "https://www.megarobotics.de/de/contact",
+    "email": "info@megarobotics.de",
+    "phone": "+49 172 2008875",
+    "priceEur": null,
+    "priceBasis": null,
+    "sourceId": "s1",
+    "note": "\"Beschaffung auf Anfrage\" / \"Preis & Verfügbarkeit anfragen\"; calls itself an official Agile Robots distributor (not verified with the maker)."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "height_m",
+   "label": "Height",
+   "value": 1.4,
+   "unit": "m",
+   "conditions": "approx.",
+   "sourceId": "s1",
+   "quote": "approx. 140 cm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight",
+   "value": 40,
+   "unit": "kg",
+   "conditions": "approx., excluding hands",
+   "sourceId": "s1",
+   "quote": "approx. 40 kg"
+  },
+  {
+   "key": "dof_body",
+   "label": "Degrees of freedom (without hands)",
+   "value": 31,
+   "unit": null,
+   "conditions": "legs 2 x 6, waist 3, arms 2 x 7, neck 2",
+   "sourceId": "s1",
+   "quote": "31: legs 2 × 6, waist 3, arms 2 × 7, neck 2"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Payload per arm",
+   "value": 3,
+   "unit": "kg",
+   "conditions": "up to 3 kg at the bare flange, without hand or gripper",
+   "sourceId": "s1",
+   "quote": "up to 3 kg (bare flange, without hand or gripper)"
+  },
+  {
+   "key": "peak_joint_torque_nm",
+   "label": "Peak joint torque",
+   "value": 140,
+   "unit": "N·m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "140 N·m"
+  },
+  {
+   "key": "compute",
+   "label": "Onboard compute",
+   "value": "NVIDIA Jetson Thor T5000 + Intel Core i3 N305",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "NVIDIA Jetson Thor T5000 + Intel Core i3 N305"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "Li-ion 9 Ah / 421.2 Wh, 46.8 V, quick-swappable",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Li-ion, 9 Ah / 421.2 Wh, 46.8 V nominal, quick-swappable"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Battery life",
+   "value": 2,
+   "unit": "h",
+   "conditions": "approx., varies with use",
+   "sourceId": "s1",
+   "quote": "approx. 2 h (varies with use)"
+  },
+  {
+   "key": "end_effectors",
+   "label": "End effectors",
+   "value": "standard non-functional hand model; optional 1-DOF two-finger gripper or four-finger dexterous hand",
+   "unit": null,
+   "conditions": "dexterous hand DOF differs: 13 (MegaRobotics) vs 9 (maker page)",
+   "sourceId": "s1",
+   "quote": "Standard: non-functional hand model. Optional: two-finger gripper (1 DoF) or four-finger dexterous hand (13 DoF), both from Agile Robots"
+  },
+  {
+   "key": "simulation_assets",
+   "label": "Simulation assets",
+   "value": "URDF and USD",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "URDF and USD assets are provided"
+  },
+  {
+   "key": "production_start",
+   "label": "Production start",
+   "value": "by the end of 2026",
+   "unit": null,
+   "conditions": "company plan, reported by Reuters via TechNode",
+   "sourceId": "s4",
+   "quote": "Production of the Agile ONE S and ONE SN models is scheduled to begin by the end of 2026"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "optional",
+  "handsIncluded": false,
+  "armPayloadKg": 3,
+  "carryPayloadKg": null,
+  "runtimeH": 2,
+  "ipRating": null,
+  "sdk": "Open software stack (bring your own models); URDF and USD assets",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Ships with non-functional hand models; a two-finger gripper or a four-finger dexterous hand are options.",
+   "Research and teaching platform; the maker says skills developed on it can move to the full-size Agile ONE.",
+   "Differs from Agile ONE SN, which ships with tactile five-finger hands and preinstalled NVIDIA Isaac GR00T."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://cdn.sanity.io/images/wudur8e8/production/4fd5a8fdedd4fd7bbaecd94b639bea68d7caca1b-1280x1006.png?bg=ffffff&w=1200&h=630&fit=fill",
+   "pageUrl": "https://www.megarobotics.de/de/products/agile-one-s",
+   "credit": "MegaRobotics",
+   "alt": "Agile ONE S humanoid robot, full body",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Embodied-AI research, imitation learning and university teaching",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Lab platform; no site or factory use reported."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.megarobotics.de/de/products/agile-one-s",
+   "title": "Agile ONE S",
+   "publisher": "MegaRobotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.agile-robots.com/en/products/humanoid-robots/agile-one-s/",
+   "title": "The open reference humanoid platform: Agile ONE S",
+   "publisher": "Agile Robots",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.megarobotics.de/de/contact",
+   "title": "Kontakt",
+   "publisher": "MegaRobotics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://technode.com/2026/10/26/agile-robots-plans-up-to-2000-research-humanoids-through-nvidia-partnership/",
+   "title": "Agile Robots plans up to 2,000 research humanoids through Nvidia partnership",
+   "publisher": "TechNode",
+   "kind": "press",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price and delivery time in Germany.",
+  "Dexterous hand DOF: MegaRobotics says 13, the maker page says 9.",
+  "First delivery date; production is only scheduled to start by the end of 2026."
+ ],
+ "checkedAt": "2026-11-18"
+}

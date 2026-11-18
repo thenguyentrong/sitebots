@@ -1,0 +1,244 @@
+{
+ "schemaVersion": 1,
+ "id": "unitree-b1",
+ "maker": "Unitree Robotics",
+ "makerCountry": "CN",
+ "model": "B1",
+ "variant": null,
+ "name": "Unitree B1",
+ "robotType": "quadruped",
+ "specialisedFor": [],
+ "officialUrl": "https://m.unitree.com/b1/",
+ "summary": "An industrial quadruped of about 50 kg that Unitree still lists next to the newer B2, with a waterproof body, 20 kg recommended walking load and about 2 h walking endurance without load.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "buy_now",
+  "statusNote": "RBTX (igus marketplace) lists the Unitree B1 at 63,530 € plus VAT and shipping with an add-to-cart button and a usual delivery time of 3 weeks.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": {
+   "amount": 63530,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "\"63.530 €\" with \"zzgl. MwSt. und Versand\"."
+  },
+  "priceOther": null,
+  "leadTime": "Usual delivery time 3 weeks (RBTX)",
+  "sellers": [
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/components/mobile-robots/unitree-quadruped-robot-b1",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": "info@rbtx.com",
+    "phone": null,
+    "priceEur": 63530,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "Article RBTX-UNIT-0003. Scope of delivery: robot, one battery, charger and remote controller."
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "weight_kg",
+   "label": "Weight incl. battery",
+   "value": 50,
+   "unit": "kg",
+   "conditions": "about; battery about 5 kg",
+   "sourceId": "s1",
+   "quote": "About 50kg"
+  },
+  {
+   "key": "carry_payload_kg",
+   "label": "Continuous walking load",
+   "value": 20,
+   "unit": "kg",
+   "conditions": "recommended while carrying; maximum standing load 80 kg",
+   "sourceId": "s1",
+   "quote": "In the process of carrying the load, it is recommended to control the weight within 20kg."
+  },
+  {
+   "key": "max_standing_load_kg",
+   "label": "Maximum standing load",
+   "value": 80,
+   "unit": "kg",
+   "conditions": "standing, not walking",
+   "sourceId": "s1",
+   "quote": "Maximum standing load80kg"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Walking endurance",
+   "value": 2,
+   "unit": "h",
+   "conditions": "continuous walking without load; standing endurance 5 h; ideal conditions",
+   "sourceId": "s1",
+   "quote": "Continuous walking and endurance without load2h"
+  },
+  {
+   "key": "max_step_cm",
+   "label": "Stair step height",
+   "value": 20,
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Maximum Step Height to Climb Stairs20cm"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Slope",
+   "value": 35,
+   "unit": "deg",
+   "conditions": "at least, seller figure",
+   "sourceId": "s2",
+   "quote": "Steigungen:≥35°"
+  },
+  {
+   "key": "max_speed_ms",
+   "label": "Walking speed",
+   "value": 1.8,
+   "unit": "m/s",
+   "conditions": "seller text; its table gives 1.5-2 m/s",
+   "sourceId": "s2",
+   "quote": "Geschwindigkeit von 1,8m/s bzw. 6,5km/h"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Size standing (L x W x H)",
+   "value": "1126 x 467 x 636",
+   "unit": "mm",
+   "conditions": "folded 1202 x 467 x 297 mm",
+   "sourceId": "s1",
+   "quote": "Length*Width*Height(stand)1126*467*636mm"
+  },
+  {
+   "key": "battery_wh",
+   "label": "Battery energy",
+   "value": 932.4,
+   "unit": "Wh",
+   "conditions": "18000 mAh at 51.8 V; charge time 1-2 h",
+   "sourceId": "s1",
+   "quote": "Rated Energy932.4Wh"
+  },
+  {
+   "key": "compute",
+   "label": "Computing",
+   "value": "Intel i5-1135G7 main CPU, 3 x Jetson Xavier NX, 5 x Intel RealSense D430",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Main Control CPUIntel i5-1135G7"
+  },
+  {
+   "key": "connectivity",
+   "label": "Connectivity",
+   "value": "Built-in 4G module with GNSS",
+   "unit": null,
+   "conditions": "seller description",
+   "sourceId": "s2",
+   "quote": "Eingebautes 4G-Modul (einschließlich GNSS)"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 20,
+  "runtimeH": 2,
+  "ipRating": "IP68",
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "IP class differs between sources: Unitree's page headline says IP68, the RBTX table says IP67.",
+   "Unitree lists security patrols, surveys and exploration, and public rescue as application directions; no autonomy software package is named.",
+   "The RBTX spec table prints the speed as \"2.000 m/s\", which is clearly a typo; its text says 1.8 m/s."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://images.cdn.europe-west1.gcp.commercetools.com/e6e8fb78-82fb-4fc9-8ac7-7ac06b850514/quadruped-b1-removeb-MZEfYuFD.png",
+   "pageUrl": "https://rbtx.de/components/mobile-robots/unitree-quadruped-robot-b1",
+   "credit": "RBTX marketplace",
+   "alt": "Unitree B1 quadruped robot",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Maker names security patrols, surveys and exploration, and public rescue as main application directions",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "researchEvidence": [
+  {
+   "field": "ip_rating",
+   "value": "IP68",
+   "sourceId": "s1",
+   "quote": "IP68 Waterproof, Industrial Level Heavy Loader",
+   "basis": "maker page headline; RBTX table says IP67",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "rough_ground",
+   "value": true,
+   "sourceId": "s1",
+   "quote": "B1 can adapt to complex terrain and all kinds of bad weather",
+   "basis": "maker claim",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "field": "outdoor",
+   "value": true,
+   "sourceId": "s2",
+   "quote": "Dank der IP68 Zertifizierung, kann der B1 bei jedem Wetter benutzt werden.",
+   "basis": "seller description",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://m.unitree.com/b1/",
+   "title": "Unitree B1",
+   "publisher": "Unitree Robotics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/components/mobile-robots/unitree-quadruped-robot-b1",
+   "title": "Unitree - Vierbeiniger Roboter B1",
+   "publisher": "RBTX (igus)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Launch year and whether Unitree still builds the B1 or only sells remaining stock; Unitree's page shows no date.",
+  "IP class: IP68 (Unitree) or IP67 (RBTX table).",
+  "No SDK or autonomy package is named on the pages read."
+ ],
+ "checkedAt": "2026-11-18"
+}

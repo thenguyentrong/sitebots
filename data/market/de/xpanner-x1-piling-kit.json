@@ -1,0 +1,148 @@
+{
+ "schemaVersion": 1,
+ "id": "xpanner-x1-piling-kit",
+ "maker": "Xpanner Inc.",
+ "makerCountry": "US",
+ "model": "X1 Piling",
+ "variant": "X1 Kit retrofit for existing pile drivers such as Vermeer PD10",
+ "name": "Xpanner X1 Piling (X1 Kit)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "other",
+  "utility-scale solar construction: driving tracker foundation piles"
+ ],
+ "officialUrl": "https://xpanner.com/solution/x1-piling/",
+ "summary": "Retrofit automation kit (controller, sensor and AI module, dashboard) that turns an existing solar pile driver such as the Vermeer PD10 into a one-touch machine that drives, aligns, hammers and checks plumb by itself. Xpanner says it has been used at more than 60 US sites.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found. Xpanner (Santa Fe Springs, California) installs the kit, trains operators and gives field support itself; the deployments it lists are in Arizona, Texas, Colorado, Missouri and Australia.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "carrier",
+   "label": "Compatible carrier",
+   "value": "existing pile drivers, e.g. Vermeer PD10",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Designed for seamless integration with leading models like Vermeer’s PD10"
+  },
+  {
+   "key": "crew",
+   "label": "Personnel for the piling process",
+   "value": "6 → 1",
+   "unit": "people",
+   "conditions": "maker claim, whole process incl. surveying and marking",
+   "sourceId": "s1",
+   "quote": "Reduced total requiredpersonnel for the entireprocess from six to just one."
+  },
+  {
+   "key": "time_saving_pct",
+   "label": "Time saving",
+   "value": 57,
+   "unit": "%",
+   "conditions": "maker claim for pile installation time",
+   "sourceId": "s1",
+   "quote": "↓57%"
+  },
+  {
+   "key": "hardware",
+   "label": "On-machine hardware",
+   "value": "Mango automation controller and M2 Physical AI module",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "On-Machine HardwareMango: Automation Controller"
+  },
+  {
+   "key": "carrier_undercarriage",
+   "label": "Vermeer PD10 undercarriage",
+   "value": "steel track with urethane pads",
+   "unit": null,
+   "conditions": "base machine named by Xpanner",
+   "sourceId": "s3",
+   "quote": "Steel track with urethane pads"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": false,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": false,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Kit only: the pile driver (mast and hammer, tracked carrier such as the Vermeer PD10) is the customer's own machine, so handsIncluded is false.",
+   "roughGround set true for open solar-field ground, not a sourced spec.",
+   "Xpanner Connect dashboard shows production data and plan vs. as-built checks."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Automated solar pile driving on real job sites",
+   "stage": "deployment",
+   "where": "More than 60 sites across the United States (Arizona, Texas, Colorado, Missouri) and Australia",
+   "date": "2026-10",
+   "sourceId": "s2",
+   "note": "Site count from the maker; the X1 Piling page also lists the same states and Australia."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://xpanner.com/solution/x1-piling/",
+   "title": "X1 Piling: solar pile driving automation (X1 Kit)",
+   "publisher": "Xpanner Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://xpanner.com/solution/x1-piling/x1-piling-r6/",
+   "title": "X1 Piling R6 page (deployment count for X1 Piling)",
+   "publisher": "Xpanner Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://vermeeriowa.com/?p=579",
+   "title": "PD10 Pile Driver (dealer product page)",
+   "publisher": "Vermeer Iowa",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Which pile driver models besides the Vermeer PD10 are supported?",
+  "Kit price and subscription terms are not published.",
+  "Accuracy figures (position, plumb) are not stated on the pages read."
+ ],
+ "checkedAt": "2026-11-18"
+}

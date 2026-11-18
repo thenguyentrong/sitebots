@@ -1,0 +1,163 @@
+{
+ "schemaVersion": 1,
+ "id": "dexterity-mech",
+ "maker": "Dexterity, Inc.",
+ "makerCountry": "US",
+ "model": "Mech",
+ "variant": null,
+ "name": "Dexterity Mech",
+ "robotType": "mobile_manipulator",
+ "specialisedFor": [],
+ "officialUrl": "https://www.dexterity.ai/mech",
+ "summary": "A dual-arm industrial mobile manipulator on a four-wheel-steer rover for truck loading, unloading and palletizing, with a 5.4 m arm span, 60 kg lift and over 2.4 m vertical reach. FedEx uses it for trailer loading at its Hagerstown hub.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU sales route found; Dexterity (Redwood City, California) sells through contact@dexterity.ai and designs and assembles Mech in California.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "arm_payload_kg",
+   "label": "Lift capacity",
+   "value": 60,
+   "unit": "kg",
+   "conditions": "with two arms",
+   "sourceId": "s1",
+   "quote": "With two arms, it achieves a 5.4m armspan and can lift 60kg."
+  },
+  {
+   "key": "armspan_m",
+   "label": "Arm span",
+   "value": 5.4,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "With two arms, it achieves a 5.4m armspan and can lift 60kg."
+  },
+  {
+   "key": "vertical_reach_m",
+   "label": "Vertical reach",
+   "value": 2.4,
+   "unit": "m",
+   "conditions": "more than",
+   "sourceId": "s1",
+   "quote": "Mech's vertical reach safely extends beyond 2.4 meters"
+  },
+  {
+   "key": "operating_conditions",
+   "label": "Operating conditions",
+   "value": "0 to 50 °C, up to 1,500 m altitude, up to 90% humidity",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "built to operate in 0°-50°C temperatures, up to 1,500m altitude, and up to 90% humidity"
+  },
+  {
+   "key": "arms",
+   "label": "Arm hardware",
+   "value": "Two arms made by Kawasaki, motion components by HIWIN; 4 kHz torque control",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Mech's arms are manufactured by Kawasaki"
+  },
+  {
+   "key": "base",
+   "label": "Rover base",
+   "value": "Four steerable wheels, strafes and climbs ramps; dual vacuum pumps, up to 16 cameras",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Mech's rover base moves, spins, strafes, and climbs ramps, with all four wheels steerable."
+  },
+  {
+   "key": "skills",
+   "label": "Software",
+   "value": "68+ autonomous skill agents (Dexterity Physical AI, Foresight world model)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Every Mech runs Dexterity's Physical AI - a fleet of 68+ autonomous skill agents"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 2,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": 60,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Picks boxes, parcels and polybags with vacuum grippers (dual vacuum pumps on the rover).",
+   "Arm payload is the combined two-arm lift (60 kg).",
+   "The maker calls it an \"industrial superhumanoid\" but stresses it is not a humanoid: wheeled rover with two industrial arms."
+  ]
+ },
+ "images": [
+  {
+   "url": "https://dexterity.ai/images/blog-fedex-hagerstown.jpg",
+   "pageUrl": "https://dexterity.ai/blog/fedex-hagerstown-physical-ai-deployment",
+   "credit": "Dexterity, Inc.",
+   "alt": "Dexterity Mech unloading parcels from a truck at FedEx in Hagerstown",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "material_yard_warehouse/truck-loading"
+   ],
+   "task": "Autonomous trailer loading of parcels at the FedEx Hagerstown Hub, expanded beyond the earlier pilot site",
+   "stage": "deployment",
+   "where": "Hagerstown, Maryland, USA",
+   "date": "2026-07",
+   "sourceId": "s2",
+   "note": "Joint FedEx and Dexterity announcement of 30 July 2026; number of robots not stated."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.dexterity.ai/mech",
+   "title": "Mech - Industrial Superhumanoid",
+   "publisher": "Dexterity, Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://dexterity.ai/blog/fedex-hagerstown-physical-ai-deployment",
+   "title": "FedEx and Dexterity Expand Physical AI Deployment for Autonomous Trailer Loading at Hagerstown Hub",
+   "publisher": "Dexterity, Inc.",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price and whether Mech is sold outright or as a service.",
+  "Runtime, weight and footprint of the rover.",
+  "Any European customer or partner."
+ ],
+ "checkedAt": "2026-11-18"
+}

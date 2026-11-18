@@ -1,10 +1,13 @@
 'use client';
 
-import { CaretDown, Check } from '@phosphor-icons/react';
+import { CaretDown, Check, Plus } from '@phosphor-icons/react';
 import Link from 'next/link';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { flushSync } from 'react-dom';
-import { Logo } from '@/components/Logo';
+import { AccessLine } from '@/components/account/AccessLine';
+import { canAsk, currentKey, keepQuestion, loadAccount, openDialog, removeKey, setAccessLang, takeQuestion, useAccess, type Notice } from '@/components/account/access-store';
+import { TopBar } from '@/components/TopBar';
+import { API_KEY_HEADER } from '@/lib/chat/visitor-key';
 import { TEXT, browserLang, type Lang } from '@/lib/chat/i18n';
 import type { BriefFact, ChatForm, ChatOption, LeftOut } from '@/lib/chat/tools';
 import { ui } from '@/lib/ui';
@@ -24,7 +27,7 @@ type Item =
   | { kind: 'options'; options: ChatOption[]; leftOut: LeftOut[] }
   | { kind: 'report' };
 
-type StreamEvent = { t: string; conversationId?: string; lang?: Lang; text?: string; delta?: string; facts?: BriefFact[]; form?: ChatForm; options?: ChatOption[]; leftOut?: LeftOut[]; code?: string };
+type StreamEvent = { t: string; conversationId?: string; lang?: Lang; text?: string; delta?: string; facts?: BriefFact[]; form?: ChatForm; options?: ChatOption[]; leftOut?: LeftOut[]; code?: string; paidBy?: 'free' | 'own_key' };
 
 type SavedChat = { items: Item[]; brief: BriefFact[]; lang: Lang; chosen?: boolean; conversation: string | null };
 
@@ -51,10 +54,9 @@ function writeChat(chat: SavedChat | null) {
 
 const delay = (seconds: number) => ({ '--delay': seconds + 's' }) as CSSProperties;
 
-const Nav = ({ lang }: { lang: Lang }) => <nav className="flex items-center gap-6 text-sm text-zinc-300" aria-label="Main">
-  <Link href="/robots" className="transition hover:text-white">{TEXT[lang].robots}</Link>
-  <Link href="/compare" className="transition hover:text-white">{TEXT[lang].compare2}</Link>
-</nav>;
+// Answers from the server that mean "this needs a sign-in, a key or another door", each with the note
+// the dialog opens with.
+const DOOR: Record<string, Notice> = { sign_in: 'sign_in', quota: 'quota', free_closed: 'free_closed', bad_key: 'bad_key' };
 
 /** What the adviser looked at, folded away once the answer is in. */
 function Trail({ steps, lang }: { steps: string[]; lang: Lang }) {
@@ -94,8 +96,14 @@ export function Advisor({ maxChars }: { maxChars: number }) {
   const bottom = useRef<HTMLDivElement>(null);
   const copy = useRef<HTMLDivElement>(null);
   const following = useRef(true);
+  const access = useAccess();
+  const accessRef = useRef(access);
+  accessRef.current = access;
+  // A question asked before the visitor could ask: sent by itself once they have signed in or added a key.
+  const waiting = useRef<string | null>(null);
 
   const started = items.length > 0;
+  useEffect(() => setAccessLang(lang), [lang]);
 
   // Going to a robot page or the comparison and back must find the chat as it was. It is read after the
   // first render, which has to match the server, and before the browser paints, so nothing flashes.
@@ -111,6 +119,18 @@ export function Advisor({ maxChars }: { maxChars: number }) {
       conversationRef.current = saved.conversation;
     } else setLang(browserLang(navigator.language));
     restored.current = true;
+    // Back from Google or Microsoft: the question typed before is waiting, or the sign-in failed.
+    const url = new URL(location.href);
+    const signin = url.searchParams.get('signin');
+    if (signin) {
+      url.searchParams.delete('signin');
+      history.replaceState(history.state, '', url.pathname + url.search + url.hash);
+      const question = takeQuestion();
+      if (signin === 'ok' && question) {
+        waiting.current = question;
+        setInput(question);
+      } else if (signin !== 'ok') openDialog('access', 'signin_failed');
+    }
   }, []);
   useEffect(() => {
     if (restored.current) writeChat(items.length ? { items, brief, lang, chosen, conversation } : null);
@@ -141,6 +161,16 @@ export function Advisor({ maxChars }: { maxChars: number }) {
   const ask = useCallback(async (question: string) => {
     const text = question.trim();
     if (!text || sending) return;
+    // No way to pay for an answer yet: the dialog opens and the question waits, in the box and for after
+    // a sign-in round trip.
+    const now = accessRef.current;
+    if (now.info && !canAsk(now, Boolean(conversationRef.current))) {
+      waiting.current = text;
+      keepQuestion(text);
+      setInput(text);
+      openDialog('access', now.info.signedIn ? (now.info.free.open ? 'quota' : 'free_closed') : null);
+      return;
+    }
     const firstMessage = !items.length;
     const open = () => {
       setSending(true);
@@ -170,13 +200,23 @@ export function Advisor({ maxChars }: { maxChars: number }) {
     const controller = new AbortController();
     abort.current = controller;
     try {
+      const key = currentKey();
       const response = await fetch('/api/chat', {
-        method: 'POST', headers: { 'content-type': 'application/json' }, signal: controller.signal,
+        method: 'POST', headers: { 'content-type': 'application/json', ...(key ? { [API_KEY_HEADER]: key } : {}) }, signal: controller.signal,
         body: JSON.stringify({ message: text.slice(0, maxChars), lang, chosen, ...(conversationRef.current ? { conversationId: conversationRef.current } : {}) }),
       });
       if (!response.ok || !response.body) {
-        const body = await response.json().catch(() => null) as { error?: string } | null;
-        fail(body?.error ?? 'failed');
+        const code = (await response.json().catch(() => null) as { error?: string } | null)?.error ?? 'failed';
+        const door = DOOR[code];
+        if (door === undefined) return fail(code);
+        // Not an answer, a door: the question goes back into the box and waits for the dialog.
+        setItems((list) => list.at(-1)?.kind === 'user' ? list.slice(0, -1) : list);
+        setInput(text);
+        waiting.current = text;
+        keepQuestion(text);
+        if (code === 'bad_key') removeKey();
+        if (code === 'sign_in') void loadAccount(true);
+        openDialog('access', door);
         return;
       }
       const reader = response.body.pipeThrough(new TextDecoderStream()).getReader();
@@ -194,6 +234,8 @@ export function Advisor({ maxChars }: { maxChars: number }) {
             conversationRef.current = event.conversationId;
             setConversation(event.conversationId);
             if (event.lang && !chosen) setLang(event.lang);
+            // The count of free consultations may have changed: the header and the line under the box show it.
+            if (event.paidBy === 'free') void loadAccount(true);
           } else if (event.t === 'status') setWorking(event.text ?? '');
           else if (event.t === 'step' && event.text && !lookups.includes(event.text)) {
             lookups = [...lookups, event.text];
@@ -213,7 +255,14 @@ export function Advisor({ maxChars }: { maxChars: number }) {
             settle();
             setItems((list) => [...list, { kind: 'options', options, leftOut: event.leftOut ?? [] }]);
           } else if (event.t === 'report') setItems((list) => [...list, { kind: 'report' }]);
-          else if (event.t === 'error') fail(event.code ?? 'failed');
+          else if (event.t === 'error') {
+            fail(event.code ?? 'failed');
+            // A key Anthropic refuses is no use kept: it goes, and the dialog asks for a new one.
+            if (event.code === 'bad_key') {
+              removeKey();
+              openDialog('access', 'bad_key');
+            }
+          }
         }
       }
     } catch (error) {
@@ -224,6 +273,18 @@ export function Advisor({ maxChars }: { maxChars: number }) {
       setSteps([]);
     }
   }, [appendText, chosen, items.length, lang, maxChars, sending]);
+
+  // The question waiting for a sign-in or a key goes out as soon as one arrives. Closing the dialog
+  // without either drops it, so nothing is sent later by surprise; the text stays in the box.
+  useEffect(() => {
+    if (!waiting.current || !access.info) return;
+    if (canAsk(access, Boolean(conversationRef.current))) {
+      const question = waiting.current;
+      waiting.current = null;
+      takeQuestion();
+      void ask(question);
+    } else if (!access.dialog) waiting.current = null;
+  }, [access, ask]);
 
   const startOver = () => {
     abort.current?.abort();
@@ -246,13 +307,11 @@ export function Advisor({ maxChars }: { maxChars: number }) {
 
   if (!started) return <section className="adv-hero">
     <SiteStage over={copy} />
-    <header className="absolute inset-x-0 top-0 z-10">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6"><Logo className="text-white" /><Nav lang={lang} /></div>
-    </header>
+    <TopBar overlay lang={lang} />
     <div ref={copy} className="mx-auto w-full max-w-5xl px-4 pb-5 text-center sm:px-6">
       <h1 className="adv-rise text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">{TEXT[lang].title}</h1>
       <p className="adv-rise mx-auto mt-3 text-base text-zinc-300 sm:text-lg" style={delay(0.1)}>{TEXT[lang].lead}</p>
-      <div className="adv-rise mx-auto mt-6 max-w-3xl text-left" style={delay(0.2)}>{composer}</div>
+      <div className="adv-rise mx-auto mt-6 max-w-3xl text-left" style={delay(0.2)}>{composer}<AccessLine lang={lang} /></div>
       <div className="adv-rise mt-3 flex flex-wrap justify-center gap-2" style={delay(0.3)}>
         {TEXT[lang].starters.map((starter) => <button key={starter} type="button" onClick={() => void ask(starter)} className="adv-chip">{starter}</button>)}
       </div>
@@ -263,15 +322,7 @@ export function Advisor({ maxChars }: { maxChars: number }) {
   </section>;
 
   return <div className="flex min-h-[100dvh] flex-col">
-    <header className="border-b border-edge">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Logo />
-        <div className="flex items-center gap-6">
-          <button type="button" onClick={startOver} className="text-sm font-medium text-foreground transition hover:text-safety">{TEXT[lang].newChat}</button>
-          <Nav lang={lang} />
-        </div>
-      </div>
-    </header>
+    <TopBar lang={lang} extra={<button type="button" onClick={startOver} aria-label={TEXT[lang].newChat} className="top-account"><Plus size={16} weight="bold" /><span className="max-sm:hidden">{TEXT[lang].newChat}</span></button>} />
     <main className="mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 items-start gap-8 px-4 pt-8 pb-6 sm:px-6 lg:grid-cols-[minmax(0,1fr)_280px]">
       <div className="min-w-0 space-y-6" aria-live="polite">
         <div className="lg:hidden"><BriefPanel facts={brief} reportHref={reportHref} lang={lang} /></div>
@@ -292,7 +343,7 @@ export function Advisor({ maxChars }: { maxChars: number }) {
     </main>
     <div className="sticky bottom-0 bg-gradient-to-t from-background via-background to-transparent pt-6">
       <div className="mx-auto w-full max-w-6xl px-4 pb-3 sm:px-6 lg:grid lg:grid-cols-[minmax(0,1fr)_280px] lg:gap-8">
-        <div>{composer}<p className="mt-2 text-center text-xs text-muted">{TEXT[lang].suggestion}</p></div>
+        <div>{composer}<AccessLine lang={lang} /><p className="mt-1 text-center text-xs text-faint">{TEXT[lang].suggestion}</p></div>
       </div>
     </div>
   </div>;
