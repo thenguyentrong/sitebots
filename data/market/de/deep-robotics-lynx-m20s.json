@@ -13,17 +13,38 @@
  "launched": "2026-05",
  "lifecycle": "shipping",
  "germany": {
-  "status": "not_sold",
-  "statusNote": "Launched May 2026; no German or EU seller lists the M20S yet. DEEP takes requests through its global purchase form; German dealers sell the M20 and M20 Pro.",
+  "status": "buy_now",
+  "statusNote": "Génération Robots sells the M20S (sport version) from 59,990 € excl. VAT (71,988 € incl. VAT) with a cart and delivery within 2 weeks. DEEP also takes requests through its global purchase form.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 59990,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s4",
+   "note": "Génération Robots, sport version, excl. VAT."
+  },
   "priceOther": null,
   "leadTime": null,
-  "sellers": [],
-  "checkedAt": "2026-10-02"
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404515-lynx-m20s-quadruped-roboter-sportversion.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 59990,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": "German GR page, ref. A-000000-08549, no variant selector (one version, the M20S 'Sportversion', specs match the record: 36 kg, 35 kg payload, 2x 128-line lidar, IP67); 'Lieferung innerhalb von 2 Wochen', 'In den Warenkorb', schema.org InStock. Status should change from not_sold to buy_now."
+   }
+  ],
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -185,6 +206,14 @@
    "publisher": "DEEP Robotics",
    "kind": "press",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.generationrobots.com/de/404515-lynx-m20s-quadruped-roboter-sportversion.html",
+   "title": "Génération Robots",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

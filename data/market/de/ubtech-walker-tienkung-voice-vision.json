@@ -14,11 +14,11 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": {
-   "amount": 104000,
-   "basis": "unknown",
+   "amount": 116806,
+   "basis": "gross",
    "kind": "list",
-   "sourceId": "s5",
-   "note": "Terra Robotics (Terra Connect GmbH): price in the shop's product data; the product page itself says \"Preis anfragen\". VAT not stated."
+   "sourceId": "s6",
+   "note": "Funduino GmbH, Voice & Vision version (\"Stimme & Sicht\"), incl. VAT."
   },
   "priceOther": null,
   "leadTime": null,
@@ -35,12 +35,26 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "Variant \"Voice & Vision\"; metadata price EUR 104,000, basis not stated, not displayed."
+   },
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduino.com/products/ubtech-walker-tienkung",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 116806,
+    "priceBasis": "gross",
+    "sourceId": "s6",
+    "note": "Variant \"Stimme & Sicht\" with a cart."
    }
   ],
   "checkedAt": "2026-11-18",
-  "status": "quote",
-  "statusNote": "Terra Robotics lists the Walker Tienkung in its Voice & Vision version; the page asks for a price request, but Terra's shop data holds 104,000 €.",
+  "status": "buy_now",
+  "statusNote": "Funduino (Germany) sells the Voice & Vision version at 116,806 € incl. VAT with a cart. Terra Robotics also lists it; its page asks for a price request, but Terra's shop data holds 104,000 €.",
   "sourceIds": [
+   "s6",
    "s4",
    "s2",
    "s3",
@@ -199,6 +213,14 @@
    "url": "https://terra-robotics.de/products/ubtech-walker-tienkung.js",
    "title": "Terra Robotics (Terra Connect GmbH)",
    "publisher": "Terra Robotics (Terra Connect GmbH)",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s6",
+   "url": "https://funduino.com/products/ubtech-walker-tienkung",
+   "title": "UBTECH Walker Tienkung - humanoider Roboter, 172 cm, 2 Ausführungen",
+   "publisher": "Funduino GmbH",
    "kind": "seller",
    "checkedAt": "2026-11-18"
   }

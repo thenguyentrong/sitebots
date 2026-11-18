@@ -14,13 +14,18 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "EU maker (Barcelona, Spain) that sells directly to customers across Europe on quote; no German distributor found and no public price.",
+  "statusNote": "EU maker (Barcelona, Spain) that sells directly to customers across Europe on quote; no German distributor found and no public euro price.",
   "sourceIds": [
    "s1",
    "s2"
   ],
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 1545082,
+   "currency": "DKK",
+   "market": "Public direct award (voluntary ex-ante transparency notice, TED 79428-2025, 05/02/2025): Aalborg Universitet (DK) buys a dual-arm TIAGo Pro from PAL Robotics S.L.; configuration includes Allegro 4-finger hands; quantity not stated (lot title singular); VAT basis not stated",
+   "sourceId": "s10"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -37,7 +42,7 @@
     "note": "Sells directly from Barcelona; quote request on the product page."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -201,6 +206,14 @@
    "publisher": "PAL Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s10",
+   "url": "https://ted.europa.eu/de/notice/79428-2025/html",
+   "title": "ted.europa.eu",
+   "publisher": "ted.europa.eu",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

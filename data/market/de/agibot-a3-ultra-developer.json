@@ -13,12 +13,19 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "status": "quote",
-  "statusNote": "Bipedal GmbH (Leverkusen) lists the A3 Ultra Developer as 'Preis auf Anfrage' and 'Sofort verfügbar'; no public price.",
+  "status": "buy_now",
+  "statusNote": "RBTX (igus) sells the A3 Ultra Developer at 89,000 € excl. VAT with a cart. Bipedal GmbH (Leverkusen) lists it as \"Preis auf Anfrage\" and \"Sofort verfügbar\".",
   "sourceIds": [
-   "s1"
+   "s1",
+   "s2"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 89000,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "RBTX marketplace (igus SE & Co. KG), excl. VAT."
+  },
   "priceOther": null,
   "leadTime": "Sofort verfügbar (Bipedal)",
   "sellers": [
@@ -34,6 +41,19 @@
     "priceBasis": null,
     "sourceId": "s1",
     "note": "Price on request ('Preis auf Anfrage'), listed as 'Sofort verfügbar'. Bipedal also lists the non-developer A3 Ultra."
+   },
+   {
+    "name": "RBTX marketplace (igus SE & Co. KG)",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://rbtx.de/de-DE/components/humanoid/agibot-a3-ultra-humanoid-robot-51dof/a3-ultra-developer",
+    "contactUrl": "https://rbtx.de/de-DE/contact",
+    "email": null,
+    "phone": null,
+    "priceEur": 89000,
+    "priceBasis": "net",
+    "sourceId": "s2",
+    "note": "RBTX page (rendered) with variant 'A3 Ultra Developer' selected: open platform for secondary development, Mid360 lidar, RealSense D457/D415. Second DE seller: Funduino GmbH, variant 'AgiBot A3 Ultra Developer' 105.910,00 € inkl. MwSt., zzgl. Versand, 'Lieferzeit: 21 Werktage', In den Warenkorb (https://funduino.com/products/agibot-a3-ultra-a3-ultra-developer-1?variant=66045730390365) = same 89,000 € before VAT. Bipedal still 'Preis auf Anfrage'."
    }
   ],
   "checkedAt": "2026-11-18"
@@ -164,6 +184,14 @@
    "url": "https://www.bipedal.de/AgiBot-A3-Ultra-Developer",
    "title": "AgiBot A3 Ultra Developer",
    "publisher": "Bipedal GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://rbtx.de/de-DE/components/humanoid/agibot-a3-ultra-humanoid-robot-51dof/a3-ultra-developer",
+   "title": "RBTX marketplace (igus SE & Co. KG)",
+   "publisher": "RBTX marketplace (igus SE & Co. KG)",
    "kind": "seller",
    "checkedAt": "2026-11-18"
   }

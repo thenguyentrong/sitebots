@@ -13,17 +13,38 @@
  "launched": "2026-05",
  "lifecycle": "shipping",
  "germany": {
-  "status": "not_sold",
-  "statusNote": "Launched May 2026; no German or EU seller lists the S10 yet. DEEP takes requests through its global purchase form.",
+  "status": "buy_now",
+  "statusNote": "Génération Robots sells the S10 from 9,990 € excl. VAT (11,988 € incl. VAT) with a cart and delivery within 2 weeks; that price is without battery, remote control and charger. DEEP also takes requests through its global purchase form.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 9990,
+   "basis": "net",
+   "kind": "from",
+   "sourceId": "s4",
+   "note": "Génération Robots, Basic version sold without battery, remote control and charger, excl. VAT."
+  },
   "priceOther": null,
   "leadTime": null,
-  "sellers": [],
-  "checkedAt": "2026-10-02"
+  "sellers": [
+   {
+    "name": "Generation Robots",
+    "country": "FR",
+    "role": "reseller",
+    "productUrl": "https://www.generationrobots.com/de/404524-lynx-s10-quadruped-roboter-mit-rädern-2340.html",
+    "contactUrl": "https://www.generationrobots.com/de/kontaktieren-sie-uns",
+    "email": null,
+    "phone": "+33 5 56 39 37 05",
+    "priceEur": 9990,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": "Two versions on the page (Basic: 1 lidar + 1 wide-angle camera; Pro: 2 lidars + 4 wide-angle cameras). The 9,990 € net is the 'from' price of combination 2340 (GR's own link adds #/707-version-basic, so it is the Basic); Pro price not shown in the static page. Sold WITHOUT battery, remote and charger. 'Lieferung innerhalb von 2 Wochen', 'In den Warenkorb'. Status should change from not_sold to buy_now (say 'Basic, without battery' in the price note)."
+   }
+  ],
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -133,6 +154,14 @@
    "publisher": "DEEP Robotics",
    "kind": "press",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.generationrobots.com/de/404524-lynx-s10-quadruped-roboter-mit-rädern-2340.html",
+   "title": "Génération Robots",
+   "publisher": "Génération Robots",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

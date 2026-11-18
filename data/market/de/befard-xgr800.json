@@ -19,10 +19,11 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Sold on request by the Polish maker Befard (German-language product page with contact form); Befard names GreenLifter in Fürth as its German sales partner. No price found.",
+  "statusNote": "Sold on request by the Polish maker Befard (German-language product page with contact form); Befard names GreenLifter in Fürth as its German sales partner. Befard lists a new XGR800.3 on Maschinensucher.de at a fixed 41,756 € excl. VAT (contact form, no cart).",
   "sourceIds": [
    "s1",
-   "s3"
+   "s3",
+   "s4"
   ],
   "sellers": [
    {
@@ -52,7 +53,13 @@
     "note": "Boxdorfer Str. 35, 90765 Fürth. Named by Befard as its German sales partner (\"Niemcy - GreenLifter\"); this model is not shown on a GreenLifter page."
    }
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 41756,
+   "basis": "net",
+   "kind": "quoted_example",
+   "sourceId": "s4",
+   "note": "Befard's own new-unit listing on Maschinensucher.de for the XGR800.3, the largest version, excl. VAT."
+  },
   "priceOther": null,
   "leadTime": null,
   "checkedAt": "2026-11-18"
@@ -194,6 +201,14 @@
    "title": "Vertriebspartner (sales partners incl. Germany)",
    "publisher": "Befard",
    "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.maschinensucher.de/befard-xgr800.3/i-7386590",
+   "title": "Befard (own listing on Maschinensucher.de)",
+   "publisher": "Befard (own listing on Maschinensucher.de)",
+   "kind": "other",
    "checkedAt": "2026-11-18"
   }
  ],

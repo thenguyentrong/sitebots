@@ -13,7 +13,13 @@
  "launched": null,
  "lifecycle": "shipping",
  "germany": {
-  "priceEur": null,
+  "priceEur": {
+   "amount": 188991,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s5",
+   "note": "Funduino GmbH, incl. VAT."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -29,15 +35,29 @@
     "priceBasis": null,
     "sourceId": "s2",
     "note": "Variant \"Embodied intelligence\"; metadata price EUR 178,000, basis not stated, not displayed."
+   },
+   {
+    "name": "Funduino GmbH",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://funduino.com/products/ubtech-walker-tienkung",
+    "contactUrl": "https://funduino.com/en/pages/contact",
+    "email": "info@funduino.de",
+    "phone": "+49 5921 9704030",
+    "priceEur": 188991,
+    "priceBasis": "gross",
+    "sourceId": "s5",
+    "note": "Variant 'Verkörperte Intelligenz' (default, Shopify variant 66296801132893): 42 DOF, ~73 kg, 2x 6-DOF dexterous hands, matches the record; 'Lieferzeit: 28 Werktage', In den Warenkorb. Other variant 'Stimme & Sicht' 116.806,00 € inkl. MwSt. (useful for ubtech-walker-tienkung-voice-vision, not my id; its record now uses Terra's hidden 104,000). Terra Robotics page still shows 'Preis auf Anfrage' (its product JSON has 79,000 for Embodied, not shown, not used)."
    }
   ],
-  "checkedAt": "2026-11-06",
-  "status": "quote",
-  "statusNote": "Terra Robotics lists the Walker Tienkung in its Embodied Intelligence version, price on request.",
+  "checkedAt": "2026-11-18",
+  "status": "buy_now",
+  "statusNote": "Funduino (Germany) sells the Embodied Intelligence version at 188,991 € incl. VAT with a cart. Terra Robotics also lists it, price on request.",
   "sourceIds": [
    "s4",
    "s2",
-   "s3"
+   "s3",
+   "s5"
   ]
  },
  "specs": [
@@ -203,6 +223,14 @@
    "publisher": "RobotShop",
    "kind": "seller",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s5",
+   "url": "https://funduino.com/products/ubtech-walker-tienkung",
+   "title": "Funduino GmbH",
+   "publisher": "Funduino GmbH",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [

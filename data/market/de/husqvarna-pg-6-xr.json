@@ -18,13 +18,18 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. No public price found on the maker page or in German shops.",
+  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. No public euro price found on the maker page or in German shops.",
   "sourceIds": [
    "s1",
    "s2"
   ],
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 30325,
+   "currency": "GBP",
+   "market": "Red Band UK (UK dealer), excl. VAT (incl. VAT 36,390.00 GBP; RRP 46,650.00 GBP incl. VAT), 380-415 V version",
+   "sourceId": "s3"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -153,6 +158,14 @@
    "title": "Kontaktieren Sie uns",
    "publisher": "Husqvarna Deutschland GmbH",
    "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.redbanduk.co.uk/husqvarna-pg6xr-floor-grinder-polisher-415v",
+   "title": "redbanduk.co.uk",
+   "publisher": "redbanduk.co.uk",
+   "kind": "other",
    "checkedAt": "2026-11-18"
   }
  ],

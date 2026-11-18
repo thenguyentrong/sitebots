@@ -14,14 +14,26 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Sold on request directly by ANYbotics (Zurich); in routine use at W.R. Grace in Düren and tested at BASF Ludwigshafen. No German reseller and no public price.",
+  "statusNote": "Sold on request directly by ANYbotics (Zurich); in routine use at W.R. Grace in Düren and tested at BASF Ludwigshafen. No German reseller and no list price; public contract awards show 164,231.06 € (Université de Lorraine, 2024) and CHF 185,800 excl. VAT for an ANYmal gen D (Heriot-Watt, 2023).",
   "sourceIds": [
    "s1",
    "s4",
-   "s6"
+   "s6",
+   "s7"
   ],
-  "priceEur": null,
-  "priceOther": null,
+  "priceEur": {
+   "amount": 164231.06,
+   "basis": "unknown",
+   "kind": "quoted_example",
+   "sourceId": "s7",
+   "note": "Public contract award: Université de Lorraine bought an ANYmal from ANYbotics in December 2024 (the notice does not name the generation); VAT not stated."
+  },
+  "priceOther": {
+   "amount": 185800,
+   "currency": "CHF",
+   "market": "UK public contract award, Heriot-Watt University, ANYmal gen D research platform, contract 30 Aug 2023, excl. VAT",
+   "sourceId": "s8"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -38,7 +50,7 @@
     "note": "Sells directly from Zurich; its reseller list names no German partner. Customers in Germany include W.R. Grace (Düren) and BASF (Ludwigshafen tests)."
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-18"
  },
  "specs": [
   {
@@ -308,6 +320,22 @@
    "publisher": "ANYbotics",
    "kind": "manufacturer",
    "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s7",
+   "url": "https://www.boamp.fr/telechargements/FILES/PDF/2025/02/25-11921.pdf",
+   "title": "ANYbotics (public contract award, Université de Lorraine)",
+   "publisher": "ANYbotics (public contract award, Université de Lorraine)",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s8",
+   "url": "https://www.ukconstructionmedia.co.uk/opportunities/purchase-of-autonomous-four-legged-research-platform/",
+   "title": "ukconstructionmedia.co.uk",
+   "publisher": "ukconstructionmedia.co.uk",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
   }
  ],
  "openQuestions": [
