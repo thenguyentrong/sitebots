@@ -55,6 +55,8 @@ export type CompanyInsight = {
   weaknesses: string[];
   uses: { total: number; daily: number; regions: { label: string; count: number }[]; countries: string[] };
   reviews: { total: number; positive: number; mixed: number; critical: number };
+  /** The same facts as numbers, for the scorecard. */
+  facts: { robots: number; orderable: number; cart: number; sellers: string[]; priced: number; onSale: number };
 };
 
 const TYPE_WORD: Record<string, [string, string]> = {
@@ -103,5 +105,6 @@ export function companyInsight(robots: MarketRobot[]): CompanyInsight {
     doesWhat, strengths, weaknesses,
     uses: { total: uses.length, daily, regions: REGIONS.filter((r) => regionCount.get(r.id)).map((r) => ({ label: r.label, count: regionCount.get(r.id)! })), countries },
     reviews: { total: reviews.length, positive, mixed: reviews.filter((review) => review.stance === 'mixed').length, critical },
+    facts: { robots: robots.length, orderable: sold.length, cart: cart.length, sellers, priced: priced.length, onSale: robots.filter((robot) => robot.lifecycle === 'shipping').length },
   };
 }

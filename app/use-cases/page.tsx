@@ -1,9 +1,13 @@
 import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
+import { RobotUseCard } from '@/components/use-cases/RobotUseCard';
+import { SettingTiles } from '@/components/use-cases/SettingTiles';
+import { UseMap } from '@/components/use-cases/UseMap';
+import { CountryFlag, StageBar, StageDot, StageLegend } from '@/components/use-cases/parts';
+import { groupByRobot, settingTiles, stageCounts, usePoints } from '@/lib/market/use-case-views';
+import { REGIONS, SETTINGS, STAGE_LABEL, USE_STAGES, countryName, loadUseCases, useCaseStats, type RegionId, type UseStage } from '@/lib/market/use-cases';
 import { publicMetadata } from '@/lib/seo';
 import { ui } from '@/lib/ui';
 import { cn } from '@/lib/utils';
-import { REGIONS, SETTINGS, STAGE_LABEL, USE_STAGES, loadUseCases, useCaseStats, type RegionId, type UseCase, type UseStage } from '@/lib/market/use-cases';
 
 export const metadata = publicMetadata({
   title: 'Where construction robots already work',
@@ -11,134 +15,131 @@ export const metadata = publicMetadata({
   path: '/use-cases',
 });
 
-type Search = Promise<{ region?: string; stage?: string }>;
-const STAGE_VARIANT: Record<UseStage, 'success' | 'info' | 'neutral'> = { deployment: 'success', pilot: 'info', demo: 'neutral' };
+type Search = Promise<{ region?: string; stage?: string; country?: string }>;
 const nf = new Intl.NumberFormat('en-GB');
+// Each setting shows its first cards; the rest open below them.
+const FIRST = 6;
 
-function Stat({ value, label, hint }: { value: number; label: string; hint?: string }) {
-  return <div className="bg-card px-5 py-4">
-    <div className="num text-3xl font-semibold tracking-tight">{nf.format(value)}</div>
-    <div className="mt-1 text-sm">{label}</div>
+function BigNumber({ value, label, hint }: { value: number; label: string; hint?: string }) {
+  return <div>
+    <div className="num text-4xl font-semibold leading-none tracking-tight sm:text-5xl">{nf.format(value)}</div>
+    <div className="mt-2 text-sm font-medium">{label}</div>
     {hint ? <div className="mt-0.5 text-xs text-muted">{hint}</div> : null}
   </div>;
 }
 
-/** One measure per row, sorted, labelled at the bar: no legend needed for a single series. */
-function Bars({ title, rows, unit }: { title: string; rows: { key: string; label: string; count: number; note?: string; href?: string }[]; unit: string }) {
-  const max = Math.max(1, ...rows.map((row) => row.count));
-  return <section className="card overflow-hidden" aria-labelledby={'bars-' + title}>
-    <header className="border-b border-edge/70 px-5 py-3.5"><h2 id={'bars-' + title} className="text-sm font-semibold">{title}</h2></header>
-    <ul className="space-y-2.5 px-5 py-4">
-      {rows.map((row) => {
-        const label = <span className="leading-snug">{row.label}</span>;
-        return <li key={row.key} className="grid grid-cols-[minmax(0,13.5rem)_minmax(0,1fr)_auto] items-center gap-3 text-sm" title={`${row.label}: ${row.count} ${unit}${row.note ? ' · ' + row.note : ''}`}>
-          {row.href ? <a href={row.href} className="leading-snug underline-offset-4 hover:underline">{row.label}</a> : label}
-          <span className="h-2.5 rounded-r-[4px] bg-[var(--accent)]" style={{ width: `${Math.max(2, (row.count / max) * 100)}%` }} aria-hidden />
-          <span className="num text-right text-xs text-muted">{row.count}{row.note ? <span className="ml-1 text-faint">· {row.note}</span> : null}</span>
-        </li>;
-      })}
-    </ul>
-  </section>;
-}
-
-function UseRow({ use }: { use: UseCase }) {
-  return <li className="grid grid-cols-1 gap-x-4 gap-y-1 px-5 py-3 text-sm md:grid-cols-[minmax(0,14rem)_minmax(0,1fr)_minmax(0,12rem)_auto]">
-    <div className="min-w-0">
-      <Link href={use.href} className="font-medium underline-offset-4 hover:underline">{use.robot}</Link>
-      <div className="truncate text-xs text-muted">{use.maker}</div>
-    </div>
-    <p className="min-w-0 text-muted">{use.task}</p>
-    <div className="min-w-0 text-xs">
-      <div className="text-foreground">{use.place || <span className="text-faint">Place not named</span>}</div>
-      {use.where && use.where !== use.place ? <div className="line-clamp-2 text-faint">{use.where}</div> : null}
-    </div>
-    <div className="flex flex-wrap items-start gap-2 md:flex-col md:items-end">
-      <Badge variant={STAGE_VARIANT[use.stage]}>{STAGE_LABEL[use.stage]}</Badge>
-      <span className="flex items-center gap-2 text-xs text-faint">
-        {use.date ? <span className="num">{use.date}</span> : null}
-        {use.sourceUrl ? <a href={use.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">Source ↗</a> : null}
-      </span>
-    </div>
-  </li>;
-}
-
 export default async function UseCasesPage({ searchParams }: { searchParams: Search }) {
   const sp = await searchParams;
-  const region = REGIONS.some((r) => r.id === sp.region) ? sp.region as RegionId : undefined;
-  const stage = (USE_STAGES as readonly string[]).includes(String(sp.stage)) ? sp.stage as UseStage : undefined;
   const all = loadUseCases();
   const stats = useCaseStats(all);
-  const shown = all.filter((use) => (!region || use.region === region) && (!stage || use.stage === stage));
-  const href = (next: { region?: string; stage?: string }) => {
+  const region = REGIONS.some((r) => r.id === sp.region) ? sp.region as RegionId : undefined;
+  const stage = (USE_STAGES as readonly string[]).includes(String(sp.stage)) ? sp.stage as UseStage : undefined;
+  const country = /^[A-Z]{2}$/.test(String(sp.country)) && all.some((use) => use.countries.includes(sp.country!)) ? sp.country : undefined;
+  const shown = all.filter((use) => (!region || use.region === region) && (!stage || use.stage === stage) && (!country || use.countries.includes(country)));
+
+  const href = (next: { region?: string; stage?: string; country?: string }) => {
     const q = new URLSearchParams();
-    const merged = { region, stage, ...next };
-    for (const [k, v] of Object.entries(merged)) if (v) q.set(k, v);
+    for (const [k, v] of Object.entries({ region, stage, country, ...next })) if (v) q.set(k, v);
     const s = q.toString();
-    return '/use-cases' + (s ? '?' + s : '') + '#uses';
+    return '/use-cases' + (s ? '?' + s : '') + '#explore';
   };
+  const map = usePoints(shown);
+  const tiles = settingTiles(shown);
+  const top = groupByRobot(shown).slice(0, 4);
+  // Each robot card takes a photo no other card on the page shows yet, where the robot has more than one.
+  const seen = new Set(top.flatMap((group) => group.picture ? [group.picture.src] : []));
+  const sections = SETTINGS.map((s) => ({ ...s, uses: shown.filter((use) => use.setting === s.id) })).filter((s) => s.uses.length)
+    .sort((a, b) => b.uses.length - a.uses.length)
+    .map((s) => ({ ...s, groups: groupByRobot(s.uses, seen), stages: stageCounts(s.uses) }));
+  const filtered = Boolean(region || stage || country);
 
   return <main className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6">
-    <header className="py-10">
-      <p className="label">Use cases</p>
-      <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Where robots already work</h1>
-      <p className="mt-3 max-w-3xl text-muted">Every documented job of the robots we track, from German building sites to tunnels in Sweden, towers in Tokyo and solar parks in Texas. Each line links to the page it was read from. Maker claims without a shown job are not counted.</p>
+    <header className="grid grid-cols-1 items-end gap-10 pb-10 pt-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+      <div>
+        <p className="label">Use cases</p>
+        <h1 className="mt-3 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">Where robots already work</h1>
+        <p className="mt-5 max-w-xl text-base text-muted">German building sites, tunnels in Sweden, towers in Tokyo, solar parks in Texas. Every job here was shown on a real project or in a demonstration, and links to the page it was read from.</p>
+      </div>
+      <div className="space-y-6">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-7">
+          <BigNumber value={stats.total} label="Documented uses" hint="each with a source" />
+          <BigNumber value={stats.byStage.deployment} label="In daily use" hint="on real projects" />
+          <BigNumber value={stats.robots} label="Robots" hint={`from ${stats.makers} makers`} />
+          <BigNumber value={stats.countries} label="Countries" hint="named in the sources" />
+        </div>
+        <div className="space-y-2">
+          <StageBar stages={stats.byStage} className="h-3" />
+          <StageLegend />
+          <p className="text-xs text-faint">{nf.format(stats.claims)} more maker claims name a job but show no project. They are not counted.</p>
+        </div>
+      </div>
     </header>
 
-    <section aria-label="Key numbers" className="card overflow-hidden">
-      <div className="grid grid-cols-2 gap-px bg-edge/60 sm:grid-cols-3 lg:grid-cols-6">
-        <Stat value={stats.total} label="Documented uses" hint="with a source" />
-        <Stat value={stats.byStage.deployment} label="In daily use" hint="on real projects" />
-        <Stat value={stats.byStage.pilot} label="Pilots" hint="on a real project" />
-        <Stat value={stats.byStage.demo} label="Demonstrations" hint="shown working" />
-        <Stat value={stats.robots} label="Robots" hint={`from ${stats.makers} makers`} />
-        <Stat value={stats.countries} label="Countries" hint="named in the sources" />
-      </div>
-      <p className="border-t border-edge/70 px-5 py-2.5 text-xs text-muted">{nf.format(stats.claims)} more maker claims name a job but show no project; they are not in these numbers.</p>
-    </section>
-
-    <div className="mt-6 grid grid-cols-1 gap-6 lg:grid-cols-2">
-      <Bars title="By setting" unit="uses" rows={[...stats.bySetting].filter((s) => s.count).sort((a, b) => b.count - a.count).map((s) => ({ key: s.id, label: s.label, count: s.count, note: s.deployments + ' daily', href: '#' + s.id }))} />
-      <Bars title="By region" unit="uses" rows={stats.byRegion.filter((r) => r.count).map((r) => ({ key: r.id, label: r.label, count: r.count, href: href({ region: r.id }) }))} />
-      <Bars title="Countries with the most uses" unit="uses" rows={stats.topCountries.map((c) => ({ key: c.code, label: c.name, count: c.count }))} />
-      <Bars title="Robots with the most documented uses" unit="uses" rows={stats.topRobots.map((r) => ({ key: r.robotId, label: r.robot, count: r.count, note: r.deployments + ' daily', href: r.href }))} />
-    </div>
-
-    <div id="uses" className="mt-10 flex scroll-mt-20 flex-wrap items-center gap-3">
+    <div id="explore" className="card flex scroll-mt-20 flex-wrap items-center gap-3 p-2">
       <nav className={cn(ui.segment, 'max-w-full flex-wrap')} aria-label="Region">
-        <Link href={href({ region: '' })} className={cn(ui.segmentItem, !region && ui.segmentActive)} aria-current={!region ? 'page' : undefined}>All regions</Link>
-        {REGIONS.filter((r) => stats.byRegion.find((x) => x.id === r.id)?.count).map((r) => <Link key={r.id} href={href({ region: r.id })} className={cn(ui.segmentItem, region === r.id && ui.segmentActive)} aria-current={region === r.id ? 'page' : undefined}>{r.label}</Link>)}
+        <Link href={href({ region: '', country: '' })} className={cn(ui.segmentItem, !region && !country && ui.segmentActive)} aria-current={!region && !country ? 'page' : undefined}>Worldwide</Link>
+        {REGIONS.filter((r) => r.id !== 'NONE' && stats.byRegion.find((x) => x.id === r.id)?.count).map((r) => <Link key={r.id} href={href({ region: r.id, country: '' })} className={cn(ui.segmentItem, region === r.id && ui.segmentActive)} aria-current={region === r.id ? 'page' : undefined}>{r.label}</Link>)}
       </nav>
       <nav className={cn(ui.segment, 'max-w-full flex-wrap')} aria-label="How far">
-        <Link href={href({ stage: '' })} className={cn(ui.segmentItem, !stage && ui.segmentActive)} aria-current={!stage ? 'page' : undefined}>All</Link>
-        {USE_STAGES.map((s) => <Link key={s} href={href({ stage: s })} className={cn(ui.segmentItem, stage === s && ui.segmentActive)} aria-current={stage === s ? 'page' : undefined}>{STAGE_LABEL[s]}</Link>)}
+        <Link href={href({ stage: '' })} className={cn(ui.segmentItem, !stage && ui.segmentActive)} aria-current={!stage ? 'page' : undefined}>Every stage</Link>
+        {USE_STAGES.map((s) => <Link key={s} href={href({ stage: s })} className={cn(ui.segmentItem, 'inline-flex items-center gap-1.5', stage === s && ui.segmentActive)} aria-current={stage === s ? 'page' : undefined}><StageDot stage={s} />{STAGE_LABEL[s]}</Link>)}
       </nav>
-      <span className="label ml-auto">{nf.format(shown.length)} shown</span>
+      {country ? <Link href={href({ country: '' })} className="inline-flex items-center gap-2 rounded-full bg-foreground px-3 py-1.5 text-sm text-background" aria-label={`Remove the ${countryName(country)} filter`}><CountryFlag code={country} />{countryName(country)}<span aria-hidden>×</span></Link> : null}
+      <span className="label ml-auto px-2">{nf.format(shown.length)} uses{filtered ? ' shown' : ''}</span>
     </div>
 
-    <nav aria-label="Settings" className="mt-4 flex flex-wrap gap-2">
-      {SETTINGS.map((s) => {
-        const n = shown.filter((use) => use.setting === s.id).length;
-        return n ? <a key={s.id} href={'#' + s.id} className="rounded-full border border-edge px-3 py-1.5 text-xs text-muted transition hover:border-edge-strong hover:text-foreground">{s.label} <span className="num ml-1">{n}</span></a> : null;
-      })}
-    </nav>
+    {!shown.length ? <div className="card mt-6 px-6 py-12 text-center text-muted">No documented use matches this filter. <Link href="/use-cases" className="underline underline-offset-4">Show all</Link></div> : <>
+      <section className="card mt-6 overflow-hidden" aria-labelledby="map-title">
+        <header className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-5 pb-1 pt-4">
+          <h2 id="map-title" className="text-lg font-semibold tracking-tight">On the map</h2>
+          <span className="text-xs text-muted">{map.points.length} places in {map.countries.length} countries{map.unplaced ? ` · ${map.unplaced} uses name no place` : ''}</span>
+        </header>
+        <UseMap points={map.points} active={new Set(map.countries.map((c) => c.code))} selected={country} href={(code) => href({ country: code, region: '' })} />
+        <div className="flex flex-wrap gap-2 border-t border-edge/70 p-4" aria-label="Filter by country">
+          {map.countries.map((c) => <Link key={c.code} href={href({ country: c.code === country ? '' : c.code, region: '' })} aria-current={c.code === country ? 'page' : undefined}
+            className={cn('inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs transition hover:border-edge-strong', c.code === country ? 'border-foreground bg-foreground text-background' : 'border-edge text-muted')}>
+            <CountryFlag code={c.code} />{c.name}<span className="num">{c.count}</span>
+          </Link>)}
+        </div>
+      </section>
 
-    <div className="mt-6 space-y-6">
-      {SETTINGS.map((s) => {
-        const uses = shown.filter((use) => use.setting === s.id);
-        if (!uses.length) return null;
-        const daily = uses.filter((use) => use.stage === 'deployment').length;
-        return <section key={s.id} id={s.id} className="card scroll-mt-20 overflow-hidden" aria-labelledby={s.id + '-title'}>
-          <header className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b border-edge/70 px-5 py-3.5">
+      <section className="mt-14" aria-labelledby="settings-title">
+        <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
+          <div>
+            <h2 id="settings-title" className="text-2xl font-semibold tracking-tight sm:text-3xl">{tiles.length} kinds of work</h2>
+            <p className="mt-1 text-sm text-muted">Sorted by the number of uses. Pick one to see its robots.</p>
+          </div>
+        </div>
+        <SettingTiles tiles={tiles} />
+      </section>
+
+      {top.length > 1 ? <section className="mt-14" aria-labelledby="top-title">
+        <h2 id="top-title" className="text-2xl font-semibold tracking-tight sm:text-3xl">The most proven robots</h2>
+        <p className="mb-5 mt-1 text-sm text-muted">Most days in real use first, then the most projects and demonstrations.</p>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">{top.map((group, i) => <RobotUseCard key={group.robotId} group={group} rank={i + 1} />)}</div>
+      </section> : null}
+
+      <div className="mt-6 space-y-16">
+        {sections.map((s) => <section key={s.id} id={s.id} className="scroll-mt-20 pt-8" aria-labelledby={s.id + '-title'}>
+          <header className="mb-5 grid grid-cols-1 items-end gap-4 border-t border-edge pt-8 md:grid-cols-[minmax(0,1fr)_minmax(0,18rem)]">
             <div>
-              <h2 id={s.id + '-title'} className="text-sm font-semibold">{s.label}</h2>
-              <p className="mt-0.5 text-xs text-muted">{s.intro}</p>
+              <h2 id={s.id + '-title'} className="text-2xl font-semibold tracking-tight sm:text-3xl">{s.label}</h2>
+              <p className="mt-1 max-w-2xl text-sm text-muted">{s.intro}</p>
             </div>
-            <span className="num text-xs text-faint">{uses.length} uses · {daily} in daily use · {new Set(uses.map((use) => use.robotId)).size} robots</span>
+            <div className="space-y-2">
+              <p className="text-sm"><span className="num text-2xl font-semibold">{s.uses.length}</span> <span className="text-muted">uses by</span> <span className="num font-semibold">{s.groups.length}</span> <span className="text-muted">robot{s.groups.length === 1 ? '' : 's'}</span></p>
+              <StageBar stages={s.stages} />
+            </div>
           </header>
-          <ul className="divide-y divide-edge/60">{uses.map((use) => <UseRow key={use.key} use={use} />)}</ul>
-        </section>;
-      })}
-      {!shown.length ? <div className="card px-6 py-10 text-center text-muted">No documented use matches this filter. <Link href="/use-cases" className="underline underline-offset-4">Show all</Link></div> : null}
-    </div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{s.groups.slice(0, FIRST).map((group) => <RobotUseCard key={group.robotId} group={group} />)}</div>
+          {s.groups.length > FIRST ? <details className="group/more mt-4">
+            <summary className={cn(ui.btnSecondary, 'cursor-pointer list-none [&::-webkit-details-marker]:hidden')}>
+              <span className="group-open/more:hidden">Show {s.groups.length - FIRST} more robots</span><span className="hidden group-open/more:inline">Show fewer</span>
+            </summary>
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{s.groups.slice(FIRST).map((group) => <RobotUseCard key={group.robotId} group={group} />)}</div>
+          </details> : null}
+        </section>)}
+      </div>
+    </>}
   </main>;
 }
