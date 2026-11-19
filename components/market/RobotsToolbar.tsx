@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { GlobeHemisphereWest } from '@phosphor-icons/react/dist/ssr';
+import { GermanFlag } from './Flag';
 import { ui } from '@/lib/ui';
 import { cn } from '@/lib/utils';
 
@@ -8,8 +10,8 @@ import { cn } from '@/lib/utils';
 export function ScopeSwitch({ world, q }: { world: boolean; q?: string }) {
   const search = q ? 'q=' + encodeURIComponent(q) : '';
   return <nav className={cn(ui.segment, 'mb-4')} aria-label="Where the robots are sold">
-    <Link href={'/robots' + (search ? '?' + search : '')} className={cn(ui.segmentItem, 'px-4 py-1.5', !world && ui.segmentActive)} aria-current={!world ? 'page' : undefined}>In Germany</Link>
-    <Link href={'/robots?scope=world' + (search ? '&' + search : '')} className={cn(ui.segmentItem, 'px-4 py-1.5', world && ui.segmentActive)} aria-current={world ? 'page' : undefined}>Worldwide</Link>
+    <Link href={'/robots' + (search ? '?' + search : '')} className={cn(ui.segmentItem, 'px-4 py-1.5', !world && ui.segmentActive)} aria-current={!world ? 'page' : undefined}><span className="inline-flex items-center gap-2"><GermanFlag />In Germany</span></Link>
+    <Link href={'/robots?scope=world' + (search ? '&' + search : '')} className={cn(ui.segmentItem, 'px-4 py-1.5', world && ui.segmentActive)} aria-current={world ? 'page' : undefined}><span className="inline-flex items-center gap-2"><GlobeHemisphereWest size={16} weight="regular" aria-hidden />Worldwide</span></Link>
   </nav>;
 }
 

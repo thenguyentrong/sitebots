@@ -31,10 +31,9 @@ function config(provider: Provider): Config | null {
 /** Which buttons the sign-in dialog may show. */
 export const enabledProviders = (): Provider[] => (['google', 'microsoft'] as const).filter((provider) => config(provider) !== null);
 
-/** The free adviser needs a sign-in only once a sign-in exists. Until the first provider's keys are set,
- * the live site stays open as before (daily limits still apply); on a dev machine the test login keeps
- * the gate on, so the sign-in flow can be tried there. */
-export const signInRequired = () => enabledProviders().length > 0 || process.env.NODE_ENV !== 'production';
+/** The adviser is never open to anonymous visitors: a signed-in account pays from its free allowance,
+ * or the visitor's own API key pays. Browsing the robots stays free for everyone. */
+export const signInRequired = () => true;
 
 /** What has to survive the trip to the provider and back, in a short-lived signed cookie. */
 export type Pending = { provider: Provider; state: string; verifier: string; nonce: string; back: string; exp: number };

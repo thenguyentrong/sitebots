@@ -6,6 +6,9 @@ import { RobotMedia } from '@/components/robot/RobotMedia';
 import { RobotSection } from '@/components/robot/RobotSection';
 import { RobotTemplate, STATUS_VARIANT } from '@/components/robot/RobotTemplate';
 import { ReviewsSection } from '@/components/robot/ReviewsSection';
+import { VisitorReviews } from '@/components/reviews/VisitorReviews';
+import { companySlugFor } from '@/lib/market/companies';
+import { manufacturerLogo } from '@/lib/manufacturers';
 import { SourceList } from '@/components/robot/SourceList';
 import { lifecycleLabel, marketFacts } from '@/lib/compare/facts';
 import { STATUS_LABELS, TYPE_LABELS } from '@/lib/market/cards';
@@ -33,11 +36,12 @@ export default async function MarketRobotPage({ params }: { params: Params }) {
   if (linked) permanentRedirect(linked + '#germany');
   const pictures = [robot.picture, ...robot.gallery].flatMap((picture) => picture ? [marketImage(picture)] : []);
   const form = robot.robotType === 'specialised' ? 'dedicated_robot' : robot.robotType;
+  const company = companySlugFor(robot);
   return <RobotTemplate page={{
     name: robot.name,
     type: TYPE_LABELS[robot.robotType],
     status: { label: lifecycleLabel(robot.lifecycle), variant: STATUS_VARIANT[robot.lifecycle] ?? 'neutral' },
-    maker: { name: robot.maker, href: null, country: robot.makerCountry },
+    maker: { name: robot.maker, href: '/brands/' + company, country: robot.makerCountry, logo: manufacturerLogo(company) },
     configuration: robot.variant,
     summary: robot.summary,
     compare: { id: robot.id, name: robot.name },
@@ -52,7 +56,7 @@ export default async function MarketRobotPage({ params }: { params: Params }) {
     more: <RobotSection id="profile" title="Robot evidence profile" aside={<span className="text-xs text-muted">Checked <time dateTime={robot.checkedAt}>{robot.checkedAt}</time></span>}>
       <div className="px-5 py-5"><ConfigurationEvidence robots={[robot]} /></div>
     </RobotSection>,
-    reviews: <ReviewsSection ids={[robot.id]} />,
+    reviews: <><ReviewsSection ids={[robot.id]} /><VisitorReviews target={'robot:' + robot.id} name={robot.name} /></>,
     sources: <SourceList market={robot.sources} />,
   }} />;
 }

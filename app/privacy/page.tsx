@@ -26,9 +26,10 @@ export default function PrivacyPage() {
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Signing in</h2>
-        <p className="mt-2">The robot pages, the comparison and everything else are free and need no account. Only the adviser needs one, because every answer costs money. You sign in with Google or Microsoft. They confirm to us that you signed in and send your email address.</p>
+        <p className="mt-2">The robot pages, the comparison and everything else are free and need no account. Only the adviser and writing a review need one: every adviser answer costs money, and a review should come from a real account. You sign in with Google or Microsoft. They confirm to us that you signed in and send your email address.</p>
         <p className="mt-2">We store a code made from your Google or Microsoft account number and a secret, so it does not show who you are; how many free consultations you started each month; and which chats are yours. We do not store your name or your email address. Your email address is kept only in the sign-in cookie in your browser, so the account menu can show which account you used. The cookie lasts 30 days, or until you sign out.</p>
-        <p className="mt-2">&quot;Delete my account&quot; removes the account record and all chats started with it, straight away.</p>
+        <p className="mt-2">If you write a review of a robot or a company, we store it with the same account code, the sign-in provider, your rating, whether you worked with it, the text and the optional name you chose to show. Everyone can read the review; the account code is never shown. You can change or delete your review at any time.</p>
+        <p className="mt-2">&quot;Delete my account&quot; removes the account record, all chats started with it and all reviews written with it, straight away.</p>
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Your own API key</h2>
@@ -36,7 +37,7 @@ export default function PrivacyPage() {
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Who processes it</h2>
-        <p className="mt-2">Your messages are sent to Anthropic PBC in the United States, which generates the answers with its AI model Claude. The site runs on Vercel, which handles every page request and stores the chats and account records in a private store in Frankfurt. Sign-in goes through Google (Google Ireland Limited) or Microsoft (Microsoft Ireland Operations Limited), depending on the button you choose.</p>
+        <p className="mt-2">Your messages are sent to Anthropic PBC in the United States, which generates the answers with its AI model Claude. The site runs on Vercel, which handles every page request and stores the chats, account records and reviews in a private store in Frankfurt. Sign-in goes through Google (Google Ireland Limited) or Microsoft (Microsoft Ireland Operations Limited), depending on the button you choose.</p>
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Legal basis and your rights</h2>

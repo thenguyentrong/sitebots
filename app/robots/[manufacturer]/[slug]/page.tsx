@@ -1,6 +1,8 @@
 import { BuyingPanel } from '@/components/robot/BuyingPanel';
 import { GermanySection, JobsSection, TrackRecordSection, type Deployment } from '@/components/market/GermanyBuy';
 import { ReviewsSection } from '@/components/robot/ReviewsSection';
+import { VisitorReviews } from '@/components/reviews/VisitorReviews';
+import { manufacturerLogo } from '@/lib/manufacturers';
 import { MarketSpecifications } from '@/components/market/MarketSpecifications';
 import { marketForCatalogue } from '@/lib/market/links';
 import { marketImagesFor, pageIdentity } from '@/lib/market/tiles';
@@ -110,7 +112,7 @@ export default async function RobotPage({ params, searchParams }: { params: Para
         type: catalogueType(robot.form_factor),
         status: { label: STATUS_LABEL[robot.status], variant: STATUS_VARIANT[robot.status] ?? 'neutral' },
         year: robot.release_year,
-        maker: { name: robot.manufacturer_name, href: `/brands/${robot.manufacturer_slug}`, country: robot.manufacturer_country },
+        maker: { name: robot.manufacturer_name, href: `/brands/${robot.manufacturer_slug}`, country: robot.manufacturer_country, logo: manufacturerLogo(robot.manufacturer_slug) },
         summary: robot.summary ?? record?.summary ?? null,
         compare: { id: robot.id, name: robot.name },
         actions: <VariantTabs base={base} variants={variants} current={robot.variant} />,
@@ -153,7 +155,7 @@ export default async function RobotPage({ params, searchParams }: { params: Para
             <UseCaseProfile profile={profile} name={robot.name} marketRobots={market} configurationLabel={robot.variant === 'base' ? 'Catalogue model' : robot.variant} />
           </div>
         </>,
-        reviews: <ReviewsSection ids={market.map((item) => item.id)} />,
+        reviews: <><ReviewsSection ids={market.map((item) => item.id)} />{market[0] ? <VisitorReviews target={'robot:' + market[0].id} name={robot.name} /> : null}</>,
         sources: <SourceList sources={sources} market={market.flatMap((item) => item.sources)} />,
       }} />
     </>

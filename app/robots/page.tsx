@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import { ManufacturerMap } from '@/components/ManufacturerMap';
 import { MarketListing } from '@/components/market/MarketListing';
+import { allCompanies } from '@/lib/market/company-list';
 import { RobotSearch, ScopeSwitch } from '@/components/market/RobotsToolbar';
 import { TileSection } from '@/components/market/TileSection';
 import { FOCUSED_FORM_FACTORS, isFocusedForm } from '@/lib/browse-scope';
@@ -56,6 +58,12 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
     return { form, items, visible: preview ? items.slice(0, PREVIEW) : items };
   }).filter((group) => group.items.length);
   const tiles = new Map((await worldTiles(groups.flatMap((group) => group.visible))).map((tile) => [tile.id, tile]));
+  // Which country has how many robot companies: catalogue makers and the construction-machine makers of the guide.
+  const companies = await allCompanies();
+  const regionNames = new Intl.DisplayNames(['en'], { type: 'region' });
+  const perCountry = new Map<string, number>();
+  for (const company of companies) if (company.country) perCountry.set(company.country, (perCountry.get(company.country) ?? 0) + 1);
+  const countries = [...perCountry].map(([code, count]) => ({ code, count, name: regionNames.of(code) ?? code, href: '/brands?country=' + code + '#manufacturers' })).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
 
   return <main className="mk-page">
     <header className="mk-page-head">
@@ -63,6 +71,11 @@ export default async function RobotsPage({ searchParams }: { searchParams: Searc
       <h1>All robots worldwide</h1>
       <p>Every humanoid, robot dog and mobile manipulator we track, including prototypes and robots that are not sold in Germany. Choose robots to compare their specifications.</p>
     </header>
+
+    <div className="mt-6">
+      <ManufacturerMap countries={countries} selected="" unknown={companies.filter((company) => !company.country).length}
+        title="Robot companies around the world" lead={`${companies.length} companies in ${countries.length} countries. Select a country to see its companies.`} />
+    </div>
 
     <div className="card mt-6 flex flex-wrap items-center gap-3 p-2">
       <nav className={cn(ui.segment, 'max-w-full flex-wrap')} aria-label="Robot type">

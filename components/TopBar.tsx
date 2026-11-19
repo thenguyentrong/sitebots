@@ -8,7 +8,7 @@ import { Logo } from '@/components/Logo';
 import { ACCESS_TEXT, type Lang } from '@/lib/chat/i18n';
 import { cn } from '@/lib/utils';
 
-/** One header for every page: the three places, the current one marked, and the account on the right.
+/** One header for every page: the adviser, the robots and the use cases (compare opens from a robot), the current one marked, and the account on the right.
  *  `overlay` lays it over the job-site scene on the opening screen. */
 export function TopBar({ lang = 'en', overlay = false, extra }: { lang?: Lang; overlay?: boolean; extra?: ReactNode }) {
   const path = usePathname() ?? '/';
@@ -16,7 +16,7 @@ export function TopBar({ lang = 'en', overlay = false, extra }: { lang?: Lang; o
   const links = [
     { href: '/', label: t.adviser, short: t.adviserShort, active: path === '/' },
     { href: '/robots', label: t.robots, short: t.robots, active: path.startsWith('/robots') || path.startsWith('/market') || path.startsWith('/brands') },
-    { href: '/compare', label: t.compare, short: t.compare, active: path.startsWith('/compare') },
+    { href: '/use-cases', label: t.useCases, short: t.useCasesShort, active: path.startsWith('/use-cases') },
   ];
   return <header className={overlay ? 'absolute inset-x-0 top-0 z-10 top-overlay' : 'sticky top-0 z-20 border-b border-edge bg-background'}>
     <div className="mx-auto flex h-16 max-w-6xl items-center gap-2 px-4 sm:gap-4 sm:px-6">

@@ -8,7 +8,7 @@ import { ui } from '@/lib/ui';
 export type CountryGroup = { code: string; name: string; count: number; href: string };
 const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 
-export function ManufacturerMap({ countries, selected, unknown }: { countries: CountryGroup[]; selected: string; unknown: number }) {
+export function ManufacturerMap({ countries, selected, unknown, title = 'Manufacturers around the world', lead = 'Select a country to explore its companies. Locations are shown at country level.' }: { countries: CountryGroup[]; selected: string; unknown: number; title?: string; lead?: string }) {
   const [view, setView] = useState({ zoom: 1, x: 0, y: 0 });
   const drag = useRef<{ id: number; x: number; y: number; originX: number; originY: number; scale: number } | null>(null);
   const byCode = new Map(countries.map(c => [c.code === 'UK' ? 'GB' : c.code, c]));
@@ -30,7 +30,7 @@ export function ManufacturerMap({ countries, selected, unknown }: { countries: C
   return (
     <section aria-labelledby="manufacturer-map-title" className="card mb-8 overflow-hidden">
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-edge px-5 py-4">
-        <div><h2 id="manufacturer-map-title" className="font-semibold">Manufacturers around the world</h2><p className="mt-1 text-xs text-muted">Select a country to explore its companies. Locations are shown at country level.</p></div>
+        <div><h2 id="manufacturer-map-title" className="font-semibold">{title}</h2><p className="mt-1 text-xs text-muted">{lead}</p></div>
         <div className="flex items-center gap-1" aria-label="Map controls">
           <button type="button" onClick={() => zoomBy(1 / 1.5)} disabled={view.zoom === 1} aria-label="Zoom out map" className={ui.btnSecondary}>−</button>
           <span className="num min-w-12 text-center text-xs text-muted" aria-live="polite">{Math.round(view.zoom * 100)}%</span>

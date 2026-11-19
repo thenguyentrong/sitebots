@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 import { CompareToggle } from '@/components/compare/CompareBar';
+import { MakerAvatar } from '@/components/MakerAvatar';
+import type { ManufacturerLogo } from '@/lib/manufacturers';
 import { FactValues } from '@/components/compare/FactValues';
 import { RobotSection } from '@/components/robot/RobotSection';
 import { Badge, type BadgeProps } from '@/components/ui/badge';
@@ -23,7 +25,7 @@ export type RobotPageContent = {
   type: string;
   status: { label: string; variant: NonNullable<BadgeProps['variant']> };
   year?: number | null;
-  maker: { name: string; href: string | null; country: string | null };
+  maker: { name: string; href: string | null; country: string | null; logo?: ManufacturerLogo | null };
   configuration?: string | null;
   summary: string | null;
   compare: { id: string; name: string };
@@ -63,7 +65,7 @@ function Header({ page }: { page: RobotPageContent }) {
         <span className="text-foreground">{page.name}</span>
       </nav>
       <header className="mt-5 flex flex-wrap items-start justify-between gap-6">
-        <div className="min-w-0 max-w-3xl">
+        <div className="min-w-0 max-w-3xl flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline">{page.type}</Badge>
             <Badge variant={page.status.variant}>{page.status.label}</Badge>
@@ -77,11 +79,18 @@ function Header({ page }: { page: RobotPageContent }) {
             {page.configuration ? ` · Configuration: ${page.configuration}` : ''}
           </p>
           {page.summary ? <p className="mt-4 max-w-2xl text-base text-muted">{plainDashes(page.summary)}</p> : null}
+          <div className="mt-5 flex flex-wrap items-center gap-3">
+            <CompareToggle id={page.compare.id} name={page.compare.name} size="md" />
+            {page.actions}
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-3">
-          {page.actions}
-          <CompareToggle id={page.compare.id} name={page.compare.name} size="md" />
-        </div>
+        {maker.href ? <Link href={maker.href} className="group flex w-full shrink-0 items-center gap-3 rounded-2xl border border-edge/70 bg-card p-3 transition hover:border-edge-strong sm:w-56 sm:flex-col sm:items-stretch sm:p-4" aria-label={`About ${maker.name}: what the company does, strengths, weak points and reviews`}>
+          <MakerAvatar name={maker.name} logo={maker.logo} className="h-14 w-28 sm:h-20 sm:w-full" />
+          <span className="min-w-0">
+            <span className="block truncate text-sm font-medium">{maker.name}</span>
+            <span className="block text-xs text-muted underline-offset-4 group-hover:underline">Company profile, strengths and reviews →</span>
+          </span>
+        </Link> : null}
       </header>
     </div>
   </div>;

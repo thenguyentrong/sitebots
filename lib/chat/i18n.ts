@@ -62,7 +62,7 @@ export const TEXT = {
 /** The door to the adviser: an account with a free allowance, or the visitor's own API key. */
 export const ACCESS_TEXT = {
   en: {
-    nav: { adviser: 'Ask the adviser', adviserShort: 'Adviser', robots: 'Robots', compare: 'Compare' },
+    nav: { adviser: 'Advisor', adviserShort: 'Advisor', robots: 'Robots', compare: 'Compare', useCases: 'Use cases', useCasesShort: 'Use cases' },
     signIn: 'Sign in', account: 'Account', close: 'Close', cancel: 'Cancel', or: 'or',
     title: 'Start your consultation', lead: (n: number) => n + ' free consultations a month with a Google or Microsoft account. No password, no newsletter.',
     google: 'Continue with Google', microsoft: 'Continue with Microsoft', dev: 'Test sign-in (this computer only)',
@@ -85,7 +85,7 @@ export const ACCESS_TEXT = {
     unavailable: 'Sign-in is not set up yet. You can start with your own API key.',
   },
   de: {
-    nav: { adviser: 'Berater fragen', adviserShort: 'Berater', robots: 'Roboter', compare: 'Vergleich' },
+    nav: { adviser: 'Berater', adviserShort: 'Berater', robots: 'Roboter', compare: 'Vergleich', useCases: 'Einsatzbeispiele', useCasesShort: 'Einsätze' },
     signIn: 'Anmelden', account: 'Konto', close: 'Schließen', cancel: 'Abbrechen', or: 'oder',
     title: 'Beratung starten', lead: (n: number) => n + ' kostenlose Beratungen im Monat mit einem Google- oder Microsoft-Konto. Kein Passwort, kein Newsletter.',
     google: 'Weiter mit Google', microsoft: 'Weiter mit Microsoft', dev: 'Test-Anmeldung (nur dieser Rechner)',

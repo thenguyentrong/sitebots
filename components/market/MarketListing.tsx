@@ -12,6 +12,7 @@ import { CompareToggle } from '@/components/compare/CompareBar';
 import { MarketFilters } from './MarketFilters';
 import { RobotSearch, ScopeSwitch } from './RobotsToolbar';
 import { TileSection } from './TileSection';
+import { GermanFlag } from './Flag';
 import './market.css';
 
 // The robots page for buyers in Germany: what can be bought or ordered here, by type. Robots that are
@@ -90,7 +91,7 @@ export async function MarketListing({ type, q, filters }: { type: RobotType | ''
   return <main className="mk-page">
     <header className="mk-page-head">
       <ScopeSwitch world={false} q={q} />
-      <h1>Robots you can buy in Germany</h1>
+      <h1 className="flex flex-wrap items-center gap-x-3"><GermanFlag className="h-[0.62em] w-[1.05em] rounded-[4px]" title="Sold in Germany" />Robots you can buy in Germany</h1>
       <p>{orderable(false)} robots and {orderable(true)} job-specific machines you can buy or order here, {count('preorder')} more on pre-order. Every price and seller links to the page it was read from. Robots that are not sold here are under <Link href={world} className="underline underline-offset-2">Worldwide</Link>.</p>
     </header>
     <div className="card mt-6 flex flex-wrap items-center gap-3 p-2">

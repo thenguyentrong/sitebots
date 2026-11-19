@@ -4,7 +4,7 @@ import { ManufacturerMap } from '@/components/ManufacturerMap';
 import { ManufacturerSubmission } from '@/components/ManufacturerSubmission';
 import reviewData from '@/data/manufacturers/review.json';
 import { MakerAvatar } from '@/components/MakerAvatar';
-import { listManufacturers } from '@/lib/queries/manufacturers';
+import { allCompanies } from '@/lib/market/company-list';
 import { manufacturerStatusLabels } from '@/lib/manufacturers';
 import { publicMetadata } from '@/lib/seo';
 import { ui } from '@/lib/ui';
@@ -18,7 +18,7 @@ export const metadata = publicMetadata({
 
 type Search = Promise<{ q?: string; status?: string; country?: string }>;
 export default async function BrandsPage({ searchParams }: { searchParams: Search }) {
-  const [allMakers, search] = await Promise.all([listManufacturers(), searchParams]);
+  const [allMakers, search] = await Promise.all([allCompanies(), searchParams]);
   const q = typeof search.q === 'string' ? search.q.trim() : '';
   const status = search.status === 'commercial' || search.status === 'developing' ? search.status : '';
   const country = typeof search.country === 'string' ? search.country.toUpperCase() : '';
@@ -31,8 +31,8 @@ export default async function BrandsPage({ searchParams }: { searchParams: Searc
     if (status) params.set('status', status);
     return { code, count, name: regionNames.of(code === 'UK' ? 'GB' : code) ?? code, href: `/brands?${params}#manufacturers` };
   }).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
-  const makers = allMakers.filter((m) => (!country || m.country === country) && (!status || m.review?.status === status) && (!q || `${m.name} ${m.slug} ${m.country ?? ''}`.toLowerCase().includes(q.toLowerCase())));
-  const commercial = allMakers.filter((m) => m.review?.status === 'commercial').length;
+  const makers = allMakers.filter((m) => (!country || m.country === country) && (!status || m.status === status) && (!q || `${m.name} ${m.slug} ${m.country ?? ''}`.toLowerCase().includes(q.toLowerCase())));
+  const commercial = allMakers.filter((m) => m.status === 'commercial').length;
   return (
     <main className="mx-auto w-full max-w-6xl px-4 pb-24 sm:px-6">
       <header className="py-10">
@@ -84,8 +84,8 @@ export default async function BrandsPage({ searchParams }: { searchParams: Searc
                     <span className="underline-offset-4 hover:underline">{m.name}</span>
                   </Link>
                 </td>
-                <td className="px-4 py-3"><span className={`inline-flex whitespace-nowrap rounded-full px-2.5 py-1 text-xs ${m.review?.status === 'commercial' ? 'bg-trust-verified/10 text-trust-verified' : 'bg-subtle text-muted'}`}>{manufacturerStatusLabels[m.review?.status ?? 'unverified']}</span></td>
-                <td className="px-4 py-3 text-muted">{m.country ?? '—'}</td>
+                <td className="px-4 py-3"><span className={`inline-flex whitespace-nowrap rounded-full px-2.5 py-1 text-xs ${m.status === 'commercial' ? 'bg-trust-verified/10 text-trust-verified' : 'bg-subtle text-muted'}`}>{manufacturerStatusLabels[m.status]}</span></td>
+                <td className="px-4 py-3 text-muted">{m.country ? regionNames.of(m.country) ?? m.country : '—'}</td>
                 <td className="num px-4 py-3 text-right font-medium">{m.robots}</td>
                 <td className="num px-5 py-3 text-right text-muted">{m.verified_values}</td>
               </tr>
