@@ -1,0 +1,146 @@
+{
+ "schemaVersion": 1,
+ "specialisedFor": [
+  "site_earthworks/formation-compaction-testing"
+ ],
+ "variant": "rollers and dozers (dump trucks planned for 2027)",
+ "launched": "2026",
+ "images": [
+  {
+   "url": "https://www.robotsinconstruction.com/static/website/images/robots/ROB_CON_CREWLINE/ROB_CON_CREWLINE.hero.5acfe20dc9ca.webp",
+   "pageUrl": "https://www.robotsinconstruction.com/robots/crewline-autonomy-kit/",
+   "credit": "Crewline AI via Robots in Construction",
+   "alt": "Crewline Autonomy Kit autonomous roller",
+   "kind": "in_use"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Compaction of a 30-acre airport extension without a driver for 30 days",
+   "stage": "deployment",
+   "where": "Austin, Texas, USA",
+   "date": null,
+   "sourceId": "s2",
+   "note": "A drum roller fitted with the kit for Dynamic Site Solutions; daily downtime fell from six hours to under one hour (database entry)."
+  },
+  {
+   "taskIds": [],
+   "task": "One operator supervised three retrofitted rollers: 27.33 combined hours of compaction in a 12-hour shift",
+   "stage": "deployment",
+   "where": "Syracuse, USA",
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "Price on request per the database; the maker page shows no price.",
+  "Compatible model list not read."
+ ],
+ "checkedAt": "2026-11-18",
+ "id": "crewline-autonomy-kit",
+ "maker": "Crewline",
+ "makerCountry": "US",
+ "model": "Autonomy Kit",
+ "name": "Crewline Autonomy Kit (self-driving roller retrofit)",
+ "robotType": "specialised",
+ "officialUrl": "https://www.crewline.ai/",
+ "summary": "A reversible retrofit that makes a single-drum vibratory roller or a dozer self-driving inside a geo-fenced zone, with one operator supervising several machines.",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The maker (Buda, Texas) and its deployments are in the USA; no German or EU route found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "install_time",
+   "label": "Retrofit time",
+   "value": "about one hour",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "retrofits compatible rollers and dozers in just one hour, with a fully reversible installation"
+  },
+  {
+   "key": "speed_mph",
+   "label": "Operating speed",
+   "value": "2.2 mph or 3 mph",
+   "unit": null,
+   "conditions": "two vendor figures",
+   "sourceId": "s2",
+   "quote": "Operating speed2.2 mph or 3 mphTwo vendor figures"
+  },
+  {
+   "key": "min_site",
+   "label": "Suitable site size",
+   "value": "10+ acres",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Site size10+ acresRaised from 3+ acres in Dec 2025"
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "RTK-GNSS with camera-based obstacle avoidance",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "RTK-GNSS positioning, camera-based obstacle avoidance"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Retrofit kit on a roller or dozer, not a separate robot.",
+   "Needs a dozer-cab GPS and joystick unit; works a pad after a dozer has crossed it.",
+   "360-degree cameras stop the machine for people in the work zone."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.crewline.ai/",
+   "title": "Your Rollers and Dozers. Now Self-Driving.",
+   "publisher": "Crewline",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.robotsinconstruction.com/robots/crewline-autonomy-kit/",
+   "title": "Crewline Autonomy Kit",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ]
+}

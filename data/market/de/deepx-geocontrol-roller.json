@@ -1,0 +1,108 @@
+{
+ "schemaVersion": 1,
+ "specialisedFor": [
+  "site_earthworks/formation-compaction-testing"
+ ],
+ "variant": null,
+ "launched": null,
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Autonomous compaction: operator sets area and number of passes and presses start",
+   "stage": "pilot",
+   "where": "Japan",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Page says current availability is limited to automated construction demonstration sites."
+  }
+ ],
+ "openQuestions": [
+  "No price or compatible-machine list read.",
+  "Named demonstration site not given."
+ ],
+ "checkedAt": "2026-11-18",
+ "id": "deepx-geocontrol-roller",
+ "maker": "DeepX",
+ "makerCountry": "JP",
+ "model": "GeoControl Roller",
+ "name": "DeepX GeoControl Roller (autonomous roller retrofit)",
+ "robotType": "specialised",
+ "officialUrl": "https://www.deepx.co.jp/geocontrol-roller",
+ "summary": "A retrofit system, developed with Nishiken Kogyo, that lets a compatible vibratory roller compact a defined area autonomously with centimetre-level GNSS-RTK accuracy.",
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The maker says availability is limited to automated-construction demonstration sites in Japan and overseas use is discussed case by case; no German or EU route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "accuracy",
+   "label": "Accuracy",
+   "value": "centimetre level in a GNSS-RTK environment",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "In a GNSS-RTK environment, the system delivers centimeter-level accuracy"
+  },
+  {
+   "key": "safety",
+   "label": "Safety",
+   "value": "Independent radio emergency stop; automatic stop near people or obstacles",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Automatic emergency braking activates upon proximity to people or obstacles"
+  },
+  {
+   "key": "site_need",
+   "label": "Site requirement",
+   "value": "Secured unmanned area and Starlink",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The site must allow for a secured unmanned area and support the use of Starlink."
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Retrofit system on a customer roller; manual and remote control stay selectable."
+  ],
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.deepx.co.jp/geocontrol-roller",
+   "title": "Roller Autonomous System -GeoControl Roller-",
+   "publisher": "DeepX",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ]
+}

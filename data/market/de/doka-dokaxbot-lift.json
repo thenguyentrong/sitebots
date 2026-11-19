@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 1,
+  "id": "doka-dokaxbot-lift",
+  "maker": "Doka GmbH (Umdasch Group)",
+  "makerCountry": "AT",
+  "model": "DokaXbot Lift",
+  "variant": null,
+  "name": "Doka DokaXbot Lift",
+  "robotType": "specialised",
+  "specialisedFor": [
+    "site_concrete/slab-formwork"
+  ],
+  "officialUrl": "https://www.doka.com/en/system-groups/doka-floor-systems/panel-floor-formwork/dokaxdek/dokaxbot-lift/index",
+  "summary": "Semi-automated robot for the DokaXdek slab formwork. It lifts and places formwork panels with their floor props from the ground, up to 5.7 m working height, remote-controlled so no one stands under the load.",
+  "launched": "2025-04",
+  "lifecycle": "shipping",
+  "germany": {
+    "status": "quote",
+    "statusNote": "Doka says the robot is initially available as a rental product after bauma 2025 and invites site tests through a contact form. Doka's German site says it has more than 150 sales and logistics locations, 14 of them in Germany, and the DokaXdek reference list names projects in Munich and Augsburg; no price or rental rate is published.",
+    "sourceIds": [
+      "s1",
+      "s2",
+      "s3"
+    ],
+    "priceEur": null,
+    "priceOther": null,
+    "leadTime": null,
+    "sellers": [
+      {
+        "name": "Doka Germany (sales and logistics locations)",
+        "country": "DE",
+        "role": "manufacturer",
+        "productUrl": "https://www.doka.com/en/system-groups/doka-floor-systems/panel-floor-formwork/dokaxdek/dokaxbot-lift/index",
+        "contactUrl": "https://www.doka.com/de/",
+        "email": null,
+        "phone": null,
+        "priceEur": null,
+        "priceBasis": null,
+        "sourceId": "s3",
+        "note": "Rental on request; the product page has an enquiry form and offers to test the robot at your construction site. The legal name of the German sales company was not checked."
+      }
+    ],
+    "checkedAt": "2026-11-19"
+  },
+  "specs": [
+    {
+      "key": "working_height_m",
+      "label": "Working height",
+      "value": 5.7,
+      "unit": "m",
+      "conditions": "up to; maker",
+      "sourceId": "s1",
+      "quote": "With a working height of up to 5.7 metres"
+    },
+    {
+      "key": "operation",
+      "label": "Operation",
+      "value": "remote operation from the ground; tablet for parameters; RFID card access",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "enables remote operation from a safe distance"
+    },
+    {
+      "key": "floor_compensation",
+      "label": "Floor unevenness",
+      "value": "compensates floor deviations; door-entry capable",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "Compensates floor deviations"
+    },
+    {
+      "key": "positioning",
+      "label": "Positioning",
+      "value": "automatic height adjustment and sensor-supported fine positioning",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "automatic height adjustment and sensor-supported fine positioning"
+    }
+  ],
+  "capabilities": {
+    "legs": false,
+    "wheels": true,
+    "tracks": false,
+    "levelFloors": true,
+    "roughGround": false,
+    "stairs": null,
+    "outdoor": null,
+    "arms": 0,
+    "hands": "none",
+    "handsIncluded": null,
+    "armPayloadKg": null,
+    "carryPayloadKg": null,
+    "runtimeH": null,
+    "ipRating": null,
+    "sdk": null,
+    "sourceIds": [
+      "s1",
+      "s2"
+    ],
+    "notes": [
+      "Wheels is an assumption from the maker's 'quick traversing to the next position' and 'door-entry capable'; the running gear is not described.",
+      "It works on the slab itself and compensates floor deviations; rough ground is set false because it is a slab-level machine.",
+      "Handles DokaXdek panels with their floor props; it is a lifting machine, not a free arm, so arms are 0.",
+      "Doka calls it semi-automated: an operator drives and releases it from the ground."
+    ]
+  },
+  "images": [],
+  "evidence": [
+    {
+      "taskIds": [
+        "site_concrete/slab-formwork"
+      ],
+      "task": "Positions DokaXdek slab formwork panels with floor props in the support heads from the ground, up to 5.7 m high",
+      "stage": "claim",
+      "where": null,
+      "date": "2025-04",
+      "sourceId": "s2",
+      "note": "Doka: 'has already proven its value on test sites'; the maker's page shows it in action on a construction site. No project is named for the robot itself. Shown as a claim because no project or site is named."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.doka.com/en/system-groups/doka-floor-systems/panel-floor-formwork/dokaxdek/dokaxbot-lift/index",
+      "title": "DokaXbot Lift",
+      "publisher": "Doka",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.doka.com/ea/news/press/bauma_Vorschau_2025_-_Smart_Construction",
+      "title": "How robots are revolutionising formwork assembly",
+      "publisher": "Doka",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.doka.com/de/",
+      "title": "Doka Deutschland: Schalungen und Gerüste",
+      "publisher": "Doka",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    }
+  ],
+  "openQuestions": [
+    "No rental rate or price is published.",
+    "Running gear, drive power, battery runtime and load capacity are not stated.",
+    "The product page and press text do not name a site where the robot itself worked."
+  ],
+  "checkedAt": "2026-11-19"
+}

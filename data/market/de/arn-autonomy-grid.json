@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "id": "arn-autonomy-grid",
+  "maker": "Arn Autonomy (formerly Spacer Robotics)",
+  "makerCountry": "US",
+  "model": "GRID",
+  "variant": null,
+  "name": "Arn Autonomy GRID",
+  "robotType": "specialised",
+  "specialisedFor": [
+    "rebar_tying",
+    "site_concrete/rebar-tying-slabs"
+  ],
+  "officialUrl": "https://spacerrobotics.ai/grid",
+  "summary": "Small self-driving robot that maps a rebar mat, plans its own route and ties the bar crossings while an operator supervises. Made by a San Francisco start-up and taken on pre-order in the United States.",
+  "launched": "2025-09",
+  "lifecycle": "preorder",
+  "germany": {
+    "status": "not_sold",
+    "statusNote": "The maker is based in the United States and its page offers pre-order, buy or lease through its own sales team, with a 20% launch discount. No German or EU distributor, CE information or euro price was found.",
+    "sourceIds": [
+      "s1"
+    ],
+    "priceEur": null,
+    "priceOther": null,
+    "leadTime": null,
+    "sellers": [],
+    "checkedAt": "2026-11-19"
+  },
+  "specs": [
+    {
+      "key": "ties_per_shift",
+      "label": "Ties per shift",
+      "value": 5000,
+      "unit": "ties",
+      "conditions": "per 8-hour shift (maker figure)",
+      "sourceId": "s1",
+      "quote": "5000tiesPer 8-hour shift"
+    },
+    {
+      "key": "runtime_h",
+      "label": "Runtime",
+      "value": "14+",
+      "unit": "h",
+      "conditions": "with swappable battery packs (maker)",
+      "sourceId": "s1",
+      "quote": "14+hoursRuntime with swappable battery packs"
+    },
+    {
+      "key": "weight_lb",
+      "label": "Weight",
+      "value": 90,
+      "unit": "lb",
+      "conditions": "maker: optimized for OSHA requirements",
+      "sourceId": "s1",
+      "quote": "90lbsWeight, optimized for OSHA requirements"
+    },
+    {
+      "key": "dimensions_ft",
+      "label": "Size (L x W x H)",
+      "value": "3 x 2 x 2.5",
+      "unit": "ft",
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "3 x 2 x 2.5ftLength x width x height robot dimensions"
+    },
+    {
+      "key": "navigation",
+      "label": "Navigation",
+      "value": "SLAM and LiDAR sensor fusion with an RGB camera; maps the mat on the first pass",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s2",
+      "quote": "integrating advanced technologies such as sensor fusion, SLAM, and LiDAR"
+    }
+  ],
+  "capabilities": {
+    "legs": false,
+    "wheels": false,
+    "tracks": false,
+    "levelFloors": false,
+    "roughGround": true,
+    "stairs": null,
+    "outdoor": true,
+    "arms": 0,
+    "hands": "tool",
+    "handsIncluded": true,
+    "armPayloadKg": null,
+    "carryPayloadKg": null,
+    "runtimeH": 14,
+    "ipRating": null,
+    "sdk": null,
+    "sourceIds": [
+      "s1",
+      "s2"
+    ],
+    "notes": [
+      "The maker does not describe the running gear, so legs, wheels and tracks are all left false; the pictures show a low box-shaped machine on the rebar mat.",
+      "Described as operator-controlled: it ties on its own while an operator supervises.",
+      "Safety: perimeter awareness, auto-stop and remote e-stop (maker).",
+      "Maker says it works in rain, snow and extreme heat and navigates uneven terrain.",
+      "Runtime is the maker's 14+ hours with swappable battery packs; the press release says 14 hours on one charge from a standard outlet."
+    ]
+  },
+  "images": [
+    {
+      "url": "https://cdn.prod.website-files.com/6aabec426d2b3025c1f525c0/6ad1464bafd7a6b1c92353ee_grid-rebar-tying-robot-rebar-mat-crew.avif",
+      "pageUrl": "https://spacerrobotics.ai/",
+      "credit": "Arn Autonomy",
+      "alt": "GRID rebar tying robot working on a rebar mat beside crew members on a construction site",
+      "kind": "in_use"
+    }
+  ],
+  "evidence": [
+    {
+      "taskIds": [
+        "site_concrete/rebar-tying-slabs"
+      ],
+      "task": "Ties rebar crossings on a rebar mat by itself while an operator supervises",
+      "stage": "claim",
+      "where": null,
+      "date": "2025-09",
+      "sourceId": "s2",
+      "note": "Maker press release at the public debut; no customer site is named."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://spacerrobotics.ai/grid",
+      "title": "GRID - Autonomous Rebar Tying Robot",
+      "publisher": "Arn Autonomy",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    },
+    {
+      "id": "s2",
+      "url": "https://theaiinsider.tech/2025/09/15/spacer-robotics-unveils-grid-the-first-step-toward-autonomous-construction-on-the-moon/",
+      "title": "Spacer Robotics Unveils GRID: The First Step Toward Autonomous Construction on the Moon",
+      "publisher": "The AI Insider (maker press release)",
+      "kind": "press",
+      "checkedAt": "2026-11-19"
+    }
+  ],
+  "openQuestions": [
+    "Price: the page says to contact sales for the pre-order and 20% off; no list price is shown.",
+    "No customer jobsite is named; the first deployments are not documented.",
+    "Running gear (wheels or tracks) and tie wire type are not described."
+  ],
+  "checkedAt": "2026-11-19"
+}

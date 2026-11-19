@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "id": "cscec-flexible-steel-welding-robot",
+  "maker": "China State Construction Engineering Corporation (CSCEC)",
+  "makerCountry": "CN",
+  "model": "Flexible on-site steel-structure welding robot",
+  "variant": null,
+  "name": "CSCEC flexible on-site steel-structure welding robot",
+  "robotType": "specialised",
+  "specialisedFor": [
+    "welding",
+    "on-site welding of steel column joints"
+  ],
+  "officialUrl": "https://english.cscec.com/CompanyNews/CorporateNews/202608/3957415.html",
+  "summary": "Welding robot shown by the Chinese contractor CSCEC at the 2026 World Robot Conference. It is designed for on-site butt welds on box columns and round tube columns and recommends welding parameters itself.",
+  "launched": "2026-08",
+  "lifecycle": "prototype",
+  "germany": {
+    "status": "not_sold",
+    "statusNote": "Shown by the contractor at a Beijing trade event; the news item talks of 'customers' for CSCEC's smart equipment but gives no model number, price or seller, and no German or EU sales route was found.",
+    "sourceIds": [
+      "s1"
+    ],
+    "priceEur": null,
+    "priceOther": null,
+    "leadTime": null,
+    "sellers": [],
+    "checkedAt": "2026-11-19"
+  },
+  "specs": [
+    {
+      "key": "welding_efficiency_gain_pct",
+      "label": "Welding efficiency gain",
+      "value": 30,
+      "unit": "%",
+      "conditions": "more than; maker claim, against its own baseline",
+      "sourceId": "s1",
+      "quote": "increasing welding efficiency by more than 30 percent"
+    },
+    {
+      "key": "joint_types",
+      "label": "Joints",
+      "value": "butt welds on box columns and round tube columns",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "handles butt welds on components such as box columns and round tube columns"
+    },
+    {
+      "key": "parameters",
+      "label": "Welding parameters",
+      "value": "automatic recommendation of optimal welding parameters",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "It automatically recommends optimal welding parameters"
+    }
+  ],
+  "capabilities": {
+    "legs": false,
+    "wheels": false,
+    "tracks": false,
+    "levelFloors": false,
+    "roughGround": null,
+    "stairs": null,
+    "outdoor": null,
+    "arms": 1,
+    "hands": "tool",
+    "handsIncluded": true,
+    "armPayloadKg": null,
+    "carryPayloadKg": null,
+    "runtimeH": null,
+    "ipRating": null,
+    "sdk": null,
+    "sourceIds": [
+      "s1"
+    ],
+    "notes": [
+      "The news item gives no hardware description (carrier, rail or crawler, arm count); legs, wheels and tracks are left false and arms 1 with a welding torch is the minimum implied by 'welding robot'.",
+      "CSCEC separately shows a compact collaborative welding robot (start and end points set by the worker, used in steel structures, shipbuilding and nuclear piping); it is not recorded here because it is not described as site-mobile."
+    ]
+  },
+  "images": [],
+  "evidence": [
+    {
+      "taskIds": [],
+      "task": "Welds butt joints of box columns and round tube columns on site in steel-structure construction",
+      "stage": "demo",
+      "where": "World Robot Conference, Beijing, China",
+      "date": "2026-08",
+      "sourceId": "s1",
+      "note": "Exhibited by CSCEC; no building project is named."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://english.cscec.com/CompanyNews/CorporateNews/202608/3957415.html",
+      "title": "CSCEC showcases smart products at 2026 World Robot Conference",
+      "publisher": "CSCEC",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    }
+  ],
+  "openQuestions": [
+    "No model name, picture, size, weld thickness range, price or buyer is given.",
+    "Whether it is sold to other firms or only used by CSCEC is not stated; lifecycle 'prototype' is the closest value."
+  ],
+  "checkedAt": "2026-11-19"
+}

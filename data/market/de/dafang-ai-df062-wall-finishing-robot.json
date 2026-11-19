@@ -1,0 +1,149 @@
+{
+ "schemaVersion": 1,
+ "id": "dafang-ai-df062-wall-finishing-robot",
+ "maker": "DaFang AI (Shenzhen DaFang Intelligent Technology)",
+ "makerCountry": "CN",
+ "model": "DF062",
+ "variant": "Wall Finishing Robot (6 m)",
+ "name": "DaFang AI DF062 wall finishing robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "drywall_finishing",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://www.dafang.ai/",
+ "summary": "Wheeled four-in-one wall robot that grinds, plasters or skims, sands and paints interior walls up to 6 m high, mapping the room with lidar and run from an Android app. On the Hong Kong CITF pre-approved list as PA23-051.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. DaFang AI (Singapore, Hong Kong and a factory in Dongguan) takes enquiries at marketing@dafang.ai; its site shows customer reviews from Italy and Russia.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_height_m",
+   "label": "Maximum construction height",
+   "value": 6,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The maximum construction height is 6 meters."
+  },
+  {
+   "key": "functions",
+   "label": "Functions",
+   "value": "Grinding, plastering, skimming, painting and sanding",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "The DF062 wall finishing robot combines functions of grinding, plastering, skimming, painting and sanding."
+  },
+  {
+   "key": "battery_runtime_h",
+   "label": "Runtime per battery",
+   "value": 5,
+   "unit": "h",
+   "conditions": "about",
+   "sourceId": "s3",
+   "quote": "It runs about 5 hours per battery"
+  },
+  {
+   "key": "position_accuracy_mm",
+   "label": "Chassis positioning accuracy",
+   "value": 10,
+   "unit": "mm",
+   "conditions": "plus/minus; vendor spec",
+   "sourceId": "s3",
+   "quote": "±10 mm"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "Android phone or tablet app",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s3",
+   "quote": "controlled from an Android phone or tablet"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 5,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s3"
+  ],
+  "notes": [
+   "Works the wall from a module on a lift and arm; the crew swaps the module for each process.",
+   "Skimming and sanding stop at 5.25 m according to Robots in Construction.",
+   "Uses lidar and IMU SLAM to map the room."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Grinds, skims, sands and sprays walls on building projects",
+   "stage": "deployment",
+   "where": "Yangjiang, China",
+   "date": "2023-07",
+   "sourceId": "s3",
+   "note": "Used at Yangjiang Country Garden by July 2023; Robots in Construction counts 7 deployments. The maker also lists cases in Shenzhen, Zhuhai and Dongguan."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://citac.cic.hk/en-hk/exhibitions/exhibits/525",
+   "title": "DF062 Wall Finishing Robot (CITF code PA23-051)",
+   "publisher": "Construction Innovation and Technology Application Centre (CITAC), Hong Kong",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.dafang.ai/public/product.html",
+   "title": "Products: wall finishing robots",
+   "publisher": "DaFang AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.robotsinconstruction.com/robots/dafang-df062wall/",
+   "title": "DF062 by DaFang AI",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price on request; not published.",
+  "No EU or German seller found."
+ ],
+ "checkedAt": "2026-11-18"
+}

@@ -1,0 +1,171 @@
+{
+ "schemaVersion": 1,
+ "id": "clapa-floor-master-130-cable",
+ "maker": "Cłapa",
+ "makerCountry": "PL",
+ "model": "Floor Master",
+ "variant": "Typ 130 cable powered",
+ "name": "Cłapa Floor Master Typ 130 (cable powered)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "concrete_finishing",
+  "site_screed/screed-levelling"
+ ],
+ "officialUrl": "https://clapa.pl",
+ "summary": "Remote-controlled floor robot from Poland that spreads, compacts and levels cement-sand screed and concrete with laser levelling to ±1 mm per 20 m. The cable version runs on mains power without a charge limit.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Direct from the Polish maker (Wieruszów); the page offers \"Zapytaj o ofertę\" (ask for a quote) and shows no price.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://clapa.pl",
+    "contactUrl": "https://clapa.pl",
+    "email": "contact@clapa.pl",
+    "phone": "+48 665 065 904",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Sold directly by the maker, no intermediaries per its page; price on request.",
+    "name": "Cłapa (Floor Master)",
+    "country": "PL",
+    "role": "manufacturer",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "output_m2_per_h",
+   "label": "Output",
+   "value": 80,
+   "unit": "m²/h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "80 m²/h"
+  },
+  {
+   "key": "laser_accuracy",
+   "label": "Laser levelling accuracy",
+   "value": "±1 mm per 20 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "±1 mm / 20 m"
+  },
+  {
+   "key": "working_width_mm",
+   "label": "Working width",
+   "value": "800 / 1300",
+   "unit": "mm",
+   "conditions": "two options",
+   "sourceId": "s1",
+   "quote": "800 / 1300 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Machine weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "65 kg"
+  },
+  {
+   "key": "power",
+   "label": "Power supply (cable version)",
+   "value": "110–230 V AC mains, 24 V DC working voltage",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "110–230V AC"
+  },
+  {
+   "key": "runtime",
+   "label": "Working time (cable version)",
+   "value": "Unlimited (mains)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Nielimitowany(sieć)"
+  },
+  {
+   "key": "dimensions_mm",
+   "label": "Length x width x height",
+   "value": "840 x 780 x 730",
+   "unit": "mm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "840 mm"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Remote-control operation; the operator stands next to the machine.",
+   "Maker says it may be used outdoors only with suitable protection of the electronics.",
+   "Drive type is not stated on the page read; wheels are assumed because the gallery shows it driving through doors."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_screed/screed-levelling"
+   ],
+   "task": "Spreads, compacts and levels cement-sand screed and concrete in houses and warehouse halls",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker gallery with captions such as single-family house and warehouse construction; the maker says 570+ robots were produced and sold in 30+ countries. Shown as a claim because no project or site is named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clapa.pl",
+   "title": "Floor Master Cłapa (Floor Master Typ 130, product and contact page)",
+   "publisher": "Cłapa",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.robotsinconstruction.com/robots/?job=flooring-installation",
+   "title": "Robots in Construction: flooring installation robots (listing)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price not published.",
+  "Drive type, IP rating and screed types beyond cement-sand, semi-dry and some concrete mixes are not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

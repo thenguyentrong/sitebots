@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "id": "human-friendly-robotics-wattson",
+  "maker": "Human Friendly Robotics",
+  "makerCountry": "US",
+  "model": "Wattson",
+  "variant": null,
+  "name": "Human Friendly Robotics Wattson",
+  "robotType": "specialised",
+  "specialisedFor": [
+    "site_electrical/cable-pulling"
+  ],
+  "officialUrl": "https://www.humanfriendly.bot/wattson",
+  "summary": "Two-robot system, a feeder and a puller, that runs conduit and pulls cable from device box to panel on data-centre building sites. The New Jersey maker also builds the Tyler flooring robot; Wattson is in pilots.",
+  "launched": null,
+  "lifecycle": "pilot_only",
+  "germany": {
+    "status": "not_sold",
+    "statusNote": "In pilots in the United States; the maker's page only offers early updates by email. No German or EU sales route, price or CE information was found.",
+    "sourceIds": [
+      "s1"
+    ],
+    "priceEur": null,
+    "priceOther": null,
+    "leadTime": null,
+    "sellers": [],
+    "checkedAt": "2026-11-19"
+  },
+  "specs": [
+    {
+      "key": "cable_pull_speed_target_ft_min",
+      "label": "Cable pull speed (target)",
+      "value": 18,
+      "unit": "ft/min",
+      "conditions": "design target, not yet measured in pilots (maker)",
+      "sourceId": "s1",
+      "quote": "Cable pull · target18 ft/min"
+    },
+    {
+      "key": "crew_target",
+      "label": "Crew (target)",
+      "value": "1 operator + 2 robots",
+      "unit": null,
+      "conditions": "design target (maker)",
+      "sourceId": "s1",
+      "quote": "Crew · target1 operator + 2 robots"
+    },
+    {
+      "key": "replaces_target",
+      "label": "Replaces (target)",
+      "value": "a 6-person hand pull",
+      "unit": null,
+      "conditions": "design target (maker)",
+      "sourceId": "s1",
+      "quote": "Replaces · targetA 6-person hand pull"
+    },
+    {
+      "key": "system",
+      "label": "System",
+      "value": "feeder + puller, conduit and cable from device box to panel",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "Wattson is a two-robot system — a feeder and a puller that work together to run conduit and pull cable from device box to panel"
+    }
+  ],
+  "capabilities": {
+    "legs": false,
+    "wheels": false,
+    "tracks": false,
+    "levelFloors": true,
+    "roughGround": null,
+    "stairs": null,
+    "outdoor": null,
+    "arms": 0,
+    "hands": "none",
+    "handsIncluded": null,
+    "armPayloadKg": null,
+    "carryPayloadKg": null,
+    "runtimeH": null,
+    "ipRating": null,
+    "sdk": null,
+    "sourceIds": [
+      "s1"
+    ],
+    "notes": [
+      "The page gives no hardware details (running gear, arms, battery); legs, wheels and tracks are left false because nothing is sourced.",
+      "Maker: full spec numbers will be published when measured; the figures above are targets.",
+      "Aimed at data-centre buildouts; it shares a learning model with the Tyler flooring robot."
+    ]
+  },
+  "images": [],
+  "evidence": [
+    {
+      "taskIds": [
+        "site_electrical/cable-pulling"
+      ],
+      "task": "Runs conduit and pulls cable from device box to panel on data-centre building sites",
+      "stage": "claim",
+      "where": null,
+      "date": "2026",
+      "sourceId": "s1",
+      "note": "Maker says it is in pilots and 'validated on real sites'; no site, customer or result is named and the speed figure is a target. Shown as a claim because no project or site is named."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.humanfriendly.bot/wattson",
+      "title": "Wattson - wire-pulling for data centers",
+      "publisher": "Human Friendly Robotics",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    }
+  ],
+  "openQuestions": [
+    "No measured specs yet: the maker says numbers ship when measured.",
+    "No pilot site, customer or price is named.",
+    "Running gear, payload and cable size range are not described."
+  ],
+  "checkedAt": "2026-11-19"
+}

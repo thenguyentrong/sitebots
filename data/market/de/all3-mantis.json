@@ -1,0 +1,131 @@
+{
+ "schemaVersion": 1,
+ "specialisedFor": [],
+ "variant": null,
+ "launched": null,
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_timber_frame/prefab-element-setting"
+   ],
+   "task": "Installs and fastens cross-laminated timber panels on site",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  },
+  {
+   "taskIds": [
+    "site_timber_frame/structural-screw-connections"
+   ],
+   "task": "Changes tools and drives screws",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "Price on request per the database.",
+  "Maker country GB taken from the \"Innovate UK project\" note in the database.",
+  "No video-proven site work seen."
+ ],
+ "checkedAt": "2026-11-18",
+ "id": "all3-mantis",
+ "maker": "All3",
+ "makerCountry": "GB",
+ "model": "Mantis",
+ "name": "All3 Mantis (four-legged construction robot)",
+ "robotType": "quadruped",
+ "officialUrl": "https://all3.com/mantis",
+ "summary": "A four-legged, electric construction robot with a telescopic arm and swappable tools that installs and fastens building elements on All3 projects.",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The database states it is not sold, leased or hired on its own and works only on buildings from All3's own design and factory; no German or EU route found.",
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Payload",
+   "value": "100+",
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "100kg+ payload and 4m reach"
+  },
+  {
+   "key": "reach_m",
+   "label": "Reach",
+   "value": 4,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "100kg+ payload and 4m reach"
+  },
+  {
+   "key": "power",
+   "label": "Power",
+   "value": "fully electric",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Fully electric and modular"
+  }
+ ],
+ "capabilities": {
+  "legs": true,
+  "wheels": false,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": true,
+  "outdoor": true,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": 100,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Four-legged; changes leg stance to pass doors or widen on uneven ground and stairs.",
+   "Database: \"Only one robot operates today.\""
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://all3.com/mantis",
+   "title": "Mantis",
+   "publisher": "All3",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.robotsinconstruction.com/robots/all3-mantis/",
+   "title": "Mantis",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ]
+}

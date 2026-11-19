@@ -1,0 +1,123 @@
+{
+ "schemaVersion": 1,
+ "specialisedFor": [
+  "excavation"
+ ],
+ "variant": "for Cat and Volvo articulated haul trucks",
+ "launched": null,
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Autonomous haul truck cycles on circular hauls",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker says customers \"grow to autonomous articulated trucks\"; no site named."
+  }
+ ],
+ "openQuestions": [
+  "No German or EU dealer found.",
+  "No named customer site for trucks on the pages read."
+ ],
+ "checkedAt": "2026-11-18",
+ "id": "bluelight-machines-truck-kit",
+ "maker": "Bluelight Machines",
+ "makerCountry": "US",
+ "model": "Autopilot Truck Kit",
+ "name": "Bluelight Autopilot Truck Kit (autonomy retrofit)",
+ "robotType": "specialised",
+ "officialUrl": "https://bluelightmachines.com/order/",
+ "summary": "A bolt-on autonomy kit for articulated dump trucks that drives repeat haul circuits on earthworks sites with a driver-free cycle.",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The order page offers installation \"anywhere in the lower 48 US States\" and names dealers in North America, South America, Asia and Australia; no German or EU route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 19000,
+   "currency": "USD",
+   "market": "Bluelight order page, 3-month rental including hardware, subscriptions and RTK, Android tablet included",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "gps",
+   "label": "Positioning",
+   "value": "Dual-band, dual-antenna RTK, +-2 cm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dual-band, dual-antenna RTK precision ±2cm"
+  },
+  {
+   "key": "best_use",
+   "label": "Best use case",
+   "value": "Circular hauls with type-writer dumps",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Works best on circular hauls with type-writer dumps."
+  },
+  {
+   "key": "compat_trucks",
+   "label": "Compatible trucks",
+   "value": "Cat 730, 740GC, 745; Volvo A25G, A35G, A40G, A45G",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "Articulated Haul Truck Volvo A45G"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "A retrofit kit on an articulated dump truck, not a separate robot.",
+   "Truck autonomy is the follow-on step after rollers according to the maker FAQ."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://bluelightmachines.com/order/",
+   "title": "Bluelight Autonomy you can buy",
+   "publisher": "Bluelight Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bluelightmachines.com/compatibility/",
+   "title": "Compatibility",
+   "publisher": "Bluelight Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ]
+}

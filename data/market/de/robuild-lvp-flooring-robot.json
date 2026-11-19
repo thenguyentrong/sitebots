@@ -1,0 +1,101 @@
+{
+ "schemaVersion": 1,
+ "id": "robuild-lvp-flooring-robot",
+ "maker": "RoBuild",
+ "makerCountry": "US",
+ "model": "LVP flooring robot",
+ "variant": null,
+ "name": "RoBuild LVP flooring robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "site_flooring/click-vinyl-laying"
+ ],
+ "officialUrl": null,
+ "summary": "Mobile robot arm with a multi-point vacuum gripper that lifts full-size LVP planks and lays them by vision alignment in indoor rooms, including occupied ones. Offered through a pilot program.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Pilot program for US contractors only; no German or EU route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "gripper",
+   "label": "Gripper",
+   "value": "Multi-point vacuum gripper on a mobile arm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "lifting each full-size plank with a multi-point vacuum gripper on a mobile arm"
+  },
+  {
+   "key": "availability",
+   "label": "Availability",
+   "value": "Pilot program for contractors with repeat LVP installs",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "RoBuild runs it through a pilot program for contractors"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "gripper",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Places one plank at a time; vision aligns each plank against the room geometry.",
+   "Drive type is not stated on the page read; wheels assumed for a mobile base."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_flooring/click-vinyl-laying"
+   ],
+   "task": "Laid new LVP planks over the existing floor in an occupied room",
+   "stage": "pilot",
+   "where": "New Jersey, USA",
+   "date": null,
+   "sourceId": "s1",
+   "note": "One documented pilot deployment."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotsinconstruction.com/robots/robuild/",
+   "title": "RoBuild (Robots in Construction)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Maker website not read; weight, speed and price are unknown."
+ ],
+ "checkedAt": "2026-11-18"
+}

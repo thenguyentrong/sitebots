@@ -1,0 +1,184 @@
+{
+ "schemaVersion": 1,
+ "id": "csc-robo-drillcorpio-d3",
+ "maker": "CSC Robotic Engineering Limited (CSC ROBO)",
+ "makerCountry": "HK",
+ "model": "Drillcorpio",
+ "variant": "Model D3",
+ "name": "CSC ROBO Drillcorpio D3 drilling and anchor robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_electrical/overhead-drilling-anchors"
+ ],
+ "officialUrl": "https://cscrobotic.com/",
+ "summary": "Automatic drilling and anchor installation robot for walls and ceilings with built-in dust vacuuming. Made in Hong Kong by CSC ROBO; the data below come from its Singapore partner page.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. CSC ROBO (Hong Kong Science Park) takes enquiries by email; a Singapore firm, Shiftectonics, presents the D3 on its own site.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "drill_diameter_mm",
+   "label": "Drill diameter",
+   "value": "5 - 20",
+   "unit": "mm",
+   "conditions": "maker footnote marks the range with an asterisk",
+   "sourceId": "s1",
+   "quote": "Ø 5 - 20mm*"
+  },
+  {
+   "key": "drill_depth_mm",
+   "label": "Drill depth",
+   "value": 130,
+   "unit": "mm",
+   "conditions": "at most",
+   "sourceId": "s1",
+   "quote": "≤ 130mm"
+  },
+  {
+   "key": "accuracy_mm",
+   "label": "Positioning accuracy",
+   "value": 3,
+   "unit": "mm",
+   "conditions": "plus/minus",
+   "sourceId": "s1",
+   "quote": "± 3mm*"
+  },
+  {
+   "key": "working_time_h",
+   "label": "Working time",
+   "value": 8,
+   "unit": "h",
+   "conditions": "up to",
+   "sourceId": "s1",
+   "quote": "Up to 8 Hours of Working Time*"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Robot weight",
+   "value": 225,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "225kg*"
+  },
+  {
+   "key": "size",
+   "label": "Robot size",
+   "value": "1.1 m x 0.59 m x 1.72 m (L x W x H)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1.1m(L) x 0.59m(W) x 1.72m(H)"
+  },
+  {
+   "key": "anchor_sizes",
+   "label": "Anchor sizes (flush and sleeve)",
+   "value": "M8, M10, M12, M16",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "M8, M10, M12, M16*"
+  },
+  {
+   "key": "certification",
+   "label": "Certification",
+   "value": "CE",
+   "unit": null,
+   "conditions": "listed on a Korean B2B catalogue page",
+   "sourceId": "s3",
+   "quote": "CE Certification"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s4"
+  ],
+  "notes": [
+   "Arm = drilling unit that also sets flush or sleeve anchors; it vacuums dust while it drills.",
+   "Drive type is not stated on the pages read; wheels are assumed from a floor-driving robot of this size.",
+   "Working time is a maker figure marked with an asterisk."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Drills holes and installs anchors in ceilings and walls with dust extraction",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker/partner description; Robots in Construction lists it as a scissor-lift-mounted overhead drilling and anchoring unit."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.shiftectonics.com/drillcorpio/",
+   "title": "Drillcorpio Model D3 (specifications)",
+   "publisher": "Shiftectonics",
+   "kind": "seller",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://cscrobotic.com/",
+   "title": "CSC Robotic Engineering: products and contact",
+   "publisher": "CSC Robotic Engineering Limited",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://linkonbiz.com/en/product/11017",
+   "title": "Drillcorpio (Model D3) product page",
+   "publisher": "Linkonbiz (Messe Esang)",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.robotsinconstruction.com/robots/?job=mep-installation",
+   "title": "Robots in Construction: MEP installation robots (listing)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price not published (a Hong Kong subsidy price list exists but could not be read: PDF).",
+  "Drive type and anchor-setting method details are not stated on the pages read.",
+  "No EU or German seller found."
+ ],
+ "checkedAt": "2026-11-18"
+}

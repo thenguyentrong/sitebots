@@ -1,0 +1,180 @@
+{
+ "schemaVersion": 1,
+ "id": "clapa-floor-master-130-battery",
+ "maker": "Cłapa",
+ "makerCountry": "PL",
+ "model": "Floor Master",
+ "variant": "Typ 130 battery powered",
+ "name": "Cłapa Floor Master Typ 130 (battery powered)",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "concrete_finishing",
+  "site_screed/screed-levelling"
+ ],
+ "officialUrl": "https://clapa.pl",
+ "summary": "Battery version of the Polish Floor Master screed robot: spreads, compacts and levels cement-sand screed and concrete with laser levelling to ±1 mm per 20 m, for sites without mains power.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Direct from the Polish maker (Wieruszów); the page offers \"Zapytaj o ofertę\" (ask for a quote) and shows no price. Lithium batteries may need extra transport planning for export.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://clapa.pl",
+    "contactUrl": "https://clapa.pl",
+    "email": "contact@clapa.pl",
+    "phone": "+48 665 065 904",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Sold directly by the maker; price on request.",
+    "name": "Cłapa (Floor Master)",
+    "country": "PL",
+    "role": "manufacturer",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "output_m2_per_h",
+   "label": "Output",
+   "value": 80,
+   "unit": "m²/h",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "80 m²/h"
+  },
+  {
+   "key": "laser_accuracy",
+   "label": "Laser levelling accuracy",
+   "value": "±1 mm per 20 m",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "±1 mm / 20 m"
+  },
+  {
+   "key": "working_width_mm",
+   "label": "Working width",
+   "value": "800 / 1300",
+   "unit": "mm",
+   "conditions": "two options",
+   "sourceId": "s1",
+   "quote": "800 / 1300 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Machine weight",
+   "value": 65,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "65 kg"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "24 V Li-ion",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Akumulator 24V Li-ion"
+  },
+  {
+   "key": "runtime",
+   "label": "Continuous working time",
+   "value": "6–7 h",
+   "unit": null,
+   "conditions": "intermittent use up to 8 h",
+   "sourceId": "s1",
+   "quote": "6–7 h ciągłe"
+  },
+  {
+   "key": "range_per_charge",
+   "label": "Range per charge",
+   "value": "~300",
+   "unit": "m²",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "~300 m²"
+  },
+  {
+   "key": "charging_time",
+   "label": "Charging time",
+   "value": "2–3 hours",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "2–3 godziny"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Runtime 6–7 h continuous (6 h entered, the lower bound).",
+   "Remote-control operation.",
+   "Drive type is not stated on the page read; wheels are assumed because the gallery shows it driving through doors."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_screed/screed-levelling"
+   ],
+   "task": "Spreads, compacts and levels cement-sand screed and concrete in houses and warehouse halls",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Maker gallery with captions such as single-family house and warehouse construction; the maker says 570+ robots were produced and sold in 30+ countries. Shown as a claim because no project or site is named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://clapa.pl",
+   "title": "Floor Master Cłapa (Floor Master Typ 130, product and contact page)",
+   "publisher": "Cłapa",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.robotsinconstruction.com/robots/?job=flooring-installation",
+   "title": "Robots in Construction: flooring installation robots (listing)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price not published.",
+  "IP rating and drive type are not stated."
+ ],
+ "checkedAt": "2026-11-18"
+}

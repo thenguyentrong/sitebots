@@ -1,0 +1,159 @@
+{
+ "schemaVersion": 1,
+ "id": "csc-robo-drillcorpio-df",
+ "maker": "CSC Robotic Engineering Limited (CSC ROBO)",
+ "makerCountry": "HK",
+ "model": "Drillcorpio",
+ "variant": "Model Df",
+ "name": "CSC ROBO Drillcorpio Df self-navigating drilling robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "drilling_anchoring",
+  "site_electrical/overhead-drilling-anchors"
+ ],
+ "officialUrl": "https://cscrobotic.com/",
+ "summary": "Self-navigating drilling and anchor-installing robot for ceilings, floors and walls that drills holes from a CAD/BIM drilling plan and avoids rebar. Made in Hong Kong; a UK contractor announced a purchase for 2026.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. CSC ROBO lists an enquiry address in Hong Kong; a UK firm (Beton Bauen) bought one for 2026.",
+  "sourceIds": [
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "navigation",
+   "label": "Navigation",
+   "value": "Self-navigating with plan import",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "After importing the CAD/BIM drawing to the tablet, the construction robot can drill the holes autonomously according to the drilling plan."
+  },
+  {
+   "key": "safety_functions",
+   "label": "Safety and avoidance",
+   "value": "Collision avoidance and rebar evasion",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "It included a collision avoidance system and rebar evasion function."
+  },
+  {
+   "key": "operation",
+   "label": "Operation",
+   "value": "One-man operation, Wi-Fi remote and Android tablet",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "require less labour (one-man operation)"
+  },
+  {
+   "key": "dust",
+   "label": "Dust control",
+   "value": "Built-in dust control mechanism",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s2",
+   "quote": "The machine also incorporate a dust control mechanism"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 1,
+  "hands": "tool",
+  "handsIncluded": true,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1",
+   "s2"
+  ],
+  "notes": [
+   "Arm = drilling unit; the robot also installs anchors automatically.",
+   "Drive type is not stated on the pages read; wheels are assumed for a floor-driving robot.",
+   "Drills floors, ceilings and walls."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Drills holes and installs anchors autonomously from an imported drilling plan",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s2",
+   "note": "UK contractor Beton Bauen announced an investment of almost 250,000 GBP to buy a Df, expected in service by summer 2026."
+  },
+  {
+   "taskIds": [
+    "site_electrical/overhead-drilling-anchors"
+   ],
+   "task": "Overhead drilling and anchoring",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s4",
+   "note": "Robots in Construction lists 100 documented deployments across 4 companies; sites were not read. Shown as a claim because no project or site is named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://citac.cic.hk/en-hk/exhibitions/exhibits/466",
+   "title": "Drillcorpio (Model no. Df)",
+   "publisher": "Construction Innovation and Technology Application Centre (CITAC), Hong Kong",
+   "kind": "other",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.betonbauen.com/post/beton-bauen-invest-250k-in-automatic-drilling-and-anchor-installing-robot-technology",
+   "title": "Beton Bauen invest 250k in automatic drilling and anchor-installing robot technology",
+   "publisher": "Beton Bauen",
+   "kind": "customer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://cscrobotic.com/",
+   "title": "CSC Robotic Engineering: products and contact",
+   "publisher": "CSC Robotic Engineering Limited",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.robotsinconstruction.com/robots/?job=mep-installation",
+   "title": "Robots in Construction: MEP installation robots (listing)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Specifications (drill size, depth, weight, runtime) are not on the pages read.",
+  "Price not found.",
+  "No EU or German seller found."
+ ],
+ "checkedAt": "2026-11-18"
+}

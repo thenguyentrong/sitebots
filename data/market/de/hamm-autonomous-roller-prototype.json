@@ -1,0 +1,92 @@
+{
+ "schemaVersion": 1,
+ "specialisedFor": [
+  "site_roads_paving/asphalt-paving"
+ ],
+ "variant": "prototype",
+ "launched": null,
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_roads_paving/asphalt-paving"
+   ],
+   "task": "Driverless compaction run on closed test tracks, shadowing a simulated road paver",
+   "stage": "demo",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "Maker page not read; confirm on hamm.eu.",
+  "No price."
+ ],
+ "checkedAt": "2026-11-18",
+ "id": "hamm-autonomous-roller-prototype",
+ "maker": "Wirtgen Group (HAMM)",
+ "makerCountry": "DE",
+ "model": "Autonomous Roller",
+ "name": "HAMM Autonomous Roller (test-track prototype)",
+ "robotType": "specialised",
+ "officialUrl": null,
+ "summary": "A driverless compaction roller prototype that drives a programmed route positioned by the GNSS of the HCQ Navigator and can shadow a paver in a rolling train.",
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The database states it is a prototype used so far on closed test tracks and not for sale.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "operating_weight_kg",
+   "label": "Operating weight",
+   "value": 9000,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Operating weight9000 kg"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Single source only (database entry that summarises HAMM material)."
+  ],
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotsinconstruction.com/robots/wirtgen-autonomousroller/",
+   "title": "Autonomous Roller",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+{
+ "schemaVersion": 1,
+ "id": "trigonos-layro",
+ "maker": "Trigonos",
+ "makerCountry": "DE",
+ "model": "LAYRO",
+ "variant": null,
+ "name": "Trigonos LAYRO floor layout marking robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": null,
+ "summary": "Light 16 kg robot that drives to each layout point and marks points, lines, axes and ID labels on concrete floors, tracked by a total station or laser tracker. Used for halls and plant installation in Germany and Hungary.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No sales page read. Trigonos ran its own marking jobs in Germany (Rastatt, Sindelfingen) and supplied a second robot to a client metrology team in Debrecen, Hungary, but no seller route was found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "speed",
+   "label": "Marking speed (vendor)",
+   "value": "250 points per hour",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "250 points per hour"
+  },
+  {
+   "key": "accuracy_mm",
+   "label": "Point accuracy (adjustable)",
+   "value": "0.2 to 4",
+   "unit": "mm",
+   "conditions": "vendor",
+   "sourceId": "s1",
+   "quote": "0.2 to 4 mm"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Weight and footprint",
+   "value": "16 kg, 75 x 52 cm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "16 kg, with a 75 × 52 cm footprint"
+  },
+  {
+   "key": "battery",
+   "label": "Power",
+   "value": "Two 18 V batteries, hot-swappable",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Two 18V batteries, hot-swappable without stopping the marking run"
+  },
+  {
+   "key": "tilt",
+   "label": "Floor incline compensated",
+   "value": "Up to 1.5°",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "up to 1.5°"
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "Leica total station or API/Hexagon laser tracker",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "a Leica total station, or an API or Hexagon laser tracker"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Semi-autonomous: drives to each point and marks it; one operator sets up the measuring device and supervises.",
+   "Works offline; no cloud needed.",
+   "Also measures floor heights below 0.5 mm."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Marked more than 10,000 floor points over two weeks",
+   "stage": "deployment",
+   "where": "Rastatt, Germany",
+   "date": null,
+   "sourceId": "s1",
+   "note": "Trigonos own job, reported by Robots in Construction."
+  },
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Marked more than 5,000 floor points within a few days",
+   "stage": "deployment",
+   "where": "Sindelfingen, Germany",
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotsinconstruction.com/robots/trigonos-layro/",
+   "title": "LAYRO by Trigonos",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Maker website and company details were not found; maker country DE is inferred from the German project sites on the page read.",
+  "Price on request; no seller route found."
+ ],
+ "checkedAt": "2026-11-18"
+}

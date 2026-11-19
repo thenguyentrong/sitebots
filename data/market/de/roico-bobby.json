@@ -1,0 +1,122 @@
+{
+ "schemaVersion": 1,
+ "id": "roico-bobby",
+ "maker": "ROICO Solutions ApS",
+ "makerCountry": "DK",
+ "model": "Bobby",
+ "variant": null,
+ "name": "ROICO Bobby wall and ceiling painting robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": null,
+ "summary": "Lightweight painting robot from Denmark that sprays paint onto interior walls and ceilings up to 3.5 m high from the crew's own paint pump. A ROICO operator stays on site during use.",
+ "launched": null,
+ "lifecycle": "pilot_only",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "Danish company; the page read shows price on request and an on-site operator service model, but no contact route for Germany or the EU was found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "working_height_m",
+   "label": "Working height",
+   "value": 3.5,
+   "unit": "m",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "3.5 m (11.5 ft)"
+  },
+  {
+   "key": "speed_m2_per_h",
+   "label": "Spray speed (vendor)",
+   "value": 150,
+   "unit": "m²/h",
+   "conditions": "up to; vendor figure from the ROICO homepage",
+   "sourceId": "s1",
+   "quote": "up to 150 m² per hour"
+  },
+  {
+   "key": "setup_time",
+   "label": "Setup time",
+   "value": "About 5 to 10 minutes, no BIM or pre-scan",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "It sets up in 5 to 10 minutes with no BIM or pre-scan"
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "Mobile app",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "starts it from a mobile app"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Moves across the wall by itself; drive type and spray mechanism are not described on the page read.",
+   "Detects objects, people and no-paint zones such as windows, sockets and doorways and stops when obstacles are present."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Sprays interior walls and ceilings on live fit-out sites with painters doing the skilled work",
+   "stage": "pilot",
+   "where": "Høje Taastrup, Denmark",
+   "date": "2026-03",
+   "sourceId": "s1",
+   "note": "City 2 store fit-out with Malerfirmaet Preben Kjær & Lobe; also tested for a year on sites in Denmark (e.g. Jyske Bank premises). The page counts 23 deployments by 3 companies."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotsinconstruction.com/robots/roico-bobby/",
+   "title": "ROICO Bobby (Robots in Construction)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "No ROICO website could be read; maker contact and price are unknown.",
+  "Whether the robot can be bought or only used as a ROICO operator service is not clear.",
+  "Drive and spray mechanism are not described."
+ ],
+ "checkedAt": "2026-11-18"
+}

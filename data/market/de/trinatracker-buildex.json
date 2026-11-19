@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "id": "trinatracker-buildex",
+  "maker": "TrinaTracker (Trinasolar)",
+  "makerCountry": "CN",
+  "model": "Buildex",
+  "variant": null,
+  "name": "TrinaTracker Buildex",
+  "robotType": "specialised",
+  "specialisedFor": [
+    "utility-scale solar construction: lifting PV modules and placing them on tracker racking"
+  ],
+  "officialUrl": null,
+  "summary": "PV module installation robot from the tracker business unit of Trinasolar. It picks, carries, aligns and places solar modules on fixed or tracker brackets, using AI vision and 3D cameras.",
+  "launched": "2026-09",
+  "lifecycle": "prototype",
+  "germany": {
+    "status": "not_sold",
+    "statusNote": "Announced in September 2026 by the Chinese maker. The trade report names no price, seller, distributor or customer, and no German or EU sales route was found.",
+    "sourceIds": [
+      "s1"
+    ],
+    "priceEur": null,
+    "priceOther": null,
+    "leadTime": null,
+    "sellers": [],
+    "checkedAt": "2026-11-19"
+  },
+  "specs": [
+    {
+      "key": "modules_per_hour",
+      "label": "Installation rate",
+      "value": 90,
+      "unit": "modules/h",
+      "conditions": "up to; maker claim, said to be three to four times faster than manual labour",
+      "sourceId": "s1",
+      "quote": "it can install up to 90 modules per hour, which is three to four times faster than manual labour"
+    },
+    {
+      "key": "platform_levelling_deg",
+      "label": "Platform levelling",
+      "value": 17,
+      "unit": "°",
+      "conditions": "height-adjustable robotic base",
+      "sourceId": "s1",
+      "quote": "the height-adjustable robotic base has 17° platform levelling capability"
+    },
+    {
+      "key": "compatibility",
+      "label": "Brackets and modules",
+      "value": "fixed and tracking brackets; 1P and 2P modules",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "works with fixed and tracking brackets as well as 1P and 2P modules"
+    },
+    {
+      "key": "sensing",
+      "label": "Positioning",
+      "value": "AI vision positioning and industrial 3D cameras",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "utilises AI vision positioning and industrial 3D cameras to adapt to complex terrain and different tracker layouts"
+    }
+  ],
+  "capabilities": {
+    "legs": false,
+    "wheels": false,
+    "tracks": false,
+    "levelFloors": false,
+    "roughGround": true,
+    "stairs": null,
+    "outdoor": true,
+    "arms": 1,
+    "hands": "gripper",
+    "handsIncluded": true,
+    "armPayloadKg": null,
+    "carryPayloadKg": null,
+    "runtimeH": null,
+    "ipRating": null,
+    "sdk": null,
+    "sourceIds": [
+      "s1"
+    ],
+    "notes": [
+      "The report does not describe the running gear or the module gripper; legs, wheels and tracks are left false because nothing is sourced, and arms 1 with a gripper is the minimum implied by 'picking, transportation, alignment and placement'.",
+      "Maker says it can operate around the clock, which is a claim, not a measured runtime.",
+      "Adapts to complex terrain and different tracker layouts (maker)."
+    ]
+  },
+  "images": [],
+  "evidence": [
+    {
+      "taskIds": [],
+      "task": "Picks, carries, aligns and places solar modules on tracker or fixed brackets in utility-scale solar plants",
+      "stage": "claim",
+      "where": null,
+      "date": "2026-09",
+      "sourceId": "s1",
+      "note": "Launch announcement by TrinaTracker; no site is named."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.pv-magazine.com/2026/09/30/trinatracker-launches-solar-panel-installation-and-cleaning-robots/",
+      "title": "TrinaTracker launches solar panel installation and cleaning robots",
+      "publisher": "pv magazine Global",
+      "kind": "press",
+      "checkedAt": "2026-11-19"
+    }
+  ],
+  "openQuestions": [
+    "No maker page was found for Buildex; all figures come from one trade report quoting the company.",
+    "Price, delivery, running gear, payload and runtime are not stated.",
+    "No installation site is named, so the stage is only a launch claim; lifecycle 'prototype' is the closest value because no sales or customer project is reported."
+  ],
+  "checkedAt": "2026-11-19"
+}

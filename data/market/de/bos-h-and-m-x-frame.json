@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "id": "bos-h-and-m-x-frame",
+  "maker": "BOS Woodworking Solutions (H&M Machines)",
+  "makerCountry": "NL",
+  "model": "X-Frame",
+  "variant": null,
+  "name": "BOS H&M X-Frame",
+  "robotType": "specialised",
+  "specialisedFor": [
+    "prefab_timber/stud-insertion-framing"
+  ],
+  "officialUrl": "https://www.modularbuildingautomation.eu/x-frame",
+  "summary": "Automatic squaring and nailing station for timber-frame wall panels in a prefab plant. Servo-driven locating arms place the studs and CNC-controlled nail guns fix them, fed from the drawing software.",
+  "launched": null,
+  "lifecycle": "shipping",
+  "germany": {
+    "status": "quote",
+    "statusNote": "Sold by BOS Woodworking Solutions in Sneek, the Netherlands, through a contact-a-specialist form; no price is shown. No German dealer was checked.",
+    "sourceIds": [
+      "s1",
+      "s2"
+    ],
+    "priceEur": null,
+    "priceOther": null,
+    "leadTime": null,
+    "sellers": [
+      {
+        "name": "BOS Woodworking Solutions",
+        "country": "NL",
+        "role": "manufacturer",
+        "productUrl": "https://www.modularbuildingautomation.eu/x-frame",
+        "contactUrl": "https://www.modularbuildingautomation.eu/contact-us",
+        "email": null,
+        "phone": null,
+        "priceEur": null,
+        "priceBasis": null,
+        "sourceId": "s2",
+        "note": "Koperslagersstraat 6, 8601 WL Sneek, Netherlands. Enquiry form only; options are priced per metre of extra capacity, stud carriage, laser and twin saws."
+      }
+    ],
+    "checkedAt": "2026-11-19"
+  },
+  "specs": [
+    {
+      "key": "panel_height_mm",
+      "label": "Panel height",
+      "value": "1300 to 5000",
+      "unit": "mm",
+      "conditions": "minimum 1300 mm, maximum 5 m",
+      "sourceId": "s1",
+      "quote": "1300mm minimum panel height Maximum panel height 5m"
+    },
+    {
+      "key": "panel_length_m",
+      "label": "Maximum panel length",
+      "value": 6,
+      "unit": "m",
+      "conditions": "optionally up to 13 m",
+      "sourceId": "s1",
+      "quote": "Maximum panel length 6m – optionally up to 13m"
+    },
+    {
+      "key": "panel_thickness_mm",
+      "label": "Maximum panel thickness",
+      "value": 300,
+      "unit": "mm",
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "300mm maximum panel thickness"
+    },
+    {
+      "key": "working_height_mm",
+      "label": "Table working height",
+      "value": 825,
+      "unit": "mm",
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "825mm working height"
+    },
+    {
+      "key": "control",
+      "label": "Control",
+      "value": "CNC control with 17-inch touchscreen; automatic download from drawing software (Sema, Dietrich's, HsbSoft, CADWORKS, Tekla Structures, Gang Nail, DDS, Mitek)",
+      "unit": null,
+      "conditions": null,
+      "sourceId": "s1",
+      "quote": "Full PC control with 17” touchscreen"
+    },
+    {
+      "key": "crew",
+      "label": "Operators",
+      "value": 1,
+      "unit": "people",
+      "conditions": "operator places components by hand in the centre of the panel; can override the automatic sequence",
+      "sourceId": "s1",
+      "quote": "enable the machine to be used with a single operator"
+    }
+  ],
+  "capabilities": {
+    "legs": false,
+    "wheels": false,
+    "tracks": false,
+    "levelFloors": true,
+    "roughGround": false,
+    "stairs": false,
+    "outdoor": false,
+    "arms": 0,
+    "hands": "tool",
+    "handsIncluded": true,
+    "armPayloadKg": null,
+    "carryPayloadKg": null,
+    "runtimeH": null,
+    "ipRating": null,
+    "sdk": null,
+    "sourceIds": [
+      "s1"
+    ],
+    "notes": [
+      "A fixed plant station, not a mobile robot: heavy-duty tables with servo-positioned locating arms and nail guns.",
+      "The operator places studs and components by hand; the machine positions them, squares the panel and fires the nails per the CNC program.",
+      "Squaring and nailing only: no sawing or sheathing (the maker lists twin saws and a stud carriage as options)."
+    ]
+  },
+  "images": [
+    {
+      "url": "https://www.modularbuildingautomation.eu/images/600x400/0x0-0x0/machines/butterfly/x-frame-2023-jpeg2.jpg?1678289330",
+      "pageUrl": "https://www.modularbuildingautomation.eu/x-frame",
+      "credit": "BOS Woodworking Solutions",
+      "alt": "X-Frame timber frame assembly station, picture from the maker's product page (file name x-frame-2023)",
+      "kind": "product"
+    }
+  ],
+  "evidence": [
+    {
+      "taskIds": [
+        "prefab_timber/stud-insertion-framing"
+      ],
+      "task": "Squares timber-frame wall panels and nails the studs and sub-components with CNC-positioned nail guns",
+      "stage": "claim",
+      "where": null,
+      "date": null,
+      "sourceId": "s1",
+      "note": "Maker product description; no customer plant is named on the page."
+    }
+  ],
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.modularbuildingautomation.eu/x-frame",
+      "title": "X-Frame - Automatic Timber Frame Construction Assembly Station",
+      "publisher": "BOS Woodworking Solutions",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.modularbuildingautomation.eu/contact-us",
+      "title": "Contact us",
+      "publisher": "BOS Woodworking Solutions",
+      "kind": "manufacturer",
+      "checkedAt": "2026-11-19"
+    }
+  ],
+  "openQuestions": [
+    "No price, delivery time or customer plant is shown.",
+    "Borderline robot: a CNC nailing station with servo arms, not a free-moving robot arm; kept because it does the framing and nailing job in a timber prefab plant.",
+    "The picture comes from a folder named 'butterfly' on the maker's site; check by eye that it shows the X-Frame."
+  ],
+  "checkedAt": "2026-11-19"
+}

@@ -5,6 +5,7 @@ import { ConfigurationEvidence } from '@/components/robot/ConfigurationEvidence'
 import { RobotMedia } from '@/components/robot/RobotMedia';
 import { RobotSection } from '@/components/robot/RobotSection';
 import { RobotTemplate, STATUS_VARIANT } from '@/components/robot/RobotTemplate';
+import { ReviewsSection } from '@/components/robot/ReviewsSection';
 import { SourceList } from '@/components/robot/SourceList';
 import { lifecycleLabel, marketFacts } from '@/lib/compare/facts';
 import { STATUS_LABELS, TYPE_LABELS } from '@/lib/market/cards';
@@ -51,6 +52,7 @@ export default async function MarketRobotPage({ params }: { params: Params }) {
     more: <RobotSection id="profile" title="Robot evidence profile" aside={<span className="text-xs text-muted">Checked <time dateTime={robot.checkedAt}>{robot.checkedAt}</time></span>}>
       <div className="px-5 py-5"><ConfigurationEvidence robots={[robot]} /></div>
     </RobotSection>,
+    reviews: <ReviewsSection ids={[robot.id]} />,
     sources: <SourceList market={robot.sources} />,
   }} />;
 }

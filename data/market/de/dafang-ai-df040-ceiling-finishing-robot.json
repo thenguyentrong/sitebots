@@ -1,0 +1,111 @@
+{
+ "schemaVersion": 1,
+ "id": "dafang-ai-df040-ceiling-finishing-robot",
+ "maker": "DaFang AI (Shenzhen DaFang Intelligent Technology)",
+ "makerCountry": "CN",
+ "model": "DF040",
+ "variant": "Ceiling Finishing Robot",
+ "name": "DaFang AI DF040 ceiling finishing robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "surface_spraying",
+  "drywall_finishing",
+  "site_painting/wall-ceiling-painting"
+ ],
+ "officialUrl": "https://www.dafang.ai/",
+ "summary": "Wheeled ceiling finishing robot that grinds, skims, sands and paints indoor ceilings up to 4 m without scaffolding.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found. DaFang AI (Singapore, Hong Kong and a factory in Dongguan) takes enquiries at marketing@dafang.ai; its site shows customer reviews from Italy and Russia.",
+  "sourceIds": [
+   "s2"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "max_height_m",
+   "label": "Ceiling height",
+   "value": 4,
+   "unit": "m",
+   "conditions": "up to",
+   "sourceId": "s1",
+   "quote": "ceilings up to 4 m without scaffolding"
+  },
+  {
+   "key": "functions",
+   "label": "Functions",
+   "value": "Grinding, skimming, sanding, painting",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Wheeled robot that grinds, skims, sands and paints indoor ceilings"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Arm and mast are not described on the pages read."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_painting/wall-ceiling-painting"
+   ],
+   "task": "Finishes indoor ceilings without scaffolding",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Robots in Construction counts 0 deployments. DaFang cases mention wall and ceiling sanding, plastering and painting at a Guangzhou school, product not named."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotsinconstruction.com/robots/?job=interior-finishes",
+   "title": "Robots in Construction: interior finishes robots (listing)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.dafang.ai/",
+   "title": "DaFang AI home (product list, cases, contact)",
+   "publisher": "DaFang AI",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Weight, speed, runtime and price are not on the pages read.",
+  "No EU or German seller found."
+ ],
+ "checkedAt": "2026-11-18"
+}

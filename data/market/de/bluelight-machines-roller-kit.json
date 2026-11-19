@@ -1,0 +1,133 @@
+{
+ "schemaVersion": 1,
+ "specialisedFor": [
+  "site_earthworks/formation-compaction-testing"
+ ],
+ "variant": "for Cat, Dynapac and Hamm smooth and padfoot rollers",
+ "launched": null,
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Autonomous compaction of open fills and pads behind a dozer or motor grader",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "\"100+ units manufactured and operating in the field across 3 continents\"; \"rolled 1.6 billion square feet\" with zero injuries (maker figures). Shown as a claim because no project or site is named."
+  }
+ ],
+ "openQuestions": [
+  "No German or EU dealer found.",
+  "Hamm support on the compatibility page vs only Dynapac and Cat on the order page."
+ ],
+ "checkedAt": "2026-11-18",
+ "id": "bluelight-machines-roller-kit",
+ "maker": "Bluelight Machines",
+ "makerCountry": "US",
+ "model": "Autopilot Roller Kit",
+ "name": "Bluelight Autopilot Roller Kit (autonomy retrofit)",
+ "robotType": "specialised",
+ "officialUrl": "https://bluelightmachines.com/order/",
+ "summary": "A bolt-on autonomy kit that turns a customer-owned smooth or padfoot vibratory roller into a supervised autonomous compactor that follows a drawn work order or a lead dozer.",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "The order page offers installation \"anywhere in the lower 48 US States\" and names dealers in North America, South America, Asia and Australia; no German or EU route found.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": {
+   "amount": 12000,
+   "currency": "USD",
+   "market": "Bluelight order page, 3-month rental including hardware, subscriptions and RTK; the compatibility page says purchase starts at $20,000",
+   "sourceId": "s1"
+  },
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "install_time",
+   "label": "Installation time",
+   "value": "under 3 hours",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Installs in under 3 hours with no welding and no special tools."
+  },
+  {
+   "key": "gps",
+   "label": "Positioning",
+   "value": "Dual-band, dual-antenna RTK, +-2 cm",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Dual-band, dual-antenna RTK precision ±2cm"
+  },
+  {
+   "key": "detections",
+   "label": "AI detections",
+   "value": "Humans, vehicles, heavy equipment, cones, stakes",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "AI Detections Humans, Vehicles, Heavy Equipment, Cones, Stakes"
+  },
+  {
+   "key": "compat_rollers",
+   "label": "Compatible roller makes",
+   "value": "Cat, Dynapac, Hamm",
+   "unit": null,
+   "conditions": "Cat CS10GC to CS79B, Dynapac CA1500D to CA6500PD, Hamm H10i to HC250i",
+   "sourceId": "s2",
+   "quote": "Smooth and Padfoot Roller Hamm H10i (P)"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "A retrofit kit on a ride-on roller, not a separate robot.",
+   "Supervised autonomy with emergency stop, obstacle detection and operator override.",
+   "Hamm models appear on the compatibility page; the order page names Dynapac and Cat."
+  ],
+  "sourceIds": [
+   "s1",
+   "s2"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://bluelightmachines.com/order/",
+   "title": "Bluelight Autonomy you can buy",
+   "publisher": "Bluelight Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.bluelightmachines.com/compatibility/",
+   "title": "Compatibility",
+   "publisher": "Bluelight Machines",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ]
+}

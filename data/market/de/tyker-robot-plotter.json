@@ -1,0 +1,196 @@
+{
+ "schemaVersion": 1,
+ "id": "tyker-robot-plotter",
+ "maker": "Tyker",
+ "makerCountry": "NL",
+ "model": "Robot Plotter",
+ "variant": null,
+ "name": "Tyker Robot Plotter",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_roads_paving/stakeout-kerb-lines"
+ ],
+ "officialUrl": "https://www.tyker.com/producten/robot-plotter",
+ "summary": "Self-propelled 21 kg marking robot that plots lines and points from DXF or CSV files with 1 to 2 cm accuracy, guided by GNSS or a total station. Dutch maker, used on roads, tunnels and building sites.",
+ "launched": null,
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Tyker (Barneveld, Netherlands) has a sales line and a rental line; price is on request. Robots in Construction lists Flughafen Stuttgart GmbH among its customers.",
+  "sourceIds": [
+   "s2",
+   "s3"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "productUrl": "https://www.tyker.com/producten/robot-plotter",
+    "contactUrl": "https://www.tyker.com",
+    "email": "info@tyker.com",
+    "phone": "+31 (0)85 482 4812",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Sales line; a separate rental line +31 (0)85 482 4813 is listed.",
+    "name": "Tyker",
+    "country": "NL",
+    "role": "manufacturer",
+    "sourceId": "s2"
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "accuracy_cm",
+   "label": "Accuracy",
+   "value": "1-2",
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "1–2 cm"
+  },
+  {
+   "key": "speed",
+   "label": "Plotting speed",
+   "value": "Up to 5 km/h, 300 points per hour",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Plotting up to 5 km/h – 300 points per hour"
+  },
+  {
+   "key": "battery_life",
+   "label": "Battery life",
+   "value": 8,
+   "unit": "h",
+   "conditions": "replaceable battery",
+   "sourceId": "s1",
+   "quote": "8 hours (replaceable)"
+  },
+  {
+   "key": "weight_kg",
+   "label": "Base weight",
+   "value": 21,
+   "unit": "kg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "21 kg (base weight)"
+  },
+  {
+   "key": "file_formats",
+   "label": "File formats",
+   "value": "DXF (lines), CSV (points)",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "DXF, CSV"
+  },
+  {
+   "key": "surfaces",
+   "label": "Surfaces",
+   "value": "Asphalt, concrete, rubble, sand, grass",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Asphalt, concrete, rubble, sand, grass, etc."
+  },
+  {
+   "key": "positioning",
+   "label": "Positioning",
+   "value": "Integrated GNSS receiver or total station",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Controlled via (integrated) GNSS receiver or Total Station"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": 8,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Marking modules: spray can, paint, drill, laser pointing.",
+   "Works on asphalt, concrete, rubble, sand and grass according to the maker.",
+   "Driven by remote control and tablet."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [],
+   "task": "Set out steering lines for nearly 10 km of asphalt replacement",
+   "stage": "deployment",
+   "where": "A12 near Utrecht, Netherlands",
+   "date": null,
+   "sourceId": "s3",
+   "note": "Heijmans, reported by Robots in Construction."
+  },
+  {
+   "taskIds": [],
+   "task": "Marked more than 5,000 HSP floor piles, then set the piles out again under the finished roof driven by a total station",
+   "stage": "deployment",
+   "where": "Den Hoorn, Netherlands",
+   "date": null,
+   "sourceId": "s3",
+   "note": "Bas den Boer GWW-Services for Bouwbedrijf Vrolijk."
+  },
+  {
+   "taskIds": [],
+   "task": "Marked borehole positions in tunnel floors four times faster",
+   "stage": "deployment",
+   "where": "A24 Blankenburg tunnels, Netherlands",
+   "date": null,
+   "sourceId": "s3",
+   "note": "Ballast Nedam and DIBEC."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.tyker.com/producten/robot-plotter",
+   "title": "Robot Plotter (product page)",
+   "publisher": "Tyker",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s2",
+   "url": "https://www.tyker.com",
+   "title": "Tyker home and contact",
+   "publisher": "Tyker",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.robotsinconstruction.com/robots/tyker-plotter/",
+   "title": "Tyker Robot Plotter (deployments)",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Price not published; Tyker sells and rents on request.",
+  "IP rating and exact dimensions are not on the page read (full datasheet on request)."
+ ],
+ "checkedAt": "2026-11-18"
+}

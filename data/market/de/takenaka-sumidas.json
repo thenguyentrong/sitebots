@@ -1,0 +1,122 @@
+{
+ "schemaVersion": 1,
+ "id": "takenaka-sumidas",
+ "maker": "Takenaka Corporation",
+ "makerCountry": "JP",
+ "model": "Sumidas",
+ "variant": null,
+ "name": "Takenaka Sumidas floor layout marking robot",
+ "robotType": "specialised",
+ "specialisedFor": [
+  "layout_marking",
+  "site_survey_documentation/layout-marking-slabs"
+ ],
+ "officialUrl": null,
+ "summary": "Self-propelled robot that inks layout lines, symbols and text from converted CAD data onto construction floors with an onboard pen plotter, guided by a surveying instrument.",
+ "launched": null,
+ "lifecycle": "prototype",
+ "germany": {
+  "status": "not_sold",
+  "statusNote": "No German or EU seller found; price on request on the page read.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "function",
+   "label": "Function",
+   "value": "Inks lines, symbols and text from converted CAD data",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Sumidas drives itself between points on the floor and inks layout lines, symbols and text from converted CAD data with an onboard pen plotter"
+  },
+  {
+   "key": "site_preparation",
+   "label": "Site preparation",
+   "value": "Surveyor plus at least 2 reference points",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Surveyor plus at least 2 reference points"
+  },
+  {
+   "key": "edge_limit",
+   "label": "Not reachable by the robot",
+   "value": "Band of 600 mm next to walls and columns",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Workers still mark within 600 mm of walls and columns"
+  },
+  {
+   "key": "battery",
+   "label": "Battery",
+   "value": "Li-ion, 25.2 V",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Li-ion, 25.2 V"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": true,
+  "tracks": false,
+  "levelFloors": true,
+  "roughGround": null,
+  "stairs": null,
+  "outdoor": null,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": null,
+  "runtimeH": null,
+  "ipRating": null,
+  "sdk": null,
+  "sourceIds": [
+   "s1"
+  ],
+  "notes": [
+   "Works from dxf/dwg CAD converted to work data; no native BIM import stated.",
+   "Tablet or touch panel control."
+  ]
+ },
+ "images": [],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_survey_documentation/layout-marking-slabs"
+   ],
+   "task": "Inks wall lines, openings, MEP penetrations and finish boundaries on floors",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": "Robots in Construction counts 0 documented deployments."
+  }
+ ],
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.robotsinconstruction.com/robots/takenaka-sumidas/",
+   "title": "Sumidas by Takenaka",
+   "publisher": "Robots in Construction",
+   "kind": "database",
+   "checkedAt": "2026-11-18"
+  }
+ ],
+ "openQuestions": [
+  "Takenaka maker page not read; lifecycle (prototype or product) is unclear.",
+  "Weight, speed and accuracy are not on the page read.",
+  "Price not found."
+ ],
+ "checkedAt": "2026-11-18"
+}

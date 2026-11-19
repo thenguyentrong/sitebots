@@ -43,6 +43,8 @@ export type RobotPageContent = {
   conflicts?: ReactNode;
   more: ReactNode;
   moreLabel: string;
+  /** Public reviews; the section shows even when there are none. */
+  reviews?: ReactNode;
   sources: ReactNode;
   /** ?render=1: the viewer alone, used to make the card pictures. */
   compact?: boolean;
@@ -108,6 +110,7 @@ export function RobotTemplate({ page }: { page: RobotPageContent }) {
     ['track-record', 'Where it has worked'],
     ['specs', 'Specifications'],
     ...(page.conflicts ? [['conflicts', 'Sources disagree'] as [string, string]] : []),
+    ...(page.reviews ? [['reviews', 'Reviews'] as [string, string]] : []),
     ['more-detail', 'More detail'],
     ['sources', 'Sources'],
   ];
@@ -144,6 +147,7 @@ export function RobotTemplate({ page }: { page: RobotPageContent }) {
           </summary>
           <div className="mt-6 space-y-6">{page.more}</div>
         </details>
+        {page.reviews}
         {page.sources}
       </div>
     </main>

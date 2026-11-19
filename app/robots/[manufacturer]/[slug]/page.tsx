@@ -1,5 +1,6 @@
 import { BuyingPanel } from '@/components/robot/BuyingPanel';
 import { GermanySection, JobsSection, TrackRecordSection, type Deployment } from '@/components/market/GermanyBuy';
+import { ReviewsSection } from '@/components/robot/ReviewsSection';
 import { MarketSpecifications } from '@/components/market/MarketSpecifications';
 import { marketForCatalogue } from '@/lib/market/links';
 import { marketImagesFor, pageIdentity } from '@/lib/market/tiles';
@@ -152,6 +153,7 @@ export default async function RobotPage({ params, searchParams }: { params: Para
             <UseCaseProfile profile={profile} name={robot.name} marketRobots={market} configurationLabel={robot.variant === 'base' ? 'Catalogue model' : robot.variant} />
           </div>
         </>,
+        reviews: <ReviewsSection ids={market.map((item) => item.id)} />,
         sources: <SourceList sources={sources} market={market.flatMap((item) => item.sources)} />,
       }} />
     </>

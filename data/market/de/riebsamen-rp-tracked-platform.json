@@ -1,0 +1,171 @@
+{
+ "schemaVersion": 1,
+ "specialisedFor": [
+  "material_lifting",
+  "site_setup_logistics/material-runs-to-installers"
+ ],
+ "variant": "RP 750, RP 1000, RP 1200, RP 1500 (payload classes)",
+ "launched": null,
+ "images": [
+  {
+   "url": "https://www.riebsamen.de/default-wAssets/img/weblication/wThumbnails/detail_plattform_2-fbd0634e4cbf5eag0f9855e0e5c5f129.png",
+   "pageUrl": "https://www.riebsamen.de/en/Raupenplattform/",
+   "credit": "Maschinenbau Riebsamen",
+   "alt": "Detailed photo of the Riebsamen tracked platform",
+   "kind": "product"
+  }
+ ],
+ "evidence": [
+  {
+   "taskIds": [
+    "site_setup_logistics/material-runs-to-installers"
+   ],
+   "task": "Transports Euro pallets, steel beams, timber beams, windows and glass panels on uneven ground, gravel and slopes",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s1",
+   "note": null
+  }
+ ],
+ "openQuestions": [
+  "No price on the maker page.",
+  "Which exact payload class carries which crane module is not stated in the text read."
+ ],
+ "checkedAt": "2026-11-18",
+ "id": "riebsamen-rp-tracked-platform",
+ "maker": "Maschinenbau Riebsamen",
+ "makerCountry": "DE",
+ "model": "Tracked platform (Raupenplattform) RP",
+ "name": "Riebsamen RP electric tracked platform (RP 750 to RP 1500)",
+ "robotType": "specialised",
+ "officialUrl": "https://www.riebsamen.de/en/Raupenplattform/",
+ "summary": "A battery-electric, radio-controlled crawler carrier (750 to 1,500 kg payload) for pallets, beams, windows and glass panels on construction sites, with swap-on crane modules.",
+ "lifecycle": "shipping",
+ "germany": {
+  "status": "quote",
+  "statusNote": "Built in Germany by Maschinenbau Riebsamen; the maker page lists model variants and technical data but no price, so a quote is needed.",
+  "sourceIds": [
+   "s1"
+  ],
+  "priceEur": null,
+  "priceOther": null,
+  "leadTime": null,
+  "sellers": [
+   {
+    "country": "DE",
+    "role": "manufacturer",
+    "productUrl": "https://www.riebsamen.de/en/Raupenplattform/",
+    "contactUrl": null,
+    "email": null,
+    "phone": "+49 7582 791",
+    "priceEur": null,
+    "priceBasis": null,
+    "note": "Bierstetter Straße 1, 88348 Allmannsweiler; the page shows a contact link but no price.",
+    "name": "Maschinenbau Riebsamen GmbH & Co. KG",
+    "sourceId": "s1"
+   }
+  ],
+  "checkedAt": "2026-11-18"
+ },
+ "specs": [
+  {
+   "key": "payload_kg",
+   "label": "Payload (four classes)",
+   "value": "750 to 1,500",
+   "unit": "kg",
+   "conditions": "RP 750 / RP 1000 / RP 1200 / RP 1500",
+   "sourceId": "s1",
+   "quote": "The models transport loads from 750 kg to 1500 kg."
+  },
+  {
+   "key": "weight_kg",
+   "label": "Own weight",
+   "value": "280 to 330",
+   "unit": "kg",
+   "conditions": "RP 1500 330 kg",
+   "sourceId": "s1",
+   "quote": "RP 750 Payload 750 kg Qwn weight 280 kg"
+  },
+  {
+   "key": "dimensions_cm",
+   "label": "Width x length x height",
+   "value": "81 x 121 x 43",
+   "unit": "cm",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Width 81 cm Lenght 121 cm Height 43 cm"
+  },
+  {
+   "key": "max_slope_deg",
+   "label": "Climbing ability",
+   "value": 45,
+   "unit": "deg",
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Climbing ability 45°"
+  },
+  {
+   "key": "runtime_h",
+   "label": "Operating time",
+   "value": "6 to 8",
+   "unit": "h",
+   "conditions": "optional second battery: 12 to 14 h",
+   "sourceId": "s1",
+   "quote": "With an operating time of up to 6–8 hours"
+  },
+  {
+   "key": "crane_module_kg",
+   "label": "Swap-on crane module lifting capacity",
+   "value": 990,
+   "unit": "kg",
+   "conditions": "KM 1.1 module, 990 kg at 1.1 m, 200 kg at 4.5 m",
+   "sourceId": "s1",
+   "quote": "With the crane attachment, the tracked platform becomes a fully functional crane. It can lift loads of up to 990 kg."
+  },
+  {
+   "key": "control",
+   "label": "Control",
+   "value": "Acron radio control",
+   "unit": null,
+   "conditions": null,
+   "sourceId": "s1",
+   "quote": "Radio control Acron radio control"
+  }
+ ],
+ "capabilities": {
+  "legs": false,
+  "wheels": false,
+  "tracks": true,
+  "levelFloors": true,
+  "roughGround": true,
+  "stairs": null,
+  "outdoor": true,
+  "arms": 0,
+  "hands": "none",
+  "handsIncluded": null,
+  "armPayloadKg": null,
+  "carryPayloadKg": 1500,
+  "runtimeH": 6,
+  "ipRating": null,
+  "sdk": null,
+  "notes": [
+   "Radio-controlled by an operator, not autonomous.",
+   "Crane modules KM 0.5 and KM 1.1 and a glass rack module are swap-on attachments (3 to 5 minutes).",
+   "The maker also lists indoor use (emission-free, quiet)."
+  ],
+  "sourceIds": [
+   "s1"
+  ]
+ },
+ "sources": [
+  {
+   "id": "s1",
+   "url": "https://www.riebsamen.de/en/Raupenplattform/",
+   "title": "Battery-powered crawler transporters",
+   "publisher": "Maschinenbau Riebsamen",
+   "kind": "manufacturer",
+   "checkedAt": "2026-11-18"
+  }
+ ]
+}
