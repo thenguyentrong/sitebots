@@ -43,6 +43,10 @@ export const countryLabel = (code: string, lang: Lang = 'en'): string =>
   lang === 'de' ? COUNTRY_NAMES_DE[code] ?? regionName(code, 'de') : COUNTRY_NAMES[code] ?? regionName(code, 'en');
 const EUROPE = new Set(['DE', 'AT', 'CH', 'CZ', 'DK', 'SE', 'NO', 'GB', 'FR', 'ES', 'NL', 'PL', 'SK', 'HU', 'BG']);
 
+/** The towns in places.json that German writes its own way; every other town keeps the name the file gives it. */
+const TOWN_NAMES_DE: Record<string, string> = { Vienna: 'Wien', Copenhagen: 'Kopenhagen', Warsaw: 'Warschau', 'Hong Kong': 'Hongkong', Singapore: 'Singapur', Riyadh: 'Riad' };
+export const townLabel = (town: string, lang: Lang = 'en'): string => lang === 'de' ? TOWN_NAMES_DE[town] ?? town : town;
+
 let places: Record<string, Place[]> | null = null;
 export function loadPlaces(): Record<string, Place[]> {
   places ??= JSON.parse(readFileSync(join(process.cwd(), 'data', 'market', 'places.json'), 'utf8')).places as Record<string, Place[]>;
@@ -54,7 +58,7 @@ export function placeLabel(where: string | null, lang: Lang = 'en'): string {
   const first = where ? loadPlaces()[where]?.[0] : undefined;
   if (!first) return '';
   const country = lang === 'en' ? COUNTRY_NAMES[first.country] ?? first.country : countryLabel(first.country, lang);
-  return first.town ? first.town + ', ' + country : country;
+  return first.town ? townLabel(first.town, lang) + ', ' + country : country;
 }
 
 /** Every pilot and daily use on a construction-site job, one entry per robot and project. */

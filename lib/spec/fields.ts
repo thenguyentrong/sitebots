@@ -167,3 +167,32 @@ export function splitSpecKey(key: string): { field: string; qualifier: string | 
   const i = key.indexOf(':');
   return i === -1 ? { field: key, qualifier: null } : { field: key.slice(0, i), qualifier: key.slice(i + 1) };
 }
+
+// German names of the fields and groups. `label` above stays English: the adapters, the adviser's tools
+// and the tests read it. Pages call fieldLabel/groupLabel with the page's language.
+const FIELD_LABEL_DE: Record<string, string> = {
+  height_m: 'Höhe', weight_kg: 'Gewicht', reach_m: 'Reichweite', footprint: 'Abmessungen', shipping_weight_kg: 'Versandgewicht', structural_material: 'Struktur',
+  dof_total: 'Freiheitsgrade', dof_body: 'Freiheitsgrade Körper', dof_arms: 'Freiheitsgrade Arme', dof_legs: 'Freiheitsgrade Beine', dof_hands: 'Freiheitsgrade Hände',
+  hand_type: 'Hände', hand_model: 'Handmodell', finger_count: 'Finger', payload_kg: 'Traglast',
+  walk_speed_ms: 'Gehgeschwindigkeit', max_speed_ms: 'Höchstgeschwindigkeit', stair_capable: 'Treppen', max_slope_deg: 'Max. Steigung', step_height_m: 'Stufenhöhe', terrain_notes: 'Gelände',
+  battery_wh: 'Akku', runtime_h: 'Laufzeit', charge_time_h: 'Ladezeit', hot_swap: 'Akkuwechsel', swap_time_min: 'Wechselzeit',
+  compute_module: 'Rechner', compute_tops: 'KI-Rechenleistung', has_lidar: 'LiDAR', lidar_model: 'LiDAR-Modell', cameras: 'Kameras', force_torque: 'Kraft-Momenten-Sensorik',
+  connectivity: 'Vernetzung', sensors: 'Sensoren', actuators: 'Antriebe', battery_pack: 'Akkupack', equipment_options: 'Ausstattungsoptionen',
+  ip_rating: 'Schutzart', operating_temp_c: 'Betriebstemperatur', outdoor_rated: 'Einsatz im Freien', noise_db: 'Geräusch', collaborative: 'Arbeitet neben Menschen',
+  certifications: 'Zertifizierungen', task_capabilities: 'Aufgaben', requires_operator: 'Bediener', trl: 'Reifegrad (TRL)', deployment_evidence: 'Einsätze',
+  warranty_months: 'Garantie', availability_note: 'Verfügbarkeit',
+};
+const GROUP_LABEL_DE: Record<FieldGroup, string> = {
+  physical: 'Größe und Gewicht', payload: 'Traglast', mobility: 'Mobilität', power: 'Energie', environment: 'Umgebung', construction: 'Auf der Baustelle',
+  kinematics: 'Kinematik', parts: 'Verbaute Teile', equipment: 'Ausstattungsoptionen', commercial: 'Kaufmännisches',
+};
+
+/** A field's name in the page's language; an unknown id reads as its words. */
+export function fieldLabel(id: string, lang: 'en' | 'de' = 'en'): string {
+  if (lang === 'de' && FIELD_LABEL_DE[id]) return FIELD_LABEL_DE[id];
+  return fieldDef(id)?.label ?? id.replaceAll('_', ' ');
+}
+
+export function groupLabel(id: FieldGroup, lang: 'en' | 'de' = 'en'): string {
+  return lang === 'de' ? GROUP_LABEL_DE[id] : GROUPS.find((group) => group.id === id)?.label ?? id;
+}

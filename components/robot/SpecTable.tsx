@@ -1,6 +1,8 @@
 import * as React from 'react';
+import { recordLang, type Lang } from '@/lib/i18n/config';
+import { PANEL_TEXT } from '@/lib/i18n/robot';
 import { formatDate, formatSpec, qualifierLabel } from '@/lib/spec/display';
-import { GROUPS, splitSpecKey, visibleFields, type FieldDef } from '@/lib/spec/fields';
+import { GROUPS, fieldLabel, groupLabel, splitSpecKey, visibleFields, type FieldDef } from '@/lib/spec/fields';
 import type { Specs, SpecValue } from '@/lib/spec/types';
 import { EvidenceBadge } from './EvidenceBadge';
 
@@ -22,7 +24,8 @@ function hostOf(url: string): string {
  * the finding. With `unpublishedAsList` they are named together at the end
  * instead of one empty row each.
  */
-export function SpecTable({ specs, formFactor, unpublishedAsList = false }: { specs: Specs; formFactor: string; unpublishedAsList?: boolean }) {
+export function SpecTable({ specs, formFactor, unpublishedAsList = false, lang = 'en' }: { specs: Specs; formFactor: string; unpublishedAsList?: boolean; lang?: Lang }) {
+  const t = PANEL_TEXT[lang];
   const keys = Object.keys(specs);
   const present = new Set(keys.map((k) => splitSpecKey(k).field));
   const fields = visibleFields(formFactor, present);
@@ -34,7 +37,8 @@ export function SpecTable({ specs, formFactor, unpublishedAsList = false }: { sp
       return matching.map((k) => ({ key: k, def, spec: specs[k] }));
     }),
   }));
-  const unpublished = unpublishedAsList ? groups.flatMap(({ rows }) => rows.filter((row) => !row.spec).map((row) => row.def.label)) : [];
+  const unpublished = unpublishedAsList ? groups.flatMap(({ rows }) => rows.filter((row) => !row.spec).map((row) => fieldLabel(row.def.id, lang))) : [];
+  const [open, close] = lang === 'de' ? ['„', '“'] : ['"', '"'];
 
   return (
     <div className="overflow-x-auto">
@@ -47,16 +51,16 @@ export function SpecTable({ specs, formFactor, unpublishedAsList = false }: { sp
               <React.Fragment key={group.id}>
                 <tr>
                   <th colSpan={4} className="eyebrow px-4 pt-6 pb-2 text-left">
-                    {group.label}
+                    {groupLabel(group.id, lang)}
                   </th>
                 </tr>
                 {rows.map(({ key, def, spec }) => {
                   const { qualifier } = splitSpecKey(key);
-                  const q = qualifierLabel(qualifier);
+                  const q = qualifierLabel(qualifier, lang);
                   // On a phone the source goes under the value instead of a fourth column.
                   const source = spec && spec.source_url.startsWith('curated://') ? (
-                    <span className="text-faint" title={`Assessed by sitebots · ${spec.source_url.replace('curated://', 'data/curated/')}`}>
-                      curated
+                    <span className="text-faint" title={`${t.assessedBy} · ${spec.source_url.replace('curated://', 'data/curated/')}`}>
+                      {t.curated}
                     </span>
                   ) : spec ? (
                     <a
@@ -64,7 +68,7 @@ export function SpecTable({ specs, formFactor, unpublishedAsList = false }: { sp
                       rel="nofollow noopener"
                       target="_blank"
                       className="text-faint underline-offset-2 transition hover:text-foreground hover:underline"
-                      title={`${spec.source_url} · seen ${formatDate(spec.observed_at)}${spec.raw ? ` · "${spec.raw}"` : ''}`}
+                      title={`${spec.source_url} · ${t.seen} ${formatDate(spec.observed_at, lang)}${spec.raw ? ` · ${open}${spec.raw}${close}` : ''}`}
                     >
                       {hostOf(spec.source_url)}
                     </a>
@@ -72,16 +76,16 @@ export function SpecTable({ specs, formFactor, unpublishedAsList = false }: { sp
                   return (
                     <tr key={key} className="border-t border-edge/60 align-top transition hover:bg-subtle/60">
                       <td className="w-[36%] px-4 py-2.5 text-muted">
-                        {def.label}
+                        {fieldLabel(def.id, lang)}
                         {q ? <span className="text-faint"> · {q}</span> : null}
                       </td>
                       <td className="num px-2 py-2.5 font-medium">
-                        {spec ? formatSpec(key, spec) : <span className="font-normal text-faint">not published</span>}
-                        {spec?.note ? <div className="mt-0.5 text-xs font-normal text-faint">{spec.note}</div> : null}
+                        {spec ? formatSpec(key, spec, lang) : <span className="font-normal text-faint">{t.notPublished}</span>}
+                        {spec?.note ? <div className="mt-0.5 text-xs font-normal text-faint" lang={recordLang(lang)}>{spec.note}</div> : null}
                         {source ? <div className="mt-0.5 text-xs font-normal sm:hidden">{source}</div> : null}
                       </td>
                       <td className="px-2 py-2.5">
-                        <EvidenceBadge trust={spec ? spec.trust : 'unknown'} />
+                        <EvidenceBadge trust={spec ? spec.trust : 'unknown'} lang={lang} />
                       </td>
                       <td className="hidden px-4 py-2.5 text-right text-xs sm:table-cell">{source}</td>
                     </tr>
@@ -93,13 +97,13 @@ export function SpecTable({ specs, formFactor, unpublishedAsList = false }: { sp
           {unpublished.length ? (
             <tr className="border-t border-edge/60" data-testid="spec-unpublished">
               <td colSpan={4} className="px-4 pt-4 pb-2">
-                <p className="eyebrow">Not published · {unpublished.length}</p>
+                <p className="eyebrow">{t.notPublishedTitle} · {unpublished.length}</p>
                 <ul className="mt-2 flex flex-wrap gap-1.5">
                   {unpublished.map((label, index) => (
                     <li key={label + index} className="rounded-full border border-edge px-2.5 py-1 text-xs text-muted">{label}</li>
                   ))}
                 </ul>
-                <p className="mt-2 text-xs text-faint">Not published anywhere we could find.</p>
+                <p className="mt-2 text-xs text-faint">{t.notPublishedAnywhere}</p>
               </td>
             </tr>
           ) : null}

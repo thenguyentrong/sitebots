@@ -1,6 +1,6 @@
 import type { Candidate } from '@/lib/match/types';
 import type { SpecValue } from '@/lib/spec/types';
-import { fieldDef } from '@/lib/spec/fields';
+import { fieldLabel } from '@/lib/spec/fields';
 import { formatSpec, qualifierLabel } from '@/lib/spec/display';
 import { conservativePayload, publishedLowerBound } from '@/lib/spec/payload';
 import type { Trust } from '@/lib/spec/enums';
@@ -22,17 +22,38 @@ const TOPICS: Record<string, { fields: string[]; needed: { keys: string[]; label
   evidence: { fields:[], needed:[], question:'Which claims have primary sources, and which still need manufacturer confirmation or a task trial?' },
 };
 
+type Lang = 'en' | 'de';
+/** The follow-ups and questions in German, by axis; the order matches TOPICS[axis].needed. */
+const TOPICS_DE: Record<string, { needed: string[]; question: string }> = {
+  carry: { needed: ['Nennlast im Einsatz, Armhaltung und ob der Wert pro Arm oder gesamt gilt'], question: 'Welche Last trägt genau diese Konfiguration dauerhaft bei der geplanten Aufgabe?' },
+  reach: { needed: ['Senkrechte Arbeitsreichweite vom Boden, mit Endeffektor'], question: 'Welche nutzbare Werkzeughöhe und welchen Arbeitsraum erlauben der montierte Arm und die Basis?' },
+  stairs: { needed: ['Ausdrücklich angegebene Treppengängigkeit', 'Maximale Stufenhöhe und Testbedingungen', 'Maximale Steigung und Testuntergrund'], question: 'Welche Treppenform, welcher Untergrund und welche Last wurden getestet?' },
+  terrain: { needed: ['Benanntes Gelände und Testnachweise für diese Konfiguration'], question: 'Sind Kies oder Schutt für diese Konfiguration ausdrücklich freigegeben? Allgemeine Angaben zu unebenem Boden belegen nicht beides.' },
+  weather: { needed: ['Schutzart des ganzen Roboters', 'Ausdrückliche Freigabe oder Einschränkung für den Einsatz im Freien', 'Vollständiger Betriebstemperaturbereich'], question: 'Gelten die Witterungsangaben für den ganzen Roboter, einschließlich Händen, Sensoren und Akku?' },
+  endurance: { needed: ['Laufzeit unter Last mit angegebener Belastung'], question: 'Wie lange arbeitet er mit der geplanten Last und dem geplanten Arbeitszyklus, einschließlich Laden oder Akkuwechsel?' },
+  autonomy: { needed: ['Rolle des Bedieners und unterstützter autonomer Ablauf'], question: 'Welche Aufgaben laufen ohne Fernsteuerung, und wann muss ein Mensch eingreifen?' },
+  manipulation: { needed: ['Nachweis für die nötige Handhabungsaufgabe und den montierten Endeffektor'], question: 'Welche Griffe, Werkzeuge und Handhabungsaufgaben wurden mit genau diesem Endeffektor gezeigt?' },
+  speed: { needed: ['Veröffentlichte Geh- oder Höchstgeschwindigkeit mit Bedingungen'], question: 'Ist das die Höchstgeschwindigkeit oder die Dauergeschwindigkeit im Betrieb, und mit welcher Last?' },
+  evidence: { needed: [], question: 'Welche Angaben haben Primärquellen, und welche brauchen noch eine Bestätigung des Herstellers oder einen Test?' },
+};
+const EXTRA_DE: Record<string, string> = {
+  'A usable working-load measurement from the selected payload source': 'Ein verwertbarer Messwert der Nutzlast aus der gewählten Quelle',
+  'Manufacturer confirmation of the reported working-load figure': 'Bestätigung des berichteten Nutzlastwerts durch den Hersteller',
+  'Manufacturer confirmation of the loaded runtime': 'Bestätigung der Laufzeit unter Last durch den Hersteller',
+  'Reviewed evidence for gravel and rubble separately': 'Geprüfte Nachweise für Kies und Schutt, jeweils getrennt',
+};
+
 export const hasValue = (s: SpecValue | undefined): s is SpecValue => !!s && (s.min != null || s.max != null || (s.value !== null && s.value !== '' && (!Array.isArray(s.value) || s.value.length > 0)));
-export function factFor(key: string, spec: SpecValue): ProfileFact {
+export function factFor(key: string, spec: SpecValue, lang: Lang = 'en'): ProfileFact {
   const [field, qualifier] = key.split(':');
-  return { key, label: (fieldDef(field)?.label ?? field.replaceAll('_',' ')) + (qualifier ? ' · '+qualifierLabel(qualifier) : ''), value: formatSpec(key,spec), trust: spec.trust, sourceUrl: spec.evidence_url || spec.source_url, checkedAt: spec.observed_at, note: spec.note || null };
+  return { key, label: fieldLabel(field, lang) + (qualifier ? ' · '+qualifierLabel(qualifier, lang) : ''), value: formatSpec(key,spec,lang), trust: spec.trust, sourceUrl: spec.evidence_url || spec.source_url, checkedAt: spec.observed_at, note: spec.note || null };
 }
 
-export function evidenceForAxis(c: Candidate, axisId: string): AxisEvidence {
+export function evidenceForAxis(c: Candidate, axisId: string, lang: Lang = 'en'): AxisEvidence {
   const topic = TOPICS[axisId] ?? TOPICS.evidence;
   const specs = c.card.specs ?? {};
   const entries = Object.entries(specs).filter(([,spec])=>hasValue(spec));
-  const facts = entries.filter(([key])=>topic.fields.includes(key.split(':')[0])).map(([key,spec])=>factFor(key,spec));
+  const facts = entries.filter(([key])=>topic.fields.includes(key.split(':')[0])).map(([key,spec])=>factFor(key,spec,lang));
   const missing = topic.needed.filter(group => {
     // A temperature range needs both ends; either speed measurement can fill the speed question.
     if (axisId === 'carry' || axisId === 'endurance') return !group.keys.some(k => publishedLowerBound(specs[k]) !== null);
@@ -45,6 +66,11 @@ export function evidenceForAxis(c: Candidate, axisId: string): AxisEvidence {
   }
   if (axisId === 'endurance' && hasValue(specs['runtime_h:loaded']) && ['reported','unknown'].includes(specs['runtime_h:loaded'].trust)) missing.push('Manufacturer confirmation of the loaded runtime');
   if (axisId === 'terrain') missing.push('Reviewed evidence for gravel and rubble separately');
+  if (lang === 'de') {
+    const de = TOPICS_DE[axisId] ?? TOPICS_DE.evidence;
+    const index = new Map(topic.needed.map((group, i) => [group.label, i]));
+    return { facts, missing: missing.map((label) => index.has(label) ? de.needed[index.get(label)!] ?? label : EXTRA_DE[label] ?? label), question: de.question };
+  }
   return {facts,missing,question:topic.question};
 }
 

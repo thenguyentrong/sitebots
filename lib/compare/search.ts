@@ -2,7 +2,8 @@ import { FOCUSED_FORM_FACTORS } from '@/lib/browse-scope';
 import { isPublicRobot } from '@/lib/catalogue-policy';
 import { catalogueType } from '@/lib/compare/facts';
 import { getSql } from '@/lib/db';
-import { TYPE_LABELS } from '@/lib/market/cards';
+import type { Lang } from '@/lib/i18n/config';
+import { typeLabel } from '@/lib/market/cards';
 import { marketByPath } from '@/lib/market/links';
 import { loadMarket, type MarketRobot } from '@/lib/market/load';
 import { norm, pageIdentity } from '@/lib/market/tiles';
@@ -12,7 +13,8 @@ import type { FormFactor } from '@/lib/spec/enums';
 // so the page does not ship a list of a thousand robots to every visitor.
 
 export type CompareHit = { id: string; name: string; maker: string; type: string; picture: string | null };
-type Entry = CompareHit & { text: string };
+/** `type` is the English word; `types` holds it in every language, so one index answers both. */
+type Entry = CompareHit & { text: string; types: Record<Lang, string> };
 export type IndexRow = { id: string; manufacturer_slug: string; manufacturer_name: string; model_slug: string; variant: string; name: string; form_factor: string; image_url: string | null };
 
 export const COMPARE_HITS = 8;
@@ -38,17 +40,19 @@ export function buildIndex(records: MarketRobot[], rows: IndexRow[], pages: Map<
     if (entries.has(id)) continue;
     const row = byId.get(id);
     // The catalogue name stays searchable: the Kepler K2 record is the Forerunner K2 row.
-    entries.set(id, { id, name: record.name, maker: record.maker, type: TYPE_LABELS[record.robotType], picture: record.picture?.src ?? row?.image_url ?? null, text: norm([record.name, record.maker, record.model, record.variant, row?.name].filter(Boolean).join(' ')) });
+    entries.set(id, { id, name: record.name, maker: record.maker, type: typeLabel(record.robotType), types: { en: typeLabel(record.robotType, 'en'), de: typeLabel(record.robotType, 'de') }, picture: record.picture?.src ?? row?.image_url ?? null, text: norm([record.name, record.maker, record.model, record.variant, row?.name].filter(Boolean).join(' ')) });
   }
   for (const row of rows) {
     if (spoken.has(row.id) || entries.has(row.id) || !isPublicRobot(row.manufacturer_slug, row.model_slug)) continue;
-    entries.set(row.id, { id: row.id, name: row.name, maker: row.manufacturer_name, type: catalogueType(row.form_factor as FormFactor), picture: row.image_url, text: norm([row.name, row.manufacturer_name, row.model_slug.replaceAll('-', ' ')].join(' ')) });
+    const form = row.form_factor as FormFactor;
+    entries.set(row.id, { id: row.id, name: row.name, maker: row.manufacturer_name, type: catalogueType(form), types: { en: catalogueType(form, 'en'), de: catalogueType(form, 'de') }, picture: row.image_url, text: norm([row.name, row.manufacturer_name, row.model_slug.replaceAll('-', ' ')].join(' ')) });
   }
   return [...entries.values()];
 }
 
-/** Every word must match. A name that starts with the query comes first, then a word in the name, then the shortest name. */
-export function searchIndex(index: Entry[], query: string, limit = COMPARE_HITS): CompareHit[] {
+/** Every word must match. A name that starts with the query comes first, then a word in the name, then the shortest name.
+ * The type is named in `lang`. */
+export function searchIndex(index: Entry[], query: string, limit = COMPARE_HITS, lang: Lang = 'en'): CompareHit[] {
   const wanted = norm(query);
   const words = wanted.split(' ').filter(Boolean);
   if (!words.length) return [];
@@ -59,7 +63,7 @@ export function searchIndex(index: Entry[], query: string, limit = COMPARE_HITS)
   return index.filter((entry) => words.every((word) => entry.text.includes(word)))
     .sort((a, b) => rank(a) - rank(b) || a.name.length - b.name.length || a.name.localeCompare(b.name))
     .slice(0, limit)
-    .map(({ id, name, maker, type, picture }) => ({ id, name, maker, type, picture }));
+    .map(({ id, name, maker, types, picture }) => ({ id, name, maker, type: types[lang], picture }));
 }
 
 let cached: { at: number; index: Promise<Entry[]> } | null = null;
@@ -76,11 +80,11 @@ async function loadIndex(): Promise<Entry[]> {
   return buildIndex(loadMarket(), rows as IndexRow[], marketByPath());
 }
 
-export async function searchRobots(query: string): Promise<CompareHit[]> {
+export async function searchRobots(query: string, lang: Lang = 'en'): Promise<CompareHit[]> {
   if (!cached || Date.now() - cached.at > INDEX_TTL_MS) {
     const index = loadIndex();
     cached = { at: Date.now(), index };
     index.catch(() => { cached = null; });
   }
-  return searchIndex(await cached.index, query);
+  return searchIndex(await cached.index, query, COMPARE_HITS, lang);
 }

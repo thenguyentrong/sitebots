@@ -2,8 +2,11 @@ import { canonicalManufacturerSlug, manufacturerLogo, type ManufacturerLogo } fr
 import { cataloguePathFor } from './links';
 import { loadMarket, type MarketRobot } from './load';
 import { reviewsFor } from './reviews';
-import { JOB_LABELS } from './vocab';
-import { loadUseCases, REGIONS, countryName } from './use-cases';
+import { JOB_LABELS, jobLabel } from './vocab';
+import { loadUseCases, REGIONS, countryName, regionLabel } from './use-cases';
+import type { Lang } from '@/lib/i18n/config';
+import { INSIGHT_TEXT } from '@/lib/i18n/brands';
+import { formatNumber } from '@/lib/i18n/format';
 
 // Server-side only. The companies behind the market records: one slug per maker, the same slug the catalogue uses
 // where the catalogue has the maker, so /brands/<slug> is the one company page either way.
@@ -59,19 +62,18 @@ export type CompanyInsight = {
   facts: { robots: number; orderable: number; cart: number; sellers: string[]; priced: number; onSale: number };
 };
 
-const TYPE_WORD: Record<string, [string, string]> = {
-  humanoid: ['humanoid', 'humanoids'], quadruped: ['robot dog', 'robot dogs'], mobile_manipulator: ['mobile manipulator', 'mobile manipulators'], specialised: ['job-specific construction robot', 'job-specific construction robots'],
-};
-const plural = (n: number, [one, many]: [string, string]) => n + ' ' + (n === 1 ? one : many);
-const list = (items: string[]) => items.length <= 1 ? items.join('') : items.slice(0, -1).join(', ') + ' and ' + items.at(-1);
-
-/** What the records say about a company, in plain lines. Every line is counted from the records, none is an opinion. */
-export function companyInsight(robots: MarketRobot[]): CompanyInsight {
+/** What the records say about a company, in plain lines in the page's language (English by default, for the
+ * adviser's tools and the tests). Every line is counted from the records, none is an opinion. */
+export function companyInsight(robots: MarketRobot[], lang: Lang = 'en'): CompanyInsight {
+  const t = INSIGHT_TEXT[lang];
+  const count = (n: number) => ({ n, text: formatNumber(n, lang) });
+  const plural = (n: number, [one, many]: [string, string]) => count(n).text + ' ' + (n === 1 ? one : many);
+  const list = (items: string[]) => items.length <= 1 ? items.join('') : items.slice(0, -1).join(', ') + t.and + items.at(-1);
   const ids = new Set(robots.map((robot) => robot.id));
   const byType = new Map<string, number>();
   for (const robot of robots) byType.set(robot.robotType, (byType.get(robot.robotType) ?? 0) + 1);
-  const jobs = [...new Set(robots.flatMap((robot) => robot.specialisedFor ?? []).flatMap((job) => JOB_LABELS[job] ? [JOB_LABELS[job].toLowerCase()] : []))].slice(0, 4);
-  const doesWhat = 'Makes ' + list([...byType].sort((a, b) => b[1] - a[1]).map(([type, n]) => plural(n, TYPE_WORD[type] ?? [type, type]))) + (jobs.length ? ', for ' + list(jobs) : '') + '.';
+  const jobs = [...new Set(robots.flatMap((robot) => robot.specialisedFor ?? []).flatMap((job) => JOB_LABELS[job] ? [t.jobWord(jobLabel(job, lang))] : []))].slice(0, 4);
+  const doesWhat = t.doesWhat(list([...byType].sort((a, b) => b[1] - a[1]).map(([type, n]) => plural(n, t.type[type] ?? [type, type]))), jobs.length ? list(jobs) : '');
 
   const sold = robots.filter((robot) => robot.germany.status === 'buy_now' || robot.germany.status === 'quote');
   const cart = robots.filter((robot) => robot.germany.status === 'buy_now');
@@ -88,22 +90,23 @@ export function companyInsight(robots: MarketRobot[]): CompanyInsight {
 
   const strengths: string[] = [];
   const weaknesses: string[] = [];
-  if (sold.length) strengths.push(`${sold.length} of ${robots.length} robot${robots.length === 1 ? '' : 's'} can be ordered in Germany${cart.length ? `, ${cart.length} with a shop cart` : ''}${sellers.length ? `: ${sellers.slice(0, 3).join(' · ')}${sellers.length > 3 ? ' and others' : ''}` : ''}.`);
-  if (priced.length) strengths.push(`Published price for ${priced.length} of ${robots.length} robot${robots.length === 1 ? '' : 's'}.`);
-  if (uses.length) strengths.push(`${uses.length} documented use${uses.length === 1 ? '' : 's'} on real projects or demonstrations${daily ? `, ${daily} in daily use` : ''}${countries.length ? `, in ${list(countries.slice(0, 4).map((code) => countryName(code)))}${countries.length > 4 ? ' and more' : ''}` : ''}.`);
-  if (positive) strengths.push(`${positive} positive independent review${positive === 1 ? '' : 's'} or user report${positive === 1 ? '' : 's'}.`);
-  if (notSold.length) weaknesses.push(`${notSold.length} of ${robots.length} robots have no German or EU sales route we could find.`);
-  if (!priced.length) weaknesses.push('No published price: every robot is on request.');
-  else if (priced.length < robots.length) weaknesses.push(`${robots.length - priced.length} robots without a published price.`);
-  if (!uses.length) weaknesses.push('No named project or demonstration found yet: only the maker\'s own claims.');
-  if (early.length) weaknesses.push(`${early.length} of ${robots.length} robots are not yet on general sale (prototype, pilot or pre-order).`);
-  if (critical) weaknesses.push(`${critical} critical review${critical === 1 ? '' : 's'} or bug report${critical === 1 ? '' : 's'} from users.`);
+  const total = count(robots.length);
+  if (sold.length) strengths.push(t.orderable(count(sold.length), total, cart.length ? count(cart.length) : null, sellers.slice(0, 3).join(' · '), sellers.length > 3));
+  if (priced.length) strengths.push(t.priced(count(priced.length), total));
+  if (uses.length) strengths.push(t.uses(count(uses.length), daily ? count(daily) : null, countries.length ? list(countries.slice(0, 4).map((code) => countryName(code, lang))) : '', Math.min(countries.length, 4), countries.length > 4));
+  if (positive) strengths.push(t.positive(count(positive)));
+  if (notSold.length) weaknesses.push(t.notSold(count(notSold.length), total));
+  if (!priced.length) weaknesses.push(t.noPrice);
+  else if (priced.length < robots.length) weaknesses.push(t.somePrices(count(robots.length - priced.length)));
+  if (!uses.length) weaknesses.push(t.noUses);
+  if (early.length) weaknesses.push(t.early(count(early.length), total));
+  if (critical) weaknesses.push(t.critical(count(critical)));
 
   const regionCount = new Map<string, number>();
   for (const use of uses) regionCount.set(use.region, (regionCount.get(use.region) ?? 0) + 1);
   return {
     doesWhat, strengths, weaknesses,
-    uses: { total: uses.length, daily, regions: REGIONS.filter((r) => regionCount.get(r.id)).map((r) => ({ label: r.label, count: regionCount.get(r.id)! })), countries },
+    uses: { total: uses.length, daily, regions: REGIONS.filter((r) => regionCount.get(r.id)).map((r) => ({ label: regionLabel(r.id, lang), count: regionCount.get(r.id)! })), countries },
     reviews: { total: reviews.length, positive, mixed: reviews.filter((review) => review.stance === 'mixed').length, critical },
     facts: { robots: robots.length, orderable: sold.length, cart: cart.length, sellers, priced: priced.length, onSale: robots.filter((robot) => robot.lifecycle === 'shipping').length },
   };

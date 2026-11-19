@@ -1,7 +1,9 @@
 import Link from '@/components/LocaleLink';
 import { CompareRemove } from '@/components/compare/CompareControls';
 import { FactValues } from '@/components/compare/FactValues';
-import { visibleRows } from '@/lib/compare/facts';
+import { factLabel, visibleRows } from '@/lib/compare/facts';
+import { COMPARE_TEXT } from '@/lib/i18n/compare';
+import type { Lang } from '@/lib/i18n/config';
 import type { CompareColumn } from '@/lib/queries/compare';
 
 /**
@@ -9,7 +11,8 @@ import type { CompareColumn } from '@/lib/queries/compare';
  * published and with which conditions. It marks no best value and draws no conclusion: the reader
  * decides. The label column stays put while the robots scroll sideways inside their own box.
  */
-export function CompareTable({ columns }: { columns: CompareColumn[] }) {
+export function CompareTable({ columns, lang }: { columns: CompareColumn[]; lang: Lang }) {
+  const t = COMPARE_TEXT[lang];
   const rows = visibleRows(columns);
   const items = columns.map(({ id, name }) => ({ id, name }));
   return (
@@ -17,7 +20,7 @@ export function CompareTable({ columns }: { columns: CompareColumn[] }) {
       <table className="w-full table-fixed border-collapse text-sm" style={{ minWidth: 112 + columns.length * 168 }}>
         <thead>
           <tr className="border-b border-edge align-top">
-            <th scope="col" className="sticky left-0 z-10 w-28 bg-card px-3 py-3 text-left font-normal sm:w-44 sm:px-5 sm:py-4"><span className="sr-only">Fact</span></th>
+            <th scope="col" className="sticky left-0 z-10 w-28 bg-card px-3 py-3 text-left font-normal sm:w-44 sm:px-5 sm:py-4"><span className="sr-only">{t.fact}</span></th>
             {columns.map((column) => (
               <th key={column.id} scope="col" className="px-3 py-3 text-left font-normal sm:px-4 sm:py-4">
                 <Link href={column.href} className="group block">
@@ -26,7 +29,7 @@ export function CompareTable({ columns }: { columns: CompareColumn[] }) {
                     {column.picture ? (
                       // eslint-disable-next-line @next/next/no-img-element -- a local market picture or a remote catalogue picture
                       <img src={column.picture.src} alt={column.picture.alt} referrerPolicy="no-referrer" loading="lazy" decoding="async" className="h-full w-full object-contain" />
-                    ) : <span className="grid h-full place-items-center text-xs text-[#52525b]">No picture published</span>}
+                    ) : <span className="grid h-full place-items-center text-xs text-[#52525b]">{t.noPicture}</span>}
                   </span>
                   <span className="mt-2 block text-xs text-muted">{column.maker}</span>
                   <span className="block text-base font-semibold leading-tight tracking-tight underline-offset-4 group-hover:underline">{column.name}</span>
@@ -39,13 +42,13 @@ export function CompareTable({ columns }: { columns: CompareColumn[] }) {
         <tbody>
           {rows.map((row) => (
             <tr key={row.key} className="border-t border-edge/60 align-top" data-fact={row.key}>
-              <th scope="row" className="sticky left-0 z-10 bg-card px-3 py-2.5 text-left text-xs font-normal leading-snug text-muted sm:px-5 sm:text-sm">{row.label}</th>
-              {columns.map((column) => <td key={column.id} className="px-3 py-2.5 sm:px-4"><FactValues values={column.facts[row.key]} /></td>)}
+              <th scope="row" className="sticky left-0 z-10 bg-card px-3 py-2.5 text-left text-xs font-normal leading-snug text-muted sm:px-5 sm:text-sm">{factLabel(row.key, lang)}</th>
+              {columns.map((column) => <td key={column.id} className="px-3 py-2.5 sm:px-4"><FactValues values={column.facts[row.key]} lang={lang} /></td>)}
             </tr>
           ))}
           <tr className="border-t border-edge/60 align-top">
-            <th scope="row" className="sticky left-0 z-10 bg-card px-3 py-2.5 text-left text-xs font-normal leading-snug text-muted sm:px-5 sm:text-sm">Sources</th>
-            {columns.map((column) => <td key={column.id} className="px-3 py-2.5 text-xs sm:px-4"><Link href={column.href + '#sources'} className="text-muted underline underline-offset-2 hover:text-foreground">All sources on the robot page</Link></td>)}
+            <th scope="row" className="sticky left-0 z-10 bg-card px-3 py-2.5 text-left text-xs font-normal leading-snug text-muted sm:px-5 sm:text-sm">{t.sources}</th>
+            {columns.map((column) => <td key={column.id} className="px-3 py-2.5 text-xs sm:px-4"><Link href={column.href + '#sources'} className="text-muted underline underline-offset-2 hover:text-foreground">{t.allSources}</Link></td>)}
           </tr>
         </tbody>
       </table>

@@ -95,3 +95,14 @@ it('retains additional source claims separately from the original specification 
   expect(row.additionalClaims).toHaveLength(1);
   expect(row.additionalClaims[0]).toMatchObject({ source: { kind: 'manufacturer' }, quote: '5 kg maximum per arm.', basis: 'Maximum claim; posture unstated.' });
 });
+
+it('writes its own words in German on German pages and keeps record labels', () => {
+  const robot = record('booster-t2-edu');
+  const de = configurationSpecifications(robot, 'de');
+  const en = configurationSpecifications(robot);
+  expect(de.specs.map((row) => row.label)).toEqual(en.specs.map((row) => row.label));
+  expect(de.missing).toContain('Einsatz im Freien');
+  expect(marketValue(de.capabilities.find((row) => row.key === 'outdoor')!, 'de')).toBe('Unbekannt');
+  expect(marketValue({ value: 2.5, unit: 'h' }, 'de')).toBe('2,5 h');
+  expect(marketSourceLabel(de.specs.find((row) => row.key === 'arm_payload_kg')!.source!, 'de')).toBe('Berichtet · Händler');
+});

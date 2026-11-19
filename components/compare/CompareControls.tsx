@@ -4,29 +4,49 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useId, useRef, useState } from 'react';
 import { comparisonHref, useCompare, type CompareItem } from '@/lib/compare/store';
 import type { CompareHit } from '@/lib/compare/search';
+import { localePath, type Lang } from '@/lib/i18n/config';
+import { useLang } from '@/lib/i18n/client';
+import { bilingual } from '@/lib/i18n/text';
 import { ui } from '@/lib/ui';
 import { cn } from '@/lib/utils';
 
-/** Show this set of robots. The saved selection follows, so the bar and the table stay the same list. */
-function useShow() {
+const TEXT = bilingual({
+  en: {
+    remove: 'Remove', removeLabel: (name: string) => 'Remove ' + name + ' from comparison',
+    unavailable: 'Search is not available right now.', already: 'Already in this comparison.', none: (q: string) => 'No robot matches “' + q + '”.', searching: 'Searching…',
+    add: 'Add a robot', full: 'Comparison full. Remove a robot to add another.', placeholder: 'Search by name or maker', found: 'Robots found',
+  },
+  de: {
+    remove: 'Entfernen', removeLabel: (name: string) => name + ' aus dem Vergleich entfernen',
+    unavailable: 'Die Suche ist gerade nicht verfügbar.', already: 'Schon in diesem Vergleich.', none: (q: string) => 'Kein Roboter passt zu „' + q + '“.', searching: 'Suche läuft …',
+    add: 'Roboter hinzufügen', full: 'Vergleich voll. Entfernen Sie einen Roboter, um einen anderen hinzuzufügen.', placeholder: 'Nach Name oder Hersteller suchen', found: 'Gefundene Roboter',
+  },
+});
+
+/** Show this set of robots, in the page's language. The saved selection follows, so the bar and the table stay the same list. */
+function useShow(lang: Lang) {
   const router = useRouter();
   const { replace } = useCompare();
   return (items: CompareItem[]) => {
     replace(items);
-    router.push(comparisonHref(items));
+    router.push(localePath(comparisonHref(items), lang));
   };
 }
 
 export function CompareRemove({ id, name, items }: { id: string; name: string; items: CompareItem[] }) {
-  const show = useShow();
-  return <button type="button" onClick={() => show(items.filter((item) => item.id !== id))} aria-label={'Remove ' + name + ' from comparison'} className="mt-1 text-xs text-faint underline underline-offset-2 transition hover:text-foreground">Remove</button>;
+  const lang = useLang();
+  const t = TEXT[lang];
+  const show = useShow(lang);
+  return <button type="button" onClick={() => show(items.filter((item) => item.id !== id))} aria-label={t.removeLabel(name)} className="mt-1 text-xs text-faint underline underline-offset-2 transition hover:text-foreground">{t.remove}</button>;
 }
 
 type Search = { state: 'idle' | 'loading' | 'failed' } | { state: 'done'; hits: CompareHit[] };
 
 /** Adds any robot by name without leaving the page. Results come from the server a few at a time. */
 export function CompareSearch({ selected, max }: { selected: CompareItem[]; max: number }) {
-  const show = useShow();
+  const lang = useLang();
+  const t = TEXT[lang];
+  const show = useShow(lang);
   const list = useId();
   const input = useRef<HTMLInputElement>(null);
   const [query, setQuery] = useState('');
@@ -43,7 +63,8 @@ export function CompareSearch({ selected, max }: { selected: CompareItem[]; max:
     const timer = setTimeout(async () => {
       setSearch({ state: 'loading' });
       try {
-        const response = await fetch('/api/compare/search?q=' + encodeURIComponent(wanted), { signal: controller.signal });
+        // The route names each robot's type in the page's language; the language is part of the cached URL.
+        const response = await fetch('/api/compare/search?q=' + encodeURIComponent(wanted) + '&lang=' + lang, { signal: controller.signal });
         if (!response.ok) throw new Error('HTTP ' + response.status);
         const { hits } = (await response.json()) as { hits: CompareHit[] };
         setSearch({ state: 'done', hits });
@@ -54,12 +75,12 @@ export function CompareSearch({ selected, max }: { selected: CompareItem[]; max:
       }
     }, 160);
     return () => { clearTimeout(timer); controller.abort(); };
-  }, [wanted]);
+  }, [wanted, lang]);
 
   const hits = wanted.length >= 2 && search.state === 'done' ? search.hits.filter((hit) => !selected.some((item) => item.id === hit.id)) : [];
-  const message = wanted.length < 2 ? null : search.state === 'failed' ? 'Search is not available right now.'
-    : search.state === 'done' && !hits.length ? (search.hits.length ? 'Already in this comparison.' : 'No robot matches “' + wanted + '”.')
-      : search.state === 'done' ? null : 'Searching…';
+  const message = wanted.length < 2 ? null : search.state === 'failed' ? t.unavailable
+    : search.state === 'done' && !hits.length ? (search.hits.length ? t.already : t.none(wanted))
+      : search.state === 'done' ? null : t.searching;
   const showList = open && !full && (hits.length > 0 || message !== null);
   const add = (hit: CompareHit) => {
     setQuery('');
@@ -77,7 +98,7 @@ export function CompareSearch({ selected, max }: { selected: CompareItem[]; max:
   };
 
   return <div className="relative w-full max-w-md" data-compare-search>
-    <label htmlFor={list + '-input'} className="label mb-1.5 block">Add a robot</label>
+    <label htmlFor={list + '-input'} className="label mb-1.5 block">{t.add}</label>
     <input
       ref={input}
       id={list + '-input'}
@@ -89,7 +110,7 @@ export function CompareSearch({ selected, max }: { selected: CompareItem[]; max:
       aria-activedescendant={showList && hits.length ? list + '-' + Math.min(active, hits.length - 1) : undefined}
       autoComplete="off"
       disabled={full}
-      placeholder={full ? 'Comparison full. Remove a robot to add another.' : 'Search by name or maker'}
+      placeholder={full ? t.full : t.placeholder}
       value={query}
       onChange={(event) => { setQuery(event.target.value); setOpen(true); }}
       onFocus={() => setOpen(true)}
@@ -97,7 +118,7 @@ export function CompareSearch({ selected, max }: { selected: CompareItem[]; max:
       onKeyDown={onKey}
       className={cn(ui.input, 'disabled:cursor-not-allowed disabled:bg-subtle')}
     />
-    {showList ? <ul id={list} role="listbox" aria-label="Robots found" className="absolute inset-x-0 top-full z-20 mt-2 max-h-96 overflow-y-auto rounded-xl border border-edge bg-card p-1 shadow-float">
+    {showList ? <ul id={list} role="listbox" aria-label={t.found} className="absolute inset-x-0 top-full z-20 mt-2 max-h-96 overflow-y-auto rounded-xl border border-edge bg-card p-1 shadow-float">
       {hits.map((hit, index) => <li
         key={hit.id}
         id={list + '-' + index}

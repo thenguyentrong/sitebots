@@ -10,7 +10,6 @@ import './use-cases.css';
 
 /** One hue in three steps, darkest for daily use (the proof scale of globals.css, flipped in dark mode). */
 export const STAGE_COLOR: Record<UseStage, string> = { deployment: 'var(--proof-deployment)', pilot: 'var(--proof-pilot)', demo: 'var(--proof-demo)' };
-export const STAGE_SHORT: Record<UseStage, [string, string]> = MARKET_TEXT.en.useStageCount;
 /** "12 in daily use", "1 pilot", "3 Demos": a stage counted, in the page's language. */
 export const stageCount = (stage: UseStage, n: number, lang: Lang) => formatNumber(n, lang) + ' ' + MARKET_TEXT[lang].useStageCount[stage][n === 1 ? 0 : 1];
 

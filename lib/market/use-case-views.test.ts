@@ -17,6 +17,17 @@ describe('use-case pictures', () => {
     expect(project(13.41, 52.52)).toEqual({ x: (13.41 + 180) * 2.5, y: (90 - 52.52) * 2.5 });
   });
 
+  it('names the map points and the country chips in the page language', () => {
+    const en = usePoints(all);
+    const de = usePoints(all, 'de');
+    expect(de.points.map((p) => p.id)).toEqual(en.points.map((p) => p.id));
+    expect(de.countries.find((c) => c.code === 'DE')?.name).toBe('Deutschland');
+    expect(en.countries.find((c) => c.code === 'DE')?.name).toBe('Germany');
+    const town = de.points.find((p) => p.town && p.country === 'DE');
+    expect(town?.label).toBe(town?.townName + ', Deutschland');
+    expect(settingTiles(all, 'de').find((t) => t.id === 'interior')?.label).toBe('Innenausbau');
+  });
+
   it('shows each robot once per group, and sister models with the same projects on one card', () => {
     const groups = groupByRobot(all);
     const ids = groups.flatMap((g) => [g.robotId, ...g.variants.map((v) => v.href)]);

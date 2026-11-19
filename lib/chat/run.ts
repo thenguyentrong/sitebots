@@ -60,7 +60,7 @@ export function mergeBrief(current: readonly BriefFact[], updates: readonly Brie
 /** The brief goes in with the newest message rather than the system prompt, because it comes from the
  *  visitor and changes every turn: the cached prefix stays stable and it keeps user-level trust. The same
  *  place carries the nudge to conclude, because a model left alone keeps asking questions for ever. */
-function withBrief(turns: ChatTurn[], brief: readonly BriefFact[], language: Lang): Anthropic.Beta.Messages.BetaMessageParam[] {
+function withBrief(turns: ChatTurn[], brief: readonly BriefFact[], language: Lang, fromPage = false): Anthropic.Beta.Messages.BetaMessageParam[] {
   const messages: Anthropic.Beta.Messages.BetaMessageParam[] = turns.map((turn) => ({ role: turn.role, content: turn.content }));
   const last = turns[turns.length - 1];
   if (last?.role !== 'user') return messages;
@@ -68,7 +68,9 @@ function withBrief(turns: ChatTurn[], brief: readonly BriefFact[], language: Lan
   const concluded = turns.some((item) => item.content.includes(OPTIONS_SHOWN));
   const open = stillOpen(brief);
   const notes = [
-    language === 'de' ? 'Write in German and say Sie, reply line included.' : 'Write in English, reply line included.',
+    // The page's language wins over what they type: /de/advisor answers in German, /advisor in English.
+    (language === 'de' ? 'Write in German and say Sie, reply line included' : 'Write in English, reply line included')
+      + (fromPage ? ', even if they type in another language: it is the language of the page they are on.' : '.'),
     brief.length ? 'Project brief so far:\n' + JSON.stringify(brief) : '',
     // Left alone, a model keeps refining the job and reaches the end without knowing the person.
     turn >= LIMITS.askByTurn && turn < LIMITS.conclusionTurn && !concluded && open.length ? 'You still do not know: ' + open.join(', ') + '. Make the first of these your one question now, and stop refining the job.' : '',
@@ -109,7 +111,7 @@ function replySplitter() {
  *  block ever has to survive between turns; inside this loop the assistant content goes back unchanged. */
 export async function* runChat(client: Client, history: ChatTurn[], brief: readonly BriefFact[], signal?: AbortSignal, chosen?: Lang): AsyncGenerator<ChatEvent, ChatResult> {
   const language = chosen ?? guessLang(history.filter((turn) => turn.role === 'user').map((turn) => turn.content).join(' '));
-  const messages = withBrief(history, brief, language);
+  const messages = withBrief(history, brief, language, chosen !== undefined);
   const result: ChatResult = { text: '', brief: [...brief], options: null, leftOut: [], form: null, trace: [], inputTokens: 0, outputTokens: 0, costUsd: 0, refused: false, model: EARLY_MODEL };
   let cost = 0;
   let jsonRetries = 0;

@@ -116,21 +116,6 @@ a.lineup-label:hover { color: #fb923c; }
 .adv-mic[data-on='true'] { color: #09090b; background: #fb923c; animation: adv-listen 1.4s ease-in-out infinite; }
 @keyframes adv-listen { 50% { box-shadow: 0 0 0 7px rgba(251, 146, 60, 0.22); } }
 
-.adv-lang { flex: none; display: flex; align-items: center; gap: 2px; }
-.adv-lang button {
-  min-width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: #71717a;
-  transition: color 0.15s ease, background 0.15s ease;
-}
-.adv-lang button:hover:not(:disabled) { color: #fafafa; }
-.adv-lang button[aria-pressed='true'] { color: #fafafa; background: rgba(255, 255, 255, 0.1); }
-.adv-lang button:disabled { opacity: 0.5; }
-
 .adv-chip {
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);

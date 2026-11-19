@@ -12,7 +12,8 @@ export type PropSpec = { id: string; kind: 'box' | 'tote' | 'stand' | 'shelf' | 
  *  `yaw` turns it with the upper body that holds it. */
 export type PropState = { id: string; at: Vec3; held?: number; offset?: Vec3; opacity?: number; spin?: number; yaw?: number };
 export type TaskFrame = { pose: Pose; move: number; props: PropState[]; action: string };
-export type Task = { label: string; loop: number; delay: number; hands: string[]; body?: string; props: PropSpec[]; frame: (t: number) => TaskFrame };
+/** `label` in both languages: the landing shows it in the page's language. */
+export type Task = { label: { en: string; de: string }; loop: number; delay: number; hands: string[]; body?: string; props: PropSpec[]; frame: (t: number) => TaskFrame };
 type Robot = { key: string; turn: number; joints: string[]; presets: Record<string, Pose> };
 
 const clamp01 = (u: number) => Math.min(1, Math.max(0, u));
@@ -79,7 +80,7 @@ function liftCrate(robot: Robot): Task {
     [6.3, reach, side], [6.7, reach, side], [7.7, S, 0], [9, S, 0],
   ];
   return {
-    label: 'Lifts a crate', loop: 9, delay: 0, hands: ['L_hand_base_link', 'R_hand_base_link'],
+    label: { en: 'Lifts a crate', de: 'Hebt eine Kiste' }, loop: 9, delay: 0, hands: ['L_hand_base_link', 'R_hand_base_link'],
     props: [
       { id: 'bench', kind: 'stand', size: [0.32, BENCH.height, 0.28], color: STEEL, yaw: turn + side },
       { id: 'crate', kind: 'box', size: [0.28, 0.24, 0.32], color: CARDBOARD, yaw: turn + side },
@@ -111,7 +112,7 @@ function pickFittings(robot: Robot): Task {
   const bin: Vec3 = [-0.38, 0.62, 0.1], tote: Vec3 = [0.38, 0.6, 0.1];
   const toBin = toward(turn, bin[0], bin[2]), toTote = toward(turn, tote[0], tote[2]);
   return {
-    label: 'Picks fittings into a tote', loop: 7, delay: 1.1, hands: ['left_wrist_roll_rubber_hand', 'right_wrist_roll_rubber_hand'],
+    label: { en: 'Picks fittings into a tote', de: 'Legt Fittings in eine Transportbox' }, loop: 7, delay: 1.1, hands: ['left_wrist_roll_rubber_hand', 'right_wrist_roll_rubber_hand'],
     props: [
       { id: 'bin-stand', kind: 'stand', size: [0.22, 0.55, 0.22], color: STEEL, yaw: 0 },
       { id: 'tote-stand', kind: 'stand', size: [0.22, 0.53, 0.22], color: STEEL, yaw: 0 },
@@ -149,7 +150,7 @@ function shelfPick(robot: Robot): Task {
   const shelf: Vec3 = [0.46, 0, 0.12], tote: Vec3 = [-0.42, 0.5, 0.12];
   const toShelf = toward(turn, shelf[0], shelf[2]), toTote = toward(turn, tote[0], tote[2]);
   return {
-    label: 'Picks parts from a shelf', loop: 8, delay: 2.3, hands: ['left_hand_palm_link', 'right_hand_palm_link'],
+    label: { en: 'Picks parts from a shelf', de: 'Nimmt Teile aus dem Regal' }, loop: 8, delay: 2.3, hands: ['left_hand_palm_link', 'right_hand_palm_link'],
     props: [
       { id: 'shelf', kind: 'shelf', size: [0.32, 1.18, 0.3], color: STEEL, yaw: 0 },
       { id: 'tote-stand', kind: 'stand', size: [0.24, 0.43, 0.24], color: STEEL, yaw: 0 },
@@ -194,7 +195,7 @@ function patrolScan(robot: Robot): Task {
   // The scan looks towards the camera (facing +z), not along the row at the next robot.
   const front = -Math.PI / 2 - robot.turn;
   return {
-    label: 'Patrols and scans the site', loop: 8, delay: 0.6, hands: [], body: 'body',
+    label: { en: 'Patrols and scans the site', de: 'Kontrolliert und scannt die Baustelle' }, loop: 8, delay: 0.6, hands: [], body: 'body',
     props: [{ id: 'beam', kind: 'beam', size: [0.46, 0.46, 0.8], color: '#fb923c', yaw: 0, tilt: -0.62 }],
     frame: (t) => {
       const walking = spell(t);
@@ -209,7 +210,7 @@ function carryLoad(robot: Robot): Task {
   const S = robot.presets.standing ?? {};
   const legs = [{ hip: 'FL_thigh_joint', knee: 'FL_calf_joint', phase: 0 }, { hip: 'RR_thigh_joint', knee: 'RR_calf_joint', phase: 0 }, { hip: 'FR_thigh_joint', knee: 'FR_calf_joint', phase: Math.PI }, { hip: 'RL_thigh_joint', knee: 'RL_calf_joint', phase: Math.PI }];
   return {
-    label: 'Carries material', loop: 8, delay: 4.6, hands: [], body: 'base_link',
+    label: { en: 'Carries material', de: 'Trägt Material' }, loop: 8, delay: 4.6, hands: [], body: 'base_link',
     props: [{ id: 'load', kind: 'box', size: [0.46, 0.2, 0.3], color: CARDBOARD, yaw: robot.turn }],
     frame: (t) => {
       const walking = spell(t);

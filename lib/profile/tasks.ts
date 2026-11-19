@@ -18,6 +18,25 @@ export const TASK_LABEL: Record<TaskCapability, string> = {
   kitting: 'Kitting', machine_tending: 'Machine tending', palletising: 'Palletising', surface_finishing: 'Surface finishing',
 };
 
+const TASK_LABEL_DE: Record<TaskCapability, string> = {
+  carry_payload: 'Material tragen', fetch_and_deliver: 'Holen und bringen', shelf_pick: 'Aus Regalen greifen', tool_handoff: 'Werkzeug übergeben',
+  site_inspection: 'Baustelle prüfen', progress_scan_360: '360°-Baufortschritt erfassen', lidar_scan: 'LiDAR-Scan', layout_marking: 'Anzeichnen',
+  drilling: 'Bohren', screwing: 'Schrauben', cleaning_sweep: 'Kehren', material_sorting: 'Material sortieren', patrol_monitoring: 'Streife / Überwachung',
+  teleoperated_manipulation: 'Ferngesteuertes Handhaben', autonomous_nav_indoor: 'Allein navigieren (innen)', autonomous_nav_outdoor: 'Allein navigieren (außen)', stair_climbing: 'Treppen steigen',
+  kitting: 'Kommissionieren', machine_tending: 'Maschinen beschicken', palletising: 'Palettieren', surface_finishing: 'Oberflächen bearbeiten',
+};
+const BUCKET_LABEL_DE: Record<string, string> = { transport: 'Transport', inspection: 'Prüfen und Erfassen', manipulation: 'Handhaben und Werkzeuge', navigation: 'Navigation', sitework: 'Arbeiten auf der Baustelle' };
+const WORDING = {
+  en: { notAssessed: 'not assessed', confidence: 'source confidence not established', thirdParty: 'third-party report only', maker: 'maker states it', assessed: 'assessed with evidence', notConfirmed: 'task not confirmed' },
+  de: { notAssessed: 'nicht bewertet', confidence: 'Verlässlichkeit der Quelle nicht belegt', thirdParty: 'nur von Dritten berichtet', maker: 'laut Hersteller', assessed: 'mit Belegen bewertet', notConfirmed: 'Aufgabe nicht bestätigt' },
+};
+/** A task's name in the page's language. */
+export const taskLabel = (id: TaskCapability, lang: 'en' | 'de' = 'en'): string => (lang === 'de' ? TASK_LABEL_DE : TASK_LABEL)[id];
+/** The short name on the radar's spokes. */
+export const taskShortLabel = (id: TaskCapability, lang: 'en' | 'de' = 'en'): string =>
+  lang === 'de' ? ({ autonomous_nav_indoor: 'Navigation innen', autonomous_nav_outdoor: 'Navigation außen' } as Record<string, string>)[id] ?? TASK_LABEL_DE[id] : TASK_LABEL[id].replace('Navigate ', '').replace(' alone', '');
+export const bucketLabel = (id: string, lang: 'en' | 'de' = 'en'): string => (lang === 'de' ? BUCKET_LABEL_DE[id] : null) ?? TASK_BUCKETS.find((b) => b.id === id)?.label ?? id;
+
 export type TaskStatus = 'yes' | 'partial' | 'unknown' | 'no';
 export type TaskRow = { id: TaskCapability; label: string; status: TaskStatus; wording: string };
 
@@ -26,16 +45,17 @@ export type TaskRow = { id: TaskCapability; label: string; status: TaskStatus; w
  * partial when only a third party reports it. A task absent from a list is
  * unknown: absence is not evidence that it cannot be performed.
  */
-export function taskRows(c: Candidate): { rows: TaskRow[]; trust: Trust } {
+export function taskRows(c: Candidate, lang: 'en' | 'de' = 'en'): { rows: TaskRow[]; trust: Trust } {
+  const w = WORDING[lang];
   const spec = c.card.specs?.task_capabilities;
   const listed = new Set<string>(Array.isArray(spec?.value) ? (spec.value as string[]) : c.card.task_capabilities ?? []);
   const assessed = Boolean(spec) || listed.size > 0;
   const trust: Trust = spec?.trust ?? (listed.size ? 'reported' : 'unknown');
   const rows = TASK_CAPABILITIES.map((id): TaskRow => {
-    if (!assessed) return { id, label: TASK_LABEL[id], status: 'unknown', wording: 'not assessed' };
-    if (listed.has(id) && trust === 'unknown') return { id, label: TASK_LABEL[id], status: 'unknown', wording: 'source confidence not established' };
-    if (listed.has(id)) return trust === 'reported' ? { id, label: TASK_LABEL[id], status: 'partial', wording: 'third-party report only' } : { id, label: TASK_LABEL[id], status: 'yes', wording: trust === 'verified' ? 'maker states it' : 'assessed with evidence' };
-    return { id, label: TASK_LABEL[id], status: 'unknown', wording: 'task not confirmed' };
+    if (!assessed) return { id, label: taskLabel(id, lang), status: 'unknown', wording: w.notAssessed };
+    if (listed.has(id) && trust === 'unknown') return { id, label: taskLabel(id, lang), status: 'unknown', wording: w.confidence };
+    if (listed.has(id)) return trust === 'reported' ? { id, label: taskLabel(id, lang), status: 'partial', wording: w.thirdParty } : { id, label: taskLabel(id, lang), status: 'yes', wording: trust === 'verified' ? w.maker : w.assessed };
+    return { id, label: taskLabel(id, lang), status: 'unknown', wording: w.notConfirmed };
   });
   return { rows, trust };
 }

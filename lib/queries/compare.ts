@@ -1,6 +1,7 @@
 import { FOCUSED_FORM_FACTORS } from '@/lib/browse-scope';
 import { catalogueFacts, marketFacts, mergeFacts, type Facts } from '@/lib/compare/facts';
 import { getSql } from '@/lib/db';
+import type { Lang } from '@/lib/i18n/config';
 import { cataloguePathFor, marketByPath } from '@/lib/market/links';
 import { loadMarket, type MarketRobot } from '@/lib/market/load';
 import { catalogueRows, pageIdentity } from '@/lib/market/tiles';
@@ -67,7 +68,7 @@ function pictureOf(record: MarketRobot | null, card: RobotCard | null): CompareC
   return card?.image_url ? { src: card.image_url, alt: card.image_alt ?? card.name } : null;
 }
 
-function columnFor(id: string, record: MarketRobot | null, row: CompareRow | null): CompareColumn {
+function columnFor(id: string, record: MarketRobot | null, row: CompareRow | null, lang: Lang): CompareColumn {
   const card = row?.card ?? null;
   const routes = card ? germanyBuyingRoutes(card.manufacturer_slug, card.model_slug, card.variant, row!.prices).map(({ name, url, region }) => ({ name, url, region })) : [];
   const page = card ? '/robots/' + cardPath(card) + (card.variant === 'base' ? '' : '?variant=' + card.variant) : cataloguePathFor(record!.id) ?? '/market/' + record!.id;
@@ -77,13 +78,14 @@ function columnFor(id: string, record: MarketRobot | null, row: CompareRow | nul
     maker: record?.maker ?? card!.manufacturer_name,
     href: page,
     picture: pictureOf(record, card),
-    facts: mergeFacts(record ? marketFacts(record) : null, row ? catalogueFacts(row.card, row.prices, row.availability, routes) : null),
+    facts: mergeFacts(record ? marketFacts(record, lang) : null, row ? catalogueFacts(row.card, row.prices, row.availability, routes, lang) : null),
   };
 }
 
 /** Columns for /compare: market ids and catalogue ids, mixed, in the order asked. Where a catalogue
- * row and a market record are one robot they become one column and the market record speaks first. */
-export async function getCompareColumns(requested: string[]): Promise<CompareResult> {
+ * row and a market record are one robot they become one column and the market record speaks first.
+ * The facts are worded in `lang`. */
+export async function getCompareColumns(requested: string[], lang: Lang = 'en'): Promise<CompareResult> {
   const ids = [...new Set(requested)];
   const market = new Map(loadMarket().map((robot) => [robot.id, robot]));
   const known = await catalogueCompareRows(ids.filter((id) => UUID.test(id)));
@@ -114,7 +116,7 @@ export async function getCompareColumns(requested: string[]): Promise<CompareRes
   const missing = chosen.flatMap(([, { rowId }]) => (rowId && !rowsById.has(rowId) ? [rowId] : []));
   for (const row of await catalogueCompareRows(missing)) rowsById.set(row.card.id, row);
   return {
-    columns: chosen.map(([id, { record, rowId }]) => columnFor(id, record, (rowId && rowsById.get(rowId)) || null)),
+    columns: chosen.map(([id, { record, rowId }]) => columnFor(id, record, (rowId && rowsById.get(rowId)) || null, lang)),
     robots: wanted.size,
     unknown,
   };

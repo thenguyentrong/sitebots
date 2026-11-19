@@ -2,14 +2,17 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { getSql } from '@/lib/db';
 import { getRobotModel } from '@/lib/models/index';
-import { STATUS_LABEL, formatMoney } from '@/lib/spec/display';
+import { formatMoney } from '@/lib/spec/display';
 import type { RobotImage } from '@/lib/queries/robots';
 import type { RobotCard } from '@/lib/spec/types';
-import { STATUS_LABELS, TYPE_LABELS, priceText, toCard, type RobotCardData } from './cards';
+import type { Lang } from '@/lib/i18n/config';
+import { formatNumber } from '@/lib/i18n/format';
+import { LISTING_TEXT, cardJobsLine } from '@/lib/i18n/listing';
+import { MARKET_TEXT } from '@/lib/i18n/market';
+import { bodyLabel, germanyStatusLabel, priceText, toCard, typeLabel, type RobotCardData } from './cards';
 import { cataloguePathFor, marketByPath } from './links';
 import type { RobotJobStats } from './jobs';
 import type { MarketRobot, Picture } from './load';
-import { jobsLine } from './proof';
 
 // Server side. Market records and catalogue rows become the same robot card, so both views of the
 // robots page look alike: pictures to page through, the 3D model where one exists, price and the
@@ -119,8 +122,10 @@ export async function catalogueRows(paths: string[]): Promise<Row[]> {
   )) as Row[];
 }
 
-/** Catalogue pictures by robot id: the maker's pictures first, then free-licence photographs, renders last. */
-async function cataloguePictures(ids: string[]): Promise<Map<string, Shot[]>> {
+/** Catalogue pictures by robot id: the maker's pictures first, then free-licence photographs, renders last.
+ * The credit line is ours ("From unitree.com"); a photographer's attribution stays as they wrote it. */
+async function cataloguePictures(ids: string[], lang: Lang = 'en'): Promise<Map<string, Shot[]>> {
+  const t = LISTING_TEXT[lang];
   const out = new Map<string, Shot[]>();
   if (!ids.length) return out;
   const sql = await getSql();
@@ -134,9 +139,9 @@ async function cataloguePictures(ids: string[]): Promise<Map<string, Shot[]>> {
     const url = row.url;
     const render = url.startsWith('/renders/');
     const credit = render
-      ? 'Render of the published model'
+      ? t.render
       : row.licence && PREVIEW_LICENCES.includes(row.licence)
-        ? 'From ' + (host(row.source_url ?? url) ?? 'the maker')
+        ? t.from(host(row.source_url ?? url))
         : [row.attribution ?? 'Wikimedia Commons', row.licence].filter(Boolean).join(' · ');
     const list = out.get(row.robot_id) ?? [];
     list.push({ src: url, url, alt: row.alt ?? '', credit, href: row.source_url ?? null, render });
@@ -191,10 +196,9 @@ function modelFor(row: Row): TileModel | null {
   };
 }
 
-const plural = (n: number, word: string) => n + ' ' + word + (n === 1 ? '' : 's');
-
-/** Cards for the German view, in the order given. */
-export async function germanTiles(robots: RobotCardData[], market: Map<string, MarketRobot>, fits: Record<string, RobotJobStats>): Promise<TileData[]> {
+/** Cards for the German view, in the order given, with every line in the page's language. */
+export async function germanTiles(robots: RobotCardData[], market: Map<string, MarketRobot>, fits: Record<string, RobotJobStats>, lang: Lang = 'en'): Promise<TileData[]> {
+  const t = LISTING_TEXT[lang];
   const pathOf = (id: string) => cataloguePathFor(id)?.replace(/^[/]robots[/]/, '') ?? null;
   const paths = [...new Set(robots.map((robot) => pathOf(robot.id)).filter((path): path is string => Boolean(path)))];
   const rows = await catalogueRows(paths);
@@ -203,7 +207,7 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
     const key = row.manufacturer_slug + '/' + row.model_slug;
     rowsByPath.set(key, [...(rowsByPath.get(key) ?? []), row]);
   }
-  const shots = await cataloguePictures(rows.map((row) => row.id));
+  const shots = await cataloguePictures(rows.map((row) => row.id), lang);
   const byPath = marketByPath();
   const identities = new Map([...rowsByPath].map(([path, list]) => [path, pageIdentity(list, byPath.get(path) ?? [])]));
   return robots.map((card) => {
@@ -216,18 +220,18 @@ export async function germanTiles(robots: RobotCardData[], market: Map<string, M
     const record = market.get(card.id);
     const own = row ? shots.get(row.id) ?? [] : [];
     const sellers = card.germany.sellers.length;
-    const jobs = jobsLine(fits[card.id]);
+    const jobs = cardJobsLine(fits[card.id], lang);
     return {
       id: card.id,
       href: card.href,
       name: card.name,
-      kicker: TYPE_LABELS[card.robotType] + ' · ' + card.body,
+      kicker: typeLabel(card.robotType, lang) + ' · ' + (record ? bodyLabel(record, lang) : card.body),
       summary: card.summary,
       pictures: merge([record ? marketShots(record) : [], own.length || !base || row?.variant === 'base' ? own : shots.get(base.id) ?? []], Boolean(model)),
       model,
-      price: priceText(card),
-      status: { label: STATUS_LABELS[card.germany.status], tone: card.germany.status },
-      fine: (sellers ? plural(sellers, 'seller') + ' · ' : '') + jobs,
+      price: priceText(card, lang),
+      status: { label: germanyStatusLabel(card.germany.status, lang), tone: card.germany.status },
+      fine: (sellers ? t.sellers(sellers, formatNumber(sellers, lang)) + ' · ' : '') + jobs,
       compare: { id: record && identity ? identity.compareId(record) : card.id, name: card.name },
     };
   });
@@ -249,14 +253,16 @@ export async function catalogueIdsWithMarketPictures(): Promise<string[]> {
 }
 
 /** Cards for the worldwide view: every catalogue configuration, with its German status where the market research covers it. */
-export async function worldTiles(rows: RobotCard[]): Promise<TileData[]> {
+export async function worldTiles(rows: RobotCard[], lang: Lang = 'en'): Promise<TileData[]> {
+  const t = LISTING_TEXT[lang];
+  const words = MARKET_TEXT[lang];
   const byPath = marketByPath();
   const pathOf = (row: { manufacturer_slug: string; model_slug: string }) => row.manufacturer_slug + '/' + row.model_slug;
   // Every configuration of the listed pages, also the ones this view leaves out, so records land on the right one.
   const pages = new Map<string, Row[]>();
   for (const row of await catalogueRows([...new Set(rows.map(pathOf))])) pages.set(pathOf(row), [...(pages.get(pathOf(row)) ?? []), row]);
   const bases = new Map([...pages].flatMap(([path, list]) => list.filter((row) => row.variant === 'base').map((row) => [path, row.id] as const)));
-  const shots = await cataloguePictures([...rows.map((row) => row.id), ...bases.values()]);
+  const shots = await cataloguePictures([...rows.map((row) => row.id), ...bases.values()], lang);
   const recordsFor = (row: RobotCard) => recordsOf(row, pages.get(pathOf(row)) ?? [], byPath.get(pathOf(row)) ?? []);
   return rows.map((row) => {
     const records = recordsFor(row);
@@ -268,19 +274,20 @@ export async function worldTiles(rows: RobotCard[]): Promise<TileData[]> {
     const pictures = merge([...records.map(marketShots), own.length || !base ? own : shots.get(base) ?? []], Boolean(model));
     const sold = best && best.germany.status !== 'not_sold';
     const sellers = best ? best.germany.sellers.length : 0;
-    const abroad = row.price_amount !== null && row.price_currency ? formatMoney(row.price_amount, row.price_currency) + (row.price_region ? ' (' + row.price_region + ')' : '') : null;
-    const type = TYPE_LABELS[row.form_factor as keyof typeof TYPE_LABELS] ?? row.form_factor;
+    const abroad = row.price_amount !== null && row.price_currency ? formatMoney(row.price_amount, row.price_currency, lang) + (row.price_region ? ' (' + row.price_region + ')' : '') : null;
+    const type = (words.type as Record<string, string>)[row.form_factor] ?? row.form_factor;
+    const status: string | undefined = words.lifecycle[row.status];
     return {
       id: row.id,
       href: '/robots/' + row.manufacturer_slug + '/' + row.model_slug + (row.variant === 'base' ? '' : '?variant=' + row.variant),
       name: row.name,
-      kicker: type + ' · ' + (best ? toCard(best).body : row.manufacturer_country ?? row.manufacturer_name),
+      kicker: type + ' · ' + (best ? bodyLabel(best, lang) : row.manufacturer_country ?? row.manufacturer_name),
       summary: row.summary ?? best?.summary ?? null,
       pictures,
       model,
-      price: sold ? priceText(toCard(best)) : abroad,
-      status: best ? { label: STATUS_LABELS[best.germany.status], tone: best.germany.status } : { label: STATUS_LABEL[row.status] ?? 'Status unknown', tone: 'other' },
-      fine: sold ? (sellers ? plural(sellers, 'seller') + ' in Germany' : 'Sold in Germany') : best ? null : 'No German seller found',
+      price: sold ? priceText(toCard(best, lang), lang) : abroad,
+      status: best ? { label: germanyStatusLabel(best.germany.status, lang), tone: best.germany.status } : { label: status ?? words.lifecycle.unknown, tone: 'other' },
+      fine: sold ? (sellers ? t.sellersInGermany(sellers, formatNumber(sellers, lang)) : t.soldInGermany) : best ? null : t.noGermanSeller,
       compare: { id: row.id, name: row.name },
     };
   });

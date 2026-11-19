@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { COUNTRY_NAMES, loadPlaces, loadProjectMap, placeLabel, siteProjects } from './places';
+import { COUNTRY_NAMES, loadPlaces, loadProjectMap, placeLabel, siteProjects, townLabel } from './places';
 
 // The project map places every pilot and daily use on a site job; new evidence needs its place.
 describe('project map', () => {
@@ -22,6 +22,9 @@ describe('project map', () => {
     expect(placeLabel('Maler Damm GmbH, Germany')).toBe('Germany');
     expect(placeLabel('Malermeister Sachs (master painter)')).toBe('');
     expect(placeLabel(null)).toBe('');
+    expect(placeLabel('Maler Damm GmbH, Germany', 'de')).toBe('Deutschland');
+    expect(townLabel('Vienna', 'de')).toBe('Wien');
+    expect(townLabel('Vienna')).toBe('Vienna');
   });
 
   it('draws every pin inside the Europe map and names every country', () => {

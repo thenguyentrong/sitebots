@@ -149,14 +149,27 @@ export function robotJobStats(jobs: readonly JobPoint[]): Record<string, RobotJo
 }
 
 export type RobotJob = { id: string; title: string; setting: string; clusterId: string; fit: RobotFit };
-/** Every job a robot fits, best evidence first, for its details page. */
-export function jobsForRobot(robotId: string): RobotJob[] {
+let german: Map<string, { title: string; setting: string }> | null = null;
+/** The German title and setting of each job from the bilingual task files. Researched jobs have English only. */
+function germanWords() {
+  if (german) return german;
+  const content = loadContent();
+  const settings = new Map(content.settings.map((setting) => [setting.id, setting]));
+  german = new Map(taskCards(content).map((task) => [task.id, { title: task.title.de || task.title.en, setting: settings.get(task.setting)?.title.de || settings.get(task.setting)?.title.en || task.setting }]));
+  return german;
+}
+
+/** Every job a robot fits, best evidence first, for its details page. On German pages a job from the task
+ *  files has its German title; `english` marks the researched ones that only exist in English. */
+export function jobsForRobot(robotId: string, lang: 'en' | 'de' = 'en'): (RobotJob & { english?: boolean })[] {
   const { jobs, marketRobots, familyOf, needs } = loadJobs();
   const robot = marketRobots.find((item) => item.id === robotId);
   if (!robot) return [];
   return jobs.flatMap((job) => {
     const fit = fitRobot(robot, { id: job.id, needs: job.needs, outdoor: job.outdoor, isRelated: relatedTo(job.id, job.family, needs, familyOf) });
-    return fit ? [{ id: job.id, title: job.title, setting: job.setting, clusterId: job.clusterId, fit }] : [];
+    if (!fit) return [];
+    const de = lang === 'de' ? germanWords().get(job.id) : undefined;
+    return [{ id: job.id, title: de?.title ?? job.title, setting: de?.setting ?? job.setting, clusterId: job.clusterId, fit, ...(lang === 'de' && !de ? { english: true } : {}) }];
   }).sort((a, b) => b.fit.score - a.fit.score || a.title.localeCompare(b.title));
 }
 

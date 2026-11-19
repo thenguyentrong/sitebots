@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { companyInsight, companySlugFor, marketCompanies, slugifyMaker } from './companies';
 import { loadMarket } from './load';
-import { countriesOf, loadUseCases, settingOf, useCaseStats } from './use-cases';
+import { countriesOf, loadUseCases, settingOf, useCaseStats, useDate, usePlace } from './use-cases';
 
 describe('use cases', () => {
   const uses = loadUseCases();
@@ -24,6 +24,16 @@ describe('use cases', () => {
     expect(settingOf(['site_concrete_repair/x'], 'Engelbergtunnel A81 Leonberg')).toBe('underground');
     expect(settingOf(['site_painting/wall-ceiling-painting'], 'Office fit-out, Munich')).toBe('interior');
     expect(countriesOf('Construction sites in Tokyo, Japan')).toContain('JP');
+  });
+  it('name places and dates again for German pages, from the same cached list', () => {
+    const erlangen = { where: 'Metzner Recycling with Volvo CE, demolition for the Siemens Technology Campus, Erlangen, Germany', place: 'Erlangen, Germany', countries: ['DE'] };
+    expect(usePlace(erlangen)).toBe('Erlangen, Germany');
+    expect(usePlace(erlangen, 'de')).toBe('Erlangen, Deutschland');
+    expect(usePlace({ where: null, place: 'Japan', countries: ['JP'] }, 'de')).toBe('Japan');
+    expect(useDate('2024-06')).toBe('2024-06');
+    expect(useDate('2024-06', 'de')).toBe('Juni 2024');
+    expect(useDate('2024-06-14', 'de')).toBe('14.06.2024');
+    expect(useDate('2024', 'de')).toBe('2024');
   });
 });
 

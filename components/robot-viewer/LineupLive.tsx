@@ -9,6 +9,9 @@ import { HDRLoader } from 'three/addons/loaders/HDRLoader.js';
 import type { ModelEntry } from '@/lib/models/schemas';
 import type { Pose } from '@/lib/models/poses';
 import { createRobotRig } from '@/lib/models/rig';
+import { useLang } from '@/lib/i18n/client';
+import { localePath, type Lang } from '@/lib/i18n/config';
+import { formatNumber } from '@/lib/i18n/format';
 import { WORKER_URL } from './RobotViewer';
 import { taskFor, type PropSpec, type Task } from './lineupTasks';
 
@@ -56,7 +59,7 @@ const localBox = (object: Object3D) => {
   return object.parent ? box.applyMatrix4(new Matrix4().copy(object.parent.matrixWorld).invert()) : box;
 };
 const short = (name: string) => name.replace(/^(Unitree|Boston Dynamics)\s+/, '');
-const metres = (value: number) => value.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' m';
+const metres = (value: number, lang: Lang) => formatNumber(value, lang, 2, 2) + ' m';
 
 /** Pixels per metre at the row, and the screen row of the horizon, which is the 1.80 m line. On the
  *  landing the row stands on the headline (feet at `floor` px), fills the width and keeps the line below
@@ -148,13 +151,13 @@ function Yard({ center, onLoad }: { center: number; onLoad: () => void }) {
 }
 
 /** A site worker's height across the whole row, on the horizon: the scale every robot is read against. */
-function HeightLine({ width }: { width: number }) {
+function HeightLine({ width, lang }: { width: number; lang: Lang }) {
   return <group position={[0, EYE, -0.6]}>
     <mesh position={[width / 2, 0, 0]}>
       <boxGeometry args={[width, 0.012, 0.012]} />
       <meshBasicMaterial color="#fb923c" toneMapped={false} />
     </mesh>
-    <Html position={[0.04, 0, 0]} zIndexRange={[12, 10]} style={{ pointerEvents: 'none' }}><span className="lineup-scale">1.80 m</span></Html>
+    <Html position={[0.04, 0, 0]} zIndexRange={[12, 10]} style={{ pointerEvents: 'none' }}><span className="lineup-scale">{metres(EYE, lang)}</span></Html>
   </group>;
 }
 
@@ -190,8 +193,8 @@ function Prop({ spec, register }: { spec: PropSpec; register: (id: string, objec
   </group>;
 }
 
-function LiveRobot({ item, x, motion, hovered, onHover, onOpen, onSize, onAction }: {
-  item: LiveItem; x: number; motion: boolean; hovered: boolean;
+function LiveRobot({ item, x, motion, hovered, onHover, onOpen, onSize, onAction, lang }: {
+  item: LiveItem; x: number; motion: boolean; hovered: boolean; lang: Lang;
   onHover: (key: string | null) => void; onOpen: (href: string) => void; onSize: (key: string, size: Size) => void; onAction: (key: string, action: string) => void;
 }) {
   const { scene } = useGLTF(item.entry.glbUrl, false, true);
@@ -282,10 +285,10 @@ function LiveRobot({ item, x, motion, hovered, onHover, onOpen, onSize, onAction
         <meshBasicMaterial transparent opacity={0} depthWrite={false} />
       </mesh> : null}
       {foot ? <Html position={[foot.cx, -foot.lift, 0.25]} zIndexRange={[12, 10]}>
-        <a className="lineup-label" href={item.href}>{short(item.name)}<b>{metres(item.heightM)}</b></a>
+        <a className="lineup-label" href={localePath(item.href, lang)}>{short(item.name)}<b>{metres(item.heightM, lang)}</b></a>
       </Html> : null}
       {foot && hovered ? <Html position={[foot.cx, foot.top + 0.14, foot.cz]} center zIndexRange={[20, 14]} style={{ pointerEvents: 'none' }}>
-        <span className="lineup-tag"><strong>{item.name}</strong><span>{task ? task.label + ' · ' : ''}{metres(item.heightM)} · click to open</span></span>
+        <span className="lineup-tag"><strong>{item.name}</strong><span>{task ? task.label[lang] + ' · ' : ''}{metres(item.heightM, lang)} · {lang === 'de' ? 'zum Öffnen klicken' : 'click to open'}</span></span>
       </Html> : null}
     </group>
     {task ? <group position={[x, 0, 0]}>{task.props.map((spec) => <Prop key={spec.id} spec={spec} register={register} />)}</group> : null}
@@ -317,7 +320,7 @@ function ReturnHome({ center }: { center: number }) {
   return null;
 }
 
-function LiveWorker({ x, onSize }: { x: number; onSize: (key: string, size: Size) => void }) {
+function LiveWorker({ x, onSize, lang }: { x: number; onSize: (key: string, size: Size) => void; lang: Lang }) {
   const { scene } = useGLTF(WORKER_URL, false, true);
   const copy = useMemo(() => { const made = scene.clone(true); prepare(made); return made; }, [scene]);
   const [center, setCenter] = useState<number | null>(null);
@@ -330,7 +333,7 @@ function LiveWorker({ x, onSize }: { x: number; onSize: (key: string, size: Size
   return <group position={[x, 0, 0]}>
     <primitive object={copy} />
     {center === null ? null : <Html position={[center, 0, 0.25]} zIndexRange={[12, 10]} style={{ pointerEvents: 'none' }}>
-      <span className="lineup-label">Site worker<b>{metres(EYE)}</b></span>
+      <span className="lineup-label">{lang === 'de' ? 'Bauarbeiter' : 'Site worker'}<b>{metres(EYE, lang)}</b></span>
     </Html>}
   </group>;
 }
@@ -339,6 +342,8 @@ export function LineupLive({ items, mode = 'hero', floor = 0, ceiling = 0, onRea
   items: LiveItem[]; mode?: 'hero' | 'strip'; floor?: number; ceiling?: number; onReady?: () => void;
   onActions?: (actions: Record<string, string>) => void; onHovered?: (key: string | null) => void;
 }) {
+  // Read here, outside the canvas: the canvas and drei's <Html> labels render in React roots of their own.
+  const lang = useLang();
   const [sizes, setSizes] = useState<Record<string, Size>>({});
   const [hovered, setHovered] = useState<string | null>(null);
   const [motion, setMotion] = useState(true);
@@ -371,7 +376,7 @@ export function LineupLive({ items, mode = 'hero', floor = 0, ceiling = 0, onRea
     observer.observe(element);
     return () => observer.disconnect();
   }, []);
-  const open = useCallback((href: string) => { window.location.assign(href); }, []);
+  const open = useCallback((href: string) => { window.location.assign(localePath(href, lang)); }, [lang]);
 
   // The worker, then each robot, LEAD free on both ends.
   let cursor = LEAD;
@@ -393,10 +398,10 @@ export function LineupLive({ items, mode = 'hero', floor = 0, ceiling = 0, onRea
       camera={{ fov: 30, position: [center, EYE, DISTANCE], near: 0.05, far: 400, manual: true }}>
       <Suspense fallback={null}>
         <Yard center={center} onLoad={onYard} />
-        <HeightLine width={width} />
-        <LiveWorker x={workerX} onSize={onSize} />
+        <HeightLine width={width} lang={lang} />
+        <LiveWorker x={workerX} onSize={onSize} lang={lang} />
         {items.map((item) => <LiveRobot key={item.key} item={item} x={xs[item.key]} motion={motion} hovered={hovered === item.key}
-          onHover={setHovered} onOpen={open} onSize={onSize} onAction={onAction} />)}
+          onHover={setHovered} onOpen={open} onSize={onSize} onAction={onAction} lang={lang} />)}
         <ContactShadows position={[center, 0.003, 0]} scale={[width + 2, 3]} resolution={512} blur={2.4} far={2.5} opacity={0.6} color="#000000" frames={Infinity} />
       </Suspense>
       <Lens center={center} row={width} mode={mode} floor={floor} ceiling={ceiling} />

@@ -1,7 +1,8 @@
 import geography from '@/data/manufacturers/countries.json';
+import type { Lang } from '@/lib/i18n/config';
 import { loadMarket, type MarketRobot, type Picture } from './load';
-import { loadPlaces } from './places';
-import { SETTINGS, countryName, type SettingId, type UseCase, type UseStage } from './use-cases';
+import { loadPlaces, townLabel } from './places';
+import { SETTINGS, countryName, settingText, usePlace, type SettingId, type UseCase, type UseStage } from './use-cases';
 
 // Server-side only. What the use-case pictures need: a photo of each robot at work where we have one,
 // the uses as dots on a world map, and the uses grouped per robot and per setting.
@@ -48,10 +49,17 @@ const centre = (code: string): [number, number] | null => {
   return c ? [c.longitude, c.latitude] : EXTRA_CENTRES[code] ?? null;
 };
 
-export type UsePoint = { id: string; label: string; country: string; x: number; y: number; count: number; stages: StageCounts; best: UseStage; town: boolean };
+export type UsePoint = {
+  id: string; label: string; country: string; x: number; y: number; count: number; stages: StageCounts; best: UseStage; town: boolean;
+  /** The town's own name, so a map in another language can name the point again (see pointLabel). */
+  townName: string | null;
+};
+
+/** "Erlangen, Germany" or the country alone, in the page's language. */
+export const pointLabel = (p: Pick<UsePoint, 'townName' | 'country'>, lang: Lang = 'en') => p.townName ? townLabel(p.townName, lang) + ', ' + countryName(p.country, lang) : countryName(p.country, lang);
 
 /** One dot per town (or per country when the source names no town), sized later by its number of uses. */
-export function usePoints(list: readonly UseCase[]): { points: UsePoint[]; unplaced: number; countries: { code: string; name: string; count: number; stages: StageCounts }[] } {
+export function usePoints(list: readonly UseCase[], lang: Lang = 'en'): { points: UsePoint[]; unplaced: number; countries: { code: string; name: string; count: number; stages: StageCounts }[] } {
   const points = new Map<string, Omit<UsePoint, 'best'>>();
   const countries = new Map<string, StageCounts>();
   let unplaced = 0;
@@ -68,7 +76,8 @@ export function usePoints(list: readonly UseCase[]): { points: UsePoint[]; unpla
       const at = spot.lat != null && spot.lon != null ? [spot.lon, spot.lat] as [number, number] : centre(spot.country);
       if (!at) continue;
       const id = spot.town && spot.lat != null ? spot.country + ':' + spot.town : spot.country;
-      const known = points.get(id) ?? { id, label: spot.town && spot.lat != null ? spot.town + ', ' + countryName(spot.country) : countryName(spot.country), country: spot.country, ...project(at[0], at[1]), count: 0, stages: { deployment: 0, pilot: 0, demo: 0 }, town: Boolean(spot.town && spot.lat != null) };
+      const townName = spot.town && spot.lat != null ? spot.town : null;
+      const known = points.get(id) ?? { id, label: pointLabel({ townName, country: spot.country }, lang), country: spot.country, ...project(at[0], at[1]), count: 0, stages: { deployment: 0, pilot: 0, demo: 0 }, town: Boolean(townName), townName };
       known.count++;
       known.stages[use.stage]++;
       points.set(id, known);
@@ -77,7 +86,7 @@ export function usePoints(list: readonly UseCase[]): { points: UsePoint[]; unpla
   return {
     points: [...points.values()].map((p) => ({ ...p, best: best(p.stages) })).sort((a, b) => b.count - a.count),
     unplaced,
-    countries: [...countries].map(([code, stages]) => ({ code, name: countryName(code), stages, count: stages.deployment + stages.pilot + stages.demo })).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)),
+    countries: [...countries].map(([code, stages]) => ({ code, name: countryName(code, lang), stages, count: stages.deployment + stages.pilot + stages.demo })).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)),
   };
 }
 
@@ -93,9 +102,22 @@ export type RobotUses = {
   countries: string[];
 };
 
+/** A robot's places with their country, most used first, named in the page's language. */
+export function robotPlaces(uses: readonly UseCase[], lang: Lang = 'en'): { label: string; country: string | null }[] {
+  const places = new Map<string, { label: string; country: string | null; n: number }>();
+  for (const use of uses) {
+    const label = usePlace(use, lang);
+    if (!label) continue;
+    const known = places.get(label) ?? { label, country: use.countries[0] ?? null, n: 0 };
+    known.n++;
+    places.set(label, known);
+  }
+  return [...places.values()].sort((a, b) => b.n - a.n).map(({ label, country }) => ({ label, country }));
+}
+
 /** The uses grouped per robot, most daily use first. Sister models of one maker with the very same projects
  * (one record per size, say) share one card; the others are named on it as `variants`. */
-export function groupByRobot(list: readonly UseCase[], avoid?: Set<string>): RobotUses[] {
+export function groupByRobot(list: readonly UseCase[], avoid?: Set<string>, lang: Lang = 'en'): RobotUses[] {
   const byRobot = new Map<string, UseCase[]>();
   for (const use of list) byRobot.set(use.robotId, [...(byRobot.get(use.robotId) ?? []), use]);
   const bySignature = new Map<string, { robotId: string; uses: UseCase[]; variants: { robot: string; href: string }[] }>();
@@ -108,19 +130,11 @@ export function groupByRobot(list: readonly UseCase[], avoid?: Set<string>): Rob
   return [...bySignature.values()].map(({ robotId, uses, variants }) => {
     const first = uses[0];
     const record = robotById(robotId);
-    const places = new Map<string, { label: string; country: string | null; n: number }>();
-    for (const use of uses) {
-      const label = use.place || '';
-      if (!label) continue;
-      const known = places.get(label) ?? { label, country: use.countries[0] ?? null, n: 0 };
-      known.n++;
-      places.set(label, known);
-    }
     const picture = record ? scenePicture(record, avoid) : null;
     if (picture) avoid?.add(picture.src);
     return {
       robotId, robot: first.robot, maker: first.maker, href: first.href, sold: first.sold, variants, picture, uses, stages: stageCounts(uses),
-      places: [...places.values()].sort((a, b) => b.n - a.n).map(({ label, country }) => ({ label, country })),
+      places: robotPlaces(uses, lang),
       countries: [...new Set(uses.flatMap((use) => use.countries))],
     };
   }).sort((a, b) => b.stages.deployment - a.stages.deployment || b.uses.length - a.uses.length || a.robot.localeCompare(b.robot));
@@ -129,7 +143,7 @@ export function groupByRobot(list: readonly UseCase[], avoid?: Set<string>): Rob
 export type SettingTile = { id: SettingId; label: string; intro: string; count: number; stages: StageCounts; robots: number; countries: string[]; picture: ScenePicture | null };
 
 /** One picture tile per setting that has a use, biggest first; each tile takes a different robot's photo of work. */
-export function settingTiles(list: readonly UseCase[]): SettingTile[] {
+export function settingTiles(list: readonly UseCase[], lang: Lang = 'en'): SettingTile[] {
   const used = new Set<string>();
   return SETTINGS.map((s) => ({ s, uses: list.filter((use) => use.setting === s.id) })).filter(({ uses }) => uses.length)
     .sort((a, b) => b.uses.length - a.uses.length)
@@ -146,6 +160,6 @@ export function settingTiles(list: readonly UseCase[]): SettingTile[] {
         if (picture) break;
       }
       if (picture) used.add(picture.src);
-      return { id: s.id, label: s.label, intro: s.intro, count: uses.length, stages: stageCounts(uses), robots: ranked.length, countries: [...new Set(uses.flatMap((use) => use.countries))], picture };
+      return { id: s.id, ...settingText(s.id, lang), count: uses.length, stages: stageCounts(uses), robots: ranked.length, countries: [...new Set(uses.flatMap((use) => use.countries))], picture };
     });
 }

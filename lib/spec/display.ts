@@ -32,7 +32,9 @@ export function formatSpec(key: string, spec: SpecValue, lang: Lang = 'en'): str
   const { field } = splitSpecKey(key);
   const def = fieldDef(field);
   const decimals = def?.decimals ?? 1;
-  const unit = spec.unit ?? def?.unit ?? '';
+  const raw = spec.unit ?? def?.unit ?? '';
+  // The only unit written as a word; the others (kg, m, h, °C) read the same in German.
+  const unit = lang === 'de' && raw === 'months' ? 'Monate' : raw;
   const sep = unit === '°' || unit === '°C' || unit === '%' ? '' : ' ';
 
   if (def?.kind === 'bool' || typeof spec.value === 'boolean') {
@@ -46,7 +48,7 @@ export function formatSpec(key: string, spec: SpecValue, lang: Lang = 'en'): str
     return `≤ ${num(spec.max as number, decimals, lang)}${sep}${unit}`.trim();
   }
   if (typeof spec.value === 'number') return `${num(spec.value, decimals, lang)}${sep}${unit}`.trim();
-  if (def?.kind === 'json') return field === 'deployment_evidence' && Array.isArray(spec.value) ? spec.value.map((d) => { const x = d as { site?: string; year?: number }; return `${x.site ?? ''}${x.year ? ` (${x.year})` : ''}`; }).join(', ') : summarizeJson(field, spec.value);
+  if (def?.kind === 'json') return field === 'deployment_evidence' && Array.isArray(spec.value) ? spec.value.map((d) => { const x = d as { site?: string; year?: number }; return `${x.site ?? ''}${x.year ? ` (${x.year})` : ''}`; }).join(', ') : summarizeJson(field, spec.value, lang);
   if (Array.isArray(spec.value)) return spec.value.length ? spec.value.map((v) => String(v).replace(/_/g, ' ')).join(', ') : t.notPublished;
   if (spec.value && typeof spec.value === 'object') return JSON.stringify(spec.value);
   if (spec.value == null || spec.value === '') return t.notPublished;

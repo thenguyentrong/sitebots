@@ -76,8 +76,10 @@ describe('language', () => {
     return JSON.stringify((sent[0].messages as unknown[]).at(-1));
   };
 
-  it('follows the switch whatever the person types', async () => {
+  it('follows the page language whatever the person types', async () => {
     expect(await lastSent('We need a robot for the site', 'de')).toContain('Write in German');
+    expect(await lastSent('We need a robot for the site', 'de')).toContain('language of the page');
+    expect(await lastSent('Wir suchen einen Roboter für die Baustelle', 'en')).toContain('Write in English');
   });
 
   it('guesses from the words when nobody touched the switch', async () => {

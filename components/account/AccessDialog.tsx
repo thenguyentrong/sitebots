@@ -2,9 +2,10 @@
 
 import { ArrowSquareOut, GoogleLogo, Key, SignOut, Trash, WindowsLogo, X } from '@phosphor-icons/react';
 import Link from '@/components/LocaleLink';
-import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import { ACCESS_TEXT } from '@/lib/chat/i18n';
+import { useLang, usePagePath } from '@/lib/i18n/client';
+import { localePath } from '@/lib/i18n/config';
 import { API_KEY_PATTERN as KEY_PATTERN } from '@/lib/chat/visitor-key';
 import { ui } from '@/lib/ui';
 import { closeDialog, deleteAccount, removeKey, saveKey, signOut, useAccess, type Provider } from './access-store';
@@ -87,10 +88,12 @@ function Account({ lang }: { lang: 'en' | 'de' }) {
 /** One dialog for both doors: signing in for the free allowance, or pasting an own key; and, once in,
  *  the account menu. A modal <dialog>, so focus, Escape and the page behind work as the browser intends. */
 export function AccessDialog() {
-  const { dialog, notice, lang, info } = useAccess();
+  const { dialog, notice, info } = useAccess();
+  const lang = useLang();
   const t = ACCESS_TEXT[lang];
   const ref = useRef<HTMLDialogElement>(null);
-  const path = usePathname();
+  // Back from Google or Microsoft to the same page in the same language: /de/advisor stays German.
+  const back = localePath(usePagePath(), lang);
   useEffect(() => {
     const element = ref.current;
     if (!element) return;
@@ -108,7 +111,7 @@ export function AccessDialog() {
       {notice ? <p role="status" className="mt-3 rounded-2xl border border-safety/40 bg-safety-soft px-4 py-3 text-sm text-foreground">{t.notice[notice]}</p> : null}
       {showSignIn ? <>
         <p className="mt-2 text-[15px] text-muted">{t.lead(info?.free.perMonth ?? 3)}</p>
-        <div className="mt-5"><SignInButtons lang={lang} back={path || '/'} /></div>
+        <div className="mt-5"><SignInButtons lang={lang} back={back} /></div>
         <div className="my-6 flex items-center gap-3 text-xs text-faint"><span className="h-px flex-1 bg-edge" />{t.or}<span className="h-px flex-1 bg-edge" /></div>
         <h3 className="mb-1 font-semibold">{t.keyTitle}</h3>
         <p className="mb-3 text-sm text-muted">{t.keyLead}</p>

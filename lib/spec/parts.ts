@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { formatNumber } from '@/lib/i18n/format';
 import { HAND_TYPES, type HandType } from './enums';
 
 /**
@@ -94,34 +95,55 @@ export function parseHandType(raw: string): HandType | null {
   return (HAND_TYPES as readonly string[]).includes(s) ? (s as HandType) : null;
 }
 
-const fmt = (n: number, d = 0) => n.toLocaleString('en-GB', { maximumFractionDigits: d });
+const EQUIPMENT_TYPE_LABEL_DE: Record<EquipmentType, string> = {
+  arm: 'Manipulatorarm', gripper: 'Greifer', hand: 'Hand', lidar: 'LiDAR', camera_ptz: 'PTZ-Kamera', camera_thermal: 'Wärmebildkamera', camera_depth: 'Tiefenkamera',
+  gas_sensor: 'Gassensor', acoustic_sensor: 'Akustiksensor', dock: 'Ladestation', payload_mount: 'Nutzlasthalterung', compute: 'Rechenmodul', radio: 'Funk',
+  speaker_light: 'Lautsprecher / Licht', battery: 'Akku', charger: 'Ladegerät', controller: 'Steuergerät', tool_changer: 'Werkzeugwechsler', case: 'Koffer', kit: 'Bausatz', other: 'Sonstiges',
+};
+const SENSOR_TYPE_LABEL_DE: Record<SensorType, string> = {
+  lidar: 'LiDAR', depth_camera: 'Tiefenkamera', rgb_camera: 'RGB-Kamera', fisheye_camera: 'Fischaugenkamera', imu: 'IMU', force_torque: 'Kraft/Moment',
+  tactile: 'Taktil', microphone: 'Mikrofon', gnss: 'GNSS', ultrasonic: 'Ultraschall', foot_contact: 'Fußkontakt', other: 'Sonstige',
+};
+const ACTUATOR_GROUP_LABEL_DE: Record<ActuatorGroup, string> = { leg: 'Beine', arm: 'Arme', hand: 'Hände', waist: 'Hüfte', neck: 'Hals', wheel: 'Räder', other: 'Sonstige' };
+
+type Lang = 'en' | 'de';
+/** The part words in the page's language; the English constants above stay for the scripts and tests. */
+export const equipmentTypeLabel = (type: string, lang: Lang = 'en'): string => (lang === 'de' ? EQUIPMENT_TYPE_LABEL_DE : EQUIPMENT_TYPE_LABEL)[type as EquipmentType] ?? type;
+export const sensorTypeLabel = (type: string, lang: Lang = 'en'): string => (lang === 'de' ? SENSOR_TYPE_LABEL_DE : SENSOR_TYPE_LABEL)[type as SensorType] ?? type;
+export const actuatorGroupLabel = (group: string, lang: Lang = 'en'): string => (lang === 'de' ? ACTUATOR_GROUP_LABEL_DE : ACTUATOR_GROUP_LABEL)[group as ActuatorGroup] ?? group;
+
+const fmt = (n: number, d = 0, lang: Lang = 'en') => formatNumber(n, lang, d);
 
 /** One line for a compare cell or a card: enough to compare, not the whole list. */
-export function summarizeJson(field: string, value: unknown): string {
+export function summarizeJson(field: string, value: unknown, lang: Lang = 'en'): string {
+  const de = lang === 'de';
   if (field === 'equipment_options' && Array.isArray(value)) {
     const items = value as EquipmentItem[];
-    const types = [...new Set(items.map((i) => EQUIPMENT_TYPE_LABEL[i.type] ?? i.type))];
-    return `${items.length} option${items.length === 1 ? '' : 's'}: ${types.slice(0, 4).join(', ').toLowerCase()}${types.length > 4 ? '…' : ''}`;
+    const types = [...new Set(items.map((i) => equipmentTypeLabel(i.type, lang)))];
+    const list = types.slice(0, 4).join(', ') + (types.length > 4 ? '…' : '');
+    // German nouns keep their capital letter.
+    return de ? `${items.length} ${items.length === 1 ? 'Option' : 'Optionen'}: ${list}` : `${items.length} option${items.length === 1 ? '' : 's'}: ${list.toLowerCase()}`;
   }
   if (field === 'sensors' && Array.isArray(value)) {
     const items = value as SensorItem[];
-    return items.map((i) => `${i.count && i.count > 1 ? `${i.count}× ` : ''}${i.model ?? SENSOR_TYPE_LABEL[i.type] ?? i.type}`).slice(0, 4).join(', ') + (items.length > 4 ? '…' : '');
+    return items.map((i) => `${i.count && i.count > 1 ? `${i.count}× ` : ''}${i.model ?? sensorTypeLabel(i.type, lang)}`).slice(0, 4).join(', ') + (items.length > 4 ? '…' : '');
   }
   if (field === 'actuators' && Array.isArray(value)) {
     const items = value as ActuatorItem[];
-    return items.map((i) => `${ACTUATOR_GROUP_LABEL[i.group] ?? i.group}${i.peak_torque_nm ? ` ${fmt(i.peak_torque_nm)} N·m` : ''}${i.count ? ` ×${i.count}` : ''}`).join(' · ');
+    return items.map((i) => `${actuatorGroupLabel(i.group, lang)}${i.peak_torque_nm ? ` ${fmt(i.peak_torque_nm, 0, lang)} N·m` : ''}${i.count ? ` ×${i.count}` : ''}`).join(' · ');
   }
   if (field === 'battery_pack' && value && typeof value === 'object') {
     const b = value as BatteryPack;
     const parts = [
-      b.chemistry ? CHEMISTRY_LABEL[b.chemistry] : null,
-      b.voltage_v ? `${fmt(b.voltage_v, 1)} V` : null,
-      b.capacity_ah ? `${fmt(b.capacity_ah, 1)} Ah` : null,
-      b.energy_wh ? `${fmt(b.energy_wh)} Wh` : null,
-      b.packs && b.packs > 1 ? `${b.packs} packs` : null,
-      b.swappable ? 'swappable' : null,
+      b.chemistry ? (de && b.chemistry === 'other' ? 'Akku' : CHEMISTRY_LABEL[b.chemistry]) : null,
+      b.voltage_v ? `${fmt(b.voltage_v, 1, lang)} V` : null,
+      b.capacity_ah ? `${fmt(b.capacity_ah, 1, lang)} Ah` : null,
+      b.energy_wh ? `${fmt(b.energy_wh, 0, lang)} Wh` : null,
+      b.packs && b.packs > 1 ? `${b.packs} ${de ? 'Akkus' : 'packs'}` : null,
+      b.swappable ? (de ? 'wechselbar' : 'swappable') : null,
     ].filter(Boolean);
-    return parts.join(' · ') || 'published';
+    return parts.join(' · ') || (de ? 'veröffentlicht' : 'published');
   }
-  return Array.isArray(value) ? `${value.length} item${value.length === 1 ? '' : 's'}` : 'published';
+  if (Array.isArray(value)) return de ? `${value.length} ${value.length === 1 ? 'Eintrag' : 'Einträge'}` : `${value.length} item${value.length === 1 ? '' : 's'}`;
+  return de ? 'veröffentlicht' : 'published';
 }

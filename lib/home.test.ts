@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buyGroups, industryFigures, labourShares } from './home';
+import { buyGroups, industryFigures, industrySeries, labourShares, videos } from './home';
 
 describe('start page data', () => {
   it('shows only figures with a source page and the sentence they were read from', () => {
@@ -20,6 +20,23 @@ describe('start page data', () => {
     for (let i = 1; i < top.length; i++) expect(top[i - 1].value).toBeGreaterThanOrEqual(top[i].value);
     expect(building?.wz).toBe('41.20');
     expect(hourly?.value).toBeGreaterThan(30);
+  });
+
+  it('has our German wording for every figure, series and film, and keeps the quotes as published', () => {
+    const en = industryFigures();
+    const de = industryFigures('de');
+    expect(de).toHaveLength(en.length);
+    de.forEach((f, i) => {
+      expect(f.de, f.id).toBeTruthy();
+      expect(f.label).not.toBe(en[i].label);
+      expect(f.value).toBe(en[i].value);
+      expect(f.source.quote).toBe(en[i].source.quote);
+      if (en[i].unit) expect(f.unit).toBeTruthy();
+    });
+    for (const s of industrySeries('de').values()) expect(s.de, s.id).toBeTruthy();
+    for (const v of videos('de')) expect(v.de?.label, v.id).toBe(v.label);
+    expect(labourShares('de').building?.label).toBe('Bau von Gebäuden');
+    expect(labourShares('de').top.every((row) => !/[a-z] and /.test(row.label))).toBe(true);
   });
 
   it('counts the robots a German buyer can order, per type', () => {

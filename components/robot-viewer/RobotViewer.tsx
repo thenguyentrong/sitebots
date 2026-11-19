@@ -7,11 +7,41 @@ import { AgXToneMapping, Group } from 'three';
 import type { ModelEntry } from '@/lib/models/schemas';
 import type { Pose } from '@/lib/models/poses';
 import { createRobotRig, modelBounds } from '@/lib/models/rig';
+import { useLang } from '@/lib/i18n/client';
+import type { Lang } from '@/lib/i18n/config';
+import { formatNumber } from '@/lib/i18n/format';
+import { bilingual } from '@/lib/i18n/text';
 import { useRobotPose } from './useRobotPose';
 import { CameraControls, type CameraCommand } from './CameraControls';
 import { JointControls } from './JointControls';
 
-const POSE_LABEL: Record<string, string> = { standing: 'Rest pose', reach_up: 'Reach up', carry: 'Carry', crouch: 'Crouch', sit: 'Sit' };
+// The viewer's words. The canvas is its own React root, so the parts inside it get the language as a prop.
+const TEXT = bilingual({
+  en: {
+    pose: { standing: 'Rest pose', reach_up: 'Reach up', carry: 'Carry', crouch: 'Crouch', sit: 'Sit' } as Record<string, string>,
+    failed: 'The 3D model could not load. You can still browse the robot’s photos and specifications.', retry: 'Retry 3D model',
+    webgl: '3D needs WebGL. Photos and specifications are still available.', loading: (name: string) => `Loading ${name}…`,
+    dragMode: 'Drag mode', rotate: 'Rotate', pan: 'Pan', zoomIn: 'Zoom in', zoomOut: 'Zoom out',
+    closeExpanded: 'Close expanded view', expandView: 'Expand 3D view', close: 'Close', expand: 'Expand',
+    views: 'Camera views', view: { fit: 'Reset view', front: 'Front', side: 'Side', top: 'Top' } as Record<string, string>,
+    help: (pan: boolean) => `Drag to ${pan ? 'pan' : 'rotate'}. Scroll or pinch to zoom. Right-drag or two fingers to pan.`,
+    custom: 'Custom pose', person: 'Show 1.80 m person', heightTitle: 'Height of the model in the current pose', model: 'model',
+    credits: 'Model credits and licence', source: 'Source:', licence: 'Licence:', fullText: '(full text). Not endorsed by the manufacturer.', modified: 'Modified by sitebots: ',
+    stats: (triangles: string, kb: string, joints: number) => `${triangles} triangles, ${kb} KB, ${joints} joints`,
+  },
+  de: {
+    pose: { standing: 'Ruhehaltung', reach_up: 'Nach oben greifen', carry: 'Tragen', crouch: 'Hocken', sit: 'Sitzen' },
+    failed: 'Das 3D-Modell ließ sich nicht laden. Fotos und technische Daten des Roboters sind weiterhin verfügbar.', retry: '3D-Modell neu laden',
+    webgl: '3D braucht WebGL. Fotos und technische Daten sind weiterhin verfügbar.', loading: (name: string) => `${name} wird geladen …`,
+    dragMode: 'Ziehmodus', rotate: 'Drehen', pan: 'Verschieben', zoomIn: 'Vergrößern', zoomOut: 'Verkleinern',
+    closeExpanded: 'Großansicht schließen', expandView: '3D-Ansicht groß anzeigen', close: 'Schließen', expand: 'Großansicht',
+    views: 'Kameraansichten', view: { fit: 'Ansicht zurücksetzen', front: 'Vorne', side: 'Seite', top: 'Oben' },
+    help: (pan: boolean) => `Ziehen zum ${pan ? 'Verschieben' : 'Drehen'}. Scrollen oder mit zwei Fingern zoomen. Mit der rechten Maustaste oder zwei Fingern verschieben.`,
+    custom: 'Eigene Haltung', person: 'Person mit 1,80 m zeigen', heightTitle: 'Höhe des Modells in der aktuellen Haltung', model: 'Modell',
+    credits: 'Modellnachweis und Lizenz', source: 'Quelle:', licence: 'Lizenz:', fullText: '(Volltext). Nicht vom Hersteller autorisiert.', modified: 'Von sitebots geändert: ',
+    stats: (triangles: string, kb: string, joints: number) => `${triangles} Dreiecke, ${kb} KB, ${joints} Gelenke`,
+  },
+});
 type PoseApi = { animating: boolean; pose: string; heightM: number; values: Pose; missing: string[] };
 
 type SceneColors = { dark: boolean; cell: string; section: string; ink: string; line: string };
@@ -56,13 +86,13 @@ function RobotModel({ entry, pose, initial, setReady, onPoseApi }: { entry: Mode
   return <group position={[0, offset, 0]}><primitive object={rig.scene} dispose={null} /></group>;
 }
 
-class ModelBoundary extends Component<{ children: ReactNode; url: string }, { failed: boolean }> {
+class ModelBoundary extends Component<{ children: ReactNode; url: string; lang: Lang }, { failed: boolean }> {
   state = { failed: false };
   static getDerivedStateFromError() { return { failed: true }; }
   render() {
     if (this.state.failed) return <div role="alert" className="flex aspect-[4/3] flex-col items-center justify-center gap-3 px-6 text-center text-sm text-muted">
-      <p>The 3D model could not load. You can still browse the robot’s photos and specifications.</p>
-      <button type="button" className="rounded-lg border border-edge px-3 py-2" onClick={() => { useGLTF.clear(this.props.url); this.setState({ failed: false }); }}>Retry 3D model</button>
+      <p>{TEXT[this.props.lang].failed}</p>
+      <button type="button" className="rounded-lg border border-edge px-3 py-2" onClick={() => { useGLTF.clear(this.props.url); this.setState({ failed: false }); }}>{TEXT[this.props.lang].retry}</button>
     </div>;
     return this.props.children;
   }
@@ -82,19 +112,19 @@ function Worker() {
  * boots) because the question a robot page answers is "how big is this next
  * to the people on my site", not next to a grey mannequin.
  */
-export function HumanReference({ x, visible, ink, label = true }: { x: number; visible: boolean; ink: string; label?: boolean }) {
+export function HumanReference({ x, visible, ink, label = true, lang = 'en' }: { x: number; visible: boolean; ink: string; label?: boolean; lang?: Lang }) {
   if (!visible) return null;
   return (
     <group position={[x, 0, 0]}>
       <Worker />
       {label ? <Text position={[0, 1.95, 0]} fontSize={0.09} color={ink} anchorX="center" anchorY="bottom">
-        1.80 m
+        {formatNumber(1.8, lang, 2, 2)} m
       </Text> : null}
     </group>
   );
 }
 
-function Ruler({ x, height, colors }: { x: number; height: number; colors: SceneColors }) {
+function Ruler({ x, height, colors, lang }: { x: number; height: number; colors: SceneColors; lang: Lang }) {
   const top = Math.ceil(Math.max(height, 1.8) * 2) / 2;
   const ticks = [];
   for (let h = 0; h <= top + 1e-6; h += 0.5) ticks.push(h);
@@ -111,7 +141,7 @@ function Ruler({ x, height, colors }: { x: number; height: number; colors: Scene
             <meshBasicMaterial color={colors.line} />
           </mesh>
           <Text position={[-0.12, 0, 0]} fontSize={0.06} color={colors.ink} anchorX="right" anchorY="middle">
-            {h.toFixed(1)}
+            {formatNumber(h, lang, 1, 1)}
           </Text>
         </group>
       ))}
@@ -136,6 +166,8 @@ export function Studio() {
 }
 
 export function RobotViewer({ entry, presets, name, compact = false, fill = false }: { entry: ModelEntry; presets: Record<string, Pose>; name: string; compact?: boolean; fill?: boolean }) {
+  const lang = useLang();
+  const t = TEXT[lang];
   const content = useRef<Group>(null);
   const container = useRef<HTMLDivElement>(null);
   const colors = useSceneColors();
@@ -170,10 +202,10 @@ export function RobotViewer({ entry, presets, name, compact = false, fill = fals
   const presetNames = Object.keys(presets).filter((p) => p === 'standing' || Object.keys(presets[p]).length > 0);
   const button = 'rounded-lg border border-edge bg-card/90 px-2.5 py-2 text-xs font-medium text-foreground shadow-sm  transition hover:bg-subtle aria-pressed:bg-foreground aria-pressed:text-background disabled:opacity-40';
   return <div ref={container} className={expanded ? 'fixed inset-3 z-50 overflow-auto rounded-2xl border border-edge bg-card shadow-2xl sm:inset-6' : compact ? (fill ? 'h-full overflow-hidden' : 'overflow-hidden') : 'card overflow-hidden'} data-robot-viewer data-ready={ready ? 'true' : 'false'} data-pose={api.pose} data-animating={api.animating} data-joint-values={JSON.stringify(api.values)} data-missing-joints={api.missing.join(',')}>
-    <ModelBoundary key={entry.glbUrl} url={entry.glbUrl}>
+    <ModelBoundary key={entry.glbUrl} url={entry.glbUrl} lang={lang}>
       <div className={(expanded ? 'relative h-[70vh] min-h-72' : fill ? 'relative h-full' : 'relative aspect-[4/3]') + (compact ? '' : ' viewer-stage')}>
         <Canvas dpr={[1, 2]} frameloop="demand" shadows={false}
-          fallback={<div role="alert" className="p-6 text-sm">3D needs WebGL. Photos and specifications are still available.</div>}
+          fallback={<div role="alert" className="p-6 text-sm">{t.webgl}</div>}
           gl={{ antialias: true, powerPreference: 'high-performance', alpha: true, preserveDrawingBuffer: compact }}
           onCreated={({ gl }) => { gl.toneMapping = AgXToneMapping; gl.toneMappingExposure = 1.05; }}
           camera={{ fov: 30, position: [3.2, 1.7, 3.6], near: 0.005, far: 100 }}>
@@ -184,54 +216,55 @@ export function RobotViewer({ entry, presets, name, compact = false, fill = fals
           <Suspense fallback={null}>
             <group ref={content}>
               <RobotModel entry={entry} pose={pose} initial={initial} setReady={setReady} onPoseApi={setApi} />
-              <HumanReference x={half + 0.7} visible={scale} ink={colors.ink} />
-              {scale ? <Ruler x={-(half + 0.3)} height={entry.joints.modelHeightM || entry.heightM} colors={colors} /> : null}
+              <HumanReference x={half + 0.7} visible={scale} ink={colors.ink} lang={lang} />
+              {scale ? <Ruler x={-(half + 0.3)} height={entry.joints.modelHeightM || entry.heightM} colors={colors} lang={lang} /> : null}
             </group>
             <ContactShadows position={[0, 0.001, 0]} scale={8} resolution={1024} blur={2.2} far={2.5} opacity={colors.dark ? 0.75 : 0.45} color="#000000" />
           </Suspense>
           {compact ? null : <Grid position={[0, -0.001, 0]} args={[12, 12]} cellSize={0.5} cellThickness={0.6} cellColor={colors.cell} sectionSize={1} sectionThickness={1} sectionColor={colors.section} fadeDistance={9} fadeStrength={1.4} infiniteGrid />}
           <CameraControls content={content} ready={ready} scale={scale} mode={mode} command={command} compact={compact} />
         </Canvas>
-        {!ready ? <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-faint"><span className="rounded-full border border-edge bg-card px-3 py-1 shadow-sm">Loading {name}…</span></div> : null}
+        {!ready ? <div className="pointer-events-none absolute inset-0 flex items-center justify-center text-sm text-faint"><span className="rounded-full border border-edge bg-card px-3 py-1 shadow-sm">{t.loading(name)}</span></div> : null}
         {compact ? null : <>
-          <div className="absolute left-3 top-3 flex gap-1" role="group" aria-label="Drag mode">
-            <button type="button" className={button} aria-pressed={mode === 'rotate'} onClick={() => setMode('rotate')}>Rotate</button>
-            <button type="button" className={button} aria-pressed={mode === 'pan'} onClick={() => setMode('pan')}>Pan</button>
+          <div className="absolute left-3 top-3 flex gap-1" role="group" aria-label={t.dragMode}>
+            <button type="button" className={button} aria-pressed={mode === 'rotate'} onClick={() => setMode('rotate')}>{t.rotate}</button>
+            <button type="button" className={button} aria-pressed={mode === 'pan'} onClick={() => setMode('pan')}>{t.pan}</button>
           </div>
           <div className="absolute right-3 top-3 flex gap-1">
-            <button type="button" className={button} aria-label="Zoom in" disabled={!ready} onClick={() => cameraAction('in')}>+</button>
-            <button type="button" className={button} aria-label="Zoom out" disabled={!ready} onClick={() => cameraAction('out')}>−</button>
-            <button type="button" className={button} aria-label={expanded ? 'Close expanded view' : 'Expand 3D view'} onClick={() => setExpanded((v) => !v)}>{expanded ? 'Close' : 'Expand'}</button>
+            <button type="button" className={button} aria-label={t.zoomIn} disabled={!ready} onClick={() => cameraAction('in')}>+</button>
+            <button type="button" className={button} aria-label={t.zoomOut} disabled={!ready} onClick={() => cameraAction('out')}>−</button>
+            <button type="button" className={button} aria-label={expanded ? t.closeExpanded : t.expandView} onClick={() => setExpanded((v) => !v)}>{expanded ? t.close : t.expand}</button>
           </div>
-          <div className="absolute bottom-3 left-3 flex flex-wrap gap-1" role="group" aria-label="Camera views">
-            {(['fit', 'front', 'side', 'top'] as const).map((view) => <button key={view} type="button" className={button} disabled={!ready} onClick={() => cameraAction(view)}>{view === 'fit' ? 'Reset view' : view[0].toUpperCase() + view.slice(1)}</button>)}
+          <div className="absolute bottom-3 left-3 flex flex-wrap gap-1" role="group" aria-label={t.views}>
+            {(['fit', 'front', 'side', 'top'] as const).map((view) => <button key={view} type="button" className={button} disabled={!ready} onClick={() => cameraAction(view)}>{t.view[view]}</button>)}
           </div>
         </>}
       </div>
     </ModelBoundary>
     {compact ? null : <>
-      <p className="border-t border-edge/70 px-3 py-2 text-xs text-muted">Drag to {mode === 'pan' ? 'pan' : 'rotate'}. Scroll or pinch to zoom. Right-drag or two fingers to pan.</p>
+      <p className="border-t border-edge/70 px-3 py-2 text-xs text-muted">{t.help(mode === 'pan')}</p>
       <div className="flex flex-wrap items-center gap-1.5 border-t border-edge/70 px-3 py-2.5 text-sm">
         {presetNames.map((p) => <button key={p} type="button" data-pose-preset={p} aria-pressed={api.pose === p} disabled={!ready} onClick={() => setPose({ name: p, values: presets[p] })}
-          className={'rounded-full border px-3 py-1 text-xs font-medium transition ' + (api.pose === p ? 'border-foreground bg-foreground text-background' : 'border-edge bg-card text-muted hover:border-edge-strong hover:text-foreground')}>{POSE_LABEL[p] ?? p.replace(/_/g, ' ')}</button>)}
-        {api.pose === 'custom' ? <span className="rounded-full bg-subtle px-3 py-1 text-xs">Custom pose</span> : null}
-        <label className="ml-auto flex items-center gap-1.5 text-xs text-muted"><input type="checkbox" checked={scale} onChange={(event) => { setScale(event.target.checked); try { localStorage.setItem('sitebots.scale', event.target.checked ? '1' : '0'); } catch { /* Storage is optional. */ } }} className="h-3.5 w-3.5 rounded accent-[var(--foreground)]" />Show 1.80 m person</label>
-        <span className="num text-xs text-faint" title="Height of the model in the current pose">model {api.heightM.toFixed(2)} m</span>
+          className={'rounded-full border px-3 py-1 text-xs font-medium transition ' + (api.pose === p ? 'border-foreground bg-foreground text-background' : 'border-edge bg-card text-muted hover:border-edge-strong hover:text-foreground')}>{t.pose[p] ?? p.replace(/_/g, ' ')}</button>)}
+        {api.pose === 'custom' ? <span className="rounded-full bg-subtle px-3 py-1 text-xs">{t.custom}</span> : null}
+        <label className="ml-auto flex items-center gap-1.5 text-xs text-muted"><input type="checkbox" checked={scale} onChange={(event) => { setScale(event.target.checked); try { localStorage.setItem('sitebots.scale', event.target.checked ? '1' : '0'); } catch { /* Storage is optional. */ } }} className="h-3.5 w-3.5 rounded accent-[var(--foreground)]" />{t.person}</label>
+        <span className="num text-xs text-faint" title={t.heightTitle}>{t.model} {formatNumber(api.heightM, lang, 2, 2)} m</span>
       </div>
-      <JointControls joints={entry.joints.joints.filter((j) => !api.missing.includes(j.name))} values={api.values} onChange={changeJoint} onReset={resetJoints} disabled={!ready} />
-      <ModelCredits entry={entry} />
+      <JointControls lang={lang} joints={entry.joints.joints.filter((j) => !api.missing.includes(j.name))} values={api.values} onChange={changeJoint} onReset={resetJoints} disabled={!ready} />
+      <ModelCredits entry={entry} lang={lang} />
     </>}
   </div>;
 }
 
-function ModelCredits({ entry }: { entry: ModelEntry }) {
+function ModelCredits({ entry, lang }: { entry: ModelEntry; lang: Lang }) {
+  const t = TEXT[lang];
   const c = entry.credits;
   return (
     <details className="border-t border-edge/70 px-3 py-2 text-xs text-muted">
-      <summary className="cursor-pointer">Model credits and licence</summary>
+      <summary className="cursor-pointer">{t.credits}</summary>
       <div className="mt-2 space-y-1">
         <p>
-          Source:{' '}
+          {t.source}{' '}
           <a href={c.source.url} rel="noopener" target="_blank" className="underline-offset-2 hover:underline">
             {c.source.repo}
           </a>{' '}
@@ -239,15 +272,15 @@ function ModelCredits({ entry }: { entry: ModelEntry }) {
         </p>
         <p>{c.license.copyright}</p>
         <p>
-          Licence:{' '}
+          {t.licence}{' '}
           <a href={c.license.file} rel="noopener" target="_blank" className="underline-offset-2 hover:underline">
             {c.license.spdx}
           </a>{' '}
-          (full text). Not endorsed by the manufacturer.
+          {t.fullText}
         </p>
-        <p>Modified by sitebots: {c.modifications.join('; ')}.</p>
+        <p>{t.modified}<span lang={lang === 'en' ? undefined : 'en'}>{c.modifications.join('; ')}</span>.</p>
         <p className="num">
-          {c.stats.triangles.after.toLocaleString('en-GB')} triangles, {(c.stats.bytes / 1024).toFixed(0)} KB, {c.stats.joints} joints
+          {t.stats(formatNumber(c.stats.triangles.after, lang), formatNumber(c.stats.bytes / 1024, lang), c.stats.joints)}
         </p>
       </div>
     </details>

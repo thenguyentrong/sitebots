@@ -13,6 +13,12 @@ import { isPublicRobot } from '@/lib/catalogue-policy';
 import { JsonLd } from '@/components/JsonLd';
 import { breadcrumbJsonLd, productJsonLd } from '@/lib/jsonld';
 import { catalogueFacts, catalogueType, marketFacts, mergeFacts } from '@/lib/compare/facts';
+import { COMMON } from '@/lib/i18n/common';
+import { localePath, type Lang } from '@/lib/i18n/config';
+import { formatNumber } from '@/lib/i18n/format';
+import { MARKET_TEXT } from '@/lib/i18n/market';
+import { ROBOT_TEXT } from '@/lib/i18n/robot';
+import { pageLang } from '@/lib/i18n/server';
 import { getRobotModel } from '@/lib/models/index';
 import { resolvePresets } from '@/lib/models/poses';
 import { EquipmentPanel } from '@/components/robot/EquipmentPanel';
@@ -29,14 +35,20 @@ import { SpecTable } from '@/components/robot/SpecTable';
 import { VariantTabs } from '@/components/robot/VariantTabs';
 import { getRobotDetail } from '@/lib/queries/robots';
 import { publicMetadata } from '@/lib/seo';
-import { formatSpec, pickPayloadKey, qualifierLabel, STATUS_LABEL } from '@/lib/spec/display';
+import { fieldLabel } from '@/lib/spec/fields';
+import { formatSpec, pickPayloadKey, qualifierLabel, statusLabel } from '@/lib/spec/display';
 
 export const dynamic = 'force-dynamic';
 
-type Params = Promise<{ manufacturer: string; slug: string }>;
+/** A number in the description: as stored on English pages (unchanged), with a decimal comma on German ones. */
+const figure = (value: number, lang: Lang, digits: number) => (lang === 'en' ? String(value) : formatNumber(value, lang, digits));
+
+type Params = Promise<{ lang: string; manufacturer: string; slug: string }>;
 type Search = Promise<{ variant?: string; render?: string }>;
 
 export async function generateMetadata({ params, searchParams }: { params: Params; searchParams: Search }): Promise<Metadata> {
+  const lang = await pageLang(params);
+  const t = ROBOT_TEXT[lang];
   const { manufacturer, slug } = await params;
   const { variant } = await searchParams;
   const detail = await getRobotDetail(manufacturer, slug, variant);
@@ -44,19 +56,22 @@ export async function generateMetadata({ params, searchParams }: { params: Param
   const r = detail.robot;
   const payloadKey = pickPayloadKey(r.specs ?? {});
   const bits = [
-    r.height_m !== null ? `${r.height_m} m` : null,
-    r.weight_kg !== null ? `${r.weight_kg} kg` : null,
-    payloadKey ? formatSpec(payloadKey, r.specs[payloadKey]) + ' payload (' + (qualifierLabel(payloadKey.split(':')[1]) ?? 'basis unstated') + ')' : null,
+    r.height_m !== null ? `${figure(r.height_m, lang, 2)} m` : null,
+    r.weight_kg !== null ? `${figure(r.weight_kg, lang, 1)} kg` : null,
+    payloadKey ? t.payloadBit(formatSpec(payloadKey, r.specs[payloadKey], lang), qualifierLabel(payloadKey.split(':')[1], lang) ?? MARKET_TEXT[lang].qualifier.unstated) : null,
     r.ip_rating,
   ].filter(Boolean);
   return { ...publicMetadata({
-    title: `${r.name} specs, price and site suitability`,
-    description: `${r.manufacturer_name} ${r.name}: ${bits.join(', ') || 'specifications'}, with the source of every value, regional prices and delivery status.`,
+    title: t.metaTitle(r.name),
+    description: t.metaDescription(r.manufacturer_name, r.name, bits.join(', ')),
     path: `/robots/${manufacturer}/${slug}`,
+    lang,
   }), ...(!isPublicRobot(manufacturer, slug) ? { robots: { index: false, follow: false } } : {}) };
 }
 
 export default async function RobotPage({ params, searchParams }: { params: Params; searchParams: Search }) {
+  const lang = await pageLang(params);
+  const t = ROBOT_TEXT[lang];
   const { manufacturer, slug } = await params;
   const { variant, render } = await searchParams;
   const detail = await getRobotDetail(manufacturer, slug, variant);
@@ -76,13 +91,13 @@ export default async function RobotPage({ params, searchParams }: { params: Para
   const listed = isPublicRobot(manufacturer, slug);
 
   const path = `${base}${robot.variant === 'base' ? '' : `?variant=${robot.variant}`}`;
-  const profile = profileFor({ card: robot, prices, availability });
+  const profile = profileFor({ card: robot, prices, availability }, lang);
   const model = getRobotModel(`${manufacturer}/${slug}`, robot.variant);
   const presets = model ? resolvePresets(`${manufacturer}/${slug}${robot.variant === 'base' ? '' : `#${robot.variant}`}`, robot.form_factor, model.joints.joints) : {};
   const hasMedia = Boolean(model) || gallery.length > 0;
   // The market record of this configuration speaks first; the catalogue fills what it leaves open.
   const record = pageIdentity(variants, market).recordFor.get(robot.id) ?? null;
-  const facts = mergeFacts(record ? marketFacts(record) : null, catalogueFacts(robot, prices, availability, germanyBuyingRoutes(manufacturer, slug, robot.variant, prices)));
+  const facts = mergeFacts(record ? marketFacts(record, lang) : null, catalogueFacts(robot, prices, availability, germanyBuyingRoutes(manufacturer, slug, robot.variant, prices), lang));
   // Where German sellers are listed, prices that only third-party databases report fold away; a
   // maker's store price or delivery status stays open.
   const onlyReported = market.length > 0 && prices.every((p) => p.tier > 2) && availability.every((a) => a.source_tier == null || a.source_tier > 2);
@@ -90,50 +105,52 @@ export default async function RobotPage({ params, searchParams }: { params: Para
 
   const catalogueValues = <div id={market.length ? undefined : 'configuration-specs'} className="scroll-mt-6 pb-3">
     {market.length ? <div className="border-t border-edge/70 px-5 pt-4">
-      <h3 className="text-sm font-medium">Catalogue specifications</h3>
-      <p className="mt-1 text-xs text-muted">Catalogue values for {robot.variant === 'base' ? 'the base record' : robot.variant}.</p>
+      <h3 className="text-sm font-medium">{t.catalogueSpecs}</h3>
+      <p className="mt-1 text-xs text-muted">{t.catalogueValuesFor(robot.variant === 'base' ? null : robot.variant)}</p>
     </div> : null}
-    <SpecTable specs={specs} formFactor={robot.form_factor} unpublishedAsList />
+    <SpecTable specs={specs} formFactor={robot.form_factor} unpublishedAsList lang={lang} />
   </div>;
 
   return (
     <>
-      {listed ? <JsonLd data={productJsonLd(robot, prices, availability, path)} /> : null}
+      {/* Structured data names this page in its own language; the record's summary stays as written. */}
+      {listed ? <JsonLd data={productJsonLd(robot, prices, availability, localePath(path, lang), lang)} /> : null}
       <JsonLd
         data={breadcrumbJsonLd([
-          { name: 'Robots', path: '/robots' },
-          { name: robot.manufacturer_name, path: `/brands/${robot.manufacturer_slug}` },
-          { name: robot.name, path },
+          { name: COMMON[lang].robots, path: localePath('/robots', lang) },
+          { name: robot.manufacturer_name, path: localePath(`/brands/${robot.manufacturer_slug}`, lang) },
+          { name: robot.name, path: localePath(path, lang) },
         ])}
       />
       <RobotTemplate page={{
+        lang,
         compact,
         name: robot.name,
-        type: catalogueType(robot.form_factor),
-        status: { label: STATUS_LABEL[robot.status], variant: STATUS_VARIANT[robot.status] ?? 'neutral' },
+        type: catalogueType(robot.form_factor, lang),
+        status: { label: statusLabel(robot.status, lang), variant: STATUS_VARIANT[robot.status] ?? 'neutral' },
         year: robot.release_year,
         maker: { name: robot.manufacturer_name, href: `/brands/${robot.manufacturer_slug}`, country: robot.manufacturer_country, logo: manufacturerLogo(robot.manufacturer_slug) },
         summary: robot.summary ?? record?.summary ?? null,
         compare: { id: robot.id, name: robot.name },
-        actions: <VariantTabs base={base} variants={variants} current={robot.variant} />,
-        notice: !listed ? <p className="card mb-6 p-4 text-sm text-muted">Reference only · This record has no named, reviewed current or upcoming commercial product offering. This robot is hidden from the supplier catalogue and matcher. <Link href={`/brands/${manufacturer}`} className="underline underline-offset-4">View manufacturer review</Link></p> : null,
+        actions: <VariantTabs base={base} variants={variants} current={robot.variant} lang={lang} />,
+        notice: !listed ? <p className="card mb-6 p-4 text-sm text-muted">{t.referenceOnly} <Link href={`/brands/${manufacturer}`} className="underline underline-offset-4">{t.referenceLink}</Link></p> : null,
         media: hasMedia ? <RobotMedia model={model} presets={presets} images={gallery} name={robot.name} formFactor={robot.form_factor} compact={compact} /> : null,
-        germany: <GermanySection robots={market} pictures={!hasMedia} fallback={listed ? <BuyingPanel manufacturer={manufacturer} model={slug} variant={robot.variant} prices={prices} /> : undefined} />,
+        germany: <GermanySection robots={market} pictures={!hasMedia} fallback={listed ? <BuyingPanel manufacturer={manufacturer} model={slug} variant={robot.variant} prices={prices} lang={lang} /> : undefined} />,
         prices: <div id="prices" className="scroll-mt-6">
           {onlyReported ? (
             <details className="group">
               <summary className="flex cursor-pointer list-none flex-wrap items-center gap-x-3 gap-y-1 text-sm [&::-webkit-details-marker]:hidden">
-                <span className="font-medium">Price and delivery outside Germany</span>
-                <span className="text-xs text-faint">{prices.length ? prices.length + ' reported by databases, not by a seller' : 'nothing published'}</span>
-                <span className="text-xs font-medium underline underline-offset-2 group-open:hidden">Show</span>
-                <span className="hidden text-xs font-medium underline underline-offset-2 group-open:inline">Hide</span>
+                <span className="font-medium">{t.priceOutside}</span>
+                <span className="text-xs text-faint">{prices.length ? t.reportedByDatabases(prices.length) : t.nothingPublished}</span>
+                <span className="text-xs font-medium underline underline-offset-2 group-open:hidden">{t.show}</span>
+                <span className="hidden text-xs font-medium underline underline-offset-2 group-open:inline">{t.hide}</span>
               </summary>
               <div className="mt-4">
-                <PricePanel prices={prices} availability={availability} />
+                <PricePanel prices={prices} availability={availability} lang={lang} />
               </div>
             </details>
           ) : (
-            <PricePanel prices={prices} availability={availability} />
+            <PricePanel prices={prices} availability={availability} lang={lang} />
           )}
         </div>,
         facts,
@@ -143,20 +160,20 @@ export default async function RobotPage({ params, searchParams }: { params: Para
           <MarketSpecifications robots={market} />
           {catalogueValues}
         </>,
-        specsAside: <span className="num text-xs text-faint">{total} catalogue value{total === 1 ? '' : 's'} · {verified} verified</span>,
-        conflicts: conflicts.length ? <SourcesDisagree conflicts={conflicts} /> : null,
-        moreLabel: 'Parts, equipment and evidence profile',
+        specsAside: <span className="num text-xs text-faint">{t.catalogueValueCount(total, verified)}</span>,
+        conflicts: conflicts.length ? <SourcesDisagree conflicts={conflicts} lang={lang} /> : null,
+        moreLabel: t.moreCatalogue,
         more: <>
           <div id="parts" className="scroll-mt-6 space-y-6">
-            <PartsPanel specs={specs} formFactor={robot.form_factor} alsoUnpublished={specs.equipment_options ? [] : ['Equipment options']} />
-            {specs.equipment_options ? <EquipmentPanel spec={specs.equipment_options} /> : null}
+            <PartsPanel specs={specs} formFactor={robot.form_factor} alsoUnpublished={specs.equipment_options ? [] : [fieldLabel('equipment_options', lang)]} lang={lang} />
+            {specs.equipment_options ? <EquipmentPanel spec={specs.equipment_options} lang={lang} /> : null}
           </div>
           <div id="profile" className="scroll-mt-6">
-            <UseCaseProfile profile={profile} name={robot.name} marketRobots={market} configurationLabel={robot.variant === 'base' ? 'Catalogue model' : robot.variant} />
+            <UseCaseProfile profile={profile} name={robot.name} marketRobots={market} configurationLabel={robot.variant === 'base' ? t.catalogueModel : robot.variant} lang={lang} />
           </div>
         </>,
         reviews: <><ReviewsSection ids={market.map((item) => item.id)} />{market[0] ? <VisitorReviews target={'robot:' + market[0].id} name={robot.name} /> : null}</>,
-        sources: <SourceList sources={sources} market={market.flatMap((item) => item.sources)} />,
+        sources: <SourceList sources={sources} market={market.flatMap((item) => item.sources)} lang={lang} />,
       }} />
     </>
   );

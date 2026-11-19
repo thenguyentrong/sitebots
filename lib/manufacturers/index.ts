@@ -1,5 +1,7 @@
 import reviewData from '@/data/manufacturers/review.json';
 import logoData from '@/data/manufacturers/logos.json';
+import type { Lang } from '@/lib/i18n/config';
+import { bilingual } from '@/lib/i18n/text';
 
 export type ManufacturerStatus = 'commercial' | 'developing' | 'research' | 'inactive' | 'unverified';
 export type ManufacturerReview = {
@@ -16,13 +18,25 @@ export type ManufacturerLogo = { src: string; background: 'light' | 'dark'; sour
 const reviews = reviewData.manufacturers as Record<string, ManufacturerReview>;
 const logos = logoData as Record<string, ManufacturerLogo>;
 
-export const manufacturerStatusLabels: Record<ManufacturerStatus, string> = {
-  commercial: 'Commercial supplier',
-  developing: 'In development',
-  research: 'Research project',
-  inactive: 'Historical / inactive',
-  unverified: 'Not verified',
-};
+const STATUS_TEXT = bilingual<Record<ManufacturerStatus, string>>({
+  en: {
+    commercial: 'Commercial supplier',
+    developing: 'In development',
+    research: 'Research project',
+    inactive: 'Historical / inactive',
+    unverified: 'Not verified',
+  },
+  de: {
+    commercial: 'Kommerzieller Anbieter',
+    developing: 'In Entwicklung',
+    research: 'Forschungsprojekt',
+    inactive: 'Historisch / inaktiv',
+    unverified: 'Nicht geprüft',
+  },
+});
+/** English, for code without a page language. Pages use manufacturerStatusLabel(status, lang). */
+export const manufacturerStatusLabels: Record<ManufacturerStatus, string> = STATUS_TEXT.en;
+export const manufacturerStatusLabel = (status: ManufacturerStatus, lang: Lang = 'en'): string => STATUS_TEXT[lang][status];
 
 export function canonicalManufacturerSlug(slug: string): string {
   const seen = new Set<string>();

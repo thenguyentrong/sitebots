@@ -8,9 +8,26 @@ import { RobotPhoto } from '@/components/robot/RobotPhoto';
 import type { TileData } from '@/lib/market/tiles';
 import type { ModelEntry } from '@/lib/models/schemas';
 import type { Pose } from '@/lib/models/poses';
+import { recordLang } from '@/lib/i18n/config';
+import { useLang } from '@/lib/i18n/client';
+import { bilingual } from '@/lib/i18n/text';
 
 // One live 3D view on the page at a time: opening a model closes the one open on another card.
 const OPEN_3D = 'sitebots:tile-3d';
+
+// The card's own words. The lines the server writes (kicker, price, status, sellers) arrive in the page's language.
+const TEXT = bilingual({
+  en: {
+    modelFailed: 'The 3D model did not load.', modelLoading: 'Loading the 3D model…', noPicture: 'No picture published', noPrice: 'No price published',
+    previous: (name: string) => 'Previous picture of ' + name, next: (name: string) => 'Next picture of ' + name, modes: (name: string) => 'Pictures or 3D model of ' + name,
+    photos: 'Photos', model: 'Model: ',
+  },
+  de: {
+    modelFailed: 'Das 3D-Modell ließ sich nicht laden.', modelLoading: 'Das 3D-Modell wird geladen …', noPicture: 'Kein Bild veröffentlicht', noPrice: 'Kein Preis veröffentlicht',
+    previous: (name: string) => 'Vorheriges Bild von ' + name, next: (name: string) => 'Nächstes Bild von ' + name, modes: (name: string) => 'Bilder oder 3D-Modell von ' + name,
+    photos: 'Fotos', model: 'Modell: ',
+  },
+});
 
 function Chevron({ back }: { back?: boolean }) {
   return <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d={back ? 'm15 18-6-6 6-6' : 'm9 18 6-6-6-6'} /></svg>;
@@ -20,6 +37,8 @@ function Chevron({ back }: { back?: boolean }) {
  * model where one exists, price, German status and the compare button. The whole card links to
  * the robot page; the controls sit above that link. */
 export function RobotTile({ tile }: { tile: TileData }) {
+  const lang = useLang();
+  const t = TEXT[lang];
   const [index, setIndex] = useState(0);
   const [mode, setMode] = useState<'photo' | '3d'>('photo');
   const [model, setModel] = useState<{ entry: ModelEntry; presets: Record<string, Pose> } | null>(null);
@@ -54,31 +73,31 @@ export function RobotTile({ tile }: { tile: TileData }) {
   return <article className="mk-robot mk-tile" data-robot={tile.id} data-pictures={count} data-model={tile.model ? 'yes' : 'no'}>
     <div className="mk-tile-media" data-mode={mode}>
       {mode === '3d' && tile.model ? <div className="mk-tile-3d">
-        {model ? <RobotViewerLazy entry={model.entry} presets={model.presets} name={tile.name} compact fill /> : <p className="mk-tile-note">{failed ? 'The 3D model did not load.' : 'Loading the 3D model…'}</p>}
+        {model ? <RobotViewerLazy entry={model.entry} presets={model.presets} name={tile.name} compact fill /> : <p className="mk-tile-note">{failed ? t.modelFailed : t.modelLoading}</p>}
       </div> : picture ? <RobotPhoto key={picture.src} url={picture.src} alt={picture.alt || tile.name} formFactor="humanoid" fit="contain" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px" className="mk-tile-photo" />
-        : <span className="mk-tile-empty">No picture published</span>}
+        : <span className="mk-tile-empty">{t.noPicture}</span>}
 
       {mode === 'photo' && count > 1 ? <>
-        <button type="button" className="mk-tile-arrow" data-dir="prev" aria-label={'Previous picture of ' + tile.name} onClick={() => step(-1)}><Chevron back /></button>
-        <button type="button" className="mk-tile-arrow" data-dir="next" aria-label={'Next picture of ' + tile.name} onClick={() => step(1)}><Chevron /></button>
+        <button type="button" className="mk-tile-arrow" data-dir="prev" aria-label={t.previous(tile.name)} onClick={() => step(-1)}><Chevron back /></button>
+        <button type="button" className="mk-tile-arrow" data-dir="next" aria-label={t.next(tile.name)} onClick={() => step(1)}><Chevron /></button>
         <span className="mk-tile-count" data-tile-count>{index + 1} / {count}</span>
       </> : null}
 
-      {tile.model ? <div className="mk-tile-modes" role="group" aria-label={'Pictures or 3D model of ' + tile.name}>
-        <button type="button" aria-pressed={mode === 'photo'} onClick={() => setMode('photo')} disabled={!count}>Photos</button>
+      {tile.model ? <div className="mk-tile-modes" role="group" aria-label={t.modes(tile.name)}>
+        <button type="button" aria-pressed={mode === 'photo'} onClick={() => setMode('photo')} disabled={!count}>{t.photos}</button>
         <button type="button" aria-pressed={mode === '3d'} onClick={open3d}>3D</button>
       </div> : null}
 
-      {mode === '3d' && tile.model ? <a className="mk-tile-credit" href={tile.model.creditUrl} target="_blank" rel="noopener noreferrer">Model: {tile.model.credit}</a>
+      {mode === '3d' && tile.model ? <a className="mk-tile-credit" href={tile.model.creditUrl} target="_blank" rel="noopener noreferrer">{t.model}{tile.model.credit}</a>
         : picture?.credit ? (picture.href ? <a className="mk-tile-credit" href={picture.href} target="_blank" rel="noopener noreferrer">{picture.credit}</a> : <span className="mk-tile-credit">{picture.credit}</span>) : null}
     </div>
 
     <div className="mk-robot-body">
       <p className="mk-maker">{tile.kicker}</p>
       <h4><Link href={tile.href} className="mk-tile-link">{tile.name}</Link></h4>
-      {tile.summary ? <p className="mk-card-summary">{tile.summary}</p> : null}
+      {tile.summary ? <p className="mk-card-summary" lang={recordLang(lang)}>{tile.summary}</p> : null}
       <div className="mk-price">
-        {tile.price ? <strong>{tile.price}</strong> : <span className="mk-fine">No price published</span>}
+        {tile.price ? <strong>{tile.price}</strong> : <span className="mk-fine">{t.noPrice}</span>}
         <span className="mk-status" data-s={tile.status.tone}>{tile.status.label}</span>
       </div>
       <div className="mk-tile-foot">

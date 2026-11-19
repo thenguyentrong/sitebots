@@ -1,7 +1,6 @@
 'use client';
 
 import { useSyncExternalStore } from 'react';
-import type { Lang } from '@/lib/chat/i18n';
 
 // Who the visitor is to the adviser, shared by the header, the chat and the sign-in dialog: signed in or
 // not, free consultations left, and their own API key if they use one. The key lives in this browser
@@ -17,12 +16,12 @@ export type AccountInfo = {
 };
 export type DialogMode = 'access' | 'account';
 export type Notice = 'quota' | 'sign_in' | 'signin_failed' | 'free_closed' | 'bad_key' | null;
-type State = { info: AccountInfo | null; key: string | null; dialog: DialogMode | null; notice: Notice; lang: Lang };
+type State = { info: AccountInfo | null; key: string | null; dialog: DialogMode | null; notice: Notice };
 
 const KEY = 'sitebots-api-key';
 const PENDING = 'sitebots-pending-question';
 
-let state: State = { info: null, key: null, dialog: null, notice: null, lang: 'en' };
+let state: State = { info: null, key: null, dialog: null, notice: null };
 const listeners = new Set<() => void>();
 const emit = (next: Partial<State>) => {
   state = { ...state, ...next };
@@ -63,7 +62,6 @@ export const useAccess = () => useSyncExternalStore(subscribe, () => state, () =
 
 export const openDialog = (mode: DialogMode, notice: Notice = null) => emit({ dialog: mode, notice });
 export const closeDialog = () => emit({ dialog: null, notice: null });
-export const setAccessLang = (lang: Lang) => { if (state.lang !== lang) emit({ lang }); };
 export const currentKey = () => state.key;
 
 export function saveKey(key: string, remember: boolean) {

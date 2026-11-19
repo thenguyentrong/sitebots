@@ -4,36 +4,44 @@ import { Fragment } from 'react';
 import { CompareSearch } from '@/components/compare/CompareControls';
 import { CompareTable } from '@/components/compare/CompareTable';
 import { SavedComparison } from '@/components/compare/SavedComparison';
+import { COMPARE_TEXT } from '@/lib/i18n/compare';
+import { formatNumber } from '@/lib/i18n/format';
+import { pageLang } from '@/lib/i18n/server';
 import { COMPARE_MAX, getCompareColumns } from '@/lib/queries/compare';
 import { PRIVATE_METADATA } from '@/lib/seo';
 import { ui } from '@/lib/ui';
 
 export const dynamic = 'force-dynamic';
 
+type Params = Promise<{ lang: string }>;
+
 // Every combination of ids is a page; none of them should be indexed.
-export const metadata: Metadata = { title: 'Compare robots', ...PRIVATE_METADATA };
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const lang = await pageLang(params);
+  return { title: COMPARE_TEXT[lang].title, ...PRIVATE_METADATA };
+}
 
 type Search = Promise<{ ids?: string }>;
 
-export default async function ComparePage({ searchParams }: { searchParams: Search }) {
+export default async function ComparePage({ params, searchParams }: { params: Params; searchParams: Search }) {
+  const lang = await pageLang(params);
+  const t = COMPARE_TEXT[lang];
+  const num = (n: number) => formatNumber(n, lang);
   const { ids } = await searchParams;
   const requested = (ids ?? '').split(',').map((s) => s.trim()).filter(Boolean);
-  const { columns, robots, unknown } = await getCompareColumns(requested);
+  const { columns, robots, unknown } = await getCompareColumns(requested, lang);
   const EmptyState = ids === undefined ? SavedComparison : Fragment;
 
   return (
     <main className="mx-auto w-full max-w-6xl px-4 pb-28 sm:px-6">
       <header className="py-10">
-        <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">Compare</h1>
-        <p className="mt-3 max-w-2xl text-muted">
-          Up to {COMPARE_MAX} robots side by side, any type. Each row shows what was published, with its conditions and
-          source. We do not score or rank them: what fits your job is your call. If a value is missing, it says Not published.
-        </p>
-        {robots > COMPARE_MAX ? <p className="mt-3 text-sm font-medium text-safety">Only the first {COMPARE_MAX} of {robots} robots are shown.</p> : null}
-        {unknown > 0 ? <p className="mt-3 text-sm font-medium text-safety">{unknown} robot{unknown === 1 ? '' : 's'} not found.</p> : null}
+        <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">{t.heading}</h1>
+        <p className="mt-3 max-w-2xl text-muted">{t.lead(num(COMPARE_MAX))}</p>
+        {robots > COMPARE_MAX ? <p className="mt-3 text-sm font-medium text-safety">{t.limited(num(COMPARE_MAX), num(robots))}</p> : null}
+        {unknown > 0 ? <p className="mt-3 text-sm font-medium text-safety">{t.unknown(unknown, num(unknown))}</p> : null}
         <div className="mt-6 flex flex-wrap items-end gap-3">
           <CompareSearch selected={columns.map(({ id, name }) => ({ id, name }))} max={COMPARE_MAX} />
-          <Link href="/robots" className={ui.btnSecondary}>Browse robots</Link>
+          <Link href="/robots" className={ui.btnSecondary}>{t.browse}</Link>
         </div>
       </header>
 
@@ -46,14 +54,14 @@ export default async function ComparePage({ searchParams }: { searchParams: Sear
             </svg>
           </span>
           <p className="text-muted">
-            Nothing to compare yet. Search for a robot above, or use the Compare button on{' '}
+            {t.emptyBefore}
             <Link href="/robots" className={ui.link}>
-              the robots page
-            </Link>{' '}
-            or on any robot page.
+              {t.emptyLink}
+            </Link>
+            {t.emptyAfter}
           </p>
         </div></EmptyState>
-      ) : <CompareTable columns={columns} />}
+      ) : <CompareTable columns={columns} lang={lang} />}
     </main>
   );
 }

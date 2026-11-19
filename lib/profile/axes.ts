@@ -1,4 +1,5 @@
 import { autonomy, dust, evidence, outdoor, payload, reach, runtime, slope, stairs, temperature, terrain, wet } from '@/lib/match/criteria';
+import { formatNumber } from '@/lib/i18n/format';
 import type { Candidate } from '@/lib/match/types';
 import { combine, ladder, single, type Part } from './ladder';
 import { taskRows } from './tasks';
@@ -9,9 +10,10 @@ import { taskRows } from './tasks';
  * listed here and on /methodology, not a formula. Speed and manipulation have
  * no criterion of their own and are the only new scorers.
  */
-export type AxisDef = { id: string; label: string; hint: string; derive: (c: Candidate) => Part[] };
+type Lang = 'en' | 'de';
+export type AxisDef = { id: string; label: string; hint: string; derive: (c: Candidate, lang?: Lang) => Part[] };
 
-const f1 = (n: number) => n.toLocaleString('en-GB', { maximumFractionDigits: 1 });
+const f1 = (n: number, lang: Lang = 'en') => formatNumber(n, lang, 1);
 
 export type TaskCoverage = { supported: number; reported: number; unknown: number; total: number };
 
@@ -25,18 +27,19 @@ function handlingCoverage(c: Candidate): TaskCoverage {
   };
 }
 
-function manipulation(c: Candidate): Part[] {
+function manipulation(c: Candidate, lang: Lang = 'en'): Part[] {
   const coverage = handlingCoverage(c);
-  const text = coverage.supported + ' supported; ' + coverage.reported + ' reported only; ' + coverage.unknown + ' unconfirmed. Counts describe evidence, not task success.';
+  const text = lang === 'de' ? coverage.supported + ' belegt; ' + coverage.reported + ' nur berichtet; ' + coverage.unknown + ' unbestätigt. Die Zahlen beschreiben Nachweise, keinen Erfolg bei der Aufgabe.' : coverage.supported + ' supported; ' + coverage.reported + ' reported only; ' + coverage.unknown + ' unconfirmed. Counts describe evidence, not task success.';
   // Averaging only known tasks made one supported task appear as 100/100.
   if (coverage.unknown || coverage.reported) return [{ score: null, status: 'unknown', text }];
   return [{ score: coverage.supported / coverage.total, status: 'known', text }];
 }
-function speed(c: Candidate): Part[] {
+function speed(c: Candidate, lang: Lang = 'en'): Part[] {
+  const de = lang === 'de';
   const v = c.card.max_speed_ms ?? c.card.walk_speed_ms;
-  if (v === null) return [{ score: null, status: 'unknown', text: 'speed not published' }];
+  if (v === null) return [{ score: null, status: 'unknown', text: de ? 'Geschwindigkeit nicht veröffentlicht' : 'speed not published' }];
   const rungs = [0.5, 1.0, 1.5, 2.0, 3.0];
-  return [{ score: rungs.filter((r) => v >= r).length / rungs.length, status: 'known', text: `${f1(v)} m/s ${c.card.max_speed_ms !== null ? 'max' : 'walking'}` }];
+  return [{ score: rungs.filter((r) => v >= r).length / rungs.length, status: 'known', text: `${f1(v, lang)} m/s ${c.card.max_speed_ms !== null ? (de ? 'Höchstwert' : 'max') : (de ? 'beim Gehen' : 'walking')}` }];
 }
 
 export const AXES: readonly AxisDef[] = [
@@ -52,8 +55,22 @@ export const AXES: readonly AxisDef[] = [
   { id: 'evidence', label: 'Evidence', hint: 'How much of the record is published and maker-verified.', derive: (c) => [single(c, () => evidence(c), {})] },
 ];
 
+/** The axes in German; AXES keeps the English for /methodology and the tests. */
+const AXIS_DE: Record<string, { label: string; hint: string }> = {
+  carry: { label: 'Tragen', hint: 'Nennlast gemessen an 5, 10, 20, 40 und 80 kg.' },
+  reach: { label: 'Reichweite', hint: 'Arbeitshöhe gemessen an 1,0, 1,5, 2,0 und 2,5 m; unbekannt, wenn die Arbeitsreichweite nicht veröffentlicht ist.' },
+  stairs: { label: 'Treppen und Steigung', hint: 'Treppengängigkeit und Steigung gemessen an 10, 20, 30 und 45°.' },
+  terrain: { label: 'Gelände', hint: 'Nachweise für Kies und Schutt, je Konfiguration.' },
+  weather: { label: 'Witterung', hint: 'Starker Staub, Feuchte und Regen (IP-Code), Eignung für draußen und −10…35 °C / −20…45 °C.' },
+  endurance: { label: 'Ausdauer', hint: 'Veröffentlichte Laufzeit unter Last gemessen an Schichten von 2, 4 und 8 h; Nenn- und Leerlaufwerte bleiben unbestätigt.' },
+  autonomy: { label: 'Autonomie', hint: 'Betrieb unter Aufsicht, dann vollständig autonom.' },
+  manipulation: { label: 'Handhabung', hint: 'Belegte, berichtete und unbestätigte Handhabungsaufgaben. Unvollständige Nachweise lassen eine Lücke im Diagramm statt eines Erfolgswerts.' },
+  speed: { label: 'Geschwindigkeit', hint: 'Höchst- oder Gehgeschwindigkeit gemessen an 0,5, 1, 1,5, 2 und 3 m/s.' },
+  evidence: { label: 'Nachweise', hint: 'Wie viel des Datensatzes veröffentlicht und vom Hersteller bestätigt ist.' },
+};
+
 export type Axis = { id: string; label: string; hint: string; score: number | null; status: 'known' | 'partial' | 'unknown'; basis: string; coverage?: TaskCoverage };
 
-export function axesFor(c: Candidate): Axis[] {
-  return AXES.map((a) => ({ id: a.id, label: a.label, hint: a.hint, ...combine(a.derive(c)), ...(a.id === 'manipulation' ? { coverage: handlingCoverage(c) } : {}) }));
+export function axesFor(c: Candidate, lang: Lang = 'en'): Axis[] {
+  return AXES.map((a) => ({ id: a.id, label: lang === 'de' ? AXIS_DE[a.id].label : a.label, hint: lang === 'de' ? AXIS_DE[a.id].hint : a.hint, ...combine(a.derive(c, lang)), ...(a.id === 'manipulation' ? { coverage: handlingCoverage(c) } : {}) }));
 }

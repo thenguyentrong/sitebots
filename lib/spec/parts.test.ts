@@ -33,4 +33,8 @@ describe('summarizeJson', () => {
     expect(summarizeJson('actuators', [{ group: 'leg', count: 12, peak_torque_nm: 120 }])).toBe('Legs 120 N·m ×12');
     expect(summarizeJson('sensors', [{ type: 'lidar', model: 'Mid-360' }, { type: 'depth_camera', count: 2 }])).toBe('Mid-360, 2× Depth camera');
   });
+  it('writes German on German pages', () => {
+    expect(summarizeJson('equipment_options', [{ type: 'arm', name: 'A' }, { type: 'lidar', name: 'B' }], 'de')).toBe('2 Optionen: Manipulatorarm, LiDAR');
+    expect(summarizeJson('battery_pack', { chemistry: 'li_ion', voltage_v: 58.8, swappable: true }, 'de')).toBe('Li-ion · 58,8 V · wechselbar');
+  });
 });

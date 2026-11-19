@@ -1,5 +1,28 @@
+import type { Lang } from '@/lib/i18n/config';
+import { formatNumber } from '@/lib/i18n/format';
 import { FIELDS, missingFields, type Field } from './research';
 import type { Dossier } from './schema';
+
+// Our own words (row names, yes/no, who states a value) follow the page's language, passed last and
+// English by default: compare/facts.ts matches the English row names. Labels the records carry for their
+// own specifications stay as the sources wrote them.
+const DE = {
+  capability: {
+    legs: 'Beine', wheels: 'Räder', tracks: 'Ketten', levelFloors: 'Ebene Böden', roughGround: 'Unebener Boden', stairs: 'Treppen', outdoor: 'Einsatz im Freien',
+    arms: 'Anzahl der Arme', hands: 'Hände oder Endeffektoren', handsIncluded: 'Hände enthalten', armPayloadKg: 'Traglast pro Arm', carryPayloadKg: 'Traglast auf Körper oder Basis',
+    runtimeH: 'Laufzeit', ipRating: 'Schutzart', sdk: 'SDK / Entwicklungsschnittstelle',
+  } as Record<string, string>,
+  hands: { none: 'Keine', gripper: 'Greifer', dexterous: 'Mehrfingerhände', tool: 'Werkzeug', optional: 'Optional' } as Record<string, string>,
+  field: {
+    arm_payload_kg: 'Traglast pro Arm', both_arms_payload_kg: 'Traglast, beide Arme', carry_payload_kg: 'Traglast', runtime_h: 'Laufzeit', ip_rating: 'Schutzart',
+    stairs: 'Treppen', rough_ground: 'Unebener Boden', outdoor: 'Einsatz im Freien', hands_included: 'Hände enthalten',
+  } as Record<string, string>,
+  summary: { arm_payload_kg: 'Pro Arm', carry_payload_kg: 'Traglast Körper / Basis', runtime_h: 'Laufzeit', ip_rating: 'Schutzart' } as Record<string, string>,
+  kind: { manufacturer: 'Hersteller', seller: 'Händler', press: 'Presse', customer: 'Kunde', trade_fair: 'Messe', database: 'Datenbank', other: 'Sonstige' } as Record<string, string>,
+};
+
+/** A research field (payload per arm, IP rating ...) by name, in the page's language. */
+export const researchFieldLabel = (field: Field, lang: Lang = 'en'): string => (lang === 'de' ? DE.field[field] : null) ?? FIELDS[field].label;
 
 export type MarketSource = Dossier['sources'][number];
 type CapabilityKey = Exclude<keyof Dossier['capabilities'], 'sourceIds' | 'notes'>;
@@ -42,19 +65,23 @@ const HAND_LABELS: Record<Dossier['capabilities']['hands'], string> = {
   none: 'None', gripper: 'Gripper', dexterous: 'Dexterous hands', tool: 'Tool', optional: 'Optional',
 };
 
-export function marketSourceLabel(source: MarketSource): string {
+export function marketSourceLabel(source: MarketSource, lang: Lang = 'en'): string {
+  if (lang === 'de') return source.kind === 'manufacturer' ? 'Herstellerquelle' : 'Berichtet · ' + (DE.kind[source.kind] ?? source.kind.replaceAll('_', ' '));
   return source.kind === 'manufacturer' ? 'Manufacturer source' : 'Reported · ' + source.kind.replaceAll('_', ' ');
 }
 
-export function marketValue(row: Pick<MarketValueRow, 'value' | 'unit' | 'notApplicable'>): string {
-  if (row.notApplicable) return 'Not applicable';
-  if (row.value === null) return 'Unknown';
-  const value = typeof row.value === 'boolean' ? (row.value ? 'Yes' : 'No') : String(row.value);
+export function marketValue(row: Pick<MarketValueRow, 'value' | 'unit' | 'notApplicable'>, lang: Lang = 'en'): string {
+  const de = lang === 'de';
+  if (row.notApplicable) return de ? 'Entfällt' : 'Not applicable';
+  if (row.value === null) return de ? 'Unbekannt' : 'Unknown';
+  // Text values are the source's words and stay as written; numbers take the page's decimal mark.
+  const value = typeof row.value === 'boolean' ? (row.value ? (de ? 'Ja' : 'Yes') : (de ? 'Nein' : 'No')) : typeof row.value === 'number' && de ? formatNumber(row.value, lang, 3) : String(row.value);
   return value + (row.unit ? ' ' + row.unit : '');
 }
 
 /** A capability source list covers the whole record; it cannot verify an individual field. */
-export function configurationSpecifications(robot: Dossier) {
+export function configurationSpecifications(robot: Dossier, lang: Lang = 'en') {
+  const de = lang === 'de';
   const sources = new Map(robot.sources.map((source) => [source.id, source]));
   const evidence = robot.researchEvidence ?? [];
   const specs: MarketValueRow[] = robot.specs.map((spec) => {
@@ -84,8 +111,8 @@ export function configurationSpecifications(robot: Dossier) {
     const source = quoted ? sources.get(quoted.sourceId) ?? null : null;
     return [{
       key,
-      label,
-      value: key === 'hands' ? HAND_LABELS[value as Dossier['capabilities']['hands']] : value,
+      label: de ? DE.capability[key] ?? label : label,
+      value: key === 'hands' ? (de ? DE.hands : HAND_LABELS)[value as Dossier['capabilities']['hands']] : value,
       unit: unit ?? null,
       conditions: quoted?.basis ?? null,
       source,
@@ -99,8 +126,8 @@ export function configurationSpecifications(robot: Dossier) {
       notApplicable: value === null && !!field && !gaps.includes(field),
     }];
   });
-  const missing = gaps.map((field) => FIELDS[field].label as string);
-  if (robot.capabilities.sdk === null) missing.push('SDK / development interface');
+  const missing = gaps.map((field) => researchFieldLabel(field, lang));
+  if (robot.capabilities.sdk === null) missing.push(de ? DE.capability.sdk : 'SDK / development interface');
   const summary = [
     { key: 'arm_payload_kg', capability: 'armPayloadKg', label: 'Per arm' },
     { key: 'carry_payload_kg', capability: 'carryPayloadKg', label: 'Body / base payload' },
@@ -108,7 +135,7 @@ export function configurationSpecifications(robot: Dossier) {
     { key: 'ip_rating', capability: 'ipRating', label: 'IP rating' },
   ].flatMap(({ key, capability, label }) => {
     const row = specs.find((item) => item.key === key) ?? capabilities.find((item) => item.key === capability);
-    return row && row.value !== null ? [{ ...row, label }] : [];
+    return row && row.value !== null ? [{ ...row, label: de ? DE.summary[key] : label }] : [];
   });
   return { specs, capabilities, missing, summary };
 }

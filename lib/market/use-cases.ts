@@ -1,4 +1,4 @@
-import type { Lang } from '@/lib/i18n/config';
+import { LOCALE, type Lang } from '@/lib/i18n/config';
 import { MARKET_TEXT } from '@/lib/i18n/market';
 import { robotHref } from './links';
 import { loadMarket } from './load';
@@ -100,6 +100,29 @@ export function regionOf(countries: readonly string[]): RegionId {
   return 'OTHER';
 }
 export const countryName = (code: string, lang: Lang = 'en') => countryLabel(code, lang);
+
+/**
+ * A use's place in the page's language. `place` is computed once, in English, when loadUseCases() fills
+ * its cache; German pages name it again here at render time so the cache stays one list for both languages.
+ */
+export function usePlace(use: Pick<UseCase, 'where' | 'place' | 'countries'>, lang: Lang = 'en'): string {
+  if (lang === 'en') return use.place;
+  return placeLabel(use.where, lang) || (use.countries[0] ? countryName(use.countries[0], lang) : '');
+}
+
+/**
+ * The date of a use's source, which the records keep as "2024", "2024-06" or "2024-06-14". English pages
+ * print it as stored; German pages write "Juni 2024" and "14.06.2024".
+ */
+export function useDate(date: string, lang: Lang = 'en'): string {
+  if (lang === 'en') return date;
+  const [year, month, day] = date.split('-').map(Number);
+  if (!year || (date.length > 4 && !month)) return date;
+  if (!month) return String(year);
+  const at = new Date(Date.UTC(year, month - 1, day || 1));
+  if (Number.isNaN(at.getTime())) return date;
+  return new Intl.DateTimeFormat(LOCALE[lang], day ? { day: '2-digit', month: '2-digit', year: 'numeric', timeZone: 'UTC' } : { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(at);
+}
 
 export type UseCase = {
   key: string; robotId: string; robot: string; maker: string; type: RobotType; href: string;

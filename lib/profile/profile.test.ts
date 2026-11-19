@@ -66,3 +66,12 @@ describe('profileFor', () => {
     }
   });
 });
+
+it('names axes, tasks and follow-ups in German on German pages', () => {
+  const base = candidates[0];
+  const de = profileFor(base, 'de');
+  expect(de.axes.map((a) => a.label)).toContain('Tragen');
+  expect(de.buckets[0].label).toBe('Transport');
+  expect(de.axes.map((a) => a.score)).toEqual(profileFor(base).axes.map((a) => a.score));
+  expect(de.axes.find((a) => a.id === 'terrain')!.evidence.missing).toContain('Geprüfte Nachweise für Kies und Schutt, jeweils getrennt');
+});

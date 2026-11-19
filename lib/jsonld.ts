@@ -1,4 +1,5 @@
-import { AVAILABILITY_LABEL, FORM_FACTOR_LABEL } from '@/lib/spec/display';
+import type { Lang } from '@/lib/i18n/config';
+import { availabilityLabel as availabilityIn, formFactorLabel } from '@/lib/spec/display';
 import type { AvailabilityCurrent, PriceCurrent, RobotCard } from '@/lib/spec/types';
 import { SITE } from '@/lib/site';
 
@@ -10,6 +11,9 @@ import { SITE } from '@/lib/site';
  * only when a price was read on a store or distributor page (tier ≤ 2) and is
  * not stale. No aggregateRating, ever — we have none, and inventing one is
  * how the AI-content farms got on our denylist.
+ *
+ * `path` is the address of the page in its own language (/de/... on German pages); the category is in
+ * that language, the description is the record's summary as written.
  */
 
 const SCHEMA_AVAILABILITY: Record<string, string> = {
@@ -17,7 +21,7 @@ const SCHEMA_AVAILABILITY: Record<string, string> = {
   discontinued: 'https://schema.org/Discontinued',
 };
 
-export function productJsonLd(robot: RobotCard, prices: PriceCurrent[], availability: AvailabilityCurrent[], path: string) {
+export function productJsonLd(robot: RobotCard, prices: PriceCurrent[], availability: AvailabilityCurrent[], path: string, lang: Lang = 'en') {
   const url = `${SITE.url}${path}`;
   const props = Object.entries(robot.specs ?? {})
     .filter(([, s]) => s.trust === 'verified' || s.trust === 'assessed')
@@ -53,7 +57,7 @@ export function productJsonLd(robot: RobotCard, prices: PriceCurrent[], availabi
     name: robot.name,
     url,
     brand: { '@type': 'Brand', name: robot.manufacturer_name },
-    category: FORM_FACTOR_LABEL[robot.form_factor],
+    category: formFactorLabel(robot.form_factor, lang),
     ...(robot.summary ? { description: robot.summary } : {}),
     ...(robot.image_url ? { image: robot.image_url } : {}),
     ...(props.length ? { additionalProperty: props } : {}),
@@ -74,6 +78,6 @@ export function breadcrumbJsonLd(items: { name: string; path?: string }[]) {
   };
 }
 
-export function availabilityLabel(status: string): string {
-  return AVAILABILITY_LABEL[status] ?? status;
+export function availabilityLabel(status: string, lang: Lang = 'en'): string {
+  return availabilityIn(status, lang);
 }
