@@ -63,7 +63,8 @@ export default async function Home({ searchParams }: { searchParams: Search }) {
       <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
       <div className="relative mx-auto w-full max-w-6xl px-4 pb-14 pt-32 sm:px-6">
         <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/75">Robots for German building sites</p>
-        <h1 id="home-title" className="mt-3 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight [text-shadow:0_2px_24px_rgb(0_0_0/0.45)] sm:text-7xl">The site needs more hands. See what robots already do.</h1>
+        {/* One sentence per line; balance keeps a lone last word ("do.") from dropping down on narrow screens. */}
+        <h1 id="home-title" className="mt-3 max-w-5xl text-balance text-[2.5rem] font-semibold leading-[1.02] tracking-tight [text-shadow:0_2px_24px_rgb(0_0_0/0.45)] sm:text-7xl"><span className="block">The site needs more hands.</span> <span className="block">See what robots already do.</span></h1>
         <p className="mt-5 max-w-2xl text-lg text-white/85">Checked figures on the German building trade, real footage and records of robots at work, and the robots you can order in Germany today. Every number links to where it was read.</p>
         <div className="mt-7 flex flex-wrap gap-3">
           <Link href="/use-cases" className="inline-flex h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-black transition hover:bg-white/90 active:scale-[0.98]">See where robots work<ArrowRight size={16} weight="bold" /></Link>
