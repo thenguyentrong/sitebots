@@ -9,9 +9,9 @@ export const dynamic = 'force-dynamic';
 export async function GET(request: Request, { params }: { params: Promise<{ provider: string }> }) {
   const { provider } = await params;
   const url = new URL(request.url);
-  if (!PROVIDERS.includes(provider as Provider)) return NextResponse.redirect(new URL('/?signin=failed', url), 303);
+  if (!PROVIDERS.includes(provider as Provider)) return NextResponse.redirect(new URL('/advisor?signin=failed', url), 303);
   const started = startSignIn(provider as Provider, url.origin + '/api/auth/callback/' + provider, url.searchParams.get('back') ?? '/');
-  if (!started) return NextResponse.redirect(new URL('/?signin=unavailable', url), 303);
+  if (!started) return NextResponse.redirect(new URL('/advisor?signin=unavailable', url), 303);
   const response = NextResponse.redirect(started.url, 303);
   response.cookies.set(PENDING_COOKIE, sealPending(started.pending), { httpOnly: true, sameSite: 'lax', secure: process.env.NODE_ENV === 'production', path: '/api/auth', maxAge: 600 });
   return response;

@@ -12,10 +12,11 @@ function spans(n: number): string[] {
   return out;
 }
 
-export function SettingTiles({ tiles }: { tiles: SettingTile[] }) {
+/** `base` is the page the tiles jump into: this page by default, the use-case page from elsewhere. */
+export function SettingTiles({ tiles, base = '' }: { tiles: SettingTile[]; base?: string }) {
   const span = spans(tiles.length);
   return <div className="grid auto-rows-[200px] grid-cols-2 gap-3 md:auto-rows-[210px] md:grid-cols-4">
-    {tiles.map((tile, i) => <a key={tile.id} href={'#' + tile.id} className={'group relative overflow-hidden rounded-2xl bg-subtle ' + span[i]}>
+    {tiles.map((tile, i) => <a key={tile.id} href={base + '#' + tile.id} className={'group relative overflow-hidden rounded-2xl bg-subtle ' + span[i]}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {tile.picture ? <img src={tile.picture.src} alt="" loading={i < 4 ? 'eager' : 'lazy'} decoding="async" className="absolute inset-0 h-full w-full object-cover object-[50%_30%] transition duration-700 group-hover:scale-[1.04]" /> : null}
       <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/0" />

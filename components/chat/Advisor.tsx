@@ -121,6 +121,13 @@ export function Advisor({ maxChars }: { maxChars: number }) {
     restored.current = true;
     // Back from Google or Microsoft: the question typed before is waiting, or the sign-in failed.
     const url = new URL(location.href);
+    // A question typed into the box on the start page waits in the input; the visitor sends it.
+    const asked = url.searchParams.get('q');
+    if (asked) {
+      url.searchParams.delete('q');
+      history.replaceState(history.state, '', url.pathname + url.search + url.hash);
+      setInput(asked.slice(0, maxChars));
+    }
     const signin = url.searchParams.get('signin');
     if (signin) {
       url.searchParams.delete('signin');

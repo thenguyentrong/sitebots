@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     const models = ['02', 'w1'].map(model => ({ source: `/robots/zerith/${model}`, destination: `/robots/casbot/${model}`, permanent: true }));
     // The site became one chat. Old pages go to it instead of ending in a 404.
-    const gone = ['/chat', '/graph', '/steps', '/costs', '/search', '/methodology', '/plan/:path*', '/workflows/:path*', '/solutions/:path*']
+    const gone = ['/graph', '/steps', '/costs', '/search', '/methodology', '/plan/:path*', '/workflows/:path*', '/solutions/:path*']
       .map(source => ({ source, destination: '/', permanent: false }));
     // The site lives on sitebots.org since 18 Nov 2026. Old links on the Vercel address follow it, so a
     // sign-in always starts on the one host the Google and Microsoft apps accept. API routes stay
@@ -33,7 +33,9 @@ const nextConfig: NextConfig = {
     const home = { source: '/:path((?!api/).*)', has: [{ type: 'host' as const, value: 'sitebots.vercel.app' }], destination: 'https://sitebots.org/:path', permanent: true };
     // The old per-use-case pages fold into the one use-case page.
     const useCases = { source: '/use-cases/:path+', destination: '/use-cases', permanent: false };
-    return [home, ...models, useCases, ...gone];
+    // The adviser moved from the start page to its own page on 19 Nov 2026.
+    const chat = { source: '/chat', destination: '/advisor', permanent: false };
+    return [home, ...models, useCases, chat, ...gone];
   },
   // PGlite loads its WASM and data files with `new URL(...)` checks that fail
   // once Turbopack has bundled it (the bundler's URL is not Node's URL). Keep
@@ -44,6 +46,8 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/market{,/**}': CONTENT,
     '/use-cases': CONTENT,
+    // The start page reads the use cases, the robots and the cost data.
+    '/': ['./data/costs/*.json', ...CONTENT],
     '/api/market{,/**}': CONTENT,
     '/api/reviews': CONTENT,
     '/robots{,/**}': ['./data/snapshot/pglite.tar.gz', ...CONTENT],
@@ -70,7 +74,7 @@ const nextConfig: NextConfig = {
   // Every catalogue page boots the database in a function. The catalogue only changes with a deploy, and a
   // deploy empties this cache, so one visitor's page can serve everyone for a week.
   async headers() {
-    return ['/robots/:path*', '/brands/:path*', '/market/:path*', '/compare', '/use-cases', '/sitemap.xml'].map(source => ({
+    return ['/', '/robots/:path*', '/brands/:path*', '/market/:path*', '/compare', '/use-cases', '/sitemap.xml'].map(source => ({
       source,
       headers: [{ key: 'Vercel-CDN-Cache-Control', value: 'public, max-age=604800' }],
     }));

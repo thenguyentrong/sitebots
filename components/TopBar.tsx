@@ -14,7 +14,7 @@ export function TopBar({ lang = 'en', overlay = false, extra }: { lang?: Lang; o
   const path = usePathname() ?? '/';
   const t = ACCESS_TEXT[lang].nav;
   const links = [
-    { href: '/', label: t.adviser, short: t.adviserShort, active: path === '/' },
+    { href: '/advisor', label: t.adviser, short: t.adviserShort, active: path.startsWith('/advisor') },
     { href: '/robots', label: t.robots, short: t.robots, active: path.startsWith('/robots') || path.startsWith('/market') || path.startsWith('/brands') },
     { href: '/use-cases', label: t.useCases, short: t.useCasesShort, active: path.startsWith('/use-cases') },
   ];
