@@ -5,7 +5,8 @@ import { usePathname } from 'next/navigation';
 
 /** Hidden on the chat, which fills the screen and carries the same links itself. */
 export function SiteFooter() {
-  if (usePathname() === '/') return null;
+  // The adviser lives on /advisor since 19 Nov 2026; the start page needs the legal links (§ 5 DDG).
+  if (usePathname()?.startsWith('/advisor')) return null;
   return (
     <footer className="mt-16 border-t border-edge">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm text-muted sm:px-6">

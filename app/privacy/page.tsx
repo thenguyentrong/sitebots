@@ -26,9 +26,9 @@ export default function PrivacyPage() {
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Signing in</h2>
-        <p className="mt-2">The robot pages, the comparison and everything else are free and need no account. Only the adviser and writing a review need one: every adviser answer costs money, and a review should come from a real account. You sign in with Google or Microsoft. They confirm to us that you signed in and send your email address.</p>
-        <p className="mt-2">We store a code made from your Google or Microsoft account number and a secret, so it does not show who you are; how many free consultations you started each month; and which chats are yours. We do not store your name or your email address. Your email address is kept only in the sign-in cookie in your browser, so the account menu can show which account you used. The cookie lasts 30 days, or until you sign out.</p>
-        <p className="mt-2">If you write a review of a robot or a company, we store it with the same account code, the sign-in provider, your rating, whether you worked with it, the text and the optional name you chose to show. Everyone can read the review; the account code is never shown. You can change or delete your review at any time.</p>
+        <p className="mt-2">The robot pages, the comparison and everything else are free and need no account. Only the adviser and writing a review need one: every adviser answer costs money, and a review should come from a real account. You sign in with Google. Google confirms to us that you signed in and sends your email address. During sign-in a short-lived cookie (sitebots_oauth) protects the login and is deleted afterwards.</p>
+        <p className="mt-2">We store a code made from your Google or Microsoft account number and a secret, so it does not show who you are; how many free consultations you started each month; and which chats are yours. We do not store your name or your email address. Your email address is kept only in the sign-in cookie in your browser, so the account menu can show which account you used. The cookie lasts 30 days, or until you sign out. The account record is kept until you delete your account.</p>
+        <p className="mt-2">If you write a review of a robot or a company, we store it with the same account code, the sign-in provider, your rating, whether you worked with it, the text and the optional name you chose to show. Everyone can read the review; the account code is never shown. You can change or delete your review at any time. It stays online until you or we delete it.</p>
         <p className="mt-2">&quot;Delete my account&quot; removes the account record, all chats started with it and all reviews written with it, straight away.</p>
       </section>
       <section>
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Who processes it</h2>
-        <p className="mt-2">Your messages are sent to Anthropic PBC in the United States, which generates the answers with its AI model Claude. The site runs on Vercel, which handles every page request and stores the chats, account records and reviews in a private store in Frankfurt. Sign-in goes through Google (Google Ireland Limited) or Microsoft (Microsoft Ireland Operations Limited), depending on the button you choose.</p>
+        <p className="mt-2">Your messages are sent to Anthropic PBC in the United States, which writes the answers with its AI model Claude as our processor under its data processing terms. The site is hosted by Vercel Inc. (USA), which handles every page request and stores the chats, account records and reviews in a private store in Frankfurt. For every page request Vercel processes your IP address and browser data in server logs, to deliver the page and protect it from attacks. Both transfers to the USA are based on the EU Standard Contractual Clauses in their data processing terms (Art. 46(2)(c) GDPR). Sign-in goes through Google (Google Ireland Limited).</p>
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Videos</h2>
@@ -45,7 +45,9 @@ export default function PrivacyPage() {
       </section>
       <section>
         <h2 className="font-semibold text-foreground">Legal basis and your rights</h2>
-        <p className="mt-2">We process chats because you choose to send them and to run and improve this service (Art. 6(1)(b) and (f) GDPR). You can ask for access, correction, deletion or restriction, object to the processing, and complain to a data protection authority.</p>
+        <p className="mt-2">Chats, sign-in, your account, the free allowance and reviews: Art. 6(1)(b) GDPR, the service you asked for. The daily-limit code, server logs, reading chats to improve the service and protection against abuse: Art. 6(1)(f) GDPR, our interest in running a free service safely and within budget. YouTube films: Art. 6(1)(a) GDPR, your consent by pressing play, which you can withdraw at any time for the future.</p>
+        <p className="mt-2">You can ask for access, correction, deletion, restriction and a copy of your data (data portability), and you can complain to a data protection authority, for example the Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW).</p>
+        <p className="mt-3 rounded-lg border border-edge p-3 text-foreground"><strong>Right to object (Art. 21 GDPR).</strong> Where we rely on our legitimate interest, you can object at any time for reasons arising from your situation. Write to us at the address in the Impressum.</p>
       </section>
       <section>
         <h2 className="font-semibold text-foreground">This browser</h2>

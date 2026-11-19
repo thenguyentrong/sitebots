@@ -16,5 +16,11 @@ export default function ImpressumPage() {
       {SITE.vatId ? <p>VAT ID: {SITE.vatId}</p> : null}
       {SITE.register ? <p>Register: {SITE.register}</p> : null}
     </div> : <p className="mt-6 text-muted">The operator&apos;s details are being added.</p>}
+    <section className="mt-10 space-y-3 text-muted">
+      <h2 className="font-semibold text-foreground">Pictures and content of others</h2>
+      <p>Pictures and quotes belong to the makers and publishers named next to them. If you own something shown here and want it removed or credited differently, write to the address above. We remove it within 48 hours.</p>
+      <h2 className="pt-3 font-semibold text-foreground">No guarantee</h2>
+      <p>We check every value against its source, but prices, availability and specifications change. Please confirm every detail with the seller before you decide.</p>
+    </section>
   </main>;
 }

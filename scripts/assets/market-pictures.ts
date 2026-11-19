@@ -16,6 +16,7 @@ const manifestFile = join(root, 'data/market/pictures.json');
 type Entry = { src: string; width: number; height: number; credit: string; pageUrl: string; alt: string; sourceUrl: string };
 const manifest: { pictures: Record<string, Entry>; gallery: Record<string, Entry[]> } = { pictures: {}, gallery: {}, ...(existsSync(manifestFile) ? JSON.parse(readFileSync(manifestFile, 'utf8')) : {}) };
 const GALLERY = 11;
+const BLOCKED = /\/category\/|envato|i\.ytimg\.com|img\.youtube\.com/i;
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const fileFor = (id: string, url: string) => id + '.' + createHash('sha1').update(url).digest('hex').slice(0, 8) + '.webp';
 mkdirSync(out, { recursive: true });
@@ -68,7 +69,9 @@ for (const name of readdirSync(records).filter((file) => file.endsWith('.json'))
   const record = DossierSchema.parse(JSON.parse(readFileSync(join(records, name), 'utf8').replace(/^﻿/, '')));
   ids.add(record.id);
   if (only.length && !only.includes(record.id)) continue;
-  const candidates = [...record.images.filter((image) => image.kind === 'product'), ...record.images.filter((image) => image.kind !== 'product')];
+  // Never store category banners, AI stock, YouTube thumbnails or logos as product pictures (legal audit 19 Nov 2026).
+  const usable = record.images.filter((image) => !BLOCKED.test(image.url));
+  const candidates = [...usable.filter((image) => image.kind === 'product'), ...usable.filter((image) => image.kind !== 'product')];
   const current = manifest.pictures[record.id];
   // A record whose pictures were all removed loses its stored copy too.
   if (!candidates.length && current) { rmSync(join(root, 'public', current.src), { force: true }); delete manifest.pictures[record.id]; }
@@ -90,7 +93,7 @@ for (const name of readdirSync(records).filter((file) => file.endsWith('.json'))
     await new Promise((resolve) => setTimeout(resolve, 300));
   }
   if (!done && candidates.length) failed++;
-  await gallery(record.id, record.images);
+  await gallery(record.id, usable);
   await sleep(300);
 }
 for (const id of Object.keys(manifest.pictures)) if (!ids.has(id)) delete manifest.pictures[id];
