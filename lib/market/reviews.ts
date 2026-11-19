@@ -5,7 +5,7 @@ import { z } from 'zod';
 // Server-side only. Public reviews of the robots, found and checked by hand (data/market/reviews.json): the quote is on
 // the page, the page is independent of the maker unless the kind says otherwise.
 
-export const REVIEW_KINDS = ['press', 'hands_on', 'owner', 'customer', 'forum', 'study', 'maker_testimonial'] as const;
+export const REVIEW_KINDS = ['press', 'hands_on', 'owner', 'customer', 'forum', 'study', 'maker_testimonial', 'reddit', 'github', 'ros_community', 'hacker_news', 'blog', 'video'] as const;
 export const reviewSchema = z.object({
   url: z.string().url(),
   publisher: z.string().min(1),

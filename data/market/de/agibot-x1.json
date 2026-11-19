@@ -14,7 +14,12 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 19499,
+   "currency": "USD",
+   "market": "Robotics Center (San Francisco), authorized AgiBot distributor, US, tax excluded at checkout",
+   "sourceId": "s3"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -31,7 +36,7 @@
     "sourceId": "s1"
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-19",
   "status": "quote",
   "statusNote": "RBTX (igus, Cologne) lists the AGIBOT X1 with price on request. No other German seller was found.",
   "sourceIds": [
@@ -129,6 +134,13 @@
    "credit": "AGIBOT (via RBTX)",
    "alt": "AGIBOT X1 two-legged humanoid, front view",
    "kind": "product"
+  },
+  {
+   "url": "https://opengraph.githubassets.com/dccb7ca80576b8208bf1f3781b56e1b27f9a4085a6750661bb13567389bee015/AgibotTech/agibot_x1_infer",
+   "pageUrl": "https://github.com/AgibotTech/agibot_x1_infer",
+   "credit": "AGIBOT",
+   "alt": "AGIBOT X1, picture from github.com",
+   "kind": "product"
   }
  ],
  "evidence": [
@@ -158,6 +170,14 @@
    "publisher": "AGIBOT",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.roboticscenter.ai/store/product/agibot-x1/",
+   "title": "roboticscenter.ai",
+   "publisher": "roboticscenter.ai",
+   "kind": "other",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [

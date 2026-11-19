@@ -15,7 +15,7 @@ const out = join(root, 'public/market');
 const manifestFile = join(root, 'data/market/pictures.json');
 type Entry = { src: string; width: number; height: number; credit: string; pageUrl: string; alt: string; sourceUrl: string };
 const manifest: { pictures: Record<string, Entry>; gallery: Record<string, Entry[]> } = { pictures: {}, gallery: {}, ...(existsSync(manifestFile) ? JSON.parse(readFileSync(manifestFile, 'utf8')) : {}) };
-const GALLERY = 7;
+const GALLERY = 11;
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const fileFor = (id: string, url: string) => id + '.' + createHash('sha1').update(url).digest('hex').slice(0, 8) + '.webp';
 mkdirSync(out, { recursive: true });

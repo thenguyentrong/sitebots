@@ -14,7 +14,12 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 63000,
+   "currency": "USD",
+   "market": "AIFitLab (US reseller), variant Pro Edition",
+   "sourceId": "s5"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -44,7 +49,7 @@
     "sourceId": "s4"
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-19",
   "status": "quote",
   "statusNote": "No German or EU seller lists T800 Pro or Max; EngineAI sells PM01 Basic in the EU through Research Robots (Portugal) and takes purchase inquiries by email, so ask EngineAI. RBTX (igus, Germany) has an ENGINEAI partner page with a demo booking and names T800 without an edition; it has no listing or price.",
   "sourceIds": [
@@ -227,6 +232,14 @@
    "publisher": "RBTX (igus)",
    "kind": "seller",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s5",
+   "url": "https://aifitlab.com/products/engineai-t800-robot",
+   "title": "AIFitLab",
+   "publisher": "AIFitLab",
+   "kind": "other",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [

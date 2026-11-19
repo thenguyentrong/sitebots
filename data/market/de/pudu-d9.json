@@ -14,10 +14,15 @@
  "lifecycle": "prototype",
  "germany": {
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 356000,
+   "currency": "USD",
+   "market": "AIFitLab (US reseller), variant PUDU D9",
+   "sourceId": "s3"
+  },
   "leadTime": null,
   "sellers": [],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-19",
   "status": "not_sold",
   "statusNote": "PUDU shows the D9 with a demo-request form and says it is \"aiming towards commercially viable\" embodied intelligence; no price, seller or delivery in Europe found.",
   "sourceIds": [
@@ -165,6 +170,14 @@
    "publisher": "Pudu Robotics",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://aifitlab.com/products/pudu-robotics-d9-robot",
+   "title": "AIFitLab",
+   "publisher": "AIFitLab",
+   "kind": "other",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [],
