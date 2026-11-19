@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { usePathname } from 'next/navigation';
 import { comparisonHref, useCompare } from '@/lib/compare/store';
 export { useCompare } from '@/lib/compare/store';

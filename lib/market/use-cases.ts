@@ -1,6 +1,8 @@
+import type { Lang } from '@/lib/i18n/config';
+import { MARKET_TEXT } from '@/lib/i18n/market';
 import { robotHref } from './links';
 import { loadMarket } from './load';
-import { COUNTRY_NAMES, loadPlaces, placeLabel } from './places';
+import { countryLabel, loadPlaces, placeLabel } from './places';
 import type { RobotType } from './schema';
 
 // Server-side only. Every documented use of a robot, from the evidence in the market records, sorted into the
@@ -8,7 +10,11 @@ import type { RobotType } from './schema';
 
 export type UseStage = 'deployment' | 'pilot' | 'demo';
 export const USE_STAGES: readonly UseStage[] = ['deployment', 'pilot', 'demo'];
-export const STAGE_LABEL: Record<UseStage, string> = { deployment: 'In daily use', pilot: 'Pilot on a real project', demo: 'Demonstration' };
+export const STAGE_LABEL: Record<UseStage, string> = MARKET_TEXT.en.useStage;
+export const useStageLabel = (stage: UseStage, lang: Lang = 'en'): string => MARKET_TEXT[lang].useStage[stage];
+/** A setting's name and its one-line description in the page's language (SETTINGS keeps the English). */
+export const settingText = (id: string, lang: Lang = 'en'): { label: string; intro: string } => MARKET_TEXT[lang].setting[id] ?? MARKET_TEXT.en.setting[id] ?? { label: id, intro: '' };
+export const regionLabel = (id: string, lang: Lang = 'en'): string => MARKET_TEXT[lang].region[id] ?? id;
 
 export const SETTINGS = [
   { id: 'high_rise', label: 'High-rise and multi-storey', intro: 'Towers, apartment blocks and multi-storey buildings: lifts, façades, floors and the work between them.' },
@@ -93,7 +99,7 @@ export function regionOf(countries: readonly string[]): RegionId {
   if (c === 'JP' || c === 'KR' || c === 'US') return c;
   return 'OTHER';
 }
-export const countryName = (code: string) => COUNTRY_NAMES[code] ?? new Intl.DisplayNames(['en'], { type: 'region' }).of(code) ?? code;
+export const countryName = (code: string, lang: Lang = 'en') => countryLabel(code, lang);
 
 export type UseCase = {
   key: string; robotId: string; robot: string; maker: string; type: RobotType; href: string;

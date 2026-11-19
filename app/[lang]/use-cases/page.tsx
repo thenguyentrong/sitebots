@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { RobotUseCard } from '@/components/use-cases/RobotUseCard';
 import { SettingTiles } from '@/components/use-cases/SettingTiles';
 import { UseMap } from '@/components/use-cases/UseMap';

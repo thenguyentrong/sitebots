@@ -90,7 +90,7 @@ export function companyInsight(robots: MarketRobot[]): CompanyInsight {
   const weaknesses: string[] = [];
   if (sold.length) strengths.push(`${sold.length} of ${robots.length} robot${robots.length === 1 ? '' : 's'} can be ordered in Germany${cart.length ? `, ${cart.length} with a shop cart` : ''}${sellers.length ? `: ${sellers.slice(0, 3).join(' · ')}${sellers.length > 3 ? ' and others' : ''}` : ''}.`);
   if (priced.length) strengths.push(`Published price for ${priced.length} of ${robots.length} robot${robots.length === 1 ? '' : 's'}.`);
-  if (uses.length) strengths.push(`${uses.length} documented use${uses.length === 1 ? '' : 's'} on real projects or demonstrations${daily ? `, ${daily} in daily use` : ''}${countries.length ? `, in ${list(countries.slice(0, 4).map(countryName))}${countries.length > 4 ? ' and more' : ''}` : ''}.`);
+  if (uses.length) strengths.push(`${uses.length} documented use${uses.length === 1 ? '' : 's'} on real projects or demonstrations${daily ? `, ${daily} in daily use` : ''}${countries.length ? `, in ${list(countries.slice(0, 4).map((code) => countryName(code)))}${countries.length > 4 ? ' and more' : ''}` : ''}.`);
   if (positive) strengths.push(`${positive} positive independent review${positive === 1 ? '' : 's'} or user report${positive === 1 ? '' : 's'}.`);
   if (notSold.length) weaknesses.push(`${notSold.length} of ${robots.length} robots have no German or EU sales route we could find.`);
   if (!priced.length) weaknesses.push('No published price: every robot is on request.');

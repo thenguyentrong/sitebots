@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element -- pictures are served as stored, same as the robot pages */
 import { ArrowUpRight, Check, DownloadSimple, Minus, Warning } from '@phosphor-icons/react';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { CSSProperties, ReactNode } from 'react';
 import { CompareToggle } from '@/components/compare/CompareBar';
 import { TEXT } from '@/lib/chat/i18n';
@@ -73,7 +73,7 @@ function Option({ option, first, index }: { option: ChatOption; first: boolean; 
  *  and only the reasons, pros and cons come from the adviser. */
 export function OptionCards({ options, leftOut, reportHref }: { options: ChatOption[]; leftOut: LeftOut[]; reportHref: string | null }) {
   const t = TEXT[options[0].language];
-  return <section aria-label="Your options" className="space-y-4">
+  return <section aria-label={TEXT[options[0].language].yourOptions} className="space-y-4">
     {options.map((option, index) => <Option key={option.id} option={option} first={index === 0} index={index} />)}
     {leftOut.length ? <details className="rounded-2xl border border-edge bg-card px-5 py-3 text-sm">
       <summary className="cursor-pointer font-medium">{t.whyNot}</summary>

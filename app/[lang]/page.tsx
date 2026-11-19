@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { redirect } from 'next/navigation';
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr';
 import { GrowthChart, LineChart, YearBars } from '@/components/home/charts';

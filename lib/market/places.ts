@@ -1,5 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import type { Lang } from '@/lib/i18n/config';
+import { regionName } from '@/lib/i18n/format';
 import europe from '@/lib/maps/europe.json';
 import { project } from '@/lib/maps/project';
 import { loadJobs } from './jobs';
@@ -34,6 +36,11 @@ export const COUNTRY_NAMES: Record<string, string> = {
   ES: 'Spain', NL: 'Netherlands', PL: 'Poland', SK: 'Slovakia', HU: 'Hungary', BG: 'Bulgaria', US: 'USA', CN: 'China', HK: 'Hong Kong', SG: 'Singapore',
   AE: 'United Arab Emirates', KR: 'South Korea', JP: 'Japan', MY: 'Malaysia', AU: 'Australia', SA: 'Saudi Arabia', FI: 'Finland',
 };
+/** Where Intl's German name is too long for a caption or reads oddly next to the English short forms. */
+const COUNTRY_NAMES_DE: Record<string, string> = { US: 'USA', HK: 'Hongkong', GB: 'Großbritannien' };
+/** A country's name in the page's language: the short English names above, Intl's German ones. */
+export const countryLabel = (code: string, lang: Lang = 'en'): string =>
+  lang === 'de' ? COUNTRY_NAMES_DE[code] ?? regionName(code, 'de') : COUNTRY_NAMES[code] ?? regionName(code, 'en');
 const EUROPE = new Set(['DE', 'AT', 'CH', 'CZ', 'DK', 'SE', 'NO', 'GB', 'FR', 'ES', 'NL', 'PL', 'SK', 'HU', 'BG']);
 
 let places: Record<string, Place[]> | null = null;
@@ -43,10 +50,10 @@ export function loadPlaces(): Record<string, Place[]> {
 }
 
 /** A short place for a caption: "Erlangen, Germany", or the country alone when no town is named. */
-export function placeLabel(where: string | null): string {
+export function placeLabel(where: string | null, lang: Lang = 'en'): string {
   const first = where ? loadPlaces()[where]?.[0] : undefined;
   if (!first) return '';
-  const country = COUNTRY_NAMES[first.country] ?? first.country;
+  const country = lang === 'en' ? COUNTRY_NAMES[first.country] ?? first.country : countryLabel(first.country, lang);
   return first.town ? first.town + ', ' + country : country;
 }
 

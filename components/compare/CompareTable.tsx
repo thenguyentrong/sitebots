@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { CompareRemove } from '@/components/compare/CompareControls';
 import { FactValues } from '@/components/compare/FactValues';
 import { visibleRows } from '@/lib/compare/facts';

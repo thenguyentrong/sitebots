@@ -289,6 +289,16 @@ body {
 .top-account { display: inline-flex; flex: none; align-items: center; gap: 8px; height: 36px; padding: 0 12px; border: 1px solid var(--edge-strong); border-radius: 999px; background: var(--card); color: var(--foreground); font-size: 14px; font-weight: 500; white-space: nowrap; transition: background 0.15s ease; }
 .top-account:hover { background: var(--subtle); }
 @media (max-width: 639px) { .top-link { padding: 0 9px; } .top-cta { padding: 0 13px; } .top-account { padding: 0 9px; } }
+/* EN | DE: two short links in one pill, the page's language filled. */
+.top-lang { display: inline-flex; flex: none; align-items: center; height: 36px; padding: 2px; border: 1px solid var(--edge-strong); border-radius: 999px; }
+.top-lang a { display: inline-grid; place-items: center; min-width: 32px; height: 30px; padding: 0 6px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); transition: color 0.15s ease, background 0.15s ease; }
+.top-lang a:hover { color: var(--foreground); }
+.top-lang a[aria-current='true'] { color: var(--foreground); background: var(--subtle); }
+.top-lang-overlay { border-color: rgba(255, 255, 255, 0.3); }
+.top-lang-overlay a { color: rgba(250, 250, 250, 0.82); }
+.top-lang-overlay a:hover, .top-lang-overlay a[aria-current='true'] { color: #fafafa; }
+.top-lang-overlay a[aria-current='true'] { background: rgba(255, 255, 255, 0.16); }
+@media (max-width: 639px) { .top-lang { height: 32px; } .top-lang a { min-width: 28px; height: 26px; padding: 0 4px; font-size: 11px; } }
 
 /* The sign-in and account dialog: the page behind dims, nothing blurs. */
 .acc-dialog { width: 100%; max-width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; background: transparent; color: var(--foreground); overflow: visible; }

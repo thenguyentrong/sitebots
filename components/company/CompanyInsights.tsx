@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { ReactNode } from 'react';
 import { CheckCircle, WarningCircle } from '@phosphor-icons/react/dist/ssr';
 import { GermanFlag } from '@/components/market/Flag';

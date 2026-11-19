@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { ReactNode } from 'react';
 import { CompareToggle } from '@/components/compare/CompareBar';
 import { MakerAvatar } from '@/components/MakerAvatar';

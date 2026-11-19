@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { GermanFlag } from '@/components/market/Flag';
 import type { RobotUses } from '@/lib/market/use-case-views';
 import { STAGE_LABEL } from '@/lib/market/use-cases';

@@ -74,17 +74,12 @@ function useDictation(value: string, onChange: (value: string) => void, lang: La
   return { supported, listening, toggle, stop };
 }
 
-export function Composer({ value, onChange, onSend, busy, started, replyHint, maxChars, field, lang, onLang }: {
+export function Composer({ value, onChange, onSend, busy, started, replyHint, maxChars, field, lang }: {
   value: string; onChange: (value: string) => void; onSend: () => void; busy: boolean; started: boolean; replyHint: string; maxChars: number;
-  field: RefObject<HTMLTextAreaElement | null>; lang: Lang; onLang: (lang: Lang) => void;
+  field: RefObject<HTMLTextAreaElement | null>; lang: Lang;
 }) {
   const typed = useTypedHint(!started, TEXT[lang].hints);
   const dictation = useDictation(value, onChange, lang, maxChars);
-  // Speech is recognised in one language at a time, so a change has to end what is running.
-  const pick = (next: Lang) => {
-    dictation.stop();
-    onLang(next);
-  };
   const hint = dictation.listening ? TEXT[lang].listening : started ? replyHint : typed;
   const send = () => {
     dictation.stop();
@@ -107,9 +102,6 @@ export function Composer({ value, onChange, onSend, busy, started, replyHint, ma
       onChange={(event) => onChange(event.target.value)} onKeyDown={onKey} placeholder={hint}
       className="max-h-40 min-h-12 w-full resize-none bg-transparent py-3 pl-5 text-[17px] text-foreground outline-none [field-sizing:content] placeholder:text-zinc-500"
     />
-    <div role="group" aria-label={TEXT[lang].language} className="adv-lang">
-      {(['en', 'de'] as const).map((code) => <button key={code} type="button" onClick={() => pick(code)} aria-pressed={lang === code} disabled={busy}>{code.toUpperCase()}</button>)}
-    </div>
     {dictation.supported ? <button type="button" onClick={dictation.toggle} disabled={busy} aria-pressed={dictation.listening} aria-label={TEXT[lang].speak} title={TEXT[lang].speak} className="adv-mic" data-on={dictation.listening}><Microphone size={20} weight={dictation.listening ? 'fill' : 'regular'} /></button> : null}
     <button type="submit" disabled={busy || !value.trim()} aria-label={TEXT[lang].ask} className="adv-send"><ArrowUp size={20} weight="bold" /></button>
   </form>;

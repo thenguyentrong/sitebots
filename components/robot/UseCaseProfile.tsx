@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { EvidenceBadge } from '@/components/robot/EvidenceBadge';
 import { Badge } from '@/components/ui/badge';
 import type { Profile } from '@/lib/profile/profile';

@@ -1,14 +1,15 @@
 'use client';
 
 import { CaretDown, Check, Plus } from '@phosphor-icons/react';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { flushSync } from 'react-dom';
 import { AccessLine } from '@/components/account/AccessLine';
-import { canAsk, currentKey, keepQuestion, loadAccount, openDialog, removeKey, setAccessLang, takeQuestion, useAccess, type Notice } from '@/components/account/access-store';
+import { canAsk, currentKey, keepQuestion, loadAccount, openDialog, removeKey, takeQuestion, useAccess, type Notice } from '@/components/account/access-store';
 import { TopBar } from '@/components/TopBar';
 import { API_KEY_HEADER } from '@/lib/chat/visitor-key';
-import { TEXT, browserLang, type Lang } from '@/lib/chat/i18n';
+import { TEXT, type Lang } from '@/lib/chat/i18n';
+import { useLang } from '@/lib/i18n/client';
 import type { BriefFact, ChatForm, ChatOption, LeftOut } from '@/lib/chat/tools';
 import { ui } from '@/lib/ui';
 import { BriefPanel } from './BriefPanel';
@@ -70,8 +71,8 @@ function Trail({ steps, lang }: { steps: string[]; lang: Lang }) {
 }
 
 /** The adviser at work: what it finished, ticked, and what it is on now, shimmering. */
-function LiveSteps({ steps, working }: { steps: string[]; working: string }) {
-  return <ul className="space-y-1.5 text-sm" aria-label="What the adviser is doing">
+function LiveSteps({ steps, working, lang }: { steps: string[]; working: string; lang: Lang }) {
+  return <ul className="space-y-1.5 text-sm" aria-label={TEXT[lang].doing}>
     {steps.map((step) => <li key={step} className="adv-item flex items-center gap-2"><Check size={14} weight="bold" className="text-safety" /><span className="text-muted">{step}</span></li>)}
     {working ? <li className="flex items-center gap-2"><span className="w-3.5" /><span className="adv-working font-medium">{working}</span></li> : null}
   </ul>;
@@ -85,9 +86,9 @@ export function Advisor({ maxChars }: { maxChars: number }) {
   const [input, setInput] = useState('');
   const [steps, setSteps] = useState<string[]>([]);
   const [working, setWorking] = useState('');
-  const [lang, setLang] = useState<Lang>('en');
-  // True once the person used the switch: from then on the page stops guessing from what they type.
-  const [chosen, setChosen] = useState(false);
+  // The page's language is the chat's: /de/advisor answers in German, /advisor in English, whatever the
+  // person types. The switch at the top changes it by opening the other page, and the chat comes along.
+  const lang = useLang();
   const [sending, setSending] = useState(false);
   const [conversation, setConversation] = useState<string | null>(null);
   const conversationRef = useRef<string | null>(null);
@@ -103,7 +104,6 @@ export function Advisor({ maxChars }: { maxChars: number }) {
   const waiting = useRef<string | null>(null);
 
   const started = items.length > 0;
-  useEffect(() => setAccessLang(lang), [lang]);
 
   // Going to a robot page or the comparison and back must find the chat as it was. It is read after the
   // first render, which has to match the server, and before the browser paints, so nothing flashes.
@@ -113,11 +113,9 @@ export function Advisor({ maxChars }: { maxChars: number }) {
     if (saved) {
       setItems(saved.items);
       setBrief(saved.brief);
-      setLang(saved.lang);
-      setChosen(saved.chosen ?? false);
       setConversation(saved.conversation);
       conversationRef.current = saved.conversation;
-    } else setLang(browserLang(navigator.language));
+    }
     restored.current = true;
     // Back from Google or Microsoft: the question typed before is waiting, or the sign-in failed.
     const url = new URL(location.href);
@@ -140,8 +138,8 @@ export function Advisor({ maxChars }: { maxChars: number }) {
     }
   }, []);
   useEffect(() => {
-    if (restored.current) writeChat(items.length ? { items, brief, lang, chosen, conversation } : null);
-  }, [items, brief, lang, chosen, conversation]);
+    if (restored.current) writeChat(items.length ? { items, brief, lang, chosen: true, conversation } : null);
+  }, [items, brief, lang, conversation]);
 
   // Follow the answer only while the person stays at the end of it. Scrolling up to reread wins.
   useEffect(() => {
@@ -210,7 +208,7 @@ export function Advisor({ maxChars }: { maxChars: number }) {
       const key = currentKey();
       const response = await fetch('/api/chat', {
         method: 'POST', headers: { 'content-type': 'application/json', ...(key ? { [API_KEY_HEADER]: key } : {}) }, signal: controller.signal,
-        body: JSON.stringify({ message: text.slice(0, maxChars), lang, chosen, ...(conversationRef.current ? { conversationId: conversationRef.current } : {}) }),
+        body: JSON.stringify({ message: text.slice(0, maxChars), lang, chosen: true, ...(conversationRef.current ? { conversationId: conversationRef.current } : {}) }),
       });
       if (!response.ok || !response.body) {
         const code = (await response.json().catch(() => null) as { error?: string } | null)?.error ?? 'failed';
@@ -240,7 +238,6 @@ export function Advisor({ maxChars }: { maxChars: number }) {
           if (event.t === 'start' && event.conversationId) {
             conversationRef.current = event.conversationId;
             setConversation(event.conversationId);
-            if (event.lang && !chosen) setLang(event.lang);
             // The count of free consultations may have changed: the header and the line under the box show it.
             if (event.paidBy === 'free') void loadAccount(true);
           } else if (event.t === 'status') setWorking(event.text ?? '');
@@ -253,12 +250,10 @@ export function Advisor({ maxChars }: { maxChars: number }) {
           } else if (event.t === 'brief') setBrief(event.facts ?? []);
           else if (event.t === 'form' && event.form) {
             const form = event.form;
-            setLang(form.language);
             settle();
             setItems((list) => [...list, { kind: 'form', form, answered: false }]);
           } else if (event.t === 'options' && event.options) {
             const options = event.options;
-            setLang(options[0]?.language ?? 'en');
             settle();
             setItems((list) => [...list, { kind: 'options', options, leftOut: event.leftOut ?? [] }]);
           } else if (event.t === 'report') setItems((list) => [...list, { kind: 'report' }]);
@@ -279,7 +274,7 @@ export function Advisor({ maxChars }: { maxChars: number }) {
       setSending(false);
       setSteps([]);
     }
-  }, [appendText, chosen, items.length, lang, maxChars, sending]);
+  }, [appendText, items.length, lang, maxChars, sending]);
 
   // The question waiting for a sign-in or a key goes out as soon as one arrives. Closing the dialog
   // without either drops it, so nothing is sent later by surprise; the text stays in the box.
@@ -306,15 +301,11 @@ export function Advisor({ maxChars }: { maxChars: number }) {
   };
 
   const reportHref = conversation ? '/api/report?id=' + conversation : null;
-  const pickLang = (next: Lang) => {
-    setLang(next);
-    setChosen(true);
-  };
-  const composer = <Composer value={input} onChange={setInput} onSend={() => void ask(input)} busy={sending} started={started} replyHint={TEXT[lang].reply} maxChars={maxChars} field={field} lang={lang} onLang={pickLang} />;
+  const composer = <Composer value={input} onChange={setInput} onSend={() => void ask(input)} busy={sending} started={started} replyHint={TEXT[lang].reply} maxChars={maxChars} field={field} lang={lang} />;
 
   if (!started) return <section className="adv-hero">
     <SiteStage over={copy} />
-    <TopBar overlay lang={lang} />
+    <TopBar overlay />
     <div ref={copy} className="mx-auto w-full max-w-5xl px-4 pb-5 text-center sm:px-6">
       <h1 className="adv-rise text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">{TEXT[lang].title}</h1>
       <p className="adv-rise mx-auto mt-3 text-base text-zinc-300 sm:text-lg" style={delay(0.1)}>{TEXT[lang].lead}</p>
@@ -323,13 +314,13 @@ export function Advisor({ maxChars }: { maxChars: number }) {
         {TEXT[lang].starters.map((starter) => <button key={starter} type="button" onClick={() => void ask(starter)} className="adv-chip">{starter}</button>)}
       </div>
       <p className="adv-rise mt-4 text-xs text-zinc-500" style={delay(0.4)}>
-        {TEXT[lang].suggestion} <Link href="/privacy" className="ml-2 underline underline-offset-2 hover:text-zinc-300">{TEXT[lang].privacy}</Link> <Link href="/impressum" className="ml-2 underline underline-offset-2 hover:text-zinc-300">Impressum</Link>
+        {TEXT[lang].suggestion} <Link href="/privacy" className="ml-2 underline underline-offset-2 hover:text-zinc-300">{TEXT[lang].privacy}</Link> <Link href="/impressum" className="ml-2 underline underline-offset-2 hover:text-zinc-300">{TEXT[lang].impressum}</Link>
       </p>
     </div>
   </section>;
 
   return <div className="flex min-h-[100dvh] flex-col">
-    <TopBar lang={lang} extra={<button type="button" onClick={startOver} aria-label={TEXT[lang].newChat} className="top-account"><Plus size={16} weight="bold" /><span className="max-sm:hidden">{TEXT[lang].newChat}</span></button>} />
+    <TopBar extra={<button type="button" onClick={startOver} aria-label={TEXT[lang].newChat} className="top-account"><Plus size={16} weight="bold" /><span className="max-sm:hidden">{TEXT[lang].newChat}</span></button>} />
     <main className="mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 items-start gap-8 px-4 pt-8 pb-6 sm:px-6 lg:grid-cols-[minmax(0,1fr)_280px]">
       <div className="min-w-0 space-y-6" aria-live="polite">
         <div className="lg:hidden"><BriefPanel facts={brief} reportHref={reportHref} lang={lang} /></div>
@@ -343,7 +334,7 @@ export function Advisor({ maxChars }: { maxChars: number }) {
           if (item.kind === 'options') return <div key={key}><OptionCards options={item.options} leftOut={item.leftOut} reportHref={reportHref} /></div>;
           return reportHref ? <div key={key} className="adv-item"><a href={reportHref} className={ui.btn}>{TEXT[lang].pdfExport}</a></div> : null;
         })}
-        {sending && (steps.length || working) ? <LiveSteps steps={steps} working={working} /> : null}
+        {sending && (steps.length || working) ? <LiveSteps steps={steps} working={working} lang={lang} /> : null}
         <div ref={bottom} className="scroll-mb-36" />
       </div>
       <div className="hidden self-stretch lg:block"><BriefPanel facts={brief} reportHref={reportHref} lang={lang} /></div>

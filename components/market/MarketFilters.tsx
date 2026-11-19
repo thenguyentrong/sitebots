@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { STATUS_LABELS } from '@/lib/market/cards';
 import { MAX_PRICES, MIN_PAYLOADS, isFiltered, type Filters } from '@/lib/market/filters';
 import { ui } from '@/lib/ui';

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { LEGAL_READY, SITE } from '@/lib/site';
 import { publicMetadata } from '@/lib/seo';
 

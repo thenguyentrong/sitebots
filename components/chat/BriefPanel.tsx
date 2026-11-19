@@ -29,7 +29,7 @@ export function BriefPanel({ facts, reportHref, lang }: { facts: BriefFact[]; re
       <summary className="cursor-pointer text-sm font-medium">{t.facts(known)}</summary>
       <div className="mt-3"><Facts facts={facts} lang={lang} /></div>
     </details>
-    <aside aria-label="Your brief" className="hidden lg:block">
+    <aside aria-label={TEXT[lang].brief} className="hidden lg:block">
       <div className="sticky top-6 rounded-2xl border border-edge bg-card p-4">
         <h2 className="text-sm font-semibold">{t.brief}</h2>
         <p className="mt-0.5 mb-4 text-xs text-muted">{t.briefHint}</p>

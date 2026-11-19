@@ -1,6 +1,7 @@
 // The adviser answers in the person's language, so the labels around its answer must follow it. A German
 // answer inside English cards reads like two products glued together.
-export type Lang = 'en' | 'de';
+import type { Lang } from '@/lib/i18n/config';
+export type { Lang };
 
 /** What the visitor's browser speaks is the best first guess, and the switch on the box overrides it. */
 export const browserLang = (language: string): Lang => language.toLowerCase().startsWith('de') ? 'de' : 'en';
@@ -13,7 +14,8 @@ export const TEXT = {
     title: 'Which robot makes sense for your job?', lead: 'Ask an independent construction and robotics expert. No sales pitch, just honest options.',
     starters: ['Carry boards on a building site', 'A humanoid for my prefab plant', 'Drill ceiling anchors', 'Inspect a site with a robot dog'],
     hints: ['We lift 20 kg boards in a timber hall, which robot makes sense?', 'We are a prefab company near Aachen, where should we start?', 'I want a humanoid for my prefab plant'],
-    robots: 'Robots', compare2: 'Compare', privacy: 'Privacy', describe: 'Describe your job', ask: 'Ask', language: 'Language',
+    robots: 'Robots', compare2: 'Compare', privacy: 'Privacy', impressum: 'Impressum', describe: 'Describe your job', ask: 'Ask', language: 'Language',
+    doing: 'What the adviser is doing', yourOptions: 'Your options',
     errors: {
       daily_limit: 'You have reached today\'s limit of questions. Please come back tomorrow.', conversation_limit: 'This chat is full. Start a new chat to go on.',
       busy: 'A lot of people are asking right now. Please try again in a minute.', paused: 'The adviser is paused for now. Please come back on the 1st of next month.',
@@ -37,7 +39,8 @@ export const TEXT = {
     title: 'Welcher Roboter passt zu Ihrer Arbeit?', lead: 'Fragen Sie einen unabhängigen Experten für Bau und Robotik. Kein Verkaufsgespräch, nur ehrliche Optionen.',
     starters: ['Platten auf der Baustelle tragen', 'Ein Humanoider für mein Fertigteilwerk', 'Deckenanker bohren', 'Baustelle mit einem Roboterhund prüfen'],
     hints: ['Wir heben 20 kg schwere Platten in einer Holzbauhalle, welcher Roboter passt?', 'Wir sind ein Fertighaus-Betrieb bei Aachen, wo fangen wir an?', 'Wir suchen einen Roboter für Trockenbau'],
-    robots: 'Roboter', compare2: 'Vergleich', privacy: 'Datenschutz', describe: 'Beschreiben Sie Ihre Arbeit', ask: 'Fragen', language: 'Sprache',
+    robots: 'Roboter', compare2: 'Vergleich', privacy: 'Datenschutz', impressum: 'Impressum', describe: 'Beschreiben Sie Ihre Arbeit', ask: 'Fragen', language: 'Sprache',
+    doing: 'Was der Berater gerade tut', yourOptions: 'Ihre Optionen',
     errors: {
       daily_limit: 'Sie haben das Tageslimit erreicht. Bitte kommen Sie morgen wieder.', conversation_limit: 'Dieser Chat ist voll. Bitte starten Sie einen neuen Chat.',
       busy: 'Gerade fragen sehr viele Menschen. Bitte versuchen Sie es in einer Minute noch einmal.', paused: 'Der Berater pausiert gerade. Bitte kommen Sie am 1. des nächsten Monats wieder.',
@@ -62,7 +65,7 @@ export const TEXT = {
 /** The door to the adviser: an account with a free allowance, or the visitor's own API key. */
 export const ACCESS_TEXT = {
   en: {
-    nav: { adviser: 'Advisor', adviserShort: 'Advisor', robots: 'Robots', compare: 'Compare', useCases: 'Use cases', useCasesShort: 'Use cases' },
+    nav: { main: 'Main', adviser: 'Advisor', adviserShort: 'Advisor', robots: 'Robots', compare: 'Compare', useCases: 'Use cases', useCasesShort: 'Use cases' },
     signIn: 'Sign in', account: 'Account', close: 'Close', cancel: 'Cancel', or: 'or',
     title: 'Start your consultation', lead: (n: number) => n + ' free consultations a month with a Google or Microsoft account. No password, no newsletter.',
     google: 'Continue with Google', microsoft: 'Continue with Microsoft', dev: 'Test sign-in (this computer only)',
@@ -85,7 +88,7 @@ export const ACCESS_TEXT = {
     unavailable: 'Sign-in is not set up yet. You can start with your own API key.',
   },
   de: {
-    nav: { adviser: 'Berater', adviserShort: 'Berater', robots: 'Roboter', compare: 'Vergleich', useCases: 'Einsatzbeispiele', useCasesShort: 'Einsätze' },
+    nav: { main: 'Hauptmenü', adviser: 'Berater', adviserShort: 'Berater', robots: 'Roboter', compare: 'Vergleich', useCases: 'Einsatzbeispiele', useCasesShort: 'Einsätze' },
     signIn: 'Anmelden', account: 'Konto', close: 'Schließen', cancel: 'Abbrechen', or: 'oder',
     title: 'Beratung starten', lead: (n: number) => n + ' kostenlose Beratungen im Monat mit einem Google- oder Microsoft-Konto. Kein Passwort, kein Newsletter.',
     google: 'Weiter mit Google', microsoft: 'Weiter mit Microsoft', dev: 'Test-Anmeldung (nur dieser Rechner)',

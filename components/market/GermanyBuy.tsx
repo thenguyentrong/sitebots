@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { ReactNode } from 'react';
 import frames from '@/data/workflows/frames.json';
 import { RobotSection } from '@/components/robot/RobotSection';

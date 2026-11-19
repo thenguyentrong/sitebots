@@ -17,6 +17,8 @@ const CONTENT = [
   './data/reference/**/*.yaml',
   './data/partners.yaml',
 ];
+// The route path of app/[lang], as a picomatch glob.
+const LANG = String.raw`/\[lang\]`;
 
 const nextConfig: NextConfig = {
   devIndicators: false,
@@ -35,7 +37,9 @@ const nextConfig: NextConfig = {
     const useCases = { source: '/use-cases/:path+', destination: '/use-cases', permanent: false };
     // The adviser moved from the start page to its own page on 19 Nov 2026.
     const chat = { source: '/chat', destination: '/advisor', permanent: false };
-    return [home, ...models, useCases, chat, ...gone];
+    // The same moves for the German pages under /de (proxy.ts), so old German links land in German.
+    const german = [...models, useCases, chat, ...gone].map(rule => ({ ...rule, source: '/de' + rule.source, destination: rule.destination === '/' ? '/de' : '/de' + rule.destination }));
+    return [home, ...models, useCases, chat, ...gone, ...german];
   },
   // PGlite loads its WASM and data files with `new URL(...)` checks that fail
   // once Turbopack has bundled it (the bundler's URL is not Node's URL). Keep
@@ -43,16 +47,19 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ['@electric-sql/pglite', '@react-pdf/renderer'],
   // Only database-backed routes need the prepared catalogue. Runtime scraper
   // caches must never be copied into deployment functions.
+  // The keys are route paths, and every public page sits under app/[lang] (one route serves /robots and
+  // /de/robots), so they start with LANG: the segment with its brackets escaped, since a bare [lang] is a
+  // picomatch character class and would match nothing.
   outputFileTracingIncludes: {
-    '/market{,/**}': CONTENT,
-    '/use-cases': CONTENT,
+    [`${LANG}/market{,/**}`]: CONTENT,
+    [`${LANG}/use-cases`]: CONTENT,
     // The start page reads the use cases, the robots and the cost data.
-    '/': ['./data/costs/*.json', ...CONTENT],
+    [LANG]: ['./data/costs/*.json', ...CONTENT],
     '/api/market{,/**}': CONTENT,
     '/api/reviews': CONTENT,
-    '/robots{,/**}': ['./data/snapshot/pglite.tar.gz', ...CONTENT],
-    '/brands{,/**}': ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
-    '/compare': ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
+    [`${LANG}/robots{,/**}`]: ['./data/snapshot/pglite.tar.gz', ...CONTENT],
+    [`${LANG}/brands{,/**}`]: ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
+    [`${LANG}/compare`]: ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
     '/api/compare{,/**}': ['./data/snapshot/pglite.tar.gz', './data/market/**/*.json'],
     '/api/models': ['./data/models/index.json', './data/models/poses.json'],
     '/api/chat': ['./data/graph/*.json', './data/costs/*.json', ...CONTENT],
@@ -72,9 +79,13 @@ const nextConfig: NextConfig = {
     imageSizes: [128, 256, 384],
   },
   // Every catalogue page boots the database in a function. The catalogue only changes with a deploy, and a
-  // deploy empties this cache, so one visitor's page can serve everyone for a week.
+  // deploy empties this cache, so one visitor's page can serve everyone for a week. The cache key is the
+  // URL, which is why German has its own (/de/...) and the HTML never depends on a cookie or on
+  // Accept-Language: proxy.ts sends a German browser to /de before the cache is asked.
   async headers() {
-    return ['/', '/robots/:path*', '/brands/:path*', '/market/:path*', '/compare', '/use-cases', '/sitemap.xml'].map(source => ({
+    const catalogue = ['/', '/robots/:path*', '/brands/:path*', '/market/:path*', '/compare', '/use-cases'];
+    const german = catalogue.map(source => source === '/' ? '/de' : '/de' + source);
+    return [...catalogue, ...german, '/sitemap.xml'].map(source => ({
       source,
       headers: [{ key: 'Vercel-CDN-Cache-Control', value: 'public, max-age=604800' }],
     }));

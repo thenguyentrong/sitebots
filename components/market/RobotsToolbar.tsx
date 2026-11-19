@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { GlobeHemisphereWest } from '@phosphor-icons/react/dist/ssr';
 import { GermanFlag } from './Flag';
 import { ui } from '@/lib/ui';

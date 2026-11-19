@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { useEffect, useState } from 'react';
 import { CompareToggle } from '@/components/compare/CompareBar';
 import { RobotViewerLazy } from '@/components/robot-viewer/RobotViewerLazy';

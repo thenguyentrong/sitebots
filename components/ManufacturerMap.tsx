@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState, type PointerEvent } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import geography from '@/data/manufacturers/countries.json';
 import { ui } from '@/lib/ui';
 

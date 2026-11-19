@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { SITE } from '@/lib/site';
 import { cn } from '@/lib/utils';
 

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { STATUS_LABELS, TYPE_PLURAL, priceText, type RobotCardData } from '@/lib/market/cards';
 import { byPrice, filterParams, grossEur, isFiltered, matchesFilters, narrows, type Filters } from '@/lib/market/filters';
 import { loadJobs, robotJobStats } from '@/lib/market/jobs';

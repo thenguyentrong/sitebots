@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { notFound, permanentRedirect } from 'next/navigation';
 import { canonicalManufacturerSlug, isPublicManufacturer, manufacturerStatusLabels } from '@/lib/manufacturers';
 import { CompanyInsights } from '@/components/company/CompanyInsights';

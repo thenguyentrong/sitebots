@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { Fragment } from 'react';
 import { CompareSearch } from '@/components/compare/CompareControls';
 import { CompareTable } from '@/components/compare/CompareTable';

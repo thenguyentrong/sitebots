@@ -1,5 +1,8 @@
 import type { ScenePicture, StageCounts } from '@/lib/market/use-case-views';
 import { USE_STAGES, type UseStage } from '@/lib/market/use-cases';
+import type { Lang } from '@/lib/i18n/config';
+import { formatNumber } from '@/lib/i18n/format';
+import { MARKET_TEXT } from '@/lib/i18n/market';
 import { cn } from '@/lib/utils';
 import './use-cases.css';
 
@@ -7,7 +10,9 @@ import './use-cases.css';
 
 /** One hue in three steps, darkest for daily use (the proof scale of globals.css, flipped in dark mode). */
 export const STAGE_COLOR: Record<UseStage, string> = { deployment: 'var(--proof-deployment)', pilot: 'var(--proof-pilot)', demo: 'var(--proof-demo)' };
-export const STAGE_SHORT: Record<UseStage, [string, string]> = { deployment: ['in daily use', 'in daily use'], pilot: ['pilot', 'pilots'], demo: ['demo', 'demos'] };
+export const STAGE_SHORT: Record<UseStage, [string, string]> = MARKET_TEXT.en.useStageCount;
+/** "12 in daily use", "1 pilot", "3 Demos": a stage counted, in the page's language. */
+export const stageCount = (stage: UseStage, n: number, lang: Lang) => formatNumber(n, lang) + ' ' + MARKET_TEXT[lang].useStageCount[stage][n === 1 ? 0 : 1];
 
 /** A country flag from public/flags (country-flag-icons, copied by scripts/assets/flags.sh). The name stands next to it, so the image is decorative. */
 export function CountryFlag({ code, className }: { code: string | null | undefined; className?: string }) {
@@ -21,29 +26,28 @@ export function StageDot({ stage, className }: { stage: UseStage; className?: st
   return <span aria-hidden className={cn('uc-dot', className)} style={{ background: STAGE_COLOR[stage] }} />;
 }
 
-const words = (stages: StageCounts) => USE_STAGES.filter((s) => stages[s]).map((s) => `${stages[s]} ${STAGE_SHORT[s][stages[s] === 1 ? 0 : 1]}`);
+const words = (stages: StageCounts, lang: Lang) => USE_STAGES.filter((s) => stages[s]).map((s) => stageCount(s, stages[s], lang));
 
 /** The share of daily use, pilots and demos in one rounded bar, with a 2px gap between the parts. */
-export function StageBar({ stages, className }: { stages: StageCounts; className?: string }) {
+export function StageBar({ stages, lang, className }: { stages: StageCounts; lang: Lang; className?: string }) {
   const total = stages.deployment + stages.pilot + stages.demo;
   if (!total) return null;
-  return <div role="img" aria-label={words(stages).join(', ')} className={cn('flex h-2 w-full gap-[2px] overflow-hidden rounded-full', className)}>
-    {USE_STAGES.map((s) => stages[s] ? <span key={s} title={`${stages[s]} ${STAGE_SHORT[s][stages[s] === 1 ? 0 : 1]}`} className="h-full min-w-[4px]" style={{ flexGrow: stages[s], background: STAGE_COLOR[s] }} /> : null)}
+  return <div role="img" aria-label={words(stages, lang).join(', ')} className={cn('flex h-2 w-full gap-[2px] overflow-hidden rounded-full', className)}>
+    {USE_STAGES.map((s) => stages[s] ? <span key={s} title={stageCount(s, stages[s], lang)} className="h-full min-w-[4px]" style={{ flexGrow: stages[s], background: STAGE_COLOR[s] }} /> : null)}
   </div>;
 }
 
 /** "12 in daily use · 2 pilots", each part with its colour dot. */
-export function StageWords({ stages, className }: { stages: StageCounts; className?: string }) {
+export function StageWords({ stages, lang, className }: { stages: StageCounts; lang: Lang; className?: string }) {
   return <p className={cn('flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted', className)}>
-    {USE_STAGES.filter((s) => stages[s]).map((s) => <span key={s} className="inline-flex items-center gap-1.5"><StageDot stage={s} /><span><span className="num font-medium text-foreground">{stages[s]}</span> {STAGE_SHORT[s][stages[s] === 1 ? 0 : 1]}</span></span>)}
+    {USE_STAGES.filter((s) => stages[s]).map((s) => <span key={s} className="inline-flex items-center gap-1.5"><StageDot stage={s} /><span><span className="num font-medium text-foreground">{formatNumber(stages[s], lang)}</span> {MARKET_TEXT[lang].useStageCount[s][stages[s] === 1 ? 0 : 1]}</span></span>)}
   </p>;
 }
 
-export function StageLegend({ className }: { className?: string }) {
-  return <ul className={cn('flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted', className)} aria-label="Colour key">
-    <li className="inline-flex items-center gap-1.5"><StageDot stage="deployment" />In daily use</li>
-    <li className="inline-flex items-center gap-1.5"><StageDot stage="pilot" />Pilot on a real project</li>
-    <li className="inline-flex items-center gap-1.5"><StageDot stage="demo" />Demonstration</li>
+export function StageLegend({ lang, className }: { lang: Lang; className?: string }) {
+  const t = MARKET_TEXT[lang];
+  return <ul className={cn('flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted', className)} aria-label={t.colourKey}>
+    {USE_STAGES.map((s) => <li key={s} className="inline-flex items-center gap-1.5"><StageDot stage={s} />{t.useStage[s]}</li>)}
   </ul>;
 }
 

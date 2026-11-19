@@ -1,7 +1,7 @@
 'use client';
 
 import { ArrowSquareOut, GoogleLogo, Key, SignOut, Trash, WindowsLogo, X } from '@phosphor-icons/react';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react';
 import { ACCESS_TEXT } from '@/lib/chat/i18n';

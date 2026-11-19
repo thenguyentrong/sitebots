@@ -7,7 +7,7 @@ import { MarketSpecifications } from '@/components/market/MarketSpecifications';
 import { marketForCatalogue } from '@/lib/market/links';
 import { marketImagesFor, pageIdentity } from '@/lib/market/tiles';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { notFound } from 'next/navigation';
 import { isPublicRobot } from '@/lib/catalogue-policy';
 import { JsonLd } from '@/components/JsonLd';

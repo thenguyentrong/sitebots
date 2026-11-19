@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { ManufacturerMap } from '@/components/ManufacturerMap';
 import { MarketListing } from '@/components/market/MarketListing';
 import { allCompanies } from '@/lib/market/company-list';

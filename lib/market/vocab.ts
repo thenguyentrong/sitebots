@@ -1,5 +1,8 @@
 // Client-safe words and the requirement map layout. No file system access here.
 
+import type { Lang } from '@/lib/i18n/config';
+import { MARKET_TEXT } from '@/lib/i18n/market';
+
 export const WHERE = [
   { id: 'site', label: 'Construction site' },
   { id: 'factory', label: 'Factory & workshop' },
@@ -21,26 +24,18 @@ export type ConditionId = (typeof CONDITIONS)[number]['id'];
 
 export const MOVEMENT_LABELS = { stationary: 'At one spot', level_floors: 'Level floors', rough_ground: 'Rough ground', stairs_ladders: 'Stairs & ladders' } as const;
 export const HAND_LABELS = { none: 'No hands', simple_grip: 'Pick & place', two_arm: 'Two arms', dexterous: 'Fine finger work', tool: 'Power tool' } as const;
-export const JOB_LABELS: Record<string, string> = {
-  layout_marking: 'Layout marking', drilling_anchoring: 'Drilling and anchors', demolition: 'Demolition', surface_spraying: 'Spraying and painting',
-  drywall_finishing: 'Drywall finishing', floor_grinding: 'Floor grinding', concrete_finishing: 'Concrete finishing', rebar_tying: 'Rebar tying',
-  rebar_placement: 'Rebar placement', bricklaying: 'Bricklaying', printing_3d: '3D printing', material_lifting: 'Material lifting', welding: 'Welding',
-  facade_cleaning: 'Facade cleaning', glazing_installation: 'Glazing installation', scanning_documentation: 'Scanning and documentation',
-  excavation: 'Excavation', tunnelling: 'Tunnelling', other: 'Other jobs',
-};
-export const STAGE_LABELS = { claim: 'Made for this work', demo: 'Shown in a demo', pilot: 'Tested in a pilot', deployment: 'In daily use' } as const;
+/** The job a job-specific robot is built for. English here; jobLabel() gives the page's language. */
+export const JOB_LABELS: Record<string, string> = MARKET_TEXT.en.job;
+export const jobLabel = (job: string, lang: Lang = 'en'): string => MARKET_TEXT[lang].job[job] ?? MARKET_TEXT.en.job[job] ?? job.replaceAll('_', ' ');
+export const STAGE_LABELS = MARKET_TEXT.en.stage;
+export const stageLabel = (stage: keyof typeof STAGE_LABELS, lang: Lang = 'en'): string => MARKET_TEXT[lang].stage[stage];
 /** How far a job is proven, weakest first: the index is the rank in STAGE_RANK, 0 for no proof. */
 export const PROOF = ['none', 'claim', 'demo', 'pilot', 'deployment'] as const;
 export type ProofLevel = (typeof PROOF)[number];
-export const PROOF_LABELS: Record<ProofLevel, string> = { none: 'No proof yet', ...STAGE_LABELS };
+export const PROOF_LABELS: Record<ProofLevel, string> = { none: MARKET_TEXT.en.proofNone, ...STAGE_LABELS };
+export const proofLabel = (level: ProofLevel, lang: Lang = 'en'): string => level === 'none' ? MARKET_TEXT[lang].proofNone : MARKET_TEXT[lang].stage[level];
 /** What each level means, for legends and the answer on the landing. */
-export const PROOF_HELP: Record<ProofLevel, string> = {
-  deployment: 'used on real projects, named in a source',
-  pilot: 'tried on a real site, named in a source',
-  demo: 'shown working at a fair or in a test',
-  claim: 'the maker offers it for this work',
-  none: 'no source shows a robot doing it yet',
-};
+export const PROOF_HELP: Record<ProofLevel, string> = MARKET_TEXT.en.proofHelp;
 
 export const AXES = {
   movement: { label: 'Movement needed', levels: Object.entries(MOVEMENT_LABELS).map(([id, label]) => ({ id, label })) },

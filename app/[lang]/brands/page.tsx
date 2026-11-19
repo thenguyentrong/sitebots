@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import Form from 'next/form';
 import { ManufacturerMap } from '@/components/ManufacturerMap';
 import { ManufacturerSubmission } from '@/components/ManufacturerSubmission';

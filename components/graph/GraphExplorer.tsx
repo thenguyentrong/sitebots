@@ -2,7 +2,7 @@
 
 import { ArrowSquareOut, ArrowsOutSimple, Circle, Diamond, Hexagon, MagnifyingGlass, Plus, Square, Star, Triangle, X, type Icon } from '@phosphor-icons/react';
 import { forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY, type Simulation, type SimulationNodeDatum } from 'd3-force';
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { useCallback, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { STATUS_TEXT, TYPE_TEXT } from '@/lib/chat/i18n';
 import { EDGE_KINDS, NODE_KINDS, type EdgeKind, type NodeKind } from '@/lib/graph/types';

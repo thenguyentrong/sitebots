@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import { variantLabel } from '@/lib/ingest/entities';
 import type { RobotVariant } from '@/lib/queries/robots';
 import { ui } from '@/lib/ui';

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocaleLink';
 import type { TileData } from '@/lib/market/tiles';
 import { RobotTile } from './RobotTile';
 import './market.css';
