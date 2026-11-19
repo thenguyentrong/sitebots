@@ -20,7 +20,8 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const fileFor = (id: string, url: string) => id + '.' + createHash('sha1').update(url).digest('hex').slice(0, 8) + '.webp';
 mkdirSync(out, { recursive: true });
 const only = process.argv.slice(2);
-const AGENTS = ['sitebots-research/1.0 (+https://sitebots.org)', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0 Safari/537.36'];
+// Our own identified agent only: a picture a site refuses to give us is skipped, never fetched under a browser name.
+const AGENTS = ['sitebots-research/1.0 (+https://sitebots.org)'];
 
 async function download(url: string, referer: string): Promise<Buffer> {
   let last = '';
