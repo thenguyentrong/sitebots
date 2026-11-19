@@ -33,7 +33,7 @@ export default async function MarketRobotPage({ params }: { params: Params }) {
   if (!robot) notFound();
   // One page per robot: where the catalogue has it, its page carries the German offer too.
   const linked = cataloguePathFor(robot.id);
-  if (linked) permanentRedirect(linked + '#germany');
+  if (linked) permanentRedirect(linked);
   const pictures = [robot.picture, ...robot.gallery].flatMap((picture) => picture ? [marketImage(picture)] : []);
   const form = robot.robotType === 'specialised' ? 'dedicated_robot' : robot.robotType;
   const company = companySlugFor(robot);

@@ -17,7 +17,7 @@ export function SettingTiles({ tiles }: { tiles: SettingTile[] }) {
   return <div className="grid auto-rows-[200px] grid-cols-2 gap-3 md:auto-rows-[210px] md:grid-cols-4">
     {tiles.map((tile, i) => <a key={tile.id} href={'#' + tile.id} className={'group relative overflow-hidden rounded-2xl bg-subtle ' + span[i]}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      {tile.picture ? <img src={tile.picture.src} alt="" loading={i < 4 ? 'eager' : 'lazy'} decoding="async" className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]" /> : null}
+      {tile.picture ? <img src={tile.picture.src} alt="" loading={i < 4 ? 'eager' : 'lazy'} decoding="async" className="absolute inset-0 h-full w-full object-cover object-[50%_30%] transition duration-700 group-hover:scale-[1.04]" /> : null}
       <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/0" />
       <span className={'absolute right-3 top-3 items-center gap-1 rounded-full bg-black/45 px-2 py-1.5 ' + (i < 2 ? 'flex' : 'hidden md:flex')}>{tile.countries.slice(0, i === 0 ? 6 : 4).map((code) => <CountryFlag key={code} code={code} className="ring-white/30" />)}{tile.countries.length > (i === 0 ? 6 : 4) ? <span className="num pl-0.5 text-[10px] font-medium text-white">+{tile.countries.length - (i === 0 ? 6 : 4)}</span> : null}</span>
       <span className="absolute inset-x-0 bottom-0 flex flex-col gap-1.5 p-4 text-white">

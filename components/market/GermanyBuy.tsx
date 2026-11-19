@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import frames from '@/data/workflows/frames.json';
 import { RobotSection } from '@/components/robot/RobotSection';
 import { STATUS_LABELS, priceText, toCard } from '@/lib/market/cards';
 import { jobsForRobot, type RobotJob } from '@/lib/market/jobs';
-import type { MarketRobot } from '@/lib/market/load';
+import { loadMarket, type MarketRobot } from '@/lib/market/load';
+import { scenePicture, type ScenePicture } from '@/lib/market/use-case-views';
+import { photoFit } from '@/components/use-cases/parts';
 import { STAGE_LABELS } from '@/lib/market/vocab';
 import { plainDashes } from '@/lib/spec/display';
 import { ProofTimeline } from './ProofTimeline';
@@ -12,8 +15,8 @@ import './market.css';
 // Shared pieces of a robot page: how to buy it in Germany, the jobs it fits and where it has worked.
 
 const euro = (amount: number) => '€' + amount.toLocaleString('en-GB', { maximumFractionDigits: 0 });
-// Each list of jobs shows its first five; the rest fold away.
-const JOBS_SHOWN = 5;
+// The first six job cards show; the rest fold away.
+const JOBS_SHOWN = 6;
 
 export function BuyBox({ robot, title, collapsed = false, picture = false }: { robot: MarketRobot; title?: string; collapsed?: boolean; picture?: boolean }) {
   const g = robot.germany;
@@ -39,25 +42,84 @@ export function BuyBox({ robot, title, collapsed = false, picture = false }: { r
   </div>;
 }
 
-function JobLinks({ jobs }: { jobs: RobotJob[] }) {
-  return <ul>{jobs.map((job) => <li key={job.id}>{job.title}{job.fit.evidence ? <small>{STAGE_LABELS[job.fit.evidence.stage]}{job.fit.evidence.where ? ' · ' + job.fit.evidence.where : ''}</small> : job.fit.related ? <small>Did similar work · {job.fit.related.task}</small> : <small>{job.setting}</small>}</li>)}</ul>;
+// A still from each job's step-by-step sheet, the people doing the work by hand today.
+const FRAMES = (frames as { frames: Record<string, { src: string; width: number; height: number }[]> }).frames;
+// Green for work it has done on a real project, blue for a demo or a near match, amber where it needs more.
+const TONE = { done: 'var(--verified)', near: 'var(--assessed)', stretch: 'var(--reported)', claim: 'var(--faint)' } as const;
+type JobGroup = { label: string; tone: keyof typeof TONE; jobs: RobotJob[] };
+
+let workPhotos: Map<string, ScenePicture & { robot: string; robotId: string }> | null = null;
+/** For a job without a step sheet: a photo of a robot doing it, from the robot with the furthest proof. */
+function jobPhoto(jobId: string) {
+  if (!workPhotos) {
+    workPhotos = new Map();
+    const rank = { deployment: 0, pilot: 1, demo: 2, claim: 3 } as const;
+    const entries = loadMarket().flatMap((robot) => robot.evidence.flatMap((e) => e.taskIds.map((task) => ({ task, robot, r: rank[e.stage] }))))
+      .sort((a, b) => a.r - b.r);
+    for (const { task, robot } of entries) {
+      if (workPhotos.has(task)) continue;
+      const p = scenePicture(robot);
+      if (p?.scene) workPhotos.set(task, { ...p, robot: robot.name, robotId: robot.id });
+    }
+  }
+  return workPhotos.get(jobId) ?? null;
+}
+
+function JobCard({ job, group, own }: { job: RobotJob; group: JobGroup; own: (ScenePicture & { robotId: string }) | null }) {
+  const still = FRAMES[job.id]?.[1] ?? FRAMES[job.id]?.[0];
+  const borrowed = still ? null : jobPhoto(job.id);
+  const photo = still ? null : borrowed && borrowed.robotId !== own?.robotId ? borrowed : own;
+  const frame = still ?? photo;
+  const detail = job.fit.evidence ? job.fit.evidence.where ?? job.setting : job.fit.related ? 'Did: ' + job.fit.related.task : job.setting;
+  return <li className="flex flex-col overflow-hidden rounded-xl border border-edge/70 bg-card">
+    <span className="relative block aspect-[16/9] overflow-hidden bg-subtle">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {frame ? <img src={frame.src} alt="" width={frame.width} height={frame.height} loading="lazy" decoding="async" className={'h-full w-full ' + (photo ? photoFit(photo, 'p-3') + ' bg-white' : 'object-cover')} />
+        : <span className="grid h-full place-items-center px-4 text-center text-xs text-faint">{job.setting}</span>}
+      <span className="absolute left-2 top-2 inline-flex items-center gap-1.5 rounded-full bg-card px-2.5 py-1 text-[11px] font-medium text-foreground shadow-sm">
+        <span aria-hidden className="h-2 w-2 rounded-full" style={{ background: TONE[group.tone] }} />{group.label}
+      </span>
+      {photo && 'robot' in photo ? <span className="absolute bottom-2 right-2 max-w-[80%] truncate rounded bg-card/90 px-1.5 py-0.5 text-[10px] text-muted">Shown: {String(photo.robot)}</span> : null}
+    </span>
+    <span className="flex flex-col gap-1 p-3">
+      <span className="text-sm font-medium leading-snug">{job.title}</span>
+      <span className="line-clamp-2 text-xs text-muted">{detail}</span>
+    </span>
+  </li>;
 }
 
 export function RobotJobs({ robotId }: { robotId: string }) {
   const jobs = jobsForRobot(robotId);
+  const self = loadMarket().find((robot) => robot.id === robotId);
+  const picture = self ? scenePicture(self) : null;
+  const own = picture && self ? { ...picture, robotId: self.id } : null;
   // "Has done" used to hold a maker's claim and a year in daily use alike; each proof level is its own group.
-  const groups: [string, RobotJob[]][] = [
-    ...(['deployment', 'pilot', 'demo', 'claim'] as const).map((stage): [string, RobotJob[]] => [STAGE_LABELS[stage], jobs.filter((job) => job.fit.verdict === 'done' && job.fit.evidence?.stage === stage)]),
-    ['Did similar work', jobs.filter((job) => job.fit.verdict === 'similar')],
-    ['Specs fit', jobs.filter((job) => job.fit.verdict === 'fits')],
-    ['Needs add-ons or a trial', jobs.filter((job) => job.fit.verdict === 'stretch')],
-  ];
+  const groups: JobGroup[] = ([
+    { label: STAGE_LABELS.deployment, tone: 'done', jobs: jobs.filter((job) => job.fit.verdict === 'done' && job.fit.evidence?.stage === 'deployment') },
+    { label: STAGE_LABELS.pilot, tone: 'done', jobs: jobs.filter((job) => job.fit.verdict === 'done' && job.fit.evidence?.stage === 'pilot') },
+    { label: STAGE_LABELS.demo, tone: 'near', jobs: jobs.filter((job) => job.fit.verdict === 'done' && job.fit.evidence?.stage === 'demo') },
+    { label: STAGE_LABELS.claim, tone: 'claim', jobs: jobs.filter((job) => job.fit.verdict === 'done' && job.fit.evidence?.stage === 'claim') },
+    { label: 'Did similar work', tone: 'near', jobs: jobs.filter((job) => job.fit.verdict === 'similar') },
+    { label: 'Specs fit', tone: 'near', jobs: jobs.filter((job) => job.fit.verdict === 'fits') },
+    { label: 'Needs add-ons or a trial', tone: 'stretch', jobs: jobs.filter((job) => job.fit.verdict === 'stretch') },
+  ] satisfies JobGroup[]).filter((group) => group.jobs.length);
   if (!jobs.length) return <p className="mk-muted">No job on the map fits this robot yet.</p>;
-  return <div className="mk-job-columns">{groups.filter(([, list]) => list.length).map(([label, list]) => <div key={label}>
-    <h3>{label} <span>{list.length}</span></h3>
-    <JobLinks jobs={list.slice(0, JOBS_SHOWN)} />
-    {list.length > JOBS_SHOWN ? <details className="mk-siblings"><summary>Show {list.length - JOBS_SHOWN} more</summary><JobLinks jobs={list.slice(JOBS_SHOWN)} /></details> : null}
-  </div>)}</div>;
+  const cards = groups.flatMap((group) => group.jobs.map((job) => ({ job, group })));
+  const card = ({ job, group }: (typeof cards)[number]) => <JobCard key={job.id} job={job} group={group} own={own} />;
+  return <div className="flex flex-col gap-4">
+    <ul className="flex flex-wrap gap-2" aria-label="Jobs by how well it fits">
+      {groups.map((group) => <li key={group.label} className="inline-flex items-center gap-2 rounded-full border border-edge px-3 py-1.5 text-xs">
+        <span aria-hidden className="h-2 w-2 rounded-full" style={{ background: TONE[group.tone] }} />{group.label}<span className="num font-semibold">{group.jobs.length}</span>
+      </li>)}
+    </ul>
+    <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{cards.slice(0, JOBS_SHOWN).map(card)}</ul>
+    {cards.length > JOBS_SHOWN ? <details className="group/jobs">
+      <summary className="inline-flex cursor-pointer list-none items-center rounded-full border border-edge px-4 py-2 text-sm font-medium transition hover:border-edge-strong [&::-webkit-details-marker]:hidden">
+        <span className="group-open/jobs:hidden">Show {cards.length - JOBS_SHOWN} more jobs</span><span className="hidden group-open/jobs:inline">Show fewer</span>
+      </summary>
+      <ul className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{cards.slice(JOBS_SHOWN).map(card)}</ul>
+    </details> : null}
+  </div>;
 }
 
 /** Where the robot has worked, across all its versions, each with its source. */

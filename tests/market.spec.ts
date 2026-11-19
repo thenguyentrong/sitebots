@@ -97,7 +97,7 @@ test.describe('robots page', () => {
     await page.goto('/market?type=quadruped');
     await expect(page).toHaveURL(/[/]robots[?]type=quadruped$/);
     await page.goto('/market/boston-dynamics-spot');
-    await expect(page).toHaveURL(/[/]robots[/]boston-dynamics[/]spot#germany$/);
+    await expect(page).toHaveURL(/[/]robots[/]boston-dynamics[/]spot$/);
     const germany = page.getByRole('region', { name: 'Buy in Germany', exact: true });
     await expect(germany.locator('.mk-buybox .mk-status').first()).toBeVisible();
     const jobs = page.getByRole('region', { name: 'Jobs', exact: true });

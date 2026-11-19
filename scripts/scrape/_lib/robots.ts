@@ -8,8 +8,8 @@ import { CACHE_ROOT } from './cache';
  * day on disk so a run does not fetch it once per page.
  *
  * Fail closed on a server error: if a host cannot tell us its rules we do not
- * assume it has none. A missing file (404) is the one case that means "no
- * rules", and the standard says so.
+ * assume it has none. A 4xx answer (404, but also the 403 of image hosts)
+ * means "no rules", as RFC 9309 says.
  */
 const DIR = join(CACHE_ROOT, 'robots');
 const TTL_MS = 24 * 3600 * 1000;
@@ -53,12 +53,11 @@ export async function allowed(url: string, ua: string): Promise<RobotsVerdict> {
     memo.set(origin, p);
   }
   const c = await p;
-  if (c.status === 404 || c.status === 410) return { ok: true };
   if (c.status === 0 || c.status >= 500) return { ok: false, reason: `robots.txt unavailable (${c.status || 'network'})` };
-  if (c.status === 401 || c.status === 403) {
-    // The standard treats these as "no access at all".
-    return { ok: false, reason: `robots.txt returned ${c.status}` };
-  }
+  // RFC 9309, 2.3.1.3: a robots.txt that answers with any 4xx is "unavailable", and the crawler may access the
+  // server. Image hosts (Webflow, Framer, Wix, S3 buckets) answer 403 for a file they do not have. A 403 on the
+  // page or picture itself still stops us (fetch.ts).
+  if (c.status >= 400 && c.status < 500) return { ok: true };
   const parser = robotsParser(`${origin}/robots.txt`, c.text);
   const verdict = parser.isAllowed(url, ua);
   if (verdict === false) return { ok: false, reason: 'disallowed by robots.txt' };

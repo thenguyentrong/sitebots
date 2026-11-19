@@ -1,4 +1,4 @@
-import type { StageCounts } from '@/lib/market/use-case-views';
+import type { ScenePicture, StageCounts } from '@/lib/market/use-case-views';
 import { USE_STAGES, type UseStage } from '@/lib/market/use-cases';
 import { cn } from '@/lib/utils';
 
@@ -45,3 +45,8 @@ export function StageLegend({ className }: { className?: string }) {
     <li className="inline-flex items-center gap-1.5"><StageDot stage="demo" />Demonstration</li>
   </ul>;
 }
+
+/** How a photo fills a card: a wide photo of work fills it and keeps its upper part (heads, booms, arms);
+ * a product shot or an upright picture is shown whole on white. */
+export const photoFit = (p: Pick<ScenePicture, 'scene' | 'width' | 'height'>, pad = 'p-4') =>
+  p.scene && p.width / p.height >= 1.25 ? 'object-cover object-[50%_30%]' : 'object-contain ' + pad;

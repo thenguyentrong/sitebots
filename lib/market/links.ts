@@ -25,7 +25,7 @@ export const cataloguePathFor = (marketId: string): string | null => links()[mar
 /** The one page of a robot: its catalogue page where the catalogue has it, else its market page. */
 export function robotHref(marketId: string): string {
   const linked = cataloguePathFor(marketId);
-  return linked ? linked + '#germany' : '/market/' + marketId;
+  return linked ?? '/market/' + marketId;
 }
 
 /** The market records sold under one catalogue page, for example G1 base and G1 EDU under /robots/unitree/g1. */

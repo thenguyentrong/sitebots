@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { GermanFlag } from '@/components/market/Flag';
 import type { RobotUses } from '@/lib/market/use-case-views';
 import { STAGE_LABEL } from '@/lib/market/use-cases';
-import { CountryFlag, StageBar, StageDot, StageWords } from './parts';
+import { CountryFlag, StageBar, StageDot, StageWords, photoFit } from './parts';
 
 /** A robot at work: its photo, how far it got, where it worked, and every project with its source behind "Projects". */
 export function RobotUseCard({ group, rank }: { group: RobotUses; rank?: number }) {
@@ -14,7 +14,7 @@ export function RobotUseCard({ group, rank }: { group: RobotUses; rank?: number 
       {/* The pictures are already 900 px WebP files, so they skip the paid image transformation. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       {picture ? <img src={picture.src} alt={picture.alt} width={picture.width} height={picture.height} loading="lazy" decoding="async"
-        className={(picture.scene ? 'object-cover' : 'object-contain p-5') + ' h-full w-full transition duration-500 group-hover:scale-[1.03]'} />
+        className={photoFit(picture, 'p-5') + ' h-full w-full transition duration-500 group-hover:scale-[1.03]'} />
         : <span className="grid h-full place-items-center bg-subtle text-xs text-faint">No picture published</span>}
       <span className="absolute inset-x-3 top-3 flex items-start justify-between gap-2">
         {rank ? <span className="num grid h-8 min-w-8 place-items-center rounded-full bg-foreground px-2 text-sm font-semibold text-background">{rank}</span>

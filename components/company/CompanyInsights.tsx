@@ -6,7 +6,7 @@ import { ReviewsSection } from '@/components/robot/ReviewsSection';
 import { VisitorReviews } from '@/components/reviews/VisitorReviews';
 import { RobotUseCard } from '@/components/use-cases/RobotUseCard';
 import { UseMap } from '@/components/use-cases/UseMap';
-import { CountryFlag, StageBar, StageWords } from '@/components/use-cases/parts';
+import { CountryFlag, StageBar, StageWords, photoFit } from '@/components/use-cases/parts';
 import { STATUS_LABELS, TYPE_LABELS } from '@/lib/market/cards';
 import { companyInsight } from '@/lib/market/companies';
 import { cataloguePathFor, robotHref } from '@/lib/market/links';
@@ -58,7 +58,7 @@ export function CompanyInsights({ slug, name, description, robots, showAllRobots
         {photos.length ? <div className={'mt-6 grid gap-3 ' + (photos.length === 3 ? 'grid-cols-[minmax(0,2fr)_minmax(0,1fr)] grid-rows-2' : photos.length === 2 ? 'grid-cols-2' : 'grid-cols-1')}>
           {photos.map((photo, i) => <Link key={photo.src} href={photo.href} className={'group relative block overflow-hidden rounded-2xl bg-white ' + (photos.length === 3 ? (i === 0 ? 'row-span-2 aspect-[4/3]' : 'h-full') : photos.length === 2 ? 'aspect-[4/3]' : 'aspect-[16/10]')} aria-label={photo.robot}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={photo.src} alt={photo.alt} loading={i ? 'lazy' : 'eager'} decoding="async" className={(photo.scene ? 'object-cover' : 'object-contain p-4') + ' h-full w-full transition duration-500 group-hover:scale-[1.03]'} />
+            <img src={photo.src} alt={photo.alt} loading={i ? 'lazy' : 'eager'} decoding="async" className={photoFit(photo) + ' h-full w-full transition duration-500 group-hover:scale-[1.03]'} />
             <span className="absolute bottom-2 left-2 max-w-[85%] truncate rounded-full bg-card px-2.5 py-1 text-[11px] font-medium text-foreground shadow-sm">{photo.robot}</span>
           </Link>)}
         </div> : null}
@@ -111,7 +111,7 @@ export function CompanyInsights({ slug, name, description, robots, showAllRobots
           return <Link key={robot.id} href={robotHref(robot.id)} className="card group flex flex-col overflow-hidden transition hover:border-edge-strong">
             <span className="relative block aspect-[4/3] overflow-hidden bg-white">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              {picture ? <img src={picture.src} alt={picture.alt} loading="lazy" decoding="async" className={(picture.scene ? 'object-cover' : 'object-contain p-4') + ' h-full w-full transition duration-500 group-hover:scale-[1.03]'} /> : <span className="grid h-full place-items-center bg-subtle text-xs text-faint">No picture published</span>}
+              {picture ? <img src={picture.src} alt={picture.alt} loading="lazy" decoding="async" className={photoFit(picture) + ' h-full w-full transition duration-500 group-hover:scale-[1.03]'} /> : <span className="grid h-full place-items-center bg-subtle text-xs text-faint">No picture published</span>}
               {robot.germany.status === 'buy_now' || robot.germany.status === 'quote' ? <span className="absolute left-2 top-2 inline-flex items-center gap-1 rounded-full bg-card px-2 py-0.5 text-[10px] font-medium shadow-sm"><GermanFlag className="h-2 w-3" title="" />{STATUS_LABELS[robot.germany.status]}</span> : null}
             </span>
             <span className="flex flex-1 flex-col gap-1 p-3.5 text-sm">
