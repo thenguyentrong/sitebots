@@ -143,8 +143,8 @@ export default async function UseCasesPage({ params, searchParams }: { params: P
             </div>
           </header>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{(only ? s.groups : s.groups.slice(0, FIRST)).map((group) => <RobotUseCard key={group.robotId} group={group} lang={lang} />)}</div>
-          {!only && s.groups.length > FIRST ? <p className="mt-4"><Link href={href({ setting: s.id }, s.id)} className={ui.btnSecondary}>{t.showAllFor(s.groups.length, s.label)}</Link></p> : null}
-          {only ? <p className="mt-4"><Link href={href({ setting: '' }, s.id)} className={ui.btnSecondary}>{t.backToAll}</Link></p> : null}
+          {!only && s.groups.length > FIRST ? <p className="mt-4"><Link href={href({ setting: s.id }, s.id)} className={cn(ui.btnSecondary, 'h-auto min-h-10 max-w-full whitespace-normal py-2 text-left')}>{t.showAllFor(s.groups.length, s.label)}</Link></p> : null}
+          {only ? <p className="mt-4"><Link href={href({ setting: '' }, s.id)} className={cn(ui.btnSecondary, 'h-auto min-h-10 max-w-full whitespace-normal py-2 text-left')}>{t.backToAll}</Link></p> : null}
         </section>)}
       </div>
     </>}

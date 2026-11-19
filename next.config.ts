@@ -22,6 +22,9 @@ const LANG = String.raw`/\[lang\]`;
 
 const nextConfig: NextConfig = {
   devIndicators: false,
+  // Public pages have their root layout in app/[lang], the admin pages their own, so an address no route
+  // answers needs app/global-not-found.tsx for a real 404.
+  experimental: { globalNotFound: true },
   // The in-app preview connects through the loopback IP.
   allowedDevOrigins: ['127.0.0.1'],
   async redirects() {

@@ -9,12 +9,13 @@ import { plainDashes } from '@/lib/spec/display';
 // Our words follow the page's language. The record's own row names, conditions, quotes and notes are the
 // sources' words and are marked lang="en" on German pages.
 
-function ValueRows({ rows, lang }: { rows: MarketValueRow[]; lang: Lang }) {
+/** `recordLabels`: the row names are the source's own (specifications); capability names are ours. */
+function ValueRows({ rows, lang, recordLabels = false }: { rows: MarketValueRow[]; lang: Lang; recordLabels?: boolean }) {
   const t = MARKET_SPEC_TEXT[lang];
   const rl = recordLang(lang);
   return <dl className="divide-y divide-edge/60">
     {rows.map((row) => <div key={row.key} data-spec-field={row.key} className="grid gap-2 px-4 py-3 text-sm sm:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] sm:gap-4 sm:px-5">
-      <dt className="text-muted">{row.label}</dt>
+      <dt className="text-muted" lang={recordLabels ? rl : undefined}>{row.label}</dt>
       <dd className="min-w-0 space-y-1.5">
         {/* Value, who states it, the page and the date on one line; conditions and the quote below. */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -74,7 +75,7 @@ export function MarketSpecifications({ robots }: { robots: Dossier[] }) {
             <span className="mt-2 hidden text-xs font-medium underline underline-offset-2 group-open:block">{t.hide}</span>
           </summary>
           <div className="border-t border-edge/70">
-            {specs.length ? <ValueRows rows={specs} lang={lang} /> : <p className="px-5 py-3 text-sm text-muted">{t.noSpecs}</p>}
+            {specs.length ? <ValueRows rows={specs} lang={lang} recordLabels /> : <p className="px-5 py-3 text-sm text-muted">{t.noSpecs}</p>}
             <h3 className="border-y border-edge/70 bg-subtle px-5 py-3 text-sm font-medium">{t.capabilities}</h3>
             <ValueRows rows={capabilities} lang={lang} />
             {robot.capabilities.notes.length ? <div className="border-t border-edge/70 px-5 py-4">

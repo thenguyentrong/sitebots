@@ -4,7 +4,9 @@ import Link from '@/components/LocaleLink';
 import { COMMON } from '@/lib/i18n/common';
 import { useLang } from '@/lib/i18n/client';
 
-// A client component, so it reads the language the layout above it set: not-found pages get no params.
+// For notFound() inside a page (an unknown robot, maker or record). A client component, so it reads the
+// language the layout above it set: not-found pages get no params. Unknown addresses go to
+// app/global-not-found.tsx.
 export default function NotFound() {
   const t = COMMON[useLang()];
   return (

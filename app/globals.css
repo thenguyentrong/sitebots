@@ -298,7 +298,14 @@ body {
 .top-lang-overlay a { color: rgba(250, 250, 250, 0.82); }
 .top-lang-overlay a:hover, .top-lang-overlay a[aria-current='true'] { color: #fafafa; }
 .top-lang-overlay a[aria-current='true'] { background: rgba(255, 255, 255, 0.16); }
-@media (max-width: 639px) { .top-lang { height: 32px; } .top-lang a { min-width: 28px; height: 26px; padding: 0 4px; font-size: 11px; } }
+/* On a phone the bar has no room for both: it shows the other language only, as one small pill. */
+@media (max-width: 639px) {
+  .top-lang { height: 32px; padding: 1px; }
+  .top-lang a { min-width: 30px; height: 28px; padding: 0 4px; font-size: 11px; }
+  .top-lang a[aria-current='true'] { display: none; }
+  .top-link { padding: 0 7px; font-size: 13px; }
+  .top-cta { padding: 0 11px; font-size: 13px; }
+}
 
 /* The sign-in and account dialog: the page behind dims, nothing blurs. */
 .acc-dialog { width: 100%; max-width: min(440px, calc(100vw - 32px)); max-height: calc(100dvh - 32px); margin: auto; padding: 0; border: 0; background: transparent; color: var(--foreground); overflow: visible; }
