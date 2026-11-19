@@ -38,6 +38,9 @@ if (problems.length) {
 }
 
 async function main() {
+  // Stills cut from other people's YouTube films are protected pictures (BGH I ZR 86/12); the site no longer
+  // shows them (legal audit 19 Nov 2026). Only --check still runs.
+  if (!process.argv.includes('--check')) { console.error('Frame capture is switched off: link to the video at its second instead.'); process.exit(1); }
   if (check || problems.length) return;
   mkdirSync(cacheDir, { recursive: true });
   const cached = (id: string, at: number) => join(cacheDir, id + '-' + at + 's.webp');

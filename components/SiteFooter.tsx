@@ -4,11 +4,12 @@ import Link from '@/components/LocaleLink';
 import { COMMON } from '@/lib/i18n/common';
 import { useLang, usePagePath } from '@/lib/i18n/client';
 
-/** Hidden on the chat, which fills the screen and carries the same links itself. */
+/** Hidden on the adviser, which fills the screen and carries the same links itself. */
 export function SiteFooter() {
   const lang = useLang();
   const t = COMMON[lang];
-  if (usePagePath() === '/') return null;
+  // The adviser lives on /advisor since 19 Nov 2026; the start page needs the legal links (§ 5 DDG).
+  if (usePagePath().startsWith('/advisor')) return null;
   return (
     <footer className="mt-16 border-t border-edge">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-sm text-muted sm:px-6">

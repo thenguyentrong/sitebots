@@ -7,8 +7,8 @@ import { publicMetadata } from '@/lib/seo';
 type Params = Promise<{ lang: string }>;
 
 const TEXT = bilingual({
-  en: { title: 'Impressum', description: 'Who runs sitebots and how to reach them.', email: 'Email', phone: 'Phone', vat: 'VAT ID', register: 'Register', missing: "The operator's details are being added." },
-  de: { title: 'Impressum', description: 'Wer sitebots betreibt und wie Sie den Betreiber erreichen.', email: 'E-Mail', phone: 'Telefon', vat: 'USt-IdNr.', register: 'Registereintrag', missing: 'Die Angaben zum Betreiber werden ergänzt.' },
+  en: { title: 'Impressum', description: 'Who runs sitebots and how to reach them.', email: 'Email', phone: 'Phone', vat: 'VAT ID', register: 'Register', missing: "The operator's details are being added.", picturesTitle: 'Pictures and content of others', pictures: 'Pictures and quotes belong to the makers and publishers named next to them. If you own something shown here and want it removed or credited differently, write to the address above. We remove it within 48 hours.', guaranteeTitle: 'No guarantee', guarantee: 'We check every value against its source, but prices, availability and specifications change. Please confirm every detail with the seller before you decide.' },
+  de: { title: 'Impressum', description: 'Wer sitebots betreibt und wie Sie den Betreiber erreichen.', email: 'E-Mail', phone: 'Telefon', vat: 'USt-IdNr.', register: 'Registereintrag', missing: 'Die Angaben zum Betreiber werden ergänzt.', picturesTitle: 'Bilder und Inhalte Dritter', pictures: 'Bilder und Zitate gehören den Herstellern und Verlagen, die daneben genannt sind. Wenn Ihnen etwas gehört, das hier gezeigt wird, und Sie es entfernt oder anders genannt haben möchten, schreiben Sie an die oben genannte Adresse. Wir entfernen es innerhalb von 48 Stunden.', guaranteeTitle: 'Keine Gewähr', guarantee: 'Wir prüfen jeden Wert an seiner Quelle, aber Preise, Verfügbarkeit und technische Daten ändern sich. Bitte klären Sie jedes Detail mit dem Verkäufer, bevor Sie entscheiden.' },
 });
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
@@ -29,5 +29,11 @@ export default async function ImpressumPage({ params }: { params: Params }) {
       {SITE.vatId ? <p>{t.vat}: {SITE.vatId}</p> : null}
       {SITE.register ? <p>{t.register}: {SITE.register}</p> : null}
     </div> : <p className="mt-6 text-muted">{t.missing}</p>}
+    <section className="mt-10 space-y-3 text-muted">
+      <h2 className="font-semibold text-foreground">{t.picturesTitle}</h2>
+      <p>{t.pictures}</p>
+      <h2 className="pt-3 font-semibold text-foreground">{t.guaranteeTitle}</h2>
+      <p>{t.guarantee}</p>
+    </section>
   </main>;
 }
