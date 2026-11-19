@@ -70,6 +70,8 @@ for (const name of readdirSync(records).filter((file) => file.endsWith('.json'))
   if (only.length && !only.includes(record.id)) continue;
   const candidates = [...record.images.filter((image) => image.kind === 'product'), ...record.images.filter((image) => image.kind !== 'product')];
   const current = manifest.pictures[record.id];
+  // A record whose pictures were all removed loses its stored copy too.
+  if (!candidates.length && current) { rmSync(join(root, 'public', current.src), { force: true }); delete manifest.pictures[record.id]; }
   // Keep the stored picture while it is still the first choice; a new first image replaces it.
   let done = Boolean(current && candidates[0]?.url === current.sourceUrl && existsSync(join(root, 'public', current.src)));
   for (const image of done ? [] : candidates) {
