@@ -82,3 +82,10 @@ export function chooseLang({ cookie, acceptLanguage }: { cookie?: string | null;
   if (isLang(cookie)) return cookie;
   return preferredLang(acceptLanguage);
 }
+
+/**
+ * The lang attribute for free text from the robot records (summaries, notes, evidence, quotes), which is
+ * written in English for now: on a German page it tells screen readers and translation tools that this
+ * block is English. On an English page it adds nothing, so it is left off.
+ */
+export const recordLang = (lang: Lang): 'en' | undefined => (lang === 'en' ? undefined : 'en');

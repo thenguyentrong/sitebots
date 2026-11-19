@@ -13,7 +13,7 @@ export const TYPE_PLURAL: Record<RobotType, string> = MARKET_TEXT.en.typePlural;
 export const STATUS_LABELS: Record<GermanyStatus, string> = MARKET_TEXT.en.status;
 export const typeLabel = (type: RobotType, lang: Lang = 'en'): string => MARKET_TEXT[lang].type[type];
 export const typePlural = (type: RobotType, lang: Lang = 'en'): string => MARKET_TEXT[lang].typePlural[type];
-export const statusLabel = (status: GermanyStatus, lang: Lang = 'en'): string => MARKET_TEXT[lang].status[status];
+export const germanyStatusLabel = (status: GermanyStatus, lang: Lang = 'en'): string => MARKET_TEXT[lang].status[status];
 
 export type CardSeller = { name: string; country: string; role: string; productUrl: string | null; contactUrl: string | null; email: string | null; phone: string | null; priceEur: number | null; priceBasis: string | null };
 export type CardSpec = { key: string; label: string; value: string; conditions: string | null };
