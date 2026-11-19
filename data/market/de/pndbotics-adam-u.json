@@ -14,7 +14,12 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 60000,
+   "currency": "USD",
+   "market": "Robotopian (US reseller)",
+   "sourceId": "s3"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -44,7 +49,7 @@
     "note": "Adam-U Ultra; price on request."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-19",
   "status": "quote",
   "statusNote": "Bipedal (Leverkusen) is the official PNDbotics distributor and lists this model with price on request. Variants: Adam-U, Pro (with motion capture and VR), Pro Max (Inspire RH56E2 hands with force sensors) and Ultra (with pre-trained Being-H model and datasets).",
   "sourceIds": [
@@ -198,6 +203,14 @@
    "publisher": "Bipedal GmbH",
    "kind": "seller",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://robotopian.com/products/pndbotics-adam-u-upper-body-humanoid-robot",
+   "title": "Robotopian product page",
+   "publisher": "Robotopian",
+   "kind": "seller",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [

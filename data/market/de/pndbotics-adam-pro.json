@@ -14,7 +14,12 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 170000,
+   "currency": "USD",
+   "market": "Robotopian (US reseller)",
+   "sourceId": "s3"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -31,7 +36,7 @@
     "note": "Adam Pro and Pro Max; price on request."
    }
   ],
-  "checkedAt": "2026-11-06",
+  "checkedAt": "2026-11-19",
   "status": "quote",
   "statusNote": "Bipedal (Leverkusen) is the official PNDbotics distributor and lists this model with price on request.",
   "sourceIds": [
@@ -197,6 +202,14 @@
    "publisher": "PNDbotics",
    "kind": "manufacturer",
    "checkedAt": "2026-11-06"
+  },
+  {
+   "id": "s3",
+   "url": "https://robotopian.com/products/pndbotics-adam-pro-humanoid-robot",
+   "title": "Robotopian product page",
+   "publisher": "Robotopian",
+   "kind": "seller",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [

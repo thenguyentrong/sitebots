@@ -18,12 +18,19 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. No public euro price found on the maker page or in German shops.",
+  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. Profi-Bau-Shop (Germany) sells it online at 28,899.16 € excl. VAT (article 970604403, delivery 3-5 working days), the same price it shows for the PG 6 DR.",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 28899.16,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "Profi-Bau-Shop, article 970604403, excl. VAT (UVP shown higher), delivery 3-5 working days. The shop lists the same price for the PG 6 DR."
+  },
   "priceOther": {
    "amount": 30325,
    "currency": "GBP",
@@ -44,9 +51,22 @@
     "priceBasis": null,
     "sourceId": "s1",
     "note": "Bahnhofstr. 50, 89168 Niederstotzingen (contact page). Article no. 970 60 44-03 (3x380-415 V, 7.5 kW, EU); quote request, dealer search and demo booking on the product page."
+   },
+   {
+    "name": "Profi-Bau-Shop",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.profi-bau-shop.de/profi-bau-shop/schleifen-und-polieren/husqvarna-pg-6-xr-bodenschleifmaschinen-7-5-kw-detail",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 28899.16,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": "Shop page 19 Nov 2026 (7,5 kW, 415 V): shows exactly the same price block as the PG 6 DR page (UVP 45.785,25, 34.390,00 gross), so the price may be a shop template value; a search snippet showed 32.635 gross for the XR. Treat as indicative; \"Lieferzeit ca. 3 - 5 Werktage\""
    }
   ],
-  "checkedAt": "2026-11-18"
+  "checkedAt": "2026-11-19"
  },
  "specs": [
   {
@@ -167,6 +187,14 @@
    "publisher": "redbanduk.co.uk",
    "kind": "other",
    "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.profi-bau-shop.de/profi-bau-shop/schleifen-und-polieren/husqvarna-pg-6-xr-bodenschleifmaschinen-7-5-kw-detail",
+   "title": "Profi-Bau-Shop (profi-bau-shop.de)",
+   "publisher": "Profi-Bau-Shop (profi-bau-shop.de)",
+   "kind": "seller",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [

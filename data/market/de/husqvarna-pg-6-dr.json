@@ -18,12 +18,19 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. No public euro price found on the maker page or in German shops.",
+  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. Profi-Bau-Shop (Germany) sells it online at 28,899.16 € excl. VAT (article 970604103, delivery 3-5 working days).",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s4"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 28899.16,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s4",
+   "note": "Profi-Bau-Shop, article 970604103, excl. VAT (UVP shown higher), delivery 3-5 working days."
+  },
   "priceOther": {
    "amount": 30325,
    "currency": "GBP",
@@ -44,9 +51,22 @@
     "priceBasis": null,
     "sourceId": "s1",
     "note": "Bahnhofstr. 50, 89168 Niederstotzingen (contact page). Article no. 970 60 41-03 (3x380-415 V, 11+1.5 kW, EU); quote request, dealer search and demo booking on the product page."
+   },
+   {
+    "name": "Profi-Bau-Shop",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.profi-bau-shop.de/oberflaechenbearbeitung/schleifen-und-polieren/husqvarna-pg-6-dr-bodenschleifmaschinen-11-1-5-kw-detail",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 28899.16,
+    "priceBasis": "net",
+    "sourceId": "s4",
+    "note": "Shop page 19 Nov 2026: UVP 45.785,25 EUR, shop price 34.390,00 EUR gross (25% Rabatt), \"Lieferzeit ca. 3 - 5 Werktage\"; page text says 415 V, not checked against record variant"
    }
   ],
-  "checkedAt": "2026-11-18"
+  "checkedAt": "2026-11-19"
  },
  "specs": [
   {
@@ -185,6 +205,14 @@
    "publisher": "redbanduk.co.uk",
    "kind": "other",
    "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.profi-bau-shop.de/oberflaechenbearbeitung/schleifen-und-polieren/husqvarna-pg-6-dr-bodenschleifmaschinen-11-1-5-kw-detail",
+   "title": "Profi-Bau-Shop (profi-bau-shop.de)",
+   "publisher": "Profi-Bau-Shop (profi-bau-shop.de)",
+   "kind": "seller",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [

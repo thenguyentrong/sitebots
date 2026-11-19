@@ -14,12 +14,18 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "MYBOTSHOP (Germany) sells RealMan robots and lists an older single-arm \"Compound Robot\" with lifting system at €35,599.95; whether that is this model is not stated. Ask MYBOTSHOP or RealMan for a quote.",
+  "statusNote": "MYBOTSHOP (Germany) lists the RealMan RM65 single-arm compound robot with lifting system at €35,599.95 incl. VAT; some specs on that page differ from RealMan's current data sheet. Ask MYBOTSHOP or RealMan for a quote.",
   "sourceIds": [
    "s1",
    "s2"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 35599.95,
+   "basis": "gross",
+   "kind": "list",
+   "sourceId": "s2",
+   "note": "MYBOTSHOP.DE listing \"Realman Compound Robot Mobile manipulator RM65 single arm with lifting system\", incl. VAT; some listed specs differ from the current model."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -31,8 +37,8 @@
     "contactUrl": "https://www.mybotshop.de/Kontakt",
     "email": "info@mybotshop.de",
     "phone": "+49 2271 588930",
-    "priceEur": null,
-    "priceBasis": null,
+    "priceEur": 35599.95,
+    "priceBasis": "gross",
     "sourceId": "s2",
     "note": "Listing of a single-arm RealMan lifting robot at €35,599.95 incl. VAT; specs differ from this model."
    },
@@ -50,7 +56,7 @@
     "note": null
    }
   ],
-  "checkedAt": "2026-10-02"
+  "checkedAt": "2026-11-19"
  },
  "specs": [
   {

@@ -18,12 +18,19 @@
  "lifecycle": "shipping",
  "germany": {
   "status": "quote",
-  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. No public price found on the maker page or in German shops.",
+  "statusNote": "Listed on Husqvarna Construction's German website with an EU article number and 'Angebot anfordern', dealer search and demo booking. Profi-Bau-Shop (Germany) sells it online at 34,494.12 € excl. VAT (article 970605803, delivery 3-5 working days).",
   "sourceIds": [
    "s1",
-   "s2"
+   "s2",
+   "s3"
   ],
-  "priceEur": null,
+  "priceEur": {
+   "amount": 34494.12,
+   "basis": "net",
+   "kind": "list",
+   "sourceId": "s3",
+   "note": "Profi-Bau-Shop, article 970605803, excl. VAT (UVP shown higher), delivery 3-5 working days."
+  },
   "priceOther": null,
   "leadTime": null,
   "sellers": [
@@ -39,9 +46,22 @@
     "priceBasis": null,
     "sourceId": "s1",
     "note": "Bahnhofstr. 50, 89168 Niederstotzingen (contact page). Article no. 970 60 58-03 (3x380-415 V, 15 kW, EU); quote request, dealer search and demo booking on the product page."
+   },
+   {
+    "name": "Profi-Bau-Shop",
+    "country": "DE",
+    "role": "reseller",
+    "productUrl": "https://www.profi-bau-shop.de/oberflaechenbearbeitung/schleifen-und-polieren/husqvarna-pg-8-xr-bodenschleifmaschinen-15-kw-detail",
+    "contactUrl": null,
+    "email": null,
+    "phone": null,
+    "priceEur": 34494.12,
+    "priceBasis": "net",
+    "sourceId": "s3",
+    "note": "Shop page 19 Nov 2026: 15 kW, 415 V, 41.048 EUR gross (25% off UVP 54.662,65 per search snippet), \"Lieferzeit ca. 3 - 5 Werktage\""
    }
   ],
-  "checkedAt": "2026-11-18"
+  "checkedAt": "2026-11-19"
  },
  "specs": [
   {
@@ -154,6 +174,14 @@
    "publisher": "Husqvarna Deutschland GmbH",
    "kind": "manufacturer",
    "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s3",
+   "url": "https://www.profi-bau-shop.de/oberflaechenbearbeitung/schleifen-und-polieren/husqvarna-pg-8-xr-bodenschleifmaschinen-15-kw-detail",
+   "title": "Profi-Bau-Shop (profi-bau-shop.de)",
+   "publisher": "Profi-Bau-Shop (profi-bau-shop.de)",
+   "kind": "seller",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [

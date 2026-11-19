@@ -14,7 +14,12 @@
  "lifecycle": "shipping",
  "germany": {
   "priceEur": null,
-  "priceOther": null,
+  "priceOther": {
+   "amount": 699700,
+   "currency": "CNY",
+   "market": "JD.com, approximate, as reported by Robots International",
+   "sourceId": "s4"
+  },
   "leadTime": null,
   "sellers": [
    {
@@ -31,7 +36,7 @@
     "sourceId": "s3"
    }
   ],
-  "checkedAt": "2026-11-18",
+  "checkedAt": "2026-11-19",
   "status": "quote",
   "statusNote": "Bipedal GmbH (Germany) lists the Galbot G1 with \"Preis auf Anfrage\". Galbot itself sells through JD.com in China and a contact form (business@galbot.com).",
   "sourceIds": [
@@ -214,6 +219,14 @@
    "publisher": "Bipedal GmbH",
    "kind": "seller",
    "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s4",
+   "url": "https://www.robotsinternational.com/Galbot-G1.htm",
+   "title": "Robots International product page",
+   "publisher": "Robots International",
+   "kind": "seller",
+   "checkedAt": "2026-11-19"
   }
  ],
  "openQuestions": [],
