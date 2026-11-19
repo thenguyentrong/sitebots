@@ -4,7 +4,7 @@ import costs from '@/data/costs/trade-shares.json';
 import { TYPE_LABELS } from './market/cards';
 import { loadMarket } from './market/load';
 import { ROBOT_TYPES, type RobotType } from './market/schema';
-import { scenePicture, settingTiles, type ScenePicture, type SettingTile } from './market/use-case-views';
+import { groupByRobot, scenePicture, settingTiles, type ScenePicture, type SettingTile } from './market/use-case-views';
 import { loadUseCases, useCaseStats, type UseCaseStats } from './market/use-cases';
 
 // Server-side only. What the start page shows: checked figures on German construction, where labour is most of
@@ -73,4 +73,48 @@ export function buyGroups(): BuyGroup[] {
 export function useCaseOverview(): { stats: UseCaseStats; tiles: SettingTile[] } {
   const all = loadUseCases();
   return { stats: useCaseStats(all), tiles: settingTiles(all) };
+}
+
+export type Series = { id: string; label: string; unit: string; points: [number, number][]; source: { publisher: string; url: string; quote: string } };
+/** The checked yearly series in data/industry/germany.json. */
+export function industrySeries(): Map<string, Series> {
+  try {
+    const file = JSON.parse(readFileSync(join(process.cwd(), 'data', 'industry', 'germany.json'), 'utf8')) as { series?: Series[] };
+    return new Map((file.series ?? []).map((s) => [s.id, s]));
+  } catch {
+    return new Map();
+  }
+}
+
+/** Documented robot jobs per year of their source, from the first year with one to now. */
+export function useCaseYears(): ({ year: number } & Record<'deployment' | 'pilot' | 'demo', number>)[] {
+  const by = new Map<number, { deployment: number; pilot: number; demo: number }>();
+  for (const use of loadUseCases()) {
+    const year = Number(use.date?.slice(0, 4));
+    if (!year) continue;
+    const row = by.get(year) ?? { deployment: 0, pilot: 0, demo: 0 };
+    row[use.stage]++;
+    by.set(year, row);
+  }
+  const years = [...by.keys()];
+  if (!years.length) return [];
+  const out = [];
+  for (let year = Math.min(...years); year <= Math.max(...years); year++) out.push({ year, ...(by.get(year) ?? { deployment: 0, pilot: 0, demo: 0 }) });
+  return out;
+}
+
+export type Video = { id: string; robotId: string; label: string; title: string; channel: string; thumb: string };
+export function videos(): Video[] {
+  try {
+    return (JSON.parse(readFileSync(join(process.cwd(), 'data', 'media', 'videos.json'), 'utf8')) as { videos: Video[] }).videos;
+  } catch {
+    return [];
+  }
+}
+
+/** Photos of robots at work for the moving strip: one per robot, the most proven first. */
+export function workPhotos(limit = 18): { src: string; alt: string; robot: string; href: string }[] {
+  const seen = new Set<string>();
+  return groupByRobot(loadUseCases()).flatMap((group) => group.picture?.scene && !seen.has(group.picture.src) && seen.add(group.picture.src)
+    ? [{ src: group.picture.src, alt: group.picture.alt, robot: group.robot, href: group.href }] : []).slice(0, limit);
 }

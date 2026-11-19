@@ -1,6 +1,7 @@
 import type { ScenePicture, StageCounts } from '@/lib/market/use-case-views';
 import { USE_STAGES, type UseStage } from '@/lib/market/use-cases';
 import { cn } from '@/lib/utils';
+import './use-cases.css';
 
 // Small pieces the use-case pictures share: a country flag, the stage colours and the stage bar.
 
@@ -13,11 +14,11 @@ export function CountryFlag({ code, className }: { code: string | null | undefin
   if (!code) return null;
   const iso = (code === 'UK' ? 'GB' : code).toUpperCase();
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src={`/flags/${iso}.svg`} alt="" width={18} height={12} loading="lazy" className={cn('inline-block h-3 w-[18px] shrink-0 rounded-[2px] object-cover ring-1 ring-black/10', className)} />;
+  return <img src={`/flags/${iso}.svg`} alt="" width={18} height={12} loading="lazy" className={cn('uc-flag', className)} />;
 }
 
 export function StageDot({ stage, className }: { stage: UseStage; className?: string }) {
-  return <span aria-hidden className={cn('inline-block h-2 w-2 shrink-0 rounded-full', className)} style={{ background: STAGE_COLOR[stage] }} />;
+  return <span aria-hidden className={cn('uc-dot', className)} style={{ background: STAGE_COLOR[stage] }} />;
 }
 
 const words = (stages: StageCounts) => USE_STAGES.filter((s) => stages[s]).map((s) => `${stages[s]} ${STAGE_SHORT[s][stages[s] === 1 ? 0 : 1]}`);

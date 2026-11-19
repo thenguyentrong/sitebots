@@ -15,9 +15,9 @@ export const metadata = publicMetadata({
   path: '/use-cases',
 });
 
-type Search = Promise<{ region?: string; stage?: string; country?: string }>;
+type Search = Promise<{ region?: string; stage?: string; country?: string; setting?: string }>;
 const nf = new Intl.NumberFormat('en-GB');
-// Each setting shows its first cards; the rest open below them.
+// Each kind of work shows its first cards; its own view (?setting=) shows them all, so the page stays light.
 const FIRST = 6;
 
 function BigNumber({ value, label, hint }: { value: number; label: string; hint?: string }) {
@@ -37,18 +37,19 @@ export default async function UseCasesPage({ searchParams }: { searchParams: Sea
   const country = /^[A-Z]{2}$/.test(String(sp.country)) && all.some((use) => use.countries.includes(sp.country!)) ? sp.country : undefined;
   const shown = all.filter((use) => (!region || use.region === region) && (!stage || use.stage === stage) && (!country || use.countries.includes(country)));
 
-  const href = (next: { region?: string; stage?: string; country?: string }) => {
+  const only = SETTINGS.some((s) => s.id === sp.setting) ? sp.setting : undefined;
+  const href = (next: { region?: string; stage?: string; country?: string; setting?: string }, hash = 'explore') => {
     const q = new URLSearchParams();
-    for (const [k, v] of Object.entries({ region, stage, country, ...next })) if (v) q.set(k, v);
+    for (const [k, v] of Object.entries({ region, stage, country, setting: only, ...next })) if (v) q.set(k, v);
     const s = q.toString();
-    return '/use-cases' + (s ? '?' + s : '') + '#explore';
+    return '/use-cases' + (s ? '?' + s : '') + '#' + hash;
   };
   const map = usePoints(shown);
   const tiles = settingTiles(shown);
   const top = groupByRobot(shown).slice(0, 4);
   // Each robot card takes a photo no other card on the page shows yet, where the robot has more than one.
   const seen = new Set(top.flatMap((group) => group.picture ? [group.picture.src] : []));
-  const sections = SETTINGS.map((s) => ({ ...s, uses: shown.filter((use) => use.setting === s.id) })).filter((s) => s.uses.length)
+  const sections = SETTINGS.map((s) => ({ ...s, uses: shown.filter((use) => use.setting === s.id) })).filter((s) => s.uses.length && (!only || s.id === only))
     .sort((a, b) => b.uses.length - a.uses.length)
     .map((s) => ({ ...s, groups: groupByRobot(s.uses, seen), stages: stageCounts(s.uses) }));
   const filtered = Boolean(region || stage || country);
@@ -110,7 +111,7 @@ export default async function UseCasesPage({ searchParams }: { searchParams: Sea
             <p className="mt-1 text-sm text-muted">Sorted by the number of uses. Pick one to see its robots.</p>
           </div>
         </div>
-        <SettingTiles tiles={tiles} />
+        <SettingTiles tiles={tiles} base={only ? href({ setting: '' }, '').slice(0, -1) : ''} />
       </section>
 
       {top.length > 1 ? <section className="mt-14" aria-labelledby="top-title">
@@ -131,13 +132,9 @@ export default async function UseCasesPage({ searchParams }: { searchParams: Sea
               <StageBar stages={s.stages} />
             </div>
           </header>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{s.groups.slice(0, FIRST).map((group) => <RobotUseCard key={group.robotId} group={group} />)}</div>
-          {s.groups.length > FIRST ? <details className="group/more mt-4">
-            <summary className={cn(ui.btnSecondary, 'cursor-pointer list-none [&::-webkit-details-marker]:hidden')}>
-              <span className="group-open/more:hidden">Show {s.groups.length - FIRST} more robots</span><span className="hidden group-open/more:inline">Show fewer</span>
-            </summary>
-            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{s.groups.slice(FIRST).map((group) => <RobotUseCard key={group.robotId} group={group} />)}</div>
-          </details> : null}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">{(only ? s.groups : s.groups.slice(0, FIRST)).map((group) => <RobotUseCard key={group.robotId} group={group} />)}</div>
+          {!only && s.groups.length > FIRST ? <p className="mt-4"><Link href={href({ setting: s.id }, s.id)} className={ui.btnSecondary}>Show all {s.groups.length} robots for {s.label.toLowerCase()}</Link></p> : null}
+          {only ? <p className="mt-4"><Link href={href({ setting: '' }, s.id)} className={ui.btnSecondary}>Back to every kind of work</Link></p> : null}
         </section>)}
       </div>
     </>}

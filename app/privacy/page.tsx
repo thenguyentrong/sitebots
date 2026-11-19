@@ -40,6 +40,10 @@ export default function PrivacyPage() {
         <p className="mt-2">Your messages are sent to Anthropic PBC in the United States, which generates the answers with its AI model Claude. The site runs on Vercel, which handles every page request and stores the chats, account records and reviews in a private store in Frankfurt. Sign-in goes through Google (Google Ireland Limited) or Microsoft (Microsoft Ireland Operations Limited), depending on the button you choose.</p>
       </section>
       <section>
+        <h2 className="font-semibold text-foreground">Videos</h2>
+        <p className="mt-2">The start page shows films by robot makers that are hosted on YouTube. Until you press play, only a preview picture stored on our own server is shown and nothing is loaded from YouTube. When you press play, the film loads from youtube-nocookie.com, and Google Ireland Limited receives your IP address and the usual browser data. YouTube&apos;s own privacy policy applies to that film (Art. 6(1)(a) GDPR, by pressing play). The film behind the opening of the start page is stored on our own server.</p>
+      </section>
+      <section>
         <h2 className="font-semibold text-foreground">Legal basis and your rights</h2>
         <p className="mt-2">We process chats because you choose to send them and to run and improve this service (Art. 6(1)(b) and (f) GDPR). You can ask for access, correction, deletion or restriction, object to the processing, and complain to a data protection authority.</p>
       </section>

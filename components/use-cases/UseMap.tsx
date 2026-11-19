@@ -27,9 +27,11 @@ export function UseMap({ points, active, selected, href }: { points: UsePoint[];
   return <div className="grid grid-cols-1 gap-px bg-edge/60 lg:grid-cols-[minmax(0,1.85fr)_minmax(0,1fr)]">
     <figure className="relative bg-card">
       <svg viewBox={WORLD.box} className="block h-auto w-full" role="group" aria-label="World map of documented robot uses">
+        {/* Every country comes from one cached picture; only the countries with uses are drawn in the page. */}
+        <image href="/maps/world.svg" x={0} y={0} width={900} height={450} />
         <defs>
           <g id="uc-countries">
-            {geography.countries.map((c, i) => <path key={c.code + i} d={c.path} fill={c.code === selected ? 'var(--accent-soft)' : active.has(c.code) ? 'var(--edge-strong)' : 'var(--subtle)'} stroke="var(--card)" strokeWidth={0.6} vectorEffect="non-scaling-stroke" />)}
+            {geography.countries.filter((c) => active.has(c.code)).map((c, i) => <path key={c.code + i} d={c.path} fill={c.code === selected ? 'var(--accent-soft)' : 'var(--edge-strong)'} stroke="var(--card)" strokeWidth={0.6} vectorEffect="non-scaling-stroke" />)}
           </g>
         </defs>
         <use href="#uc-countries" />
@@ -39,6 +41,7 @@ export function UseMap({ points, active, selected, href }: { points: UsePoint[];
     </figure>
     <figure className="relative bg-card">
       <svg viewBox={EUROPE.box} className="block h-auto w-full" role="group" aria-label="Close-up of Europe">
+        <image href="/maps/world.svg" x={0} y={0} width={900} height={450} />
         <use href="#uc-countries" />
         <Dots points={europe} k={EUROPE.k} href={href} />
       </svg>
