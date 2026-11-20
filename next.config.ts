@@ -29,6 +29,8 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ['127.0.0.1'],
   async redirects() {
     const models = ['02', 'w1'].map(model => ({ source: `/robots/zerith/${model}`, destination: `/robots/casbot/${model}`, permanent: true }));
+    // Spot Arm is an optional payload, not a separate robot (Boston Dynamics, 20 Nov 2026): one page for Spot.
+    models.push(...['', '/de'].map(prefix => ({ source: `${prefix}/market/boston-dynamics-spot-arm`, destination: `${prefix}/market/boston-dynamics-spot`, permanent: true })));
     // The site became one chat. Old pages go to it instead of ending in a 404.
     const gone = ['/graph', '/steps', '/costs', '/search', '/methodology', '/plan/:path*', '/workflows/:path*', '/solutions/:path*']
       .map(source => ({ source, destination: '/', permanent: false }));

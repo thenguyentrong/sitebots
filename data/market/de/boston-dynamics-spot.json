@@ -208,6 +208,62 @@
    "unit": null,
    "conditions": "dock needs shelter, operating -20 to 35 °C, charge 2 to 3.5 h",
    "sourceId": "s6"
+  },
+  {
+   "key": "dof_per_arm",
+   "label": "Arm degrees of freedom (optional Spot Arm)",
+   "value": 6,
+   "unit": null,
+   "conditions": "plus gripper; with the optional Spot Arm payload",
+   "sourceId": "s13"
+  },
+  {
+   "key": "reach_m",
+   "label": "Arm length at full extension (optional Spot Arm)",
+   "value": 0.984,
+   "unit": "m",
+   "conditions": "max reach height on robot 1.8 m; with the optional Spot Arm payload",
+   "sourceId": "s13"
+  },
+  {
+   "key": "arm_payload_kg",
+   "label": "Arm lift capacity (optional Spot Arm)",
+   "value": 11,
+   "unit": "kg",
+   "conditions": "peak; continuous 5 kg at 0.5 m extension; measured at 22 °C; with the optional Spot Arm payload",
+   "sourceId": "s13"
+  },
+  {
+   "key": "arm_continuous_payload_kg",
+   "label": "Arm continuous lift (optional Spot Arm)",
+   "value": 5,
+   "unit": "kg",
+   "conditions": "at 0.5 m extension; with the optional Spot Arm payload",
+   "sourceId": "s13"
+  },
+  {
+   "key": "arm_drag_kg",
+   "label": "Arm drag capacity (optional Spot Arm)",
+   "value": 25,
+   "unit": "kg",
+   "conditions": "on carpet; with the optional Spot Arm payload",
+   "sourceId": "s13"
+  },
+  {
+   "key": "arm_weight_kg",
+   "label": "Arm weight incl. gripper (optional Spot Arm)",
+   "value": 8,
+   "unit": "kg",
+   "conditions": "with the optional Spot Arm payload",
+   "sourceId": "s13"
+  },
+  {
+   "key": "gripper",
+   "label": "Gripper (optional Spot Arm)",
+   "value": "max aperture 175 mm, peak clamp force 130 N, 4K RGB camera, ToF and IMU in gripper",
+   "unit": null,
+   "conditions": "with the optional Spot Arm payload",
+   "sourceId": "s13"
   }
  ],
  "capabilities": {
@@ -233,7 +289,11 @@
   "notes": [
    "The base robot has no inspection camera; Spot CAM 2, the EAP 2 lidar, acoustic or gas payloads are sold separately and share the 14 kg limit.",
    "Autonomous charging needs the separate Spot Dock, which must be sheltered.",
-   "Not for private buyers: Boston Dynamics sells only for commercial, industrial and research use."
+   "Not for private buyers: Boston Dynamics sells only for commercial, industrial and research use.",
+   "Spot Arm is an optional payload for Spot, not a separate robot (Boston Dynamics, 20 Nov 2026). With it, Spot can grasp, open doors and turn valves.",
+   "Arm payload: 5 kg continuous at 0.5 m extension, up to 11 kg peak.",
+   "The arm has no IP rating of its own (water and dust resistant); base Spot is IP54.",
+   "Arms: none in the base robot; one with the optional Spot Arm."
   ]
  },
  "images": [
@@ -285,6 +345,62 @@
    "credit": "Boston Dynamics",
    "alt": "Boston Dynamics Spot, picture from bostondynamics.com",
    "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2022/06/spot-arm-extended-cam-ir.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Spot with the arm extended and a CAM+ IR payload (with Spot Arm)",
+   "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/06/arm-industrial-pipe-min.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Spot Arm working at industrial piping",
+   "kind": "in_use"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/06/spot-arm-tablet-joystick-min.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Boston Dynamics Spot with Arm, picture from bostondynamics.com",
+   "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/12/arm-api-screen.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Boston Dynamics Spot with Arm, picture from bostondynamics.com",
+   "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/06/spot-investigate-suspicious-package-min-scaled.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Boston Dynamics Spot with Arm, picture from bostondynamics.com",
+   "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/06/spot-lava-cave-arm-min.jpg",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Boston Dynamics Spot with Arm, picture from bostondynamics.com",
+   "kind": "product"
+  },
+  {
+   "url": "https://bostondynamics.com/wp-content/uploads/2023/06/spot-section.png",
+   "pageUrl": "https://bostondynamics.com/products/spot/arm/",
+   "credit": "Boston Dynamics",
+   "alt": "Boston Dynamics Spot with Arm, picture from bostondynamics.com",
+   "kind": "product"
+  },
+  {
+   "url": "https://www.elp-gmbh.com/wp-content/uploads/elp_produkte_laufroboter_spot_740x740.png",
+   "pageUrl": "https://www.elp-gmbh.com/produkte/spot-agiler-und-autonomer-laufroboter/",
+   "credit": "ELP GmbH European Logistic Partners",
+   "alt": "Boston Dynamics Spot with Arm, picture from elp-gmbh.com",
+   "kind": "product"
   }
  ],
  "evidence": [
@@ -321,6 +437,15 @@
    "date": "2023",
    "sourceId": "s7",
    "note": "Over 4,000 patrols; four more robots planned for other Vienna plants."
+  },
+  {
+   "taskIds": [],
+   "task": "Opens doors, turns valves and flips levers semi-autonomously",
+   "stage": "claim",
+   "where": null,
+   "date": null,
+   "sourceId": "s12",
+   "note": "With the optional Spot Arm."
   }
  ],
  "sources": [
@@ -411,6 +536,22 @@
    "publisher": "netzwoche.ch",
    "kind": "other",
    "checkedAt": "2026-11-18"
+  },
+  {
+   "id": "s12",
+   "url": "https://bostondynamics.com/products/spot/arm/",
+   "title": "Spot Arm",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
+  },
+  {
+   "id": "s13",
+   "url": "https://bostondynamics.com/wp-content/uploads/2020/10/spot-arm.pdf",
+   "title": "Spot Arm datasheet",
+   "publisher": "Boston Dynamics",
+   "kind": "manufacturer",
+   "checkedAt": "2026-10-02"
   }
  ],
  "openQuestions": [
